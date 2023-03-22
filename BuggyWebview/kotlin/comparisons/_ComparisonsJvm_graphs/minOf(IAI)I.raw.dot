@@ -1,0 +1,18 @@
+digraph "CFG forkotlin.comparisons.ComparisonsKt___ComparisonsJvmKt.minOf(I[I)I" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"other\" \l0x0002: INVOKE  (r5 I:java.lang.Object A[D('other' int[])]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x0005: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r4 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('a' int)])  (LINE:402)\l0x0006: ARRAY_LENGTH  (r1 I:int) = (r5 I:??[] A[D('other' int[])])  (LINE:403)\l0x0007: CONST  (r2 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_START\lLOOP:0: B:3:0x0008\-\>B:4:0x000a\l|0x0008: IF  (r2 I:??[int, byte, short, char]) \>= (r1 I:??[int, byte, short, char])  \-\> B:6:0x0013 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:4:0x000a\l|0x000a: AGET  (r3 I:??[int, float, short, byte, char]) = (r5 I:??[int, float][] A[D('other' int[])]), (r2 I:??[int, short, byte, char]) \l0x000c: INVOKE  (r0 I:int A[D('min' int)]) = (r0 I:int A[D('min' int)]), (r3 I:int A[D('e' int)]) type: STATIC call: java.lang.Math.min(int, int):int A[MD:(int, int):int (c)]\l0x0010: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|SYNTHETIC\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|RETURN\l|0x0013: RETURN  (r0 I:int A[D('min' int)])  (LINE:404)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.comparisons.ComparisonsKt___ComparisonsJvmKt.minOf((r4 I:int A[D('a' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:int[] A[D('other' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x000a \-\> B:3:0x0008\lDebug Info:\l  0x000c\-0x0013: r3 'e' I\l  0x0006\-0x0013: r0 'min' I\l  \-1 \-0x0013: r4 'a' I\l  \-1 \-0x0013: r5 'other' [I\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_3;
+Node_6 -> Node_5;
+Node_5 -> Node_1;
+}
+

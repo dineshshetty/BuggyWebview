@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.onEach(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Iterable;" {
+subgraph cluster_Region_607017271 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"action\")\ljava.util.Iterator r3 = r5.iterator()\l\l}"];
+subgraph cluster_LoopRegion_119450763 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0015|java.lang.Object \lif (r3.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1903202185 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|LOOP_END\lLOOP:0: B:19:0x0011\-\>B:21:0x0017\l|java.lang.Object r4 = r3.next()\lr6.invoke(r4)\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001f|RETURN\l|return r5\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0011|LOOP_START\lLOOP:0: B:19:0x0011\-\>B:21:0x0017\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001f|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final C extends java.lang.Iterable\<? extends T\> kotlin.collections.CollectionsKt___CollectionsKt.onEach((r5v0 C extends java.lang.Iterable\<? extends T\> A[D('$this$onEach' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'action' kotlin.jvm.functions.Function1\<? super T, kotlin.Unit\> A[D('action' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0017 \-\> B:19:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: [C extends java.lang.Iterable\<? extends T\>, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;C::Ljava\/lang\/Iterable\<+TT;\>;\>(TC;Lkotlin\/jvm\/functions\/Function1\<\-TT;Lkotlin\/Unit;\>;)TC;\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_19;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_23 -> Node_22;
+}
+

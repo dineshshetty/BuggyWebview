@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.provider.SelfDestructiveThread.onDestruction()V" {
+subgraph cluster_Region_401863435 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000}"];
+subgraph cluster_SynchronizedRegion_1763582287 {
+label = "Synchronized:R(2:2|(1:(2:(1:7)|(1:9))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002}"];
+subgraph cluster_Region_196529295 {
+label = "R(1:(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1018260183 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_886226401 {
+label = "IF [B:5:0x000a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|if (r3.mHandler.hasMessages(1) == true) goto L6\l}"];
+subgraph cluster_Region_744416877 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_296846813 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000e|TryCatch #0 \{, blocks: (B:4:0x0003, B:6:0x000c, B:8:0x000e, B:9:0x0018), top: B:14:0x0003 \}\lCatch: all \-\> 0x001a\l|r3.mThread.quit()     \/\/ Catch: java.lang.Throwable \-\> L1a\lr3.mThread = null     \/\/ Catch: java.lang.Throwable \-\> L1a\lr3.mHandler = null     \/\/ Catch: java.lang.Throwable \-\> L1a\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:4:0x0003, B:6:0x000c, B:8:0x000e, B:9:0x0018), top: B:14:0x0003 \}\lCatch: all \-\> 0x001a\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000c|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:4:0x0003, B:6:0x000c, B:8:0x000e, B:9:0x0018), top: B:14:0x0003 \}\lCatch: all \-\> 0x001a\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L1a\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0018|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:4:0x0003, B:6:0x000c, B:8:0x000e, B:9:0x0018), top: B:14:0x0003 \}\lCatch: all \-\> 0x001a\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L1a\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0019}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001a|REMOVE\lExcHandler: all \-\> 0x001a\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001b|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x001a\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001c|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{void androidx.core.provider.SelfDestructiveThread.onDestruction((r3v0 'this' androidx.core.provider.SelfDestructiveThread A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0019 \-\> B:1:?, CROSS_EDGE: B:13:0x001c \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_14;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_14 -> Node_4;
+Node_14 -> Node_11;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+}
+

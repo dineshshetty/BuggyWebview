@@ -1,0 +1,71 @@
+digraph "CFG forcom.google.android.material.progressindicator.IndeterminateDrawable.draw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_880486138 {
+label = "R(2:1|(2:(1:15)|(3:7|(1:10)|12)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|android.graphics.Rect android.graphics.Rect r0 = new android.graphics.Rect()\l}"];
+subgraph cluster_Region_1093155447 {
+label = "R(2:(1:15)|(3:7|(1:10)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1195403867 {
+label = "IF [B:22:0x000d, B:24:0x0013, B:26:0x0019] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000d|if (getBounds().isEmpty() != false) goto L17\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0013|ADDED_TO_REGION\l|if (isVisible() == false) goto L16\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0019|ADDED_TO_REGION\l|if (r10.getClipBounds(r0) == false) goto L15\l}"];
+subgraph cluster_Region_1251074743 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_110443678 {
+label = "R(3:7|(1:10)|12)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001c|r10.save()\lr9.drawingDelegate.validateSpecAndAdjustCanvas(r10, getBounds(), getGrowFraction())\lr9.drawingDelegate.fillTrack(r10, r9.paint)\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_413623222 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0039|if (r1 \< r9.animatorDelegate.segmentColors.length) goto L10\l}"];
+subgraph cluster_Region_1963383470 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x003b|LOOP_END\lLOOP:0: B:29:0x0034\-\>B:31:0x003b\l|r9.drawingDelegate.fillIndicator(r10, r9.paint, r9.animatorDelegate.segmentPositions[r1 * 2], r9.animatorDelegate.segmentPositions[(r1 * 2) + 1], r9.animatorDelegate.segmentColors[r1])\lr1++\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x005e|r10.restore()\l}"];
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000f}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0015}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0034|LOOP_START\lLOOP:0: B:29:0x0034\-\>B:31:0x003b\lPHI: r1 \l  PHI: (r1v7 'segmentIndex' int) = (r1v6 'segmentIndex' int), (r1v8 'segmentIndex' int) binds: [B:28:0x001c, B:31:0x003b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x005e|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0061}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0062|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.progressindicator.IndeterminateDrawable.draw((r9v0 'this' com.google.android.material.progressindicator.IndeterminateDrawable\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\> A[D('this' com.google.android.material.progressindicator.IndeterminateDrawable\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\>), IMMUTABLE_TYPE, THIS]), (r10v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:31:0x003b \-\> B:29:0x0034, CROSS_EDGE: B:34:0x0062 \-\> B:20:?, CROSS_EDGE: B:24:0x0013 \-\> B:34:0x0062, CROSS_EDGE: B:22:0x000d \-\> B:34:0x0062\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec]\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.draw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_34;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_36;
+Node_26 -> Node_28[style=dashed];
+Node_26 -> Node_37;
+Node_37 -> Node_20;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_35[style=dashed];
+Node_31 -> Node_29;
+Node_32 -> Node_33;
+Node_19 -> Node_21;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_29 -> Node_30;
+Node_35 -> Node_32;
+Node_33 -> Node_20;
+Node_36 -> Node_20;
+Node_34 -> Node_20;
+}
+

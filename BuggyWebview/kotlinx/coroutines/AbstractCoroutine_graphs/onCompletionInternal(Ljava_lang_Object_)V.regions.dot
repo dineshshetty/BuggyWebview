@@ -1,0 +1,36 @@
+digraph "CFG forkotlinx.coroutines.AbstractCoroutine.onCompletionInternal(Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_300335389 {
+label = "R(1:(1:3)(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_951605250 {
+label = "IF [B:11:0x0002] THEN: R(1:3) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if ((r3 instanceof kotlinx.coroutines.CompletedExceptionally) != false) goto L3\l}"];
+subgraph cluster_Region_1689034078 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|onCancelled(((kotlinx.coroutines.CompletedExceptionally) r3).cause, ((kotlinx.coroutines.CompletedExceptionally) r3).getHandled())\l}"];
+}
+subgraph cluster_Region_1428257349 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0014|onCompleted(r3)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0017|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{protected final void kotlinx.coroutines.AbstractCoroutine.onCompletionInternal((r2v0 'this' kotlinx.coroutines.AbstractCoroutine\<T\> A[IMMUTABLE_TYPE, THIS]), (r3v0 'state' java.lang.Object A[D('state' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0014 \-\> B:14:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r3v0, resolved type: java.lang.Object\}\lMETHOD_OVERRIDE: [kotlinx.coroutines.JobSupport.onCompletionInternal(java.lang.Object):void]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+Node_14 -> Node_9;
+}
+

@@ -1,0 +1,77 @@
+digraph "CFG forkotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher.limited(I)Lkotlinx\/coroutines\/CoroutineDispatcher;" {
+subgraph cluster_Region_1193451786 {
+label = "R(1:(2:(1:15)|(1:(2:(2:12|13)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1756011124 {
+label = "R(2:(1:15)|(1:(2:(2:12|13)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1582886284 {
+label = "IF [B:24:0x0007] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0007|PHI: r2 \l  PHI: (r2v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4 \> 0) == false) goto L14\l}"];
+subgraph cluster_Region_2011511479 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0054|throw new java.lang.IllegalArgumentException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Expected positive parallelism level, but have \", java.lang.Integer.valueOf(r4)).toString())\l}"];
+}
+}
+subgraph cluster_Region_631107504 {
+label = "R(1:(2:(2:12|13)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_433629261 {
+label = "R(2:(2:12|13)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_16061047 {
+label = "IF [B:29:0x000f] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x000f|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if ((r4 \<= r3.corePoolSize) == false) goto L12\l}"];
+subgraph cluster_Region_1587257436 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x001a}"];
+Node_33 [shape=record,label="{33\:\ 0x003f|throw new java.lang.IllegalArgumentException((\"Expected parallelism level lesser than core pool size (\" + r3.corePoolSize + \"), but have \" + r4).toString())\l}"];
+}
+}
+subgraph cluster_Region_347153488 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0019|RETURN\l|return new kotlinx.coroutines.scheduling.LimitingDispatcher(r3, r4, null, 0)\l}"];
+}
+}
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0002}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0004}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0009}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000b}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x000e}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0011}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0040}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0006}"];
+MethodNode[shape=record,label="{public final kotlinx.coroutines.CoroutineDispatcher kotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher.limited((r3v0 'this' kotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher A[IMMUTABLE_TYPE, THIS]), (r4v0 'parallelism' int A[D('parallelism' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:33:0x003f \-\> B:19:?, CROSS_EDGE: B:26:0x000b \-\> B:29:0x000f, CROSS_EDGE: B:35:0x0054 \-\> B:19:?, CROSS_EDGE: B:23:0x0006 \-\> B:24:0x0007\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_34;
+Node_35 -> Node_19;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_32;
+Node_32 -> Node_33;
+Node_33 -> Node_19;
+Node_31 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23;
+Node_22 -> Node_24;
+Node_25 -> Node_26;
+Node_26 -> Node_28;
+Node_26 -> Node_29;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_34 -> Node_35;
+Node_23 -> Node_24;
+}
+

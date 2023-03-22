@@ -1,0 +1,77 @@
+digraph "CFG forandroidx.appcompat.widget.ForwardingListener.onTouchForwarded(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_1237157937 {
+label = "R(2:1|(2:(1:21)|(3:9|10|14))) | DECL_VAR: androidx.appcompat.widget.DropDownListView dst\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0000|android.view.View android.view.View r0 = r9.mSrc\landroidx.appcompat.view.menu.ShowableListMenu androidx.appcompat.view.menu.ShowableListMenu r1 = getPopup()\l}"];
+subgraph cluster_Region_1330844298 {
+label = "R(2:(1:21)|(3:9|10|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_177239486 {
+label = "IF [B:29:0x0007, B:31:0x000d, B:34:0x0016, B:36:0x001c] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0007|if (r1 == null) goto L22\l}"];
+Node_31 [shape=record,label="{31\:\ 0x000d|ADDED_TO_REGION\l|if (r1.isShowing() == false) goto L22\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0016|ADDED_TO_REGION\l|if ((r3 = (androidx.appcompat.widget.DropDownListView) r1.getListView()) == null) goto L21\l}"];
+Node_36 [shape=record,label="{36\:\ 0x001c|ADDED_TO_REGION\l|if (r3.isShown() == false) goto L21\l}"];
+subgraph cluster_Region_263105390 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x0045|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1548468175 {
+label = "R(3:9|10|14)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x001f|android.view.MotionEvent android.view.MotionEvent r4 = android.view.MotionEvent.obtainNoHistory(r10)\ltoGlobalMotionEvent(r0, r4)\ltoLocalMotionEvent(r3, r4)\lboolean boolean r5 = r3.onForwardedEvent(r4, r9.mActivePointerId)\lr4.recycle()\lint int r6 = r10.getActionMasked()\l}"];
+Node_39 [shape=record,label="{39\:\ 0x0037|boolean r8 = (r6 == 1 \|\| r6 == 3) ? false : true\l}"];
+Node_44 [shape=record,label="{44\:\ 0x003f|RETURN\lPHI: r8 \l  PHI: (r8v1 'keepForwarding' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|return r5 && r8\l}"];
+}
+}
+}
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0009}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0010}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0018}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0039}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x003a|REMOVE\lADDED_TO_REGION\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x003c}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0041|REMOVE\lADDED_TO_REGION\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x0043|ORIG_RETURN\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ ?|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x003e}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x0046|RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{private boolean androidx.appcompat.widget.ForwardingListener.onTouchForwarded((r9v0 'this' androidx.appcompat.widget.ForwardingListener A[IMMUTABLE_TYPE, THIS]), (r10v0 'srcEvent' android.view.MotionEvent A[D('srcEvent' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:45:0x0041 \-\> B:47:0x0044, CROSS_EDGE: B:44:0x003f \-\> B:47:0x0044, CROSS_EDGE: B:43:0x003e \-\> B:44:0x003f, CROSS_EDGE: B:39:0x0037 \-\> B:43:0x003e, CROSS_EDGE: B:48:0x0045 \-\> B:27:?, CROSS_EDGE: B:34:0x0016 \-\> B:48:0x0045, CROSS_EDGE: B:49:0x0046 \-\> B:27:?, CROSS_EDGE: B:29:0x0007 \-\> B:49:0x0046\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_26;Node_28 -> Node_29;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_49;
+Node_31 -> Node_33[style=dashed];
+Node_31 -> Node_49;
+Node_34 -> Node_35[style=dashed];
+Node_34 -> Node_48;
+Node_36 -> Node_38[style=dashed];
+Node_36 -> Node_48;
+Node_48 -> Node_27;
+Node_38 -> Node_39;
+Node_39 -> Node_40;
+Node_39 -> Node_43;
+Node_44 -> Node_45;
+Node_44 -> Node_50;
+Node_26 -> Node_28;
+Node_30 -> Node_31;
+Node_33 -> Node_34;
+Node_35 -> Node_36;
+Node_40 -> Node_41;
+Node_41 -> Node_42;
+Node_41 -> Node_43;
+Node_42 -> Node_44;
+Node_45 -> Node_46;
+Node_45 -> Node_51;
+Node_46 -> Node_27;
+Node_51 -> Node_27;
+Node_50 -> Node_27;
+Node_43 -> Node_44;
+Node_49 -> Node_27;
+}
+

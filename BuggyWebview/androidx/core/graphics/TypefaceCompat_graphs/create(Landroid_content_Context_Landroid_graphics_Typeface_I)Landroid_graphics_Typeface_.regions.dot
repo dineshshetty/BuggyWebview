@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.core.graphics.TypefaceCompat.create(Landroid\/content\/Context;Landroid\/graphics\/Typeface;I)Landroid\/graphics\/Typeface;" {
+subgraph cluster_Region_2060803004 {
+label = "R(1:(2:(1:11)|(1:(2:(1:6)|(1:9))))) | DECL_VAR: android.graphics.Typeface typefaceFromFamily\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1689192507 {
+label = "R(2:(1:11)|(1:(2:(1:6)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_282336115 {
+label = "IF [B:2:0x0000] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r3 == null) goto L10\l}"];
+subgraph cluster_Region_1287957419 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001c|throw new java.lang.IllegalArgumentException(\"Context cannot be null\")\l}"];
+}
+}
+subgraph cluster_Region_479990068 {
+label = "R(1:(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_15608908 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_819048609 {
+label = "IF [B:4:0x0007, B:6:0x000d] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|if (android.os.Build.VERSION.SDK_INT \< 21) goto L4\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000d|ADDED_TO_REGION\l|if ((r0 = getBestFontFromFamily(r3, r4, r5)) != null) goto L6\l}"];
+subgraph cluster_Region_1495387363 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_633893698 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0014|RETURN\l|return android.graphics.Typeface.create(r4, r5)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0002}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0010}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0015}"];
+MethodNode[shape=record,label="{public static android.graphics.Typeface androidx.core.graphics.TypefaceCompat.create((r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'family' android.graphics.Typeface A[D('family' android.graphics.Typeface), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'style' int A[D('style' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0014 \-\> B:1:?, CROSS_EDGE: B:4:0x0007 \-\> B:8:0x0010, CROSS_EDGE: B:11:0x001c \-\> B:1:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_10;
+Node_11 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_1;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

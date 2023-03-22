@@ -1,0 +1,27 @@
+digraph "CFG forkotlinx.coroutines.DispatchedCoroutine.getResult()Ljava\/lang\/Object;" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|0x0000: INVOKE  (r0 I:boolean) = (r2 I:kotlinx.coroutines.DispatchedCoroutine) type: DIRECT call: kotlinx.coroutines.DispatchedCoroutine.trySuspend():boolean A[MD:():boolean (m)] (LINE:261)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0004|0x0004: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:17:0x000b \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0006|0x0006: INVOKE  (r0 I:java.lang.Object) =  type: STATIC call: kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED():java.lang.Object A[MD:():java.lang.Object (m)]\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000a|RETURN\l|0x000a: RETURN  (r0 I:java.lang.Object) \l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000b|0x000b: INVOKE  (r0 I:java.lang.Object) = (r2 I:kotlinx.coroutines.DispatchedCoroutine) type: VIRTUAL call: kotlinx.coroutines.DispatchedCoroutine.getState$kotlinx_coroutines_core():java.lang.Object A[MD:():java.lang.Object (m)] (LINE:263)\l0x000f: INVOKE  (r0 I:java.lang.Object) = (r0 I:java.lang.Object) type: STATIC call: kotlinx.coroutines.JobSupportKt.unboxState(java.lang.Object):java.lang.Object A[MD:(java.lang.Object):java.lang.Object (m)]\l0x0013: INSTANCE_OF  (r1 I:boolean) = (r0 I:??[OBJECT, ARRAY] A[D('state' java.lang.Object)]) kotlinx.coroutines.CompletedExceptionally  (LINE:264)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0015|0x0015: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:20:0x0018 \l}"];
+Node_19 [shape=record,label="{19\:\ 0x0017|RETURN\l|0x0017: RETURN  (r0 I:java.lang.Object A[D('state' java.lang.Object)])  (LINE:266)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0018|0x0018: MOVE  (r1 I:??[OBJECT, ARRAY]) = (r0 I:??[OBJECT, ARRAY] A[D('state' java.lang.Object)])  (LINE:264)\l0x0019: CHECK_CAST (r1 I:kotlinx.coroutines.CompletedExceptionally) = (kotlinx.coroutines.CompletedExceptionally) (r1 I:??[OBJECT, ARRAY]) \l0x001b: IGET  (r1 I:java.lang.Throwable) = (r1 I:kotlinx.coroutines.CompletedExceptionally) kotlinx.coroutines.CompletedExceptionally.cause java.lang.Throwable \l}"];
+Node_21 [shape=record,label="{21\:\ 0x001d|0x001d: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.DispatchedCoroutine.getResult((r2 'this' I:kotlinx.coroutines.DispatchedCoroutine\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0017 \-\> B:12:?, CROSS_EDGE: B:21:0x001d \-\> B:12:?\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0013\-0x001d: r0 'state' Ljava\/lang\/Object;\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_17;
+Node_15 -> Node_16;
+Node_16 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+}
+

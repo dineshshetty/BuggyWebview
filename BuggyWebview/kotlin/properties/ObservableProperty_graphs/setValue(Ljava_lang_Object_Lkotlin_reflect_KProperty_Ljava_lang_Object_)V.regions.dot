@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.properties.ObservableProperty.setValue(Ljava\/lang\/Object;Lkotlin\/reflect\/KProperty;Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_697383834 {
+label = "R(2:1|(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"property\")\lV V r0 = r2.value\l}"];
+subgraph cluster_Region_1591498929 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_759934931 {
+label = "IF [B:3:0x000b] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (beforeChange(r4, r0, r5) == false) goto L3\l}"];
+subgraph cluster_Region_1704141192 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1968535036 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|r2.value = r5\lafterChange(r4, r0, r5)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013}"];
+MethodNode[shape=record,label="{public void kotlin.properties.ObservableProperty.setValue((r2v0 'this' kotlin.properties.ObservableProperty\<V\> A[IMMUTABLE_TYPE, THIS]), (r3v0 'thisRef' java.lang.Object A[D('thisRef' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'property' kotlin.reflect.KProperty\<?\> A[D('property' kotlin.reflect.KProperty), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 V A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x0013 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V]\lSIGNATURE: (Ljava\/lang\/Object;Lkotlin\/reflect\/KProperty\<*\>;TV;)V\lMETHOD_OVERRIDE: [kotlin.properties.ReadWriteProperty.setValue(T, kotlin.reflect.KProperty\<?\>, V):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_6 -> Node_1;
+}
+

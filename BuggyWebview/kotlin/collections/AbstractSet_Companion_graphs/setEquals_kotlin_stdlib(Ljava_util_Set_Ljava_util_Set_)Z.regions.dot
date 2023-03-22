@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.collections.AbstractSet.Companion.setEquals$kotlin_stdlib(Ljava\/util\/Set;Ljava\/util\/Set;)Z" {
+subgraph cluster_Region_1312549061 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"c\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"other\")\l}"];
+subgraph cluster_Region_922379672 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_769215434 {
+label = "IF [B:3:0x0012] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r3.size() != r4.size()) goto L3\l}"];
+subgraph cluster_Region_1963120527 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1684960298 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|RETURN\l|return r3.containsAll(r4)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+MethodNode[shape=record,label="{public final boolean kotlin.collections.AbstractSet.Companion.setEquals$kotlin_stdlib((r2v0 'this' kotlin.collections.AbstractSet$Companion A[IMMUTABLE_TYPE, THIS]), (r3v0 'c' java.util.Set\<?\> A[D('c' java.util.Set), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'other' java.util.Set\<?\> A[D('other' java.util.Set), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0020 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (Ljava\/util\/Set\<*\>;Ljava\/util\/Set\<*\>;)Z\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_1;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+}
+

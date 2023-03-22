@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.coordinatorlayout.widget.CoordinatorLayout.getChildRect(Landroid\/view\/View;ZLandroid\/graphics\/Rect;)V" {
+subgraph cluster_Region_1569780937 {
+label = "R(1:(1:11)(1:(1:6)(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_901840446 {
+label = "IF [B:17:0x0004, B:19:0x000c] THEN: R(1:11) ELSE: R(1:(1:6)(1:9))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (r5.isLayoutRequested() != false) goto L11\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000c|ADDED_TO_REGION\l|if (r5.getVisibility() == 8) goto L11\l}"];
+subgraph cluster_Region_41507338 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0029|r7.setEmpty()\l}"];
+}
+subgraph cluster_Region_956718644 {
+label = "R(1:(1:6)(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1667945313 {
+label = "IF [B:21:0x000f] THEN: R(1:6) ELSE: R(1:9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|if (r6 != false) goto L6\l}"];
+subgraph cluster_Region_1365893180 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|getDescendantRect(r5, r7)\l}"];
+}
+subgraph cluster_Region_428362001 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0015|r7.set(r5.getLeft(), r5.getTop(), r5.getRight(), r5.getBottom())\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0028|ORIG_RETURN\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002c}"];
+MethodNode[shape=record,label="{void androidx.coordinatorlayout.widget.CoordinatorLayout.getChildRect((r4v0 'this' androidx.coordinatorlayout.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'transform' boolean A[D('transform' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'out' android.graphics.Rect A[D('out' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0015 \-\> B:24:0x0028, CROSS_EDGE: B:26:0x002c \-\> B:15:?, CROSS_EDGE: B:17:0x0004 \-\> B:25:0x0029\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_25;
+Node_19 -> Node_21[style=dashed];
+Node_19 -> Node_25;
+Node_25 -> Node_26;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_27;
+Node_23 -> Node_24;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_27 -> Node_15;
+Node_24 -> Node_15;
+Node_26 -> Node_15;
+}
+

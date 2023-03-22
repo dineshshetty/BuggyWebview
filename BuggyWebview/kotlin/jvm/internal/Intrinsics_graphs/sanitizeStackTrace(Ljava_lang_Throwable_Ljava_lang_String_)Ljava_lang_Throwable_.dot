@@ -1,0 +1,31 @@
+digraph "CFG forkotlin.jvm.internal.Intrinsics.sanitizeStackTrace(Ljava\/lang\/Throwable;Ljava\/lang\/String;)Ljava\/lang\/Throwable;" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.lang.StackTraceElement[] r0 = r5.getStackTrace()\lint r1 = r0.length\lr2 = \-1\lr3 = 0\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0007|LOOP_START\lLOOP:0: B:16:0x0007\-\>B:20:0x0016\lPHI: r2 r3 \l  PHI: (r2v1 'lastIntrinsic' int) = (r2v0 'lastIntrinsic' int), (r2v2 'lastIntrinsic' int) binds: [B:15:0x0000, B:20:0x0016] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v5 'i' int) binds: [B:15:0x0000, B:20:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \>= r1) goto L9\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0009}"];
+Node_18 [shape=record,label="{18\:\ 0x0013|if (r6.equals(r0[r3].getClassName()) == false) goto L8\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0015|r2 = r3\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0016|SYNTHETIC\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0016|LOOP_END\lLOOP:0: B:16:0x0007\-\>B:20:0x0016\lPHI: r2 \l  PHI: (r2v2 'lastIntrinsic' int) = (r2v1 'lastIntrinsic' int), (r2v3 'lastIntrinsic' int) binds: [B:25:0x0016, B:24:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|int r3 = r3 + 1\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0016|SYNTHETIC\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0019|SYNTHETIC\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0019|int r3 = r2 + 1\ljava.lang.StackTraceElement[] r3 = (java.lang.StackTraceElement[]) java.util.Arrays.copyOfRange(r0, r3, r1)\lr5.setStackTrace(r3)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0024|RETURN\l|return r5\l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static T extends java.lang.Throwable kotlin.jvm.internal.Intrinsics.sanitizeStackTrace((r5v0 'throwable' T extends java.lang.Throwable A[D('throwable' T extends java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'classNameToDrop' java.lang.String A[D('classNameToDrop' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0016 \-\> B:16:0x0007, CROSS_EDGE: B:18:0x0013 \-\> B:20:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends java.lang.Throwable]\lSIGNATURE: \<T:Ljava\/lang\/Throwable;\>(TT;Ljava\/lang\/String;)TT;\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_23;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_25;
+Node_19 -> Node_24;
+Node_24 -> Node_20;
+Node_20 -> Node_16;
+Node_25 -> Node_20;
+Node_23 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_14;
+}
+

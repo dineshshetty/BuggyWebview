@@ -1,0 +1,43 @@
+digraph "CFG forcom.google.android.material.badge.BadgeState.generateTypedArray(Landroid\/content\/Context;III)Landroid\/content\/res\/TypedArray;" {
+subgraph cluster_Region_1375956213 {
+label = "R(5:1|(1:3)|(1:5)|6|7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|android.util.AttributeSet r0 = null\lint r1 = 0\l}"];
+subgraph cluster_IfRegion_1686878056 {
+label = "IF [B:12:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0002|if (r10 != 0) goto L3\l}"];
+subgraph cluster_Region_304303212 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|android.util.AttributeSet r0 = com.google.android.material.drawable.DrawableUtils.parseDrawableXml(r9, r10, com.google.android.material.badge.BadgeState.BADGE_RESOURCE_TAG)\lint r1 = r0.getStyleAttribute()\l}"];
+}
+}
+subgraph cluster_IfRegion_917637159 {
+label = "IF [B:14:0x000e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|PHI: r0 r1 \l  PHI: (r0v1 'attrs' android.util.AttributeSet) = (r0v0 'attrs' android.util.AttributeSet), (r0v2 'attrs' android.util.AttributeSet) binds: [B:12:0x0002, B:13:0x0004] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'style' int) = (r1v0 'style' int), (r1v4 'style' int) binds: [B:12:0x0002, B:13:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 == 0) goto L5\l}"];
+subgraph cluster_Region_1048941903 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|r1 = r12\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0011|PHI: r1 \l  PHI: (r1v2 'style' int) = (r1v1 'style' int), (r1v3 'style' int) binds: [B:14:0x000e, B:15:0x0010] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x001e|RETURN\l|return com.google.android.material.internal.ThemeEnforcement.obtainStyledAttributes(r9, r0, com.google.android.material.C0571R.styleable.Badge, r11, r1, new int[0])\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.content.res.TypedArray com.google.android.material.badge.BadgeState.generateTypedArray((r8v0 'this' com.google.android.material.badge.BadgeState A[IMMUTABLE_TYPE, THIS]), (r9v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'badgeResId' int A[D('badgeResId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'defStyleAttr' int A[D('defStyleAttr' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'defStyleRes' int A[D('defStyleRes' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x000e \-\> B:16:0x0011, CROSS_EDGE: B:12:0x0002 \-\> B:14:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_10;
+Node_9 -> Node_11;
+}
+

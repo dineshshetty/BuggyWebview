@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.pageLeft()Z" {
+subgraph cluster_Region_1991391976 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|int int r0 = r2.mCurItem\l}"];
+subgraph cluster_Region_1686251029 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1445121596 {
+label = "IF [B:11:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r0 \> 0) goto L3\l}"];
+subgraph cluster_Region_946539657 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|setCurrentItem(r0 \- 1, true)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0009|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_803374741 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|RETURN\l|return false\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{boolean androidx.viewpager.widget.ViewPager.pageLeft((r2v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000b \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+}
+

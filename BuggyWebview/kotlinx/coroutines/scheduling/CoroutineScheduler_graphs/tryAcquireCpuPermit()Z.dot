@@ -1,0 +1,27 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.tryAcquireCpuPermit()Z" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000}"];
+Node_17 [shape=record,label="{17\:\ 0x0003|LOOP_START\lLOOP:0: B:17:0x0003\-\>B:22:0x0028\l|long r9 = r15.controlState\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0014|if (((int) ((kotlinx.coroutines.scheduling.CoroutineScheduler.CPU_PERMITS_MASK & r9) \>\> 42)) != 0) goto L4\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0018|long r13 = r9 \- 4398046511104L\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0028|LOOP_END\lLOOP:0: B:17:0x0003\-\>B:22:0x0028\l|if (kotlinx.coroutines.scheduling.CoroutineScheduler.controlState$FU.compareAndSet(r15, r9, r13) == false) goto L2\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002a|SYNTHETIC\l}"];
+Node_23 [shape=record,label="{23\:\ 0x002a|RETURN\l|return true\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0016|SYNTHETIC\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0016|RETURN\l|return false\l}"];
+MethodNode[shape=record,label="{private final boolean kotlinx.coroutines.scheduling.CoroutineScheduler.tryAcquireCpuPermit((r15v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x002b \-\> B:15:?, BACK_EDGE: B:22:0x0028 \-\> B:17:0x0003\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_21;
+Node_18 -> Node_26[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_17;
+Node_22 -> Node_27[style=dashed];
+Node_27 -> Node_23;
+Node_23 -> Node_15;
+Node_26 -> Node_19;
+Node_19 -> Node_15;
+}
+

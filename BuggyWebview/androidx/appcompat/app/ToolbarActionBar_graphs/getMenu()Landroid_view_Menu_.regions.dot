@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.appcompat.app.ToolbarActionBar.getMenu()Landroid\/view\/Menu;" {
+subgraph cluster_Region_1960417658 {
+label = "R(2:(1:3)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1035059403 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r3.mMenuCallbackSet == false) goto L3\l}"];
+subgraph cluster_Region_1436726348 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|r3.mDecorToolbar.setMenuCallbacks(new androidx.appcompat.app.ToolbarActionBar.ActionMenuPresenterCallback(), new androidx.appcompat.app.ToolbarActionBar.MenuBuilderCallback())\lr3.mMenuCallbackSet = true\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|return r3.mDecorToolbar.getMenu()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0016}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.view.Menu androidx.appcompat.app.ToolbarActionBar.getMenu((r3v0 'this' androidx.appcompat.app.ToolbarActionBar A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0002 \-\> B:5:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

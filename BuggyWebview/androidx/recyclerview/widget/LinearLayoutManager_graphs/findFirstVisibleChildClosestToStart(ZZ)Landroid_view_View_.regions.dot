@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.findFirstVisibleChildClosestToStart(ZZ)Landroid\/view\/View;" {
+subgraph cluster_Region_1462779215 {
+label = "R(1:(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1088248456 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_301946133 {
+label = "IF [B:11:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r2.mShouldReverseLayout != false) goto L3\l}"];
+subgraph cluster_Region_283143827 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|RETURN\l|return findOneVisibleChild(getChildCount() \- 1, \-1, r3, r4)\l}"];
+}
+}
+subgraph cluster_Region_1181545349 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0019|RETURN\l|return findOneVisibleChild(0, getChildCount(), r3, r4)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0010}"];
+MethodNode[shape=record,label="{public android.view.View androidx.recyclerview.widget.LinearLayoutManager.findFirstVisibleChildClosestToStart((r2v0 'this' androidx.recyclerview.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'completelyVisible' boolean A[D('completelyVisible' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'acceptPartiallyVisible' boolean A[D('acceptPartiallyVisible' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0019 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

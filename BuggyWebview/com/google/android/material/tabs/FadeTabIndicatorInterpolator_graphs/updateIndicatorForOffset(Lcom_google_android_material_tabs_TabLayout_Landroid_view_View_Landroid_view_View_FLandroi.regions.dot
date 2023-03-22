@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.material.tabs.FadeTabIndicatorInterpolator.updateIndicatorForOffset(Lcom\/google\/android\/material\/tabs\/TabLayout;Landroid\/view\/View;Landroid\/view\/View;FLandroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_1855752836 {
+label = "R(4:2|4|(1:6)(1:10)|7) | DECL_VAR: float alpha\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|android.view.View r1 = r11 \< 0.5f ? r9 : r10\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0009|PHI: r1 \l  PHI: (r1v2 'tab' android.view.View) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.graphics.RectF android.graphics.RectF r2 = calculateIndicatorWidthForTab(r8, r1)\l}"];
+subgraph cluster_IfRegion_1411501158 {
+label = "IF [B:7:0x0012] THEN: R(1:6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|if (r11 \< 0.5f) goto L6\l}"];
+subgraph cluster_Region_1619286923 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|float r0 = com.google.android.material.animation.AnimationUtils.lerp(1.0f, 0.0f, 0.0f, 0.5f, r11)\l}"];
+}
+subgraph cluster_Region_754728607 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0019|float r0 = com.google.android.material.animation.AnimationUtils.lerp(0.0f, 1.0f, 0.5f, 1.0f, r11)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001d|PHI: r0 \l  PHI: (r0v2 'alpha' float) = (r0v1 'alpha' float), (r0v3 'alpha' float) binds: [B:9:0x0019, B:8:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|r12.setBounds((int) r2.left, r12.getBounds().top, (int) r2.right, r12.getBounds().bottom)\lr12.setAlpha((int) (255.0f * r0))\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003b}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+MethodNode[shape=record,label="{public void com.google.android.material.tabs.FadeTabIndicatorInterpolator.updateIndicatorForOffset((r7v0 'this' com.google.android.material.tabs.FadeTabIndicatorInterpolator A[IMMUTABLE_TYPE, THIS]), (r8v0 'tabLayout' com.google.android.material.tabs.TabLayout A[D('tabLayout' com.google.android.material.tabs.TabLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'startTitle' android.view.View A[D('startTitle' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'endTitle' android.view.View A[D('endTitle' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'offset' float A[D('offset' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'indicator' android.graphics.drawable.Drawable A[D('indicator' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0019 \-\> B:10:0x001d, CROSS_EDGE: B:5:0x0008 \-\> B:6:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\lMETHOD_OVERRIDE: [com.google.android.material.tabs.TabIndicatorInterpolator.updateIndicatorForOffset(com.google.android.material.tabs.TabLayout, android.view.View, android.view.View, float, android.graphics.drawable.Drawable):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_11 -> Node_1;
+Node_5 -> Node_6;
+}
+

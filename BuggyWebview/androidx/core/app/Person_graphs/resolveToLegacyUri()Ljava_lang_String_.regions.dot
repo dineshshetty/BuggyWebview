@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.core.app.Person.resolveToLegacyUri()Ljava\/lang\/String;" {
+subgraph cluster_Region_751794566 {
+label = "R(2:1|(2:(1:3)|(1:(2:(2:7|8)|(1:9)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.lang.String java.lang.String r0 = r2.mUri\l}"];
+subgraph cluster_Region_647434930 {
+label = "R(2:(1:3)|(1:(2:(2:7|8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1871655350 {
+label = "IF [B:14:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1649944997 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1428222269 {
+label = "R(1:(2:(2:7|8)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_11640379 {
+label = "R(2:(2:7|8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1700322042 {
+label = "IF [B:17:0x0007] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|if (r2.mName != null) goto L7\l}"];
+subgraph cluster_Region_2068076129 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0009}"];
+Node_19 [shape=record,label="{19\:\ 0x001c|RETURN\l|return \"name:\" + ((java.lang.Object) r2.mName)\l}"];
+}
+}
+subgraph cluster_Region_692054317 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001d|RETURN\l|return \"\"\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0005}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.core.app.Person.resolveToLegacyUri((r2v0 'this' androidx.core.app.Person A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001c \-\> B:12:?, CROSS_EDGE: B:21:0x001f \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_16 -> Node_17;
+}
+

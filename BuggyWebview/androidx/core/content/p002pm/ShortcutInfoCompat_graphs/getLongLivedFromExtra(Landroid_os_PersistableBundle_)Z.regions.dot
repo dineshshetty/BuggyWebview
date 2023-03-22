@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutInfoCompat.getLongLivedFromExtra(Landroid\/os\/PersistableBundle;)Z" {
+subgraph cluster_Region_171348875 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_311888256 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1287434240 {
+label = "IF [B:13:0x0000, B:15:0x0008] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|if (r2 == null) goto L8\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0008|ADDED_TO_REGION\l|if (r2.containsKey(androidx.core.content.p002pm.ShortcutInfoCompat.EXTRA_LONG_LIVED) == false) goto L7\l}"];
+subgraph cluster_Region_1330016393 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1901201441 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000f|RETURN\l|return r2.getBoolean(androidx.core.content.p002pm.ShortcutInfoCompat.EXTRA_LONG_LIVED)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0002}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0010|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{static boolean androidx.core.content.pm.ShortcutInfoCompat.getLongLivedFromExtra((r2v0 'bundle' android.os.PersistableBundle A[D('bundle' android.os.PersistableBundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0011 \-\> B:12:?, CROSS_EDGE: B:13:0x0000 \-\> B:19:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_19;
+Node_15 -> Node_17[style=dashed];
+Node_15 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+Node_19 -> Node_12;
+}
+

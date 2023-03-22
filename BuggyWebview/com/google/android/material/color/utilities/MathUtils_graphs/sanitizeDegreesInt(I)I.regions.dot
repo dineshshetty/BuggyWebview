@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.material.color.utilities.MathUtils.sanitizeDegreesInt(I)I" {
+subgraph cluster_Region_2293953 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = r0 % 360\l}"];
+subgraph cluster_Region_2043298160 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1720347994 {
+label = "IF [B:10:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|if (r0 \< 0) goto L3\l}"];
+subgraph cluster_Region_1366279597 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|RETURN\lORIG_RETURN\l|return r0 + 360\l}"];
+}
+}
+subgraph cluster_Region_1218699044 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0004}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static int com.google.android.material.color.utilities.MathUtils.sanitizeDegreesInt((r0v0 'degrees' int A[D('degrees' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0002 \-\> B:12:0x0006\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_11 -> Node_12;
+}
+

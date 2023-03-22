@@ -1,0 +1,49 @@
+digraph "CFG forcom.google.android.material.chip.ChipDrawable.calculateTextOriginAndAlignment(Landroid\/graphics\/Rect;Landroid\/graphics\/PointF;)Landroid\/graphics\/Paint$Align;" {
+subgraph cluster_Region_908224789 {
+label = "R(3:1|(3:3|(1:5)(1:7)|6)|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|r6.set(0.0f, 0.0f)\landroid.graphics.Paint$Align android.graphics.Paint.Align r0 = android.graphics.Paint.Align.LEFT\l}"];
+subgraph cluster_IfRegion_2074705219 {
+label = "IF [B:3:0x0008] THEN: R(3:3|(1:5)(1:7)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r4.text != null) goto L3\l}"];
+subgraph cluster_Region_642797424 {
+label = "R(3:3|(1:5)(1:7)|6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|float float r1 = r4.chipStartPadding + calculateChipIconWidth() + r4.textStartPadding\l}"];
+subgraph cluster_IfRegion_2082456927 {
+label = "IF [B:5:0x0018] THEN: R(1:5) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|if (androidx.core.graphics.drawable.DrawableCompat.getLayoutDirection(r4) == 0) goto L5\l}"];
+subgraph cluster_Region_2043690253 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|r6.x = r5.left + r1\landroid.graphics.Paint$Align r0 = android.graphics.Paint.Align.LEFT\l}"];
+}
+subgraph cluster_Region_1315410439 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023|r6.x = r5.right \- r1\landroid.graphics.Paint$Align r0 = android.graphics.Paint.Align.RIGHT\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002b|PHI: r0 \l  PHI: (r0v4 'align' android.graphics.Paint$Align) = (r0v3 'align' android.graphics.Paint$Align), (r0v5 'align' android.graphics.Paint$Align) binds: [B:7:0x0023, B:6:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|r6.y = r5.centerY() \- calculateTextCenterFromBaseline()\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0037|RETURN\lPHI: r0 \l  PHI: (r0v2 'align' android.graphics.Paint$Align) = (r0v1 'align' android.graphics.Paint$Align), (r0v4 'align' android.graphics.Paint$Align) binds: [B:3:0x0008, B:8:0x002b] A[DONT_GENERATE, DONT_INLINE]\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{android.graphics.Paint$Align com.google.android.material.chip.ChipDrawable.calculateTextOriginAndAlignment((r4v0 'this' com.google.android.material.chip.ChipDrawable A[IMMUTABLE_TYPE, THIS]), (r5v0 'bounds' android.graphics.Rect A[D('bounds' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'pointF' android.graphics.PointF A[D('pointF' android.graphics.PointF), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0023 \-\> B:8:0x002b, CROSS_EDGE: B:3:0x0008 \-\> B:9:0x0037\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+}
+

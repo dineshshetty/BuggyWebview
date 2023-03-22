@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.coordinatorlayout.widget.CoordinatorLayout.requestChildRectangleOnScreen(Landroid\/view\/View;Landroid\/graphics\/Rect;Z)Z" {
+subgraph cluster_Region_2002875847 {
+label = "R(2:1|(2:(1:5)|(1:8)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|androidx.coordinatorlayout.widget.CoordinatorLayout$LayoutParams androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams r0 = (androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams) r4.getLayoutParams()\landroidx.coordinatorlayout.widget.CoordinatorLayout$Behavior androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior r1 = r0.getBehavior()\l}"];
+subgraph cluster_Region_1131784725 {
+label = "R(2:(1:5)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_474767057 {
+label = "IF [B:13:0x000a, B:15:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|if (r1 != null) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0010|ADDED_TO_REGION\l|if (r1.onRequestChildRectangleOnScreen(r3, r4, r5, r6) != false) goto L5\l}"];
+subgraph cluster_Region_994111509 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_910744233 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0018|RETURN\l|return super.requestChildRectangleOnScreen(r4, r5, r6)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000c}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0014}"];
+MethodNode[shape=record,label="{public boolean androidx.coordinatorlayout.widget.CoordinatorLayout.requestChildRectangleOnScreen((r3v0 'this' androidx.coordinatorlayout.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'rectangle' android.graphics.Rect A[D('rectangle' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'immediate' boolean A[D('immediate' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0018 \-\> B:11:?, CROSS_EDGE: B:13:0x000a \-\> B:18:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewParent.requestChildRectangleOnScreen(android.view.View, android.graphics.Rect, boolean):boolean\}, ClspMth\{android.view.ViewGroup.requestChildRectangleOnScreen(android.view.View, android.graphics.Rect, boolean):boolean\}]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+}
+

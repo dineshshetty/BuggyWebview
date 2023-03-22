@@ -1,0 +1,35 @@
+digraph "CFG forandroidx.loader.content.CursorLoader.onReset()V" {
+subgraph cluster_Region_117505691 {
+label = "R(3:1|(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|super.onReset()\lonStopLoading()\landroid.database.Cursor android.database.Cursor r0 = r1.mCursor\l}"];
+subgraph cluster_IfRegion_1708886207 {
+label = "IF [B:3:0x0008, B:5:0x000e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r0 != null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|ADDED_TO_REGION\l|if (r0.isClosed() == false) goto L5\l}"];
+subgraph cluster_Region_1231286700 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|r1.mCursor.close()\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0015|r1.mCursor = null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.loader.content.CursorLoader.onReset((r1v0 'this' androidx.loader.content.CursorLoader A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x000e \-\> B:7:0x0015, CROSS_EDGE: B:3:0x0008 \-\> B:7:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: protected\}\lMETHOD_OVERRIDE: [androidx.loader.content.Loader.onReset():void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_1;
+}
+

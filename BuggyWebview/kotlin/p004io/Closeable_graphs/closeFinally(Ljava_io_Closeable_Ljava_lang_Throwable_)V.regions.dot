@@ -1,0 +1,89 @@
+digraph "CFG forkotlin.io.CloseableKt.closeFinally(Ljava\/io\/Closeable;Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_2120525811 {
+label = "R(1:(1:(1:(2:(1:(2:7|9))|(1:3)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_952093551 {
+label = "R(1:(1:(2:(1:(2:7|9))|(1:3))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1551666707 {
+label = "IF [B:18:0x0001] THEN: R(1:(2:(1:(2:7|9))|(1:3))) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0001|if (r1 != null) goto L2\l}"];
+subgraph cluster_Region_504266783 {
+label = "R(1:(2:(1:(2:7|9))|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1158604562 {
+label = "R(2:(1:(2:7|9))|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_61651055 {
+label = "IF [B:19:0x0003] THEN: R(1:(2:7|9)) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0003|if (r2 != null) goto L6\l}"];
+subgraph cluster_Region_999858719 {
+label = "R(1:(2:7|9))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1375523595 {
+label = "Try: R(2:7|9) catches: R(3:10|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1677236305 {
+label = "R(2:7|9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000a|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x000e, blocks: (B:22:0x000a), top: B:27:0x000a \}\lCatch: all \-\> 0x000e\l|r1.close()     \/\/ Catch: java.lang.Throwable \-\> Le\l}"];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_99695489 {
+label = "R(3:10|11|12) | ExcHandler: all \-\> 0x000e\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000e|ExcHandler: all \-\> 0x000e\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000f|kotlin.Exceptions.addSuppressed(r2, r0)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0012|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_2072504698 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0005|r1.close()\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_99695489 {
+label = "R(3:10|11|12) | ExcHandler: all \-\> 0x000e\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000e|ExcHandler: all \-\> 0x000e\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000f|kotlin.Exceptions.addSuppressed(r2, r0)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0012|RETURN\lORIG_RETURN\l|return\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000a|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.io.CloseableKt.closeFinally((r1v0 '$this$closeFinally' java.io.Closeable A[D('$this$closeFinally' java.io.Closeable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x000a \-\> B:26:0x0012, CROSS_EDGE: B:25:0x000f \-\> B:26:0x0012, CROSS_EDGE: B:27:0x000a \-\> B:24:0x000e, CROSS_EDGE: B:18:0x0001 \-\> B:26:0x0012\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x000e, blocks: (B:22:0x000a), top: B:27:0x000a \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_18 -> Node_29[style=dashed];
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_27;
+Node_22 -> Node_28;
+Node_22 -> Node_31;
+Node_31 -> Node_17;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_17;
+Node_20 -> Node_30;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_17;
+Node_16 -> Node_18;
+Node_30 -> Node_17;
+Node_27 -> Node_22;
+Node_27 -> Node_24;
+Node_28 -> Node_24;
+Node_29 -> Node_17;
+}
+

@@ -1,0 +1,60 @@
+digraph "CFG forcom.google.android.material.chip.ChipDrawable.calculateChipIconBounds(Landroid\/graphics\/Rect;Landroid\/graphics\/RectF;)V" {
+subgraph cluster_Region_1641107654 {
+label = "R(2:1|(1:(3:7|(1:9)(1:12)|10)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|r7.setEmpty()\l}"];
+subgraph cluster_Region_385688239 {
+label = "R(1:(3:7|(1:9)(1:12)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2027046508 {
+label = "IF [B:3:0x0007, B:5:0x000d] THEN: R(3:7|(1:9)(1:12)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (showsChipIcon() != false) goto L7\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|ADDED_TO_REGION\l|if (showsCheckedIcon() != false) goto L7\l}"];
+subgraph cluster_Region_791276022 {
+label = "R(3:7|(1:9)(1:12)|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|float float r0 = r5.chipStartPadding + r5.iconStartPadding\lfloat float r1 = getCurrentChipIconWidth()\l}"];
+subgraph cluster_IfRegion_1913904876 {
+label = "IF [B:7:0x001c] THEN: R(1:9) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|if (androidx.core.graphics.drawable.DrawableCompat.getLayoutDirection(r5) == 0) goto L9\l}"];
+subgraph cluster_Region_522587144 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001e|r7.left = r6.left + r0\lr7.right = r7.left + r1\l}"];
+}
+subgraph cluster_Region_187267954 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|r7.right = r6.right \- r0\lr7.left = r7.right \- r1\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0035|float float r2 = getCurrentChipIconHeight()\lr7.top = r6.exactCenterY() \- (r2 \/ 2.0f)\lr7.bottom = r7.top + r2\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0049|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.chip.ChipDrawable.calculateChipIconBounds((r5v0 'this' com.google.android.material.chip.ChipDrawable A[IMMUTABLE_TYPE, THIS]), (r6v0 'bounds' android.graphics.Rect A[D('bounds' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'outBounds' android.graphics.RectF A[D('outBounds' android.graphics.RectF), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x002a \-\> B:10:0x0035, CROSS_EDGE: B:5:0x000d \-\> B:11:0x0049, CROSS_EDGE: B:3:0x0007 \-\> B:6:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_12 -> Node_1;
+Node_11 -> Node_1;
+}
+

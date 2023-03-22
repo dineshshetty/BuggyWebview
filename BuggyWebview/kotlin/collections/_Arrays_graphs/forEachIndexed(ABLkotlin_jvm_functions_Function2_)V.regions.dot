@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.forEachIndexed([BLkotlin\/jvm\/functions\/Function2;)V" {
+subgraph cluster_Region_355764080 {
+label = "R(2:1|(1:3))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"action\")\lint r1 = 0\lint int r2 = r7.length\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_729031210 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000e|LOOP_START\lLOOP:0: B:10:0x000e\-\>B:11:0x0010\lPHI: r1 r3 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v3 'index' int) binds: [B:9:0x0000, B:11:0x0010] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:9:0x0000, B:11:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L3\l}"];
+subgraph cluster_Region_1211963518 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0010|LOOP_END\lLOOP:0: B:10:0x000e\-\>B:11:0x0010\l|byte r4 = r7[r3]\lr8.invoke(java.lang.Integer.valueOf(r1), java.lang.Byte.valueOf(r4))\lr3++\lr1++\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0023|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0023}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.collections.ArraysKt___ArraysKt.forEachIndexed((r7v0 '$this$forEachIndexed' byte[] A[D('$this$forEachIndexed' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'action' kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super java.lang.Byte, kotlin.Unit\> A[D('action' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0010 \-\> B:10:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([BLkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Integer;\-Ljava\/lang\/Byte;Lkotlin\/Unit;\>;)V\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_10;
+Node_7 -> Node_9;
+Node_13 -> Node_12;
+Node_12 -> Node_8;
+}
+

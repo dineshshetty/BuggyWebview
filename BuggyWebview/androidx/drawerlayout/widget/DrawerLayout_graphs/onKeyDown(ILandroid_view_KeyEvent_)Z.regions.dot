@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.onKeyDown(ILandroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_801901329 {
+label = "R(1:(2:(2:5|6)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1314784936 {
+label = "R(2:(2:5|6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_605350521 {
+label = "IF [B:13:0x0001, B:15:0x0007] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0001|if (r2 == 4) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0007|ADDED_TO_REGION\l|if (hasVisibleDrawer() != false) goto L5\l}"];
+subgraph cluster_Region_486919317 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|r3.startTracking()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000d|RETURN\l|return androidx.drawerlayout.widget.DrawerLayout.CHILDREN_DISALLOW_INTERCEPT\l}"];
+}
+}
+subgraph cluster_Region_1390336167 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|RETURN\l|return super.onKeyDown(r2, r3)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0003}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e}"];
+MethodNode[shape=record,label="{public boolean androidx.drawerlayout.widget.DrawerLayout.onKeyDown((r1v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 'keyCode' int A[D('keyCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0012 \-\> B:11:?, CROSS_EDGE: B:13:0x0001 \-\> B:18:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onKeyDown(int, android.view.KeyEvent):boolean\}, ClspMth\{android.view.KeyEvent.Callback.onKeyDown(int, android.view.KeyEvent):boolean\}]\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+}
+

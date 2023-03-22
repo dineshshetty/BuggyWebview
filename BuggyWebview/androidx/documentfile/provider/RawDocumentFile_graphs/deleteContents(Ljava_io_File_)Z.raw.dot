@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.documentfile.provider.RawDocumentFile.deleteContents(Ljava\/io\/File;)Z" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: INVOKE  (r0 I:java.io.File[]) = (r7 I:java.io.File A[D('dir' java.io.File)]) type: VIRTUAL call: java.io.File.listFiles():java.io.File[] A[MD:():java.io.File[] (c)] (LINE:169)\l0x0004: CONST  (r1 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char])  (LINE:170)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|0x0005: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('files' java.io.File[])]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:13:0x0038  (LINE:171)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0007|0x0007: ARRAY_LENGTH  (r2 I:int) = (r0 I:??[] A[D('files' java.io.File[])])  (LINE:172)\l0x0008: CONST  (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|LOOP_START\lLOOP:0: B:5:0x0009\-\>B:12:0x0035\l|0x0009: IF  (r3 I:??[int, byte, short, char]) \>= (r2 I:??[int, byte, short, char])  \-\> B:14:0x0038 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000b|0x000b: AGET  (r4 I:??[OBJECT, ARRAY]) = (r0 I:??[OBJECT, ARRAY][] A[D('files' java.io.File[])]), (r3 I:??[int, short, byte, char]) \l0x000d: INVOKE  (r5 I:boolean) = (r4 I:java.io.File A[D('file' java.io.File)]) type: VIRTUAL call: java.io.File.isDirectory():boolean A[MD:():boolean (c)] (LINE:173)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0011|0x0011: IF  (r5 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0018 \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0013|0x0013: INVOKE  (r5 I:boolean) = (r4 I:java.io.File A[D('file' java.io.File)]) type: STATIC call: androidx.documentfile.provider.RawDocumentFile.deleteContents(java.io.File):boolean A[MD:(java.io.File):boolean (m)] (LINE:174)\l0x0017: ARITH  (r1 I:??[int, boolean]) = (r1 I:??[int, boolean, short, byte, char] A[D('success' boolean)]) & (r5 I:??[int, boolean, short, byte, char]) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0018|0x0018: INVOKE  (r5 I:boolean) = (r4 I:java.io.File A[D('file' java.io.File)]) type: VIRTUAL call: java.io.File.delete():boolean A[MD:():boolean (c)] (LINE:176)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001c|0x001c: IF  (r5 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:16:0x0035 \l}"];
+Node_11 [shape=record,label="{11\:\ 0x001e|0x001e: NEW_INSTANCE  (r5 I:java.lang.StringBuilder) =  java.lang.StringBuilder  (LINE:177)\l0x0020: INVOKE  (r5 I:java.lang.StringBuilder) type: DIRECT call: java.lang.StringBuilder.\<init\>():void A[MD:():void (c)]\l0x0023: CONST_STR  (r6 I:java.lang.String) =  \"Failed to delete \" \l0x0025: INVOKE  (r5 I:java.lang.StringBuilder), (r6 I:java.lang.String) type: VIRTUAL call: java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder A[MD:(java.lang.String):java.lang.StringBuilder (c)]\l0x0028: INVOKE  (r5 I:java.lang.StringBuilder), (r4 I:java.lang.Object A[D('file' java.io.File)]) type: VIRTUAL call: java.lang.StringBuilder.append(java.lang.Object):java.lang.StringBuilder A[MD:(java.lang.Object):java.lang.StringBuilder (c)]\l0x002b: INVOKE  (r5 I:java.lang.String) = (r5 I:java.lang.StringBuilder) type: VIRTUAL call: java.lang.StringBuilder.toString():java.lang.String A[MD:():java.lang.String (c)]\l0x002f: CONST_STR  (r6 I:java.lang.String) =  \"DocumentFile\" \l0x0031: INVOKE  (r6 I:java.lang.String), (r5 I:java.lang.String) type: STATIC call: android.util.Log.w(java.lang.String, java.lang.String):int A[MD:(java.lang.String, java.lang.String):int (c)]\l0x0034: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('success' boolean)]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:178)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0035|SYNTHETIC\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0035|LOOP_END\lLOOP:0: B:5:0x0009\-\>B:12:0x0035\l|0x0035: ARITH  (r3 I:int) = (r3 I:int) + (1 int)  (LINE:172)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0035|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0038|SYNTHETIC\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0038|RETURN\l|0x0038: RETURN  (r1 I:boolean A[D('success' boolean)])  (LINE:182)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static boolean androidx.documentfile.provider.RawDocumentFile.deleteContents((r7 I:java.io.File A[D('dir' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0035 \-\> B:5:0x0009, CROSS_EDGE: B:10:0x001c \-\> B:12:0x0035, CROSS_EDGE: B:7:0x0011 \-\> B:9:0x0018, CROSS_EDGE: B:3:0x0005 \-\> B:13:0x0038\lDebug Info:\l  0x000d\-0x0035: r4 'file' Ljava\/io\/File;\l  0x0004\-0x0038: r0 'files' [Ljava\/io\/File;\l  0x0005\-0x0038: r1 'success' Z\l  \-1 \-0x0038: r7 'dir' Ljava\/io\/File;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_14;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_16;
+Node_11 -> Node_15;
+Node_15 -> Node_12;
+Node_12 -> Node_5;
+Node_16 -> Node_12;
+Node_14 -> Node_13;
+Node_13 -> Node_1;
+}
+

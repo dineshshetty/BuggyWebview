@@ -1,0 +1,134 @@
+digraph "CFG forandroidx.collection.ArraySet.add(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_601959308 {
+label = "R(2:(1:2)(1:23)|(2:(1:5)|(6:7|(5:9|(1:11)(1:(1:17))|12|(1:14)|15)|18|(1:20)|21|22))) | DECL_VAR: int hash, int index\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1568479627 {
+label = "IF [B:26:0x0000] THEN: R(1:2) ELSE: R(1:23)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0000|if (r9 == null) goto L2\l}"];
+subgraph cluster_Region_146643960 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0002|r0 = 0\lint r1 = indexOfNull()\l}"];
+}
+subgraph cluster_Region_1234700160 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0008|int r0 = r9.hashCode()\lint r1 = indexOf(r9, r0)\l}"];
+}
+}
+subgraph cluster_Region_1875016928 {
+label = "R(2:(1:5)|(6:7|(5:9|(1:11)(1:(1:17))|12|(1:14)|15)|18|(1:20)|21|22))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1210721993 {
+label = "IF [B:30:0x0011] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0011|if (r1 \>= 0) goto L5\l}"];
+subgraph cluster_Region_1648216331 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0013|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_620176067 {
+label = "R(6:7|(5:9|(1:11)(1:(1:17))|12|(1:14)|15)|18|(1:20)|21|22)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0014|int int r1 = ~r1\lint int r3 = r8.mSize\l}"];
+subgraph cluster_IfRegion_1622707762 {
+label = "IF [B:33:0x001a] THEN: R(5:9|(1:11)(1:(1:17))|12|(1:14)|15) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x001a|if (r3 \>= r8.mHashes.length) goto L9\l}"];
+subgraph cluster_Region_1030826313 {
+label = "R(5:9|(1:11)(1:(1:17))|12|(1:14)|15)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x001c|int r4 = 4\l}"];
+subgraph cluster_IfRegion_2101627356 {
+label = "IF [B:35:0x001f] THEN: R(1:11) ELSE: R(1:(1:17))";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x001f|if (r3 \>= 8) goto L11\l}"];
+subgraph cluster_Region_1760256346 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0021|int r4 = (r3 \>\> 1) + r3\l}"];
+}
+subgraph cluster_Region_1463367046 {
+label = "R(1:(1:17)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_429714774 {
+label = "IF [B:37:0x0025] THEN: R(1:17) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0025|if (r3 \>= 4) goto L17\l}"];
+subgraph cluster_Region_1654955410 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0027|r4 = 8\l}"];
+}
+}
+}
+}
+Node_39 [shape=record,label="{39\:\ 0x0029|PHI: r4 \l  PHI: (r4v7 int) = (r4v5 int), (r4v6 int), (r4v10 int) binds: [B:37:0x0025, B:38:0x0027, B:36:0x0021] A[DONT_GENERATE, DONT_INLINE]\l|int r3 = r4\lint[] int[] r4 = r8.mHashes\ljava.lang.Object[] java.lang.Object[] r5 = r8.mArray\lallocArrays(r3)\lint[] int[] r6 = r8.mHashes\l}"];
+subgraph cluster_IfRegion_805199880 {
+label = "IF [B:40:0x0034] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0034|if (r6.length \> 0) goto L14\l}"];
+subgraph cluster_Region_1366737197 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0036|java.lang.System.arraycopy(r4, 0, r6, 0, r4.length)\ljava.lang.System.arraycopy(r5, 0, r8.mArray, 0, r5.length)\l}"];
+}
+}
+Node_42 [shape=record,label="{42\:\ 0x0040|freeArrays(r4, r5, r8.mSize)\l}"];
+}
+}
+Node_43 [shape=record,label="{43\:\ 0x0045|int int r2 = r8.mSize\l}"];
+subgraph cluster_IfRegion_227743011 {
+label = "IF [B:44:0x0047] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0047|if (r1 \< r2) goto L20\l}"];
+subgraph cluster_Region_71218966 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0049|int[] int[] r3 = r8.mHashes\ljava.lang.System.arraycopy(r3, r1, r3, r1 + 1, r2 \- r1)\ljava.lang.Object[] java.lang.Object[] r2 = r8.mArray\ljava.lang.System.arraycopy(r2, r1, r2, r1 + 1, r8.mSize \- r1)\l}"];
+}
+}
+Node_46 [shape=record,label="{46\:\ 0x005b|r8.mHashes[r1] = r0\lr8.mArray[r1] = r9\lr8.mSize++\l}"];
+Node_47 [shape=record,label="{47\:\ 0x0069|RETURN\l|return true\l}"];
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0010|PHI: r0 r1 \l  PHI: (r0v1 'hash' int) = (r0v0 'hash' int), (r0v2 'hash' int) binds: [B:28:0x0008, B:27:0x0002] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v3 'index' int) binds: [B:28:0x0008, B:27:0x0002] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.collection.ArraySet.add((r8v0 'this' androidx.collection.ArraySet\<E\> A[D('this' androidx.collection.ArraySet\<E\>), IMMUTABLE_TYPE, THIS]), (r9v0 'value' E A[D('value' E), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:47:0x0069 \-\> B:25:?, CROSS_EDGE: B:44:0x0047 \-\> B:46:0x005b, CROSS_EDGE: B:40:0x0034 \-\> B:42:0x0040, CROSS_EDGE: B:38:0x0027 \-\> B:39:0x0029, CROSS_EDGE: B:37:0x0025 \-\> B:39:0x0029, CROSS_EDGE: B:33:0x001a \-\> B:43:0x0045, CROSS_EDGE: B:28:0x0008 \-\> B:29:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (TE;)Z\lMETHOD_OVERRIDE: [ClspMth\{java.util.Collection.add(E):boolean\}]\l}"];
+MethodNode -> Node_24;Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_29;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_25;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_43[style=dashed];
+Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_39;
+Node_37 -> Node_38;
+Node_37 -> Node_39[style=dashed];
+Node_38 -> Node_39;
+Node_39 -> Node_40;
+Node_40 -> Node_41;
+Node_40 -> Node_42[style=dashed];
+Node_41 -> Node_42;
+Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_44 -> Node_45;
+Node_44 -> Node_46[style=dashed];
+Node_45 -> Node_46;
+Node_46 -> Node_47;
+Node_47 -> Node_25;
+Node_24 -> Node_26;
+Node_29 -> Node_30;
+}
+

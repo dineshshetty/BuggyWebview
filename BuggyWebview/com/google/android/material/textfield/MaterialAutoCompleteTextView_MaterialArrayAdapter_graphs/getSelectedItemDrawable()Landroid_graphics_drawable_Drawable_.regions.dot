@@ -1,0 +1,66 @@
+digraph "CFG forcom.google.android.material.textfield.MaterialAutoCompleteTextView.MaterialArrayAdapter.getSelectedItemDrawable()Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_1817035312 {
+label = "R(1:(2:(1:11)|(2:5|(2:(2:7|8)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2082957789 {
+label = "R(2:(1:11)|(2:5|(2:(2:7|8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1939394362 {
+label = "IF [B:16:0x0005, B:18:0x000b] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|if (hasSelectedColor() == true) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000b|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \< 21) goto L11\l}"];
+subgraph cluster_Region_2049437088 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002b|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1539833862 {
+label = "R(2:5|(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|android.graphics.drawable.ColorDrawable android.graphics.drawable.Drawable r0 = new android.graphics.drawable.ColorDrawable(com.google.android.material.textfield.MaterialAutoCompleteTextView.this.simpleItemSelectedColor)\l}"];
+subgraph cluster_Region_2029644950 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1062669269 {
+label = "IF [B:21:0x001b] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001b|if (r4.pressedRippleColor != null) goto L7\l}"];
+subgraph cluster_Region_192680822 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001d|androidx.core.graphics.drawable.DrawableCompat.setTintList(r0, r4.selectedItemRippleOverlaidColor)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0029|RETURN\l|return new android.graphics.drawable.RippleDrawable(r4.pressedRippleColor, r0, null)\l}"];
+}
+}
+subgraph cluster_Region_1359767102 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002a|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.graphics.drawable.Drawable com.google.android.material.textfield.MaterialAutoCompleteTextView.MaterialArrayAdapter.getSelectedItemDrawable((r4v0 'this' com.google.android.material.textfield.MaterialAutoCompleteTextView$MaterialArrayAdapter\<T\> A[D('this' com.google.android.material.textfield.MaterialAutoCompleteTextView$MaterialArrayAdapter\<T\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x002a \-\> B:14:?, CROSS_EDGE: B:25:0x002b \-\> B:14:?, CROSS_EDGE: B:16:0x0005 \-\> B:25:0x002b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_25[style=dashed];
+Node_18 -> Node_20[style=dashed];
+Node_18 -> Node_25;
+Node_25 -> Node_14;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_24 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+}
+

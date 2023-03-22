@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputEditText.getGlobalVisibleRect(Landroid\/graphics\/Rect;Landroid\/graphics\/Point;)Z" {
+subgraph cluster_Region_999322732 {
+label = "R(2:1|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|com.google.android.material.textfield.TextInputLayout com.google.android.material.textfield.TextInputLayout r0 = getTextInputLayout()\l}"];
+subgraph cluster_Region_703195502 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1308376489 {
+label = "IF [B:3:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (shouldUseTextInputLayoutFocusedRect(r0) != false) goto L3\l}"];
+subgraph cluster_Region_1717026238 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return r0.getGlobalVisibleRect(r3, r4)\l}"];
+}
+}
+subgraph cluster_Region_2067543120 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|RETURN\lORIG_RETURN\l|return super.getGlobalVisibleRect(r3, r4)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000f}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.textfield.TextInputEditText.getGlobalVisibleRect((r2v0 'this' com.google.android.material.textfield.TextInputEditText A[IMMUTABLE_TYPE, THIS]), (r3v0 'r' android.graphics.Rect A[D('r' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'globalOffset' android.graphics.Point A[D('globalOffset' android.graphics.Point), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:5:0x000f \-\> B:6:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.getGlobalVisibleRect(android.graphics.Rect, android.graphics.Point):boolean\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_7 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+}
+

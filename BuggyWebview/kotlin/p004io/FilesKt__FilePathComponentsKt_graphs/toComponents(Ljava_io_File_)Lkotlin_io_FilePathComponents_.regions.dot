@@ -1,0 +1,62 @@
+digraph "CFG forkotlin.io.FilesKt__FilePathComponentsKt.toComponents(Ljava\/io\/File;)Lkotlin\/io\/FilePathComponents;" {
+subgraph cluster_Region_1191796666 {
+label = "R(3:1|(1:5)(3:9|(1:12)|14)|7) | DECL_VAR: java.util.List list\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r14, \"\<this\>\")\ljava.lang.String java.lang.String r0 = r14.getPath()\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"path\")\lint int r1 = getRootLength$FilesKt__FilePathComponentsKt(r0)\ljava.lang.String java.lang.String r3 = r0.substring(0, r1)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, \"this as java.lang.String…ing(startIndex, endIndex)\")\ljava.lang.String java.lang.String r4 = r0.substring(r1)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r4, \"this as java.lang.String).substring(startIndex)\")\l}"];
+subgraph cluster_IfRegion_71707917 {
+label = "IF [B:6:0x0032] THEN: R(1:5) ELSE: R(3:9|(1:12)|14)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0032|PHI: r5 \l  PHI: (r5v5 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4.length() == 0) == true) goto L5\l}"];
+subgraph cluster_Region_261120486 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0034|java.util.List r2 = kotlin.collections.CollectionsKt.emptyList()\l}"];
+}
+subgraph cluster_Region_1069461090 {
+label = "R(3:9|(1:12)|14)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0039|java.lang.Iterable java.lang.Iterable r2 = kotlin.text.StringsKt.split$default((java.lang.CharSequence) r4, new char[]\{java.io.File.separatorChar\}, false, 0, 6, (java.lang.Object) null)\ljava.util.Collection java.util.Collection r6 = new java.util.ArrayList(kotlin.collections.CollectionsKt.collectionSizeOrDefault(r2, 10))\ljava.util.Iterator r9 = r2.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1241290094 {
+label = "LOOP:0: (1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0064|java.lang.Object \lif (r9.hasNext() != false) goto L12\l}"];
+subgraph cluster_Region_40442526 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0066|LOOP_END\lLOOP:0: B:9:0x0060\-\>B:11:0x0066\l|java.lang.Object r10 = r9.next()\ljava.lang.String java.lang.String r11 = (java.lang.String) r10\lr6.add(new java.io.File(r11))\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0077|r2 = (java.util.List) r6\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0086|RETURN\l|return new kotlin.p004io.FilePathComponents(new java.io.File(r3), r2)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x002d}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x002f}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x007b|PHI: r2 \l  PHI: (r2v4 'list' java.util.List) = (r2v3 'list' java.util.List), (r2v5 'list' java.util.List) binds: [B:12:0x0077, B:7:0x0034] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0060|LOOP_START\lLOOP:0: B:9:0x0060\-\>B:11:0x0066\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0077|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0031}"];
+MethodNode[shape=record,label="{public static final kotlin.io.FilePathComponents kotlin.io.FilesKt__FilePathComponentsKt.toComponents((r14v0 '$this$toComponents' java.io.File A[D('$this$toComponents' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0066 \-\> B:9:0x0060, CROSS_EDGE: B:12:0x0077 \-\> B:13:0x007b, CROSS_EDGE: B:5:0x0031 \-\> B:6:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_13;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_15[style=dashed];
+Node_11 -> Node_9;
+Node_12 -> Node_13;
+Node_14 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_13 -> Node_14;
+Node_9 -> Node_10;
+Node_15 -> Node_12;
+Node_5 -> Node_6;
+}
+

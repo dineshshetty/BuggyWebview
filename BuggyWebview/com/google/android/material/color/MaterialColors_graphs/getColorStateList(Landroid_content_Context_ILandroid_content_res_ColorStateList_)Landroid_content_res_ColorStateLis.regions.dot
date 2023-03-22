@@ -1,0 +1,37 @@
+digraph "CFG forcom.google.android.material.color.MaterialColors.getColorStateList(Landroid\/content\/Context;ILandroid\/content\/res\/ColorStateList;)Landroid\/content\/res\/ColorStateList;" {
+subgraph cluster_Region_179529612 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|android.content.res.ColorStateList r0 = null\landroid.util.TypedValue android.util.TypedValue r1 = com.google.android.material.resources.MaterialAttributes.resolve(r3, r4)\l}"];
+subgraph cluster_IfRegion_578928831 {
+label = "IF [B:13:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0005|if (r1 != null) goto L3\l}"];
+subgraph cluster_Region_94253826 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0007|android.content.res.ColorStateList r0 = resolveColorStateList(r3, r1)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x000b|RETURN\lPHI: r0 \l  PHI: (r0v1 'resolvedColor' android.content.res.ColorStateList) = (r0v0 'resolvedColor' android.content.res.ColorStateList), (r0v2 'resolvedColor' android.content.res.ColorStateList) binds: [B:13:0x0005, B:14:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|return r0 == null ? r5 : r0\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000d}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000f}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0010|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static android.content.res.ColorStateList com.google.android.material.color.MaterialColors.getColorStateList((r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'colorAttributeResId' int A[D('colorAttributeResId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'defaultValue' android.content.res.ColorStateList A[D('defaultValue' android.content.res.ColorStateList), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000f \-\> B:18:0x0010, CROSS_EDGE: B:13:0x0005 \-\> B:15:0x000b\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_10 -> Node_12;
+Node_16 -> Node_19;
+Node_19 -> Node_11;
+Node_17 -> Node_18;
+Node_18 -> Node_11;
+}
+

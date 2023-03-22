@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.collections.AbstractSet.Companion.unorderedHashCode$kotlin_stdlib(Ljava\/util\/Collection;)I" {
+subgraph cluster_Region_1748867762 {
+label = "R(3:1|(2:4|8)|12)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"c\")\lint r0 = 0\ljava.util.Iterator java.util.Iterator\<?\> r1 = r5.iterator()\l}"];
+subgraph cluster_LoopRegion_485617978 {
+label = "LOOP:0: (2:4|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1653104822 {
+label = "R(2:4|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|java.lang.Object java.lang.Object r2 = r1.next()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001c|LOOP_END\lLOOP:0: B:3:0x000a\-\>B:9:0x001c\lPHI: r3 \l  PHI: (r3v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r0 += r2 != null ? r2.hashCode() : 0\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001e|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a|LOOP_START\lLOOP:0: B:3:0x000a\-\>B:9:0x001c\lPHI: r0 \l  PHI: (r0v2 'hashCode' int) = (r0v1 'hashCode' int), (r0v3 'hashCode' int) binds: [B:2:0x0000, B:9:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001c|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001b}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001c|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001e|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final int kotlin.collections.AbstractSet.Companion.unorderedHashCode$kotlin_stdlib((r4v0 'this' kotlin.collections.AbstractSet$Companion A[IMMUTABLE_TYPE, THIS]), (r5v0 'c' java.util.Collection\<?\> A[D('c' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:9:0x001c \-\> B:3:0x000a, CROSS_EDGE: B:8:0x001b \-\> B:9:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (Ljava\/util\/Collection\<*\>;)I\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_9 -> Node_3;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_13;
+Node_13 -> Node_9;
+Node_8 -> Node_12;
+Node_12 -> Node_9;
+Node_11 -> Node_10;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.recyclerview.widget.GridLayoutManager.setStackFromEnd(Z)V" {
+subgraph cluster_Region_489641479 {
+label = "R(1:(2:(1:6)|(1:2)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1258876064 {
+label = "R(2:(1:6)|(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1389742081 {
+label = "IF [B:9:0x0000] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r3 != false) goto L5\l}"];
+subgraph cluster_Region_1812785028 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000e|throw new java.lang.UnsupportedOperationException(\"GridLayoutManager does not support stack from end. Consider using reverse layout\")\l}"];
+}
+}
+subgraph cluster_Region_192154476 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|super.setStackFromEnd(false)\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0006}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0007}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.GridLayoutManager.setStackFromEnd((r2v0 'this' androidx.recyclerview.widget.GridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'stackFromEnd' boolean A[D('stackFromEnd' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000e \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.LinearLayoutManager.setStackFromEnd(boolean):void]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_13 -> Node_8;
+Node_10 -> Node_11;
+Node_7 -> Node_9;
+Node_11 -> Node_8;
+Node_12 -> Node_13;
+}
+

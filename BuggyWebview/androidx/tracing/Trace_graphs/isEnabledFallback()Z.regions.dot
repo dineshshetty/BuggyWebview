@@ -1,0 +1,75 @@
+digraph "CFG forandroidx.tracing.Trace.isEnabledFallback()Z" {
+subgraph cluster_Region_112751187 {
+label = "R(2:(1:(2:(1:8)|10))|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1348057853 {
+label = "IF [B:17:0x0007] THEN: R(1:(2:(1:8)|10)) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|if (android.os.Build.VERSION.SDK_INT \>= 18) goto L5\l}"];
+subgraph cluster_Region_1283621929 {
+label = "R(1:(2:(1:8)|10))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1968924257 {
+label = "Try: R(2:(1:8)|10) catches: R(2:12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_808761459 {
+label = "R(2:(1:8)|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_765948634 {
+label = "IF [B:19:0x000d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000d|if (androidx.tracing.Trace.sIsTagEnabledMethod == null) goto L8\l}"];
+subgraph cluster_Region_703736138 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000f|TryCatch #0 \{Exception \-\> 0x0042, blocks: (B:18:0x0009, B:20:0x000f, B:21:0x002b), top: B:26:0x0009 \}\lCatch: Exception \-\> 0x0042\l|java.lang.reflect.Field java.lang.reflect.Field r1 = android.os.Trace.class.getField(\"TRACE_TAG_APP\")     \/\/ Catch: java.lang.Exception \-\> L42\landroidx.tracing.Trace.sTraceTagApp = r1.getLong(null)     \/\/ Catch: java.lang.Exception \-\> L42\landroidx.tracing.Trace.sIsTagEnabledMethod = android.os.Trace.class.getMethod(\"isTagEnabled\", java.lang.Long.TYPE)     \/\/ Catch: java.lang.Exception \-\> L42\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0041|RETURN\l|return ((java.lang.Boolean) androidx.tracing.Trace.sIsTagEnabledMethod.invoke(null, java.lang.Long.valueOf(androidx.tracing.Trace.sTraceTagApp))).booleanValue()\l}"];
+}
+subgraph cluster_Region_1977354379 {
+label = "R(2:12|13) | ExcHandler: Exception \-\> 0x0042\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0042|ExcHandler: Exception \-\> 0x0042\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0043|handleException(\"isTagEnabled\", r1)\l}"];
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0046|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1977354379 {
+label = "R(2:12|13) | ExcHandler: Exception \-\> 0x0042\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0042|ExcHandler: Exception \-\> 0x0042\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0043|handleException(\"isTagEnabled\", r1)\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0009|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0009|TRY_ENTER\lTryCatch #0 \{Exception \-\> 0x0042, blocks: (B:18:0x0009, B:20:0x000f, B:21:0x002b), top: B:26:0x0009 \}\lCatch: Exception \-\> 0x0042\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002b|TRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x0042, blocks: (B:18:0x0009, B:20:0x000f, B:21:0x002b), top: B:26:0x0009 \}\lCatch: Exception \-\> 0x0042\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{private static boolean androidx.tracing.Trace.isEnabledFallback()  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0041 \-\> B:15:?, CROSS_EDGE: B:24:0x0043 \-\> B:25:0x0046, CROSS_EDGE: B:19:0x000d \-\> B:21:0x002b, CROSS_EDGE: B:26:0x0009 \-\> B:23:0x0042\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x0042, blocks: (B:18:0x0009, B:20:0x000f, B:21:0x002b), top: B:26:0x0009 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_25[style=dashed];
+Node_17 -> Node_26;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_15;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_26 -> Node_18;
+Node_26 -> Node_23;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_21 -> Node_27;
+Node_27 -> Node_23;
+}
+

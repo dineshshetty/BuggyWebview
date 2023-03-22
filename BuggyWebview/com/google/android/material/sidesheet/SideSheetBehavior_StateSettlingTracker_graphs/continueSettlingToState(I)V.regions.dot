@@ -1,0 +1,64 @@
+digraph "CFG forcom.google.android.material.sidesheet.SideSheetBehavior.StateSettlingTracker.continueSettlingToState(I)V" {
+subgraph cluster_Region_784475664 {
+label = "R(1:(2:(1:11)|(2:5|(1:(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_639527448 {
+label = "R(2:(1:11)|(2:5|(1:(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2098316630 {
+label = "IF [B:17:0x0006, B:19:0x0012] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|if (com.google.android.material.sidesheet.SideSheetBehavior.this.viewRef == null) goto L12\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0012|ADDED_TO_REGION\l|if (com.google.android.material.sidesheet.SideSheetBehavior.this.viewRef.get() == null) goto L11\l}"];
+subgraph cluster_Region_1642545020 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1579837430 {
+label = "R(2:5|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|r2.targetState = r3\l}"];
+subgraph cluster_Region_187795585 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2021246916 {
+label = "IF [B:22:0x0019] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0019|if (r2.isContinueSettlingRunnablePosted == false) goto L7\l}"];
+subgraph cluster_Region_540871528 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001b|androidx.core.view.ViewCompat.postOnAnimation((android.view.View) com.google.android.material.sidesheet.SideSheetBehavior.this.viewRef.get(), r2.continueSettlingRunnable)\lr2.isContinueSettlingRunnablePosted = true\l}"];
+}
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0008}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002f|ORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0030|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{void com.google.android.material.sidesheet.SideSheetBehavior.StateSettlingTracker.continueSettlingToState((r2v0 'this' com.google.android.material.sidesheet.SideSheetBehavior$StateSettlingTracker A[D('this' com.google.android.material.sidesheet.SideSheetBehavior\<V\>$StateSettlingTracker), IMMUTABLE_TYPE, THIS]), (r3v0 'targetState' int A[D('targetState' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0019 \-\> B:24:0x002f, CROSS_EDGE: B:25:0x0030 \-\> B:15:?, CROSS_EDGE: B:17:0x0006 \-\> B:25:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_25;
+Node_19 -> Node_21[style=dashed];
+Node_19 -> Node_27;
+Node_27 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_26[style=dashed];
+Node_23 -> Node_24;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_24 -> Node_15;
+Node_26 -> Node_15;
+Node_25 -> Node_15;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.core.content.pm.PackageInfoCompat.byteArrayContains([[B[B)Z" {
+subgraph cluster_Region_210993729 {
+label = "R(3:1|(2:3|(2:(1:7)|(1:5)))|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_1182684669 {
+label = "LOOP:0: (2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|LOOP_START\lLOOP:0: B:3:0x0003\-\>B:8:0x000f\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:2:0x0000, B:8:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r0) goto L3\l}"];
+subgraph cluster_Region_1452522282 {
+label = "R(2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|r3 = r5[r2]\l}"];
+subgraph cluster_Region_1076867180 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2033483248 {
+label = "IF [B:5:0x000b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|if (java.util.Arrays.equals(r6, r3) != false) goto L6\l}"];
+subgraph cluster_Region_1617432975 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1711877871 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|LOOP_END\lLOOP:0: B:3:0x0003\-\>B:8:0x000f\l|r2++\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0012|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000d|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0012|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static boolean androidx.core.content.pm.PackageInfoCompat.byteArrayContains((r5v0 'array' byte[][] A[D('array' byte[][]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'expected' byte[] A[D('expected' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x000f \-\> B:3:0x0003, CROSS_EDGE: B:9:0x0012 \-\> B:1:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_8[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_1;
+Node_8 -> Node_3;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_11 -> Node_6;
+Node_10 -> Node_9;
+}
+

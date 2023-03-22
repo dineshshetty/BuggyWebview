@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.documentfile.provider.RawDocumentFile.getTypeForName(Ljava\/lang\/String;)Ljava\/lang\/String;" {
+subgraph cluster_Region_960993731 {
+label = "R(2:1|(2:(2:3|(2:(1:5)|(1:7)))|(1:8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r3.lastIndexOf(46)\l}"];
+subgraph cluster_Region_2014533453 {
+label = "R(2:(2:3|(2:(1:5)|(1:7)))|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1684570154 {
+label = "IF [B:3:0x0006] THEN: R(2:3|(2:(1:5)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1821347242 {
+label = "R(2:3|(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|java.lang.String java.lang.String r1 = r3.substring(r0 + 1).toLowerCase()\ljava.lang.String java.lang.String r2 = android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(r1)\l}"];
+subgraph cluster_Region_1898226076 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1863472380 {
+label = "IF [B:5:0x001a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|if (r2 != null) goto L5\l}"];
+subgraph cluster_Region_1780367708 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1411194076 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return \"application\/octet\-stream\"\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_377881365 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|RETURN\lORIG_RETURN\l|return \"application\/octet\-stream\"\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static java.lang.String androidx.documentfile.provider.RawDocumentFile.getTypeForName((r3v0 'name' java.lang.String A[D('name' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x001f \-\> B:1:?, CROSS_EDGE: B:3:0x0006 \-\> B:7:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_1;
+Node_9 -> Node_1;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+}
+

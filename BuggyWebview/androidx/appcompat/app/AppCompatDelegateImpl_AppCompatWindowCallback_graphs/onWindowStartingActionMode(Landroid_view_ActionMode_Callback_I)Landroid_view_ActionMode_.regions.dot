@@ -1,0 +1,44 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.AppCompatWindowCallback.onWindowStartingActionMode(Landroid\/view\/ActionMode$Callback;I)Landroid\/view\/ActionMode;" {
+subgraph cluster_Region_1654431734 {
+label = "R(2:(1:3)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1365480310 {
+label = "IF [B:13:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|if (androidx.appcompat.app.AppCompatDelegateImpl.this.isHandleNativeActionModesEnabled() != false) goto L3\l}"];
+subgraph cluster_Region_1613588870 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_853890599 {
+label = "Switch: 1
+ case 0 -> R(1:5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|switch(r3) \{\l    case 0: goto L4;\l    default: goto L7;\l\}\l}"];
+subgraph cluster_Region_872422562 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|RETURN\l|return startAsSupportActionMode(r2)\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0015|RETURN\l|return super.onWindowStartingActionMode(r2, r3)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000c}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0011}"];
+MethodNode[shape=record,label="{public android.view.ActionMode androidx.appcompat.app.AppCompatDelegateImpl.AppCompatWindowCallback.onWindowStartingActionMode((r1v0 'this' androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback A[IMMUTABLE_TYPE, THIS]), (r2v0 'callback' android.view.ActionMode$Callback A[D('callback' android.view.ActionMode$Callback), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'type' int A[D('type' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0015 \-\> B:11:?, CROSS_EDGE: B:13:0x0006 \-\> B:18:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.Window.Callback.onWindowStartingActionMode(android.view.ActionMode$Callback, int):android.view.ActionMode\}]\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_16;
+Node_14 -> Node_18;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

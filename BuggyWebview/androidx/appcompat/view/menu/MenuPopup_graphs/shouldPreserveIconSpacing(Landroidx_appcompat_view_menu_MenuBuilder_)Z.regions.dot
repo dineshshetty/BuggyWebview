@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuPopup.shouldPreserveIconSpacing(Landroidx\/appcompat\/view\/menu\/MenuBuilder;)Z" {
+subgraph cluster_Region_328672309 {
+label = "R(3:1|(2:3|(2:(1:8)|(1:11)))|14)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|int int r1 = r5.size()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1992763290 {
+label = "LOOP:0: (2:3|(2:(1:8)|(1:11)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|LOOP_START\lLOOP:0: B:19:0x0006\-\>B:25:0x001a\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:18:0x0000, B:25:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_1021444613 {
+label = "R(2:3|(2:(1:8)|(1:11)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|android.view.MenuItem android.view.MenuItem r3 = r5.getItem(r2)\l}"];
+subgraph cluster_Region_1654635253 {
+label = "R(2:(1:8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_385761056 {
+label = "IF [B:21:0x0010, B:23:0x0016] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|if (r3.isVisible() != false) goto L5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0016|ADDED_TO_REGION\l|if (r3.getIcon() != null) goto L7\l}"];
+subgraph cluster_Region_739692551 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1627686417 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|LOOP_END\lLOOP:0: B:19:0x0006\-\>B:25:0x001a\l|r2++\l}"];
+}
+}
+}
+}
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0012}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0018|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001a|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001a|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.appcompat.view.menu.MenuPopup.shouldPreserveIconSpacing((r5v0 'menu' androidx.appcompat.view.menu.MenuBuilder A[D('menu' androidx.appcompat.view.menu.MenuBuilder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x001a \-\> B:19:0x0006, CROSS_EDGE: B:21:0x0010 \-\> B:25:0x001a, CROSS_EDGE: B:19:0x0006 \-\> B:26:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_27[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_29[style=dashed];
+Node_23 -> Node_28;
+Node_23 -> Node_30[style=dashed];
+Node_24 -> Node_17;
+Node_25 -> Node_19;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_22 -> Node_23;
+Node_28 -> Node_24;
+Node_30 -> Node_25;
+Node_29 -> Node_25;
+Node_27 -> Node_31;
+}
+

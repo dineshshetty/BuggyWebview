@@ -1,0 +1,80 @@
+digraph "CFG forkotlin.collections.MapsKt___MapsKt.count(Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;)I" {
+subgraph cluster_Region_729364505 {
+label = "R(2:1|(2:(1:3)|(3:5|(2:8|(1:11)(0))|16)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"predicate\")\l}"];
+subgraph cluster_Region_1386619215 {
+label = "R(2:(1:3)|(3:5|(2:8|(1:11)(0))|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_708977001 {
+label = "IF [B:21:0x000f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|if (r5.isEmpty() == true) goto L3\l}"];
+subgraph cluster_Region_356830756 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_994915329 {
+label = "R(3:5|(2:8|(1:11)(0))|16)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0013|int r1 = 0\ljava.util.Iterator r2 = r5.entrySet().iterator()\l\l}"];
+subgraph cluster_LoopRegion_2006947173 {
+label = "LOOP:0: (2:8|(1:11)(0))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0020|java.util.Map$Entry \lif (r2.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_349208192 {
+label = "R(2:8|(1:11)(0))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0022|java.util.Map$Entry r3 = r2.next()\l}"];
+subgraph cluster_IfRegion_790780954 {
+label = "IF [B:28:0x0032] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0032|if (r6.invoke(r3).booleanValue() != false) goto L10\l}"];
+subgraph cluster_Region_357910148 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0034|r1++\l}"];
+}
+subgraph cluster_Region_480547380 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x0037|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001c|LOOP_START\lLOOP:0: B:25:0x001c\-\>B:33:0x001c\lPHI: r1 \l  PHI: (r1v2 'count' int) = (r1v1 'count' int), (r1v3 'count' int) binds: [B:24:0x0013, B:33:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0034|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x001c|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001c|LOOP_END\lSYNTHETIC\lLOOP:0: B:25:0x001c\-\>B:33:0x001c\lPHI: r1 \l  PHI: (r1v3 'count' int) = (r1v2 'count' int), (r1v4 'count' int) binds: [B:34:0x001c, B:35:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x001c|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0037|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.collections.MapsKt___MapsKt.count((r5v0 java.util.Map\<? extends K, ? extends V\> A[D('$this$count' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'predicate' kotlin.jvm.functions.Function1\<? super java.util.Map$Entry\<? extends K, ? extends V\>, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:28:0x0032 \-\> B:25:0x001c, BACK_EDGE: B:29:0x0034 \-\> B:25:0x001c, CROSS_EDGE: B:30:0x0037 \-\> B:19:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;\>(Ljava\/util\/Map\<+TK;+TV;\>;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/util\/Map$Entry\<+TK;+TV;\>;Ljava\/lang\/Boolean;\>;)I\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_22 -> Node_19;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_31[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_32;
+Node_28 -> Node_34[style=dashed];
+Node_29 -> Node_35;
+Node_30 -> Node_19;
+Node_18 -> Node_20;
+Node_25 -> Node_26;
+Node_32 -> Node_29;
+Node_35 -> Node_33;
+Node_33 -> Node_25;
+Node_34 -> Node_33;
+Node_31 -> Node_30;
+}
+

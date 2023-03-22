@@ -1,0 +1,113 @@
+digraph "CFG forkotlin.io.path.PathRelativizer.tryRelativeTo(Ljava\/nio\/file\/Path;Ljava\/nio\/file\/Path;)Ljava\/nio\/file\/Path;" {
+subgraph cluster_Region_878958171 {
+label = "R(5:1|(2:3|(1:11)(1:(1:9)))|(1:16)(2:19|(1:21)(1:22))|17|18) | DECL_VAR: java.nio.file.Path null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"path\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, \"base\")\ljava.nio.file.Path java.nio.file.Path r0 = r11.normalize()\ljava.nio.file.Path java.nio.file.Path r1 = r10.normalize()\ljava.nio.file.Path java.nio.file.Path r2 = r0.relativize(r1)\lint int r3 = java.lang.Math.min(r0.getNameCount(), r1.getNameCount())\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_1141441326 {
+label = "LOOP:0: (2:3|(1:11)(1:(1:9)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0024|LOOP_START\lLOOP:0: B:3:0x0024\-\>B:8:0x003e\lPHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v6 int) binds: [B:2:0x0000, B:8:0x003e] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r3) goto L3\l}"];
+subgraph cluster_Region_50415790 {
+label = "R(2:3|(1:11)(1:(1:9)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0026|int r6 = r5\lr5++\ljava.nio.file.Path java.nio.file.Path r7 = r0.getName(r6)\ljava.nio.file.Path java.nio.file.Path r8 = kotlin.p004io.path.PathUtils.parentPath\l}"];
+subgraph cluster_IfRegion_1541129329 {
+label = "IF [B:5:0x0033] THEN: R(1:11) ELSE: R(1:(1:9))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0033|if (kotlin.jvm.internal.Intrinsics.areEqual(r7, r8) != true) goto L11\l}"];
+subgraph cluster_Region_585992461 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0049|SYNTHETIC\lEDGE_INSN: B:23:0x0049\-\>B:12:0x0049 ?: BREAK  \l|break\l}"];
+}
+subgraph cluster_Region_655370605 {
+label = "R(1:(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1663364165 {
+label = "IF [B:8:0x003e] THEN: R(1:9) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003e|LOOP_END\lLOOP:0: B:3:0x0024\-\>B:8:0x003e\l|if (kotlin.jvm.internal.Intrinsics.areEqual(r1.getName(r6), r8) == false) goto L7\l}"];
+subgraph cluster_Region_784515171 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0048|throw new java.lang.IllegalArgumentException(\"Unable to compute relative path\")\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_2022776210 {
+label = "IF [B:13:0x004d, B:15:0x0055] THEN: R(1:16) ELSE: R(2:19|(1:21)(1:22))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x004d|if (kotlin.jvm.internal.Intrinsics.areEqual(r1, r0) == false) goto L14\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0055|ADDED_TO_REGION\l|if (kotlin.jvm.internal.Intrinsics.areEqual(r0, kotlin.p004io.path.PathUtils.emptyPath) != false) goto L16\l}"];
+subgraph cluster_Region_1239363444 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0057|r4 = r1\l}"];
+}
+subgraph cluster_Region_1074940633 {
+label = "R(2:19|(1:21)(1:22))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0059|java.lang.String java.lang.String r3 = r2.toString()\ljava.lang.String java.lang.String r5 = r2.getFileSystem().getSeparator()\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, \"rn.fileSystem.separator\")\l}"];
+subgraph cluster_IfRegion_379575796 {
+label = "IF [B:18:0x0070] THEN: R(1:21) ELSE: R(1:22)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0070|if (kotlin.text.StringsKt.endsWith$default(r3, r5, false, 2, (java.lang.Object) null) != false) goto L21\l}"];
+subgraph cluster_Region_807383748 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0072|java.nio.file.Path r4 = r2.getFileSystem().getPath(kotlin.text.StringsKt.dropLast(r3, r2.getFileSystem().getSeparator().length()), new java.lang.String[0])\l}"];
+}
+subgraph cluster_Region_1956460102 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x008d|r4 = r2\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x008e|PHI: r4 \l  PHI: (r4v5 java.nio.file.Path) = (r4v2 java.nio.file.Path), (r4v4 java.nio.file.Path), (r4v7 java.nio.file.Path) binds: [B:20:0x008d, B:19:0x0072, B:16:0x0057] A[DONT_GENERATE, DONT_INLINE]\l|java.nio.file.Path r3 = r4\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, \"r\")\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0094|RETURN\l|return r3\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0036}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0041|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0041}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0049|EDGE_INSN: B:23:0x0049\-\>B:12:0x0049 ?: BREAK  \l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x004f}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0049|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final java.nio.file.Path kotlin.io.path.PathRelativizer.tryRelativeTo((r9v0 'this' kotlin.io.path.PathRelativizer A[IMMUTABLE_TYPE, THIS]), (r10v0 'path' java.nio.file.Path A[D('path' java.nio.file.Path), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'base' java.nio.file.Path A[D('base' java.nio.file.Path), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x003e \-\> B:3:0x0024, CROSS_EDGE: B:22:0x0094 \-\> B:1:?, CROSS_EDGE: B:19:0x0072 \-\> B:21:0x008e, CROSS_EDGE: B:20:0x008d \-\> B:21:0x008e, CROSS_EDGE: B:13:0x004d \-\> B:17:0x0059, CROSS_EDGE: B:3:0x0024 \-\> B:12:0x0049\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_24[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_23;
+Node_23 -> Node_12;
+Node_8 -> Node_3[style=dashed];
+Node_8 -> Node_25;
+Node_11 -> Node_1;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_21;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_1;
+Node_0 -> Node_2;
+Node_7 -> Node_8;
+Node_25 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_24 -> Node_12;
+}
+

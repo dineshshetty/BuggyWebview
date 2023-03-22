@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.hideFragment(Landroidx\/fragment\/app\/Fragment;)V" {
+subgraph cluster_Region_597024431 {
+label = "R(2:(1:3)|(1:(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1314828723 {
+label = "IF [B:13:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0005|if (isLoggingEnabled(2) != false) goto L3\l}"];
+subgraph cluster_Region_1477258828 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0007|android.util.Log.v(androidx.fragment.app.FragmentManager.TAG, \"hide: \" + r3)\l}"];
+}
+}
+subgraph cluster_Region_709928269 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_658339342 {
+label = "IF [B:16:0x001f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001f|if (r3.mHidden == false) goto L6\l}"];
+subgraph cluster_Region_475371635 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0021|r3.mHidden = true\lr3.mHiddenChanged = true ^ r3.mHiddenChanged\lsetVisibleRemovingFragment(r3)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001d}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x002c|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentManager.hideFragment((r2v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'fragment' androidx.fragment.app.Fragment A[D('fragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x001f \-\> B:18:0x002c, CROSS_EDGE: B:13:0x0005 \-\> B:15:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

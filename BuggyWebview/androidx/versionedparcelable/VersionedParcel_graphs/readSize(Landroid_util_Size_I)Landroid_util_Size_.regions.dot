@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.readSize(Landroid\/util\/Size;I)Landroid\/util\/Size;" {
+subgraph cluster_Region_1831798803 {
+label = "R(1:(2:(1:3)|(1:(2:(2:7|8)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1451289037 {
+label = "R(2:(1:3)|(1:(2:(2:7|8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_549439986 {
+label = "IF [B:14:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (readField(r5) == false) goto L3\l}"];
+subgraph cluster_Region_949928554 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_769932026 {
+label = "R(1:(2:(2:7|8)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2096853002 {
+label = "R(2:(2:7|8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_576046654 {
+label = "IF [B:17:0x000b] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|if (readBoolean() != false) goto L7\l}"];
+subgraph cluster_Region_1074297944 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|int int r0 = readInt()\lint int r1 = readInt()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001a|RETURN\l|return new android.util.Size(r0, r1)\l}"];
+}
+}
+subgraph cluster_Region_1813433740 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001b|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0007}"];
+MethodNode[shape=record,label="{public android.util.Size androidx.versionedparcelable.VersionedParcel.readSize((r3v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]), (r4v0 'def' android.util.Size A[D('def' android.util.Size), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'fieldId' int A[D('fieldId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001a \-\> B:12:?, CROSS_EDGE: B:21:0x001c \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+}
+

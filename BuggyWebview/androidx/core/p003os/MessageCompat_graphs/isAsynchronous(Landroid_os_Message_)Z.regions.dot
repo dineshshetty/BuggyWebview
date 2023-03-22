@@ -1,0 +1,88 @@
+digraph "CFG forandroidx.core.os.MessageCompat.isAsynchronous(Landroid\/os\/Message;)Z" {
+subgraph cluster_Region_1622186646 {
+label = "R(1:(2:(1:4)|(2:(1:(1:12))|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_306152077 {
+label = "R(2:(1:4)|(2:(1:(1:12))|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_367642170 {
+label = "IF [B:3:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 22) goto L3\l}"];
+subgraph cluster_Region_1875816407 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|RETURN\l|return androidx.core.p003os.MessageCompat.Api22Impl.isAsynchronous(r3)\l}"];
+}
+}
+subgraph cluster_Region_189721746 {
+label = "R(2:(1:(1:12))|16)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1703623836 {
+label = "IF [B:7:0x000e, B:9:0x0014] THEN: R(1:(1:12)) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|if (androidx.core.p003os.MessageCompat.sTryIsAsynchronous != false) goto L8\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0014|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L10\l}"];
+subgraph cluster_Region_1049165313 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_606227984 {
+label = "Try: R(1:12) catches: R(1:15)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1492388986 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001a|RETURN\l|return androidx.core.p003os.MessageCompat.Api22Impl.isAsynchronous(r3)\l}"];
+}
+subgraph cluster_Region_1688712228 {
+label = "R(1:15) | ExcHandler: NoSuchMethodError \-\> 0x001b\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001c|androidx.core.p003os.MessageCompat.sTryIsAsynchronous = false\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x001e|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_1688712228 {
+label = "R(1:15) | ExcHandler: NoSuchMethodError \-\> 0x001b\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001c|androidx.core.p003os.MessageCompat.sTryIsAsynchronous = false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000b}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0010}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0016|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0016|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{NoSuchMethodError \-\> 0x001b, blocks: (B:10:0x0016), top: B:15:0x0016 \}\lCatch: NoSuchMethodError \-\> 0x001b\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001b|ExcHandler: NoSuchMethodError \-\> 0x001b\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.os.MessageCompat.isAsynchronous((r3v0 'message' android.os.Message A[D('message' android.os.Message), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x001e \-\> B:1:?, CROSS_EDGE: B:11:0x001a \-\> B:1:?, CROSS_EDGE: B:13:0x001c \-\> B:14:0x001e, CROSS_EDGE: B:15:0x0016 \-\> B:12:0x001b, CROSS_EDGE: B:7:0x000e \-\> B:14:0x001e\lINLINE_NOT_NEEDED\lTryCatch #0 \{NoSuchMethodError \-\> 0x001b, blocks: (B:10:0x0016), top: B:15:0x0016 \}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_9 -> Node_14[style=dashed];
+Node_9 -> Node_15;
+Node_11 -> Node_1;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+Node_13 -> Node_14;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_15 -> Node_10;
+Node_15 -> Node_12;
+Node_10 -> Node_11;
+Node_10 -> Node_16;
+Node_16 -> Node_12;
+Node_12 -> Node_13;
+}
+

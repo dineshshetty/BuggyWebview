@@ -1,0 +1,69 @@
+digraph "CFG forkotlinx.coroutines.flow.internal.ChannelFlow$collectToFun$1.invokeSuspend(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_2029116934 {
+label = "R(3:1|2|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.Object java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+subgraph cluster_SwitchRegion_1325201804 {
+label = "Switch: 3
+ case 0 -> R(2:9|(1:1)(1:11))
+ case 1 -> R(2:6|1)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|switch(r6.label) \{\l    case 0: goto L9;\l    case 1: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_637703688 {
+label = "R(2:9|(1:1)(1:11))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|kotlin.ResultKt.throwOnFailure(r7)\lkotlinx.coroutines.channels.ProducerScope kotlinx.coroutines.channels.ProducerScope r2 = (kotlinx.coroutines.channels.ProducerScope) r6.L$0\lr6.label = 1\l}"];
+subgraph cluster_IfRegion_381061684 {
+label = "IF [B:8:0x002a] THEN: R(1:1) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002a|if (r6.this$0.collectTo(r2, r6) != r0) goto L12\l}"];
+subgraph cluster_Region_1398484061 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_2140880485 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_319956387 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002c|RETURN\l|return r0\l}"];
+}
+}
+}
+subgraph cluster_Region_330600400 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|kotlin.ResultKt.throwOnFailure(r7)\l}"];
+Node_InsnContainer_976041139 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_807325295 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw new java.lang.IllegalStateException(\"call to 'resume' before 'invoke' with coroutine\")\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0030|RETURN\l|return kotlin.Unit.INSTANCE\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002e}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002d}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.flow.internal.ChannelFlow$collectToFun$1.invokeSuspend((r6v0 'this' kotlinx.coroutines.flow.internal.ChannelFlow$collectToFun$1 A[IMMUTABLE_TYPE, THIS]), (r7v0 '$result' java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0030 \-\> B:1:?, CROSS_EDGE: B:9:0x002c \-\> B:1:?, CROSS_EDGE: B:10:0x002d \-\> B:11:0x002e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlin.coroutines.jvm.internal.BaseContinuationImpl.invokeSuspend(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6;
+Node_3 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_1;
+Node_6 -> Node_11;
+Node_5 -> Node_1;
+Node_12 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_11 -> Node_12;
+Node_10 -> Node_11;
+}
+

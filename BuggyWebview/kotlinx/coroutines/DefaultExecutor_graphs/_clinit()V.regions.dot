@@ -1,0 +1,47 @@
+digraph "CFG forkotlinx.coroutines.DefaultExecutor.\<clinit\>()V" {
+subgraph cluster_Region_191707648 {
+label = "R(3:1|(1:3)|4) | DECL_VAR: java.lang.Long null\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlinx.coroutines.DefaultExecutor kotlinx.coroutines.DefaultExecutor r0 = new kotlinx.coroutines.DefaultExecutor()\lkotlinx.coroutines.DefaultExecutor.INSTANCE = r0\lkotlinx.coroutines.EventLoop.incrementUseCount$default(r0, false, 1, null)\ljava.util.concurrent.TimeUnit java.util.concurrent.TimeUnit r0 = java.util.concurrent.TimeUnit.MILLISECONDS\l}"];
+subgraph cluster_TryCatchRegion_2056911783 {
+label = "Try: R(1:3) catches: R(1:9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_728248483 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0016|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{SecurityException \-\> 0x001d, blocks: (B:14:0x0016), top: B:20:0x0016 \}\lCatch: SecurityException \-\> 0x001d\l|java.lang.Long r1 = java.lang.Long.getLong(\"kotlinx.coroutines.DefaultExecutor.keepAlive\", (long) kotlinx.coroutines.DefaultExecutor.DEFAULT_KEEP_ALIVE_MS)     \/\/ Catch: java.lang.SecurityException \-\> L1d\l}"];
+}
+subgraph cluster_Region_1759779576 {
+label = "R(1:9) | ExcHandler: SecurityException \-\> 0x001d\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001e|java.lang.Long r1 = java.lang.Long.valueOf((long) kotlinx.coroutines.DefaultExecutor.DEFAULT_KEEP_ALIVE_MS)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0022|PHI: r1 \l  PHI: (r1v4 java.lang.Long) = (r1v3 java.lang.Long), (r1v6 java.lang.Long) binds: [B:17:0x001e, B:14:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|kotlinx.coroutines.DefaultExecutor.KEEP_ALIVE_NANOS = r0.toNanos(r1.longValue())\l}"];
+}
+subgraph cluster_Region_1759779576 {
+label = "R(1:9) | ExcHandler: SecurityException \-\> 0x001d\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001e|java.lang.Long r1 = java.lang.Long.valueOf((long) kotlinx.coroutines.DefaultExecutor.DEFAULT_KEEP_ALIVE_MS)\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x002c}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001d|ExcHandler: SecurityException \-\> 0x001d\l}"];
+MethodNode[shape=record,label="{static void kotlinx.coroutines.DefaultExecutor.\<clinit\>()  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x001e \-\> B:18:0x0022, CROSS_EDGE: B:20:0x0016 \-\> B:16:0x001d\lINLINE_NOT_NEEDED\lTryCatch #0 \{SecurityException \-\> 0x001d, blocks: (B:14:0x0016), top: B:20:0x0016 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_20;
+Node_14 -> Node_18;
+Node_14 -> Node_21;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_17 -> Node_18;
+Node_11 -> Node_13;
+Node_20 -> Node_14;
+Node_20 -> Node_16;
+Node_19 -> Node_12;
+Node_21 -> Node_16;
+Node_16 -> Node_17;
+}
+

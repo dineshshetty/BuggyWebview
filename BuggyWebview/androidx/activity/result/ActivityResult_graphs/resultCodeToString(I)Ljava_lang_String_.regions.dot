@@ -1,0 +1,42 @@
+digraph "CFG forandroidx.activity.result.ActivityResult.resultCodeToString(I)Ljava\/lang\/String;" {
+subgraph cluster_Region_2037274690 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1671862987 {
+label = "Switch: 3
+ case -1 -> R(1:6)
+ case 0 -> R(1:5)
+ case default -> R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|switch(r1) \{\l    case \-1: goto L6;\l    case 0: goto L5;\l    default: goto L2;\l\}\l}"];
+subgraph cluster_Region_971407785 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000b|RETURN\l|return \"RESULT_OK\"\l}"];
+}
+subgraph cluster_Region_2110915451 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|RETURN\l|return \"RESULT_CANCELED\"\l}"];
+}
+subgraph cluster_Region_1987442891 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0007|RETURN\l|return java.lang.String.valueOf(r1)\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0003}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static java.lang.String androidx.activity.result.ActivityResult.resultCodeToString((r1v0 'resultCode' int A[D('resultCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000a \-\> B:10:?, CROSS_EDGE: B:17:0x000d \-\> B:10:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_11 -> Node_14;
+Node_11 -> Node_16;
+Node_16 -> Node_10;
+Node_14 -> Node_10;
+Node_13 -> Node_10;
+Node_9 -> Node_11;
+Node_12 -> Node_13;
+}
+

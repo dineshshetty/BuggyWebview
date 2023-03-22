@@ -1,0 +1,82 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.maxWithOrThrow(Ljava\/lang\/Iterable;Ljava\/util\/Comparator;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_426354552 {
+label = "R(2:1|(2:(1:17)|(3:3|(2:6|(1:9)(0))|14)))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"comparator\")\ljava.util.Iterator java.util.Iterator r0 = r4.iterator()\l}"];
+subgraph cluster_Region_1358855469 {
+label = "R(2:(1:17)|(3:3|(2:6|(1:9)(0))|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1683942628 {
+label = "IF [B:39:0x0012] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0012|if (r0.hasNext() == false) goto L16\l}"];
+subgraph cluster_Region_621588038 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x0030|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_2113021782 {
+label = "R(3:3|(2:6|(1:9)(0))|14)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0014|java.lang.Object java.lang.Object r1 = (T) r0.next()\l}"];
+subgraph cluster_LoopRegion_1671358328 {
+label = "LOOP:0: (2:6|(1:9)(0))";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x001c|if (r0.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_932761108 {
+label = "R(2:6|(1:9)(0))";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x001e|java.lang.Object T r2 = r0.next()\l}"];
+subgraph cluster_IfRegion_1217816216 {
+label = "IF [B:44:0x0026] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0026|if (r5.compare(r1, r2) \< 0) goto L8\l}"];
+subgraph cluster_Region_615656911 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0028|java.lang.Object r1 = r2\lr1 = (T) r1\l}"];
+}
+subgraph cluster_Region_1707236642 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_46 [shape=record,label="{46\:\ 0x002a|RETURN\l|return (T) r1\l}"];
+}
+}
+}
+Node_36 [shape=record,color=red,label="{36\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0018|LOOP_START\lLOOP:0: B:41:0x0018\-\>B:51:0x0018\lPHI: r1 \l  PHI: (r1v3 'max' java.lang.Object) = (r1v2 'max' java.lang.Object), (r1v4 'max' java.lang.Object) binds: [B:40:0x0014, B:51:0x0018] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x0028|SYNTHETIC\l}"];
+Node_53 [shape=record,color=red,label="{53\:\ 0x0018|SYNTHETIC\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x0018|LOOP_END\lSYNTHETIC\lLOOP:0: B:41:0x0018\-\>B:51:0x0018\lPHI: r1 \l  PHI: (r1v4 'max' java.lang.Object) = (r1v3 'max' java.lang.Object), (r1v5 'max' java.lang.Object) binds: [B:52:0x0018, B:53:0x0018] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x0018|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x002a|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x002b}"];
+MethodNode[shape=record,label="{public static final T kotlin.collections.CollectionsKt___CollectionsKt.maxWithOrThrow((r4v0 java.lang.Iterable\<? extends T\> A[D('$this$maxWith' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'comparator' java.util.Comparator\<? super T\> A[D('comparator' java.util.Comparator), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:44:0x0026 \-\> B:41:0x0018, BACK_EDGE: B:45:0x0028 \-\> B:41:0x0018, CROSS_EDGE: B:48:0x0030 \-\> B:37:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Ljava\/util\/Comparator\<\-TT;\>;)TT;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r2v1, resolved type: java.lang.Object\l \-\> Type inference failed for r1v8. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_36;Node_38 -> Node_39;
+Node_39 -> Node_40[style=dashed];
+Node_39 -> Node_47;
+Node_48 -> Node_37;
+Node_40 -> Node_41;
+Node_42 -> Node_43;
+Node_42 -> Node_50[style=dashed];
+Node_43 -> Node_44;
+Node_44 -> Node_49;
+Node_44 -> Node_52[style=dashed];
+Node_45 -> Node_53;
+Node_46 -> Node_37;
+Node_36 -> Node_38;
+Node_41 -> Node_42;
+Node_49 -> Node_45;
+Node_53 -> Node_51;
+Node_51 -> Node_41;
+Node_52 -> Node_51;
+Node_50 -> Node_46;
+Node_47 -> Node_48;
+}
+

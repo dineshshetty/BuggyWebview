@@ -1,0 +1,61 @@
+digraph "CFG forkotlinx.coroutines.EventLoop_commonKt.delayToNanos(J)J" {
+subgraph cluster_Region_1891665973 {
+label = "R(1:(2:(1:9)|(1:(2:(1:5)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1378212221 {
+label = "R(2:(1:9)|(1:(2:(1:5)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1135069681 {
+label = "IF [B:15:0x0005] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|if (r3 \<= 0) goto L9\l}"];
+subgraph cluster_Region_1233508331 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return 0L\l}"];
+}
+}
+subgraph cluster_Region_1030782926 {
+label = "R(1:(2:(1:5)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1096984364 {
+label = "R(2:(1:5)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1014437552 {
+label = "IF [B:18:0x000f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000f|if (r3 \>= kotlinx.coroutines.EventLoop_commonKt.MAX_MS) goto L5\l}"];
+subgraph cluster_Region_1529521242 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|SYNTHETIC\lRETURN\l|return Long.MAX_VALUE\l}"];
+}
+}
+subgraph cluster_Region_1696214782 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001c|RETURN\lORIG_RETURN\l|return kotlinx.coroutines.EventLoop_commonKt.MS_TO_NS * r3\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0001}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0008}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0017}"];
+MethodNode[shape=record,label="{public static final long kotlinx.coroutines.EventLoop_commonKt.delayToNanos((r3v0 'timeMillis' long A[D('timeMillis' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0017 \-\> B:21:0x001c, CROSS_EDGE: B:15:0x0005 \-\> B:21:0x001c\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_12;Node_15 -> Node_17[style=dashed];
+Node_15 -> Node_23;
+Node_23 -> Node_13;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_13;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+}
+

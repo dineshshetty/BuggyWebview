@@ -1,0 +1,68 @@
+digraph "CFG forkotlinx.coroutines.ThreadState.invoke(Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_2047718851 {
+label = "R(2:(2:2|3)|7) | DECL_VAR: int state\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1626340428 {
+label = "LOOP:0: (2:2|3)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|LOOP_END\lLOOP:0: B:19:0x0002\-\>B:25:0x001a\l|if (kotlinx.coroutines.ThreadState._state$FU.compareAndSet(r6, r2, 2) == false) goto L2\l}"];
+subgraph cluster_Region_1718207654 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|LOOP_START\lLOOP:0: B:19:0x0002\-\>B:25:0x001a\l|int r2 = r6._state\l}"];
+subgraph cluster_SwitchRegion_727115083 {
+label = "Switch: 3
+ case 0 -> R(1:1)
+ case 1, 2, 3 -> R(1:14)
+ case default -> R(2:11|12)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|switch(r2) \{\l    case 0: goto L4;\l    case 1: goto L13;\l    case 2: goto L13;\l    case 3: goto L13;\l    default: goto L10;\l\}\l}"];
+subgraph cluster_Region_1516073506 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_2015686861 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2072215362 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0012|RETURN\l|return\l}"];
+}
+subgraph cluster_Region_1009866452 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0009|invalidState(r2)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0011|throw new kotlin.ExceptionsH()\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x001c|r6.targetThread.interrupt()\lr6._state = 3\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0013}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001c|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0024}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0009|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0012|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.ThreadState.invoke((r6v0 'this' kotlinx.coroutines.ThreadState A[IMMUTABLE_TYPE, THIS]), (r7v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0012 \-\> B:17:?, CROSS_EDGE: B:27:0x0024 \-\> B:17:?, BACK_EDGE: B:25:0x001a \-\> B:19:0x0002\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lBRIDGED_BY: kotlinx.coroutines.ThreadState.invoke(java.lang.Throwable):kotlin.Unit\l}"];
+MethodNode -> Node_16;Node_25 -> Node_19;
+Node_25 -> Node_31[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_24;
+Node_20 -> Node_29;
+Node_20 -> Node_30;
+Node_23 -> Node_17;
+Node_21 -> Node_22;
+Node_22 -> Node_17;
+Node_26 -> Node_27;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_24 -> Node_25;
+Node_31 -> Node_26;
+Node_27 -> Node_17;
+Node_29 -> Node_21;
+Node_30 -> Node_23;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.view.DisplayCompat.Api23Impl.getMode(Landroid\/content\/Context;Landroid\/view\/Display;)Landroidx\/core\/view\/DisplayCompat$ModeCompat;" {
+subgraph cluster_Region_164635398 {
+label = "R(2:1|(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.Display$Mode android.view.Display.Mode r0 = r5.getMode()\landroid.graphics.Point android.graphics.Point r1 = androidx.core.view.DisplayCompat.getCurrentDisplaySizeFromWorkarounds(r4, r5)\l}"];
+subgraph cluster_Region_316750129 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1672107619 {
+label = "IF [B:3:0x0008, B:5:0x000e] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r1 == null) goto L8\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|ADDED_TO_REGION\l|if (physicalSizeEquals(r0, r1) != false) goto L8\l}"];
+subgraph cluster_Region_1273479843 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001d|RETURN\lORIG_RETURN\l|return new androidx.core.view.DisplayCompat.ModeCompat(r0, true)\l}"];
+}
+}
+subgraph cluster_Region_683686401 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return new androidx.core.view.DisplayCompat.ModeCompat(r0, r1)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0011}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017}"];
+MethodNode[shape=record,label="{static androidx.core.view.DisplayCompat$ModeCompat androidx.core.view.DisplayCompat.Api23Impl.getMode((r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'display' android.view.Display A[D('display' android.view.Display), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0017 \-\> B:9:0x001d, CROSS_EDGE: B:3:0x0008 \-\> B:8:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_8;
+Node_9 -> Node_1;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+}
+

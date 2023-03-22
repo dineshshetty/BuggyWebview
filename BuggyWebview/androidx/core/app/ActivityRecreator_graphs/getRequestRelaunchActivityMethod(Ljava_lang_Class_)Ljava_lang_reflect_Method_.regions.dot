@@ -1,0 +1,69 @@
+digraph "CFG forandroidx.core.app.ActivityRecreator.getRequestRelaunchActivityMethod(Ljava\/lang\/Class;)Ljava\/lang\/reflect\/Method;" {
+subgraph cluster_Region_1751456465 {
+label = "R(1:(2:(1:11)|(1:(2:5|6))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_99932872 {
+label = "R(2:(1:11)|(1:(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1435473039 {
+label = "IF [B:16:0x0005, B:17:0x0007] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|if (needsRelaunchCall() == true) goto L3\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0007|ADDED_TO_REGION\l|if (r6 == null) goto L11\l}"];
+subgraph cluster_Region_956635764 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0048|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_2037787671 {
+label = "R(1:(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1517788011 {
+label = "Try: R(2:5|6) catches: R(1:10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_91318417 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0046, blocks: (B:19:0x000a), top: B:24:0x000a \}\lCatch: all \-\> 0x0046\l|java.lang.reflect.Method java.lang.reflect.Method r0 = r6.getDeclaredMethod(\"requestRelaunchActivity\", android.os.IBinder.class, java.util.List.class, java.util.List.class, java.lang.Integer.TYPE, java.lang.Boolean.TYPE, android.content.res.Configuration.class, android.content.res.Configuration.class, java.lang.Boolean.TYPE, java.lang.Boolean.TYPE)     \/\/ Catch: java.lang.Throwable \-\> L46\lr0.setAccessible(true)     \/\/ Catch: java.lang.Throwable \-\> L46\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0045|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1937069894 {
+label = "R(1:10) | ExcHandler: all \-\> 0x0046\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0047|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1937069894 {
+label = "R(1:10) | ExcHandler: all \-\> 0x0046\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0047|RETURN\l|return null\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000a|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0046|ExcHandler: all \-\> 0x0046\l}"];
+MethodNode[shape=record,label="{private static java.lang.reflect.Method androidx.core.app.ActivityRecreator.getRequestRelaunchActivityMethod((r6v0 'activityThreadClass' java.lang.Class\<?\> A[D('activityThreadClass' java.lang.Class\<?\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0045 \-\> B:14:?, CROSS_EDGE: B:22:0x0047 \-\> B:14:?, CROSS_EDGE: B:24:0x000a \-\> B:21:0x0046, CROSS_EDGE: B:16:0x0005 \-\> B:23:0x0048\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0046, blocks: (B:19:0x000a), top: B:24:0x000a \}\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/Class\<*\>;)Ljava\/lang\/reflect\/Method;\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_17 -> Node_23;
+Node_17 -> Node_24[style=dashed];
+Node_23 -> Node_14;
+Node_19 -> Node_20;
+Node_19 -> Node_25;
+Node_20 -> Node_14;
+Node_22 -> Node_14;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_24 -> Node_19;
+Node_24 -> Node_21;
+Node_25 -> Node_21;
+Node_21 -> Node_22;
+}
+

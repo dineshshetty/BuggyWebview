@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.material.appbar.HeaderBehavior.setHeaderTopBottomOffset(Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;Landroid\/view\/View;III)I" {
+subgraph cluster_Region_920539830 {
+label = "R(2:1|(2:(1:10)|(2:7|8))) | DECL_VAR: int newOffset\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|int int r0 = getTopAndBottomOffset()\l}"];
+subgraph cluster_Region_1603034830 {
+label = "R(2:(1:10)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_24922992 {
+label = "IF [B:17:0x0005, B:18:0x0007, B:19:0x0009, B:21:0x000f] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0005|if (r6 == 0) goto L13\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0007|ADDED_TO_REGION\l|if (r0 \< r6) goto L12\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0009|ADDED_TO_REGION\l|if (r0 \> r7) goto L11\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000f|ADDED_TO_REGION\l|if (r0 == (r5 = androidx.core.math.MathUtils.clamp(r5, r6, r7))) goto L10\l}"];
+subgraph cluster_Region_441460713 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_664157751 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|setTopAndBottomOffset(r5)\lint int r1 = r0 \- r5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0016|RETURN\lORIG_RETURN\l|return r1\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000b}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return 0\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return 0\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return 0\l}"];
+MethodNode[shape=record,label="{int com.google.android.material.appbar.HeaderBehavior.setHeaderTopBottomOffset((r2v0 'this' com.google.android.material.appbar.HeaderBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.appbar.HeaderBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r3v0 'parent' androidx.coordinatorlayout.widget.CoordinatorLayout A[D('parent' androidx.coordinatorlayout.widget.CoordinatorLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'header' V extends android.view.View A[D('header' V extends android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'newOffset' int A[D('newOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'minOffset' int A[D('minOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'maxOffset' int A[D('maxOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x000f \-\> B:23:0x0016, CROSS_EDGE: B:19:0x0009 \-\> B:23:0x0016, CROSS_EDGE: B:18:0x0007 \-\> B:23:0x0016, CROSS_EDGE: B:17:0x0005 \-\> B:23:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\lSIGNATURE: (Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;TV;III)I\lMETHOD_OVERRIDE: [com.google.android.material.appbar.HeaderBehavior.setHeaderTopBottomOffset(androidx.coordinatorlayout.widget.CoordinatorLayout, V extends android.view.View, int, int, int):int]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_24;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_25;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_26;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_27;
+Node_27 -> Node_15;
+Node_22 -> Node_23;
+Node_23 -> Node_15;
+Node_14 -> Node_16;
+Node_20 -> Node_21;
+Node_26 -> Node_15;
+Node_25 -> Node_15;
+Node_24 -> Node_15;
+}
+

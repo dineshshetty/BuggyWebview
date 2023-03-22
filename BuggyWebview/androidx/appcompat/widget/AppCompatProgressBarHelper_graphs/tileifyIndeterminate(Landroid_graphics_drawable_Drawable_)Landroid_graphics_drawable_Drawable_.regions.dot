@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatProgressBarHelper.tileifyIndeterminate(Landroid\/graphics\/drawable\/Drawable;)Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_1372964764 {
+label = "R(1:(2:(4:3|(1:6)|8|9)|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1325410875 {
+label = "R(2:(4:3|(1:6)|8|9)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_746737761 {
+label = "IF [B:15:0x0002] THEN: R(4:3|(1:6)|8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if ((r8 instanceof android.graphics.drawable.AnimationDrawable) != false) goto L3\l}"];
+subgraph cluster_Region_2118776546 {
+label = "R(4:3|(1:6)|8|9)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|android.graphics.drawable.AnimationDrawable android.graphics.drawable.AnimationDrawable r0 = (android.graphics.drawable.AnimationDrawable) r8\lint int r1 = r0.getNumberOfFrames()\landroid.graphics.drawable.AnimationDrawable android.graphics.drawable.AnimationDrawable r2 = new android.graphics.drawable.AnimationDrawable()\lr2.setOneShot(r0.isOneShot())\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_482485216 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001a|if (r3 \< r1) goto L6\l}"];
+subgraph cluster_Region_566698552 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|LOOP_END\lLOOP:0: B:17:0x0018\-\>B:19:0x001c\l|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r5 = tileify(r0.getFrame(r3), true)\lr5.setLevel(10000)\lr2.addFrame(r5, r0.getDuration(r3))\lr3++\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0032|r2.setLevel(10000)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0036|RETURN\lORIG_RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_754820273 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return r8\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0018|LOOP_START\lLOOP:0: B:17:0x0018\-\>B:19:0x001c\lPHI: r3 \l  PHI: (r3v2 'i' int) = (r3v1 'i' int), (r3v3 'i' int) binds: [B:16:0x0004, B:19:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0032|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.graphics.drawable.Drawable androidx.appcompat.widget.AppCompatProgressBarHelper.tileifyIndeterminate((r7v0 'this' androidx.appcompat.widget.AppCompatProgressBarHelper A[IMMUTABLE_TYPE, THIS]), (r8v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x001c \-\> B:17:0x0018, CROSS_EDGE: B:15:0x0002 \-\> B:21:0x0036\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_23[style=dashed];
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_22[style=dashed];
+Node_19 -> Node_17;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+Node_22 -> Node_20;
+}
+

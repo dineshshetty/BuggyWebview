@@ -1,0 +1,41 @@
+digraph "CFG forcom.google.android.material.materialswitch.MaterialSwitch.setInterpolatedDrawableTintIfPossible(Landroid\/graphics\/drawable\/Drawable;Landroid\/content\/res\/ColorStateList;[I[IF)V" {
+subgraph cluster_Region_1587919381 {
+label = "R(1:(2:(1:6)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_504444652 {
+label = "R(2:(1:6)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_81476113 {
+label = "IF [B:2:0x0000, B:3:0x0002] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r2 == null) goto L7\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|ADDED_TO_REGION\l|if (r3 == null) goto L6\l}"];
+subgraph cluster_Region_473499697 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1866427569 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|androidx.core.graphics.drawable.DrawableCompat.setTint(r2, androidx.core.graphics.ColorUtils.blendARGB(r3.getColorForState(r4, 0), r3.getColorForState(r5, 0), r6))\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0017|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private static void com.google.android.material.materialswitch.MaterialSwitch.setInterpolatedDrawableTintIfPossible((r2v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'tint' android.content.res.ColorStateList A[D('tint' android.content.res.ColorStateList), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'stateUnchecked' int[] A[D('stateUnchecked' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'stateChecked' int[] A[D('stateChecked' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'thumbPosition' float A[D('thumbPosition' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0017 \-\> B:1:?, CROSS_EDGE: B:2:0x0000 \-\> B:7:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_8;
+Node_8 -> Node_1;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_6 -> Node_1;
+Node_7 -> Node_1;
+}
+

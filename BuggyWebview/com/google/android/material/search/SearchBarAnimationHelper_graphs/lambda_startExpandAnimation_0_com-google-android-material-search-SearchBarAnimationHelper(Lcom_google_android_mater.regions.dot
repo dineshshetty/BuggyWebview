@@ -1,0 +1,47 @@
+digraph "CFG forcom.google.android.material.search.SearchBarAnimationHelper.lambda$startExpandAnimation$0$com\-google\-android\-material\-search\-SearchBarAnimationHelper(Lcom\/google\/android\/material\/search\/SearchBar;Landroid\/view\/View;Lcom\/google\/android\/material\/appbar\/AppBarLayout;Z)V" {
+subgraph cluster_Region_105091710 {
+label = "R(4:1|(1:4)|(1:7)|8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0000|android.animation.AnimatorSet android.animation.AnimatorSet r0 = new android.animation.AnimatorSet()\landroid.animation.Animator android.animation.Animator r1 = getFadeOutChildrenAnimator(r6, r7)\landroid.animation.Animator android.animation.Animator r2 = getExpandAnimator(r6, r7, r8)\lr0.playSequentially(r1, r2)\lr0.addListener(new com.google.android.material.search.SearchBarAnimationHelper.C07503())\ljava.util.Iterator r3 = r5.expandAnimationListeners.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1700521361 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002b|android.animation.AnimatorListenerAdapter \lif (r3.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1282960404 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002d|LOOP_END\lLOOP:0: B:25:0x0027\-\>B:27:0x002d\l|android.animation.AnimatorListenerAdapter r4 = r3.next()\lr0.addListener(r4)\l}"];
+}
+}
+subgraph cluster_IfRegion_1969795521 {
+label = "IF [B:28:0x0037] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0037|if (r9 != false) goto L7\l}"];
+subgraph cluster_Region_818255066 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0039|r0.setDuration(0L)\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x003e|r0.start()\lr5.runningExpandOrCollapseAnimator = r0\l}"];
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0027|LOOP_START\lLOOP:0: B:25:0x0027\-\>B:27:0x002d\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0037|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0043}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public \/* synthetic *\/ void com.google.android.material.search.SearchBarAnimationHelper.lambda$startExpandAnimation$0$com\-google\-android\-material\-search\-SearchBarAnimationHelper((r5v0 'this' com.google.android.material.search.SearchBarAnimationHelper A[IMMUTABLE_TYPE, THIS]), (r6v0 'searchBar' com.google.android.material.search.SearchBar A[D('searchBar' com.google.android.material.search.SearchBar), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'expandedView' android.view.View A[D('expandedView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'appBarLayout' com.google.android.material.appbar.AppBarLayout A[D('appBarLayout' com.google.android.material.appbar.AppBarLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'skipAnimation' boolean A[D('skipAnimation' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:27:0x002d \-\> B:25:0x0027, CROSS_EDGE: B:28:0x0037 \-\> B:30:0x003e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_22;Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_32[style=dashed];
+Node_27 -> Node_25;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_22 -> Node_24;
+Node_25 -> Node_26;
+Node_32 -> Node_28;
+Node_31 -> Node_23;
+}
+

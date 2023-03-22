@@ -1,0 +1,22 @@
+digraph "CFG forkotlin.collections.CollectionsKt__IterablesKt.flatten(Ljava\/lang\/Iterable;)Ljava\/util\/List;" {
+Node_9 [shape=record,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0000|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"\<this\>\" \l0x0002: INVOKE  (r4 I:java.lang.Object A[D('$this$flatten' java.lang.Iterable)]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x0005: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList  (LINE:47)\l0x0007: INVOKE  (r0 I:java.util.ArrayList) type: DIRECT call: java.util.ArrayList.\<init\>():void A[MD:():void (c)]\l0x000a: INVOKE  (r1 I:java.util.Iterator) = (r4 I:java.lang.Iterable A[D('$this$flatten' java.lang.Iterable)]) type: INTERFACE call: java.lang.Iterable.iterator():java.util.Iterator A[MD:():java.util.Iterator\<T\> (c)] (LINE:48)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000e|LOOP_START\lLOOP:0: B:12:0x000e\-\>B:14:0x0014\l|0x000e: INVOKE  (r2 I:boolean) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0012|0x0012: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:17:0x0021 \l}"];
+Node_14 [shape=record,label="{14\:\ 0x0014|LOOP_END\lLOOP:0: B:12:0x000e\-\>B:14:0x0014\l|0x0014: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x0018: CHECK_CAST (r2 I:java.lang.Iterable) = (java.lang.Iterable) (r2 I:??[OBJECT, ARRAY]) \l0x001a: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r0 I:??[OBJECT, ARRAY] A[D('result' java.util.ArrayList)])  (LINE:49)\l0x001b: CHECK_CAST (r3 I:java.util.Collection) = (java.util.Collection) (r3 I:??[OBJECT, ARRAY]) \l0x001d: INVOKE  (r3 I:java.util.Collection), (r2 I:java.lang.Iterable A[D('element' java.lang.Iterable)]) type: STATIC call: kotlin.collections.CollectionsKt.addAll(java.util.Collection, java.lang.Iterable):boolean A[MD:\<T\>:(java.util.Collection\<? super T\>, java.lang.Iterable\<? extends T\>):boolean (m)]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0021|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0021|0x0021: MOVE  (r1 I:??[OBJECT, ARRAY]) = (r0 I:??[OBJECT, ARRAY] A[D('result' java.util.ArrayList)])  (LINE:51)\l0x0022: CHECK_CAST (r1 I:java.util.List) = (java.util.List) (r1 I:??[OBJECT, ARRAY]) \l}"];
+Node_16 [shape=record,label="{16\:\ 0x0024|RETURN\l|0x0024: RETURN  (r1 I:java.util.List\<T\>) \l}"];
+Node_10 [shape=record,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<T\> kotlin.collections.CollectionsKt__IterablesKt.flatten((r4 I:java.lang.Iterable\<? extends java.lang.Iterable\<? extends T\>\> A[D('$this$flatten' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x0014 \-\> B:12:0x000e\lINLINE_NOT_NEEDED\lDebug Info:\l  0x001a\-0x0021: r2 'element' Ljava\/lang\/Iterable;\l  0x000a\-0x0024: r0 'result' Ljava\/util\/ArrayList;\l  \-1 \-0x0024: r4 '$this$flatten' Ljava\/lang\/Iterable;\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+Ljava\/lang\/Iterable\<+TT;\>;\>;)Ljava\/util\/List\<TT;\>;\l}"];
+MethodNode -> Node_9;Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_17;
+Node_14 -> Node_12;
+Node_17 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_10;
+}
+

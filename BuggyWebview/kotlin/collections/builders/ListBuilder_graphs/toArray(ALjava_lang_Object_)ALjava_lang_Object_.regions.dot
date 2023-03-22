@@ -1,0 +1,53 @@
+digraph "CFG forkotlin.collections.builders.ListBuilder.toArray([Ljava\/lang\/Object;)[Ljava\/lang\/Object;" {
+subgraph cluster_Region_702166731 {
+label = "R(2:1|(2:(2:3|4)|(3:6|(1:8)|9)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"destination\")\lint int r0 = r5.length\lint int r1 = r4.length\l}"];
+subgraph cluster_Region_784121444 {
+label = "R(2:(2:3|4)|(3:6|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1931914197 {
+label = "IF [B:3:0x0008] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r0 \< r1) goto L3\l}"];
+subgraph cluster_Region_1600061849 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|E[] E[] r0 = r4.array\lint int r2 = r4.offset\ljava.lang.Object[] T[] r0 = (T[]) java.util.Arrays.copyOfRange(r0, r2, r1 + r2, r5.getClass())\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"copyOfRange(array, offse…h, destination.javaClass)\")\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_867547921 {
+label = "R(3:6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001d|E[] E[] r0 = r4.array\lkotlin.jvm.internal.Intrinsics.checkNotNull(r0, \"null cannot be cast to non\-null type kotlin.Array\<T of kotlin.collections.builders.ListBuilder.toArray\>\")\lint int r2 = r4.offset\lkotlin.collections.ArraysKt.copyInto(r0, r5, 0, r2, r4.length + r2)\lint int r0 = r5.length\lint int r1 = r4.length\l}"];
+subgraph cluster_IfRegion_1268891586 {
+label = "IF [B:7:0x0030] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0030|if (r0 \> r1) goto L8\l}"];
+subgraph cluster_Region_228576608 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0032|r5[r1] = null\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0035|RETURN\l|return r5\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public T[] kotlin.collections.builders.ListBuilder.toArray((r4v0 'this' kotlin.collections.builders.ListBuilder\<E\> A[IMMUTABLE_TYPE, THIS]), (r5v0 'destination' T[] A[D('destination' java.lang.Object[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:9:0x0035 \-\> B:1:?, CROSS_EDGE: B:7:0x0030 \-\> B:9:0x0035\lINLINE_NOT_NEEDED\lTYPE_VARS: [T, E]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>([TT;)[TT;\lMETHOD_OVERRIDE: [ClspMth\{\<T\> java.util.Collection.toArray(T[]):T[]\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+}
+

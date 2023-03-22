@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.fragment.app.Fragment.getMinimumMaxLifecycleState()I" {
+subgraph cluster_Region_395403518 {
+label = "R(1:(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1974515528 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2098287656 {
+label = "IF [B:14:0x0004, B:16:0x0008] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (r2.mMaxState == androidx.lifecycle.Lifecycle.State.INITIALIZED) goto L8\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0008|ADDED_TO_REGION\l|if (r2.mParentFragment == null) goto L8\l}"];
+subgraph cluster_Region_785713002 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0022|RETURN\l|return r2.mMaxState.ordinal()\l}"];
+}
+}
+subgraph cluster_Region_853476574 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001b|RETURN\l|return java.lang.Math.min(r2.mMaxState.ordinal(), r2.mParentFragment.getMinimumMaxLifecycleState())\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001c}"];
+MethodNode[shape=record,label="{private int androidx.fragment.app.Fragment.getMinimumMaxLifecycleState((r2v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0022 \-\> B:12:?, CROSS_EDGE: B:14:0x0004 \-\> B:20:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_20;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

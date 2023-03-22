@@ -1,0 +1,48 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.Worker.tryReleaseCpu(Lkotlinx\/coroutines\/scheduling\/CoroutineScheduler$WorkerState;)Z" {
+subgraph cluster_Region_1082235515 {
+label = "R(5:1|2|(1:5)|(1:7)|8)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlinx.coroutines.scheduling.CoroutineScheduler$WorkerState kotlinx.coroutines.scheduling.CoroutineScheduler.WorkerState r0 = r7.state\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0004|boolean r1 = r0 == kotlinx.coroutines.scheduling.CoroutineScheduler.WorkerState.CPU_ACQUIRED\l}"];
+subgraph cluster_IfRegion_451792818 {
+label = "IF [B:17:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0009|PHI: r1 \l  PHI: (r1v2 'hadCpu' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != false) goto L5\l}"];
+subgraph cluster_Region_1116074050 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|kotlinx.coroutines.scheduling.CoroutineScheduler kotlinx.coroutines.scheduling.CoroutineScheduler r2 = kotlinx.coroutines.scheduling.CoroutineScheduler.this\lkotlinx.coroutines.scheduling.CoroutineScheduler.controlState$FU.addAndGet(r2, 4398046511104L)\l}"];
+}
+}
+subgraph cluster_IfRegion_455897470 {
+label = "IF [B:19:0x0018] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0018|if (r0 != r8) goto L7\l}"];
+subgraph cluster_Region_1565332299 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001a|r7.state = r8\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x001c|RETURN\l|return r1\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0008}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.tryReleaseCpu((r7v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler$Worker A[IMMUTABLE_TYPE, THIS]), (r8v0 'newState' kotlinx.coroutines.scheduling.CoroutineScheduler$WorkerState A[D('newState' kotlinx.coroutines.scheduling.CoroutineScheduler$WorkerState), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0018 \-\> B:21:0x001c, CROSS_EDGE: B:17:0x0009 \-\> B:19:0x0018, CROSS_EDGE: B:16:0x0008 \-\> B:17:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+}
+

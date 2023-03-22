@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.material.datepicker.MonthAdapter.getItem(I)Ljava\/lang\/Long;" {
+subgraph cluster_Region_1692269413 {
+label = "R(1:(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_541145831 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1779912680 {
+label = "IF [B:15:0x0004, B:17:0x000a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (r3 \< firstPositionInMonth()) goto L9\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000a|ADDED_TO_REGION\l|if (r3 \> lastPositionInMonth()) goto L8\l}"];
+subgraph cluster_Region_889684385 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1040863927 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001b|RETURN\l|return java.lang.Long.valueOf(r2.month.getDay(positionToDay(r3)))\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000d}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001c|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public java.lang.Long com.google.android.material.datepicker.MonthAdapter.getItem((r2v0 'this' com.google.android.material.datepicker.MonthAdapter A[IMMUTABLE_TYPE, THIS]), (r3v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:22:0x001d \-\> B:13:?, CROSS_EDGE: B:15:0x0004 \-\> B:21:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: com.google.android.material.datepicker.MonthAdapter.getItem(int):java.lang.Object\lMETHOD_OVERRIDE: [ClspMth\{android.widget.Adapter.getItem(int):java.lang.Object\}]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_21;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_23;
+Node_23 -> Node_13;
+Node_20 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+Node_21 -> Node_13;
+}
+

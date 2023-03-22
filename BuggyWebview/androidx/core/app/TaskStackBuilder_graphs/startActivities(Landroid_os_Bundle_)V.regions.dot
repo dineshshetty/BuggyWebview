@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.core.app.TaskStackBuilder.startActivities(Landroid\/os\/Bundle;)V" {
+subgraph cluster_Region_1616283176 {
+label = "R(1:(2:(1:10)|(2:3|(1:(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1942753934 {
+label = "R(2:(1:10)|(2:3|(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1313037547 {
+label = "IF [B:14:0x0006] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|if (r4.mIntents.isEmpty() != false) goto L9\l}"];
+subgraph cluster_Region_1802317871 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0047|throw new java.lang.IllegalStateException(\"No intents added to TaskStackBuilder; cannot startActivities\")\l}"];
+}
+}
+subgraph cluster_Region_1986658098 {
+label = "R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|android.content.Intent[] android.content.Intent[] r0 = (android.content.Intent[]) r4.mIntents.toArray(new android.content.Intent[0])\lr0[0] = new android.content.Intent(r0[0]).addFlags(268484608)\l}"];
+subgraph cluster_Region_1071553708 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_940881699 {
+label = "IF [B:16:0x0029] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0029|if (androidx.core.content.ContextCompat.startActivities(r4.mSourceContext, r0, r5) == false) goto L5\l}"];
+subgraph cluster_Region_382736116 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x002b|android.content.Intent android.content.Intent r1 = new android.content.Intent(r0[r0.length \- 1])\lr1.addFlags(268435456)\lr4.mSourceContext.startActivity(r1)\l}"];
+}
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x003f|ORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0040}"];
+MethodNode[shape=record,label="{public void androidx.core.app.TaskStackBuilder.startActivities((r4v0 'this' androidx.core.app.TaskStackBuilder A[IMMUTABLE_TYPE, THIS]), (r5v0 'options' android.os.Bundle A[D('options' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0029 \-\> B:18:0x003f, CROSS_EDGE: B:20:0x0047 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_20 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_18 -> Node_12;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+}
+

@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.viewpager2.widget.ViewPager2.setOrientation(Landroid\/content\/Context;Landroid\/util\/AttributeSet;)V" {
+subgraph cluster_Region_1247823296 {
+label = "R(3:1|(1:3)|(1:5))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|android.content.res.TypedArray android.content.res.TypedArray r0 = r9.obtainStyledAttributes(r10, androidx.viewpager2.C0545R.styleable.ViewPager2)\l}"];
+subgraph cluster_IfRegion_247585832 {
+label = "IF [B:16:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L3\l}"];
+subgraph cluster_Region_2135910748 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|saveAttributeDataForStyleable(r9, androidx.viewpager2.C0545R.styleable.ViewPager2, r10, r0, 0, 0)\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_883926263 {
+label = "Try: R(1:5) finally: R(3:10|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1436423642 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0017|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0026, blocks: (B:18:0x0017), top: B:24:0x0017 \}\lCatch: all \-\> 0x0026\l|setOrientation(r0.getInt(androidx.viewpager2.C0545R.styleable.ViewPager2_android_orientation, 0))     \/\/ Catch: java.lang.Throwable \-\> L26\l}"];
+}
+subgraph cluster_Region_1730108800 {
+label = "R(3:10|11|12) | ExcHandler: all \-\> 0x0026\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0026|ExcHandler: all \-\> 0x0026\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0027|FINALLY_INSNS\l|r0.recycle()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x002a|throw r1\l}"];
+}
+}
+}
+subgraph cluster_Region_1730108800 {
+label = "R(3:10|11|12) | ExcHandler: all \-\> 0x0026\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0026|ExcHandler: all \-\> 0x0026\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0027|FINALLY_INSNS\l|r0.recycle()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x002a|throw r1\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0017|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0021|DONT_GENERATE\l|r0.recycle()\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0025}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{private void androidx.viewpager2.widget.ViewPager2.setOrientation((r8v0 'this' androidx.viewpager2.widget.ViewPager2 A[IMMUTABLE_TYPE, THIS]), (r9v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'attrs' android.util.AttributeSet A[D('attrs' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x002a \-\> B:14:?, CROSS_EDGE: B:24:0x0017 \-\> B:21:0x0026, CROSS_EDGE: B:16:0x000a \-\> B:24:0x0017\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0026, blocks: (B:18:0x0017), top: B:24:0x0017 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_24;
+Node_18 -> Node_19;
+Node_18 -> Node_25;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_18;
+Node_24 -> Node_21;
+Node_19 -> Node_20;
+Node_20 -> Node_14;
+Node_25 -> Node_21;
+}
+

@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.transition.Transition.runAnimators()V" {
+subgraph cluster_Region_61240760 {
+label = "R(3:1|(2:4|(1:7)(0))|12)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|start()\landroidx.collection.ArrayMap androidx.collection.ArrayMap\<android.animation.Animator, androidx.transition.Transition.AnimationInfo\> r0 = getRunningAnimators()\ljava.util.Iterator java.util.Iterator\<android.animation.Animator\> r1 = r4.mAnimators.iterator()\l}"];
+subgraph cluster_LoopRegion_1259902581 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0011|if (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_2065903899 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0013|android.animation.Animator android.animation.Animator r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_2026430404 {
+label = "IF [B:22:0x001d] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001d|if (r0.containsKey(r2) != false) goto L6\l}"];
+subgraph cluster_Region_1949365988 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001f|start()\lrunAnimator(r2, r0)\l}"];
+}
+subgraph cluster_Region_1566508293 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0026|r4.mAnimators.clear()\lend()\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000d|LOOP_START\lLOOP:0: B:19:0x000d\-\>B:29:0x000d\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x001f|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x000d|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000d|LOOP_END\lSYNTHETIC\lLOOP:0: B:19:0x000d\-\>B:29:0x000d\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x000d|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0026|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002e}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.transition.Transition.runAnimators((r4v0 'this' androidx.transition.Transition A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x001f \-\> B:19:0x000d, BACK_EDGE: B:22:0x001d \-\> B:19:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.transition.Transition.runAnimators():void]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_27[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_28;
+Node_22 -> Node_30[style=dashed];
+Node_23 -> Node_31;
+Node_25 -> Node_26;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_28 -> Node_23;
+Node_31 -> Node_29;
+Node_29 -> Node_19;
+Node_30 -> Node_29;
+Node_27 -> Node_25;
+Node_26 -> Node_17;
+}
+

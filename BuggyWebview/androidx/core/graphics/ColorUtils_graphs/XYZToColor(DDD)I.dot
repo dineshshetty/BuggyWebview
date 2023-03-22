@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.graphics.ColorUtils.XYZToColor(DDD)I" {
+Node_16 [shape=record,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0000|double r0 = (((3.2406d * r18) + ((\-1.5372d) * r20)) + ((\-0.4986d) * r22)) \/ androidx.core.graphics.ColorUtils.XYZ_WHITE_REFERENCE_Y\ldouble r4 = ((((\-0.9689d) * r18) + (1.8758d * r20)) + (0.0415d * r22)) \/ androidx.core.graphics.ColorUtils.XYZ_WHITE_REFERENCE_Y\ldouble r6 = (((0.0557d * r18) + ((\-0.204d) * r20)) + (1.057d * r22)) \/ androidx.core.graphics.ColorUtils.XYZ_WHITE_REFERENCE_Y\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0065|if ((r0 \> 0.0031308d ? 1 : (r0 == 0.0031308d ? 0 : \-1)) \<= 0) goto L15\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0067|double r16 = (java.lang.Math.pow(r0, 0.4166666666666667d) * 1.055d) \- 0.055d\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0072|PHI: r16 \l  PHI: (r16v2 double) = (r16v1 double), (r16v12 double) binds: [B:21:0x0070, B:20:0x0067] A[DONT_GENERATE, DONT_INLINE]\l|r0 = r16\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0076|if ((r4 \> 0.0031308d ? 1 : (r4 == 0.0031308d ? 0 : \-1)) \<= 0) goto L14\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0078|double r16 = (java.lang.Math.pow(r4, 0.4166666666666667d) * 1.055d) \- 0.055d\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0083|PHI: r16 \l  PHI: (r16v5 double) = (r16v4 double), (r16v9 double) binds: [B:25:0x0081, B:24:0x0078] A[DONT_GENERATE, DONT_INLINE]\l|r4 = r16\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0087|if ((r6 \> 0.0031308d ? 1 : (r6 == 0.0031308d ? 0 : \-1)) \<= 0) goto L13\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0089|double r8 = (java.lang.Math.pow(r6, 0.4166666666666667d) * 1.055d) \- 0.055d\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0093|PHI: r8 \l  PHI: (r8v6 double) = (r8v5 double), (r8v12 double) binds: [B:29:0x0091, B:28:0x0089] A[DONT_GENERATE, DONT_INLINE]\l|r2 = r8\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00c1|RETURN\l|return android.graphics.Color.rgb(constrain((int) java.lang.Math.round(r0 * 255.0d), 0, 255), constrain((int) java.lang.Math.round(r4 * 255.0d), 0, 255), constrain((int) java.lang.Math.round(255.0d * r2), 0, 255))\l}"];
+Node_17 [shape=record,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0091|double r8 = r6 * 12.92d\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0081|double r16 = r4 * 12.92d\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0070|double r16 = r0 * 12.92d\l}"];
+MethodNode[shape=record,label="{public static int androidx.core.graphics.ColorUtils.XYZToColor((r18v0 'x' double A[D('x' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 'y' double A[D('y' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'z' double A[D('z' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x0091 \-\> B:30:0x0093, CROSS_EDGE: B:25:0x0081 \-\> B:26:0x0083, CROSS_EDGE: B:21:0x0070 \-\> B:22:0x0072\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_16;Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_29;
+Node_28 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+Node_29 -> Node_30;
+Node_25 -> Node_26;
+Node_21 -> Node_22;
+}
+

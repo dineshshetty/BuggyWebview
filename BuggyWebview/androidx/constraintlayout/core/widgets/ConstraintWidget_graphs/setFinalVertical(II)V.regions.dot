@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.ConstraintWidget.setFinalVertical(II)V" {
+subgraph cluster_Region_927248810 {
+label = "R(1:(2:(1:3)|(3:5|(1:7)|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_346308009 {
+label = "R(2:(1:3)|(3:5|(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1178987021 {
+label = "IF [B:13:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r2.resolvedVertical != false) goto L3\l}"];
+subgraph cluster_Region_800452398 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1039057555 {
+label = "R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|r2.mTop.setFinalValue(r3)\lr2.mBottom.setFinalValue(r4)\lr2.f39mY = r3\lr2.mHeight = r4 \- r3\l}"];
+subgraph cluster_IfRegion_143845874 {
+label = "IF [B:16:0x0017] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0017|if (r2.hasBaseline != false) goto L7\l}"];
+subgraph cluster_Region_1643016047 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0019|r2.mBaseline.setFinalValue(r2.mBaselineDistance + r3)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0021|r2.resolvedVertical = true\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0024}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.widgets.ConstraintWidget.setFinalVertical((r2v0 'this' androidx.constraintlayout.core.widgets.ConstraintWidget A[IMMUTABLE_TYPE, THIS]), (r3v0 'y1' int A[D('y1' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'y2' int A[D('y2' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0024 \-\> B:11:?, CROSS_EDGE: B:16:0x0017 \-\> B:18:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_19 -> Node_11;
+}
+

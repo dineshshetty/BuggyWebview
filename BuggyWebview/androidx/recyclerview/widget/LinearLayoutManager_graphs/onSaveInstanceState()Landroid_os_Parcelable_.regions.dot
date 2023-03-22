@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.onSaveInstanceState()Landroid\/os\/Parcelable;" {
+subgraph cluster_Region_2058818 {
+label = "R(1:(2:(1:4)|(3:6|(2:8|(1:10)(1:12))(1:13)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_145408177 {
+label = "R(2:(1:4)|(3:6|(2:8|(1:10)(1:12))(1:13)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_93060366 {
+label = "IF [B:18:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|if (r5.mPendingSavedState != null) goto L3\l}"];
+subgraph cluster_Region_478605345 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|RETURN\l|return new androidx.recyclerview.widget.LinearLayoutManager.SavedState(r5.mPendingSavedState)\l}"];
+}
+}
+subgraph cluster_Region_1098881543 {
+label = "R(3:6|(2:8|(1:10)(1:12))(1:13)|11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000c|androidx.recyclerview.widget.LinearLayoutManager$SavedState androidx.recyclerview.widget.LinearLayoutManager.SavedState r0 = new androidx.recyclerview.widget.LinearLayoutManager.SavedState()\l}"];
+subgraph cluster_IfRegion_1739641993 {
+label = "IF [B:22:0x0015] THEN: R(2:8|(1:10)(1:12)) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|if (getChildCount() \> 0) goto L8\l}"];
+subgraph cluster_Region_1471624043 {
+label = "R(2:8|(1:10)(1:12))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|ensureLayoutState()\lboolean r1 = r5.mLastStackFromEnd ^ r5.mShouldReverseLayout\lr0.mAnchorLayoutFromEnd = r1\l}"];
+subgraph cluster_IfRegion_335013092 {
+label = "IF [B:24:0x0021] THEN: R(1:10) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0021|if (r1 != false) goto L10\l}"];
+subgraph cluster_Region_954454755 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0023|android.view.View android.view.View r2 = getChildClosestToEnd()\lr0.mAnchorOffset = r5.mOrientationHelper.getEndAfterPadding() \- r5.mOrientationHelper.getDecoratedEnd(r2)\lr0.mAnchorPosition = getPosition(r2)\l}"];
+}
+subgraph cluster_Region_1084733923 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x003d|android.view.View android.view.View r2 = getChildClosestToStart()\lr0.mAnchorPosition = getPosition(r2)\lr0.mAnchorOffset = r5.mOrientationHelper.getDecoratedStart(r2) \- r5.mOrientationHelper.getStartAfterPadding()\l}"];
+}
+}
+}
+subgraph cluster_Region_2109062226 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0057|r0.invalidateAnchor()\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x005a|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0004}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.os.Parcelable androidx.recyclerview.widget.LinearLayoutManager.onSaveInstanceState((r5v0 'this' androidx.recyclerview.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x005a \-\> B:16:?, CROSS_EDGE: B:26:0x003d \-\> B:29:0x005a, CROSS_EDGE: B:28:0x0057 \-\> B:29:0x005a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.RecyclerView.LayoutManager.onSaveInstanceState():android.os.Parcelable]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_20 -> Node_16;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_29;
+Node_26 -> Node_29;
+Node_28 -> Node_29;
+Node_29 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+}
+

@@ -1,0 +1,65 @@
+digraph "CFG forandroidx.tracing.Trace.handleException(Ljava\/lang\/String;Ljava\/lang\/Exception;)V" {
+subgraph cluster_Region_443625668 {
+label = "R(1:(2:(2:3|(2:(1:6)|(1:9)))|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_952176641 {
+label = "R(2:(2:3|(2:(1:6)|(1:9)))|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1034459572 {
+label = "IF [B:15:0x0002] THEN: R(2:3|(2:(1:6)|(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if ((r3 instanceof java.lang.reflect.InvocationTargetException) != false) goto L3\l}"];
+subgraph cluster_Region_184634917 {
+label = "R(2:3|(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|java.lang.Throwable java.lang.Throwable r0 = r3.getCause()\l}"];
+subgraph cluster_Region_435753934 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1813315526 {
+label = "IF [B:17:0x000a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|if ((r0 instanceof java.lang.RuntimeException) != false) goto L5\l}"];
+subgraph cluster_Region_1391065054 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|throw ((java.lang.RuntimeException) r0)\l}"];
+}
+}
+subgraph cluster_Region_2129153136 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|throw new java.lang.RuntimeException(r0)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_169731877 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0016|android.util.Log.v(androidx.tracing.Trace.TAG, \"Unable to call \" + r2 + \" via reflection\", r3)\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000c}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0010}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0031}"];
+MethodNode[shape=record,label="{private static void androidx.tracing.Trace.handleException((r2v0 'methodName' java.lang.String A[D('methodName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'exception' java.lang.Exception A[D('exception' java.lang.Exception), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0015 \-\> B:13:?, CROSS_EDGE: B:23:0x0031 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_19 -> Node_13;
+Node_21 -> Node_13;
+Node_22 -> Node_23;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_23 -> Node_13;
+}
+

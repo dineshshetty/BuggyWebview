@@ -1,0 +1,65 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.9.onActivityResult(Landroidx\/activity\/result\/ActivityResult;)V" {
+subgraph cluster_Region_1235445364 {
+label = "R(2:1|(2:(2:3|4)|(2:6|(2:(2:8|9)|(1:10)))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|androidx.fragment.app.FragmentManager$LaunchedFragmentInfo androidx.fragment.app.FragmentManager.LaunchedFragmentInfo r0 = androidx.fragment.app.FragmentManager.this.mLaunchedFragments.pollFirst()\l}"];
+subgraph cluster_Region_2125879912 {
+label = "R(2:(2:3|4)|(2:6|(2:(2:8|9)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_303865568 {
+label = "IF [B:15:0x000c] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1502607104 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000e|android.util.Log.w(androidx.fragment.app.FragmentManager.TAG, \"No Activities were started for result for \" + r7)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0022|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_117966300 {
+label = "R(2:6|(2:(2:8|9)|(1:10)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0023|java.lang.String java.lang.String r2 = r0.mWho\lint int r3 = r0.mRequestCode\landroidx.fragment.app.Fragment androidx.fragment.app.Fragment r4 = androidx.fragment.app.FragmentManager.this.mFragmentStore.findFragmentByWho(r2)\l}"];
+subgraph cluster_Region_583340379 {
+label = "R(2:(2:8|9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1068722643 {
+label = "IF [B:19:0x0031] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0031|if (r4 == null) goto L8\l}"];
+subgraph cluster_Region_460083287 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0033|android.util.Log.w(androidx.fragment.app.FragmentManager.TAG, \"Activity result delivered for unknown Fragment \" + r2)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0047|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1227752840 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0048|r4.onActivityResult(r3, r8.getResultCode(), r8.getData())\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0053}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentManager.9.onActivityResult((r7v0 'this' androidx.fragment.app.FragmentManager$9 A[IMMUTABLE_TYPE, THIS]), (r8v0 'result' androidx.activity.result.ActivityResult A[D('result' androidx.activity.result.ActivityResult), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0047 \-\> B:13:?, CROSS_EDGE: B:23:0x0053 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: androidx.fragment.app.FragmentManager.9.onActivityResult(androidx.activity.result.ActivityResult):void\lBRIDGED_BY: androidx.fragment.app.FragmentManager.9.onActivityResult(androidx.activity.result.ActivityResult):void\lMETHOD_OVERRIDE: [androidx.activity.result.ActivityResultCallback.onActivityResult(O):void]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_22 -> Node_23;
+Node_12 -> Node_14;
+Node_23 -> Node_13;
+}
+

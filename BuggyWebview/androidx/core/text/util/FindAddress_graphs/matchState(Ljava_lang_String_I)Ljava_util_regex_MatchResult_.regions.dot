@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.core.text.util.FindAddress.matchState(Ljava\/lang\/String;I)Ljava\/util\/regex\/MatchResult;" {
+subgraph cluster_Region_1652215949 {
+label = "R(1:(2:(1:5)|(2:7|(2:(1:10)|(1:11)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_191086026 {
+label = "R(2:(1:5)|(2:7|(2:(1:10)|(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_320971738 {
+label = "IF [B:15:0x0001, B:17:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0001|if (r4 \> 0) goto L3\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0010|ADDED_TO_REGION\l|if (androidx.core.text.util.FindAddress.WORD_DELIM.indexOf(r3.charAt(r4 \- 1)) == (\-1)) goto L5\l}"];
+subgraph cluster_Region_132828985 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0012|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1016854275 {
+label = "R(2:7|(2:(1:10)|(1:11)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0013|java.util.regex.Matcher java.util.regex.Matcher r1 = androidx.core.text.util.FindAddress.sStateRe.matcher(r3).region(r4, r3.length())\l}"];
+subgraph cluster_Region_857770481 {
+label = "R(2:(1:10)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1902578299 {
+label = "IF [B:20:0x0025] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0025|if (r1.lookingAt() == true) goto L9\l}"];
+subgraph cluster_Region_340270297 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002b|RETURN\lORIG_RETURN\l|return r1.toMatchResult()\l}"];
+}
+}
+subgraph cluster_Region_624684978 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0003}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0027}"];
+MethodNode[shape=record,label="{public static java.util.regex.MatchResult androidx.core.text.util.FindAddress.matchState((r3v0 'content' java.lang.String A[D('content' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'offset' int A[D('offset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x002b \-\> B:13:?, CROSS_EDGE: B:20:0x0025 \-\> B:22:0x002b, CROSS_EDGE: B:15:0x0001 \-\> B:19:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_13;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_22 -> Node_13;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+}
+

@@ -1,0 +1,47 @@
+digraph "CFG forkotlinx.coroutines.internal.ThreadState.restore(Lkotlin\/coroutines\/CoroutineContext;)V" {
+subgraph cluster_Region_1949536941 {
+label = "R(2:1|(1:(1:(1:3))))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|int int r0 = r4.elements.length \- 1\l}"];
+subgraph cluster_Region_428310612 {
+label = "R(1:(1:(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1197073096 {
+label = "IF [B:12:0x0005] THEN: R(1:(1:3)) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0005|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_289439246 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_544952436 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0018|LOOP_END\lLOOP:0: B:13:0x0007\-\>B:14:0x0018\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1232278028 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0007|LOOP_START\lLOOP:0: B:13:0x0007\-\>B:14:0x0018\lPHI: r0 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:12:0x0005, B:14:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|int r1 = r0\lr0\-\-\lkotlinx.coroutines.ThreadContextElement\<java.lang.Object\> r2 = r4.elements[r1]\lkotlin.jvm.internal.Intrinsics.checkNotNull(r2)\lr2.restoreThreadContext(r5, r4.values[r1])\l}"];
+}
+}
+}
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001a|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001a|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.internal.ThreadState.restore((r4v0 'this' kotlinx.coroutines.internal.ThreadState A[IMMUTABLE_TYPE, THIS]), (r5v0 'context' kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x0018 \-\> B:13:0x0007, CROSS_EDGE: B:12:0x0005 \-\> B:15:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_14 -> Node_13;
+Node_14 -> Node_16[style=dashed];
+Node_13 -> Node_14;
+Node_9 -> Node_11;
+Node_16 -> Node_17;
+Node_17 -> Node_10;
+Node_15 -> Node_10;
+}
+

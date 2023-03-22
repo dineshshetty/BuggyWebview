@@ -1,0 +1,94 @@
+digraph "CFG forandroidx.emoji2.text.EmojiProcessor.ProcessorSm.shouldUseEmojiPresentationStyleForSingleCodepoint()Z" {
+subgraph cluster_Region_1205112810 {
+label = "R(1:(2:(1:7)|(2:(1:(2:(1:12)|(2:13|(1:15))))|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1579619671 {
+label = "R(2:(1:7)|(2:(1:(2:(1:12)|(2:13|(1:15))))|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_473158893 {
+label = "IF [B:3:0x000b, B:6:0x0014] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r4.mCurrentNode.getData().isDefaultEmoji() == true) goto L3\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0014|ADDED_TO_REGION\l|if (isEmojiStyle(r4.mLastCodepoint) == true) goto L7\l}"];
+subgraph cluster_Region_1971788354 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_374300871 {
+label = "R(2:(1:(2:(1:12)|(2:13|(1:15))))|16)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1881424628 {
+label = "IF [B:9:0x001a] THEN: R(1:(2:(1:12)|(2:13|(1:15)))) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|if (r4.mUseEmojiAsDefaultStyle != false) goto L10\l}"];
+subgraph cluster_Region_1915909281 {
+label = "R(1:(2:(1:12)|(2:13|(1:15))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1059726767 {
+label = "R(2:(1:12)|(2:13|(1:15)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1376662485 {
+label = "IF [B:11:0x001e] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001e|if (r4.mEmojiAsDefaultStyleExceptions == null) goto L12\l}"];
+subgraph cluster_Region_15722626 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0020|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1842569676 {
+label = "R(2:13|(1:15))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0021|int int r0 = r4.mCurrentNode.getData().getCodepointAt(0)\lint int r3 = java.util.Arrays.binarySearch(r4.mEmojiAsDefaultStyleExceptions, r0)\l}"];
+subgraph cluster_IfRegion_1322066539 {
+label = "IF [B:14:0x0031] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0031|if (r3 \< 0) goto L15\l}"];
+subgraph cluster_Region_1637421890 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0033|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0034|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d|RETURN\lADDED_TO_REGION\l|return true\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001c}"];
+MethodNode[shape=record,label="{private boolean androidx.emoji2.text.EmojiProcessor.ProcessorSm.shouldUseEmojiPresentationStyleForSingleCodepoint((r4v0 'this' androidx.emoji2.text.EmojiProcessor$ProcessorSm A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0016 \-\> B:1:?, CROSS_EDGE: B:12:0x0020 \-\> B:1:?, CROSS_EDGE: B:15:0x0033 \-\> B:1:?, CROSS_EDGE: B:16:0x0034 \-\> B:1:?, CROSS_EDGE: B:9:0x001a \-\> B:16:0x0034\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_1;
+Node_9 -> Node_10;
+Node_9 -> Node_16[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_1;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_1;
+Node_16 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

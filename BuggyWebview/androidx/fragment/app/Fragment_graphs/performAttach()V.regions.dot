@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.fragment.app.Fragment.performAttach()V" {
+subgraph cluster_Region_1312453320 {
+label = "R(4:1|(1:4)|6|(2:(2:11|12)|(1:8)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.util.Iterator java.util.Iterator\<androidx.fragment.app.Fragment.OnPreAttachedListener\> r0 = r3.mOnPreAttachedListeners.iterator()\l}"];
+subgraph cluster_LoopRegion_27813067 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|if (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1281618359 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|LOOP_END\lLOOP:0: B:16:0x0006\-\>B:18:0x000c\l|androidx.fragment.app.Fragment$OnPreAttachedListener androidx.fragment.app.Fragment.OnPreAttachedListener r1 = r0.next()\lr1.onPreAttached()\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0016|r3.mOnPreAttachedListeners.clear()\lr3.mChildFragmentManager.attachController(r3.mHost, createFragmentContainer(), r3)\lr3.mState = 0\lr3.mCalled = false\lonAttach(r3.mHost.getContext())\l}"];
+subgraph cluster_Region_838058529 {
+label = "R(2:(2:11|12)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2111404101 {
+label = "IF [B:20:0x0036] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0036|if (r3.mCalled == false) goto L11\l}"];
+subgraph cluster_Region_872881296 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0043}"];
+Node_24 [shape=record,label="{24\:\ 0x005e|throw new androidx.fragment.app.SuperNotCalledException(\"Fragment \" + r3 + \" did not call through to super.onAttach()\")\l}"];
+}
+}
+subgraph cluster_Region_1592462392 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0038|r3.mFragmentManager.dispatchOnAttachFragment(r3)\lr3.mChildFragmentManager.dispatchAttach()\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006|LOOP_START\lLOOP:0: B:16:0x0006\-\>B:18:0x000c\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0016|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0042}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.performAttach((r3v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:18:0x000c \-\> B:16:0x0006, CROSS_EDGE: B:24:0x005e \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_25[style=dashed];
+Node_18 -> Node_16;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_14;
+Node_21 -> Node_22;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_25 -> Node_19;
+Node_22 -> Node_14;
+}
+

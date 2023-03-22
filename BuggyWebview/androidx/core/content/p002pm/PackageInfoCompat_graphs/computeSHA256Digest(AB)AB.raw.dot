@@ -1,0 +1,23 @@
+digraph "CFG forandroidx.core.content.pm.PackageInfoCompat.computeSHA256Digest([B)[B" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{NoSuchAlgorithmException \-\> 0x000b, blocks: (B:2:0x0000), top: B:7:0x0000 \}\lCatch: NoSuchAlgorithmException \-\> 0x000b\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"SHA256\" A[TRY_ENTER] (LINE:255)\l0x0002: INVOKE  (r0 I:java.security.MessageDigest) = (r0 I:java.lang.String) type: STATIC call: java.security.MessageDigest.getInstance(java.lang.String):java.security.MessageDigest A[Catch: NoSuchAlgorithmException \-\> 0x000b, MD:(java.lang.String):java.security.MessageDigest throws java.security.NoSuchAlgorithmException (c)]\l0x0006: INVOKE  (r0 I:byte[]) = (r0 I:java.security.MessageDigest), (r3 I:byte[] A[D('bytes' byte[])]) type: VIRTUAL call: java.security.MessageDigest.digest(byte[]):byte[] A[Catch: NoSuchAlgorithmException \-\> 0x000b, MD:(byte[]):byte[] (c), TRY_LEAVE]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|0x000a: RETURN  (r0 I:byte[]) \l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|ExcHandler: NoSuchAlgorithmException \-\> 0x000b\l|0x000b: MOVE_EXCEPTION  (r0 I:java.security.NoSuchAlgorithmException A[CUSTOM_DECLARE]) =  A[DONT_INLINE, ExcHandler: NoSuchAlgorithmException \-\> 0x000b] (LINE:256)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|0x000c: NEW_INSTANCE  (r1 I:java.lang.RuntimeException) =  java.lang.RuntimeException  (LINE:258)\l0x000e: CONST_STR  (r2 I:java.lang.String) =  \"Device doesn't support SHA256 cert checking\" \l0x0010: INVOKE  \l  (r1 I:java.lang.RuntimeException)\l  (r2 I:java.lang.String)\l  (r0 I:java.lang.Throwable A[D('e' java.security.NoSuchAlgorithmException)])\l type: DIRECT call: java.lang.RuntimeException.\<init\>(java.lang.String, java.lang.Throwable):void A[MD:(java.lang.String, java.lang.Throwable):void (c)]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|0x0013: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private static byte[] androidx.core.content.pm.PackageInfoCompat.computeSHA256Digest((r3 I:byte[] A[D('bytes' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x0013 \-\> B:1:?, CROSS_EDGE: B:7:0x0000 \-\> B:4:0x000b\lDebug Info:\l  0x000c\-0x0013: r0 'e' Ljava\/security\/NoSuchAlgorithmException;\l  \-1 \-0x0013: r3 'bytes' [B\lTryCatch #0 \{NoSuchAlgorithmException \-\> 0x000b, blocks: (B:2:0x0000), top: B:7:0x0000 \}\l}"];
+MethodNode -> Node_0;Node_0 -> Node_7;
+Node_7 -> Node_2;
+Node_7 -> Node_4;
+Node_2 -> Node_3;
+Node_2 -> Node_8;
+Node_3 -> Node_1;
+Node_8 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+}
+

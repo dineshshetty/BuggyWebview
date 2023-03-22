@@ -1,0 +1,74 @@
+digraph "CFG forcom.google.android.material.behavior.HideBottomViewOnScrollBehavior.slideUp(Landroid\/view\/View;Z)V" {
+subgraph cluster_Region_1606592882 {
+label = "R(1:(2:(1:3)|(4:5|(1:7)|8|(1:10)(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_86737032 {
+label = "R(2:(1:3)|(4:5|(1:7)|8|(1:10)(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_13178919 {
+label = "IF [B:17:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (isScrolledUp() != false) goto L3\l}"];
+subgraph cluster_Region_1370724108 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1546592457 {
+label = "R(4:5|(1:7)|8|(1:10)(1:12))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0007|android.view.ViewPropertyAnimator android.view.ViewPropertyAnimator r0 = r7.currentAnimator\l}"];
+subgraph cluster_IfRegion_559320832 {
+label = "IF [B:20:0x0009] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0009|if (r0 != null) goto L7\l}"];
+subgraph cluster_Region_45972708 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000b|r0.cancel()\lr8.clearAnimation()\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0011|updateCurrentState(r8, 2)\l}"];
+subgraph cluster_IfRegion_460336497 {
+label = "IF [B:23:0x0016] THEN: R(1:10) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0016|if (r9 != false) goto L10\l}"];
+subgraph cluster_Region_1116127575 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|animateChildTo(r8, 0, r7.enterAnimDuration, r7.enterAnimInterpolator)\l}"];
+}
+subgraph cluster_Region_172421376 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0024|r8.setTranslationY(0)\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0028|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.behavior.HideBottomViewOnScrollBehavior.slideUp((r7v0 'this' com.google.android.material.behavior.HideBottomViewOnScrollBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.behavior.HideBottomViewOnScrollBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r8v0 'child' V extends android.view.View A[D('child' V extends android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'animate' boolean A[D('animate' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0028 \-\> B:15:?, CROSS_EDGE: B:25:0x0024 \-\> B:26:0x0028, CROSS_EDGE: B:20:0x0009 \-\> B:22:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\lSIGNATURE: (TV;Z)V\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_27;
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_27 -> Node_15;
+Node_26 -> Node_15;
+}
+

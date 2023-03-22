@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.Style.setBuilder(Landroidx\/core\/app\/NotificationCompat$Builder;)V" {
+subgraph cluster_Region_696593215 {
+label = "R(1:(1:(2:3|(1:(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1806081882 {
+label = "R(1:(2:3|(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_852531460 {
+label = "IF [B:13:0x0002] THEN: R(2:3|(1:(1:5))) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r1.mBuilder != r2) goto L3\l}"];
+subgraph cluster_Region_2117827706 {
+label = "R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|r1.mBuilder = r2\l}"];
+subgraph cluster_Region_2120711249 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_560230536 {
+label = "IF [B:15:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r2 != null) goto L5\l}"];
+subgraph cluster_Region_390776089 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|r2.setStyle(r1)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000b|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.core.app.NotificationCompat.Style.setBuilder((r1v0 'this' androidx.core.app.NotificationCompat$Style A[IMMUTABLE_TYPE, THIS]), (r2v0 'builder' androidx.core.app.NotificationCompat$Builder A[D('builder' androidx.core.app.NotificationCompat$Builder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0006 \-\> B:17:0x000b, CROSS_EDGE: B:13:0x0002 \-\> B:17:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_18 -> Node_11;
+}
+

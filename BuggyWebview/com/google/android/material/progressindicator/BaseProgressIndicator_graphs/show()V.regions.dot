@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.material.progressindicator.BaseProgressIndicator.show()V" {
+subgraph cluster_Region_1164939097 {
+label = "R(1:(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1172052563 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_623870140 {
+label = "IF [B:3:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r3.showDelay \> 0) goto L3\l}"];
+subgraph cluster_Region_768686570 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|removeCallbacks(r3.delayedShow)\lpostDelayed(r3.delayedShow, r3.showDelay)\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_343768654 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|r3.delayedShow.run()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.progressindicator.BaseProgressIndicator.show((r3v0 'this' com.google.android.material.progressindicator.BaseProgressIndicator\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\> A[D('this' com.google.android.material.progressindicator.BaseProgressIndicator\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0012 \-\> B:6:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_7 -> Node_1;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_1;
+}
+

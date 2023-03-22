@@ -1,0 +1,95 @@
+digraph "CFG forandroidx.recyclerview.widget.GapWorker.LayoutPrefetchRegistryImpl.addPosition(II)V" {
+subgraph cluster_Region_1210629088 {
+label = "R(1:(2:(1:15)|(1:(2:(1:13)|(3:3|(1:5)(1:(1:11))|6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1440143272 {
+label = "R(2:(1:15)|(1:(2:(1:13)|(3:3|(1:5)(1:(1:11))|6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1795324176 {
+label = "IF [B:2:0x0000] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r6 \< 0) goto L14\l}"];
+subgraph cluster_Region_665626480 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0044|throw new java.lang.IllegalArgumentException(\"Layout positions must be non\-negative\")\l}"];
+}
+}
+subgraph cluster_Region_710340574 {
+label = "R(1:(2:(1:13)|(3:3|(1:5)(1:(1:11))|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1239291563 {
+label = "R(2:(1:13)|(3:3|(1:5)(1:(1:11))|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_837565561 {
+label = "IF [B:3:0x0002] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r7 \< 0) goto L12\l}"];
+subgraph cluster_Region_1933150739 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003c|throw new java.lang.IllegalArgumentException(\"Pixel distance must be non\-negative\")\l}"];
+}
+}
+subgraph cluster_Region_27186136 {
+label = "R(3:3|(1:5)(1:(1:11))|6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|int int r0 = r5.mCount * 2\lint[] int[] r1 = r5.mPrefetchArray\l}"];
+subgraph cluster_IfRegion_327024888 {
+label = "IF [B:5:0x000a] THEN: R(1:5) ELSE: R(1:(1:11))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|if (r1 == null) goto L5\l}"];
+subgraph cluster_Region_1686704476 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|int[] int[] r1 = new int[4]\lr5.mPrefetchArray = r1\ljava.util.Arrays.fill(r1, \-1)\l}"];
+}
+subgraph cluster_Region_1854714805 {
+label = "R(1:(1:11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1350646633 {
+label = "IF [B:8:0x0017] THEN: R(1:11) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|if (r0 \>= r1.length) goto L11\l}"];
+subgraph cluster_Region_1168196150 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0019|int[] int[] r1 = r5.mPrefetchArray\lint[] int[] r2 = new int[r0 * 2]\lr5.mPrefetchArray = r2\ljava.lang.System.arraycopy(r1, 0, r2, 0, r1.length)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0026|int[] int[] r1 = r5.mPrefetchArray\lr1[r0] = r6\lr1[r0 + 1] = r7\lr5.mCount++\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0034}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0035}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003d}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.GapWorker.LayoutPrefetchRegistryImpl.addPosition((r5v0 'this' androidx.recyclerview.widget.GapWorker$LayoutPrefetchRegistryImpl A[IMMUTABLE_TYPE, THIS]), (r6v0 'layoutPosition' int A[D('layoutPosition' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'pixelDistance' int A[D('pixelDistance' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0019 \-\> B:10:0x0026, CROSS_EDGE: B:8:0x0017 \-\> B:10:0x0026, CROSS_EDGE: B:13:0x003c \-\> B:1:?, CROSS_EDGE: B:15:0x0044 \-\> B:1:?\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.RecyclerView.LayoutManager.LayoutPrefetchRegistry.addPosition(int, int):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_14;
+Node_15 -> Node_1;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_13 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_11 -> Node_1;
+Node_7 -> Node_8;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

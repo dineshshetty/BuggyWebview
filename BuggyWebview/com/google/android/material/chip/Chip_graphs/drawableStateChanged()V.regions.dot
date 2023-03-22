@@ -1,0 +1,52 @@
+digraph "CFG forcom.google.android.material.chip.Chip.drawableStateChanged()V" {
+subgraph cluster_Region_2006858967 {
+label = "R(3:1|(1:5)|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|super.drawableStateChanged()\lboolean r0 = false\lcom.google.android.material.chip.ChipDrawable com.google.android.material.chip.ChipDrawable r1 = r3.chipDrawable\l}"];
+subgraph cluster_IfRegion_1092971923 {
+label = "IF [B:14:0x0006, B:16:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|if (r1 != null) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000c|ADDED_TO_REGION\l|if (r1.isCloseIconStateful() != false) goto L5\l}"];
+subgraph cluster_Region_831546959 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|boolean r0 = r3.chipDrawable.setCloseIconState(createCloseIconDrawableState())\l}"];
+}
+}
+subgraph cluster_Region_1526892993 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1463574540 {
+label = "IF [B:18:0x0018] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0018|PHI: r0 \l  PHI: (r0v1 'changed' boolean) = (r0v0 'changed' boolean), (r0v0 'changed' boolean), (r0v2 'changed' boolean) binds: [B:14:0x0006, B:16:0x000c, B:17:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != false) goto L7\l}"];
+subgraph cluster_Region_365532456 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001a|invalidate()\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0008}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001d|ORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.chip.Chip.drawableStateChanged((r3v0 'this' com.google.android.material.chip.Chip A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:18:0x0018 \-\> B:20:0x001d, CROSS_EDGE: B:16:0x000c \-\> B:18:0x0018, CROSS_EDGE: B:14:0x0006 \-\> B:18:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: protected\}\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.drawableStateChanged():void\}]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_20 -> Node_12;
+Node_21 -> Node_12;
+}
+

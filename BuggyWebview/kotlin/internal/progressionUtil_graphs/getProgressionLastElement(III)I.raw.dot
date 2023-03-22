@@ -1,0 +1,35 @@
+digraph "CFG forkotlin.internal.ProgressionUtilKt.getProgressionLastElement(III)I" {
+Node_15 [shape=record,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0001|0x0001: IF  (r4 I:??[int, byte, short, char] A[D('step' int)]) \<= (0 ??[int, byte, short, char])  \-\> B:21:0x000d  (LINE:46)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0003|0x0003: IF  (r2 I:??[int, byte, short, char] A[D('start' int)]) \< (r3 I:??[int, byte, short, char] A[D('end' int)])  \-\> B:20:0x0006 \l}"];
+Node_20 [shape=record,label="{20\:\ 0x0006|0x0006: INVOKE  (r0 I:int) = (r3 I:int A[D('end' int)]), (r2 I:int A[D('start' int)]), (r4 I:int A[D('step' int)]) type: STATIC call: kotlin.internal.ProgressionUtilKt.differenceModulo(int, int, int):int A[MD:(int, int, int):int (m)]\l0x000a: ARITH  (r0 I:int) = (r3 I:int A[D('end' int)]) \- (r0 I:int) \l}"];
+Node_28 [shape=record,label="{28\:\ ?|SYNTHETIC\lRETURN\l|0x0019: RETURN  (r0 I:int) A[SYNTHETIC] (LINE:49)\l}"];
+Node_16 [shape=record,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0011|0x0011: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('end' int)])  (LINE:49)\l}"];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|0x0019: RETURN  (r0 I:int) A[SYNTHETIC] (LINE:49)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000d|0x000d: IF  (r4 I:??[int, byte, short, char] A[D('step' int)]) \>= (0 ??[int, byte, short, char])  \-\> B:26:0x001a  (LINE:47)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000f|0x000f: IF  (r2 I:??[int, byte, short, char] A[D('start' int)]) \> (r3 I:??[int, byte, short, char] A[D('end' int)])  \-\> B:24:0x0013 \l}"];
+Node_24 [shape=record,label="{24\:\ 0x0013|0x0013: NEG  (r0 I:int) = (r4 I:int A[D('step' int)])  (LINE:47)\l0x0014: INVOKE  (r0 I:int) = (r2 I:int A[D('start' int)]), (r3 I:int A[D('end' int)]), (r0 I:int) type: STATIC call: kotlin.internal.ProgressionUtilKt.differenceModulo(int, int, int):int A[MD:(int, int, int):int (m)]\l0x0018: ARITH  (r0 I:int) = (r0 I:int) + (r3 I:int A[D('end' int)]) \l}"];
+Node_25 [shape=record,label="{25\:\ 0x0019|RETURN\lORIG_RETURN\l|0x0019: RETURN  (r0 I:int)  (LINE:49)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001a|0x001a: NEW_INSTANCE  (r0 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException  (LINE:48)\l0x001c: CONST_STR  (r1 I:java.lang.String) =  \"Step is zero.\" \l0x001e: INVOKE  (r0 I:java.lang.IllegalArgumentException), (r1 I:java.lang.String) type: DIRECT call: java.lang.IllegalArgumentException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0021|0x0021: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static final int kotlin.internal.ProgressionUtilKt.getProgressionLastElement((r2 I:int A[D('start' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:int A[D('end' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:int A[D('step' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0011 \-\> B:25:0x0019, CROSS_EDGE: B:22:0x000f \-\> B:23:0x0011, CROSS_EDGE: B:24:0x0013 \-\> B:25:0x0019, CROSS_EDGE: B:27:0x0021 \-\> B:16:?\lINLINE_NOT_NEEDED\lDebug Info:\l  \-1 \-0x0021: r2 'start' I\l  \-1 \-0x0021: r3 'end' I\l  \-1 \-0x0021: r4 'step' I\l}"];
+MethodNode -> Node_15;Node_15 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_18 -> Node_20;
+Node_18 -> Node_23[style=dashed];
+Node_20 -> Node_28;
+Node_28 -> Node_16;
+Node_23 -> Node_29;
+Node_29 -> Node_16;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_26;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_16;
+Node_26 -> Node_27;
+Node_27 -> Node_16;
+}
+

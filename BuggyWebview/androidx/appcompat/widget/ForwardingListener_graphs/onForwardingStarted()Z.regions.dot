@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.appcompat.widget.ForwardingListener.onForwardingStarted()Z" {
+subgraph cluster_Region_1956460705 {
+label = "R(2:1|(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|androidx.appcompat.view.menu.ShowableListMenu androidx.appcompat.view.menu.ShowableListMenu r0 = getPopup()\l}"];
+subgraph cluster_Region_1850794867 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_649946062 {
+label = "IF [B:14:0x0004, B:16:0x000a] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (r0 != null) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000a|ADDED_TO_REGION\l|if (r0.isShowing() == false) goto L5\l}"];
+subgraph cluster_Region_529962478 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|r0.show()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000f|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_940685218 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return true\l}"];
+MethodNode[shape=record,label="{protected boolean androidx.appcompat.widget.ForwardingListener.onForwardingStarted((r2v0 'this' androidx.appcompat.widget.ForwardingListener A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000a \-\> B:18:0x000f, CROSS_EDGE: B:14:0x0004 \-\> B:18:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.widget.ForwardingListener.onForwardingStarted():boolean]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_20 -> Node_12;
+}
+

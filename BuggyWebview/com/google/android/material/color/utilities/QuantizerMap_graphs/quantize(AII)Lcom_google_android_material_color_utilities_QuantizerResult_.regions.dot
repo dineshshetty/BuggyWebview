@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.material.color.utilities.QuantizerMap.quantize([II)Lcom\/google\/android\/material\/color\/utilities\/QuantizerResult;" {
+subgraph cluster_Region_402340465 {
+label = "R(4:1|(3:3|(1:5)(0)|7)|10|11)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|java.util.HashMap java.util.HashMap\<java.lang.Integer, java.lang.Integer\> r0 = new java.util.HashMap\<\>()\lint r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_1269240395 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|LOOP_START\lLOOP:0: B:17:0x0007\-\>B:22:0x001e\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:16:0x0000, B:22:0x001e] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_1462757384 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0009|r3 = r9[r2]\ljava.lang.Integer java.lang.Integer r4 = r0.get(java.lang.Integer.valueOf(r3))\lint r5 = 1\l}"];
+subgraph cluster_IfRegion_609046772 {
+label = "IF [B:19:0x0016] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0016|if (r4 != null) goto L5\l}"];
+subgraph cluster_Region_1661103188 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0019|int r5 = 1 + r4.intValue()\l}"];
+}
+subgraph cluster_Region_1001895847 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001e|LOOP_END\lLOOP:0: B:17:0x0007\-\>B:22:0x001e\lPHI: r5 \l  PHI: (r5v1 'newPixelCount' int) = (r5v0 'newPixelCount' int), (r5v2 'newPixelCount' int) binds: [B:27:0x001e, B:26:0x001e] A[DONT_GENERATE, DONT_INLINE]\l|r0.put(java.lang.Integer.valueOf(r3), java.lang.Integer.valueOf(r5))\lr2++\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x002c|r8.colorToCount = r0\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0033|RETURN\l|return new com.google.android.material.color.utilities.QuantizerResult(r0)\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001e|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001e|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002c|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public com.google.android.material.color.utilities.QuantizerResult com.google.android.material.color.utilities.QuantizerMap.quantize((r8v0 'this' com.google.android.material.color.utilities.QuantizerMap A[IMMUTABLE_TYPE, THIS]), (r9v0 'pixels' int[] A[D('pixels' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'colorCount' int A[D('colorCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x001e \-\> B:17:0x0007, CROSS_EDGE: B:19:0x0016 \-\> B:22:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [com.google.android.material.color.utilities.Quantizer.quantize(int[], int):com.google.android.material.color.utilities.QuantizerResult]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_25[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_21;
+Node_19 -> Node_27[style=dashed];
+Node_21 -> Node_26;
+Node_22 -> Node_17;
+Node_23 -> Node_24;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_26 -> Node_22;
+Node_27 -> Node_22;
+Node_25 -> Node_23;
+}
+

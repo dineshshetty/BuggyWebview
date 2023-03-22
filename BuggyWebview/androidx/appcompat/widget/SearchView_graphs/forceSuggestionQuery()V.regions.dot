@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.appcompat.widget.SearchView.forceSuggestionQuery()V" {
+subgraph cluster_Region_1309825858 {
+label = "R(1:(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1282758939 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_538259349 {
+label = "IF [B:11:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L3\l}"];
+subgraph cluster_Region_1585875415 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|androidx.appcompat.widget.SearchView.Api29Impl.refreshAutoCompleteResults(r2.mSearchSrcTextView)\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_355155943 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000c|androidx.appcompat.widget.SearchView$PreQAutoCompleteTextViewReflector androidx.appcompat.widget.SearchView.PreQAutoCompleteTextViewReflector r0 = androidx.appcompat.widget.SearchView.PRE_API_29_HIDDEN_METHOD_INVOKER\lr0.doBeforeTextChanged(r2.mSearchSrcTextView)\lr0.doAfterTextChanged(r2.mSearchSrcTextView)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0018|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.widget.SearchView.forceSuggestionQuery((r2v0 'this' androidx.appcompat.widget.SearchView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000c \-\> B:14:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_14 -> Node_9;
+}
+

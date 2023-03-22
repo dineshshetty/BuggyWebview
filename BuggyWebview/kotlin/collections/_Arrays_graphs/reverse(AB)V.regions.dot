@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.reverse([B)V" {
+subgraph cluster_Region_413433950 {
+label = "R(2:1|(2:(1:3)|(2:5|(1:8))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lint int r0 = (r6.length \/ 2) \- 1\l}"];
+subgraph cluster_Region_1451778962 {
+label = "R(2:(1:3)|(2:5|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_344734458 {
+label = "IF [B:14:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|if (r0 \< 0) goto L3\l}"];
+subgraph cluster_Region_232182965 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_212000503 {
+label = "R(2:5|(1:8))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000d|int int r1 = kotlin.collections.ArraysKt.getLastIndex(r6)\lkotlin.collections.IntIterator ?? r2 = new kotlin.ranges.IntRange(0, r0).iterator()\l}"];
+subgraph cluster_LoopRegion_488711220 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001f|if (r2.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_565966381 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0021|LOOP_END\lLOOP:0: B:17:0x001b\-\>B:19:0x0021\l|int int r3 = r2.nextInt()\lbyte byte r4 = r6[r3]\lr6[r3] = r6[r1]\lr6[r1] = r4\lr1\-\-\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001b|LOOP_START\lLOOP:0: B:17:0x001b\-\>B:19:0x0021\lPHI: r1 \l  PHI: (r1v1 'reverseIndex' int) = (r1v0 'reverseIndex' int), (r1v2 'reverseIndex' int) binds: [B:16:0x000d, B:19:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0031|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0031}"];
+MethodNode[shape=record,label="{public static final void kotlin.collections.ArraysKt___ArraysKt.reverse((r6v0 '$this$reverse' byte[] A[D('$this$reverse' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0021 \-\> B:17:0x001b, CROSS_EDGE: B:20:0x0031 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r2v1, types: [kotlin.collections.IntIterator]\}\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_17;
+Node_11 -> Node_13;
+Node_17 -> Node_18;
+Node_21 -> Node_20;
+Node_20 -> Node_12;
+}
+

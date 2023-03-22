@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.Recycler.tryBindViewHolderByDeadline(Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;IIJ)Z" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000|r10.mOwnerRecyclerView = androidx.recyclerview.widget.RecyclerView.this\lint r0 = r10.getItemViewType()\llong r7 = androidx.recyclerview.widget.RecyclerView.this.getNanoTime()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0015|if ((r13 \> Long.MAX_VALUE ? 1 : (r13 == Long.MAX_VALUE ? 0 : \-1)) == 0) goto L7\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0017}"];
+Node_19 [shape=record,label="{19\:\ 0x0020|if (r9.mRecyclerPool.willBindInTime(r0, r7, r13) != false) goto L7\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0022|RETURN\l|return false\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0024|androidx.recyclerview.widget.RecyclerView.this.mAdapter.bindViewHolder(r10, r11)\llong r1 = androidx.recyclerview.widget.RecyclerView.this.getNanoTime()\lr9.mRecyclerPool.factorInBindTime(r10.getItemViewType(), r1 \- r7)\lattachAccessibilityDelegateOnBind(r10)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0047|if (androidx.recyclerview.widget.RecyclerView.this.mState.isPreLayout() == false) goto L11\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0049|r10.mPreLayoutPosition = r12\l}"];
+Node_25 [shape=record,label="{25\:\ 0x004b|RETURN\lORIG_RETURN\l|return true\l}"];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+MethodNode[shape=record,label="{private boolean androidx.recyclerview.widget.RecyclerView.Recycler.tryBindViewHolderByDeadline((r9v0 'this' androidx.recyclerview.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, THIS]), (r10v0 'holder' androidx.recyclerview.widget.RecyclerView$ViewHolder A[D('holder' androidx.recyclerview.widget.RecyclerView$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'offsetPosition' int A[D('offsetPosition' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'deadlineNs' long A[D('deadlineNs' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x004c \-\> B:15:?, CROSS_EDGE: B:23:0x0047 \-\> B:25:0x004b, CROSS_EDGE: B:17:0x0015 \-\> B:22:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_22;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_22;
+Node_20 -> Node_15;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_27;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_27 -> Node_15;
+}
+

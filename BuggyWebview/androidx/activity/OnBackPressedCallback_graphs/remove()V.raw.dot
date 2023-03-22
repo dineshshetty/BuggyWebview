@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.activity.OnBackPressedCallback.remove()V" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: IGET  (r0 I:java.util.concurrent.CopyOnWriteArrayList\<androidx.activity.Cancellable\>) = (r2 I:androidx.activity.OnBackPressedCallback) androidx.activity.OnBackPressedCallback.mCancellables java.util.concurrent.CopyOnWriteArrayList  (LINE:91)\l0x0002: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.concurrent.CopyOnWriteArrayList) type: VIRTUAL call: java.util.concurrent.CopyOnWriteArrayList.iterator():java.util.Iterator A[MD:():java.util.Iterator\<E\> (c)]\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0006|LOOP_START\lLOOP:0: B:11:0x0006\-\>B:13:0x000c\l|0x0006: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000a|0x000a: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:15:0x0016 \l}"];
+Node_13 [shape=record,label="{13\:\ 0x000c|LOOP_END\lLOOP:0: B:11:0x0006\-\>B:13:0x000c\l|0x000c: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x0010: CHECK_CAST (r1 I:androidx.activity.Cancellable) = (androidx.activity.Cancellable) (r1 I:??[OBJECT, ARRAY]) \l0x0012: INVOKE  (r1 I:androidx.activity.Cancellable A[D('cancellable' androidx.activity.Cancellable)]) type: INTERFACE call: androidx.activity.Cancellable.cancel():void A[MD:():void (m)] (LINE:92)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0016|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0016|RETURN\l|0x0016: RETURN    (LINE:94)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final void androidx.activity.OnBackPressedCallback.remove((r2 'this' I:androidx.activity.OnBackPressedCallback A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x000c \-\> B:11:0x0006\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0012\-0x0015: r1 'cancellable' Landroidx\/activity\/Cancellable;\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_11;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

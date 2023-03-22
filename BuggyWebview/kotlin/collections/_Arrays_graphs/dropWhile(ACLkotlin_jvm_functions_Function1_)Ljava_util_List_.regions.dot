@@ -1,0 +1,76 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.dropWhile([CLkotlin\/jvm\/functions\/Function1;)Ljava\/util\/List;" {
+subgraph cluster_Region_930871871 {
+label = "R(3:1|(3:3|(1:5)(1:(1:10)(0))|7)|15)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"predicate\")\lboolean r1 = false\ljava.util.ArrayList java.util.ArrayList r2 = new java.util.ArrayList()\lint r4 = 0\l\l}"];
+subgraph cluster_LoopRegion_31298150 {
+label = "LOOP:0: (3:3|(1:5)(1:(1:10)(0))|7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0013|LOOP_START\lLOOP:0: B:20:0x0013\-\>B:27:0x0039\lPHI: r1 r4 \l  PHI: (r1v1 'yielding' boolean) = (r1v0 'yielding' boolean), (r1v3 'yielding' boolean) binds: [B:19:0x0000, B:27:0x0039] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:19:0x0000, B:27:0x0039] A[DONT_GENERATE, DONT_INLINE]\l|char \lif (r4 \< r3) goto L3\l}"];
+subgraph cluster_Region_1438379361 {
+label = "R(3:3|(1:5)(1:(1:10)(0))|7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|char r5 = r7[r4]\l}"];
+subgraph cluster_IfRegion_249857664 {
+label = "IF [B:22:0x0017] THEN: R(1:5) ELSE: R(1:(1:10)(0))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0017|if (r1 != false) goto L5\l}"];
+subgraph cluster_Region_1031361267 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0019|r2.add(java.lang.Character.valueOf(r5))\l}"];
+}
+subgraph cluster_Region_2146362799 {
+label = "R(1:(1:10)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2043266626 {
+label = "IF [B:25:0x002f] THEN: R(1:10) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002f|if (r8.invoke(java.lang.Character.valueOf(r5)).booleanValue() == false) goto L10\l}"];
+subgraph cluster_Region_1151495504 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0031|r2.add(java.lang.Character.valueOf(r5))\lr1 = true\l}"];
+}
+subgraph cluster_Region_350881632 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0039|LOOP_END\lLOOP:0: B:20:0x0013\-\>B:27:0x0039\lPHI: r1 \l  PHI: (r1v3 'yielding' boolean) = (r1v1 'yielding' boolean), (r1v2 'yielding' boolean), (r1v1 'yielding' boolean) binds: [B:33:0x0039, B:31:0x0039, B:32:0x0039] A[DONT_GENERATE, DONT_INLINE]\l|r4++\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x003f|RETURN\l|return r2\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0039|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0021}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0039|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0039|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x003c|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x003c}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<java.lang.Character\> kotlin.collections.ArraysKt___ArraysKt.dropWhile((r7v0 '$this$dropWhile' char[] A[D('$this$dropWhile' char[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Character, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:27:0x0039 \-\> B:20:0x0013, CROSS_EDGE: B:26:0x0031 \-\> B:27:0x0039, CROSS_EDGE: B:25:0x002f \-\> B:27:0x0039\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([CLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;Ljava\/lang\/Boolean;\>;)Ljava\/util\/List\<Ljava\/lang\/Character;\>;\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_30[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_32;
+Node_25 -> Node_26;
+Node_25 -> Node_33[style=dashed];
+Node_26 -> Node_31;
+Node_27 -> Node_20;
+Node_29 -> Node_18;
+Node_17 -> Node_19;
+Node_32 -> Node_27;
+Node_24 -> Node_25;
+Node_31 -> Node_27;
+Node_33 -> Node_27;
+Node_30 -> Node_28;
+Node_28 -> Node_29;
+}
+

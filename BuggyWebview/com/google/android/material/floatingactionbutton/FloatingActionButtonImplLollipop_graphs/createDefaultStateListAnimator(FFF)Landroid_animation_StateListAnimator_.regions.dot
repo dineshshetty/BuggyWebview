@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop.createDefaultStateListAnimator(FFF)Landroid\/animation\/StateListAnimator;" {
+subgraph cluster_Region_332805173 {
+label = "R(4:1|(1:5)|6|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.animation.StateListAnimator android.animation.StateListAnimator r0 = new android.animation.StateListAnimator()\lr0.addState(com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop.PRESSED_ENABLED_STATE_SET, createElevationAnimator(r12, r14))\lr0.addState(com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop.HOVERED_FOCUSED_ENABLED_STATE_SET, createElevationAnimator(r12, r13))\lr0.addState(com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop.FOCUSED_ENABLED_STATE_SET, createElevationAnimator(r12, r13))\lr0.addState(com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop.HOVERED_ENABLED_STATE_SET, createElevationAnimator(r12, r13))\landroid.animation.AnimatorSet android.animation.AnimatorSet r1 = new android.animation.AnimatorSet()\ljava.util.ArrayList java.util.List\<android.animation.Animator\> r2 = new java.util.ArrayList\<\>()\lr2.add(android.animation.ObjectAnimator.ofFloat(r11.view, \"elevation\", r12).setDuration(0L))\l}"];
+subgraph cluster_IfRegion_348680516 {
+label = "IF [B:3:0x0050, B:5:0x0056] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0050|if (android.os.Build.VERSION.SDK_INT \>= 22) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0056|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \<= 24) goto L5\l}"];
+subgraph cluster_Region_197167344 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0058|r2.add(android.animation.ObjectAnimator.ofFloat(r11.view, android.view.View.TRANSLATION_Z, r11.view.getTranslationZ()).setDuration(100L))\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0071|r2.add(android.animation.ObjectAnimator.ofFloat(r11.view, android.view.View.TRANSLATION_Z, 0.0f).setDuration(100L))\lr1.playSequentially((android.animation.Animator[]) r2.toArray(new android.animation.Animator[0]))\lr1.setInterpolator(com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop.ELEVATION_ANIM_INTERPOLATOR)\lr0.addState(com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop.ENABLED_STATE_SET, r1)\lr0.addState(com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop.EMPTY_STATE_SET, createElevationAnimator(0.0f, 0.0f))\l}"];
+Node_8 [shape=record,label="{8\:\ 0x00a3|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0052}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.animation.StateListAnimator com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop.createDefaultStateListAnimator((r11v0 'this' com.google.android.material.floatingactionbutton.FloatingActionButtonImplLollipop A[IMMUTABLE_TYPE, THIS]), (r12v0 'elevation' float A[D('elevation' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'hoveredFocusedTranslationZ' float A[D('hoveredFocusedTranslationZ' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'pressedTranslationZ' float A[D('pressedTranslationZ' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0056 \-\> B:7:0x0071, CROSS_EDGE: B:3:0x0050 \-\> B:7:0x0071\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+}
+

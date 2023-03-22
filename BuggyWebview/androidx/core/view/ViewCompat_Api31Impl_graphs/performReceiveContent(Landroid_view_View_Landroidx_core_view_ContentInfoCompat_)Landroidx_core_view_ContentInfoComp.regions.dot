@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.core.view.ViewCompat.Api31Impl.performReceiveContent(Landroid\/view\/View;Landroidx\/core\/view\/ContentInfoCompat;)Landroidx\/core\/view\/ContentInfoCompat;" {
+subgraph cluster_Region_1112407661 {
+label = "R(2:1|(2:(1:3)|(1:(2:(1:6)|(1:8)))))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|android.view.ContentInfo android.view.ContentInfo r0 = r4.toContentInfo()\landroid.view.ContentInfo android.view.ContentInfo r1 = r3.performReceiveContent(r0)\l}"];
+subgraph cluster_Region_258688515 {
+label = "R(2:(1:3)|(1:(2:(1:6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2084173532 {
+label = "IF [B:13:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_520295791 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1434295365 {
+label = "R(1:(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_943111043 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1478331928 {
+label = "IF [B:16:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000c|if (r1 == r0) goto L6\l}"];
+subgraph cluster_Region_1840822744 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_2041383796 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0013|RETURN\l|return androidx.core.view.ContentInfoCompat.toContentInfoCompat(r1)\l}"];
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000f}"];
+MethodNode[shape=record,label="{public static androidx.core.view.ContentInfoCompat androidx.core.view.ViewCompat.Api31Impl.performReceiveContent((r3v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'payload' androidx.core.view.ContentInfoCompat A[D('payload' androidx.core.view.ContentInfoCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000e \-\> B:11:?, CROSS_EDGE: B:19:0x0013 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_16[style=dashed];
+Node_14 -> Node_11;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_18 -> Node_19;
+}
+

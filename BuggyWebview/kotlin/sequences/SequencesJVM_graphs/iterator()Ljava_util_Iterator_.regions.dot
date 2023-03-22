@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.sequences.ConstrainedOnceSequence.iterator()Ljava\/util\/Iterator;" {
+subgraph cluster_Region_65636412 {
+label = "R(2:1|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.sequences.Sequence kotlin.sequences.Sequence r0 = r2.sequenceRef.getAndSet(null)\l}"];
+subgraph cluster_Region_1179575626 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_540834634 {
+label = "IF [B:11:0x0009] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0009|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_99299554 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0017|throw new java.lang.IllegalStateException(\"This sequence can be consumed only once.\")\l}"];
+}
+}
+subgraph cluster_Region_1713482283 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|RETURN\l|return r0.iterator()\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000b}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0010}"];
+MethodNode[shape=record,label="{public java.util.Iterator\<T\> kotlin.sequences.ConstrainedOnceSequence.iterator((r2v0 'this' kotlin.sequences.ConstrainedOnceSequence\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0017 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: ()Ljava\/util\/Iterator\<TT;\>;\lMETHOD_OVERRIDE: [kotlin.sequences.Sequence.iterator():java.util.Iterator\<T\>]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

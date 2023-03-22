@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.loader.app.LoaderManagerImpl.LoaderInfo.dump(Ljava\/lang\/String;Ljava\/io\/FileDescriptor;Ljava\/io\/PrintWriter;[Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1898187006 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|r6.print(r4)\lr6.print(\"mId=\")\lr6.print(r3.mId)\lr6.print(\" mArgs=\")\lr6.println(r3.mArgs)\lr6.print(r4)\lr6.print(\"mLoader=\")\lr6.println(r3.mLoader)\landroidx.loader.content.Loader\<D\> androidx.loader.content.Loader\<D\> r0 = r3.mLoader\lr0.dump(r4 + \"  \", r5, r6, r7)\l}"];
+subgraph cluster_IfRegion_300158037 {
+label = "IF [B:10:0x003c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003c|if (r3.mObserver != null) goto L3\l}"];
+subgraph cluster_Region_206563259 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003e|r6.print(r4)\lr6.print(\"mCallbacks=\")\lr6.println(r3.mObserver)\landroidx.loader.app.LoaderManagerImpl$LoaderObserver\<D\> androidx.loader.app.LoaderManagerImpl.LoaderObserver\<D\> r0 = r3.mObserver\lr0.dump(r4 + \"  \", r6)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x005f|r6.print(r4)\lr6.print(\"mData=\")\lr6.println(getLoader().dataToString(getValue()))\lr6.print(r4)\lr6.print(\"mStarted=\")\lr6.println(hasActiveObservers())\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0085}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.loader.app.LoaderManagerImpl.LoaderInfo.dump((r3v0 'this' androidx.loader.app.LoaderManagerImpl$LoaderInfo\<D\> A[D('this' androidx.loader.app.LoaderManagerImpl$LoaderInfo\<D\>), IMMUTABLE_TYPE, THIS]), (r4v0 'prefix' java.lang.String A[D('prefix' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'fd' java.io.FileDescriptor A[D('fd' java.io.FileDescriptor), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'writer' java.io.PrintWriter A[D('writer' java.io.PrintWriter), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'args' java.lang.String[] A[D('args' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x003c \-\> B:12:0x005f\lINLINE_NOT_NEEDED\lTYPE_VARS: [D]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

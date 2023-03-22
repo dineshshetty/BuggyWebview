@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.io.FilesKt__FileReadWriteKt.readText(Ljava\/io\/File;Ljava\/nio\/charset\/Charset;)Ljava\/lang\/String;" {
+subgraph cluster_Region_627722988 {
+label = "R(2:1|(3:3|4|5))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"charset\")\ljava.io.Closeable java.io.InputStreamReader r0 = new java.io.InputStreamReader(new java.io.FileInputStream(r4), r5)\l}"];
+subgraph cluster_TryCatchRegion_408112231 {
+label = "Try: R(3:3|4|5) finally: R(1:8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_355453805 {
+label = "R(3:3|4|5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0018|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0028, blocks: (B:18:0x0018), top: B:26:0x0018 \}\lCatch: all \-\> 0x0028\l|java.io.InputStreamReader java.io.InputStreamReader r1 = r0     \/\/ Catch: java.lang.Throwable \-\> L28\ljava.lang.String java.lang.String r3 = kotlin.p004io.TextStreamsKt.readText(r1)     \/\/ Catch: java.lang.Throwable \-\> L28\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0023|kotlin.p004io.Closeable.closeFinally(r0, null)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0027|RETURN\l|return r3\l}"];
+}
+subgraph cluster_Region_814185860 {
+label = "R(1:8) | ExcHandler: all \-\> 0x0028\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0028|ExcHandler: all \-\> 0x0028\l}"];
+}
+}
+}
+subgraph cluster_Region_814185860 {
+label = "R(1:8) | ExcHandler: all \-\> 0x0028\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0028|ExcHandler: all \-\> 0x0028\l}"];
+}
+subgraph cluster_Region_237458687 {
+label = "R(3:12|13|14) | ExcHandler: all \-\> 0x002a\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002a|DONT_GENERATE\lFINALLY_INSNS\lExcHandler: all \-\> 0x002a\l|java.lang.Throwable r2 = move\-exception\l}"];
+Node_24 [shape=record,label="{24\:\ 0x002b|DONT_GENERATE\lFINALLY_INSNS\l|kotlin.p004io.Closeable.closeFinally(r0, r1)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x002e|DONT_GENERATE\lFINALLY_INSNS\l|throw r2\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0018|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0029|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0029|TRY_ENTER\lTRY_LEAVE\lDONT_GENERATE\lFINALLY_INSNS\lTryCatch #1 \{all \-\> 0x002a, blocks: (B:22:0x0029), top: B:28:0x0029 \}\lCatch: all \-\> 0x002a\l|throw r1     \/\/ Catch: java.lang.Throwable \-\> L2a\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.io.FilesKt__FileReadWriteKt.readText((r4v0 '$this$readText' java.io.File A[D('$this$readText' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'charset' java.nio.charset.Charset A[D('charset' java.nio.charset.Charset), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0029 \-\> B:16:?, CROSS_EDGE: B:25:0x002e \-\> B:16:?, CROSS_EDGE: B:28:0x0029 \-\> B:23:0x002a, CROSS_EDGE: B:26:0x0018 \-\> B:21:0x0028\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0028, blocks: (B:18:0x0018), top: B:26:0x0018 \}, TryCatch #1 \{all \-\> 0x002a, blocks: (B:22:0x0029), top: B:28:0x0029 \}\lJadxCommentsAttr\{\l DEBUG: \l \-\> Finally have unexpected throw blocks count: 2, expect 1\}\l}"];
+MethodNode -> Node_15;Node_17 -> Node_26;
+Node_18 -> Node_19;
+Node_18 -> Node_27;
+Node_19 -> Node_20;
+Node_20 -> Node_16;
+Node_21 -> Node_28;
+Node_21 -> Node_28;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_16;
+Node_15 -> Node_17;
+Node_26 -> Node_18;
+Node_26 -> Node_21;
+Node_27 -> Node_21;
+Node_28 -> Node_22;
+Node_28 -> Node_23;
+Node_22 -> Node_16;
+Node_22 -> Node_29;
+Node_29 -> Node_23;
+}
+

@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.RecycledViewPool.onAdapterChanged(Landroidx\/recyclerview\/widget\/RecyclerView$Adapter;Landroidx\/recyclerview\/widget\/RecyclerView$Adapter;Z)V" {
+subgraph cluster_Region_1497123850 {
+label = "R(3:(1:2)|(1:6)|(1:(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_62698471 {
+label = "IF [B:14:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|if (r2 != null) goto L2\l}"];
+subgraph cluster_Region_1330544337 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|detach()\l}"];
+}
+}
+subgraph cluster_IfRegion_1129296704 {
+label = "IF [B:16:0x0005, B:18:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|if (r4 == false) goto L4\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0009|ADDED_TO_REGION\l|if (r1.mAttachCount == 0) goto L6\l}"];
+subgraph cluster_Region_2024336191 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|clear()\l}"];
+}
+}
+subgraph cluster_Region_510479430 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_585699756 {
+label = "IF [B:20:0x000e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|if (r3 != null) goto L8\l}"];
+subgraph cluster_Region_478307074 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|attach()\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0013|ORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.RecycledViewPool.onAdapterChanged((r1v0 'this' androidx.recyclerview.widget.RecyclerView$RecycledViewPool A[IMMUTABLE_TYPE, THIS]), (r2v0 'oldAdapter' androidx.recyclerview.widget.RecyclerView$Adapter A[D('oldAdapter' androidx.recyclerview.widget.RecyclerView$Adapter), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'newAdapter' androidx.recyclerview.widget.RecyclerView$Adapter A[D('newAdapter' androidx.recyclerview.widget.RecyclerView$Adapter), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'compatibleWithPrevious' boolean A[D('compatibleWithPrevious' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x000e \-\> B:22:0x0013, CROSS_EDGE: B:18:0x0009 \-\> B:20:0x000e, CROSS_EDGE: B:16:0x0005 \-\> B:20:0x000e, CROSS_EDGE: B:14:0x0000 \-\> B:16:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_12 -> Node_14;
+Node_17 -> Node_18;
+Node_22 -> Node_13;
+Node_23 -> Node_13;
+}
+

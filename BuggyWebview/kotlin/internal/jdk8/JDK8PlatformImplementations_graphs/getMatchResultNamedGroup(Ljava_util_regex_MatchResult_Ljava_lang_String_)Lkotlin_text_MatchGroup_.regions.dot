@@ -1,0 +1,70 @@
+digraph "CFG forkotlin.internal.jdk8.JDK8PlatformImplementations.getMatchResultNamedGroup(Ljava\/util\/regex\/MatchResult;Ljava\/lang\/String;)Lkotlin\/text\/MatchGroup;" {
+subgraph cluster_Region_723129615 {
+label = "R(3:1|2|(2:(1:12)|(2:5|(2:(2:7|8)|(1:10)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"matchResult\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"name\")\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|java.util.regex.Matcher r0 = r6 instanceof java.util.regex.Matcher ? (java.util.regex.Matcher) r6 : null\l}"];
+subgraph cluster_Region_119239900 {
+label = "R(2:(1:12)|(2:5|(2:(2:7|8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1672931009 {
+label = "IF [B:6:0x0014] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|PHI: r0 \l  PHI: (r0v4 'matcher' java.util.regex.Matcher) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L11\l}"];
+subgraph cluster_Region_1178649357 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0047|throw new java.lang.UnsupportedOperationException(\"Retrieving groups by name is not supported on this platform.\")\l}"];
+}
+}
+subgraph cluster_Region_1649821163 {
+label = "R(2:5|(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|kotlin.ranges.IntRange kotlin.ranges.IntRange r2 = new kotlin.ranges.IntRange(r0.start(r7), r0.end(r7) \- 1)\l}"];
+subgraph cluster_Region_1891538438 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2000078223 {
+label = "IF [B:8:0x002d] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002d|if (r2.getStart().intValue() \>= 0) goto L7\l}"];
+subgraph cluster_Region_209656674 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002f|java.lang.String java.lang.String r3 = r0.group(r7)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, \"matcher.group(name)\")\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003f|RETURN\lORIG_RETURN\l|return new kotlin.text.MatchGroup(r3, r2)\l}"];
+}
+}
+subgraph cluster_Region_1568037112 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0040}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+MethodNode[shape=record,label="{public kotlin.text.MatchGroup kotlin.internal.jdk8.JDK8PlatformImplementations.getMatchResultNamedGroup((r5v0 'this' kotlin.internal.jdk8.JDK8PlatformImplementations A[IMMUTABLE_TYPE, THIS]), (r6v0 'matchResult' java.util.regex.MatchResult A[D('matchResult' java.util.regex.MatchResult), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'name' java.lang.String A[D('name' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x002d \-\> B:11:0x003f, CROSS_EDGE: B:13:0x0047 \-\> B:1:?, CROSS_EDGE: B:5:0x0013 \-\> B:6:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlin.internal.PlatformImplementations.getMatchResultNamedGroup(java.util.regex.MatchResult, java.lang.String):kotlin.text.MatchGroup]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_12;
+Node_13 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_14[style=dashed];
+Node_9 -> Node_11;
+Node_11 -> Node_1;
+Node_14 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_12 -> Node_13;
+Node_5 -> Node_6;
+}
+

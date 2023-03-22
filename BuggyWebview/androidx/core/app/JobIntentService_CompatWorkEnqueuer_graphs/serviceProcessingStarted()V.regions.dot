@@ -1,0 +1,52 @@
+digraph "CFG forandroidx.core.app.JobIntentService.CompatWorkEnqueuer.serviceProcessingStarted()V" {
+subgraph cluster_Region_888929611 {
+label = "R(1:0)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_944466948 {
+label = "Synchronized:R(2:1|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000}"];
+subgraph cluster_Region_498082976 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2012770625 {
+label = "IF [B:4:0x0003] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0003|if (r3.mServiceProcessing == false) goto L5\l}"];
+subgraph cluster_Region_478333776 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|TryCatch #0 \{, blocks: (B:3:0x0001, B:5:0x0005, B:6:0x0015), top: B:11:0x0001 \}\lCatch: all \-\> 0x0017\l|r3.mServiceProcessing = true     \/\/ Catch: java.lang.Throwable \-\> L17\lr3.mRunWakeLock.acquire(600000L)     \/\/ Catch: java.lang.Throwable \-\> L17\lr3.mLaunchWakeLock.release()     \/\/ Catch: java.lang.Throwable \-\> L17\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0001|TRY_ENTER\lTryCatch #0 \{, blocks: (B:3:0x0001, B:5:0x0005, B:6:0x0015), top: B:11:0x0001 \}\lCatch: all \-\> 0x0017\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:3:0x0001, B:5:0x0005, B:6:0x0015), top: B:11:0x0001 \}\lCatch: all \-\> 0x0017\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L17\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017|REMOVE\lExcHandler: all \-\> 0x0017\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0018|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x0017\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0019|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public void androidx.core.app.JobIntentService.CompatWorkEnqueuer.serviceProcessingStarted((r3v0 'this' androidx.core.app.JobIntentService$CompatWorkEnqueuer A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0019 \-\> B:1:?, CROSS_EDGE: B:4:0x0003 \-\> B:6:0x0015, CROSS_EDGE: B:11:0x0001 \-\> B:8:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.app.JobIntentService.WorkEnqueuer.serviceProcessingStarted():void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_11;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_11 -> Node_3;
+Node_11 -> Node_8;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_12;
+Node_7 -> Node_1;
+Node_12 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+}
+

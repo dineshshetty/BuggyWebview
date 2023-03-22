@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.FragmentIntentSenderContract.createIntent(Landroid\/content\/Context;Landroidx\/activity\/result\/IntentSenderRequest;)Landroid\/content\/Intent;" {
+subgraph cluster_Region_303559335 {
+label = "R(5:1|(2:5|(1:7))|8|(1:10)|11) | DECL_VAR: android.os.Bundle activityOptions\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|android.content.Intent android.content.Intent r0 = new android.content.Intent(androidx.activity.result.contract.ActivityResultContracts.StartIntentSenderForResult.ACTION_INTENT_SENDER_REQUEST)\landroid.content.Intent android.content.Intent r1 = r8.getFillInIntent()\l}"];
+subgraph cluster_IfRegion_2110258169 {
+label = "IF [B:16:0x000b, B:18:0x0013] THEN: R(2:5|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000b|if (r1 != null) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0013|ADDED_TO_REGION\l|if ((r3 = r1.getBundleExtra(androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult.EXTRA_ACTIVITY_OPTIONS_BUNDLE)) != null) goto L5\l}"];
+subgraph cluster_Region_835773556 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|r0.putExtra(androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult.EXTRA_ACTIVITY_OPTIONS_BUNDLE, r3)\lr1.removeExtra(androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult.EXTRA_ACTIVITY_OPTIONS_BUNDLE)\l}"];
+subgraph cluster_IfRegion_1357425708 {
+label = "IF [B:20:0x0022] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0022|if (r1.getBooleanExtra(androidx.fragment.app.FragmentManager.EXTRA_CREATED_FILLIN_INTENT, false) != false) goto L7\l}"];
+subgraph cluster_Region_402102066 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|androidx.activity.result.IntentSenderRequest r8 = new androidx.activity.result.IntentSenderRequest.Builder(r8.getIntentSender()).setFillInIntent(null).setFlags(r8.getFlagsValues(), r8.getFlagsMask()).build()\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0042|PHI: r8 \l  PHI: (r8v1 'input' androidx.activity.result.IntentSenderRequest) = (r8v0 'input' androidx.activity.result.IntentSenderRequest), (r8v0 'input' androidx.activity.result.IntentSenderRequest), (r8v0 'input' androidx.activity.result.IntentSenderRequest), (r8v2 'input' androidx.activity.result.IntentSenderRequest) binds: [B:16:0x000b, B:18:0x0013, B:20:0x0022, B:21:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|r0.putExtra(androidx.activity.result.contract.ActivityResultContracts.StartIntentSenderForResult.EXTRA_INTENT_SENDER_REQUEST, r8)\l}"];
+subgraph cluster_IfRegion_498209630 {
+label = "IF [B:23:0x004c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x004c|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(2) != false) goto L10\l}"];
+subgraph cluster_Region_1152437078 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x004e|android.util.Log.v(androidx.fragment.app.FragmentManager.TAG, \"CreateIntent created the following intent: \" + r0)\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0064|RETURN\l|return r0\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000d}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.content.Intent androidx.fragment.app.FragmentManager.FragmentIntentSenderContract.createIntent((r6v0 'this' androidx.fragment.app.FragmentManager$FragmentIntentSenderContract A[IMMUTABLE_TYPE, THIS]), (r7v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'input' androidx.activity.result.IntentSenderRequest A[D('input' androidx.activity.result.IntentSenderRequest), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x004c \-\> B:25:0x0064, CROSS_EDGE: B:20:0x0022 \-\> B:22:0x0042, CROSS_EDGE: B:18:0x0013 \-\> B:22:0x0042, CROSS_EDGE: B:16:0x000b \-\> B:22:0x0042\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: androidx.fragment.app.FragmentManager.FragmentIntentSenderContract.createIntent(android.content.Context, androidx.activity.result.IntentSenderRequest):android.content.Intent\lBRIDGED_BY: androidx.fragment.app.FragmentManager.FragmentIntentSenderContract.createIntent(android.content.Context, androidx.activity.result.IntentSenderRequest):android.content.Intent\lMETHOD_OVERRIDE: [androidx.activity.result.contract.ActivityResultContract.createIntent(android.content.Context, I):android.content.Intent]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_22[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_22[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+}
+

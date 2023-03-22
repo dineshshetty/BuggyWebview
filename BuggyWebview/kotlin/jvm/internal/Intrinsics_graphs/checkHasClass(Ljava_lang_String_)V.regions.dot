@@ -1,0 +1,51 @@
+digraph "CFG forkotlin.jvm.internal.Intrinsics.checkHasClass(Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1316865725 {
+label = "R(2:1|(1:3))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|java.lang.String java.lang.String r0 = r5.replace('\/', '.')\l}"];
+subgraph cluster_TryCatchRegion_613706537 {
+label = "Try: R(1:3) catches: R(3:7|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1209136811 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{ClassNotFoundException \-\> 0x000d, blocks: (B:13:0x0008), top: B:18:0x0008 \}\lCatch: ClassNotFoundException \-\> 0x000d\l|java.lang.Class.forName(r0)     \/\/ Catch: java.lang.ClassNotFoundException \-\> Ld\l}"];
+}
+subgraph cluster_Region_176431430 {
+label = "R(3:7|8|9) | ExcHandler: ClassNotFoundException \-\> 0x000d\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|ExcHandler: ClassNotFoundException \-\> 0x000d\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000e}"];
+Node_17 [shape=record,label="{17\:\ 0x002f|throw ((java.lang.ClassNotFoundException) sanitizeStackTrace(new java.lang.ClassNotFoundException(\"Class \" + r0 + \" is not found. Please update the Kotlin runtime to the latest version\", r1)))\l}"];
+}
+}
+}
+subgraph cluster_Region_176431430 {
+label = "R(3:7|8|9) | ExcHandler: ClassNotFoundException \-\> 0x000d\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|ExcHandler: ClassNotFoundException \-\> 0x000d\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000e}"];
+Node_17 [shape=record,label="{17\:\ 0x002f|throw ((java.lang.ClassNotFoundException) sanitizeStackTrace(new java.lang.ClassNotFoundException(\"Class \" + r0 + \" is not found. Please update the Kotlin runtime to the latest version\", r1)))\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0008|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000c}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public static void kotlin.jvm.internal.Intrinsics.checkHasClass((r5v0 'internalName' java.lang.String A[D('internalName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x002f \-\> B:11:?, CROSS_EDGE: B:18:0x0008 \-\> B:15:0x000d\lINLINE_NOT_NEEDED\lTryCatch #0 \{ClassNotFoundException \-\> 0x000d, blocks: (B:13:0x0008), top: B:18:0x0008 \}\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Ljava\/lang\/ClassNotFoundException;]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_18;
+Node_13 -> Node_14;
+Node_13 -> Node_19;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_18 -> Node_13;
+Node_18 -> Node_15;
+Node_14 -> Node_11;
+Node_19 -> Node_15;
+}
+

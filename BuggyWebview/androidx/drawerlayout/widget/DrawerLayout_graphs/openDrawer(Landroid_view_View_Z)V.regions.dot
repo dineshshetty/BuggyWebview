@@ -1,0 +1,99 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.openDrawer(Landroid\/view\/View;Z)V" {
+subgraph cluster_Region_758660121 {
+label = "R(1:(2:(2:16|17)|(3:3|(1:5)(1:(2:11|(1:13)(1:14))(1:15))|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_446683388 {
+label = "R(2:(2:16|17)|(3:3|(1:5)(1:(2:11|(1:13)(1:14))(1:15))|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1253598416 {
+label = "IF [B:21:0x0004] THEN: R(2:16|17) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0004|if (isDrawerView(r5) == false) goto L16\l}"];
+subgraph cluster_Region_1046839442 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0058}"];
+Node_35 [shape=record,label="{35\:\ 0x0073|throw new java.lang.IllegalArgumentException(\"View \" + r5 + \" is not a sliding drawer\")\l}"];
+}
+}
+subgraph cluster_Region_220382950 {
+label = "R(3:3|(1:5)(1:(2:11|(1:13)(1:14))(1:15))|6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0006|androidx.drawerlayout.widget.DrawerLayout$LayoutParams androidx.drawerlayout.widget.DrawerLayout.LayoutParams r0 = (androidx.drawerlayout.widget.DrawerLayout.LayoutParams) r5.getLayoutParams()\l}"];
+subgraph cluster_IfRegion_1381084083 {
+label = "IF [B:23:0x0010] THEN: R(1:5) ELSE: R(1:(2:11|(1:13)(1:14))(1:15))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0010|if (r4.mFirstLayout == true) goto L5\l}"];
+subgraph cluster_Region_1417050897 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0012|r0.onScreen = 1.0f\lr0.openState = 1\lupdateChildrenImportantForAccessibility(r5, androidx.drawerlayout.widget.DrawerLayout.CHILDREN_DISALLOW_INTERCEPT)\lupdateChildAccessibilityAction(r5)\l}"];
+}
+subgraph cluster_Region_921555261 {
+label = "R(1:(2:11|(1:13)(1:14))(1:15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1065004500 {
+label = "IF [B:26:0x001f] THEN: R(2:11|(1:13)(1:14)) ELSE: R(1:15) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001f|if (r6 != false) goto L11\l}"];
+subgraph cluster_Region_946241921 {
+label = "R(2:11|(1:13)(1:14))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0021|r0.openState \|= 2\l}"];
+subgraph cluster_IfRegion_755620793 {
+label = "IF [B:28:0x002c] THEN: R(1:13) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x002c|if (checkDrawerViewAbsoluteGravity(r5, 3) != false) goto L13\l}"];
+subgraph cluster_Region_1918558616 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002e|r4.mLeftDragger.smoothSlideViewTo(r5, 0, r5.getTop())\l}"];
+}
+subgraph cluster_Region_711373527 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0038|r4.mRightDragger.smoothSlideViewTo(r5, getWidth() \- r5.getWidth(), r5.getTop())\l}"];
+}
+}
+}
+subgraph cluster_Region_1083747906 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x004b|moveDrawerToOffset(r5, 1.0f)\lupdateDrawerState(0, r5)\lr5.setVisibility(0)\l}"];
+}
+}
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0054|invalidate()\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0057}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001e}"];
+MethodNode[shape=record,label="{public void androidx.drawerlayout.widget.DrawerLayout.openDrawer((r4v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'drawerView' android.view.View A[D('drawerView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'animate' boolean A[D('animate' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x002e \-\> B:32:0x0054, CROSS_EDGE: B:30:0x0038 \-\> B:32:0x0054, CROSS_EDGE: B:31:0x004b \-\> B:32:0x0054, CROSS_EDGE: B:35:0x0073 \-\> B:19:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_34;
+Node_34 -> Node_35;
+Node_35 -> Node_19;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_32;
+Node_26 -> Node_27;
+Node_26 -> Node_31[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_32;
+Node_30 -> Node_32;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_33 -> Node_19;
+Node_25 -> Node_26;
+}
+

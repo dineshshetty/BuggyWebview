@@ -1,0 +1,23 @@
+digraph "CFG forcom.google.android.material.math.MathUtils.floorMod(FI)F" {
+Node_9 [shape=record,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0000|int r0 = (int) (r3 \/ ((float) r4))\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000e|if (((java.lang.Math.signum(r3) * ((float) r4)) \> 0.0f ? 1 : ((java.lang.Math.signum(r3) * ((float) r4)) == 0.0f ? 0 : \-1)) \>= 0) goto L6\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0010}"];
+Node_14 [shape=record,label="{14\:\ 0x0015|if ((((float) (r0 * r4)) \> r3 ? 1 : (((float) (r0 * r4)) == r3 ? 0 : \-1)) == 0) goto L6\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0017|int r0 = r0 + (\-1)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0019|PHI: r0 \l  PHI: (r0v3 'r' int) = (r0v2 'r' int), (r0v2 'r' int), (r0v4 'r' int) binds: [B:12:0x000e, B:14:0x0015, B:15:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x001e|RETURN\l|return r3 \- ((float) (r0 * r4))\l}"];
+Node_10 [shape=record,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static float com.google.android.material.math.MathUtils.floorMod((r3v0 'x' float A[D('x' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'y' int A[D('y' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0015 \-\> B:16:0x0019, CROSS_EDGE: B:12:0x000e \-\> B:16:0x0019\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_9;Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_16;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_10;
+}
+

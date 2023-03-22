@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.fragment.app.FragmentContainerView.drawChild(Landroid\/graphics\/Canvas;Landroid\/view\/View;J)Z" {
+subgraph cluster_Region_1720619920 {
+label = "R(1:(2:(1:9)|(1:12))) | DECL_VAR: java.util.ArrayList\<android.view.View\> null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_95970503 {
+label = "R(2:(1:9)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_125263050 {
+label = "IF [B:17:0x0002, B:19:0x0006, B:21:0x000c, B:23:0x0014] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (r1.mDrawDisappearingViewsFirst != false) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0006|ADDED_TO_REGION\l|if ((r0 = r1.mDisappearingFragmentChildren) != null) goto L5\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000c|ADDED_TO_REGION\l|if (r0.size() \> 0) goto L7\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0014|ADDED_TO_REGION\l|if (r1.mDisappearingFragmentChildren.contains(r3) != false) goto L9\l}"];
+subgraph cluster_Region_9450066 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0016|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_311436227 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001c|RETURN\l|return super.drawChild(r2, r3, r4)\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0004}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0008}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000e}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0018}"];
+MethodNode[shape=record,label="{protected boolean androidx.fragment.app.FragmentContainerView.drawChild((r1v0 'this' androidx.fragment.app.FragmentContainerView A[IMMUTABLE_TYPE, THIS]), (r2v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'drawingTime' long A[D('drawingTime' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:27:0x001c \-\> B:15:?, CROSS_EDGE: B:21:0x000c \-\> B:26:0x0018, CROSS_EDGE: B:19:0x0006 \-\> B:26:0x0018, CROSS_EDGE: B:17:0x0002 \-\> B:26:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewGroup.drawChild(android.graphics.Canvas, android.view.View, long):boolean\}]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_26[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_26[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_26[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_26[style=dashed];
+Node_24 -> Node_15;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_26 -> Node_27;
+}
+

@@ -1,0 +1,81 @@
+digraph "CFG forcom.google.android.material.bottomappbar.BottomAppBar.maybeAnimateModeChange(I)V" {
+subgraph cluster_Region_1762718991 {
+label = "R(1:(2:(1:15)|(5:5|(1:7)|8|(1:10)(1:14)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_595090253 {
+label = "R(2:(1:15)|(5:5|(1:7)|8|(1:10)(1:14)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1199128552 {
+label = "IF [B:21:0x0002, B:23:0x0008] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0002|if (r5.fabAlignmentMode == r6) goto L16\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0008|ADDED_TO_REGION\l|if (androidx.core.view.ViewCompat.isLaidOut(r5) == false) goto L15\l}"];
+subgraph cluster_Region_1697903863 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2042583116 {
+label = "R(5:5|(1:7)|8|(1:10)(1:14)|11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000b|android.animation.Animator android.animation.Animator r0 = r5.modeAnimator\l}"];
+subgraph cluster_IfRegion_296997199 {
+label = "IF [B:26:0x000d] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000d|if (r0 != null) goto L7\l}"];
+subgraph cluster_Region_438408777 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000f|r0.cancel()\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0012|java.util.ArrayList java.util.List\<android.animation.Animator\> r0 = new java.util.ArrayList\<\>()\l}"];
+subgraph cluster_IfRegion_199613907 {
+label = "IF [B:29:0x001a] THEN: R(1:10) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001a|if (r5.fabAnimationMode == 1) goto L10\l}"];
+subgraph cluster_Region_1521222673 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x001c|createFabTranslationXAnimation(r6, r0)\l}"];
+}
+subgraph cluster_Region_1498569264 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0020|createFabDefaultXAnimation(r6, r0)\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0023|android.animation.AnimatorSet android.animation.AnimatorSet r1 = new android.animation.AnimatorSet()\lr1.playTogether(r0)\lr1.setInterpolator(com.google.android.material.motion.MotionUtils.resolveThemeInterpolator(getContext(), com.google.android.material.bottomappbar.BottomAppBar.FAB_ALIGNMENT_ANIM_EASING_ATTR, com.google.android.material.animation.AnimationUtils.LINEAR_INTERPOLATOR))\lr5.modeAnimator = r1\lr1.addListener(new com.google.android.material.bottomappbar.BottomAppBar.C05964())\lr5.modeAnimator.start()\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0004}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x004a}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x004b|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.bottomappbar.BottomAppBar.maybeAnimateModeChange((r5v0 'this' com.google.android.material.bottomappbar.BottomAppBar A[IMMUTABLE_TYPE, THIS]), (r6v0 'targetMode' int A[D('targetMode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0020 \-\> B:32:0x0023, CROSS_EDGE: B:26:0x000d \-\> B:28:0x0012, CROSS_EDGE: B:34:0x004b \-\> B:19:?, CROSS_EDGE: B:21:0x0002 \-\> B:34:0x004b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_34;
+Node_23 -> Node_25[style=dashed];
+Node_23 -> Node_35;
+Node_35 -> Node_19;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_32;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_33 -> Node_19;
+Node_34 -> Node_19;
+}
+

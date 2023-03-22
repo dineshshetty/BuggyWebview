@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.findInterceptingOnItemTouchListener(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_111639460 {
+label = "R(3:1|(2:3|(2:(2:8|9)|(1:12)))|15)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|int int r0 = r6.getAction()\lint int r1 = r5.mOnItemTouchListeners.size()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1674564671 {
+label = "LOOP:0: (2:3|(2:(2:8|9)|(1:12)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|LOOP_START\lLOOP:0: B:20:0x000b\-\>B:27:0x0022\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v3 'i' int) binds: [B:19:0x0000, B:27:0x0022] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_594209323 {
+label = "R(2:3|(2:(2:8|9)|(1:12)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000d|androidx.recyclerview.widget.RecyclerView$OnItemTouchListener androidx.recyclerview.widget.RecyclerView.OnItemTouchListener r3 = r5.mOnItemTouchListeners.get(r2)\l}"];
+subgraph cluster_Region_1073655562 {
+label = "R(2:(2:8|9)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_276433128 {
+label = "IF [B:22:0x0019, B:24:0x001c] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0019|if (r3.onInterceptTouchEvent(r5, r6) != false) goto L5\l}"];
+Node_24 [shape=record,label="{24\:\ 0x001c|ADDED_TO_REGION\l|if (r0 != 3) goto L7\l}"];
+subgraph cluster_Region_1670880230 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001e|r5.mInterceptingOnItemTouchListener = r3\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0021|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_506316817 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0022|LOOP_END\lLOOP:0: B:20:0x000b\-\>B:27:0x0022\l|r2++\l}"];
+}
+}
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0025|RETURN\l|return false\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001b}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001e|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0022|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0022|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0025|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean androidx.recyclerview.widget.RecyclerView.findInterceptingOnItemTouchListener((r5v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r6v0 'e' android.view.MotionEvent A[D('e' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:27:0x0022 \-\> B:20:0x000b, CROSS_EDGE: B:22:0x0019 \-\> B:27:0x0022, CROSS_EDGE: B:29:0x0026 \-\> B:18:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_30[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_32[style=dashed];
+Node_24 -> Node_31;
+Node_24 -> Node_33[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_18;
+Node_27 -> Node_20;
+Node_28 -> Node_18;
+Node_17 -> Node_19;
+Node_23 -> Node_24;
+Node_31 -> Node_25;
+Node_33 -> Node_27;
+Node_32 -> Node_27;
+Node_30 -> Node_28;
+}
+

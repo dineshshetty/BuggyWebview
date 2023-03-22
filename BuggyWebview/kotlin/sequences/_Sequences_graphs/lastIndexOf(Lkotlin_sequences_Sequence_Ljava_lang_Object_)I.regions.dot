@@ -1,0 +1,70 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.lastIndexOf(Lkotlin\/sequences\/Sequence;Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_1320839081 {
+label = "R(3:1|(4:4|(1:6)|(1:9)(0)|11)|14)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lint r0 = \-1\lint r1 = 0\ljava.util.Iterator r2 = r5.iterator()\l\l}"];
+subgraph cluster_LoopRegion_246235589 {
+label = "LOOP:0: (4:4|(1:6)|(1:9)(0)|11)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000f|java.lang.Object \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1209359900 {
+label = "R(4:4|(1:6)|(1:9)(0)|11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0011|java.lang.Object r3 = r2.next()\l}"];
+subgraph cluster_IfRegion_1009731964 {
+label = "IF [B:22:0x0015] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|if (r1 \< 0) goto L6\l}"];
+subgraph cluster_Region_2088511981 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|kotlin.collections.CollectionsKt.throwIndexOverflow()\l}"];
+}
+}
+subgraph cluster_IfRegion_1298325645 {
+label = "IF [B:25:0x001e] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001e|if (kotlin.jvm.internal.Intrinsics.areEqual(r6, r3) != false) goto L9\l}"];
+subgraph cluster_Region_1577850112 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0020|r0 = r1\l}"];
+}
+subgraph cluster_Region_721762179 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0021|LOOP_END\lLOOP:0: B:19:0x000b\-\>B:27:0x0021\lPHI: r0 \l  PHI: (r0v3 'lastIndex' int) = (r0v2 'lastIndex' int), (r0v4 'lastIndex' int) binds: [B:31:0x0021, B:30:0x0021] A[DONT_GENERATE, DONT_INLINE]\l|r1++\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0025|RETURN\l|return r0\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000b|LOOP_START\lLOOP:0: B:19:0x000b\-\>B:27:0x0021\lPHI: r0 r1 \l  PHI: (r0v2 'lastIndex' int) = (r0v1 'lastIndex' int), (r0v3 'lastIndex' int) binds: [B:18:0x0000, B:27:0x0021] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v2 'index' int) binds: [B:18:0x0000, B:27:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001a}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0021|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0021|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0025|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.sequences.SequencesKt___SequencesKt.lastIndexOf((r5v0 kotlin.sequences.Sequence\<? extends T\> A[D('$this$lastIndexOf' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 T A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:27:0x0021 \-\> B:19:0x000b, CROSS_EDGE: B:25:0x001e \-\> B:27:0x0021, CROSS_EDGE: B:22:0x0015 \-\> B:24:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;TT;)I\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_29[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_31[style=dashed];
+Node_26 -> Node_30;
+Node_27 -> Node_19;
+Node_28 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_24 -> Node_25;
+Node_30 -> Node_27;
+Node_31 -> Node_27;
+Node_29 -> Node_28;
+}
+

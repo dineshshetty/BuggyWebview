@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.savedstate.Recreator.onStateChanged(Landroidx\/lifecycle\/LifecycleOwner;Landroidx\/lifecycle\/Lifecycle$Event;)V" {
+Node_19 [shape=record,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"source\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"event\")\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000c|if (r6 != androidx.lifecycle.Lifecycle.Event.ON_CREATE) goto L17\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000e|r5.getLifecycle().removeObserver(r4)\landroid.os.Bundle r0 = r4.owner.getSavedStateRegistry().consumeRestoredStateForKey(androidx.savedstate.Recreator.COMPONENT_KEY)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0024|if (r0 != null) goto L7\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0026|RETURN\l|return\l}"];
+Node_20 [shape=record,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0027|java.util.ArrayList r1 = r0.getStringArrayList(androidx.savedstate.Recreator.CLASSES_KEY)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002d|if (r1 == null) goto L15\l}"];
+Node_28 [shape=record,label="{28\:\ 0x002f|java.util.List r1 = r1\ljava.util.Iterator r2 = r1.iterator()\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0035|LOOP_START\lLOOP:0: B:29:0x0035\-\>B:31:0x003b\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0039|if (r2.hasNext() == false) goto L13\l}"];
+Node_31 [shape=record,label="{31\:\ 0x003b|LOOP_END\lLOOP:0: B:29:0x0035\-\>B:31:0x003b\l|java.lang.String r3 = r2.next()\lreflectiveNew(r3)\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0045|SYNTHETIC\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0045|RETURN\l|return\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0046}"];
+Node_34 [shape=record,label="{34\:\ 0x004e|throw new java.lang.IllegalStateException(\"Bundle with restored state for the component \"androidx.savedstate.Restarter\" must contain list of strings by the key \"classes_to_restore\"\")\l}"];
+Node_35 [shape=record,label="{35\:\ 0x004f}"];
+Node_36 [shape=record,label="{36\:\ 0x0056|throw new java.lang.AssertionError(\"Next event must be ON_CREATE\")\l}"];
+MethodNode[shape=record,label="{public void androidx.savedstate.Recreator.onStateChanged((r4v0 'this' androidx.savedstate.Recreator A[IMMUTABLE_TYPE, THIS]), (r5v0 'source' androidx.lifecycle.LifecycleOwner A[D('source' androidx.lifecycle.LifecycleOwner), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'event' androidx.lifecycle.Lifecycle$Event A[D('event' androidx.lifecycle.Lifecycle$Event), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:31:0x003b \-\> B:29:0x0035, CROSS_EDGE: B:32:0x0045 \-\> B:20:?, CROSS_EDGE: B:34:0x004e \-\> B:20:?, CROSS_EDGE: B:36:0x0056 \-\> B:20:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.lifecycle.LifecycleEventObserver.onStateChanged(androidx.lifecycle.LifecycleOwner, androidx.lifecycle.Lifecycle$Event):void]\l}"];
+MethodNode -> Node_19;Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_35;
+Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_26;
+Node_25 -> Node_20;
+Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_33;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_37;
+Node_31 -> Node_29;
+Node_37 -> Node_32;
+Node_32 -> Node_20;
+Node_33 -> Node_34;
+Node_34 -> Node_20;
+Node_35 -> Node_36;
+Node_36 -> Node_20;
+}
+

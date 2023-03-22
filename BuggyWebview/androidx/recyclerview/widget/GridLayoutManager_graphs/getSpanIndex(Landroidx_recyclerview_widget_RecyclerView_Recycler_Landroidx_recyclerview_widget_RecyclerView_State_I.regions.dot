@@ -1,0 +1,88 @@
+digraph "CFG forandroidx.recyclerview.widget.GridLayoutManager.getSpanIndex(Landroidx\/recyclerview\/widget\/RecyclerView$Recycler;Landroidx\/recyclerview\/widget\/RecyclerView$State;I)I" {
+subgraph cluster_Region_831655798 {
+label = "R(1:(2:(1:4)|(2:6|(2:(1:8)|(2:9|(2:(2:11|12)|(1:14)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2118354959 {
+label = "R(2:(1:4)|(2:6|(2:(1:8)|(2:9|(2:(2:11|12)|(1:14))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1734604638 {
+label = "IF [B:18:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (r6.isPreLayout() == false) goto L3\l}"];
+subgraph cluster_Region_1135652645 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|RETURN\l|return r4.mSpanSizeLookup.getCachedSpanIndex(r7, r4.mSpanCount)\l}"];
+}
+}
+subgraph cluster_Region_622801873 {
+label = "R(2:6|(2:(1:8)|(2:9|(2:(2:11|12)|(1:14)))))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|int int r0 = r4.mPreLayoutSpanIndexCache.get(r7, \-1)\l}"];
+subgraph cluster_Region_1652093338 {
+label = "R(2:(1:8)|(2:9|(2:(2:11|12)|(1:14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_957453952 {
+label = "IF [B:22:0x0016] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0016|if (r0 != (\-1)) goto L8\l}"];
+subgraph cluster_Region_1178678688 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0018|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_918263275 {
+label = "R(2:9|(2:(2:11|12)|(1:14)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|int int r2 = r5.convertPreLayoutPositionToPostLayout(r7)\l}"];
+subgraph cluster_Region_1642026 {
+label = "R(2:(2:11|12)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1793501526 {
+label = "IF [B:25:0x001d] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001d|if (r2 == (\-1)) goto L11\l}"];
+subgraph cluster_Region_2025377904 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001f|android.util.Log.w(androidx.recyclerview.widget.GridLayoutManager.TAG, \"Cannot find span size for pre layout position. It is not cached, not in the adapter. Pos:\" + r7)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0036|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1601603356 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003f|RETURN\l|return r4.mSpanSizeLookup.getCachedSpanIndex(r2, r4.mSpanCount)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0006}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0037}"];
+MethodNode[shape=record,label="{private int androidx.recyclerview.widget.GridLayoutManager.getSpanIndex((r4v0 'this' androidx.recyclerview.widget.GridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r5v0 'recycler' androidx.recyclerview.widget.RecyclerView$Recycler A[D('recycler' androidx.recyclerview.widget.RecyclerView$Recycler), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'pos' int A[D('pos' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0018 \-\> B:16:?, CROSS_EDGE: B:27:0x0036 \-\> B:16:?, CROSS_EDGE: B:29:0x003f \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_20 -> Node_16;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_16;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_16;
+Node_29 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_28 -> Node_29;
+}
+

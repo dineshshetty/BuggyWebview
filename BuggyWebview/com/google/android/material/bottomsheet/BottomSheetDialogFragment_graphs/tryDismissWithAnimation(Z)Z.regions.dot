@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.bottomsheet.BottomSheetDialogFragment.tryDismissWithAnimation(Z)Z" {
+subgraph cluster_Region_38715221 {
+label = "R(2:1|(2:(2:3|(2:(2:7|8)|(1:10)))|(1:12)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.app.Dialog android.app.Dialog r0 = getDialog()\l}"];
+subgraph cluster_Region_360590086 {
+label = "R(2:(2:3|(2:(2:7|8)|(1:10)))|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1023146881 {
+label = "IF [B:3:0x0006] THEN: R(2:3|(2:(2:7|8)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if ((r0 instanceof com.google.android.material.bottomsheet.BottomSheetDialog) != false) goto L3\l}"];
+subgraph cluster_Region_1966256322 {
+label = "R(2:3|(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|com.google.android.material.bottomsheet.BottomSheetDialog com.google.android.material.bottomsheet.BottomSheetDialog r1 = (com.google.android.material.bottomsheet.BottomSheetDialog) r0\lcom.google.android.material.bottomsheet.BottomSheetBehavior com.google.android.material.bottomsheet.BottomSheetBehavior\<?\> r2 = r1.getBehavior()\l}"];
+subgraph cluster_Region_1575606012 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2039794935 {
+label = "IF [B:5:0x0013, B:7:0x0019] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r2.isHideable() != false) goto L5\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|ADDED_TO_REGION\l|if (r1.getDismissWithAnimation() != false) goto L7\l}"];
+subgraph cluster_Region_248995975 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|dismissWithAnimation(r2, r5)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001f|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1249031005 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1242097909 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0020|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{private boolean com.google.android.material.bottomsheet.BottomSheetDialogFragment.tryDismissWithAnimation((r4v0 'this' com.google.android.material.bottomsheet.BottomSheetDialogFragment A[IMMUTABLE_TYPE, THIS]), (r5v0 'allowingStateLoss' boolean A[D('allowingStateLoss' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0021 \-\> B:1:?, CROSS_EDGE: B:5:0x0013 \-\> B:10:0x0020, CROSS_EDGE: B:3:0x0006 \-\> B:10:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_13 -> Node_1;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+Node_12 -> Node_1;
+}
+

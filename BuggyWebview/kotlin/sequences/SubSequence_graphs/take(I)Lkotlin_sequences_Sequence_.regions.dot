@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.sequences.SubSequence.take(I)Lkotlin\/sequences\/Sequence;" {
+subgraph cluster_Region_1015628171 {
+label = "R(1:(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1603908595 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_903057218 {
+label = "IF [B:11:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (r5 \>= getCount()) goto L3\l}"];
+subgraph cluster_Region_1936177947 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1356885570 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|kotlin.sequences.Sequence\<T\> kotlin.sequences.Sequence\<T\> r1 = r4.sequence\lint int r2 = r4.startIndex\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0017|RETURN\lORIG_RETURN\l|return new kotlin.sequences.SubSequence(r1, r2, r2 + r5)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0006}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public kotlin.sequences.Sequence\<T\> kotlin.sequences.SubSequence.take((r4v0 'this' kotlin.sequences.SubSequence\<T\> A[IMMUTABLE_TYPE, THIS]), (r5v0 'n' int A[D('n' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000a \-\> B:14:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (I)Lkotlin\/sequences\/Sequence\<TT;\>;\lMETHOD_OVERRIDE: [kotlin.sequences.DropTakeSequence.take(int):kotlin.sequences.Sequence\<T\>]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_15;
+}
+

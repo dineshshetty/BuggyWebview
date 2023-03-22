@@ -1,0 +1,55 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.tryAcquireCpuPermit()Z" {
+subgraph cluster_Region_792882540 {
+label = "R(2:(2:2|(2:(1:10)|(1:4)))|7) | DECL_VAR: long state, long update\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_53343943 {
+label = "LOOP:0: (2:2|(2:(1:10)|(1:4)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0028|LOOP_END\lLOOP:0: B:17:0x0003\-\>B:22:0x0028\l|if (kotlinx.coroutines.scheduling.CoroutineScheduler.controlState$FU.compareAndSet(r15, r9, r13) == false) goto L2\l}"];
+subgraph cluster_Region_8478817 {
+label = "R(2:2|(2:(1:10)|(1:4)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0003|LOOP_START\lLOOP:0: B:17:0x0003\-\>B:22:0x0028\l|long r9 = r15.controlState\l}"];
+subgraph cluster_Region_1862891739 {
+label = "R(2:(1:10)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1499251124 {
+label = "IF [B:18:0x0014] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0014|if (((int) ((kotlinx.coroutines.scheduling.CoroutineScheduler.CPU_PERMITS_MASK & r9) \>\> 42)) == 0) goto L9\l}"];
+subgraph cluster_Region_2055589098 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0016|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1042019279 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0018|long r13 = r9 \- 4398046511104L\l}"];
+}
+}
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x002a|RETURN\l|return true\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002a|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final boolean kotlinx.coroutines.scheduling.CoroutineScheduler.tryAcquireCpuPermit((r15v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x002b \-\> B:15:?, BACK_EDGE: B:22:0x0028 \-\> B:17:0x0003\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_22 -> Node_17;
+Node_22 -> Node_27[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_26;
+Node_19 -> Node_15;
+Node_21 -> Node_22;
+Node_23 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_27 -> Node_23;
+Node_26 -> Node_19;
+}
+

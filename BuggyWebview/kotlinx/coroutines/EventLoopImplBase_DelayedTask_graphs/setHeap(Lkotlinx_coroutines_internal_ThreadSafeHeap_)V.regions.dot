@@ -1,0 +1,47 @@
+digraph "CFG forkotlinx.coroutines.EventLoopImplBase.DelayedTask.setHeap(Lkotlinx\/coroutines\/internal\/ThreadSafeHeap;)V" {
+subgraph cluster_Region_280625788 {
+label = "R(2:1|(2:(1:9)|(1:5))) | DECL_VAR: kotlinx.coroutines.internal.Symbol null\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.lang.Object java.lang.Object r0 = r2._heap\lkotlinx.coroutines.internal.Symbol r1 = kotlinx.coroutines.EventLoop_commonKt.DISPOSED_TASK\l}"];
+subgraph cluster_Region_1159206125 {
+label = "R(2:(1:9)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2068090771 {
+label = "IF [B:17:0x000b] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|PHI: r0 \l  PHI: (r0v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r0 != r1) == false) goto L8\l}"];
+subgraph cluster_Region_1652137974 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001b|throw new java.lang.IllegalArgumentException(\"Failed requirement.\".toString())\l}"];
+}
+}
+subgraph cluster_Region_1836493751 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|r2._heap = r3\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0008}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000f}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0010}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000a}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.EventLoopImplBase.DelayedTask.setHeap((r2v0 'this' kotlinx.coroutines.EventLoopImplBase$DelayedTask A[IMMUTABLE_TYPE, THIS]), (r3v0 kotlinx.coroutines.internal.ThreadSafeHeap\<?\> A[D('value' kotlinx.coroutines.internal.ThreadSafeHeap), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001b \-\> B:12:?, CROSS_EDGE: B:16:0x000a \-\> B:17:0x000b\lINLINE_NOT_NEEDED\lSIGNATURE: (Lkotlinx\/coroutines\/internal\/ThreadSafeHeap\<*\>;)V\lMETHOD_OVERRIDE: [kotlinx.coroutines.internal.ThreadSafeHeapNode.setHeap(kotlinx.coroutines.internal.ThreadSafeHeap\<?\>):void]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_16 -> Node_17;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.emoji2.viewsintegration.EmojiEditTextHelper.onCreateInputConnection(Landroid\/view\/inputmethod\/InputConnection;Landroid\/view\/inputmethod\/EditorInfo;)Landroid\/view\/inputmethod\/InputConnection;" {
+subgraph cluster_Region_870122823 {
+label = "R(1:(2:(1:2)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1338745684 {
+label = "R(2:(1:2)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_983379176 {
+label = "IF [B:9:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r2 == null) goto L2\l}"];
+subgraph cluster_Region_131348226 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1559821698 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|RETURN\l|return r1.mHelper.onCreateInputConnection(r2, r3)\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+MethodNode[shape=record,label="{public android.view.inputmethod.InputConnection androidx.emoji2.viewsintegration.EmojiEditTextHelper.onCreateInputConnection((r1v0 'this' androidx.emoji2.viewsintegration.EmojiEditTextHelper A[IMMUTABLE_TYPE, THIS]), (r2v0 'inputConnection' android.view.inputmethod.InputConnection A[D('inputConnection' android.view.inputmethod.InputConnection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'outAttrs' android.view.inputmethod.EditorInfo A[D('outAttrs' android.view.inputmethod.EditorInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000a \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_12 -> Node_13;
+}
+

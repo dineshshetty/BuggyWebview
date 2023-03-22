@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.fragment.app.FragmentTransition.getEnterTransition(Landroidx\/fragment\/app\/FragmentTransitionImpl;Landroidx\/fragment\/app\/Fragment;Z)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1873149992 {
+label = "R(1:(2:(1:2)|(2:(1:5)(1:8)|7))) | DECL_VAR: java.lang.Object null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1273456712 {
+label = "R(2:(1:2)|(2:(1:5)(1:8)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_716711598 {
+label = "IF [B:12:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r2 == null) goto L2\l}"];
+subgraph cluster_Region_393751930 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1208015101 {
+label = "R(2:(1:5)(1:8)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_953506973 {
+label = "IF [B:15:0x0004] THEN: R(1:5) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (r3 != false) goto L5\l}"];
+subgraph cluster_Region_305903096 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|java.lang.Object r0 = r2.getReenterTransition()\l}"];
+}
+subgraph cluster_Region_1848040026 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|java.lang.Object r0 = r2.getEnterTransition()\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0013|RETURN\l|return r1.cloneTransition(r0)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000f|PHI: r0 \l  PHI: (r0v1 java.lang.Object) = (r0v0 java.lang.Object), (r0v3 java.lang.Object) binds: [B:17:0x000b, B:16:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private static java.lang.Object androidx.fragment.app.FragmentTransition.getEnterTransition((r1v0 'impl' androidx.fragment.app.FragmentTransitionImpl A[D('impl' androidx.fragment.app.FragmentTransitionImpl), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'inFragment' androidx.fragment.app.Fragment A[D('inFragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'isPop' boolean A[D('isPop' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0013 \-\> B:11:?, CROSS_EDGE: B:17:0x000b \-\> B:18:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_18 -> Node_19;
+}
+

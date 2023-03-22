@@ -1,0 +1,32 @@
+digraph "CFG forkotlinx.coroutines.EventLoopImplPlatform.unpark()V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: INVOKE  (r0 I:java.lang.Thread) = (r2 I:kotlinx.coroutines.EventLoopImplPlatform) type: VIRTUAL call: kotlinx.coroutines.EventLoopImplPlatform.getThread():java.lang.Thread A[MD:():java.lang.Thread (m)] (LINE:11)\l0x0004: INVOKE  (r1 I:java.lang.Thread) =  type: STATIC call: java.lang.Thread.currentThread():java.lang.Thread A[MD:():java.lang.Thread (c)] (LINE:12)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('thread' java.lang.Thread)])  \-\> B:11:? \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|0x000a: INVOKE  (r1 I:kotlinx.coroutines.AbstractTimeSource) =  type: STATIC call: kotlinx.coroutines.AbstractTimeSourceKt.getTimeSource():kotlinx.coroutines.AbstractTimeSource A[MD:():kotlinx.coroutines.AbstractTimeSource (m)] (LINE:13)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|0x000e: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0012 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0010|0x0010: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0017|0x0017: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:12:? \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0019|0x0019: INVOKE  (r0 I:java.lang.Thread A[D('thread' java.lang.Thread)]) type: STATIC call: java.util.concurrent.locks.LockSupport.unpark(java.lang.Thread):void A[MD:(java.lang.Thread):void (c)]\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001c|RETURN\lORIG_RETURN\l|0x001c: RETURN    (LINE:14)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|0x001c: RETURN   A[SYNTHETIC] (LINE:14)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0012|0x0012: INVOKE  (r1 I:kotlinx.coroutines.AbstractTimeSource), (r0 I:java.lang.Thread A[D('thread' java.lang.Thread)]) type: VIRTUAL call: kotlinx.coroutines.AbstractTimeSource.unpark(java.lang.Thread):void A[MD:(java.lang.Thread):void (m)]\l0x0015: SGET  (r1 I:kotlin.Unit) =  kotlin.Unit.INSTANCE kotlin.Unit \l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|0x001c: RETURN   A[SYNTHETIC] (LINE:14)\l}"];
+MethodNode[shape=record,label="{protected final void kotlinx.coroutines.EventLoopImplPlatform.unpark((r2 'this' I:kotlinx.coroutines.EventLoopImplPlatform A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0017 \-\> B:10:0x001c, CROSS_EDGE: B:7:0x0012 \-\> B:8:0x0017, CROSS_EDGE: B:3:0x0008 \-\> B:10:0x001c\lDebug Info:\l  0x0004\-0x001c: r0 'thread' Ljava\/lang\/Thread;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_11;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_12;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_12 -> Node_1;
+Node_7 -> Node_8;
+Node_11 -> Node_1;
+}
+

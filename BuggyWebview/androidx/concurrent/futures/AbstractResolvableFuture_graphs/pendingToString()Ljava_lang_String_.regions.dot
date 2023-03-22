@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.concurrent.futures.AbstractResolvableFuture.pendingToString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1543153880 {
+label = "R(2:1|(2:3|4)(1:(2:8|9)(1:10)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|java.lang.Object java.lang.Object r0 = r4.value\l}"];
+subgraph cluster_IfRegion_439201569 {
+label = "IF [B:15:0x0004] THEN: R(2:3|4) ELSE: R(1:(2:8|9)(1:10))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if ((r0 instanceof androidx.concurrent.futures.AbstractResolvableFuture.SetFuture) != false) goto L3\l}"];
+subgraph cluster_Region_1725561329 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006}"];
+Node_17 [shape=record,label="{17\:\ 0x0025|RETURN\l|return \"setFuture=[\" + userObjectToString(((androidx.concurrent.futures.AbstractResolvableFuture.SetFuture) r0).future) + \"]\"\l}"];
+}
+subgraph cluster_Region_578883865 {
+label = "R(1:(2:8|9)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_925326219 {
+label = "IF [B:19:0x0028] THEN: R(2:8|9) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0028|if ((r4 instanceof java.util.concurrent.ScheduledFuture) != false) goto L8\l}"];
+subgraph cluster_Region_1050953272 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002a}"];
+Node_21 [shape=record,label="{21\:\ 0x0049|RETURN\l|return \"remaining delay=[\" + ((java.util.concurrent.ScheduledFuture) r4).getDelay(java.util.concurrent.TimeUnit.MILLISECONDS) + \" ms]\"\l}"];
+}
+subgraph cluster_Region_1371576811 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x004a|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0026}"];
+MethodNode[shape=record,label="{protected java.lang.String androidx.concurrent.futures.AbstractResolvableFuture.pendingToString((r4v0 'this' androidx.concurrent.futures.AbstractResolvableFuture\<V\> A[D('this' androidx.concurrent.futures.AbstractResolvableFuture\<V\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0049 \-\> B:13:?, CROSS_EDGE: B:23:0x004b \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V]\lMETHOD_OVERRIDE: [androidx.concurrent.futures.AbstractResolvableFuture.pendingToString():java.lang.String]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_13;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_18 -> Node_19;
+}
+

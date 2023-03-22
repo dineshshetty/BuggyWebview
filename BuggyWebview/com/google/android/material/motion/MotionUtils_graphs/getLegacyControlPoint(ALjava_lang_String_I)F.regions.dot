@@ -1,0 +1,43 @@
+digraph "CFG forcom.google.android.material.motion.MotionUtils.getLegacyControlPoint([Ljava\/lang\/String;I)F" {
+subgraph cluster_Region_1927711634 {
+label = "R(2:1|(2:(2:7|8)|(1:5)))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|float float r0 = java.lang.Float.parseFloat(r4[r5])\l}"];
+subgraph cluster_Region_1314875468 {
+label = "R(2:(2:7|8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1037954087 {
+label = "IF [B:12:0x0009, B:14:0x000f] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0009|if (r0 \< 0.0f) goto L7\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000f|ADDED_TO_REGION\l|if (r0 \> 1.0f) goto L7\l}"];
+subgraph cluster_Region_425542881 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012}"];
+Node_17 [shape=record,label="{17\:\ 0x0028|throw new java.lang.IllegalArgumentException(\"Motion easing control point value must be between 0 and 1; instead got: \" + r0)\l}"];
+}
+}
+subgraph cluster_Region_1762642912 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000b}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static float com.google.android.material.motion.MotionUtils.getLegacyControlPoint((r4v0 'controlPoints' java.lang.String[] A[D('controlPoints' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0028 \-\> B:10:?, CROSS_EDGE: B:12:0x0009 \-\> B:16:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_16;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_10;
+Node_15 -> Node_10;
+Node_9 -> Node_11;
+Node_13 -> Node_14;
+}
+

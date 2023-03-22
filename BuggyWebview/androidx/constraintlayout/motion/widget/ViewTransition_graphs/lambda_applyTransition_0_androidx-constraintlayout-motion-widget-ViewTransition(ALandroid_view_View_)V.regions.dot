@@ -1,0 +1,79 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.ViewTransition.lambda$applyTransition$0$androidx\-constraintlayout\-motion\-widget\-ViewTransition([Landroid\/view\/View;)V" {
+subgraph cluster_Region_1800791802 {
+label = "R(3:1|(2:3|(1:5))|(1:(2:9|(1:11))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|int r1 = 0\l}"];
+subgraph cluster_IfRegion_786268320 {
+label = "IF [B:19:0x0004] THEN: R(2:3|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (r8.mSetsTag != (\-1)) goto L3\l}"];
+subgraph cluster_Region_915734064 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|int r3 = 0\l\l}"];
+subgraph cluster_LoopRegion_233868653 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0008|LOOP_START\lLOOP:0: B:21:0x0008\-\>B:22:0x000a\lPHI: r3 \l  PHI: (r3v2 int) = (r3v1 int), (r3v3 int) binds: [B:20:0x0006, B:22:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r0) goto L5\l}"];
+subgraph cluster_Region_110356949 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000a|LOOP_END\lLOOP:0: B:21:0x0008\-\>B:22:0x000a\l|r4 = r9[r3]\lr4.setTag(r8.mSetsTag, java.lang.Long.valueOf(java.lang.System.nanoTime()))\lr3++\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_395786397 {
+label = "R(1:(2:9|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_685691359 {
+label = "IF [B:24:0x001e] THEN: R(2:9|(1:11)) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|if (r8.mClearsTag != (\-1)) goto L9\l}"];
+subgraph cluster_Region_1791270116 {
+label = "R(2:9|(1:11))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0020}"];
+subgraph cluster_LoopRegion_1666641716 {
+label = "LOOP:1: (1:11)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0021|LOOP_START\lLOOP:1: B:26:0x0021\-\>B:27:0x0023\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:25:0x0020, B:27:0x0023] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L11\l}"];
+subgraph cluster_Region_1533994003 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0023|LOOP_END\lLOOP:1: B:26:0x0021\-\>B:27:0x0023\l|r2 = r9[r1]\lr2.setTag(r8.mClearsTag, null)\lr1++\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001c|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001c}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002e|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x002e|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public \/* synthetic *\/ void androidx.constraintlayout.motion.widget.ViewTransition.lambda$applyTransition$0$androidx\-constraintlayout\-motion\-widget\-ViewTransition((r8v0 'this' androidx.constraintlayout.motion.widget.ViewTransition A[IMMUTABLE_TYPE, THIS]), (r9v0 'views' android.view.View[] A[D('views' android.view.View[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x000a \-\> B:21:0x0008, BACK_EDGE: B:27:0x0023 \-\> B:26:0x0021, CROSS_EDGE: B:24:0x001e \-\> B:28:0x002e, CROSS_EDGE: B:19:0x0004 \-\> B:23:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_29[style=dashed];
+Node_22 -> Node_21;
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_30[style=dashed];
+Node_27 -> Node_26;
+Node_16 -> Node_18;
+Node_29 -> Node_23;
+Node_23 -> Node_24;
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+Node_28 -> Node_17;
+}
+

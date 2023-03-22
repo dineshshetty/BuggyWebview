@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.emoji2.text.EmojiMetadata.toString()Ljava\/lang\/String;" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(super.toString())\lr0.append(\", id:\")\lr0.append(java.lang.Integer.toHexString(getId()))\lr0.append(\", codepoints:\")\lint r1 = getCodepointsLength()\lr2 = 0\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0026|LOOP_START\lLOOP:0: B:11:0x0026\-\>B:12:0x0028\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v3 'i' int) binds: [B:10:0x0000, B:12:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= r1) goto L4\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0028|LOOP_END\lLOOP:0: B:11:0x0026\-\>B:12:0x0028\l|r0.append(java.lang.Integer.toHexString(getCodepointAt(r2)))\lr0.append(\" \")\lint r2 = r2 + 1\l}"];
+Node_15 [shape=record,label="{15\:\ 0x003b|SYNTHETIC\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003b}"];
+Node_14 [shape=record,label="{14\:\ 0x003f|RETURN\l|return r0.toString()\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.emoji2.text.EmojiMetadata.toString((r4v0 'this' androidx.emoji2.text.EmojiMetadata A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0028 \-\> B:11:0x0026\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_15;
+Node_12 -> Node_11;
+Node_15 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+}
+

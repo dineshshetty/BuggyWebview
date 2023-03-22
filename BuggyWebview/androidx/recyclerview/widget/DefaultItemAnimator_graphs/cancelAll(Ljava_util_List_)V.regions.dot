@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.recyclerview.widget.DefaultItemAnimator.cancelAll(Ljava\/util\/List;)V" {
+subgraph cluster_Region_1951475092 {
+label = "R(2:1|(1:3))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r3.size() \- 1\l}"];
+subgraph cluster_LoopRegion_1670292248 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|LOOP_START\lLOOP:0: B:3:0x0006\-\>B:4:0x0008\lPHI: r0 \l  PHI: (r0v2 'i' int) = (r0v1 'i' int), (r0v3 'i' int) binds: [B:2:0x0000, B:4:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1794758692 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|LOOP_END\lLOOP:0: B:3:0x0006\-\>B:4:0x0008\l|r3.get(r0).itemView.animate().cancel()\lr0\-\-\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001a|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.DefaultItemAnimator.cancelAll((r2v0 'this' androidx.recyclerview.widget.DefaultItemAnimator A[IMMUTABLE_TYPE, THIS]), (r3v0 'viewHolders' java.util.List\<androidx.recyclerview.widget.RecyclerView$ViewHolder\> A[D('viewHolders' java.util.List\<androidx.recyclerview.widget.RecyclerView$ViewHolder\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x0008 \-\> B:3:0x0006\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/List\<Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;\>;)V\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_3;
+Node_0 -> Node_2;
+Node_6 -> Node_5;
+Node_5 -> Node_1;
+}
+

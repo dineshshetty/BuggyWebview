@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.material.chip.ChipGroup.onInitializeAccessibilityNodeInfo(Landroid\/view\/accessibility\/AccessibilityNodeInfo;)V" {
+subgraph cluster_Region_1182728097 {
+label = "R(5:1|2|4|(1:6)(1:10)|7) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|super.onInitializeAccessibilityNodeInfo(r6)\landroidx.core.view.accessibility.AccessibilityNodeInfoCompat androidx.core.view.accessibility.AccessibilityNodeInfoCompat r0 = androidx.core.view.accessibility.AccessibilityNodeInfoCompat.wrap(r6)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|int r1 = isSingleLine() ? getVisibleChipCount() : \-1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|PHI: r1 \l  PHI: (r1v2 'columnCount' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r2 = getRowCount()\l}"];
+subgraph cluster_IfRegion_565780605 {
+label = "IF [B:7:0x001d] THEN: R(1:6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (isSingleSelection() != false) goto L6\l}"];
+subgraph cluster_Region_1250116018 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|r4 = 1\l}"];
+}
+subgraph cluster_Region_1316365121 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0021|r4 = 2\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0022|PHI: r4 \l  PHI: (r4v2 int) = (r4v1 int), (r4v3 int) binds: [B:9:0x0021, B:8:0x001f] A[DONT_GENERATE, DONT_INLINE]\l|r0.setCollectionInfo(androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionInfoCompat.obtain(r2, r1, false, r4))\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0029}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+MethodNode[shape=record,label="{public void com.google.android.material.chip.ChipGroup.onInitializeAccessibilityNodeInfo((r5v0 'this' com.google.android.material.chip.ChipGroup A[IMMUTABLE_TYPE, THIS]), (r6v0 'info' android.view.accessibility.AccessibilityNodeInfo A[D('info' android.view.accessibility.AccessibilityNodeInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:9:0x0021 \-\> B:10:0x0022, CROSS_EDGE: B:5:0x0012 \-\> B:6:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo):void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_11 -> Node_1;
+Node_5 -> Node_6;
+}
+

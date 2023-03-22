@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.appcompat.view.menu.BaseMenuWrapper.getMenuItemWrapper(Landroid\/view\/MenuItem;)Landroid\/view\/MenuItem;" {
+subgraph cluster_Region_589243979 {
+label = "R(1:(2:(4:3|(1:5)|6|(2:(2:8|9)|(1:11)))|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1238373180 {
+label = "R(2:(4:3|(1:5)|6|(2:(2:8|9)|(1:11)))|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_327637856 {
+label = "IF [B:16:0x0002] THEN: R(4:3|(1:5)|6|(2:(2:8|9)|(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if ((r5 instanceof androidx.core.internal.view.SupportMenuItem) != false) goto L3\l}"];
+subgraph cluster_Region_1835116927 {
+label = "R(4:3|(1:5)|6|(2:(2:8|9)|(1:11)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|androidx.core.internal.view.SupportMenuItem androidx.core.internal.view.SupportMenuItem r0 = (androidx.core.internal.view.SupportMenuItem) r5\l}"];
+subgraph cluster_IfRegion_231828774 {
+label = "IF [B:18:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0009|if (r4.mMenuItems == null) goto L5\l}"];
+subgraph cluster_Region_1470513065 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|r4.mMenuItems = new androidx.collection.SimpleArrayMap\<\>()\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0012|android.view.MenuItem android.view.MenuItem r1 = r4.mMenuItems.get(r0)\l}"];
+subgraph cluster_Region_505843602 {
+label = "R(2:(2:8|9)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_31239569 {
+label = "IF [B:21:0x001a] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001a|if (r1 == null) goto L8\l}"];
+subgraph cluster_Region_2066749350 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001c|androidx.appcompat.view.menu.MenuItemWrapperICS android.view.MenuItem r2 = new androidx.appcompat.view.menu.MenuItemWrapperICS(r4.mContext, r0)\lr4.mMenuItems.put(r0, r2)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0029|RETURN\lORIG_RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_864447549 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_928226157 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002a|RETURN\l|return r5\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final android.view.MenuItem androidx.appcompat.view.menu.BaseMenuWrapper.getMenuItemWrapper((r4v0 'this' androidx.appcompat.view.menu.BaseMenuWrapper A[IMMUTABLE_TYPE, THIS]), (r5v0 'menuItem' android.view.MenuItem A[D('menuItem' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001a \-\> B:23:0x0029, CROSS_EDGE: B:18:0x0009 \-\> B:20:0x0012, CROSS_EDGE: B:24:0x002a \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_25 -> Node_14;
+Node_24 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+}
+

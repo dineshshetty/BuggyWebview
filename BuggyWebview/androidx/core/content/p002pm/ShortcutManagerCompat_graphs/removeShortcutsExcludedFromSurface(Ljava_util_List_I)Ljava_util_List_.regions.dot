@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutManagerCompat.removeShortcutsExcludedFromSurface(Ljava\/util\/List;I)Ljava\/util\/List;" {
+subgraph cluster_Region_1050980213 {
+label = "R(2:1|(2:(1:3)|(3:5|(2:8|(1:11)(0))|16)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.Objects.requireNonNull(r4)\l}"];
+subgraph cluster_Region_1818235550 {
+label = "R(2:(1:3)|(3:5|(2:8|(1:11)(0))|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1068298818 {
+label = "IF [B:3:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (android.os.Build.VERSION.SDK_INT \> 31) goto L3\l}"];
+subgraph cluster_Region_498164223 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1270171291 {
+label = "R(3:5|(2:8|(1:11)(0))|16)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|java.util.ArrayList java.util.List\<androidx.core.content.p002pm.ShortcutInfoCompat\> r0 = new java.util.ArrayList\<\>(r4)\ljava.util.Iterator r1 = r4.iterator()\l\l}"];
+subgraph cluster_LoopRegion_108374587 {
+label = "LOOP:0: (2:8|(1:11)(0))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|androidx.core.content.pm.ShortcutInfoCompat \lif (r1.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_1793961097 {
+label = "R(2:8|(1:11)(0))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|androidx.core.content.pm.ShortcutInfoCompat r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_839609716 {
+label = "IF [B:9:0x0023] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|if (r2.isExcludedFromSurfaces(r5) != false) goto L10\l}"];
+subgraph cluster_Region_371852325 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0025|r0.remove(r2)\l}"];
+}
+subgraph cluster_Region_614681683 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0029|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013|LOOP_START\lLOOP:0: B:6:0x0013\-\>B:15:0x0013\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0025|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0013|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0013|LOOP_END\lSYNTHETIC\lLOOP:0: B:6:0x0013\-\>B:15:0x0013\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0013|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0029|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<androidx.core.content.pm.ShortcutInfoCompat\> androidx.core.content.pm.ShortcutManagerCompat.removeShortcutsExcludedFromSurface((r4v0 'shortcuts' java.util.List\<androidx.core.content.pm.ShortcutInfoCompat\> A[D('shortcuts' java.util.List\<androidx.core.content.pm.ShortcutInfoCompat\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'surfaces' int A[D('surfaces' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:10:0x0025 \-\> B:6:0x0013, BACK_EDGE: B:9:0x0023 \-\> B:6:0x0013, CROSS_EDGE: B:12:0x0029 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/List\<Landroidx\/core\/content\/pm\/ShortcutInfoCompat;\>;I)Ljava\/util\/List\<Landroidx\/core\/content\/pm\/ShortcutInfoCompat;\>;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_13;
+Node_9 -> Node_16[style=dashed];
+Node_10 -> Node_17;
+Node_12 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+Node_13 -> Node_10;
+Node_17 -> Node_15;
+Node_15 -> Node_6;
+Node_16 -> Node_15;
+Node_14 -> Node_12;
+}
+

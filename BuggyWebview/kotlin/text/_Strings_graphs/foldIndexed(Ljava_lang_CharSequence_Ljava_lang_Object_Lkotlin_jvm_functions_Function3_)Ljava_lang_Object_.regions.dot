@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.foldIndexed(Ljava\/lang\/CharSequence;Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function3;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1496158366 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"operation\")\lint r1 = 0\ljava.lang.Object r2 = r8\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1976684746 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0012|if (r3 \< r7.length()) goto L4\l}"];
+subgraph cluster_Region_760197403 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0014|LOOP_END\lLOOP:0: B:11:0x000e\-\>B:13:0x0014\l|char char r4 = r7.charAt(r3)\ljava.lang.Object r2 = (R) r9.invoke(java.lang.Integer.valueOf(r1), r2, java.lang.Character.valueOf(r4))\lr3++\lr1++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x002a|RETURN\l|return (R) r2\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000e|LOOP_START\lLOOP:0: B:11:0x000e\-\>B:13:0x0014\lPHI: r1 r2 r3 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v3 'index' int) binds: [B:10:0x0000, B:13:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'accumulator' java.lang.Object) = (r2v0 'accumulator' java.lang.Object), (r2v2 'accumulator' java.lang.Object) binds: [B:10:0x0000, B:13:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:10:0x0000, B:13:0x0014] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002a|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final R kotlin.text.StringsKt___StringsKt.foldIndexed((r7v0 '$this$foldIndexed' java.lang.CharSequence A[D('$this$foldIndexed' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 R A[D('initial' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'operation' kotlin.jvm.functions.Function3\<? super java.lang.Integer, ? super R, ? super java.lang.Character, ? extends R\> A[D('operation' kotlin.jvm.functions.Function3), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0014 \-\> B:11:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lSIGNATURE: \<R:Ljava\/lang\/Object;\>(Ljava\/lang\/CharSequence;TR;Lkotlin\/jvm\/functions\/Function3\<\-Ljava\/lang\/Integer;\-TR;\-Ljava\/lang\/Character;+TR;\>;)TR;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r2v5. Raw type applied. Possible types: R, ? super R\}\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

@@ -1,0 +1,28 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractChannel.enqueueReceive(Lkotlinx\/coroutines\/channels\/Receive;)Z" {
+subgraph cluster_Region_775834360 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|boolean boolean r0 = enqueueReceiveInternal(r4)\l}"];
+subgraph cluster_IfRegion_542466956 {
+label = "IF [B:17:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|if (r0 != false) goto L3\l}"];
+subgraph cluster_Region_1521917595 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|onReceiveEnqueued()\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x000d|RETURN\l|return r0\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.channels.AbstractChannel.enqueueReceive((r3v0 'this' kotlinx.coroutines.channels.AbstractChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r4v0 kotlinx.coroutines.channels.Receive\<? super E\> A[D('receive' kotlinx.coroutines.channels.Receive), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0006 \-\> B:20:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (Lkotlinx\/coroutines\/channels\/Receive\<\-TE;\>;)Z\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_20;
+Node_20 -> Node_15;
+Node_14 -> Node_16;
+}
+

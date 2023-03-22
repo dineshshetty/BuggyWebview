@@ -1,0 +1,82 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.parkedWorkersStackPop()Lkotlinx\/coroutines\/scheduling\/CoroutineScheduler$Worker;" {
+subgraph cluster_Region_575133582 {
+label = "R(1:(2:2|(2:(1:17)|(2:4|(1:(2:10|11))))))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1416423377 {
+label = "LOOP:0: (2:2|(2:(1:17)|(2:4|(1:(2:10|11)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_268010489 {
+label = "R(2:2|(2:(1:17)|(2:4|(1:(2:10|11)))))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0005|LOOP_START\lLOOP:0: B:25:0x0005\-\>B:41:0x0005\l|long long r9 = r19.parkedWorkersStack\lint int r12 = (int) (2097151 & r9)\lkotlinx.coroutines.scheduling.CoroutineScheduler$Worker kotlinx.coroutines.scheduling.CoroutineScheduler.Worker r0 = r19.workers.get(r12)\l}"];
+subgraph cluster_Region_823749241 {
+label = "R(2:(1:17)|(2:4|(1:(2:10|11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_41578794 {
+label = "IF [B:26:0x0016] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0016|if (r0 == null) goto L16\l}"];
+subgraph cluster_Region_227891676 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0018|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1543920831 {
+label = "R(2:4|(1:(2:10|11)))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001a|long long r14 = (kotlinx.coroutines.scheduling.CoroutineScheduler.PARKED_VERSION_INC + r9) & kotlinx.coroutines.scheduling.CoroutineScheduler.PARKED_VERSION_MASK\lint int r4 = parkedWorkersStackNextIndex(r0)\l}"];
+subgraph cluster_Region_292684871 {
+label = "R(1:(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_611615038 {
+label = "IF [B:30:0x0028, B:33:0x003b] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0028|if (r4 \>= 0) goto L6\l}"];
+Node_33 [shape=record,label="{33\:\ 0x003b|ADDED_TO_REGION\l|if (kotlinx.coroutines.scheduling.CoroutineScheduler.parkedWorkersStack$FU.compareAndSet(r19, r9, r14 \| r4) != false) goto L9\l}"];
+subgraph cluster_Region_1096801495 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x003d|r0.setNextParkedWorker(kotlinx.coroutines.scheduling.CoroutineScheduler.NOT_IN_STACK)\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0042|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0000}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x002b|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x002b}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x003d|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0005|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0005|LOOP_END\lSYNTHETIC\lLOOP:0: B:25:0x0005\-\>B:41:0x0005\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x0005|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0018|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final kotlinx.coroutines.scheduling.CoroutineScheduler$Worker kotlinx.coroutines.scheduling.CoroutineScheduler.parkedWorkersStackPop((r19v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x0042 \-\> B:23:?, BACK_EDGE: B:33:0x003b \-\> B:25:0x0005, BACK_EDGE: B:30:0x0028 \-\> B:25:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_22;Node_25 -> Node_26;
+Node_26 -> Node_29[style=dashed];
+Node_26 -> Node_38;
+Node_27 -> Node_23;
+Node_29 -> Node_30;
+Node_30 -> Node_39;
+Node_30 -> Node_42[style=dashed];
+Node_33 -> Node_40;
+Node_33 -> Node_43[style=dashed];
+Node_34 -> Node_35;
+Node_35 -> Node_23;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_39 -> Node_32;
+Node_32 -> Node_33;
+Node_40 -> Node_34;
+Node_43 -> Node_41;
+Node_41 -> Node_25;
+Node_42 -> Node_41;
+Node_38 -> Node_27;
+}
+

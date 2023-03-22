@@ -1,0 +1,20 @@
+digraph "CFG forkotlinx.coroutines.Unconfined.dispatch(Lkotlin\/coroutines\/CoroutineContext;Ljava\/lang\/Runnable;)V" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: SGET  (r0 I:kotlinx.coroutines.YieldContext$Key) =  kotlinx.coroutines.YieldContext.Key kotlinx.coroutines.YieldContext$Key  (LINE:24)\l0x0002: CHECK_CAST (r0 I:kotlin.coroutines.CoroutineContext$Key) = (kotlin.coroutines.CoroutineContext$Key) (r0 I:??[OBJECT, ARRAY]) \l0x0004: INVOKE  (r0 I:kotlin.coroutines.CoroutineContext$Element) = \l  (r4 I:kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext)])\l  (r0 I:kotlin.coroutines.CoroutineContext$Key)\l type: INTERFACE call: kotlin.coroutines.CoroutineContext.get(kotlin.coroutines.CoroutineContext$Key):kotlin.coroutines.CoroutineContext$Element A[MD:\<E extends kotlin.coroutines.CoroutineContext$Element\>:(kotlin.coroutines.CoroutineContext$Key\<E extends kotlin.coroutines.CoroutineContext$Element\>):E extends kotlin.coroutines.CoroutineContext$Element (m)]\l0x0008: CHECK_CAST (r0 I:kotlinx.coroutines.YieldContext) = (kotlinx.coroutines.YieldContext) (r0 I:??[OBJECT, ARRAY]) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x000a|0x000a: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('yieldContext' kotlinx.coroutines.YieldContext)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:14:0x0010  (LINE:25)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000c|0x000c: CONST  (r1 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char])  (LINE:27)\l0x000d: IPUT  (r1 I:boolean), (r0 I:kotlinx.coroutines.YieldContext A[D('yieldContext' kotlinx.coroutines.YieldContext)]) kotlinx.coroutines.YieldContext.dispatcherWasUnconfined boolean \l}"];
+Node_13 [shape=record,label="{13\:\ 0x000f|RETURN\l|0x000f: RETURN    (LINE:28)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0010|0x0010: NEW_INSTANCE  (r1 I:java.lang.UnsupportedOperationException) =  java.lang.UnsupportedOperationException  (LINE:30)\l0x0012: CONST_STR  (r2 I:java.lang.String) =  \"Dispatchers.Unconfined.dispatch function can only be used by the yield function. If you wrap Unconfined dispatcher in your code, make sure you properly delegate isDispatchNeeded and dispatch calls.\" \l0x0014: INVOKE  (r1 I:java.lang.UnsupportedOperationException), (r2 I:java.lang.String) type: DIRECT call: java.lang.UnsupportedOperationException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0017|0x0017: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.Unconfined.dispatch((r3 'this' I:kotlinx.coroutines.Unconfined A[IMMUTABLE_TYPE, THIS]), (r4 I:kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:java.lang.Runnable A[D('block' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0017 \-\> B:9:?\lINLINE_NOT_NEEDED\lDebug Info:\l  0x000a\-0x0017: r0 'yieldContext' Lkotlinx\/coroutines\/YieldContext;\l  \-1 \-0x0017: r4 'context' Lkotlin\/coroutines\/CoroutineContext;\l  \-1 \-0x0017: r5 'block' Ljava\/lang\/Runnable;\lMETHOD_OVERRIDE: [kotlinx.coroutines.CoroutineDispatcher.dispatch(kotlin.coroutines.CoroutineContext, java.lang.Runnable):void]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+}
+

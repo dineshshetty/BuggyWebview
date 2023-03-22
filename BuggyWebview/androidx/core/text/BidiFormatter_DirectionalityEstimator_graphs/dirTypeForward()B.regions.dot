@@ -1,0 +1,111 @@
+digraph "CFG forandroidx.core.text.BidiFormatter.DirectionalityEstimator.dirTypeForward()B" {
+subgraph cluster_Region_555115150 {
+label = "R(2:1|(2:(2:3|4)|(2:6|(2:(2:8|(2:(1:11)|(1:(2:(1:15)|(1:16)))))|(1:17)))))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|char char r0 = r3.text.charAt(r3.charIndex)\lr3.lastChar = r0\l}"];
+subgraph cluster_Region_1660531425 {
+label = "R(2:(2:3|4)|(2:6|(2:(2:8|(2:(1:11)|(1:(2:(1:15)|(1:16)))))|(1:17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_803970367 {
+label = "IF [B:21:0x000e] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|if (java.lang.Character.isHighSurrogate(r0) != false) goto L3\l}"];
+subgraph cluster_Region_592688223 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|int int r0 = java.lang.Character.codePointAt(r3.text, r3.charIndex)\lr3.charIndex += java.lang.Character.charCount(r0)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0025|RETURN\l|return java.lang.Character.getDirectionality(r0)\l}"];
+}
+}
+subgraph cluster_Region_2001089842 {
+label = "R(2:6|(2:(2:8|(2:(1:11)|(1:(2:(1:15)|(1:16)))))|(1:17)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0026|r3.charIndex++\lbyte byte r0 = getCachedDirectionality(r3.lastChar)\l}"];
+subgraph cluster_Region_369809921 {
+label = "R(2:(2:8|(2:(1:11)|(1:(2:(1:15)|(1:16)))))|(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2002178084 {
+label = "IF [B:25:0x0034] THEN: R(2:8|(2:(1:11)|(1:(2:(1:15)|(1:16))))) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0034|if (r3.isHtml != false) goto L8\l}"];
+subgraph cluster_Region_2003472830 {
+label = "R(2:8|(2:(1:11)|(1:(2:(1:15)|(1:16)))))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0036|char char r1 = r3.lastChar\l}"];
+subgraph cluster_Region_759120318 {
+label = "R(2:(1:11)|(1:(2:(1:15)|(1:16))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_834913732 {
+label = "IF [B:27:0x003a] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x003a|if (r1 == '\<') goto L10\l}"];
+subgraph cluster_Region_41848898 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ ?|SYNTHETIC\lRETURN\l|return skipTagForward()\l}"];
+}
+}
+subgraph cluster_Region_1122277598 {
+label = "R(1:(2:(1:15)|(1:16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_57849686 {
+label = "R(2:(1:15)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2023808370 {
+label = "IF [B:30:0x0043] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0043|if (r1 == '&') goto L14\l}"];
+subgraph cluster_Region_1419195447 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0049|RETURN\lORIG_RETURN\l|return skipEntityForward()\l}"];
+}
+}
+subgraph cluster_Region_369882154 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_77330039 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x003c}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0041}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0045}"];
+MethodNode[shape=record,label="{byte androidx.core.text.BidiFormatter.DirectionalityEstimator.dirTypeForward((r3v0 'this' androidx.core.text.BidiFormatter$DirectionalityEstimator A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x0049 \-\> B:19:?, CROSS_EDGE: B:31:0x0045 \-\> B:32:0x0049, CROSS_EDGE: B:30:0x0043 \-\> B:32:0x0049, CROSS_EDGE: B:25:0x0034 \-\> B:32:0x0049\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_19;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_33[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_34 -> Node_19;
+Node_30 -> Node_31;
+Node_30 -> Node_35[style=dashed];
+Node_32 -> Node_19;
+Node_35 -> Node_19;
+Node_33 -> Node_19;
+Node_18 -> Node_20;
+Node_28 -> Node_34;
+Node_29 -> Node_30;
+Node_31 -> Node_32;
+}
+

@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.math.MathKt__MathJVMKt.atanh(D)D" {
+subgraph cluster_Region_2131004919 {
+label = "R(1:(2:(1:(2:(2:5|6)|(1:8)))|(2:9|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_124267128 {
+label = "R(2:(1:(2:(2:5|6)|(1:8)))|(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1718805741 {
+label = "IF [B:14:0x0008] THEN: R(1:(2:(2:5|6)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|if (java.lang.Math.abs(r7) \< kotlin.math.MathJVM.taylor_n_bound) goto L3\l}"];
+subgraph cluster_Region_1480214090 {
+label = "R(1:(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_50992015 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1165476476 {
+label = "IF [B:16:0x0013] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0013|if (java.lang.Math.abs(r7) \> kotlin.math.MathJVM.taylor_2_bound) goto L5\l}"];
+subgraph cluster_Region_1437985959 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|double double r0 = r7 + (((r7 * r7) * r7) \/ 3)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x001d|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_886248371 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return r7\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_857167556 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001e|double double r0 = 1\l}"];
+Node_20 [shape=record,label="{20\:\ 0x002b|RETURN\l|return java.lang.Math.log((r0 + r7) \/ (r0 \- r7)) \/ 2\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000a}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final double kotlin.math.MathKt__MathJVMKt.atanh((r7v0 'x' double A[D('x' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0013 \-\> B:18:0x001d, CROSS_EDGE: B:20:0x002b \-\> B:12:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_12;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

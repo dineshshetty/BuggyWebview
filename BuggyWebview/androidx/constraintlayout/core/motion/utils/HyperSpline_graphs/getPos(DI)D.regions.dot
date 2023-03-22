@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.constraintlayout.core.motion.utils.HyperSpline.getPos(DI)D" {
+subgraph cluster_Region_1711038021 {
+label = "R(3:1|(2:2|(2:(1:1)|(1:6)))|9) | DECL_VAR: double[] null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|double double r0 = r9.mTotalLength * r10\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_85195619 {
+label = "LOOP:0: (2:2|(2:(1:1)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_831510621 {
+label = "R(2:2|(2:(1:1)|(1:6)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|LOOP_START\lLOOP:0: B:3:0x0007\-\>B:7:0x0014\lPHI: r0 r4 \l  PHI: (r0v2 'pos' double) = (r0v1 'pos' double), (r0v3 'pos' double) binds: [B:2:0x0000, B:7:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'k' int) = (r4v0 'k' int), (r4v2 'k' int) binds: [B:2:0x0000, B:7:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|double[] r5 = r9.mCurveLength\l}"];
+subgraph cluster_Region_295918311 {
+label = "R(2:(1:1)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2106730527 {
+label = "IF [B:4:0x000c, B:6:0x0012] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r4 \>= (r5.length \- 1)) goto L11\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|ADDED_TO_REGION\l|if (r5[r4] \>= r0) goto L7\l}"];
+subgraph cluster_Region_1711461437 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_702023745 [shape=record,label="{|break\l}"];
+}
+}
+subgraph cluster_Region_1552085805 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|LOOP_END\lLOOP:0: B:3:0x0007\-\>B:7:0x0014\l|r0 \-= r5[r4]\lr4++\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0028|RETURN\l|return r9.mCurve[r12][r4].eval(r0 \/ r5[r4])\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001a|SYNTHETIC\lADDED_TO_REGION\lEDGE_INSN: B:10:0x001a\-\>B:8:0x001a ?: BREAK  \l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001a|EDGE_INSN: B:10:0x001a\-\>B:8:0x001a ?: BREAK  , EDGE_INSN: B:11:0x001a\-\>B:8:0x001a ?: BREAK  \l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001a|SYNTHETIC\lADDED_TO_REGION\lEDGE_INSN: B:11:0x001a\-\>B:8:0x001a ?: BREAK  \l}"];
+MethodNode[shape=record,label="{public double androidx.constraintlayout.core.motion.utils.HyperSpline.getPos((r9v0 'this' androidx.constraintlayout.core.motion.utils.HyperSpline A[IMMUTABLE_TYPE, THIS]), (r10v0 'p' double A[D('p' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'splineNumber' int A[D('splineNumber' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x0014 \-\> B:3:0x0007, CROSS_EDGE: B:4:0x000c \-\> B:8:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_7 -> Node_3;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_10 -> Node_8;
+Node_8 -> Node_9;
+Node_11 -> Node_8;
+}
+

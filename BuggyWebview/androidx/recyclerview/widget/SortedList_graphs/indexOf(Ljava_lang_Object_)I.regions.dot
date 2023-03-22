@@ -1,0 +1,86 @@
+digraph "CFG forandroidx.recyclerview.widget.SortedList.indexOf(Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_999832454 {
+label = "R(1:(2:(2:3|(2:(1:5)|(2:7|(2:(1:11)|(1:10)))))|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_190620204 {
+label = "R(2:(2:3|(2:(1:5)|(2:7|(2:(1:11)|(1:10)))))|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1508777270 {
+label = "IF [B:17:0x0002] THEN: R(2:3|(2:(1:5)|(2:7|(2:(1:11)|(1:10))))) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (r8.mOldData != null) goto L3\l}"];
+subgraph cluster_Region_413051636 {
+label = "R(2:3|(2:(1:5)|(2:7|(2:(1:11)|(1:10)))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|int int r0 = findIndexOf(r9, r8.mData, 0, r8.mNewDataStart, 4)\l}"];
+subgraph cluster_Region_1363715830 {
+label = "R(2:(1:5)|(2:7|(2:(1:11)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1604952200 {
+label = "IF [B:19:0x0011] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|if (r0 != (\-1)) goto L5\l}"];
+subgraph cluster_Region_892961151 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0013|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1137174677 {
+label = "R(2:7|(2:(1:11)|(1:10)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0014|int int r0 = findIndexOf(r9, r8.mOldData, r8.mOldDataStart, r8.mOldDataSize, 4)\l}"];
+subgraph cluster_Region_737600338 {
+label = "R(2:(1:11)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_786641683 {
+label = "IF [B:22:0x0021] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0021|if (r0 == (\-1)) goto L11\l}"];
+subgraph cluster_Region_1163229634 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002b|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1012693927 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002a|RETURN\l|return (r0 \- r8.mOldDataStart) + r8.mNewDataStart\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1828445171 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0038|RETURN\l|return findIndexOf(r9, r8.mData, 0, r8.mSize, 4)\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0023}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002c}"];
+MethodNode[shape=record,label="{public int androidx.recyclerview.widget.SortedList.indexOf((r8v0 'this' androidx.recyclerview.widget.SortedList\<T\> A[D('this' androidx.recyclerview.widget.SortedList\<T\>), IMMUTABLE_TYPE, THIS]), (r9v0 'item' T A[D('item' T), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x002a \-\> B:15:?, CROSS_EDGE: B:25:0x002b \-\> B:15:?, CROSS_EDGE: B:27:0x0038 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (TT;)I\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_26[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_25;
+Node_25 -> Node_15;
+Node_24 -> Node_15;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_23 -> Node_24;
+Node_26 -> Node_27;
+}
+

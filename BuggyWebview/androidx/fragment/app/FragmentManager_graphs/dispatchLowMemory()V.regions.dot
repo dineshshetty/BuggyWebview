@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.dispatchLowMemory()V" {
+subgraph cluster_Region_963509074 {
+label = "R(2:1|(2:4|(1:7)(0)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|java.util.Iterator r0 = r2.mFragmentStore.getFragments().iterator()\l\l}"];
+subgraph cluster_LoopRegion_178123899 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|androidx.fragment.app.Fragment \lif (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_813726730 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0010|androidx.fragment.app.Fragment r1 = r0.next()\l}"];
+subgraph cluster_IfRegion_918508508 {
+label = "IF [B:21:0x0016] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|if (r1 != null) goto L6\l}"];
+subgraph cluster_Region_1616812338 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0018|r1.performLowMemory()\l}"];
+}
+subgraph cluster_Region_92641134 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000a|LOOP_START\lLOOP:0: B:18:0x000a\-\>B:27:0x000a\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0018|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000a|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000a|LOOP_END\lSYNTHETIC\lLOOP:0: B:18:0x000a\-\>B:27:0x000a\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x000a|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001c|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001c}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentManager.dispatchLowMemory((r2v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x0018 \-\> B:18:0x000a, BACK_EDGE: B:21:0x0016 \-\> B:18:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_26[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_25;
+Node_21 -> Node_28[style=dashed];
+Node_22 -> Node_29;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_25 -> Node_22;
+Node_29 -> Node_27;
+Node_27 -> Node_18;
+Node_28 -> Node_27;
+Node_26 -> Node_24;
+Node_24 -> Node_16;
+}
+

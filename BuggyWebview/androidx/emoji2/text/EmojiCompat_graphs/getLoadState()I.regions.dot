@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.emoji2.text.EmojiCompat.getLoadState()I" {
+subgraph cluster_Region_351641587 {
+label = "R(2:1|(1:5))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r2.mInitLock.readLock().lock()\l}"];
+subgraph cluster_TryCatchRegion_1720752252 {
+label = "Try: R(1:5) finally: R(3:8|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_283200364 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0014|RETURN\l|return r2.mLoadState\l}"];
+}
+subgraph cluster_Region_518696255 {
+label = "R(3:8|9|10) | ExcHandler: all \-\> 0x0015\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|ExcHandler: all \-\> 0x0015\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0016|FINALLY_INSNS\l|r2.mInitLock.readLock().unlock()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001f|throw r0\l}"];
+}
+}
+}
+subgraph cluster_Region_518696255 {
+label = "R(3:8|9|10) | ExcHandler: all \-\> 0x0015\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|ExcHandler: all \-\> 0x0015\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0016|FINALLY_INSNS\l|r2.mInitLock.readLock().unlock()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001f|throw r0\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0009|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0009|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0015, blocks: (B:14:0x0009), top: B:20:0x0009 \}\lCatch: all \-\> 0x0015\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000b|DONT_GENERATE\l|java.util.concurrent.locks.ReadWriteLock r1 = r2.mInitLock\ljava.util.concurrent.locks.Lock r1 = r1.readLock()\lr1.unlock()\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public int androidx.emoji2.text.EmojiCompat.getLoadState((r2v0 'this' androidx.emoji2.text.EmojiCompat A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001f \-\> B:12:?, CROSS_EDGE: B:20:0x0009 \-\> B:17:0x0015\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0015, blocks: (B:14:0x0009), top: B:20:0x0009 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_20;
+Node_16 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_20 -> Node_14;
+Node_20 -> Node_17;
+Node_14 -> Node_15;
+Node_14 -> Node_21;
+Node_15 -> Node_16;
+Node_21 -> Node_17;
+}
+

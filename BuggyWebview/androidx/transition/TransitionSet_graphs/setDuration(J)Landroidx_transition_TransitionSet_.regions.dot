@@ -1,0 +1,48 @@
+digraph "CFG forandroidx.transition.TransitionSet.setDuration(J)Landroidx\/transition\/TransitionSet;" {
+subgraph cluster_Region_48934633 {
+label = "R(3:1|(2:5|(1:7))|9) | DECL_VAR: java.util.ArrayList\<androidx.transition.Transition\> null\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|super.setDuration(r6)\l}"];
+subgraph cluster_IfRegion_90180656 {
+label = "IF [B:14:0x0009, B:16:0x000d] THEN: R(2:5|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0009|if (r5.mDuration \>= 0) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000d|ADDED_TO_REGION\l|if ((r0 = r5.mTransitions) != null) goto L5\l}"];
+subgraph cluster_Region_1661130019 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|int int r0 = r0.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1302348447 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0014|LOOP_START\lLOOP:0: B:18:0x0014\-\>B:19:0x0016\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:17:0x000f, B:19:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L7\l}"];
+subgraph cluster_Region_2043895566 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0016|LOOP_END\lLOOP:0: B:18:0x0014\-\>B:19:0x0016\l|r5.mTransitions.get(r1).setDuration(r6)\lr1++\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0024|RETURN\l|return r5\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000b}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0024|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.transition.TransitionSet androidx.transition.TransitionSet.setDuration((r5v0 'this' androidx.transition.TransitionSet A[IMMUTABLE_TYPE, THIS]), (r6v0 'duration' long A[D('duration' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0016 \-\> B:18:0x0014, CROSS_EDGE: B:16:0x000d \-\> B:20:0x0024, CROSS_EDGE: B:14:0x0009 \-\> B:20:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: androidx.transition.TransitionSet.setDuration(long):androidx.transition.Transition\lMETHOD_OVERRIDE: [androidx.transition.Transition.setDuration(long):androidx.transition.Transition]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_18;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_21 -> Node_20;
+}
+

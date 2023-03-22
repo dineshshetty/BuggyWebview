@@ -1,0 +1,51 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuDialogHelper.show(Landroid\/os\/IBinder;)V" {
+subgraph cluster_Region_1357324971 {
+label = "R(5:1|(1:3)(1:10)|4|(1:6)|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|androidx.appcompat.view.menu.MenuBuilder androidx.appcompat.view.menu.MenuBuilder r0 = r6.mMenu\landroidx.appcompat.app.AlertDialog$Builder androidx.appcompat.app.AlertDialog.Builder r1 = new androidx.appcompat.app.AlertDialog.Builder(r0.getContext())\landroidx.appcompat.view.menu.ListMenuPresenter androidx.appcompat.view.menu.ListMenuPresenter r2 = new androidx.appcompat.view.menu.ListMenuPresenter(r1.getContext(), androidx.appcompat.C0019R.layout.abc_list_menu_item_layout)\lr6.mPresenter = r2\lr2.setCallback(r6)\lr6.mMenu.addMenuPresenter(r6.mPresenter)\lr1.setAdapter(r6.mPresenter.getAdapter(), r6)\landroid.view.View android.view.View r2 = r0.getHeaderView()\l}"];
+subgraph cluster_IfRegion_1887679344 {
+label = "IF [B:14:0x002f] THEN: R(1:3) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002f|if (r2 != null) goto L3\l}"];
+subgraph cluster_Region_1695289469 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0031|r1.setCustomTitle(r2)\l}"];
+}
+subgraph cluster_Region_1740749221 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0035|r1.setIcon(r0.getHeaderIcon()).setTitle(r0.getHeaderTitle())\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0044|r1.setOnKeyListener(r6)\landroidx.appcompat.app.AlertDialog androidx.appcompat.app.AlertDialog r3 = r1.create()\lr6.mDialog = r3\lr3.setOnDismissListener(r6)\landroid.view.WindowManager$LayoutParams android.view.WindowManager.LayoutParams r3 = r6.mDialog.getWindow().getAttributes()\lr3.type = androidx.core.view.PointerIconCompat.TYPE_HELP\l}"];
+subgraph cluster_IfRegion_712826120 {
+label = "IF [B:18:0x005e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x005e|if (r7 != null) goto L6\l}"];
+subgraph cluster_Region_421017009 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0060|r3.token = r7\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0062|r3.flags \|= 131072\lr6.mDialog.show()\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x006e}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.view.menu.MenuDialogHelper.show((r6v0 'this' androidx.appcompat.view.menu.MenuDialogHelper A[IMMUTABLE_TYPE, THIS]), (r7v0 'windowToken' android.os.IBinder A[D('windowToken' android.os.IBinder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x005e \-\> B:20:0x0062, CROSS_EDGE: B:16:0x0035 \-\> B:17:0x0044\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_21 -> Node_12;
+}
+

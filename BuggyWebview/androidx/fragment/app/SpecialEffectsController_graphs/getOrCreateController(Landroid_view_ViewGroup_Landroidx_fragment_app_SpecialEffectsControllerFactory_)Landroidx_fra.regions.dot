@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.fragment.app.SpecialEffectsController.getOrCreateController(Landroid\/view\/ViewGroup;Landroidx\/fragment\/app\/SpecialEffectsControllerFactory;)Landroidx\/fragment\/app\/SpecialEffectsController;" {
+subgraph cluster_Region_1451009788 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.lang.Object java.lang.Object r0 = r3.getTag(androidx.fragment.C0296R.C0299id.special_effects_controller_view_tag)\l}"];
+subgraph cluster_Region_1326672115 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_184292590 {
+label = "IF [B:11:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|if ((r0 instanceof androidx.fragment.app.SpecialEffectsController) != false) goto L3\l}"];
+subgraph cluster_Region_22913437 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000d|RETURN\l|return (androidx.fragment.app.SpecialEffectsController) r0\l}"];
+}
+}
+subgraph cluster_Region_296234022 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|androidx.fragment.app.SpecialEffectsController androidx.fragment.app.SpecialEffectsController r1 = r4.createController(r3)\lr3.setTag(androidx.fragment.C0296R.C0299id.special_effects_controller_view_tag, r1)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0017|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000a}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.fragment.app.SpecialEffectsController androidx.fragment.app.SpecialEffectsController.getOrCreateController((r3v0 'container' android.view.ViewGroup A[D('container' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'factory' androidx.fragment.app.SpecialEffectsControllerFactory A[D('factory' androidx.fragment.app.SpecialEffectsControllerFactory), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0017 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

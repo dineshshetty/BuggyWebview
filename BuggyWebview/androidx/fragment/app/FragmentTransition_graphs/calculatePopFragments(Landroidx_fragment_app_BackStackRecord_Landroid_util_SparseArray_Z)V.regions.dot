@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.fragment.app.FragmentTransition.calculatePopFragments(Landroidx\/fragment\/app\/BackStackRecord;Landroid\/util\/SparseArray;Z)V" {
+subgraph cluster_Region_452351368 {
+label = "R(1:(2:(1:3)|(2:5|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2050381382 {
+label = "R(2:(1:3)|(2:5|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1490334272 {
+label = "IF [B:13:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|if (r4.mManager.getContainer().onHasView() == false) goto L3\l}"];
+subgraph cluster_Region_1681139405 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_758007963 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|int int r0 = r4.mOps.size()\lint int r1 = r0 \- 1\l}"];
+subgraph cluster_LoopRegion_1752453429 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0015|LOOP_START\lLOOP:0: B:16:0x0015\-\>B:17:0x0017\lPHI: r1 \l  PHI: (r1v1 'opNum' int) = (r1v0 'opNum' int), (r1v2 'opNum' int) binds: [B:15:0x000d, B:17:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \>= 0) goto L7\l}"];
+subgraph cluster_Region_1971123267 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0015\-\>B:17:0x0017\l|androidx.fragment.app.FragmentTransaction$Op androidx.fragment.app.FragmentTransaction.C0352Op r2 = r4.mOps.get(r1)\laddToFirstInLastOut(r4, r2, r5, true, r6)\lr1\-\-\l}"];
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0026|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0026}"];
+MethodNode[shape=record,label="{public static void androidx.fragment.app.FragmentTransition.calculatePopFragments((r4v0 'transaction' androidx.fragment.app.BackStackRecord A[D('transaction' androidx.fragment.app.BackStackRecord), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'transitioningFragments' android.util.SparseArray\<androidx.fragment.app.FragmentTransition$FragmentContainerTransition\> A[D('transitioningFragments' android.util.SparseArray\<androidx.fragment.app.FragmentTransition$FragmentContainerTransition\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'isReordered' boolean A[D('isReordered' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x0017 \-\> B:16:0x0015, CROSS_EDGE: B:18:0x0026 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroidx\/fragment\/app\/BackStackRecord;Landroid\/util\/SparseArray\<Landroidx\/fragment\/app\/FragmentTransition$FragmentContainerTransition;\>;Z)V\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_16;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_19 -> Node_18;
+Node_18 -> Node_11;
+}
+

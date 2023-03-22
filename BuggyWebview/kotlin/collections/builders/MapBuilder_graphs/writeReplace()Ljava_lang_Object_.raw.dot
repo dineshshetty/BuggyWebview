@@ -1,0 +1,20 @@
+digraph "CFG forkotlin.collections.builders.MapBuilder.writeReplace()Ljava\/lang\/Object;" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: IGET  (r0 I:boolean) = (r2 I:kotlin.collections.builders.MapBuilder) kotlin.collections.builders.MapBuilder.isReadOnly boolean  (LINE:51)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0002|0x0002: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:14:0x000d \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0004|0x0004: NEW_INSTANCE  (r0 I:kotlin.collections.builders.SerializedMap) =  kotlin.collections.builders.SerializedMap  (LINE:52)\l0x0006: MOVE  (r1 I:??[OBJECT, ARRAY]) = (r2 I:??[OBJECT, ARRAY]) \l0x0007: CHECK_CAST (r1 I:java.util.Map) = (java.util.Map) (r1 I:??[OBJECT, ARRAY]) \l0x0009: INVOKE  (r0 I:kotlin.collections.builders.SerializedMap), (r1 I:java.util.Map) type: DIRECT call: kotlin.collections.builders.SerializedMap.\<init\>(java.util.Map):void A[MD:(java.util.Map\<?, ?\>):void (m)]\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000c|RETURN\l|0x000c: RETURN  (r0 I:java.lang.Object)  (LINE:54)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000d|0x000d: NEW_INSTANCE  (r0 I:java.io.NotSerializableException) =  java.io.NotSerializableException \l0x000f: CONST_STR  (r1 I:java.lang.String) =  \"The map cannot be serialized while it is being built.\" \l0x0011: INVOKE  (r0 I:java.io.NotSerializableException), (r1 I:java.lang.String) type: DIRECT call: java.io.NotSerializableException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0014|0x0014: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private final java.lang.Object kotlin.collections.builders.MapBuilder.writeReplace((r2 'this' I:kotlin.collections.builders.MapBuilder\<K, V\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0014 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+}
+

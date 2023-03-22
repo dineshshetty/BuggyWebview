@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.fragment.app.Fragment.getTargetFragment()Landroidx\/fragment\/app\/Fragment;" {
+subgraph cluster_Region_190192288 {
+label = "R(2:1|(2:(1:3)|(2:5|(2:(1:10)|(1:11))))) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|androidx.fragment.app.Fragment androidx.fragment.app.Fragment r0 = r2.mTarget\l}"];
+subgraph cluster_Region_1615930676 {
+label = "R(2:(1:3)|(2:5|(2:(1:10)|(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1440394181 {
+label = "IF [B:17:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_33040091 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1425719110 {
+label = "R(2:5|(2:(1:10)|(1:11)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|androidx.fragment.app.FragmentManager androidx.fragment.app.FragmentManager r0 = r2.mFragmentManager\l}"];
+subgraph cluster_Region_1695933569 {
+label = "R(2:(1:10)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1875000419 {
+label = "IF [B:20:0x0007, B:22:0x000b] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0007|if (r0 != null) goto L7\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000b|ADDED_TO_REGION\l|if ((r1 = r2.mTargetWho) != null) goto L9\l}"];
+subgraph cluster_Region_1866872541 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0011|RETURN\l|return r0.findActiveFragment(r1)\l}"];
+}
+}
+subgraph cluster_Region_1352975469 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0009}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000d}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0012|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public final androidx.fragment.app.Fragment androidx.fragment.app.Fragment.getTargetFragment((r2v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:24:0x0011 \-\> B:15:?, CROSS_EDGE: B:26:0x0013 \-\> B:15:?, CROSS_EDGE: B:20:0x0007 \-\> B:25:0x0012\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_25[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_27[style=dashed];
+Node_24 -> Node_15;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_25 -> Node_15;
+}
+

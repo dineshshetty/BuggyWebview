@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputLayout.applyBoxAttributes()V" {
+subgraph cluster_Region_2050947056 {
+label = "R(2:1|(2:(1:3)|(4:5|(1:7)|(1:10)|11)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|com.google.android.material.shape.MaterialShapeDrawable com.google.android.material.shape.MaterialShapeDrawable r0 = r3.boxBackground\l}"];
+subgraph cluster_Region_935901172 {
+label = "R(2:(1:3)|(4:5|(1:7)|(1:10)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1540474384 {
+label = "IF [B:16:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1016257926 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_706793797 {
+label = "R(4:5|(1:7)|(1:10)|11)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|com.google.android.material.shape.ShapeAppearanceModel com.google.android.material.shape.ShapeAppearanceModel r0 = r0.getShapeAppearanceModel()\lcom.google.android.material.shape.ShapeAppearanceModel com.google.android.material.shape.ShapeAppearanceModel r1 = r3.shapeAppearanceModel\l}"];
+subgraph cluster_IfRegion_805562993 {
+label = "IF [B:19:0x000b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|if (r0 != r1) goto L7\l}"];
+subgraph cluster_Region_1032784630 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|r3.boxBackground.setShapeAppearanceModel(r1)\l}"];
+}
+}
+subgraph cluster_IfRegion_1334160375 {
+label = "IF [B:22:0x0016] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0016|if (canDrawOutlineStroke() != false) goto L10\l}"];
+subgraph cluster_Region_1677189722 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0018|r3.boxBackground.setStroke(r3.boxStrokeWidthPx, r3.boxStrokeColor)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0022|int int r0 = calculateBoxBackgroundColor()\lr3.boxBackgroundColor = r0\lr3.boxBackground.setFillColor(android.content.res.ColorStateList.valueOf(r0))\lapplyBoxUnderlineAttributes()\lupdateEditTextBoxBackgroundIfNeeded()\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0012}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0037}"];
+MethodNode[shape=record,label="{private void com.google.android.material.textfield.TextInputLayout.applyBoxAttributes((r3v0 'this' com.google.android.material.textfield.TextInputLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0037 \-\> B:14:?, CROSS_EDGE: B:22:0x0016 \-\> B:24:0x0022, CROSS_EDGE: B:19:0x000b \-\> B:21:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_14;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_13 -> Node_15;
+Node_21 -> Node_22;
+Node_25 -> Node_14;
+}
+

@@ -1,0 +1,69 @@
+digraph "CFG forkotlinx.coroutines.flow.StartedLazily$command$1.invokeSuspend(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_389872767 {
+label = "R(3:1|2|8)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.lang.Object java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+subgraph cluster_SwitchRegion_1268008036 {
+label = "Switch: 3
+ case 0 -> R(2:9|(1:1)(1:11))
+ case 1 -> R(2:6|1)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|switch(r8.label) \{\l    case 0: goto L9;\l    case 1: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_1213095194 {
+label = "R(2:9|(1:1)(1:11))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0016|kotlin.ResultKt.throwOnFailure(r9)\lkotlinx.coroutines.flow.FlowCollector kotlinx.coroutines.flow.FlowCollector r2 = (kotlinx.coroutines.flow.FlowCollector) r8.L$0\lkotlin.jvm.internal.Ref$BooleanRef kotlin.jvm.internal.Ref.BooleanRef r3 = new kotlin.jvm.internal.Ref.BooleanRef()\lr8.label = 1\l}"];
+subgraph cluster_IfRegion_1941021491 {
+label = "IF [B:21:0x0036] THEN: R(1:1) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0036|if (r8.$subscriptionCount.collect(new kotlinx.coroutines.flow.StartedLazily$command$1.C09641(r3, r2), r8) != r0) goto L12\l}"];
+subgraph cluster_Region_1202014884 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_1874585116 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1716859590 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0038|RETURN\l|return r0\l}"];
+}
+}
+}
+subgraph cluster_Region_464268845 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|kotlin.ResultKt.throwOnFailure(r9)\l}"];
+Node_InsnContainer_1920138840 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_527395544 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0010|throw new java.lang.IllegalStateException(\"call to 'resume' before 'invoke' with coroutine\")\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x003f|throw new kotlin.ExceptionsH()\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0009}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x003a}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0039}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.flow.StartedLazily$command$1.invokeSuspend((r8v0 'this' kotlinx.coroutines.flow.StartedLazily$command$1 A[IMMUTABLE_TYPE, THIS]), (r9v0 '$result' java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x003f \-\> B:14:?, CROSS_EDGE: B:22:0x0038 \-\> B:14:?, CROSS_EDGE: B:23:0x0039 \-\> B:24:0x003a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlin.coroutines.jvm.internal.BaseContinuationImpl.invokeSuspend(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19;
+Node_16 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_14;
+Node_19 -> Node_24;
+Node_18 -> Node_14;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_24 -> Node_25;
+Node_23 -> Node_24;
+}
+

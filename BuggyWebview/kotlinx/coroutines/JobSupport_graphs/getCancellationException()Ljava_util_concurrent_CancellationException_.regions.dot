@@ -1,0 +1,102 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.getCancellationException()Ljava\/util\/concurrent\/CancellationException;" {
+subgraph cluster_Region_705404769 {
+label = "R(2:1|(2:(1:(2:(1:20)|(1:14)))|(3:3|4|(2:(1:8)|(1:10)))))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0000|java.lang.Object java.lang.Object r0 = getState$kotlinx_coroutines_core()\l}"];
+subgraph cluster_Region_863570179 {
+label = "R(2:(1:(2:(1:20)|(1:14)))|(3:3|4|(2:(1:8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2017217530 {
+label = "IF [B:26:0x0009] THEN: R(1:(2:(1:20)|(1:14))) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0009|if ((r0 instanceof kotlinx.coroutines.JobSupport.Finishing) != true) goto L11\l}"];
+subgraph cluster_Region_942613881 {
+label = "R(1:(2:(1:20)|(1:14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_377047340 {
+label = "R(2:(1:20)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_569322854 {
+label = "IF [B:36:0x0036] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0036|if ((r0 instanceof kotlinx.coroutines.Incomplete) == true) goto L19\l}"];
+subgraph cluster_Region_1706090175 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x006a|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Job is still new or active: \", r5).toString())\l}"];
+}
+}
+subgraph cluster_Region_1628884073 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x003a|RETURN\l|return r0 instanceof kotlinx.coroutines.CompletedExceptionally ? toCancellationException$default(r5, ((kotlinx.coroutines.CompletedExceptionally) r0).cause, null, 1, null) : new kotlinx.coroutines.JobCancellationException(kotlin.jvm.internal.Intrinsics.stringPlus(kotlinx.coroutines.DebugStrings.getClassSimpleName(r5), \" has completed normally\"), null, r5)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_386971581 {
+label = "R(3:3|4|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000b|java.lang.Throwable java.lang.Throwable r1 = ((kotlinx.coroutines.JobSupport.Finishing) r0).getRootCause()\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0012|java.util.concurrent.CancellationException r3 = r1 != null ? toCancellationException(r1, kotlin.jvm.internal.Intrinsics.stringPlus(kotlinx.coroutines.DebugStrings.getClassSimpleName(r5), \" is cancelling\")) : null\l}"];
+subgraph cluster_Region_519762459 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_233393470 {
+label = "IF [B:31:0x0023] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0023|PHI: r3 \l  PHI: (r3v4 java.util.concurrent.CancellationException) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (r3 == null) goto L7\l}"];
+subgraph cluster_Region_1606359120 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0033|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Job is still new or active: \", r5).toString())\l}"];
+}
+}
+subgraph cluster_Region_1429587448 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ ?|SYNTHETIC\lRETURN\l|return r3\l}"];
+}
+}
+}
+}
+}
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0015}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0026}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0034}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0038}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x003c}"];
+Node_44 [shape=record,color=red,label="{44\:\ ?|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0047}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x005c|ORIG_RETURN\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x005d}"];
+MethodNode[shape=record,label="{public final java.util.concurrent.CancellationException kotlinx.coroutines.JobSupport.getCancellationException((r5v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:41:0x005c \-\> B:24:?, CROSS_EDGE: B:28:0x0012 \-\> B:31:0x0023, CROSS_EDGE: B:39:0x003c \-\> B:41:0x005c, CROSS_EDGE: B:40:0x0047 \-\> B:41:0x005c, CROSS_EDGE: B:43:0x006a \-\> B:24:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.Job.getCancellationException():java.util.concurrent.CancellationException]\l}"];
+MethodNode -> Node_23;Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_35;
+Node_36 -> Node_37[style=dashed];
+Node_36 -> Node_42;
+Node_43 -> Node_24;
+Node_38 -> Node_39;
+Node_38 -> Node_40;
+Node_27 -> Node_28;
+Node_28 -> Node_30;
+Node_28 -> Node_31;
+Node_31 -> Node_33;
+Node_31 -> Node_45[style=dashed];
+Node_34 -> Node_24;
+Node_45 -> Node_24;
+Node_23 -> Node_25;
+Node_30 -> Node_31;
+Node_33 -> Node_34;
+Node_35 -> Node_36;
+Node_37 -> Node_38;
+Node_39 -> Node_44;
+Node_44 -> Node_24;
+Node_40 -> Node_41;
+Node_41 -> Node_24;
+Node_42 -> Node_43;
+}
+

@@ -1,0 +1,72 @@
+digraph "CFG forcom.google.android.material.datepicker.MonthAdapter.updateSelectedStates(Lcom\/google\/android\/material\/datepicker\/MaterialCalendarGridView;)V" {
+subgraph cluster_Region_1138349556 {
+label = "R(4:1|(1:4)|6|(1:(3:8|(1:11)|13)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|java.util.Iterator r0 = r4.previouslySelectedDates.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1983673287 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000a|java.lang.Long \lif (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1629286386 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|LOOP_END\lLOOP:0: B:20:0x0006\-\>B:22:0x000c\l|java.lang.Long r1 = r0.next()\lupdateSelectedStateForDate(r5, r1.longValue())\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x001a|com.google.android.material.datepicker.DateSelector\<?\> com.google.android.material.datepicker.DateSelector\<?\> r0 = r4.dateSelector\l}"];
+subgraph cluster_Region_2089480197 {
+label = "R(1:(3:8|(1:11)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_189319692 {
+label = "IF [B:24:0x001c] THEN: R(3:8|(1:11)|13) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001c|if (r0 != null) goto L8\l}"];
+subgraph cluster_Region_1669604057 {
+label = "R(3:8|(1:11)|13)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001e|java.util.Iterator r0 = r0.getSelectedDays().iterator()\l\l}"];
+subgraph cluster_LoopRegion_1512602739 {
+label = "LOOP:1: (1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002a|java.lang.Long \lif (r0.hasNext() != false) goto L11\l}"];
+subgraph cluster_Region_1327468218 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x002c|LOOP_END\lLOOP:1: B:26:0x0026\-\>B:28:0x002c\l|java.lang.Long r1 = r0.next()\lupdateSelectedStateForDate(r5, r1.longValue())\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x003a|r4.previouslySelectedDates = r4.dateSelector.getSelectedDays()\l}"];
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0006|LOOP_START\lLOOP:0: B:20:0x0006\-\>B:22:0x000c\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001a|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0026|LOOP_START\lLOOP:1: B:26:0x0026\-\>B:28:0x002c\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x003a|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0042|ORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.datepicker.MonthAdapter.updateSelectedStates((r4v0 'this' com.google.android.material.datepicker.MonthAdapter A[IMMUTABLE_TYPE, THIS]), (r5v0 'monthGrid' com.google.android.material.datepicker.MaterialCalendarGridView A[D('monthGrid' com.google.android.material.datepicker.MaterialCalendarGridView), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x000c \-\> B:20:0x0006, BACK_EDGE: B:28:0x002c \-\> B:26:0x0026, CROSS_EDGE: B:24:0x001c \-\> B:30:0x0042\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_31[style=dashed];
+Node_22 -> Node_20;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_33[style=dashed];
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_32[style=dashed];
+Node_28 -> Node_26;
+Node_29 -> Node_30;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_31 -> Node_23;
+Node_26 -> Node_27;
+Node_32 -> Node_29;
+Node_30 -> Node_18;
+Node_33 -> Node_18;
+}
+

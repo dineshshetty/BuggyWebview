@@ -1,0 +1,64 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.minOf(Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function1;)F" {
+subgraph cluster_Region_2091516648 {
+label = "R(2:1|(2:(1:13)|(3:5|(1:8)|10)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"selector\")\l}"];
+subgraph cluster_Region_1959498990 {
+label = "R(2:(1:13)|(3:5|(1:8)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_816128864 {
+label = "IF [B:21:0x0015] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4.length() == 0) != false) goto L12\l}"];
+subgraph cluster_Region_228397656 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x005d|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_390325633 {
+label = "R(3:5|(1:8)|10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0017|float float r0 = r5.invoke(java.lang.Character.valueOf(r4.charAt(0))).floatValue()\lkotlin.collections.IntIterator ?? r1 = new kotlin.ranges.IntRange(1, kotlin.text.StringsKt.getLastIndex(r4)).iterator()\l}"];
+subgraph cluster_LoopRegion_1239763234 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x003a|if (r1.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_1186744926 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x003c|LOOP_END\lLOOP:0: B:23:0x0036\-\>B:25:0x003c\l|int int r2 = r1.nextInt()\lfloat float r3 = r5.invoke(java.lang.Character.valueOf(r4.charAt(r2))).floatValue()\lfloat r0 = java.lang.Math.min(r0, r3)\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0057|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0010}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0012}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0036|LOOP_START\lLOOP:0: B:23:0x0036\-\>B:25:0x003c\lPHI: r0 \l  PHI: (r0v11 'minValue' float) = (r0v10 'minValue' float), (r0v12 'minValue' float) binds: [B:22:0x0017, B:25:0x003c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0057|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0058}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0014}"];
+MethodNode[shape=record,label="{private static final float kotlin.text.StringsKt___StringsKt.minOf((r4v0 '$this$minOf' java.lang.CharSequence A[D('$this$minOf' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'selector' kotlin.jvm.functions.Function1\<? super java.lang.Character, java.lang.Float\> A[D('selector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x003c \-\> B:23:0x0036, CROSS_EDGE: B:28:0x005d \-\> B:16:?, CROSS_EDGE: B:20:0x0014 \-\> B:21:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;Ljava\/lang\/Float;\>;)F\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r1v1, types: [kotlin.collections.IntIterator]\}\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_27;
+Node_28 -> Node_16;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_29[style=dashed];
+Node_25 -> Node_23;
+Node_26 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_21;
+Node_23 -> Node_24;
+Node_29 -> Node_26;
+Node_27 -> Node_28;
+Node_20 -> Node_21;
+}
+

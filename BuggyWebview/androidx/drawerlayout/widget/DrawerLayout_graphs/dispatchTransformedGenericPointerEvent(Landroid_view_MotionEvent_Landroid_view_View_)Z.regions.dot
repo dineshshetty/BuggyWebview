@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.dispatchTransformedGenericPointerEvent(Landroid\/view\/MotionEvent;Landroid\/view\/View;)Z" {
+subgraph cluster_Region_1337048889 {
+label = "R(2:1|(2:(2:3|4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.graphics.Matrix android.graphics.Matrix r0 = r8.getMatrix()\l}"];
+subgraph cluster_Region_1840310626 {
+label = "R(2:(2:3|4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1414353391 {
+label = "IF [B:11:0x0008] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|if (r0.isIdentity() == false) goto L3\l}"];
+subgraph cluster_Region_153574561 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000a|android.view.MotionEvent android.view.MotionEvent r1 = getTransformedMotionEvent(r7, r8)\lboolean boolean r2 = r8.dispatchGenericMotionEvent(r1)\lr1.recycle()\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1263673040 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0016|float float r1 = getScrollX() \- r8.getLeft()\lfloat float r2 = getScrollY() \- r8.getTop()\lr7.offsetLocation(r1, r2)\lboolean boolean r3 = r8.dispatchGenericMotionEvent(r7)\lr7.offsetLocation(\-r1, \-r2)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0037|RETURN\lORIG_RETURN\l|return r3\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private boolean androidx.drawerlayout.widget.DrawerLayout.dispatchTransformedGenericPointerEvent((r6v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r7v0 'event' android.view.MotionEvent A[D('event' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0016 \-\> B:14:0x0037\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+}
+

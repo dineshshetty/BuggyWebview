@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.vectordrawable.graphics.drawable.VectorDrawableCompat.updateTintFilter(Landroid\/graphics\/PorterDuffColorFilter;Landroid\/content\/res\/ColorStateList;Landroid\/graphics\/PorterDuff$Mode;)Landroid\/graphics\/PorterDuffColorFilter;" {
+subgraph cluster_Region_1558056146 {
+label = "R(1:(2:(1:6)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_241968740 {
+label = "R(2:(1:6)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_115004338 {
+label = "IF [B:12:0x0000, B:13:0x0002] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r4 == null) goto L7\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0002|ADDED_TO_REGION\l|if (r5 == null) goto L6\l}"];
+subgraph cluster_Region_1380158441 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_2012536337 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|int int r0 = r4.getColorForState(getState(), 0)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0013|RETURN\l|return new android.graphics.PorterDuffColorFilter(r0, r5)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0014|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{android.graphics.PorterDuffColorFilter androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.updateTintFilter((r2v0 'this' androidx.vectordrawable.graphics.drawable.VectorDrawableCompat A[IMMUTABLE_TYPE, THIS]), (r3v0 'tintFilter' android.graphics.PorterDuffColorFilter A[D('tintFilter' android.graphics.PorterDuffColorFilter), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'tint' android.content.res.ColorStateList A[D('tint' android.content.res.ColorStateList), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'tintMode' android.graphics.PorterDuff$Mode A[D('tintMode' android.graphics.PorterDuff$Mode), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0015 \-\> B:11:?, CROSS_EDGE: B:12:0x0000 \-\> B:17:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_17;
+Node_13 -> Node_15[style=dashed];
+Node_13 -> Node_19;
+Node_19 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_11;
+Node_10 -> Node_12;
+Node_17 -> Node_11;
+}
+

@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.app.AppOpsManagerCompat.checkOrNoteProxyOp(Landroid\/content\/Context;ILjava\/lang\/String;Ljava\/lang\/String;)I" {
+subgraph cluster_Region_1112783934 {
+label = "R(1:(2:(2:3|(2:(1:5)|(2:7|8)))|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1028637831 {
+label = "R(2:(2:3|(2:(1:5)|(2:7|8)))|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1977968101 {
+label = "IF [B:14:0x0004] THEN: R(2:3|(2:(1:5)|(2:7|8))) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L3\l}"];
+subgraph cluster_Region_208926364 {
+label = "R(2:3|(2:(1:5)|(2:7|8)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|android.app.AppOpsManager android.app.AppOpsManager r0 = androidx.core.app.AppOpsManagerCompat.Api29Impl.getSystemService(r5)\lint int r1 = android.os.Binder.getCallingUid()\lint int r2 = androidx.core.app.AppOpsManagerCompat.Api29Impl.checkOpNoThrow(r0, r7, r1, r8)\l}"];
+subgraph cluster_Region_59133409 {
+label = "R(2:(1:5)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_848673262 {
+label = "IF [B:16:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|if (r2 != 0) goto L5\l}"];
+subgraph cluster_Region_309973177 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1166541203 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|java.lang.String java.lang.String r3 = androidx.core.app.AppOpsManagerCompat.Api29Impl.getOpPackageName(r5)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001d|RETURN\l|return androidx.core.app.AppOpsManagerCompat.Api29Impl.checkOpNoThrow(r0, r7, r6, r3)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1558950883 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0022|RETURN\l|return noteProxyOpNoThrow(r5, r7, r8)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001e}"];
+MethodNode[shape=record,label="{public static int androidx.core.app.AppOpsManagerCompat.checkOrNoteProxyOp((r5v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'proxyUid' int A[D('proxyUid' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'op' java.lang.String A[D('op' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'proxiedPackageName' java.lang.String A[D('proxiedPackageName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001d \-\> B:12:?, CROSS_EDGE: B:21:0x0022 \-\> B:12:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_12;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_20 -> Node_21;
+}
+

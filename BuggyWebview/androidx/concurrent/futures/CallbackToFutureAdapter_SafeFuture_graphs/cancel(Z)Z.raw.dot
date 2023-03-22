@@ -1,0 +1,19 @@
+digraph "CFG forandroidx.concurrent.futures.CallbackToFutureAdapter.SafeFuture.cancel(Z)Z" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: IGET  (r0 I:java.lang.ref.WeakReference\<androidx.concurrent.futures.CallbackToFutureAdapter$Completer\<T\>\>) = \l  (r2 I:androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture A[D('this' androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture\<T\>)])\l androidx.concurrent.futures.CallbackToFutureAdapter.SafeFuture.completerWeakReference java.lang.ref.WeakReference  (LINE:164)\l0x0002: INVOKE  (r0 I:java.lang.Object) = (r0 I:java.lang.ref.WeakReference) type: VIRTUAL call: java.lang.ref.WeakReference.get():java.lang.Object A[MD:():T (c)]\l0x0006: CHECK_CAST (r0 I:androidx.concurrent.futures.CallbackToFutureAdapter$Completer) = (androidx.concurrent.futures.CallbackToFutureAdapter$Completer) (r0 I:??[OBJECT, ARRAY]) \l0x0008: IGET  (r1 I:androidx.concurrent.futures.AbstractResolvableFuture\<T\>) = \l  (r2 I:androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture A[D('this' androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture\<T\>)])\l androidx.concurrent.futures.CallbackToFutureAdapter.SafeFuture.delegate androidx.concurrent.futures.AbstractResolvableFuture  (LINE:165)\l0x000a: INVOKE  (r1 I:boolean) = (r1 I:androidx.concurrent.futures.AbstractResolvableFuture), (r3 I:boolean A[D('mayInterruptIfRunning' boolean)]) type: VIRTUAL call: androidx.concurrent.futures.AbstractResolvableFuture.cancel(boolean):boolean A[MD:(boolean):boolean (m)]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|0x000e: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('cancelled' boolean)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0015  (LINE:166)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|0x0010: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('completer' androidx.concurrent.futures.CallbackToFutureAdapter$Completer\<T\>)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0015 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|0x0012: INVOKE  \l  (r0 I:androidx.concurrent.futures.CallbackToFutureAdapter$Completer A[D('completer' androidx.concurrent.futures.CallbackToFutureAdapter$Completer\<T\>)])\l type: VIRTUAL call: androidx.concurrent.futures.CallbackToFutureAdapter.Completer.fireCancellationListeners():void A[MD:():void (m)] (LINE:168)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|RETURN\l|0x0015: RETURN  (r1 I:boolean A[D('cancelled' boolean)])  (LINE:170)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.concurrent.futures.CallbackToFutureAdapter.SafeFuture.cancel((r2 'this' I:androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture\<T\> A[D('this' androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture\<T\>), IMMUTABLE_TYPE, THIS]), (r3 I:boolean A[D('mayInterruptIfRunning' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:4:0x0010 \-\> B:6:0x0015, CROSS_EDGE: B:3:0x000e \-\> B:6:0x0015\lDebug Info:\l  0x0008\-0x0015: r0 'completer' Landroidx\/concurrent\/futures\/CallbackToFutureAdapter$Completer;, signature: Landroidx\/concurrent\/futures\/CallbackToFutureAdapter$Completer\<TT;\>;\l  0x000e\-0x0015: r1 'cancelled' Z\l  0x0000\-0x0015: r2 'this' Landroidx\/concurrent\/futures\/CallbackToFutureAdapter$SafeFuture;, signature: Landroidx\/concurrent\/futures\/CallbackToFutureAdapter$SafeFuture\<TT;\>;\l  \-1 \-0x0015: r3 'mayInterruptIfRunning' Z\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [ClspMth\{java.util.concurrent.Future.cancel(boolean):boolean\}]\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+}
+

@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.offsetFullSpansForAddition(II)V" {
+subgraph cluster_Region_1631395206 {
+label = "R(2:1|(2:(1:3)|(2:5|(3:7|(1:9)(0)|11))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.List\<androidx.recyclerview.widget.StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem\> java.util.List\<androidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.FullSpanItem\> r0 = r3.mFullSpanItems\l}"];
+subgraph cluster_Region_209689200 {
+label = "R(2:(1:3)|(2:5|(3:7|(1:9)(0)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_964165277 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1228755824 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1543842136 {
+label = "R(2:5|(3:7|(1:9)(0)|11))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|int int r0 = r0.size() \- 1\l}"];
+subgraph cluster_LoopRegion_1564810236 {
+label = "LOOP:0: (3:7|(1:9)(0)|11)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|LOOP_START\lLOOP:0: B:6:0x000b\-\>B:11:0x001f\lPHI: r0 \l  PHI: (r0v3 'i' int) = (r0v2 'i' int), (r0v4 'i' int) binds: [B:5:0x0005, B:11:0x001f] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L7\l}"];
+subgraph cluster_Region_1419640063 {
+label = "R(3:7|(1:9)(0)|11)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|androidx.recyclerview.widget.StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem androidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.FullSpanItem r1 = r3.mFullSpanItems.get(r0)\l}"];
+subgraph cluster_IfRegion_1385722855 {
+label = "IF [B:8:0x0017] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|if (r1.mPosition \>= r4) goto L9\l}"];
+subgraph cluster_Region_664985349 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001a|r1.mPosition += r5\l}"];
+}
+subgraph cluster_Region_284609562 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x001f|LOOP_END\lLOOP:0: B:6:0x000b\-\>B:11:0x001f\l|r0\-\-\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001f|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001f|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0022|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0022}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.offsetFullSpansForAddition((r3v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager$LazySpanLookup A[IMMUTABLE_TYPE, THIS]), (r4v0 'positionStart' int A[D('positionStart' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'itemCount' int A[D('itemCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x001f \-\> B:6:0x000b, CROSS_EDGE: B:8:0x0017 \-\> B:11:0x001f, CROSS_EDGE: B:12:0x0022 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_13[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_10;
+Node_8 -> Node_15[style=dashed];
+Node_10 -> Node_14;
+Node_11 -> Node_6;
+Node_0 -> Node_2;
+Node_14 -> Node_11;
+Node_15 -> Node_11;
+Node_13 -> Node_12;
+Node_12 -> Node_1;
+}
+

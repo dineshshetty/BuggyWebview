@@ -1,0 +1,79 @@
+digraph "CFG forkotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1.invoke(ILkotlin\/coroutines\/CoroutineContext$Element;)Ljava\/lang\/Integer;" {
+subgraph cluster_Region_1063952339 {
+label = "R(2:1|(2:(1:6)|(2:9|(2:(1:14)|(2:16|17)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.coroutines.CoroutineContext$Key kotlin.coroutines.CoroutineContext.Key r0 = r9.getKey()\lkotlin.coroutines.CoroutineContext$Element kotlin.coroutines.CoroutineContext.Element r1 = r7.$this_checkContext.collectContext.get(r0)\l}"];
+subgraph cluster_Region_180782646 {
+label = "R(2:(1:6)|(2:9|(2:(1:14)|(2:16|17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_718557005 {
+label = "IF [B:3:0x000e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r0 != kotlinx.coroutines.Job.Key) goto L3\l}"];
+subgraph cluster_Region_271019377 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|RETURN\l|return java.lang.Integer.valueOf(r9 != r1 ? Integer.MIN_VALUE : r8 + 1)\l}"];
+}
+}
+subgraph cluster_Region_1576703748 {
+label = "R(2:9|(2:(1:14)|(2:16|17)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001c|kotlinx.coroutines.Job kotlinx.coroutines.Job r2 = (kotlinx.coroutines.Job) r1\lkotlinx.coroutines.Job kotlinx.coroutines.Job r3 = kotlinx.coroutines.flow.internal.SafeCollector_commonKt.transitiveCoroutineParent((kotlinx.coroutines.Job) r9, r2)\l}"];
+subgraph cluster_Region_1824094399 {
+label = "R(2:(1:14)|(2:16|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_906301295 {
+label = "IF [B:10:0x0026] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0026|if (r3 == r2) goto L11\l}"];
+subgraph cluster_Region_1050902725 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0032|RETURN\l|return java.lang.Integer.valueOf(r2 == null ? r8 : r8 + 1)\l}"];
+}
+}
+subgraph cluster_Region_356789893 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0033}"];
+Node_17 [shape=record,label="{17\:\ 0x005e|throw new java.lang.IllegalStateException((\"Flow invariant is violated:nttEmission from another coroutine is detected.nttChild of \" + r3 + \", expected child of \" + r2 + \".nttFlowCollector is not thread\-safe and concurrent emissions are prohibited.nttTo mitigate this restriction please use 'channelFlow' builder instead of 'flow'\").toString())\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0017|PHI: r2 \l  PHI: (r2v4 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0028}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002a}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002e|PHI: r4 \l  PHI: (r4v2 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002c}"];
+MethodNode[shape=record,label="{public final java.lang.Integer kotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1.invoke((r7v0 'this' kotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1 A[IMMUTABLE_TYPE, THIS]), (r8v0 'count' int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'element' kotlin.coroutines.CoroutineContext$Element A[D('element' kotlin.coroutines.CoroutineContext$Element), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | CROSS_EDGE: B:6:0x0015 \-\> B:7:0x0017, CROSS_EDGE: B:15:0x0032 \-\> B:1:?, CROSS_EDGE: B:13:0x002c \-\> B:14:0x002e, CROSS_EDGE: B:17:0x005e \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l DEBUG: \l \-\> Don't trust debug lines info. Repeating lines: [68=5]\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_16[style=dashed];
+Node_15 -> Node_1;
+Node_16 -> Node_17;
+Node_17 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_11 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_13 -> Node_14;
+}
+

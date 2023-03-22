@@ -1,0 +1,114 @@
+digraph "CFG forkotlin.random.Random.nextBytes([BII)[B" {
+subgraph cluster_Region_482421716 {
+label = "R(2:1|(2:(2:23|24)|(1:(2:(2:21|22)|(5:11|(1:13)|15|(1:17)|19)))))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"array\")\lint r2 = 0\l}"];
+subgraph cluster_Region_939347725 {
+label = "R(2:(2:23|24)|(1:(2:(2:21|22)|(5:11|(1:13)|15|(1:17)|19))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1205383542 {
+label = "IF [B:36:0x0024] THEN: R(2:23|24) ELSE: null";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0024|if ((new kotlin.ranges.IntRange(0, r9.length).contains(r10) && new kotlin.ranges.IntRange(0, r9.length).contains(r11)) == false) goto L23\l}"];
+subgraph cluster_Region_99169680 {
+label = "R(2:23|24)";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x0098}"];
+Node_51 [shape=record,label="{51\:\ 0x00c7|throw new java.lang.IllegalArgumentException((\"fromIndex (\" + r10 + \") or toIndex (\" + r11 + \") are out of range: 0..\" + r9.length + '.').toString())\l}"];
+}
+}
+subgraph cluster_Region_29041805 {
+label = "R(1:(2:(2:21|22)|(5:11|(1:13)|15|(1:17)|19)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1550030480 {
+label = "R(2:(2:21|22)|(5:11|(1:13)|15|(1:17)|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1588780907 {
+label = "IF [B:40:0x002a] THEN: R(2:21|22) ELSE: null";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x002a|PHI: r1 \l  PHI: (r1v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if ((r10 \<= r11) == false) goto L21\l}"];
+subgraph cluster_Region_305865880 {
+label = "R(2:21|22)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x0071}"];
+Node_49 [shape=record,label="{49\:\ 0x0097|throw new java.lang.IllegalArgumentException((\"fromIndex (\" + r10 + \") must be not greater than toIndex (\" + r11 + \").\").toString())\l}"];
+}
+}
+subgraph cluster_Region_194390709 {
+label = "R(5:11|(1:13)|15|(1:17)|19)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x002c|int int r0 = (r11 \- r10) \/ 4\lint r1 = r10\l}"];
+subgraph cluster_LoopRegion_568857918 {
+label = "LOOP:0: (1:13)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0033|LOOP_START\lLOOP:0: B:42:0x0033\-\>B:43:0x0035\lPHI: r1 r2 \l  PHI: (r1v9 'position' int) = (r1v8 'position' int), (r1v10 'position' int) binds: [B:41:0x002c, B:43:0x0035] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v7 int) = (r2v0 int), (r2v9 int) binds: [B:41:0x002c, B:43:0x0035] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r0) goto L13\l}"];
+subgraph cluster_Region_1478130363 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0035|LOOP_END\lLOOP:0: B:42:0x0033\-\>B:43:0x0035\l|int int r5 = nextInt()\lr9[r1] = (byte) r5\lr9[r1 + 1] = (byte) (r5 \>\>\> 8)\lr9[r1 + 2] = (byte) (r5 \>\>\> 16)\lr9[r1 + 3] = (byte) (r5 \>\>\> 24)\lr1 += 4\lr2++\l}"];
+}
+}
+Node_44 [shape=record,label="{44\:\ 0x0059|int int r2 = r11 \- r1\lint int r3 = nextBits(r2 * 8)\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_2143066240 {
+label = "LOOP:1: (1:17)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0062|LOOP_START\lLOOP:1: B:45:0x0062\-\>B:46:0x0064\lPHI: r4 \l  PHI: (r4v1 'i' int) = (r4v0 'i' int), (r4v2 'i' int) binds: [B:44:0x0059, B:46:0x0064] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \< r2) goto L17\l}"];
+subgraph cluster_Region_505167768 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0064|LOOP_END\lLOOP:1: B:45:0x0062\-\>B:46:0x0064\l|r9[r1 + r4] = (byte) (r3 \>\>\> (r4 * 8))\lr4++\l}"];
+}
+}
+Node_47 [shape=record,label="{47\:\ 0x0070|RETURN\l|return r9\l}"];
+}
+}
+}
+}
+}
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0011}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0013}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001d|REMOVE\lADDED_TO_REGION\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001f}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0022|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0026}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0029}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x0059|SYNTHETIC\l}"];
+Node_53 [shape=record,color=red,label="{53\:\ 0x0070|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0021}"];
+MethodNode[shape=record,label="{public byte[] kotlin.random.Random.nextBytes((r8v0 'this' kotlin.random.Random A[IMMUTABLE_TYPE, THIS]), (r9v0 'array' byte[] A[D('array' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'fromIndex' int A[D('fromIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'toIndex' int A[D('toIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:43:0x0035 \-\> B:42:0x0033, BACK_EDGE: B:46:0x0064 \-\> B:45:0x0062, CROSS_EDGE: B:49:0x0097 \-\> B:28:?, CROSS_EDGE: B:37:0x0026 \-\> B:40:0x002a, CROSS_EDGE: B:51:0x00c7 \-\> B:28:?, CROSS_EDGE: B:34:0x0021 \-\> B:35:0x0022, CROSS_EDGE: B:30:0x0011 \-\> B:34:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlin.random.Random.nextBytes(byte[], int, int):byte[]]\l}"];
+MethodNode -> Node_27;Node_29 -> Node_30;
+Node_36 -> Node_37[style=dashed];
+Node_36 -> Node_50;
+Node_50 -> Node_51;
+Node_51 -> Node_28;
+Node_40 -> Node_41[style=dashed];
+Node_40 -> Node_48;
+Node_48 -> Node_49;
+Node_49 -> Node_28;
+Node_41 -> Node_42;
+Node_42 -> Node_43;
+Node_42 -> Node_52[style=dashed];
+Node_43 -> Node_42;
+Node_44 -> Node_45;
+Node_45 -> Node_46;
+Node_45 -> Node_53[style=dashed];
+Node_46 -> Node_45;
+Node_47 -> Node_28;
+Node_27 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_34;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_34;
+Node_33 -> Node_35;
+Node_35 -> Node_36;
+Node_37 -> Node_39;
+Node_37 -> Node_40;
+Node_39 -> Node_40;
+Node_52 -> Node_44;
+Node_53 -> Node_47;
+Node_34 -> Node_35;
+}
+

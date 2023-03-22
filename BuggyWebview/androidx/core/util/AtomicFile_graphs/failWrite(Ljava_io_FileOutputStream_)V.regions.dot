@@ -1,0 +1,102 @@
+digraph "CFG forandroidx.core.util.AtomicFile.failWrite(Ljava\/io\/FileOutputStream;)V" {
+subgraph cluster_Region_1962720412 {
+label = "R(1:(2:(1:2)|(3:(1:6)|(1:8)|(1:(1:11)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1701031807 {
+label = "R(2:(1:2)|(3:(1:6)|(1:8)|(1:(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1901222531 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r4 == null) goto L2\l}"];
+subgraph cluster_Region_1422345166 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1162743190 {
+label = "R(3:(1:6)|(1:8)|(1:(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1026447895 {
+label = "IF [B:5:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|if (sync(r4) == false) goto L6\l}"];
+subgraph cluster_Region_1590397299 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|android.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, \"Failed to sync file output stream\")\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_813463639 {
+label = "Try: R(1:8) catches: R(2:15|16)";
+node [shape=record,color=blue];
+subgraph cluster_Region_99348851 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IOException \-\> 0x0014, blocks: (B:7:0x0010), top: B:15:0x0010 \}\lCatch: IOException \-\> 0x0014\l|r4.close()     \/\/ Catch: java.io.IOException \-\> L14\l}"];
+}
+subgraph cluster_Region_1255861563 {
+label = "R(2:15|16) | ExcHandler: IOException \-\> 0x0014\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0014|ExcHandler: IOException \-\> 0x0014\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0015|android.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, \"Failed to close file output stream\", r0)\l}"];
+}
+}
+subgraph cluster_Region_1222141186 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_456462990 {
+label = "IF [B:12:0x0020] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0020|if (r3.mNewName.delete() == false) goto L11\l}"];
+subgraph cluster_Region_1091508466 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0022|android.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, \"Failed to delete new file \" + r3.mNewName)\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1255861563 {
+label = "R(2:15|16) | ExcHandler: IOException \-\> 0x0014\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0014|ExcHandler: IOException \-\> 0x0014\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0015|android.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, \"Failed to close file output stream\", r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0003}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0010|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001a}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0038|ORIG_RETURN\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public void androidx.core.util.AtomicFile.failWrite((r3v0 'this' androidx.core.util.AtomicFile A[IMMUTABLE_TYPE, THIS]), (r4v0 'str' java.io.FileOutputStream A[D('str' java.io.FileOutputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0038 \-\> B:1:?, CROSS_EDGE: B:12:0x0020 \-\> B:14:0x0038, CROSS_EDGE: B:10:0x0015 \-\> B:11:0x001a, CROSS_EDGE: B:15:0x0010 \-\> B:9:0x0014, CROSS_EDGE: B:5:0x0009 \-\> B:15:0x0010\lINLINE_NOT_NEEDED\lTryCatch #0 \{IOException \-\> 0x0014, blocks: (B:7:0x0010), top: B:15:0x0010 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_1;
+Node_5 -> Node_6;
+Node_5 -> Node_15[style=dashed];
+Node_6 -> Node_15;
+Node_7 -> Node_11;
+Node_7 -> Node_16;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_17[style=dashed];
+Node_13 -> Node_14;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_15 -> Node_7;
+Node_15 -> Node_9;
+Node_11 -> Node_12;
+Node_14 -> Node_1;
+Node_17 -> Node_1;
+Node_16 -> Node_9;
+}
+

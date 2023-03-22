@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.emoji2.text.EmojiCompat.ListenerDispatcher.run()V" {
+subgraph cluster_Region_1425209833 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|int int r0 = r4.mInitCallbacks.size()\l}"];
+subgraph cluster_SwitchRegion_391578187 {
+label = "Switch: 2
+ case 1 -> R(3:9|(1:11)|13)
+ case default -> R(3:3|(1:5)|7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|switch(r4.mLoadState) \{\l    case 1: goto L9;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_1154389611 {
+label = "R(3:9|(1:11)|13)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_1571534599 {
+label = "LOOP:1: (1:11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|LOOP_START\lLOOP:1: B:21:0x000e\-\>B:22:0x0010\lPHI: r1 \l  PHI: (r1v2 'i' int) = (r1v1 'i' int), (r1v3 'i' int) binds: [B:20:0x000d, B:22:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L11\l}"];
+subgraph cluster_Region_120591018 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|LOOP_END\lLOOP:1: B:21:0x000e\-\>B:22:0x0010\l|r4.mInitCallbacks.get(r1).onInitialized()\lr1++\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_128163524 {
+label = "R(3:3|(1:5)|7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_1010648005 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001f|LOOP_START\lLOOP:0: B:24:0x001f\-\>B:25:0x0021\lPHI: r1 \l  PHI: (r1v5 'i' int) = (r1v4 'i' int), (r1v6 'i' int) binds: [B:19:0x000b, B:25:0x0021] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L5\l}"];
+subgraph cluster_Region_1364645534 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0021|LOOP_END\lLOOP:0: B:24:0x001f\-\>B:25:0x0021\l|r4.mInitCallbacks.get(r1).onFailed(r4.mThrowable)\lr1++\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0031|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0031|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0031|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.emoji2.text.EmojiCompat.ListenerDispatcher.run((r4v0 'this' androidx.emoji2.text.EmojiCompat$ListenerDispatcher A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:25:0x0021 \-\> B:24:0x001f, BACK_EDGE: B:22:0x0010 \-\> B:21:0x000e, CROSS_EDGE: B:21:0x000e \-\> B:26:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{java.lang.Runnable.run():void\}]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_28[style=dashed];
+Node_22 -> Node_21;
+Node_29 -> Node_16;
+Node_19 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_25 -> Node_24;
+Node_26 -> Node_16;
+Node_15 -> Node_17;
+Node_27 -> Node_26;
+Node_28 -> Node_29;
+}
+

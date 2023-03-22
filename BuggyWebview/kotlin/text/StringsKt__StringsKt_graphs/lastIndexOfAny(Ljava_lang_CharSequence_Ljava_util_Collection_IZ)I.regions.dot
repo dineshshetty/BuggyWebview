@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.lastIndexOfAny(Ljava\/lang\/CharSequence;Ljava\/util\/Collection;IZ)I" {
+subgraph cluster_Region_1465166563 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"strings\")\lkotlin.Pair kotlin.Tuples\<java.lang.Integer, java.lang.String\> r0 = findAnyOf$StringsKt__StringsKt(r1, r2, r3, r4, true)\l}"];
+subgraph cluster_Region_1532244337 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1246185169 {
+label = "IF [B:19:0x000f] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1340776115 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return r0.getFirst().intValue()\l}"];
+}
+}
+subgraph cluster_Region_252030603 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001c|RETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0011}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.text.StringsKt__StringsKt.lastIndexOfAny((r1v0 '$this$lastIndexOfAny' java.lang.CharSequence A[D('$this$lastIndexOfAny' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'strings' java.util.Collection\<java.lang.String\> A[D('strings' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'startIndex' int A[D('startIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'ignoreCase' boolean A[D('ignoreCase' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001c \-\> B:22:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/CharSequence;Ljava\/util\/Collection\<Ljava\/lang\/String;\>;IZ)I\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_17;
+Node_21 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_23;
+}
+

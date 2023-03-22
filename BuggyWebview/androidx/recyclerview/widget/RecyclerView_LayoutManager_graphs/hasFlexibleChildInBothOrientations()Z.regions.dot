@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.LayoutManager.hasFlexibleChildInBothOrientations()Z" {
+subgraph cluster_Region_363209733 {
+label = "R(3:1|(2:3|(2:(1:8)|(1:11)))|14)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|int int r0 = getChildCount()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1907109594 {
+label = "LOOP:0: (2:3|(2:(1:8)|(1:11)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0005|LOOP_START\lLOOP:0: B:20:0x0005\-\>B:27:0x0019\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:19:0x0000, B:27:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_2040408937 {
+label = "R(2:3|(2:(1:8)|(1:11)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|android.view.View android.view.View r2 = getChildAt(r1)\landroid.view.ViewGroup$LayoutParams android.view.ViewGroup.LayoutParams r3 = r2.getLayoutParams()\l}"];
+subgraph cluster_Region_1568578787 {
+label = "R(2:(1:8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1564257875 {
+label = "IF [B:22:0x0011, B:24:0x0015] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|if (r3.width \< 0) goto L5\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0015|ADDED_TO_REGION\l|if (r3.height \< 0) goto L7\l}"];
+subgraph cluster_Region_1773432406 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0017|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1537633584 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0019|LOOP_END\lLOOP:0: B:20:0x0005\-\>B:27:0x0019\l|r1++\l}"];
+}
+}
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x001c|RETURN\l|return false\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0013}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0017|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0019|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0019|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean androidx.recyclerview.widget.RecyclerView.LayoutManager.hasFlexibleChildInBothOrientations((r5v0 'this' androidx.recyclerview.widget.RecyclerView$LayoutManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:27:0x0019 \-\> B:20:0x0005, CROSS_EDGE: B:22:0x0011 \-\> B:27:0x0019, CROSS_EDGE: B:29:0x001d \-\> B:18:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_30[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_32[style=dashed];
+Node_24 -> Node_31;
+Node_24 -> Node_33[style=dashed];
+Node_25 -> Node_18;
+Node_27 -> Node_20;
+Node_28 -> Node_18;
+Node_17 -> Node_19;
+Node_23 -> Node_24;
+Node_31 -> Node_25;
+Node_33 -> Node_27;
+Node_32 -> Node_27;
+Node_30 -> Node_28;
+}
+

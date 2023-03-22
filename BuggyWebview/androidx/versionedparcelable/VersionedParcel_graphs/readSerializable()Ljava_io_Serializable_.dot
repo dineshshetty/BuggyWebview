@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.readSerializable()Ljava\/io\/Serializable;" {
+Node_17 [shape=record,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0000|java.lang.String r1 = readString()\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0006|if (r1 != null) goto L5\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0008|RETURN\l|return null\l}"];
+Node_18 [shape=record,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000a|byte[] r2 = readByteArray()\ljava.io.ByteArrayInputStream r3 = new java.io.ByteArrayInputStream(r2)\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0013|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0013|TRY_ENTER\lTRY_LEAVE\lTryCatch #2 \{IOException \-\> 0x003a, ClassNotFoundException \-\> 0x001f, blocks: (B:24:0x0013), top: B:32:0x0013 \}\lCatch: ClassNotFoundException \-\> 0x001f, IOException \-\> 0x003a\l|androidx.versionedparcelable.VersionedParcel$1 r4 = new androidx.versionedparcelable.VersionedParcel.C05321(r3)     \/\/ Catch: java.lang.ClassNotFoundException \-\> L1f java.io.IOException \-\> L3a\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001e|RETURN\l|return (java.io.Serializable) r4.readObject()\l}"];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_29 [shape=record,label="{29\:\ 0x003a|ExcHandler: IOException \-\> 0x003a\l|java.io.IOException r4 = move\-exception\l}"];
+Node_30 [shape=record,label="{30\:\ 0x003b|java.lang.StringBuilder r6 = new java.lang.StringBuilder()\lr6.append(\"VersionedParcelable encountered IOException reading a Serializable object (name = \")\lr6.append(r1)\lr6.append(\")\")\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0054|throw new java.lang.RuntimeException(r6.toString(), r4)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001f|ExcHandler: ClassNotFoundException \-\> 0x001f\l|java.lang.ClassNotFoundException r4 = move\-exception\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0020|java.lang.StringBuilder r6 = new java.lang.StringBuilder()\lr6.append(\"VersionedParcelable encountered ClassNotFoundException reading a Serializable object (name = \")\lr6.append(r1)\lr6.append(\")\")\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0039|throw new java.lang.RuntimeException(r6.toString(), r4)\l}"];
+MethodNode[shape=record,label="{protected java.io.Serializable androidx.versionedparcelable.VersionedParcel.readSerializable((r8v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x001e \-\> B:18:?, CROSS_EDGE: B:31:0x0054 \-\> B:18:?, CROSS_EDGE: B:28:0x0039 \-\> B:18:?, CROSS_EDGE: B:32:0x0013 \-\> B:29:0x003a, CROSS_EDGE: B:32:0x0013 \-\> B:26:0x001f\lINLINE_NOT_NEEDED\lTryCatch #2 \{IOException \-\> 0x003a, ClassNotFoundException \-\> 0x001f, blocks: (B:24:0x0013), top: B:32:0x0013 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_23;
+Node_21 -> Node_18;
+Node_23 -> Node_32;
+Node_32 -> Node_24;
+Node_32 -> Node_29;
+Node_32 -> Node_26;
+Node_24 -> Node_25;
+Node_24 -> Node_33;
+Node_25 -> Node_18;
+Node_33 -> Node_29;
+Node_33 -> Node_26;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_18;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_18;
+}
+

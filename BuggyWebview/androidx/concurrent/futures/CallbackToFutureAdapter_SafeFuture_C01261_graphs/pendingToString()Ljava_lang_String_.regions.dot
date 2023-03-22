@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.concurrent.futures.CallbackToFutureAdapter.SafeFuture.1.pendingToString()Ljava\/lang\/String;" {
+subgraph cluster_Region_254964743 {
+label = "R(2:1|(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.concurrent.futures.CallbackToFutureAdapter$Completer androidx.concurrent.futures.CallbackToFutureAdapter.Completer\<T\> r0 = androidx.concurrent.futures.CallbackToFutureAdapter.SafeFuture.this.completerWeakReference.get()\l}"];
+subgraph cluster_Region_409764611 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_572843714 {
+label = "IF [B:3:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1560857289 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|RETURN\l|return \"Completer object has been garbage collected, future will fail soon\"\l}"];
+}
+}
+subgraph cluster_Region_1942005852 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f}"];
+Node_7 [shape=record,label="{7\:\ 0x0027|RETURN\l|return \"tag=[\" + r0.tag + \"]\"\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected java.lang.String androidx.concurrent.futures.CallbackToFutureAdapter.SafeFuture.1.pendingToString((r3v0 'this' androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture$1 A[D('this' androidx.concurrent.futures.CallbackToFutureAdapter$SafeFuture$1), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0027 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [androidx.concurrent.futures.AbstractResolvableFuture.pendingToString():java.lang.String]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+}
+

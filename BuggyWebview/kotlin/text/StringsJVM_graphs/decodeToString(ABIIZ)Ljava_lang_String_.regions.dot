@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.text.StringsKt__StringsJVMKt.decodeToString([BIIZ)Ljava\/lang\/String;" {
+subgraph cluster_Region_1649132106 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\lkotlin.collections.AbstractList.Companion.checkBoundsIndexes$kotlin_stdlib(r4, r5, r3.length)\l}"];
+subgraph cluster_Region_404680 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2060313660 {
+label = "IF [B:19:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|if (r6 == false) goto L3\l}"];
+subgraph cluster_Region_1359811096 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|RETURN\l|return new java.lang.String(r3, r4, r5 \- r4, kotlin.text.Charsets.UTF_8)\l}"];
+}
+}
+subgraph cluster_Region_1944237953 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0017|java.nio.charset.CharsetDecoder java.nio.charset.CharsetDecoder r0 = kotlin.text.Charsets.UTF_8.newDecoder().onMalformedInput(java.nio.charset.CodingErrorAction.REPORT).onUnmappableCharacter(java.nio.charset.CodingErrorAction.REPORT)\ljava.lang.String java.lang.String r1 = r0.decode(java.nio.ByteBuffer.wrap(r3, r4, r5 \- r4)).toString()\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, \"decoder.decode(ByteBuffe…\- startIndex)).toString()\")\l}"];
+Node_23 [shape=record,label="{23\:\ 0x003d|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000d}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.text.StringsKt__StringsJVMKt.decodeToString((r3v0 '$this$decodeToString' byte[] A[D('$this$decodeToString' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'startIndex' int A[D('startIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'endIndex' int A[D('endIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'throwOnInvalidSequence' boolean A[D('throwOnInvalidSequence' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x003d \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_17;
+Node_22 -> Node_23;
+Node_23 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+}
+

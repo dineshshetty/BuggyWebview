@@ -1,0 +1,30 @@
+digraph "CFG forkotlinx.coroutines.flow.StateFlowKt.getAndUpdate(Lkotlinx\/coroutines\/flow\/MutableStateFlow;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1371733322 {
+label = "R(2:(1:2)|5) | DECL_VAR: ?? null\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_2139274665 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000e|LOOP_END\lLOOP:0: B:11:0x0001\-\>B:12:0x000e\l|if (r4.compareAndSet(r1, r5.invoke(r1)) == false) goto L2\l}"];
+subgraph cluster_Region_1217526994 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0001|LOOP_START\lLOOP:0: B:11:0x0001\-\>B:12:0x000e\l|java.lang.Object r1 = (java.lang.Object) r4.getValue()\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0010|RETURN\l|return r1\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0010|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final T kotlinx.coroutines.flow.StateFlowKt.getAndUpdate((r4v0 kotlinx.coroutines.flow.MutableStateFlow\<T\> A[D('$this$getAndUpdate' kotlinx.coroutines.flow.MutableStateFlow), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 kotlin.jvm.functions.Function1\<? super T, ? extends T\> A[D('function' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x000e \-\> B:11:0x0001\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlinx\/coroutines\/flow\/MutableStateFlow\<TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;+TT;\>;)TT;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l \-\> Type inference failed for: r1v0, types: [T, java.lang.Object]\l DEBUG: \l \-\> Multi\-variable search result rejected for r4v0, resolved type: kotlinx.coroutines.flow.MutableStateFlow\<T\>\}\l}"];
+MethodNode -> Node_8;Node_12 -> Node_11;
+Node_12 -> Node_15[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_13;
+}
+

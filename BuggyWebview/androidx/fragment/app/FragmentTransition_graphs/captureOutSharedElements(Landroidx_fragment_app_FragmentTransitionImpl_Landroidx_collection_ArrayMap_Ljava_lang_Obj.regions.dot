@@ -1,0 +1,153 @@
+digraph "CFG forandroidx.fragment.app.FragmentTransition.captureOutSharedElements(Landroidx\/fragment\/app\/FragmentTransitionImpl;Landroidx\/collection\/ArrayMap;Ljava\/lang\/Object;Landroidx\/fragment\/app\/FragmentTransition$FragmentContainerTransition;)Landroidx\/collection\/ArrayMap;" {
+subgraph cluster_Region_1101254906 {
+label = "R(1:(2:(2:27|28)|(5:4|(1:6)(1:26)|(1:8)|(2:10|(3:12|(1:14)(1:(1:19)(0))|16))(1:25)|23))) | DECL_VAR: androidx.core.app.SharedElementCallback sharedElementCallback, java.util.ArrayList\<java.lang.String\> names\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_859027752 {
+label = "R(2:(2:27|28)|(5:4|(1:6)(1:26)|(1:8)|(2:10|(3:12|(1:14)(1:(1:19)(0))|16))(1:25)|23))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1014685814 {
+label = "IF [B:34:0x0004, B:35:0x0006] THEN: R(2:27|28) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0004|if (r11.isEmpty() != false) goto L27\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0006|ADDED_TO_REGION\l|if (r12 == null) goto L27\l}"];
+subgraph cluster_Region_1626734139 {
+label = "R(2:27|28)";
+node [shape=record,color=blue];
+Node_56 [shape=record,label="{56\:\ 0x0071|r11.clear()\l}"];
+Node_57 [shape=record,label="{57\:\ 0x0075|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1304888860 {
+label = "R(5:4|(1:6)(1:26)|(1:8)|(2:10|(3:12|(1:14)(1:(1:19)(0))|16))(1:25)|23)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0009|androidx.fragment.app.Fragment androidx.fragment.app.Fragment r0 = r13.firstOut\landroidx.collection.ArrayMap androidx.collection.ArrayMap\<java.lang.String, android.view.View\> r1 = new androidx.collection.ArrayMap\<\>()\lr10.findNamedViews(r1, r0.requireView())\landroidx.fragment.app.BackStackRecord androidx.fragment.app.BackStackRecord r2 = r13.firstOutTransaction\l}"];
+subgraph cluster_IfRegion_1057933023 {
+label = "IF [B:38:0x001b] THEN: R(1:6) ELSE: R(1:26)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x001b|if (r13.firstOutIsPop != false) goto L6\l}"];
+subgraph cluster_Region_1413528436 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x001d|androidx.core.app.SharedElementCallback r3 = r0.getEnterTransitionCallback()\ljava.util.ArrayList\<java.lang.String\> r4 = r2.mSharedElementTargetNames\l}"];
+}
+subgraph cluster_Region_292723188 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0024|androidx.core.app.SharedElementCallback r3 = r0.getExitTransitionCallback()\ljava.util.ArrayList\<java.lang.String\> r4 = r2.mSharedElementSourceNames\l}"];
+}
+}
+subgraph cluster_IfRegion_291160815 {
+label = "IF [B:41:0x002a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x002a|PHI: r3 r4 \l  PHI: (r3v2 'sharedElementCallback' androidx.core.app.SharedElementCallback) = (r3v1 'sharedElementCallback' androidx.core.app.SharedElementCallback), (r3v3 'sharedElementCallback' androidx.core.app.SharedElementCallback) binds: [B:40:0x0024, B:39:0x001d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'names' java.util.ArrayList\<java.lang.String\>) = (r4v0 'names' java.util.ArrayList\<java.lang.String\>), (r4v2 'names' java.util.ArrayList\<java.lang.String\>) binds: [B:40:0x0024, B:39:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 != null) goto L8\l}"];
+subgraph cluster_Region_769237124 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x002c|r1.retainAll(r4)\l}"];
+}
+}
+subgraph cluster_IfRegion_2051602914 {
+label = "IF [B:43:0x002f] THEN: R(2:10|(3:12|(1:14)(1:(1:19)(0))|16)) ELSE: R(1:25)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x002f|if (r3 != null) goto L10\l}"];
+subgraph cluster_Region_1490789573 {
+label = "R(2:10|(3:12|(1:14)(1:(1:19)(0))|16))";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0031|r3.onMapSharedElements(r4, r1)\lint int r5 = r4.size() \- 1\l}"];
+subgraph cluster_LoopRegion_1813309151 {
+label = "LOOP:0: (3:12|(1:14)(1:(1:19)(0))|16)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x003a|LOOP_START\lLOOP:0: B:45:0x003a\-\>B:52:0x0065\lPHI: r5 \l  PHI: (r5v3 'i' int) = (r5v2 'i' int), (r5v4 'i' int) binds: [B:44:0x0031, B:52:0x0065] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \>= 0) goto L12\l}"];
+subgraph cluster_Region_160509873 {
+label = "R(3:12|(1:14)(1:(1:19)(0))|16)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x003c|java.lang.String java.lang.String r6 = r4.get(r5)\landroid.view.View android.view.View r7 = r1.get(r6)\l}"];
+subgraph cluster_IfRegion_1666402637 {
+label = "IF [B:47:0x0048] THEN: R(1:14) ELSE: R(1:(1:19)(0))";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ 0x0048|if (r7 == null) goto L14\l}"];
+subgraph cluster_Region_1768725012 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x004a|r11.remove(r6)\l}"];
+}
+subgraph cluster_Region_889439414 {
+label = "R(1:(1:19)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1770048559 {
+label = "IF [B:50:0x0056] THEN: R(1:19) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x0056|if (r6.equals(androidx.core.view.ViewCompat.getTransitionName(r7)) == false) goto L19\l}"];
+subgraph cluster_Region_683303067 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_51 [shape=record,label="{51\:\ 0x0058|java.lang.String java.lang.String r8 = r11.remove(r6)\lr11.put(androidx.core.view.ViewCompat.getTransitionName(r7), r8)\l}"];
+}
+subgraph cluster_Region_2087900407 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_52 [shape=record,label="{52\:\ 0x0065|LOOP_END\lLOOP:0: B:45:0x003a\-\>B:52:0x0065\l|r5\-\-\l}"];
+}
+}
+}
+subgraph cluster_Region_212449870 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_54 [shape=record,label="{54\:\ 0x0069|r11.retainAll(r1.keySet())\l}"];
+}
+}
+Node_55 [shape=record,label="{55\:\ 0x0070|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_31 [shape=record,color=red,label="{31\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0000}"];
+Node_60 [shape=record,color=red,label="{60\:\ 0x0065|SYNTHETIC\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x004e}"];
+Node_59 [shape=record,color=red,label="{59\:\ 0x0065|SYNTHETIC\l}"];
+Node_61 [shape=record,color=red,label="{61\:\ 0x0065|SYNTHETIC\l}"];
+Node_58 [shape=record,color=red,label="{58\:\ 0x0070|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static androidx.collection.ArrayMap\<java.lang.String, android.view.View\> androidx.fragment.app.FragmentTransition.captureOutSharedElements((r10v0 'impl' androidx.fragment.app.FragmentTransitionImpl A[D('impl' androidx.fragment.app.FragmentTransitionImpl), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'nameOverrides' androidx.collection.ArrayMap\<java.lang.String, java.lang.String\> A[D('nameOverrides' androidx.collection.ArrayMap\<java.lang.String, java.lang.String\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'sharedElementTransition' java.lang.Object A[D('sharedElementTransition' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'fragments' androidx.fragment.app.FragmentTransition$FragmentContainerTransition A[D('fragments' androidx.fragment.app.FragmentTransition$FragmentContainerTransition), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:52:0x0065 \-\> B:45:0x003a, CROSS_EDGE: B:51:0x0058 \-\> B:52:0x0065, CROSS_EDGE: B:50:0x0056 \-\> B:52:0x0065, CROSS_EDGE: B:54:0x0069 \-\> B:55:0x0070, CROSS_EDGE: B:41:0x002a \-\> B:43:0x002f, CROSS_EDGE: B:40:0x0024 \-\> B:41:0x002a, CROSS_EDGE: B:57:0x0075 \-\> B:32:?, CROSS_EDGE: B:34:0x0004 \-\> B:56:0x0071\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroidx\/fragment\/app\/FragmentTransitionImpl;Landroidx\/collection\/ArrayMap\<Ljava\/lang\/String;Ljava\/lang\/String;\>;Ljava\/lang\/Object;Landroidx\/fragment\/app\/FragmentTransition$FragmentContainerTransition;)Landroidx\/collection\/ArrayMap\<Ljava\/lang\/String;Landroid\/view\/View;\>;\l}"];
+MethodNode -> Node_31;Node_34 -> Node_35[style=dashed];
+Node_34 -> Node_56;
+Node_35 -> Node_37[style=dashed];
+Node_35 -> Node_56;
+Node_56 -> Node_57;
+Node_57 -> Node_32;
+Node_37 -> Node_38;
+Node_38 -> Node_39;
+Node_38 -> Node_40[style=dashed];
+Node_39 -> Node_41;
+Node_40 -> Node_41;
+Node_41 -> Node_42;
+Node_41 -> Node_43[style=dashed];
+Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_43 -> Node_54[style=dashed];
+Node_44 -> Node_45;
+Node_45 -> Node_46;
+Node_45 -> Node_58[style=dashed];
+Node_46 -> Node_47;
+Node_47 -> Node_48;
+Node_47 -> Node_49[style=dashed];
+Node_48 -> Node_60;
+Node_50 -> Node_51;
+Node_50 -> Node_61[style=dashed];
+Node_51 -> Node_59;
+Node_52 -> Node_45;
+Node_54 -> Node_55;
+Node_55 -> Node_32;
+Node_31 -> Node_33;
+Node_33 -> Node_34;
+Node_60 -> Node_52;
+Node_49 -> Node_50;
+Node_59 -> Node_52;
+Node_61 -> Node_52;
+Node_58 -> Node_55;
+}
+

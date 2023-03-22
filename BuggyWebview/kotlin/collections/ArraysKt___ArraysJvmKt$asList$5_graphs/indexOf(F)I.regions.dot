@@ -1,0 +1,62 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysJvmKt$asList$5.indexOf(F)I" {
+subgraph cluster_Region_232915612 {
+label = "R(3:1|(2:3|(2:(1:9)|(1:7)))|13)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|float[] float[] r0 = r8.$this_asList\lint r2 = 0\lint int r3 = r0.length\l}"];
+subgraph cluster_LoopRegion_278175740 {
+label = "LOOP:0: (2:3|(2:(1:9)|(1:7)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|LOOP_START\lLOOP:0: B:19:0x0005\-\>B:26:0x001a\lPHI: r2 \l  PHI: (r2v1 'index$iv' int) = (r2v0 'index$iv' int), (r2v3 'index$iv' int) binds: [B:18:0x0000, B:26:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r3) goto L3\l}"];
+subgraph cluster_Region_951930921 {
+label = "R(2:3|(2:(1:9)|(1:7)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0007|float r4 = r0[r2]\l}"];
+subgraph cluster_Region_1012610888 {
+label = "R(2:(1:9)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_453614581 {
+label = "IF [B:24:0x0017] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0017|PHI: r6 \l  PHI: (r6v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((java.lang.Float.floatToIntBits(r4) == java.lang.Float.floatToIntBits(r9)) != false) goto L8\l}"];
+subgraph cluster_Region_1231533800 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1418504199 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001a|LOOP_END\lLOOP:0: B:19:0x0005\-\>B:26:0x001a\l|r2++\l}"];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x001d|RETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0012}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0014}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001e|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0016}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int kotlin.collections.ArraysKt___ArraysJvmKt$asList$5.indexOf((r8v0 'this' kotlin.collections.ArraysKt___ArraysJvmKt$asList$5 A[IMMUTABLE_TYPE, THIS]), (r9v0 'element' float A[D('element' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x001a \-\> B:19:0x0005, CROSS_EDGE: B:23:0x0016 \-\> B:24:0x0017, CROSS_EDGE: B:27:0x001d \-\> B:28:0x001e\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_29[style=dashed];
+Node_20 -> Node_21;
+Node_24 -> Node_26[style=dashed];
+Node_24 -> Node_30;
+Node_31 -> Node_17;
+Node_26 -> Node_19;
+Node_27 -> Node_17;
+Node_16 -> Node_18;
+Node_21 -> Node_22;
+Node_21 -> Node_23;
+Node_22 -> Node_24;
+Node_30 -> Node_31;
+Node_23 -> Node_24;
+Node_29 -> Node_27;
+}
+

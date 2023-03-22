@@ -1,0 +1,73 @@
+digraph "CFG forandroidx.cursoradapter.widget.SimpleCursorAdapter.findColumns(Landroid\/database\/Cursor;[Ljava\/lang\/String;)V" {
+subgraph cluster_Region_32811903 {
+label = "R(1:(2:(5:2|(1:12)|6|(1:8)|10)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2075737680 {
+label = "R(2:(5:2|(1:12)|6|(1:8)|10)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1516182243 {
+label = "IF [B:2:0x0000] THEN: R(5:2|(1:12)|6|(1:8)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r5 != null) goto L2\l}"];
+subgraph cluster_Region_1847176384 {
+label = "R(5:2|(1:12)|6|(1:8)|10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|int int r0 = r6.length\lint[] int[] r1 = r4.mFrom\l}"];
+subgraph cluster_IfRegion_87774673 {
+label = "IF [B:4:0x0005, B:6:0x0008] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|if (r1 == null) goto L12\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0008|ADDED_TO_REGION\l|if (r1.length != r0) goto L12\l}"];
+subgraph cluster_Region_1746648955 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000a|r4.mFrom = new int[r0]\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x000e|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_1501587197 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x000f|LOOP_START\lLOOP:0: B:9:0x000f\-\>B:10:0x0011\lPHI: r1 \l  PHI: (r1v3 'i' int) = (r1v2 'i' int), (r1v4 'i' int) binds: [B:8:0x000e, B:10:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L8\l}"];
+subgraph cluster_Region_2061287073 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0011|LOOP_END\lLOOP:0: B:9:0x000f\-\>B:10:0x0011\l|r4.mFrom[r1] = r5.getColumnIndexOrThrow(r6[r1])\lr1++\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1739843959 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001f|r4.mFrom = null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0022|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0022|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.cursoradapter.widget.SimpleCursorAdapter.findColumns((r4v0 'this' androidx.cursoradapter.widget.SimpleCursorAdapter A[IMMUTABLE_TYPE, THIS]), (r5v0 'c' android.database.Cursor A[D('c' android.database.Cursor), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'from' java.lang.String[] A[D('from' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:10:0x0011 \-\> B:9:0x000f, CROSS_EDGE: B:6:0x0008 \-\> B:8:0x000e, CROSS_EDGE: B:4:0x0005 \-\> B:7:0x000a, CROSS_EDGE: B:12:0x001f \-\> B:13:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_12[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_9;
+Node_15 -> Node_1;
+Node_12 -> Node_13;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_14 -> Node_15;
+Node_13 -> Node_1;
+}
+

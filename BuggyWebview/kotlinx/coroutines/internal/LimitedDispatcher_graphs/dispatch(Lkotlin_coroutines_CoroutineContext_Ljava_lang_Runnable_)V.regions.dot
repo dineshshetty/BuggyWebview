@@ -1,0 +1,41 @@
+digraph "CFG forkotlinx.coroutines.internal.LimitedDispatcher.dispatch(Lkotlin\/coroutines\/CoroutineContext;Ljava\/lang\/Runnable;)V" {
+subgraph cluster_Region_834612377 {
+label = "R(1:(1:(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_208912910 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1118708029 {
+label = "IF [B:3:0x0006, B:6:0x000d] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (addAndTryDispatching(r8) == false) goto L3\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000d|ADDED_TO_REGION\l|if (tryAllocateWorker() != false) goto L5\l}"];
+subgraph cluster_Region_1583690963 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0010|r6.dispatcher.dispatch(r6, r6)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001e|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.internal.LimitedDispatcher.dispatch((r6v0 'this' kotlinx.coroutines.internal.LimitedDispatcher A[IMMUTABLE_TYPE, THIS]), (r7v0 'context' kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'block' java.lang.Runnable A[D('block' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x000d \-\> B:9:0x001e, CROSS_EDGE: B:3:0x0006 \-\> B:9:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.CoroutineDispatcher.dispatch(kotlin.coroutines.CoroutineContext, java.lang.Runnable):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_5;
+Node_3 -> Node_10[style=dashed];
+Node_6 -> Node_8;
+Node_6 -> Node_11[style=dashed];
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_9 -> Node_1;
+Node_11 -> Node_1;
+Node_10 -> Node_1;
+}
+

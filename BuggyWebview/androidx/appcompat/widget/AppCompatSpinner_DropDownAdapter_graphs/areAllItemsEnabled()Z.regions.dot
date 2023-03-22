@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatSpinner.DropDownAdapter.areAllItemsEnabled()Z" {
+subgraph cluster_Region_1384406290 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.widget.ListAdapter android.widget.ListAdapter r0 = r2.mListAdapter\l}"];
+subgraph cluster_Region_2029079542 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1211503740 {
+label = "IF [B:11:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_726537174 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|RETURN\l|return r0.areAllItemsEnabled()\l}"];
+}
+}
+subgraph cluster_Region_173468921 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0009|RETURN\l|return true\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.widget.AppCompatSpinner.DropDownAdapter.areAllItemsEnabled((r2v0 'this' androidx.appcompat.widget.AppCompatSpinner$DropDownAdapter A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x000a \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.ListAdapter.areAllItemsEnabled():boolean\}]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

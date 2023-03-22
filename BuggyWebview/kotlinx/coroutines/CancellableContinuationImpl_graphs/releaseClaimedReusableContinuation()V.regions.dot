@@ -1,0 +1,50 @@
+digraph "CFG forkotlinx.coroutines.CancellableContinuationImpl.releaseClaimedReusableContinuation()V" {
+subgraph cluster_Region_831652665 {
+label = "R(4:1|2|4|(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.coroutines.Continuation\<T\> kotlin.coroutines.Continuation\<T\> r0 = r3.delegate\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0005|kotlinx.coroutines.internal.DispatchedContinuation r0 = r0 instanceof kotlinx.coroutines.internal.DispatchedContinuation ? (kotlinx.coroutines.internal.DispatchedContinuation) r0 : null\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000b|PHI: r0 \l  PHI: (r0v2 kotlinx.coroutines.internal.DispatchedContinuation) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Throwable r2 = r0 != null ? r0.tryReleaseClaimedContinuation(r3) : null\l}"];
+subgraph cluster_Region_1191142844 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1400520497 {
+label = "IF [B:22:0x0015] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|PHI: r2 \l  PHI: (r2v1 java.lang.Throwable) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (r2 == null) goto L7\l}"];
+subgraph cluster_Region_1033402334 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2085727310 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|java.lang.Throwable r0 = r2\ldetachChild$kotlinx_coroutines_core()\lcancel(r0)\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000e}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001f}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000a}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.CancellableContinuationImpl.releaseClaimedReusableContinuation((r3v0 'this' kotlinx.coroutines.CancellableContinuationImpl\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x001f \-\> B:14:?, CROSS_EDGE: B:19:0x000b \-\> B:22:0x0015, CROSS_EDGE: B:18:0x000a \-\> B:19:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_21;
+Node_19 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_14;
+Node_24 -> Node_25;
+Node_13 -> Node_15;
+Node_17 -> Node_19;
+Node_21 -> Node_22;
+Node_25 -> Node_14;
+Node_18 -> Node_19;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.appcompat.widget.ActivityChooserView.onMeasure(II)V" {
+subgraph cluster_Region_558584688 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|android.view.View android.view.View r0 = r3.mActivityChooserContent\l}"];
+subgraph cluster_IfRegion_1782530117 {
+label = "IF [B:10:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0008|if (r3.mDefaultActivityButton.getVisibility() != 0) goto L3\l}"];
+subgraph cluster_Region_295573472 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000a|int r5 = android.view.View.MeasureSpec.makeMeasureSpec(android.view.View.MeasureSpec.getSize(r5), androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.EXACTLY)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0014|PHI: r5 \l  PHI: (r5v1 'heightMeasureSpec' int) = (r5v0 'heightMeasureSpec' int), (r5v2 'heightMeasureSpec' int) binds: [B:10:0x0008, B:11:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|measureChild(r0, r4, r5)\lsetMeasuredDimension(r0.getMeasuredWidth(), r0.getMeasuredHeight())\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0022}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected void androidx.appcompat.widget.ActivityChooserView.onMeasure((r3v0 'this' androidx.appcompat.widget.ActivityChooserView A[IMMUTABLE_TYPE, THIS]), (r4v0 'widthMeasureSpec' int A[D('widthMeasureSpec' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'heightMeasureSpec' int A[D('heightMeasureSpec' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:10:0x0008 \-\> B:12:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onMeasure(int, int):void\}]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

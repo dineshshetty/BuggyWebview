@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.core.graphics.TypefaceCompatUtil.closeQuietly(Ljava\/io\/Closeable;)V" {
+subgraph cluster_Region_1108427493 {
+label = "R(1:(1:(1:(1:3))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2052726042 {
+label = "R(1:(1:(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1250425064 {
+label = "IF [B:13:0x0000] THEN: R(1:(1:3)) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|if (r1 != null) goto L2\l}"];
+subgraph cluster_Region_247803257 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1183535150 {
+label = "Try: R(1:3) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1821587240 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IOException \-\> 0x0006, blocks: (B:14:0x0002), top: B:18:0x0002 \}\lCatch: IOException \-\> 0x0006\l|r1.close()     \/\/ Catch: java.io.IOException \-\> L6\l}"];
+}
+subgraph cluster_Region_430359274 {
+label = "R(0) | ExcHandler: IOException \-\> 0x0006\l";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_430359274 {
+label = "R(0) | ExcHandler: IOException \-\> 0x0006\l";
+node [shape=record,color=blue];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0002|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006|ExcHandler: IOException \-\> 0x0006\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007|ORIG_RETURN\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.graphics.TypefaceCompatUtil.closeQuietly((r1v0 'c' java.io.Closeable A[D('c' java.io.Closeable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0002 \-\> B:17:0x0007, CROSS_EDGE: B:16:0x0006 \-\> B:17:0x0007, CROSS_EDGE: B:18:0x0002 \-\> B:16:0x0006\lINLINE_NOT_NEEDED\lTryCatch #0 \{IOException \-\> 0x0006, blocks: (B:14:0x0002), top: B:18:0x0002 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_18;
+Node_13 -> Node_20[style=dashed];
+Node_14 -> Node_19;
+Node_14 -> Node_21;
+Node_11 -> Node_13;
+Node_18 -> Node_14;
+Node_18 -> Node_16;
+Node_19 -> Node_16;
+Node_21 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_12;
+Node_20 -> Node_12;
+}
+

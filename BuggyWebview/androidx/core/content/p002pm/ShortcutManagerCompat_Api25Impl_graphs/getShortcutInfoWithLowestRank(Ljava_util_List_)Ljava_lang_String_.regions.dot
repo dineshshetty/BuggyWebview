@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutManagerCompat.Api25Impl.getShortcutInfoWithLowestRank(Ljava\/util\/List;)Ljava\/lang\/String;" {
+subgraph cluster_Region_563142104 {
+label = "R(3:1|(2:4|(1:7)(0))|12)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r0 = \-1\ljava.lang.String r1 = null\ljava.util.Iterator r2 = r5.iterator()\l\l}"];
+subgraph cluster_LoopRegion_202520760 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|android.content.pm.ShortcutInfo \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1304810331 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|android.content.pm.ShortcutInfo r3 = r2.next()\l}"];
+subgraph cluster_IfRegion_785833719 {
+label = "IF [B:6:0x0016] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|if (r3.getRank() \> r0) goto L6\l}"];
+subgraph cluster_Region_1759183435 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|java.lang.String r1 = r3.getId()\lint r0 = r3.getRank()\l}"];
+}
+subgraph cluster_Region_528335144 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0021|RETURN\l|return r1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006|LOOP_START\lLOOP:0: B:3:0x0006\-\>B:12:0x0006\lPHI: r0 r1 \l  PHI: (r0v1 'rank' int) = (r0v0 'rank' int), (r0v2 'rank' int) binds: [B:2:0x0000, B:12:0x0006] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'target' java.lang.String) = (r1v0 'target' java.lang.String), (r1v2 'target' java.lang.String) binds: [B:2:0x0000, B:12:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0018|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0006|LOOP_END\lSYNTHETIC\lLOOP:0: B:3:0x0006\-\>B:12:0x0006\lPHI: r0 r1 \l  PHI: (r0v2 'rank' int) = (r0v1 'rank' int), (r0v3 'rank' int) binds: [B:13:0x0006, B:14:0x0006] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v2 'target' java.lang.String) = (r1v1 'target' java.lang.String), (r1v3 'target' java.lang.String) binds: [B:13:0x0006, B:14:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0006|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0021|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static java.lang.String androidx.core.content.pm.ShortcutManagerCompat.Api25Impl.getShortcutInfoWithLowestRank((r5v0 'shortcuts' java.util.List\<android.content.pm.ShortcutInfo\> A[D('shortcuts' java.util.List\<android.content.pm.ShortcutInfo\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x0018 \-\> B:3:0x0006, BACK_EDGE: B:6:0x0016 \-\> B:3:0x0006\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/List\<Landroid\/content\/pm\/ShortcutInfo;\>;)Ljava\/lang\/String;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_10;
+Node_6 -> Node_13[style=dashed];
+Node_7 -> Node_14;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_10 -> Node_7;
+Node_14 -> Node_12;
+Node_12 -> Node_3;
+Node_13 -> Node_12;
+Node_11 -> Node_9;
+}
+

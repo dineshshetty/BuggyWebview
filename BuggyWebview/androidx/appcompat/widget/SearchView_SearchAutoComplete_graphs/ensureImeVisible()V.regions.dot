@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.appcompat.widget.SearchView.SearchAutoComplete.ensureImeVisible()V" {
+subgraph cluster_Region_2046759852 {
+label = "R(1:(2:(2:3|(2:(2:5|6)|(1:8)))|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_61259747 {
+label = "R(2:(2:3|(2:(2:5|6)|(1:8)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1794094784 {
+label = "IF [B:14:0x0004] THEN: R(2:3|(2:(2:5|6)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L3\l}"];
+subgraph cluster_Region_765322959 {
+label = "R(2:3|(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|androidx.appcompat.widget.SearchView.Api29Impl.setInputMethodMode(r2, 1)\l}"];
+subgraph cluster_Region_754905763 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_445712760 {
+label = "IF [B:16:0x000e] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000e|if (enoughToFilter() != false) goto L5\l}"];
+subgraph cluster_Region_224388444 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|showDropDown()\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1328988582 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_344344841 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0014|androidx.appcompat.widget.SearchView.PRE_API_29_HIDDEN_METHOD_INVOKER.ensureImeVisible(r2)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0019|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.widget.SearchView.SearchAutoComplete.ensureImeVisible((r2v0 'this' androidx.appcompat.widget.SearchView$SearchAutoComplete A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000e \-\> B:19:0x0019, CROSS_EDGE: B:18:0x0014 \-\> B:19:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_17 -> Node_21;
+Node_21 -> Node_12;
+Node_20 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_19 -> Node_12;
+}
+

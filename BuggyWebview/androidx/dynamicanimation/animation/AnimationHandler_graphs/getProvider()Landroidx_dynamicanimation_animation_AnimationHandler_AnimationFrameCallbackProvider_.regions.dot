@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.dynamicanimation.animation.AnimationHandler.getProvider()Landroidx\/dynamicanimation\/animation\/AnimationHandler$AnimationFrameCallbackProvider;" {
+subgraph cluster_Region_827645997 {
+label = "R(2:(1:(1:5)(1:6))|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_5779150 {
+label = "IF [B:13:0x0002] THEN: R(1:(1:5)(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r2.mProvider == null) goto L3\l}"];
+subgraph cluster_Region_1433204988 {
+label = "R(1:(1:5)(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_841142547 {
+label = "IF [B:15:0x0008] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L5\l}"];
+subgraph cluster_Region_610339570 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|r2.mProvider = new androidx.dynamicanimation.animation.AnimationHandler.FrameCallbackProvider16(r2.mCallbackDispatcher)\l}"];
+}
+subgraph cluster_Region_1703837422 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|r2.mProvider = new androidx.dynamicanimation.animation.AnimationHandler.FrameCallbackProvider14(r2.mCallbackDispatcher)\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x001f|RETURN\l|return r2.mProvider\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0004}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001d}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{androidx.dynamicanimation.animation.AnimationHandler$AnimationFrameCallbackProvider androidx.dynamicanimation.animation.AnimationHandler.getProvider((r2v0 'this' androidx.dynamicanimation.animation.AnimationHandler A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0014 \-\> B:18:0x001d, CROSS_EDGE: B:13:0x0002 \-\> B:18:0x001d\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+}
+

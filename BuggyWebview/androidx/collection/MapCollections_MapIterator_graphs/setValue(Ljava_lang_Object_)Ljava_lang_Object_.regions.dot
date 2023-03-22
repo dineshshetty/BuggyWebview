@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.collection.MapCollections.MapIterator.setValue(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_381886041 {
+label = "R(1:(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_967447131 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2122836514 {
+label = "IF [B:11:0x0002] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r2.mEntryValid == false) goto L6\l}"];
+subgraph cluster_Region_475252524 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0014|throw new java.lang.IllegalStateException(\"This container does not support retaining Map.Entry objects\")\l}"];
+}
+}
+subgraph cluster_Region_309076777 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000c|RETURN\l|return (V) androidx.collection.MapCollections.this.colSetValue(r2.mIndex, r3)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000d}"];
+MethodNode[shape=record,label="{public V androidx.collection.MapCollections.MapIterator.setValue((r2v0 'this' androidx.collection.MapCollections$MapIterator A[D('this' androidx.collection.MapCollections\<K, V\>$MapIterator), IMMUTABLE_TYPE, THIS]), (r3v0 'object' V A[D('object' V), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x0014 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: (TV;)TV;\lMETHOD_OVERRIDE: [ClspMth\{java.util.Map.Entry.setValue(V):V\}]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

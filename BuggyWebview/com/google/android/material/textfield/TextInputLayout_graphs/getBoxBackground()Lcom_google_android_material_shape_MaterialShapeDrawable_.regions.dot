@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputLayout.getBoxBackground()Lcom\/google\/android\/material\/shape\/MaterialShapeDrawable;" {
+subgraph cluster_Region_1239202443 {
+label = "R(2:1|(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = r2.boxBackgroundMode\l}"];
+subgraph cluster_Region_210940458 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_792536829 {
+label = "IF [B:14:0x0003, B:16:0x0006] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0003|if (r0 == 1) goto L8\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0006|ADDED_TO_REGION\l|if (r0 == 2) goto L8\l}"];
+subgraph cluster_Region_1712065227 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0011|RETURN\l|return r2.boxBackground\l}"];
+}
+}
+subgraph cluster_Region_921099780 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|throw new java.lang.IllegalStateException()\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0005}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0009}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000f}"];
+MethodNode[shape=record,label="{com.google.android.material.shape.MaterialShapeDrawable com.google.android.material.textfield.TextInputLayout.getBoxBackground((r2v0 'this' com.google.android.material.textfield.TextInputLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0011 \-\> B:12:?, CROSS_EDGE: B:14:0x0003 \-\> B:20:0x000f\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_20;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

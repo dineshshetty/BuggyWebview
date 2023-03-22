@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.checkForMenus()Z" {
+subgraph cluster_Region_157178689 {
+label = "R(3:1|(3:4|(2:6|7)(0)|(1:10))|14)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|boolean r0 = false\ljava.util.Iterator r1 = r3.mFragmentStore.getActiveFragments().iterator()\l\l}"];
+subgraph cluster_LoopRegion_1854153746 {
+label = "LOOP:0: (3:4|(2:6|7)(0)|(1:10))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000f|androidx.fragment.app.Fragment \lif (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_754624592 {
+label = "R(3:4|(2:6|7)(0)|(1:10))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0011|androidx.fragment.app.Fragment r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_1435186058 {
+label = "IF [B:24:0x0017] THEN: R(2:6|7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0017|if (r2 != null) goto L6\l}"];
+subgraph cluster_Region_1102009546 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0019|boolean r0 = isMenuAvailable(r2)\l}"];
+Node_34 [shape=record,label="{34\:\ 0x001d|SYNTHETIC\l|continue\l}"];
+}
+subgraph cluster_Region_1336066493 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+subgraph cluster_IfRegion_389309831 {
+label = "IF [B:26:0x001d] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001d|LOOP_END\lLOOP:0: B:21:0x000b\-\>B:26:0x001d\lPHI: r0 \l  PHI: (r0v2 'hasMenu' boolean) = (r0v1 'hasMenu' boolean), (r0v3 'hasMenu' boolean) binds: [B:35:0x001d, B:34:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != false) goto L9\l}"];
+subgraph cluster_Region_13224175 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001f|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x0022|RETURN\l|return false\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000b|LOOP_START\lLOOP:0: B:21:0x000b\-\>B:26:0x001d\lPHI: r0 \l  PHI: (r0v1 'hasMenu' boolean) = (r0v0 'hasMenu' boolean), (r0v2 'hasMenu' boolean) binds: [B:20:0x0000, B:26:0x001d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001f|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x001d|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0022|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{boolean androidx.fragment.app.FragmentManager.checkForMenus((r3v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x001d \-\> B:21:0x000b, CROSS_EDGE: B:24:0x0017 \-\> B:26:0x001d, CROSS_EDGE: B:31:0x0023 \-\> B:19:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_33[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_35[style=dashed];
+Node_25 -> Node_34;
+Node_34 -> Node_26;
+Node_26 -> Node_21[style=dashed];
+Node_26 -> Node_32;
+Node_27 -> Node_19;
+Node_30 -> Node_19;
+Node_18 -> Node_20;
+Node_21 -> Node_22;
+Node_32 -> Node_27;
+Node_35 -> Node_26;
+Node_33 -> Node_30;
+}
+

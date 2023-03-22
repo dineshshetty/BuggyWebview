@@ -1,0 +1,51 @@
+digraph "CFG forandroidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.setVisible(ZZ)Z" {
+subgraph cluster_Region_996593272 {
+label = "R(3:1|(1:(1:6)(1:7))|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|boolean boolean r0 = super.setVisible(r3, r4)\landroidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$Transition androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.Transition r1 = r2.mTransition\l}"];
+subgraph cluster_IfRegion_595216389 {
+label = "IF [B:3:0x0006, B:4:0x0008, B:5:0x000a] THEN: R(1:(1:6)(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r1 != null) goto L3\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|ADDED_TO_REGION\l|if (r0 != false) goto L5\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|ADDED_TO_REGION\l|if (r4 != false) goto L5\l}"];
+subgraph cluster_Region_439652268 {
+label = "R(1:(1:6)(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_25188011 {
+label = "IF [B:6:0x000c] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|if (r3 != false) goto L6\l}"];
+subgraph cluster_Region_929200369 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|r1.start()\l}"];
+}
+subgraph cluster_Region_466025446 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0012|jumpToCurrentState()\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0015|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.setVisible((r2v0 'this' androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat A[IMMUTABLE_TYPE, THIS]), (r3v0 'visible' boolean A[D('visible' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'restart' boolean A[D('restart' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:8:0x0012 \-\> B:9:0x0015, CROSS_EDGE: B:5:0x000a \-\> B:9:0x0015, CROSS_EDGE: B:4:0x0008 \-\> B:6:0x000c, CROSS_EDGE: B:3:0x0006 \-\> B:9:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.setVisible(boolean, boolean):boolean\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+}
+

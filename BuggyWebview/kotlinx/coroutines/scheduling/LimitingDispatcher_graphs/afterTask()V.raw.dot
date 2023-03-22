@@ -1,0 +1,27 @@
+digraph "CFG forkotlinx.coroutines.scheduling.LimitingDispatcher.afterTask()V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: IGET  (r0 I:java.util.concurrent.ConcurrentLinkedQueue\<java.lang.Runnable\>) = (r4 I:kotlinx.coroutines.scheduling.LimitingDispatcher) kotlinx.coroutines.scheduling.LimitingDispatcher.queue java.util.concurrent.ConcurrentLinkedQueue  (LINE:190)\l0x0002: INVOKE  (r0 I:java.lang.Object) = (r0 I:java.util.concurrent.ConcurrentLinkedQueue) type: VIRTUAL call: java.util.concurrent.ConcurrentLinkedQueue.poll():java.lang.Object A[MD:():E (c)]\l0x0006: CHECK_CAST (r0 I:java.lang.Runnable) = (java.lang.Runnable) (r0 I:??[OBJECT, ARRAY]) \l0x0008: CONST  (r1 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char])  (LINE:192)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|0x0009: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('next' java.lang.Runnable)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0014 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|0x000b: IGET  (r2 I:kotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher) = (r4 I:kotlinx.coroutines.scheduling.LimitingDispatcher) kotlinx.coroutines.scheduling.LimitingDispatcher.dispatcher kotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher  (LINE:193)\l0x000d: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]) \l0x000e: CHECK_CAST (r3 I:kotlinx.coroutines.scheduling.TaskContext) = (kotlinx.coroutines.scheduling.TaskContext) (r3 I:??[OBJECT, ARRAY]) \l0x0010: INVOKE  \l  (r2 I:kotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher)\l  (r0 I:java.lang.Runnable A[D('next' java.lang.Runnable)])\l  (r3 I:kotlinx.coroutines.scheduling.TaskContext)\l  (r1 I:boolean)\l type: VIRTUAL call: kotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher.dispatchWithContext$kotlinx_coroutines_core(java.lang.Runnable, kotlinx.coroutines.scheduling.TaskContext, boolean):void A[MD:(java.lang.Runnable, kotlinx.coroutines.scheduling.TaskContext, boolean):void (m)]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|RETURN\l|0x0013: RETURN    (LINE:194)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0014|0x0014: SGET  (r2 I:java.util.concurrent.atomic.AtomicIntegerFieldUpdater) =  kotlinx.coroutines.scheduling.LimitingDispatcher.inFlightTasks$FU java.util.concurrent.atomic.AtomicIntegerFieldUpdater  (LINE:196)\l0x0016: INVOKE  (r2 I:java.util.concurrent.atomic.AtomicIntegerFieldUpdater), (r4 I:java.lang.Object) type: VIRTUAL call: java.util.concurrent.atomic.AtomicIntegerFieldUpdater.decrementAndGet(java.lang.Object):int A[MD:(T):int (c)]\l0x0019: IGET  (r2 I:java.util.concurrent.ConcurrentLinkedQueue\<java.lang.Runnable\>) = (r4 I:kotlinx.coroutines.scheduling.LimitingDispatcher) kotlinx.coroutines.scheduling.LimitingDispatcher.queue java.util.concurrent.ConcurrentLinkedQueue  (LINE:209)\l0x001b: INVOKE  (r2 I:java.lang.Object) = (r2 I:java.util.concurrent.ConcurrentLinkedQueue) type: VIRTUAL call: java.util.concurrent.ConcurrentLinkedQueue.poll():java.lang.Object A[MD:():E (c)]\l0x001f: CHECK_CAST (r2 I:java.lang.Runnable) = (java.lang.Runnable) (r2 I:??[OBJECT, ARRAY]) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|0x0021: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0024 \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0023|RETURN\l|0x0023: RETURN   \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0024|0x0024: MOVE  (r0 I:??[OBJECT, ARRAY] A[D('next' java.lang.Runnable)]) = (r2 I:??[OBJECT, ARRAY]) \l0x0025: INVOKE  \l  (r4 I:kotlinx.coroutines.scheduling.LimitingDispatcher)\l  (r0 I:java.lang.Runnable A[D('next' java.lang.Runnable)])\l  (r1 I:boolean)\l type: DIRECT call: kotlinx.coroutines.scheduling.LimitingDispatcher.dispatch(java.lang.Runnable, boolean):void A[MD:(java.lang.Runnable, boolean):void (m)] (LINE:210)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0028|RETURN\l|0x0028: RETURN    (LINE:211)\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.scheduling.LimitingDispatcher.afterTask((r4 'this' I:kotlinx.coroutines.scheduling.LimitingDispatcher A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0023 \-\> B:1:?, CROSS_EDGE: B:10:0x0028 \-\> B:1:?\lDebug Info:\l  0x0008\-0x0028: r0 'next' Ljava\/lang\/Runnable;\lMETHOD_OVERRIDE: [kotlinx.coroutines.scheduling.TaskContext.afterTask():void]\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+}
+

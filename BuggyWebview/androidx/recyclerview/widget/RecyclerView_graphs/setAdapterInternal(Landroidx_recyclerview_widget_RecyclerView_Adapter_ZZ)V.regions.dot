@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.setAdapterInternal(Landroidx\/recyclerview\/widget\/RecyclerView$Adapter;ZZ)V" {
+subgraph cluster_Region_117441682 {
+label = "R(8:1|(1:3)|(1:15)|6|(1:8)|9|(1:11)|12)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|androidx.recyclerview.widget.RecyclerView$Adapter androidx.recyclerview.widget.RecyclerView.Adapter r0 = r3.mAdapter\l}"];
+subgraph cluster_IfRegion_1982803041 {
+label = "IF [B:19:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_65307555 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0004|r0.unregisterAdapterDataObserver(r3.mObserver)\lr3.mAdapter.onDetachedFromRecyclerView(r3)\l}"];
+}
+}
+subgraph cluster_IfRegion_302854599 {
+label = "IF [B:21:0x000e, B:22:0x0010] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|if (r5 == false) goto L15\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0010|ADDED_TO_REGION\l|if (r6 != false) goto L15\l}"];
+subgraph cluster_Region_404183524 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0012|removeAndRecycleViews()\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0015|r3.mAdapterHelper.reset()\landroidx.recyclerview.widget.RecyclerView$Adapter androidx.recyclerview.widget.RecyclerView.Adapter r0 = r3.mAdapter\lr3.mAdapter = r4\l}"];
+subgraph cluster_IfRegion_132892422 {
+label = "IF [B:25:0x001e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001e|if (r4 != null) goto L8\l}"];
+subgraph cluster_Region_545687482 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0020|r4.registerAdapterDataObserver(r3.mObserver)\lr4.onAttachedToRecyclerView(r3)\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0028|androidx.recyclerview.widget.RecyclerView$LayoutManager androidx.recyclerview.widget.RecyclerView.LayoutManager r1 = r3.mLayout\l}"];
+subgraph cluster_IfRegion_738503047 {
+label = "IF [B:28:0x002a] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x002a|if (r1 != null) goto L11\l}"];
+subgraph cluster_Region_732372213 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002c|r1.onAdapterChanged(r0, r3.mAdapter)\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x0031|r3.mRecycler.onAdapterChanged(r0, r3.mAdapter, r5)\lr3.mState.mStructureChanged = true\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x003d}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.RecyclerView.setAdapterInternal((r3v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r4v0 'adapter' androidx.recyclerview.widget.RecyclerView$Adapter A[D('adapter' androidx.recyclerview.widget.RecyclerView$Adapter), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'compatibleWithPrevious' boolean A[D('compatibleWithPrevious' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'removeAndRecycleViews' boolean A[D('removeAndRecycleViews' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x002a \-\> B:30:0x0031, CROSS_EDGE: B:25:0x001e \-\> B:27:0x0028, CROSS_EDGE: B:22:0x0010 \-\> B:24:0x0015, CROSS_EDGE: B:21:0x000e \-\> B:23:0x0012, CROSS_EDGE: B:19:0x0002 \-\> B:21:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_16 -> Node_18;
+Node_31 -> Node_17;
+}
+

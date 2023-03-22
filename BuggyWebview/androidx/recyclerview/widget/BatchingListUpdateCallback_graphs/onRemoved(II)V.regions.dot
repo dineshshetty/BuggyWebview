@@ -1,0 +1,50 @@
+digraph "CFG forandroidx.recyclerview.widget.BatchingListUpdateCallback.onRemoved(II)V" {
+subgraph cluster_Region_700133456 {
+label = "R(1:(2:(2:7|8)|(1:10))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_960493534 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1601724060 {
+label = "IF [B:15:0x0003, B:17:0x0007, B:19:0x000b] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0003|if (r3.mLastEventType == 2) goto L3\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0007|ADDED_TO_REGION\l|if ((r0 = r3.mLastEventPosition) \>= r4) goto L5\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000b|ADDED_TO_REGION\l|if (r0 \<= (r4 + r5)) goto L7\l}"];
+subgraph cluster_Region_163472732 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|r3.mLastEventCount += r5\lr3.mLastEventPosition = r4\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0014|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2046291339 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|dispatchLastEvent()\lr3.mLastEventPosition = r4\lr3.mLastEventCount = r5\lr3.mLastEventType = 2\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0005}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0009}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001e}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.BatchingListUpdateCallback.onRemoved((r3v0 'this' androidx.recyclerview.widget.BatchingListUpdateCallback A[IMMUTABLE_TYPE, THIS]), (r4v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'count' int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001e \-\> B:13:?, CROSS_EDGE: B:17:0x0007 \-\> B:22:0x0015, CROSS_EDGE: B:15:0x0003 \-\> B:22:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.ListUpdateCallback.onRemoved(int, int):void]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_22[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_22 -> Node_23;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_23 -> Node_13;
+}
+

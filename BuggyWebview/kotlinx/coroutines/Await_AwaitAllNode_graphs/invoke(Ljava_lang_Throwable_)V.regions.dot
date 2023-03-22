@@ -1,0 +1,120 @@
+digraph "CFG forkotlinx.coroutines.AwaitAll.AwaitAllNode.invoke(Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_1437901556 {
+label = "R(1:(2:(2:2|(2:(2:4|(2:(1:9)|(2:6|7)))|(1:10)))|(2:11|(1:(3:13|(1:15)|17)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_725255891 {
+label = "R(2:(2:2|(2:(2:4|(2:(1:9)|(2:6|7)))|(1:10)))|(2:11|(1:(3:13|(1:15)|17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_682378843 {
+label = "IF [B:2:0x0000] THEN: R(2:2|(2:(2:4|(2:(1:9)|(2:6|7)))|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r12 != null) goto L2\l}"];
+subgraph cluster_Region_679161557 {
+label = "R(2:2|(2:(2:4|(2:(1:9)|(2:6|7)))|(1:10)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|java.lang.Object java.lang.Object r0 = r11.continuation.tryResumeWithException(r12)\l}"];
+subgraph cluster_Region_349735857 {
+label = "R(2:(2:4|(2:(1:9)|(2:6|7)))|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1427437861 {
+label = "IF [B:4:0x0008] THEN: R(2:4|(2:(1:9)|(2:6|7))) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|if (r0 != null) goto L4\l}"];
+subgraph cluster_Region_201410340 {
+label = "R(2:4|(2:(1:9)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|r11.continuation.completeResume(r0)\lkotlinx.coroutines.AwaitAll$DisposeHandlersOnCancel kotlinx.coroutines.Await\<T\>.DisposeHandlersOnCancel r1 = getDisposer()\l}"];
+subgraph cluster_Region_1678452956 {
+label = "R(2:(1:9)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_197682358 {
+label = "IF [B:6:0x0013] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|if (r1 == null) goto L9\l}"];
+subgraph cluster_Region_460863120 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2050289308 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0016|r1.disposeAll()\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1361851706 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_24750509 {
+label = "R(2:11|(1:(3:13|(1:15)|17)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a}"];
+subgraph cluster_Region_1007234198 {
+label = "R(1:(3:13|(1:15)|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1713328433 {
+label = "IF [B:10:0x0022] THEN: R(3:13|(1:15)|17) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0022|if (kotlinx.coroutines.Await.notCompletedCount$FU.decrementAndGet(kotlinx.coroutines.Await.this) == 0) goto L13\l}"];
+subgraph cluster_Region_1079490751 {
+label = "R(3:13|(1:15)|17)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0024|kotlin.coroutines.Continuation kotlinx.coroutines.CancellableContinuation\<java.util.List\<? extends T\>\> r0 = r11.continuation\lkotlin.Result$Companion kotlin.Result.Companion r1 = kotlin.Result.Companion\lkotlinx.coroutines.Deferred[] kotlinx.coroutines.Deferred[] r1 = ((kotlinx.coroutines.Await) kotlinx.coroutines.Await.this).deferreds\ljava.util.Collection java.util.Collection r3 = new java.util.ArrayList(r1.length)\lint r6 = 0\lint int r7 = r1.length\l}"];
+subgraph cluster_LoopRegion_1328094462 {
+label = "LOOP:0: (1:15)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003d|LOOP_START\lLOOP:0: B:12:0x003d\-\>B:13:0x003f\lPHI: r6 \l  PHI: (r6v1 int) = (r6v0 int), (r6v2 int) binds: [B:11:0x0024, B:13:0x003f] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 \< r7) goto L15\l}"];
+subgraph cluster_Region_139079883 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003f|LOOP_END\lLOOP:0: B:12:0x003d\-\>B:13:0x003f\l|kotlinx.coroutines.Deferred r8 = r1[r6]\lr6++\lr3.add(r8.getCompleted())\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x004d|r0.resumeWith(kotlin.Result.m144constructorimpl((java.util.List) r3))\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x004d|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0058|ORIG_RETURN\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.AwaitAll.AwaitAllNode.invoke((r11v0 'this' kotlinx.coroutines.AwaitAll$AwaitAllNode A[IMMUTABLE_TYPE, THIS]), (r12v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x0013 \-\> B:15:0x0058, CROSS_EDGE: B:4:0x0008 \-\> B:15:0x0058, BACK_EDGE: B:13:0x003f \-\> B:12:0x003d, CROSS_EDGE: B:14:0x004d \-\> B:15:0x0058, CROSS_EDGE: B:10:0x0022 \-\> B:15:0x0058\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lRENAME_REASON:avoid collision after fix types in other method\lBRIDGED_BY: kotlinx.coroutines.AwaitAll.AwaitAllNode.invoke(java.lang.Throwable):kotlin.Unit\lMETHOD_OVERRIDE: [kotlinx.coroutines.CompletionHandlerBase.invoke(java.lang.Throwable):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_17[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_8[style=dashed];
+Node_6 -> Node_20;
+Node_20 -> Node_1;
+Node_8 -> Node_18;
+Node_18 -> Node_1;
+Node_17 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_19[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_13 -> Node_12;
+Node_14 -> Node_15;
+Node_0 -> Node_2;
+Node_16 -> Node_14;
+Node_15 -> Node_1;
+Node_19 -> Node_1;
+}
+

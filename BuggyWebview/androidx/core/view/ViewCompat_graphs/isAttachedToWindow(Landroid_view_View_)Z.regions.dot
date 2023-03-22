@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.view.ViewCompat.isAttachedToWindow(Landroid\/view\/View;)Z" {
+subgraph cluster_Region_64933118 {
+label = "R(1:(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_365035189 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_935063166 {
+label = "IF [B:15:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 19) goto L3\l}"];
+subgraph cluster_Region_1736361790 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|RETURN\l|return androidx.core.view.ViewCompat.Api19Impl.isAttachedToWindow(r2)\l}"];
+}
+}
+subgraph cluster_Region_305286675 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|RETURN\l|return r2.getWindowToken() != null\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0011|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0013|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.view.ViewCompat.isAttachedToWindow((r2v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0014 \-\> B:13:?, CROSS_EDGE: B:21:0x0013 \-\> B:22:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_13;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_13;
+Node_21 -> Node_13;
+}
+

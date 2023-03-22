@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.recyclerview.widget.AdapterHelper.postponeAndUpdateViewHolders(Landroidx\/recyclerview\/widget\/AdapterHelper$UpdateOp;)V" {
+subgraph cluster_Region_1972580384 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|r4.mPostponedList.add(r5)\l}"];
+subgraph cluster_SwitchRegion_1557858558 {
+label = "Switch: 5
+ case 1 -> R(2:12|13)
+ case 2 -> R(2:10|11)
+ case 4 -> R(2:8|9)
+ case 8 -> R(2:6|7)
+ case default -> R(2:3|4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|switch(r5.cmd) \{\l    case 1: goto L12;\l    case 2: goto L10;\l    case 4: goto L8;\l    case 8: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_94077387 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0041|r4.mCallback.offsetPositionsForAdd(r5.positionStart, r5.itemCount)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x004b|RETURN\lORIG_RETURN\l|return\l}"];
+}
+subgraph cluster_Region_1667839972 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0037|r4.mCallback.offsetPositionsForRemovingLaidOutOrNewView(r5.positionStart, r5.itemCount)\l}"];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_253172121 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x002b|r4.mCallback.markViewHoldersUpdated(r5.positionStart, r5.itemCount, r5.payload)\l}"];
+Node_26 [shape=record,label="{26\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_185564285 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0021|r4.mCallback.offsetPositionsForMove(r5.positionStart, r5.itemCount)\l}"];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_1380131086 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a}"];
+Node_19 [shape=record,label="{19\:\ 0x0020|throw new java.lang.IllegalArgumentException(\"Unknown update op type for \" + r5)\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.AdapterHelper.postponeAndUpdateViewHolders((r4v0 'this' androidx.recyclerview.widget.AdapterHelper A[IMMUTABLE_TYPE, THIS]), (r5v0 'op' androidx.recyclerview.widget.AdapterHelper$UpdateOp A[D('op' androidx.recyclerview.widget.AdapterHelper$UpdateOp), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x004b \-\> B:15:?, CROSS_EDGE: B:21:0x002b \-\> B:24:0x004b, CROSS_EDGE: B:22:0x0037 \-\> B:24:0x004b, CROSS_EDGE: B:23:0x0041 \-\> B:24:0x004b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20;
+Node_17 -> Node_21;
+Node_17 -> Node_22;
+Node_17 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_15;
+Node_22 -> Node_27;
+Node_27 -> Node_15;
+Node_21 -> Node_26;
+Node_26 -> Node_15;
+Node_20 -> Node_25;
+Node_25 -> Node_15;
+Node_18 -> Node_19;
+Node_19 -> Node_15;
+Node_14 -> Node_16;
+}
+

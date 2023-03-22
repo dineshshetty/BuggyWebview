@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuItemImpl.setCheckedInt(Z)V" {
+subgraph cluster_Region_737633956 {
+label = "R(3:1|4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = r4.mFlags\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000c|PHI: r3 \l  PHI: (r3v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int r1 = (r4.mFlags & (\-3)) \| (r5 ? 2 : 0)\lr4.mFlags = r1\l}"];
+subgraph cluster_Region_1722928709 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1321788603 {
+label = "IF [B:18:0x000f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000f|if (r0 != r1) goto L6\l}"];
+subgraph cluster_Region_1349400562 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|r4.mMenu.onItemsChanged(false)\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0007}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0009}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016|ORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.view.menu.MenuItemImpl.setCheckedInt((r4v0 'this' androidx.appcompat.view.menu.MenuItemImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 'checked' boolean A[D('checked' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x000f \-\> B:20:0x0016, CROSS_EDGE: B:16:0x000b \-\> B:17:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_20 -> Node_12;
+Node_21 -> Node_12;
+Node_16 -> Node_17;
+}
+

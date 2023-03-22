@@ -1,0 +1,48 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.single([F)F" {
+subgraph cluster_Region_817080985 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\l}"];
+subgraph cluster_SwitchRegion_65717449 {
+label = "Switch: 3
+ case 0 -> R(1:9)
+ case 1 -> R(1:7)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|switch(r2.length) \{\l    case 0: goto L8;\l    case 1: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_1596897290 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|throw new java.util.NoSuchElementException(\"Array is empty.\")\l}"];
+}
+subgraph cluster_Region_1537831528 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|RETURN\l|return r2[0]\l}"];
+}
+subgraph cluster_Region_1994648806 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|throw new java.lang.IllegalArgumentException(\"Array has more than one element.\")\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0009}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0011}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0015}"];
+MethodNode[shape=record,label="{public static final float kotlin.collections.ArraysKt___ArraysKt.single((r2v0 '$this$single' float[] A[D('$this$single' float[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0014 \-\> B:11:?, CROSS_EDGE: B:19:0x001c \-\> B:11:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_16;
+Node_13 -> Node_18;
+Node_19 -> Node_11;
+Node_17 -> Node_11;
+Node_15 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

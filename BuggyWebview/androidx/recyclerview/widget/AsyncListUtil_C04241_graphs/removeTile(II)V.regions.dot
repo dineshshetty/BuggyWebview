@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.recyclerview.widget.AsyncListUtil.1.removeTile(II)V" {
+subgraph cluster_Region_1964905849 {
+label = "R(1:(2:(1:3)|(2:5|(2:(2:7|8)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1325833702 {
+label = "R(2:(1:3)|(2:5|(2:(2:7|8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_321679781 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (isRequestedGeneration(r4) == false) goto L3\l}"];
+subgraph cluster_Region_846653951 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1698772983 {
+label = "R(2:5|(2:(2:7|8)|(1:9)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|androidx.recyclerview.widget.TileList$Tile androidx.recyclerview.widget.TileList.Tile\<T\> r0 = androidx.recyclerview.widget.AsyncListUtil.this.mTileList.removeAtPos(r5)\l}"];
+subgraph cluster_Region_935761685 {
+label = "R(2:(2:7|8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_896975456 {
+label = "IF [B:6:0x000f] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|if (r0 == null) goto L7\l}"];
+subgraph cluster_Region_1289012646 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|android.util.Log.e(androidx.recyclerview.widget.AsyncListUtil.TAG, \"tile not found @\" + r5)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0027|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_931484900 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0028|androidx.recyclerview.widget.AsyncListUtil.this.mBackgroundProxy.recycleTile(r0)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002f}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.AsyncListUtil.1.removeTile((r3v0 'this' androidx.recyclerview.widget.AsyncListUtil$1 A[D('this' androidx.recyclerview.widget.AsyncListUtil$1), IMMUTABLE_TYPE, THIS]), (r4v0 'generation' int A[D('generation' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0027 \-\> B:1:?, CROSS_EDGE: B:10:0x002f \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.ThreadUtil.MainThreadCallback.removeTile(int, int):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_10 -> Node_1;
+}
+

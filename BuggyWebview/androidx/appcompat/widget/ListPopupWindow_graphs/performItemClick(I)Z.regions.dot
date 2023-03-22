@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.appcompat.widget.ListPopupWindow.performItemClick(I)Z" {
+subgraph cluster_Region_666319708 {
+label = "R(1:(2:(1:(2:(2:5|6)|(1:8)))|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1100029852 {
+label = "R(2:(1:(2:(2:5|6)|(1:8)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1800660970 {
+label = "IF [B:15:0x0004] THEN: R(1:(2:(2:5|6)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (isShowing() != false) goto L3\l}"];
+subgraph cluster_Region_820842435 {
+label = "R(1:(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_773762905 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1740257529 {
+label = "IF [B:17:0x0008] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (r9.mItemClickListener != null) goto L5\l}"];
+subgraph cluster_Region_135102977 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|androidx.appcompat.widget.DropDownListView androidx.appcompat.widget.DropDownListView r0 = r9.mDropDownList\landroid.view.View android.view.View r7 = r0.getChildAt(r10 \- r0.getFirstVisiblePosition())\landroid.widget.ListAdapter android.widget.ListAdapter r8 = r0.getAdapter()\lr9.mItemClickListener.onItemClick(r0, r7, r10, r8.getItemId(r10))\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0026|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_329449299 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1273588211 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0028|RETURN\l|return false\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.widget.ListPopupWindow.performItemClick((r9v0 'this' androidx.appcompat.widget.ListPopupWindow A[IMMUTABLE_TYPE, THIS]), (r10v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0008 \-\> B:19:0x0026, CROSS_EDGE: B:22:0x0029 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_13;
+Node_23 -> Node_13;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+}
+

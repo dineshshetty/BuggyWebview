@@ -1,0 +1,66 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.indexOfLast([DLkotlin\/jvm\/functions\/Function1;)I" {
+subgraph cluster_Region_686324172 {
+label = "R(2:1|(2:(2:(2:3|(1:8))|10)|(1:10)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"predicate\")\lint int r1 = r6.length \- 1\l}"];
+subgraph cluster_Region_1799080166 {
+label = "R(2:(2:(2:3|(1:8))|10)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1682894685 {
+label = "IF [B:14:0x000e] THEN: R(2:(2:3|(1:8))|10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|if (r1 \>= 0) goto L3\l}"];
+subgraph cluster_Region_229194554 {
+label = "R(2:(2:3|(1:8))|10)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1114665639 {
+label = "LOOP:0: (2:3|(1:8))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0025|LOOP_END\lLOOP:0: B:15:0x0010\-\>B:18:0x0025\l|if (r1 \>= 0) goto L3\l}"];
+subgraph cluster_Region_97124943 {
+label = "R(2:3|(1:8))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|LOOP_START\lLOOP:0: B:15:0x0010\-\>B:18:0x0025\lPHI: r1 \l  PHI: (r1v2 int) = (r1v1 int), (r1v3 int) binds: [B:14:0x000e, B:18:0x0025] A[DONT_GENERATE, DONT_INLINE]\l|int r3 = r1\lr1\-\-\l}"];
+subgraph cluster_IfRegion_700273980 {
+label = "IF [B:16:0x0022] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0022|if (r7.invoke(java.lang.Double.valueOf(r6[r3])).booleanValue() != false) goto L7\l}"];
+subgraph cluster_Region_2091971134 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0024|RETURN\l|return r3\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0027|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1889725519 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0027|RETURN\l|return \-1\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0027|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0024|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.collections.ArraysKt___ArraysKt.indexOfLast((r6v0 '$this$indexOfLast' double[] A[D('$this$indexOfLast' double[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Double, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:18:0x0025 \-\> B:15:0x0010, CROSS_EDGE: B:19:0x0027 \-\> B:12:?, CROSS_EDGE: B:14:0x000e \-\> B:19:0x0027\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([DLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Double;Ljava\/lang\/Boolean;\>;)I\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_19[style=dashed];
+Node_18 -> Node_15;
+Node_18 -> Node_21[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_20;
+Node_17 -> Node_12;
+Node_19 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_21 -> Node_19;
+Node_20 -> Node_17;
+}
+

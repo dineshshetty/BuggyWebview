@@ -1,0 +1,49 @@
+digraph "CFG forkotlin.sequences.DistinctIterator.computeNext()V" {
+subgraph cluster_Region_693449796 {
+label = "R(2:(2:3|(2:6|7))|10)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_859810390 {
+label = "LOOP:0: (2:3|(2:6|7))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r3.source.hasNext() != false) goto L3\l}"];
+subgraph cluster_Region_1082641513 {
+label = "R(2:3|(2:6|7))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|java.lang.Object T r0 = r3.source.next()\l}"];
+subgraph cluster_IfRegion_1298854739 {
+label = "IF [B:17:0x001a] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001a|LOOP_END\lLOOP:0: B:14:0x0000\-\>B:17:0x001a\l|if (r3.observed.add(r3.keySelector.invoke(r0)) != false) goto L5\l}"];
+subgraph cluster_Region_511645254 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001c|setNext(r0)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001f|RETURN\l|return\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0020|done()\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000|LOOP_START\lLOOP:0: B:14:0x0000\-\>B:17:0x001a\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001c|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0020|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0023}"];
+MethodNode[shape=record,label="{protected void kotlin.sequences.DistinctIterator.computeNext((r3v0 'this' kotlin.sequences.DistinctIterator\<T, K\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x001a \-\> B:14:0x0000, CROSS_EDGE: B:21:0x0023 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T, K]\lMETHOD_OVERRIDE: [kotlin.collections.AbstractIterator.computeNext():void]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_14[style=dashed];
+Node_17 -> Node_23;
+Node_18 -> Node_19;
+Node_19 -> Node_13;
+Node_20 -> Node_21;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_23 -> Node_18;
+Node_22 -> Node_20;
+Node_21 -> Node_13;
+}
+

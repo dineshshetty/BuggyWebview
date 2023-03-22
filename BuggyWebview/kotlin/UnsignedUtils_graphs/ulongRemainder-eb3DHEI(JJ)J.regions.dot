@@ -1,0 +1,97 @@
+digraph "CFG forkotlin.UnsignedKt.ulongRemainder\-eb3DHEI(JJ)J" {
+subgraph cluster_Region_101707231 {
+label = "R(2:1|(1:(2:(1:6)|(1:9)))(1:(1:13)(3:14|(1:16)|18)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|long r4 = 0\l}"];
+subgraph cluster_IfRegion_1077397322 {
+label = "IF [B:22:0x0007] THEN: R(1:(2:(1:6)|(1:9))) ELSE: R(1:(1:13)(3:14|(1:16)|18))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0007|if (r16 \< 0) goto L3\l}"];
+subgraph cluster_Region_1137926254 {
+label = "R(1:(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_403665592 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_513005084 {
+label = "IF [B:24:0x000d] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000d|if (ulongCompare(r14, r16) \< 0) goto L5\l}"];
+subgraph cluster_Region_1625317139 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return r14\l}"];
+}
+}
+subgraph cluster_Region_954762097 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0017|RETURN\lORIG_RETURN\l|return kotlin.ULong.m316constructorimpl(r14 \- r16)\l}"];
+}
+}
+}
+subgraph cluster_Region_1536273510 {
+label = "R(1:(1:13)(3:14|(1:16)|18)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1538433598 {
+label = "IF [B:29:0x001a] THEN: R(1:13) ELSE: R(3:14|(1:16)|18) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001a|if (r14 \>= 0) goto L12\l}"];
+subgraph cluster_Region_961046172 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0022|RETURN\l|return kotlin.ULong.m316constructorimpl(r14 % r16)\l}"];
+}
+subgraph cluster_Region_1138147998 {
+label = "R(3:14|(1:16)|18)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0023|long long r6 = ((r14 \>\>\> 1) \/ r16) \<\< 1\llong long r8 = r14 \- (r6 * r16)\l}"];
+subgraph cluster_IfRegion_306690558 {
+label = "IF [B:33:0x0039] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0039|if (ulongCompare(kotlin.ULong.m316constructorimpl(r8), kotlin.ULong.m316constructorimpl(r16)) \>= 0) goto L16\l}"];
+subgraph cluster_Region_1200149364 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x003b|r4 = r16\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0042|RETURN\l|return kotlin.ULong.m316constructorimpl(r8 \- r4)\l}"];
+}
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0009}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000f}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0011}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0018}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001c}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x003c|PHI: r4 \l  PHI: (r4v1 long) = (r4v0 long), (r4v4 long) binds: [B:33:0x0039, B:34:0x003b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static final long kotlin.UnsignedKt.ulongRemainder\-eb3DHEI((r14v0 'v1' long A[D('v1' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 'v2' long A[D('v2' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0011 \-\> B:27:0x0017, CROSS_EDGE: B:31:0x0022 \-\> B:20:?, CROSS_EDGE: B:36:0x0042 \-\> B:20:?, CROSS_EDGE: B:33:0x0039 \-\> B:35:0x003c\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_37 -> Node_20;
+Node_27 -> Node_20;
+Node_29 -> Node_30;
+Node_29 -> Node_32[style=dashed];
+Node_31 -> Node_20;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_35[style=dashed];
+Node_34 -> Node_35;
+Node_36 -> Node_20;
+Node_19 -> Node_21;
+Node_23 -> Node_24;
+Node_25 -> Node_37;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_35 -> Node_36;
+}
+

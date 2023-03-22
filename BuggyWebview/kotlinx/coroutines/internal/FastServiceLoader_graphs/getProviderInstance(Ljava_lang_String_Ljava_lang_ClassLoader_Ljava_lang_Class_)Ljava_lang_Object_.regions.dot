@@ -1,0 +1,40 @@
+digraph "CFG forkotlinx.coroutines.internal.FastServiceLoader.getProviderInstance(Ljava\/lang\/String;Ljava\/lang\/ClassLoader;Ljava\/lang\/Class;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1183537471 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.lang.Class java.lang.Class r1 = java.lang.Class.forName(r5, false, r6)\l}"];
+subgraph cluster_Region_1150156433 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_686153675 {
+label = "IF [B:11:0x0009] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0009|if (r7.isAssignableFrom(r1) != false) goto L3\l}"];
+subgraph cluster_Region_590962558 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001b|RETURN\l|return r7.cast(r1.getDeclaredConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0]))\l}"];
+}
+}
+subgraph cluster_Region_1107467074 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001c}"];
+Node_15 [shape=record,label="{15\:\ 0x003f|throw new java.lang.IllegalArgumentException((\"Expected service of class \" + r7 + \", but found \" + r1).toString())\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000b}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final S kotlinx.coroutines.internal.FastServiceLoader.getProviderInstance((r4v0 'this' kotlinx.coroutines.internal.FastServiceLoader A[IMMUTABLE_TYPE, THIS]), (r5v0 'name' java.lang.String A[D('name' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'loader' java.lang.ClassLoader A[D('loader' java.lang.ClassLoader), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.lang.Class\<S\> A[D('service' java.lang.Class), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x003f \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [S]\lSIGNATURE: \<S:Ljava\/lang\/Object;\>(Ljava\/lang\/String;Ljava\/lang\/ClassLoader;Ljava\/lang\/Class\<TS;\>;)TS;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

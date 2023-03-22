@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.collection.LongSparseArray.clear()V" {
+subgraph cluster_Region_1635176536 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|int int r0 = r4.mSize\ljava.lang.Object[] java.lang.Object[] r1 = r4.mValues\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_2003976285 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0005|LOOP_START\lLOOP:0: B:11:0x0005\-\>B:12:0x0007\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v3 'i' int) binds: [B:10:0x0000, B:12:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r0) goto L3\l}"];
+subgraph cluster_Region_814868996 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0007|LOOP_END\lLOOP:0: B:11:0x0005\-\>B:12:0x0007\l|r1[r2] = null\lr2++\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x000d|r4.mSize = 0\lr4.mGarbage = false\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000d|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0012}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.collection.LongSparseArray.clear((r4v0 'this' androidx.collection.LongSparseArray\<E\> A[D('this' androidx.collection.LongSparseArray\<E\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0007 \-\> B:11:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_11;
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_15 -> Node_13;
+Node_14 -> Node_9;
+}
+

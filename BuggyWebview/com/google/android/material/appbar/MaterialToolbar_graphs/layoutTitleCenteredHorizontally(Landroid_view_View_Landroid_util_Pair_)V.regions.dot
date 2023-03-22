@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.material.appbar.MaterialToolbar.layoutTitleCenteredHorizontally(Landroid\/view\/View;Landroid\/util\/Pair;)V" {
+subgraph cluster_Region_1546752240 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = getMeasuredWidth()\lint int r1 = r10.getMeasuredWidth()\lint int r2 = (r0 \/ 2) \- (r1 \/ 2)\lint int r3 = r2 + r1\lint int r4 = java.lang.Math.max(((java.lang.Integer) r11.first).intValue() \- r2, 0)\lint int r5 = java.lang.Math.max(r3 \- ((java.lang.Integer) r11.second).intValue(), 0)\lint int r6 = java.lang.Math.max(r4, r5)\l}"];
+subgraph cluster_IfRegion_627662264 {
+label = "IF [B:10:0x002f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002f|if (r6 \> 0) goto L3\l}"];
+subgraph cluster_Region_1071187294 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0031|r2 += r6\lr3 \-= r6\lr10.measure(android.view.View.MeasureSpec.makeMeasureSpec(r3 \- r2, androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.EXACTLY), r10.getMeasuredHeightAndState())\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0042|PHI: r2 r3 \l  PHI: (r2v2 'titleLeft' int) = (r2v1 'titleLeft' int), (r2v3 'titleLeft' int) binds: [B:10:0x002f, B:11:0x0031] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v2 'titleRight' int) = (r3v1 'titleRight' int), (r3v3 'titleRight' int) binds: [B:10:0x002f, B:11:0x0031] A[DONT_GENERATE, DONT_INLINE]\l|r10.layout(r2, r10.getTop(), r3, r10.getBottom())\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004d}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.appbar.MaterialToolbar.layoutTitleCenteredHorizontally((r9v0 'this' com.google.android.material.appbar.MaterialToolbar A[IMMUTABLE_TYPE, THIS]), (r10v0 'titleView' android.view.View A[D('titleView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'titleBoundLimits' android.util.Pair\<java.lang.Integer, java.lang.Integer\> A[D('titleBoundLimits' android.util.Pair\<java.lang.Integer, java.lang.Integer\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x002f \-\> B:12:0x0042\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/view\/View;Landroid\/util\/Pair\<Ljava\/lang\/Integer;Ljava\/lang\/Integer;\>;)V\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

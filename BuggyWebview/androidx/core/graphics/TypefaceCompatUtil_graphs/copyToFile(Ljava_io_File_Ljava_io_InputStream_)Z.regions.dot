@@ -1,0 +1,110 @@
+digraph "CFG forandroidx.core.graphics.TypefaceCompatUtil.copyToFile(Ljava\/io\/File;Ljava\/io\/InputStream;)Z" {
+subgraph cluster_Region_1873674716 {
+label = "R(2:1|(2:3|(2:4|(2:(2:8|9)|(1:6)))))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|java.io.FileOutputStream r0 = null\landroid.os.StrictMode$ThreadPolicy android.os.StrictMode.ThreadPolicy r1 = android.os.StrictMode.allowThreadDiskWrites()\l}"];
+subgraph cluster_TryCatchRegion_211747446 {
+label = "Try: R(2:3|(2:4|(2:(2:8|9)|(1:6)))) catches: R(3:15|16|18) finally: R(3:12|13|14)";
+node [shape=record,color=blue];
+subgraph cluster_Region_647045017 {
+label = "R(2:3|(2:4|(2:(2:8|9)|(1:6))))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0006|TRY_ENTER\lMerged into TryCatch #0 \{all \-\> 0x0024, IOException \-\> 0x0026, blocks: (B:24:0x0006, B:25:0x0010, B:27:0x0018, B:34:0x0027), top: B:39:0x0006 \}\lCatch: all \-\> 0x0024, IOException \-\> 0x0026\l|r0 = new java.io.FileOutputStream(r7, false)     \/\/ Catch: java.lang.Throwable \-\> L24 java.io.IOException \-\> L26\lbyte[] byte[] r3 = new byte[1024]     \/\/ Catch: java.lang.Throwable \-\> L24 java.io.IOException \-\> L26\l}"];
+subgraph cluster_LoopRegion_865996587 {
+label = "LOOP:0: (2:4|(2:(2:8|9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_461362366 {
+label = "R(2:4|(2:(2:8|9)|(1:6)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0010|LOOP_START\lMerged into TryCatch #0 \{all \-\> 0x0024, IOException \-\> 0x0026, blocks: (B:24:0x0006, B:25:0x0010, B:27:0x0018, B:34:0x0027), top: B:39:0x0006 \}\lLOOP:0: B:25:0x0010\-\>B:27:0x0018\lCatch: all \-\> 0x0024, IOException \-\> 0x0026\l|int int r4 = r8.read(r3)     \/\/ Catch: java.lang.Throwable \-\> L24 java.io.IOException \-\> L26\l}"];
+subgraph cluster_Region_2145939242 {
+label = "R(2:(2:8|9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_173915633 {
+label = "IF [B:26:0x0016] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0016|if (r4 == (\-1)) goto L7\l}"];
+subgraph cluster_Region_704851002 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001c|closeQuietly(r0)\landroid.os.StrictMode.setThreadPolicy(r1)\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0023|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_901544007 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0018|TRY_LEAVE\lLOOP_END\lMerged into TryCatch #0 \{all \-\> 0x0024, IOException \-\> 0x0026, blocks: (B:24:0x0006, B:25:0x0010, B:27:0x0018, B:34:0x0027), top: B:39:0x0006 \}\lLOOP:0: B:25:0x0010\-\>B:27:0x0018\lCatch: all \-\> 0x0024, IOException \-\> 0x0026\l|r0.write(r3, 0, r4)     \/\/ Catch: java.lang.Throwable \-\> L24 java.io.IOException \-\> L26\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_2087031621 {
+label = "R(3:15|16|18) | ExcHandler: IOException \-\> 0x0026\l";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0026|ExcHandler: IOException \-\> 0x0026\lPHI: r0 \l  PHI: (r0v1 'os' java.io.FileOutputStream) = (r0v0 'os' java.io.FileOutputStream), (r0v3 'os' java.io.FileOutputStream) binds: [B:39:0x0006, B:40:?] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0027|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0024, IOException \-\> 0x0026, blocks: (B:24:0x0006, B:25:0x0010, B:27:0x0018, B:34:0x0027), top: B:39:0x0006 \}\lCatch: all \-\> 0x0024\l|android.util.Log.e(androidx.core.graphics.TypefaceCompatUtil.TAG, \"Error copying resource contents to temp file: \" + r3.getMessage())     \/\/ Catch: java.lang.Throwable \-\> L24\l}"];
+Node_36 [shape=record,label="{36\:\ 0x0048|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1899762169 {
+label = "R(3:12|13|14) | ExcHandler: all \-\> 0x0024\l";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0024|ExcHandler: all \-\> 0x0024\lPHI: r0 \l  PHI: (r0v2 'os' java.io.FileOutputStream) = (r0v0 'os' java.io.FileOutputStream), (r0v3 'os' java.io.FileOutputStream) binds: [B:39:0x0006, B:40:?] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0049|FINALLY_INSNS\l|closeQuietly(r0)\landroid.os.StrictMode.setThreadPolicy(r1)\l}"];
+Node_38 [shape=record,label="{38\:\ 0x004f|throw r2\l}"];
+}
+}
+}
+subgraph cluster_Region_2087031621 {
+label = "R(3:15|16|18) | ExcHandler: IOException \-\> 0x0026\l";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0026|ExcHandler: IOException \-\> 0x0026\lPHI: r0 \l  PHI: (r0v1 'os' java.io.FileOutputStream) = (r0v0 'os' java.io.FileOutputStream), (r0v3 'os' java.io.FileOutputStream) binds: [B:39:0x0006, B:40:?] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0027|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0024, IOException \-\> 0x0026, blocks: (B:24:0x0006, B:25:0x0010, B:27:0x0018, B:34:0x0027), top: B:39:0x0006 \}\lCatch: all \-\> 0x0024\l|android.util.Log.e(androidx.core.graphics.TypefaceCompatUtil.TAG, \"Error copying resource contents to temp file: \" + r3.getMessage())     \/\/ Catch: java.lang.Throwable \-\> L24\l}"];
+Node_36 [shape=record,label="{36\:\ 0x0048|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1899762169 {
+label = "R(3:12|13|14) | ExcHandler: all \-\> 0x0024\l";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0024|ExcHandler: all \-\> 0x0024\lPHI: r0 \l  PHI: (r0v2 'os' java.io.FileOutputStream) = (r0v0 'os' java.io.FileOutputStream), (r0v3 'os' java.io.FileOutputStream) binds: [B:39:0x0006, B:40:?] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0049|FINALLY_INSNS\l|closeQuietly(r0)\landroid.os.StrictMode.setThreadPolicy(r1)\l}"];
+Node_38 [shape=record,label="{38\:\ 0x004f|throw r2\l}"];
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0006|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x001c|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0042|DONT_GENERATE\l|closeQuietly(r0)\landroid.os.StrictMode.setThreadPolicy(r1)\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.graphics.TypefaceCompatUtil.copyToFile((r7v0 'file' java.io.File A[D('file' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'is' java.io.InputStream A[D('is' java.io.InputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | BACK_EDGE: B:27:0x0018 \-\> B:25:0x0010, CROSS_EDGE: B:36:0x0048 \-\> B:22:?, CROSS_EDGE: B:38:0x004f \-\> B:22:?, CROSS_EDGE: B:39:0x0006 \-\> B:31:0x0024, CROSS_EDGE: B:39:0x0006 \-\> B:33:0x0026\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0024, IOException \-\> 0x0026, blocks: (B:24:0x0006, B:25:0x0010, B:27:0x0018, B:34:0x0027), top: B:39:0x0006 \}\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l DEBUG: \l \-\> Don't trust debug lines info. Repeating lines: [168=4]\}\l}"];
+MethodNode -> Node_21;Node_23 -> Node_39;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_40;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_41;
+Node_29 -> Node_30;
+Node_30 -> Node_22;
+Node_27 -> Node_25;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_36 -> Node_22;
+Node_31 -> Node_37;
+Node_37 -> Node_38;
+Node_38 -> Node_22;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_36 -> Node_22;
+Node_31 -> Node_37;
+Node_37 -> Node_38;
+Node_38 -> Node_22;
+Node_21 -> Node_23;
+Node_39 -> Node_24;
+Node_39 -> Node_31;
+Node_39 -> Node_33;
+Node_41 -> Node_29;
+Node_40 -> Node_33;
+Node_40 -> Node_31;
+Node_35 -> Node_36;
+}
+

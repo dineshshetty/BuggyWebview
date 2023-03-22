@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.TouchResponse.scrollMove(FF)V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|float r0 = (r11.mTouchDirectionX * r12) + (r11.mTouchDirectionY * r13)\lfloat r1 = r11.mMotionLayout.getProgress()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r11.mDragStarted != false) goto L4\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|r11.mDragStarted = true\lr11.mMotionLayout.setProgress(r1)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|r11.mMotionLayout.getAnchorDpDt(r11.mTouchAnchorId, r1, r11.mTouchAnchorX, r11.mTouchAnchorY, r11.mAnchorDpDt)\lfloat r2 = r11.mTouchDirectionX\lfloat[] r3 = r11.mAnchorDpDt\lfloat r2 = (r2 * r3[0]) + (r11.mTouchDirectionY * r3[1])\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0045|if ((((double) java.lang.Math.abs(r2)) \> 0.01d ? 1 : (((double) java.lang.Math.abs(r2)) == 0.01d ? 0 : \-1)) \>= 0) goto L7\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0047|float[] r3 = r11.mAnchorDpDt\lr3[0] = 0.01f\lr3[1] = 0.01f\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0050|float r3 = r11.mTouchDirectionX\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0055|if ((r3 \> 0.0f ? 1 : (r3 == 0.0f ? 0 : \-1)) == 0) goto L16\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0057|float r3 = (r3 * r12) \/ r11.mAnchorDpDt[0]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0068|PHI: r3 \l  PHI: (r3v9 'change' float) = (r3v8 'change' float), (r3v11 'change' float) binds: [B:11:0x005f, B:10:0x0057] A[DONT_GENERATE, DONT_INLINE]\l|float r1 = java.lang.Math.max(java.lang.Math.min(r1 + r3, 1.0f), 0.0f)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x007c|if ((r1 \> r11.mMotionLayout.getProgress() ? 1 : (r1 == r11.mMotionLayout.getProgress() ? 0 : \-1)) == 0) goto L15\l}"];
+Node_14 [shape=record,label="{14\:\ 0x007e|r11.mMotionLayout.setProgress(r1)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0083|RETURN\lORIG_RETURN\l|return\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_11 [shape=record,label="{11\:\ 0x005f|float r3 = r11.mTouchDirectionY\lfloat r3 = (r3 * r13) \/ r11.mAnchorDpDt[1]\l}"];
+MethodNode[shape=record,label="{void androidx.constraintlayout.motion.widget.TouchResponse.scrollMove((r11v0 'this' androidx.constraintlayout.motion.widget.TouchResponse A[IMMUTABLE_TYPE, THIS]), (r12v0 'dx' float A[D('dx' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'dy' float A[D('dy' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x007c \-\> B:15:0x0083, CROSS_EDGE: B:11:0x005f \-\> B:12:0x0068, CROSS_EDGE: B:6:0x0045 \-\> B:8:0x0050, CROSS_EDGE: B:3:0x0012 \-\> B:5:0x001b\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [dx, dy]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_16;
+Node_14 -> Node_15;
+Node_15 -> Node_1;
+Node_16 -> Node_1;
+Node_11 -> Node_12;
+}
+

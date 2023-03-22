@@ -1,0 +1,41 @@
+digraph "CFG forcom.google.android.material.datepicker.MonthsPagerAdapter.onBindViewHolder(Lcom\/google\/android\/material\/datepicker\/MonthsPagerAdapter$ViewHolder;I)V" {
+subgraph cluster_Region_1962359952 {
+label = "R(3:1|(1:5)(1:9)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|com.google.android.material.datepicker.Month com.google.android.material.datepicker.Month r0 = r6.calendarConstraints.getStart().monthsLater(r8)\lr7.monthTitle.setText(r0.getLongName())\lcom.google.android.material.datepicker.MaterialCalendarGridView final com.google.android.material.datepicker.MaterialCalendarGridView r1 = (com.google.android.material.datepicker.MaterialCalendarGridView) r7.monthGrid.findViewById(com.google.android.material.C0571R.C0574id.month_grid)\l}"];
+subgraph cluster_IfRegion_1072556695 {
+label = "IF [B:3:0x0021, B:5:0x002d] THEN: R(1:5) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0021|if (r1.getAdapter() != null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002d|ADDED_TO_REGION\l|if (r0.equals(r1.getAdapter().month) != false) goto L5\l}"];
+subgraph cluster_Region_405099775 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002f|r1.invalidate()\lr1.getAdapter().updateSelectedStates(r1)\l}"];
+}
+subgraph cluster_Region_110417776 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003a|com.google.android.material.datepicker.MonthAdapter com.google.android.material.datepicker.MonthAdapter r2 = new com.google.android.material.datepicker.MonthAdapter(r0, r6.dateSelector, r6.calendarConstraints, r6.dayViewDecorator)\lr1.setNumColumns(r0.daysInWeek)\lr1.setAdapter2((android.widget.ListAdapter) r2)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x004d|r1.setOnItemClickListener(new com.google.android.material.datepicker.MonthsPagerAdapter.C06671())\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0023}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0055}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.datepicker.MonthsPagerAdapter.onBindViewHolder((r6v0 'this' com.google.android.material.datepicker.MonthsPagerAdapter A[IMMUTABLE_TYPE, THIS]), (r7v0 'viewHolder' com.google.android.material.datepicker.MonthsPagerAdapter$ViewHolder A[D('viewHolder' com.google.android.material.datepicker.MonthsPagerAdapter$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x003a \-\> B:8:0x004d, CROSS_EDGE: B:3:0x0021 \-\> B:7:0x003a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lRENAME_REASON:avoid collision after fix types in other method\lREPLACED_BY: com.google.android.material.datepicker.MonthsPagerAdapter.onBindViewHolder(com.google.android.material.datepicker.MonthsPagerAdapter$ViewHolder, int):void\lBRIDGED_BY: com.google.android.material.datepicker.MonthsPagerAdapter.onBindViewHolder(com.google.android.material.datepicker.MonthsPagerAdapter$ViewHolder, int):void\lJadxCommentsAttr\{\l DEBUG: \l \-\> Method merged with bridge method\}\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.RecyclerView.Adapter.onBindViewHolder(VH extends androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_9 -> Node_1;
+}
+

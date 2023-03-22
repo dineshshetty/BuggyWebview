@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.material.transition.MaterialContainerTransform.TransitionDrawable.drawElevationShadow(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_340505551 {
+label = "R(3:1|(1:3)(1:7)|4)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|r3.save()\lr3.clipPath(r2.maskEvaluator.getPath(), android.graphics.Region.Op.DIFFERENCE)\l}"];
+subgraph cluster_IfRegion_1981262681 {
+label = "IF [B:11:0x0012] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0012|if (android.os.Build.VERSION.SDK_INT \> 28) goto L3\l}"];
+subgraph cluster_Region_1413990145 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0014|drawElevationShadowWithPaintShadowLayer(r3)\l}"];
+}
+subgraph cluster_Region_247142399 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0018|drawElevationShadowWithMaterialShapeDrawable(r3)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x001b|r3.restore()\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001e}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.transition.MaterialContainerTransform.TransitionDrawable.drawElevationShadow((r2v0 'this' com.google.android.material.transition.MaterialContainerTransform$TransitionDrawable A[IMMUTABLE_TYPE, THIS]), (r3v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0018 \-\> B:14:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_15 -> Node_9;
+}
+

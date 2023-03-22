@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.material.button.MaterialButtonToggleGroup.resetChildMargins(I)V" {
+subgraph cluster_Region_1501260115 {
+label = "R(1:(2:(1:12)|(2:5|(2:(2:7|8)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1444621922 {
+label = "R(2:(1:12)|(2:5|(2:(2:7|8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1928763281 {
+label = "IF [B:18:0x0004, B:20:0x0007] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (getChildCount() == 0) goto L13\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0007|ADDED_TO_REGION\l|if (r6 == (\-1)) goto L12\l}"];
+subgraph cluster_Region_158208532 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_743296923 {
+label = "R(2:5|(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000a|com.google.android.material.button.MaterialButton com.google.android.material.button.MaterialButton r0 = getChildButton(r6)\landroid.widget.LinearLayout$LayoutParams android.widget.LinearLayout.LayoutParams r1 = (android.widget.LinearLayout.LayoutParams) r0.getLayoutParams()\l}"];
+subgraph cluster_Region_190694299 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_79332524 {
+label = "IF [B:23:0x001a] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001a|if (getOrientation() == 1) goto L7\l}"];
+subgraph cluster_Region_432101379 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001c|r1.topMargin = 0\lr1.bottomMargin = 0\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0020|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_375654784 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0021|androidx.core.view.MarginLayoutParamsCompat.setMarginEnd(r1, 0)\landroidx.core.view.MarginLayoutParamsCompat.setMarginStart(r1, 0)\lr1.leftMargin = 0\lr1.rightMargin = 0\l}"];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0006}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002b}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x002c|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.button.MaterialButtonToggleGroup.resetChildMargins((r5v0 'this' com.google.android.material.button.MaterialButtonToggleGroup A[IMMUTABLE_TYPE, THIS]), (r6v0 'childIndex' int A[D('childIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x002b \-\> B:16:?, CROSS_EDGE: B:28:0x002c \-\> B:16:?, CROSS_EDGE: B:18:0x0004 \-\> B:28:0x002c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_28;
+Node_20 -> Node_22[style=dashed];
+Node_20 -> Node_29;
+Node_29 -> Node_16;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_26[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_16;
+Node_26 -> Node_27;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_27 -> Node_16;
+Node_28 -> Node_16;
+}
+

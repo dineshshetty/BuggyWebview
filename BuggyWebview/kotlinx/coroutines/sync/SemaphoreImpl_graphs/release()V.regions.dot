@@ -1,0 +1,100 @@
+digraph "CFG forkotlinx.coroutines.sync.SemaphoreImpl.release()V" {
+subgraph cluster_Region_1377614015 {
+label = "R(1:(2:(2:2|(2:(1:20)|(1:6)))|(1:(1:17)))) | DECL_VAR: int cur$iv, int upd$iv\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_905596655 {
+label = "LOOP:0: (2:(2:2|(2:(1:20)|(1:6)))|(1:(1:17)))";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0023|LOOP_END\lLOOP:0: B:25:0x0000\-\>B:37:0x0023\l|if (tryResumeNextFromQueue() == false) goto L1\l}"];
+subgraph cluster_Region_746582575 {
+label = "R(2:(2:2|(2:(1:20)|(1:6)))|(1:(1:17)))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_2011516453 {
+label = "LOOP:1: (2:2|(2:(1:20)|(1:6)))";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0019|LOOP_END\lLOOP:1: B:26:0x0003\-\>B:32:0x0019\l|if (kotlinx.coroutines.sync.SemaphoreImpl._availablePermits$FU.compareAndSet(r8, r2, r3) == false) goto L2\l}"];
+subgraph cluster_Region_689801127 {
+label = "R(2:2|(2:(1:20)|(1:6)))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0003|LOOP_START\lLOOP:1: B:26:0x0003\-\>B:32:0x0019\l|int r2 = r8._availablePermits\lint int r5 = r8.permits\l}"];
+subgraph cluster_Region_589893203 {
+label = "R(2:(1:20)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1393556247 {
+label = "IF [B:30:0x000f] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x000f|PHI: r6 \l  PHI: (r6v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r2 \< r5) == false) goto L18\l}"];
+subgraph cluster_Region_97280083 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x003b|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"The number of released permits cannot be greater than \", java.lang.Integer.valueOf(r5)).toString())\l}"];
+}
+}
+subgraph cluster_Region_492836276 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0011|int r3 = r2 + 1\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_340231113 {
+label = "R(1:(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1485146368 {
+label = "IF [B:34:0x001c] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x001c|if (r2 \>= 0) goto L16\l}"];
+subgraph cluster_Region_1932343960 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x001e|RETURN\l|return\l}"];
+}
+}
+}
+}
+}
+}
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0000|LOOP_START\lLOOP:0: B:25:0x0000\-\>B:37:0x0023\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000a}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x000c}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x001b|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001b}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x001f}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x0025|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0025}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x001e|SYNTHETIC\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x0027|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0027}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000e}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.sync.SemaphoreImpl.release((r8v0 'this' kotlinx.coroutines.sync.SemaphoreImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:37:0x0023 \-\> B:25:0x0000, CROSS_EDGE: B:38:0x0025 \-\> B:24:?, BACK_EDGE: B:32:0x0019 \-\> B:26:0x0003, CROSS_EDGE: B:41:0x003b \-\> B:24:?, CROSS_EDGE: B:29:0x000e \-\> B:30:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.sync.Semaphore.release():void]\l}"];
+MethodNode -> Node_23;Node_37 -> Node_25;
+Node_37 -> Node_42[style=dashed];
+Node_32 -> Node_26;
+Node_32 -> Node_45[style=dashed];
+Node_26 -> Node_27;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_44;
+Node_41 -> Node_24;
+Node_31 -> Node_32;
+Node_34 -> Node_36[style=dashed];
+Node_34 -> Node_43;
+Node_35 -> Node_24;
+Node_23 -> Node_25;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_29;
+Node_28 -> Node_30;
+Node_45 -> Node_33;
+Node_33 -> Node_34;
+Node_36 -> Node_37;
+Node_42 -> Node_38;
+Node_38 -> Node_24;
+Node_43 -> Node_35;
+Node_44 -> Node_40;
+Node_40 -> Node_41;
+Node_29 -> Node_30;
+}
+

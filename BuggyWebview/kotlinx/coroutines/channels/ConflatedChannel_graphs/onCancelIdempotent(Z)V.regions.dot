@@ -1,0 +1,72 @@
+digraph "CFG forkotlinx.coroutines.channels.ConflatedChannel.onCancelIdempotent(Z)V" {
+subgraph cluster_Region_1360904645 {
+label = "R(2:1|(3:3|4|(1:(1:9))))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0001|java.util.concurrent.locks.ReentrantLock java.util.concurrent.locks.ReentrantLock r1 = r6.lock\ljava.util.concurrent.locks.Lock java.util.concurrent.locks.ReentrantLock r3 = r1\lr3.lock()\l}"];
+subgraph cluster_TryCatchRegion_1673558170 {
+label = "Try: R(3:3|4|(1:(1:9))) catches: R(3:11|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1693460186 {
+label = "R(3:3|4|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0023, blocks: (B:17:0x000c), top: B:26:0x000c \}\lCatch: all \-\> 0x0023\l|kotlinx.coroutines.internal.UndeliveredElementException kotlinx.coroutines.internal.UndeliveredElementException r5 = updateValueLocked(kotlinx.coroutines.channels.AbstractChannelKt.EMPTY)     \/\/ Catch: java.lang.Throwable \-\> L23\lkotlin.Unit kotlin.Unit r4 = kotlin.Unit.INSTANCE     \/\/ Catch: java.lang.Throwable \-\> L23\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0016|r3.unlock()\lsuper.onCancelIdempotent(r7)\l}"];
+subgraph cluster_Region_1710925786 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1788878251 {
+label = "IF [B:19:0x001d] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001d|if (r5 != null) goto L8\l}"];
+subgraph cluster_Region_1435302611 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0022|throw r5\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_516189552 {
+label = "R(3:11|12|13) | ExcHandler: all \-\> 0x0023\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0023|ExcHandler: all \-\> 0x0023\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0024|r3.unlock()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0027|throw r4\l}"];
+}
+}
+}
+subgraph cluster_Region_516189552 {
+label = "R(3:11|12|13) | ExcHandler: all \-\> 0x0023\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0023|ExcHandler: all \-\> 0x0023\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0024|r3.unlock()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0027|throw r4\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000c|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001f}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0020}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.channels.ConflatedChannel.onCancelIdempotent((r6v0 'this' kotlinx.coroutines.channels.ConflatedChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r7v0 'wasClosed' boolean A[D('wasClosed' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | CROSS_EDGE: B:22:0x0022 \-\> B:15:?, CROSS_EDGE: B:25:0x0027 \-\> B:15:?, CROSS_EDGE: B:26:0x000c \-\> B:23:0x0023\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0023, blocks: (B:17:0x000c), top: B:26:0x000c \}\lTYPE_VARS: [E]\lJadxCommentsAttr\{\l DEBUG: \l \-\> Don't trust debug lines info. Repeating lines: [123=4]\}\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.AbstractChannel.onCancelIdempotent(boolean):void]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_26;
+Node_17 -> Node_18;
+Node_17 -> Node_27;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_22 -> Node_15;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_14 -> Node_16;
+Node_26 -> Node_17;
+Node_26 -> Node_23;
+Node_20 -> Node_15;
+Node_21 -> Node_22;
+Node_27 -> Node_23;
+}
+

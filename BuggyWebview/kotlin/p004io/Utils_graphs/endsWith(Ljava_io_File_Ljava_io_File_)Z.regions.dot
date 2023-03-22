@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.io.FilesKt__UtilsKt.endsWith(Ljava\/io\/File;Ljava\/io\/File;)Z" {
+subgraph cluster_Region_160863331 {
+label = "R(2:1|(2:(1:4)|(2:6|(2:(1:8)|(1:10)))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"other\")\lkotlin.io.FilePathComponents kotlin.p004io.FilePathComponents r0 = kotlin.p004io.FilesKt.toComponents(r5)\lkotlin.io.FilePathComponents kotlin.p004io.FilePathComponents r1 = kotlin.p004io.FilesKt.toComponents(r6)\l}"];
+subgraph cluster_Region_2139760015 {
+label = "R(2:(1:4)|(2:6|(2:(1:8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2022825237 {
+label = "IF [B:15:0x0016] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0016|if (r1.isRooted() != false) goto L3\l}"];
+subgraph cluster_Region_1750982741 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001c|RETURN\l|return kotlin.jvm.internal.Intrinsics.areEqual(r5, r6)\l}"];
+}
+}
+subgraph cluster_Region_662675234 {
+label = "R(2:6|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001d|int int r2 = r0.getSize() \- r1.getSize()\l}"];
+subgraph cluster_Region_106768974 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1159298024 {
+label = "IF [B:19:0x0026] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0026|if (r2 \< 0) goto L8\l}"];
+subgraph cluster_Region_857615365 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0028|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1593155133 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x003e|RETURN\lORIG_RETURN\l|return r0.getSegments().subList(r2, r0.getSize()).equals(r1.getSegments())\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0018}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002a}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.io.FilesKt__UtilsKt.endsWith((r5v0 '$this$endsWith' java.io.File A[D('$this$endsWith' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'other' java.io.File A[D('other' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x003e \-\> B:13:?, CROSS_EDGE: B:21:0x002a \-\> B:22:0x003e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+}
+

@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.core.view.LayoutInflaterCompat.setFactory(Landroid\/view\/LayoutInflater;Landroidx\/core\/view\/LayoutInflaterFactory;)V" {
+subgraph cluster_Region_1866685755 {
+label = "R(1:(2:(2:3|4)|(2:6|(1:8)(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1752080504 {
+label = "R(2:(2:3|4)|(2:6|(1:8)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1717692197 {
+label = "IF [B:15:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L3\l}"];
+subgraph cluster_Region_668847837 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|r3.setFactory2(new androidx.core.view.LayoutInflaterCompat.Factory2Wrapper(r4))\l}"];
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_105363707 {
+label = "R(2:6|(1:8)(1:10))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|androidx.core.view.LayoutInflaterCompat$Factory2Wrapper android.view.LayoutInflater.Factory2 r0 = new androidx.core.view.LayoutInflaterCompat.Factory2Wrapper(r4)\lr3.setFactory2(r0)\landroid.view.LayoutInflater$Factory android.view.LayoutInflater.Factory r1 = r3.getFactory()\l}"];
+subgraph cluster_IfRegion_776071898 {
+label = "IF [B:18:0x001d] THEN: R(1:8) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001d|if ((r1 instanceof android.view.LayoutInflater.Factory2) != false) goto L8\l}"];
+subgraph cluster_Region_514034415 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001f|forceSetFactory2(r3, (android.view.LayoutInflater.Factory2) r1)\l}"];
+}
+subgraph cluster_Region_1135008968 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0026|forceSetFactory2(r3, r0)\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0029|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.view.LayoutInflaterCompat.setFactory((r3v0 'inflater' android.view.LayoutInflater A[D('inflater' android.view.LayoutInflater), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'factory' androidx.core.view.LayoutInflaterFactory A[D('factory' androidx.core.view.LayoutInflaterFactory), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:19:0x001f \-\> B:21:0x0029, CROSS_EDGE: B:20:0x0026 \-\> B:21:0x0029\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_22;
+Node_22 -> Node_13;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_23;
+Node_20 -> Node_21;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_23 -> Node_13;
+Node_21 -> Node_13;
+}
+

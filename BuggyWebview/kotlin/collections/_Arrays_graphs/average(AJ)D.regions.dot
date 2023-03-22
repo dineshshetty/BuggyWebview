@@ -1,0 +1,53 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.average([J)D" {
+subgraph cluster_Region_416915985 {
+label = "R(3:1|(1:3)|(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"\<this\>\")\ldouble r0 = 0.0d\lint r2 = 0\lint r4 = 0\l\l}"];
+subgraph cluster_LoopRegion_1489231361 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|LOOP_START\lLOOP:0: B:14:0x000a\-\>B:15:0x000c\lPHI: r0 r2 r4 \l  PHI: (r0v2 'sum' double) = (r0v1 'sum' double), (r0v3 'sum' double) binds: [B:13:0x0000, B:15:0x000c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'count' int) = (r2v0 'count' int), (r2v2 'count' int) binds: [B:13:0x0000, B:15:0x000c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:13:0x0000, B:15:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \< r3) goto L3\l}"];
+subgraph cluster_Region_1916803357 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|LOOP_END\lLOOP:0: B:14:0x000a\-\>B:15:0x000c\l|r5 = r9[r4]\lr0 += r5\lr2++\lr4++\l}"];
+}
+}
+subgraph cluster_Region_1569261447 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_63596559 {
+label = "IF [B:16:0x0016] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0016|if (r2 == 0) goto L6\l}"];
+subgraph cluster_Region_24456625 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|SYNTHETIC\lRETURN\l|return Double.NaN\l}"];
+}
+}
+subgraph cluster_Region_63855367 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001e|RETURN\lORIG_RETURN\l|return r0 \/ r2\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001b}"];
+MethodNode[shape=record,label="{public static final double kotlin.collections.ArraysKt___ArraysKt.average((r9v0 '$this$average' long[] A[D('$this$average' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:15:0x000c \-\> B:14:0x000a, CROSS_EDGE: B:18:0x001b \-\> B:19:0x001e\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_14;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_20 -> Node_16;
+Node_18 -> Node_19;
+}
+

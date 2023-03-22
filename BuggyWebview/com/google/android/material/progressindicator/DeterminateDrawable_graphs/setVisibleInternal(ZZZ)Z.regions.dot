@@ -1,0 +1,34 @@
+digraph "CFG forcom.google.android.material.progressindicator.DeterminateDrawable.setVisibleInternal(ZZZ)Z" {
+subgraph cluster_Region_759332417 {
+label = "R(3:1|(1:3)(1:6)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|boolean boolean r0 = super.setVisibleInternal(r5, r6, r7)\lfloat float r1 = r4.animatorDurationScaleProvider.getSystemAnimatorDurationScale(r4.context.getContentResolver())\l}"];
+subgraph cluster_IfRegion_424662582 {
+label = "IF [B:10:0x0013] THEN: R(1:3) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0013|if (r1 == 0.0f) goto L3\l}"];
+subgraph cluster_Region_462200120 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0015|r4.skipAnimationOnLevelChange = true\l}"];
+}
+subgraph cluster_Region_457706307 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0019|r4.skipAnimationOnLevelChange = false\lr4.springForce.setStiffness(50.0f \/ r1)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0024|RETURN\l|return r0\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.progressindicator.DeterminateDrawable.setVisibleInternal((r4v0 'this' com.google.android.material.progressindicator.DeterminateDrawable\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\> A[D('this' com.google.android.material.progressindicator.DeterminateDrawable\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\>), IMMUTABLE_TYPE, THIS]), (r5v0 'visible' boolean A[D('visible' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'restart' boolean A[D('restart' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'animate' boolean A[D('animate' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0019 \-\> B:13:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec]\lMETHOD_OVERRIDE: [com.google.android.material.progressindicator.DrawableWithAnimatedVisibilityChange.setVisibleInternal(boolean, boolean, boolean):boolean]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

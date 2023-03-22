@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.appcompat.widget.LinearLayoutCompat.setGravity(I)V" {
+subgraph cluster_Region_1375250312 {
+label = "R(1:(1:(3:(1:5)|(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_964613087 {
+label = "R(1:(3:(1:5)|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1836791217 {
+label = "IF [B:16:0x0002] THEN: R(3:(1:5)|(1:8)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if (r1.mGravity != r2) goto L3\l}"];
+subgraph cluster_Region_1576912331 {
+label = "R(3:(1:5)|(1:8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1236139291 {
+label = "IF [B:18:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|if ((8388615 & r2) == 0) goto L5\l}"];
+subgraph cluster_Region_109199322 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|r2 \|= androidx.core.view.GravityCompat.START\l}"];
+}
+}
+subgraph cluster_IfRegion_845169670 {
+label = "IF [B:21:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|if ((r2 & 112) == 0) goto L8\l}"];
+subgraph cluster_Region_25173020 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0012|r2 \|= 48\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0014|PHI: r2 \l  PHI: (r2v2 'gravity' int) = (r2v1 'gravity' int), (r2v3 'gravity' int) binds: [B:21:0x0010, B:22:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|r1.mGravity = r2\lrequestLayout()\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0004}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000e|PHI: r2 \l  PHI: (r2v1 'gravity' int) = (r2v0 'gravity' int), (r2v4 'gravity' int) binds: [B:18:0x0008, B:19:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0019|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.LinearLayoutCompat.setGravity((r1v0 'this' androidx.appcompat.widget.LinearLayoutCompat A[IMMUTABLE_TYPE, THIS]), (r2v0 'gravity' int A[D('gravity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0010 \-\> B:23:0x0014, CROSS_EDGE: B:18:0x0008 \-\> B:20:0x000e, CROSS_EDGE: B:16:0x0002 \-\> B:24:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_25[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+Node_24 -> Node_14;
+Node_25 -> Node_14;
+}
+

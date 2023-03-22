@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.randomOrNull(Ljava\/util\/Collection;Lkotlin\/random\/Random;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_24812973 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"random\")\l}"];
+subgraph cluster_Region_1186662303 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_805479087 {
+label = "IF [B:19:0x000e] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|if (r2.isEmpty() != false) goto L3\l}"];
+subgraph cluster_Region_1333796398 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0010|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_448951686 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0021|RETURN\l|return (T) kotlin.collections.CollectionsKt.elementAt(r2, r3.nextInt(r2.size()))\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0012}"];
+MethodNode[shape=record,label="{public static final T kotlin.collections.CollectionsKt___CollectionsKt.randomOrNull((r2v0 java.util.Collection\<? extends T\> A[D('$this$randomOrNull' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'random' kotlin.random.Random A[D('random' kotlin.random.Random), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0021 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/Collection\<+TT;\>;Lkotlin\/random\/Random;)TT;\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_17;
+Node_23 -> Node_17;
+Node_16 -> Node_18;
+Node_22 -> Node_23;
+}
+

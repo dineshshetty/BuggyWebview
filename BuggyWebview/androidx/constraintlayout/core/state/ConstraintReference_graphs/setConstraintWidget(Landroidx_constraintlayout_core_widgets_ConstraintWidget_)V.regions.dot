@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.constraintlayout.core.state.ConstraintReference.setConstraintWidget(Landroidx\/constraintlayout\/core\/widgets\/ConstraintWidget;)V" {
+subgraph cluster_Region_2010159463 {
+label = "R(1:(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_144788462 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_657060565 {
+label = "IF [B:8:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|if (r2 == null) goto L2\l}"];
+subgraph cluster_Region_453327629 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0002|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1752007339 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0003|r1.mConstraintWidget = r2\lr2.setCompanionWidget(r1.mView)\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000a}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.state.ConstraintReference.setConstraintWidget((r1v0 'this' androidx.constraintlayout.core.state.ConstraintReference A[IMMUTABLE_TYPE, THIS]), (r2v0 'widget' androidx.constraintlayout.core.widgets.ConstraintWidget A[D('widget' androidx.constraintlayout.core.widgets.ConstraintWidget), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x000a \-\> B:7:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.constraintlayout.core.state.Reference.setConstraintWidget(androidx.constraintlayout.core.widgets.ConstraintWidget):void]\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_7;
+Node_10 -> Node_11;
+Node_6 -> Node_8;
+Node_11 -> Node_7;
+}
+

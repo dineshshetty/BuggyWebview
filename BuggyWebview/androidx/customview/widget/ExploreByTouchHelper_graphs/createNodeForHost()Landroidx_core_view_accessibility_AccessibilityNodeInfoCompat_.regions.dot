@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.customview.widget.ExploreByTouchHelper.createNodeForHost()Landroidx\/core\/view\/accessibility\/AccessibilityNodeInfoCompat;" {
+subgraph cluster_Region_2072703749 {
+label = "R(2:1|(2:(1:6)|(3:8|(1:10)|12)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|androidx.core.view.accessibility.AccessibilityNodeInfoCompat androidx.core.view.accessibility.AccessibilityNodeInfoCompat r0 = androidx.core.view.accessibility.AccessibilityNodeInfoCompat.obtain(r7.mHost)\landroidx.core.view.ViewCompat.onInitializeAccessibilityNodeInfo(r7.mHost, r0)\ljava.util.ArrayList java.util.ArrayList\<java.lang.Integer\> r1 = new java.util.ArrayList\<\>()\lgetVisibleVirtualViews(r1)\lint int r2 = r0.getChildCount()\l}"];
+subgraph cluster_Region_3687972 {
+label = "R(2:(1:6)|(3:8|(1:10)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1709030467 {
+label = "IF [B:17:0x0017, B:19:0x001d] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0017|if (r2 \> 0) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001d|ADDED_TO_REGION\l|if (r1.size() \> 0) goto L5\l}"];
+subgraph cluster_Region_112093735 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0027|throw new java.lang.RuntimeException(\"Views cannot have both real and virtual children\")\l}"];
+}
+}
+subgraph cluster_Region_1231657537 {
+label = "R(3:8|(1:10)|12)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0028|int r3 = 0\lint int r4 = r1.size()\l}"];
+subgraph cluster_LoopRegion_1239640358 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002d|LOOP_START\lLOOP:0: B:24:0x002d\-\>B:25:0x002f\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:23:0x0028, B:25:0x002f] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r4) goto L10\l}"];
+subgraph cluster_Region_1555547614 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002f|LOOP_END\lLOOP:0: B:24:0x002d\-\>B:25:0x002f\l|r0.addChild(r7.mHost, r1.get(r3).intValue())\lr3++\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0041|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0019}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0020}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0041|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private androidx.core.view.accessibility.AccessibilityNodeInfoCompat androidx.customview.widget.ExploreByTouchHelper.createNodeForHost((r7v0 'this' androidx.customview.widget.ExploreByTouchHelper A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x002f \-\> B:24:0x002d, CROSS_EDGE: B:26:0x0041 \-\> B:15:?, CROSS_EDGE: B:17:0x0017 \-\> B:23:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_19 -> Node_21;
+Node_19 -> Node_23[style=dashed];
+Node_22 -> Node_15;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_25 -> Node_24;
+Node_26 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_27 -> Node_26;
+}
+

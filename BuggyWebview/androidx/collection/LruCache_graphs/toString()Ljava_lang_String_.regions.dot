@@ -1,0 +1,46 @@
+digraph "CFG forandroidx.collection.LruCache.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_2076387550 {
+label = "R(2:(1:(2:3|4))|8) | DECL_VAR: int hitPercent\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_2126500330 {
+label = "R(1:(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_Region_33509989 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0001|TRY_ENTER\lTryCatch #0 \{, blocks: (B:18:0x0001, B:20:0x0009, B:22:0x000e), top: B:28:0x0001 \}\lCatch: all \-\> 0x003c\l|int int r0 = r7.hitCount     \/\/ Catch: java.lang.Throwable \-\> L3c\lint int r1 = r7.missCount + r0     \/\/ Catch: java.lang.Throwable \-\> L3c\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0007|r0 = r1 != 0 ? (r0 * 100) \/ r1 : 0\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x003b|RETURN\l|return java.lang.String.format(java.util.Locale.US, \"LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]\", java.lang.Integer.valueOf(r7.maxSize), java.lang.Integer.valueOf(r7.hitCount), java.lang.Integer.valueOf(r7.missCount), java.lang.Integer.valueOf(r0))\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0009|TryCatch #0 \{, blocks: (B:18:0x0001, B:20:0x0009, B:22:0x000e), top: B:28:0x0001 \}\lCatch: all \-\> 0x003c\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000e|TRY_LEAVE\lTryCatch #0 \{, blocks: (B:18:0x0001, B:20:0x0009, B:22:0x000e), top: B:28:0x0001 \}\lCatch: all \-\> 0x003c\lPHI: r0 \l  PHI: (r0v3 'hitPercent' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x003a|DONT_GENERATE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000d}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x003c|REMOVE\lExcHandler: all \-\> 0x003c\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x003e|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public final synchronized java.lang.String androidx.collection.LruCache.toString((r7v0 'this' androidx.collection.LruCache\<K, V\> A[D('this' androidx.collection.LruCache\<K, V\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x003e \-\> B:16:?, CROSS_EDGE: B:21:0x000d \-\> B:22:0x000e, CROSS_EDGE: B:28:0x0001 \-\> B:25:0x003c\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_24 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_28;
+Node_28 -> Node_18;
+Node_28 -> Node_25;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_29;
+Node_23 -> Node_24;
+Node_29 -> Node_25;
+Node_21 -> Node_22;
+Node_25 -> Node_27;
+Node_27 -> Node_16;
+}
+

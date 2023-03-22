@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.core.view.AccessibilityDelegateCompat.performClickableSpanAction(ILandroid\/view\/View;)Z" {
+subgraph cluster_Region_513552031 {
+label = "R(2:1|(2:(2:5|(2:(2:7|8)|(1:10)))|(1:11))) | DECL_VAR: java.lang.ref.WeakReference\<android.text.style.ClickableSpan\> reference\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|android.util.SparseArray android.util.SparseArray\<java.lang.ref.WeakReference\<android.text.style.ClickableSpan\>\> r0 = (android.util.SparseArray) r6.getTag(androidx.core.C0180R.C0183id.tag_accessibility_clickable_spans)\l}"];
+subgraph cluster_Region_1724632543 {
+label = "R(2:(2:5|(2:(2:7|8)|(1:10)))|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1325778643 {
+label = "IF [B:17:0x0008, B:19:0x0010] THEN: R(2:5|(2:(2:7|8)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (r0 != null) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0010|ADDED_TO_REGION\l|if ((r1 = r0.get(r5)) != null) goto L5\l}"];
+subgraph cluster_Region_56424561 {
+label = "R(2:5|(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0012|android.text.style.ClickableSpan android.text.style.ClickableSpan r2 = r1.get()\l}"];
+subgraph cluster_Region_507089003 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2038762969 {
+label = "IF [B:21:0x001c] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001c|if (isSpanStillValid(r2, r6) != false) goto L7\l}"];
+subgraph cluster_Region_101854368 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001e|r2.onClick(r6)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0022|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_803038406 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1984821530 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000a}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0023|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{private boolean androidx.core.view.AccessibilityDelegateCompat.performClickableSpanAction((r4v0 'this' androidx.core.view.AccessibilityDelegateCompat A[IMMUTABLE_TYPE, THIS]), (r5v0 'clickableSpanId' int A[D('clickableSpanId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'host' android.view.View A[D('host' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0024 \-\> B:15:?, CROSS_EDGE: B:19:0x0010 \-\> B:24:0x0023, CROSS_EDGE: B:17:0x0008 \-\> B:24:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_26[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_27[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_15;
+Node_27 -> Node_15;
+Node_26 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_24 -> Node_15;
+}
+

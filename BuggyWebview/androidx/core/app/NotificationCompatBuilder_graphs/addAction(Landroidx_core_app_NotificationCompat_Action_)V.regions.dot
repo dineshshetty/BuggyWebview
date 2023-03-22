@@ -1,0 +1,205 @@
+digraph "CFG forandroidx.core.app.NotificationCompatBuilder.addAction(Landroidx\/core\/app\/NotificationCompat$Action;)V" {
+subgraph cluster_Region_1422618815 {
+label = "R(1:(11:3|(1:8)(1:38)|(2:11|(1:13))|(1:17)(1:33)|18|(1:20)|21|(1:23)|(1:26)|(1:29)|30)(1:(1:42)(0))) | DECL_VAR: android.app.Notification$Action$Builder actionBuilder, android.os.Bundle actionExtras, android.app.RemoteInput[] null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_973248514 {
+label = "IF [B:3:0x0004] THEN: R(11:3|(1:8)(1:38)|(2:11|(1:13))|(1:17)(1:33)|18|(1:20)|21|(1:23)|(1:26)|(1:29)|30) ELSE: R(1:(1:42)(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 20) goto L3\l}"];
+subgraph cluster_Region_1677995125 {
+label = "R(11:3|(1:8)(1:38)|(2:11|(1:13))|(1:17)(1:33)|18|(1:20)|21|(1:23)|(1:26)|(1:29)|30)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|androidx.core.graphics.drawable.IconCompat androidx.core.graphics.drawable.IconCompat r0 = r7.getIconCompat()\lint r3 = 0\l}"];
+subgraph cluster_IfRegion_255492300 {
+label = "IF [B:5:0x000f] THEN: R(1:8) ELSE: R(1:38)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L5\l}"];
+subgraph cluster_Region_1870452412 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001b|PHI: r2 \l  PHI: (r2v12 android.graphics.drawable.Icon A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.app.Notification$Action$Builder r1 = new android.app.Notification.Action.Builder(r0 != null ? r0.toIcon() : null, r7.getTitle(), r7.getActionIntent())\l}"];
+}
+subgraph cluster_Region_1453340153 {
+label = "R(1:38)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0031|PHI: r2 \l  PHI: (r2v2 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.app.Notification$Action$Builder r1 = new android.app.Notification.Action.Builder(r0 != null ? r0.getResId() : 0, r7.getTitle(), r7.getActionIntent())\l}"];
+}
+}
+subgraph cluster_IfRegion_242300322 {
+label = "IF [B:17:0x0040] THEN: R(2:11|(1:13)) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0040|if (r7.getRemoteInputs() != null) goto L11\l}"];
+subgraph cluster_Region_19984987 {
+label = "R(2:11|(1:13))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0043}"];
+subgraph cluster_LoopRegion_802994423 {
+label = "LOOP:0: (1:13)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x004c|LOOP_START\lLOOP:0: B:19:0x004c\-\>B:20:0x004e\lPHI: r3 \l  PHI: (r3v14 int) = (r3v0 int), (r3v15 int) binds: [B:18:0x0043, B:20:0x004e] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r4) goto L13\l}"];
+subgraph cluster_Region_1533619451 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x004e|LOOP_END\lLOOP:0: B:19:0x004c\-\>B:20:0x004e\l|r5 = r2[r3]\lr1.addRemoteInput(r5)\lr3++\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1958437152 {
+label = "IF [B:22:0x005a] THEN: R(1:17) ELSE: R(1:33)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x005a|if (r7.getExtras() != null) goto L17\l}"];
+subgraph cluster_Region_386607156 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x005c|android.os.Bundle r2 = new android.os.Bundle(r7.getExtras())\l}"];
+}
+subgraph cluster_Region_516670567 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0066|android.os.Bundle r2 = new android.os.Bundle()\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x006b|PHI: r2 \l  PHI: (r2v7 'actionExtras' android.os.Bundle) = (r2v6 'actionExtras' android.os.Bundle), (r2v8 'actionExtras' android.os.Bundle) binds: [B:24:0x0066, B:23:0x005c] A[DONT_GENERATE, DONT_INLINE]\l|r2.putBoolean(\"android.support.allowGeneratedReplies\", r7.getAllowGeneratedReplies())\l}"];
+subgraph cluster_IfRegion_1944098352 {
+label = "IF [B:26:0x0079] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0079|if (android.os.Build.VERSION.SDK_INT \>= 24) goto L20\l}"];
+subgraph cluster_Region_1975779389 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x007b|r1.setAllowGeneratedReplies(r7.getAllowGeneratedReplies())\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0082|r2.putInt(\"android.support.action.semanticAction\", r7.getSemanticAction())\l}"];
+subgraph cluster_IfRegion_1058346354 {
+label = "IF [B:29:0x0090] THEN: R(1:23) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0090|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L23\l}"];
+subgraph cluster_Region_269013457 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0092|r1.setSemanticAction(r7.getSemanticAction())\l}"];
+}
+}
+subgraph cluster_IfRegion_1739494646 {
+label = "IF [B:32:0x009d] THEN: R(1:26) ELSE: null";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x009d|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L26\l}"];
+subgraph cluster_Region_842966486 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x009f|r1.setContextual(r7.isContextual())\l}"];
+}
+}
+subgraph cluster_IfRegion_630687846 {
+label = "IF [B:35:0x00aa] THEN: R(1:29) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x00aa|if (android.os.Build.VERSION.SDK_INT \>= 31) goto L29\l}"];
+subgraph cluster_Region_1934050140 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x00ac|r1.setAuthenticationRequired(r7.isAuthenticationRequired())\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x00b3|r2.putBoolean(\"android.support.action.showsUserInterface\", r7.getShowsUserInterface())\lr1.addExtras(r2)\lr6.mBuilder.addAction(r1.build())\l}"];
+}
+subgraph cluster_Region_1625125094 {
+label = "R(1:(1:42)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_663386430 {
+label = "IF [B:39:0x00ce] THEN: R(1:42) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x00ce|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L42\l}"];
+subgraph cluster_Region_1044844817 {
+label = "R(1:42)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x00d0|r6.mActionExtrasList.add(androidx.core.app.NotificationCompatJellybean.writeActionAndGetExtras(r6.mBuilder, r7))\l}"];
+}
+subgraph cluster_Region_2010376230 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0013}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0015}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x003c|PHI: r1 \l  PHI: (r1v6 'actionBuilder' android.app.Notification$Action$Builder) = (r1v5 'actionBuilder' android.app.Notification$Action$Builder), (r1v7 'actionBuilder' android.app.Notification$Action$Builder) binds: [B:15:0x0031, B:10:0x001b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0056|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0056}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0099}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x00a6}"];
+Node_44 [shape=record,color=red,label="{44\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001a}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0027}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0029}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002b}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0030}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x00ca}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x00dd|ORIG_RETURN\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.core.app.NotificationCompatBuilder.addAction((r6v0 'this' androidx.core.app.NotificationCompatBuilder A[IMMUTABLE_TYPE, THIS]), (r7v0 'action' androidx.core.app.NotificationCompat$Action A[D('action' androidx.core.app.NotificationCompat$Action), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x004e \-\> B:19:0x004c, CROSS_EDGE: B:35:0x00aa \-\> B:37:0x00b3, CROSS_EDGE: B:32:0x009d \-\> B:34:0x00a6, CROSS_EDGE: B:29:0x0090 \-\> B:31:0x0099, CROSS_EDGE: B:26:0x0079 \-\> B:28:0x0082, CROSS_EDGE: B:24:0x0066 \-\> B:25:0x006b, CROSS_EDGE: B:17:0x0040 \-\> B:21:0x0056, CROSS_EDGE: B:9:0x001a \-\> B:10:0x001b, CROSS_EDGE: B:15:0x0031 \-\> B:16:0x003c, CROSS_EDGE: B:14:0x0030 \-\> B:15:0x0031, CROSS_EDGE: B:40:0x00d0 \-\> B:42:0x00dd, CROSS_EDGE: B:39:0x00ce \-\> B:42:0x00dd\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_38[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_10 -> Node_16;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_43[style=dashed];
+Node_20 -> Node_19;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_32 -> Node_34[style=dashed];
+Node_33 -> Node_34;
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_37;
+Node_37 -> Node_44;
+Node_39 -> Node_40;
+Node_39 -> Node_45[style=dashed];
+Node_40 -> Node_42;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_16 -> Node_17;
+Node_43 -> Node_21;
+Node_21 -> Node_22;
+Node_31 -> Node_32;
+Node_34 -> Node_35;
+Node_44 -> Node_1;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14;
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_38 -> Node_39;
+Node_42 -> Node_1;
+Node_45 -> Node_1;
+}
+

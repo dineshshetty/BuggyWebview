@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.app.ShareCompat.getCallingPackage(Landroid\/content\/Intent;)Ljava\/lang\/String;" {
+subgraph cluster_Region_2076227717 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.String java.lang.String r0 = r2.getStringExtra(androidx.core.app.ShareCompat.EXTRA_CALLING_PACKAGE)\l}"];
+subgraph cluster_Region_1901148390 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_715971628 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1613966879 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|RETURN\lORIG_RETURN\l|return r2.getStringExtra(androidx.core.app.ShareCompat.EXTRA_CALLING_PACKAGE_INTEROP)\l}"];
+}
+}
+subgraph cluster_Region_1578836783 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static java.lang.String androidx.core.app.ShareCompat.getCallingPackage((r2v0 'intent' android.content.Intent A[D('intent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0006 \-\> B:5:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+}
+

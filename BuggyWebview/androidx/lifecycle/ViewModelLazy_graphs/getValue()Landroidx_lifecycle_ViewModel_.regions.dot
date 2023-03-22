@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.lifecycle.ViewModelLazy.getValue()Landroidx\/lifecycle\/ViewModel;" {
+subgraph cluster_Region_243691715 {
+label = "R(2:1|(2:(2:3|4)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|VM extends androidx.lifecycle.ViewModel VM r0 = r6.cached\l}"];
+subgraph cluster_Region_1471750359 {
+label = "R(2:(2:3|4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2137491913 {
+label = "IF [B:3:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_669081744 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|androidx.lifecycle.ViewModelProvider$Factory androidx.lifecycle.ViewModelProvider.Factory r1 = r6.factoryProducer.invoke()\landroidx.lifecycle.ViewModelStore androidx.lifecycle.ViewModelStore r2 = r6.storeProducer.invoke()\landroidx.lifecycle.ViewModel VM r3 = (VM) new androidx.lifecycle.ViewModelProvider(r2, r1, r6.extrasProducer.invoke()).get(kotlin.jvm.JvmClassMapping.getJavaClass((kotlin.reflect.KClass) r6.viewModelClass))\lr6.cached = r3\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1458143473 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0035|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0034}"];
+MethodNode[shape=record,label="{public VM extends androidx.lifecycle.ViewModel androidx.lifecycle.ViewModelLazy.getValue((r6v0 'this' androidx.lifecycle.ViewModelLazy\<VM extends androidx.lifecycle.ViewModel\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0034 \-\> B:6:0x0035\lINLINE_NOT_NEEDED\lTYPE_VARS: [VM extends androidx.lifecycle.ViewModel]\lSIGNATURE: ()TVM;\lREPLACED_BY: androidx.lifecycle.ViewModelLazy.getValue():java.lang.Object\lJadxCommentsAttr\{\l DEBUG: \l \-\> Method merged with bridge method\}\lMETHOD_OVERRIDE: [kotlin.Lazy.getValue():T]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_7 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+}
+

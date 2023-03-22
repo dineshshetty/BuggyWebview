@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.fragment.app.FragmentStateManager.create()V" {
+subgraph cluster_Region_1627389465 {
+label = "R(2:(1:3)|(2:(2:6|7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1328660304 {
+label = "IF [B:14:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0005|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(3) != false) goto L3\l}"];
+subgraph cluster_Region_1748255968 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0007|android.util.Log.d(androidx.fragment.app.FragmentStateManager.TAG, \"moveto CREATED: \" + r4.mFragment)\l}"];
+}
+}
+subgraph cluster_Region_1613944730 {
+label = "R(2:(2:6|7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2141385395 {
+label = "IF [B:17:0x0023] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0023|if (r4.mFragment.mIsCreated == false) goto L6\l}"];
+subgraph cluster_Region_690865426 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0025|androidx.fragment.app.FragmentLifecycleCallbacksDispatcher androidx.fragment.app.FragmentLifecycleCallbacksDispatcher r0 = r4.mDispatcher\landroidx.fragment.app.Fragment androidx.fragment.app.Fragment r1 = r4.mFragment\lr0.dispatchOnFragmentPreCreated(r1, r1.mSavedFragmentState, false)\landroidx.fragment.app.Fragment androidx.fragment.app.Fragment r0 = r4.mFragment\lr0.performCreate(r0.mSavedFragmentState)\landroidx.fragment.app.FragmentLifecycleCallbacksDispatcher androidx.fragment.app.FragmentLifecycleCallbacksDispatcher r0 = r4.mDispatcher\landroidx.fragment.app.Fragment androidx.fragment.app.Fragment r1 = r4.mFragment\lr0.dispatchOnFragmentCreated(r1, r1.mSavedFragmentState, false)\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_529294188 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0040|androidx.fragment.app.Fragment androidx.fragment.app.Fragment r0 = r4.mFragment\lr0.restoreChildFragmentState(r0.mSavedFragmentState)\lr4.mFragment.mState = 1\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001f}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x004c|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentStateManager.create((r4v0 'this' androidx.fragment.app.FragmentStateManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0040 \-\> B:20:0x004c, CROSS_EDGE: B:14:0x0005 \-\> B:16:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+Node_20 -> Node_12;
+}
+

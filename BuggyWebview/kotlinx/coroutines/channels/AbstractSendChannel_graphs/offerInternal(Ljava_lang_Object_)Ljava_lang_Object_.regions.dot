@@ -1,0 +1,94 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractSendChannel.offerInternal(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1177233723 {
+label = "R(4:(2:1|(2:(1:20)|(1:3)))|(1:(1:13))|16|17) | DECL_VAR: kotlinx.coroutines.channels.ReceiveOrClosed receive, kotlinx.coroutines.internal.Symbol token\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_99223919 {
+label = "LOOP:0: (2:1|(2:(1:20)|(1:3)))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x000f|LOOP_END\lLOOP:0: B:25:0x0000\-\>B:30:0x000f\l|if (r1 == null) goto L1\l}"];
+subgraph cluster_Region_2090332859 {
+label = "R(2:1|(2:(1:20)|(1:3)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0000|LOOP_START\lLOOP:0: B:25:0x0000\-\>B:30:0x000f\l|kotlinx.coroutines.channels.ReceiveOrClosed r0 = takeFirstReceiveOrPeekClosed()\l}"];
+subgraph cluster_Region_62163929 {
+label = "R(2:(1:20)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2125783596 {
+label = "IF [B:26:0x0005] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0005|if (r0 == null) goto L18\l}"];
+subgraph cluster_Region_96960414 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0009|RETURN\l|return kotlinx.coroutines.channels.AbstractChannelKt.OFFER_FAILED\l}"];
+}
+}
+subgraph cluster_Region_1924598072 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x000a|kotlinx.coroutines.internal.Symbol r1 = r0.tryResumeReceive(r5, null)\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1531075465 {
+label = "IF [B:32:0x0015] THEN: R(1:(1:13)) ELSE: null";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0015|if (kotlinx.coroutines.Debug.getASSERTIONS_ENABLED() != false) goto L8\l}"];
+subgraph cluster_Region_1035836177 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1553350268 {
+label = "IF [B:37:0x001f] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x001f|PHI: r3 \l  PHI: (r3v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r1 == kotlinx.coroutines.CancellableContinuationImplKt.RESUME_TOKEN) == false) goto L12\l}"];
+subgraph cluster_Region_443557180 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0027|throw new java.lang.AssertionError()\l}"];
+}
+}
+}
+}
+Node_41 [shape=record,label="{41\:\ 0x0028|r0.completeResumeReceive(r5)\l}"];
+Node_42 [shape=record,label="{42\:\ 0x002f|RETURN\l|return r0.getOfferResult()\l}"];
+}
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0011|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0011}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0017}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x001a}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x001c}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0022}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x001e}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x0007|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0007}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.channels.AbstractSendChannel.offerInternal((r4v0 'this' kotlinx.coroutines.channels.AbstractSendChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r5v0 E A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:40:0x0027 \-\> B:24:?, CROSS_EDGE: B:42:0x002f \-\> B:24:?, CROSS_EDGE: B:36:0x001e \-\> B:37:0x001f, CROSS_EDGE: B:32:0x0015 \-\> B:41:0x0028, BACK_EDGE: B:30:0x000f \-\> B:25:0x0000\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (TE;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.AbstractSendChannel.offerInternal(E):java.lang.Object]\l}"];
+MethodNode -> Node_23;Node_30 -> Node_25;
+Node_30 -> Node_45[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_29[style=dashed];
+Node_26 -> Node_44;
+Node_28 -> Node_24;
+Node_29 -> Node_30;
+Node_32 -> Node_33;
+Node_32 -> Node_41[style=dashed];
+Node_37 -> Node_39;
+Node_37 -> Node_41[style=dashed];
+Node_40 -> Node_24;
+Node_41 -> Node_42;
+Node_42 -> Node_24;
+Node_23 -> Node_25;
+Node_45 -> Node_31;
+Node_31 -> Node_32;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36;
+Node_35 -> Node_37;
+Node_39 -> Node_40;
+Node_36 -> Node_37;
+Node_44 -> Node_27;
+Node_27 -> Node_28;
+}
+

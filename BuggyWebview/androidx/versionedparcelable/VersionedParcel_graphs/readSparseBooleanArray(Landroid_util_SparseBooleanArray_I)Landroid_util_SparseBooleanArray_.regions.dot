@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.readSparseBooleanArray(Landroid\/util\/SparseBooleanArray;I)Landroid\/util\/SparseBooleanArray;" {
+subgraph cluster_Region_402264652 {
+label = "R(1:(2:(1:3)|(2:5|(2:(1:7)|(3:8|(1:10)|12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_737662042 {
+label = "R(2:(1:3)|(2:5|(2:(1:7)|(3:8|(1:10)|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1953410936 {
+label = "IF [B:17:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (readField(r7) == false) goto L3\l}"];
+subgraph cluster_Region_1610767363 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|RETURN\l|return r6\l}"];
+}
+}
+subgraph cluster_Region_1655801531 {
+label = "R(2:5|(2:(1:7)|(3:8|(1:10)|12)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0007|int int r0 = readInt()\l}"];
+subgraph cluster_Region_657283645 {
+label = "R(2:(1:7)|(3:8|(1:10)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_657402767 {
+label = "IF [B:20:0x000b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|if (r0 \< 0) goto L7\l}"];
+subgraph cluster_Region_854400902 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000d|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_957512074 {
+label = "R(3:8|(1:10)|12)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000f|android.util.SparseBooleanArray android.util.SparseBooleanArray r1 = new android.util.SparseBooleanArray(r0)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1712332161 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0015|LOOP_START\lLOOP:0: B:24:0x0015\-\>B:25:0x0017\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:23:0x000f, B:25:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r0) goto L10\l}"];
+subgraph cluster_Region_142269350 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0017|LOOP_END\lLOOP:0: B:24:0x0015\-\>B:25:0x0017\l|r1.put(readInt(), readBoolean())\lr2++\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0025|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0025|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public android.util.SparseBooleanArray androidx.versionedparcelable.VersionedParcel.readSparseBooleanArray((r5v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]), (r6v0 'def' android.util.SparseBooleanArray A[D('def' android.util.SparseBooleanArray), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'fieldId' int A[D('fieldId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x000e \-\> B:15:?, BACK_EDGE: B:25:0x0017 \-\> B:24:0x0015, CROSS_EDGE: B:26:0x0025 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_15;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_25 -> Node_24;
+Node_26 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_27 -> Node_26;
+}
+

@@ -1,0 +1,58 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.setTabIndicatorAnimationMode(I)V" {
+subgraph cluster_Region_2139543690 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|r3.tabIndicatorAnimationMode = r4\l}"];
+subgraph cluster_SwitchRegion_636427042 {
+label = "Switch: 4
+ case 0 -> R(2:10|11)
+ case 1 -> R(2:8|9)
+ case 2 -> R(2:6|7)
+ case default -> R(2:3|4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|switch(r4) \{\l    case 0: goto L10;\l    case 1: goto L8;\l    case 2: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_861608169 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002c|r3.tabIndicatorInterpolator = new com.google.android.material.tabs.TabIndicatorInterpolator()\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0034|RETURN\lORIG_RETURN\l|return\l}"];
+}
+subgraph cluster_Region_14744973 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0024|r3.tabIndicatorInterpolator = new com.google.android.material.tabs.ElasticTabIndicatorInterpolator()\l}"];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_1231763347 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001c|r3.tabIndicatorInterpolator = new com.google.android.material.tabs.FadeTabIndicatorInterpolator()\l}"];
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_343937943 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005}"];
+Node_17 [shape=record,label="{17\:\ 0x001b|throw new java.lang.IllegalArgumentException(r4 + \" is not a valid TabIndicatorAnimationMode\")\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.tabs.TabLayout.setTabIndicatorAnimationMode((r3v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'tabIndicatorAnimationMode' int A[D('tabIndicatorAnimationMode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0034 \-\> B:13:?, CROSS_EDGE: B:19:0x0024 \-\> B:21:0x0034, CROSS_EDGE: B:20:0x002c \-\> B:21:0x0034\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18;
+Node_15 -> Node_19;
+Node_15 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_19 -> Node_23;
+Node_23 -> Node_13;
+Node_18 -> Node_22;
+Node_22 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_13;
+Node_12 -> Node_14;
+}
+

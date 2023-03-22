@@ -1,0 +1,51 @@
+digraph "CFG forandroidx.lifecycle.SavedStateHandle.getStateFlow(Ljava\/lang\/String;Ljava\/lang\/Object;)Lkotlinx\/coroutines\/flow\/StateFlow;" {
+subgraph cluster_Region_828535764 {
+label = "R(3:1|(2:(1:5)|6)(1:10)|8) | DECL_VAR: kotlinx.coroutines.flow.MutableStateFlow null\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"key\")\ljava.util.Map\<java.lang.String, kotlinx.coroutines.flow.MutableStateFlow\<java.lang.Object\>\> java.util.Map r0 = r8.flows\ljava.lang.Object kotlinx.coroutines.flow.MutableStateFlow\<java.lang.Object\> r2 = r0.get(r9)\l}"];
+subgraph cluster_IfRegion_665040275 {
+label = "IF [B:25:0x000c] THEN: R(2:(1:5)|6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000c|if (r2 == null) goto L3\l}"];
+subgraph cluster_Region_86178573 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_946311805 {
+label = "IF [B:27:0x0015] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0015|if (r8.regular.containsKey(r9) == false) goto L5\l}"];
+subgraph cluster_Region_632624059 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0017|r8.regular.put(r9, r10)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x001c|kotlinx.coroutines.flow.MutableStateFlow kotlinx.coroutines.flow.MutableStateFlow r4 = kotlinx.coroutines.flow.StateFlowKt.MutableStateFlow(r8.regular.get(r9))\lr8.flows.put(r9, r4)\lr3 = r4\lr0.put(r9, r3)\l}"];
+}
+subgraph cluster_Region_1626569093 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0033|r3 = r2\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x003b|RETURN\l|return kotlinx.coroutines.flow.FlowKt.asStateFlow(r3)\l}"];
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000e}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0034|PHI: r3 \l  PHI: (r3v1 kotlinx.coroutines.flow.MutableStateFlow) = (r3v0 kotlinx.coroutines.flow.MutableStateFlow), (r3v4 kotlinx.coroutines.flow.MutableStateFlow) binds: [B:30:0x0033, B:29:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final kotlinx.coroutines.flow.StateFlow\<T\> androidx.lifecycle.SavedStateHandle.getStateFlow((r8v0 'this' androidx.lifecycle.SavedStateHandle A[IMMUTABLE_TYPE, THIS]), (r9v0 'key' java.lang.String A[D('key' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 T A[D('initialValue' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0015 \-\> B:29:0x001c, CROSS_EDGE: B:30:0x0033 \-\> B:31:0x0034\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/String;TT;)Lkotlinx\/coroutines\/flow\/StateFlow\<TT;\>;\l}"];
+MethodNode -> Node_22;Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_30[style=dashed];
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_31;
+Node_30 -> Node_31;
+Node_32 -> Node_23;
+Node_22 -> Node_24;
+Node_26 -> Node_27;
+Node_31 -> Node_32;
+}
+

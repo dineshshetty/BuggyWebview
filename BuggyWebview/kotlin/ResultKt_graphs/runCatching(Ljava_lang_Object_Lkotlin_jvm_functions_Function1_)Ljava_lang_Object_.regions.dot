@@ -1,0 +1,51 @@
+digraph "CFG forkotlin.ResultKt.runCatching(Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1516241847 {
+label = "R(2:1|(2:3|5))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"block\")\l}"];
+subgraph cluster_TryCatchRegion_1481715520 {
+label = "Try: R(2:3|5) catches: R(3:7|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1779095283 {
+label = "R(2:3|5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0011, blocks: (B:14:0x0006), top: B:19:0x0006 \}\lCatch: all \-\> 0x0011\l|kotlin.Result$Companion kotlin.Result.Companion r0 = kotlin.Result.Companion     \/\/ Catch: java.lang.Throwable \-\> L11\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return kotlin.Result.m144constructorimpl(r3.invoke(r2))\l}"];
+}
+subgraph cluster_Region_1997288853 {
+label = "R(3:7|8|9) | ExcHandler: all \-\> 0x0011\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0011|ExcHandler: all \-\> 0x0011\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0012|kotlin.Result$Companion kotlin.Result.Companion r1 = kotlin.Result.Companion\l}"];
+Node_18 [shape=record,label="{18\:\ 0x001d|RETURN\lORIG_RETURN\l|return kotlin.Result.m144constructorimpl(createFailure(r0))\l}"];
+}
+}
+}
+subgraph cluster_Region_1997288853 {
+label = "R(3:7|8|9) | ExcHandler: all \-\> 0x0011\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0011|ExcHandler: all \-\> 0x0011\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0012|kotlin.Result$Companion kotlin.Result.Companion r1 = kotlin.Result.Companion\l}"];
+Node_18 [shape=record,label="{18\:\ 0x001d|RETURN\lORIG_RETURN\l|return kotlin.Result.m144constructorimpl(createFailure(r0))\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0006|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final java.lang.Object kotlin.ResultKt.runCatching((r2v0 T A[D('$this$runCatching' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'block' kotlin.jvm.functions.Function1\<? super T, ? extends R\> A[D('block' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0012 \-\> B:18:0x001d, CROSS_EDGE: B:19:0x0006 \-\> B:16:0x0011\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0011, blocks: (B:14:0x0006), top: B:19:0x0006 \}\lTYPE_VARS: [R, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;\>(TT;Lkotlin\/jvm\/functions\/Function1\<\-TT;+TR;\>;)Ljava\/lang\/Object;\l}"];
+MethodNode -> Node_11;Node_13 -> Node_19;
+Node_14 -> Node_20;
+Node_14 -> Node_21;
+Node_21 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_19 -> Node_14;
+Node_19 -> Node_16;
+Node_20 -> Node_16;
+}
+

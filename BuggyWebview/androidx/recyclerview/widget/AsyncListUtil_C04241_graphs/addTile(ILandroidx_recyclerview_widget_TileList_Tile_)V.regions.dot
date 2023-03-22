@@ -1,0 +1,106 @@
+digraph "CFG forandroidx.recyclerview.widget.AsyncListUtil.1.addTile(ILandroidx\/recyclerview\/widget\/TileList$Tile;)V" {
+subgraph cluster_Region_1321389759 {
+label = "R(1:(2:(2:3|4)|(4:6|(1:8)|9|(2:12|(1:20)(1:16)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_226948232 {
+label = "R(2:(2:3|4)|(4:6|(1:8)|9|(2:12|(1:20)(1:16))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_82510752 {
+label = "IF [B:3:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (isRequestedGeneration(r6) == false) goto L3\l}"];
+subgraph cluster_Region_762417502 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|androidx.recyclerview.widget.AsyncListUtil.this.mBackgroundProxy.recycleTile(r7)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1019299952 {
+label = "R(4:6|(1:8)|9|(2:12|(1:20)(1:16)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|androidx.recyclerview.widget.TileList$Tile androidx.recyclerview.widget.TileList.Tile\<T\> r0 = androidx.recyclerview.widget.AsyncListUtil.this.mTileList.addOrReplace(r7)\l}"];
+subgraph cluster_IfRegion_1330422449 {
+label = "IF [B:7:0x0016] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|if (r0 != null) goto L8\l}"];
+subgraph cluster_Region_1333772646 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|android.util.Log.e(androidx.recyclerview.widget.AsyncListUtil.TAG, \"duplicate tile @\" + r0.mStartPosition)\landroidx.recyclerview.widget.AsyncListUtil.this.mBackgroundProxy.recycleTile(r0)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0037|int int r1 = r7.mStartPosition + r7.mItemCount\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1094404385 {
+label = "LOOP:0: (2:12|(1:20)(1:16))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0045|if (r2 \< androidx.recyclerview.widget.AsyncListUtil.this.mMissingPositions.size()) goto L12\l}"];
+subgraph cluster_Region_1887360145 {
+label = "R(2:12|(1:20)(1:16))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0047|int int r3 = androidx.recyclerview.widget.AsyncListUtil.this.mMissingPositions.keyAt(r2)\l}"];
+subgraph cluster_IfRegion_1576826580 {
+label = "IF [B:13:0x0051, B:14:0x0053] THEN: R(1:20) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0051|if (r7.mStartPosition \<= r3) goto L14\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0053|ADDED_TO_REGION\l|if (r3 \< r1) goto L19\l}"];
+subgraph cluster_Region_1309300380 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0055|androidx.recyclerview.widget.AsyncListUtil.this.mMissingPositions.removeAt(r2)\landroidx.recyclerview.widget.AsyncListUtil.this.mViewCallback.onItemLoaded(r3)\l}"];
+}
+subgraph cluster_Region_1799890899 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0064|r2++\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003d|LOOP_START\lLOOP:0: B:10:0x003d\-\>B:23:0x003d\lPHI: r2 \l  PHI: (r2v2 'index' int) = (r2v1 'index' int), (r2v3 'index' int) binds: [B:9:0x0037, B:23:0x003d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0064|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x003d|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x003d|LOOP_END\lSYNTHETIC\lLOOP:0: B:10:0x003d\-\>B:23:0x003d\lPHI: r2 \l  PHI: (r2v3 'index' int) = (r2v4 'index' int), (r2v2 'index' int) binds: [B:24:0x003d, B:25:0x003d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0055|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x003d|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0064|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0067|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0067}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.AsyncListUtil.1.addTile((r5v0 'this' androidx.recyclerview.widget.AsyncListUtil$1 A[D('this' androidx.recyclerview.widget.AsyncListUtil$1), IMMUTABLE_TYPE, THIS]), (r6v0 'generation' int A[D('generation' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'tile' androidx.recyclerview.widget.TileList$Tile\<T\> A[D('tile' androidx.recyclerview.widget.TileList$Tile\<T\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:15:0x0055 \-\> B:10:0x003d, BACK_EDGE: B:16:0x0064 \-\> B:10:0x003d, CROSS_EDGE: B:13:0x0051 \-\> B:16:0x0064, CROSS_EDGE: B:18:0x0067 \-\> B:1:?, CROSS_EDGE: B:7:0x0016 \-\> B:9:0x0037\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (ILandroidx\/recyclerview\/widget\/TileList$Tile\<TT;\>;)V\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.ThreadUtil.MainThreadCallback.addTile(int, androidx.recyclerview.widget.TileList$Tile\<T\>):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_21[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_19[style=dashed];
+Node_14 -> Node_20[style=dashed];
+Node_14 -> Node_22;
+Node_15 -> Node_25;
+Node_16 -> Node_24;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_10 -> Node_11;
+Node_20 -> Node_16;
+Node_24 -> Node_23;
+Node_23 -> Node_10;
+Node_22 -> Node_15;
+Node_25 -> Node_23;
+Node_19 -> Node_16;
+Node_21 -> Node_18;
+Node_18 -> Node_1;
+}
+

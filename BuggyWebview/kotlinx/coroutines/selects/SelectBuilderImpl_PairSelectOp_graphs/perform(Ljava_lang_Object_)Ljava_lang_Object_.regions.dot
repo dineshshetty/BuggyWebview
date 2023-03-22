@@ -1,0 +1,47 @@
+digraph "CFG forkotlinx.coroutines.selects.SelectBuilderImpl.PairSelectOp.perform(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1990691598 {
+label = "R(1:(2:(1:10)|(4:2|3|5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_651702373 {
+label = "R(2:(1:10)|(4:2|3|5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_927276060 {
+label = "IF [B:13:0x0000] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|if (r5 == null) goto L9\l}"];
+subgraph cluster_Region_1778190394 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x002d|throw new java.lang.NullPointerException(\"null cannot be cast to non\-null type kotlinx.coroutines.selects.SelectBuilderImpl\<*\>\")\l}"];
+}
+}
+subgraph cluster_Region_1701869982 {
+label = "R(4:2|3|5|6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|kotlinx.coroutines.selects.SelectBuilderImpl kotlinx.coroutines.selects.SelectBuilderImpl r0 = (kotlinx.coroutines.selects.SelectBuilderImpl) r5\lr4.otherOp.finishPrepare()\ljava.lang.Object java.lang.Object r1 = r4.otherOp.getAtomicOp().decide(null)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0015|java.lang.Object r2 = r1 == null ? r4.otherOp.desc : kotlinx.coroutines.selects.SelectKt.getNOT_SELECTED()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0020|PHI: r2 \l  PHI: (r2v2 'update' java.lang.Object) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|androidx.concurrent.futures.C0125xc40028dd.m112m(kotlinx.coroutines.selects.SelectBuilderImpl._state$FU, r0, r4, r2)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0025|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0017}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001c}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0026}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.selects.SelectBuilderImpl.PairSelectOp.perform((r4v0 'this' kotlinx.coroutines.selects.SelectBuilderImpl$PairSelectOp A[IMMUTABLE_TYPE, THIS]), (r5v0 'affected' java.lang.Object A[D('affected' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x001c \-\> B:18:0x0020, CROSS_EDGE: B:21:0x002d \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lMETHOD_OVERRIDE: [kotlinx.coroutines.internal.OpDescriptor.perform(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_20;
+Node_21 -> Node_12;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+}
+

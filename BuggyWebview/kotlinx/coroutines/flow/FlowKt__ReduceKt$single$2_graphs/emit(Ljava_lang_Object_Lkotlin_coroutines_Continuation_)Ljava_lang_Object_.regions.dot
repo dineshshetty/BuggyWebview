@@ -1,0 +1,47 @@
+digraph "CFG forkotlinx.coroutines.flow.FlowKt__ReduceKt$single$2.emit(Ljava\/lang\/Object;Lkotlin\/coroutines\/Continuation;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1285645532 {
+label = "R(1:(2:(2:5|6)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1429715035 {
+label = "R(2:(2:5|6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1919925022 {
+label = "IF [B:17:0x000b] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|PHI: r0 \l  PHI: (r0v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r2.$result.element == kotlinx.coroutines.flow.internal.NullSurrogate.NULL) == true) goto L5\l}"];
+subgraph cluster_Region_1971928734 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|r2.$result.element = r3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0013|RETURN\l|return kotlin.Unit.INSTANCE\l}"];
+}
+}
+subgraph cluster_Region_852042615 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0021|throw new java.lang.IllegalArgumentException(\"Flow has more than one element\".toString())\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0008}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0014}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000a}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.flow.FlowKt__ReduceKt$single$2.emit((r2v0 'this' kotlinx.coroutines.flow.FlowKt__ReduceKt$single$2\<T\> A[IMMUTABLE_TYPE, THIS]), (r3v0 T A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 kotlin.coroutines.Continuation\<? super kotlin.Unit\> A[D('$completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0021 \-\> B:12:?, CROSS_EDGE: B:16:0x000a \-\> B:17:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (TT;Lkotlin\/coroutines\/Continuation\<\-Lkotlin\/Unit;\>;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.flow.FlowCollector.emit(T, kotlin.coroutines.Continuation\<? super kotlin.Unit\>):java.lang.Object]\l}"];
+MethodNode -> Node_11;Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_20 -> Node_21;
+Node_16 -> Node_17;
+}
+

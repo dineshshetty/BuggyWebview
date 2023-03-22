@@ -1,0 +1,40 @@
+digraph "CFG forkotlinx.coroutines.scheduling.WorkQueue.pollBuffer()Lkotlinx\/coroutines\/scheduling\/Task;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|LOOP_START\lLOOP:0: B:2:0x0000\-\>B:16:0x0000\l|int r0 = r5.consumerIndex\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|if ((r0 \- r5.producerIndex) != 0) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000b|r1 = r0 & kotlinx.coroutines.scheduling.WorkQueueKt.MASK\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (kotlinx.coroutines.scheduling.WorkQueue.consumerIndex$FU.compareAndSet(r5, r0, r0 + 1) == false) goto L14\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0017|SYNTHETIC\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|kotlinx.coroutines.scheduling.Task r2 = r5.buffer.getAndSet(r1, null)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001f|if (r2 != null) goto L8\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0022|SYNTHETIC\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0022|decrementIfBlocking(r2)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0025|RETURN\l|return r2\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0000|SYNTHETIC\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000|LOOP_END\lSYNTHETIC\lLOOP:0: B:2:0x0000\-\>B:16:0x0000\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0000|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000a|SYNTHETIC\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|RETURN\l|return null\l}"];
+MethodNode[shape=record,label="{private final kotlinx.coroutines.scheduling.Task kotlinx.coroutines.scheduling.WorkQueue.pollBuffer((r5v0 'this' kotlinx.coroutines.scheduling.WorkQueue A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0025 \-\> B:1:?, BACK_EDGE: B:8:0x001f \-\> B:2:0x0000, BACK_EDGE: B:6:0x0015 \-\> B:2:0x0000\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_3 -> Node_14[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_13[style=dashed];
+Node_6 -> Node_17;
+Node_13 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_15;
+Node_8 -> Node_18[style=dashed];
+Node_15 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_1;
+Node_18 -> Node_16;
+Node_16 -> Node_2;
+Node_17 -> Node_16;
+Node_14 -> Node_4;
+Node_4 -> Node_1;
+}
+

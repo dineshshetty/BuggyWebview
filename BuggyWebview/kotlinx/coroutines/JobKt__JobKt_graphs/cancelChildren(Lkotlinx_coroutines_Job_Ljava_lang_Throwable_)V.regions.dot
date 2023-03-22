@@ -1,0 +1,64 @@
+digraph "CFG forkotlinx.coroutines.JobKt__JobKt.cancelChildren(Lkotlinx\/coroutines\/Job;Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_1426838995 {
+label = "R(2:1|(3:4|5|(1:9)(0)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|kotlin.sequences.Sequence kotlin.sequences.Sequence r0 = r8.getChildren()\ljava.util.Iterator r2 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1925107257 {
+label = "LOOP:0: (3:4|5|(1:9)(0))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000d|java.lang.Object \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1513727173 {
+label = "R(3:4|5|(1:9)(0))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000f|java.lang.Object r3 = r2.next()\lkotlinx.coroutines.Job kotlinx.coroutines.Job r4 = (kotlinx.coroutines.Job) r3\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0019|kotlinx.coroutines.JobSupport r6 = r4 instanceof kotlinx.coroutines.JobSupport ? (kotlinx.coroutines.JobSupport) r4 : null\l}"];
+subgraph cluster_IfRegion_1414535178 {
+label = "IF [B:28:0x0020] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0020|PHI: r6 \l  PHI: (r6v2 kotlinx.coroutines.JobSupport) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 != null) goto L8\l}"];
+subgraph cluster_Region_1866909686 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0023|r6.cancelInternal(orCancellation$JobKt__JobKt(r9, r8))\l}"];
+}
+subgraph cluster_Region_211067847 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0009|LOOP_START\lLOOP:0: B:22:0x0009\-\>B:35:0x0009\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001b}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0023|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0009|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0009|LOOP_END\lSYNTHETIC\lLOOP:0: B:22:0x0009\-\>B:35:0x0009\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0009|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001f}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x002c|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x002c}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final \/* synthetic *\/ void kotlinx.coroutines.JobKt__JobKt.cancelChildren((r8v0 '$this$cancelChildren' kotlinx.coroutines.Job A[D('$this$cancelChildren' kotlinx.coroutines.Job), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\l\{Lkotlin\/Deprecated;=Annotation\{RUNTIME, type=Lkotlin\/Deprecated;, values=\{level=\{ENCODED_FIELD: Lkotlin\/DeprecationLevel;\-\>HIDDEN:Lkotlin\/DeprecationLevel;\}, message=Since 1.2.0, binary compatibility with versions \<= 1.1.x\}\}\}\lINLINE_NOT_NEEDED\lBACK_EDGE: B:30:0x0023 \-\> B:22:0x0009, BACK_EDGE: B:28:0x0020 \-\> B:22:0x0009, CROSS_EDGE: B:27:0x001f \-\> B:28:0x0020\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_34[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27;
+Node_28 -> Node_33;
+Node_28 -> Node_36[style=dashed];
+Node_30 -> Node_37;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_26 -> Node_28;
+Node_33 -> Node_30;
+Node_37 -> Node_35;
+Node_35 -> Node_22;
+Node_36 -> Node_35;
+Node_27 -> Node_28;
+Node_34 -> Node_32;
+Node_32 -> Node_20;
+}
+

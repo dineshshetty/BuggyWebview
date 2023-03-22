@@ -1,0 +1,80 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.averageOfShort(Ljava\/lang\/Iterable;)D" {
+subgraph cluster_Region_517368251 {
+label = "R(3:1|(2:4|(1:7)(0))|(2:(1:13)|(1:16)))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\ldouble r0 = 0.0d\lint r2 = 0\ljava.util.Iterator r3 = r7.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1972208426 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0010|java.lang.Object \lif (r3.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_214211271 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0012|short short r4 = r4.shortValue()\lr0 += r4\lr2++\l}"];
+subgraph cluster_IfRegion_125262236 {
+label = "IF [B:42:0x0020] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0020|if (r2 \< 0) goto L6\l}"];
+subgraph cluster_Region_1517200545 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0022|kotlin.collections.CollectionsKt.throwCountOverflow()\l}"];
+}
+subgraph cluster_Region_576808586 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+subgraph cluster_Region_1136779370 {
+label = "R(2:(1:13)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_717321934 {
+label = "IF [B:44:0x0026] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0026|if (r2 == 0) goto L13\l}"];
+subgraph cluster_Region_1523367915 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0028|SYNTHETIC\lRETURN\l|return Double.NaN\l}"];
+}
+}
+subgraph cluster_Region_607084405 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ 0x002e|RETURN\lORIG_RETURN\l|return r0 \/ r2\l}"];
+}
+}
+}
+Node_36 [shape=record,color=red,label="{36\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x000c|LOOP_START\lLOOP:0: B:39:0x000c\-\>B:50:0x000c\lPHI: r0 r2 \l  PHI: (r0v2 'sum' double) = (r0v1 'sum' double), (r0v3 'sum' double) binds: [B:38:0x0000, B:50:0x000c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'count' int) = (r2v0 'count' int), (r2v2 'count' int) binds: [B:38:0x0000, B:50:0x000c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x0022|SYNTHETIC\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x000c|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x000c|LOOP_END\lSYNTHETIC\lLOOP:0: B:39:0x000c\-\>B:50:0x000c\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x000c|SYNTHETIC\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x0026|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x002b}"];
+MethodNode[shape=record,label="{public static final double kotlin.collections.CollectionsKt___CollectionsKt.averageOfShort((r7v0 java.lang.Iterable\<java.lang.Short\> A[D('$this$average' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:42:0x0020 \-\> B:39:0x000c, BACK_EDGE: B:43:0x0022 \-\> B:39:0x000c, CROSS_EDGE: B:46:0x002b \-\> B:47:0x002e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/Iterable\<Ljava\/lang\/Short;\>;)D\l}"];
+MethodNode -> Node_36;Node_38 -> Node_39;
+Node_40 -> Node_41;
+Node_40 -> Node_49[style=dashed];
+Node_41 -> Node_42;
+Node_42 -> Node_48;
+Node_42 -> Node_51[style=dashed];
+Node_43 -> Node_52;
+Node_44 -> Node_45;
+Node_44 -> Node_46[style=dashed];
+Node_45 -> Node_37;
+Node_47 -> Node_37;
+Node_36 -> Node_38;
+Node_39 -> Node_40;
+Node_48 -> Node_43;
+Node_52 -> Node_50;
+Node_50 -> Node_39;
+Node_51 -> Node_50;
+Node_49 -> Node_44;
+Node_46 -> Node_47;
+}
+

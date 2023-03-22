@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.appcompat.widget.ShareActionProvider.onPrepareSubMenu(Landroid\/view\/SubMenu;)V" {
+subgraph cluster_Region_1146543752 {
+label = "R(3:1|(1:4)|(1:(2:7|(1:9))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|r11.clear()\landroidx.appcompat.widget.ActivityChooserModel androidx.appcompat.widget.ActivityChooserModel r0 = androidx.appcompat.widget.ActivityChooserModel.get(r10.mContext, r10.mShareHistoryFileName)\landroid.content.pm.PackageManager android.content.pm.PackageManager r1 = r10.mContext.getPackageManager()\lint int r2 = r0.getActivityCount()\lint int r3 = java.lang.Math.min(r2, r10.mMaxShownActivityCount)\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_1187942866 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001d|if (r4 \< r3) goto L4\l}"];
+subgraph cluster_Region_1242347566 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001f|LOOP_END\lLOOP:0: B:3:0x001c\-\>B:5:0x001f\l|android.content.pm.ResolveInfo android.content.pm.ResolveInfo r6 = r0.getActivity(r4)\lr11.add(0, r4, r4, r6.loadLabel(r1)).setIcon(r6.loadIcon(r1)).setOnMenuItemClickListener(r10.mOnMenuItemClickListener)\lr4++\l}"];
+}
+}
+subgraph cluster_Region_42313955 {
+label = "R(1:(2:7|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_469542520 {
+label = "IF [B:6:0x003b] THEN: R(2:7|(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x003b|if (r3 \< r2) goto L7\l}"];
+subgraph cluster_Region_357563386 {
+label = "R(2:7|(1:9))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003d|android.view.SubMenu android.view.SubMenu r4 = r11.addSubMenu(0, r3, r3, r10.mContext.getString(androidx.appcompat.C0019R.string.abc_activity_chooser_view_see_all))\lint r6 = 0\l}"];
+subgraph cluster_LoopRegion_1764526353 {
+label = "LOOP:1: (1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004a|LOOP_START\lLOOP:1: B:8:0x004a\-\>B:9:0x004c\lPHI: r6 \l  PHI: (r6v2 'i' int) = (r6v1 'i' int), (r6v3 'i' int) binds: [B:7:0x003d, B:9:0x004c] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 \< r2) goto L9\l}"];
+subgraph cluster_Region_1981065425 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x004c|LOOP_END\lLOOP:1: B:8:0x004a\-\>B:9:0x004c\l|android.content.pm.ResolveInfo android.content.pm.ResolveInfo r7 = r0.getActivity(r6)\lr4.add(0, r6, r6, r7.loadLabel(r1)).setIcon(r7.loadIcon(r1)).setOnMenuItemClickListener(r10.mOnMenuItemClickListener)\lr6++\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001c|LOOP_START\lLOOP:0: B:3:0x001c\-\>B:5:0x001f\lPHI: r4 \l  PHI: (r4v1 'i' int) = (r4v0 'i' int), (r4v5 'i' int) binds: [B:2:0x0000, B:5:0x001f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003b|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0068|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0068|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.ShareActionProvider.onPrepareSubMenu((r10v0 'this' androidx.appcompat.widget.ShareActionProvider A[IMMUTABLE_TYPE, THIS]), (r11v0 'subMenu' android.view.SubMenu A[D('subMenu' android.view.SubMenu), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:5:0x001f \-\> B:3:0x001c, BACK_EDGE: B:9:0x004c \-\> B:8:0x004a, CROSS_EDGE: B:6:0x003b \-\> B:10:0x0068\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.ActionProvider.onPrepareSubMenu(android.view.SubMenu):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_3;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_9 -> Node_8;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_11 -> Node_6;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_10 -> Node_1;
+}
+

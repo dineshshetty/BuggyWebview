@@ -1,0 +1,81 @@
+digraph "CFG forandroidx.core.widget.NestedScrollView.scrollAndFocus(III)Z" {
+subgraph cluster_Region_1602152761 {
+label = "R(7:1|2|4|(1:6)|(1:9)(2:15|17)|(1:12)|13)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|boolean r0 = true\lint int r1 = getHeight()\lint int r2 = getScrollY()\lint int r3 = r2 + r1\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000d|boolean r4 = r8 == 33\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0012|PHI: r4 \l  PHI: (r4v2 'up' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.view.View android.view.View r5 = findFocusableViewInBounds(r4, r9, r10)\l}"];
+subgraph cluster_IfRegion_476534314 {
+label = "IF [B:27:0x0016] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0016|if (r5 == null) goto L6\l}"];
+subgraph cluster_Region_1960882858 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0018|r5 = r7\l}"];
+}
+}
+subgraph cluster_IfRegion_1131404284 {
+label = "IF [B:29:0x0019, B:30:0x001b] THEN: R(1:9) ELSE: R(2:15|17)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0019|PHI: r5 \l  PHI: (r5v1 'newFocused' android.view.View) = (r5v0 'newFocused' android.view.View), (r5v2 'newFocused' android.view.View) binds: [B:27:0x0016, B:28:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|if (r9 \>= r2) goto L8\l}"];
+Node_30 [shape=record,label="{30\:\ 0x001b|ADDED_TO_REGION\l|if (r10 \<= r3) goto L9\l}"];
+subgraph cluster_Region_1988353417 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001d|r0 = false\l}"];
+}
+subgraph cluster_Region_1551871805 {
+label = "R(2:15|17)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x001f|int r6 = r4 ? r9 \- r2 : r10 \- r3\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0026|PHI: r6 \l  PHI: (r6v1 'delta' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|doScrollY(r6)\l}"];
+}
+}
+subgraph cluster_IfRegion_560651873 {
+label = "IF [B:37:0x002d] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x002d|if (r5 != findFocus()) goto L12\l}"];
+subgraph cluster_Region_13470518 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x002f|r5.requestFocus(r8)\l}"];
+}
+}
+Node_39 [shape=record,label="{39\:\ 0x0032|RETURN\l|return r0\l}"];
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000f}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0029|PHI: r0 \l  PHI: (r0v1 'handled' boolean) = (r0v0 'handled' boolean), (r0v2 'handled' boolean) binds: [B:35:0x0026, B:31:0x001d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0021}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0024}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0011}"];
+MethodNode[shape=record,label="{private boolean androidx.core.widget.NestedScrollView.scrollAndFocus((r7v0 'this' androidx.core.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]), (r8v0 'direction' int A[D('direction' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'top' int A[D('top' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'bottom' int A[D('bottom' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:37:0x002d \-\> B:39:0x0032, CROSS_EDGE: B:35:0x0026 \-\> B:36:0x0029, CROSS_EDGE: B:34:0x0024 \-\> B:35:0x0026, CROSS_EDGE: B:29:0x0019 \-\> B:32:0x001f, CROSS_EDGE: B:27:0x0016 \-\> B:29:0x0019, CROSS_EDGE: B:25:0x0011 \-\> B:26:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_32[style=dashed];
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_36;
+Node_32 -> Node_33;
+Node_32 -> Node_34;
+Node_35 -> Node_36;
+Node_37 -> Node_38;
+Node_37 -> Node_39[style=dashed];
+Node_38 -> Node_39;
+Node_39 -> Node_21;
+Node_20 -> Node_22;
+Node_24 -> Node_26;
+Node_36 -> Node_37;
+Node_33 -> Node_35;
+Node_34 -> Node_35;
+Node_25 -> Node_26;
+}
+

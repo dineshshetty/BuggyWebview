@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.appcompat.widget.Toolbar.1.onMenuItemClick(Landroid\/view\/MenuItem;)Z" {
+subgraph cluster_Region_1392976361 {
+label = "R(2:1|(2:(1:3)|(1:(2:(1:8)|(1:9)))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|boolean boolean r0 = androidx.appcompat.widget.Toolbar.this.mMenuHostHelper.onMenuItemSelected(r3)\l}"];
+subgraph cluster_Region_1328278552 {
+label = "R(2:(1:3)|(1:(2:(1:8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_883875855 {
+label = "IF [B:15:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|if (r0 != false) goto L3\l}"];
+subgraph cluster_Region_1243146663 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_647134453 {
+label = "R(1:(2:(1:8)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1747285699 {
+label = "R(2:(1:8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2029919475 {
+label = "IF [B:19:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0010|if (androidx.appcompat.widget.Toolbar.this.mOnMenuItemClickListener != null) goto L7\l}"];
+subgraph cluster_Region_1973847962 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001a|RETURN\l|return androidx.appcompat.widget.Toolbar.this.mOnMenuItemClickListener.onMenuItemClick(r3)\l}"];
+}
+}
+subgraph cluster_Region_1080440847 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001b|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000c}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0012}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.widget.Toolbar.1.onMenuItemClick((r2v0 'this' androidx.appcompat.widget.Toolbar$1 A[IMMUTABLE_TYPE, THIS]), (r3v0 'item' android.view.MenuItem A[D('item' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001a \-\> B:13:?, CROSS_EDGE: B:23:0x001c \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.widget.ActionMenuView.OnMenuItemClickListener.onMenuItemClick(android.view.MenuItem):boolean]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_13;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

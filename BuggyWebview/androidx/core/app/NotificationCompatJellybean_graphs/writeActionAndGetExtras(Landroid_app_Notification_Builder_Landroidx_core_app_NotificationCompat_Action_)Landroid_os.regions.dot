@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.core.app.NotificationCompatJellybean.writeActionAndGetExtras(Landroid\/app\/Notification$Builder;Landroidx\/core\/app\/NotificationCompat$Action;)Landroid\/os\/Bundle;" {
+subgraph cluster_Region_468266213 {
+label = "R(6:1|4|(1:6)|(1:9)|10|11)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|androidx.core.graphics.drawable.IconCompat androidx.core.graphics.drawable.IconCompat r0 = r5.getIconCompat()\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000d|PHI: r1 \l  PHI: (r1v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r4.addAction(r0 != null ? r0.getResId() : 0, r5.getTitle(), r5.getActionIntent())\landroid.os.Bundle android.os.Bundle r1 = new android.os.Bundle(r5.getExtras())\l}"];
+subgraph cluster_IfRegion_2038896376 {
+label = "IF [B:21:0x0025] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0025|if (r5.getRemoteInputs() != null) goto L6\l}"];
+subgraph cluster_Region_583152736 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0028|r1.putParcelableArray(androidx.core.app.NotificationCompatExtras.EXTRA_REMOTE_INPUTS, toBundleArray(r5.getRemoteInputs()))\l}"];
+}
+}
+subgraph cluster_IfRegion_1147016488 {
+label = "IF [B:24:0x0039] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0039|if (r5.getDataOnlyRemoteInputs() != null) goto L9\l}"];
+subgraph cluster_Region_1586209203 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x003c|r1.putParcelableArray(androidx.core.app.NotificationCompatJellybean.EXTRA_DATA_ONLY_REMOTE_INPUTS, toBundleArray(r5.getDataOnlyRemoteInputs()))\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0049|r1.putBoolean(androidx.core.app.NotificationCompatJellybean.EXTRA_ALLOW_GENERATED_REPLIES, r5.getAllowGeneratedReplies())\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0053|RETURN\l|return r1\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0005}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0007}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0035}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000c}"];
+MethodNode[shape=record,label="{public static android.os.Bundle androidx.core.app.NotificationCompatJellybean.writeActionAndGetExtras((r4v0 'builder' android.app.Notification$Builder A[D('builder' android.app.Notification$Builder), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'action' androidx.core.app.NotificationCompat$Action A[D('action' androidx.core.app.NotificationCompat$Action), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0039 \-\> B:26:0x0049, CROSS_EDGE: B:21:0x0025 \-\> B:23:0x0035, CROSS_EDGE: B:19:0x000c \-\> B:20:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_18 -> Node_20;
+Node_23 -> Node_24;
+Node_19 -> Node_20;
+}
+

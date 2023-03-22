@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.android.material.floatingactionbutton.FloatingActionButton.BaseBehavior.updateFabVisibilityForBottomSheet(Landroid\/view\/View;Lcom\/google\/android\/material\/floatingactionbutton\/FloatingActionButton;)Z" {
+subgraph cluster_Region_1825257800 {
+label = "R(1:(2:(2:5|(2:(2:7|8)|(2:9|10)))|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_532216378 {
+label = "R(2:(2:5|(2:(2:7|8)|(2:9|10)))|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1325805607 {
+label = "IF [B:15:0x0005] THEN: R(2:5|(2:(2:7|8)|(2:9|10))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|if (shouldUpdateVisibility(r6, r7) == true) goto L5\l}"];
+subgraph cluster_Region_1944082165 {
+label = "R(2:5|(2:(2:7|8)|(2:9|10)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|androidx.coordinatorlayout.widget.CoordinatorLayout$LayoutParams androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams r0 = (androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams) r7.getLayoutParams()\l}"];
+subgraph cluster_Region_951835853 {
+label = "R(2:(2:7|8)|(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_431971248 {
+label = "IF [B:18:0x001b] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001b|if (r6.getTop() \< ((r7.getHeight() \/ 2) + r0.topMargin)) goto L7\l}"];
+subgraph cluster_Region_227517419 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001d|r7.hide(r5.internalAutoHideListener, false)\l}"];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return com.google.android.material.floatingactionbutton.FloatingActionButton.BaseBehavior.AUTO_HIDE_DEFAULT\l}"];
+}
+}
+subgraph cluster_Region_1430184266 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0023|r7.show(r5.internalAutoHideListener, false)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0028|RETURN\lORIG_RETURN\l|return com.google.android.material.floatingactionbutton.FloatingActionButton.BaseBehavior.AUTO_HIDE_DEFAULT\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_726103234 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0007|RETURN\l|return false\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private boolean com.google.android.material.floatingactionbutton.FloatingActionButton.BaseBehavior.updateFabVisibilityForBottomSheet((r5v0 'this' com.google.android.material.floatingactionbutton.FloatingActionButton$BaseBehavior\<T extends com.google.android.material.floatingactionbutton.FloatingActionButton\> A[D('this' com.google.android.material.floatingactionbutton.FloatingActionButton$BaseBehavior\<T extends com.google.android.material.floatingactionbutton.FloatingActionButton\>), IMMUTABLE_TYPE, THIS]), (r6v0 'bottomSheet' android.view.View A[D('bottomSheet' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'child' com.google.android.material.floatingactionbutton.FloatingActionButton A[D('child' com.google.android.material.floatingactionbutton.FloatingActionButton), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0029 \-\> B:13:?, CROSS_EDGE: B:20:0x0023 \-\> B:21:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends com.google.android.material.floatingactionbutton.FloatingActionButton]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_23;
+Node_23 -> Node_13;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_16 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+}
+

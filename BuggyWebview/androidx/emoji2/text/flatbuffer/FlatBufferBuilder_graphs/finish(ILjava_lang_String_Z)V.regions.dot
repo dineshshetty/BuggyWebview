@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlatBufferBuilder.finish(ILjava\/lang\/String;Z)V" {
+subgraph cluster_Region_927307881 {
+label = "R(2:4|(2:(1:14)|(3:6|(1:8)|10)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0008|PHI: r2 \l  PHI: (r2v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|prep(r3.minalign, (r6 ? 4 : 0) + 8)\l}"];
+subgraph cluster_Region_593459965 {
+label = "R(2:(1:14)|(3:6|(1:8)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_308355124 {
+label = "IF [B:23:0x0011] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0011|if (r5.length() != 4) goto L13\l}"];
+subgraph cluster_Region_1676605473 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002c|throw new java.lang.AssertionError(\"FlatBuffers: file identifier must be length 4\")\l}"];
+}
+}
+subgraph cluster_Region_766637675 {
+label = "R(3:6|(1:8)|10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0013|int r0 = 3\l}"];
+subgraph cluster_LoopRegion_630841847 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0014|LOOP_START\lLOOP:0: B:25:0x0014\-\>B:26:0x0016\lPHI: r0 \l  PHI: (r0v4 'i' int) = (r0v3 'i' int), (r0v5 'i' int) binds: [B:24:0x0013, B:26:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L8\l}"];
+subgraph cluster_Region_1546636774 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0016|LOOP_END\lLOOP:0: B:25:0x0014\-\>B:26:0x0016\l|addByte((byte) r5.charAt(r0))\lr0\-\-\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0021|finish(r4, r6)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0003}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0005}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0021|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0024}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0025}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0007}"];
+MethodNode[shape=record,label="{protected void androidx.emoji2.text.flatbuffer.FlatBufferBuilder.finish((r3v0 'this' androidx.emoji2.text.flatbuffer.FlatBufferBuilder A[IMMUTABLE_TYPE, THIS]), (r4v0 'root_table' int A[D('root_table' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'file_identifier' java.lang.String A[D('file_identifier' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'size_prefix' boolean A[D('size_prefix' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x0016 \-\> B:25:0x0014, CROSS_EDGE: B:30:0x002c \-\> B:17:?, CROSS_EDGE: B:21:0x0007 \-\> B:22:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_29;
+Node_30 -> Node_17;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_31[style=dashed];
+Node_26 -> Node_25;
+Node_27 -> Node_28;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_20 -> Node_22;
+Node_31 -> Node_27;
+Node_28 -> Node_17;
+Node_29 -> Node_30;
+Node_21 -> Node_22;
+}
+

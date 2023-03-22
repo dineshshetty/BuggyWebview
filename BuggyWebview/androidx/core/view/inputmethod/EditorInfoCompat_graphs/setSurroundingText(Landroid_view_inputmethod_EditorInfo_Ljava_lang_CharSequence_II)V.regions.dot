@@ -1,0 +1,37 @@
+digraph "CFG forandroidx.core.view.inputmethod.EditorInfoCompat.setSurroundingText(Landroid\/view\/inputmethod\/EditorInfo;Ljava\/lang\/CharSequence;II)V" {
+subgraph cluster_Region_1678243409 {
+label = "R(3:(1:3)|4|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_157983217 {
+label = "IF [B:13:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r3.extras == null) goto L3\l}"];
+subgraph cluster_Region_599084418 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|r3.extras = new android.os.Bundle()\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x000b|java.lang.CharSequence r0 = r4 != null ? new android.text.SpannableStringBuilder(r4) : null\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0014|PHI: r0 \l  PHI: (r0v2 'surroundingTextCopy' java.lang.CharSequence) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.extras.putCharSequence(androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_SURROUNDING_TEXT_KEY, r0)\lr3.extras.putInt(androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_SELECTION_HEAD_KEY, r5)\lr3.extras.putInt(androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_SELECTION_END_KEY, r6)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000d}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0029}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0013}"];
+MethodNode[shape=record,label="{private static void androidx.core.view.inputmethod.EditorInfoCompat.setSurroundingText((r3v0 'editorInfo' android.view.inputmethod.EditorInfo A[D('editorInfo' android.view.inputmethod.EditorInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'surroundingText' java.lang.CharSequence A[D('surroundingText' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'selectionHead' int A[D('selectionHead' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'selectionEnd' int A[D('selectionEnd' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0013 \-\> B:18:0x0014, CROSS_EDGE: B:13:0x0002 \-\> B:15:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_16 -> Node_18;
+Node_19 -> Node_11;
+Node_17 -> Node_18;
+}
+

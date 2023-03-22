@@ -1,0 +1,99 @@
+digraph "CFG forandroidx.recyclerview.widget.AdapterHelper.preProcess()V" {
+subgraph cluster_Region_523550304 {
+label = "R(3:1|(5:3|4|9|(1:11)(0)|13)|16)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|r4.mOpReorderer.reorderOps(r4.mPendingUpdates)\lint int r0 = r4.mPendingUpdates.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_556378713 {
+label = "LOOP:0: (5:3|4|9|(1:11)(0)|13)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000e|LOOP_START\lLOOP:0: B:23:0x000e\-\>B:34:0x0035\lPHI: r1 \l  PHI: (r1v2 'i' int) = (r1v1 'i' int), (r1v4 'i' int) binds: [B:22:0x0000, B:34:0x0035] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_1684628243 {
+label = "R(5:3|4|9|(1:11)(0)|13)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0010|androidx.recyclerview.widget.AdapterHelper$UpdateOp androidx.recyclerview.widget.AdapterHelper.UpdateOp r2 = r4.mPendingUpdates.get(r1)\l}"];
+subgraph cluster_SwitchRegion_640373492 {
+label = "Switch: 4
+ case 1 -> R(2:8|1)
+ case 2 -> R(2:7|1)
+ case 4 -> R(2:6|1)
+ case 8 -> R(2:5|1)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|switch(r2.cmd) \{\l    case 1: goto L8;\l    case 2: goto L7;\l    case 4: goto L6;\l    case 8: goto L5;\l    default: goto L9;\l\}\l}"];
+subgraph cluster_Region_475414511 {
+label = "R(2:8|1)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002a|applyAdd(r2)\l}"];
+Node_InsnContainer_800152888 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1891706206 {
+label = "R(2:7|1)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0026|applyRemove(r2)\l}"];
+Node_InsnContainer_187728267 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1595912622 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0022|applyUpdate(r2)\l}"];
+Node_InsnContainer_1746704710 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_593491019 {
+label = "R(2:5|1)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001e|applyMove(r2)\l}"];
+Node_InsnContainer_1934740836 [shape=record,label="{|break\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x002e|java.lang.Runnable java.lang.Runnable r3 = r4.mOnItemProcessedCallback\l}"];
+subgraph cluster_IfRegion_240848520 {
+label = "IF [B:32:0x0030] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0030|if (r3 != null) goto L11\l}"];
+subgraph cluster_Region_2001285576 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0032|r3.run()\l}"];
+}
+subgraph cluster_Region_1445725867 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x0035|LOOP_END\lLOOP:0: B:23:0x000e\-\>B:34:0x0035\l|r1++\l}"];
+}
+}
+Node_35 [shape=record,label="{35\:\ 0x0038|r4.mPendingUpdates.clear()\l}"];
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0035|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0035|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0038|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x003d}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.AdapterHelper.preProcess((r4v0 'this' androidx.recyclerview.widget.AdapterHelper A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:34:0x0035 \-\> B:23:0x000e, CROSS_EDGE: B:32:0x0030 \-\> B:34:0x0035, CROSS_EDGE: B:28:0x0022 \-\> B:31:0x002e, CROSS_EDGE: B:29:0x0026 \-\> B:31:0x002e, CROSS_EDGE: B:30:0x002a \-\> B:31:0x002e, CROSS_EDGE: B:25:0x001a \-\> B:31:0x002e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_37[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_27;
+Node_25 -> Node_28;
+Node_25 -> Node_29;
+Node_25 -> Node_30;
+Node_25 -> Node_31;
+Node_30 -> Node_31;
+Node_29 -> Node_31;
+Node_28 -> Node_31;
+Node_27 -> Node_31;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_39[style=dashed];
+Node_33 -> Node_38;
+Node_34 -> Node_23;
+Node_35 -> Node_36;
+Node_20 -> Node_22;
+Node_38 -> Node_34;
+Node_39 -> Node_34;
+Node_37 -> Node_35;
+Node_36 -> Node_21;
+}
+

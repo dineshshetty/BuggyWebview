@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.constraintlayout.widget.ConstraintLayout.updateHierarchy()Z" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000|0x0000: INVOKE  (r0 I:int) = (r5 I:androidx.constraintlayout.widget.ConstraintLayout) type: VIRTUAL call: androidx.constraintlayout.widget.ConstraintLayout.getChildCount():int A[MD:():int (c)] (LINE:1132)\l0x0004: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:1134)\l0x0005: CONST  (r2 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:1135)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0006|LOOP_START\lLOOP:0: B:16:0x0006\-\>B:20:0x0014\l|0x0006: IF  (r2 I:??[int, byte, short, char] A[D('i' int)]) \>= (r0 I:??[int, byte, short, char] A[D('count' int)])  \-\> B:25:0x0017 \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0008|0x0008: INVOKE  (r3 I:android.view.View) = (r5 I:androidx.constraintlayout.widget.ConstraintLayout), (r2 I:int A[D('i' int)]) type: VIRTUAL call: androidx.constraintlayout.widget.ConstraintLayout.getChildAt(int):android.view.View A[MD:(int):android.view.View (c)] (LINE:1136)\l0x000c: INVOKE  (r4 I:boolean) = (r3 I:android.view.View A[D('child' android.view.View)]) type: VIRTUAL call: android.view.View.isLayoutRequested():boolean A[MD:():boolean (c)] (LINE:1137)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0010|0x0010: IF  (r4 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:20:0x0014 \l}"];
+Node_20 [shape=record,label="{20\:\ 0x0014|LOOP_END\lLOOP:0: B:16:0x0006\-\>B:20:0x0014\l|0x0014: ARITH  (r2 I:int) = (r2 I:int A[D('i' int)]) + (1 int)  (LINE:1135)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0012|SYNTHETIC\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0012|0x0012: CONST  (r1 I:??[boolean, int, float, short, byte, char] A[D('recompute' boolean)]) = (1 ??[boolean, int, float, short, byte, char])  (LINE:1138)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0017|0x0017: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('recompute' boolean)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:23:0x001c  (LINE:1142)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0019|0x0019: INVOKE  (r5 I:androidx.constraintlayout.widget.ConstraintLayout) type: DIRECT call: androidx.constraintlayout.widget.ConstraintLayout.setChildrenConstraints():void A[MD:():void (m)] (LINE:1143)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001c|RETURN\l|0x001c: RETURN  (r1 I:boolean A[D('recompute' boolean)])  (LINE:1145)\l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0017|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean androidx.constraintlayout.widget.ConstraintLayout.updateHierarchy((r5 'this' I:androidx.constraintlayout.widget.ConstraintLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0017 \-\> B:23:0x001c, BACK_EDGE: B:20:0x0014 \-\> B:16:0x0006, CROSS_EDGE: B:16:0x0006 \-\> B:21:0x0017\lINLINE_NOT_NEEDED\lDebug Info:\l  0x000c\-0x0014: r3 'child' Landroid\/view\/View;\l  0x0006\-0x0017: r2 'i' I\l  0x0004\-0x001c: r0 'count' I\l  0x0005\-0x001c: r1 'recompute' Z\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_25;
+Node_17 -> Node_18;
+Node_18 -> Node_20;
+Node_18 -> Node_24[style=dashed];
+Node_20 -> Node_16;
+Node_24 -> Node_19;
+Node_19 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_25 -> Node_21;
+}
+

@@ -1,0 +1,103 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.getCompletionCause()Ljava\/lang\/Throwable;" {
+subgraph cluster_Region_380487850 {
+label = "R(2:1|(2:3|(2:(1:6)|(1:8)))(1:(1:17)(1:(2:(1:14)|(1:15)))))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|java.lang.Object java.lang.Object r0 = getState$kotlinx_coroutines_core()\l}"];
+subgraph cluster_IfRegion_361905745 {
+label = "IF [B:23:0x0008] THEN: R(2:3|(2:(1:6)|(1:8))) ELSE: R(1:(1:17)(1:(2:(1:14)|(1:15))))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0008|if ((r0 instanceof kotlinx.coroutines.JobSupport.Finishing) == true) goto L3\l}"];
+subgraph cluster_Region_224606499 {
+label = "R(2:3|(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000a|java.lang.Throwable java.lang.Throwable r1 = ((kotlinx.coroutines.JobSupport.Finishing) r0).getRootCause()\l}"];
+subgraph cluster_Region_776514297 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1500687117 {
+label = "IF [B:25:0x0011] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0011|if (r1 == null) goto L5\l}"];
+subgraph cluster_Region_897948085 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0021|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Job is still new or active: \", r3).toString())\l}"];
+}
+}
+subgraph cluster_Region_750555994 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+}
+subgraph cluster_Region_1135702478 {
+label = "R(1:(1:17)(1:(2:(1:14)|(1:15)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_825786481 {
+label = "IF [B:30:0x0024] THEN: R(1:17) ELSE: R(1:(2:(1:14)|(1:15))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0024|if ((r0 instanceof kotlinx.coroutines.Incomplete) != false) goto L16\l}"];
+subgraph cluster_Region_72016543 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x003f|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Job is still new or active: \", r3).toString())\l}"];
+}
+subgraph cluster_Region_1874763661 {
+label = "R(1:(2:(1:14)|(1:15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1995439102 {
+label = "R(2:(1:14)|(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1235809892 {
+label = "IF [B:32:0x0028] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0028|if ((r0 instanceof kotlinx.coroutines.CompletedExceptionally) == true) goto L13\l}"];
+subgraph cluster_Region_1305225654 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ ?|SYNTHETIC\lRETURN\l|return ((kotlinx.coroutines.CompletedExceptionally) r0).cause\l}"];
+}
+}
+subgraph cluster_Region_1050205164 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0030|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0014}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0022}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0026}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002a}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0032}"];
+MethodNode[shape=record,label="{protected final java.lang.Throwable kotlinx.coroutines.JobSupport.getCompletionCause((r3v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x0031 \-\> B:21:?, CROSS_EDGE: B:33:0x002a \-\> B:35:0x0031, CROSS_EDGE: B:34:0x0030 \-\> B:35:0x0031, CROSS_EDGE: B:37:0x003f \-\> B:21:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_29[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_27;
+Node_25 -> Node_39[style=dashed];
+Node_28 -> Node_21;
+Node_39 -> Node_21;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_36;
+Node_37 -> Node_21;
+Node_32 -> Node_33;
+Node_32 -> Node_34[style=dashed];
+Node_38 -> Node_21;
+Node_34 -> Node_21;
+Node_20 -> Node_22;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_31 -> Node_32;
+Node_33 -> Node_38;
+Node_36 -> Node_37;
+}
+

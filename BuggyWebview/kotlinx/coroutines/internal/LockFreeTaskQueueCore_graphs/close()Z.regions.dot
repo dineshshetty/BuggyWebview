@@ -1,0 +1,80 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeTaskQueueCore.close()Z" {
+subgraph cluster_Region_2120166081 {
+label = "R(2:(2:2|(2:(1:14)|(1:(2:(1:12)|(1:6)))))|9) | DECL_VAR: long cur$iv, long upd$iv\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_300029247 {
+label = "LOOP:0: (2:2|(2:(1:14)|(1:(2:(1:12)|(1:6)))))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0027|LOOP_END\lLOOP:0: B:20:0x0002\-\>B:28:0x0027\l|if (kotlinx.coroutines.internal.LockFreeTaskQueueCore._state$FU.compareAndSet(r15, r8, r10) == false) goto L2\l}"];
+subgraph cluster_Region_846794855 {
+label = "R(2:2|(2:(1:14)|(1:(2:(1:12)|(1:6)))))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0002|LOOP_START\lLOOP:0: B:20:0x0002\-\>B:28:0x0027\l|long r8 = r15._state\l}"];
+subgraph cluster_Region_355007339 {
+label = "R(2:(1:14)|(1:(2:(1:12)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1176997352 {
+label = "IF [B:21:0x0010] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|if ((r8 & kotlinx.coroutines.internal.LockFreeTaskQueueCore.CLOSED_MASK) != 0) goto L13\l}"];
+subgraph cluster_Region_171091112 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0012|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_654557014 {
+label = "R(1:(2:(1:12)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_537755733 {
+label = "R(2:(1:12)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1327463598 {
+label = "IF [B:24:0x0018] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|if ((kotlinx.coroutines.internal.LockFreeTaskQueueCore.FROZEN_MASK & r8) != 0) goto L11\l}"];
+subgraph cluster_Region_1915536540 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_899659522 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001c|long r10 = r8 \| kotlinx.coroutines.internal.LockFreeTaskQueueCore.CLOSED_MASK\l}"];
+}
+}
+}
+}
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0029|RETURN\l|return true\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0013}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0029|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001a|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0012|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.internal.LockFreeTaskQueueCore.close((r15v0 'this' kotlinx.coroutines.internal.LockFreeTaskQueueCore\<E\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x001b \-\> B:18:?, CROSS_EDGE: B:29:0x0029 \-\> B:18:?, BACK_EDGE: B:28:0x0027 \-\> B:20:0x0002\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_17;Node_28 -> Node_20;
+Node_28 -> Node_32[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_23[style=dashed];
+Node_21 -> Node_31;
+Node_22 -> Node_18;
+Node_24 -> Node_27[style=dashed];
+Node_24 -> Node_33;
+Node_25 -> Node_18;
+Node_27 -> Node_28;
+Node_29 -> Node_18;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_23 -> Node_24;
+Node_32 -> Node_29;
+Node_33 -> Node_25;
+Node_31 -> Node_22;
+}
+

@@ -1,0 +1,35 @@
+digraph "CFG forkotlin.collections.AbstractList.Companion.checkElementIndex$kotlin_stdlib(II)V" {
+subgraph cluster_Region_1809103591 {
+label = "R(1:(1:(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1854971317 {
+label = "R(1:(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_411869043 {
+label = "IF [B:9:0x0000, B:10:0x0002] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r4 \< 0) goto L5\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0002|ADDED_TO_REGION\l|if (r4 \>= r5) goto L5\l}"];
+subgraph cluster_Region_134913387 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0005}"];
+Node_13 [shape=record,label="{13\:\ 0x0023|throw new java.lang.IndexOutOfBoundsException(\"index: \" + r4 + \", size: \" + r5)\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0004}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final void kotlin.collections.AbstractList.Companion.checkElementIndex$kotlin_stdlib((r3v0 'this' kotlin.collections.AbstractList$Companion A[IMMUTABLE_TYPE, THIS]), (r4v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'size' int A[D('size' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0023 \-\> B:8:?, CROSS_EDGE: B:9:0x0000 \-\> B:12:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_11 -> Node_8;
+}
+

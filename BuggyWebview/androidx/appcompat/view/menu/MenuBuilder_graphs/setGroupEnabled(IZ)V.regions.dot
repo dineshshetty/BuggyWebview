@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuBuilder.setGroupEnabled(IZ)V" {
+subgraph cluster_Region_1685229992 {
+label = "R(2:1|(3:3|(1:5)(0)|7))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = r4.mItems.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_506018050 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0007|LOOP_START\lLOOP:0: B:15:0x0007\-\>B:19:0x001a\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:14:0x0000, B:19:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_106478603 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|androidx.appcompat.view.menu.MenuItemImpl androidx.appcompat.view.menu.MenuItemImpl r2 = r4.mItems.get(r1)\l}"];
+subgraph cluster_IfRegion_1180243688 {
+label = "IF [B:17:0x0015] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|if (r2.getGroupId() == r5) goto L5\l}"];
+subgraph cluster_Region_911614042 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0017|r2.setEnabled(r6)\l}"];
+}
+subgraph cluster_Region_1376286583 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x001a|LOOP_END\lLOOP:0: B:15:0x0007\-\>B:19:0x001a\l|r1++\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001a|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001a|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001d|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001d}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.view.menu.MenuBuilder.setGroupEnabled((r4v0 'this' androidx.appcompat.view.menu.MenuBuilder A[IMMUTABLE_TYPE, THIS]), (r5v0 'group' int A[D('group' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'enabled' boolean A[D('enabled' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:19:0x001a \-\> B:15:0x0007, CROSS_EDGE: B:17:0x0015 \-\> B:19:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.Menu.setGroupEnabled(int, boolean):void\}]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_22;
+Node_19 -> Node_15;
+Node_12 -> Node_14;
+Node_22 -> Node_19;
+Node_23 -> Node_19;
+Node_21 -> Node_20;
+Node_20 -> Node_13;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.widget.NestedScrollView.getScrollRange()I" {
+subgraph cluster_Region_1676739593 {
+label = "R(1:(2:(1:6)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1892986212 {
+label = "R(2:(1:6)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_209716636 {
+label = "IF [B:10:0x0005] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0005|if (getChildCount() \<= 0) goto L6\l}"];
+subgraph cluster_Region_1752578869 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1377423667 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0007|android.view.View android.view.View r2 = getChildAt(0)\landroid.widget.FrameLayout$LayoutParams android.widget.FrameLayout.LayoutParams r3 = (android.widget.FrameLayout.LayoutParams) r2.getLayoutParams()\lint int r4 = r2.getHeight() + r3.topMargin + r3.bottomMargin\lint int r5 = (getHeight() \- getPaddingTop()) \- getPaddingBottom()\lint int r0 = java.lang.Math.max(0, r4 \- r5)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0030|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0000}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{int androidx.core.widget.NestedScrollView.getScrollRange((r7v0 'this' androidx.core.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0005 \-\> B:12:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_13;
+Node_13 -> Node_8;
+Node_11 -> Node_12;
+Node_12 -> Node_8;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+}
+

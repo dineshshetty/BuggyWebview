@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt$rangesDelimitedBy$1.invoke(Ljava\/lang\/CharSequence;I)Lkotlin\/Pair;" {
+subgraph cluster_Region_319032106 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"$this$$receiver\")\lint int r0 = kotlin.text.StringsKt.indexOfAny(r5, r4.$delimiters, r6, r4.$ignoreCase)\l}"];
+subgraph cluster_Region_1163322472 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_113662499 {
+label = "IF [B:3:0x000e] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r0 \< 0) goto L3\l}"];
+subgraph cluster_Region_734218456 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_79897313 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|RETURN\lORIG_RETURN\l|return kotlin.TuplesKt.m15to(java.lang.Integer.valueOf(r0), 1)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+MethodNode[shape=record,label="{public final kotlin.Pair\<java.lang.Integer, java.lang.Integer\> kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$1.invoke((r4v0 'this' kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$1 A[IMMUTABLE_TYPE, THIS]), (r5v0 '$receiver' java.lang.CharSequence A[D('$this$$receiver' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'currentIndex' int A[D('currentIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0012 \-\> B:6:0x001f\lINLINE_NOT_NEEDED\lSIGNATURE: (Ljava\/lang\/CharSequence;I)Lkotlin\/Pair\<Ljava\/lang\/Integer;Ljava\/lang\/Integer;\>;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+}
+

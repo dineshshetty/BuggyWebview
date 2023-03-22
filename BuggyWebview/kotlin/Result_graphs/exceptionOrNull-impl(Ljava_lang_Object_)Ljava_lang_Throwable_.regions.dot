@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.Result.exceptionOrNull\-impl(Ljava\/lang\/Object;)Ljava\/lang\/Throwable;" {
+subgraph cluster_Region_1384076458 {
+label = "R(1:(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_260456604 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1933524310 {
+label = "IF [B:11:0x0003] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0003|if ((r1 instanceof kotlin.Result.Failure) == true) goto L3\l}"];
+subgraph cluster_Region_1259223961 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return ((kotlin.Result.Failure) r1).exception\l}"];
+}
+}
+subgraph cluster_Region_1677519958 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000b|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0001}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0005}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.Throwable kotlin.Result.exceptionOrNull\-impl((r1v0 'arg0' java.lang.Object A[D('arg0' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000b \-\> B:14:0x000c\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_15 -> Node_9;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_15;
+}
+

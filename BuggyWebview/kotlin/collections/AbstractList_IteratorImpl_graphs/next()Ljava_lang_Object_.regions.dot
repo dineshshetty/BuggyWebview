@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.collections.AbstractList.IteratorImpl.next()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1964226456 {
+label = "R(1:(2:(1:7)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_352927628 {
+label = "R(2:(1:7)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_494653065 {
+label = "IF [B:11:0x0004] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (hasNext() == false) goto L6\l}"];
+subgraph cluster_Region_506194707 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0018|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_193460938 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|kotlin.collections.AbstractList\<E\> kotlin.collections.AbstractList\<E\> r0 = kotlin.collections.AbstractList.this\lint int r1 = r3.index\lr3.index = r1 + 1\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0012|RETURN\l|return r0.get(r1)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0013}"];
+MethodNode[shape=record,label="{public E kotlin.collections.AbstractList.IteratorImpl.next((r3v0 'this' kotlin.collections.AbstractList$IteratorImpl A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x0018 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: ()TE;\lMETHOD_OVERRIDE: [ClspMth\{java.util.Iterator.next():E\}]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+}
+

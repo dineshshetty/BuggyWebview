@@ -1,0 +1,46 @@
+digraph "CFG forkotlin.ranges.RangesKt___RangesKt.coerceIn(BBB)B" {
+subgraph cluster_Region_148492562 {
+label = "R(1:(2:(1:2)|(2:8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_957505030 {
+label = "R(2:(1:2)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_185063493 {
+label = "IF [B:12:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r4 \<= r5) goto L2\l}"];
+subgraph cluster_Region_1556335348 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|RETURN\l|return r3 \< r4 ? r4 : r3 \> r5 ? r5 : r3\l}"];
+}
+}
+subgraph cluster_Region_450150719 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0009}"];
+Node_19 [shape=record,label="{19\:\ 0x002c|throw new java.lang.IllegalArgumentException(\"Cannot coerce value to an empty range: maximum \" + ((int) r5) + \" is less than minimum \" + ((int) r4) + '.')\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0004}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0005}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0007}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0008}"];
+MethodNode[shape=record,label="{public static final byte kotlin.ranges.RangesKt___RangesKt.coerceIn((r3v0 '$this$coerceIn' byte A[D('$this$coerceIn' byte), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'minimumValue' byte A[D('minimumValue' byte), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'maximumValue' byte A[D('maximumValue' byte), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0007 \-\> B:11:?, CROSS_EDGE: B:17:0x0008 \-\> B:11:?, CROSS_EDGE: B:19:0x002c \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_18[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_16 -> Node_11;
+Node_17 -> Node_11;
+}
+

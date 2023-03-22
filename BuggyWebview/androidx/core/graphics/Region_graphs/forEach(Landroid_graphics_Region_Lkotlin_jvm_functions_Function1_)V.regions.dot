@@ -1,0 +1,44 @@
+digraph "CFG forandroidx.core.graphics.RegionKt.forEach(Landroid\/graphics\/Region;Lkotlin\/jvm\/functions\/Function1;)V" {
+subgraph cluster_Region_594635847 {
+label = "R(2:1|(2:2|(1:4)(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"action\")\landroid.graphics.RegionIterator android.graphics.RegionIterator r1 = new android.graphics.RegionIterator(r4)\l}"];
+subgraph cluster_LoopRegion_1052547795 {
+label = "LOOP:0: (2:2|(1:4)(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1969705358 {
+label = "R(2:2|(1:4)(1:6))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|LOOP_START\lLOOP:0: B:3:0x0010\-\>B:6:0x001e\l|android.graphics.Rect android.graphics.Rect r2 = new android.graphics.Rect()\l}"];
+subgraph cluster_IfRegion_1281911882 {
+label = "IF [B:4:0x001a] THEN: R(1:4) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (r1.next(r2) != false) goto L4\l}"];
+subgraph cluster_Region_839076623 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|LOOP_END\lLOOP:0: B:3:0x0010\-\>B:6:0x001e\l|r5.invoke(r2)\l}"];
+}
+subgraph cluster_Region_2026952396 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|RETURN\l|return\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001d|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void androidx.core.graphics.RegionKt.forEach((r4v0 '$this$forEach' android.graphics.Region A[D('$this$forEach' android.graphics.Region), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'action' kotlin.jvm.functions.Function1\<? super android.graphics.Rect, kotlin.Unit\> A[D('action' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:6:0x001e \-\> B:3:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/graphics\/Region;Lkotlin\/jvm\/functions\/Function1\<\-Landroid\/graphics\/Rect;Lkotlin\/Unit;\>;)V\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_4 -> Node_7[style=dashed];
+Node_6 -> Node_3;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_7 -> Node_5;
+}
+

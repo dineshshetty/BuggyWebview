@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.loader.content.Loader.unregisterListener(Landroidx\/loader\/content\/Loader$OnLoadCompleteListener;)V" {
+subgraph cluster_Region_868682606 {
+label = "R(2:1|(2:(1:10)|(1:(2:(1:8)|(1:4)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|androidx.loader.content.Loader$OnLoadCompleteListener\<D\> androidx.loader.content.Loader.OnLoadCompleteListener\<D\> r0 = r2.mListener\l}"];
+subgraph cluster_Region_1423077700 {
+label = "R(2:(1:10)|(1:(2:(1:8)|(1:4))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_484393877 {
+label = "IF [B:14:0x0002] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r0 == null) goto L9\l}"];
+subgraph cluster_Region_117745520 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0019|throw new java.lang.IllegalStateException(\"No listener register\")\l}"];
+}
+}
+subgraph cluster_Region_214010161 {
+label = "R(1:(2:(1:8)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_626000174 {
+label = "R(2:(1:8)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2137607510 {
+label = "IF [B:15:0x0004] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (r0 != r3) goto L7\l}"];
+subgraph cluster_Region_1657736337 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|throw new java.lang.IllegalArgumentException(\"Attempting to unregister the wrong listener\")\l}"];
+}
+}
+subgraph cluster_Region_1087506591 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|r2.mListener = null\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0009}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000a}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0012}"];
+MethodNode[shape=record,label="{public void androidx.loader.content.Loader.unregisterListener((r2v0 'this' androidx.loader.content.Loader\<D\> A[D('this' androidx.loader.content.Loader\<D\>), IMMUTABLE_TYPE, THIS]), (r3v0 'listener' androidx.loader.content.Loader$OnLoadCompleteListener\<D\> A[D('listener' androidx.loader.content.Loader$OnLoadCompleteListener\<D\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0011 \-\> B:12:?, CROSS_EDGE: B:21:0x0019 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [D]\lSIGNATURE: (Landroidx\/loader\/content\/Loader$OnLoadCompleteListener\<TD;\>;)V\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_21 -> Node_12;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_18;
+Node_19 -> Node_12;
+Node_16 -> Node_17;
+Node_11 -> Node_13;
+Node_17 -> Node_12;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

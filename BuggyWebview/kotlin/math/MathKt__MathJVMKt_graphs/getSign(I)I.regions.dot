@@ -1,0 +1,39 @@
+digraph "CFG forkotlin.math.MathKt__MathJVMKt.getSign(I)I" {
+subgraph cluster_Region_610773694 {
+label = "R(1:(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1676454050 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_653423583 {
+label = "IF [B:12:0x0001] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0001|if (r1 \< 0) goto L2\l}"];
+subgraph cluster_Region_412374307 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0003|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_20922069 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0005|RETURN\l|return r1 \> 0 ? 1 : 0\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0007|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0009|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.math.MathKt__MathJVMKt.getSign((r1v0 '$this$sign' int A[D('$this$sign' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0007 \-\> B:17:0x000a, CROSS_EDGE: B:16:0x0009 \-\> B:17:0x000a\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_10 -> Node_12;
+Node_15 -> Node_11;
+Node_16 -> Node_11;
+}
+

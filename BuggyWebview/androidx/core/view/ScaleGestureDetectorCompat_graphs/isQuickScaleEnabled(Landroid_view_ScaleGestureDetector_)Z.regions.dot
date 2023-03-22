@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.view.ScaleGestureDetectorCompat.isQuickScaleEnabled(Landroid\/view\/ScaleGestureDetector;)Z" {
+subgraph cluster_Region_1932195908 {
+label = "R(1:(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_929101914 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2055436600 {
+label = "IF [B:3:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 19) goto L3\l}"];
+subgraph cluster_Region_767101232 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|RETURN\l|return androidx.core.view.ScaleGestureDetectorCompat.Api19Impl.isQuickScaleEnabled(r2)\l}"];
+}
+}
+subgraph cluster_Region_158678043 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.view.ScaleGestureDetectorCompat.isQuickScaleEnabled((r2v0 'scaleGestureDetector' android.view.ScaleGestureDetector A[D('scaleGestureDetector' android.view.ScaleGestureDetector), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x000c \-\> B:1:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

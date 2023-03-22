@@ -1,0 +1,77 @@
+digraph "CFG forandroidx.recyclerview.widget.ChildHelper.Bucket.remove(I)Z" {
+subgraph cluster_Region_1867612844 {
+label = "R(1:(2:(2:3|4)|(5:6|7|9|(2:(1:13)|14)|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1045730536 {
+label = "R(2:(2:3|4)|(5:6|7|9|(2:(1:13)|14)|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2070730 {
+label = "IF [B:20:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0002|if (r14 \>= 64) goto L3\l}"];
+subgraph cluster_Region_2031803195 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0004|ensureNext()\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000f|RETURN\l|return r13.mNext.remove(r14 \- 64)\l}"];
+}
+}
+subgraph cluster_Region_297612044 {
+label = "R(5:6|7|9|(2:(1:13)|14)|15)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0010|long long r2 = 1 \<\< r14\llong long r4 = r13.mData\l}"];
+Node_24 [shape=record,label="{24\:\ 0x001e|boolean r6 = (r4 & r2) != 0\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0023|PHI: r6 \l  PHI: (r6v2 'value' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|long long r4 = r4 & (~r2)\lr13.mData = r4\llong long r2 = r2 \- 1\llong long r0 = r4 & r2\llong long r4 = java.lang.Long.rotateRight(r4 & (~r2), 1)\lr13.mData = r0 \| r4\landroidx.recyclerview.widget.ChildHelper$Bucket androidx.recyclerview.widget.ChildHelper.Bucket r7 = r13.mNext\l}"];
+subgraph cluster_IfRegion_663323800 {
+label = "IF [B:28:0x0036] THEN: R(2:(1:13)|14) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0036|if (r7 != null) goto L11\l}"];
+subgraph cluster_Region_448623190 {
+label = "R(2:(1:13)|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_245615100 {
+label = "IF [B:30:0x003c] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x003c|if (r7.get(0) != false) goto L13\l}"];
+subgraph cluster_Region_5523005 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x003e|set(63)\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0043|r13.mNext.remove(0)\l}"];
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x0048|RETURN\l|return r6\l}"];
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0020}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0038}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0022}"];
+MethodNode[shape=record,label="{boolean androidx.recyclerview.widget.ChildHelper.Bucket.remove((r13v0 'this' androidx.recyclerview.widget.ChildHelper$Bucket A[IMMUTABLE_TYPE, THIS]), (r14v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:33:0x0048 \-\> B:18:?, CROSS_EDGE: B:30:0x003c \-\> B:32:0x0043, CROSS_EDGE: B:28:0x0036 \-\> B:33:0x0048, CROSS_EDGE: B:26:0x0022 \-\> B:27:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_18;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_33[style=dashed];
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_33 -> Node_18;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_25 -> Node_27;
+Node_29 -> Node_30;
+Node_26 -> Node_27;
+}
+

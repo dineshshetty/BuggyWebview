@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.customview.widget.ExploreByTouchHelper.clearKeyboardFocusForVirtualView(I)Z" {
+subgraph cluster_Region_227278872 {
+label = "R(1:(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_487204826 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1275168388 {
+label = "IF [B:10:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0003|if (r2.mKeyboardFocusedVirtualViewId != r3) goto L3\l}"];
+subgraph cluster_Region_2063598432 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0005|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_383860952 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|r2.mKeyboardFocusedVirtualViewId = Integer.MIN_VALUE\lonVirtualViewKeyboardFocusChanged(r3, false)\lsendEventForVirtualView(r3, 8)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0013|RETURN\l|return true\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0000}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final boolean androidx.customview.widget.ExploreByTouchHelper.clearKeyboardFocusForVirtualView((r2v0 'this' androidx.customview.widget.ExploreByTouchHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 'virtualViewId' int A[D('virtualViewId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0013 \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_8;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+}
+

@@ -1,0 +1,20 @@
+digraph "CFG forcom.google.android.material.color.utilities.QuantizerWu.constructHistogram(Ljava\/util\/Map;)V" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|r0 = r18\lr0.weights = new int[com.google.android.material.color.utilities.QuantizerWu.TOTAL_SIZE]\lr0.momentsR = new int[com.google.android.material.color.utilities.QuantizerWu.TOTAL_SIZE]\lr0.momentsG = new int[com.google.android.material.color.utilities.QuantizerWu.TOTAL_SIZE]\lr0.momentsB = new int[com.google.android.material.color.utilities.QuantizerWu.TOTAL_SIZE]\lr0.moments = new double[com.google.android.material.color.utilities.QuantizerWu.TOTAL_SIZE]\ljava.util.Iterator r1 = r19.entrySet().iterator()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0021|LOOP_START\lLOOP:0: B:11:0x0021\-\>B:13:0x0027\lPHI: r0 r1 \l  PHI: (r0v1 com.google.android.material.color.utilities.QuantizerWu) = (r0v0 com.google.android.material.color.utilities.QuantizerWu), (r0v4 com.google.android.material.color.utilities.QuantizerWu) binds: [B:10:0x0000, B:13:0x0027] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v4 java.util.Iterator\<java.util.Map$Entry\<java.lang.Integer, java.lang.Integer\>\>) = (r1v3 java.util.Iterator\<java.util.Map$Entry\<java.lang.Integer, java.lang.Integer\>\>), (r1v5 java.util.Iterator\<java.util.Map$Entry\<java.lang.Integer, java.lang.Integer\>\>) binds: [B:10:0x0000, B:13:0x0027] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0025|if (r1.hasNext() == false) goto L5\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0027|LOOP_END\lLOOP:0: B:11:0x0021\-\>B:13:0x0027\l|java.util.Map$Entry r2 = r1.next()\lint r3 = r2.getKey().intValue()\lint r4 = r2.getValue().intValue()\lint r5 = com.google.android.material.color.utilities.ColorUtils.redFromArgb(r3)\lint r6 = com.google.android.material.color.utilities.ColorUtils.greenFromArgb(r3)\lint r7 = com.google.android.material.color.utilities.ColorUtils.blueFromArgb(r3)\lint r9 = (r5 \>\> 3) + 1\lint r10 = (r6 \>\> 3) + 1\lint r11 = (r7 \>\> 3) + 1\lint r12 = getIndex(r9, r10, r11)\lint[] r13 = r0.weights\lr13[r12] = r13[r12] + r4\lint[] r13 = r0.momentsR\lr13[r12] = r13[r12] + (r5 * r4)\lint[] r13 = r0.momentsG\lr13[r12] = r13[r12] + (r6 * r4)\lint[] r13 = r0.momentsB\lr13[r12] = r13[r12] + (r7 * r4)\ldouble[] r13 = r0.moments\lint r0 = r4 * (((r5 * r5) + (r6 * r6)) + (r7 * r7))\lr13[r12] = r13[r12] + ((double) r0)\lr0 = r18\lr1 = r1\l}"];
+Node_15 [shape=record,label="{15\:\ 0x009b|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x009b|RETURN\l|return\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void com.google.android.material.color.utilities.QuantizerWu.constructHistogram((r18v0 'this' com.google.android.material.color.utilities.QuantizerWu A[IMMUTABLE_TYPE, THIS]), (r19v0 'pixels' java.util.Map\<java.lang.Integer, java.lang.Integer\> A[D('pixels' java.util.Map\<java.lang.Integer, java.lang.Integer\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0027 \-\> B:11:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/Map\<Ljava\/lang\/Integer;Ljava\/lang\/Integer;\>;)V\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_11;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

@@ -1,0 +1,74 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlexBuffers.Reference.asString()Ljava\/lang\/String;" {
+subgraph cluster_Region_788261130 {
+label = "R(1:(2:3|4)(1:(3:8|(1:11)|14)(1:15)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_100975872 {
+label = "IF [B:20:0x0004] THEN: R(2:3|4) ELSE: R(1:(3:8|(1:11)|14)(1:15))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0004|if (isString() != false) goto L3\l}"];
+subgraph cluster_Region_238109507 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0006|int int r0 = androidx.emoji2.text.flatbuffer.FlexBuffers.indirect(r4.f85bb, r4.end, r4.parentWidth)\landroidx.emoji2.text.flatbuffer.ReadBuf androidx.emoji2.text.flatbuffer.ReadBuf r1 = r4.f85bb\lint int r2 = r4.byteWidth\lint int r2 = (int) androidx.emoji2.text.flatbuffer.FlexBuffers.readUInt(r1, r0 \- r2, r2)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0021|RETURN\l|return r4.f85bb.getString(r0, r2)\l}"];
+}
+subgraph cluster_Region_484943476 {
+label = "R(1:(3:8|(1:11)|14)(1:15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1458816177 {
+label = "IF [B:24:0x0026] THEN: R(3:8|(1:11)|14) ELSE: R(1:15) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0026|if (isKey() != false) goto L8\l}"];
+subgraph cluster_Region_378860269 {
+label = "R(3:8|(1:11)|14)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0028|int int r0 = androidx.emoji2.text.flatbuffer.FlexBuffers.indirect(r4.f85bb, r4.end, r4.byteWidth)\lint r1 = r0\l}"];
+subgraph cluster_LoopRegion_251669433 {
+label = "LOOP:0: (1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0039|if (r4.f85bb.get(r1) != 0) goto L11\l}"];
+subgraph cluster_Region_1930593019 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0044|LOOP_END\lLOOP:0: B:26:0x0033\-\>B:30:0x0044\l|r1++\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0043|RETURN\l|return r4.f85bb.getString(r0, r1 \- r0)\l}"];
+}
+subgraph cluster_Region_657573084 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0047|RETURN\l|return \"\"\l}"];
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0022}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0033|LOOP_START\lLOOP:0: B:26:0x0033\-\>B:30:0x0044\lPHI: r1 \l  PHI: (r1v2 'i' int) = (r1v1 'i' int), (r1v3 'i' int) binds: [B:25:0x0028, B:30:0x0044] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x003b|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x003b}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.emoji2.text.flatbuffer.FlexBuffers.Reference.asString((r4v0 'this' androidx.emoji2.text.flatbuffer.FlexBuffers$Reference A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x0043 \-\> B:18:?, BACK_EDGE: B:30:0x0044 \-\> B:26:0x0033, CROSS_EDGE: B:32:0x0049 \-\> B:18:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_18;
+Node_24 -> Node_25;
+Node_24 -> Node_31[style=dashed];
+Node_25 -> Node_26;
+Node_27 -> Node_30;
+Node_27 -> Node_33[style=dashed];
+Node_30 -> Node_26;
+Node_29 -> Node_18;
+Node_31 -> Node_18;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_23 -> Node_24;
+Node_26 -> Node_27;
+Node_33 -> Node_28;
+Node_28 -> Node_29;
+}
+

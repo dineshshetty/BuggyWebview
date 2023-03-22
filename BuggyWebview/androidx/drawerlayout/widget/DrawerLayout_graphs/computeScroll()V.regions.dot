@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.computeScroll()V" {
+subgraph cluster_Region_1873029145 {
+label = "R(4:1|(1:3)|5|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = getChildCount()\lfloat r1 = 0.0f\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1760044635 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|LOOP_START\lLOOP:0: B:15:0x0006\-\>B:16:0x0008\lPHI: r1 r2 \l  PHI: (r1v1 'scrimOpacity' float) = (r1v0 'scrimOpacity' float), (r1v2 'scrimOpacity' float) binds: [B:14:0x0000, B:16:0x0008] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v4 'i' int) binds: [B:14:0x0000, B:16:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r0) goto L3\l}"];
+subgraph cluster_Region_680255179 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|LOOP_END\lLOOP:0: B:15:0x0006\-\>B:16:0x0008\l|float float r3 = ((androidx.drawerlayout.widget.DrawerLayout.LayoutParams) getChildAt(r2).getLayoutParams()).onScreen\lfloat r1 = java.lang.Math.max(r1, r3)\lr2++\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x001b|r5.mScrimOpacity = r1\lboolean boolean r2 = r5.mLeftDragger.continueSettling(androidx.drawerlayout.widget.DrawerLayout.CHILDREN_DISALLOW_INTERCEPT)\lboolean boolean r3 = r5.mRightDragger.continueSettling(androidx.drawerlayout.widget.DrawerLayout.CHILDREN_DISALLOW_INTERCEPT)\l}"];
+subgraph cluster_Region_1332977891 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1941650147 {
+label = "IF [B:18:0x002a, B:19:0x002c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002a|if (r2 != false) goto L10\l}"];
+Node_19 [shape=record,label="{19\:\ 0x002c|ADDED_TO_REGION\l|if (r3 != false) goto L10\l}"];
+subgraph cluster_Region_1989407956 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002e|androidx.core.view.ViewCompat.postInvalidateOnAnimation(r5)\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001b|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0031|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.drawerlayout.widget.DrawerLayout.computeScroll((r5v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:16:0x0008 \-\> B:15:0x0006, CROSS_EDGE: B:19:0x002c \-\> B:21:0x0031, CROSS_EDGE: B:18:0x002a \-\> B:20:0x002e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.computeScroll():void\}]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_15;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_20 -> Node_21;
+Node_12 -> Node_14;
+Node_22 -> Node_17;
+Node_23 -> Node_13;
+Node_21 -> Node_13;
+}
+

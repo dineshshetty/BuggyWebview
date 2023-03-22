@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.cardview.widget.CardView.\<clinit\>()V" {
+subgraph cluster_Region_1342800464 {
+label = "R(3:1|(1:3)(1:(1:9)(1:10))|4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000}"];
+subgraph cluster_IfRegion_727176392 {
+label = "IF [B:14:0x000f] THEN: R(1:3) ELSE: R(1:(1:9)(1:10))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000f|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L3\l}"];
+subgraph cluster_Region_322819485 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|androidx.cardview.widget.CardView.IMPL = new androidx.cardview.widget.CardViewApi21Impl()\l}"];
+}
+subgraph cluster_Region_556136790 {
+label = "R(1:(1:9)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1025696800 {
+label = "IF [B:17:0x001d] THEN: R(1:9) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001d|if (android.os.Build.VERSION.SDK_INT \>= 17) goto L9\l}"];
+subgraph cluster_Region_684099288 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001f|androidx.cardview.widget.CardView.IMPL = new androidx.cardview.widget.CardViewApi17Impl()\l}"];
+}
+subgraph cluster_Region_1437216608 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0027|androidx.cardview.widget.CardView.IMPL = new androidx.cardview.widget.CardViewBaseImpl()\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x002e|androidx.cardview.widget.CardView.IMPL.initStatic()\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0033}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0019}"];
+MethodNode[shape=record,label="{static void androidx.cardview.widget.CardView.\<clinit\>()  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x001f \-\> B:20:0x002e, CROSS_EDGE: B:19:0x0027 \-\> B:20:0x002e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_20;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_21 -> Node_12;
+Node_16 -> Node_17;
+}
+

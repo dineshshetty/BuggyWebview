@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.text.StringsKt__StringsJVMKt.replaceFirst(Ljava\/lang\/String;Ljava\/lang\/String;Ljava\/lang\/String;Z)Ljava\/lang\/String;" {
+subgraph cluster_Region_1185683891 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"oldValue\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"newValue\")\lint int r0 = kotlin.text.StringsKt.indexOf$default(r7, r8, 0, r10, 2, (java.lang.Object) null)\l}"];
+subgraph cluster_Region_550718034 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1180029751 {
+label = "IF [B:19:0x001b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001b|if (r0 \< 0) goto L3\l}"];
+subgraph cluster_Region_1512666718 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return r7\l}"];
+}
+}
+subgraph cluster_Region_285526633 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001f}"];
+Node_22 [shape=record,label="{22\:\ 0x0032|RETURN\lORIG_RETURN\l|return kotlin.text.StringsKt.replaceRange((java.lang.CharSequence) r7, r0, r8.length() + r0, (java.lang.CharSequence) r9).toString()\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001d}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.text.StringsKt__StringsJVMKt.replaceFirst((r7v0 '$this$replaceFirst' java.lang.String A[D('$this$replaceFirst' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'oldValue' java.lang.String A[D('oldValue' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'newValue' java.lang.String A[D('newValue' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'ignoreCase' boolean A[D('ignoreCase' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001f \-\> B:22:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_17;
+Node_21 -> Node_22;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_23;
+}
+

@@ -1,0 +1,104 @@
+digraph "CFG forandroidx.core.view.ContentInfoCompat.partition(Landroidx\/core\/util\/Predicate;)Landroid\/util\/Pair;" {
+subgraph cluster_Region_509084922 {
+label = "R(2:1|(2:(2:3|9)|(2:12|(2:(1:15)|(1:(2:(1:19)|(1:21)))))))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0000|android.content.ClipData android.content.ClipData r0 = r5.mCompat.getClip()\l}"];
+subgraph cluster_Region_2071101990 {
+label = "R(2:(2:3|9)|(2:12|(2:(1:15)|(1:(2:(1:19)|(1:21))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_848586547 {
+label = "IF [B:26:0x000c] THEN: R(2:3|9) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000c|if (r0.getItemCount() == 1) goto L3\l}"];
+subgraph cluster_Region_1785160763 {
+label = "R(2:3|9)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000e|boolean boolean r1 = r6.test(r0.getItemAt(0))\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0024|RETURN\l|return android.util.Pair.create(r1 ? r5 : null, r1 ? null : r5)\l}"];
+}
+}
+subgraph cluster_Region_715098782 {
+label = "R(2:12|(2:(1:15)|(1:(2:(1:19)|(1:21)))))";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0025|android.util.Pair android.util.Pair\<android.content.ClipData, android.content.ClipData\> r1 = partition(r0, r6)\l}"];
+subgraph cluster_Region_1259386187 {
+label = "R(2:(1:15)|(1:(2:(1:19)|(1:21))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1950233827 {
+label = "IF [B:37:0x002b] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x002b|if (r1.first == null) goto L14\l}"];
+subgraph cluster_Region_269880601 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0031|RETURN\l|return android.util.Pair.create(null, r5)\l}"];
+}
+}
+subgraph cluster_Region_1485129329 {
+label = "R(1:(2:(1:19)|(1:21)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_923376885 {
+label = "R(2:(1:19)|(1:21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1694656680 {
+label = "IF [B:41:0x0034] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0034|if (r1.second == null) goto L18\l}"];
+subgraph cluster_Region_2038291890 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x003a|RETURN\l|return android.util.Pair.create(r5, null)\l}"];
+}
+}
+subgraph cluster_Region_882216591 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0061|RETURN\l|return android.util.Pair.create(new androidx.core.view.ContentInfoCompat.Builder(r5).setClip((android.content.ClipData) r1.first).build(), new androidx.core.view.ContentInfoCompat.Builder(r5).setClip((android.content.ClipData) r1.second).build())\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0017}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0019}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001c|PHI: r3 \l  PHI: (r3v9 androidx.core.view.ContentInfoCompat A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001f}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0020|PHI: r2 \l  PHI: (r2v7 androidx.core.view.ContentInfoCompat A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001b}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x002d}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0032}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x0036}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x003b}"];
+MethodNode[shape=record,label="{public android.util.Pair\<androidx.core.view.ContentInfoCompat, androidx.core.view.ContentInfoCompat\> androidx.core.view.ContentInfoCompat.partition((r5v0 'this' androidx.core.view.ContentInfoCompat A[IMMUTABLE_TYPE, THIS]), (r6v0 'itemPredicate' androidx.core.util.Predicate\<android.content.ClipData$Item\> A[D('itemPredicate' androidx.core.util.Predicate\<android.content.ClipData$Item\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x001c \-\> B:34:0x0020, CROSS_EDGE: B:30:0x001b \-\> B:31:0x001c, CROSS_EDGE: B:39:0x0031 \-\> B:24:?, CROSS_EDGE: B:43:0x003a \-\> B:24:?, CROSS_EDGE: B:45:0x0061 \-\> B:24:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroidx\/core\/util\/Predicate\<Landroid\/content\/ClipData$Item;\>;)Landroid\/util\/Pair\<Landroidx\/core\/view\/ContentInfoCompat;Landroidx\/core\/view\/ContentInfoCompat;\>;\l}"];
+MethodNode -> Node_23;Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_36[style=dashed];
+Node_27 -> Node_28;
+Node_35 -> Node_24;
+Node_36 -> Node_37;
+Node_37 -> Node_38;
+Node_37 -> Node_40[style=dashed];
+Node_39 -> Node_24;
+Node_41 -> Node_42;
+Node_41 -> Node_44[style=dashed];
+Node_43 -> Node_24;
+Node_45 -> Node_24;
+Node_23 -> Node_25;
+Node_28 -> Node_29;
+Node_28 -> Node_30;
+Node_29 -> Node_31;
+Node_31 -> Node_33;
+Node_31 -> Node_34;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_30 -> Node_31;
+Node_38 -> Node_39;
+Node_40 -> Node_41;
+Node_42 -> Node_43;
+Node_44 -> Node_45;
+}
+

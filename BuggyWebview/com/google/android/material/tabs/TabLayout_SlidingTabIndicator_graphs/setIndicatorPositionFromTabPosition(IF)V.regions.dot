@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.SlidingTabIndicator.setIndicatorPositionFromTabPosition(IF)V" {
+subgraph cluster_Region_232982921 {
+label = "R(3:1|(1:5)|6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|com.google.android.material.tabs.TabLayout.this.indicatorPosition = java.lang.Math.round(r3 + r4)\landroid.animation.ValueAnimator android.animation.ValueAnimator r0 = r2.indicatorAnimator\l}"];
+subgraph cluster_IfRegion_1229457014 {
+label = "IF [B:12:0x000c, B:14:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000c|if (r0 != null) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0012|ADDED_TO_REGION\l|if (r0.isRunning() != false) goto L5\l}"];
+subgraph cluster_Region_1735152956 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0014|r2.indicatorAnimator.cancel()\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0019|android.view.View android.view.View r0 = getChildAt(r3)\landroid.view.View android.view.View r1 = getChildAt(r3 + 1)\ltweenIndicatorPosition(r0, r1, r4)\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000e}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0026}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void com.google.android.material.tabs.TabLayout.SlidingTabIndicator.setIndicatorPositionFromTabPosition((r2v0 'this' com.google.android.material.tabs.TabLayout$SlidingTabIndicator A[IMMUTABLE_TYPE, THIS]), (r3v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'positionOffset' float A[D('positionOffset' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0012 \-\> B:16:0x0019, CROSS_EDGE: B:12:0x000c \-\> B:16:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_9 -> Node_11;
+Node_13 -> Node_14;
+Node_17 -> Node_10;
+}
+

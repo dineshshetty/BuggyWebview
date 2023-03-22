@@ -1,0 +1,49 @@
+digraph "CFG forcom.google.android.material.navigation.NavigationBarMenuView.setItemActiveIndicatorHeight(I)V" {
+subgraph cluster_Region_1357315739 {
+label = "R(2:1|(1:(2:3|(1:5))))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|r4.itemActiveIndicatorHeight = r5\lcom.google.android.material.navigation.NavigationBarItemView[] com.google.android.material.navigation.NavigationBarItemView[] r0 = r4.buttons\l}"];
+subgraph cluster_Region_845955851 {
+label = "R(1:(2:3|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1904251864 {
+label = "IF [B:13:0x0004] THEN: R(2:3|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_83467084 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|int r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_710177455 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|LOOP_START\lLOOP:0: B:15:0x0008\-\>B:16:0x000a\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:14:0x0006, B:16:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L5\l}"];
+subgraph cluster_Region_1416621150 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|LOOP_END\lLOOP:0: B:15:0x0008\-\>B:16:0x000a\l|r3 = r0[r2]\lr3.setActiveIndicatorHeight(r5)\lr2++\l}"];
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0012|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0012|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.navigation.NavigationBarMenuView.setItemActiveIndicatorHeight((r4v0 'this' com.google.android.material.navigation.NavigationBarMenuView A[IMMUTABLE_TYPE, THIS]), (r5v0 'height' int A[D('height' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:16:0x000a \-\> B:15:0x0008, CROSS_EDGE: B:13:0x0004 \-\> B:17:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_15;
+Node_10 -> Node_12;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_17 -> Node_11;
+}
+

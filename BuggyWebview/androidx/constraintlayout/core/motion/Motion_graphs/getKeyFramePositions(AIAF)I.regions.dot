@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.constraintlayout.core.motion.Motion.getKeyFramePositions([I[F)I" {
+subgraph cluster_Region_1902571249 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|int r0 = 0\lint r1 = 0\ljava.util.Iterator java.util.Iterator\<androidx.constraintlayout.core.motion.key.MotionKey\> r2 = r12.mKeyList.iterator()\l}"];
+subgraph cluster_LoopRegion_1336481599 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000c|if (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1986830887 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000e|LOOP_END\lLOOP:0: B:11:0x0008\-\>B:13:0x000e\l|androidx.constraintlayout.core.motion.key.MotionKey androidx.constraintlayout.core.motion.key.MotionKey r10 = r2.next()\lint int r11 = r0 + 1\lr13[r0] = r10.mFramePosition + (r10.mType * 1000)\lfloat float r0 = r10.mFramePosition \/ 100.0f\lr12.mSpline[0].getPos(r0, r12.mInterpolateData)\lr12.mStartMotionPath.getCenter(r0, r12.mInterpolateVariables, r12.mInterpolateData, r14, r1)\lr1 += 2\lr0 = r11\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0042|RETURN\l|return r0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0008|LOOP_START\lLOOP:0: B:11:0x0008\-\>B:13:0x000e\lPHI: r0 r1 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v5 'i' int) binds: [B:10:0x0000, B:13:0x000e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'count' int) = (r1v0 'count' int), (r1v2 'count' int) binds: [B:10:0x0000, B:13:0x000e] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0042|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.constraintlayout.core.motion.Motion.getKeyFramePositions((r12v0 'this' androidx.constraintlayout.core.motion.Motion A[IMMUTABLE_TYPE, THIS]), (r13v0 'type' int[] A[D('type' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'pos' float[] A[D('pos' float[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x000e \-\> B:11:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

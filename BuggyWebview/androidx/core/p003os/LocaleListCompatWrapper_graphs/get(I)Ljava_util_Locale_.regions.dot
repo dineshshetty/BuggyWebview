@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.core.os.LocaleListCompatWrapper.get(I)Ljava\/util\/Locale;" {
+subgraph cluster_Region_1921688362 {
+label = "R(2:(2:2|(1:5))|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_811911339 {
+label = "IF [B:2:0x0000] THEN: R(2:2|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r3 \>= 0) goto L2\l}"];
+subgraph cluster_Region_992903625 {
+label = "R(2:2|(1:5))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|java.util.Locale[] java.util.Locale[] r0 = r2.mList\l}"];
+subgraph cluster_IfRegion_580865457 {
+label = "IF [B:4:0x0005] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|if (r3 \< r0.length) goto L4\l}"];
+subgraph cluster_Region_1672944756 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return r0[r3]\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x000a|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.util.Locale androidx.core.os.LocaleListCompatWrapper.get((r2v0 'this' androidx.core.os.LocaleListCompatWrapper A[IMMUTABLE_TYPE, THIS]), (r3v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x000a \-\> B:7:0x000b, CROSS_EDGE: B:2:0x0000 \-\> B:6:0x000a\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [androidx.core.os.LocaleListInterface.get(int):java.util.Locale]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_8 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_8;
+}
+

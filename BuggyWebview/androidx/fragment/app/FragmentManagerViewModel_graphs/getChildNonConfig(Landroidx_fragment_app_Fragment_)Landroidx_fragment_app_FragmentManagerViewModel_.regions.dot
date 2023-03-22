@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.fragment.app.FragmentManagerViewModel.getChildNonConfig(Landroidx\/fragment\/app\/Fragment;)Landroidx\/fragment\/app\/FragmentManagerViewModel;" {
+subgraph cluster_Region_2020760494 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|androidx.fragment.app.FragmentManagerViewModel androidx.fragment.app.FragmentManagerViewModel r0 = r3.mChildNonConfigs.get(r4.mWho)\l}"];
+subgraph cluster_Region_1835405066 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_126390342 {
+label = "IF [B:10:0x000a] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000a|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_741536805 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000c|androidx.fragment.app.FragmentManagerViewModel androidx.fragment.app.FragmentManagerViewModel r1 = new androidx.fragment.app.FragmentManagerViewModel(r3.mStateAutomaticallySaved)\lr3.mChildNonConfigs.put(r4.mWho, r1)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001b|RETURN\lORIG_RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_403831968 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.fragment.app.FragmentManagerViewModel androidx.fragment.app.FragmentManagerViewModel.getChildNonConfig((r3v0 'this' androidx.fragment.app.FragmentManagerViewModel A[IMMUTABLE_TYPE, THIS]), (r4v0 'f' androidx.fragment.app.Fragment A[D('f' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x000a \-\> B:12:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

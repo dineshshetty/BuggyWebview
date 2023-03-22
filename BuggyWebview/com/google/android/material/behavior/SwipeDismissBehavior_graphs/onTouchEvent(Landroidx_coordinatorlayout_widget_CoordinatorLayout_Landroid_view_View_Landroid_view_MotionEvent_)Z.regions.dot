@@ -1,0 +1,66 @@
+digraph "CFG forcom.google.android.material.behavior.SwipeDismissBehavior.onTouchEvent(Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;Landroid\/view\/View;Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_1846255199 {
+label = "R(1:(2:(1:(2:(2:9|10)|(1:7)))|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1553850528 {
+label = "R(2:(1:(2:(2:9|10)|(1:7)))|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1607899437 {
+label = "IF [B:3:0x0002] THEN: R(1:(2:(2:9|10)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r2.viewDragHelper != null) goto L3\l}"];
+subgraph cluster_Region_1004413041 {
+label = "R(1:(2:(2:9|10)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_160802867 {
+label = "R(2:(2:9|10)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_985583937 {
+label = "IF [B:5:0x0006, B:7:0x000d] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0006|if (r2.requestingDisallowInterceptTouchEvent == false) goto L9\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000d|ADDED_TO_REGION\l|if (r5.getActionMasked() != 3) goto L9\l}"];
+subgraph cluster_Region_1363814602 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|r2.viewDragHelper.processTouchEvent(r5)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0014|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_467490618 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1068347458 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0016|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0008}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.behavior.SwipeDismissBehavior.onTouchEvent((r2v0 'this' com.google.android.material.behavior.SwipeDismissBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.behavior.SwipeDismissBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r3v0 'parent' androidx.coordinatorlayout.widget.CoordinatorLayout A[D('parent' androidx.coordinatorlayout.widget.CoordinatorLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'child' V extends android.view.View A[D('child' V extends android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'event' android.view.MotionEvent A[D('event' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x000d \-\> B:9:0x0014, CROSS_EDGE: B:5:0x0006 \-\> B:8:0x000f, CROSS_EDGE: B:12:0x0017 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\lSIGNATURE: (Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;TV;Landroid\/view\/MotionEvent;)Z\lMETHOD_OVERRIDE: [androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior.onTouchEvent(androidx.coordinatorlayout.widget.CoordinatorLayout, V extends android.view.View, android.view.MotionEvent):boolean]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_13 -> Node_1;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

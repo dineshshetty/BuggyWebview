@@ -1,0 +1,55 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeLinkedListHead.forEach(Lkotlin\/jvm\/functions\/Function1;)V" {
+subgraph cluster_Region_1022652369 {
+label = "R(2:1|(3:4|(1:6)(0)|8))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlinx.coroutines.internal.LockFreeLinkedListNode kotlinx.coroutines.internal.LockFreeLinkedListNode r1 = (kotlinx.coroutines.internal.LockFreeLinkedListNode) getNext()\l}"];
+subgraph cluster_LoopRegion_939300572 {
+label = "LOOP:0: (3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|if (kotlin.jvm.internal.Intrinsics.areEqual(r1, r4) == false) goto L4\l}"];
+subgraph cluster_Region_2003358647 {
+label = "R(3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|kotlin.jvm.internal.Intrinsics.reifiedOperationMarker(3, \"T\")\l}"];
+subgraph cluster_IfRegion_127350393 {
+label = "IF [B:19:0x0015] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|if ((r1 instanceof kotlinx.coroutines.internal.LockFreeLinkedListNode) != false) goto L6\l}"];
+subgraph cluster_Region_411196349 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0017|r5.invoke(r1)\l}"];
+}
+subgraph cluster_Region_2116615766 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x001a|LOOP_END\lLOOP:0: B:16:0x0007\-\>B:21:0x001a\l|kotlinx.coroutines.internal.LockFreeLinkedListNode r1 = r1.getNextNode()\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0007|LOOP_START\lLOOP:0: B:16:0x0007\-\>B:21:0x001a\lPHI: r1 \l  PHI: (r1v2 'cur' kotlinx.coroutines.internal.LockFreeLinkedListNode) = (r1v1 'cur' kotlinx.coroutines.internal.LockFreeLinkedListNode), (r1v3 'cur' kotlinx.coroutines.internal.LockFreeLinkedListNode) binds: [B:15:0x0000, B:21:0x001a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001a|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001a|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001f|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001f}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final \/* synthetic *\/ void kotlinx.coroutines.internal.LockFreeLinkedListHead.forEach((r4v0 'this' kotlinx.coroutines.internal.LockFreeLinkedListHead A[IMMUTABLE_TYPE, THIS]), (r5v0 kotlin.jvm.functions.Function1\<? super T extends kotlinx.coroutines.internal.LockFreeLinkedListNode, kotlin.Unit\> A[D('block' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x001a \-\> B:16:0x0007, CROSS_EDGE: B:19:0x0015 \-\> B:21:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends kotlinx.coroutines.internal.LockFreeLinkedListNode]\lSIGNATURE: \<T:Lkotlinx\/coroutines\/internal\/LockFreeLinkedListNode;\>(Lkotlin\/jvm\/functions\/Function1\<\-TT;Lkotlin\/Unit;\>;)V\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_24;
+Node_21 -> Node_16;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_24 -> Node_21;
+Node_25 -> Node_21;
+Node_23 -> Node_22;
+Node_22 -> Node_14;
+}
+

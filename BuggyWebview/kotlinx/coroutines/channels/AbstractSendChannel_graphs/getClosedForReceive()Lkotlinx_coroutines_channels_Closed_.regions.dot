@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractSendChannel.getClosedForReceive()Lkotlinx\/coroutines\/channels\/Closed;" {
+subgraph cluster_Region_1681759800 {
+label = "R(3:1|2|(2:(1:8)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlinx.coroutines.internal.LockFreeLinkedListNode kotlinx.coroutines.internal.LockFreeLinkedListNode r0 = r3.queue.getNextNode()\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0009|kotlinx.coroutines.channels.Closed r0 = r0 instanceof kotlinx.coroutines.channels.Closed ? (kotlinx.coroutines.channels.Closed) r0 : null\l}"];
+subgraph cluster_Region_1032212389 {
+label = "R(2:(1:8)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1288430916 {
+label = "IF [B:17:0x000f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|PHI: r0 \l  PHI: (r0v3 kotlinx.coroutines.channels.Closed) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L8\l}"];
+subgraph cluster_Region_982657885 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_230995520 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|kotlinx.coroutines.channels.Closed r1 = r0\lhelpClose(r1)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0018|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000e}"];
+MethodNode[shape=record,label="{public final kotlinx.coroutines.channels.Closed\<?\> kotlinx.coroutines.channels.AbstractSendChannel.getClosedForReceive((r3v0 'this' kotlinx.coroutines.channels.AbstractSendChannel\<E\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000f \-\> B:20:0x0018, CROSS_EDGE: B:16:0x000e \-\> B:17:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: ()Lkotlinx\/coroutines\/channels\/Closed\<*\>;\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_21;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+}
+

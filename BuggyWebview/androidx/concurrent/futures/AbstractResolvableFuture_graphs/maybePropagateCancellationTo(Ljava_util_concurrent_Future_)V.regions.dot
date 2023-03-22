@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.concurrent.futures.AbstractResolvableFuture.maybePropagateCancellationTo(Ljava\/util\/concurrent\/Future;)V" {
+subgraph cluster_Region_1179944003 {
+label = "R(1:(1:(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1167721791 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_134226246 {
+label = "IF [B:16:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (((r3 != null) & isCancelled()) != false) goto L5\l}"];
+subgraph cluster_Region_1075176388 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|r3.cancel(wasInterrupted())\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0002}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0005|PHI: r0 \l  PHI: (r0v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0013|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0004}"];
+MethodNode[shape=record,label="{final void androidx.concurrent.futures.AbstractResolvableFuture.maybePropagateCancellationTo((r2v0 'this' androidx.concurrent.futures.AbstractResolvableFuture\<V\> A[D('this' androidx.concurrent.futures.AbstractResolvableFuture\<V\>), IMMUTABLE_TYPE, THIS]), (r3v0 'related' java.util.concurrent.Future\<?\> A[D('related' java.util.concurrent.Future\<?\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000a \-\> B:18:0x0013, CROSS_EDGE: B:14:0x0004 \-\> B:15:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: [V]\lSIGNATURE: (Ljava\/util\/concurrent\/Future\<*\>;)V\l}"];
+MethodNode -> Node_10;Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+Node_14 -> Node_15;
+}
+

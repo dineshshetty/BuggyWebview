@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.material.floatingactionbutton.FloatingActionButton.BaseBehavior.onDependentViewChanged(Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;Lcom\/google\/android\/material\/floatingactionbutton\/FloatingActionButton;Landroid\/view\/View;)Z" {
+subgraph cluster_Region_1612865677 {
+label = "R(1:(2:3|4)(1:(2:8|9)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_4987 {
+label = "IF [B:15:0x0002] THEN: R(2:3|4) ELSE: R(1:(2:8|9)(1:10))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if ((r4 instanceof com.google.android.material.appbar.AppBarLayout) != false) goto L3\l}"];
+subgraph cluster_Region_273345835 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|updateFabVisibilityForAppBarLayout(r2, (com.google.android.material.appbar.AppBarLayout) r4, r3)\l}"];
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1888544005 {
+label = "R(1:(2:8|9)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_63292818 {
+label = "IF [B:18:0x000f] THEN: R(2:8|9) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000f|if (isBottomSheet(r4) != false) goto L8\l}"];
+subgraph cluster_Region_64918874 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|updateFabVisibilityForBottomSheet(r4, r3)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0014|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1144656831 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000b}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.floatingactionbutton.FloatingActionButton.BaseBehavior.onDependentViewChanged((r1v0 'this' com.google.android.material.floatingactionbutton.FloatingActionButton$BaseBehavior\<T extends com.google.android.material.floatingactionbutton.FloatingActionButton\> A[D('this' com.google.android.material.floatingactionbutton.FloatingActionButton$BaseBehavior\<T extends com.google.android.material.floatingactionbutton.FloatingActionButton\>), IMMUTABLE_TYPE, THIS]), (r2v0 'parent' androidx.coordinatorlayout.widget.CoordinatorLayout A[D('parent' androidx.coordinatorlayout.widget.CoordinatorLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'child' com.google.android.material.floatingactionbutton.FloatingActionButton A[D('child' com.google.android.material.floatingactionbutton.FloatingActionButton), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'dependency' android.view.View A[D('dependency' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0011 \-\> B:20:0x0014, CROSS_EDGE: B:18:0x000f \-\> B:20:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends com.google.android.material.floatingactionbutton.FloatingActionButton]\lREPLACED_BY: com.google.android.material.floatingactionbutton.FloatingActionButton.BaseBehavior.onDependentViewChanged(androidx.coordinatorlayout.widget.CoordinatorLayout, android.view.View, android.view.View):boolean\lMETHOD_OVERRIDE: [androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior.onDependentViewChanged(androidx.coordinatorlayout.widget.CoordinatorLayout, V extends android.view.View, android.view.View):boolean]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_22;
+Node_22 -> Node_13;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_13;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+}
+

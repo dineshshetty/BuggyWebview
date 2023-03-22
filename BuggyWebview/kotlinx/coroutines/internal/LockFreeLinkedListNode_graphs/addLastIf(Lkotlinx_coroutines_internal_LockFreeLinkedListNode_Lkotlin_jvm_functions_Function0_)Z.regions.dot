@@ -1,0 +1,49 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeLinkedListNode.addLastIf(Lkotlinx\/coroutines\/internal\/LockFreeLinkedListNode;Lkotlin\/jvm\/functions\/Function0;)Z" {
+subgraph cluster_Region_1182534414 {
+label = "R(2:1|(2:2|3))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlinx.coroutines.internal.LockFreeLinkedListNode$CondAddOp kotlinx.coroutines.internal.LockFreeLinkedListNode.CondAddOp r3 = new kotlinx.coroutines.internal.LockFreeLinkedListNode$makeCondAddOp$1(r5, r6)\l}"];
+subgraph cluster_LoopRegion_582074600 {
+label = "LOOP:0: (2:2|3)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1437965517 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|LOOP_START\lLOOP:0: B:15:0x000c\-\>B:16:0x0015\l|kotlinx.coroutines.internal.LockFreeLinkedListNode kotlinx.coroutines.internal.LockFreeLinkedListNode r2 = getPrevNode()\l}"];
+subgraph cluster_SwitchRegion_928934985 {
+label = "Switch: 2
+ case 1 -> R(1:8)
+ case 2 -> R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0015|LOOP_END\lLOOP:0: B:15:0x000c\-\>B:16:0x0015\l|switch(r2.tryCondAddNext(r5, r4, r3)) \{\l    case 1: goto L7;\l    case 2: goto L4;\l    default: goto L2;\l\}\l}"];
+subgraph cluster_Region_1418076034 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001b|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1400473379 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0019|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0019|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.internal.LockFreeLinkedListNode.addLastIf((r4v0 'this' kotlinx.coroutines.internal.LockFreeLinkedListNode A[IMMUTABLE_TYPE, THIS]), (r5v0 'node' kotlinx.coroutines.internal.LockFreeLinkedListNode A[D('node' kotlinx.coroutines.internal.LockFreeLinkedListNode), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 kotlin.jvm.functions.Function0\<java.lang.Boolean\> A[D('condition' kotlin.jvm.functions.Function0), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001c \-\> B:13:?, BACK_EDGE: B:16:0x0015 \-\> B:15:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlinx\/coroutines\/internal\/LockFreeLinkedListNode;Lkotlin\/jvm\/functions\/Function0\<Ljava\/lang\/Boolean;\>;)Z\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_15;
+Node_16 -> Node_22;
+Node_16 -> Node_23;
+Node_20 -> Node_13;
+Node_18 -> Node_13;
+Node_12 -> Node_14;
+Node_22 -> Node_18;
+Node_23 -> Node_20;
+}
+

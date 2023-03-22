@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.app.ShareCompat.getCallingActivity(Landroid\/app\/Activity;)Landroid\/content\/ComponentName;" {
+subgraph cluster_Region_1968070787 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.content.Intent android.content.Intent r0 = r2.getIntent()\landroid.content.ComponentName android.content.ComponentName r1 = r2.getCallingActivity()\l}"];
+subgraph cluster_Region_2084567495 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1817490794 {
+label = "IF [B:3:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_956856914 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|RETURN\lORIG_RETURN\l|return getCallingActivity(r0)\l}"];
+}
+}
+subgraph cluster_Region_2045702861 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static android.content.ComponentName androidx.core.app.ShareCompat.getCallingActivity((r2v0 'calledActivity' android.app.Activity A[D('calledActivity' android.app.Activity), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0008 \-\> B:5:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+}
+

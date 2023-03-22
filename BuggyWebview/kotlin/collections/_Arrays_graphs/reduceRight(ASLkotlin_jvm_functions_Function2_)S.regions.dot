@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.reduceRight([SLkotlin\/jvm\/functions\/Function2;)S" {
+subgraph cluster_Region_1459414783 {
+label = "R(2:1|(2:(1:10)|(3:3|(1:5)|7)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"operation\")\lint int r1 = kotlin.collections.ArraysKt.getLastIndex(r5)\l}"];
+subgraph cluster_Region_1135212302 {
+label = "R(2:(1:10)|(3:3|(1:5)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_766051700 {
+label = "IF [B:14:0x000f] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000f|if (r1 \< 0) goto L9\l}"];
+subgraph cluster_Region_317165600 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0037|throw new java.lang.UnsupportedOperationException(\"Empty array can't be reduced.\")\l}"];
+}
+}
+subgraph cluster_Region_1563736407 {
+label = "R(3:3|(1:5)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|int int r2 = r1 \- 1\lshort short r1 = r5[r1]\l}"];
+subgraph cluster_LoopRegion_788576072 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0015|LOOP_START\lLOOP:0: B:16:0x0015\-\>B:17:0x0017\lPHI: r1 r2 \l  PHI: (r1v2 'accumulator' short) = (r1v1 'accumulator' short), (r1v3 'accumulator' short) binds: [B:15:0x0011, B:17:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 'index' int) = (r2v1 'index' int), (r2v7 'index' int) binds: [B:15:0x0011, B:17:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= 0) goto L5\l}"];
+subgraph cluster_Region_519731017 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0015\-\>B:17:0x0017\l|short r1 = r6.invoke(java.lang.Short.valueOf(r5[r2]), java.lang.Short.valueOf(r1)).shortValue()\lr2\-\-\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x002f|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002f|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0030}"];
+MethodNode[shape=record,label="{public static final short kotlin.collections.ArraysKt___ArraysKt.reduceRight((r5v0 '$this$reduceRight' short[] A[D('$this$reduceRight' short[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'operation' kotlin.jvm.functions.Function2\<? super java.lang.Short, ? super java.lang.Short, java.lang.Short\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x0017 \-\> B:16:0x0015, CROSS_EDGE: B:20:0x0037 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([SLkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Short;\-Ljava\/lang\/Short;Ljava\/lang\/Short;\>;)S\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_20 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_16;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_21 -> Node_18;
+Node_19 -> Node_20;
+}
+

@@ -1,0 +1,57 @@
+digraph "CFG forcom.google.android.material.behavior.SwipeDismissBehavior.1.onViewPositionChanged(Landroid\/view\/View;IIII)V" {
+subgraph cluster_Region_1206128461 {
+label = "R(2:1|(1:3)(1:(1:8)(1:10)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0001|float float r0 = r8.getWidth() * com.google.android.material.behavior.SwipeDismissBehavior.this.alphaStartSwipeDistance\lfloat float r1 = r8.getWidth() * com.google.android.material.behavior.SwipeDismissBehavior.this.alphaEndSwipeDistance\lfloat float r2 = java.lang.Math.abs(r9 \- r7.originalCapturedViewLeft)\l}"];
+subgraph cluster_IfRegion_934240452 {
+label = "IF [B:3:0x0025] THEN: R(1:3) ELSE: R(1:(1:8)(1:10))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0025|if (r2 \<= r0) goto L3\l}"];
+subgraph cluster_Region_623199369 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0027|r8.setAlpha(1.0f)\l}"];
+}
+subgraph cluster_Region_577082676 {
+label = "R(1:(1:8)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1302890552 {
+label = "IF [B:6:0x002e] THEN: R(1:8) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002e|if (r2 \>= r1) goto L8\l}"];
+subgraph cluster_Region_1575565509 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0030|r8.setAlpha(0.0f)\l}"];
+}
+subgraph cluster_Region_1797023611 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0034|float float r5 = com.google.android.material.behavior.SwipeDismissBehavior.fraction(r0, r1, r2)\lr8.setAlpha(com.google.android.material.behavior.SwipeDismissBehavior.clamp(0.0f, 1.0f \- r5, 1.0f))\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002b}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0041|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.behavior.SwipeDismissBehavior.1.onViewPositionChanged((r7v0 'this' com.google.android.material.behavior.SwipeDismissBehavior$1 A[D('this' com.google.android.material.behavior.SwipeDismissBehavior$1), IMMUTABLE_TYPE, THIS]), (r8v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'left' int A[D('left' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'top' int A[D('top' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'dx' int A[D('dx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'dy' int A[D('dy' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0030 \-\> B:9:0x0041, CROSS_EDGE: B:8:0x0034 \-\> B:9:0x0041\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\lMETHOD_OVERRIDE: [androidx.customview.widget.ViewDragHelper.Callback.onViewPositionChanged(android.view.View, int, int, int, int):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_11;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_10 -> Node_1;
+Node_5 -> Node_6;
+Node_11 -> Node_1;
+Node_9 -> Node_1;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.createTask(Ljava\/lang\/Runnable;Lkotlinx\/coroutines\/scheduling\/TaskContext;)Lkotlinx\/coroutines\/scheduling\/Task;" {
+subgraph cluster_Region_2068374189 {
+label = "R(2:1|(2:(2:3|4)|(1:7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|long long r0 = kotlinx.coroutines.scheduling.TasksKt.schedulerTimeSource.nanoTime()\l}"];
+subgraph cluster_Region_654336715 {
+label = "R(2:(2:3|4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1268968068 {
+label = "IF [B:11:0x0008] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|if ((r4 instanceof kotlinx.coroutines.scheduling.Task) != false) goto L3\l}"];
+subgraph cluster_Region_467048979 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000a|((kotlinx.coroutines.scheduling.Task) r4).submissionTime = r0\l((kotlinx.coroutines.scheduling.Task) r4).taskContext = r5\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0017|RETURN\l|return (kotlinx.coroutines.scheduling.Task) r4\l}"];
+}
+}
+subgraph cluster_Region_1155176710 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001f|RETURN\l|return new kotlinx.coroutines.scheduling.TaskImpl(r4, r0, r5)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0018}"];
+MethodNode[shape=record,label="{public final kotlinx.coroutines.scheduling.Task kotlinx.coroutines.scheduling.CoroutineScheduler.createTask((r3v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler A[IMMUTABLE_TYPE, THIS]), (r4v0 'block' java.lang.Runnable A[D('block' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'taskContext' kotlinx.coroutines.scheduling.TaskContext A[D('taskContext' kotlinx.coroutines.scheduling.TaskContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x001f \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_14 -> Node_15;
+}
+

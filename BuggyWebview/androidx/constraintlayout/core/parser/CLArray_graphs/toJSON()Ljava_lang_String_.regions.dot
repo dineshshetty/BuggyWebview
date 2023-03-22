@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.constraintlayout.core.parser.CLArray.toJSON()Ljava\/lang\/String;" {
+subgraph cluster_Region_1417372613 {
+label = "R(4:1|(2:(1:5)(1:8)|7)|11|12)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder(getDebugName() + \"[\")\lboolean r1 = true\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_19815844 {
+label = "LOOP:0: (2:(1:5)(1:8)|7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0022|if (r2 \< r4.mElements.size()) goto L4\l}"];
+subgraph cluster_Region_815856824 {
+label = "R(2:(1:5)(1:8)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1027690212 {
+label = "IF [B:19:0x0024] THEN: R(1:5) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0024|if (r1 == false) goto L5\l}"];
+subgraph cluster_Region_1764409135 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0026|r0.append(\", \")\l}"];
+}
+subgraph cluster_Region_841705007 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x002c|r1 = false\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x002d|LOOP_END\lLOOP:0: B:17:0x001c\-\>B:22:0x002d\lPHI: r1 \l  PHI: (r1v5 'first' boolean) = (r1v4 'first' boolean), (r1v3 'first' boolean) binds: [B:26:0x002d, B:27:0x002d] A[DONT_GENERATE, DONT_INLINE]\l|r0.append(r4.mElements.get(r2).toJSON())\lr2++\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x003f}"];
+Node_24 [shape=record,label="{24\:\ 0x0050|RETURN\l|return ((java.lang.Object) r0) + \"]\"\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001c|LOOP_START\lLOOP:0: B:17:0x001c\-\>B:22:0x002d\lPHI: r1 r2 \l  PHI: (r1v3 'first' boolean) = (r1v2 'first' boolean), (r1v5 'first' boolean) binds: [B:16:0x0000, B:22:0x002d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v3 'i' int) = (r2v2 'i' int), (r2v6 'i' int) binds: [B:16:0x0000, B:22:0x002d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002d|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002d|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x003f|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.constraintlayout.core.parser.CLArray.toJSON((r4v0 'this' androidx.constraintlayout.core.parser.CLArray A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x002d \-\> B:17:0x001c, CROSS_EDGE: B:21:0x002c \-\> B:22:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.constraintlayout.core.parser.CLElement.toJSON():java.lang.String]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_27;
+Node_21 -> Node_26;
+Node_22 -> Node_17;
+Node_23 -> Node_24;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_27 -> Node_22;
+Node_26 -> Node_22;
+Node_25 -> Node_23;
+}
+

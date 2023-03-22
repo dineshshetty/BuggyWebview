@@ -1,0 +1,89 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.minWithOrThrow([DLjava\/util\/Comparator;)D" {
+subgraph cluster_Region_1091286061 {
+label = "R(2:1|(2:(1:19)|(3:5|(2:8|(1:11)(0))|16)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"comparator\")\l}"];
+subgraph cluster_Region_2128347009 {
+label = "R(2:(1:19)|(3:5|(2:8|(1:11)(0))|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1030122958 {
+label = "IF [B:27:0x0012] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0012|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r8.length == 0) != false) goto L18\l}"];
+subgraph cluster_Region_182691909 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0045|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_1057992313 {
+label = "R(3:5|(2:8|(1:11)(0))|16)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0014|double r2 = r8[0]\lkotlin.collections.IntIterator ?? r0 = new kotlin.ranges.IntRange(1, kotlin.collections.ArraysKt.getLastIndex(r8)).iterator()\l}"];
+subgraph cluster_LoopRegion_141638897 {
+label = "LOOP:0: (2:8|(1:11)(0))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0027|if (r0.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_1246701536 {
+label = "R(2:8|(1:11)(0))";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0029|int int r1 = r0.nextInt()\ldouble r4 = r8[r1]\l}"];
+subgraph cluster_IfRegion_1502879345 {
+label = "IF [B:32:0x003b] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x003b|if (r9.compare(java.lang.Double.valueOf(r2), java.lang.Double.valueOf(r4)) \> 0) goto L10\l}"];
+subgraph cluster_Region_1085658470 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x003d|r2 = r4\l}"];
+}
+subgraph cluster_Region_383115240 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x003f|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000d}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000f}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0023|LOOP_START\lLOOP:0: B:29:0x0023\-\>B:39:0x0023\lPHI: r2 \l  PHI: (r2v2 'min' double) = (r2v1 'min' double), (r2v3 'min' double) binds: [B:28:0x0014, B:39:0x0023] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x003d|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0023|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0023|LOOP_END\lSYNTHETIC\lLOOP:0: B:29:0x0023\-\>B:39:0x0023\lPHI: r2 \l  PHI: (r2v3 'min' double) = (r2v2 'min' double), (r2v4 'min' double) binds: [B:40:0x0023, B:41:0x0023] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0023|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x003f|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0040}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0011}"];
+MethodNode[shape=record,label="{public static final double kotlin.collections.ArraysKt___ArraysKt.minWithOrThrow((r8v0 '$this$minWith' double[] A[D('$this$minWith' double[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'comparator' java.util.Comparator\<? super java.lang.Double\> A[D('comparator' java.util.Comparator), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:32:0x003b \-\> B:29:0x0023, BACK_EDGE: B:33:0x003d \-\> B:29:0x0023, CROSS_EDGE: B:36:0x0045 \-\> B:22:?, CROSS_EDGE: B:26:0x0011 \-\> B:27:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r0v7, types: [kotlin.collections.IntIterator]\}\lSIGNATURE: ([DLjava\/util\/Comparator\<\-Ljava\/lang\/Double;\>;)D\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_35;
+Node_36 -> Node_22;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_37[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_38;
+Node_32 -> Node_40[style=dashed];
+Node_33 -> Node_41;
+Node_34 -> Node_22;
+Node_21 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_26;
+Node_25 -> Node_27;
+Node_29 -> Node_30;
+Node_38 -> Node_33;
+Node_41 -> Node_39;
+Node_39 -> Node_29;
+Node_40 -> Node_39;
+Node_37 -> Node_34;
+Node_35 -> Node_36;
+Node_26 -> Node_27;
+}
+

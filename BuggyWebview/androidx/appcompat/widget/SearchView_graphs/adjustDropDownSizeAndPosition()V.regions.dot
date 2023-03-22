@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.appcompat.widget.SearchView.adjustDropDownSizeAndPosition()V" {
+subgraph cluster_Region_654635206 {
+label = "R(1:(1:(5:3|(1:5)(1:13)|6|(1:8)(1:12)|9))) | DECL_VAR: int iconOffset, int offset\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1130349611 {
+label = "R(1:(5:3|(1:5)(1:13)|6|(1:8)(1:12)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_282220261 {
+label = "IF [B:18:0x0007] THEN: R(5:3|(1:5)(1:13)|6|(1:8)(1:12)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0007|if (r8.mDropDownAnchor.getWidth() \> 1) goto L3\l}"];
+subgraph cluster_Region_1655998302 {
+label = "R(5:3|(1:5)(1:13)|6|(1:8)(1:12)|9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0009|android.content.res.Resources android.content.res.Resources r0 = getContext().getResources()\lint int r1 = r8.mSearchPlate.getPaddingLeft()\landroid.graphics.Rect android.graphics.Rect r2 = new android.graphics.Rect()\lboolean boolean r3 = androidx.appcompat.widget.ViewUtils.isLayoutRtl(r8)\l}"];
+subgraph cluster_IfRegion_1934883811 {
+label = "IF [B:20:0x0022] THEN: R(1:5) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0022|if (r8.mIconifiedByDefault != false) goto L5\l}"];
+subgraph cluster_Region_1690333041 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|int r4 = r0.getDimensionPixelSize(androidx.appcompat.C0019R.dimen.abc_dropdownitem_icon_width) + r0.getDimensionPixelSize(androidx.appcompat.C0019R.dimen.abc_dropdownitem_text_padding_left)\l}"];
+}
+subgraph cluster_Region_1342706466 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0032|r4 = 0\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0033|PHI: r4 \l  PHI: (r4v2 'iconOffset' int) = (r4v1 'iconOffset' int), (r4v5 'iconOffset' int) binds: [B:22:0x0032, B:21:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|r8.mSearchSrcTextView.getDropDownBackground().getPadding(r2)\l}"];
+subgraph cluster_IfRegion_928270686 {
+label = "IF [B:24:0x003d] THEN: R(1:8) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x003d|if (r3 != false) goto L8\l}"];
+subgraph cluster_Region_1906097732 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x003f|int r5 = \-r2.left\l}"];
+}
+subgraph cluster_Region_771727082 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0043|int int r5 = r2.left\lint r5 = r1 \- (r5 + r4)\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0048|PHI: r5 \l  PHI: (r5v5 'offset' int) = (r5v4 'offset' int), (r5v7 'offset' int) binds: [B:26:0x0043, B:25:0x003f] A[DONT_GENERATE, DONT_INLINE]\l|r8.mSearchSrcTextView.setDropDownHorizontalOffset(r5)\lint int r6 = (((r8.mDropDownAnchor.getWidth() + r2.left) + r2.right) + r4) \- r1\lr8.mSearchSrcTextView.setDropDownWidth(r6)\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0060|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.widget.SearchView.adjustDropDownSizeAndPosition((r8v0 'this' androidx.appcompat.widget.SearchView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0043 \-\> B:27:0x0048, CROSS_EDGE: B:22:0x0032 \-\> B:23:0x0033, CROSS_EDGE: B:18:0x0007 \-\> B:28:0x0060\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_29[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_27;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_28 -> Node_16;
+Node_29 -> Node_16;
+}
+

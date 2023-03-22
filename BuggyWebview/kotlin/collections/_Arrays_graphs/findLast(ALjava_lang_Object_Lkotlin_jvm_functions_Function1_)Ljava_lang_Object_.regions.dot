@@ -1,0 +1,66 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.findLast([Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_761326082 {
+label = "R(2:1|(2:(2:(2:3|(1:8))|10)|(1:10)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"predicate\")\lint int r2 = r6.length \- 1\l}"];
+subgraph cluster_Region_1489340408 {
+label = "R(2:(2:(2:3|(1:8))|10)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1696633716 {
+label = "IF [B:16:0x000f] THEN: R(2:(2:3|(1:8))|10) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000f|if (r2 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1236456813 {
+label = "R(2:(2:3|(1:8))|10)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_635526440 {
+label = "LOOP:0: (2:3|(1:8))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0023|LOOP_END\lLOOP:0: B:17:0x0011\-\>B:20:0x0023\l|if (r2 \>= 0) goto L3\l}"];
+subgraph cluster_Region_376753239 {
+label = "R(2:3|(1:8))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0011|LOOP_START\lLOOP:0: B:17:0x0011\-\>B:20:0x0023\lPHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v3 int) binds: [B:16:0x000f, B:20:0x0023] A[DONT_GENERATE, DONT_INLINE]\l|int r3 = r2\lr2\-\-\lT r4 = r6[r3]\l}"];
+subgraph cluster_IfRegion_268145516 {
+label = "IF [B:18:0x0020] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0020|if (r7.invoke(r4).booleanValue() != false) goto L7\l}"];
+subgraph cluster_Region_1071509680 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return r4\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0025|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1392571027 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0025|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0025|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0026|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final T kotlin.collections.ArraysKt___ArraysKt.findLast((r6v0 T[] A[D('$this$findLast' java.lang.Object[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'predicate' kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0023 \-\> B:17:0x0011, CROSS_EDGE: B:18:0x0020 \-\> B:22:0x0026, CROSS_EDGE: B:16:0x000f \-\> B:21:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>([TT;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Boolean;\>;)TT;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_20 -> Node_17;
+Node_20 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_20[style=dashed];
+Node_18 -> Node_23;
+Node_25 -> Node_14;
+Node_21 -> Node_14;
+Node_21 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_21;
+Node_23 -> Node_25;
+}
+

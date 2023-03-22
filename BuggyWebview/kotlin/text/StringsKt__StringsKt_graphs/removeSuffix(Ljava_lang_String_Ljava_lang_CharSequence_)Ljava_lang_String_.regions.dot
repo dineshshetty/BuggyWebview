@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.removeSuffix(Ljava\/lang\/String;Ljava\/lang\/CharSequence;)Ljava\/lang\/String;" {
+subgraph cluster_Region_707712555 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"suffix\")\l}"];
+subgraph cluster_Region_493491812 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1488915282 {
+label = "IF [B:17:0x0014] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|if (kotlin.text.StringsKt.endsWith$default((java.lang.CharSequence) r4, r5, false, 2, (java.lang.Object) null) != false) goto L3\l}"];
+subgraph cluster_Region_1075820833 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0016|java.lang.String java.lang.String r0 = r4.substring(0, r4.length() \- r5.length())\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"this as java.lang.String…ing(startIndex, endIndex)\")\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0028|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1254772155 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0029|RETURN\l|return r4\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.text.StringsKt__StringsKt.removeSuffix((r4v0 '$this$removeSuffix' java.lang.String A[D('$this$removeSuffix' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'suffix' java.lang.CharSequence A[D('suffix' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0029 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_15;
+Node_20 -> Node_15;
+Node_14 -> Node_16;
+}
+

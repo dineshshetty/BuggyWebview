@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.transition.PatternPathMotion.setPatternPath(Landroid\/graphics\/Path;)V" {
+subgraph cluster_Region_392224717 {
+label = "R(2:1|(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|android.graphics.PathMeasure android.graphics.PathMeasure r2 = new android.graphics.PathMeasure(r19, false)\lfloat float r4 = r2.getLength()\lfloat[] float[] r5 = new float[2]\lr2.getPosTan(r4, r5, null)\lfloat r7 = r5[0]\lfloat r9 = r5[1]\lr2.getPosTan(0.0f, r5, null)\lfloat r3 = r5[0]\lfloat r6 = r5[1]\l}"];
+subgraph cluster_Region_2019398294 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_833112836 {
+label = "IF [B:14:0x0024, B:16:0x0028] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0024|if (r3 == r7) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0028|ADDED_TO_REGION\l|if (r6 == r9) goto L5\l}"];
+subgraph cluster_Region_913861182 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0032|throw new java.lang.IllegalArgumentException(\"pattern must not end at the starting point\")\l}"];
+}
+}
+subgraph cluster_Region_2012128280 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0033|r18.mTempMatrix.setTranslate(\-r3, \-r6)\lfloat float r8 = r7 \- r3\lfloat float r10 = r9 \- r6\lfloat float r11 = distance(r8, r10)\lfloat float r12 = 1.0f \/ r11\lr18.mTempMatrix.postScale(r12, r12)\ldouble double r2 = java.lang.Math.atan2(r10, r8)\lr18.mTempMatrix.postRotate((float) java.lang.Math.toDegrees(\-r2))\lr19.transform(r18.mTempMatrix, r18.mPatternPath)\lr18.mOriginalPatternPath = r19\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0026}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x002b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x006a}"];
+MethodNode[shape=record,label="{public void androidx.transition.PatternPathMotion.setPatternPath((r18v0 'this' androidx.transition.PatternPathMotion A[IMMUTABLE_TYPE, THIS]), (r19v0 'patternPath' android.graphics.Path A[D('patternPath' android.graphics.Path), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x006a \-\> B:12:?, CROSS_EDGE: B:14:0x0024 \-\> B:20:0x0033\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_16 -> Node_18;
+Node_16 -> Node_20[style=dashed];
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+Node_21 -> Node_12;
+}
+

@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.setScrollState(I)V" {
+subgraph cluster_Region_157837332 {
+label = "R(1:(2:(1:3)|(3:5|(1:9)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_474207009 {
+label = "R(2:(1:3)|(3:5|(1:9)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1276970851 {
+label = "IF [B:16:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if (r1.mScrollState == r2) goto L3\l}"];
+subgraph cluster_Region_1030175575 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1996868647 {
+label = "R(3:5|(1:9)|11)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|r1.mScrollState = r2\l}"];
+subgraph cluster_IfRegion_1977471805 {
+label = "IF [B:19:0x0009] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0009|if (r1.mPageTransformer != null) goto L7\l}"];
+subgraph cluster_Region_1373631738 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0010|PHI: r0 \l  PHI: (r0v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|enableLayers(r2 != 0)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0013|dispatchOnScrollStateChanged(r2)\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000b}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000d}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000f}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0016}"];
+MethodNode[shape=record,label="{void androidx.viewpager.widget.ViewPager.setScrollState((r1v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]), (r2v0 'newState' int A[D('newState' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0016 \-\> B:14:?, CROSS_EDGE: B:22:0x000f \-\> B:23:0x0010, CROSS_EDGE: B:19:0x0009 \-\> B:24:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_14;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+Node_20 -> Node_22;
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+Node_25 -> Node_14;
+}
+

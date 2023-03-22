@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.material.button.MaterialButtonHelper.setVerticalInsets(II)V" {
+subgraph cluster_Region_1531429652 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = androidx.core.view.ViewCompat.getPaddingStart(r9.materialButton)\lint int r1 = r9.materialButton.getPaddingTop()\lint int r2 = androidx.core.view.ViewCompat.getPaddingEnd(r9.materialButton)\lint int r3 = r9.materialButton.getPaddingBottom()\lint int r4 = r9.insetTop\lint int r5 = r9.insetBottom\lr9.insetBottom = r11\lr9.insetTop = r10\l}"];
+subgraph cluster_IfRegion_976566911 {
+label = "IF [B:3:0x0022] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0022|if (r9.backgroundOverwritten == false) goto L3\l}"];
+subgraph cluster_Region_202986281 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0024|updateBackground()\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0027|androidx.core.view.ViewCompat.setPaddingRelative(r9.materialButton, r0, (r1 + r10) \- r4, r2, (r3 + r11) \- r5)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0032}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.button.MaterialButtonHelper.setVerticalInsets((r9v0 'this' com.google.android.material.button.MaterialButtonHelper A[IMMUTABLE_TYPE, THIS]), (r10v0 'newInsetTop' int A[D('newInsetTop' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'newInsetBottom' int A[D('newInsetBottom' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0022 \-\> B:5:0x0027\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_6 -> Node_1;
+}
+

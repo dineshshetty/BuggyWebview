@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.time.DurationKt.toDuration(ILkotlin\/time\/DurationUnit;)J" {
+subgraph cluster_Region_861385829 {
+label = "R(2:1|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"unit\")\l}"];
+subgraph cluster_Region_1173044569 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1362476113 {
+label = "IF [B:19:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000d|if (r4.compareTo(kotlin.time.DurationUnitJvm.SECONDS) \<= 0) goto L3\l}"];
+subgraph cluster_Region_603085784 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return durationOfNanos(kotlin.time.DurationUnitKt.convertDurationUnitOverflow(r3, r4, kotlin.time.DurationUnitJvm.NANOSECONDS))\l}"];
+}
+}
+subgraph cluster_Region_755509087 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0020|RETURN\lORIG_RETURN\l|return toDuration(r3, r4)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000f}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001b}"];
+MethodNode[shape=record,label="{public static final long kotlin.time.DurationKt.toDuration((r3v0 '$this$toDuration' int A[D('$this$toDuration' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'unit' kotlin.time.DurationUnit A[D('unit' kotlin.time.DurationUnit), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001b \-\> B:22:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_17;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_23;
+Node_21 -> Node_22;
+}
+

@@ -1,0 +1,96 @@
+digraph "CFG forcom.google.android.material.floatingactionbutton.FloatingActionButton.getSizeDimension(I)I" {
+subgraph cluster_Region_1484382456 {
+label = "R(2:1|(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|int int r0 = r5.customSize\l}"];
+subgraph cluster_Region_1970403206 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1047603548 {
+label = "IF [B:20:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0002|if (r0 != 0) goto L3\l}"];
+subgraph cluster_Region_1035681588 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0004|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1147469786 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0005|android.content.res.Resources android.content.res.Resources r0 = getResources()\l}"];
+subgraph cluster_SwitchRegion_919830568 {
+label = "Switch: 3
+ case -1 -> R(2:11|(2:(1:14)|(1:16)))
+ case 0, default -> R(1:8)
+ case 1 -> R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0009|switch(r6) \{\l    case \-1: goto L11;\l    case 0: goto L7;\l    case 1: goto L9;\l    default: goto L7;\l\}\l}"];
+subgraph cluster_Region_1393404302 {
+label = "R(2:11|(2:(1:14)|(1:16)))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001a|int int r1 = r0.getConfiguration().screenWidthDp\lint int r2 = r0.getConfiguration().screenHeightDp\l}"];
+subgraph cluster_Region_212903029 {
+label = "R(2:(1:14)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1675503024 {
+label = "IF [B:29:0x002c] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002c|if (java.lang.Math.max(r1, r2) \< com.google.android.material.floatingactionbutton.FloatingActionButton.AUTO_MINI_LARGEST_SCREEN_WIDTH) goto L13\l}"];
+subgraph cluster_Region_1912356788 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return getSizeDimension(1)\l}"];
+}
+}
+subgraph cluster_Region_197864394 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0039|RETURN\lORIG_RETURN\l|return getSizeDimension(0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1686196602 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0012|RETURN\l|return r0.getDimensionPixelSize(com.google.android.material.C0571R.dimen.design_fab_size_normal)\l}"];
+}
+subgraph cluster_Region_2592833 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0019|RETURN\l|return r0.getDimensionPixelSize(com.google.android.material.C0571R.dimen.design_fab_size_mini)\l}"];
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000c}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0013}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002e}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0034}"];
+MethodNode[shape=record,label="{private int com.google.android.material.floatingactionbutton.FloatingActionButton.getSizeDimension((r5v0 'this' com.google.android.material.floatingactionbutton.FloatingActionButton A[IMMUTABLE_TYPE, THIS]), (r6v0 'size' int A[D('size' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0012 \-\> B:18:?, CROSS_EDGE: B:27:0x0019 \-\> B:18:?, CROSS_EDGE: B:32:0x0039 \-\> B:18:?, CROSS_EDGE: B:31:0x0034 \-\> B:32:0x0039\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_18;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_26;
+Node_23 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_33 -> Node_18;
+Node_32 -> Node_18;
+Node_25 -> Node_18;
+Node_27 -> Node_18;
+Node_17 -> Node_19;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_30 -> Node_33;
+Node_31 -> Node_32;
+}
+

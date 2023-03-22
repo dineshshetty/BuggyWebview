@@ -1,0 +1,63 @@
+digraph "CFG forkotlinx.coroutines.DispatchedCoroutine.getResult()Ljava\/lang\/Object;" {
+subgraph cluster_Region_335017541 {
+label = "R(1:(2:(1:4)|(2:6|(2:(1:10)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_759268172 {
+label = "R(2:(1:4)|(2:6|(2:(1:10)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1504563806 {
+label = "IF [B:14:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (trySuspend() == true) goto L3\l}"];
+subgraph cluster_Region_1566068748 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|RETURN\l|return kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+}
+}
+subgraph cluster_Region_472093198 {
+label = "R(2:6|(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|java.lang.Object java.lang.Object r0 = kotlinx.coroutines.JobSupportKt.unboxState(getState$kotlinx_coroutines_core())\l}"];
+subgraph cluster_Region_1899085884 {
+label = "R(2:(1:10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1745017203 {
+label = "IF [B:18:0x0015] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|if ((r0 instanceof kotlinx.coroutines.CompletedExceptionally) != false) goto L9\l}"];
+subgraph cluster_Region_599180432 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001d|throw ((kotlinx.coroutines.CompletedExceptionally) r0).cause\l}"];
+}
+}
+subgraph cluster_Region_1468375305 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0018}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.DispatchedCoroutine.getResult((r2v0 'this' kotlinx.coroutines.DispatchedCoroutine\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0017 \-\> B:12:?, CROSS_EDGE: B:21:0x001d \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_16 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.dispatchOnAttachFragment(Landroidx\/fragment\/app\/Fragment;)V" {
+subgraph cluster_Region_594600007 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.util.Iterator java.util.Iterator\<androidx.fragment.app.FragmentOnAttachListener\> r0 = r2.mOnAttachListeners.iterator()\l}"];
+subgraph cluster_LoopRegion_1293706800 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000a|if (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1785272371 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000c|LOOP_END\lLOOP:0: B:11:0x0006\-\>B:13:0x000c\l|androidx.fragment.app.FragmentOnAttachListener androidx.fragment.app.FragmentOnAttachListener r1 = r0.next()\lr1.onAttachFragment(r2, r3)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0006|LOOP_START\lLOOP:0: B:11:0x0006\-\>B:13:0x000c\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0016|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0016}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentManager.dispatchOnAttachFragment((r2v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'fragment' androidx.fragment.app.Fragment A[D('fragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x000c \-\> B:11:0x0006\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

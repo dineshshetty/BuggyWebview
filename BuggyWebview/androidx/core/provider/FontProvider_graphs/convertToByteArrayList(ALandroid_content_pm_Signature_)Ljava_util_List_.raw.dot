@@ -1,0 +1,18 @@
+digraph "CFG forandroidx.core.provider.FontProvider.convertToByteArrayList([Landroid\/content\/pm\/Signature;)Ljava\/util\/List;" {
+Node_7 [shape=record,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0000|0x0000: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList  (LINE:223)\l0x0002: INVOKE  (r0 I:java.util.ArrayList) type: DIRECT call: java.util.ArrayList.\<init\>():void A[MD:():void (c)]\l0x0005: ARRAY_LENGTH  (r1 I:int) = (r5 I:??[] A[D('signatures' android.content.pm.Signature[])])  (LINE:224)\l0x0006: CONST  (r2 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0007|LOOP_START\lLOOP:0: B:10:0x0007\-\>B:11:0x0009\l|0x0007: IF  (r2 I:??[int, byte, short, char]) \>= (r1 I:??[int, byte, short, char])  \-\> B:13:0x0015 \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0009|LOOP_END\lLOOP:0: B:10:0x0007\-\>B:11:0x0009\l|0x0009: AGET  (r3 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY][] A[D('signatures' android.content.pm.Signature[])]), (r2 I:??[int, short, byte, char]) \l0x000b: INVOKE  (r4 I:byte[]) = (r3 I:android.content.pm.Signature A[D('signature' android.content.pm.Signature)]) type: VIRTUAL call: android.content.pm.Signature.toByteArray():byte[] A[MD:():byte[] (c)] (LINE:225)\l0x000f: INVOKE  (r0 I:java.util.List A[D('shaList' java.util.List\<byte[]\>)]), (r4 I:java.lang.Object) type: INTERFACE call: java.util.List.add(java.lang.Object):boolean A[MD:(E):boolean (c)]\l0x0012: ARITH  (r2 I:int) = (r2 I:int) + (1 int)  (LINE:224)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0015|SYNTHETIC\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0015|RETURN\l|0x0015: RETURN  (r0 I:java.util.List\<byte[]\> A[D('shaList' java.util.List\<byte[]\>)])  (LINE:227)\l}"];
+Node_8 [shape=record,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<byte[]\> androidx.core.provider.FontProvider.convertToByteArrayList((r5 I:android.content.pm.Signature[] A[D('signatures' android.content.pm.Signature[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0009 \-\> B:10:0x0007\lINLINE_NOT_NEEDED\lDebug Info:\l  0x000b\-0x0012: r3 'signature' Landroid\/content\/pm\/Signature;\l  0x0005\-0x0015: r0 'shaList' Ljava\/util\/List;, signature: Ljava\/util\/List\<[B\>;\l  \-1 \-0x0015: r5 'signatures' [Landroid\/content\/pm\/Signature;\lSIGNATURE: ([Landroid\/content\/pm\/Signature;)Ljava\/util\/List\<[B\>;\l}"];
+MethodNode -> Node_7;Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_13;
+Node_11 -> Node_10;
+Node_13 -> Node_12;
+Node_12 -> Node_8;
+}
+

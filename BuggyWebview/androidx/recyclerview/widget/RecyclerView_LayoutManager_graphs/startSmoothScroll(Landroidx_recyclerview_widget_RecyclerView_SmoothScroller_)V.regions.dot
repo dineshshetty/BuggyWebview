@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.LayoutManager.startSmoothScroll(Landroidx\/recyclerview\/widget\/RecyclerView$SmoothScroller;)V" {
+subgraph cluster_Region_1089548861 {
+label = "R(3:1|(1:6)|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|androidx.recyclerview.widget.RecyclerView$SmoothScroller androidx.recyclerview.widget.RecyclerView.SmoothScroller r0 = r1.mSmoothScroller\l}"];
+subgraph cluster_IfRegion_1775381620 {
+label = "IF [B:13:0x0002, B:14:0x0004, B:16:0x000a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r0 != null) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0004|ADDED_TO_REGION\l|if (r2 != r0) goto L4\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000a|ADDED_TO_REGION\l|if (r0.isRunning() != false) goto L6\l}"];
+subgraph cluster_Region_1031874712 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|r1.mSmoothScroller.stop()\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0011|r1.mSmoothScroller = r2\lr2.start(r1.mRecyclerView, r1)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0018}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.RecyclerView.LayoutManager.startSmoothScroll((r1v0 'this' androidx.recyclerview.widget.RecyclerView$LayoutManager A[IMMUTABLE_TYPE, THIS]), (r2v0 'smoothScroller' androidx.recyclerview.widget.RecyclerView$SmoothScroller A[D('smoothScroller' androidx.recyclerview.widget.RecyclerView$SmoothScroller), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000a \-\> B:18:0x0011, CROSS_EDGE: B:14:0x0004 \-\> B:18:0x0011, CROSS_EDGE: B:13:0x0002 \-\> B:18:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_15 -> Node_16;
+Node_19 -> Node_11;
+}
+

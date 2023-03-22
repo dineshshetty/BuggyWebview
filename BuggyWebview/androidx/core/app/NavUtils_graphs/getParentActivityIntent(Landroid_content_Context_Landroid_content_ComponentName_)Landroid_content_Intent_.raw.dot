@@ -1,0 +1,27 @@
+digraph "CFG forandroidx.core.app.NavUtils.getParentActivityIntent(Landroid\/content\/Context;Landroid\/content\/ComponentName;)Landroid\/content\/Intent;" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000|0x0000: INVOKE  (r0 I:java.lang.String) = \l  (r4 I:android.content.Context A[D('context' android.content.Context)])\l  (r5 I:android.content.ComponentName A[D('componentName' android.content.ComponentName)])\l type: STATIC call: androidx.core.app.NavUtils.getParentActivityName(android.content.Context, android.content.ComponentName):java.lang.String A[MD:(android.content.Context, android.content.ComponentName):java.lang.String throws android.content.pm.PackageManager$NameNotFoundException (m)] (LINE:197)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0004|0x0004: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('parentActivity' java.lang.String)]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:19:0x0008  (LINE:198)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0006|RETURN\l|0x0006: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x0007: RETURN  (r1 I:android.content.Intent) \l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0008|0x0008: NEW_INSTANCE  (r1 I:android.content.ComponentName) =  android.content.ComponentName  (LINE:201)\l0x000a: INVOKE  (r2 I:java.lang.String) = (r5 I:android.content.ComponentName A[D('componentName' android.content.ComponentName)]) type: VIRTUAL call: android.content.ComponentName.getPackageName():java.lang.String A[MD:():java.lang.String (c)] (LINE:202)\l0x000e: INVOKE  \l  (r1 I:android.content.ComponentName)\l  (r2 I:java.lang.String)\l  (r0 I:java.lang.String A[D('parentActivity' java.lang.String)])\l type: DIRECT call: android.content.ComponentName.\<init\>(java.lang.String, java.lang.String):void A[MD:(java.lang.String, java.lang.String):void (c)]\l0x0011: INVOKE  (r2 I:java.lang.String) = \l  (r4 I:android.content.Context A[D('context' android.content.Context)])\l  (r1 I:android.content.ComponentName A[D('target' android.content.ComponentName)])\l type: STATIC call: androidx.core.app.NavUtils.getParentActivityName(android.content.Context, android.content.ComponentName):java.lang.String A[MD:(android.content.Context, android.content.ComponentName):java.lang.String throws android.content.pm.PackageManager$NameNotFoundException (m)] (LINE:203)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0015|0x0015: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('grandparent' java.lang.String)]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:22:0x001c  (LINE:204)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0017|0x0017: INVOKE  (r3 I:android.content.Intent) = (r1 I:android.content.ComponentName A[D('target' android.content.ComponentName)]) type: STATIC call: android.content.Intent.makeMainActivity(android.content.ComponentName):android.content.Intent A[MD:(android.content.ComponentName):android.content.Intent (c)] (LINE:205)\l}"];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|0x0026: RETURN  (r3 I:android.content.Intent A[D('parentIntent' android.content.Intent)]) A[SYNTHETIC] (LINE:207)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001c|0x001c: NEW_INSTANCE  (r3 I:android.content.Intent) =  android.content.Intent  (LINE:206)\l0x001e: INVOKE  (r3 I:android.content.Intent) type: DIRECT call: android.content.Intent.\<init\>():void A[MD:():void (c)]\l0x0021: INVOKE  (r3 I:android.content.Intent) = (r3 I:android.content.Intent), (r1 I:android.content.ComponentName A[D('target' android.content.ComponentName)]) type: VIRTUAL call: android.content.Intent.setComponent(android.content.ComponentName):android.content.Intent A[MD:(android.content.ComponentName):android.content.Intent (c)]\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0026|RETURN\lORIG_RETURN\l|0x0026: RETURN  (r3 I:android.content.Intent A[D('parentIntent' android.content.Intent)])  (LINE:207)\l}"];
+MethodNode[shape=record,label="{public static android.content.Intent androidx.core.app.NavUtils.getParentActivityIntent((r4 I:android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:android.content.ComponentName A[D('componentName' android.content.ComponentName), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0026 \-\> B:14:?, CROSS_EDGE: B:22:0x001c \-\> B:24:0x0026\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0004\-0x0026: r0 'parentActivity' Ljava\/lang\/String;\l  0x0011\-0x0026: r1 'target' Landroid\/content\/ComponentName;\l  0x0015\-0x0026: r2 'grandparent' Ljava\/lang\/String;\l  0x0026\-0x0026: r3 'parentIntent' Landroid\/content\/Intent;\l  \-1 \-0x0026: r4 'context' Landroid\/content\/Context;\l  \-1 \-0x0026: r5 'componentName' Landroid\/content\/ComponentName;\lEXCEPTIONS:[Landroid\/content\/pm\/PackageManager$NameNotFoundException;]\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_19;
+Node_17 -> Node_14;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_21 -> Node_25;
+Node_25 -> Node_14;
+Node_22 -> Node_24;
+Node_24 -> Node_14;
+}
+

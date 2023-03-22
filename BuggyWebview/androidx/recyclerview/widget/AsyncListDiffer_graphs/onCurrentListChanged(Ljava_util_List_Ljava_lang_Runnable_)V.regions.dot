@@ -1,0 +1,51 @@
+digraph "CFG forandroidx.recyclerview.widget.AsyncListDiffer.onCurrentListChanged(Ljava\/util\/List;Ljava\/lang\/Runnable;)V" {
+subgraph cluster_Region_1985286302 {
+label = "R(3:1|(1:4)|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.util.Iterator r0 = r3.mListeners.iterator()\l\l}"];
+subgraph cluster_LoopRegion_548140611 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000a|androidx.recyclerview.widget.AsyncListDiffer$ListListener \lif (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_418264763 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000c|LOOP_END\lLOOP:0: B:14:0x0006\-\>B:16:0x000c\l|androidx.recyclerview.widget.AsyncListDiffer$ListListener r1 = r0.next()\lr1.onCurrentListChanged(r4, r3.mReadOnlyList)\l}"];
+}
+}
+subgraph cluster_Region_1023704793 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1661683719 {
+label = "IF [B:17:0x0018] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|if (r5 != null) goto L7\l}"];
+subgraph cluster_Region_485336011 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001a|r5.run()\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006|LOOP_START\lLOOP:0: B:14:0x0006\-\>B:16:0x000c\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0018|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001d|ORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.AsyncListDiffer.onCurrentListChanged((r3v0 'this' androidx.recyclerview.widget.AsyncListDiffer\<T\> A[D('this' androidx.recyclerview.widget.AsyncListDiffer\<T\>), IMMUTABLE_TYPE, THIS]), (r4v0 'previousList' java.util.List\<T\> A[D('previousList' java.util.List\<T\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'commitCallback' java.lang.Runnable A[D('commitCallback' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:16:0x000c \-\> B:14:0x0006, CROSS_EDGE: B:17:0x0018 \-\> B:19:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (Ljava\/util\/List\<TT;\>;Ljava\/lang\/Runnable;)V\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_20[style=dashed];
+Node_16 -> Node_14;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_20 -> Node_17;
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+}
+

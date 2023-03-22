@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.appcompat.widget.ActionMenuPresenter.hideOverflowMenu()Z" {
+subgraph cluster_Region_936082780 {
+label = "R(1:(2:(2:5|6)|(2:8|(2:(2:10|11)|(1:12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_555997447 {
+label = "R(2:(2:5|6)|(2:8|(2:(2:10|11)|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2068758753 {
+label = "IF [B:17:0x0003, B:19:0x0007] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0003|if (r3.mPostedOpenRunnable != null) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0007|ADDED_TO_REGION\l|if (r3.mMenuView != null) goto L5\l}"];
+subgraph cluster_Region_1160715131 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0009|((android.view.View) r3.mMenuView).removeCallbacks(r3.mPostedOpenRunnable)\lr3.mPostedOpenRunnable = null\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0015|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1966232737 {
+label = "R(2:8|(2:(2:10|11)|(1:12)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0016|androidx.appcompat.widget.ActionMenuPresenter$OverflowPopup androidx.appcompat.view.menu.MenuPopupHelper r0 = r3.mOverflowPopup\l}"];
+subgraph cluster_Region_694337311 {
+label = "R(2:(2:10|11)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_732531743 {
+label = "IF [B:23:0x0018] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0018|if (r0 != null) goto L10\l}"];
+subgraph cluster_Region_1832946904 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001a|r0.dismiss()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001d|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_381067477 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001e|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0005}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.widget.ActionMenuPresenter.hideOverflowMenu((r3v0 'this' androidx.appcompat.widget.ActionMenuPresenter A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x001d \-\> B:15:?, CROSS_EDGE: B:27:0x001f \-\> B:15:?, CROSS_EDGE: B:17:0x0003 \-\> B:22:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_22[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_15;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_26[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_26 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

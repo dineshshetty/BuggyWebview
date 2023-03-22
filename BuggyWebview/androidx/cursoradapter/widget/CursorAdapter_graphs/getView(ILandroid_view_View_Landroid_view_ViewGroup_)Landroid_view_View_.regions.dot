@@ -1,0 +1,84 @@
+digraph "CFG forandroidx.cursoradapter.widget.CursorAdapter.getView(ILandroid\/view\/View;Landroid\/view\/ViewGroup;)Landroid\/view\/View;" {
+subgraph cluster_Region_1238807865 {
+label = "R(1:(2:(1:14)|(1:(2:(2:11|12)|(3:(1:6)(1:10)|7|8))))) | DECL_VAR: android.view.View v\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1866662423 {
+label = "R(2:(1:14)|(1:(2:(2:11|12)|(3:(1:6)(1:10)|7|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_959689651 {
+label = "IF [B:18:0x0002] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|if (r3.mDataValid == false) goto L13\l}"];
+subgraph cluster_Region_86360032 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003e|throw new java.lang.IllegalStateException(\"this should only be called when the cursor is valid\")\l}"];
+}
+}
+subgraph cluster_Region_2040966400 {
+label = "R(1:(2:(2:11|12)|(3:(1:6)(1:10)|7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_243420057 {
+label = "R(2:(2:11|12)|(3:(1:6)(1:10)|7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_713609169 {
+label = "IF [B:20:0x000a] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000a|if (r3.mCursor.moveToPosition(r4) == false) goto L11\l}"];
+subgraph cluster_Region_49987551 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0020}"];
+Node_27 [shape=record,label="{27\:\ 0x0036|throw new java.lang.IllegalStateException(\"couldn't move cursor to position \" + r4)\l}"];
+}
+}
+subgraph cluster_Region_1316543533 {
+label = "R(3:(1:6)(1:10)|7|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1387956472 {
+label = "IF [B:21:0x000c] THEN: R(1:6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000c|if (r5 == null) goto L6\l}"];
+subgraph cluster_Region_318448056 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000e|android.view.View r0 = newView(r3.mContext, r3.mCursor, r6)\l}"];
+}
+subgraph cluster_Region_1800907484 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|r0 = r5\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0018|PHI: r0 \l  PHI: (r0v6 'v' android.view.View) = (r0v5 'v' android.view.View), (r0v8 'v' android.view.View) binds: [B:23:0x0017, B:22:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|bindView(r0, r3.mContext, r3.mCursor)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001f|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0004}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0037}"];
+MethodNode[shape=record,label="{public android.view.View androidx.cursoradapter.widget.CursorAdapter.getView((r3v0 'this' androidx.cursoradapter.widget.CursorAdapter A[IMMUTABLE_TYPE, THIS]), (r4v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'convertView' android.view.View A[D('convertView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'parent' android.view.ViewGroup A[D('parent' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:23:0x0017 \-\> B:24:0x0018, CROSS_EDGE: B:27:0x0036 \-\> B:16:?, CROSS_EDGE: B:29:0x003e \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.Adapter.getView(int, android.view.View, android.view.ViewGroup):android.view.View\}]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_28;
+Node_29 -> Node_16;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_16;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_28 -> Node_29;
+}
+

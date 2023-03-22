@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.reduceRightIndexedOrNull([ZLkotlin\/jvm\/functions\/Function3;)Ljava\/lang\/Boolean;" {
+subgraph cluster_Region_1056573791 {
+label = "R(2:1|(2:(1:3)|(3:5|(1:7)|10)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"operation\")\lint int r1 = kotlin.collections.ArraysKt.getLastIndex(r6)\l}"];
+subgraph cluster_Region_2013686984 {
+label = "R(2:(1:3)|(3:5|(1:7)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1204386351 {
+label = "IF [B:15:0x000f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000f|if (r1 \< 0) goto L3\l}"];
+subgraph cluster_Region_327970859 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0011|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1365283428 {
+label = "R(3:5|(1:7)|10)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|int int r2 = r1 \- 1\lboolean boolean r1 = r6[r1]\l}"];
+subgraph cluster_LoopRegion_425110036 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|LOOP_START\lLOOP:0: B:19:0x0017\-\>B:20:0x0019\lPHI: r1 r2 \l  PHI: (r1v2 'accumulator' boolean) = (r1v1 'accumulator' boolean), (r1v3 'accumulator' boolean) binds: [B:18:0x0013, B:20:0x0019] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'index' int) = (r2v0 'index' int), (r2v2 'index' int) binds: [B:18:0x0013, B:20:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= 0) goto L7\l}"];
+subgraph cluster_Region_1997072528 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0019|LOOP_END\lLOOP:0: B:19:0x0017\-\>B:20:0x0019\l|boolean r1 = r7.invoke(java.lang.Integer.valueOf(r2), java.lang.Boolean.valueOf(r6[r2]), java.lang.Boolean.valueOf(r1)).booleanValue()\lr2\-\-\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0038|RETURN\l|return java.lang.Boolean.valueOf(r1)\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0034|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0034}"];
+MethodNode[shape=record,label="{public static final java.lang.Boolean kotlin.collections.ArraysKt___ArraysKt.reduceRightIndexedOrNull((r6v0 '$this$reduceRightIndexedOrNull' boolean[] A[D('$this$reduceRightIndexedOrNull' boolean[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'operation' kotlin.jvm.functions.Function3\<? super java.lang.Integer, ? super java.lang.Boolean, ? super java.lang.Boolean, java.lang.Boolean\> A[D('operation' kotlin.jvm.functions.Function3), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0019 \-\> B:19:0x0017, CROSS_EDGE: B:22:0x0038 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([ZLkotlin\/jvm\/functions\/Function3\<\-Ljava\/lang\/Integer;\-Ljava\/lang\/Boolean;\-Ljava\/lang\/Boolean;Ljava\/lang\/Boolean;\>;)Ljava\/lang\/Boolean;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_20 -> Node_19;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_23 -> Node_21;
+Node_21 -> Node_22;
+}
+

@@ -1,0 +1,43 @@
+digraph "CFG forkotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1.invoke(ILkotlin\/coroutines\/CoroutineContext$Element;)Ljava\/lang\/Integer;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.coroutines.CoroutineContext$Key r0 = r9.getKey()\lkotlin.coroutines.CoroutineContext$Element r1 = r7.$this_checkContext.collectContext.get(r0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r0 == kotlinx.coroutines.Job.Key) goto L9\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r9 == r1) goto L8\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|r2 = Integer.MIN_VALUE\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|PHI: r2 \l  PHI: (r2v4 int) = (r2v3 int), (r2v6 int) binds: [B:6:0x0015, B:5:0x0012] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001b|RETURN\l|return java.lang.Integer.valueOf(r2)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|int r2 = r8 + 1\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001c|kotlinx.coroutines.Job r2 = (kotlinx.coroutines.Job) r1\lkotlinx.coroutines.Job r3 = kotlinx.coroutines.flow.internal.SafeCollector_commonKt.transitiveCoroutineParent((kotlinx.coroutines.Job) r9, r2)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0026|if (r3 != r2) goto L16\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0028|if (r2 != null) goto L15\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002a|r4 = r8\l}"];
+Node_14 [shape=record,label="{14\:\ 0x002e|PHI: r4 \l  PHI: (r4v2 int) = (r4v1 int), (r4v4 int) binds: [B:13:0x002c, B:12:0x002a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0032|RETURN\l|return java.lang.Integer.valueOf(r4)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x002c|int r4 = r8 + 1\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0033|java.lang.StringBuilder r5 = new java.lang.StringBuilder()\lr5.append(\"Flow invariant is violated:nttEmission from another coroutine is detected.nttChild of \")\lr5.append(r3)\lr5.append(\", expected child of \")\lr5.append(r2)\lr5.append(\".nttFlowCollector is not thread\-safe and concurrent emissions are prohibited.nttTo mitigate this restriction please use 'channelFlow' builder instead of 'flow'\")\l}"];
+Node_17 [shape=record,label="{17\:\ 0x005e|throw new java.lang.IllegalStateException(r5.toString().toString())\l}"];
+MethodNode[shape=record,label="{public final java.lang.Integer kotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1.invoke((r7v0 'this' kotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1 A[IMMUTABLE_TYPE, THIS]), (r8v0 'count' int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'element' kotlin.coroutines.CoroutineContext$Element A[D('element' kotlin.coroutines.CoroutineContext$Element), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | CROSS_EDGE: B:6:0x0015 \-\> B:7:0x0017, CROSS_EDGE: B:15:0x0032 \-\> B:1:?, CROSS_EDGE: B:13:0x002c \-\> B:14:0x002e, CROSS_EDGE: B:17:0x005e \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l DEBUG: \l \-\> Don't trust debug lines info. Repeating lines: [68=5]\}\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_16;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_1;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+Node_17 -> Node_1;
+}
+

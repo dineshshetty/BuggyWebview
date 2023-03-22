@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.fragment.app.FragmentTransitionCompat21.wrapTransitionInSet(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1232525890 {
+label = "R(1:(2:(1:2)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1222991013 {
+label = "R(2:(1:2)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_987659764 {
+label = "IF [B:9:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r3 == null) goto L2\l}"];
+subgraph cluster_Region_421112328 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_192026355 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|android.transition.TransitionSet android.transition.TransitionSet r0 = new android.transition.TransitionSet()\lr0.addTransition((android.transition.Transition) r3)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000f|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.Object androidx.fragment.app.FragmentTransitionCompat21.wrapTransitionInSet((r2v0 'this' androidx.fragment.app.FragmentTransitionCompat21 A[IMMUTABLE_TYPE, THIS]), (r3v0 'transition' java.lang.Object A[D('transition' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000f \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.fragment.app.FragmentTransitionImpl.wrapTransitionInSet(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_8;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

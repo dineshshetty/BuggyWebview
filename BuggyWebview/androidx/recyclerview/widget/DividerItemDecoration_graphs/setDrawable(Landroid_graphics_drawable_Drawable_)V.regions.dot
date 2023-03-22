@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.recyclerview.widget.DividerItemDecoration.setDrawable(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_1525674753 {
+label = "R(1:(2:(1:6)|(1:2)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2017088929 {
+label = "R(2:(1:6)|(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1319138061 {
+label = "IF [B:2:0x0000] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r3 == null) goto L5\l}"];
+subgraph cluster_Region_1835818846 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|throw new java.lang.IllegalArgumentException(\"Drawable cannot be null.\")\l}"];
+}
+}
+subgraph cluster_Region_1212079625 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|r2.mDivider = r3\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0005}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.DividerItemDecoration.setDrawable((r2v0 'this' androidx.recyclerview.widget.DividerItemDecoration A[IMMUTABLE_TYPE, THIS]), (r3v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x000c \-\> B:1:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_6 -> Node_1;
+Node_3 -> Node_4;
+Node_0 -> Node_2;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+}
+

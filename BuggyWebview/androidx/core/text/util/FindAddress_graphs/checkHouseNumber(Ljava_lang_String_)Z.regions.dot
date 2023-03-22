@@ -1,0 +1,190 @@
+digraph "CFG forandroidx.core.text.util.FindAddress.checkHouseNumber(Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_804879939 {
+label = "R(3:1|(2:(1:6)(0)|8)|(2:(1:13)|(2:15|(2:(2:17|(2:(1:19)|(2:20|21)))|(1:39)))))";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0000|int r0 = 0\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1176143475 {
+label = "LOOP:0: (2:(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ 0x0006|if (r1 \< r7.length()) goto L4\l}"];
+subgraph cluster_Region_586539925 {
+label = "R(2:(1:6)(0)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1746832746 {
+label = "IF [B:49:0x0010] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x0010|if (java.lang.Character.isDigit(r7.charAt(r1)) != false) goto L6\l}"];
+subgraph cluster_Region_1048480762 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x0012|r0++\l}"];
+}
+subgraph cluster_Region_443201032 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_51 [shape=record,label="{51\:\ 0x0014|LOOP_END\lLOOP:0: B:46:0x0002\-\>B:51:0x0014\lPHI: r0 \l  PHI: (r0v2 'digitCount' int) = (r0v1 'digitCount' int), (r0v3 'digitCount' int) binds: [B:85:0x0014, B:84:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|r1++\l}"];
+}
+}
+subgraph cluster_Region_1699763216 {
+label = "R(2:(1:13)|(2:15|(2:(2:17|(2:(1:19)|(2:20|21)))|(1:39))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_766372502 {
+label = "IF [B:53:0x0019] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x0019|if (r0 \> 5) goto L13\l}"];
+subgraph cluster_Region_1068312579 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_54 [shape=record,label="{54\:\ 0x001b|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_715465637 {
+label = "R(2:15|(2:(2:17|(2:(1:19)|(2:20|21)))|(1:39)))";
+node [shape=record,color=blue];
+Node_55 [shape=record,label="{55\:\ 0x001c|java.util.regex.Matcher java.util.regex.Matcher r1 = androidx.core.text.util.FindAddress.sSuffixedNumberRe.matcher(r7)\l}"];
+subgraph cluster_Region_130906521 {
+label = "R(2:(2:17|(2:(1:19)|(2:20|21)))|(1:39))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_941494684 {
+label = "IF [B:56:0x0027] THEN: R(2:17|(2:(1:19)|(2:20|21))) ELSE: null";
+node [shape=record,color=blue];
+Node_56 [shape=record,label="{56\:\ 0x0027|if (r1.find() == true) goto L17\l}"];
+subgraph cluster_Region_905618497 {
+label = "R(2:17|(2:(1:19)|(2:20|21)))";
+node [shape=record,color=blue];
+Node_57 [shape=record,label="{57\:\ 0x0029|int int r3 = java.lang.Integer.parseInt(r1.group(1))\l}"];
+subgraph cluster_Region_1213744542 {
+label = "R(2:(1:19)|(2:20|21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_715697349 {
+label = "IF [B:58:0x0031] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_58 [shape=record,label="{58\:\ 0x0031|if (r3 == 0) goto L19\l}"];
+subgraph cluster_Region_793737297 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_59 [shape=record,label="{59\:\ 0x0033|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_689117769 {
+label = "R(2:20|21)";
+node [shape=record,color=blue];
+Node_60 [shape=record,label="{60\:\ 0x0034|java.lang.String java.lang.String r2 = r1.group(2).toLowerCase(java.util.Locale.getDefault())\ljava.lang.String r5 = \"th\"\l}"];
+subgraph cluster_SwitchRegion_1651690237 {
+label = "Switch: 4
+ case 1 -> R(1:38)
+ case 2 -> R(1:33)
+ case 3 -> R(1:28)
+ case default -> R(1:23)";
+node [shape=record,color=blue];
+Node_61 [shape=record,label="{61\:\ 0x0045|switch((r3 % 10)) \{\l    case 1: goto L34;\l    case 2: goto L29;\l    case 3: goto L24;\l    default: goto L22;\l\}\l}"];
+subgraph cluster_Region_46838366 {
+label = "R(1:38)";
+node [shape=record,color=blue];
+Node_81 [shape=record,label="{81\:\ 0x0076|RETURN\l|return r2.equals(r3 % 100 != 11 ? \"st\" : \"th\")\l}"];
+}
+subgraph cluster_Region_867836188 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_75 [shape=record,label="{75\:\ 0x0068|RETURN\l|return r2.equals(r3 % 100 != 12 ? \"nd\" : \"th\")\l}"];
+}
+subgraph cluster_Region_1545305386 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_69 [shape=record,label="{69\:\ 0x005a|RETURN\l|return r2.equals(r3 % 100 != 13 ? \"rd\" : \"th\")\l}"];
+}
+subgraph cluster_Region_684351862 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_63 [shape=record,label="{63\:\ 0x004c|RETURN\l|return r2.equals(\"th\")\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_2046075019 {
+label = "R(1:39)";
+node [shape=record,color=blue];
+Node_82 [shape=record,label="{82\:\ 0x0077|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_43 [shape=record,color=red,label="{43\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x0002|LOOP_START\lLOOP:0: B:46:0x0002\-\>B:51:0x0014\lPHI: r0 r1 \l  PHI: (r0v1 'digitCount' int) = (r0v0 'digitCount' int), (r0v2 'digitCount' int) binds: [B:45:0x0000, B:51:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v5 'i' int) binds: [B:45:0x0000, B:51:0x0014] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x0008}"];
+Node_84 [shape=record,color=red,label="{84\:\ 0x0014|SYNTHETIC\l}"];
+Node_85 [shape=record,color=red,label="{85\:\ 0x0014|SYNTHETIC\l}"];
+Node_83 [shape=record,color=red,label="{83\:\ 0x0017|SYNTHETIC\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x0017}"];
+Node_44 [shape=record,color=red,label="{44\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_62 [shape=record,color=red,label="{62\:\ 0x0048}"];
+Node_64 [shape=record,color=red,label="{64\:\ 0x004d}"];
+Node_65 [shape=record,color=red,label="{65\:\ 0x0051}"];
+Node_67 [shape=record,color=red,label="{67\:\ 0x0054}"];
+Node_68 [shape=record,color=red,label="{68\:\ 0x0056|PHI: r5 \l  PHI: (r5v5 java.lang.String A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l}"];
+Node_70 [shape=record,color=red,label="{70\:\ 0x005b}"];
+Node_71 [shape=record,color=red,label="{71\:\ 0x005f}"];
+Node_73 [shape=record,color=red,label="{73\:\ 0x0062}"];
+Node_74 [shape=record,color=red,label="{74\:\ 0x0064|PHI: r5 \l  PHI: (r5v3 java.lang.String A[REMOVE]) = (r5v0 java.lang.String) binds: [B:71:0x005f] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l}"];
+Node_76 [shape=record,color=red,label="{76\:\ 0x0069}"];
+Node_77 [shape=record,color=red,label="{77\:\ 0x006d}"];
+Node_79 [shape=record,color=red,label="{79\:\ 0x0070}"];
+Node_80 [shape=record,color=red,label="{80\:\ 0x0072|PHI: r5 \l  PHI: (r5v1 java.lang.String A[REMOVE]) = (r5v0 java.lang.String) binds: [B:77:0x006d] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l}"];
+MethodNode[shape=record,label="{private static boolean androidx.core.text.util.FindAddress.checkHouseNumber((r7v0 'houseNumber' java.lang.String A[D('houseNumber' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:51:0x0014 \-\> B:46:0x0002, CROSS_EDGE: B:49:0x0010 \-\> B:51:0x0014, CROSS_EDGE: B:59:0x0033 \-\> B:44:?, CROSS_EDGE: B:63:0x004c \-\> B:44:?, CROSS_EDGE: B:69:0x005a \-\> B:44:?, CROSS_EDGE: B:65:0x0051 \-\> B:68:0x0056, CROSS_EDGE: B:75:0x0068 \-\> B:44:?, CROSS_EDGE: B:71:0x005f \-\> B:74:0x0064, CROSS_EDGE: B:81:0x0076 \-\> B:44:?, CROSS_EDGE: B:77:0x006d \-\> B:80:0x0072, CROSS_EDGE: B:82:0x0077 \-\> B:44:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_43;Node_45 -> Node_46;
+Node_47 -> Node_48;
+Node_47 -> Node_83[style=dashed];
+Node_49 -> Node_50;
+Node_49 -> Node_85[style=dashed];
+Node_50 -> Node_84;
+Node_51 -> Node_46;
+Node_53 -> Node_54;
+Node_53 -> Node_55[style=dashed];
+Node_54 -> Node_44;
+Node_55 -> Node_56;
+Node_56 -> Node_57;
+Node_56 -> Node_82[style=dashed];
+Node_57 -> Node_58;
+Node_58 -> Node_59;
+Node_58 -> Node_60[style=dashed];
+Node_59 -> Node_44;
+Node_60 -> Node_61;
+Node_61 -> Node_62;
+Node_61 -> Node_64;
+Node_61 -> Node_70;
+Node_61 -> Node_76;
+Node_81 -> Node_44;
+Node_75 -> Node_44;
+Node_69 -> Node_44;
+Node_63 -> Node_44;
+Node_82 -> Node_44;
+Node_43 -> Node_45;
+Node_46 -> Node_47;
+Node_48 -> Node_49;
+Node_84 -> Node_51;
+Node_85 -> Node_51;
+Node_83 -> Node_52;
+Node_52 -> Node_53;
+Node_62 -> Node_63;
+Node_64 -> Node_65;
+Node_65 -> Node_67;
+Node_65 -> Node_68;
+Node_67 -> Node_68;
+Node_68 -> Node_69;
+Node_70 -> Node_71;
+Node_71 -> Node_73;
+Node_71 -> Node_74;
+Node_73 -> Node_74;
+Node_74 -> Node_75;
+Node_76 -> Node_77;
+Node_77 -> Node_79;
+Node_77 -> Node_80;
+Node_79 -> Node_80;
+Node_80 -> Node_81;
+}
+

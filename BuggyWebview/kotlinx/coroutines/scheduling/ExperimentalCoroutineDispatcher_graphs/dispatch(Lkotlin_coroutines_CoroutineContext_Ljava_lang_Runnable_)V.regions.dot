@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher.dispatch(Lkotlin\/coroutines\/CoroutineContext;Ljava\/lang\/Runnable;)V" {
+subgraph cluster_Region_1957542819 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1893902476 {
+label = "Try: R(1:2) catches: R(1:7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1224119656 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0001|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{RejectedExecutionException \-\> 0x000c, blocks: (B:12:0x0001), top: B:17:0x0001 \}\lCatch: RejectedExecutionException \-\> 0x000c\l|kotlinx.coroutines.scheduling.CoroutineScheduler.dispatch$default(r6.coroutineScheduler, r8, null, false, 6, null)     \/\/ Catch: java.util.concurrent.RejectedExecutionException \-\> Lc\l}"];
+}
+subgraph cluster_Region_927114165 {
+label = "R(1:7) | ExcHandler: RejectedExecutionException \-\> 0x000c\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|kotlinx.coroutines.DefaultExecutor.INSTANCE.dispatch(r7, r8)\l}"];
+}
+}
+}
+subgraph cluster_Region_927114165 {
+label = "R(1:7) | ExcHandler: RejectedExecutionException \-\> 0x000c\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|kotlinx.coroutines.DefaultExecutor.INSTANCE.dispatch(r7, r8)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000c|ExcHandler: RejectedExecutionException \-\> 0x000c\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0012|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher.dispatch((r6v0 'this' kotlinx.coroutines.scheduling.ExperimentalCoroutineDispatcher A[IMMUTABLE_TYPE, THIS]), (r7v0 'context' kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'block' java.lang.Runnable A[D('block' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000d \-\> B:16:0x0012, CROSS_EDGE: B:17:0x0001 \-\> B:14:0x000c\lINLINE_NOT_NEEDED\lTryCatch #0 \{RejectedExecutionException \-\> 0x000c, blocks: (B:12:0x0001), top: B:17:0x0001 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.CoroutineDispatcher.dispatch(kotlin.coroutines.CoroutineContext, java.lang.Runnable):void]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_18;
+Node_12 -> Node_19;
+Node_15 -> Node_16;
+Node_15 -> Node_16;
+Node_10 -> Node_17;
+Node_17 -> Node_12;
+Node_17 -> Node_14;
+Node_18 -> Node_14;
+Node_19 -> Node_11;
+Node_14 -> Node_15;
+Node_16 -> Node_11;
+}
+

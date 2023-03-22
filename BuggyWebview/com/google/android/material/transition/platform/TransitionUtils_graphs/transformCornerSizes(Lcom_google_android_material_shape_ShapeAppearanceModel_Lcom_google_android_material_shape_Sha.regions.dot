@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.material.transition.platform.TransitionUtils.transformCornerSizes(Lcom\/google\/android\/material\/shape\/ShapeAppearanceModel;Lcom\/google\/android\/material\/shape\/ShapeAppearanceModel;Landroid\/graphics\/RectF;Lcom\/google\/android\/material\/transition\/platform\/TransitionUtils$CornerSizeBinaryOperator;)Lcom\/google\/android\/material\/shape\/ShapeAppearanceModel;" {
+subgraph cluster_Region_253202246 {
+label = "R(2:(1:3)(1:7)|5) | DECL_VAR: com.google.android.material.shape.ShapeAppearanceModel shapeAppearanceModel\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1682630871 {
+label = "IF [B:11:0x0004] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (isShapeAppearanceSignificant(r4, r6) != false) goto L3\l}"];
+subgraph cluster_Region_1765169806 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|r0 = r4\l}"];
+}
+subgraph cluster_Region_669644702 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|r0 = r5\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0052|RETURN\l|return r0.toBuilder().setTopLeftCornerSize(r7.apply(r4.getTopLeftCornerSize(), r5.getTopLeftCornerSize())).setTopRightCornerSize(r7.apply(r4.getTopRightCornerSize(), r5.getTopRightCornerSize())).setBottomLeftCornerSize(r7.apply(r4.getBottomLeftCornerSize(), r5.getBottomLeftCornerSize())).setBottomRightCornerSize(r7.apply(r4.getBottomRightCornerSize(), r5.getBottomRightCornerSize())).build()\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0009|PHI: r0 \l  PHI: (r0v2 'shapeAppearanceModel' com.google.android.material.shape.ShapeAppearanceModel) = (r0v1 'shapeAppearanceModel' com.google.android.material.shape.ShapeAppearanceModel), (r0v3 'shapeAppearanceModel' com.google.android.material.shape.ShapeAppearanceModel) binds: [B:13:0x0008, B:12:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static com.google.android.material.shape.ShapeAppearanceModel com.google.android.material.transition.platform.TransitionUtils.transformCornerSizes((r4v0 'shapeAppearanceModel1' com.google.android.material.shape.ShapeAppearanceModel A[D('shapeAppearanceModel1' com.google.android.material.shape.ShapeAppearanceModel), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'shapeAppearanceModel2' com.google.android.material.shape.ShapeAppearanceModel A[D('shapeAppearanceModel2' com.google.android.material.shape.ShapeAppearanceModel), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'shapeAppearanceModel1Bounds' android.graphics.RectF A[D('shapeAppearanceModel1Bounds' android.graphics.RectF), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'op' com.google.android.material.transition.platform.TransitionUtils$CornerSizeBinaryOperator A[D('op' com.google.android.material.transition.platform.TransitionUtils$CornerSizeBinaryOperator), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0008 \-\> B:14:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+}
+

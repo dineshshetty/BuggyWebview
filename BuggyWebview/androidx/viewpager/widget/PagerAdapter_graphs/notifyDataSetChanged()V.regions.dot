@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.viewpager.widget.PagerAdapter.notifyDataSetChanged()V" {
+subgraph cluster_Region_1057222808 {
+label = "R(2:0|7)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_420178883 {
+label = "Synchronized:R(2:1|(2:3|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000}"];
+subgraph cluster_Region_1259440532 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0001|TRY_ENTER\lTryCatch #0 \{, blocks: (B:17:0x0001, B:19:0x0005, B:20:0x0008), top: B:26:0x0001 \}\lCatch: all \-\> 0x000f\l|android.database.DataSetObserver android.database.DataSetObserver r0 = r1.mViewPagerObserver     \/\/ Catch: java.lang.Throwable \-\> Lf\l}"];
+subgraph cluster_IfRegion_1199349083 {
+label = "IF [B:18:0x0003] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0003|if (r0 != null) goto L5\l}"];
+subgraph cluster_Region_826226312 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|TryCatch #0 \{, blocks: (B:17:0x0001, B:19:0x0005, B:20:0x0008), top: B:26:0x0001 \}\lCatch: all \-\> 0x000f\l|r0.onChanged()     \/\/ Catch: java.lang.Throwable \-\> Lf\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0009|r1.mObservable.notifyChanged()\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0008|TRY_LEAVE\lDONT_GENERATE\lTryCatch #0 \{, blocks: (B:17:0x0001, B:19:0x0005, B:20:0x0008), top: B:26:0x0001 \}\lCatch: all \-\> 0x000f\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> Lf\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000e}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000f|REMOVE\lExcHandler: all \-\> 0x000f\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0010|TRY_ENTER\lTRY_LEAVE\lREMOVE\lCatch: all \-\> 0x000f\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0011|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public void androidx.viewpager.widget.PagerAdapter.notifyDataSetChanged((r1v0 'this' androidx.viewpager.widget.PagerAdapter A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0011 \-\> B:15:?, CROSS_EDGE: B:18:0x0003 \-\> B:20:0x0008, CROSS_EDGE: B:26:0x0001 \-\> B:23:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_26;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_14 -> Node_16;
+Node_26 -> Node_17;
+Node_26 -> Node_23;
+Node_20 -> Node_21;
+Node_20 -> Node_27;
+Node_22 -> Node_15;
+Node_27 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+}
+

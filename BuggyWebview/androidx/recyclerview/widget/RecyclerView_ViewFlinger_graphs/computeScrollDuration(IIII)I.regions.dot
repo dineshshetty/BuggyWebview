@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.ViewFlinger.computeScrollDuration(IIII)I" {
+subgraph cluster_Region_1022748043 {
+label = "R(7:1|2|4|5|7|(1:9)(1:15)|11) | DECL_VAR: int duration\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|int int r1 = java.lang.Math.abs(r14)\lint int r2 = java.lang.Math.abs(r15)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0009|boolean r3 = r1 \> r2\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000e|PHI: r3 \l  PHI: (r3v1 'horizontal' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r4 = (int) java.lang.Math.sqrt((r16 * r16) + (r17 * r17))\lint int r5 = (int) java.lang.Math.sqrt((r14 * r14) + (r15 * r15))\landroidx.recyclerview.widget.RecyclerView androidx.recyclerview.widget.RecyclerView r6 = androidx.recyclerview.widget.RecyclerView.this\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0026|int r6 = r3 ? r6.getWidth() : r6.getHeight()\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0031|PHI: r6 \l  PHI: (r6v3 'containerSize' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r7 = r6 \/ 2\lfloat float r8 = java.lang.Math.min(1.0f, (r5 * 1.0f) \/ r6)\lfloat float r10 = r7 + (r7 * distanceInfluenceForSnapDuration(r8))\l}"];
+subgraph cluster_IfRegion_232072428 {
+label = "IF [B:30:0x0047] THEN: R(1:9) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0047|if (r4 \> 0) goto L9\l}"];
+subgraph cluster_Region_1445091041 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0049|int r9 = java.lang.Math.round(java.lang.Math.abs(r10 \/ r4) * 1000.0f) * 4\l}"];
+}
+subgraph cluster_Region_109848945 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0060|PHI: r11 \l  PHI: (r11v3 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float float r11 = r3 ? r1 : r2\lint r9 = (int) (((r11 \/ r6) + 1.0f) * 300.0f)\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x0070|RETURN\l|return java.lang.Math.min(r9, (int) androidx.recyclerview.widget.RecyclerView.MAX_SCROLL_DURATION)\l}"];
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000b}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0028}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x006a|PHI: r9 \l  PHI: (r9v3 'duration' int) = (r9v2 'duration' int), (r9v6 'duration' int) binds: [B:35:0x0060, B:31:0x0049] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x005b}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x005d}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x005f}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x002d}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000d}"];
+MethodNode[shape=record,label="{private int androidx.recyclerview.widget.RecyclerView.ViewFlinger.computeScrollDuration((r13v0 'this' androidx.recyclerview.widget.RecyclerView$ViewFlinger A[IMMUTABLE_TYPE, THIS]), (r14v0 'dx' int A[D('dx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 'dy' int A[D('dy' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 'vx' int A[D('vx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 'vy' int A[D('vy' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x0060 \-\> B:36:0x006a, CROSS_EDGE: B:34:0x005f \-\> B:35:0x0060, CROSS_EDGE: B:28:0x002d \-\> B:29:0x0031, CROSS_EDGE: B:24:0x000d \-\> B:25:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_36;
+Node_35 -> Node_36;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_23 -> Node_25;
+Node_27 -> Node_29;
+Node_36 -> Node_37;
+Node_32 -> Node_33;
+Node_32 -> Node_34;
+Node_33 -> Node_35;
+Node_34 -> Node_35;
+Node_28 -> Node_29;
+Node_24 -> Node_25;
+}
+

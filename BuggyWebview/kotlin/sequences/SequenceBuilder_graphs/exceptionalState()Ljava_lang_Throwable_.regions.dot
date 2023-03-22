@@ -1,0 +1,48 @@
+digraph "CFG forkotlin.sequences.SequenceBuilderIterator.exceptionalState()Ljava\/lang\/Throwable;" {
+subgraph cluster_Region_1797076584 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_606059707 {
+label = "Switch: 3
+ case 4 -> R(1:9)
+ case 5 -> R(1:7)
+ case default -> R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|switch(r3.state) \{\l    case 4: goto L8;\l    case 5: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_2031419825 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0031|RETURN\lORIG_RETURN\l|return new java.util.NoSuchElementException()\l}"];
+}
+subgraph cluster_Region_1586964223 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return new java.lang.IllegalStateException(\"Iterator has failed.\")\l}"];
+}
+subgraph cluster_Region_1555821875 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return new java.lang.IllegalStateException(\"Unexpected state of the iterator: \" + r3.state)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0020}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002a}"];
+MethodNode[shape=record,label="{private final java.lang.Throwable kotlin.sequences.SequenceBuilderIterator.exceptionalState((r3v0 'this' kotlin.sequences.SequenceBuilderIterator\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0020 \-\> B:7:0x0031, CROSS_EDGE: B:6:0x002a \-\> B:7:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_3 -> Node_6;
+Node_7 -> Node_1;
+Node_9 -> Node_1;
+Node_4 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_9;
+Node_6 -> Node_7;
+}
+

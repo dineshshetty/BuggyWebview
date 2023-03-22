@@ -1,0 +1,34 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.AwaitContinuation.getContinuationCancellationCause(Lkotlinx\/coroutines\/Job;)Ljava\/lang\/Throwable;" {
+Node_15 [shape=record,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0000|java.lang.Object r0 = r3.job.getState$kotlinx_coroutines_core()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0008|if ((r0 instanceof kotlinx.coroutines.JobSupport.Finishing) == false) goto L8\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000a|java.lang.Throwable r1 = ((kotlinx.coroutines.JobSupport.Finishing) r0).getRootCause()\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0011|if (r1 != null) goto L5\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0014}"];
+Node_23 [shape=record,label="{23\:\ 0x0015|RETURN\l|return r1\l}"];
+Node_16 [shape=record,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0016}"];
+Node_25 [shape=record,label="{25\:\ 0x0018|if ((r0 instanceof kotlinx.coroutines.CompletedExceptionally) == false) goto L12\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001a}"];
+Node_27 [shape=record,label="{27\:\ 0x001f|RETURN\l|return ((kotlinx.coroutines.CompletedExceptionally) r0).cause\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0020}"];
+Node_29 [shape=record,label="{29\:\ 0x0026|RETURN\l|return r4.getCancellationException()\l}"];
+MethodNode[shape=record,label="{public java.lang.Throwable kotlinx.coroutines.JobSupport.AwaitContinuation.getContinuationCancellationCause((r3v0 'this' kotlinx.coroutines.JobSupport$AwaitContinuation\<T\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'parent' kotlinx.coroutines.Job A[D('parent' kotlinx.coroutines.Job), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x001f \-\> B:16:?, CROSS_EDGE: B:29:0x0026 \-\> B:16:?, CROSS_EDGE: B:18:0x0008 \-\> B:24:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [kotlinx.coroutines.CancellableContinuationImpl.getContinuationCancellationCause(kotlinx.coroutines.Job):java.lang.Throwable]\l}"];
+MethodNode -> Node_15;Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_24;
+Node_19 -> Node_20;
+Node_20 -> Node_22;
+Node_20 -> Node_24[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_16;
+Node_24 -> Node_25;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_28;
+Node_26 -> Node_27;
+Node_27 -> Node_16;
+Node_28 -> Node_29;
+Node_29 -> Node_16;
+}
+

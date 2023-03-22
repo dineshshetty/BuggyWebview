@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.takeWhile(Ljava\/lang\/String;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/String;" {
+subgraph cluster_Region_861757706 {
+label = "R(3:1|(1:(2:(2:7|8)|(1:5)))|11)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"predicate\")\lint r1 = 0\lint int r2 = r4.length()\l}"];
+subgraph cluster_LoopRegion_916125741 {
+label = "LOOP:0: (1:(2:(2:7|8)|(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|LOOP_START\lLOOP:0: B:15:0x0010\-\>B:20:0x0031\lPHI: r1 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v2 'index' int) binds: [B:14:0x0000, B:20:0x0031] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r2) goto L3\l}"];
+subgraph cluster_Region_2013755156 {
+label = "R(1:(2:(2:7|8)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_286764556 {
+label = "R(2:(2:7|8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_641712111 {
+label = "IF [B:17:0x0024] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0024|if (r5.invoke(java.lang.Character.valueOf(r4.charAt(r1))).booleanValue() == false) goto L6\l}"];
+subgraph cluster_Region_2125647635 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0026|java.lang.String java.lang.String r2 = r4.substring(0, r1)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r2, \"this as java.lang.String…ing(startIndex, endIndex)\")\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0030|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1060220537 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0031|LOOP_END\lLOOP:0: B:15:0x0010\-\>B:20:0x0031\l|r1++\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0034|RETURN\l|return r4\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0012}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0026|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0034|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.text.StringsKt___StringsKt.takeWhile((r4v0 '$this$takeWhile' java.lang.String A[D('$this$takeWhile' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Character, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0031 \-\> B:15:0x0010, CROSS_EDGE: B:21:0x0034 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/String;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;Ljava\/lang\/Boolean;\>;)Ljava\/lang\/String;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_17 -> Node_20[style=dashed];
+Node_17 -> Node_23;
+Node_18 -> Node_19;
+Node_19 -> Node_13;
+Node_20 -> Node_15;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_23 -> Node_18;
+Node_22 -> Node_21;
+}
+

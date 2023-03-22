@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.core.view.accessibility.AccessibilityNodeInfoCompat.getText()Ljava\/lang\/CharSequence;" {
+subgraph cluster_Region_2050074785 {
+label = "R(1:(2:(3:3|(1:6)|8)|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2060340784 {
+label = "R(2:(3:3|(1:6)|8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_561936899 {
+label = "IF [B:15:0x0004] THEN: R(3:3|(1:6)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (hasSpans() != false) goto L3\l}"];
+subgraph cluster_Region_1551885994 {
+label = "R(3:3|(1:6)|8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|java.util.List java.util.List\<java.lang.Integer\> r0 = extrasIntList(androidx.core.view.accessibility.AccessibilityNodeInfoCompat.SPANS_START_KEY)\ljava.util.List java.util.List\<java.lang.Integer\> r1 = extrasIntList(androidx.core.view.accessibility.AccessibilityNodeInfoCompat.SPANS_END_KEY)\ljava.util.List java.util.List\<java.lang.Integer\> r2 = extrasIntList(androidx.core.view.accessibility.AccessibilityNodeInfoCompat.SPANS_FLAGS_KEY)\ljava.util.List java.util.List\<java.lang.Integer\> r3 = extrasIntList(androidx.core.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ID_KEY)\landroid.text.SpannableString android.text.Spannable r4 = new android.text.SpannableString(android.text.TextUtils.substring(r10.mInfo.getText(), 0, r10.mInfo.getText().length()))\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_1735050655 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x003d|if (r5 \< r0.size()) goto L6\l}"];
+subgraph cluster_Region_1919230547 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x003f|LOOP_END\lLOOP:0: B:17:0x0039\-\>B:19:0x003f\l|r4.setSpan(new androidx.core.view.accessibility.AccessibilityClickableSpanCompat(r3.get(r5).intValue(), r10, getExtras().getInt(androidx.core.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ACTION_ID_KEY)), r0.get(r5).intValue(), r1.get(r5).intValue(), r2.get(r5).intValue())\lr5++\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x007c|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_2075400348 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0083|RETURN\l|return r10.mInfo.getText()\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0039|LOOP_START\lLOOP:0: B:17:0x0039\-\>B:19:0x003f\lPHI: r5 \l  PHI: (r5v4 'i' int) = (r5v3 'i' int), (r5v5 'i' int) binds: [B:16:0x0006, B:19:0x003f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x007c|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x007d}"];
+MethodNode[shape=record,label="{public java.lang.CharSequence androidx.core.view.accessibility.AccessibilityNodeInfoCompat.getText((r10v0 'this' androidx.core.view.accessibility.AccessibilityNodeInfoCompat A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x003f \-\> B:17:0x0039, CROSS_EDGE: B:22:0x0083 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_17;
+Node_20 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+Node_23 -> Node_20;
+Node_21 -> Node_22;
+}
+

@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.appcompat.widget.ActionBarContainer.setTabContainer(Landroidx\/appcompat\/widget\/ScrollingTabContainerView;)V" {
+subgraph cluster_Region_1799569875 {
+label = "R(4:1|(1:3)|4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|android.view.View android.view.View r0 = r2.mTabContainer\l}"];
+subgraph cluster_IfRegion_1236233998 {
+label = "IF [B:13:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_811701296 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|removeView(r0)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0007|r2.mTabContainer = r3\l}"];
+subgraph cluster_Region_175379037 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_215934429 {
+label = "IF [B:16:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|if (r3 != null) goto L6\l}"];
+subgraph cluster_Region_288874049 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|addView(r3)\landroid.view.ViewGroup$LayoutParams android.view.ViewGroup.LayoutParams r0 = r3.getLayoutParams()\lr0.width = \-1\lr0.height = \-2\lr3.setAllowCollapse(false)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001c|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.ActionBarContainer.setTabContainer((r2v0 'this' androidx.appcompat.widget.ActionBarContainer A[IMMUTABLE_TYPE, THIS]), (r3v0 'tabView' androidx.appcompat.widget.ScrollingTabContainerView A[D('tabView' androidx.appcompat.widget.ScrollingTabContainerView), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0009 \-\> B:18:0x001c, CROSS_EDGE: B:13:0x0002 \-\> B:15:0x0007\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.core.content.PackageManagerCompat.getPermissionRevocationVerifierApp(Landroid\/content\/pm\/PackageManager;)Ljava\/lang\/String;" {
+Node_18 [shape=record,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0000|0x0000: NEW_INSTANCE  (r0 I:android.content.Intent) =  android.content.Intent  (LINE:222)\l0x0002: CONST_STR  (r1 I:java.lang.String) =  \"android.intent.action.AUTO_REVOKE_PERMISSIONS\" \l0x0004: INVOKE  (r0 I:android.content.Intent), (r1 I:java.lang.String) type: DIRECT call: android.content.Intent.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l0x0007: CONST_STR  (r1 I:java.lang.String) =  \"package\"  (LINE:224)\l0x0009: CONST_STR  (r2 I:java.lang.String) =  \"com.example\" \l0x000b: CONST  (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x000c: INVOKE  (r1 I:android.net.Uri) = (r1 I:java.lang.String), (r2 I:java.lang.String), (r3 I:java.lang.String) type: STATIC call: android.net.Uri.fromParts(java.lang.String, java.lang.String, java.lang.String):android.net.Uri A[MD:(java.lang.String, java.lang.String, java.lang.String):android.net.Uri (c)]\l0x0010: INVOKE  (r0 I:android.content.Intent) = (r0 I:android.content.Intent), (r1 I:android.net.Uri) type: VIRTUAL call: android.content.Intent.setData(android.net.Uri):android.content.Intent A[MD:(android.net.Uri):android.content.Intent (c)]\l0x0015: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:227)\l0x0016: INVOKE  (r1 I:java.util.List) = \l  (r7 I:android.content.pm.PackageManager A[D('packageManager' android.content.pm.PackageManager)])\l  (r0 I:android.content.Intent A[D('permissionRevocationSettingsIntent' android.content.Intent)])\l  (r1 I:int)\l type: VIRTUAL call: android.content.pm.PackageManager.queryIntentActivities(android.content.Intent, int):java.util.List A[MD:(android.content.Intent, int):java.util.List\<android.content.pm.ResolveInfo\> (c)]\l0x001a: CONST  (r2 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:230)\l0x001b: INVOKE  (r3 I:java.util.Iterator) = (r1 I:java.util.List A[D('intentResolvers' java.util.List\<android.content.pm.ResolveInfo\>)]) type: INTERFACE call: java.util.List.iterator():java.util.Iterator A[MD:():java.util.Iterator\<E\> (c)] (LINE:232)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x001f|LOOP_START\lLOOP:0: B:21:0x001f\-\>B:33:0x001f\l|0x001f: INVOKE  (r4 I:boolean) = (r3 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0023|0x0023: IF  (r4 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:30:0x003d \l}"];
+Node_23 [shape=record,label="{23\:\ 0x0025|0x0025: INVOKE  (r4 I:java.lang.Object) = (r3 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x0029: CHECK_CAST (r4 I:android.content.pm.ResolveInfo) = (android.content.pm.ResolveInfo) (r4 I:??[OBJECT, ARRAY]) \l0x002b: IGET  (r5 I:android.content.pm.ActivityInfo) = (r4 I:android.content.pm.ResolveInfo A[D('intentResolver' android.content.pm.ResolveInfo)]) android.content.pm.ResolveInfo.activityInfo android.content.pm.ActivityInfo  (LINE:233)\l0x002d: IGET  (r5 I:java.lang.String) = (r5 I:android.content.pm.ActivityInfo) android.content.pm.ActivityInfo.packageName java.lang.String \l0x002f: CONST_STR  (r6 I:java.lang.String) =  \"android.permission.PACKAGE_VERIFICATION_AGENT\"  (LINE:234)\l0x0031: INVOKE  (r6 I:int) = \l  (r7 I:android.content.pm.PackageManager A[D('packageManager' android.content.pm.PackageManager)])\l  (r6 I:java.lang.String)\l  (r5 I:java.lang.String A[D('packageName' java.lang.String)])\l type: VIRTUAL call: android.content.pm.PackageManager.checkPermission(java.lang.String, java.lang.String):int A[MD:(java.lang.String, java.lang.String):int (c)]\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0035|0x0035: IF  (r6 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:31:0x0038 \l}"];
+Node_31 [shape=record,label="{31\:\ 0x0038|SYNTHETIC\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0038|0x0038: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('verifierPackageName' java.lang.String)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:28:0x003b  (LINE:239)\l}"];
+Node_28 [shape=record,label="{28\:\ 0x003b|0x003b: MOVE  (r2 I:??[OBJECT, ARRAY] A[D('verifierPackageName' java.lang.String)]) = (r5 I:??[OBJECT, ARRAY] A[D('packageName' java.lang.String)])  (LINE:245)\l}"];
+Node_35 [shape=record,label="{35\:\ 0x001f|SYNTHETIC\l}"];
+Node_33 [shape=record,label="{33\:\ 0x001f|LOOP_END\lSYNTHETIC\lLOOP:0: B:21:0x001f\-\>B:33:0x001f\l}"];
+Node_32 [shape=record,label="{32\:\ 0x003a|SYNTHETIC\l}"];
+Node_27 [shape=record,label="{27\:\ 0x003a|RETURN\l|0x003a: RETURN  (r2 I:java.lang.String A[D('verifierPackageName' java.lang.String)])  (LINE:243)\l}"];
+Node_19 [shape=record,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_34 [shape=record,label="{34\:\ 0x001f|SYNTHETIC\l}"];
+Node_30 [shape=record,label="{30\:\ 0x003d|SYNTHETIC\l}"];
+Node_29 [shape=record,label="{29\:\ 0x003d|RETURN\l|0x003d: RETURN  (r2 I:java.lang.String A[D('verifierPackageName' java.lang.String)])  (LINE:248)\l}"];
+MethodNode[shape=record,label="{public static java.lang.String androidx.core.content.PackageManagerCompat.getPermissionRevocationVerifierApp((r7 I:android.content.pm.PackageManager A[D('packageManager' android.content.pm.PackageManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:28:0x003b \-\> B:21:0x001f, BACK_EDGE: B:24:0x0035 \-\> B:21:0x001f, CROSS_EDGE: B:29:0x003d \-\> B:19:?\lINLINE_NOT_NEEDED\lDebug Info:\l  0x002b\-0x003c: r4 'intentResolver' Landroid\/content\/pm\/ResolveInfo;\l  0x002f\-0x003c: r5 'packageName' Ljava\/lang\/String;\l  0x0014\-0x003d: r0 'permissionRevocationSettingsIntent' Landroid\/content\/Intent;\l  0x001a\-0x003d: r1 'intentResolvers' Ljava\/util\/List;, signature: Ljava\/util\/List\<Landroid\/content\/pm\/ResolveInfo;\>;\l  0x001b\-0x003d: r2 'verifierPackageName' Ljava\/lang\/String;\l  \-1 \-0x003d: r7 'packageManager' Landroid\/content\/pm\/PackageManager;\l}"];
+MethodNode -> Node_18;Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_30;
+Node_23 -> Node_24;
+Node_24 -> Node_31;
+Node_24 -> Node_34[style=dashed];
+Node_31 -> Node_26;
+Node_26 -> Node_28;
+Node_26 -> Node_32[style=dashed];
+Node_28 -> Node_35;
+Node_35 -> Node_33;
+Node_33 -> Node_21;
+Node_32 -> Node_27;
+Node_27 -> Node_19;
+Node_34 -> Node_33;
+Node_30 -> Node_29;
+Node_29 -> Node_19;
+}
+

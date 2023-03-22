@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.material.snackbar.BaseTransientBottomBar.calculateBottomMarginForAnchorView()I" {
+subgraph cluster_Region_278210793 {
+label = "R(1:(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_503564069 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1906327634 {
+label = "IF [B:11:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (getAnchorView() == null) goto L3\l}"];
+subgraph cluster_Region_379005774 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1146864992 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|int[] int[] r1 = new int[2]\lgetAnchorView().getLocationOnScreen(r1)\lint r3 = r1[1]\lint[] int[] r0 = new int[2]\lr5.targetParent.getLocationOnScreen(r0)\lint int r2 = r0[1] + r5.targetParent.getHeight()\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0027|RETURN\l|return r2 \- r3\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private int com.google.android.material.snackbar.BaseTransientBottomBar.calculateBottomMarginForAnchorView((r5v0 'this' com.google.android.material.snackbar.BaseTransientBottomBar\<B extends com.google.android.material.snackbar.BaseTransientBottomBar\<B\>\> A[D('this' com.google.android.material.snackbar.BaseTransientBottomBar\<B extends com.google.android.material.snackbar.BaseTransientBottomBar\<B\>\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0027 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [B extends com.google.android.material.snackbar.BaseTransientBottomBar\<B\>]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+}
+

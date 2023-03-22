@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.fragment.app.BackStackRecord.setMaxLifecycle(Landroidx\/fragment\/app\/Fragment;Landroidx\/lifecycle\/Lifecycle$State;)Landroidx\/fragment\/app\/FragmentTransaction;" {
+subgraph cluster_Region_1586647517 {
+label = "R(1:(2:16|17)(1:(2:7|8)(1:(2:14|15)(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1376619940 {
+label = "IF [B:3:0x0004] THEN: R(2:16|17) ELSE: R(1:(2:7|8)(1:(2:14|15)(1:13)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r4.mFragmentManager != r3.mManager) goto L16\l}"];
+subgraph cluster_Region_1252164553 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004f}"];
+Node_18 [shape=record,label="{18\:\ 0x0067|throw new java.lang.IllegalArgumentException(\"Cannot setMaxLifecycle for Fragment not attached to FragmentManager \" + r3.mManager)\l}"];
+}
+subgraph cluster_Region_1509576635 {
+label = "R(1:(2:7|8)(1:(2:14|15)(1:13))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_363524576 {
+label = "IF [B:5:0x000a, B:7:0x000f] THEN: R(2:7|8) ELSE: R(1:(2:14|15)(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|if (r5 == androidx.lifecycle.Lifecycle.State.INITIALIZED) goto L5\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000f|ADDED_TO_REGION\l|if (r4.mState \> (\-1)) goto L7\l}"];
+subgraph cluster_Region_737422940 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0012}"];
+Node_10 [shape=record,label="{10\:\ 0x002b|throw new java.lang.IllegalArgumentException(\"Cannot set maximum Lifecycle to \" + r5 + \" after the Fragment has been created\")\l}"];
+}
+subgraph cluster_Region_1972784160 {
+label = "R(1:(2:14|15)(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2115654334 {
+label = "IF [B:12:0x002e] THEN: R(2:14|15) ELSE: R(1:13) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002e|if (r5 == androidx.lifecycle.Lifecycle.State.DESTROYED) goto L14\l}"];
+subgraph cluster_Region_1023248748 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0035}"];
+Node_16 [shape=record,label="{16\:\ 0x004e|throw new java.lang.IllegalArgumentException(\"Cannot set maximum Lifecycle to \" + r5 + \". Use remove() to remove the fragment from the FragmentManager and trigger its destruction.\")\l}"];
+}
+subgraph cluster_Region_913430113 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0034|RETURN\l|return super.setMaxLifecycle(r4, r5)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000c}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0030}"];
+MethodNode[shape=record,label="{public androidx.fragment.app.FragmentTransaction androidx.fragment.app.BackStackRecord.setMaxLifecycle((r3v0 'this' androidx.fragment.app.BackStackRecord A[IMMUTABLE_TYPE, THIS]), (r4v0 'fragment' androidx.fragment.app.Fragment A[D('fragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'state' androidx.lifecycle.Lifecycle$State A[D('state' androidx.lifecycle.Lifecycle$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0034 \-\> B:1:?, CROSS_EDGE: B:16:0x004e \-\> B:1:?, CROSS_EDGE: B:5:0x000a \-\> B:11:0x002c, CROSS_EDGE: B:18:0x0067 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.fragment.app.FragmentTransaction.setMaxLifecycle(androidx.fragment.app.Fragment, androidx.lifecycle.Lifecycle$State):androidx.fragment.app.FragmentTransaction]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_1;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_7 -> Node_9;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_1;
+Node_14 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+}
+

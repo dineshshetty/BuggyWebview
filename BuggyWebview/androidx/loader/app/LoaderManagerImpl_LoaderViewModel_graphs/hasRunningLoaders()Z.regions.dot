@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.loader.app.LoaderManagerImpl.LoaderViewModel.hasRunningLoaders()Z" {
+subgraph cluster_Region_761412023 {
+label = "R(3:1|(2:3|(2:(1:7)|(1:5)))|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = r4.mLoaders.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1418068993 {
+label = "LOOP:0: (2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0007|LOOP_START\lLOOP:0: B:16:0x0007\-\>B:21:0x0019\lPHI: r1 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v3 'index' int) binds: [B:15:0x0000, B:21:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_5179523 {
+label = "R(2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0009|androidx.loader.app.LoaderManagerImpl$LoaderInfo androidx.loader.app.LoaderManagerImpl.LoaderInfo r2 = r4.mLoaders.valueAt(r1)\l}"];
+subgraph cluster_Region_955556307 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1012676284 {
+label = "IF [B:18:0x0015] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|if (r2.isCallbackWaitingForData() != false) goto L6\l}"];
+subgraph cluster_Region_8775237 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_209504081 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0019|LOOP_END\lLOOP:0: B:16:0x0007\-\>B:21:0x0019\l|r1++\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001c|RETURN\l|return false\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0017|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{boolean androidx.loader.app.LoaderManagerImpl.LoaderViewModel.hasRunningLoaders((r4v0 'this' androidx.loader.app.LoaderManagerImpl$LoaderViewModel A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0019 \-\> B:16:0x0007, CROSS_EDGE: B:23:0x001d \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_25[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_24;
+Node_19 -> Node_14;
+Node_21 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_19;
+Node_25 -> Node_22;
+}
+

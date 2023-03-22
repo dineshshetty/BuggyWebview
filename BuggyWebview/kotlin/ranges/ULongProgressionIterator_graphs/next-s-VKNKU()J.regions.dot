@@ -1,0 +1,59 @@
+digraph "CFG forkotlin.ranges.ULongProgressionIterator.next\-s\-VKNKU()J" {
+subgraph cluster_Region_1170302180 {
+label = "R(3:1|(1:(2:(1:9)|(1:5)))(1:10)|6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|long long r0 = r6.next\l}"];
+subgraph cluster_IfRegion_2049139956 {
+label = "IF [B:14:0x0006] THEN: R(1:(2:(1:9)|(1:5))) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|if (r0 == r6.finalElement) goto L3\l}"];
+subgraph cluster_Region_406752734 {
+label = "R(1:(2:(1:9)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_648687148 {
+label = "R(2:(1:9)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_239420380 {
+label = "IF [B:16:0x000a] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (r6.hasNext == false) goto L8\l}"];
+subgraph cluster_Region_766207419 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_1092050349 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|r6.hasNext = false\l}"];
+}
+}
+}
+subgraph cluster_Region_918274285 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0016|r6.next = kotlin.ULong.m316constructorimpl(r6.next + r6.step)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0021|RETURN\l|return r0\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0008}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0010}"];
+MethodNode[shape=record,label="{public long kotlin.ranges.ULongProgressionIterator.next\-s\-VKNKU((r6v0 'this' kotlin.ranges.ULongProgressionIterator A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0015 \-\> B:12:?, CROSS_EDGE: B:20:0x0016 \-\> B:21:0x0021\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_19 -> Node_12;
+Node_17 -> Node_21;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+}
+

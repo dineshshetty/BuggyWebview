@@ -1,0 +1,35 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.cancel(Ljava\/lang\/Throwable;)Z" {
+subgraph cluster_Region_1394113076 {
+label = "R(4:2|(1:5)|6|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|kotlinx.coroutines.JobCancellationException r1 = r8 != null ? toCancellationException$default(r7, r8, null, 1, null) : null\l}"];
+subgraph cluster_IfRegion_1248321885 {
+label = "IF [B:16:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|PHI: r1 \l  PHI: (r1v1 java.util.concurrent.CancellationException) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (r1 == null) goto L5\l}"];
+subgraph cluster_Region_859769723 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|java.util.concurrent.CancellationException r1 = new kotlinx.coroutines.JobCancellationException(cancellationExceptionMessage(), null, r7)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x001d|PHI: r1 \l  PHI: (r1v2 java.util.concurrent.CancellationException) = (r1v1 java.util.concurrent.CancellationException), (r1v6 kotlinx.coroutines.JobCancellationException) binds: [B:16:0x0009, B:17:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|cancelInternal(r1)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0022|RETURN\l|return true\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0005}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public \/* synthetic *\/ boolean kotlinx.coroutines.JobSupport.cancel((r7v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]), (r8v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Lkotlin\/Deprecated;=Annotation\{RUNTIME, type=Lkotlin\/Deprecated;, values=\{level=\{ENCODED_FIELD: Lkotlin\/DeprecationLevel;\-\>HIDDEN:Lkotlin\/DeprecationLevel;\}, message=Added since 1.2.0 for binary compatibility with versions \<= 1.1.x\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:16:0x0009 \-\> B:18:0x001d, CROSS_EDGE: B:13:0x0002 \-\> B:16:0x0009\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.Job.cancel(java.lang.Throwable):boolean]\l}"];
+MethodNode -> Node_10;Node_13 -> Node_15;
+Node_13 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+}
+

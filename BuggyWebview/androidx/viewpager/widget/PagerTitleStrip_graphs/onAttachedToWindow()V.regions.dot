@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.viewpager.widget.PagerTitleStrip.onAttachedToWindow()V" {
+subgraph cluster_Region_570769812 {
+label = "R(2:1|(2:(1:11)|(2:3|6)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|super.onAttachedToWindow()\landroid.view.ViewParent android.view.ViewParent r0 = getParent()\l}"];
+subgraph cluster_Region_967943330 {
+label = "R(2:(1:11)|(2:3|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1184124174 {
+label = "IF [B:15:0x0009] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0009|if ((r0 instanceof androidx.viewpager.widget.ViewPager) == false) goto L10\l}"];
+subgraph cluster_Region_2037304216 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0035|throw new java.lang.IllegalStateException(\"PagerTitleStrip must be a direct child of a ViewPager.\")\l}"];
+}
+}
+subgraph cluster_Region_1685162086 {
+label = "R(2:3|6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000b|androidx.viewpager.widget.ViewPager androidx.viewpager.widget.ViewPager r1 = (androidx.viewpager.widget.ViewPager) r0\landroidx.viewpager.widget.PagerAdapter androidx.viewpager.widget.PagerAdapter r2 = r1.getAdapter()\lr1.setInternalPageChangeListener(r4.mPageListener)\lr1.addOnAdapterChangeListener(r4.mPageListener)\lr4.mPager = r1\ljava.lang.ref.WeakReference\<androidx.viewpager.widget.PagerAdapter\> java.lang.ref.WeakReference\<androidx.viewpager.widget.PagerAdapter\> r3 = r4.mWatchingAdapter\l}"];
+Node_20 [shape=record,label="{20\:\ 0x002a|PHI: r3 \l  PHI: (r3v4 androidx.viewpager.widget.PagerAdapter A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|updateAdapter(r3 != null ? r3.get() : null, r2)\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0020}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0022}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002d}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0029}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x002e}"];
+MethodNode[shape=record,label="{protected void androidx.viewpager.widget.PagerTitleStrip.onAttachedToWindow((r4v0 'this' androidx.viewpager.widget.PagerTitleStrip A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0029 \-\> B:20:0x002a, CROSS_EDGE: B:23:0x0035 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onAttachedToWindow():void\}]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_22;
+Node_23 -> Node_13;
+Node_16 -> Node_17;
+Node_20 -> Node_21;
+Node_12 -> Node_14;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_18 -> Node_20;
+Node_21 -> Node_13;
+Node_19 -> Node_20;
+Node_22 -> Node_23;
+}
+

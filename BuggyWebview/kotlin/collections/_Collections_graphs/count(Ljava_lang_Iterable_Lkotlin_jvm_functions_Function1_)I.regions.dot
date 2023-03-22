@@ -1,0 +1,90 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.count(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)I" {
+subgraph cluster_Region_1095295842 {
+label = "R(2:1|(2:(1:5)|(3:7|(2:10|(1:16))|22)))";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"predicate\")\l}"];
+subgraph cluster_Region_748923384 {
+label = "R(2:(1:5)|(3:7|(2:10|(1:16))|22))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1739928576 {
+label = "IF [B:51:0x000d, B:53:0x0016] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_51 [shape=record,label="{51\:\ 0x000d|if ((r5 instanceof java.util.Collection) == true) goto L3\l}"];
+Node_53 [shape=record,label="{53\:\ 0x0016|ADDED_TO_REGION\l|if (((java.util.Collection) r5).isEmpty() == true) goto L5\l}"];
+subgraph cluster_Region_311511504 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_54 [shape=record,label="{54\:\ 0x0018|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1849585851 {
+label = "R(3:7|(2:10|(1:16))|22)";
+node [shape=record,color=blue];
+Node_56 [shape=record,label="{56\:\ 0x001a|int r1 = 0\ljava.util.Iterator java.util.Iterator\<? extends T\> r2 = r5.iterator()\l}"];
+subgraph cluster_LoopRegion_53326282 {
+label = "LOOP:0: (2:10|(1:16))";
+node [shape=record,color=blue];
+Node_58 [shape=record,label="{58\:\ 0x0023|if (r2.hasNext() != false) goto L10\l}"];
+subgraph cluster_Region_1199412623 {
+label = "R(2:10|(1:16))";
+node [shape=record,color=blue];
+Node_59 [shape=record,label="{59\:\ 0x0025|java.lang.Object java.lang.Object r3 = (T) r2.next()\l}"];
+subgraph cluster_IfRegion_100806620 {
+label = "IF [B:60:0x0033, B:62:0x0037] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_60 [shape=record,label="{60\:\ 0x0033|if (r6.invoke(r3).booleanValue() != false) goto L12\l}"];
+Node_62 [shape=record,label="{62\:\ 0x0037|ADDED_TO_REGION\l|if ((r1 = r1 + 1) \< 0) goto L15\l}"];
+subgraph cluster_Region_340065043 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_63 [shape=record,label="{63\:\ 0x0039|kotlin.collections.CollectionsKt.throwCountOverflow()\l}"];
+}
+}
+}
+}
+Node_64 [shape=record,label="{64\:\ 0x003d|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_48 [shape=record,color=red,label="{48\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x000f}"];
+Node_49 [shape=record,color=red,label="{49\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_57 [shape=record,color=red,label="{57\:\ 0x001f|LOOP_START\lLOOP:0: B:57:0x001f\-\>B:68:0x001f\lPHI: r1 \l  PHI: (r1v2 'count' int) = (r1v1 'count' int), (r1v3 'count' int) binds: [B:56:0x001a, B:68:0x001f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_65 [shape=record,color=red,label="{65\:\ 0x0035|SYNTHETIC\l}"];
+Node_61 [shape=record,color=red,label="{61\:\ 0x0035}"];
+Node_67 [shape=record,color=red,label="{67\:\ 0x0039|SYNTHETIC\l}"];
+Node_71 [shape=record,color=red,label="{71\:\ 0x001f|SYNTHETIC\l}"];
+Node_68 [shape=record,color=red,label="{68\:\ 0x001f|LOOP_END\lSYNTHETIC\lLOOP:0: B:57:0x001f\-\>B:68:0x001f\lPHI: r1 \l  PHI: (r1v3 'count' int) = (r1v2 'count' int), (r1v4 'count' int), (r1v4 'count' int) binds: [B:69:0x001f, B:70:0x001f, B:71:0x001f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_70 [shape=record,color=red,label="{70\:\ 0x001f|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_69 [shape=record,color=red,label="{69\:\ 0x001f|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_66 [shape=record,color=red,label="{66\:\ 0x003d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.collections.CollectionsKt___CollectionsKt.count((r5v0 java.lang.Iterable\<? extends T\> A[D('$this$count' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'predicate' kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:60:0x0033 \-\> B:57:0x001f, BACK_EDGE: B:62:0x0037 \-\> B:57:0x001f, BACK_EDGE: B:63:0x0039 \-\> B:57:0x001f, CROSS_EDGE: B:64:0x003d \-\> B:49:?, CROSS_EDGE: B:51:0x000d \-\> B:56:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Boolean;\>;)I\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r3v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_48;Node_50 -> Node_51;
+Node_51 -> Node_52;
+Node_51 -> Node_56[style=dashed];
+Node_53 -> Node_54;
+Node_53 -> Node_56[style=dashed];
+Node_54 -> Node_49;
+Node_56 -> Node_57;
+Node_58 -> Node_59;
+Node_58 -> Node_66[style=dashed];
+Node_59 -> Node_60;
+Node_60 -> Node_65;
+Node_60 -> Node_69[style=dashed];
+Node_62 -> Node_67;
+Node_62 -> Node_70[style=dashed];
+Node_63 -> Node_71;
+Node_64 -> Node_49;
+Node_48 -> Node_50;
+Node_52 -> Node_53;
+Node_57 -> Node_58;
+Node_65 -> Node_61;
+Node_61 -> Node_62;
+Node_67 -> Node_63;
+Node_71 -> Node_68;
+Node_68 -> Node_57;
+Node_70 -> Node_68;
+Node_69 -> Node_68;
+Node_66 -> Node_64;
+}
+

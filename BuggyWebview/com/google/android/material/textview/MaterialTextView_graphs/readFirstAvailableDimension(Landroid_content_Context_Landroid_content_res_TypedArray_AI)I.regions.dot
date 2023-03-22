@@ -1,0 +1,37 @@
+digraph "CFG forcom.google.android.material.textview.MaterialTextView.readFirstAvailableDimension(Landroid\/content\/Context;Landroid\/content\/res\/TypedArray;[I)I" {
+subgraph cluster_Region_132815951 {
+label = "R(3:1|(1:5)|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|int r0 = \-1\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_594238283 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0003|if (r1 \< r6.length) goto L4\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0005|ADDED_TO_REGION\l|if (r0 \< 0) goto L5\l}"];
+subgraph cluster_Region_1519210217 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0007|LOOP_END\lLOOP:0: B:13:0x0002\-\>B:16:0x0007\l|int r0 = com.google.android.material.resources.MaterialResources.getDimensionPixelSize(r4, r5, r6[r1], \-1)\lr1++\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0011|RETURN\l|return r0\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0002|LOOP_START\lLOOP:0: B:13:0x0002\-\>B:16:0x0007\lPHI: r0 r1 \l  PHI: (r0v1 'lineHeight' int) = (r0v0 'lineHeight' int), (r0v2 'lineHeight' int) binds: [B:12:0x0000, B:16:0x0007] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v2 'index' int) binds: [B:12:0x0000, B:16:0x0007] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0011|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0011|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{private static int com.google.android.material.textview.MaterialTextView.readFirstAvailableDimension((r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'attributes' android.content.res.TypedArray A[D('attributes' android.content.res.TypedArray), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'indices' int[] A[D('indices' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:16:0x0007 \-\> B:13:0x0002, CROSS_EDGE: B:14:0x0003 \-\> B:17:0x0011\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_13;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_13 -> Node_14;
+Node_19 -> Node_17;
+Node_18 -> Node_17;
+}
+

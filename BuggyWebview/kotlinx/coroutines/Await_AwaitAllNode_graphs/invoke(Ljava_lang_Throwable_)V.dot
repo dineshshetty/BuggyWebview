@@ -1,0 +1,48 @@
+digraph "CFG forkotlinx.coroutines.AwaitAll.AwaitAllNode.invoke(Ljava\/lang\/Throwable;)V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r12 == null) goto L11\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|java.lang.Object r0 = r11.continuation.tryResumeWithException(r12)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|if (r0 == null) goto L10\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|r11.continuation.completeResume(r0)\lkotlinx.coroutines.AwaitAll$DisposeHandlersOnCancel r1 = getDisposer()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|if (r1 != null) goto L6\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0016|r1.disposeAll()\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001a|kotlinx.coroutines.AwaitAll\<T\> r0 = r11.this$0\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0022|if (kotlinx.coroutines.Await.notCompletedCount$FU.decrementAndGet(r0) != 0) goto L19\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0024|kotlin.coroutines.Continuation r0 = r11.continuation\lkotlin.Result$Companion r1 = kotlin.Result.Companion\lkotlinx.coroutines.Deferred[] r1 = ((kotlinx.coroutines.Await) r11.this$0).deferreds\ljava.util.Collection r3 = new java.util.ArrayList(r1.length)\lr6 = 0\lint r7 = r1.length\l}"];
+Node_12 [shape=record,label="{12\:\ 0x003d|LOOP_START\lLOOP:0: B:12:0x003d\-\>B:13:0x003f\lPHI: r6 \l  PHI: (r6v1 int) = (r6v0 int), (r6v2 int) binds: [B:11:0x0024, B:13:0x003f] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 \>= r7) goto L16\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003f|LOOP_END\lLOOP:0: B:12:0x003d\-\>B:13:0x003f\l|r8 = r1[r6]\lint r6 = r6 + 1\lr3.add(r8.getCompleted())\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004d|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x004d|r0.resumeWith(kotlin.Result.m144constructorimpl((java.util.List) r3))\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0058|RETURN\lORIG_RETURN\l|return\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.AwaitAll.AwaitAllNode.invoke((r11v0 'this' kotlinx.coroutines.AwaitAll$AwaitAllNode A[IMMUTABLE_TYPE, THIS]), (r12v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x0013 \-\> B:15:0x0058, CROSS_EDGE: B:4:0x0008 \-\> B:15:0x0058, BACK_EDGE: B:13:0x003f \-\> B:12:0x003d, CROSS_EDGE: B:14:0x004d \-\> B:15:0x0058, CROSS_EDGE: B:10:0x0022 \-\> B:15:0x0058\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lRENAME_REASON:avoid collision after fix types in other method\lBRIDGED_BY: kotlinx.coroutines.AwaitAll.AwaitAllNode.invoke(java.lang.Throwable):kotlin.Unit\lMETHOD_OVERRIDE: [kotlinx.coroutines.CompletionHandlerBase.invoke(java.lang.Throwable):void]\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_9;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_17;
+Node_5 -> Node_6;
+Node_6 -> Node_8;
+Node_6 -> Node_20[style=dashed];
+Node_8 -> Node_18;
+Node_18 -> Node_1;
+Node_20 -> Node_1;
+Node_17 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_19;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_16;
+Node_13 -> Node_12;
+Node_16 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_1;
+Node_19 -> Node_1;
+}
+

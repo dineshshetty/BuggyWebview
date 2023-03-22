@@ -1,0 +1,82 @@
+digraph "CFG forkotlin.collections.builders.MapBuilder.EntriesItr.nextAppendString(Ljava\/lang\/StringBuilder;)V" {
+subgraph cluster_Region_424116381 {
+label = "R(2:1|(2:(1:15)|(5:3|(1:5)(1:13)|6|(1:8)(1:12)|9)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"sb\")\l}"];
+subgraph cluster_Region_1673379711 {
+label = "R(2:(1:15)|(5:3|(1:5)(1:13)|6|(1:8)(1:12)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_190372086 {
+label = "IF [B:19:0x0011] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|if (getIndex$kotlin_stdlib() \>= ((kotlin.collections.builders.MapBuilder) getMap$kotlin_stdlib()).length) goto L14\l}"];
+subgraph cluster_Region_1074900256 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0070|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_1803831874 {
+label = "R(5:3|(1:5)(1:13)|6|(1:8)(1:12)|9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0013|int int r0 = getIndex$kotlin_stdlib()\lsetIndex$kotlin_stdlib(r0 + 1)\lsetLastIndex$kotlin_stdlib(r0)\ljava.lang.Object r0 = ((kotlin.collections.builders.MapBuilder) getMap$kotlin_stdlib()).keysArray[getLastIndex$kotlin_stdlib()]\l}"];
+subgraph cluster_IfRegion_1368891529 {
+label = "IF [B:21:0x0037] THEN: R(1:5) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0037|if (kotlin.jvm.internal.Intrinsics.areEqual(r0, getMap$kotlin_stdlib()) == true) goto L5\l}"];
+subgraph cluster_Region_1710722775 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0039|r5.append(\"(this Map)\")\l}"];
+}
+subgraph cluster_Region_790838045 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x003d|r5.append(r0)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0040|r5.append('=')\ljava.lang.Object[] java.lang.Object[] r1 = ((kotlin.collections.builders.MapBuilder) getMap$kotlin_stdlib()).valuesArray\lkotlin.jvm.internal.Intrinsics.checkNotNull(r1)\ljava.lang.Object r1 = r1[getLastIndex$kotlin_stdlib()]\l}"];
+subgraph cluster_IfRegion_560026499 {
+label = "IF [B:25:0x005e] THEN: R(1:8) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x005e|if (kotlin.jvm.internal.Intrinsics.areEqual(r1, getMap$kotlin_stdlib()) == true) goto L8\l}"];
+subgraph cluster_Region_1807717201 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0060|r5.append(\"(this Map)\")\l}"];
+}
+subgraph cluster_Region_1753140151 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0064|r5.append(r1)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0067|initNext$kotlin_stdlib()\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x006a}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x006b}"];
+MethodNode[shape=record,label="{public final void kotlin.collections.builders.MapBuilder.EntriesItr.nextAppendString((r4v0 'this' kotlin.collections.builders.MapBuilder$EntriesItr\<K, V\> A[IMMUTABLE_TYPE, THIS]), (r5v0 'sb' java.lang.StringBuilder A[D('sb' java.lang.StringBuilder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0064 \-\> B:28:0x0067, CROSS_EDGE: B:23:0x003d \-\> B:24:0x0040, CROSS_EDGE: B:31:0x0070 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_30;
+Node_31 -> Node_17;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_16 -> Node_18;
+Node_29 -> Node_17;
+Node_30 -> Node_31;
+}
+

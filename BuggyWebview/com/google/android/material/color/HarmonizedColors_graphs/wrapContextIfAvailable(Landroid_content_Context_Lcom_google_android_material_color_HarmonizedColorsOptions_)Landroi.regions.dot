@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.android.material.color.HarmonizedColors.wrapContextIfAvailable(Landroid\/content\/Context;Lcom\/google\/android\/material\/color\/HarmonizedColorsOptions;)Landroid\/content\/Context;" {
+subgraph cluster_Region_715414927 {
+label = "R(1:(2:(1:3)|(2:5|(2:(1:8)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1557991460 {
+label = "R(2:(1:3)|(2:5|(2:(1:8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1455892185 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (isHarmonizedColorAvailable() == false) goto L3\l}"];
+subgraph cluster_Region_264654330 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1664339348 {
+label = "R(2:5|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|java.util.Map java.util.Map\<java.lang.Integer, java.lang.Integer\> r0 = createHarmonizedColorReplacementMap(r4, r5)\lint int r1 = r5.getThemeOverlayResourceId(com.google.android.material.C0571R.style.ThemeOverlay_Material3_HarmonizedColors_Empty)\landroid.view.ContextThemeWrapper android.view.ContextThemeWrapper r2 = new android.view.ContextThemeWrapper(r4, r1)\lr2.applyOverrideConfiguration(new android.content.res.Configuration())\l}"];
+subgraph cluster_Region_117846440 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_758898513 {
+label = "IF [B:6:0x0023] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0023|if (com.google.android.material.color.ResourcesLoaderUtils.addResourcesLoaderToContext(r2, r0) != false) goto L7\l}"];
+subgraph cluster_Region_354179509 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_871259484 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0028|RETURN\lORIG_RETURN\l|return r4\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0025}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0027}"];
+MethodNode[shape=record,label="{public static android.content.Context com.google.android.material.color.HarmonizedColors.wrapContextIfAvailable((r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'options' com.google.android.material.color.HarmonizedColorsOptions A[D('options' com.google.android.material.color.HarmonizedColorsOptions), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0028 \-\> B:1:?, CROSS_EDGE: B:8:0x0027 \-\> B:9:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_10 -> Node_1;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+}
+

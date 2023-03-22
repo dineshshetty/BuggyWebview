@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.JobKt__JobKt.getJob(Lkotlin\/coroutines\/CoroutineContext;)Lkotlinx\/coroutines\/Job;" {
+subgraph cluster_Region_1796524529 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlinx.coroutines.Job kotlinx.coroutines.Job r0 = (kotlinx.coroutines.Job) r2.get(kotlinx.coroutines.Job.Key)\l}"];
+subgraph cluster_Region_531096334 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1686060190 {
+label = "IF [B:10:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000a|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1300388708 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000c|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_2073064632 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001c|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Current context doesn't contain Job in it: \", r2).toString())\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000d}"];
+MethodNode[shape=record,label="{public static final kotlinx.coroutines.Job kotlinx.coroutines.JobKt__JobKt.getJob((r2v0 '$this$job' kotlin.coroutines.CoroutineContext A[D('$this$job' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x001c \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_12 -> Node_13;
+}
+

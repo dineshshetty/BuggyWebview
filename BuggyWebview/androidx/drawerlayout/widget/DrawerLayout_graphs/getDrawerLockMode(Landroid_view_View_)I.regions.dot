@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.getDrawerLockMode(Landroid\/view\/View;)I" {
+subgraph cluster_Region_397653471 {
+label = "R(1:(2:(2:6|7)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2040269129 {
+label = "R(2:(2:6|7)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1878215756 {
+label = "IF [B:11:0x0004] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (isDrawerView(r4) == false) goto L6\l}"];
+subgraph cluster_Region_1204753519 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0013}"];
+Node_15 [shape=record,label="{15\:\ 0x002e|throw new java.lang.IllegalArgumentException(\"View \" + r4 + \" is not a drawer\")\l}"];
+}
+}
+subgraph cluster_Region_2022550078 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|int int r0 = ((androidx.drawerlayout.widget.DrawerLayout.LayoutParams) r4.getLayoutParams()).gravity\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0012|RETURN\l|return getDrawerLockMode(r0)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.drawerlayout.widget.DrawerLayout.getDrawerLockMode((r3v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'drawerView' android.view.View A[D('drawerView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x002e \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+}
+

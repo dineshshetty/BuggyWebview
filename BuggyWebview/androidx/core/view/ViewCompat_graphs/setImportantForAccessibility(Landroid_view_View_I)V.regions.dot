@@ -1,0 +1,70 @@
+digraph "CFG forandroidx.core.view.ViewCompat.setImportantForAccessibility(Landroid\/view\/View;I)V" {
+subgraph cluster_Region_365854199 {
+label = "R(1:(1:3)(1:(2:(1:10)|11)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1096983848 {
+label = "IF [B:17:0x0004] THEN: R(1:3) ELSE: R(1:(2:(1:10)|11)(0))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 19) goto L3\l}"];
+subgraph cluster_Region_1538291629 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|androidx.core.view.ViewCompat.Api16Impl.setImportantForAccessibility(r2, r3)\l}"];
+}
+subgraph cluster_Region_1415832578 {
+label = "R(1:(2:(1:10)|11)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_849615548 {
+label = "IF [B:20:0x000e] THEN: R(2:(1:10)|11) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L8\l}"];
+subgraph cluster_Region_1723576869 {
+label = "R(2:(1:10)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1047440448 {
+label = "IF [B:22:0x0011] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|if (r3 == 4) goto L10\l}"];
+subgraph cluster_Region_1978010747 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0013|r3 = 2\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0014|PHI: r3 \l  PHI: (r3v1 'mode' int) = (r3v0 'mode' int), (r3v2 'mode' int) binds: [B:22:0x0011, B:23:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|androidx.core.view.ViewCompat.Api16Impl.setImportantForAccessibility(r2, r3)\l}"];
+}
+subgraph cluster_Region_1736804737 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000a}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0010}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0017|ORIG_RETURN\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.view.ViewCompat.setImportantForAccessibility((r2v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'mode' int A[D('mode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0014 \-\> B:25:0x0017, CROSS_EDGE: B:22:0x0011 \-\> B:24:0x0014, CROSS_EDGE: B:20:0x000e \-\> B:25:0x0017\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_26;
+Node_20 -> Node_21;
+Node_20 -> Node_27[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_26 -> Node_15;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_25 -> Node_15;
+Node_27 -> Node_15;
+}
+

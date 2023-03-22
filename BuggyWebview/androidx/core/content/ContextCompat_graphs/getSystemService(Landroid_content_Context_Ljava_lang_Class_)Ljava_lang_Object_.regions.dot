@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.content.ContextCompat.getSystemService(Landroid\/content\/Context;Ljava\/lang\/Class;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1848107365 {
+label = "R(1:(2:(1:4)|(2:6|(2:(1:9)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_698196535 {
+label = "R(2:(1:4)|(2:6|(2:(1:9)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_344656463 {
+label = "IF [B:15:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L3\l}"];
+subgraph cluster_Region_303501021 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|RETURN\l|return (T) androidx.core.content.ContextCompat.Api23Impl.getSystemService(r2, r3)\l}"];
+}
+}
+subgraph cluster_Region_826520468 {
+label = "R(2:6|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|java.lang.String java.lang.String r0 = getSystemServiceName(r2, r3)\l}"];
+subgraph cluster_Region_1131084083 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1105523769 {
+label = "IF [B:19:0x000f] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|if (r0 != null) goto L8\l}"];
+subgraph cluster_Region_1686247263 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return (T) r2.getSystemService(r0)\l}"];
+}
+}
+subgraph cluster_Region_128087923 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0011}"];
+MethodNode[shape=record,label="{public static T androidx.core.content.ContextCompat.getSystemService((r2v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'serviceClass' java.lang.Class\<T\> A[D('serviceClass' java.lang.Class\<T\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0017 \-\> B:13:?, CROSS_EDGE: B:21:0x0016 \-\> B:22:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Landroid\/content\/Context;Ljava\/lang\/Class\<TT;\>;)TT;\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_13;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_20 -> Node_23;
+}
+

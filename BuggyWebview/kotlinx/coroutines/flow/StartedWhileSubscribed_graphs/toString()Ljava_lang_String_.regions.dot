@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.flow.StartedWhileSubscribed.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1466960998 {
+label = "R(5:1|(1:3)|(1:6)|7|8)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|java.util.List java.util.List r0 = kotlin.collections.CollectionsKt.createListBuilder(2)\l}"];
+subgraph cluster_IfRegion_1540395555 {
+label = "IF [B:13:0x000f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|if (r12.stopTimeout \> 0) goto L3\l}"];
+subgraph cluster_Region_409259614 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0011|r0.add(\"stopTimeout=\" + r12.stopTimeout + \"ms\")\l}"];
+}
+}
+subgraph cluster_IfRegion_857766966 {
+label = "IF [B:16:0x0033] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0033|if (r12.replayExpiration \< Long.MAX_VALUE) goto L6\l}"];
+subgraph cluster_Region_737103076 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0035|r0.add(\"replayExpiration=\" + r12.replayExpiration + \"ms\")\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x004e|java.util.List java.util.List r0 = kotlin.collections.CollectionsKt.build(r0)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0079|RETURN\l|return \"SharingStarted.WhileSubscribed(\" + kotlin.collections.CollectionsKt.joinToString$default(r0, null, null, null, 0, null, null, 63, null) + ')'\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002a}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String kotlinx.coroutines.flow.StartedWhileSubscribed.toString((r12v0 'this' kotlinx.coroutines.flow.StartedWhileSubscribed A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0033 \-\> B:18:0x004e, CROSS_EDGE: B:13:0x000f \-\> B:15:0x002a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_15 -> Node_16;
+}
+

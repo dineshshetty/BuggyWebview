@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.fragment.app.FragmentTransition.mergeTransitions(Landroidx\/fragment\/app\/FragmentTransitionImpl;Ljava\/lang\/Object;Ljava\/lang\/Object;Ljava\/lang\/Object;Landroidx\/fragment\/app\/Fragment;Z)Ljava\/lang\/Object;" {
+subgraph cluster_Region_31470943 {
+label = "R(3:1|(1:7)|(2:(2:10|11)|(2:13|14)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|boolean r0 = true\l}"];
+subgraph cluster_IfRegion_383383381 {
+label = "IF [B:18:0x0001, B:19:0x0003, B:20:0x0005] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0001|if (r3 != null) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0003|ADDED_TO_REGION\l|if (r4 != null) goto L4\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0005|ADDED_TO_REGION\l|if (r6 != null) goto L5\l}"];
+subgraph cluster_Region_975109407 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0012|PHI: r1 \l  PHI: (r1v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r0 = r7 ? r6.getAllowReturnTransitionOverlap() : r6.getAllowEnterTransitionOverlap()\l}"];
+}
+}
+subgraph cluster_Region_54516941 {
+label = "R(2:(2:10|11)|(2:13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_133140622 {
+label = "IF [B:25:0x0013] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0013|PHI: r0 \l  PHI: (r0v1 'overlap' boolean) = (r0v0 'overlap' boolean), (r0v0 'overlap' boolean), (r0v0 'overlap' boolean), (r0v2 'overlap' boolean) binds: [B:18:0x0001, B:19:0x0003, B:20:0x0005, B:24:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != false) goto L10\l}"];
+subgraph cluster_Region_973419114 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0015|java.lang.Object java.lang.Object r1 = r2.mergeTransitionsTogether(r4, r3, r5)\l}"];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_978297521 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001a|java.lang.Object java.lang.Object r1 = r2.mergeTransitionsInSequence(r4, r3, r5)\l}"];
+Node_28 [shape=record,label="{28\:\ 0x001e|RETURN\lORIG_RETURN\l|return r1\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0007}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0009}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000e}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static java.lang.Object androidx.fragment.app.FragmentTransition.mergeTransitions((r2v0 'impl' androidx.fragment.app.FragmentTransitionImpl A[D('impl' androidx.fragment.app.FragmentTransitionImpl), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'enterTransition' java.lang.Object A[D('enterTransition' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'exitTransition' java.lang.Object A[D('exitTransition' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'sharedElementTransition' java.lang.Object A[D('sharedElementTransition' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'inFragment' androidx.fragment.app.Fragment A[D('inFragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'isPop' boolean A[D('isPop' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x001a \-\> B:28:0x001e, CROSS_EDGE: B:23:0x000e \-\> B:24:0x0012, CROSS_EDGE: B:20:0x0005 \-\> B:25:0x0013, CROSS_EDGE: B:19:0x0003 \-\> B:25:0x0013, CROSS_EDGE: B:18:0x0001 \-\> B:25:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_29;
+Node_29 -> Node_16;
+Node_27 -> Node_28;
+Node_28 -> Node_16;
+Node_15 -> Node_17;
+Node_21 -> Node_22;
+Node_21 -> Node_23;
+Node_22 -> Node_24;
+Node_23 -> Node_24;
+}
+

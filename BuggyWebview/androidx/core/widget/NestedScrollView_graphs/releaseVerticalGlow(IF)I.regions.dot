@@ -1,0 +1,88 @@
+digraph "CFG forandroidx.core.widget.NestedScrollView.releaseVerticalGlow(IF)I" {
+subgraph cluster_Region_1755305838 {
+label = "R(5:1|(2:3|(1:5))(1:(2:13|(1:15)))|6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|float r0 = 0.0f\lfloat float r1 = r8 \/ getWidth()\lfloat float r2 = r7 \/ getHeight()\l}"];
+subgraph cluster_IfRegion_525712365 {
+label = "IF [B:19:0x0018] THEN: R(2:3|(1:5)) ELSE: R(1:(2:13|(1:15)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0018|if (androidx.core.widget.EdgeEffectCompat.getDistance(r6.mEdgeGlowTop) != 0.0f) goto L3\l}"];
+subgraph cluster_Region_286394834 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001a|float r0 = \-androidx.core.widget.EdgeEffectCompat.onPullDistance(r6.mEdgeGlowTop, \-r2, r1)\l}"];
+subgraph cluster_IfRegion_1075794598 {
+label = "IF [B:21:0x002a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x002a|if (androidx.core.widget.EdgeEffectCompat.getDistance(r6.mEdgeGlowTop) == 0.0f) goto L5\l}"];
+subgraph cluster_Region_1565326349 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002c|r6.mEdgeGlowTop.onRelease()\l}"];
+}
+}
+}
+subgraph cluster_Region_363451255 {
+label = "R(1:(2:13|(1:15))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_655464700 {
+label = "IF [B:24:0x003a] THEN: R(2:13|(1:15)) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x003a|if (androidx.core.widget.EdgeEffectCompat.getDistance(r6.mEdgeGlowBottom) != 0.0f) goto L13\l}"];
+subgraph cluster_Region_151300126 {
+label = "R(2:13|(1:15))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x003c|float r0 = androidx.core.widget.EdgeEffectCompat.onPullDistance(r6.mEdgeGlowBottom, r2, 1.0f \- r1)\l}"];
+subgraph cluster_IfRegion_488727770 {
+label = "IF [B:26:0x004d] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x004d|if (androidx.core.widget.EdgeEffectCompat.getDistance(r6.mEdgeGlowBottom) == 0.0f) goto L15\l}"];
+subgraph cluster_Region_657940455 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x004f|r6.mEdgeGlowBottom.onRelease()\l}"];
+}
+}
+}
+}
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0054|PHI: r0 \l  PHI: (r0v2 'consumed' float) = (r0v0 'consumed' float), (r0v1 'consumed' float), (r0v1 'consumed' float), (r0v3 'consumed' float), (r0v3 'consumed' float) binds: [B:24:0x003a, B:26:0x004d, B:27:0x004f, B:21:0x002a, B:22:0x002c] A[DONT_GENERATE, DONT_INLINE]\l|int int r3 = java.lang.Math.round(getHeight() * r0)\l}"];
+subgraph cluster_IfRegion_1981617288 {
+label = "IF [B:29:0x005f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x005f|if (r3 != 0) goto L8\l}"];
+subgraph cluster_Region_2094928413 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0061|invalidate()\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0064|RETURN\l|return r3\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0032}"];
+MethodNode[shape=record,label="{private int androidx.core.widget.NestedScrollView.releaseVerticalGlow((r6v0 'this' androidx.core.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]), (r7v0 'deltaY' int A[D('deltaY' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'x' float A[D('x' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x005f \-\> B:31:0x0064, CROSS_EDGE: B:21:0x002a \-\> B:28:0x0054, CROSS_EDGE: B:27:0x004f \-\> B:28:0x0054, CROSS_EDGE: B:26:0x004d \-\> B:28:0x0054, CROSS_EDGE: B:24:0x003a \-\> B:28:0x0054\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_28[style=dashed];
+Node_22 -> Node_28;
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_23 -> Node_24;
+}
+

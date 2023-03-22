@@ -1,0 +1,97 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatActivity.onSupportNavigateUp()Z" {
+subgraph cluster_Region_1076781875 {
+label = "R(2:1|(2:(1:(2:(2:5|(2:7|9))|(2:14|15)))|(1:16)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.content.Intent android.content.Intent r0 = getSupportParentActivityIntent()\l}"];
+subgraph cluster_Region_1455979043 {
+label = "R(2:(1:(2:(2:5|(2:7|9))|(2:14|15)))|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2083888443 {
+label = "IF [B:3:0x0004] THEN: R(1:(2:(2:5|(2:7|9))|(2:14|15))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_970490559 {
+label = "R(1:(2:(2:5|(2:7|9))|(2:14|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1328830248 {
+label = "R(2:(2:5|(2:7|9))|(2:14|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1286092628 {
+label = "IF [B:5:0x000a] THEN: R(2:5|(2:7|9)) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|if (supportShouldUpRecreateTask(r0) != false) goto L5\l}"];
+subgraph cluster_Region_1247033920 {
+label = "R(2:5|(2:7|9))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|androidx.core.app.TaskStackBuilder androidx.core.app.TaskStackBuilder r1 = androidx.core.app.TaskStackBuilder.create(r3)\lonCreateSupportNavigateUpTaskStack(r1)\lonPrepareSupportNavigateUpTaskStack(r1)\lr1.startActivities()\l}"];
+subgraph cluster_TryCatchRegion_688919596 {
+label = "Try: R(2:7|9) catches: R(2:12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1016887887 {
+label = "R(2:7|9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IllegalStateException \-\> 0x001d, blocks: (B:7:0x0019), top: B:17:0x0019 \}\lCatch: IllegalStateException \-\> 0x001d\l|androidx.core.app.ActivityCompat.finishAffinity(r3)     \/\/ Catch: java.lang.IllegalStateException \-\> L1d\l}"];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1101842969 {
+label = "R(2:12|13) | ExcHandler: IllegalStateException \-\> 0x001d\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|finish()\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_2043734450 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0022|supportNavigateUpTo(r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0025|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_751585299 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0027|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_1101842969 {
+label = "R(2:12|13) | ExcHandler: IllegalStateException \-\> 0x001d\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|finish()\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0019|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001d|ExcHandler: IllegalStateException \-\> 0x001d\l}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.app.AppCompatActivity.onSupportNavigateUp((r3v0 'this' androidx.appcompat.app.AppCompatActivity A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x001e \-\> B:13:0x0025, CROSS_EDGE: B:17:0x0019 \-\> B:9:0x001d, CROSS_EDGE: B:12:0x0022 \-\> B:13:0x0025, CROSS_EDGE: B:16:0x0028 \-\> B:1:?\lTYPE_VARS: EMPTY\lINLINE_NOT_NEEDED\lTryCatch #0 \{IllegalStateException \-\> 0x001d, blocks: (B:7:0x0019), top: B:17:0x0019 \}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_15[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_17;
+Node_7 -> Node_18;
+Node_7 -> Node_20;
+Node_20 -> Node_1;
+Node_10 -> Node_19;
+Node_19 -> Node_1;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_15 -> Node_1;
+Node_10 -> Node_19;
+Node_19 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_17 -> Node_7;
+Node_17 -> Node_9;
+Node_18 -> Node_9;
+Node_9 -> Node_10;
+}
+

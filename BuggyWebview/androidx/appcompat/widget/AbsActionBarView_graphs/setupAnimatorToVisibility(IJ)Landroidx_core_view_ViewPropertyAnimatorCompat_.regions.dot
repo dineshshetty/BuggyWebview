@@ -1,0 +1,70 @@
+digraph "CFG forandroidx.appcompat.widget.AbsActionBarView.setupAnimatorToVisibility(IJ)Landroidx\/core\/view\/ViewPropertyAnimatorCompat;" {
+subgraph cluster_Region_1840838036 {
+label = "R(3:1|(1:3)|(2:(2:12|13)|(3:(1:8)|9|10)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.core.view.ViewPropertyAnimatorCompat androidx.core.view.ViewPropertyAnimatorCompat r0 = r2.mVisibilityAnim\l}"];
+subgraph cluster_IfRegion_445240534 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_194855298 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|r0.cancel()\l}"];
+}
+}
+subgraph cluster_Region_1073650573 {
+label = "R(2:(2:12|13)|(3:(1:8)|9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1258247584 {
+label = "IF [B:6:0x0008] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0008|if (r3 != 0) goto L12\l}"];
+subgraph cluster_Region_971968659 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002a|androidx.core.view.ViewPropertyAnimatorCompat androidx.core.view.ViewPropertyAnimatorCompat r0 = androidx.core.view.ViewCompat.animate(r2).alpha(0.0f)\lr0.setDuration(r4)\lr0.setListener(r2.mVisAnimListener.withFinalVisibility(r0, r3))\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003e|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_332486255 {
+label = "R(3:(1:8)|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_605664341 {
+label = "IF [B:8:0x000e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000e|if (getVisibility() != 0) goto L8\l}"];
+subgraph cluster_Region_387259663 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0010|setAlpha(0.0f)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0013|androidx.core.view.ViewPropertyAnimatorCompat androidx.core.view.ViewPropertyAnimatorCompat r0 = androidx.core.view.ViewCompat.animate(r2).alpha(1.0f)\lr0.setDuration(r4)\lr0.setListener(r2.mVisAnimListener.withFinalVisibility(r0, r3))\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0029|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.core.view.ViewPropertyAnimatorCompat androidx.appcompat.widget.AbsActionBarView.setupAnimatorToVisibility((r2v0 'this' androidx.appcompat.widget.AbsActionBarView A[IMMUTABLE_TYPE, THIS]), (r3v0 'visibility' int A[D('visibility' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'duration' long A[D('duration' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x000e \-\> B:10:0x0013, CROSS_EDGE: B:13:0x003e \-\> B:1:?, CROSS_EDGE: B:3:0x0002 \-\> B:5:0x0007\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.widget.AbsActionBarView.setupAnimatorToVisibility(int, long):androidx.core.view.ViewPropertyAnimatorCompat]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

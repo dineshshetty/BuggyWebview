@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.appcompat.widget.SearchView.launchIntent(Landroid\/content\/Intent;)V" {
+subgraph cluster_Region_968394638 {
+label = "R(1:(2:(1:2)|(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1173141655 {
+label = "R(2:(1:2)|(1:(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1756549697 {
+label = "IF [B:14:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|if (r4 == null) goto L2\l}"];
+subgraph cluster_Region_2034751627 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_71214298 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_607558858 {
+label = "Try: R(1:5) catches: R(2:8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1525183191 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0003|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{RuntimeException \-\> 0x000b, blocks: (B:16:0x0003), top: B:21:0x0003 \}\lCatch: RuntimeException \-\> 0x000b\l|getContext().startActivity(r4)     \/\/ Catch: java.lang.RuntimeException \-\> Lb\l}"];
+}
+subgraph cluster_Region_489454209 {
+label = "R(2:8|9) | ExcHandler: RuntimeException \-\> 0x000b\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|ExcHandler: RuntimeException \-\> 0x000b\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000c|android.util.Log.e(androidx.appcompat.widget.SearchView.LOG_TAG, \"Failed launch activity: \" + r4, r0)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_489454209 {
+label = "R(2:8|9) | ExcHandler: RuntimeException \-\> 0x000b\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|ExcHandler: RuntimeException \-\> 0x000b\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000c|android.util.Log.e(androidx.appcompat.widget.SearchView.LOG_TAG, \"Failed launch activity: \" + r4, r0)\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0022|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.widget.SearchView.launchIntent((r3v0 'this' androidx.appcompat.widget.SearchView A[IMMUTABLE_TYPE, THIS]), (r4v0 'intent' android.content.Intent A[D('intent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0022 \-\> B:13:?, CROSS_EDGE: B:19:0x000c \-\> B:20:0x0022, CROSS_EDGE: B:21:0x0003 \-\> B:18:0x000b\lINLINE_NOT_NEEDED\lTryCatch #0 \{RuntimeException \-\> 0x000b, blocks: (B:16:0x0003), top: B:21:0x0003 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_14 -> Node_21[style=dashed];
+Node_15 -> Node_13;
+Node_16 -> Node_22;
+Node_16 -> Node_23;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_12 -> Node_14;
+Node_21 -> Node_16;
+Node_21 -> Node_18;
+Node_22 -> Node_18;
+Node_23 -> Node_13;
+Node_20 -> Node_13;
+}
+

@@ -1,0 +1,64 @@
+digraph "CFG forcom.google.android.material.progressindicator.LinearIndeterminateDisjointAnimatorDelegate.requestCancelAnimatorAfterCurrentCycle()V" {
+subgraph cluster_Region_1904942782 {
+label = "R(2:1|(2:(1:11)|(2:5|(1:(1:7)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.animation.ObjectAnimator android.animation.ObjectAnimator r0 = r4.completeEndAnimator\l}"];
+subgraph cluster_Region_811929079 {
+label = "R(2:(1:11)|(2:5|(1:(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_89956169 {
+label = "IF [B:3:0x0002, B:5:0x0008] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 == null) goto L12\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0008|ADDED_TO_REGION\l|if (r0.isRunning() != false) goto L11\l}"];
+subgraph cluster_Region_540835572 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_266518128 {
+label = "R(2:5|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000b|cancelAnimatorImmediately()\l}"];
+subgraph cluster_Region_1908126573 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1772687896 {
+label = "IF [B:8:0x0014] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|if (r4.drawable.isVisible() != false) goto L7\l}"];
+subgraph cluster_Region_706812423 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0016|r4.completeEndAnimator.setFloatValues(r4.animationFraction, 1.0f)\lr4.completeEndAnimator.setDuration((1.0f \- r4.animationFraction) * 1800.0f)\lr4.completeEndAnimator.start()\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003a|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003b|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.progressindicator.LinearIndeterminateDisjointAnimatorDelegate.requestCancelAnimatorAfterCurrentCycle((r4v0 'this' com.google.android.material.progressindicator.LinearIndeterminateDisjointAnimatorDelegate A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0014 \-\> B:10:0x003a, CROSS_EDGE: B:11:0x003b \-\> B:1:?, CROSS_EDGE: B:3:0x0002 \-\> B:11:0x003b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [com.google.android.material.progressindicator.IndeterminateAnimatorDelegate.requestCancelAnimatorAfterCurrentCycle():void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_11;
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_13;
+Node_13 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_10 -> Node_1;
+Node_12 -> Node_1;
+Node_11 -> Node_1;
+}
+

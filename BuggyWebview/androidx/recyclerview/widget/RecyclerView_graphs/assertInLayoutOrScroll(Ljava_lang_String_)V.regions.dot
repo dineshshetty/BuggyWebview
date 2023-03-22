@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.assertInLayoutOrScroll(Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1943516469 {
+label = "R(1:(1:(1:(2:(2:4|5)|(2:7|8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_176391273 {
+label = "R(1:(1:(2:(2:4|5)|(2:7|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_954926472 {
+label = "IF [B:13:0x0004] THEN: R(1:(2:(2:4|5)|(2:7|8))) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|if (isComputingLayout() == false) goto L3\l}"];
+subgraph cluster_Region_1828862978 {
+label = "R(1:(2:(2:4|5)|(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_590496394 {
+label = "R(2:(2:4|5)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_897858121 {
+label = "IF [B:14:0x0006] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|if (r4 == null) goto L4\l}"];
+subgraph cluster_Region_1436790324 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008}"];
+Node_16 [shape=record,label="{16\:\ 0x0022|throw new java.lang.IllegalStateException(\"Cannot call this method unless RecyclerView is computing a layout or scrolling\" + exceptionLabel())\l}"];
+}
+}
+subgraph cluster_Region_700279470 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0023}"];
+Node_18 [shape=record,label="{18\:\ 0x003b|throw new java.lang.IllegalStateException(r4 + exceptionLabel())\l}"];
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x003c}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.assertInLayoutOrScroll((r3v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r4v0 'message' java.lang.String A[D('message' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x003b \-\> B:11:?, CROSS_EDGE: B:19:0x003c \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_19[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_11;
+Node_17 -> Node_18;
+Node_18 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_19 -> Node_11;
+}
+

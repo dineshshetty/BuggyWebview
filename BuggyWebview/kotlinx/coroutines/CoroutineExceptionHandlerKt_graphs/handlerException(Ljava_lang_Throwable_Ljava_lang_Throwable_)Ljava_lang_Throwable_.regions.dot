@@ -1,0 +1,36 @@
+digraph "CFG forkotlinx.coroutines.CoroutineExceptionHandlerKt.handlerException(Ljava\/lang\/Throwable;Ljava\/lang\/Throwable;)Ljava\/lang\/Throwable;" {
+subgraph cluster_Region_331959027 {
+label = "R(1:(2:(1:2)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_298540624 {
+label = "R(2:(1:2)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_927938378 {
+label = "IF [B:8:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|if (r5 == r6) goto L2\l}"];
+subgraph cluster_Region_762588448 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0002|RETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_42709369 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0003|java.lang.RuntimeException java.lang.Throwable r0 = new java.lang.RuntimeException(\"Exception while trying to handle coroutine exception\", r6)\ljava.lang.Throwable java.lang.Throwable r3 = r0\lkotlin.Exceptions.addSuppressed(r3, r5)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0016|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.Throwable kotlinx.coroutines.CoroutineExceptionHandlerKt.handlerException((r5v0 'originalException' java.lang.Throwable A[D('originalException' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'thrownException' java.lang.Throwable A[D('thrownException' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0016 \-\> B:7:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_7;
+Node_10 -> Node_11;
+Node_11 -> Node_7;
+Node_6 -> Node_8;
+}
+

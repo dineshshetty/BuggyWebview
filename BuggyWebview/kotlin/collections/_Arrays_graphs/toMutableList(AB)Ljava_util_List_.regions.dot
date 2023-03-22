@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.toMutableList([B)Ljava\/util\/List;" {
+subgraph cluster_Region_1157398670 {
+label = "R(3:1|(1:3)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\ljava.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList(r5.length)\lint r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_305244058 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000d|LOOP_START\lLOOP:0: B:11:0x000d\-\>B:12:0x000f\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:10:0x0000, B:12:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_1045762227 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000f|LOOP_END\lLOOP:0: B:11:0x000d\-\>B:12:0x000f\l|r3 = r5[r2]\lr0.add(java.lang.Byte.valueOf(r3))\lr2++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x001e|RETURN\l|return r0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001b|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001b}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<java.lang.Byte\> kotlin.collections.ArraysKt___ArraysKt.toMutableList((r5v0 '$this$toMutableList' byte[] A[D('$this$toMutableList' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x000f \-\> B:11:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([B)Ljava\/util\/List\<Ljava\/lang\/Byte;\>;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_15 -> Node_13;
+Node_13 -> Node_14;
+}
+

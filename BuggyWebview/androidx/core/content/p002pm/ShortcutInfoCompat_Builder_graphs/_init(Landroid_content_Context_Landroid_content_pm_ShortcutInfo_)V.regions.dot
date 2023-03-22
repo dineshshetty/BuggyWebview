@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutInfoCompat.Builder.\<init\>(Landroid\/content\/Context;Landroid\/content\/pm\/ShortcutInfo;)V" {
+subgraph cluster_Region_1670515195 {
+label = "R(5:1|(1:3)(2:(1:12)(1:14)|13)|4|(1:6)|7) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|androidx.core.content.pm.ShortcutInfoCompat androidx.core.content.p002pm.ShortcutInfoCompat r0 = new androidx.core.content.p002pm.ShortcutInfoCompat()\lr4.mInfo = r0\lr0.mContext = r5\lr0.mId = r6.getId()\lr0.mPackageName = r6.getPackage()\landroid.content.Intent[] android.content.Intent[] r1 = r6.getIntents()\lr0.mIntents = (android.content.Intent[]) java.util.Arrays.copyOf(r1, r1.length)\lr0.mActivity = r6.getActivity()\lr0.mLabel = r6.getShortLabel()\lr0.mLongLabel = r6.getLongLabel()\lr0.mDisabledMessage = r6.getDisabledMessage()\l}"];
+subgraph cluster_IfRegion_382421935 {
+label = "IF [B:18:0x0041] THEN: R(1:3) ELSE: R(2:(1:12)(1:14)|13)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0041|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L3\l}"];
+subgraph cluster_Region_1404486148 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0043|r0.mDisabledReason = r6.getDisabledReason()\l}"];
+}
+subgraph cluster_Region_1425244854 {
+label = "R(2:(1:12)(1:14)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_311831105 {
+label = "IF [B:21:0x004e] THEN: R(1:12) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x004e|if (r6.isEnabled() != false) goto L12\l}"];
+subgraph cluster_Region_2010775312 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0050|r2 = 0\l}"];
+}
+subgraph cluster_Region_312129957 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0052|r2 = 3\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0053|PHI: r2 \l  PHI: (r2v10 int) = (r2v9 int), (r2v11 int) binds: [B:23:0x0052, B:22:0x0050] A[DONT_GENERATE, DONT_INLINE]\l|r0.mDisabledReason = r2\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0055|r0.mCategories = r6.getCategories()\lr0.mPersons = androidx.core.content.p002pm.ShortcutInfoCompat.getPersonsFromExtra(r6.getExtras())\lr0.mUser = r6.getUserHandle()\lr0.mLastChangedTimestamp = r6.getLastChangedTimestamp()\l}"];
+subgraph cluster_IfRegion_1999300696 {
+label = "IF [B:26:0x0075] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0075|if (android.os.Build.VERSION.SDK_INT \>= 30) goto L6\l}"];
+subgraph cluster_Region_1639229881 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0077|r0.mIsCached = r6.isCached()\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x007d|r0.mIsDynamic = r6.isDynamic()\lr0.mIsPinned = r6.isPinned()\lr0.mIsDeclaredInManifest = r6.isDeclaredInManifest()\lr0.mIsImmutable = r6.isImmutable()\lr0.mIsEnabled = r6.isEnabled()\lr0.mHasKeyFieldsOnly = r6.hasKeyFieldsOnly()\lr0.mLocusId = androidx.core.content.p002pm.ShortcutInfoCompat.getLocusId(r6)\lr0.mRank = r6.getRank()\lr0.mExtras = r6.getExtras()\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x00b3}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x004a}"];
+MethodNode[shape=record,label="{public void androidx.core.content.pm.ShortcutInfoCompat.Builder.\<init\>((r4v0 'this' androidx.core.content.pm.ShortcutInfoCompat$Builder A[IMMUTABLE_TYPE, THIS]), (r5v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'shortcutInfo' android.content.pm.ShortcutInfo A[D('shortcutInfo' android.content.pm.ShortcutInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0075 \-\> B:28:0x007d, CROSS_EDGE: B:24:0x0053 \-\> B:25:0x0055, CROSS_EDGE: B:23:0x0052 \-\> B:24:0x0053\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_25;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_15 -> Node_17;
+Node_29 -> Node_16;
+Node_20 -> Node_21;
+}
+

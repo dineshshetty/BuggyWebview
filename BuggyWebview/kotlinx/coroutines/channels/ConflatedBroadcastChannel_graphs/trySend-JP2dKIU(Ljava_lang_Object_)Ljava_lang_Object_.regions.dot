@@ -1,0 +1,40 @@
+digraph "CFG forkotlinx.coroutines.channels.ConflatedBroadcastChannel.trySend\-JP2dKIU(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_774230652 {
+label = "R(2:1|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlinx.coroutines.channels.ConflatedBroadcastChannel$Closed kotlinx.coroutines.channels.ConflatedBroadcastChannel.Closed r0 = offerInternal(r5)\l}"];
+subgraph cluster_Region_2005172865 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_791207566 {
+label = "IF [B:19:0x0004] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_1060315880 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001a|RETURN\l|return kotlinx.coroutines.channels.ChannelResult.Companion.m1651closedJP2dKIU(r0.getSendException())\l}"];
+}
+}
+subgraph cluster_Region_1520503178 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|RETURN\l|return kotlinx.coroutines.channels.ChannelResult.Companion.m1653successJP2dKIU(kotlin.Unit.INSTANCE)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0006}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000f}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.channels.ConflatedBroadcastChannel.trySend\-JP2dKIU((r4v0 'this' kotlinx.coroutines.channels.ConflatedBroadcastChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r5v0 E A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001a \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (TE;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.SendChannel.trySend\-JP2dKIU(E):java.lang.Object]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_22;
+Node_23 -> Node_17;
+Node_21 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+}
+

@@ -1,0 +1,101 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.collectInitialPrefetchPositions(ILandroidx\/recyclerview\/widget\/RecyclerView$LayoutManager$LayoutPrefetchRegistry;)V" {
+subgraph cluster_Region_339192601 {
+label = "R(5:1|(1:5)(2:21|(1:23)(1:26))|6|8|(1:13)) | DECL_VAR: boolean fromEnd, int anchorPos\l";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0000|androidx.recyclerview.widget.LinearLayoutManager$SavedState androidx.recyclerview.widget.LinearLayoutManager.SavedState r0 = r7.mPendingSavedState\l}"];
+subgraph cluster_IfRegion_1036049847 {
+label = "IF [B:32:0x0004, B:34:0x000a] THEN: R(1:5) ELSE: R(2:21|(1:23)(1:26))";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0004|if (r0 != null) goto L3\l}"];
+Node_34 [shape=record,label="{34\:\ 0x000a|ADDED_TO_REGION\l|if (r0.hasValidAnchor() != false) goto L5\l}"];
+subgraph cluster_Region_1271888930 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x000c|boolean r0 = r7.mPendingSavedState.mAnchorLayoutFromEnd\lint r3 = r7.mPendingSavedState.mAnchorPosition\l}"];
+}
+subgraph cluster_Region_2049605231 {
+label = "R(2:21|(1:23)(1:26))";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0015|resolveShouldLayoutReverse()\lboolean r0 = r7.mShouldReverseLayout\l}"];
+subgraph cluster_IfRegion_276772676 {
+label = "IF [B:37:0x001c] THEN: R(1:23) ELSE: R(1:26)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x001c|if (r7.mPendingScrollPosition == (\-1)) goto L23\l}"];
+subgraph cluster_Region_1473897097 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x001e|int r3 = r0 ? r8 \- 1 : 0\l}"];
+}
+subgraph cluster_Region_1653176609 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0025|int r3 = r7.mPendingScrollPosition\l}"];
+}
+}
+}
+}
+Node_43 [shape=record,label="{43\:\ 0x0027|PHI: r0 r3 \l  PHI: (r0v2 'fromEnd' boolean) = (r0v1 'fromEnd' boolean), (r0v1 'fromEnd' boolean), (r0v1 'fromEnd' boolean), (r0v5 'fromEnd' boolean) binds: [B:42:0x0025, B:40:0x0023, B:39:0x0020, B:35:0x000c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v4 'anchorPos' int) = (r3v1 'anchorPos' int), (r3v6 'anchorPos' int) binds: [B:42:0x0025, B:35:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|int r2 = r0 ? \-1 : 1\l}"];
+Node_46 [shape=record,label="{46\:\ 0x002b|PHI: r2 \l  PHI: (r2v1 'direction' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|int r4 = r3\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_1894775272 {
+label = "LOOP:0: (1:13)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x002f|if (r5 \< r7.mInitialPrefetchItemCount) goto L11\l}"];
+Node_49 [shape=record,label="{49\:\ 0x0031|ADDED_TO_REGION\l|if (r4 \>= 0) goto L12\l}"];
+Node_50 [shape=record,label="{50\:\ 0x0033|ADDED_TO_REGION\l|if (r4 \< r8) goto L13\l}"];
+subgraph cluster_Region_1495219618 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_51 [shape=record,label="{51\:\ 0x0035|LOOP_END\lLOOP:0: B:47:0x002d\-\>B:51:0x0035\l|r9.addPosition(r4, 0)\lr4 += r2\lr5++\l}"];
+}
+}
+}
+Node_29 [shape=record,color=red,label="{29\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0006}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x002a}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x002d|LOOP_START\lLOOP:0: B:47:0x002d\-\>B:51:0x0035\lPHI: r4 r5 \l  PHI: (r4v1 'targetPos' int) = (r4v0 'targetPos' int), (r4v2 'targetPos' int) binds: [B:46:0x002b, B:51:0x0035] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 'i' int) = (r5v0 'i' int), (r5v2 'i' int) binds: [B:46:0x002b, B:51:0x0035] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_54 [shape=record,color=red,label="{54\:\ 0x003c|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_56 [shape=record,color=red,label="{56\:\ ?|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_53 [shape=record,color=red,label="{53\:\ 0x003c|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x003c|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_55 [shape=record,color=red,label="{55\:\ 0x003c|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_57 [shape=record,color=red,label="{57\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0020}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0023}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.LinearLayoutManager.collectInitialPrefetchPositions((r7v0 'this' androidx.recyclerview.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]), (r8v0 'adapterItemCount' int A[D('adapterItemCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'layoutPrefetchRegistry' androidx.recyclerview.widget.RecyclerView$LayoutManager$LayoutPrefetchRegistry A[D('layoutPrefetchRegistry' androidx.recyclerview.widget.RecyclerView$LayoutManager$LayoutPrefetchRegistry), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:51:0x0035 \-\> B:47:0x002d, CROSS_EDGE: B:49:0x0031 \-\> B:52:0x003c, CROSS_EDGE: B:48:0x002f \-\> B:52:0x003c, CROSS_EDGE: B:43:0x0027 \-\> B:46:0x002b, CROSS_EDGE: B:39:0x0020 \-\> B:43:0x0027, CROSS_EDGE: B:40:0x0023 \-\> B:43:0x0027, CROSS_EDGE: B:42:0x0025 \-\> B:43:0x0027, CROSS_EDGE: B:32:0x0004 \-\> B:36:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.RecyclerView.LayoutManager.collectInitialPrefetchPositions(int, androidx.recyclerview.widget.RecyclerView$LayoutManager$LayoutPrefetchRegistry):void]\l}"];
+MethodNode -> Node_29;Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_36[style=dashed];
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_43;
+Node_36 -> Node_37;
+Node_37 -> Node_38;
+Node_37 -> Node_42[style=dashed];
+Node_38 -> Node_39;
+Node_38 -> Node_40;
+Node_42 -> Node_43;
+Node_43 -> Node_45;
+Node_43 -> Node_46;
+Node_46 -> Node_47;
+Node_48 -> Node_49;
+Node_48 -> Node_55[style=dashed];
+Node_49 -> Node_50;
+Node_49 -> Node_53[style=dashed];
+Node_50 -> Node_51;
+Node_50 -> Node_54[style=dashed];
+Node_51 -> Node_47;
+Node_29 -> Node_31;
+Node_33 -> Node_34;
+Node_45 -> Node_46;
+Node_47 -> Node_48;
+Node_54 -> Node_56;
+Node_56 -> Node_30;
+Node_53 -> Node_52;
+Node_52 -> Node_30;
+Node_55 -> Node_57;
+Node_57 -> Node_30;
+Node_39 -> Node_43;
+Node_40 -> Node_43;
+}
+

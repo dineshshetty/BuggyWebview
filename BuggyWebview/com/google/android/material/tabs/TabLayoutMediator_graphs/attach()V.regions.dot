@@ -1,0 +1,80 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayoutMediator.attach()V" {
+subgraph cluster_Region_1527532929 {
+label = "R(1:(2:(1:14)|(2:3|(2:(1:12)|(3:5|(1:7)|8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1895768416 {
+label = "R(2:(1:14)|(2:3|(2:(1:12)|(3:5|(1:7)|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1407727182 {
+label = "IF [B:3:0x0002] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r4.attached != false) goto L13\l}"];
+subgraph cluster_Region_218246666 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x005e|throw new java.lang.IllegalStateException(\"TabLayoutMediator is already attached\")\l}"];
+}
+}
+subgraph cluster_Region_1032816149 {
+label = "R(2:3|(2:(1:12)|(3:5|(1:7)|8)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|androidx.recyclerview.widget.RecyclerView$Adapter androidx.recyclerview.widget.RecyclerView.Adapter\<?\> r0 = r4.viewPager.getAdapter()\lr4.adapter = r0\l}"];
+subgraph cluster_Region_886770286 {
+label = "R(2:(1:12)|(3:5|(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1167619483 {
+label = "IF [B:5:0x000c] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r0 == null) goto L11\l}"];
+subgraph cluster_Region_1034340788 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0056|throw new java.lang.IllegalStateException(\"TabLayoutMediator attached before ViewPager2 has an adapter\")\l}"];
+}
+}
+subgraph cluster_Region_1333721882 {
+label = "R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|r4.attached = true\lcom.google.android.material.tabs.TabLayoutMediator$TabLayoutOnPageChangeCallback com.google.android.material.tabs.TabLayoutMediator.TabLayoutOnPageChangeCallback r1 = new com.google.android.material.tabs.TabLayoutMediator.TabLayoutOnPageChangeCallback(r4.tabLayout)\lr4.onPageChangeCallback = r1\lr4.viewPager.registerOnPageChangeCallback(r1)\lcom.google.android.material.tabs.TabLayoutMediator$ViewPagerOnTabSelectedListener com.google.android.material.tabs.TabLayoutMediator.ViewPagerOnTabSelectedListener r1 = new com.google.android.material.tabs.TabLayoutMediator.ViewPagerOnTabSelectedListener(r4.viewPager, r4.smoothScroll)\lr4.onTabSelectedListener = r1\lr4.tabLayout.addOnTabSelectedListener((com.google.android.material.tabs.TabLayout.OnTabSelectedListener) r1)\l}"];
+subgraph cluster_IfRegion_795791880 {
+label = "IF [B:7:0x0031] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0031|if (r4.autoRefresh != false) goto L7\l}"];
+subgraph cluster_Region_601430533 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0033|com.google.android.material.tabs.TabLayoutMediator$PagerAdapterObserver com.google.android.material.tabs.TabLayoutMediator.PagerAdapterObserver r1 = new com.google.android.material.tabs.TabLayoutMediator.PagerAdapterObserver()\lr4.pagerAdapterObserver = r1\lr4.adapter.registerAdapterDataObserver(r1)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x003f|populateTabsFromPagerAdapter()\lr4.tabLayout.setScrollPosition(r4.viewPager.getCurrentItem(), 0.0f, true)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x004e}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004f}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0057}"];
+MethodNode[shape=record,label="{public void com.google.android.material.tabs.TabLayoutMediator.attach((r4v0 'this' com.google.android.material.tabs.TabLayoutMediator A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0031 \-\> B:9:0x003f, CROSS_EDGE: B:12:0x0056 \-\> B:1:?, CROSS_EDGE: B:14:0x005e \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_14 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_12 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_10 -> Node_1;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+}
+

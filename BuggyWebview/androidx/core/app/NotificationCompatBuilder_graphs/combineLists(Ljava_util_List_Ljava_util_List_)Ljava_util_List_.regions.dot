@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.core.app.NotificationCompatBuilder.combineLists(Ljava\/util\/List;Ljava\/util\/List;)Ljava\/util\/List;" {
+subgraph cluster_Region_2080566394 {
+label = "R(1:(2:(1:2)|(1:(2:(1:5)|(2:6|7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_137701709 {
+label = "R(2:(1:2)|(1:(2:(1:5)|(2:6|7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_251428547 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r3 == null) goto L2\l}"];
+subgraph cluster_Region_1711683042 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_218915940 {
+label = "R(1:(2:(1:5)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_751983561 {
+label = "R(2:(1:5)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1094001398 {
+label = "IF [B:4:0x0003] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0003|if (r4 == null) goto L5\l}"];
+subgraph cluster_Region_382445079 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1558439158 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0006|androidx.collection.ArraySet androidx.collection.ArraySet\<java.lang.String\> r0 = new androidx.collection.ArraySet\<\>(r3.size() + r4.size())\lr0.addAll(r3)\lr0.addAll(r4)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001f|RETURN\l|return new java.util.ArrayList(r0)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<java.lang.String\> androidx.core.app.NotificationCompatBuilder.combineLists((r3v0 'first' java.util.List\<java.lang.String\> A[D('first' java.util.List\<java.lang.String\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'second' java.util.List\<java.lang.String\> A[D('second' java.util.List\<java.lang.String\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0005 \-\> B:1:?, CROSS_EDGE: B:7:0x001f \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/List\<Ljava\/lang\/String;\>;Ljava\/util\/List\<Ljava\/lang\/String;\>;)Ljava\/util\/List\<Ljava\/lang\/String;\>;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+}
+

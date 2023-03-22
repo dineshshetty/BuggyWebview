@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.appcompat.widget.LinearLayoutCompat.onDraw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_96939929 {
+label = "R(1:(2:(1:3)|(1:(1:7)(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_851655300 {
+label = "R(2:(1:3)|(1:(1:7)(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1680459609 {
+label = "IF [B:14:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r2.mDivider == null) goto L3\l}"];
+subgraph cluster_Region_275122320 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_752965346 {
+label = "R(1:(1:7)(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_123559648 {
+label = "IF [B:17:0x0008] THEN: R(1:7) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (r2.mOrientation == 1) goto L7\l}"];
+subgraph cluster_Region_769938013 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|drawDividersVertical(r3)\l}"];
+}
+subgraph cluster_Region_233242105 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|drawDividersHorizontal(r3)\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0005}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0011|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{protected void androidx.appcompat.widget.LinearLayoutCompat.onDraw((r2v0 'this' androidx.appcompat.widget.LinearLayoutCompat A[IMMUTABLE_TYPE, THIS]), (r3v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:20:0x0011 \-\> B:12:?, CROSS_EDGE: B:19:0x000e \-\> B:20:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onDraw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+Node_21 -> Node_12;
+Node_20 -> Node_12;
+}
+

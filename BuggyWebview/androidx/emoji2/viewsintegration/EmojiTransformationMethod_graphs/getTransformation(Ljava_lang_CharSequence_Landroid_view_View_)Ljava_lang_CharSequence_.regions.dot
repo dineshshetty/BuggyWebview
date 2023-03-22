@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.emoji2.viewsintegration.EmojiTransformationMethod.getTransformation(Ljava\/lang\/CharSequence;Landroid\/view\/View;)Ljava\/lang\/CharSequence;" {
+subgraph cluster_Region_461435453 {
+label = "R(1:(2:(1:3)|(4:5|(1:7)|(1:10)|13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1117494377 {
+label = "R(2:(1:3)|(4:5|(1:7)|(1:10)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_521863029 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r3.isInEditMode() != false) goto L3\l}"];
+subgraph cluster_Region_741108447 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1947571886 {
+label = "R(4:5|(1:7)|(1:10)|13)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|android.text.method.TransformationMethod android.text.method.TransformationMethod r0 = r1.mTransformationMethod\l}"];
+subgraph cluster_IfRegion_107084079 {
+label = "IF [B:6:0x0009] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|if (r0 != null) goto L7\l}"];
+subgraph cluster_Region_782096057 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000b|java.lang.CharSequence r2 = r0.getTransformation(r2, r3)\l}"];
+}
+}
+subgraph cluster_IfRegion_815887485 {
+label = "IF [B:8:0x000f] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|PHI: r2 \l  PHI: (r2v1 'source' java.lang.CharSequence) = (r2v0 'source' java.lang.CharSequence), (r2v2 'source' java.lang.CharSequence) binds: [B:6:0x0009, B:7:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 != null) goto L9\l}"];
+subgraph cluster_Region_784850644 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1726901550 {
+label = "Switch: 1
+ case 1 -> R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0019|switch(androidx.emoji2.text.EmojiCompat.get().getLoadState()) \{\l    case 1: goto L11;\l    default: goto L13;\l\}\l}"];
+subgraph cluster_Region_693868990 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0025|RETURN\l|return androidx.emoji2.text.EmojiCompat.get().process(r2)\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0026|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0011}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001d}"];
+MethodNode[shape=record,label="{public java.lang.CharSequence androidx.emoji2.viewsintegration.EmojiTransformationMethod.getTransformation((r1v0 'this' androidx.emoji2.viewsintegration.EmojiTransformationMethod A[IMMUTABLE_TYPE, THIS]), (r2v0 'source' java.lang.CharSequence A[D('source' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:13:0x0025 \-\> B:1:?, CROSS_EDGE: B:14:0x0026 \-\> B:1:?, CROSS_EDGE: B:8:0x000f \-\> B:14:0x0026, CROSS_EDGE: B:6:0x0009 \-\> B:8:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.text.method.TransformationMethod.getTransformation(java.lang.CharSequence, android.view.View):java.lang.CharSequence\}]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_14[style=dashed];
+Node_10 -> Node_12;
+Node_10 -> Node_14;
+Node_13 -> Node_1;
+Node_14 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+}
+

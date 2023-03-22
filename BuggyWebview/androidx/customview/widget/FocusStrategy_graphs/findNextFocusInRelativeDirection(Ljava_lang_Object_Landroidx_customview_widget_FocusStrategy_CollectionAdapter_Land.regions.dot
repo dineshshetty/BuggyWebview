@@ -1,0 +1,65 @@
+digraph "CFG forandroidx.customview.widget.FocusStrategy.findNextFocusInRelativeDirection(Ljava\/lang\/Object;Landroidx\/customview\/widget\/FocusStrategy$CollectionAdapter;Landroidx\/customview\/widget\/FocusStrategy$BoundsAdapter;Ljava\/lang\/Object;IZZ)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1818171560 {
+label = "R(4:1|(1:3)|5|6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|int int r0 = r6.size(r5)\ljava.util.ArrayList java.util.ArrayList\<T\> r1 = new java.util.ArrayList\<\>(r0)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1131710048 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|LOOP_START\lLOOP:0: B:17:0x000a\-\>B:18:0x000c\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v3 'i' int) binds: [B:16:0x0000, B:18:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r0) goto L3\l}"];
+subgraph cluster_Region_1233915452 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|LOOP_END\lLOOP:0: B:17:0x000a\-\>B:18:0x000c\l|r1.add(r6.get(r5, r2))\lr2++\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0016|androidx.customview.widget.FocusStrategy$SequentialComparator androidx.customview.widget.FocusStrategy.SequentialComparator\<T\> r2 = new androidx.customview.widget.FocusStrategy.SequentialComparator\<\>(r10, r7)\ljava.util.Collections.sort(r1, r2)\l}"];
+subgraph cluster_SwitchRegion_1650535143 {
+label = "Switch: 3
+ case 1 -> R(1:13)
+ case 2 -> R(1:11)
+ case default -> R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001e|switch(r9) \{\l    case 1: goto L12;\l    case 2: goto L10;\l    default: goto L7;\l\}\l}"];
+subgraph cluster_Region_916516733 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0032|RETURN\l|return (T) getPreviousFocusable(r8, r1, r11)\l}"];
+}
+subgraph cluster_Region_573455193 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002d|RETURN\l|return (T) getNextFocusable(r8, r1, r11)\l}"];
+}
+subgraph cluster_Region_2097906682 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0028|throw new java.lang.IllegalArgumentException(\"direction must be one of \{FOCUS_FORWARD, FOCUS_BACKWARD\}.\")\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0016|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0021}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0029}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002e}"];
+MethodNode[shape=record,label="{public static T androidx.customview.widget.FocusStrategy.findNextFocusInRelativeDirection((r5v0 'focusables' L A[D('focusables' L), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'collectionAdapter' androidx.customview.widget.FocusStrategy$CollectionAdapter\<L, T\> A[D('collectionAdapter' androidx.customview.widget.FocusStrategy$CollectionAdapter\<L, T\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'adapter' androidx.customview.widget.FocusStrategy$BoundsAdapter\<T\> A[D('adapter' androidx.customview.widget.FocusStrategy$BoundsAdapter\<T\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'focused' T A[D('focused' T), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'direction' int A[D('direction' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'isLayoutRtl' boolean A[D('isLayoutRtl' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'wrap' boolean A[D('wrap' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:18:0x000c \-\> B:17:0x000a, CROSS_EDGE: B:24:0x002d \-\> B:15:?, CROSS_EDGE: B:26:0x0032 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T, L]\lSIGNATURE: \<L:Ljava\/lang\/Object;T:Ljava\/lang\/Object;\>(TL;Landroidx\/customview\/widget\/FocusStrategy$CollectionAdapter\<TL;TT;\>;Landroidx\/customview\/widget\/FocusStrategy$BoundsAdapter\<TT;\>;TT;IZZ)TT;\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_27[style=dashed];
+Node_18 -> Node_17;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23;
+Node_20 -> Node_25;
+Node_26 -> Node_15;
+Node_24 -> Node_15;
+Node_22 -> Node_15;
+Node_14 -> Node_16;
+Node_27 -> Node_19;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+}
+

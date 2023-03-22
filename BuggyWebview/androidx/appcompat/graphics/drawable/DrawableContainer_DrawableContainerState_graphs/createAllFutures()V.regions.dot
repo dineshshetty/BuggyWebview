@@ -1,0 +1,51 @@
+digraph "CFG forandroidx.appcompat.graphics.drawable.DrawableContainer.DrawableContainerState.createAllFutures()V" {
+subgraph cluster_Region_1526633970 {
+label = "R(2:1|(1:(3:3|(1:5)|7)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|android.util.SparseArray\<android.graphics.drawable.Drawable$ConstantState\> android.util.SparseArray\<android.graphics.drawable.Drawable.ConstantState\> r0 = r6.mDrawableFutures\l}"];
+subgraph cluster_Region_74730335 {
+label = "R(1:(3:3|(1:5)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_209238367 {
+label = "IF [B:14:0x0002] THEN: R(3:3|(1:5)|7) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_2131499810 {
+label = "R(3:3|(1:5)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|int int r0 = r0.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1426708595 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|LOOP_START\lLOOP:0: B:16:0x0009\-\>B:17:0x000b\lPHI: r1 \l  PHI: (r1v1 'keyIndex' int) = (r1v0 'keyIndex' int), (r1v3 'keyIndex' int) binds: [B:15:0x0004, B:17:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L5\l}"];
+subgraph cluster_Region_2079753765 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|LOOP_END\lLOOP:0: B:16:0x0009\-\>B:17:0x000b\l|int int r2 = r6.mDrawableFutures.keyAt(r1)\landroid.graphics.drawable.Drawable$ConstantState android.graphics.drawable.Drawable.ConstantState r3 = r6.mDrawableFutures.valueAt(r1)\lr6.mDrawables[r2] = prepareDrawable(r3.newDrawable(r6.mSourceRes))\lr1++\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x002a|r6.mDrawableFutures = null\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x002a|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x002d|ORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.graphics.drawable.DrawableContainer.DrawableContainerState.createAllFutures((r6v0 'this' androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x000b \-\> B:16:0x0009, CROSS_EDGE: B:14:0x0002 \-\> B:19:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_21[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_17 -> Node_16;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_20 -> Node_18;
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+}
+

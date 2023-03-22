@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.onRestoreInstanceState(Landroid\/os\/Parcelable;)V" {
+subgraph cluster_Region_1861342138 {
+label = "R(1:(2:(2:3|4)|(2:6|(1:(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1468984749 {
+label = "R(2:(2:3|4)|(2:6|(1:(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_291796064 {
+label = "IF [B:17:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if ((r3 instanceof androidx.recyclerview.widget.RecyclerView.SavedState) == false) goto L3\l}"];
+subgraph cluster_Region_2087812768 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|super.onRestoreInstanceState(r3)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0007|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1884107170 {
+label = "R(2:6|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|androidx.recyclerview.widget.RecyclerView$SavedState androidx.recyclerview.widget.RecyclerView.SavedState r0 = (androidx.recyclerview.widget.RecyclerView.SavedState) r3\lr2.mPendingSavedState = r0\lsuper.onRestoreInstanceState(r0.getSuperState())\l}"];
+subgraph cluster_Region_486350487 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1019112224 {
+label = "IF [B:21:0x0016, B:23:0x001c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|if (r2.mLayout != null) goto L8\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001c|ADDED_TO_REGION\l|if (r2.mPendingSavedState.mLayoutState != null) goto L10\l}"];
+subgraph cluster_Region_248242083 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|r2.mLayout.onRestoreInstanceState(r2.mPendingSavedState.mLayoutState)\l}"];
+}
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0018}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0027|ORIG_RETURN\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{protected void androidx.recyclerview.widget.RecyclerView.onRestoreInstanceState((r2v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r3v0 'state' android.os.Parcelable A[D('state' android.os.Parcelable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:25:0x0027 \-\> B:15:?, CROSS_EDGE: B:23:0x001c \-\> B:25:0x0027, CROSS_EDGE: B:21:0x0016 \-\> B:25:0x0027\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onRestoreInstanceState(android.os.Parcelable):void\}]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_15;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_26[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_27[style=dashed];
+Node_24 -> Node_25;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_22 -> Node_23;
+Node_25 -> Node_15;
+Node_27 -> Node_15;
+Node_26 -> Node_15;
+}
+

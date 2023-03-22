@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.sequences.GeneratorSequence$iterator$1.calcNext()V" {
+subgraph cluster_Region_793872141 {
+label = "R(3:(1:3)(1:11)|4|7) | DECL_VAR: kotlin.jvm.functions.Function1 null, T null, kotlin.jvm.functions.Function0 null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_649709027 {
+label = "IF [B:3:0x0003] THEN: R(1:3) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r2.nextState == (\-2)) goto L3\l}"];
+subgraph cluster_Region_966813693 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|kotlin.jvm.functions.Function0 r0 = ((kotlin.sequences.GeneratorSequence) r2.this$0).getInitialValue\lr0 = r0.invoke()\l}"];
+}
+subgraph cluster_Region_616260171 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|kotlin.jvm.functions.Function1 r0 = ((kotlin.sequences.GeneratorSequence) r2.this$0).getNextValue\lT T r1 = r2.nextItem\lkotlin.jvm.internal.Intrinsics.checkNotNull(r1)\lr0 = r0.invoke(r1)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001f|PHI: r0 \l  PHI: (r0v4 T) = (r0v11 T), (r0v12 T) binds: [B:5:0x0010, B:4:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|r2.nextItem = r0\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0026|PHI: r0 \l  PHI: (r0v6 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r2.nextState = r0 == 0 ? 0 : 1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0021}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0023}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0028}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0025}"];
+MethodNode[shape=record,label="{private final void kotlin.sequences.GeneratorSequence$iterator$1.calcNext((r2v0 'this' kotlin.sequences.GeneratorSequence$iterator$1 A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0025 \-\> B:10:0x0026, CROSS_EDGE: B:5:0x0010 \-\> B:6:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r0v4, resolved type: T\l \-\> Multi\-variable search result rejected for r0v11, resolved type: T\l \-\> Multi\-variable search result rejected for r0v12, resolved type: T\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_1;
+Node_9 -> Node_10;
+}
+

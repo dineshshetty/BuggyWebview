@@ -1,0 +1,43 @@
+digraph "CFG forkotlin.text.CharsKt__CharKt.digitToIntOrNull(CI)Ljava\/lang\/Integer;" {
+subgraph cluster_Region_722643481 {
+label = "R(2:1|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.text.CharsKt.checkRadix(r5)\ljava.lang.Integer java.lang.Integer r0 = java.lang.Integer.valueOf(kotlin.text.CharsKt.digitOf(r4, r5))\lint int r1 = r0.intValue()\l}"];
+subgraph cluster_Region_894900087 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1929312393 {
+label = "IF [B:17:0x0018] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|PHI: r3 \l  PHI: (r3v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r1 \>= 0) == true) goto L7\l}"];
+subgraph cluster_Region_1313375122 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1229657557 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001b|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0013}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0015}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0017}"];
+MethodNode[shape=record,label="{public static final java.lang.Integer kotlin.text.CharsKt__CharKt.digitToIntOrNull((r4v0 '$this$digitToIntOrNull' char A[D('$this$digitToIntOrNull' char), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'radix' int A[D('radix' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0018 \-\> B:20:0x001c, CROSS_EDGE: B:16:0x0017 \-\> B:17:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_21;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+}
+

@@ -1,0 +1,98 @@
+digraph "CFG forkotlin.jvm.internal.PropertyReference.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_1535894217 {
+label = "R(1:(2:(1:3)|(1:(2:7|8)(1:(1:20)(1:21)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1423373366 {
+label = "R(2:(1:3)|(1:(2:7|8)(1:(1:20)(1:21))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_770220940 {
+label = "IF [B:27:0x0001] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0001|if (r6 == r5) goto L3\l}"];
+subgraph cluster_Region_1165731099 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0003|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1105365719 {
+label = "R(1:(2:7|8)(1:(1:20)(1:21)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_586588569 {
+label = "IF [B:30:0x0007] THEN: R(2:7|8) ELSE: R(1:(1:20)(1:21))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0007|if ((r6 instanceof kotlin.jvm.internal.PropertyReference) != false) goto L7\l}"];
+subgraph cluster_Region_2122494170 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0009|kotlin.jvm.internal.PropertyReference kotlin.jvm.internal.PropertyReference r1 = (kotlin.jvm.internal.PropertyReference) r6\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0018|RETURN\l|return getOwner().equals(r1.getOwner()) && getName().equals(r1.getName()) && getSignature().equals(r1.getSignature()) && kotlin.jvm.internal.Intrinsics.areEqual(getBoundReceiver(), r1.getBoundReceiver())\l}"];
+}
+subgraph cluster_Region_1256882824 {
+label = "R(1:(1:20)(1:21)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1386325427 {
+label = "IF [B:43:0x0049] THEN: R(1:20) ELSE: R(1:21) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0049|if ((r6 instanceof kotlin.reflect.KProperty) == true) goto L19\l}"];
+subgraph cluster_Region_130033922 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0053|RETURN\l|return r6.equals(compute())\l}"];
+}
+subgraph cluster_Region_271428106 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0054|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0004}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001a}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0026|REMOVE\lADDED_TO_REGION\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0028}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0034|REMOVE\lADDED_TO_REGION\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0036}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0042|REMOVE\lADDED_TO_REGION\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ ?|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0045|ORIG_RETURN\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x0047}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x004b}"];
+MethodNode[shape=record,label="{public boolean kotlin.jvm.internal.PropertyReference.equals((r5v0 'this' kotlin.jvm.internal.PropertyReference A[IMMUTABLE_TYPE, THIS]), (r6v0 'obj' java.lang.Object A[D('obj' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:41:0x0046 \-\> B:25:?, CROSS_EDGE: B:38:0x0042 \-\> B:41:0x0046, CROSS_EDGE: B:36:0x0034 \-\> B:40:0x0045, CROSS_EDGE: B:34:0x0026 \-\> B:40:0x0045, CROSS_EDGE: B:32:0x0018 \-\> B:40:0x0045, CROSS_EDGE: B:45:0x0053 \-\> B:25:?, CROSS_EDGE: B:46:0x0054 \-\> B:25:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_24;Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_25;
+Node_30 -> Node_31;
+Node_30 -> Node_42[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_40;
+Node_43 -> Node_44;
+Node_43 -> Node_46[style=dashed];
+Node_45 -> Node_25;
+Node_46 -> Node_25;
+Node_24 -> Node_26;
+Node_26 -> Node_27;
+Node_29 -> Node_30;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_40;
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_36 -> Node_40;
+Node_37 -> Node_38;
+Node_38 -> Node_40;
+Node_38 -> Node_47;
+Node_47 -> Node_25;
+Node_40 -> Node_25;
+Node_42 -> Node_43;
+Node_44 -> Node_45;
+}
+

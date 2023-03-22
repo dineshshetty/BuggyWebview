@@ -1,0 +1,62 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.indexOf([FF)I" {
+subgraph cluster_Region_1180202834 {
+label = "R(3:1|(1:(2:(1:9)|(1:7)))|13)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\lint r0 = 0\lint int r1 = r3.length\l}"];
+subgraph cluster_LoopRegion_116270690 {
+label = "LOOP:0: (1:(2:(1:9)|(1:7)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0007|LOOP_START\lLOOP:0: B:18:0x0007\-\>B:25:0x0015\lPHI: r0 \l  PHI: (r0v2 'index' int) = (r0v1 'index' int), (r0v4 'index' int) binds: [B:17:0x0000, B:25:0x0015] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< r1) goto L3\l}"];
+subgraph cluster_Region_1032853539 {
+label = "R(1:(2:(1:9)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1800737757 {
+label = "R(2:(1:9)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1406430841 {
+label = "IF [B:23:0x0012] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0012|PHI: r2 \l  PHI: (r2v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4 == r3[r0]) != false) goto L8\l}"];
+subgraph cluster_Region_1454600630 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0014|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1441141308 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0015|LOOP_END\lLOOP:0: B:18:0x0007\-\>B:25:0x0015\l|r0++\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0018|RETURN\l|return \-1\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0009}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000d}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000f}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0014|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0011}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0018|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final \/* synthetic *\/ int kotlin.collections.ArraysKt___ArraysKt.indexOf((r3v0 '$this$indexOf' float[] A[D('$this$indexOf' float[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'element' float A[D('element' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\l\{Lkotlin\/Deprecated;=Annotation\{RUNTIME, type=Lkotlin\/Deprecated;, values=\{message=The function has unclear behavior when searching for NaN or zero values and will be removed soon. Use 'indexOfFirst \{ it == element \}' instead to continue using this behavior, or '.asList().indexOf(element: T)' to get the same search behavior as in a list., replaceWith=\{ENCODED_ANNOTATION: Annotation\{null, type=Lkotlin\/ReplaceWith;, values=\{expression=indexOfFirst \{ it == element \}, imports=[[]]\}\}\}\}\}, Lkotlin\/DeprecatedSinceKotlin;=Annotation\{RUNTIME, type=Lkotlin\/DeprecatedSinceKotlin;, values=\{errorSince=1.6, hiddenSince=1.7, warningSince=1.4\}\}\}\lINLINE_NOT_NEEDED\lBACK_EDGE: B:25:0x0015 \-\> B:18:0x0007, CROSS_EDGE: B:22:0x0011 \-\> B:23:0x0012, CROSS_EDGE: B:27:0x0019 \-\> B:16:?\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_29[style=dashed];
+Node_23 -> Node_25[style=dashed];
+Node_23 -> Node_28;
+Node_24 -> Node_16;
+Node_25 -> Node_18;
+Node_26 -> Node_16;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22;
+Node_21 -> Node_23;
+Node_28 -> Node_24;
+Node_22 -> Node_23;
+Node_29 -> Node_26;
+}
+

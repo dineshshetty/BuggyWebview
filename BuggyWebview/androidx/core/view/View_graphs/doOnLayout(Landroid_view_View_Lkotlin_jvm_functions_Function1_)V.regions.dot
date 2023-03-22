@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.core.view.ViewKt.doOnLayout(Landroid\/view\/View;Lkotlin\/jvm\/functions\/Function1;)V" {
+subgraph cluster_Region_1070211870 {
+label = "R(2:1|(1:5)(1:8))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"action\")\l}"];
+subgraph cluster_IfRegion_1469519162 {
+label = "IF [B:3:0x000f, B:5:0x0015] THEN: R(1:5) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|if (androidx.core.view.ViewCompat.isLaidOut(r4) != false) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ADDED_TO_REGION\l|if (r4.isLayoutRequested() == false) goto L5\l}"];
+subgraph cluster_Region_1428401881 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|r5.invoke(r4)\l}"];
+}
+subgraph cluster_Region_563377739 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|r4.addOnLayoutChangeListener(new androidx.core.view.ViewKt$doOnLayout$$inlined$doOnNextLayout$1())\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0028|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static final void androidx.core.view.ViewKt.doOnLayout((r4v0 '$this$doOnLayout' android.view.View A[D('$this$doOnLayout' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'action' kotlin.jvm.functions.Function1\<? super android.view.View, kotlin.Unit\> A[D('action' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x001b \-\> B:8:0x0028, CROSS_EDGE: B:3:0x000f \-\> B:7:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/view\/View;Lkotlin\/jvm\/functions\/Function1\<\-Landroid\/view\/View;Lkotlin\/Unit;\>;)V\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_9 -> Node_1;
+Node_8 -> Node_1;
+}
+

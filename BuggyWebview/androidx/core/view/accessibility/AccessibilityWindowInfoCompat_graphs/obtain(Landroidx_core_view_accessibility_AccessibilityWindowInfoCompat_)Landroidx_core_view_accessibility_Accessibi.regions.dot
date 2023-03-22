@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.core.view.accessibility.AccessibilityWindowInfoCompat.obtain(Landroidx\/core\/view\/accessibility\/AccessibilityWindowInfoCompat;)Landroidx\/core\/view\/accessibility\/AccessibilityWindowInfoCompat;" {
+subgraph cluster_Region_113789028 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_625568868 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_259214168 {
+label = "IF [B:3:0x0005, B:4:0x0007] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (android.os.Build.VERSION.SDK_INT \< 21) goto L8\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0007|ADDED_TO_REGION\l|if (r3 == null) goto L7\l}"];
+subgraph cluster_Region_2121895607 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_985035380 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|RETURN\lORIG_RETURN\l|return wrapNonNullInstance(androidx.core.view.accessibility.AccessibilityWindowInfoCompat.Api21Impl.obtain((android.view.accessibility.AccessibilityWindowInfo) r3.mInfo))\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017|RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public static androidx.core.view.accessibility.AccessibilityWindowInfoCompat androidx.core.view.accessibility.AccessibilityWindowInfoCompat.obtain((r3v0 'info' androidx.core.view.accessibility.AccessibilityWindowInfoCompat A[D('info' androidx.core.view.accessibility.AccessibilityWindowInfoCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:4:0x0007 \-\> B:7:0x0016, CROSS_EDGE: B:8:0x0017 \-\> B:1:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_4 -> Node_6[style=dashed];
+Node_4 -> Node_9;
+Node_9 -> Node_1;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_8 -> Node_1;
+}
+

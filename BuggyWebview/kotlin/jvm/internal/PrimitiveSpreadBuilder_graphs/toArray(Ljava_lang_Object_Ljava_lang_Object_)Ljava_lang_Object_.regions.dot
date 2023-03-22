@@ -1,0 +1,85 @@
+digraph "CFG forkotlin.jvm.internal.PrimitiveSpreadBuilder.toArray(Ljava\/lang\/Object;Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_168926871 {
+label = "R(5:1|(2:4|(2:(1:8)|9)(0))|14|(1:16)|17)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"values\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"result\")\lint r0 = 0\lint r1 = 0\lkotlin.collections.IntIterator ?? r2 = new kotlin.ranges.IntRange(0, r7.size \- 1).iterator()\l}"];
+subgraph cluster_LoopRegion_1565636349 {
+label = "LOOP:0: (2:4|(2:(1:8)|9)(0))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001e|if (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_438052435 {
+label = "R(2:4|(2:(1:8)|9)(0))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0020|int int r3 = r2.nextInt()\lT r5 = r7.spreads[r3]\l}"];
+subgraph cluster_IfRegion_1170585576 {
+label = "IF [B:25:0x0028] THEN: R(2:(1:8)|9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0028|if (r5 != null) goto L6\l}"];
+subgraph cluster_Region_1227916426 {
+label = "R(2:(1:8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1948607612 {
+label = "IF [B:26:0x002a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002a|if (r1 \< r3) goto L8\l}"];
+subgraph cluster_Region_668496422 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002c|java.lang.System.arraycopy(r8, r1, r9, r0, r3 \- r1)\lr0 += r3 \- r1\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0034|PHI: r0 \l  PHI: (r0v5 'dstIndex' int) = (r0v3 'dstIndex' int), (r0v7 'dstIndex' int) binds: [B:26:0x002a, B:27:0x002c] A[DONT_GENERATE, DONT_INLINE]\l|int int r6 = getSize(r5)\ljava.lang.System.arraycopy(r5, 0, r9, r0, r6)\lr0 += r6\lint r1 = r3 + 1\l}"];
+}
+subgraph cluster_Region_1124831673 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x003f|int int r2 = r7.size\l}"];
+subgraph cluster_IfRegion_972864166 {
+label = "IF [B:30:0x0041] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0041|if (r1 \< r2) goto L16\l}"];
+subgraph cluster_Region_1917233541 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0043|java.lang.System.arraycopy(r8, r1, r9, r0, r2 \- r1)\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0047|RETURN\l|return r9\l}"];
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001a|LOOP_START\lLOOP:0: B:22:0x001a\-\>B:35:0x001a\lPHI: r0 r1 \l  PHI: (r0v3 'dstIndex' int) = (r0v2 'dstIndex' int), (r0v4 'dstIndex' int) binds: [B:21:0x0000, B:35:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'copyValuesFrom' int) = (r1v0 'copyValuesFrom' int), (r1v2 'copyValuesFrom' int) binds: [B:21:0x0000, B:35:0x001a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002a|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x001a|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x001a|LOOP_END\lSYNTHETIC\lLOOP:0: B:22:0x001a\-\>B:35:0x001a\lPHI: r0 r1 \l  PHI: (r0v4 'dstIndex' int) = (r0v3 'dstIndex' int), (r0v6 'dstIndex' int) binds: [B:36:0x001a, B:37:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v2 'copyValuesFrom' int) = (r1v1 'copyValuesFrom' int), (r1v3 'copyValuesFrom' int) binds: [B:36:0x001a, B:37:0x001a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x001a|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x003f|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final T kotlin.jvm.internal.PrimitiveSpreadBuilder.toArray((r7v0 'this' kotlin.jvm.internal.PrimitiveSpreadBuilder\<T\> A[IMMUTABLE_TYPE, THIS]), (r8v0 'values' T A[D('values' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'result' T A[D('result' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x0028 \-\> B:22:0x001a, BACK_EDGE: B:28:0x0034 \-\> B:22:0x001a, CROSS_EDGE: B:26:0x002a \-\> B:28:0x0034, CROSS_EDGE: B:30:0x0041 \-\> B:32:0x0047\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r2v1, types: [kotlin.collections.IntIterator]\}\lSIGNATURE: (TT;TT;)TT;\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_34[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_33;
+Node_25 -> Node_36[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_37;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_20;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_33 -> Node_26;
+Node_37 -> Node_35;
+Node_35 -> Node_22;
+Node_36 -> Node_35;
+Node_34 -> Node_29;
+}
+

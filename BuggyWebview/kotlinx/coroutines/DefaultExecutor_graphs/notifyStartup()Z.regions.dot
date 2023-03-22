@@ -1,0 +1,66 @@
+digraph "CFG forkotlinx.coroutines.DefaultExecutor.notifyStartup()Z" {
+subgraph cluster_Region_1697403725 {
+label = "R(1:(1:(1:(2:(1:7)|(2:10|12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1631310817 {
+label = "R(1:(1:(2:(1:7)|(2:10|12))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1465629215 {
+label = "R(1:(2:(1:7)|(2:10|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_217014649 {
+label = "R(2:(1:7)|(2:10|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_199159186 {
+label = "IF [B:21:0x0005] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0005|if (isShutdownRequested() == true) goto L5\l}"];
+subgraph cluster_Region_885359571 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0009|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1044663318 {
+label = "R(2:10|12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000b|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{, blocks: (B:20:0x0001, B:26:0x000b), top: B:32:0x0001 \}\lCatch: all \-\> 0x0015\l|kotlinx.coroutines.DefaultExecutor.debugStatus = 1     \/\/ Catch: java.lang.Throwable \-\> L15\lnotifyAll()     \/\/ Catch: java.lang.Throwable \-\> L15\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0014|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0001|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{, blocks: (B:20:0x0001, B:26:0x000b), top: B:32:0x0001 \}\lCatch: all \-\> 0x0015\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0007}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0008|DONT_GENERATE\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000a}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0013|DONT_GENERATE\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0015|REMOVE\lExcHandler: all \-\> 0x0015\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0017|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{private final synchronized boolean kotlinx.coroutines.DefaultExecutor.notifyStartup((r2v0 'this' kotlinx.coroutines.DefaultExecutor A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x0014 \-\> B:18:?, CROSS_EDGE: B:31:0x0017 \-\> B:18:?, CROSS_EDGE: B:32:0x0001 \-\> B:29:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_24 -> Node_18;
+Node_26 -> Node_27;
+Node_26 -> Node_33;
+Node_28 -> Node_18;
+Node_17 -> Node_19;
+Node_19 -> Node_32;
+Node_32 -> Node_20;
+Node_32 -> Node_29;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_33 -> Node_29;
+Node_29 -> Node_31;
+Node_31 -> Node_18;
+}
+

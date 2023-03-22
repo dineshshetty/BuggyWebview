@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.AppCompatWindowCallback.onCreatePanelView(I)Landroid\/view\/View;" {
+subgraph cluster_Region_1427125369 {
+label = "R(2:1|(2:(1:5)|(1:8))) | DECL_VAR: android.view.View created\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|androidx.appcompat.app.AppCompatDelegateImpl$ActionBarMenuCallback androidx.appcompat.app.AppCompatDelegateImpl.ActionBarMenuCallback r0 = r1.mActionBarCallback\l}"];
+subgraph cluster_Region_1832368770 {
+label = "R(2:(1:5)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_990315545 {
+label = "IF [B:12:0x0002, B:14:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0002|if (r0 != null) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0008|ADDED_TO_REGION\l|if ((r0 = r0.onCreatePanelView(r2)) != null) goto L5\l}"];
+subgraph cluster_Region_930404706 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000a|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1531040112 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|RETURN\l|return super.onCreatePanelView(r2)\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0004}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b}"];
+MethodNode[shape=record,label="{public android.view.View androidx.appcompat.app.AppCompatDelegateImpl.AppCompatWindowCallback.onCreatePanelView((r1v0 'this' androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback A[IMMUTABLE_TYPE, THIS]), (r2v0 'featureId' int A[D('featureId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:17:0x000f \-\> B:10:?, CROSS_EDGE: B:12:0x0002 \-\> B:16:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.Window.Callback.onCreatePanelView(int):android.view.View\}]\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_10;
+Node_17 -> Node_10;
+Node_9 -> Node_11;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+}
+

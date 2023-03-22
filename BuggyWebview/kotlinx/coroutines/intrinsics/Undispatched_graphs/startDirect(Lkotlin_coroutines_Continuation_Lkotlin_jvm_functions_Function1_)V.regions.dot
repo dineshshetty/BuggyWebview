@@ -1,0 +1,70 @@
+digraph "CFG forkotlinx.coroutines.intrinsics.UndispatchedKt.startDirect(Lkotlin\/coroutines\/Continuation;Lkotlin\/jvm\/functions\/Function1;)V" {
+subgraph cluster_Region_865489804 {
+label = "R(2:1|(2:3|(1:(1:6))))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.coroutines.Continuation kotlin.coroutines.Continuation r1 = kotlin.coroutines.jvm.internal.DebugProbes.probeCoroutineCreated(r4)\l}"];
+subgraph cluster_TryCatchRegion_1399565079 {
+label = "Try: R(2:3|(1:(1:6))) catches: R(2:11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_543379683 {
+label = "R(2:3|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x001d, blocks: (B:17:0x0008), top: B:25:0x0008 \}\lCatch: all \-\> 0x001d\l|java.lang.Object java.lang.Object r2 = r5.invoke(r1)     \/\/ Catch: java.lang.Throwable \-\> L1d\l}"];
+subgraph cluster_Region_181115990 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1395940491 {
+label = "IF [B:19:0x0011] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|if (r2 != kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L6\l}"];
+subgraph cluster_Region_1680151314 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0013|kotlin.Result$Companion kotlin.Result.Companion r3 = kotlin.Result.Companion\lr1.resumeWith(kotlin.Result.m144constructorimpl(r2))\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1388277603 {
+label = "R(2:11|12) | ExcHandler: all \-\> 0x001d\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001d|ExcHandler: all \-\> 0x001d\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001e|kotlin.Result$Companion kotlin.Result.Companion r3 = kotlin.Result.Companion\lr1.resumeWith(kotlin.Result.m144constructorimpl(kotlin.ResultKt.createFailure(r2)))\l}"];
+}
+}
+}
+subgraph cluster_Region_1388277603 {
+label = "R(2:11|12) | ExcHandler: all \-\> 0x001d\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001d|ExcHandler: all \-\> 0x001d\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001e|kotlin.Result$Companion kotlin.Result.Companion r3 = kotlin.Result.Companion\lr1.resumeWith(kotlin.Result.m144constructorimpl(kotlin.ResultKt.createFailure(r2)))\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0008|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000d}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001c|ORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002b}"];
+MethodNode[shape=record,label="{private static final void kotlinx.coroutines.intrinsics.UndispatchedKt.startDirect((r4v0 kotlin.coroutines.Continuation\<? super T\> A[D('completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 kotlin.jvm.functions.Function1\<? super kotlin.coroutines.Continuation\<? super T\>, ? extends java.lang.Object\> A[D('block' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0011 \-\> B:21:0x001c, CROSS_EDGE: B:24:0x002b \-\> B:15:?, CROSS_EDGE: B:25:0x0008 \-\> B:22:0x001d\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x001d, blocks: (B:17:0x0008), top: B:25:0x0008 \}\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlin\/coroutines\/Continuation\<\-TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-Lkotlin\/coroutines\/Continuation\<\-TT;\>;+Ljava\/lang\/Object;\>;)V\l}"];
+MethodNode -> Node_14;Node_16 -> Node_25;
+Node_17 -> Node_18;
+Node_17 -> Node_26;
+Node_19 -> Node_20;
+Node_19 -> Node_27[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_14 -> Node_16;
+Node_25 -> Node_17;
+Node_25 -> Node_22;
+Node_18 -> Node_19;
+Node_21 -> Node_15;
+Node_27 -> Node_15;
+Node_26 -> Node_22;
+Node_24 -> Node_15;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.vectordrawable.graphics.drawable.VectorDrawableCompat.VGroup.onStateChanged([I)Z" {
+subgraph cluster_Region_1566293431 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|boolean r0 = false\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1285084395 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|if (r1 \< r3.mChildren.size()) goto L4\l}"];
+subgraph cluster_Region_1246980022 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|LOOP_END\lLOOP:0: B:11:0x0002\-\>B:13:0x000a\l|r0 \|= r3.mChildren.get(r1).onStateChanged(r4)\lr1++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x001a|RETURN\l|return r0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0002|LOOP_START\lLOOP:0: B:11:0x0002\-\>B:13:0x000a\lPHI: r0 r1 \l  PHI: (r0v1 'changed' boolean) = (r0v0 'changed' boolean), (r0v2 'changed' boolean) binds: [B:10:0x0000, B:13:0x000a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:10:0x0000, B:13:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001a|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.VGroup.onStateChanged((r3v0 'this' androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VGroup A[IMMUTABLE_TYPE, THIS]), (r4v0 'stateSet' int[] A[D('stateSet' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x000a \-\> B:11:0x0002\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.VObject.onStateChanged(int[]):boolean]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

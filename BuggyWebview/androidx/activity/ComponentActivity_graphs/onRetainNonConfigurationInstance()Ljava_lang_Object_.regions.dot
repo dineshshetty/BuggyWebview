@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.activity.ComponentActivity.onRetainNonConfigurationInstance()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1426697600 {
+label = "R(3:1|(1:5)|(2:(1:8)|(2:10|11))) | DECL_VAR: androidx.activity.ComponentActivity$NonConfigurationInstances nc\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.lang.Object java.lang.Object r0 = onRetainCustomNonConfigurationInstance()\landroidx.lifecycle.ViewModelStore androidx.lifecycle.ViewModelStore r1 = r3.mViewModelStore\l}"];
+subgraph cluster_IfRegion_329028576 {
+label = "IF [B:16:0x0006, B:18:0x000f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|if (r1 == null) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000f|ADDED_TO_REGION\l|if ((r2 = (androidx.activity.ComponentActivity.NonConfigurationInstances) getLastNonConfigurationInstance()) != null) goto L5\l}"];
+subgraph cluster_Region_199318193 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|androidx.lifecycle.ViewModelStore r1 = r2.viewModelStore\l}"];
+}
+}
+subgraph cluster_Region_1512034464 {
+label = "R(2:(1:8)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1096011169 {
+label = "IF [B:20:0x0013, B:21:0x0015] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0013|PHI: r1 \l  PHI: (r1v1 'viewModelStore' androidx.lifecycle.ViewModelStore) = (r1v0 'viewModelStore' androidx.lifecycle.ViewModelStore), (r1v0 'viewModelStore' androidx.lifecycle.ViewModelStore), (r1v2 'viewModelStore' androidx.lifecycle.ViewModelStore) binds: [B:16:0x0006, B:18:0x000f, B:19:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 == null) goto L7\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0015|ADDED_TO_REGION\l|if (r0 == null) goto L8\l}"];
+subgraph cluster_Region_1777538683 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0017|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1366993050 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|androidx.activity.ComponentActivity$NonConfigurationInstances androidx.activity.ComponentActivity.NonConfigurationInstances r2 = new androidx.activity.ComponentActivity.NonConfigurationInstances()\lr2.custom = r0\lr2.viewModelStore = r1\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0022|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0009}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final java.lang.Object androidx.activity.ComponentActivity.onRetainNonConfigurationInstance((r3v0 'this' androidx.activity.ComponentActivity A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:25:0x0022 \-\> B:14:?, CROSS_EDGE: B:20:0x0013 \-\> B:24:0x0019, CROSS_EDGE: B:18:0x000f \-\> B:20:0x0013, CROSS_EDGE: B:16:0x0006 \-\> B:20:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.app.Activity.onRetainNonConfigurationInstance():java.lang.Object\}]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_24[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_22 -> Node_14;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+}
+

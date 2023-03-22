@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.lifecycle.ProcessLifecycleOwner.activityResumed()V" {
+subgraph cluster_Region_1797503597 {
+label = "R(2:1|(1:(1:(2:(2:5|6)|(1:8)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = r2.mResumedCounter + 1\lr2.mResumedCounter = r0\l}"];
+subgraph cluster_Region_402135493 {
+label = "R(1:(1:(2:(2:5|6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_237935263 {
+label = "IF [B:14:0x0006] THEN: R(1:(2:(2:5|6)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|if (r0 == 1) goto L3\l}"];
+subgraph cluster_Region_250554870 {
+label = "R(1:(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1589427073 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1175714769 {
+label = "IF [B:16:0x000a] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (r2.mPauseSent != false) goto L5\l}"];
+subgraph cluster_Region_292742375 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|r2.mRegistry.handleLifecycleEvent(androidx.lifecycle.Lifecycle.Event.ON_RESUME)\lr2.mPauseSent = false\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1722142630 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0017|r2.mHandler.removeCallbacks(r2.mDelayedPauseRunnable)\l}"];
+}
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0008}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001e|ORIG_RETURN\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.lifecycle.ProcessLifecycleOwner.activityResumed((r2v0 'this' androidx.lifecycle.ProcessLifecycleOwner A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0017 \-\> B:19:0x001e, CROSS_EDGE: B:14:0x0006 \-\> B:19:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_19 -> Node_12;
+Node_20 -> Node_12;
+}
+

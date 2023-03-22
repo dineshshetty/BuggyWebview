@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal19.removeEmojiInputFilterIfPresent([Landroid\/text\/InputFilter;)[Landroid\/text\/InputFilter;" {
+subgraph cluster_Region_1192196122 {
+label = "R(2:1|(2:(1:3)|(3:5|(2:(1:9)(0)|11)|14)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|android.util.SparseArray android.util.SparseArray\<android.text.InputFilter\> r0 = getEmojiInputFilterPositionArray(r8)\l}"];
+subgraph cluster_Region_199604437 {
+label = "R(2:(1:3)|(3:5|(2:(1:9)(0)|11)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_507081786 {
+label = "IF [B:18:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|if (r0.size() == 0) goto L3\l}"];
+subgraph cluster_Region_59189927 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|RETURN\l|return r8\l}"];
+}
+}
+subgraph cluster_Region_1958486133 {
+label = "R(3:5|(2:(1:9)(0)|11)|14)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|int int r1 = r8.length\lint int r2 = r8.length \- r0.size()\landroid.text.InputFilter[] android.text.InputFilter[] r3 = new android.text.InputFilter[r2]\lint r4 = 0\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_204949864 {
+label = "LOOP:0: (2:(1:9)(0)|11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|LOOP_START\lLOOP:0: B:21:0x0016\-\>B:25:0x0024\lPHI: r4 r5 \l  PHI: (r4v1 'destPosition' int) = (r4v0 'destPosition' int), (r4v2 'destPosition' int) binds: [B:20:0x000b, B:25:0x0024] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 'srcPosition' int) = (r5v0 'srcPosition' int), (r5v2 'srcPosition' int) binds: [B:20:0x000b, B:25:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r1) goto L7\l}"];
+subgraph cluster_Region_1288718514 {
+label = "R(2:(1:9)(0)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_818165954 {
+label = "IF [B:23:0x001c] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001c|if (r0.indexOfKey(r5) \< 0) goto L9\l}"];
+subgraph cluster_Region_1509581936 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|r3[r4] = r8[r5]\lr4++\l}"];
+}
+subgraph cluster_Region_332966485 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0024|LOOP_END\lLOOP:0: B:21:0x0016\-\>B:25:0x0024\lPHI: r4 \l  PHI: (r4v2 'destPosition' int) = (r4v1 'destPosition' int), (r4v3 'destPosition' int) binds: [B:29:0x0024, B:28:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|r5++\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0027|RETURN\l|return r3\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0018}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0024|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0024|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0027|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private android.text.InputFilter[] androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal19.removeEmojiInputFilterIfPresent((r7v0 'this' androidx.emoji2.viewsintegration.EmojiTextViewHelper$HelperInternal19 A[IMMUTABLE_TYPE, THIS]), (r8v0 'filters' android.text.InputFilter[] A[D('filters' android.text.InputFilter[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x0024 \-\> B:21:0x0016, CROSS_EDGE: B:23:0x001c \-\> B:25:0x0024, CROSS_EDGE: B:26:0x0027 \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_16;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_27[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_29[style=dashed];
+Node_24 -> Node_28;
+Node_25 -> Node_21;
+Node_26 -> Node_16;
+Node_15 -> Node_17;
+Node_22 -> Node_23;
+Node_28 -> Node_25;
+Node_29 -> Node_25;
+Node_27 -> Node_26;
+}
+

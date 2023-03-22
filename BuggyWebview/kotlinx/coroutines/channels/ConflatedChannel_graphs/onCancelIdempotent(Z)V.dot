@@ -1,0 +1,34 @@
+digraph "CFG forkotlinx.coroutines.channels.ConflatedChannel.onCancelIdempotent(Z)V" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0001|java.util.concurrent.locks.ReentrantLock r1 = r6.lock\ljava.util.concurrent.locks.Lock r3 = r1\lr3.lock()\l}"];
+Node_26 [shape=record,label="{26\:\ 0x000c|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000c|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0023, blocks: (B:17:0x000c), top: B:26:0x000c \}\lCatch: all \-\> 0x0023\l|kotlinx.coroutines.internal.UndeliveredElementException r5 = updateValueLocked(kotlinx.coroutines.channels.AbstractChannelKt.EMPTY)     \/\/ Catch: java.lang.Throwable \-\> L23\lkotlin.Unit r4 = kotlin.Unit.INSTANCE     \/\/ Catch: java.lang.Throwable \-\> L23\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0016|r3.unlock()\lsuper.onCancelIdempotent(r7)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001d|if (r5 != null) goto L8\l}"];
+Node_20 [shape=record,label="{20\:\ 0x001f|RETURN\l|return\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0020}"];
+Node_22 [shape=record,label="{22\:\ 0x0022|throw r5\l}"];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0023|ExcHandler: all \-\> 0x0023\l|java.lang.Throwable r4 = move\-exception\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0024|r3.unlock()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0027|throw r4\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.channels.ConflatedChannel.onCancelIdempotent((r6v0 'this' kotlinx.coroutines.channels.ConflatedChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r7v0 'wasClosed' boolean A[D('wasClosed' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | CROSS_EDGE: B:22:0x0022 \-\> B:15:?, CROSS_EDGE: B:25:0x0027 \-\> B:15:?, CROSS_EDGE: B:26:0x000c \-\> B:23:0x0023\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0023, blocks: (B:17:0x000c), top: B:26:0x000c \}\lTYPE_VARS: [E]\lJadxCommentsAttr\{\l DEBUG: \l \-\> Don't trust debug lines info. Repeating lines: [123=4]\}\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.AbstractChannel.onCancelIdempotent(boolean):void]\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_26;
+Node_26 -> Node_17;
+Node_26 -> Node_23;
+Node_17 -> Node_18;
+Node_17 -> Node_27;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_15;
+Node_27 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+}
+

@@ -1,0 +1,75 @@
+digraph "CFG forandroidx.customview.widget.ViewDragHelper.dragTo(IIII)V" {
+subgraph cluster_Region_1541868669 {
+label = "R(4:1|(1:3)(0)|(1:5)(0)|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|int r3 = r17\lint r4 = r18\lint int r5 = r16.mCapturedView.getLeft()\lint int r6 = r16.mCapturedView.getTop()\l}"];
+subgraph cluster_IfRegion_739580991 {
+label = "IF [B:17:0x0016] THEN: R(1:3) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0016|if (r19 != 0) goto L3\l}"];
+subgraph cluster_Region_953912744 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0018|int r3 = r16.mCallback.clampViewPositionHorizontal(r16.mCapturedView, r17, r19)\landroidx.core.view.ViewCompat.offsetLeftAndRight(r16.mCapturedView, r3 \- r5)\l}"];
+}
+subgraph cluster_Region_1896155547 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+subgraph cluster_IfRegion_950437758 {
+label = "IF [B:20:0x002c] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002c|PHI: r3 \l  PHI: (r3v1 'clampedX' int) = (r3v0 'clampedX' int), (r3v2 'clampedX' int) binds: [B:19:0x002a, B:18:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|if (r20 != 0) goto L5\l}"];
+subgraph cluster_Region_547377380 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x002e|int r4 = r16.mCallback.clampViewPositionVertical(r16.mCapturedView, r18, r20)\landroidx.core.view.ViewCompat.offsetTopAndBottom(r16.mCapturedView, r4 \- r6)\l}"];
+}
+subgraph cluster_Region_1598284493 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+subgraph cluster_Region_1538521598 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_35875522 {
+label = "IF [B:23:0x0042, B:24:0x0044] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0042|PHI: r4 \l  PHI: (r4v1 'clampedY' int) = (r4v0 'clampedY' int), (r4v2 'clampedY' int) binds: [B:22:0x0040, B:21:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|if (r19 != 0) goto L10\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0044|ADDED_TO_REGION\l|if (r20 != 0) goto L10\l}"];
+subgraph cluster_Region_797819646 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0046|int int r7 = r3 \- r5\lint int r8 = r4 \- r6\lr16.mCallback.onViewPositionChanged(r16.mCapturedView, r3, r4, r7, r8)\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0055|ORIG_RETURN\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0040}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x002a}"];
+MethodNode[shape=record,label="{private void androidx.customview.widget.ViewDragHelper.dragTo((r16v0 'this' androidx.customview.widget.ViewDragHelper A[IMMUTABLE_TYPE, THIS]), (r17v0 'left' int A[D('left' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'top' int A[D('top' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'dx' int A[D('dx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 'dy' int A[D('dy' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0044 \-\> B:26:0x0055, CROSS_EDGE: B:23:0x0042 \-\> B:25:0x0046, CROSS_EDGE: B:22:0x0040 \-\> B:23:0x0042, CROSS_EDGE: B:19:0x002a \-\> B:20:0x002c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_27 -> Node_15;
+Node_26 -> Node_15;
+Node_22 -> Node_23;
+Node_19 -> Node_20;
+}
+

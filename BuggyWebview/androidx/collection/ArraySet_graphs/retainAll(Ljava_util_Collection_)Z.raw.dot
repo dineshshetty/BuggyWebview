@@ -1,0 +1,29 @@
+digraph "CFG forandroidx.collection.ArraySet.retainAll(Ljava\/util\/Collection;)Z" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000|0x0000: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:749)\l0x0001: IGET  (r1 I:int) = (r3 I:androidx.collection.ArraySet A[D('this' androidx.collection.ArraySet\<E\>)]) androidx.collection.ArraySet.mSize int  (LINE:750)\l0x0003: ARITH  (r1 I:int) = (r1 I:int) + (\-1 int) \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0005|LOOP_START\lLOOP:0: B:15:0x0005\-\>B:19:0x0015\l|0x0005: IF  (r1 I:??[int, byte, short, char] A[D('i' int)]) \< (0 ??[int, byte, short, char])  \-\> B:21:0x0018 \l}"];
+Node_16 [shape=record,label="{16\:\ 0x0007|0x0007: IGET  (r2 I:java.lang.Object[]) = (r3 I:androidx.collection.ArraySet A[D('this' androidx.collection.ArraySet\<E\>)]) androidx.collection.ArraySet.mArray java.lang.Object[]  (LINE:751)\l0x0009: AGET  (r2 I:??[OBJECT, ARRAY]) = (r2 I:??[OBJECT, ARRAY][]), (r1 I:??[int, short, byte, char] A[D('i' int)]) \l0x000b: INVOKE  (r2 I:boolean) = (r4 I:java.util.Collection A[D('collection' java.util.Collection\<?\>)]), (r2 I:java.lang.Object) type: INTERFACE call: java.util.Collection.contains(java.lang.Object):boolean A[MD:(java.lang.Object):boolean (c)]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000f|0x000f: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:23:0x0015 \l}"];
+Node_18 [shape=record,label="{18\:\ 0x0011|0x0011: INVOKE  (r3 I:androidx.collection.ArraySet A[D('this' androidx.collection.ArraySet\<E\>)]), (r1 I:int A[D('i' int)]) type: VIRTUAL call: androidx.collection.ArraySet.removeAt(int):java.lang.Object A[MD:(int):E (m)] (LINE:752)\l0x0014: CONST  (r0 I:??[boolean, int, float, short, byte, char] A[D('removed' boolean)]) = (1 ??[boolean, int, float, short, byte, char])  (LINE:753)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0015|SYNTHETIC\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0015|LOOP_END\lLOOP:0: B:15:0x0005\-\>B:19:0x0015\l|0x0015: ARITH  (r1 I:int) = (r1 I:int A[D('i' int)]) + (\-1 int)  (LINE:750)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0015|SYNTHETIC\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0018|SYNTHETIC\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0018|RETURN\l|0x0018: RETURN  (r0 I:boolean A[D('removed' boolean)])  (LINE:756)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.collection.ArraySet.retainAll((r3 'this' I:androidx.collection.ArraySet\<E\> A[D('this' androidx.collection.ArraySet\<E\>), IMMUTABLE_TYPE, THIS]), (r4 I:java.util.Collection\<?\> A[D('collection' java.util.Collection\<?\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:19:0x0015 \-\> B:15:0x0005, CROSS_EDGE: B:17:0x000f \-\> B:19:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (Ljava\/util\/Collection\<*\>;)Z\lDebug Info:\l  0x0005\-0x0018: r1 'i' I\l  0x0001\-0x0018: r0 'removed' Z\l  0x0000\-0x0018: r3 'this' Landroidx\/collection\/ArraySet;, signature: Landroidx\/collection\/ArraySet\<TE;\>;\l  0x0000\-0x0018: r4 'collection' Ljava\/util\/Collection;, signature: Ljava\/util\/Collection\<*\>;\lMETHOD_OVERRIDE: [ClspMth\{java.util.Collection.retainAll(java.util.Collection\<?\>):boolean\}]\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_21;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_23;
+Node_18 -> Node_22;
+Node_22 -> Node_19;
+Node_19 -> Node_15;
+Node_23 -> Node_19;
+Node_21 -> Node_20;
+Node_20 -> Node_13;
+}
+

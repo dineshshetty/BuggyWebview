@@ -1,0 +1,53 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.TabView.getOrCreateBadge()Lcom\/google\/android\/material\/badge\/BadgeDrawable;" {
+subgraph cluster_Region_711777916 {
+label = "R(3:(1:3)|4|(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1382056841 {
+label = "IF [B:13:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r2.badgeDrawable == null) goto L3\l}"];
+subgraph cluster_Region_903539628 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|r2.badgeDrawable = com.google.android.material.badge.BadgeDrawable.create(getContext())\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x000e|tryUpdateBadgeAnchor()\lcom.google.android.material.badge.BadgeDrawable com.google.android.material.badge.BadgeDrawable r0 = r2.badgeDrawable\l}"];
+subgraph cluster_Region_1395731721 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_146828472 {
+label = "IF [B:16:0x0013] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0013|if (r0 == null) goto L8\l}"];
+subgraph cluster_Region_1692026743 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001d|throw new java.lang.IllegalStateException(\"Unable to create badge\")\l}"];
+}
+}
+subgraph cluster_Region_2116472140 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0016}"];
+MethodNode[shape=record,label="{public com.google.android.material.badge.BadgeDrawable com.google.android.material.tabs.TabLayout.TabView.getOrCreateBadge((r2v0 'this' com.google.android.material.tabs.TabLayout$TabView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001d \-\> B:11:?, CROSS_EDGE: B:13:0x0002 \-\> B:15:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_19 -> Node_11;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_18 -> Node_19;
+}
+

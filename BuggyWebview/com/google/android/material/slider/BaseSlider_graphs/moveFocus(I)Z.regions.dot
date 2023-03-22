@@ -1,0 +1,53 @@
+digraph "CFG forcom.google.android.material.slider.BaseSlider.moveFocus(I)Z" {
+subgraph cluster_Region_1329968790 {
+label = "R(2:1|(2:(1:3)|(3:(1:7)|8|9)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = r11.focusedThumbIdx\llong long r1 = r0 + r12\lint int r3 = (int) androidx.core.math.MathUtils.clamp(r1, 0L, r11.values.size() \- 1)\lr11.focusedThumbIdx = r3\l}"];
+subgraph cluster_Region_1116273793 {
+label = "R(2:(1:3)|(3:(1:7)|8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_875876969 {
+label = "IF [B:14:0x0018] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0018|if (r3 == r0) goto L3\l}"];
+subgraph cluster_Region_1216965959 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001a|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1921463531 {
+label = "R(3:(1:7)|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1639335659 {
+label = "IF [B:18:0x001f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001f|if (r11.activeThumbIdx != (\-1)) goto L7\l}"];
+subgraph cluster_Region_1613983524 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0021|r11.activeThumbIdx = r3\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0023|updateHaloHotspot()\lpostInvalidate()\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0029|RETURN\l|return true\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001c}"];
+MethodNode[shape=record,label="{private boolean com.google.android.material.slider.BaseSlider.moveFocus((r11v0 'this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\> A[D('this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\>), IMMUTABLE_TYPE, THIS]), (r12v0 'direction' int A[D('direction' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0029 \-\> B:12:?, CROSS_EDGE: B:18:0x001f \-\> B:20:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_15 -> Node_12;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_17 -> Node_18;
+}
+

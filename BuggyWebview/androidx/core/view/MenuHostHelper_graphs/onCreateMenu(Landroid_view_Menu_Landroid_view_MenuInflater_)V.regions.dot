@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.core.view.MenuHostHelper.onCreateMenu(Landroid\/view\/Menu;Landroid\/view\/MenuInflater;)V" {
+subgraph cluster_Region_925561337 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.util.Iterator java.util.Iterator\<androidx.core.view.MenuProvider\> r0 = r2.mMenuProviders.iterator()\l}"];
+subgraph cluster_LoopRegion_1547621957 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000a|if (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1036064743 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000c|LOOP_END\lLOOP:0: B:11:0x0006\-\>B:13:0x000c\l|androidx.core.view.MenuProvider androidx.core.view.MenuProvider r1 = r0.next()\lr1.onCreateMenu(r3, r4)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0006|LOOP_START\lLOOP:0: B:11:0x0006\-\>B:13:0x000c\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0016|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0016}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.core.view.MenuHostHelper.onCreateMenu((r2v0 'this' androidx.core.view.MenuHostHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 'menu' android.view.Menu A[D('menu' android.view.Menu), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'menuInflater' android.view.MenuInflater A[D('menuInflater' android.view.MenuInflater), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x000c \-\> B:11:0x0006\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

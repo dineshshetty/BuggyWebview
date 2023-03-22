@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.vectordrawable.graphics.drawable.VectorDrawableCompat.mutate()Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_962477934 {
+label = "R(1:(2:(2:3|4)|(2:(1:10)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2086466530 {
+label = "R(2:(2:3|4)|(2:(1:10)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2027982042 {
+label = "IF [B:15:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r2.mDelegateDrawable != null) goto L3\l}"];
+subgraph cluster_Region_599751832 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|r2.mDelegateDrawable.mutate()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0009|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1800569550 {
+label = "R(2:(1:10)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1879752613 {
+label = "IF [B:19:0x000c, B:21:0x0012] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|if (r2.mMutated == false) goto L8\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0012|ADDED_TO_REGION\l|if (super.mutate() == r2) goto L10\l}"];
+subgraph cluster_Region_217082658 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0014|r2.mVectorState = new androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.VectorDrawableCompatState(r2.mVectorState)\lr2.mMutated = true\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0020|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000a}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000e}"];
+MethodNode[shape=record,label="{public android.graphics.drawable.Drawable androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.mutate((r2v0 'this' androidx.vectordrawable.graphics.drawable.VectorDrawableCompat A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:23:0x0020 \-\> B:13:?, CROSS_EDGE: B:21:0x0012 \-\> B:23:0x0020, CROSS_EDGE: B:19:0x000c \-\> B:23:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.mutate():android.graphics.drawable.Drawable\}]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_13;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

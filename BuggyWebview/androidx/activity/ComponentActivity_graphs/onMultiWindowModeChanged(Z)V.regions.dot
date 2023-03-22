@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.activity.ComponentActivity.onMultiWindowModeChanged(Z)V" {
+subgraph cluster_Region_1466237794 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.util.Iterator java.util.Iterator\<androidx.core.util.Consumer\<androidx.core.app.MultiWindowModeChangedInfo\>\> r0 = r3.mOnMultiWindowModeChangedListeners.iterator()\l}"];
+subgraph cluster_LoopRegion_1723735121 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000a|if (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_474670753 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000c|LOOP_END\lLOOP:0: B:11:0x0006\-\>B:13:0x000c\l|androidx.core.util.Consumer androidx.core.util.Consumer\<androidx.core.app.MultiWindowModeChangedInfo\> r1 = r0.next()\lr1.accept(new androidx.core.app.MultiWindowModeChangedInfo(r4))\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0006|LOOP_START\lLOOP:0: B:11:0x0006\-\>B:13:0x000c\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001b|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001b}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.activity.ComponentActivity.onMultiWindowModeChanged((r3v0 'this' androidx.activity.ComponentActivity A[IMMUTABLE_TYPE, THIS]), (r4v0 'isInMultiWindowMode' boolean A[D('isInMultiWindowMode' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:13:0x000c \-\> B:11:0x0006\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.app.Activity.onMultiWindowModeChanged(boolean):void\}]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

@@ -1,0 +1,82 @@
+digraph "CFG forandroidx.emoji2.text.SpannableBuilder.WatcherWrapper.onSpanChanged(Landroid\/text\/Spannable;Ljava\/lang\/Object;IIII)V" {
+subgraph cluster_Region_1392737325 {
+label = "R(1:(2:(1:5)|(2:(2:(1:10)|(1:12))|13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1718349358 {
+label = "R(2:(1:5)|(2:(2:(1:10)|(1:12))|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1991049629 {
+label = "IF [B:18:0x0006, B:20:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|if (r7.mBlockCalls.get() \> 0) goto L3\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000c|ADDED_TO_REGION\l|if (isEmojiSpan(r9) != false) goto L5\l}"];
+subgraph cluster_Region_1564427116 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_353746674 {
+label = "R(2:(2:(1:10)|(1:12))|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_741746912 {
+label = "IF [B:23:0x0013] THEN: R(2:(1:10)|(1:12)) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0013|if (android.os.Build.VERSION.SDK_INT \< 28) goto L9\l}"];
+subgraph cluster_Region_847869202 {
+label = "R(2:(1:10)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_353002508 {
+label = "IF [B:24:0x0015] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0015|if (r10 \> r11) goto L10\l}"];
+subgraph cluster_Region_768649841 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0017|r10 = 0\l}"];
+}
+}
+subgraph cluster_IfRegion_817690115 {
+label = "IF [B:26:0x0018] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0018|PHI: r10 \l  PHI: (r10v2 'ostart' int) = (r10v0 'ostart' int), (r10v3 'ostart' int) binds: [B:24:0x0015, B:25:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r12 \> r13) goto L12\l}"];
+subgraph cluster_Region_1231303907 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001a|r12 = 0\l}"];
+}
+}
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x001b|PHI: r10 r12 \l  PHI: (r10v1 'ostart' int) = (r10v0 'ostart' int), (r10v2 'ostart' int), (r10v2 'ostart' int) binds: [B:23:0x0013, B:26:0x0018, B:27:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r12v1 'nstart' int) = (r12v0 'nstart' int), (r12v0 'nstart' int), (r12v2 'nstart' int) binds: [B:23:0x0013, B:26:0x0018, B:27:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|((android.text.SpanWatcher) r7.mObject).onSpanChanged(r8, r9, r10, r11, r12, r13)\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0008}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000f}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0028}"];
+MethodNode[shape=record,label="{public void androidx.emoji2.text.SpannableBuilder.WatcherWrapper.onSpanChanged((r7v0 'this' androidx.emoji2.text.SpannableBuilder$WatcherWrapper A[IMMUTABLE_TYPE, THIS]), (r8v0 'text' android.text.Spannable A[D('text' android.text.Spannable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'what' java.lang.Object A[D('what' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'ostart' int A[D('ostart' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'oend' int A[D('oend' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'nstart' int A[D('nstart' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'nend' int A[D('nend' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:29:0x0028 \-\> B:16:?, CROSS_EDGE: B:26:0x0018 \-\> B:28:0x001b, CROSS_EDGE: B:24:0x0015 \-\> B:26:0x0018, CROSS_EDGE: B:23:0x0013 \-\> B:28:0x001b, CROSS_EDGE: B:18:0x0006 \-\> B:22:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.text.SpanWatcher.onSpanChanged(android.text.Spannable, java.lang.Object, int, int, int, int):void\}]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_16;
+Node_23 -> Node_24;
+Node_23 -> Node_28[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_22 -> Node_23;
+Node_29 -> Node_16;
+}
+

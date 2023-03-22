@@ -1,0 +1,60 @@
+digraph "CFG forkotlinx.coroutines.debug.internal.ConcurrentWeakMap.Core.removeCleanedAt(I)V" {
+subgraph cluster_Region_823100524 {
+label = "R(2:(2:1|(1:(1:12)))|8) | DECL_VAR: java.lang.Object oldValue\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1463914981 {
+label = "LOOP:0: (2:1|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0016|LOOP_END\lLOOP:0: B:18:0x0000\-\>B:25:0x0016\l|if (r3.values.compareAndSet(r4, r0, null) == false) goto L1\l}"];
+subgraph cluster_Region_1301206664 {
+label = "R(2:1|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|LOOP_START\lLOOP:0: B:18:0x0000\-\>B:25:0x0016\l|java.lang.Object r0 = r3.values.get(r4)\l}"];
+subgraph cluster_Region_1175199291 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1110451270 {
+label = "IF [B:19:0x0007, B:22:0x000c] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0007|if (r0 == null) goto L13\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000c|ADDED_TO_REGION\l|if ((r0 instanceof kotlinx.coroutines.debug.internal.Marked) != false) goto L11\l}"];
+subgraph cluster_Region_2125630680 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000e|RETURN\lADDED_TO_REGION\l|return\l}"];
+}
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0018|kotlinx.coroutines.debug.internal.ConcurrentWeakMap.this.decrementSize()\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000f}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0018|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001d}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x000e|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0009|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0009|RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.debug.internal.ConcurrentWeakMap.Core.removeCleanedAt((r3v0 'this' kotlinx.coroutines.debug.internal.ConcurrentWeakMap$Core A[IMMUTABLE_TYPE, THIS]), (r4v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x000e \-\> B:17:?, CROSS_EDGE: B:27:0x001d \-\> B:17:?, BACK_EDGE: B:25:0x0016 \-\> B:18:0x0000\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_16;Node_25 -> Node_18;
+Node_25 -> Node_29[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_21[style=dashed];
+Node_19 -> Node_30;
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_31;
+Node_23 -> Node_17;
+Node_26 -> Node_27;
+Node_16 -> Node_18;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_29 -> Node_26;
+Node_27 -> Node_17;
+Node_31 -> Node_23;
+Node_30 -> Node_20;
+Node_20 -> Node_17;
+}
+

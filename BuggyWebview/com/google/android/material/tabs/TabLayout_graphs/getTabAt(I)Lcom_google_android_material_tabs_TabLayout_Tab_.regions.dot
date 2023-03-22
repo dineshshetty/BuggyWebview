@@ -1,0 +1,41 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.getTabAt(I)Lcom\/google\/android\/material\/tabs\/TabLayout$Tab;" {
+subgraph cluster_Region_1260572715 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1908455853 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1433218833 {
+label = "IF [B:12:0x0000, B:14:0x0006] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r2 \< 0) goto L7\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0006|ADDED_TO_REGION\l|if (r2 \>= getTabCount()) goto L7\l}"];
+subgraph cluster_Region_2132263290 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0012|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_585758011 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return r1.tabs.get(r2)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0002}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0009}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public com.google.android.material.tabs.TabLayout$Tab com.google.android.material.tabs.TabLayout.getTabAt((r1v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0012 \-\> B:18:0x0013, CROSS_EDGE: B:12:0x0000 \-\> B:17:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_17;
+Node_14 -> Node_16[style=dashed];
+Node_14 -> Node_17;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_13 -> Node_14;
+Node_16 -> Node_19;
+}
+

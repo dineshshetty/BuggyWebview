@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuBuilder.findInsertIndex(Ljava\/util\/ArrayList;I)I" {
+subgraph cluster_Region_1113691996 {
+label = "R(3:1|(2:3|(2:(1:8)|(1:5)))|11)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = r3.size() \- 1\l}"];
+subgraph cluster_LoopRegion_2040375314 {
+label = "LOOP:0: (2:3|(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|LOOP_START\lLOOP:0: B:16:0x0006\-\>B:21:0x0017\lPHI: r0 \l  PHI: (r0v2 'i' int) = (r0v1 'i' int), (r0v4 'i' int) binds: [B:15:0x0000, B:21:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_312227172 {
+label = "R(2:3|(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|androidx.appcompat.view.menu.MenuItemImpl androidx.appcompat.view.menu.MenuItemImpl r1 = r3.get(r0)\l}"];
+subgraph cluster_Region_1007377514 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1212183991 {
+label = "IF [B:18:0x0012] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0012|if (r1.getOrdering() \<= r4) goto L6\l}"];
+subgraph cluster_Region_1544133404 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0016|RETURN\l|return r0 + 1\l}"];
+}
+}
+subgraph cluster_Region_712917777 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0006\-\>B:21:0x0017\l|r0\-\-\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001a|RETURN\l|return 0\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0014|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0014}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static int androidx.appcompat.view.menu.MenuBuilder.findInsertIndex((r3v0 'items' java.util.ArrayList\<androidx.appcompat.view.menu.MenuItemImpl\> A[D('items' java.util.ArrayList\<androidx.appcompat.view.menu.MenuItemImpl\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'ordering' int A[D('ordering' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0017 \-\> B:16:0x0006, CROSS_EDGE: B:23:0x001b \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/ArrayList\<Landroidx\/appcompat\/view\/menu\/MenuItemImpl;\>;I)I\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_25[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_24;
+Node_20 -> Node_14;
+Node_21 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_19;
+Node_19 -> Node_20;
+Node_25 -> Node_22;
+}
+

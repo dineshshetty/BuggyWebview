@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.core.app.ActivityRecreator.getPerformStopActivity2Params(Ljava\/lang\/Class;)Ljava\/lang\/reflect\/Method;" {
+subgraph cluster_Region_1274301997 {
+label = "R(1:(2:(1:3)|(1:(2:6|7))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_149040053 {
+label = "R(2:(1:3)|(1:(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_973235610 {
+label = "IF [B:14:0x0001] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0001|if (r5 == null) goto L3\l}"];
+subgraph cluster_Region_2068468061 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0003|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_304540991 {
+label = "R(1:(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_192992077 {
+label = "Try: R(2:6|7) catches: R(1:10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_374424764 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x001b, blocks: (B:16:0x0004), top: B:20:0x0004 \}\lCatch: all \-\> 0x001b\l|java.lang.reflect.Method java.lang.reflect.Method r1 = r5.getDeclaredMethod(\"performStopActivity\", android.os.IBinder.class, java.lang.Boolean.TYPE)     \/\/ Catch: java.lang.Throwable \-\> L1b\lr1.setAccessible(true)     \/\/ Catch: java.lang.Throwable \-\> L1b\l}"];
+Node_17 [shape=record,label="{17\:\ 0x001a|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_570902802 {
+label = "R(1:10) | ExcHandler: all \-\> 0x001b\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_570902802 {
+label = "R(1:10) | ExcHandler: all \-\> 0x001b\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|RETURN\l|return null\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0004|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001b|ExcHandler: all \-\> 0x001b\l}"];
+MethodNode[shape=record,label="{private static java.lang.reflect.Method androidx.core.app.ActivityRecreator.getPerformStopActivity2Params((r5v0 'activityThreadClass' java.lang.Class\<?\> A[D('activityThreadClass' java.lang.Class\<?\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x001a \-\> B:12:?, CROSS_EDGE: B:19:0x001c \-\> B:12:?, CROSS_EDGE: B:20:0x0004 \-\> B:18:0x001b\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x001b, blocks: (B:16:0x0004), top: B:20:0x0004 \}\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/Class\<*\>;)Ljava\/lang\/reflect\/Method;\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_16 -> Node_21;
+Node_17 -> Node_12;
+Node_19 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_20 -> Node_16;
+Node_20 -> Node_18;
+Node_21 -> Node_18;
+Node_18 -> Node_19;
+}
+

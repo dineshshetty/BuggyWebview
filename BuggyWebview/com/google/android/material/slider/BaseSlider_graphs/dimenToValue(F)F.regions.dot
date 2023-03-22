@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.material.slider.BaseSlider.dimenToValue(F)F" {
+subgraph cluster_Region_160793046 {
+label = "R(1:(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1254521954 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1068038383 {
+label = "IF [B:10:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0003|if (r4 == 0.0f) goto L3\l}"];
+subgraph cluster_Region_1617668068 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0005|RETURN\l|return 0.0f\l}"];
+}
+}
+subgraph cluster_Region_2084880641 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|float float r0 = (r4 \- r3.trackSidePadding) \/ r3.trackWidth\lfloat float r1 = r3.valueFrom\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0018|RETURN\l|return (r0 * (r1 \- r3.valueTo)) + r1\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0000}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private float com.google.android.material.slider.BaseSlider.dimenToValue((r3v0 'this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\> A[D('this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\>), IMMUTABLE_TYPE, THIS]), (r4v0 'dimen' float A[D('dimen' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0018 \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>]\l}"];
+MethodNode -> Node_7;Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_8;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+}
+

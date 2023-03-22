@@ -1,0 +1,90 @@
+digraph "CFG forandroidx.core.graphics.drawable.IconCompat.Api23Impl.createFromIcon(Landroid\/content\/Context;Landroid\/graphics\/drawable\/Icon;)Landroidx\/core\/graphics\/drawable\/IconCompat;" {
+subgraph cluster_Region_2062450882 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1889143906 {
+label = "Switch: 4
+ case 2 -> R(2:10|(1:13))
+ case 3, 5, default -> R(2:3|4)
+ case 4 -> R(1:9)
+ case 6 -> R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0004|switch(getType(r5)) \{\l    case 2: goto L10;\l    case 3: goto L3;\l    case 4: goto L8;\l    case 5: goto L3;\l    case 6: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_1317831649 {
+label = "R(2:10|(1:13))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0022|java.lang.String java.lang.String r0 = getResPackage(r5)\l}"];
+subgraph cluster_TryCatchRegion_230071923 {
+label = "Try: R(1:13) catches: R(1:17)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1461364259 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0032|RETURN\l|return androidx.core.graphics.drawable.IconCompat.createWithResource(androidx.core.graphics.drawable.IconCompat.getResources(r4, r0), r0, getResId(r5))\l}"];
+}
+subgraph cluster_Region_2145845961 {
+label = "R(1:17) | ExcHandler: NotFoundException \-\> 0x0033\l";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x003b|throw new java.lang.IllegalArgumentException(\"Icon resource cannot be found\")\l}"];
+}
+}
+}
+subgraph cluster_Region_681466514 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0007|androidx.core.graphics.drawable.IconCompat androidx.core.graphics.drawable.IconCompat r0 = new androidx.core.graphics.drawable.IconCompat(\-1)\lr0.mObj1 = r5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000f|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1904305511 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0021|RETURN\l|return androidx.core.graphics.drawable.IconCompat.createWithContentUri(getUri(r5))\l}"];
+}
+subgraph cluster_Region_1373146665 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0018|RETURN\l|return androidx.core.graphics.drawable.IconCompat.createWithAdaptiveBitmapContentUri(getUri(r5))\l}"];
+}
+}
+}
+subgraph cluster_Region_2145845961 {
+label = "R(1:17) | ExcHandler: NotFoundException \-\> 0x0033\l";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x003b|throw new java.lang.IllegalArgumentException(\"Icon resource cannot be found\")\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0010}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0019}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0026|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0026|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{NotFoundException \-\> 0x0033, blocks: (B:29:0x0026), top: B:34:0x0026 \}\lCatch: NotFoundException \-\> 0x0033\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0033|ExcHandler: NotFoundException \-\> 0x0033\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0034}"];
+MethodNode[shape=record,label="{static androidx.core.graphics.drawable.IconCompat androidx.core.graphics.drawable.IconCompat.Api23Impl.createFromIcon((r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'icon' android.graphics.drawable.Icon A[D('icon' android.graphics.drawable.Icon), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0018 \-\> B:19:?, CROSS_EDGE: B:27:0x0021 \-\> B:19:?, CROSS_EDGE: B:30:0x0032 \-\> B:19:?, CROSS_EDGE: B:33:0x003b \-\> B:19:?, CROSS_EDGE: B:34:0x0026 \-\> B:31:0x0033\lINLINE_NOT_NEEDED\lTryCatch #0 \{NotFoundException \-\> 0x0033, blocks: (B:29:0x0026), top: B:34:0x0026 \}\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_24;
+Node_21 -> Node_26;
+Node_21 -> Node_28;
+Node_28 -> Node_34;
+Node_30 -> Node_19;
+Node_33 -> Node_19;
+Node_22 -> Node_23;
+Node_23 -> Node_19;
+Node_27 -> Node_19;
+Node_25 -> Node_19;
+Node_33 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_34 -> Node_29;
+Node_34 -> Node_31;
+Node_29 -> Node_30;
+Node_29 -> Node_35;
+Node_35 -> Node_31;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+}
+

@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.appcompat.app.LayoutIncludeDetector.detect(Landroid\/util\/AttributeSet;)Z" {
+subgraph cluster_Region_910647928 {
+label = "R(1:(2:(2:3|(2:(2:5|6)|(1:10)))|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_989520836 {
+label = "R(2:(2:3|(2:(2:5|6)|(1:10)))|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1352861254 {
+label = "IF [B:16:0x0002] THEN: R(2:3|(2:(2:5|6)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if ((r6 instanceof org.xmlpull.v1.XmlPullParser) != false) goto L3\l}"];
+subgraph cluster_Region_940917708 {
+label = "R(2:3|(2:(2:5|6)|(1:10)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|org.xmlpull.v1.XmlPullParser org.xmlpull.v1.XmlPullParser r0 = (org.xmlpull.v1.XmlPullParser) r6\l}"];
+subgraph cluster_Region_1141308507 {
+label = "R(2:(2:5|6)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1344285109 {
+label = "IF [B:18:0x000c] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|if (r0.getDepth() == 1) goto L5\l}"];
+subgraph cluster_Region_1079216927 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|org.xmlpull.v1.XmlPullParser org.xmlpull.v1.XmlPullParser r1 = popOutdatedAttrHolders(r5.mXmlParserStack)\lr5.mXmlParserStack.push(new java.lang.ref.WeakReference\<\>(r0))\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0022|RETURN\l|return shouldInheritContext(r0, r1)\l}"];
+}
+}
+subgraph cluster_Region_1239351809 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_609631293 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0025|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0024}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.app.LayoutIncludeDetector.detect((r5v0 'this' androidx.appcompat.app.LayoutIncludeDetector A[IMMUTABLE_TYPE, THIS]), (r6v0 'attrs' android.util.AttributeSet A[D('attrs' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0026 \-\> B:14:?, CROSS_EDGE: B:18:0x000c \-\> B:22:0x0025, CROSS_EDGE: B:16:0x0002 \-\> B:22:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_24[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_25;
+Node_24 -> Node_14;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_21 -> Node_14;
+Node_25 -> Node_14;
+}
+

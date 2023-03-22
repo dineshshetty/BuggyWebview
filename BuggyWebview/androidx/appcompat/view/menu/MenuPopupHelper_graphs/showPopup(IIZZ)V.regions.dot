@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuPopupHelper.showPopup(IIZZ)V" {
+subgraph cluster_Region_1923979548 {
+label = "R(3:1|(3:3|(1:5)|6)|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|androidx.appcompat.view.menu.MenuPopup androidx.appcompat.view.menu.MenuPopup r0 = getPopup()\lr0.setShowTitle(r13)\l}"];
+subgraph cluster_IfRegion_1605086506 {
+label = "IF [B:13:0x0007] THEN: R(3:3|(1:5)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0007|if (r12 != false) goto L3\l}"];
+subgraph cluster_Region_102418830 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0009|int r1 = androidx.core.view.GravityCompat.getAbsoluteGravity(r9.mDropDownGravity, androidx.core.view.ViewCompat.getLayoutDirection(r9.mAnchorView)) & 7\l}"];
+subgraph cluster_IfRegion_85204407 {
+label = "IF [B:15:0x0018] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0018|if (r1 == 5) goto L5\l}"];
+subgraph cluster_Region_1115392862 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001a|r10 \-= r9.mAnchorView.getWidth()\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0021|PHI: r10 \l  PHI: (r10v1 'xOffset' int) = (r10v0 'xOffset' int), (r10v2 'xOffset' int) binds: [B:15:0x0018, B:16:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|r0.setHorizontalOffset(r10)\lr0.setVerticalOffset(r11)\lfloat float r2 = r9.mContext.getResources().getDisplayMetrics().density\lint int r3 = (int) ((48.0f * r2) \/ 2.0f)\landroid.graphics.Rect android.graphics.Rect r4 = new android.graphics.Rect(r10 \- r3, r11 \- r3, r10 + r3, r11 + r3)\lr0.setEpicenterBounds(r4)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x004b|r0.show()\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x004e}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.view.menu.MenuPopupHelper.showPopup((r9v0 'this' androidx.appcompat.view.menu.MenuPopupHelper A[IMMUTABLE_TYPE, THIS]), (r10v0 'xOffset' int A[D('xOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'yOffset' int A[D('yOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'useOffsets' boolean A[D('useOffsets' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'showTitle' boolean A[D('showTitle' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0018 \-\> B:17:0x0021, CROSS_EDGE: B:13:0x0007 \-\> B:18:0x004b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_19 -> Node_11;
+}
+

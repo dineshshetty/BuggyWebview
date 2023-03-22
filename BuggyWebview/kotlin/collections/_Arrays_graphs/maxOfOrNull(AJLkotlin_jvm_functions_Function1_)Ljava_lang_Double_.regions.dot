@@ -1,0 +1,64 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.maxOfOrNull([JLkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Double;" {
+subgraph cluster_Region_125052830 {
+label = "R(2:1|(2:(1:5)|(3:7|(1:10)|13)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"selector\")\l}"];
+subgraph cluster_Region_975728645 {
+label = "R(2:(1:5)|(3:7|(1:10)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1021158490 {
+label = "IF [B:22:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0012|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r6.length == 0) == true) goto L5\l}"];
+subgraph cluster_Region_547258628 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0014|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_935368733 {
+label = "R(3:7|(1:10)|13)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0016|double double r2 = r7.invoke(java.lang.Long.valueOf(r6[0])).doubleValue()\lkotlin.collections.IntIterator ?? r0 = new kotlin.ranges.IntRange(1, kotlin.collections.ArraysKt.getLastIndex(r6)).iterator()\l}"];
+subgraph cluster_LoopRegion_1761058888 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0037|if (r0.hasNext() != false) goto L10\l}"];
+subgraph cluster_Region_111062738 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0039|LOOP_END\lLOOP:0: B:26:0x0033\-\>B:28:0x0039\l|int int r1 = r0.nextInt()\ldouble double r4 = r7.invoke(java.lang.Long.valueOf(r6[r1])).doubleValue()\ldouble r2 = java.lang.Math.max(r2, r4)\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x0056|RETURN\l|return java.lang.Double.valueOf(r2)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000d}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000f}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0033|LOOP_START\lLOOP:0: B:26:0x0033\-\>B:28:0x0039\lPHI: r2 \l  PHI: (r2v3 'maxValue' double) = (r2v2 'maxValue' double), (r2v4 'maxValue' double) binds: [B:25:0x0016, B:28:0x0039] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0052|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0052}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0011}"];
+MethodNode[shape=record,label="{private static final java.lang.Double kotlin.collections.ArraysKt___ArraysKt.maxOfOrNull((r6v0 '$this$maxOfOrNull' long[] A[D('$this$maxOfOrNull' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'selector' kotlin.jvm.functions.Function1\<? super java.lang.Long, java.lang.Double\> A[D('selector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:28:0x0039 \-\> B:26:0x0033, CROSS_EDGE: B:30:0x0056 \-\> B:17:?, CROSS_EDGE: B:21:0x0011 \-\> B:22:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([JLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Long;Ljava\/lang\/Double;\>;)Ljava\/lang\/Double;\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r0v9, types: [kotlin.collections.IntIterator]\}\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_23 -> Node_17;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_31[style=dashed];
+Node_28 -> Node_26;
+Node_30 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_20 -> Node_22;
+Node_26 -> Node_27;
+Node_31 -> Node_29;
+Node_29 -> Node_30;
+Node_21 -> Node_22;
+}
+

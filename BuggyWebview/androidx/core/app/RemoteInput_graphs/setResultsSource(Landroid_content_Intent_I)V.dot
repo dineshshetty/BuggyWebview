@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.core.app.RemoteInput.setResultsSource(Landroid\/content\/Intent;I)V" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000}"];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \< 28) goto L6\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0006|androidx.core.app.RemoteInput.Api28Impl.setResultsSource(r2, r3)\l}"];
+Node_26 [shape=record,label="{26\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000a}"];
+Node_20 [shape=record,label="{20\:\ 0x000e|if (android.os.Build.VERSION.SDK_INT \< 16) goto L13\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0010|android.content.Intent r0 = getClipDataIntentFromIntent(r2)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0014|if (r0 != null) goto L11\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0016|r0 = new android.content.Intent()\l}"];
+Node_24 [shape=record,label="{24\:\ 0x001c|PHI: r0 \l  PHI: (r0v3 'clipDataIntent' android.content.Intent) = (r0v2 'clipDataIntent' android.content.Intent), (r0v4 'clipDataIntent' android.content.Intent) binds: [B:22:0x0014, B:23:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|r0.putExtra(androidx.core.app.RemoteInput.EXTRA_RESULTS_SOURCE, r3)\landroidx.core.app.RemoteInput.Api16Impl.setClipData(r2, android.content.ClipData.newIntent(androidx.core.app.RemoteInput.RESULTS_CLIP_LABEL, r0))\l}"];
+Node_25 [shape=record,label="{25\:\ 0x002a|RETURN\lORIG_RETURN\l|return\l}"];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.app.RemoteInput.setResultsSource((r2v0 'intent' android.content.Intent A[D('intent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'source' int A[D('source' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x001c \-\> B:25:0x002a, CROSS_EDGE: B:22:0x0014 \-\> B:24:0x001c, CROSS_EDGE: B:20:0x000e \-\> B:25:0x002a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+Node_18 -> Node_26;
+Node_26 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_27;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_27 -> Node_15;
+}
+

@@ -1,0 +1,520 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.onTouchEvent(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_560115031 {
+label = "R(1:(2:(1:101)|(2:5|(2:(2:7|8)|(2:10|(2:(1:12)|(9:13|(1:15)|16|(1:18)|19|20|(1:98)|99|100))))))) | DECL_VAR: int dx, int dy, char null, int dx, int dy\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1822921123 {
+label = "R(2:(1:101)|(2:5|(2:(2:7|8)|(2:10|(2:(1:12)|(9:13|(1:15)|16|(1:18)|19|20|(1:98)|99|100))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_822664605 {
+label = "IF [B:108:0x0007, B:110:0x000b] THEN: R(1:101) ELSE: null";
+node [shape=record,color=blue];
+Node_108 [shape=record,label="{108\:\ 0x0007|if (r21.mLayoutSuppressed == true) goto L101\l}"];
+Node_110 [shape=record,label="{110\:\ 0x000b|ADDED_TO_REGION\l|if (r21.mIgnoreMotionEventTillDown == true) goto L101\l}"];
+subgraph cluster_Region_1111697676 {
+label = "R(1:101)";
+node [shape=record,color=blue];
+Node_209 [shape=record,label="{209\:\ 0x0207|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1661036277 {
+label = "R(2:5|(2:(2:7|8)|(2:10|(2:(1:12)|(9:13|(1:15)|16|(1:18)|19|20|(1:98)|99|100)))))";
+node [shape=record,color=blue];
+Node_112 [shape=record,label="{112\:\ 0x000f|int r9 = 1\l}"];
+subgraph cluster_Region_1988049926 {
+label = "R(2:(2:7|8)|(2:10|(2:(1:12)|(9:13|(1:15)|16|(1:18)|19|20|(1:98)|99|100))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_637899235 {
+label = "IF [B:113:0x0014] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_113 [shape=record,label="{113\:\ 0x0014|if (dispatchToOnItemTouchListeners(r22) != false) goto L7\l}"];
+subgraph cluster_Region_1360413835 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_114 [shape=record,label="{114\:\ 0x0016|cancelScroll()\l}"];
+Node_115 [shape=record,label="{115\:\ 0x0019|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1446812583 {
+label = "R(2:10|(2:(1:12)|(9:13|(1:15)|16|(1:18)|19|20|(1:98)|99|100)))";
+node [shape=record,color=blue];
+Node_116 [shape=record,label="{116\:\ 0x001a|androidx.recyclerview.widget.RecyclerView$LayoutManager androidx.recyclerview.widget.RecyclerView.LayoutManager r0 = r21.mLayout\l}"];
+subgraph cluster_Region_172367084 {
+label = "R(2:(1:12)|(9:13|(1:15)|16|(1:18)|19|20|(1:98)|99|100))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_797825464 {
+label = "IF [B:117:0x001c] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_117 [shape=record,label="{117\:\ 0x001c|if (r0 == null) goto L12\l}"];
+subgraph cluster_Region_89562798 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_118 [shape=record,label="{118\:\ 0x001e|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1151594924 {
+label = "R(9:13|(1:15)|16|(1:18)|19|20|(1:98)|99|100)";
+node [shape=record,color=blue];
+Node_119 [shape=record,label="{119\:\ 0x001f|boolean boolean r10 = r0.canScrollHorizontally()\lboolean boolean r11 = r21.mLayout.canScrollVertically()\l}"];
+subgraph cluster_IfRegion_265723246 {
+label = "IF [B:120:0x002b] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_120 [shape=record,label="{120\:\ 0x002b|if (r21.mVelocityTracker == null) goto L15\l}"];
+subgraph cluster_Region_1820832259 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_121 [shape=record,label="{121\:\ 0x002d|r21.mVelocityTracker = android.view.VelocityTracker.obtain()\l}"];
+}
+}
+Node_122 [shape=record,label="{122\:\ 0x0033|boolean r12 = false\lint int r13 = r22.getActionMasked()\lint int r14 = r22.getActionIndex()\l}"];
+subgraph cluster_IfRegion_120248601 {
+label = "IF [B:123:0x003c] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_123 [shape=record,label="{123\:\ 0x003c|if (r13 == 0) goto L18\l}"];
+subgraph cluster_Region_10282606 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_124 [shape=record,label="{124\:\ 0x003e|int[] int[] r0 = r21.mNestedOffsets\lr0[1] = 0\lr0[0] = 0\l}"];
+}
+}
+Node_125 [shape=record,label="{125\:\ 0x0044|android.view.MotionEvent android.view.MotionEvent r15 = android.view.MotionEvent.obtain(r22)\lint[] int[] r0 = r21.mNestedOffsets\lr15.offsetLocation(r0[0], r0[1])\l}"];
+subgraph cluster_SwitchRegion_592754382 {
+label = "Switch: 6
+ case 0 -> R(5:91|(1:93)|(1:95)|96|1)
+ case 1 -> R(6:76|77|79|(1:85)|86|1)
+ case 2 -> R(3:24|(3:28|(1:75)(5:30|(2:(1:33)(1:36)|(1:35))|(2:(1:39)(1:42)|(1:41))|(1:74)(1:44)|45)|(1:1)(6:48|(1:70)(1:55)|56|(1:63)|64|(2:68|1)))(2:26|27)|1)
+ case 3 -> R(2:23|1)
+ case 5 -> R(2:22|1)
+ case 6 -> R(2:21|1)";
+node [shape=record,color=blue];
+Node_126 [shape=record,label="{126\:\ 0x0055|switch(r13) \{\l    case 0: goto L91;\l    case 1: goto L76;\l    case 2: goto L24;\l    case 3: goto L23;\l    case 4: goto L97;\l    case 5: goto L22;\l    case 6: goto L21;\l    default: goto L97;\l\}\l}"];
+subgraph cluster_Region_1315956165 {
+label = "R(5:91|(1:93)|(1:95)|96|1)";
+node [shape=record,color=blue];
+Node_199 [shape=record,label="{199\:\ 0x01d4|r21.mScrollPointerId = r22.getPointerId(0)\lint int r1 = (int) (r22.getX() + 0.5f)\lr21.mLastTouchX = r1\lr21.mInitialTouchX = r1\lint int r0 = (int) (r22.getY() + 0.5f)\lr21.mLastTouchY = r0\lr21.mInitialTouchY = r0\lint r0 = 0\l}"];
+subgraph cluster_IfRegion_810442998 {
+label = "IF [B:200:0x01ef] THEN: R(1:93) ELSE: null";
+node [shape=record,color=blue];
+Node_200 [shape=record,label="{200\:\ 0x01ef|if (r10 != false) goto L93\l}"];
+subgraph cluster_Region_1149228613 {
+label = "R(1:93)";
+node [shape=record,color=blue];
+Node_201 [shape=record,label="{201\:\ 0x01f1|r0 = 0 \| 1\l}"];
+}
+}
+subgraph cluster_IfRegion_817011991 {
+label = "IF [B:202:0x01f3] THEN: R(1:95) ELSE: null";
+node [shape=record,color=blue];
+Node_202 [shape=record,label="{202\:\ 0x01f3|PHI: r0 \l  PHI: (r0v14 'nestedScrollAxis' int) = (r0v13 'nestedScrollAxis' int), (r0v17 'nestedScrollAxis' int) binds: [B:200:0x01ef, B:201:0x01f1] A[DONT_GENERATE, DONT_INLINE]\l|if (r11 != false) goto L95\l}"];
+subgraph cluster_Region_1217120256 {
+label = "R(1:95)";
+node [shape=record,color=blue];
+Node_203 [shape=record,label="{203\:\ 0x01f5|r0 \|= 2\l}"];
+}
+}
+Node_204 [shape=record,label="{204\:\ 0x01f7|PHI: r0 \l  PHI: (r0v15 'nestedScrollAxis' int) = (r0v14 'nestedScrollAxis' int), (r0v16 'nestedScrollAxis' int) binds: [B:202:0x01f3, B:203:0x01f5] A[DONT_GENERATE, DONT_INLINE]\l|startNestedScroll(r0, 0)\l}"];
+Node_InsnContainer_1453089283 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_43857147 {
+label = "R(6:76|77|79|(1:85)|86|1)";
+node [shape=record,color=blue];
+Node_184 [shape=record,label="{184\:\ 0x0192|r21.mVelocityTracker.addMovement(r15)\lr12 = true\lr21.mVelocityTracker.computeCurrentVelocity(1000, r21.mMaxFlingVelocity)\l}"];
+Node_185 [shape=record,label="{185\:\ 0x01a3|float r1 = r10 ? \-r21.mVelocityTracker.getXVelocity(r21.mScrollPointerId) : 0.0f\l}"];
+Node_188 [shape=record,label="{188\:\ 0x01b0|PHI: r1 \l  PHI: (r1v10 'xvel' float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float r2 = r11 ? \-r21.mVelocityTracker.getYVelocity(r21.mScrollPointerId) : 0.0f\l}"];
+subgraph cluster_IfRegion_997560025 {
+label = "IF [B:192:0x01bf, B:194:0x01c3, B:196:0x01cb] THEN: R(1:85) ELSE: null";
+node [shape=record,color=blue];
+Node_192 [shape=record,label="{192\:\ 0x01bf|if (r1 == 0.0f) goto L83\l}"];
+Node_194 [shape=record,label="{194\:\ 0x01c3|ADDED_TO_REGION\l|if (r2 == 0.0f) goto L85\l}"];
+Node_196 [shape=record,label="{196\:\ 0x01cb|ADDED_TO_REGION\l|if (fling((int) r1, (int) r2) == false) goto L85\l}"];
+subgraph cluster_Region_1737373072 {
+label = "R(1:85)";
+node [shape=record,color=blue];
+Node_197 [shape=record,label="{197\:\ 0x01cd|setScrollState(0)\l}"];
+}
+}
+Node_198 [shape=record,label="{198\:\ 0x01d0|resetScroll()\l}"];
+Node_InsnContainer_1544088034 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_168105407 {
+label = "R(3:24|(3:28|(1:75)(5:30|(2:(1:33)(1:36)|(1:35))|(2:(1:39)(1:42)|(1:41))|(1:74)(1:44)|45)|(1:1)(6:48|(1:70)(1:55)|56|(1:63)|64|(2:68|1)))(2:26|27)|1)";
+node [shape=record,color=blue];
+Node_131 [shape=record,label="{131\:\ 0x0080|int int r5 = r22.findPointerIndex(r21.mScrollPointerId)\l}"];
+subgraph cluster_IfRegion_483919671 {
+label = "IF [B:132:0x0086] THEN: R(3:28|(1:75)(5:30|(2:(1:33)(1:36)|(1:35))|(2:(1:39)(1:42)|(1:41))|(1:74)(1:44)|45)|(1:1)(6:48|(1:70)(1:55)|56|(1:63)|64|(2:68|1))) ELSE: R(2:26|27)";
+node [shape=record,color=blue];
+Node_132 [shape=record,label="{132\:\ 0x0086|if (r5 \>= 0) goto L28\l}"];
+subgraph cluster_Region_640624407 {
+label = "R(3:28|(1:75)(5:30|(2:(1:33)(1:36)|(1:35))|(2:(1:39)(1:42)|(1:41))|(1:74)(1:44)|45)|(1:1)(6:48|(1:70)(1:55)|56|(1:63)|64|(2:68|1)))";
+node [shape=record,color=blue];
+Node_135 [shape=record,label="{135\:\ 0x00a6|int int r4 = (int) (r22.getX(r5) + 0.5f)\lint int r3 = (int) (r22.getY(r5) + 0.5f)\lint int r0 = r21.mLastTouchX \- r4\lint int r1 = r21.mLastTouchY \- r3\l}"];
+subgraph cluster_IfRegion_223236042 {
+label = "IF [B:136:0x00ba] THEN: R(1:75) ELSE: R(5:30|(2:(1:33)(1:36)|(1:35))|(2:(1:39)(1:42)|(1:41))|(1:74)(1:44)|45)";
+node [shape=record,color=blue];
+Node_136 [shape=record,label="{136\:\ 0x00ba|if (r21.mScrollState == 1) goto L75\l}"];
+subgraph cluster_Region_1334606294 {
+label = "R(1:75)";
+node [shape=record,color=blue];
+Node_154 [shape=record,label="{154\:\ 0x00f8|r16 = r0\lr17 = r1\l}"];
+}
+subgraph cluster_Region_2057797108 {
+label = "R(5:30|(2:(1:33)(1:36)|(1:35))|(2:(1:39)(1:42)|(1:41))|(1:74)(1:44)|45)";
+node [shape=record,color=blue];
+Node_137 [shape=record,label="{137\:\ 0x00bc|boolean r2 = false\l}"];
+subgraph cluster_IfRegion_1125940489 {
+label = "IF [B:138:0x00bd] THEN: R(2:(1:33)(1:36)|(1:35)) ELSE: null";
+node [shape=record,color=blue];
+Node_138 [shape=record,label="{138\:\ 0x00bd|if (r10 != false) goto L32\l}"];
+subgraph cluster_Region_955754522 {
+label = "R(2:(1:33)(1:36)|(1:35))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_272955567 {
+label = "IF [B:139:0x00bf] THEN: R(1:33) ELSE: R(1:36)";
+node [shape=record,color=blue];
+Node_139 [shape=record,label="{139\:\ 0x00bf|if (r0 \> 0) goto L33\l}"];
+subgraph cluster_Region_321987896 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_140 [shape=record,label="{140\:\ 0x00c1|int r0 = java.lang.Math.max(0, r0 \- r21.mTouchSlop)\l}"];
+}
+subgraph cluster_Region_825980493 {
+label = "R(1:36)";
+node [shape=record,color=blue];
+Node_141 [shape=record,label="{141\:\ 0x00ca|int r0 = java.lang.Math.min(0, r21.mTouchSlop + r0)\l}"];
+}
+}
+subgraph cluster_IfRegion_1613078397 {
+label = "IF [B:142:0x00d1] THEN: R(1:35) ELSE: null";
+node [shape=record,color=blue];
+Node_142 [shape=record,label="{142\:\ 0x00d1|PHI: r0 \l  PHI: (r0v39 'dx' int) = (r0v38 'dx' int), (r0v40 'dx' int) binds: [B:141:0x00ca, B:140:0x00c1] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != 0) goto L35\l}"];
+subgraph cluster_Region_2091638161 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_143 [shape=record,label="{143\:\ 0x00d3|r2 = true\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_283527741 {
+label = "IF [B:144:0x00d4] THEN: R(2:(1:39)(1:42)|(1:41)) ELSE: null";
+node [shape=record,color=blue];
+Node_144 [shape=record,label="{144\:\ 0x00d4|PHI: r0 r2 \l  PHI: (r0v37 'dx' int) = (r0v25 'dx' int), (r0v39 'dx' int), (r0v39 'dx' int) binds: [B:138:0x00bd, B:142:0x00d1, B:143:0x00d3] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v19 'startScroll' boolean) = (r2v18 'startScroll' boolean), (r2v18 'startScroll' boolean), (r2v22 'startScroll' boolean) binds: [B:138:0x00bd, B:142:0x00d1, B:143:0x00d3] A[DONT_GENERATE, DONT_INLINE]\l|if (r11 != false) goto L38\l}"];
+subgraph cluster_Region_784541729 {
+label = "R(2:(1:39)(1:42)|(1:41))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_989108870 {
+label = "IF [B:145:0x00d6] THEN: R(1:39) ELSE: R(1:42)";
+node [shape=record,color=blue];
+Node_145 [shape=record,label="{145\:\ 0x00d6|if (r1 \> 0) goto L39\l}"];
+subgraph cluster_Region_2071793856 {
+label = "R(1:39)";
+node [shape=record,color=blue];
+Node_146 [shape=record,label="{146\:\ 0x00d8|int r1 = java.lang.Math.max(0, r1 \- r21.mTouchSlop)\l}"];
+}
+subgraph cluster_Region_1279989862 {
+label = "R(1:42)";
+node [shape=record,color=blue];
+Node_147 [shape=record,label="{147\:\ 0x00e1|int r1 = java.lang.Math.min(0, r21.mTouchSlop + r1)\l}"];
+}
+}
+subgraph cluster_IfRegion_1986409682 {
+label = "IF [B:148:0x00e8] THEN: R(1:41) ELSE: null";
+node [shape=record,color=blue];
+Node_148 [shape=record,label="{148\:\ 0x00e8|PHI: r1 \l  PHI: (r1v36 'dy' int) = (r1v35 'dy' int), (r1v37 'dy' int) binds: [B:147:0x00e1, B:146:0x00d8] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != 0) goto L41\l}"];
+subgraph cluster_Region_515221277 {
+label = "R(1:41)";
+node [shape=record,color=blue];
+Node_149 [shape=record,label="{149\:\ 0x00ea|r2 = true\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1950470564 {
+label = "IF [B:150:0x00eb] THEN: R(1:74) ELSE: R(1:44)";
+node [shape=record,color=blue];
+Node_150 [shape=record,label="{150\:\ 0x00eb|PHI: r1 r2 \l  PHI: (r1v34 'dy' int) = (r1v20 'dy' int), (r1v36 'dy' int), (r1v36 'dy' int) binds: [B:144:0x00d4, B:148:0x00e8, B:149:0x00ea] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v20 'startScroll' boolean) = (r2v19 'startScroll' boolean), (r2v19 'startScroll' boolean), (r2v21 'startScroll' boolean) binds: [B:144:0x00d4, B:148:0x00e8, B:149:0x00ea] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 == false) goto L74\l}"];
+subgraph cluster_Region_125781166 {
+label = "R(1:74)";
+node [shape=record,color=blue];
+Node_152 [shape=record,label="{152\:\ 0x00f2|r9 = 1\l}"];
+}
+subgraph cluster_Region_793432136 {
+label = "R(1:44)";
+node [shape=record,color=blue];
+Node_151 [shape=record,label="{151\:\ 0x00ed|r9 = 1\lsetScrollState(1)\l}"];
+}
+}
+Node_153 [shape=record,label="{153\:\ 0x00f3|PHI: r9 \l  PHI: (r9v8 int) = (r9v7 int), (r9v9 int) binds: [B:152:0x00f2, B:151:0x00ed] A[DONT_GENERATE, DONT_INLINE]\l|r16 = r0\lr17 = r1\l}"];
+}
+}
+subgraph cluster_IfRegion_1128599581 {
+label = "IF [B:156:0x00fe] THEN: R(1:1) ELSE: R(6:48|(1:70)(1:55)|56|(1:63)|64|(2:68|1))";
+node [shape=record,color=blue];
+Node_156 [shape=record,label="{156\:\ 0x00fe|if (r21.mScrollState != r9) goto L73\l}"];
+subgraph cluster_Region_891257826 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_1255189140 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_731639886 {
+label = "R(6:48|(1:70)(1:55)|56|(1:63)|64|(2:68|1))";
+node [shape=record,color=blue];
+Node_157 [shape=record,label="{157\:\ 0x0100|int[] int[] r2 = r21.mReusableIntPair\lr2[0] = 0\lr2[r9] = 0\l}"];
+subgraph cluster_IfRegion_409586263 {
+label = "IF [B:165:0x012c] THEN: R(1:70) ELSE: R(1:55)";
+node [shape=record,color=blue];
+Node_165 [shape=record,label="{165\:\ 0x012c|if (dispatchNestedPreScroll(r10 ? r16 : 0, r11 ? r17 : 0, r2, r21.mScrollOffset, 0) == false) goto L70\l}"];
+subgraph cluster_Region_1660590672 {
+label = "R(1:70)";
+node [shape=record,color=blue];
+Node_167 [shape=record,label="{167\:\ 0x0157|r1 = 1\lr0 = r16\lr2 = r17\l}"];
+}
+subgraph cluster_Region_1897037279 {
+label = "R(1:55)";
+node [shape=record,color=blue];
+Node_166 [shape=record,label="{166\:\ 0x012e|int[] int[] r0 = r21.mReusableIntPair\lint int r16 = r16 \- r0[0]\lr1 = 1\lint int r17 = r17 \- r0[1]\lint[] int[] r0 = r21.mNestedOffsets\lint r2 = r0[0]\lint[] int[] r3 = r21.mScrollOffset\lr0[0] = r2 + r3[0]\lr0[1] = r0[1] + r3[1]\lgetParent().requestDisallowInterceptTouchEvent(true)\lr0 = r16\lr2 = r17\l}"];
+}
+}
+Node_168 [shape=record,label="{168\:\ 0x015c|PHI: r0 r1 r2 \l  PHI: (r0v31 'dx' int) = (r0v30 'dx' int), (r0v36 'dx' int) binds: [B:167:0x0157, B:166:0x012e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v24 char) = (r1v23 char), (r1v32 char) binds: [B:167:0x0157, B:166:0x012e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v12 'dy' int) = (r2v11 'dy' int), (r2v17 'dy' int) binds: [B:167:0x0157, B:166:0x012e] A[DONT_GENERATE, DONT_INLINE]\l|int[] int[] r3 = r21.mScrollOffset\lr21.mLastTouchX = r4 \- r3[0]\lr21.mLastTouchY = r3 \- r3[r1]\l}"];
+subgraph cluster_IfRegion_1541623932 {
+label = "IF [B:175:0x0176] THEN: R(1:63) ELSE: null";
+node [shape=record,color=blue];
+Node_175 [shape=record,label="{175\:\ 0x0176|if (scrollByInternal(r10 ? r0 : 0, r11 ? r2 : 0, r22) != false) goto L63\l}"];
+subgraph cluster_Region_1331854508 {
+label = "R(1:63)";
+node [shape=record,color=blue];
+Node_176 [shape=record,label="{176\:\ 0x0178|getParent().requestDisallowInterceptTouchEvent(true)\l}"];
+}
+}
+Node_177 [shape=record,label="{177\:\ 0x0180|androidx.recyclerview.widget.GapWorker androidx.recyclerview.widget.GapWorker r1 = r21.mGapWorker\l}"];
+subgraph cluster_IfRegion_1873607121 {
+label = "IF [B:178:0x0182, B:179:0x0184, B:180:0x0186] THEN: R(2:68|1) ELSE: null";
+node [shape=record,color=blue];
+Node_178 [shape=record,label="{178\:\ 0x0182|if (r1 != null) goto L66\l}"];
+Node_179 [shape=record,label="{179\:\ 0x0184|ADDED_TO_REGION\l|if (r0 != 0) goto L68\l}"];
+Node_180 [shape=record,label="{180\:\ 0x0186|ADDED_TO_REGION\l|if (r2 != 0) goto L68\l}"];
+subgraph cluster_Region_673939538 {
+label = "R(2:68|1)";
+node [shape=record,color=blue];
+Node_181 [shape=record,label="{181\:\ 0x0188|r1.postFromTraversal(r21, r0, r2)\l}"];
+Node_InsnContainer_2019018561 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_832461626 {
+label = "R(2:26|27)";
+node [shape=record,color=blue];
+Node_133 [shape=record,label="{133\:\ 0x0088|android.util.Log.e(androidx.recyclerview.widget.RecyclerView.TAG, \"Error processing scroll; pointer index for id \" + r21.mScrollPointerId + \" not found. Did any MotionEvents get skipped?\")\l}"];
+Node_134 [shape=record,label="{134\:\ 0x00a5|RETURN\l|return false\l}"];
+}
+}
+Node_InsnContainer_2119549847 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_571361261 {
+label = "R(2:23|1)";
+node [shape=record,color=blue];
+Node_130 [shape=record,label="{130\:\ 0x007b|cancelScroll()\l}"];
+Node_InsnContainer_1688592674 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_29472571 {
+label = "R(2:22|1)";
+node [shape=record,color=blue];
+Node_129 [shape=record,label="{129\:\ 0x005f|r21.mScrollPointerId = r22.getPointerId(r14)\lint int r1 = (int) (r22.getX(r14) + 0.5f)\lr21.mLastTouchX = r1\lr21.mInitialTouchX = r1\lint int r0 = (int) (r22.getY(r14) + 0.5f)\lr21.mLastTouchY = r0\lr21.mInitialTouchY = r0\l}"];
+Node_InsnContainer_664875271 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2008553247 {
+label = "R(2:21|1)";
+node [shape=record,color=blue];
+Node_128 [shape=record,label="{128\:\ 0x005a|onPointerUp(r22)\l}"];
+Node_InsnContainer_668538666 [shape=record,label="{|break\l}"];
+}
+}
+subgraph cluster_IfRegion_1183514884 {
+label = "IF [B:205:0x01fb] THEN: R(1:98) ELSE: null";
+node [shape=record,color=blue];
+Node_205 [shape=record,label="{205\:\ 0x01fb|PHI: r12 \l  PHI: (r12v1 'eventAddedToVelocityTracker' boolean) = (r12v0 'eventAddedToVelocityTracker' boolean), (r12v0 'eventAddedToVelocityTracker' boolean), (r12v2 'eventAddedToVelocityTracker' boolean), (r12v0 'eventAddedToVelocityTracker' boolean), (r12v0 'eventAddedToVelocityTracker' boolean), (r12v0 'eventAddedToVelocityTracker' boolean), (r12v0 'eventAddedToVelocityTracker' boolean), (r12v0 'eventAddedToVelocityTracker' boolean), (r12v0 'eventAddedToVelocityTracker' boolean), (r12v0 'eventAddedToVelocityTracker' boolean) binds: [B:126:0x0055, B:204:0x01f7, B:198:0x01d0, B:182:0x018c, B:178:0x0182, B:181:0x0188, B:180:0x0186, B:130:0x007b, B:129:0x005f, B:128:0x005a] A[DONT_GENERATE, DONT_INLINE]\l|if (r12 == false) goto L98\l}"];
+subgraph cluster_Region_526124326 {
+label = "R(1:98)";
+node [shape=record,color=blue];
+Node_206 [shape=record,label="{206\:\ 0x01fd|r21.mVelocityTracker.addMovement(r15)\l}"];
+}
+}
+Node_207 [shape=record,label="{207\:\ 0x0202|r15.recycle()\l}"];
+Node_208 [shape=record,label="{208\:\ 0x0206|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_105 [shape=record,color=red,label="{105\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_107 [shape=record,color=red,label="{107\:\ 0x0000}"];
+Node_109 [shape=record,color=red,label="{109\:\ 0x0009}"];
+Node_106 [shape=record,color=red,label="{106\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_155 [shape=record,color=red,label="{155\:\ 0x00fc|PHI: r9 r16 r17 \l  PHI: (r9v1 int) = (r9v0 int), (r9v8 int) binds: [B:154:0x00f8, B:153:0x00f3] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r16v1 'dx' int) = (r16v0 'dx' int), (r16v3 'dx' int) binds: [B:154:0x00f8, B:153:0x00f3] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r17v1 'dy' int) = (r17v0 'dy' int), (r17v3 'dy' int) binds: [B:154:0x00f8, B:153:0x00f3] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_158 [shape=record,color=red,label="{158\:\ 0x0106}"];
+Node_159 [shape=record,color=red,label="{159\:\ 0x0108}"];
+Node_161 [shape=record,color=red,label="{161\:\ 0x010c|PHI: r1 \l  PHI: (r1v22 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_162 [shape=record,color=red,label="{162\:\ 0x010e}"];
+Node_164 [shape=record,color=red,label="{164\:\ 0x0112|PHI: r9 \l  PHI: (r9v4 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_169 [shape=record,color=red,label="{169\:\ 0x016a}"];
+Node_170 [shape=record,color=red,label="{170\:\ 0x016c}"];
+Node_172 [shape=record,color=red,label="{172\:\ 0x016f|PHI: r1 \l  PHI: (r1v26 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_173 [shape=record,color=red,label="{173\:\ 0x0171}"];
+Node_174 [shape=record,color=red,label="{174\:\ 0x0172|PHI: r8 \l  PHI: (r8v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l}"];
+Node_171 [shape=record,color=red,label="{171\:\ 0x016e}"];
+Node_163 [shape=record,color=red,label="{163\:\ 0x0111}"];
+Node_160 [shape=record,color=red,label="{160\:\ 0x010b}"];
+Node_182 [shape=record,color=red,label="{182\:\ 0x018c}"];
+Node_186 [shape=record,color=red,label="{186\:\ 0x01a5}"];
+Node_189 [shape=record,color=red,label="{189\:\ 0x01b2}"];
+Node_191 [shape=record,color=red,label="{191\:\ 0x01bd|PHI: r2 \l  PHI: (r2v3 'yvel' float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_193 [shape=record,color=red,label="{193\:\ 0x01c1}"];
+Node_195 [shape=record,color=red,label="{195\:\ 0x01c5}"];
+Node_190 [shape=record,color=red,label="{190\:\ 0x01bc}"];
+Node_187 [shape=record,color=red,label="{187\:\ 0x01af}"];
+MethodNode[shape=record,label="{public boolean androidx.recyclerview.widget.RecyclerView.onTouchEvent((r21v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r22v0 'e' android.view.MotionEvent A[D('e' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:118:0x001e \-\> B:106:?, CROSS_EDGE: B:208:0x0206 \-\> B:106:?, CROSS_EDGE: B:205:0x01fb \-\> B:207:0x0202, CROSS_EDGE: B:129:0x005f \-\> B:205:0x01fb, CROSS_EDGE: B:130:0x007b \-\> B:205:0x01fb, CROSS_EDGE: B:134:0x00a5 \-\> B:106:?, CROSS_EDGE: B:181:0x0188 \-\> B:205:0x01fb, CROSS_EDGE: B:180:0x0186 \-\> B:205:0x01fb, CROSS_EDGE: B:179:0x0184 \-\> B:181:0x0188, CROSS_EDGE: B:178:0x0182 \-\> B:205:0x01fb, CROSS_EDGE: B:175:0x0176 \-\> B:177:0x0180, CROSS_EDGE: B:172:0x016f \-\> B:174:0x0172, CROSS_EDGE: B:171:0x016e \-\> B:172:0x016f, CROSS_EDGE: B:167:0x0157 \-\> B:168:0x015c, CROSS_EDGE: B:163:0x0111 \-\> B:164:0x0112, CROSS_EDGE: B:160:0x010b \-\> B:161:0x010c, CROSS_EDGE: B:182:0x018c \-\> B:205:0x01fb, CROSS_EDGE: B:152:0x00f2 \-\> B:153:0x00f3, CROSS_EDGE: B:148:0x00e8 \-\> B:150:0x00eb, CROSS_EDGE: B:147:0x00e1 \-\> B:148:0x00e8, CROSS_EDGE: B:144:0x00d4 \-\> B:150:0x00eb, CROSS_EDGE: B:142:0x00d1 \-\> B:144:0x00d4, CROSS_EDGE: B:141:0x00ca \-\> B:142:0x00d1, CROSS_EDGE: B:138:0x00bd \-\> B:144:0x00d4, CROSS_EDGE: B:154:0x00f8 \-\> B:155:0x00fc, CROSS_EDGE: B:198:0x01d0 \-\> B:205:0x01fb, CROSS_EDGE: B:196:0x01cb \-\> B:198:0x01d0, CROSS_EDGE: B:194:0x01c3 \-\> B:197:0x01cd, CROSS_EDGE: B:192:0x01bf \-\> B:195:0x01c5, CROSS_EDGE: B:190:0x01bc \-\> B:191:0x01bd, CROSS_EDGE: B:187:0x01af \-\> B:188:0x01b0, CROSS_EDGE: B:204:0x01f7 \-\> B:205:0x01fb, CROSS_EDGE: B:202:0x01f3 \-\> B:204:0x01f7, CROSS_EDGE: B:200:0x01ef \-\> B:202:0x01f3, CROSS_EDGE: B:126:0x0055 \-\> B:205:0x01fb, CROSS_EDGE: B:123:0x003c \-\> B:125:0x0044, CROSS_EDGE: B:120:0x002b \-\> B:122:0x0033, CROSS_EDGE: B:209:0x0207 \-\> B:106:?, CROSS_EDGE: B:108:0x0007 \-\> B:209:0x0207\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onTouchEvent(android.view.MotionEvent):boolean\}]\l}"];
+MethodNode -> Node_105;Node_108 -> Node_109[style=dashed];
+Node_108 -> Node_209;
+Node_110 -> Node_112[style=dashed];
+Node_110 -> Node_209;
+Node_209 -> Node_106;
+Node_112 -> Node_113;
+Node_113 -> Node_114;
+Node_113 -> Node_116[style=dashed];
+Node_114 -> Node_115;
+Node_115 -> Node_106;
+Node_116 -> Node_117;
+Node_117 -> Node_118;
+Node_117 -> Node_119[style=dashed];
+Node_118 -> Node_106;
+Node_119 -> Node_120;
+Node_120 -> Node_121;
+Node_120 -> Node_122[style=dashed];
+Node_121 -> Node_122;
+Node_122 -> Node_123;
+Node_123 -> Node_124;
+Node_123 -> Node_125[style=dashed];
+Node_124 -> Node_125;
+Node_125 -> Node_126;
+Node_126 -> Node_128;
+Node_126 -> Node_129;
+Node_126 -> Node_130;
+Node_126 -> Node_131;
+Node_126 -> Node_184;
+Node_126 -> Node_199;
+Node_126 -> Node_205;
+Node_199 -> Node_200;
+Node_200 -> Node_201;
+Node_200 -> Node_202[style=dashed];
+Node_201 -> Node_202;
+Node_202 -> Node_203;
+Node_202 -> Node_204[style=dashed];
+Node_203 -> Node_204;
+Node_204 -> Node_205;
+Node_184 -> Node_185;
+Node_185 -> Node_186;
+Node_185 -> Node_187;
+Node_188 -> Node_189;
+Node_188 -> Node_190;
+Node_192 -> Node_193;
+Node_192 -> Node_195[style=dashed];
+Node_194 -> Node_195[style=dashed];
+Node_194 -> Node_197;
+Node_196 -> Node_197;
+Node_196 -> Node_198[style=dashed];
+Node_197 -> Node_198;
+Node_198 -> Node_205;
+Node_131 -> Node_132;
+Node_132 -> Node_133[style=dashed];
+Node_132 -> Node_135;
+Node_135 -> Node_136;
+Node_136 -> Node_137[style=dashed];
+Node_136 -> Node_154;
+Node_154 -> Node_155;
+Node_137 -> Node_138;
+Node_138 -> Node_139;
+Node_138 -> Node_144[style=dashed];
+Node_139 -> Node_140;
+Node_139 -> Node_141[style=dashed];
+Node_140 -> Node_142;
+Node_141 -> Node_142;
+Node_142 -> Node_143;
+Node_142 -> Node_144[style=dashed];
+Node_143 -> Node_144;
+Node_144 -> Node_145;
+Node_144 -> Node_150[style=dashed];
+Node_145 -> Node_146;
+Node_145 -> Node_147[style=dashed];
+Node_146 -> Node_148;
+Node_147 -> Node_148;
+Node_148 -> Node_149;
+Node_148 -> Node_150[style=dashed];
+Node_149 -> Node_150;
+Node_150 -> Node_151[style=dashed];
+Node_150 -> Node_152;
+Node_152 -> Node_153;
+Node_151 -> Node_153;
+Node_153 -> Node_155;
+Node_156 -> Node_157[style=dashed];
+Node_156 -> Node_182;
+Node_157 -> Node_158;
+Node_165 -> Node_166[style=dashed];
+Node_165 -> Node_167;
+Node_167 -> Node_168;
+Node_166 -> Node_168;
+Node_168 -> Node_169;
+Node_175 -> Node_176;
+Node_175 -> Node_177[style=dashed];
+Node_176 -> Node_177;
+Node_177 -> Node_178;
+Node_178 -> Node_179;
+Node_178 -> Node_205[style=dashed];
+Node_179 -> Node_180[style=dashed];
+Node_179 -> Node_181;
+Node_180 -> Node_181;
+Node_180 -> Node_205[style=dashed];
+Node_181 -> Node_205;
+Node_133 -> Node_134;
+Node_134 -> Node_106;
+Node_130 -> Node_205;
+Node_129 -> Node_205;
+Node_128 -> Node_205;
+Node_205 -> Node_206;
+Node_205 -> Node_207[style=dashed];
+Node_206 -> Node_207;
+Node_207 -> Node_208;
+Node_208 -> Node_106;
+Node_105 -> Node_107;
+Node_107 -> Node_108;
+Node_109 -> Node_110;
+Node_155 -> Node_156;
+Node_158 -> Node_159;
+Node_158 -> Node_160;
+Node_159 -> Node_161;
+Node_161 -> Node_162;
+Node_161 -> Node_163;
+Node_162 -> Node_164;
+Node_164 -> Node_165;
+Node_169 -> Node_170;
+Node_169 -> Node_171;
+Node_170 -> Node_172;
+Node_172 -> Node_173;
+Node_172 -> Node_174;
+Node_173 -> Node_174;
+Node_174 -> Node_175;
+Node_171 -> Node_172;
+Node_163 -> Node_164;
+Node_160 -> Node_161;
+Node_182 -> Node_205;
+Node_186 -> Node_188;
+Node_189 -> Node_191;
+Node_191 -> Node_192;
+Node_193 -> Node_194;
+Node_195 -> Node_196;
+Node_190 -> Node_191;
+Node_187 -> Node_188;
+}
+

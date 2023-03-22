@@ -1,0 +1,52 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.onBackPressed()Z" {
+subgraph cluster_Region_1147207017 {
+label = "R(2:1|(2:(2:3|4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|androidx.appcompat.view.ActionMode androidx.appcompat.view.ActionMode r0 = r3.mActionMode\l}"];
+subgraph cluster_Region_810800567 {
+label = "R(2:(2:3|4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_216269852 {
+label = "IF [B:17:0x0003] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0003|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_822559579 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|r0.finish()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0008|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1315808018 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0009|androidx.appcompat.app.ActionBar androidx.appcompat.app.ActionBar r0 = getSupportActionBar()\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000d|RETURN\l|return r0 != null && r0.collapseActionView()\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000f}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0013|REMOVE\lADDED_TO_REGION\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0015}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0016|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{boolean androidx.appcompat.app.AppCompatDelegateImpl.onBackPressed((r3v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0015 \-\> B:15:?, CROSS_EDGE: B:26:0x0017 \-\> B:15:?, CROSS_EDGE: B:21:0x000d \-\> B:25:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_15;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_25;
+Node_14 -> Node_16;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_27;
+Node_24 -> Node_15;
+Node_27 -> Node_15;
+Node_25 -> Node_15;
+}
+

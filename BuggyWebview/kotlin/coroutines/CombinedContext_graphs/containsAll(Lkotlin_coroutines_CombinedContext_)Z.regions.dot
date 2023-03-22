@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.coroutines.CombinedContext.containsAll(Lkotlin\/coroutines\/CombinedContext;)Z" {
+subgraph cluster_Region_738785694 {
+label = "R(3:1|(2:4|(1:6)(2:8|9))|12)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.coroutines.CombinedContext r0 = r4\l}"];
+subgraph cluster_LoopRegion_2059946236 {
+label = "LOOP:0: (2:4|(1:6)(2:8|9))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|if (contains(r0.element) != false) goto L4\l}"];
+subgraph cluster_Region_1857342337 {
+label = "R(2:4|(1:6)(2:8|9))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000c|kotlin.coroutines.CoroutineContext kotlin.coroutines.CoroutineContext r1 = r0.left\l}"];
+subgraph cluster_IfRegion_85662656 {
+label = "IF [B:22:0x0010] THEN: R(1:6) ELSE: R(2:8|9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|if ((r1 instanceof kotlin.coroutines.CombinedContext) != false) goto L6\l}"];
+subgraph cluster_Region_864286342 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0012|LOOP_END\lLOOP:0: B:17:0x0001\-\>B:23:0x0012\l|kotlin.coroutines.CombinedContext r0 = (kotlin.coroutines.CombinedContext) r1\l}"];
+}
+subgraph cluster_Region_687929891 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0016|kotlin.jvm.internal.Intrinsics.checkNotNull(r1, \"null cannot be cast to non\-null type kotlin.coroutines.CoroutineContext.Element\")\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0022|RETURN\l|return contains((kotlin.coroutines.CoroutineContext.Element) r1)\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x000a|RETURN\l|return false\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0001|LOOP_START\lLOOP:0: B:17:0x0001\-\>B:23:0x0012\lPHI: r0 \l  PHI: (r0v1 'cur' kotlin.coroutines.CombinedContext) = (r0v0 'cur' kotlin.coroutines.CombinedContext), (r0v3 'cur' kotlin.coroutines.CombinedContext) binds: [B:16:0x0000, B:23:0x0012] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0016|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final boolean kotlin.coroutines.CombinedContext.containsAll((r3v0 'this' kotlin.coroutines.CombinedContext A[IMMUTABLE_TYPE, THIS]), (r4v0 'context' kotlin.coroutines.CombinedContext A[D('context' kotlin.coroutines.CombinedContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x0012 \-\> B:17:0x0001, CROSS_EDGE: B:25:0x0022 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_18 -> Node_21;
+Node_18 -> Node_27[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_26[style=dashed];
+Node_23 -> Node_17;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_19 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_26 -> Node_24;
+Node_27 -> Node_19;
+}
+

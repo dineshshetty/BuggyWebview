@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.material.timepicker.ClockFaceView.getGradientForTextView(Landroid\/graphics\/RectF;Landroid\/widget\/TextView;)Landroid\/graphics\/RadialGradient;" {
+subgraph cluster_Region_1903270050 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|r10.getHitRect(r8.textViewRect)\lr8.scratch.set(r8.textViewRect)\lr10.getLineBounds(0, r8.scratchLineBounds)\lr8.scratch.inset(r8.scratchLineBounds.left, r8.scratchLineBounds.top)\l}"];
+subgraph cluster_Region_146837203 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_791144505 {
+label = "IF [B:3:0x0027] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0027|if (android.graphics.RectF.intersects(r9, r8.scratch) == false) goto L3\l}"];
+subgraph cluster_Region_1074573732 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0029|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1036354959 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0053|RETURN\l|return new android.graphics.RadialGradient(r9.centerX() \- r8.scratch.left, r9.centerY() \- r8.scratch.top, 0.5f * r9.width(), r8.gradientColors, r8.gradientPositions, android.graphics.Shader.TileMode.CLAMP)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002b}"];
+MethodNode[shape=record,label="{private android.graphics.RadialGradient com.google.android.material.timepicker.ClockFaceView.getGradientForTextView((r8v0 'this' com.google.android.material.timepicker.ClockFaceView A[IMMUTABLE_TYPE, THIS]), (r9v0 'selectorBox' android.graphics.RectF A[D('selectorBox' android.graphics.RectF), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'tv' android.widget.TextView A[D('tv' android.widget.TextView), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0053 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_1;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+}
+

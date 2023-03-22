@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatImageView.setImageDrawable(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_1234918608 {
+label = "R(4:1|(1:6)|7|(1:(2:9|(1:(1:11)))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|androidx.appcompat.widget.AppCompatImageHelper androidx.appcompat.widget.AppCompatImageHelper r0 = r2.mImageHelper\l}"];
+subgraph cluster_IfRegion_868918089 {
+label = "IF [B:19:0x0002, B:20:0x0004, B:22:0x0008] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|if (r0 != null) goto L3\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0004|ADDED_TO_REGION\l|if (r3 != null) goto L4\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0008|ADDED_TO_REGION\l|if (r2.mHasLevel == false) goto L6\l}"];
+subgraph cluster_Region_476095792 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000a|r0.obtainLevelFromDrawable(r3)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x000d|super.setImageDrawable(r3)\landroidx.appcompat.widget.AppCompatImageHelper androidx.appcompat.widget.AppCompatImageHelper r0 = r2.mImageHelper\l}"];
+subgraph cluster_Region_410382059 {
+label = "R(1:(2:9|(1:(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1369213295 {
+label = "IF [B:25:0x0012] THEN: R(2:9|(1:(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0012|if (r0 != null) goto L9\l}"];
+subgraph cluster_Region_1114780240 {
+label = "R(2:9|(1:(1:11)))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0014|r0.applySupportImageTint()\l}"];
+subgraph cluster_Region_621351276 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1398254104 {
+label = "IF [B:27:0x0019] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0019|if (r2.mHasLevel == false) goto L11\l}"];
+subgraph cluster_Region_699494881 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001b|r2.mImageHelper.applyImageLevel()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0006}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0020|ORIG_RETURN\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.AppCompatImageView.setImageDrawable((r2v0 'this' androidx.appcompat.widget.AppCompatImageView A[IMMUTABLE_TYPE, THIS]), (r3v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:27:0x0019 \-\> B:29:0x0020, CROSS_EDGE: B:25:0x0012 \-\> B:29:0x0020, CROSS_EDGE: B:22:0x0008 \-\> B:24:0x000d, CROSS_EDGE: B:20:0x0004 \-\> B:24:0x000d, CROSS_EDGE: B:19:0x0002 \-\> B:24:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.ImageView.setImageDrawable(android.graphics.drawable.Drawable):void\}]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_24[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_24[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_30[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_31[style=dashed];
+Node_28 -> Node_29;
+Node_16 -> Node_18;
+Node_21 -> Node_22;
+Node_29 -> Node_17;
+Node_31 -> Node_17;
+Node_30 -> Node_17;
+}
+

@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.5.attachViewToParent(Landroid\/view\/View;ILandroid\/view\/ViewGroup$LayoutParams;)V" {
+subgraph cluster_Region_1249765661 {
+label = "R(3:1|(1:(2:(2:7|8)|(1:10)))|11)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.RecyclerView.ViewHolder r0 = androidx.recyclerview.widget.RecyclerView.getChildViewHolderInt(r5)\l}"];
+subgraph cluster_IfRegion_1085636923 {
+label = "IF [B:17:0x0004] THEN: R(1:(2:(2:7|8)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_583051871 {
+label = "R(1:(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1629185107 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_833544705 {
+label = "IF [B:19:0x000a, B:21:0x0010] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|if (r0.isTmpDetached() == false) goto L5\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0010|ADDED_TO_REGION\l|if (r0.shouldIgnore() == false) goto L7\l}"];
+subgraph cluster_Region_2048203837 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0013}"];
+Node_24 [shape=record,label="{24\:\ 0x0032|throw new java.lang.IllegalArgumentException(\"Called attach on a child which is not detached: \" + r0 + androidx.recyclerview.widget.RecyclerView.this.exceptionLabel())\l}"];
+}
+}
+subgraph cluster_Region_1602565987 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0033|r0.clearTmpDetachFlag()\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0036|androidx.recyclerview.widget.RecyclerView.this.attachViewToParent(r5, r6, r7)\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x003b}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.RecyclerView.5.attachViewToParent((r4v0 'this' androidx.recyclerview.widget.RecyclerView$5 A[IMMUTABLE_TYPE, THIS]), (r5v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'layoutParams' android.view.ViewGroup$LayoutParams A[D('layoutParams' android.view.ViewGroup$LayoutParams), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x003b \-\> B:15:?, CROSS_EDGE: B:19:0x000a \-\> B:25:0x0033, CROSS_EDGE: B:17:0x0004 \-\> B:26:0x0036\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.ChildHelper.Callback.attachViewToParent(android.view.View, int, android.view.ViewGroup$LayoutParams):void]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_26[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_21 -> Node_23;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_15;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_27 -> Node_15;
+}
+

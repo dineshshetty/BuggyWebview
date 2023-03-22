@@ -1,0 +1,82 @@
+digraph "CFG forandroidx.constraintlayout.motion.utils.ViewTimeCycle.get(FJLandroid\/view\/View;Landroidx\/constraintlayout\/core\/motion\/utils\/KeyCache;)F" {
+subgraph cluster_Region_2071341276 {
+label = "R(2:1|(2:(2:3|4)|(4:(2:8|(1:10))|11|16|17)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|r19.mCurveFit.getPos(r20, r19.mCache)\lfloat r5 = r19.mCache[1]\l}"];
+subgraph cluster_Region_1957245590 {
+label = "R(2:(2:3|4)|(4:(2:8|(1:10))|11|16|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1311326406 {
+label = "IF [B:23:0x001c] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001c|if (r5 == 0.0f) goto L3\l}"];
+subgraph cluster_Region_2127185202 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|r19.mContinue = false\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0024|RETURN\l|return r19.mCache[2]\l}"];
+}
+}
+subgraph cluster_Region_1003593397 {
+label = "R(4:(2:8|(1:10))|11|16|17)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_70908473 {
+label = "IF [B:27:0x002b] THEN: R(2:8|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002b|if (java.lang.Float.isNaN(r19.last_cycle) != false) goto L8\l}"];
+subgraph cluster_Region_746250473 {
+label = "R(2:8|(1:10))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x002d|r19.last_cycle = r24.getFloatValue(r23, r19.mType, 0)\l}"];
+subgraph cluster_IfRegion_293231218 {
+label = "IF [B:29:0x003b] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003b|if (java.lang.Float.isNaN(r19.last_cycle) != false) goto L10\l}"];
+subgraph cluster_Region_1026911930 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x003d|r19.last_cycle = 0.0f\l}"];
+}
+}
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x003f|long long r11 = r21 \- r19.last_time\lr19.last_cycle = (float) ((r19.last_cycle + ((r11 * 1.0E\-9d) * r5)) % 1.0d)\lr24.setFloatValue(r23, r19.mType, 0, r19.last_cycle)\lr19.last_time = r21\lfloat r7 = r19.mCache[0]\lfloat float r8 = calcWave(r19.last_cycle)\lfloat r10 = r19.mCache[2]\lfloat float r13 = (r7 * r8) + r10\l}"];
+Node_38 [shape=record,label="{38\:\ 0x0081|PHI: r15 \l  PHI: (r15v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r19.mContinue = (r7 == 0.0f && r5 == 0.0f) ? false : true\l}"];
+Node_39 [shape=record,label="{39\:\ 0x0083|RETURN\l|return r13\l}"];
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0025}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0077}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0079}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x007b|REMOVE\lADDED_TO_REGION\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x007e}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0080}"];
+MethodNode[shape=record,label="{public float androidx.constraintlayout.motion.utils.ViewTimeCycle.get((r19v0 'this' androidx.constraintlayout.motion.utils.ViewTimeCycle A[IMMUTABLE_TYPE, THIS]), (r20v0 'pos' float A[D('pos' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 'time' long A[D('time' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r24v0 'cache' androidx.constraintlayout.core.motion.utils.KeyCache A[D('cache' androidx.constraintlayout.core.motion.utils.KeyCache), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:39:0x0083 \-\> B:21:?, CROSS_EDGE: B:37:0x0080 \-\> B:38:0x0081, CROSS_EDGE: B:32:0x0077 \-\> B:37:0x0080, CROSS_EDGE: B:29:0x003b \-\> B:31:0x003f, CROSS_EDGE: B:27:0x002b \-\> B:31:0x003f\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [pos, time, view, cache]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_26[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_21;
+Node_27 -> Node_28;
+Node_27 -> Node_31[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_38 -> Node_39;
+Node_39 -> Node_21;
+Node_20 -> Node_22;
+Node_26 -> Node_27;
+Node_32 -> Node_33;
+Node_32 -> Node_37;
+Node_33 -> Node_34;
+Node_34 -> Node_36;
+Node_34 -> Node_37;
+Node_36 -> Node_38;
+Node_37 -> Node_38;
+}
+

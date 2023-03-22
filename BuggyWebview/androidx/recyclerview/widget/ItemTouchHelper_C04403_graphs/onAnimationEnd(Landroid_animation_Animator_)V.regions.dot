@@ -1,0 +1,91 @@
+digraph "CFG forandroidx.recyclerview.widget.ItemTouchHelper.3.onAnimationEnd(Landroid\/animation\/Animator;)V" {
+subgraph cluster_Region_1503114595 {
+label = "R(2:1|(2:(1:3)|(2:(1:7)(2:13|(1:15))|(1:(1:10)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|super.onAnimationEnd(r4)\l}"];
+subgraph cluster_Region_868891893 {
+label = "R(2:(1:3)|(2:(1:7)(2:13|(1:15))|(1:(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2026535791 {
+label = "IF [B:3:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r3.mOverridden != false) goto L3\l}"];
+subgraph cluster_Region_1645567684 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_114152264 {
+label = "R(2:(1:7)(2:13|(1:15))|(1:(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1686268656 {
+label = "IF [B:6:0x000a] THEN: R(1:7) ELSE: R(2:13|(1:15))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|if (r19 \<= 0) goto L7\l}"];
+subgraph cluster_Region_1329099788 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|androidx.recyclerview.widget.ItemTouchHelper.this.mCallback.clearView(androidx.recyclerview.widget.ItemTouchHelper.this.mRecyclerView, r20)\l}"];
+}
+subgraph cluster_Region_2010747193 {
+label = "R(2:13|(1:15))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|androidx.recyclerview.widget.ItemTouchHelper.this.mPendingCleanup.add(r20.itemView)\lr3.mIsPendingCleanup = true\lint int r0 = r19\l}"];
+subgraph cluster_IfRegion_629942023 {
+label = "IF [B:9:0x002a] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|if (r0 \> 0) goto L15\l}"];
+subgraph cluster_Region_1597160617 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002c|androidx.recyclerview.widget.ItemTouchHelper.this.postDispatchSwipe(r3, r0)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_127135825 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1873552504 {
+label = "IF [B:12:0x0039] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0039|if (androidx.recyclerview.widget.ItemTouchHelper.this.mOverdrawChild == r20.itemView) goto L10\l}"];
+subgraph cluster_Region_403572375 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003b|androidx.recyclerview.widget.ItemTouchHelper.this.removeChildDrawingOrderCallbackIfNecessary(r20.itemView)\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0031}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0044|ORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.ItemTouchHelper.3.onAnimationEnd((r3v0 'this' androidx.recyclerview.widget.ItemTouchHelper$3 A[IMMUTABLE_TYPE, THIS]), (r4v0 'animation' android.animation.Animator A[D('animation' android.animation.Animator), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:14:0x0044 \-\> B:1:?, CROSS_EDGE: B:12:0x0039 \-\> B:14:0x0044, CROSS_EDGE: B:10:0x002c \-\> B:11:0x0031, CROSS_EDGE: B:9:0x002a \-\> B:11:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.animation.Animator.AnimatorListener.onAnimationEnd(android.animation.Animator):void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_11;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_11 -> Node_12;
+Node_14 -> Node_1;
+Node_15 -> Node_1;
+}
+

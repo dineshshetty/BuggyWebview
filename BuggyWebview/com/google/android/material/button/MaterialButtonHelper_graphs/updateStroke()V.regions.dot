@@ -1,0 +1,74 @@
+digraph "CFG forcom.google.android.material.button.MaterialButtonHelper.updateStroke()V" {
+subgraph cluster_Region_1402477841 {
+label = "R(2:1|(1:(2:3|(1:(3:5|(1:7)(1:11)|8))))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|com.google.android.material.shape.MaterialShapeDrawable com.google.android.material.shape.MaterialShapeDrawable r0 = getMaterialShapeDrawable()\lcom.google.android.material.shape.MaterialShapeDrawable com.google.android.material.shape.MaterialShapeDrawable r1 = getSurfaceColorStrokeDrawable()\l}"];
+subgraph cluster_Region_93814896 {
+label = "R(1:(2:3|(1:(3:5|(1:7)(1:11)|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_566305445 {
+label = "IF [B:3:0x0008] THEN: R(2:3|(1:(3:5|(1:7)(1:11)|8))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1129865683 {
+label = "R(2:3|(1:(3:5|(1:7)(1:11)|8)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|r0.setStroke(r5.strokeWidth, r5.strokeColor)\l}"];
+subgraph cluster_Region_251225139 {
+label = "R(1:(3:5|(1:7)(1:11)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1931538121 {
+label = "IF [B:5:0x0012] THEN: R(3:5|(1:7)(1:11)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|if (r1 != null) goto L5\l}"];
+subgraph cluster_Region_1623397673 {
+label = "R(3:5|(1:7)(1:11)|8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|float float r2 = r5.strokeWidth\l}"];
+subgraph cluster_IfRegion_427733046 {
+label = "IF [B:7:0x0019] THEN: R(1:7) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019|if (r5.shouldDrawSurfaceColorStroke != false) goto L7\l}"];
+subgraph cluster_Region_1223258531 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|int r3 = com.google.android.material.color.MaterialColors.getColor(r5.materialButton, com.google.android.material.C0571R.attr.colorSurface)\l}"];
+}
+subgraph cluster_Region_1220528030 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0024|r3 = 0\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0025|PHI: r3 \l  PHI: (r3v3 int) = (r3v2 int), (r3v5 int) binds: [B:9:0x0024, B:8:0x001b] A[DONT_GENERATE, DONT_INLINE]\l|r1.setStroke(r2, r3)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0028|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.button.MaterialButtonHelper.updateStroke((r5v0 'this' com.google.android.material.button.MaterialButtonHelper A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0024 \-\> B:10:0x0025, CROSS_EDGE: B:5:0x0012 \-\> B:11:0x0028, CROSS_EDGE: B:3:0x0008 \-\> B:11:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_11 -> Node_1;
+Node_13 -> Node_1;
+Node_12 -> Node_1;
+}
+

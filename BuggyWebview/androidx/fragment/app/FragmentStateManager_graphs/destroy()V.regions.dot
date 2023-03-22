@@ -1,0 +1,240 @@
+digraph "CFG forandroidx.fragment.app.FragmentStateManager.destroy()V" {
+subgraph cluster_Region_723019021 {
+label = "R(4:(1:3)|5|9|(2:(8:14|(1:16)(1:(1:43)(1:44))|(1:40)|19|(2:22|(2:25|(1:28)(0))(0))|(1:36)|37|38)|(2:(1:51)|52))) | DECL_VAR: androidx.fragment.app.Fragment target, boolean shouldClear\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1482890593 {
+label = "IF [B:61:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_61 [shape=record,label="{61\:\ 0x0005|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(3) != false) goto L3\l}"];
+subgraph cluster_Region_64160384 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_62 [shape=record,label="{62\:\ 0x0007|android.util.Log.d(androidx.fragment.app.FragmentStateManager.TAG, \"movefrom CREATED: \" + r9.mFragment)\l}"];
+}
+}
+Node_64 [shape=record,label="{64\:\ 0x0025|boolean r0 = r9.mFragment.mRemoving && !r9.mFragment.isInBackStack()\l}"];
+Node_69 [shape=record,label="{69\:\ 0x0032|PHI: r0 \l  PHI: (r0v5 'beingRemoved' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|boolean r3 = r0 \|\| r9.mFragmentStore.getNonConfig().shouldDestroy(r9.mFragment)\l}"];
+subgraph cluster_Region_799996655 {
+label = "R(2:(8:14|(1:16)(1:(1:43)(1:44))|(1:40)|19|(2:22|(2:25|(1:28)(0))(0))|(1:36)|37|38)|(2:(1:51)|52))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2047400648 {
+label = "IF [B:75:0x0046] THEN: R(8:14|(1:16)(1:(1:43)(1:44))|(1:40)|19|(2:22|(2:25|(1:28)(0))(0))|(1:36)|37|38) ELSE: null";
+node [shape=record,color=blue];
+Node_75 [shape=record,label="{75\:\ 0x0046|PHI: r3 \l  PHI: (r3v1 'shouldDestroy' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 != false) goto L14\l}"];
+subgraph cluster_Region_568925824 {
+label = "R(8:14|(1:16)(1:(1:43)(1:44))|(1:40)|19|(2:22|(2:25|(1:28)(0))(0))|(1:36)|37|38)";
+node [shape=record,color=blue];
+Node_76 [shape=record,label="{76\:\ 0x0048|androidx.fragment.app.FragmentHostCallback\<?\> androidx.fragment.app.FragmentHostCallback\<?\> r4 = r9.mFragment.mHost\l}"];
+subgraph cluster_IfRegion_1236346813 {
+label = "IF [B:77:0x004e] THEN: R(1:16) ELSE: R(1:(1:43)(1:44))";
+node [shape=record,color=blue];
+Node_77 [shape=record,label="{77\:\ 0x004e|if ((r4 instanceof androidx.lifecycle.ViewModelStoreOwner) != false) goto L16\l}"];
+subgraph cluster_Region_108489615 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_78 [shape=record,label="{78\:\ 0x0050|boolean r1 = r9.mFragmentStore.getNonConfig().isCleared()\l}"];
+}
+subgraph cluster_Region_1152573277 {
+label = "R(1:(1:43)(1:44)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_330133610 {
+label = "IF [B:80:0x0061] THEN: R(1:43) ELSE: R(1:44) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_80 [shape=record,label="{80\:\ 0x0061|if ((r4.getContext() instanceof android.app.Activity) != false) goto L43\l}"];
+subgraph cluster_Region_793716301 {
+label = "R(1:43)";
+node [shape=record,color=blue];
+Node_81 [shape=record,label="{81\:\ 0x0063|android.app.Activity android.app.Activity r5 = (android.app.Activity) r4.getContext()\lr1 = true ^ r5.isChangingConfigurations()\l}"];
+}
+subgraph cluster_Region_1178284090 {
+label = "R(1:44)";
+node [shape=record,color=blue];
+Node_82 [shape=record,label="{82\:\ 0x006f|r1 = true\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1883590777 {
+label = "IF [B:83:0x0070, B:84:0x0072] THEN: R(1:40) ELSE: null";
+node [shape=record,color=blue];
+Node_83 [shape=record,label="{83\:\ 0x0070|PHI: r1 \l  PHI: (r1v8 'shouldClear' boolean) = (r1v6 'shouldClear' boolean), (r1v7 'shouldClear' boolean), (r1v11 'shouldClear' boolean) binds: [B:82:0x006f, B:81:0x0063, B:78:0x0050] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != false) goto L40\l}"];
+Node_84 [shape=record,label="{84\:\ 0x0072|ADDED_TO_REGION\l|if (r1 != false) goto L40\l}"];
+subgraph cluster_Region_83511999 {
+label = "R(1:40)";
+node [shape=record,color=blue];
+Node_85 [shape=record,label="{85\:\ 0x0074|r9.mFragmentStore.getNonConfig().clearNonConfigState(r9.mFragment)\l}"];
+}
+}
+Node_86 [shape=record,label="{86\:\ 0x007f|r9.mFragment.performDestroy()\lr9.mDispatcher.dispatchOnFragmentDestroyed(r9.mFragment, false)\ljava.util.Iterator r2 = r9.mFragmentStore.getActiveFragmentStateManagers().iterator()\l\l}"];
+subgraph cluster_LoopRegion_522624930 {
+label = "LOOP:0: (2:22|(2:25|(1:28)(0))(0))";
+node [shape=record,color=blue];
+Node_88 [shape=record,label="{88\:\ 0x0099|androidx.fragment.app.FragmentStateManager \lif (r2.hasNext() != false) goto L22\l}"];
+subgraph cluster_Region_1200060203 {
+label = "R(2:22|(2:25|(1:28)(0))(0))";
+node [shape=record,color=blue];
+Node_89 [shape=record,label="{89\:\ 0x009b|androidx.fragment.app.FragmentStateManager r5 = r2.next()\l}"];
+subgraph cluster_IfRegion_354222257 {
+label = "IF [B:90:0x00a1] THEN: R(2:25|(1:28)(0)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_90 [shape=record,label="{90\:\ 0x00a1|if (r5 != null) goto L24\l}"];
+subgraph cluster_Region_671762908 {
+label = "R(2:25|(1:28)(0))";
+node [shape=record,color=blue];
+Node_91 [shape=record,label="{91\:\ 0x00a3|androidx.fragment.app.Fragment androidx.fragment.app.Fragment r6 = r5.getFragment()\l}"];
+subgraph cluster_IfRegion_934221319 {
+label = "IF [B:92:0x00b1] THEN: R(1:28) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_92 [shape=record,label="{92\:\ 0x00b1|if (r9.mFragment.mWho.equals(r6.mTargetWho) != false) goto L27\l}"];
+subgraph cluster_Region_171518062 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_93 [shape=record,label="{93\:\ 0x00b3|r6.mTarget = r9.mFragment\lr6.mTargetWho = null\l}"];
+}
+subgraph cluster_Region_1139019551 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1754547022 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+subgraph cluster_IfRegion_349593432 {
+label = "IF [B:96:0x00bf] THEN: R(1:36) ELSE: null";
+node [shape=record,color=blue];
+Node_96 [shape=record,label="{96\:\ 0x00bf|if (r9.mFragment.mTargetWho != null) goto L36\l}"];
+subgraph cluster_Region_2124506379 {
+label = "R(1:36)";
+node [shape=record,color=blue];
+Node_97 [shape=record,label="{97\:\ 0x00c1|androidx.fragment.app.Fragment androidx.fragment.app.Fragment r2 = r9.mFragment\lr2.mTarget = r9.mFragmentStore.findActiveFragment(r2.mTargetWho)\l}"];
+}
+}
+Node_98 [shape=record,label="{98\:\ 0x00cd|r9.mFragmentStore.makeInactive(r9)\l}"];
+Node_115 [shape=record,label="{115\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1773391355 {
+label = "R(2:(1:51)|52)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_181185317 {
+label = "IF [B:100:0x00d7, B:102:0x00e3, B:104:0x00e7] THEN: R(1:51) ELSE: null";
+node [shape=record,color=blue];
+Node_100 [shape=record,label="{100\:\ 0x00d7|if (r9.mFragment.mTargetWho != null) goto L47\l}"];
+Node_102 [shape=record,label="{102\:\ 0x00e3|ADDED_TO_REGION\l|if ((r1 = r9.mFragmentStore.findActiveFragment(r9.mFragment.mTargetWho)) != null) goto L49\l}"];
+Node_104 [shape=record,label="{104\:\ 0x00e7|ADDED_TO_REGION\l|if (r1.mRetainInstance != false) goto L51\l}"];
+subgraph cluster_Region_1082656513 {
+label = "R(1:51)";
+node [shape=record,color=blue];
+Node_105 [shape=record,label="{105\:\ 0x00e9|r9.mFragment.mTarget = r1\l}"];
+}
+}
+Node_106 [shape=record,label="{106\:\ 0x00ed|r9.mFragment.mState = 0\l}"];
+}
+}
+}
+Node_58 [shape=record,color=red,label="{58\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_60 [shape=record,color=red,label="{60\:\ 0x0000}"];
+Node_63 [shape=record,color=red,label="{63\:\ 0x001f}"];
+Node_65 [shape=record,color=red,label="{65\:\ 0x0027}"];
+Node_66 [shape=record,color=red,label="{66\:\ 0x002d|REMOVE\lADDED_TO_REGION\l}"];
+Node_67 [shape=record,color=red,label="{67\:\ 0x002f}"];
+Node_70 [shape=record,color=red,label="{70\:\ 0x0034}"];
+Node_71 [shape=record,color=red,label="{71\:\ 0x0040|REMOVE\lADDED_TO_REGION\l}"];
+Node_73 [shape=record,color=red,label="{73\:\ 0x0043}"];
+Node_87 [shape=record,color=red,label="{87\:\ 0x0095|LOOP_START\lLOOP:0: B:87:0x0095\-\>B:111:0x0095\l}"];
+Node_108 [shape=record,color=red,label="{108\:\ 0x00a3|SYNTHETIC\l}"];
+Node_110 [shape=record,color=red,label="{110\:\ 0x00b3|SYNTHETIC\l}"];
+Node_114 [shape=record,color=red,label="{114\:\ 0x0095|SYNTHETIC\l}"];
+Node_111 [shape=record,color=red,label="{111\:\ 0x0095|LOOP_END\lSYNTHETIC\lLOOP:0: B:87:0x0095\-\>B:111:0x0095\l}"];
+Node_113 [shape=record,color=red,label="{113\:\ 0x0095|SYNTHETIC\l}"];
+Node_112 [shape=record,color=red,label="{112\:\ 0x0095|SYNTHETIC\l}"];
+Node_109 [shape=record,color=red,label="{109\:\ 0x00bb|SYNTHETIC\l}"];
+Node_95 [shape=record,color=red,label="{95\:\ 0x00bb}"];
+Node_59 [shape=record,color=red,label="{59\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_79 [shape=record,color=red,label="{79\:\ 0x005b}"];
+Node_99 [shape=record,color=red,label="{99\:\ 0x00d3}"];
+Node_101 [shape=record,color=red,label="{101\:\ 0x00d9}"];
+Node_103 [shape=record,color=red,label="{103\:\ 0x00e5}"];
+Node_107 [shape=record,color=red,label="{107\:\ 0x00f1|ORIG_RETURN\l}"];
+Node_74 [shape=record,color=red,label="{74\:\ 0x0045}"];
+Node_68 [shape=record,color=red,label="{68\:\ 0x0031}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentStateManager.destroy((r9v0 'this' androidx.fragment.app.FragmentStateManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:93:0x00b3 \-\> B:87:0x0095, BACK_EDGE: B:92:0x00b1 \-\> B:87:0x0095, BACK_EDGE: B:90:0x00a1 \-\> B:87:0x0095, CROSS_EDGE: B:96:0x00bf \-\> B:98:0x00cd, CROSS_EDGE: B:84:0x0072 \-\> B:86:0x007f, CROSS_EDGE: B:83:0x0070 \-\> B:85:0x0074, CROSS_EDGE: B:81:0x0063 \-\> B:83:0x0070, CROSS_EDGE: B:82:0x006f \-\> B:83:0x0070, CROSS_EDGE: B:106:0x00ed \-\> B:107:0x00f1, CROSS_EDGE: B:104:0x00e7 \-\> B:106:0x00ed, CROSS_EDGE: B:102:0x00e3 \-\> B:106:0x00ed, CROSS_EDGE: B:100:0x00d7 \-\> B:106:0x00ed, CROSS_EDGE: B:74:0x0045 \-\> B:75:0x0046, CROSS_EDGE: B:69:0x0032 \-\> B:74:0x0045, CROSS_EDGE: B:68:0x0031 \-\> B:69:0x0032, CROSS_EDGE: B:64:0x0025 \-\> B:68:0x0031, CROSS_EDGE: B:61:0x0005 \-\> B:63:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_58;Node_61 -> Node_62;
+Node_61 -> Node_63[style=dashed];
+Node_62 -> Node_63;
+Node_64 -> Node_65;
+Node_64 -> Node_68;
+Node_69 -> Node_70;
+Node_69 -> Node_74;
+Node_75 -> Node_76;
+Node_75 -> Node_99[style=dashed];
+Node_76 -> Node_77;
+Node_77 -> Node_78;
+Node_77 -> Node_79[style=dashed];
+Node_78 -> Node_83;
+Node_80 -> Node_81;
+Node_80 -> Node_82[style=dashed];
+Node_81 -> Node_83;
+Node_82 -> Node_83;
+Node_83 -> Node_84[style=dashed];
+Node_83 -> Node_85;
+Node_84 -> Node_85;
+Node_84 -> Node_86[style=dashed];
+Node_85 -> Node_86;
+Node_86 -> Node_87;
+Node_88 -> Node_89;
+Node_88 -> Node_109[style=dashed];
+Node_89 -> Node_90;
+Node_90 -> Node_108;
+Node_90 -> Node_112[style=dashed];
+Node_91 -> Node_92;
+Node_92 -> Node_110;
+Node_92 -> Node_113[style=dashed];
+Node_93 -> Node_114;
+Node_96 -> Node_97;
+Node_96 -> Node_98[style=dashed];
+Node_97 -> Node_98;
+Node_98 -> Node_115;
+Node_115 -> Node_59;
+Node_100 -> Node_101;
+Node_100 -> Node_106[style=dashed];
+Node_102 -> Node_103;
+Node_102 -> Node_106[style=dashed];
+Node_104 -> Node_105;
+Node_104 -> Node_106[style=dashed];
+Node_105 -> Node_106;
+Node_106 -> Node_107;
+Node_58 -> Node_60;
+Node_60 -> Node_61;
+Node_63 -> Node_64;
+Node_65 -> Node_66;
+Node_66 -> Node_67;
+Node_66 -> Node_68;
+Node_67 -> Node_69;
+Node_70 -> Node_71;
+Node_71 -> Node_73;
+Node_71 -> Node_74;
+Node_73 -> Node_75;
+Node_87 -> Node_88;
+Node_108 -> Node_91;
+Node_110 -> Node_93;
+Node_114 -> Node_111;
+Node_111 -> Node_87;
+Node_113 -> Node_111;
+Node_112 -> Node_111;
+Node_109 -> Node_95;
+Node_95 -> Node_96;
+Node_79 -> Node_80;
+Node_99 -> Node_100;
+Node_101 -> Node_102;
+Node_103 -> Node_104;
+Node_107 -> Node_59;
+Node_74 -> Node_75;
+Node_68 -> Node_69;
+}
+

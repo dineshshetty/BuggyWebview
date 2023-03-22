@@ -1,0 +1,212 @@
+digraph "CFG forkotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Lkotlinx\/coroutines\/internal\/ScopeCoroutine;Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function2;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1581701241 {
+label = "R(5:1|(1:3)|4|(1:(2:(2:15|(2:20|(2:(1:25)|(1:26)))(1:(2:30|(2:(1:35)|(1:36)))(1:39)))|(1:42)))|12) | DECL_VAR: java.lang.Object null, java.lang.Object state$iv\l";
+node [shape=record,color=blue];
+Node_52 [shape=record,label="{52\:\ 0x0000|boolean r3 = false\l}"];
+subgraph cluster_TryCatchRegion_290460851 {
+label = "Try: R(1:3) catches: R(2:44|45)";
+node [shape=record,color=blue];
+subgraph cluster_Region_617441232 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x0006|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0014, blocks: (B:53:0x0006), top: B:91:0x0006 \}\lCatch: all \-\> 0x0014\l|java.lang.Object r4 = ((kotlin.jvm.functions.Function2) kotlin.jvm.internal.TypeIntrinsics.beforeCheckcastToFunctionOfArity(r10, 2)).invoke(r9, r8)     \/\/ Catch: java.lang.Throwable \-\> L14\l}"];
+}
+subgraph cluster_Region_846726203 {
+label = "R(2:44|45) | ExcHandler: all \-\> 0x0014\l";
+node [shape=record,color=blue];
+Node_55 [shape=record,label="{55\:\ 0x0014|ExcHandler: all \-\> 0x0014\l}"];
+Node_56 [shape=record,label="{56\:\ 0x0015|r4 = new kotlinx.coroutines.CompletedExceptionally(r2, false, 2, null)\l}"];
+}
+}
+Node_57 [shape=record,label="{57\:\ 0x001c|PHI: r4 \l  PHI: (r4v3 java.lang.Object) = (r4v2 java.lang.Object), (r4v6 java.lang.Object) binds: [B:56:0x0015, B:53:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Object r2 = r4\l}"];
+subgraph cluster_IfRegion_1567497393 {
+label = "IF [B:58:0x0021, B:61:0x002f] THEN: R(1:(2:(2:15|(2:20|(2:(1:25)|(1:26)))(1:(2:30|(2:(1:35)|(1:36)))(1:39)))|(1:42))) ELSE: null";
+node [shape=record,color=blue];
+Node_58 [shape=record,label="{58\:\ 0x0021|if (r2 != kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L9\l}"];
+Node_61 [shape=record,label="{61\:\ 0x002f|ADDED_TO_REGION\l|if ((r4 = r8.makeCompletingOnce$kotlinx_coroutines_core(r2)) != kotlinx.coroutines.JobSupportKt.COMPLETING_WAITING_CHILDREN) goto L13\l}"];
+subgraph cluster_Region_1004499980 {
+label = "R(1:(2:(2:15|(2:20|(2:(1:25)|(1:26)))(1:(2:30|(2:(1:35)|(1:36)))(1:39)))|(1:42)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2065271198 {
+label = "R(2:(2:15|(2:20|(2:(1:25)|(1:26)))(1:(2:30|(2:(1:35)|(1:36)))(1:39)))|(1:42))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1403920967 {
+label = "IF [B:64:0x0038] THEN: R(2:15|(2:20|(2:(1:25)|(1:26)))(1:(2:30|(2:(1:35)|(1:36)))(1:39))) ELSE: null";
+node [shape=record,color=blue];
+Node_64 [shape=record,label="{64\:\ 0x0038|if ((r4 instanceof kotlinx.coroutines.CompletedExceptionally) != false) goto L15\l}"];
+subgraph cluster_Region_624034759 {
+label = "R(2:15|(2:20|(2:(1:25)|(1:26)))(1:(2:30|(2:(1:35)|(1:36)))(1:39)))";
+node [shape=record,color=blue];
+Node_65 [shape=record,label="{65\:\ 0x003b|java.lang.Throwable java.lang.Throwable r5 = ((kotlinx.coroutines.CompletedExceptionally) r4).cause\l}"];
+subgraph cluster_IfRegion_210480430 {
+label = "IF [B:70:0x004d] THEN: R(2:20|(2:(1:25)|(1:26))) ELSE: R(1:(2:30|(2:(1:35)|(1:36)))(1:39))";
+node [shape=record,color=blue];
+Node_70 [shape=record,label="{70\:\ 0x004d|PHI: r3 \l  PHI: (r3v3 boolean A[REMOVE]) = (r3v0 boolean) binds: [B:68:0x004a] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if ((((r5 instanceof kotlinx.coroutines.Timeout) && ((kotlinx.coroutines.Timeout) r5).coroutine == r8) ? true : true) != false) goto L20\l}"];
+subgraph cluster_Region_1196737848 {
+label = "R(2:20|(2:(1:25)|(1:26)))";
+node [shape=record,color=blue];
+Node_71 [shape=record,label="{71\:\ 0x004f|java.lang.Throwable java.lang.Throwable r3 = ((kotlinx.coroutines.CompletedExceptionally) r4).cause\lkotlin.coroutines.Continuation\<T\> kotlin.coroutines.Continuation r5 = r8.uCont\l}"];
+subgraph cluster_Region_1120551181 {
+label = "R(2:(1:25)|(1:26))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1560733860 {
+label = "IF [B:72:0x005b, B:74:0x005f] THEN: R(1:25) ELSE: null";
+node [shape=record,color=blue];
+Node_72 [shape=record,label="{72\:\ 0x005b|if (kotlinx.coroutines.Debug.getRECOVER_STACK_TRACES() == true) goto L22\l}"];
+Node_74 [shape=record,label="{74\:\ 0x005f|ADDED_TO_REGION\l|if ((r5 instanceof kotlin.coroutines.jvm.internal.CoroutineStackFrame) == true) goto L24\l}"];
+subgraph cluster_Region_545160242 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_77 [shape=record,label="{77\:\ 0x006a|ORIG_RETURN\l|throw kotlinx.coroutines.internal.StackTraceRecovery.recoverFromStackFrame(r3, (kotlin.coroutines.jvm.internal.CoroutineStackFrame) r5)\l}"];
+}
+}
+subgraph cluster_Region_1946685794 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_94 [shape=record,label="{94\:\ ?|SYNTHETIC\lRETURN\l|throw r3\l}"];
+}
+}
+}
+subgraph cluster_Region_49619532 {
+label = "R(1:(2:30|(2:(1:35)|(1:36)))(1:39)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_889426549 {
+label = "IF [B:79:0x006d] THEN: R(2:30|(2:(1:35)|(1:36))) ELSE: R(1:39) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_79 [shape=record,label="{79\:\ 0x006d|if ((r2 instanceof kotlinx.coroutines.CompletedExceptionally) != false) goto L30\l}"];
+subgraph cluster_Region_1193808178 {
+label = "R(2:30|(2:(1:35)|(1:36)))";
+node [shape=record,color=blue];
+Node_80 [shape=record,label="{80\:\ 0x006f|java.lang.Throwable java.lang.Throwable r3 = ((kotlinx.coroutines.CompletedExceptionally) r2).cause\lkotlin.coroutines.Continuation\<T\> kotlin.coroutines.Continuation r5 = r8.uCont\l}"];
+subgraph cluster_Region_890703605 {
+label = "R(2:(1:35)|(1:36))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_384296983 {
+label = "IF [B:81:0x007b, B:83:0x007f] THEN: R(1:35) ELSE: null";
+node [shape=record,color=blue];
+Node_81 [shape=record,label="{81\:\ 0x007b|if (kotlinx.coroutines.Debug.getRECOVER_STACK_TRACES() == true) goto L32\l}"];
+Node_83 [shape=record,label="{83\:\ 0x007f|ADDED_TO_REGION\l|if ((r5 instanceof kotlin.coroutines.jvm.internal.CoroutineStackFrame) == true) goto L34\l}"];
+subgraph cluster_Region_187534348 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_86 [shape=record,label="{86\:\ 0x008a|ORIG_RETURN\l|throw kotlinx.coroutines.internal.StackTraceRecovery.recoverFromStackFrame(r3, (kotlin.coroutines.jvm.internal.CoroutineStackFrame) r5)\l}"];
+}
+}
+subgraph cluster_Region_595524484 {
+label = "R(1:36)";
+node [shape=record,color=blue];
+Node_96 [shape=record,label="{96\:\ ?|SYNTHETIC\lRETURN\l|throw r3\l}"];
+}
+}
+}
+subgraph cluster_Region_135532000 {
+label = "R(1:39)";
+node [shape=record,color=blue];
+Node_99 [shape=record,label="{99\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_386514442 {
+label = "R(1:42)";
+node [shape=record,color=blue];
+Node_98 [shape=record,label="{98\:\ ?|SYNTHETIC\lRETURN\l|return kotlinx.coroutines.JobSupportKt.unboxState(r4)\l}"];
+}
+}
+}
+}
+Node_97 [shape=record,label="{97\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+}
+subgraph cluster_Region_846726203 {
+label = "R(2:44|45) | ExcHandler: all \-\> 0x0014\l";
+node [shape=record,color=blue];
+Node_55 [shape=record,label="{55\:\ 0x0014|ExcHandler: all \-\> 0x0014\l}"];
+Node_56 [shape=record,label="{56\:\ 0x0015|r4 = new kotlinx.coroutines.CompletedExceptionally(r2, false, 2, null)\l}"];
+}
+Node_50 [shape=record,color=red,label="{50\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_91 [shape=record,color=red,label="{91\:\ 0x0006|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_59 [shape=record,color=red,label="{59\:\ 0x0023|ADDED_TO_REGION\l}"];
+Node_90 [shape=record,color=red,label="{90\:\ 0x0092|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_60 [shape=record,color=red,label="{60\:\ 0x0029}"];
+Node_62 [shape=record,color=red,label="{62\:\ 0x0031|ADDED_TO_REGION\l}"];
+Node_63 [shape=record,color=red,label="{63\:\ 0x0036}"];
+Node_66 [shape=record,color=red,label="{66\:\ 0x0043}"];
+Node_67 [shape=record,color=red,label="{67\:\ 0x0045}"];
+Node_68 [shape=record,color=red,label="{68\:\ 0x004a|REMOVE\lADDED_TO_REGION\l}"];
+Node_73 [shape=record,color=red,label="{73\:\ 0x005d}"];
+Node_76 [shape=record,color=red,label="{76\:\ 0x0062}"];
+Node_93 [shape=record,color=red,label="{93\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|throw r3\l}"];
+Node_78 [shape=record,color=red,label="{78\:\ 0x006b}"];
+Node_82 [shape=record,color=red,label="{82\:\ 0x007d}"];
+Node_85 [shape=record,color=red,label="{85\:\ 0x0082}"];
+Node_95 [shape=record,color=red,label="{95\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|throw r3\l}"];
+Node_87 [shape=record,color=red,label="{87\:\ 0x008b}"];
+Node_69 [shape=record,color=red,label="{69\:\ 0x004c}"];
+Node_88 [shape=record,color=red,label="{88\:\ 0x008d}"];
+Node_92 [shape=record,color=red,label="{92\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public static final java.lang.Object kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout((r8v0 kotlinx.coroutines.internal.ScopeCoroutine\<? super T\> A[D('$this$startUndispatchedOrReturnIgnoreTimeout' kotlinx.coroutines.internal.ScopeCoroutine), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 R A[D('receiver' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 kotlin.jvm.functions.Function2\<? super R, ? super kotlin.coroutines.Continuation\<? super T\>, ? extends java.lang.Object\> A[D('block' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:62:0x0031 \-\> B:90:0x0092, CROSS_EDGE: B:77:0x006a \-\> B:51:?, CROSS_EDGE: B:74:0x005f \-\> B:77:0x006a, CROSS_EDGE: B:72:0x005b \-\> B:77:0x006a, CROSS_EDGE: B:86:0x008a \-\> B:51:?, CROSS_EDGE: B:83:0x007f \-\> B:86:0x008a, CROSS_EDGE: B:81:0x007b \-\> B:86:0x008a, CROSS_EDGE: B:87:0x008b \-\> B:90:0x0092, CROSS_EDGE: B:68:0x004a \-\> B:70:0x004d, CROSS_EDGE: B:66:0x0043 \-\> B:69:0x004c, CROSS_EDGE: B:88:0x008d \-\> B:90:0x0092, CROSS_EDGE: B:56:0x0015 \-\> B:57:0x001c, CROSS_EDGE: B:91:0x0006 \-\> B:55:0x0014\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0014, blocks: (B:53:0x0006), top: B:91:0x0006 \}\lTYPE_VARS: [R, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;\>(Lkotlinx\/coroutines\/internal\/ScopeCoroutine\<\-TT;\>;TR;Lkotlin\/jvm\/functions\/Function2\<\-TR;\-Lkotlin\/coroutines\/Continuation\<\-TT;\>;+Ljava\/lang\/Object;\>;)Ljava\/lang\/Object;\l}"];
+MethodNode -> Node_50;Node_52 -> Node_91;
+Node_53 -> Node_57;
+Node_53 -> Node_92;
+Node_55 -> Node_56;
+Node_56 -> Node_57;
+Node_57 -> Node_58;
+Node_58 -> Node_59[style=dashed];
+Node_58 -> Node_60;
+Node_61 -> Node_62[style=dashed];
+Node_61 -> Node_63;
+Node_64 -> Node_65;
+Node_64 -> Node_88[style=dashed];
+Node_65 -> Node_66;
+Node_70 -> Node_71;
+Node_70 -> Node_78[style=dashed];
+Node_71 -> Node_72;
+Node_72 -> Node_73;
+Node_72 -> Node_93[style=dashed];
+Node_74 -> Node_76;
+Node_74 -> Node_94[style=dashed];
+Node_77 -> Node_51;
+Node_94 -> Node_51;
+Node_79 -> Node_80;
+Node_79 -> Node_87[style=dashed];
+Node_80 -> Node_81;
+Node_81 -> Node_82;
+Node_81 -> Node_95[style=dashed];
+Node_83 -> Node_85;
+Node_83 -> Node_96[style=dashed];
+Node_86 -> Node_51;
+Node_96 -> Node_51;
+Node_99 -> Node_51;
+Node_98 -> Node_51;
+Node_97 -> Node_51;
+Node_55 -> Node_56;
+Node_56 -> Node_57;
+Node_50 -> Node_52;
+Node_91 -> Node_53;
+Node_91 -> Node_55;
+Node_59 -> Node_90;
+Node_90 -> Node_51;
+Node_60 -> Node_61;
+Node_62 -> Node_97;
+Node_63 -> Node_64;
+Node_66 -> Node_67;
+Node_66 -> Node_69;
+Node_67 -> Node_68;
+Node_68 -> Node_69;
+Node_68 -> Node_70;
+Node_73 -> Node_74;
+Node_76 -> Node_77;
+Node_93 -> Node_51;
+Node_78 -> Node_79;
+Node_82 -> Node_83;
+Node_85 -> Node_86;
+Node_95 -> Node_51;
+Node_87 -> Node_99;
+Node_69 -> Node_70;
+Node_88 -> Node_98;
+Node_92 -> Node_55;
+}
+

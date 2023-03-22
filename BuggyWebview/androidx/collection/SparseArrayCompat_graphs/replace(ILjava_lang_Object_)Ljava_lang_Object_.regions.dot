@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.collection.SparseArrayCompat.replace(ILjava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1995814783 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|int int r0 = indexOfKey(r4)\l}"];
+subgraph cluster_Region_1938705845 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_618780296 {
+label = "IF [B:11:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_190839209 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|java.lang.Object[] java.lang.Object[] r1 = r3.mValues\lE r2 = (E) r1[r0]\lr1[r0] = r5\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000c|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_623051357 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000d|RETURN\l|return null\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public E androidx.collection.SparseArrayCompat.replace((r3v0 'this' androidx.collection.SparseArrayCompat\<E\> A[D('this' androidx.collection.SparseArrayCompat\<E\>), IMMUTABLE_TYPE, THIS]), (r4v0 'key' int A[D('key' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'value' E A[D('value' E), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000e \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (ITE;)TE;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+}
+

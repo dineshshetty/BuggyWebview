@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.recyclerview.widget.AsyncListUtil.getItem(I)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1177535308 {
+label = "R(1:(2:(2:11|12)|(3:4|(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_486871796 {
+label = "R(2:(2:11|12)|(3:4|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1254748410 {
+label = "IF [B:2:0x0000, B:4:0x0004] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r4 \< 0) goto L11\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0004|ADDED_TO_REGION\l|if (r4 \>= r3.mItemCount) goto L11\l}"];
+subgraph cluster_Region_92044429 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001b}"];
+Node_12 [shape=record,label="{12\:\ 0x0036|throw new java.lang.IndexOutOfBoundsException(r4 + \" is not within 0 and \" + r3.mItemCount)\l}"];
+}
+}
+subgraph cluster_Region_1171314104 {
+label = "R(3:4|(1:8)|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0006|java.lang.Object T r0 = r3.mTileList.getItemAt(r4)\l}"];
+subgraph cluster_IfRegion_1227413314 {
+label = "IF [B:6:0x000c, B:8:0x0012] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|if (r0 == null) goto L6\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0012|ADDED_TO_REGION\l|if (isRefreshPending() == false) goto L8\l}"];
+subgraph cluster_Region_1039264461 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0014|r3.mMissingPositions.put(r4, 0)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001a|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0002}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000e}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public T androidx.recyclerview.widget.AsyncListUtil.getItem((r3v0 'this' androidx.recyclerview.widget.AsyncListUtil\<T\> A[D('this' androidx.recyclerview.widget.AsyncListUtil\<T\>), IMMUTABLE_TYPE, THIS]), (r4v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0012 \-\> B:10:0x001a, CROSS_EDGE: B:6:0x000c \-\> B:10:0x001a, CROSS_EDGE: B:12:0x0036 \-\> B:1:?, CROSS_EDGE: B:2:0x0000 \-\> B:11:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (I)TT;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_11;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+}
+

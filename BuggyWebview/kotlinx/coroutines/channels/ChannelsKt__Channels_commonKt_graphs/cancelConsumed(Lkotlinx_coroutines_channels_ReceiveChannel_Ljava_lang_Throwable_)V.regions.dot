@@ -1,0 +1,48 @@
+digraph "CFG forkotlinx.coroutines.channels.ChannelsKt__Channels_commonKt.cancelConsumed(Lkotlinx\/coroutines\/channels\/ReceiveChannel;Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_1769543389 {
+label = "R(3:1|(2:4|(1:7))|8)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|java.util.concurrent.CancellationException r0 = null\l}"];
+subgraph cluster_IfRegion_54631352 {
+label = "IF [B:15:0x0001] THEN: R(2:4|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0001|if (r5 != null) goto L3\l}"];
+subgraph cluster_Region_2048881864 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|r0 = r5 instanceof java.util.concurrent.CancellationException ? (java.util.concurrent.CancellationException) r5 : null\l}"];
+subgraph cluster_IfRegion_2024987150 {
+label = "IF [B:20:0x000d] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|PHI: r0 \l  PHI: (r0v2 java.util.concurrent.CancellationException) = (r0v0 java.util.concurrent.CancellationException) binds: [B:18:0x0008] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (r0 == null) goto L7\l}"];
+subgraph cluster_Region_459301758 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|java.util.concurrent.CancellationException r0 = kotlinx.coroutines.ExceptionsKt.CancellationException(\"Channel was consumed, consumer had failed\", r5)\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0016|PHI: r0 \l  PHI: (r0v1 java.util.concurrent.CancellationException) = (r0v0 java.util.concurrent.CancellationException), (r0v2 java.util.concurrent.CancellationException), (r0v4 java.util.concurrent.CancellationException) binds: [B:15:0x0001, B:20:0x000d, B:21:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|r4.cancel(r0)\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0004}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000a}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0019}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlinx.coroutines.channels.ChannelsKt__Channels_commonKt.cancelConsumed((r4v0 kotlinx.coroutines.channels.ReceiveChannel\<?\> A[D('$this$cancelConsumed' kotlinx.coroutines.channels.ReceiveChannel), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x000d \-\> B:22:0x0016, CROSS_EDGE: B:18:0x0008 \-\> B:20:0x000d, CROSS_EDGE: B:15:0x0001 \-\> B:22:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlinx\/coroutines\/channels\/ReceiveChannel\<*\>;Ljava\/lang\/Throwable;)V\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_17;
+Node_15 -> Node_22[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_12 -> Node_14;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_23 -> Node_13;
+}
+

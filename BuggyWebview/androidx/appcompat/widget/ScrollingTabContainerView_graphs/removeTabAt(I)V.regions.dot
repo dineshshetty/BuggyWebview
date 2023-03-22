@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.appcompat.widget.ScrollingTabContainerView.removeTabAt(I)V" {
+subgraph cluster_Region_1020224524 {
+label = "R(3:1|(1:3)|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|r1.mTabLayout.removeViewAt(r2)\landroid.widget.Spinner android.widget.Spinner r0 = r1.mTabSpinner\l}"];
+subgraph cluster_IfRegion_2093412762 {
+label = "IF [B:13:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0007|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_181857087 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0009|((androidx.appcompat.widget.ScrollingTabContainerView.TabAdapter) r0.getAdapter()).notifyDataSetChanged()\l}"];
+}
+}
+subgraph cluster_Region_1560290257 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_487521101 {
+label = "IF [B:16:0x0014] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0014|if (r1.mAllowCollapse != false) goto L6\l}"];
+subgraph cluster_Region_412154283 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0016|requestLayout()\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0012}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0019|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.ScrollingTabContainerView.removeTabAt((r1v0 'this' androidx.appcompat.widget.ScrollingTabContainerView A[IMMUTABLE_TYPE, THIS]), (r2v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0014 \-\> B:18:0x0019, CROSS_EDGE: B:13:0x0007 \-\> B:15:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_15 -> Node_16;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

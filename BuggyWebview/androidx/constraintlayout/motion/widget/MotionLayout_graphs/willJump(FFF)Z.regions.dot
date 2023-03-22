@@ -1,0 +1,50 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.MotionLayout.willJump(FFF)Z" {
+subgraph cluster_Region_33461911 {
+label = "R(1:(2:(2:3|4)|(2:8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1182516041 {
+label = "R(2:(2:3|4)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_631813866 {
+label = "IF [B:19:0x0007] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0007|if (r7 \> 0.0f) goto L3\l}"];
+subgraph cluster_Region_1559899478 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0009|float float r3 = r7 \/ r9\lfloat float r4 = (r7 * r3) \- (((r9 * r3) * r3) \/ 2.0f)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0019|RETURN\l|return r8 + r4 \> 1.0f\l}"];
+}
+}
+subgraph cluster_Region_930353427 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001e|float float r4 = \-r7\lfloat float r4 = r4 \/ r9\lfloat float r5 = (r7 * r4) + (((r9 * r4) * r4) \/ 2.0f)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x002c|RETURN\l|return r8 + r5 \< 0.0f\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001c|ORIG_RETURN\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x002f|ORIG_RETURN\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static boolean androidx.constraintlayout.motion.widget.MotionLayout.willJump((r7v0 'velocity' float A[D('velocity' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'position' float A[D('position' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'maxAcceleration' float A[D('maxAcceleration' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0019 \-\> B:24:0x001d, CROSS_EDGE: B:29:0x0030 \-\> B:17:?, CROSS_EDGE: B:26:0x002c \-\> B:29:0x0030\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [velocity, position, maxAcceleration]\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_23;
+Node_21 -> Node_30;
+Node_25 -> Node_26;
+Node_26 -> Node_28;
+Node_26 -> Node_31;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_23 -> Node_17;
+Node_30 -> Node_17;
+Node_28 -> Node_17;
+Node_31 -> Node_17;
+}
+

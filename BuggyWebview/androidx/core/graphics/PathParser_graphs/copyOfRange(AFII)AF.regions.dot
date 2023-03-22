@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.core.graphics.PathParser.copyOfRange([FII)[F" {
+subgraph cluster_Region_32712083 {
+label = "R(1:(2:(1:11)|(2:2|(2:(1:9)|(2:5|6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_896537319 {
+label = "R(2:(1:11)|(2:2|(2:(1:9)|(2:5|6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_125919465 {
+label = "IF [B:14:0x0000] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|if (r6 \> r7) goto L10\l}"];
+subgraph cluster_Region_766801162 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0021|throw new java.lang.IllegalArgumentException()\l}"];
+}
+}
+subgraph cluster_Region_454434310 {
+label = "R(2:2|(2:(1:9)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|int int r0 = r5.length\l}"];
+subgraph cluster_Region_896729746 {
+label = "R(2:(1:9)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1044355965 {
+label = "IF [B:16:0x0003, B:17:0x0005] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0003|if (r6 \< 0) goto L8\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0005|ADDED_TO_REGION\l|if (r6 \> r0) goto L8\l}"];
+subgraph cluster_Region_2218481 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001b|throw new java.lang.ArrayIndexOutOfBoundsException()\l}"];
+}
+}
+subgraph cluster_Region_789787097 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0007|int int r1 = r7 \- r6\lint int r2 = java.lang.Math.min(r1, r0 \- r6)\lfloat[] float[] r3 = new float[r1]\ljava.lang.System.arraycopy(r5, r6, r3, 0, r2)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0015|RETURN\l|return r3\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001c}"];
+MethodNode[shape=record,label="{static float[] androidx.core.graphics.PathParser.copyOfRange((r5v0 'original' float[] A[D('original' float[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'start' int A[D('start' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'end' int A[D('end' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001b \-\> B:13:?, CROSS_EDGE: B:16:0x0003 \-\> B:20:0x0016, CROSS_EDGE: B:23:0x0021 \-\> B:13:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_22;
+Node_23 -> Node_13;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_20;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_21 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_13;
+Node_12 -> Node_14;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+}
+

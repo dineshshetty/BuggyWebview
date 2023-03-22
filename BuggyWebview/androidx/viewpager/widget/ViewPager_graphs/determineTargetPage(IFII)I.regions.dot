@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.determineTargetPage(IFII)I" {
+subgraph cluster_Region_1501210297 {
+label = "R(2:(1:5)(3:14|15|17)|(2:(2:9|10)|(1:12))) | DECL_VAR: int targetPage\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1046718787 {
+label = "IF [B:23:0x0006, B:25:0x000e] THEN: R(1:5) ELSE: R(3:14|15|17)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0006|if (java.lang.Math.abs(r9) \> r5.mFlingDistance) goto L3\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000e|ADDED_TO_REGION\l|if (java.lang.Math.abs(r8) \> r5.mMinimumVelocity) goto L5\l}"];
+subgraph cluster_Region_469309353 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0010|r0 = r8 \> 0 ? r6 : r6 + 1\l}"];
+}
+subgraph cluster_Region_102266136 {
+label = "R(3:14|15|17)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0017|int int r0 = r5.mCurItem\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0019|float r0 = r6 \>= r0 ? 0.4f : 0.6f\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0022|PHI: r0 \l  PHI: (r0v3 'truncator' float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r0 = ((int) (r7 + r0)) + r6\l}"];
+}
+}
+subgraph cluster_Region_1889626816 {
+label = "R(2:(2:9|10)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_824715242 {
+label = "IF [B:36:0x002d] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x002d|if (r5.mItems.size() \> 0) goto L9\l}"];
+subgraph cluster_Region_125108038 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x002f|androidx.viewpager.widget.ViewPager$ItemInfo androidx.viewpager.widget.ViewPager.ItemInfo r1 = r5.mItems.get(0)\ljava.util.ArrayList\<androidx.viewpager.widget.ViewPager$ItemInfo\> java.util.ArrayList\<androidx.viewpager.widget.ViewPager.ItemInfo\> r2 = r5.mItems\landroidx.viewpager.widget.ViewPager$ItemInfo androidx.viewpager.widget.ViewPager.ItemInfo r2 = r2.get(r2.size() \- 1)\l}"];
+Node_38 [shape=record,label="{38\:\ 0x0052|RETURN\lORIG_RETURN\l|return java.lang.Math.max(r1.position, java.lang.Math.min(r0, r2.position))\l}"];
+}
+}
+subgraph cluster_Region_1030422552 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0000}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0008}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0012}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0027|PHI: r0 \l  PHI: (r0v6 'targetPage' int) = (r0v4 'targetPage' int), (r0v10 'targetPage' int) binds: [B:34:0x0022, B:27:0x0012] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0014}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001b}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001f}"];
+MethodNode[shape=record,label="{private int androidx.viewpager.widget.ViewPager.determineTargetPage((r5v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]), (r6v0 'currentPage' int A[D('currentPage' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'pageOffset' float A[D('pageOffset' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'velocity' int A[D('velocity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'deltaX' int A[D('deltaX' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:36:0x002d \-\> B:38:0x0052, CROSS_EDGE: B:28:0x0014 \-\> B:35:0x0027, CROSS_EDGE: B:34:0x0022 \-\> B:35:0x0027, CROSS_EDGE: B:33:0x001f \-\> B:34:0x0022, CROSS_EDGE: B:23:0x0006 \-\> B:30:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_23 -> Node_24;
+Node_23 -> Node_30[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_30[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33;
+Node_34 -> Node_35;
+Node_36 -> Node_37;
+Node_36 -> Node_39[style=dashed];
+Node_37 -> Node_38;
+Node_38 -> Node_21;
+Node_39 -> Node_21;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_27 -> Node_35;
+Node_35 -> Node_36;
+Node_28 -> Node_35;
+Node_32 -> Node_34;
+Node_33 -> Node_34;
+}
+

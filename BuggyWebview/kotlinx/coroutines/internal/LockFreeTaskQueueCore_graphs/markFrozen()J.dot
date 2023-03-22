@@ -1,0 +1,27 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeTaskQueueCore.markFrozen()J" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000}"];
+Node_15 [shape=record,label="{15\:\ 0x0002|LOOP_START\lLOOP:0: B:15:0x0002\-\>B:19:0x001d\l|long r8 = r14._state\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000f|if (((r8 & kotlinx.coroutines.internal.LockFreeTaskQueueCore.FROZEN_MASK) \> 0 ? 1 : ((r8 & kotlinx.coroutines.internal.LockFreeTaskQueueCore.FROZEN_MASK) == 0 ? 0 : \-1)) == 0) goto L4\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0012|long r10 = r8 \| kotlinx.coroutines.internal.LockFreeTaskQueueCore.FROZEN_MASK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001d|LOOP_END\lLOOP:0: B:15:0x0002\-\>B:19:0x001d\l|if (kotlinx.coroutines.internal.LockFreeTaskQueueCore._state$FU.compareAndSet(r14, r8, r10) == false) goto L2\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001f|SYNTHETIC\l}"];
+Node_20 [shape=record,label="{20\:\ 0x001f|RETURN\l|return r10\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0011|SYNTHETIC\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0011|RETURN\l|return r8\l}"];
+MethodNode[shape=record,label="{private final long kotlinx.coroutines.internal.LockFreeTaskQueueCore.markFrozen((r14v0 'this' kotlinx.coroutines.internal.LockFreeTaskQueueCore\<E\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x001f \-\> B:13:?, BACK_EDGE: B:19:0x001d \-\> B:15:0x0002\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_18;
+Node_16 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_15;
+Node_19 -> Node_22[style=dashed];
+Node_22 -> Node_20;
+Node_20 -> Node_13;
+Node_23 -> Node_17;
+Node_17 -> Node_13;
+}
+

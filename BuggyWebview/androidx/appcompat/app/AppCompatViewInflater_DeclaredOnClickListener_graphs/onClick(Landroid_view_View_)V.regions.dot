@@ -1,0 +1,82 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatViewInflater.DeclaredOnClickListener.onClick(Landroid\/view\/View;)V" {
+subgraph cluster_Region_1461366123 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1726645451 {
+label = "IF [B:18:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|if (r4.mResolvedMethod == null) goto L3\l}"];
+subgraph cluster_Region_688969515 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|resolveMethod(r4.mHostView.getContext())\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_16351477 {
+label = "Try: R(1:5) catches: R(2:9|11), R(2:12|14)";
+node [shape=record,color=blue];
+subgraph cluster_Region_42599540 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|TRY_ENTER\lTRY_LEAVE\lTryCatch #2 \{IllegalAccessException \-\> 0x0025, InvocationTargetException \-\> 0x001c, blocks: (B:20:0x000d), top: B:28:0x000d \}\lCatch: InvocationTargetException \-\> 0x001c, IllegalAccessException \-\> 0x0025\l|r4.mResolvedMethod.invoke(r4.mResolvedContext, r5)     \/\/ Catch: java.lang.reflect.InvocationTargetException \-\> L1c java.lang.IllegalAccessException \-\> L25\l}"];
+}
+subgraph cluster_Region_821302322 {
+label = "R(2:9|11) | ExcHandler: IllegalAccessException \-\> 0x0025\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0025|ExcHandler: IllegalAccessException \-\> 0x0025\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002d|throw new java.lang.IllegalStateException(\"Could not execute non\-public method for android:onClick\", r0)\l}"];
+}
+subgraph cluster_Region_527574152 {
+label = "R(2:12|14) | ExcHandler: InvocationTargetException \-\> 0x001c\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001c|ExcHandler: InvocationTargetException \-\> 0x001c\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0024|throw new java.lang.IllegalStateException(\"Could not execute method for android:onClick\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_821302322 {
+label = "R(2:9|11) | ExcHandler: IllegalAccessException \-\> 0x0025\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0025|ExcHandler: IllegalAccessException \-\> 0x0025\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002d|throw new java.lang.IllegalStateException(\"Could not execute non\-public method for android:onClick\", r0)\l}"];
+}
+subgraph cluster_Region_527574152 {
+label = "R(2:12|14) | ExcHandler: InvocationTargetException \-\> 0x001c\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001c|ExcHandler: InvocationTargetException \-\> 0x001c\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0024|throw new java.lang.IllegalStateException(\"Could not execute method for android:onClick\", r0)\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x000d|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001b}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0026}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001d}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.app.AppCompatViewInflater.DeclaredOnClickListener.onClick((r4v0 'this' androidx.appcompat.app.AppCompatViewInflater$DeclaredOnClickListener A[IMMUTABLE_TYPE, THIS]), (r5v0 'v' android.view.View A[D('v' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:27:0x002d \-\> B:16:?, CROSS_EDGE: B:24:0x0024 \-\> B:16:?, CROSS_EDGE: B:28:0x000d \-\> B:25:0x0025, CROSS_EDGE: B:28:0x000d \-\> B:22:0x001c, CROSS_EDGE: B:18:0x0002 \-\> B:28:0x000d\lINLINE_NOT_NEEDED\lTryCatch #2 \{IllegalAccessException \-\> 0x0025, InvocationTargetException \-\> 0x001c, blocks: (B:20:0x000d), top: B:28:0x000d \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.OnClickListener.onClick(android.view.View):void\}]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_28[style=dashed];
+Node_19 -> Node_28;
+Node_20 -> Node_21;
+Node_20 -> Node_29;
+Node_25 -> Node_26;
+Node_27 -> Node_16;
+Node_22 -> Node_23;
+Node_24 -> Node_16;
+Node_25 -> Node_26;
+Node_27 -> Node_16;
+Node_22 -> Node_23;
+Node_24 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_28 -> Node_20;
+Node_28 -> Node_25;
+Node_28 -> Node_22;
+Node_21 -> Node_16;
+Node_29 -> Node_25;
+Node_29 -> Node_22;
+Node_26 -> Node_27;
+Node_23 -> Node_24;
+}
+

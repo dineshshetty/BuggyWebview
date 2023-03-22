@@ -1,0 +1,65 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.getCompletedInternal$kotlinx_coroutines_core()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1237963441 {
+label = "R(2:1|(2:(1:(2:(1:9)|(1:6)))|(1:11)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|java.lang.Object java.lang.Object r0 = getState$kotlinx_coroutines_core()\l}"];
+subgraph cluster_Region_244106652 {
+label = "R(2:(1:(2:(1:9)|(1:6)))|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_718656585 {
+label = "IF [B:15:0x0008] THEN: R(1:(2:(1:9)|(1:6))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|if ((!(r0 instanceof kotlinx.coroutines.Incomplete)) == true) goto L3\l}"];
+subgraph cluster_Region_361879797 {
+label = "R(1:(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1583682791 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_417714236 {
+label = "IF [B:17:0x000c] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|if ((r0 instanceof kotlinx.coroutines.CompletedExceptionally) != false) goto L8\l}"];
+subgraph cluster_Region_2141479289 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0018|throw ((kotlinx.coroutines.CompletedExceptionally) r0).cause\l}"];
+}
+}
+subgraph cluster_Region_2021619814 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|RETURN\l|return kotlinx.coroutines.JobSupportKt.unboxState(r0)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1182807952 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0026|throw new java.lang.IllegalStateException(\"This job has not completed yet\".toString())\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000a}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0013}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0019}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.JobSupport.getCompletedInternal$kotlinx_coroutines_core((r3v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0018 \-\> B:13:?, CROSS_EDGE: B:23:0x0026 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_21 -> Node_13;
+Node_19 -> Node_13;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.material.timepicker.ClockHandView.getDegreesFromXY(FF)I" {
+subgraph cluster_Region_1756956663 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = getWidth() \/ 2\lint int r1 = getHeight() \/ 2\ldouble double r2 = r9 \- r0\ldouble double r4 = r10 \- r1\lint int r6 = ((int) java.lang.Math.toDegrees(java.lang.Math.atan2(r4, r2))) + 90\l}"];
+subgraph cluster_Region_744575144 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_567313104 {
+label = "IF [B:10:0x001f] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001f|if (r6 \< 0) goto L3\l}"];
+subgraph cluster_Region_534321605 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0023|RETURN\lORIG_RETURN\l|return r6 + 360\l}"];
+}
+}
+subgraph cluster_Region_620066119 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r6\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0021}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private int com.google.android.material.timepicker.ClockHandView.getDegreesFromXY((r8v0 'this' com.google.android.material.timepicker.ClockHandView A[IMMUTABLE_TYPE, THIS]), (r9v0 'x' float A[D('x' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'y' float A[D('y' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x001f \-\> B:12:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_11 -> Node_12;
+}
+

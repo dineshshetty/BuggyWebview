@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.fragment.app.BackStackRecord.remove(Landroidx\/fragment\/app\/Fragment;)Landroidx\/fragment\/app\/FragmentTransaction;" {
+subgraph cluster_Region_740091191 {
+label = "R(1:(2:(2:5|6)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_728933802 {
+label = "R(2:(2:5|6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2086859484 {
+label = "IF [B:3:0x0002, B:5:0x0008] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r4.mFragmentManager != null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0008|ADDED_TO_REGION\l|if (r4.mFragmentManager != r3.mManager) goto L5\l}"];
+subgraph cluster_Region_2020603701 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000b}"];
+Node_8 [shape=record,label="{8\:\ 0x002a|throw new java.lang.IllegalStateException(\"Cannot remove Fragment attached to a different FragmentManager. Fragment \" + r4.toString() + \" is already attached to a FragmentManager.\")\l}"];
+}
+}
+subgraph cluster_Region_865177682 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002f|RETURN\l|return super.remove(r4)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002b}"];
+MethodNode[shape=record,label="{public androidx.fragment.app.FragmentTransaction androidx.fragment.app.BackStackRecord.remove((r3v0 'this' androidx.fragment.app.BackStackRecord A[IMMUTABLE_TYPE, THIS]), (r4v0 'fragment' androidx.fragment.app.Fragment A[D('fragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x002f \-\> B:1:?, CROSS_EDGE: B:3:0x0002 \-\> B:9:0x002b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.fragment.app.FragmentTransaction.remove(androidx.fragment.app.Fragment):androidx.fragment.app.FragmentTransaction]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_7;
+Node_5 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+}
+

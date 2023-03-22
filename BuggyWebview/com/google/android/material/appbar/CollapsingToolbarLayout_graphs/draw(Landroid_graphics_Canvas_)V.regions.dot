@@ -1,0 +1,151 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.draw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_471662145 {
+label = "R(4:1|(1:7)|(1:(1:22)(1:23))|(1:(3:28|29|(1:(1:32))))) | DECL_VAR: android.graphics.drawable.Drawable null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|super.draw(r7)\lensureToolbar()\l}"];
+subgraph cluster_IfRegion_1251797733 {
+label = "IF [B:3:0x0008, B:5:0x000c, B:7:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r6.toolbar == null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|ADDED_TO_REGION\l|if ((r0 = r6.contentScrim) != null) goto L5\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0010|ADDED_TO_REGION\l|if (r6.scrimAlpha \> 0) goto L7\l}"];
+subgraph cluster_Region_327695282 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0012|r0.mutate().setAlpha(r6.scrimAlpha)\lr6.contentScrim.draw(r7)\l}"];
+}
+}
+subgraph cluster_IfRegion_1494167167 {
+label = "IF [B:10:0x0022, B:12:0x0026] THEN: R(1:(1:22)(1:23)) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0022|if (r6.collapsingTitleEnabled != false) goto L10\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0026|ADDED_TO_REGION\l|if (r6.drawCollapsingTitle != false) goto L12\l}"];
+subgraph cluster_Region_580529641 {
+label = "R(1:(1:22)(1:23))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_259797149 {
+label = "IF [B:14:0x002a, B:16:0x002e, B:18:0x0032, B:20:0x0038, B:22:0x0048] THEN: R(1:22) ELSE: R(1:23)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002a|if (r6.toolbar != null) goto L14\l}"];
+Node_16 [shape=record,label="{16\:\ 0x002e|ADDED_TO_REGION\l|if (r6.contentScrim != null) goto L16\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0032|ADDED_TO_REGION\l|if (r6.scrimAlpha \> 0) goto L18\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0038|ADDED_TO_REGION\l|if (isTitleCollapseFadeMode() != false) goto L20\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0048|ADDED_TO_REGION\l|if (r6.collapsingTextHelper.getExpansionFraction() \< r6.collapsingTextHelper.getFadeModeThresholdFraction()) goto L22\l}"];
+subgraph cluster_Region_1298561658 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x004a|int int r0 = r7.save()\lr7.clipRect(r6.contentScrim.getBounds(), android.graphics.Region.Op.DIFFERENCE)\lr6.collapsingTextHelper.draw(r7)\lr7.restoreToCount(r0)\l}"];
+}
+subgraph cluster_Region_1568399211 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0062|r6.collapsingTextHelper.draw(r7)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_2108124781 {
+label = "R(1:(3:28|29|(1:(1:32))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_237105493 {
+label = "IF [B:26:0x0069, B:28:0x006d] THEN: R(3:28|29|(1:(1:32))) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0069|if (r6.statusBarScrim != null) goto L26\l}"];
+Node_28 [shape=record,label="{28\:\ 0x006d|ADDED_TO_REGION\l|if (r6.scrimAlpha \> 0) goto L28\l}"];
+subgraph cluster_Region_834413590 {
+label = "R(3:28|29|(1:(1:32)))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x006f|androidx.core.view.WindowInsetsCompat androidx.core.view.WindowInsetsCompat r0 = r6.lastInsets\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0072|int r0 = r0 != null ? r0.getSystemWindowInsetTop() : 0\l}"];
+subgraph cluster_Region_1622659284 {
+label = "R(1:(1:32))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_446331758 {
+label = "IF [B:33:0x007a] THEN: R(1:32) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x007a|PHI: r0 \l  PHI: (r0v6 'topInset' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \> 0) goto L32\l}"];
+subgraph cluster_Region_1221586651 {
+label = "R(1:32)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x007c|r6.statusBarScrim.setBounds(0, \-r6.currentOffset, getWidth(), r0 \- r6.currentOffset)\lr6.statusBarScrim.mutate().setAlpha(r6.scrimAlpha)\lr6.statusBarScrim.draw(r7)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0020}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0024}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0028}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002c}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0030}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0034}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x003a}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0067}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x006b}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0074}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x009c|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ ?|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0079}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.appbar.CollapsingToolbarLayout.draw((r6v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout A[IMMUTABLE_TYPE, THIS]), (r7v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:33:0x007a \-\> B:35:0x009c, CROSS_EDGE: B:32:0x0079 \-\> B:33:0x007a, CROSS_EDGE: B:28:0x006d \-\> B:35:0x009c, CROSS_EDGE: B:26:0x0069 \-\> B:35:0x009c, CROSS_EDGE: B:24:0x0062 \-\> B:25:0x0067, CROSS_EDGE: B:20:0x0038 \-\> B:24:0x0062, CROSS_EDGE: B:18:0x0032 \-\> B:24:0x0062, CROSS_EDGE: B:16:0x002e \-\> B:24:0x0062, CROSS_EDGE: B:14:0x002a \-\> B:24:0x0062, CROSS_EDGE: B:12:0x0026 \-\> B:25:0x0067, CROSS_EDGE: B:10:0x0022 \-\> B:25:0x0067, CROSS_EDGE: B:7:0x0010 \-\> B:9:0x0020, CROSS_EDGE: B:5:0x000c \-\> B:9:0x0020, CROSS_EDGE: B:3:0x0008 \-\> B:9:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.draw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_25[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_25[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_24[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_24[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_24[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_36[style=dashed];
+Node_28 -> Node_29;
+Node_28 -> Node_37[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32;
+Node_33 -> Node_34;
+Node_33 -> Node_38[style=dashed];
+Node_34 -> Node_35;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_31 -> Node_33;
+Node_35 -> Node_1;
+Node_38 -> Node_1;
+Node_32 -> Node_33;
+Node_37 -> Node_1;
+Node_36 -> Node_1;
+}
+

@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatDrawableManager.1.createSwitchThumbColorStateList(Landroid\/content\/Context;)Landroid\/content\/res\/ColorStateList;" {
+subgraph cluster_Region_1761689362 {
+label = "R(3:1|(1:9)(1:5)|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|int[][] int[][] r1 = new int[3]\lint[] int[] r0 = new int[3]\landroid.content.res.ColorStateList android.content.res.ColorStateList r3 = androidx.appcompat.widget.ThemeUtils.getThemeAttrColorStateList(r7, androidx.appcompat.C0019R.attr.colorSwitchThumbNormal)\l}"];
+subgraph cluster_IfRegion_1986758932 {
+label = "IF [B:13:0x000c, B:15:0x0012] THEN: R(1:9) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000c|if (r3 == null) goto L9\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0012|ADDED_TO_REGION\l|if (r3.isStateful() == false) goto L9\l}"];
+subgraph cluster_Region_2071483034 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x003e|r1[0] = androidx.appcompat.widget.ThemeUtils.DISABLED_STATE_SET\lr0[0] = androidx.appcompat.widget.ThemeUtils.getDisabledThemeAttrColor(r7, androidx.appcompat.C0019R.attr.colorSwitchThumbNormal)\lint int r2 = 0 + 1\lr1[r2] = androidx.appcompat.widget.ThemeUtils.CHECKED_STATE_SET\lr0[r2] = androidx.appcompat.widget.ThemeUtils.getThemeAttrColor(r7, androidx.appcompat.C0019R.attr.colorControlActivated)\lint int r2 = r2 + 1\lr1[r2] = androidx.appcompat.widget.ThemeUtils.EMPTY_STATE_SET\lr0[r2] = androidx.appcompat.widget.ThemeUtils.getThemeAttrColor(r7, androidx.appcompat.C0019R.attr.colorSwitchThumbNormal)\lint int r2 = r2 + 1\l}"];
+}
+subgraph cluster_Region_1361721189 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0014|r1[0] = androidx.appcompat.widget.ThemeUtils.DISABLED_STATE_SET\lr0[0] = r3.getColorForState(r1[0], 0)\lint int r2 = 0 + 1\lr1[r2] = androidx.appcompat.widget.ThemeUtils.CHECKED_STATE_SET\lr0[r2] = androidx.appcompat.widget.ThemeUtils.getThemeAttrColor(r7, androidx.appcompat.C0019R.attr.colorControlActivated)\lint int r2 = r2 + 1\lr1[r2] = androidx.appcompat.widget.ThemeUtils.EMPTY_STATE_SET\lr0[r2] = r3.getDefaultColor()\lint int r2 = r2 + 1\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x006d|RETURN\l|return new android.content.res.ColorStateList(r1, r0)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000e}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0068}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.content.res.ColorStateList androidx.appcompat.widget.AppCompatDrawableManager.1.createSwitchThumbColorStateList((r6v0 'this' androidx.appcompat.widget.AppCompatDrawableManager$1 A[IMMUTABLE_TYPE, THIS]), (r7v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x003e \-\> B:18:0x0068, CROSS_EDGE: B:13:0x000c \-\> B:17:0x003e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_17;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_16 -> Node_18;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+}
+

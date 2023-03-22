@@ -1,0 +1,62 @@
+digraph "CFG forandroidx.core.view.MarginLayoutParamsCompat.getLayoutDirection(Landroid\/view\/ViewGroup$MarginLayoutParams;)I" {
+subgraph cluster_Region_1072753740 {
+label = "R(2:(1:3)(1:11)|(2:(1:7)|(1:9))) | DECL_VAR: int result\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1039364395 {
+label = "IF [B:16:0x0004] THEN: R(1:3) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 17) goto L3\l}"];
+subgraph cluster_Region_1189770377 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|int r0 = androidx.core.view.MarginLayoutParamsCompat.Api17Impl.getLayoutDirection(r2)\l}"];
+}
+subgraph cluster_Region_134730559 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|r0 = 0\l}"];
+}
+}
+subgraph cluster_Region_1494248180 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1477245101 {
+label = "IF [B:19:0x000c, B:21:0x000f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|PHI: r0 \l  PHI: (r0v2 'result' int) = (r0v1 'result' int), (r0v4 'result' int) binds: [B:18:0x000b, B:17:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != 0) goto L5\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000f|ADDED_TO_REGION\l|if (r0 != 1) goto L7\l}"];
+subgraph cluster_Region_1621556588 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|RETURN\lORIG_RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1182446202 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000e}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r0\l}"];
+MethodNode[shape=record,label="{public static int androidx.core.view.MarginLayoutParamsCompat.getLayoutDirection((r2v0 'lp' android.view.ViewGroup$MarginLayoutParams A[D('lp' android.view.ViewGroup$MarginLayoutParams), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x000f \-\> B:23:0x0012, CROSS_EDGE: B:19:0x000c \-\> B:23:0x0012, CROSS_EDGE: B:18:0x000b \-\> B:19:0x000c\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_24[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_14;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+Node_24 -> Node_14;
+}
+

@@ -1,0 +1,129 @@
+digraph "CFG forandroidx.viewpager.widget.PagerTabStrip.onTouchEvent(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_1238234090 {
+label = "R(2:1|(2:(1:5)|(3:7|8|21)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r7.getAction()\l}"];
+subgraph cluster_Region_2093865638 {
+label = "R(2:(1:5)|(3:7|8|21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_849085399 {
+label = "IF [B:3:0x0005, B:5:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r0 != 0) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|ADDED_TO_REGION\l|if (r6.mIgnoreTap != false) goto L5\l}"];
+subgraph cluster_Region_1944060062 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_713504989 {
+label = "R(3:7|8|21)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|float float r2 = r7.getX()\lfloat float r3 = r7.getY()\l}"];
+subgraph cluster_SwitchRegion_1274571448 {
+label = "Switch: 3
+ case 0 -> R(2:20|1)
+ case 1 -> R(2:(2:16|1)(1:(2:19|1))|1)
+ case 2 -> R(2:(2:13|1)|1)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0015|switch(r0) \{\l    case 0: goto L20;\l    case 1: goto L14;\l    case 2: goto L9;\l    default: goto L21;\l\}\l}"];
+subgraph cluster_Region_217308356 {
+label = "R(2:20|1)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0070|r6.mInitialMotionX = r2\lr6.mInitialMotionY = r3\lr6.mIgnoreTap = false\l}"];
+Node_InsnContainer_1874057777 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_300234506 {
+label = "R(2:(2:16|1)(1:(2:19|1))|1)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1579414582 {
+label = "IF [B:16:0x0046] THEN: R(2:16|1) ELSE: R(1:(2:19|1))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0046|if (r2 \< (r6.mCurrText.getLeft() \- r6.mTabPadding)) goto L16\l}"];
+subgraph cluster_Region_66045818 {
+label = "R(2:16|1)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0048|r6.mPager.setCurrentItem(r6.mPager.getCurrentItem() \- 1)\l}"];
+Node_InsnContainer_1895355241 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_32242965 {
+label = "R(1:(2:19|1)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1451682016 {
+label = "IF [B:19:0x0061] THEN: R(2:19|1) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0061|if (r2 \> (r6.mCurrText.getRight() + r6.mTabPadding)) goto L19\l}"];
+subgraph cluster_Region_965662533 {
+label = "R(2:19|1)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0063|r6.mPager.setCurrentItem(r6.mPager.getCurrentItem() + 1)\l}"];
+Node_InsnContainer_1143407385 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+Node_InsnContainer_1920131951 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_749710177 {
+label = "R(2:(2:13|1)|1)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1163158333 {
+label = "IF [B:11:0x0026, B:13:0x0035] THEN: R(2:13|1) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0026|if (java.lang.Math.abs(r2 \- r6.mInitialMotionX) \> r6.mTouchSlop) goto L13\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0035|ADDED_TO_REGION\l|if (java.lang.Math.abs(r3 \- r6.mInitialMotionY) \> r6.mTouchSlop) goto L13\l}"];
+subgraph cluster_Region_1666475342 {
+label = "R(2:13|1)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0037|r6.mIgnoreTap = true\l}"];
+Node_InsnContainer_530025974 [shape=record,label="{|break\l}"];
+}
+}
+Node_InsnContainer_2057010416 [shape=record,label="{|break\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0077|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0019}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0028}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003a}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0055}"];
+MethodNode[shape=record,label="{public boolean androidx.viewpager.widget.PagerTabStrip.onTouchEvent((r6v0 'this' androidx.viewpager.widget.PagerTabStrip A[IMMUTABLE_TYPE, THIS]), (r7v0 'ev' android.view.MotionEvent A[D('ev' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:22:0x0077 \-\> B:1:?, CROSS_EDGE: B:13:0x0035 \-\> B:22:0x0077, CROSS_EDGE: B:11:0x0026 \-\> B:14:0x0037, CROSS_EDGE: B:17:0x0048 \-\> B:22:0x0077, CROSS_EDGE: B:20:0x0063 \-\> B:22:0x0077, CROSS_EDGE: B:19:0x0061 \-\> B:22:0x0077, CROSS_EDGE: B:21:0x0070 \-\> B:22:0x0077, CROSS_EDGE: B:8:0x0015 \-\> B:22:0x0077, CROSS_EDGE: B:3:0x0005 \-\> B:7:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onTouchEvent(android.view.MotionEvent):boolean\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_10;
+Node_8 -> Node_15;
+Node_8 -> Node_21;
+Node_8 -> Node_22;
+Node_21 -> Node_22;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_22;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_22;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_13 -> Node_14;
+Node_13 -> Node_22[style=dashed];
+Node_14 -> Node_22;
+Node_22 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+}
+

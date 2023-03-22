@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.flow.FlowKt__LimitKt.take(Lkotlinx\/coroutines\/flow\/Flow;I)Lkotlinx\/coroutines\/flow\/Flow;" {
+subgraph cluster_Region_1635262709 {
+label = "R(1:(2:(2:7|8)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_536580176 {
+label = "R(2:(2:7|8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1027731724 {
+label = "IF [B:15:0x0005] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|PHI: r0 \l  PHI: (r0v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4 \> 0) == false) goto L7\l}"];
+subgraph cluster_Region_1774155676 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0010}"];
+Node_19 [shape=record,label="{19\:\ 0x0030|throw new java.lang.IllegalArgumentException((\"Requested element count \" + r4 + \" should be positive\").toString())\l}"];
+}
+}
+subgraph cluster_Region_1239453142 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|RETURN\l|return new kotlinx.coroutines.flow.FlowKt__LimitKt$take$$inlined$unsafeFlow$1(r3, r4)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0002}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0007}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0004}"];
+MethodNode[shape=record,label="{public static final kotlinx.coroutines.flow.Flow\<T\> kotlinx.coroutines.flow.FlowKt__LimitKt.take((r3v0 kotlinx.coroutines.flow.Flow\<? extends T\> A[D('$this$take' kotlinx.coroutines.flow.Flow), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'count' int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0030 \-\> B:11:?, CROSS_EDGE: B:14:0x0004 \-\> B:15:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlinx\/coroutines\/flow\/Flow\<+TT;\>;I)Lkotlinx\/coroutines\/flow\/Flow\<TT;\>;\l}"];
+MethodNode -> Node_10;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_14 -> Node_15;
+}
+

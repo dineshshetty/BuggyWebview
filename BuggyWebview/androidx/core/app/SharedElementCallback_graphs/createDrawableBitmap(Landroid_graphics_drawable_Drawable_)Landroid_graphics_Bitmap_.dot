@@ -1,0 +1,37 @@
+digraph "CFG forandroidx.core.app.SharedElementCallback.createDrawableBitmap(Landroid\/graphics\/drawable\/Drawable;)Landroid\/graphics\/Bitmap;" {
+Node_17 [shape=record,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0000|int r0 = r13.getIntrinsicWidth()\lint r1 = r13.getIntrinsicHeight()\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0008|if (r0 \<= 0) goto L14\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000a|if (r1 \> 0) goto L4\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000d|float r2 = java.lang.Math.min(1.0f, 1048576.0f \/ ((float) (r0 * r1)))\l}"];
+Node_24 [shape=record,label="{24\:\ 0x001b|if ((r13 instanceof android.graphics.drawable.BitmapDrawable) == false) goto L11\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001d}"];
+Node_26 [shape=record,label="{26\:\ 0x001f|if ((r2 \> 1.0f ? 1 : (r2 == 1.0f ? 0 : \-1)) != 0) goto L11\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0021}"];
+Node_28 [shape=record,label="{28\:\ 0x0028|RETURN\l|return ((android.graphics.drawable.BitmapDrawable) r13).getBitmap()\l}"];
+Node_18 [shape=record,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0029|int r3 = (int) (((float) r0) * r2)\lint r4 = (int) (((float) r1) * r2)\landroid.graphics.Bitmap r5 = android.graphics.Bitmap.createBitmap(r3, r4, android.graphics.Bitmap.Config.ARGB_8888)\landroid.graphics.Canvas r6 = new android.graphics.Canvas(r5)\landroid.graphics.Rect r7 = r13.getBounds()\lint r8 = r7.left\lint r9 = r7.top\lint r10 = r7.right\lint r11 = r7.bottom\lr13.setBounds(0, 0, r3, r4)\lr13.draw(r6)\lr13.setBounds(r8, r9, r10, r11)\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0052|RETURN\l|return r5\l}"];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0053|RETURN\lORIG_RETURN\l|return null\l}"];
+MethodNode[shape=record,label="{private static android.graphics.Bitmap androidx.core.app.SharedElementCallback.createDrawableBitmap((r13v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:30:0x0052 \-\> B:18:?, CROSS_EDGE: B:24:0x001b \-\> B:29:0x0029, CROSS_EDGE: B:32:0x0054 \-\> B:18:?, CROSS_EDGE: B:20:0x0008 \-\> B:31:0x0053\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_31;
+Node_21 -> Node_23;
+Node_21 -> Node_33[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_29;
+Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_29;
+Node_27 -> Node_28;
+Node_28 -> Node_18;
+Node_29 -> Node_30;
+Node_30 -> Node_18;
+Node_33 -> Node_18;
+Node_31 -> Node_18;
+}
+

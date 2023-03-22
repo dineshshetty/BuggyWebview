@@ -1,0 +1,95 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.dispatchKeyEvent(Landroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_124514729 {
+label = "R(2:1|(2:(1:23)|(1:(2:(1:9)|(3:11|12|14))))) | DECL_VAR: android.view.View root\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0000|java.lang.Object java.lang.Object r0 = r4.mHost\l}"];
+subgraph cluster_Region_1614301243 {
+label = "R(2:(1:23)|(1:(2:(1:9)|(3:11|12|14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1665963354 {
+label = "IF [B:28:0x0005, B:30:0x0009, B:32:0x0011, B:34:0x0017] THEN: R(1:23) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0005|if ((r0 instanceof androidx.core.view.KeyEventDispatcher.Component) == true) goto L19\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0009|ADDED_TO_REGION\l|if ((r0 instanceof androidx.appcompat.app.AppCompatDialog) == true) goto L19\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0011|ADDED_TO_REGION\l|if ((r0 = r4.mWindow.getDecorView()) != null) goto L21\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0017|ADDED_TO_REGION\l|if (androidx.core.view.KeyEventDispatcher.dispatchBeforeHierarchy(r0, r5) == true) goto L23\l}"];
+subgraph cluster_Region_204138872 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0019|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1013794260 {
+label = "R(1:(2:(1:9)|(3:11|12|14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1879377875 {
+label = "R(2:(1:9)|(3:11|12|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1381949560 {
+label = "IF [B:37:0x0020, B:39:0x002e] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0020|if (r5.getKeyCode() == 82) goto L7\l}"];
+Node_39 [shape=record,label="{39\:\ 0x002e|ADDED_TO_REGION\l|if (r4.mAppCompatWindowCallback.bypassDispatchKeyEvent(r4.mWindow.getCallback(), r5) == true) goto L9\l}"];
+subgraph cluster_Region_165978722 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0030|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_998040516 {
+label = "R(3:11|12|14)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0031|int int r0 = r5.getKeyCode()\lint int r1 = r5.getAction()\l}"];
+Node_42 [shape=record,label="{42\:\ 0x0039|boolean r2 = r1 == 0\l}"];
+Node_45 [shape=record,label="{45\:\ 0x003d|RETURN\lPHI: r2 \l  PHI: (r2v1 'isDown' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|return r2 ? onKeyDown(r0, r5) : onKeyUp(r0, r5)\l}"];
+}
+}
+}
+}
+}
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0007}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x001a}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0022}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x003c}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x003f}"];
+Node_49 [shape=record,color=red,label="{49\:\ ?|SYNTHETIC\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x0044}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x0048|ORIG_RETURN\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x000b}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0013}"];
+MethodNode[shape=record,label="{boolean androidx.appcompat.app.AppCompatDelegateImpl.dispatchKeyEvent((r4v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:40:0x0030 \-\> B:26:?, CROSS_EDGE: B:48:0x0048 \-\> B:26:?, CROSS_EDGE: B:47:0x0044 \-\> B:48:0x0048, CROSS_EDGE: B:42:0x0039 \-\> B:45:0x003d, CROSS_EDGE: B:37:0x0020 \-\> B:41:0x0031, CROSS_EDGE: B:32:0x0011 \-\> B:36:0x001a, CROSS_EDGE: B:30:0x0009 \-\> B:36:0x001a, CROSS_EDGE: B:28:0x0005 \-\> B:31:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_25;Node_27 -> Node_28;
+Node_28 -> Node_29[style=dashed];
+Node_28 -> Node_31;
+Node_30 -> Node_31;
+Node_30 -> Node_36[style=dashed];
+Node_32 -> Node_33;
+Node_32 -> Node_36[style=dashed];
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_26;
+Node_37 -> Node_38;
+Node_37 -> Node_41[style=dashed];
+Node_39 -> Node_40;
+Node_39 -> Node_41[style=dashed];
+Node_40 -> Node_26;
+Node_41 -> Node_42;
+Node_42 -> Node_44;
+Node_42 -> Node_45;
+Node_45 -> Node_46;
+Node_45 -> Node_47;
+Node_25 -> Node_27;
+Node_29 -> Node_30;
+Node_36 -> Node_37;
+Node_38 -> Node_39;
+Node_44 -> Node_45;
+Node_46 -> Node_49;
+Node_49 -> Node_26;
+Node_47 -> Node_48;
+Node_48 -> Node_26;
+Node_31 -> Node_32;
+Node_33 -> Node_34;
+}
+

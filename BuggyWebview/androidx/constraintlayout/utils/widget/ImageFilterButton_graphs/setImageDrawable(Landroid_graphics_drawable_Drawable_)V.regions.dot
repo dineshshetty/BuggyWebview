@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.constraintlayout.utils.widget.ImageFilterButton.setImageDrawable(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_689896650 {
+label = "R(1:(2:(2:4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1436001791 {
+label = "R(2:(2:4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_473580897 {
+label = "IF [B:3:0x0002, B:4:0x0004] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r3.mAltDrawable != null) goto L3\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0004|ADDED_TO_REGION\l|if (r4 != null) goto L4\l}"];
+subgraph cluster_Region_357694025 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0006|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = r4.mutate()\lr3.mDrawable = r0\landroid.graphics.drawable.Drawable[] android.graphics.drawable.Drawable[] r1 = r3.mLayers\lr1[0] = r0\lr1[1] = r3.mAltDrawable\landroid.graphics.drawable.LayerDrawable android.graphics.drawable.LayerDrawable r0 = new android.graphics.drawable.LayerDrawable(r3.mLayers)\lr3.mLayer = r0\lsuper.setImageDrawable(r0)\lsetCrossfade(r3.mCrossfade)\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1319820314 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|super.setImageDrawable(r4)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002b|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.utils.widget.ImageFilterButton.setImageDrawable((r3v0 'this' androidx.constraintlayout.utils.widget.ImageFilterButton A[IMMUTABLE_TYPE, THIS]), (r4v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:6:0x0028 \-\> B:7:0x002b, CROSS_EDGE: B:3:0x0002 \-\> B:6:0x0028\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [drawable]\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.ImageView.setImageDrawable(android.graphics.drawable.Drawable):void\}]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_8 -> Node_1;
+Node_6 -> Node_7;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_7 -> Node_1;
+}
+

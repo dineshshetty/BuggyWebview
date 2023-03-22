@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.util.Pools.SimplePool.acquire()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1900529488 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = r5.mPoolSize\l}"];
+subgraph cluster_Region_109963420 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_603123818 {
+label = "IF [B:10:0x0003] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0003|if (r0 \> 0) goto L3\l}"];
+subgraph cluster_Region_1438437669 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0005|int int r2 = r0 \- 1\ljava.lang.Object[] java.lang.Object[] r3 = r5.mPool\lT r4 = (T) r3[r2]\lr3[r2] = null\lr5.mPoolSize = r0 \- 1\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0011|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_484623464 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0012|RETURN\l|return null\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public T androidx.core.util.Pools.SimplePool.acquire((r5v0 'this' androidx.core.util.Pools$SimplePool\<T\> A[D('this' androidx.core.util.Pools$SimplePool\<T\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0012 \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: ()TT;\lMETHOD_OVERRIDE: [androidx.core.util.Pools.Pool.acquire():T]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

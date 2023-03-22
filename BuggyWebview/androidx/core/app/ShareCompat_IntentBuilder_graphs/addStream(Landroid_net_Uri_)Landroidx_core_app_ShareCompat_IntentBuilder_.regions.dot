@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.core.app.ShareCompat.IntentBuilder.addStream(Landroid\/net\/Uri;)Landroidx\/core\/app\/ShareCompat$IntentBuilder;" {
+subgraph cluster_Region_1917684448 {
+label = "R(3:(1:3)|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_694531864 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r1.mStreams == null) goto L3\l}"];
+subgraph cluster_Region_337941267 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|r1.mStreams = new java.util.ArrayList\<\>()\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x000b|r1.mStreams.add(r2)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0010|RETURN\l|return r1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.core.app.ShareCompat$IntentBuilder androidx.core.app.ShareCompat.IntentBuilder.addStream((r1v0 'this' androidx.core.app.ShareCompat$IntentBuilder A[IMMUTABLE_TYPE, THIS]), (r2v0 'streamUri' android.net.Uri A[D('streamUri' android.net.Uri), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0002 \-\> B:5:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+}
+

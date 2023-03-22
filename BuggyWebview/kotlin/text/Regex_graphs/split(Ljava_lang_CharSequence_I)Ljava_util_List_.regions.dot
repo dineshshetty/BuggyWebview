@@ -1,0 +1,93 @@
+digraph "CFG forkotlin.text.Regex.split(Ljava\/lang\/CharSequence;I)Ljava\/util\/List;" {
+subgraph cluster_Region_117100087 {
+label = "R(2:1|(2:(1:21)|(4:8|(2:9|(1:(1:13)))|14|15)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"input\")\lkotlin.text.StringsKt.requireNonNegativeLimit(r7)\ljava.util.regex.Matcher java.util.regex.Matcher r0 = r5.nativePattern.matcher(r6)\l}"];
+subgraph cluster_Region_141970944 {
+label = "R(2:(1:21)|(4:8|(2:9|(1:(1:13)))|14|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1011194612 {
+label = "IF [B:26:0x000f, B:28:0x0015] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000f|if (r7 == 1) goto L20\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0015|ADDED_TO_REGION\l|if (r0.find() == false) goto L20\l}"];
+subgraph cluster_Region_1235617387 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0064|RETURN\l|return kotlin.collections.CollectionsKt.listOf(r6.toString())\l}"];
+}
+}
+subgraph cluster_Region_1434635592 {
+label = "R(4:8|(2:9|(1:(1:13)))|14|15)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0022|PHI: r2 \l  PHI: (r2v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|java.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList(r7 \> 0 ? kotlin.ranges.RangesKt.coerceAtMost(r7, 10) : 10)\lint r2 = 0\lint int r3 = r7 \- 1\l}"];
+subgraph cluster_LoopRegion_1694827472 {
+label = "LOOP:0: (2:9|(1:(1:13)))";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0047|LOOP_END\lLOOP:0: B:34:0x0028\-\>B:39:0x0047\l|if (r0.find() != false) goto L9\l}"];
+subgraph cluster_Region_98119858 {
+label = "R(2:9|(1:(1:13)))";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0028|LOOP_START\lLOOP:0: B:34:0x0028\-\>B:39:0x0047\lPHI: r2 \l  PHI: (r2v3 'lastStart' int) = (r2v2 'lastStart' int), (r2v4 'lastStart' int) binds: [B:33:0x0022, B:39:0x0047] A[DONT_GENERATE, DONT_INLINE]\l|r1.add(r6.subSequence(r2, r0.start()).toString())\lint r2 = r0.end()\l}"];
+subgraph cluster_Region_1262771703 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1157660470 {
+label = "IF [B:35:0x003b, B:37:0x0041] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x003b|if (r3 \>= 0) goto L11\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0041|ADDED_TO_REGION\l|if (r1.size() == r3) goto L13\l}"];
+subgraph cluster_Region_1147229484 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0049|SYNTHETIC\lEDGE_INSN: B:44:0x0049\-\>B:40:0x0049 ?: BREAK  \l|break\l}"];
+}
+}
+}
+}
+}
+Node_40 [shape=record,label="{40\:\ 0x0049|EDGE_INSN: B:44:0x0049\-\>B:40:0x0049 ?: BREAK  \l|r1.add(r6.subSequence(r2, r6.length()).toString())\l}"];
+Node_41 [shape=record,label="{41\:\ 0x005b|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0011}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0018}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001c}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001e}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x003d}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0043}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0049|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x005c}"];
+MethodNode[shape=record,label="{public final java.util.List\<java.lang.String\> kotlin.text.Regex.split((r5v0 'this' kotlin.text.Regex A[IMMUTABLE_TYPE, THIS]), (r6v0 'input' java.lang.CharSequence A[D('input' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'limit' int A[D('limit' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:39:0x0047 \-\> B:34:0x0028, CROSS_EDGE: B:37:0x0041 \-\> B:40:0x0049, CROSS_EDGE: B:35:0x003b \-\> B:38:0x0043, CROSS_EDGE: B:31:0x001c \-\> B:33:0x0022, CROSS_EDGE: B:43:0x0064 \-\> B:24:?, CROSS_EDGE: B:26:0x000f \-\> B:42:0x005c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/CharSequence;I)Ljava\/util\/List\<Ljava\/lang\/String;\>;\l}"];
+MethodNode -> Node_23;Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_42;
+Node_28 -> Node_30[style=dashed];
+Node_28 -> Node_42;
+Node_43 -> Node_24;
+Node_33 -> Node_34;
+Node_39 -> Node_34;
+Node_39 -> Node_45[style=dashed];
+Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_35 -> Node_38[style=dashed];
+Node_37 -> Node_38[style=dashed];
+Node_37 -> Node_44;
+Node_44 -> Node_40;
+Node_40 -> Node_41;
+Node_41 -> Node_24;
+Node_23 -> Node_25;
+Node_27 -> Node_28;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33;
+Node_32 -> Node_33;
+Node_36 -> Node_37;
+Node_38 -> Node_39;
+Node_45 -> Node_40;
+Node_42 -> Node_43;
+}
+

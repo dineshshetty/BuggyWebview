@@ -1,0 +1,73 @@
+digraph "CFG forkotlinx.coroutines.selects.SelectBuilderImpl.isSelected()Z" {
+subgraph cluster_Region_1172326369 {
+label = "R(1:(2:2|(2:(1:11)|(1:(2:(1:8)|(1:6))))))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_71752276 {
+label = "LOOP:0: (2:2|(2:(1:11)|(1:(2:(1:8)|(1:6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2014579073 {
+label = "R(2:2|(2:(1:11)|(1:(2:(1:8)|(1:6)))))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|LOOP_START\lLOOP:0: B:17:0x0002\-\>B:23:0x0013\l|java.lang.Object java.lang.Object r2 = r5._state\l}"];
+subgraph cluster_Region_1386067790 {
+label = "R(2:(1:11)|(1:(2:(1:8)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_478765919 {
+label = "IF [B:18:0x000b] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|if (r2 == kotlinx.coroutines.selects.SelectKt.getNOT_SELECTED()) goto L10\l}"];
+subgraph cluster_Region_1846911348 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000d|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_697117720 {
+label = "R(1:(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_455857927 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1389040309 {
+label = "IF [B:22:0x0011] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|if ((r2 instanceof kotlinx.coroutines.internal.OpDescriptor) != true) goto L7\l}"];
+subgraph cluster_Region_615720171 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001b|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1104134975 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0013|LOOP_END\lLOOP:0: B:17:0x0002\-\>B:23:0x0013\l|((kotlinx.coroutines.internal.OpDescriptor) r2).perform(r5)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000f}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001b|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean kotlinx.coroutines.selects.SelectBuilderImpl.isSelected((r5v0 'this' kotlinx.coroutines.selects.SelectBuilderImpl\<R\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x0013 \-\> B:17:0x0002, CROSS_EDGE: B:25:0x001c \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lMETHOD_OVERRIDE: [kotlinx.coroutines.selects.SelectInstance.isSelected():boolean]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_27;
+Node_19 -> Node_15;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_26;
+Node_24 -> Node_15;
+Node_23 -> Node_17;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+Node_26 -> Node_24;
+Node_27 -> Node_19;
+}
+

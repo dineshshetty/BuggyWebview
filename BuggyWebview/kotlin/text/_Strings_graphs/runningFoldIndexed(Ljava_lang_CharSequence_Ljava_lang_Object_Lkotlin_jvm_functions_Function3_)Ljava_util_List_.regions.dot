@@ -1,0 +1,64 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.runningFoldIndexed(Ljava\/lang\/CharSequence;Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function3;)Ljava\/util\/List;" {
+subgraph cluster_Region_857581771 {
+label = "R(2:1|(2:(1:6)|(3:8|(1:10)|13)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"operation\")\l}"];
+subgraph cluster_Region_1378593241 {
+label = "R(2:(1:6)|(3:8|(1:10)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_665965693 {
+label = "IF [B:21:0x0015] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|PHI: r1 \l  PHI: (r1v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r7.length() == 0) == true) goto L5\l}"];
+subgraph cluster_Region_2114255679 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001b|RETURN\l|return kotlin.collections.CollectionsKt.listOf(r8)\l}"];
+}
+}
+subgraph cluster_Region_493822337 {
+label = "R(3:8|(1:10)|13)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001c|java.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList(r7.length() + 1)\lr1.add(r8)\ljava.lang.Object r2 = (java.lang.Object) r8\lint r3 = 0\lint int r4 = r7.length()\l}"];
+subgraph cluster_LoopRegion_12438820 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0031|LOOP_START\lLOOP:0: B:25:0x0031\-\>B:26:0x0033\lPHI: r2 r3 \l  PHI: (r2v3 'accumulator' java.lang.Object) = (r2v2 'accumulator' java.lang.Object), (r2v4 'accumulator' java.lang.Object) binds: [B:24:0x001c, B:26:0x0033] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v4 'index' int) = (r3v3 'index' int), (r3v7 'index' int) binds: [B:24:0x001c, B:26:0x0033] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r4) goto L10\l}"];
+subgraph cluster_Region_622455786 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0033|LOOP_END\lLOOP:0: B:25:0x0031\-\>B:26:0x0033\l|java.lang.Object r2 = (R) r9.invoke(java.lang.Integer.valueOf(r3), r2, java.lang.Character.valueOf(r7.charAt(r3)))\lr1.add(r2)\lr3++\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x004c|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0010}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0012}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0017}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0049|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0049}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0014}"];
+MethodNode[shape=record,label="{public static final java.util.List\<R\> kotlin.text.StringsKt___StringsKt.runningFoldIndexed((r7v0 '$this$runningFoldIndexed' java.lang.CharSequence A[D('$this$runningFoldIndexed' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 R A[D('initial' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'operation' kotlin.jvm.functions.Function3\<? super java.lang.Integer, ? super R, ? super java.lang.Character, ? extends R\> A[D('operation' kotlin.jvm.functions.Function3), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x0033 \-\> B:25:0x0031, CROSS_EDGE: B:28:0x004c \-\> B:16:?, CROSS_EDGE: B:20:0x0014 \-\> B:21:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lSIGNATURE: \<R:Ljava\/lang\/Object;\>(Ljava\/lang\/CharSequence;TR;Lkotlin\/jvm\/functions\/Function3\<\-Ljava\/lang\/Integer;\-TR;\-Ljava\/lang\/Character;+TR;\>;)Ljava\/util\/List\<TR;\>;\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_23 -> Node_16;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_26 -> Node_25;
+Node_28 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_29 -> Node_27;
+Node_27 -> Node_28;
+Node_20 -> Node_21;
+}
+

@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatSpinner.performClick()Z" {
+subgraph cluster_Region_514000118 {
+label = "R(2:1|(2:(1:(2:(2:5|6)|(1:8)))|(1:10)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|androidx.appcompat.widget.AppCompatSpinner$SpinnerPopup androidx.appcompat.widget.AppCompatSpinner.SpinnerPopup r0 = r1.mPopup\l}"];
+subgraph cluster_Region_330212601 {
+label = "R(2:(1:(2:(2:5|6)|(1:8)))|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_780793428 {
+label = "IF [B:15:0x0002] THEN: R(1:(2:(2:5|6)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1058008604 {
+label = "R(1:(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1562182286 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_674146629 {
+label = "IF [B:17:0x0008] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (r0.isShowing() == false) goto L5\l}"];
+subgraph cluster_Region_709858773 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|showPopup()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000d|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1285580041 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_211750287 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0013|RETURN\l|return super.performClick()\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0004}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000f}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.widget.AppCompatSpinner.performClick((r1v0 'this' androidx.appcompat.widget.AppCompatSpinner A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:17:0x0008 \-\> B:19:0x000d, CROSS_EDGE: B:22:0x0013 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.performClick():boolean\}]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_13;
+Node_23 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+}
+

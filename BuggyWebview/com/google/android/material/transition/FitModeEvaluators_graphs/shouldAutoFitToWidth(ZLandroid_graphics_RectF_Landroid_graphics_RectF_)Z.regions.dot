@@ -1,0 +1,60 @@
+digraph "CFG forcom.google.android.material.transition.FitModeEvaluators.shouldAutoFitToWidth(ZLandroid\/graphics\/RectF;Landroid\/graphics\/RectF;)Z" {
+subgraph cluster_Region_1494996801 {
+label = "R(3:1|(1:(1:7))(1:(1:10))|5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|float float r0 = r10.width()\lfloat float r1 = r10.height()\lfloat float r2 = r11.width()\lfloat float r3 = r11.height()\lfloat float r4 = (r3 * r0) \/ r2\lfloat float r5 = (r1 * r2) \/ r0\l}"];
+subgraph cluster_IfRegion_513350583 {
+label = "IF [B:17:0x0018] THEN: R(1:(1:7)) ELSE: R(1:(1:10))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|if (r9 == true) goto L3\l}"];
+subgraph cluster_Region_943107934 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_452204511 {
+label = "IF [B:19:0x001c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|if (r4 \>= r1) goto L7\l}"];
+subgraph cluster_Region_1064808042 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_330035323 {
+label = "R(1:(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_729099927 {
+label = "IF [B:22:0x0021] THEN: R(1:10) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0021|if (r5 \>= r3) goto L10\l}"];
+subgraph cluster_Region_1169753370 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0024|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001a}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001f}"];
+MethodNode[shape=record,label="{private static boolean com.google.android.material.transition.FitModeEvaluators.shouldAutoFitToWidth((r9v0 'entering' boolean A[D('entering' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'startBounds' android.graphics.RectF A[D('startBounds' android.graphics.RectF), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'endBounds' android.graphics.RectF A[D('endBounds' android.graphics.RectF), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001c \-\> B:25:0x0025, CROSS_EDGE: B:22:0x0021 \-\> B:24:0x0024, CROSS_EDGE: B:22:0x0021 \-\> B:25:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_19 -> Node_24[style=dashed];
+Node_19 -> Node_27;
+Node_27 -> Node_15;
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_26;
+Node_26 -> Node_15;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+}
+

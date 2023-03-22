@@ -1,0 +1,62 @@
+digraph "CFG forkotlinx.coroutines.selects.SelectKt.select(Lkotlin\/jvm\/functions\/Function1;Lkotlin\/coroutines\/Continuation;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1173977790 {
+label = "R(5:1|(1:3)|4|(1:6)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlinx.coroutines.selects.SelectBuilderImpl kotlinx.coroutines.selects.SelectBuilderImpl r3 = new kotlinx.coroutines.selects.SelectBuilderImpl(r6)\l}"];
+subgraph cluster_TryCatchRegion_1341071805 {
+label = "Try: R(1:3) catches: R(2:10|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1249886118 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x000e, blocks: (B:16:0x000a), top: B:24:0x000a \}\lCatch: all \-\> 0x000e\l|r5.invoke(r3)     \/\/ Catch: java.lang.Throwable \-\> Le\l}"];
+}
+subgraph cluster_Region_1659713902 {
+label = "R(2:10|11) | ExcHandler: all \-\> 0x000e\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|ExcHandler: all \-\> 0x000e\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000f|r3.handleBuilderException(r4)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0012|java.lang.Object java.lang.Object r1 = r3.getResult()\l}"];
+subgraph cluster_IfRegion_1211754679 {
+label = "IF [B:21:0x001a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001a|if (r1 == kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L6\l}"];
+subgraph cluster_Region_987173524 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001c|kotlin.coroutines.jvm.internal.DebugProbes.probeCoroutineSuspended(r6)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x001f|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_1659713902 {
+label = "R(2:10|11) | ExcHandler: all \-\> 0x000e\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|ExcHandler: all \-\> 0x000e\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000f|r3.handleBuilderException(r4)\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000a|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public static final java.lang.Object kotlinx.coroutines.selects.SelectKt.select((r5v0 kotlin.jvm.functions.Function1\<? super kotlinx.coroutines.selects.SelectBuilder\<? super R\>, kotlin.Unit\> A[D('builder' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 kotlin.coroutines.Continuation\<? super R\> A[D('$completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001a \-\> B:23:0x001f, CROSS_EDGE: B:19:0x000f \-\> B:20:0x0012, CROSS_EDGE: B:24:0x000a \-\> B:18:0x000e\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x000e, blocks: (B:16:0x000a), top: B:24:0x000a \}\lTYPE_VARS: [R]\lSIGNATURE: \<R:Ljava\/lang\/Object;\>(Lkotlin\/jvm\/functions\/Function1\<\-Lkotlinx\/coroutines\/selects\/SelectBuilder\<\-TR;\>;Lkotlin\/Unit;\>;Lkotlin\/coroutines\/Continuation\<\-TR;\>;)Ljava\/lang\/Object;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_24;
+Node_16 -> Node_20;
+Node_16 -> Node_25;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_13 -> Node_15;
+Node_24 -> Node_16;
+Node_24 -> Node_18;
+Node_25 -> Node_18;
+}
+

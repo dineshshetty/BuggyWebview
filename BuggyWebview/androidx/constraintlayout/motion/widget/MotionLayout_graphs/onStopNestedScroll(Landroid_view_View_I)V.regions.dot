@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.MotionLayout.onStopNestedScroll(Landroid\/view\/View;I)V" {
+subgraph cluster_Region_764221458 {
+label = "R(2:1|(1:(2:3|(2:(1:8)|(1:5)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|androidx.constraintlayout.motion.widget.MotionScene androidx.constraintlayout.motion.widget.MotionScene r0 = r4.mScene\l}"];
+subgraph cluster_Region_1276306770 {
+label = "R(1:(2:3|(2:(1:8)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1057896948 {
+label = "IF [B:14:0x0002] THEN: R(2:3|(2:(1:8)|(1:5))) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1774669329 {
+label = "R(2:3|(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|float float r1 = r4.mScrollTargetDT\l}"];
+subgraph cluster_Region_527522689 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_751802035 {
+label = "IF [B:16:0x0009] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|if (r1 == 0.0f) goto L8\l}"];
+subgraph cluster_Region_851781155 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_787176771 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|r0.processScrollUp(r4.mScrollTargetDX \/ r1, r4.mScrollTargetDY \/ r1)\l}"];
+}
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0015}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.motion.widget.MotionLayout.onStopNestedScroll((r4v0 'this' androidx.constraintlayout.motion.widget.MotionLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'target' android.view.View A[D('target' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'type' int A[D('type' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0016 \-\> B:12:?, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x0016\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [target, type]\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.NestedScrollingParent2.onStopNestedScroll(android.view.View, int):void]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_19 -> Node_12;
+Node_20 -> Node_12;
+}
+

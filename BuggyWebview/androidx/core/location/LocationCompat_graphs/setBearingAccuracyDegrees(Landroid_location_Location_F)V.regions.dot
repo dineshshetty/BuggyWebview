@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.core.location.LocationCompat.setBearingAccuracyDegrees(Landroid\/location\/Location;F)V" {
+subgraph cluster_Region_742960322 {
+label = "R(1:(2:(2:3|4)|(3:6|(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_998117718 {
+label = "R(2:(2:3|4)|(3:6|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_3014168 {
+label = "IF [B:14:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 26) goto L3\l}"];
+subgraph cluster_Region_1860395169 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|androidx.core.location.LocationCompat.Api26Impl.setBearingAccuracyDegrees(r2, r3)\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_961990279 {
+label = "R(3:6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|android.os.Bundle android.os.Bundle r0 = r2.getExtras()\l}"];
+subgraph cluster_IfRegion_938691777 {
+label = "IF [B:17:0x000e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|if (r0 == null) goto L8\l}"];
+subgraph cluster_Region_428258611 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0010|r2.setExtras(new android.os.Bundle())\landroid.os.Bundle r0 = r2.getExtras()\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x001c|PHI: r0 \l  PHI: (r0v2 'extras' android.os.Bundle) = (r0v1 'extras' android.os.Bundle), (r0v3 'extras' android.os.Bundle) binds: [B:17:0x000e, B:18:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|r0.putFloat(androidx.core.location.LocationCompat.EXTRA_BEARING_ACCURACY, r3)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0021|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.location.LocationCompat.setBearingAccuracyDegrees((r2v0 'location' android.location.Location A[D('location' android.location.Location), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'bearingAccuracyD' float A[D('bearingAccuracyD' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001c \-\> B:20:0x0021, CROSS_EDGE: B:17:0x000e \-\> B:19:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_21;
+Node_21 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_20 -> Node_12;
+}
+

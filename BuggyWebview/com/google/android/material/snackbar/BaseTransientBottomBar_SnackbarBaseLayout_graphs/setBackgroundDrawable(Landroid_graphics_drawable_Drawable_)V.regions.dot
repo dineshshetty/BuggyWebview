@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.material.snackbar.BaseTransientBottomBar.SnackbarBaseLayout.setBackgroundDrawable(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_69204720 {
+label = "R(2:(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1078334499 {
+label = "IF [B:10:0x0000, B:12:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|if (r2 != null) goto L2\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0004|ADDED_TO_REGION\l|if (r1.backgroundTint != null) goto L4\l}"];
+subgraph cluster_Region_502516625 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|android.graphics.drawable.Drawable r2 = androidx.core.graphics.drawable.DrawableCompat.wrap(r2.mutate())\landroidx.core.graphics.drawable.DrawableCompat.setTintList(r2, r1.backgroundTint)\landroidx.core.graphics.drawable.DrawableCompat.setTintMode(r2, r1.backgroundTintMode)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0018|PHI: r2 \l  PHI: (r2v1 'drawable' android.graphics.drawable.Drawable) = (r2v0 'drawable' android.graphics.drawable.Drawable), (r2v0 'drawable' android.graphics.drawable.Drawable), (r2v2 'drawable' android.graphics.drawable.Drawable) binds: [B:10:0x0000, B:12:0x0004, B:13:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|super.setBackgroundDrawable(r2)\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0002}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001b}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.snackbar.BaseTransientBottomBar.SnackbarBaseLayout.setBackgroundDrawable((r1v0 'this' com.google.android.material.snackbar.BaseTransientBottomBar$SnackbarBaseLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:12:0x0004 \-\> B:14:0x0018, CROSS_EDGE: B:10:0x0000 \-\> B:14:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: [B extends com.google.android.material.snackbar.BaseTransientBottomBar\<B\>]\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.setBackgroundDrawable(android.graphics.drawable.Drawable):void\}]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_9;
+}
+

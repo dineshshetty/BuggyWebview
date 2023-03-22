@@ -1,0 +1,73 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.lastIndexOf([DD)I" {
+subgraph cluster_Region_777884887 {
+label = "R(2:1|(2:(2:(2:3|(1:10))|13)|(1:13)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lint int r0 = r6.length \- 1\l}"];
+subgraph cluster_Region_203031771 {
+label = "R(2:(2:(2:3|(1:10))|13)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1623850151 {
+label = "IF [B:17:0x0008] THEN: R(2:(2:3|(1:10))|13) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_2125917824 {
+label = "R(2:(2:3|(1:10))|13)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_952135804 {
+label = "LOOP:0: (2:3|(1:10))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|LOOP_END\lLOOP:0: B:18:0x000a\-\>B:24:0x0018\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_608388161 {
+label = "R(2:3|(1:10))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|LOOP_START\lLOOP:0: B:18:0x000a\-\>B:24:0x0018\lPHI: r0 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:17:0x0008, B:24:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|int r2 = r0\lr0\-\-\l}"];
+subgraph cluster_IfRegion_2054795423 {
+label = "IF [B:22:0x0015] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|PHI: r3 \l  PHI: (r3v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r7 == r6[r2]) != false) goto L9\l}"];
+subgraph cluster_Region_1143374557 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|RETURN\l|return r2\l}"];
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x001a|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_200537542 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|RETURN\l|return \-1\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0010}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0012}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001a|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0017|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0014}"];
+MethodNode[shape=record,label="{public static final \/* synthetic *\/ int kotlin.collections.ArraysKt___ArraysKt.lastIndexOf((r6v0 '$this$lastIndexOf' double[] A[D('$this$lastIndexOf' double[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'element' double A[D('element' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\l\{Lkotlin\/Deprecated;=Annotation\{RUNTIME, type=Lkotlin\/Deprecated;, values=\{message=The function has unclear behavior when searching for NaN or zero values and will be removed soon. Use 'indexOfLast \{ it == element \}' instead to continue using this behavior, or '.asList().lastIndexOf(element: T)' to get the same search behavior as in a list., replaceWith=\{ENCODED_ANNOTATION: Annotation\{null, type=Lkotlin\/ReplaceWith;, values=\{expression=indexOfLast \{ it == element \}, imports=[[]]\}\}\}\}\}, Lkotlin\/DeprecatedSinceKotlin;=Annotation\{RUNTIME, type=Lkotlin\/DeprecatedSinceKotlin;, values=\{errorSince=1.6, hiddenSince=1.7, warningSince=1.4\}\}\}\lINLINE_NOT_NEEDED\lBACK_EDGE: B:24:0x0018 \-\> B:18:0x000a, CROSS_EDGE: B:25:0x001a \-\> B:15:?, CROSS_EDGE: B:21:0x0014 \-\> B:22:0x0015, CROSS_EDGE: B:17:0x0008 \-\> B:25:0x001a\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_25[style=dashed];
+Node_24 -> Node_18;
+Node_24 -> Node_27[style=dashed];
+Node_18 -> Node_19;
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_26;
+Node_23 -> Node_15;
+Node_25 -> Node_15;
+Node_25 -> Node_15;
+Node_14 -> Node_16;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_20 -> Node_22;
+Node_27 -> Node_25;
+Node_26 -> Node_23;
+Node_21 -> Node_22;
+}
+

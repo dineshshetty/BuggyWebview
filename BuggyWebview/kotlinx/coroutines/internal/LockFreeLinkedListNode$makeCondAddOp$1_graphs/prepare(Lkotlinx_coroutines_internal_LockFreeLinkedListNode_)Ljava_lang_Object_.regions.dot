@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeLinkedListNode$makeCondAddOp$1.prepare(Lkotlinx\/coroutines\/internal\/LockFreeLinkedListNode;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1274557151 {
+label = "R(1:(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_404599240 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1609813874 {
+label = "IF [B:3:0x000c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r1.$condition.invoke().booleanValue() == true) goto L3\l}"];
+subgraph cluster_Region_1407299870 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1501892471 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|RETURN\lORIG_RETURN\l|return kotlinx.coroutines.internal.LockFreeLinkedListKt.getCONDITION_FALSE()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.internal.LockFreeLinkedListNode$makeCondAddOp$1.prepare((r1v0 'this' kotlinx.coroutines.internal.LockFreeLinkedListNode$makeCondAddOp$1 A[IMMUTABLE_TYPE, THIS]), (r2v0 'affected' kotlinx.coroutines.internal.LockFreeLinkedListNode A[D('affected' kotlinx.coroutines.internal.LockFreeLinkedListNode), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0010 \-\> B:6:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lRENAME_REASON:avoid collision after fix types in other method\lREPLACED_BY: kotlinx.coroutines.internal.LockFreeLinkedListNode$makeCondAddOp$1.prepare(kotlinx.coroutines.internal.LockFreeLinkedListNode):java.lang.Object\lBRIDGED_BY: kotlinx.coroutines.internal.LockFreeLinkedListNode$makeCondAddOp$1.prepare(kotlinx.coroutines.internal.LockFreeLinkedListNode):java.lang.Object\lJadxCommentsAttr\{\l DEBUG: \l \-\> Method merged with bridge method\}\lMETHOD_OVERRIDE: [kotlinx.coroutines.internal.AtomicOp.prepare(T):java.lang.Object]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,127 @@
+digraph "CFG forandroidx.core.text.util.LinkifyCompat.makeUrl(Ljava\/lang\/String;[Ljava\/lang\/String;Ljava\/util\/regex\/Matcher;Landroid\/text\/util\/Linkify$TransformFilter;)Ljava\/lang\/String;" {
+subgraph cluster_Region_779203979 {
+label = "R(4:(1:2)|3|(1:(2:(1:20)|(2:5|(1:7)(2:9|(1:11)(0)))))|(2:(2:15|16)|(1:18)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1794789810 {
+label = "IF [B:23:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|if (r14 != null) goto L2\l}"];
+subgraph cluster_Region_1512165036 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0002|java.lang.String r11 = r14.transformUrl(r13, r11)\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0006|PHI: r11 \l  PHI: (r11v1 'url' java.lang.String) = (r11v0 'url' java.lang.String), (r11v5 'url' java.lang.String) binds: [B:23:0x0000, B:24:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|boolean r6 = false\lint int r7 = r12.length\lint r9 = 0\l}"];
+subgraph cluster_LoopRegion_500890755 {
+label = "LOOP:0: (1:(2:(1:20)|(2:5|(1:7)(2:9|(1:11)(0)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1605257867 {
+label = "R(1:(2:(1:20)|(2:5|(1:7)(2:9|(1:11)(0)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1742862093 {
+label = "R(2:(1:20)|(2:5|(1:7)(2:9|(1:11)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1654637167 {
+label = "IF [B:26:0x000a] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000a|LOOP_START\lLOOP:0: B:26:0x000a\-\>B:32:0x0045\lPHI: r9 \l  PHI: (r9v1 int) = (r9v0 int), (r9v2 int) binds: [B:25:0x0006, B:32:0x0045] A[DONT_GENERATE, DONT_INLINE]\l|if (r9 \>= r7) goto L20\l}"];
+subgraph cluster_Region_870384115 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0048|SYNTHETIC\lEDGE_INSN: B:38:0x0048\-\>B:33:0x0048 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1766310605 {
+label = "R(2:5|(1:7)(2:9|(1:11)(0)))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000c|java.lang.String r10 = r12[r9]\l}"];
+subgraph cluster_IfRegion_375088527 {
+label = "IF [B:28:0x001b] THEN: R(1:7) ELSE: R(2:9|(1:11)(0))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001b|if (r11.regionMatches(true, 0, r10, 0, r10.length()) == false) goto L7\l}"];
+subgraph cluster_Region_1105325658 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0045|LOOP_END\lLOOP:0: B:26:0x000a\-\>B:32:0x0045\l|r9++\l}"];
+}
+subgraph cluster_Region_2031755905 {
+label = "R(2:9|(1:11)(0))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001d|r6 = true\l}"];
+subgraph cluster_IfRegion_181096849 {
+label = "IF [B:30:0x002b] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002b|if (r11.regionMatches(false, 0, r10, 0, r10.length()) == false) goto L11\l}"];
+subgraph cluster_Region_1142357420 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x002d|java.lang.String r11 = r10 + r11.substring(r10.length())\l}"];
+}
+subgraph cluster_Region_2039864808 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1413626435 {
+label = "R(2:(2:15|16)|(1:18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_703250739 {
+label = "IF [B:33:0x0048, B:35:0x004b] THEN: R(2:15|16) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0048|EDGE_INSN: B:38:0x0048\-\>B:33:0x0048 ?: BREAK  \lPHI: r6 r11 \l  PHI: (r6v1 'hasPrefix' boolean) = (r6v0 'hasPrefix' boolean), (r6v2 'hasPrefix' boolean), (r6v2 'hasPrefix' boolean) binds: [B:38:0x0048, B:30:0x002b, B:31:0x002d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r11v2 'url' java.lang.String) = (r11v1 'url' java.lang.String), (r11v1 'url' java.lang.String), (r11v4 'url' java.lang.String) binds: [B:38:0x0048, B:30:0x002b, B:31:0x002d] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 == false) goto L13\l}"];
+Node_35 [shape=record,label="{35\:\ 0x004b|ADDED_TO_REGION\l|if (r12.length \> 0) goto L15\l}"];
+subgraph cluster_Region_1014232665 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x004d}"];
+Node_37 [shape=record,label="{37\:\ 0x005e|RETURN\lORIG_RETURN\l|return r12[0] + r11\l}"];
+}
+}
+subgraph cluster_Region_128353981 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ ?|SYNTHETIC\lRETURN\l|return r11\l}"];
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x001d|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x004a}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r11\l}"];
+MethodNode[shape=record,label="{private static java.lang.String androidx.core.text.util.LinkifyCompat.makeUrl((r11v0 'url' java.lang.String A[D('url' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'prefixes' java.lang.String[] A[D('prefixes' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'matcher' java.util.regex.Matcher A[D('matcher' java.util.regex.Matcher), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'filter' android.text.util.Linkify$TransformFilter A[D('filter' android.text.util.Linkify$TransformFilter), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x004b \-\> B:37:0x005e, CROSS_EDGE: B:33:0x0048 \-\> B:37:0x005e, CROSS_EDGE: B:30:0x002b \-\> B:33:0x0048, BACK_EDGE: B:32:0x0045 \-\> B:26:0x000a, CROSS_EDGE: B:26:0x000a \-\> B:33:0x0048, CROSS_EDGE: B:23:0x0000 \-\> B:25:0x0006\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_38;
+Node_38 -> Node_33;
+Node_27 -> Node_28;
+Node_28 -> Node_32;
+Node_28 -> Node_39[style=dashed];
+Node_32 -> Node_26;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_33[style=dashed];
+Node_31 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_40[style=dashed];
+Node_35 -> Node_36;
+Node_35 -> Node_41[style=dashed];
+Node_36 -> Node_37;
+Node_37 -> Node_22;
+Node_41 -> Node_22;
+Node_21 -> Node_23;
+Node_39 -> Node_29;
+Node_34 -> Node_35;
+Node_40 -> Node_22;
+}
+

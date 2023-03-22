@@ -1,0 +1,87 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.maxOfOrNull([Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Comparable;" {
+subgraph cluster_Region_240178207 {
+label = "R(2:1|(2:(1:5)|(3:7|(2:10|(1:13)(0))|18)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"selector\")\l}"];
+subgraph cluster_Region_2014189060 {
+label = "R(2:(1:5)|(3:7|(2:10|(1:13)(0))|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1977255529 {
+label = "IF [B:27:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0012|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r5.length == 0) == true) goto L5\l}"];
+subgraph cluster_Region_74450973 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0014|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1703278303 {
+label = "R(3:7|(2:10|(1:13)(0))|18)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0016|java.lang.Comparable R r0 = r6.invoke(r5[0])\lkotlin.collections.IntIterator ?? r1 = new kotlin.ranges.IntRange(1, kotlin.collections.ArraysKt.getLastIndex(r5)).iterator()\l}"];
+subgraph cluster_LoopRegion_1622886016 {
+label = "LOOP:0: (2:10|(1:13)(0))";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x002f|if (r1.hasNext() != false) goto L10\l}"];
+subgraph cluster_Region_708994886 {
+label = "R(2:10|(1:13)(0))";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0031|int int r2 = r1.nextInt()\ljava.lang.Comparable R r3 = r6.invoke(r5[r2])\l}"];
+subgraph cluster_IfRegion_1422435488 {
+label = "IF [B:34:0x0041] THEN: R(1:13) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0041|if (r0.compareTo(r3) \< 0) goto L12\l}"];
+subgraph cluster_Region_1713844773 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0043|r0 = r3\l}"];
+}
+subgraph cluster_Region_210289824 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0045|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000d}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000f}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x002b|LOOP_START\lLOOP:0: B:31:0x002b\-\>B:39:0x002b\lPHI: r0 \l  PHI: (r0v8 R extends java.lang.Comparable\<? super R\>) = (r0v7 R extends java.lang.Comparable\<? super R\>), (r0v9 R extends java.lang.Comparable\<? super R\>) binds: [B:30:0x0016, B:39:0x002b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0043|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x002b|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x002b|LOOP_END\lSYNTHETIC\lLOOP:0: B:31:0x002b\-\>B:39:0x002b\lPHI: r0 \l  PHI: (r0v9 R extends java.lang.Comparable\<? super R\>) = (r0v8 R extends java.lang.Comparable\<? super R\>), (r0v10 R extends java.lang.Comparable\<? super R\>) binds: [B:40:0x002b, B:41:0x002b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x002b|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0045|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0011}"];
+MethodNode[shape=record,label="{private static final R extends java.lang.Comparable\<? super R\> kotlin.collections.ArraysKt___ArraysKt.maxOfOrNull((r5v0 T[] A[D('$this$maxOfOrNull' java.lang.Object[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'selector' kotlin.jvm.functions.Function1\<? super T, ? extends R extends java.lang.Comparable\<? super R\>\> A[D('selector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:34:0x0041 \-\> B:31:0x002b, BACK_EDGE: B:35:0x0043 \-\> B:31:0x002b, CROSS_EDGE: B:36:0x0045 \-\> B:22:?, CROSS_EDGE: B:26:0x0011 \-\> B:27:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: [R extends java.lang.Comparable\<? super R\>, T]\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r1v1, types: [kotlin.collections.IntIterator]\}\lSIGNATURE: \<T:Ljava\/lang\/Object;R::Ljava\/lang\/Comparable\<\-TR;\>;\>([TT;Lkotlin\/jvm\/functions\/Function1\<\-TT;+TR;\>;)TR;\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24;
+Node_27 -> Node_28;
+Node_27 -> Node_30[style=dashed];
+Node_28 -> Node_22;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_32 -> Node_38[style=dashed];
+Node_33 -> Node_34;
+Node_34 -> Node_37;
+Node_34 -> Node_40[style=dashed];
+Node_35 -> Node_41;
+Node_36 -> Node_22;
+Node_21 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_26;
+Node_25 -> Node_27;
+Node_31 -> Node_32;
+Node_37 -> Node_35;
+Node_41 -> Node_39;
+Node_39 -> Node_31;
+Node_40 -> Node_39;
+Node_38 -> Node_36;
+Node_26 -> Node_27;
+}
+

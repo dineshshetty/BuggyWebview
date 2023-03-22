@@ -1,0 +1,52 @@
+digraph "CFG forandroidx.transition.TransitionManager.MultiListener.onViewDetachedFromWindow(Landroid\/view\/View;)V" {
+subgraph cluster_Region_600894547 {
+label = "R(3:1|(2:5|(1:8))|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|removeListeners()\landroidx.transition.TransitionManager.sPendingTransitions.remove(r4.mSceneRoot)\ljava.util.ArrayList java.util.ArrayList\<androidx.transition.Transition\> r0 = androidx.transition.TransitionManager.getRunningTransitions().get(r4.mSceneRoot)\l}"];
+subgraph cluster_IfRegion_1103086615 {
+label = "IF [B:16:0x0016, B:18:0x001c] THEN: R(2:5|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0016|if (r0 != null) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x001c|ADDED_TO_REGION\l|if (r0.size() \> 0) goto L5\l}"];
+subgraph cluster_Region_458146462 {
+label = "R(2:5|(1:8))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001e|java.util.Iterator java.util.Iterator\<androidx.transition.Transition\> r1 = r0.iterator()\l}"];
+subgraph cluster_LoopRegion_968023505 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0026|if (r1.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_497290432 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0028|LOOP_END\lLOOP:0: B:20:0x0022\-\>B:22:0x0028\l|androidx.transition.Transition androidx.transition.Transition r2 = r1.next()\lr2.resume(r4.mSceneRoot)\l}"];
+}
+}
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0034|r4.mTransition.clearValues(true)\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0018}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0022|LOOP_START\lLOOP:0: B:20:0x0022\-\>B:22:0x0028\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0034|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x003a}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.transition.TransitionManager.MultiListener.onViewDetachedFromWindow((r4v0 'this' androidx.transition.TransitionManager$MultiListener A[IMMUTABLE_TYPE, THIS]), (r5v0 'v' android.view.View A[D('v' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:22:0x0028 \-\> B:20:0x0022, CROSS_EDGE: B:18:0x001c \-\> B:23:0x0034, CROSS_EDGE: B:16:0x0016 \-\> B:23:0x0034\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.OnAttachStateChangeListener.onViewDetachedFromWindow(android.view.View):void\}]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_20;
+Node_23 -> Node_24;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+Node_25 -> Node_23;
+Node_24 -> Node_14;
+}
+

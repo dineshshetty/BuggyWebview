@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.appcompat.widget.ThemedSpinnerAdapter.Helper.setDropDownViewTheme(Landroid\/content\/res\/Resources$Theme;)V" {
+subgraph cluster_Region_1661683785 {
+label = "R(1:(1:2)(1:(1:7)(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1553325397 {
+label = "IF [B:13:0x0000] THEN: R(1:2) ELSE: R(1:(1:7)(1:9))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|if (r3 == null) goto L2\l}"];
+subgraph cluster_Region_2062619077 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|r2.mDropDownInflater = null\l}"];
+}
+subgraph cluster_Region_846872568 {
+label = "R(1:(1:7)(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_193622270 {
+label = "IF [B:16:0x000c] THEN: R(1:7) ELSE: R(1:9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000c|if (r3 == r2.mContext.getTheme()) goto L7\l}"];
+subgraph cluster_Region_2030529455 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|r2.mDropDownInflater = r2.mInflater\l}"];
+}
+subgraph cluster_Region_1594713150 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|androidx.appcompat.view.ContextThemeWrapper android.content.Context r0 = new androidx.appcompat.view.ContextThemeWrapper(r2.mContext, r3)\lr2.mDropDownInflater = android.view.LayoutInflater.from(r0)\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0020|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.ThemedSpinnerAdapter.Helper.setDropDownViewTheme((r2v0 'this' androidx.appcompat.widget.ThemedSpinnerAdapter$Helper A[IMMUTABLE_TYPE, THIS]), (r3v0 'theme' android.content.res.Resources$Theme A[D('theme' android.content.res.Resources$Theme), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000e \-\> B:19:0x0020, CROSS_EDGE: B:18:0x0013 \-\> B:19:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_20 -> Node_12;
+Node_15 -> Node_16;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+}
+

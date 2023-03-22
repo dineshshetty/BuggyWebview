@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.setupAutoSizeText()Z" {
+subgraph cluster_Region_350203923 {
+label = "R(2:(2:(3:13|(1:15)|17)|9)(1:18)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1418299814 {
+label = "IF [B:3:0x0004, B:5:0x0009] THEN: R(2:(3:13|(1:15)|17)|9) ELSE: R(1:18)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (supportsAutoSizeText() != false) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|ADDED_TO_REGION\l|if (r7.mAutoSizeTextType == 1) goto L5\l}"];
+subgraph cluster_Region_880960448 {
+label = "R(2:(3:13|(1:15)|17)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1528247764 {
+label = "IF [B:7:0x000d, B:9:0x0012] THEN: R(3:13|(1:15)|17) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|if (r7.mHasPresetAutoSizeValues == false) goto L13\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0012|ADDED_TO_REGION\l|if (r7.mAutoSizeTextSizesInPx.length == 0) goto L13\l}"];
+subgraph cluster_Region_123588966 {
+label = "R(3:13|(1:15)|17)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0014|int int r0 = ((int) java.lang.Math.floor((r7.mAutoSizeMaxTextSizeInPx \- r7.mAutoSizeMinTextSizeInPx) \/ r7.mAutoSizeStepGranularityInPx)) + 1\lint[] int[] r2 = new int[r0]\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1512498189 {
+label = "LOOP:0: (1:15)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0026|LOOP_START\lLOOP:0: B:11:0x0026\-\>B:12:0x0028\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v3 'i' int) binds: [B:10:0x0014, B:12:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r0) goto L15\l}"];
+subgraph cluster_Region_922699128 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0028|LOOP_END\lLOOP:0: B:11:0x0026\-\>B:12:0x0028\l|r2[r3] = java.lang.Math.round(r7.mAutoSizeMinTextSizeInPx + (r3 * r7.mAutoSizeStepGranularityInPx))\lr3++\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0039|r7.mAutoSizeTextSizesInPx = cleanupAutoSizePresetSizes(r2)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x003f|r7.mNeedsAutoSizeText = true\l}"];
+}
+subgraph cluster_Region_849430925 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0042|r7.mNeedsAutoSizeText = false\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0047|RETURN\l|return r7.mNeedsAutoSizeText\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000b}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000f}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0045}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0039|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.setupAutoSizeText((r7v0 'this' androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0028 \-\> B:11:0x0026, CROSS_EDGE: B:9:0x0012 \-\> B:14:0x003f, CROSS_EDGE: B:7:0x000d \-\> B:10:0x0014, CROSS_EDGE: B:15:0x0042 \-\> B:16:0x0045, CROSS_EDGE: B:3:0x0004 \-\> B:15:0x0042\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_15[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_15[style=dashed];
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_18[style=dashed];
+Node_12 -> Node_11;
+Node_13 -> Node_14;
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_17 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_16 -> Node_17;
+Node_18 -> Node_13;
+}
+

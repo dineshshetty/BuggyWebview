@@ -1,0 +1,41 @@
+digraph "CFG forkotlin.collections.EmptyList.subList(II)Ljava\/util\/List;" {
+subgraph cluster_Region_1137014040 {
+label = "R(1:(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1662234903 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1352379457 {
+label = "IF [B:10:0x0000, B:11:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|if (r4 == 0) goto L2\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0002|ADDED_TO_REGION\l|if (r5 == 0) goto L3\l}"];
+subgraph cluster_Region_1005095016 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0007|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1399674808 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008}"];
+Node_15 [shape=record,label="{15\:\ 0x0026|throw new java.lang.IndexOutOfBoundsException(\"fromIndex: \" + r4 + \", toIndex: \" + r5)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.util.List kotlin.collections.EmptyList.subList((r3v0 'this' kotlin.collections.EmptyList A[IMMUTABLE_TYPE, THIS]), (r4v0 'fromIndex' int A[D('fromIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'toIndex' int A[D('toIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x0026 \-\> B:9:?, CROSS_EDGE: B:10:0x0000 \-\> B:14:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{java.util.List.subList(int, int):java.util.List\<E\>\}]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

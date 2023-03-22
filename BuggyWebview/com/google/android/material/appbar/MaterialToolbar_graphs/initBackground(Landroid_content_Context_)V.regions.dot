@@ -1,0 +1,52 @@
+digraph "CFG forcom.google.android.material.appbar.MaterialToolbar.initBackground(Landroid\/content\/Context;)V" {
+subgraph cluster_Region_1932085013 {
+label = "R(2:1|(2:(1:5)|(3:7|8|10)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = getBackground()\l}"];
+subgraph cluster_Region_396569610 {
+label = "R(2:(1:5)|(3:7|8|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_330487017 {
+label = "IF [B:16:0x0004, B:18:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|if (r0 != null) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0008|ADDED_TO_REGION\l|if ((r0 instanceof android.graphics.drawable.ColorDrawable) == false) goto L5\l}"];
+subgraph cluster_Region_844942633 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_244364256 {
+label = "R(3:7|8|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|com.google.android.material.shape.MaterialShapeDrawable com.google.android.material.shape.MaterialShapeDrawable r1 = new com.google.android.material.shape.MaterialShapeDrawable()\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0010|int r2 = r0 != null ? ((android.graphics.drawable.ColorDrawable) r0).getColor() : 0\l}"];
+Node_24 [shape=record,label="{24\:\ 0x001b|PHI: r2 \l  PHI: (r2v1 'backgroundColor' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r1.setFillColor(android.content.res.ColorStateList.valueOf(r2))\lr1.initializeElevationOverlay(r5)\lr1.setElevation(androidx.core.view.ViewCompat.getElevation(r4))\landroidx.core.view.ViewCompat.setBackground(r4, r1)\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0006}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0012}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002f}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001a}"];
+MethodNode[shape=record,label="{private void com.google.android.material.appbar.MaterialToolbar.initBackground((r4v0 'this' com.google.android.material.appbar.MaterialToolbar A[IMMUTABLE_TYPE, THIS]), (r5v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x002f \-\> B:14:?, CROSS_EDGE: B:23:0x001a \-\> B:24:0x001b, CROSS_EDGE: B:16:0x0004 \-\> B:20:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_14;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23;
+Node_24 -> Node_25;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_22 -> Node_24;
+Node_25 -> Node_14;
+Node_23 -> Node_24;
+}
+

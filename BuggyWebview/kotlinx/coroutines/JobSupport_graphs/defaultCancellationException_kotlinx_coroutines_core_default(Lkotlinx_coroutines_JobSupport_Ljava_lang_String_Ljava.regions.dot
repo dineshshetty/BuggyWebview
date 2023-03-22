@@ -1,0 +1,77 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.defaultCancellationException$kotlinx_coroutines_core$default(Lkotlinx\/coroutines\/JobSupport;Ljava\/lang\/String;Ljava\/lang\/Throwable;ILjava\/lang\/Object;)Lkotlinx\/coroutines\/JobCancellationException;" {
+subgraph cluster_Region_388827954 {
+label = "R(1:(2:(1:16)|(3:(1:4)|(1:7)|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_466111322 {
+label = "R(2:(1:16)|(3:(1:4)|(1:7)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1696616742 {
+label = "IF [B:19:0x0000] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|if (r6 != null) goto L15\l}"];
+subgraph cluster_Region_1979800156 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0025|throw new java.lang.UnsupportedOperationException(\"Super calls with default arguments not supported in this target, function: defaultCancellationException\")\l}"];
+}
+}
+subgraph cluster_Region_151698229 {
+label = "R(3:(1:4)|(1:7)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1346483157 {
+label = "IF [B:21:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0004|if ((r5 & 1) != 0) goto L4\l}"];
+subgraph cluster_Region_923754906 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0006|r3 = null\l}"];
+}
+}
+subgraph cluster_IfRegion_1268780701 {
+label = "IF [B:24:0x0009] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0009|if ((r5 & 2) != 0) goto L7\l}"];
+subgraph cluster_Region_389007311 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000b|r4 = null\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x001d|RETURN\l|return new kotlinx.coroutines.JobCancellationException(r3 == null ? r2.cancellationExceptionMessage() : r3, r4, r2)\l}"];
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0002}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0007|PHI: r3 \l  PHI: (r3v1 'message' java.lang.String) = (r3v0 'message' java.lang.String), (r3v2 'message' java.lang.String) binds: [B:21:0x0004, B:22:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000c|PHI: r4 \l  PHI: (r4v1 'cause' java.lang.Throwable) = (r4v0 'cause' java.lang.Throwable), (r4v2 'cause' java.lang.Throwable) binds: [B:24:0x0009, B:25:0x000b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000f}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0011}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0017|PHI: r0 \l  PHI: (r0v1 java.lang.String A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0016}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001e}"];
+MethodNode[shape=record,label="{public static \/* synthetic *\/ kotlinx.coroutines.JobCancellationException kotlinx.coroutines.JobSupport.defaultCancellationException$kotlinx_coroutines_core$default((r2v0 kotlinx.coroutines.JobSupport A[D('this' kotlinx.coroutines.JobSupport), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'message' java.lang.String A[D('message' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:29:0x0016 \-\> B:30:0x0017, CROSS_EDGE: B:24:0x0009 \-\> B:26:0x000c, CROSS_EDGE: B:21:0x0004 \-\> B:23:0x0007, CROSS_EDGE: B:33:0x0025 \-\> B:18:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_32;
+Node_33 -> Node_18;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_31 -> Node_18;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_23 -> Node_24;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29;
+Node_28 -> Node_30;
+Node_30 -> Node_31;
+Node_29 -> Node_30;
+Node_32 -> Node_33;
+}
+

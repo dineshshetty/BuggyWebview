@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.concurrent.futures.AbstractResolvableFuture.releaseWaiters()V" {
+subgraph cluster_Region_627478515 {
+label = "R(3:(1:1)|4|(1:6)) | DECL_VAR: androidx.concurrent.futures.AbstractResolvableFuture$Waiter head\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1593425297 {
+label = "LOOP:0: (1:1)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|LOOP_END\lLOOP:0: B:13:0x0000\-\>B:14:0x000a\l|if (androidx.concurrent.futures.AbstractResolvableFuture.ATOMIC_HELPER.casWaiters(r3, r0, androidx.concurrent.futures.AbstractResolvableFuture.Waiter.TOMBSTONE) == false) goto L1\l}"];
+subgraph cluster_Region_1543516992 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|LOOP_START\lLOOP:0: B:13:0x0000\-\>B:14:0x000a\l|androidx.concurrent.futures.AbstractResolvableFuture$Waiter r0 = r3.waiters\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x000c|androidx.concurrent.futures.AbstractResolvableFuture.Waiter r1 = r0\l}"];
+subgraph cluster_LoopRegion_1516887897 {
+label = "LOOP:1: (1:6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000d|LOOP_START\lLOOP:1: B:16:0x000d\-\>B:17:0x000f\lPHI: r1 \l  PHI: (r1v3 'currentWaiter' androidx.concurrent.futures.AbstractResolvableFuture$Waiter) = (r1v2 'currentWaiter' androidx.concurrent.futures.AbstractResolvableFuture$Waiter), (r1v4 'currentWaiter' androidx.concurrent.futures.AbstractResolvableFuture$Waiter) binds: [B:15:0x000c, B:17:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != null) goto L6\l}"];
+subgraph cluster_Region_128871783 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|LOOP_END\lLOOP:1: B:16:0x000d\-\>B:17:0x000f\l|r1.unpark()\landroidx.concurrent.futures.AbstractResolvableFuture$Waiter r1 = r1.next\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0015|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0015}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.concurrent.futures.AbstractResolvableFuture.releaseWaiters((r3v0 'this' androidx.concurrent.futures.AbstractResolvableFuture\<V\> A[D('this' androidx.concurrent.futures.AbstractResolvableFuture\<V\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x000f \-\> B:16:0x000d, BACK_EDGE: B:14:0x000a \-\> B:13:0x0000\lINLINE_NOT_NEEDED\lTYPE_VARS: [V]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_13;
+Node_14 -> Node_20[style=dashed];
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_16;
+Node_11 -> Node_13;
+Node_20 -> Node_15;
+Node_21 -> Node_18;
+Node_18 -> Node_12;
+}
+

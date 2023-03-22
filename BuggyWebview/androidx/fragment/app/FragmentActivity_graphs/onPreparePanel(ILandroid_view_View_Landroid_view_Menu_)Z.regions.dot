@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.fragment.app.FragmentActivity.onPreparePanel(ILandroid\/view\/View;Landroid\/view\/Menu;)Z" {
+subgraph cluster_Region_147775023 {
+label = "R(1:(2:(2:2|3)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2024012068 {
+label = "R(2:(2:2|3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1245667563 {
+label = "IF [B:2:0x0000] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r3 == 0) goto L2\l}"];
+subgraph cluster_Region_1966964300 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|boolean boolean r0 = onPrepareOptionsPanel(r4, r5)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|RETURN\l|return r0 \| r2.mFragments.dispatchPrepareOptionsMenu(r5)\l}"];
+}
+}
+subgraph cluster_Region_2141009966 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|boolean boolean r0 = super.onPreparePanel(r3, r4, r5)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.fragment.app.FragmentActivity.onPreparePanel((r2v0 'this' androidx.fragment.app.FragmentActivity A[IMMUTABLE_TYPE, THIS]), (r3v0 'featureId' int A[D('featureId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'menu' android.view.Menu A[D('menu' android.view.Menu), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lMETHOD_OVERRIDE: [ClspMth\{android.app.Activity.onPreparePanel(int, android.view.View, android.view.Menu):boolean\}, ClspMth\{android.view.Window.Callback.onPreparePanel(int, android.view.View, android.view.Menu):boolean\}]\lCROSS_EDGE: B:6:0x0012 \-\> B:1:?\lTYPE_VARS: EMPTY\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+}
+

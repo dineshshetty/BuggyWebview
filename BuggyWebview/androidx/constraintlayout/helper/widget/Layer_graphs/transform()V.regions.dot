@@ -1,0 +1,102 @@
+digraph "CFG forandroidx.constraintlayout.helper.widget.Layer.transform()V" {
+subgraph cluster_Region_1531837021 {
+label = "R(1:(2:(1:3)|(5:(1:7)|8|9|11|(3:14|(1:16)(0)|18))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1612435337 {
+label = "R(2:(1:3)|(5:(1:7)|8|9|11|(3:14|(1:16)(0)|18)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1739509318 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r18.mContainer == null) goto L3\l}"];
+subgraph cluster_Region_1316268565 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1973130699 {
+label = "R(5:(1:7)|8|9|11|(3:14|(1:16)(0)|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2053058196 {
+label = "IF [B:6:0x0009] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|if (r18.mViews == null) goto L7\l}"];
+subgraph cluster_Region_1141297617 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000b|reCacheViews()\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x000e|calcCenters()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0017|double r1 = java.lang.Float.isNaN(r18.mGroupRotateAngle) ? 0.0d : java.lang.Math.toRadians(r18.mGroupRotateAngle)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0023|PHI: r1 \l  PHI: (r1v7 'rad' double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float float r3 = (float) java.lang.Math.sin(r1)\lfloat float r4 = (float) java.lang.Math.cos(r1)\lfloat float r5 = r18.mScaleX\lfloat float r6 = r5 * r4\lfloat float r7 = r18.mScaleY\lfloat float r8 = (\-r7) * r3\lfloat float r5 = r5 * r3\lfloat float r7 = r7 * r4\lint r9 = 0\l}"];
+subgraph cluster_LoopRegion_2121755942 {
+label = "LOOP:0: (3:14|(1:16)(0)|18)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003d|if (r9 \< r18.mCount) goto L14\l}"];
+subgraph cluster_Region_1370506133 {
+label = "R(3:14|(1:16)(0)|18)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x003f|android.view.View r10 = r18.mViews[r9]\lint int r11 = (r10.getLeft() + r10.getRight()) \/ 2\lint int r12 = (r10.getTop() + r10.getBottom()) \/ 2\lfloat float r13 = r11 \- r18.mComputedCenterX\lfloat float r14 = r12 \- r18.mComputedCenterY\ldouble r16 = r1\lfloat float r15 = (((r6 * r13) + (r8 * r14)) \- r13) + r18.mShiftX\lfloat float r1 = (((r5 * r13) + (r7 * r14)) \- r14) + r18.mShiftY\lr10.setTranslationX(r15)\lr10.setTranslationY(r1)\lr10.setScaleY(r18.mScaleY)\lr10.setScaleX(r18.mScaleX)\l}"];
+subgraph cluster_IfRegion_1439427561 {
+label = "IF [B:16:0x008c] THEN: R(1:16) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x008c|if (java.lang.Float.isNaN(r18.mGroupRotateAngle) == false) goto L16\l}"];
+subgraph cluster_Region_670641322 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x008e|r10.setRotation(r18.mGroupRotateAngle)\l}"];
+}
+subgraph cluster_Region_1040504647 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0093|LOOP_END\lLOOP:0: B:13:0x003b\-\>B:18:0x0093\l|r9++\lr1 = r16\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0019}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003b|LOOP_START\lLOOP:0: B:13:0x003b\-\>B:18:0x0093\lPHI: r1 r9 \l  PHI: (r1v8 'rad' double) = (r1v7 'rad' double), (r1v14 'rad' double) binds: [B:12:0x0023, B:18:0x0093] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r9v1 'i' int) = (r9v0 'i' int), (r9v2 'i' int) binds: [B:12:0x0023, B:18:0x0093] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0093|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0093|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0098|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0098}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001c}"];
+MethodNode[shape=record,label="{private void androidx.constraintlayout.helper.widget.Layer.transform((r18v0 'this' androidx.constraintlayout.helper.widget.Layer A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:18:0x0093 \-\> B:13:0x003b, CROSS_EDGE: B:16:0x008c \-\> B:18:0x0093, CROSS_EDGE: B:19:0x0098 \-\> B:1:?, CROSS_EDGE: B:11:0x001c \-\> B:12:0x0023, CROSS_EDGE: B:6:0x0009 \-\> B:8:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_22[style=dashed];
+Node_17 -> Node_21;
+Node_18 -> Node_13;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_10 -> Node_12;
+Node_13 -> Node_14;
+Node_21 -> Node_18;
+Node_22 -> Node_18;
+Node_20 -> Node_19;
+Node_19 -> Node_1;
+Node_11 -> Node_12;
+}
+

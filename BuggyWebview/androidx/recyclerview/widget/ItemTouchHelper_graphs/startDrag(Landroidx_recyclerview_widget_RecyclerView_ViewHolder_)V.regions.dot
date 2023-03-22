@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.recyclerview.widget.ItemTouchHelper.startDrag(Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;)V" {
+subgraph cluster_Region_1497263981 {
+label = "R(1:(1:3)(1:(1:8)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1965030301 {
+label = "IF [B:3:0x000a] THEN: R(1:3) ELSE: R(1:(1:8)(1:10))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r3.mCallback.hasDragFlag(r3.mRecyclerView, r4) == false) goto L3\l}"];
+subgraph cluster_Region_490798830 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|android.util.Log.e(androidx.recyclerview.widget.ItemTouchHelper.TAG, \"Start drag has been called but dragging is not enabled\")\l}"];
+}
+subgraph cluster_Region_96525126 {
+label = "R(1:(1:8)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_791648660 {
+label = "IF [B:7:0x001a] THEN: R(1:8) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|if (r4.itemView.getParent() != r3.mRecyclerView) goto L8\l}"];
+subgraph cluster_Region_635854079 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|android.util.Log.e(androidx.recyclerview.widget.ItemTouchHelper.TAG, \"Start drag has been called with a view holder which is not a child of the RecyclerView which is controlled by this ItemTouchHelper.\")\l}"];
+}
+subgraph cluster_Region_1070297379 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0022|obtainVelocityTracker()\lr3.mDy = 0.0f\lr3.mDx = 0.0f\lselect(r4, 2)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0021}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002e}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.ItemTouchHelper.startDrag((r3v0 'this' androidx.recyclerview.widget.ItemTouchHelper A[IMMUTABLE_TYPE, THIS]), (r4v0 'viewHolder' androidx.recyclerview.widget.RecyclerView$ViewHolder A[D('viewHolder' androidx.recyclerview.widget.RecyclerView$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0021 \-\> B:1:?, CROSS_EDGE: B:11:0x002e \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_9 -> Node_1;
+Node_11 -> Node_1;
+}
+

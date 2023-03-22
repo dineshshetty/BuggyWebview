@@ -1,0 +1,99 @@
+digraph "CFG forandroidx.dynamicanimation.animation.SpringAnimation.updateValueAndVelocity(J)Z" {
+subgraph cluster_Region_1654186893 {
+label = "R(1:(2:(4:3|(1:5)|6|7)|(3:(1:17)(1:11)|12|(2:(2:14|15)|(1:16)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1810752981 {
+label = "R(2:(4:3|(1:5)|6|7)|(3:(1:17)(1:11)|12|(2:(2:14|15)|(1:16))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_482609543 {
+label = "IF [B:22:0x000a] THEN: R(4:3|(1:5)|6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000a|if (r19.mEndRequested != false) goto L3\l}"];
+subgraph cluster_Region_1212149621 {
+label = "R(4:3|(1:5)|6|7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000c|float float r1 = r19.mPendingPosition\l}"];
+subgraph cluster_IfRegion_267998993 {
+label = "IF [B:24:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0010|if (r1 != Float.MAX_VALUE) goto L5\l}"];
+subgraph cluster_Region_915194897 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0012|r19.mSpring.setFinalPosition(r1)\lr19.mPendingPosition = Float.MAX_VALUE\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0019|r19.mValue = r19.mSpring.getFinalPosition()\lr19.mVelocity = 0.0f\lr19.mEndRequested = false\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0025|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_608140097 {
+label = "R(3:(1:17)(1:11)|12|(2:(2:14|15)|(1:16)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_27156672 {
+label = "IF [B:29:0x002a] THEN: R(1:17) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002a|if (r19.mPendingPosition == Float.MAX_VALUE) goto L17\l}"];
+subgraph cluster_Region_1937331873 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0064|androidx.dynamicanimation.animation.DynamicAnimation$MassState androidx.dynamicanimation.animation.DynamicAnimation.MassState r1 = r19.mSpring.updateValues(r19.mValue, r19.mVelocity, r20)\lr19.mValue = r1.mValue\lr19.mVelocity = r1.mVelocity\l}"];
+}
+subgraph cluster_Region_229092357 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002c|r19.mSpring.getFinalPosition()\landroidx.dynamicanimation.animation.DynamicAnimation$MassState androidx.dynamicanimation.animation.DynamicAnimation.MassState r1 = r19.mSpring.updateValues(r19.mValue, r19.mVelocity, r20 \/ 2)\lr19.mSpring.setFinalPosition(r19.mPendingPosition)\lr19.mPendingPosition = Float.MAX_VALUE\landroidx.dynamicanimation.animation.DynamicAnimation$MassState androidx.dynamicanimation.animation.DynamicAnimation.MassState r1 = r19.mSpring.updateValues(r1.mValue, r1.mVelocity, r20 \/ 2)\lr19.mValue = r1.mValue\lr19.mVelocity = r1.mVelocity\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x007a|r19.mValue = java.lang.Math.max(r19.mValue, r19.mMinValue)\lr19.mValue = java.lang.Math.min(r19.mValue, r19.mMaxValue)\l}"];
+subgraph cluster_Region_89783915 {
+label = "R(2:(2:14|15)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_963467126 {
+label = "IF [B:33:0x0096] THEN: R(2:14|15) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0096|if (isAtEquilibrium(r19.mValue, r19.mVelocity) != false) goto L14\l}"];
+subgraph cluster_Region_1725417065 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0098|r19.mValue = r19.mSpring.getFinalPosition()\lr19.mVelocity = 0.0f\l}"];
+Node_35 [shape=record,label="{35\:\ 0x00a3|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_339554835 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x00a4|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0026}"];
+MethodNode[shape=record,label="{boolean androidx.dynamicanimation.animation.SpringAnimation.updateValueAndVelocity((r19v0 'this' androidx.dynamicanimation.animation.SpringAnimation A[IMMUTABLE_TYPE, THIS]), (r20v0 'deltaT' long A[D('deltaT' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0010 \-\> B:26:0x0019, CROSS_EDGE: B:35:0x00a3 \-\> B:20:?, CROSS_EDGE: B:37:0x00a5 \-\> B:20:?, CROSS_EDGE: B:31:0x0064 \-\> B:32:0x007a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.dynamicanimation.animation.DynamicAnimation.updateValueAndVelocity(long):boolean]\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_20;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_31;
+Node_31 -> Node_32;
+Node_30 -> Node_32;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_36[style=dashed];
+Node_34 -> Node_35;
+Node_35 -> Node_20;
+Node_36 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_28 -> Node_29;
+}
+

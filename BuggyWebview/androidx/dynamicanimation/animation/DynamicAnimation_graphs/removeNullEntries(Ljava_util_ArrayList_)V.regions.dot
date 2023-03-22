@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.dynamicanimation.animation.DynamicAnimation.removeNullEntries(Ljava\/util\/ArrayList;)V" {
+subgraph cluster_Region_722499737 {
+label = "R(2:1|(2:(1:5)(0)|7))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = r2.size() \- 1\l}"];
+subgraph cluster_LoopRegion_1187039190 {
+label = "LOOP:0: (2:(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|LOOP_START\lLOOP:0: B:15:0x0006\-\>B:19:0x0011\lPHI: r0 \l  PHI: (r0v2 'i' int) = (r0v1 'i' int), (r0v3 'i' int) binds: [B:14:0x0000, B:19:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_2028671493 {
+label = "R(2:(1:5)(0)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_880220765 {
+label = "IF [B:17:0x000c] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|if (r2.get(r0) == null) goto L5\l}"];
+subgraph cluster_Region_478902522 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|r2.remove(r0)\l}"];
+}
+subgraph cluster_Region_116873136 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0011|LOOP_END\lLOOP:0: B:15:0x0006\-\>B:19:0x0011\l|r0\-\-\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0008}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0011|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0011|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0014|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0014}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static void androidx.dynamicanimation.animation.DynamicAnimation.removeNullEntries((r2v0 'list' java.util.ArrayList\<T extends androidx.dynamicanimation.animation.DynamicAnimation\<T\>\> A[D('list' java.util.ArrayList\<T extends androidx.dynamicanimation.animation.DynamicAnimation\<T\>\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0011 \-\> B:15:0x0006, CROSS_EDGE: B:17:0x000c \-\> B:19:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends androidx.dynamicanimation.animation.DynamicAnimation\<T\>, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/ArrayList\<TT;\>;)V\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_22;
+Node_19 -> Node_15;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_22 -> Node_19;
+Node_23 -> Node_19;
+Node_21 -> Node_20;
+Node_20 -> Node_13;
+}
+

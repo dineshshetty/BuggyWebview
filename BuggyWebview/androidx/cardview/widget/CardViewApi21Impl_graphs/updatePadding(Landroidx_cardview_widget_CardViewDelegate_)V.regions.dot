@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.cardview.widget.CardViewApi21Impl.updatePadding(Landroidx\/cardview\/widget\/CardViewDelegate;)V" {
+subgraph cluster_Region_1159808727 {
+label = "R(1:(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_807971168 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_640132400 {
+label = "IF [B:11:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (r6.getUseCompatPadding() == false) goto L3\l}"];
+subgraph cluster_Region_999192423 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|r6.setShadowPadding(0, 0, 0, 0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1494312256 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000b|float float r0 = getMaxElevation(r6)\lfloat float r1 = getRadius(r6)\lint int r2 = (int) java.lang.Math.ceil(androidx.cardview.widget.RoundRectDrawableWithShadow.calculateHorizontalPadding(r0, r1, r6.getPreventCornerOverlap()))\lint int r3 = (int) java.lang.Math.ceil(androidx.cardview.widget.RoundRectDrawableWithShadow.calculateVerticalPadding(r0, r1, r6.getPreventCornerOverlap()))\lr6.setShadowPadding(r2, r3, r2, r3)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0034}"];
+MethodNode[shape=record,label="{public void androidx.cardview.widget.CardViewApi21Impl.updatePadding((r5v0 'this' androidx.cardview.widget.CardViewApi21Impl A[IMMUTABLE_TYPE, THIS]), (r6v0 'cardView' androidx.cardview.widget.CardViewDelegate A[D('cardView' androidx.cardview.widget.CardViewDelegate), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0034 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.cardview.widget.CardViewImpl.updatePadding(androidx.cardview.widget.CardViewDelegate):void]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+}
+

@@ -1,0 +1,82 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.makeCompleting$kotlinx_coroutines_core(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_700948357 {
+label = "R(3:(2:2|(2:(1:15)|(1:(2:(1:13)|(1:6)))))|9|10) | DECL_VAR: java.lang.Object finalState, kotlinx.coroutines.internal.Symbol null, kotlinx.coroutines.internal.Symbol null\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_320298146 {
+label = "LOOP:0: (2:2|(2:(1:15)|(1:(2:(1:13)|(1:6)))))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001f|LOOP_END\lLOOP:0: B:21:0x0002\-\>B:29:0x001f\l|if (r4 == r5) goto L2\l}"];
+subgraph cluster_Region_1389431807 {
+label = "R(2:2|(2:(1:15)|(1:(2:(1:13)|(1:6)))))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0002|LOOP_START\lLOOP:0: B:21:0x0002\-\>B:29:0x001f\l|java.lang.Object java.lang.Object r2 = getState$kotlinx_coroutines_core()\ljava.lang.Object r4 = tryMakeCompleting(r2, r8)\lkotlinx.coroutines.internal.Symbol r5 = kotlinx.coroutines.JobSupportKt.COMPLETING_ALREADY\l}"];
+subgraph cluster_Region_768499162 {
+label = "R(2:(1:15)|(1:(2:(1:13)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_445424460 {
+label = "IF [B:22:0x0011] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|if (r4 == r5) goto L14\l}"];
+subgraph cluster_Region_109625742 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0013|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_57571454 {
+label = "R(1:(2:(1:13)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1896964965 {
+label = "R(2:(1:13)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1930685675 {
+label = "IF [B:26:0x0018] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0018|if (r4 == kotlinx.coroutines.JobSupportKt.COMPLETING_WAITING_CHILDREN) goto L12\l}"];
+subgraph cluster_Region_787402768 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001a|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_10232915 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001b|kotlinx.coroutines.internal.Symbol r5 = kotlinx.coroutines.JobSupportKt.COMPLETING_RETRY\l}"];
+}
+}
+}
+}
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0022|afterCompletion(r4)\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0025|RETURN\l|return true\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0015}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0022|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x001a|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0013|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.JobSupport.makeCompleting$kotlinx_coroutines_core((r7v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]), (r8v0 'proposedUpdate' java.lang.Object A[D('proposedUpdate' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x001a \-\> B:19:?, CROSS_EDGE: B:32:0x0025 \-\> B:19:?, BACK_EDGE: B:29:0x001f \-\> B:21:0x0002\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_29 -> Node_21;
+Node_29 -> Node_35[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_25[style=dashed];
+Node_22 -> Node_33;
+Node_23 -> Node_19;
+Node_26 -> Node_28[style=dashed];
+Node_26 -> Node_34;
+Node_27 -> Node_19;
+Node_28 -> Node_29;
+Node_31 -> Node_32;
+Node_32 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_25 -> Node_26;
+Node_35 -> Node_31;
+Node_34 -> Node_27;
+Node_33 -> Node_23;
+}
+

@@ -1,0 +1,43 @@
+digraph "CFG forcom.google.android.material.divider.MaterialDividerItemDecoration.setOrientation(I)V" {
+subgraph cluster_Region_1316062657 {
+label = "R(1:(2:(2:4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2066732193 {
+label = "R(2:(2:4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1246879024 {
+label = "IF [B:2:0x0000, B:4:0x0003] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r4 != 0) goto L2\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0003|ADDED_TO_REGION\l|if (r4 != 1) goto L4\l}"];
+subgraph cluster_Region_1607156133 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0006}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|throw new java.lang.IllegalArgumentException(\"Invalid orientation: \" + r4 + \". It should be either HORIZONTAL or VERTICAL\")\l}"];
+}
+}
+subgraph cluster_Region_492210192 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|r3.orientation = r4\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0002}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0024}"];
+MethodNode[shape=record,label="{public void com.google.android.material.divider.MaterialDividerItemDecoration.setOrientation((r3v0 'this' com.google.android.material.divider.MaterialDividerItemDecoration A[IMMUTABLE_TYPE, THIS]), (r4v0 'orientation' int A[D('orientation' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0024 \-\> B:1:?, CROSS_EDGE: B:2:0x0000 \-\> B:8:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_4 -> Node_6;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_9 -> Node_1;
+}
+

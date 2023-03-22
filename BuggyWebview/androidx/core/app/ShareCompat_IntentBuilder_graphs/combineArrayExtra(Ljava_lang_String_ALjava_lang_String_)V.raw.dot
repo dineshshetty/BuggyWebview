@@ -1,0 +1,27 @@
+digraph "CFG forandroidx.core.app.ShareCompat.IntentBuilder.combineArrayExtra(Ljava\/lang\/String;[Ljava\/lang\/String;)V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: INVOKE  (r0 I:android.content.Intent) = (r6 I:androidx.core.app.ShareCompat$IntentBuilder) type: VIRTUAL call: androidx.core.app.ShareCompat.IntentBuilder.getIntent():android.content.Intent A[MD:():android.content.Intent (m)] (LINE:411)\l0x0004: INVOKE  (r1 I:java.lang.String[]) = \l  (r0 I:android.content.Intent A[D('intent' android.content.Intent)])\l  (r7 I:java.lang.String A[D('extra' java.lang.String)])\l type: VIRTUAL call: android.content.Intent.getStringArrayExtra(java.lang.String):java.lang.String[] A[MD:(java.lang.String):java.lang.String[] (c)] (LINE:412)\l0x0008: CONST  (r2 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:413)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|0x0009: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('old' java.lang.String[])]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x000d \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|0x000b: ARRAY_LENGTH  (r3 I:int) = (r1 I:??[] A[D('old' java.lang.String[])]) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|0x000e: ARRAY_LENGTH  (r4 I:int) = (r8 I:??[] A[D('add' java.lang.String[])])  (LINE:414)\l0x000f: ARITH  (r4 I:int) = (r4 I:int) + (r3 I:int A[D('oldLength' int)]) \l0x0010: NEW_ARRAY  (r4 I:java.lang.String[]) = (r4 I:int A[IMMUTABLE_TYPE]) type: java.lang.String[] \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0012|0x0012: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('old' java.lang.String[])]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0017  (LINE:415)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0014|0x0014: INVOKE  \l  (r1 I:java.lang.Object A[D('old' java.lang.String[])])\l  (r2 I:int)\l  (r4 I:java.lang.Object A[D('result' java.lang.String[])])\l  (r2 I:int)\l  (r3 I:int A[D('oldLength' int)])\l type: STATIC call: java.lang.System.arraycopy(java.lang.Object, int, java.lang.Object, int, int):void A[MD:(java.lang.Object, int, java.lang.Object, int, int):void (c)]\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0017|0x0017: ARRAY_LENGTH  (r5 I:int) = (r8 I:??[] A[D('add' java.lang.String[])])  (LINE:416)\l0x0018: INVOKE  \l  (r8 I:java.lang.Object A[D('add' java.lang.String[])])\l  (r2 I:int)\l  (r4 I:java.lang.Object A[D('result' java.lang.String[])])\l  (r3 I:int A[D('oldLength' int)])\l  (r5 I:int)\l type: STATIC call: java.lang.System.arraycopy(java.lang.Object, int, java.lang.Object, int, int):void A[MD:(java.lang.Object, int, java.lang.Object, int, int):void (c)]\l0x001b: INVOKE  \l  (r0 I:android.content.Intent A[D('intent' android.content.Intent)])\l  (r7 I:java.lang.String A[D('extra' java.lang.String)])\l  (r4 I:java.lang.String[] A[D('result' java.lang.String[])])\l type: VIRTUAL call: android.content.Intent.putExtra(java.lang.String, java.lang.String[]):android.content.Intent A[MD:(java.lang.String, java.lang.String[]):android.content.Intent (c)] (LINE:417)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001e|RETURN\l|0x001e: RETURN    (LINE:418)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|0x000d: CONST  (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+MethodNode[shape=record,label="{private void androidx.core.app.ShareCompat.IntentBuilder.combineArrayExtra((r6 'this' I:androidx.core.app.ShareCompat$IntentBuilder A[IMMUTABLE_TYPE, THIS]), (r7 I:java.lang.String A[D('extra' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8 I:java.lang.String[] A[D('add' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0012 \-\> B:9:0x0017, CROSS_EDGE: B:5:0x000d \-\> B:6:0x000e\lDebug Info:\l  0x0004\-0x001e: r0 'intent' Landroid\/content\/Intent;\l  0x0008\-0x001e: r1 'old' [Ljava\/lang\/String;\l  0x000e\-0x001e: r3 'oldLength' I\l  0x0012\-0x001e: r4 'result' [Ljava\/lang\/String;\l  \-1 \-0x001e: r7 'extra' Ljava\/lang\/String;\l  \-1 \-0x001e: r8 'add' [Ljava\/lang\/String;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_5 -> Node_6;
+}
+

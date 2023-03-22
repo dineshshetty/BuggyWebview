@@ -1,0 +1,56 @@
+digraph "CFG forandroidx.constraintlayout.utils.widget.MockView.onDraw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_879185125 {
+label = "R(4:1|(1:3)|4|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|super.onDraw(r15)\lint int r0 = getWidth()\lint int r1 = getHeight()\l}"];
+subgraph cluster_IfRegion_1131401720 {
+label = "IF [B:16:0x000d] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000d|if (r14.mDrawDiagonals != false) goto L3\l}"];
+subgraph cluster_Region_1855099960 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|r0\-\-\lr1\-\-\lr15.drawLine(0.0f, 0.0f, r0, r1, r14.mPaintDiagonals)\lr15.drawLine(0.0f, r1, r0, 0.0f, r14.mPaintDiagonals)\lr15.drawLine(0.0f, 0.0f, r0, 0.0f, r14.mPaintDiagonals)\lr15.drawLine(r0, 0.0f, r0, r1, r14.mPaintDiagonals)\lr15.drawLine(r0, r1, 0.0f, r1, r14.mPaintDiagonals)\lr15.drawLine(0.0f, r1, 0.0f, 0.0f, r14.mPaintDiagonals)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0049|PHI: r0 r1 \l  PHI: (r0v1 'w' int) = (r0v0 'w' int), (r0v2 'w' int) binds: [B:16:0x000d, B:17:0x000f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'h' int) = (r1v0 'h' int), (r1v2 'h' int) binds: [B:16:0x000d, B:17:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.String java.lang.String r2 = r14.mText\l}"];
+subgraph cluster_Region_757031057 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1138706920 {
+label = "IF [B:19:0x004b, B:21:0x004f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x004b|if (r2 != null) goto L6\l}"];
+Node_21 [shape=record,label="{21\:\ 0x004f|ADDED_TO_REGION\l|if (r14.mDrawLabel != false) goto L8\l}"];
+subgraph cluster_Region_411118791 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0051|r14.mPaintText.getTextBounds(r2, 0, r2.length(), r14.mTextBounds)\lfloat float r2 = (r0 \- r14.mTextBounds.width()) \/ 2.0f\lfloat float r4 = ((r1 \- r14.mTextBounds.height()) \/ 2.0f) + r14.mTextBounds.height()\lr14.mTextBounds.offset((int) r2, (int) r4)\landroid.graphics.Rect android.graphics.Rect r3 = r14.mTextBounds\lr3.set(r3.left \- r14.mMargin, r14.mTextBounds.top \- r14.mMargin, r14.mTextBounds.right + r14.mMargin, r14.mTextBounds.bottom + r14.mMargin)\lr15.drawRect(r14.mTextBounds, r14.mPaintTextBackground)\lr15.drawText(r14.mText, r2, r4, r14.mPaintText)\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x004d}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x00af|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.utils.widget.MockView.onDraw((r14v0 'this' androidx.constraintlayout.utils.widget.MockView A[IMMUTABLE_TYPE, THIS]), (r15v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:21:0x004f \-\> B:23:0x00af, CROSS_EDGE: B:19:0x004b \-\> B:23:0x00af, CROSS_EDGE: B:16:0x000d \-\> B:18:0x0049\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [canvas]\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onDraw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_24[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_23;
+Node_13 -> Node_15;
+Node_20 -> Node_21;
+Node_23 -> Node_14;
+Node_25 -> Node_14;
+Node_24 -> Node_14;
+}
+

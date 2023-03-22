@@ -1,0 +1,61 @@
+digraph "CFG forcom.google.android.material.badge.BadgeUtils.detachBadgeDrawable(Lcom\/google\/android\/material\/badge\/BadgeDrawable;Landroidx\/appcompat\/widget\/Toolbar;I)V" {
+subgraph cluster_Region_962014174 {
+label = "R(1:(2:(1:2)|(2:4|(2:(2:6|7)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_793035034 {
+label = "R(2:(1:2)|(2:4|(2:(2:6|7)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_667112499 {
+label = "IF [B:12:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r3 == null) goto L2\l}"];
+subgraph cluster_Region_1958639456 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1340995259 {
+label = "R(2:4|(2:(2:6|7)|(1:8)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0003|androidx.appcompat.view.menu.ActionMenuItemView androidx.appcompat.view.menu.ActionMenuItemView r0 = com.google.android.material.internal.ToolbarUtils.getActionMenuItemView(r4, r5)\l}"];
+subgraph cluster_Region_1949805554 {
+label = "R(2:(2:6|7)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1226304580 {
+label = "IF [B:15:0x0007] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0007|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_1384927536 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|removeToolbarOffset(r3)\ldetachBadgeDrawable(r3, r0)\ldetachBadgeContentDescription(r0)\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2104682623 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|android.util.Log.w(com.google.android.material.badge.BadgeUtils.LOG_TAG, \"Trying to remove badge from a null menuItemView: \" + r5)\l}"];
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0029|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static void com.google.android.material.badge.BadgeUtils.detachBadgeDrawable((r3v0 'badgeDrawable' com.google.android.material.badge.BadgeDrawable A[D('badgeDrawable' com.google.android.material.badge.BadgeDrawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'toolbar' androidx.appcompat.widget.Toolbar A[D('toolbar' androidx.appcompat.widget.Toolbar), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'menuItemId' int A[D('menuItemId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0029 \-\> B:11:?, CROSS_EDGE: B:17:0x0013 \-\> B:18:0x0029\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_19;
+Node_19 -> Node_11;
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_18 -> Node_11;
+}
+

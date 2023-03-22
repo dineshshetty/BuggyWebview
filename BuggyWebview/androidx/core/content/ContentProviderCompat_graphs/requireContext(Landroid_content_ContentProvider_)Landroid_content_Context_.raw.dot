@@ -1,0 +1,18 @@
+digraph "CFG forandroidx.core.content.ContentProviderCompat.requireContext(Landroid\/content\/ContentProvider;)Landroid\/content\/Context;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: INVOKE  (r0 I:android.content.Context) = (r3 I:android.content.ContentProvider A[D('provider' android.content.ContentProvider)]) type: VIRTUAL call: android.content.ContentProvider.getContext():android.content.Context A[MD:():android.content.Context (c)] (LINE:45)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0004|0x0004: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('ctx' android.content.Context)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0007  (LINE:46)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|0x0006: RETURN  (r0 I:android.content.Context A[D('ctx' android.content.Context)])  (LINE:49)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0007|0x0007: NEW_INSTANCE  (r1 I:java.lang.IllegalStateException) =  java.lang.IllegalStateException  (LINE:47)\l0x0009: CONST_STR  (r2 I:java.lang.String) =  \"Cannot find context from the provider.\" \l0x000b: INVOKE  (r1 I:java.lang.IllegalStateException), (r2 I:java.lang.String) type: DIRECT call: java.lang.IllegalStateException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|0x000e: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static android.content.Context androidx.core.content.ContentProviderCompat.requireContext((r3 I:android.content.ContentProvider A[D('provider' android.content.ContentProvider), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x000e \-\> B:1:?\lDebug Info:\l  0x0004\-0x000e: r0 'ctx' Landroid\/content\/Context;\l  \-1 \-0x000e: r3 'provider' Landroid\/content\/ContentProvider;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+}
+

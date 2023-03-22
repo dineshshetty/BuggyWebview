@@ -1,0 +1,70 @@
+digraph "CFG forandroidx.core.app.RemoteInput.getResultsSource(Landroid\/content\/Intent;)I" {
+subgraph cluster_Region_1974166430 {
+label = "R(1:(2:(1:4)|(1:(2:(1:10)|(1:12))))) | DECL_VAR: android.content.Intent clipDataIntent\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1532387028 {
+label = "R(2:(1:4)|(1:(2:(1:10)|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1114575222 {
+label = "IF [B:17:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L3\l}"];
+subgraph cluster_Region_271903854 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|RETURN\l|return androidx.core.app.RemoteInput.Api28Impl.getResultsSource(r4)\l}"];
+}
+}
+subgraph cluster_Region_1043192421 {
+label = "R(1:(2:(1:10)|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1466205066 {
+label = "R(2:(1:10)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1840962737 {
+label = "IF [B:21:0x0010, B:23:0x0016] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|if (android.os.Build.VERSION.SDK_INT \< 16) goto L13\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0016|ADDED_TO_REGION\l|if ((r0 = getClipDataIntentFromIntent(r4)) == null) goto L10\l}"];
+subgraph cluster_Region_1524239092 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_175381816 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0023|RETURN\l|return r0.getExtras().getInt(androidx.core.app.RemoteInput.EXTRA_RESULTS_SOURCE, 0)\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000b}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0012}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0019}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0024|RETURN\lADDED_TO_REGION\l|return 0\l}"];
+MethodNode[shape=record,label="{public static int androidx.core.app.RemoteInput.getResultsSource((r4v0 'intent' android.content.Intent A[D('intent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0018 \-\> B:15:?, CROSS_EDGE: B:26:0x0023 \-\> B:15:?, CROSS_EDGE: B:27:0x0024 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_19 -> Node_15;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_27;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_15;
+Node_26 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_25 -> Node_26;
+Node_27 -> Node_15;
+}
+

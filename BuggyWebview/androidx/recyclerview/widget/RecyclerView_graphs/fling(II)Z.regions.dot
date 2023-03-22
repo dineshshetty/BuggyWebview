@@ -1,0 +1,179 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.fling(II)Z" {
+subgraph cluster_Region_1713973756 {
+label = "R(2:1|(2:3|4)(1:(1:8)(5:9|10|13|(3:22|25|(2:(1:29)|(1:(5:31|(1:33)|(1:35)|36|37))))|39)))";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0000|androidx.recyclerview.widget.RecyclerView$LayoutManager androidx.recyclerview.widget.RecyclerView.LayoutManager r0 = r7.mLayout\l}"];
+subgraph cluster_IfRegion_414206866 {
+label = "IF [B:46:0x0003] THEN: R(2:3|4) ELSE: R(1:(1:8)(5:9|10|13|(3:22|25|(2:(1:29)|(1:(5:31|(1:33)|(1:35)|36|37))))|39))";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0003|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_205755247 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ 0x0005|android.util.Log.e(androidx.recyclerview.widget.RecyclerView.TAG, \"Cannot fling without a LayoutManager set. Call setLayoutManager with a non\-null argument.\")\l}"];
+Node_48 [shape=record,label="{48\:\ 0x000c|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_645175063 {
+label = "R(1:(1:8)(5:9|10|13|(3:22|25|(2:(1:29)|(1:(5:31|(1:33)|(1:35)|36|37))))|39)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_305658153 {
+label = "IF [B:50:0x000f] THEN: R(1:8) ELSE: R(5:9|10|13|(3:22|25|(2:(1:29)|(1:(5:31|(1:33)|(1:35)|36|37))))|39) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x000f|if (r7.mLayoutSuppressed == true) goto L8\l}"];
+subgraph cluster_Region_441429285 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_51 [shape=record,label="{51\:\ 0x0011|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1879560834 {
+label = "R(5:9|10|13|(3:22|25|(2:(1:29)|(1:(5:31|(1:33)|(1:35)|36|37))))|39)";
+node [shape=record,color=blue];
+Node_52 [shape=record,label="{52\:\ 0x0012|boolean boolean r0 = r0.canScrollHorizontally()\lboolean boolean r2 = r7.mLayout.canScrollVertically()\l}"];
+Node_53 [shape=record,label="{53\:\ 0x001c|r8 = (!r0 \|\| java.lang.Math.abs(r8) \< r7.mMinFlingVelocity) ? 0 : 0\l}"];
+Node_57 [shape=record,label="{57\:\ 0x0027|PHI: r8 \l  PHI: (r8v2 'velocityX' int) = (r8v0 'velocityX' int) binds: [B:55:0x0024] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r9 = (!r2 \|\| java.lang.Math.abs(r9) \< r7.mMinFlingVelocity) ? 0 : 0\l}"];
+subgraph cluster_IfRegion_176655848 {
+label = "IF [B:61:0x0032, B:62:0x0034, B:65:0x003d] THEN: R(3:22|25|(2:(1:29)|(1:(5:31|(1:33)|(1:35)|36|37)))) ELSE: null";
+node [shape=record,color=blue];
+Node_61 [shape=record,label="{61\:\ 0x0032|PHI: r9 \l  PHI: (r9v2 'velocityY' int) = (r9v0 'velocityY' int) binds: [B:59:0x002f] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (r8 != 0) goto L19\l}"];
+Node_62 [shape=record,label="{62\:\ 0x0034|ADDED_TO_REGION\l|if (r9 != 0) goto L19\l}"];
+Node_65 [shape=record,label="{65\:\ 0x003d|ADDED_TO_REGION\l|if (dispatchNestedPreFling(r8, r9) == false) goto L21\l}"];
+subgraph cluster_Region_1717859189 {
+label = "R(3:22|25|(2:(1:29)|(1:(5:31|(1:33)|(1:35)|36|37))))";
+node [shape=record,color=blue];
+Node_67 [shape=record,label="{67\:\ 0x0040|boolean r4 = r0 \|\| r2\l}"];
+Node_72 [shape=record,label="{72\:\ 0x0048|PHI: r4 \l  PHI: (r4v2 'canScroll' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|dispatchNestedFling(r8, r9, r4)\landroidx.recyclerview.widget.RecyclerView$OnFlingListener androidx.recyclerview.widget.RecyclerView.OnFlingListener r5 = r7.mOnFlingListener\l}"];
+subgraph cluster_Region_147423104 {
+label = "R(2:(1:29)|(1:(5:31|(1:33)|(1:35)|36|37)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1480364757 {
+label = "IF [B:73:0x004f, B:75:0x0055] THEN: R(1:29) ELSE: null";
+node [shape=record,color=blue];
+Node_73 [shape=record,label="{73\:\ 0x004f|if (r5 != null) goto L27\l}"];
+Node_75 [shape=record,label="{75\:\ 0x0055|ADDED_TO_REGION\l|if (r5.onFling(r8, r9) != false) goto L29\l}"];
+subgraph cluster_Region_622473473 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_76 [shape=record,label="{76\:\ 0x0057|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1121687042 {
+label = "R(1:(5:31|(1:33)|(1:35)|36|37))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_495363531 {
+label = "IF [B:77:0x0058] THEN: R(5:31|(1:33)|(1:35)|36|37) ELSE: null";
+node [shape=record,color=blue];
+Node_77 [shape=record,label="{77\:\ 0x0058|if (r4 != false) goto L31\l}"];
+subgraph cluster_Region_2142408942 {
+label = "R(5:31|(1:33)|(1:35)|36|37)";
+node [shape=record,color=blue];
+Node_78 [shape=record,label="{78\:\ 0x005a|int r1 = 0\l}"];
+subgraph cluster_IfRegion_1227739276 {
+label = "IF [B:79:0x005b] THEN: R(1:33) ELSE: null";
+node [shape=record,color=blue];
+Node_79 [shape=record,label="{79\:\ 0x005b|if (r0 != false) goto L33\l}"];
+subgraph cluster_Region_1536296530 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_80 [shape=record,label="{80\:\ 0x005d|r1 = 0 \| 1\l}"];
+}
+}
+subgraph cluster_IfRegion_1398533856 {
+label = "IF [B:81:0x005f] THEN: R(1:35) ELSE: null";
+node [shape=record,color=blue];
+Node_81 [shape=record,label="{81\:\ 0x005f|PHI: r1 \l  PHI: (r1v2 'nestedScrollAxis' int) = (r1v1 'nestedScrollAxis' int), (r1v5 'nestedScrollAxis' int) binds: [B:79:0x005b, B:80:0x005d] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 != false) goto L35\l}"];
+subgraph cluster_Region_1938967830 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_82 [shape=record,label="{82\:\ 0x0061|r1 \|= 2\l}"];
+}
+}
+Node_83 [shape=record,label="{83\:\ 0x0063|PHI: r1 \l  PHI: (r1v3 'nestedScrollAxis' int) = (r1v2 'nestedScrollAxis' int), (r1v4 'nestedScrollAxis' int) binds: [B:81:0x005f, B:82:0x0061] A[DONT_GENERATE, DONT_INLINE]\l|startNestedScroll(r1, 1)\lint int r5 = r7.mMaxFlingVelocity\lint int r8 = java.lang.Math.max(\-r5, java.lang.Math.min(r8, r5))\lint int r5 = r7.mMaxFlingVelocity\lr7.mViewFlinger.fling(r8, java.lang.Math.max(\-r5, java.lang.Math.min(r9, r5)))\l}"];
+Node_84 [shape=record,label="{84\:\ 0x0081|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+}
+Node_85 [shape=record,label="{85\:\ 0x0082|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_43 [shape=record,color=red,label="{43\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x000d}"];
+Node_54 [shape=record,color=red,label="{54\:\ 0x001e}"];
+Node_55 [shape=record,color=red,label="{55\:\ 0x0024|REMOVE\lADDED_TO_REGION\l}"];
+Node_58 [shape=record,color=red,label="{58\:\ 0x0029}"];
+Node_59 [shape=record,color=red,label="{59\:\ 0x002f|REMOVE\lADDED_TO_REGION\l}"];
+Node_63 [shape=record,color=red,label="{63\:\ 0x0036|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_64 [shape=record,color=red,label="{64\:\ 0x0037}"];
+Node_66 [shape=record,color=red,label="{66\:\ 0x003f}"];
+Node_68 [shape=record,color=red,label="{68\:\ 0x0042|REMOVE\lADDED_TO_REGION\l}"];
+Node_70 [shape=record,color=red,label="{70\:\ 0x0045}"];
+Node_74 [shape=record,color=red,label="{74\:\ 0x0051}"];
+Node_71 [shape=record,color=red,label="{71\:\ 0x0047}"];
+Node_60 [shape=record,color=red,label="{60\:\ 0x0031}"];
+Node_56 [shape=record,color=red,label="{56\:\ 0x0026}"];
+MethodNode[shape=record,label="{public boolean androidx.recyclerview.widget.RecyclerView.fling((r7v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r8v0 'velocityX' int A[D('velocityX' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'velocityY' int A[D('velocityY' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:51:0x0011 \-\> B:44:?, CROSS_EDGE: B:63:0x0036 \-\> B:44:?, CROSS_EDGE: B:76:0x0057 \-\> B:44:?, CROSS_EDGE: B:84:0x0081 \-\> B:44:?, CROSS_EDGE: B:81:0x005f \-\> B:83:0x0063, CROSS_EDGE: B:79:0x005b \-\> B:81:0x005f, CROSS_EDGE: B:85:0x0082 \-\> B:44:?, CROSS_EDGE: B:73:0x004f \-\> B:77:0x0058, CROSS_EDGE: B:71:0x0047 \-\> B:72:0x0048, CROSS_EDGE: B:67:0x0040 \-\> B:71:0x0047, CROSS_EDGE: B:65:0x003d \-\> B:85:0x0082, CROSS_EDGE: B:61:0x0032 \-\> B:64:0x0037, CROSS_EDGE: B:59:0x002f \-\> B:61:0x0032, CROSS_EDGE: B:57:0x0027 \-\> B:60:0x0031, CROSS_EDGE: B:55:0x0024 \-\> B:57:0x0027, CROSS_EDGE: B:53:0x001c \-\> B:56:0x0026\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_43;Node_45 -> Node_46;
+Node_46 -> Node_47;
+Node_46 -> Node_49[style=dashed];
+Node_47 -> Node_48;
+Node_48 -> Node_44;
+Node_50 -> Node_51;
+Node_50 -> Node_52[style=dashed];
+Node_51 -> Node_44;
+Node_52 -> Node_53;
+Node_53 -> Node_54;
+Node_53 -> Node_56;
+Node_57 -> Node_58;
+Node_57 -> Node_60;
+Node_61 -> Node_62[style=dashed];
+Node_61 -> Node_64;
+Node_62 -> Node_63[style=dashed];
+Node_62 -> Node_64;
+Node_65 -> Node_66;
+Node_65 -> Node_85[style=dashed];
+Node_67 -> Node_68;
+Node_67 -> Node_71;
+Node_72 -> Node_73;
+Node_73 -> Node_74;
+Node_73 -> Node_77[style=dashed];
+Node_75 -> Node_76;
+Node_75 -> Node_77[style=dashed];
+Node_76 -> Node_44;
+Node_77 -> Node_78;
+Node_77 -> Node_85[style=dashed];
+Node_78 -> Node_79;
+Node_79 -> Node_80;
+Node_79 -> Node_81[style=dashed];
+Node_80 -> Node_81;
+Node_81 -> Node_82;
+Node_81 -> Node_83[style=dashed];
+Node_82 -> Node_83;
+Node_83 -> Node_84;
+Node_84 -> Node_44;
+Node_85 -> Node_44;
+Node_43 -> Node_45;
+Node_49 -> Node_50;
+Node_54 -> Node_55;
+Node_55 -> Node_56;
+Node_55 -> Node_57;
+Node_58 -> Node_59;
+Node_59 -> Node_60;
+Node_59 -> Node_61;
+Node_63 -> Node_44;
+Node_64 -> Node_65;
+Node_66 -> Node_67;
+Node_68 -> Node_70;
+Node_68 -> Node_71;
+Node_70 -> Node_72;
+Node_74 -> Node_75;
+Node_71 -> Node_72;
+Node_60 -> Node_61;
+Node_56 -> Node_57;
+}
+

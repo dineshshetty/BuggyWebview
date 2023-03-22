@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.Api26Impl.generateConfigDelta_colorMode(Landroid\/content\/res\/Configuration;Landroid\/content\/res\/Configuration;Landroid\/content\/res\/Configuration;)V" {
+subgraph cluster_Region_1008874155 {
+label = "R(2:(1:3)|(1:(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_542253241 {
+label = "IF [B:13:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|if ((r2.colorMode & 3) != (r3.colorMode & 3)) goto L3\l}"];
+subgraph cluster_Region_2138180494 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|r4.colorMode \|= r3.colorMode & 3\l}"];
+}
+}
+subgraph cluster_Region_1563797232 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1890545815 {
+label = "IF [B:16:0x001b] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001b|if ((r2.colorMode & 12) != (r3.colorMode & 12)) goto L6\l}"];
+subgraph cluster_Region_1103741395 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001d|r4.colorMode \|= r3.colorMode & 12\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0013}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0026|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static void androidx.appcompat.app.AppCompatDelegateImpl.Api26Impl.generateConfigDelta_colorMode((r2v0 'base' android.content.res.Configuration A[D('base' android.content.res.Configuration), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'change' android.content.res.Configuration A[D('change' android.content.res.Configuration), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'delta' android.content.res.Configuration A[D('delta' android.content.res.Configuration), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x001b \-\> B:18:0x0026, CROSS_EDGE: B:13:0x0008 \-\> B:15:0x0013\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

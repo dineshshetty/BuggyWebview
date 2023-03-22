@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.appcompat.widget.ResourceManagerInternal.addDrawableToCache(Landroid\/content\/Context;JLandroid\/graphics\/drawable\/Drawable;)Z" {
+Node_20 [shape=record,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0000|monitor\-enter(r3)\l}"];
+Node_38 [shape=record,label="{38\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0001|TRY_ENTER\lTryCatch #0 \{, blocks: (B:23:0x0001, B:25:0x0007, B:27:0x0011, B:28:0x001c), top: B:38:0x0001 \}\lCatch: all \-\> 0x002a\l|android.graphics.drawable.Drawable$ConstantState r0 = r7.getConstantState()     \/\/ Catch: java.lang.Throwable \-\> L2a\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0005|if (r0 == null) goto L14\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0007|TryCatch #0 \{, blocks: (B:23:0x0001, B:25:0x0007, B:27:0x0011, B:28:0x001c), top: B:38:0x0001 \}\lCatch: all \-\> 0x002a\l|androidx.collection.LongSparseArray r1 = r3.mDrawableCaches.get(r4)     \/\/ Catch: java.lang.Throwable \-\> L2a\l}"];
+Node_26 [shape=record,label="{26\:\ 0x000f|if (r1 != null) goto L8\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0011|TryCatch #0 \{, blocks: (B:23:0x0001, B:25:0x0007, B:27:0x0011, B:28:0x001c), top: B:38:0x0001 \}\lCatch: all \-\> 0x002a\l|r1 = new androidx.collection.LongSparseArray\<\>()     \/\/ Catch: java.lang.Throwable \-\> L2a\lr3.mDrawableCaches.put(r4, r1)     \/\/ Catch: java.lang.Throwable \-\> L2a\l}"];
+Node_28 [shape=record,label="{28\:\ 0x001c|TRY_LEAVE\lTryCatch #0 \{, blocks: (B:23:0x0001, B:25:0x0007, B:27:0x0011, B:28:0x001c), top: B:38:0x0001 \}\lCatch: all \-\> 0x002a\lPHI: r1 \l  PHI: (r1v4 'cache' androidx.collection.LongSparseArray\<java.lang.ref.WeakReference\<android.graphics.drawable.Drawable$ConstantState\>\>) = (r1v3 'cache' androidx.collection.LongSparseArray\<java.lang.ref.WeakReference\<android.graphics.drawable.Drawable$ConstantState\>\>), (r1v5 'cache' androidx.collection.LongSparseArray\<java.lang.ref.WeakReference\<android.graphics.drawable.Drawable$ConstantState\>\>) binds: [B:26:0x000f, B:27:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|r1.put(r5, new java.lang.ref.WeakReference\<\>(r0))     \/\/ Catch: java.lang.Throwable \-\> L2a\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0024}"];
+Node_30 [shape=record,label="{30\:\ 0x0025|monitor\-exit(r3)\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0026|RETURN\l|return true\l}"];
+Node_21 [shape=record,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_39 [shape=record,label="{39\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0027}"];
+Node_33 [shape=record,label="{33\:\ 0x0028|monitor\-exit(r3)\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0029|RETURN\l|return false\l}"];
+Node_35 [shape=record,label="{35\:\ 0x002a|REMOVE\lExcHandler: all \-\> 0x002a\l|java.lang.Throwable r4 = move\-exception\l}"];
+Node_37 [shape=record,label="{37\:\ 0x002c|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{private synchronized boolean androidx.appcompat.widget.ResourceManagerInternal.addDrawableToCache((r3v0 'this' androidx.appcompat.widget.ResourceManagerInternal A[IMMUTABLE_TYPE, THIS]), (r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'key' long A[D('key' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:37:0x002c \-\> B:21:?, CROSS_EDGE: B:26:0x000f \-\> B:28:0x001c, CROSS_EDGE: B:34:0x0029 \-\> B:21:?, CROSS_EDGE: B:38:0x0001 \-\> B:35:0x002a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_20 -> Node_22;
+Node_22 -> Node_38;
+Node_38 -> Node_23;
+Node_38 -> Node_35;
+Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_32;
+Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_39;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_21;
+Node_39 -> Node_35;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_34 -> Node_21;
+Node_35 -> Node_37;
+Node_37 -> Node_21;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.writeSerializable(Ljava\/io\/Serializable;)V" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000|if (r7 != null) goto L5\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0002|writeString(null)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0006|RETURN\l|return\l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0007|java.lang.String r0 = r7.getClass().getName()\lwriteString(r0)\ljava.io.ByteArrayOutputStream r1 = new java.io.ByteArrayOutputStream()\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0017|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0017|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IOException \-\> 0x002b, blocks: (B:19:0x0017), top: B:24:0x0017 \}\lCatch: IOException \-\> 0x002b\l|java.io.ObjectOutputStream r2 = new java.io.ObjectOutputStream(r1)     \/\/ Catch: java.io.IOException \-\> L2b\lr2.writeObject(r7)     \/\/ Catch: java.io.IOException \-\> L2b\lr2.close()     \/\/ Catch: java.io.IOException \-\> L2b\lwriteByteArray(r1.toByteArray())     \/\/ Catch: java.io.IOException \-\> L2b\l}"];
+Node_20 [shape=record,label="{20\:\ 0x002a|RETURN\l|return\l}"];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_21 [shape=record,label="{21\:\ 0x002b|ExcHandler: IOException \-\> 0x002b\l|java.io.IOException r2 = move\-exception\l}"];
+Node_22 [shape=record,label="{22\:\ 0x002c|java.lang.StringBuilder r4 = new java.lang.StringBuilder()\lr4.append(\"VersionedParcelable encountered IOException writing serializable object (name = \")\lr4.append(r0)\lr4.append(\")\")\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0047|throw new java.lang.RuntimeException(r4.toString(), r2)\l}"];
+MethodNode[shape=record,label="{private void androidx.versionedparcelable.VersionedParcel.writeSerializable((r6v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]), (r7v0 's' java.io.Serializable A[D('s' java.io.Serializable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x002a \-\> B:14:?, CROSS_EDGE: B:23:0x0047 \-\> B:14:?, CROSS_EDGE: B:24:0x0017 \-\> B:21:0x002b\lINLINE_NOT_NEEDED\lTryCatch #0 \{IOException \-\> 0x002b, blocks: (B:19:0x0017), top: B:24:0x0017 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_18;
+Node_16 -> Node_17;
+Node_17 -> Node_14;
+Node_18 -> Node_24;
+Node_24 -> Node_19;
+Node_24 -> Node_21;
+Node_19 -> Node_20;
+Node_19 -> Node_25;
+Node_20 -> Node_14;
+Node_25 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+}
+

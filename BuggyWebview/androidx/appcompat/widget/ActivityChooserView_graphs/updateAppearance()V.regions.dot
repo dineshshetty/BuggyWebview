@@ -1,0 +1,97 @@
+digraph "CFG forandroidx.appcompat.widget.ActivityChooserView.updateAppearance()V" {
+subgraph cluster_Region_402210638 {
+label = "R(4:(1:3)(1:19)|4|(2:16|(1:18))(1:8)|(1:11)(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2040998918 {
+label = "IF [B:25:0x0008] THEN: R(1:3) ELSE: R(1:19)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0008|if (r9.mAdapter.getCount() \> 0) goto L3\l}"];
+subgraph cluster_Region_99614216 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000a|r9.mExpandActivityOverflowButton.setEnabled(true)\l}"];
+}
+subgraph cluster_Region_756781808 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0010|r9.mExpandActivityOverflowButton.setEnabled(false)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0015|int int r0 = r9.mAdapter.getActivityCount()\lint int r3 = r9.mAdapter.getHistorySize()\l}"];
+subgraph cluster_IfRegion_1497002784 {
+label = "IF [B:29:0x0021, B:30:0x0023, B:31:0x0025] THEN: R(2:16|(1:18)) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0021|if (r0 == 1) goto L16\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0023|ADDED_TO_REGION\l|if (r0 \> 1) goto L7\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0025|ADDED_TO_REGION\l|if (r3 \> 0) goto L16\l}"];
+subgraph cluster_Region_1883365582 {
+label = "R(2:16|(1:18))";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0030|r9.mDefaultActivityButton.setVisibility(0)\landroid.content.pm.ResolveInfo android.content.pm.ResolveInfo r4 = r9.mAdapter.getDefaultActivity()\landroid.content.pm.PackageManager android.content.pm.PackageManager r5 = getContext().getPackageManager()\lr9.mDefaultActivityButtonImage.setImageDrawable(r4.loadIcon(r5))\l}"];
+subgraph cluster_IfRegion_147845976 {
+label = "IF [B:35:0x004e] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x004e|if (r9.mDefaultActionButtonContentDescription != 0) goto L18\l}"];
+subgraph cluster_Region_1971054914 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0050|java.lang.CharSequence java.lang.CharSequence r6 = r4.loadLabel(r5)\ljava.lang.String java.lang.String r1 = getContext().getString(r9.mDefaultActionButtonContentDescription, r6)\lr9.mDefaultActivityButton.setContentDescription(r1)\l}"];
+}
+}
+}
+subgraph cluster_Region_1212688731 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0028|r9.mDefaultActivityButton.setVisibility(8)\l}"];
+}
+}
+subgraph cluster_IfRegion_841843172 {
+label = "IF [B:39:0x006e] THEN: R(1:11) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x006e|if (r9.mDefaultActivityButton.getVisibility() == 0) goto L11\l}"];
+subgraph cluster_Region_1137711427 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0070|r9.mActivityChooserContent.setBackgroundDrawable(r9.mActivityChooserContentBackground)\l}"];
+}
+subgraph cluster_Region_888305490 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0078|r9.mActivityChooserContent.setBackgroundDrawable(null)\l}"];
+}
+}
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0000}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0068}"];
+Node_43 [shape=record,color=red,label="{43\:\ ?|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x007e|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.widget.ActivityChooserView.updateAppearance((r9v0 'this' androidx.appcompat.widget.ActivityChooserView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:41:0x0078 \-\> B:42:0x007e, CROSS_EDGE: B:36:0x0050 \-\> B:38:0x0068, CROSS_EDGE: B:35:0x004e \-\> B:38:0x0068, CROSS_EDGE: B:30:0x0023 \-\> B:33:0x0028, CROSS_EDGE: B:29:0x0021 \-\> B:34:0x0030, CROSS_EDGE: B:27:0x0010 \-\> B:28:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_22;Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_34;
+Node_30 -> Node_31;
+Node_30 -> Node_33[style=dashed];
+Node_31 -> Node_33[style=dashed];
+Node_31 -> Node_34;
+Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_35 -> Node_38[style=dashed];
+Node_36 -> Node_38;
+Node_33 -> Node_38;
+Node_39 -> Node_40;
+Node_39 -> Node_41[style=dashed];
+Node_40 -> Node_43;
+Node_41 -> Node_42;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_38 -> Node_39;
+Node_43 -> Node_23;
+Node_42 -> Node_23;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.analyzer.Grouping.findGroup(Ljava\/util\/ArrayList;I)Landroidx\/constraintlayout\/core\/widgets\/analyzer\/WidgetGroup;" {
+subgraph cluster_Region_1454512130 {
+label = "R(3:1|(2:3|(2:(1:7)|(1:5)))|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r4.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_2007011552 {
+label = "LOOP:0: (2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|LOOP_START\lLOOP:0: B:3:0x0005\-\>B:7:0x0012\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:2:0x0000, B:7:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_1540748788 {
+label = "R(2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|androidx.constraintlayout.core.widgets.analyzer.WidgetGroup androidx.constraintlayout.core.widgets.analyzer.WidgetGroup r2 = r4.get(r1)\l}"];
+subgraph cluster_Region_276020264 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_492934276 {
+label = "IF [B:5:0x000f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (r5 == r2.f47id) goto L6\l}"];
+subgraph cluster_Region_1848975448 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_573578967 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|LOOP_END\lLOOP:0: B:3:0x0005\-\>B:7:0x0012\l|r1++\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0015|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0011|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0015|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static androidx.constraintlayout.core.widgets.analyzer.WidgetGroup androidx.constraintlayout.core.widgets.analyzer.Grouping.findGroup((r4v0 'horizontalDependencyLists' java.util.ArrayList\<androidx.constraintlayout.core.widgets.analyzer.WidgetGroup\> A[D('horizontalDependencyLists' java.util.ArrayList\<androidx.constraintlayout.core.widgets.analyzer.WidgetGroup\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'groupId' int A[D('groupId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x0012 \-\> B:3:0x0005, CROSS_EDGE: B:9:0x0016 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/ArrayList\<Landroidx\/constraintlayout\/core\/widgets\/analyzer\/WidgetGroup;\>;I)Landroidx\/constraintlayout\/core\/widgets\/analyzer\/WidgetGroup;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_1;
+Node_7 -> Node_3;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_11 -> Node_6;
+Node_10 -> Node_8;
+}
+

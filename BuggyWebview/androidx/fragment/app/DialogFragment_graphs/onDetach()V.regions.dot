@@ -1,0 +1,35 @@
+digraph "CFG forandroidx.fragment.app.DialogFragment.onDetach()V" {
+subgraph cluster_Region_712059215 {
+label = "R(3:1|(1:5)|6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|super.onDetach()\l}"];
+subgraph cluster_IfRegion_1778327914 {
+label = "IF [B:12:0x0005, B:14:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0005|if (r2.mShownByMe == false) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0009|ADDED_TO_REGION\l|if (r2.mDismissed == false) goto L5\l}"];
+subgraph cluster_Region_362454344 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000b|r2.mDismissed = true\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x000e|getViewLifecycleOwnerLiveData().removeObserver(r2.mObserver)\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0007}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0017}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.DialogFragment.onDetach((r2v0 'this' androidx.fragment.app.DialogFragment A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0009 \-\> B:16:0x000e, CROSS_EDGE: B:12:0x0005 \-\> B:16:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.fragment.app.Fragment.onDetach():void]\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_9 -> Node_11;
+Node_13 -> Node_14;
+Node_17 -> Node_10;
+}
+

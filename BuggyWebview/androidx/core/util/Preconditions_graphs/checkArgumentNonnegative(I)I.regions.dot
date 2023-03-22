@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.util.Preconditions.checkArgumentNonnegative(I)I" {
+subgraph cluster_Region_73648337 {
+label = "R(1:(2:(1:5)|(1:2)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1637663137 {
+label = "R(2:(1:5)|(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1115794929 {
+label = "IF [B:8:0x0000] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|if (r1 \< 0) goto L4\l}"];
+subgraph cluster_Region_917738311 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|throw new java.lang.IllegalArgumentException()\l}"];
+}
+}
+subgraph cluster_Region_739045376 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0002|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0003}"];
+MethodNode[shape=record,label="{public static int androidx.core.util.Preconditions.checkArgumentNonnegative((r1v0 'value' int A[D('value' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0008 \-\> B:7:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_11 -> Node_7;
+Node_9 -> Node_7;
+Node_6 -> Node_8;
+Node_10 -> Node_11;
+}
+

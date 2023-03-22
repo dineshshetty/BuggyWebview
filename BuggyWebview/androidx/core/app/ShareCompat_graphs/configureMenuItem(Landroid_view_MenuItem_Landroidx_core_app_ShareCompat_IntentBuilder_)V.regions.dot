@@ -1,0 +1,62 @@
+digraph "CFG forandroidx.core.app.ShareCompat.configureMenuItem(Landroid\/view\/MenuItem;Landroidx\/core\/app\/ShareCompat$IntentBuilder;)V" {
+subgraph cluster_Region_1173594655 {
+label = "R(4:1|(1:3)(1:13)|4|(1:(1:8))) | DECL_VAR: android.widget.ShareActionProvider provider\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.ActionProvider android.view.ActionProvider r0 = r4.getActionProvider()\l}"];
+subgraph cluster_IfRegion_928737592 {
+label = "IF [B:3:0x0006] THEN: R(1:3) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if ((r0 instanceof android.widget.ShareActionProvider) == false) goto L3\l}"];
+subgraph cluster_Region_2043021467 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|android.widget.ShareActionProvider r1 = new android.widget.ShareActionProvider(r5.getContext())\l}"];
+}
+subgraph cluster_Region_1965067002 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|android.widget.ShareActionProvider r1 = (android.widget.ShareActionProvider) r0\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0015|PHI: r1 \l  PHI: (r1v3 'provider' android.widget.ShareActionProvider) = (r1v2 'provider' android.widget.ShareActionProvider), (r1v4 'provider' android.widget.ShareActionProvider) binds: [B:5:0x0012, B:4:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|r1.setShareHistoryFileName(androidx.core.app.ShareCompat.HISTORY_FILENAME_PREFIX + r5.getContext().getClass().getName())\lr1.setShareIntent(r5.getIntent())\lr4.setActionProvider(r1)\l}"];
+subgraph cluster_Region_1351455884 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_954243240 {
+label = "IF [B:7:0x0043, B:9:0x0049] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0043|if (android.os.Build.VERSION.SDK_INT \< 16) goto L6\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0049|ADDED_TO_REGION\l|if (r4.hasSubMenu() == false) goto L8\l}"];
+subgraph cluster_Region_827849014 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004b|r4.setIntent(r5.createChooserIntent())\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0045}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0052|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.app.ShareCompat.configureMenuItem((r4v0 'item' android.view.MenuItem A[D('item' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'shareIntent' androidx.core.app.ShareCompat$IntentBuilder A[D('shareIntent' androidx.core.app.ShareCompat$IntentBuilder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lCROSS_EDGE: B:9:0x0049 \-\> B:11:0x0052, CROSS_EDGE: B:7:0x0043 \-\> B:11:0x0052, CROSS_EDGE: B:5:0x0012 \-\> B:6:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_13[style=dashed];
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_8 -> Node_9;
+Node_11 -> Node_1;
+Node_13 -> Node_1;
+Node_12 -> Node_1;
+}
+

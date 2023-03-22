@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.launchStartActivityForResult(Landroidx\/fragment\/app\/Fragment;Landroid\/content\/Intent;ILandroid\/os\/Bundle;)V" {
+subgraph cluster_Region_1540789811 {
+label = "R(1:(2:(4:3|(1:6)|7|8)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_788020241 {
+label = "R(2:(4:3|(1:6)|7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1516851950 {
+label = "IF [B:15:0x0002] THEN: R(4:3|(1:6)|7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r2.mStartActivityForResult != null) goto L3\l}"];
+subgraph cluster_Region_1459570057 {
+label = "R(4:3|(1:6)|7|8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|androidx.fragment.app.FragmentManager$LaunchedFragmentInfo androidx.fragment.app.FragmentManager.LaunchedFragmentInfo r0 = new androidx.fragment.app.FragmentManager.LaunchedFragmentInfo(r3.mWho, r5)\lr2.mLaunchedFragments.addLast(r0)\l}"];
+subgraph cluster_IfRegion_1430010596 {
+label = "IF [B:17:0x0010, B:18:0x0012] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|if (r4 != null) goto L5\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0012|ADDED_TO_REGION\l|if (r6 != null) goto L6\l}"];
+subgraph cluster_Region_984897918 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0014|r4.putExtra(androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult.EXTRA_ACTIVITY_OPTIONS_BUNDLE, r6)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0019|r2.mStartActivityForResult.launch(r4)\l}"];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1430512269 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001f|r2.mHost.onStartActivityFromFragment(r3, r4, r5, r6)\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0024|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentManager.launchStartActivityForResult((r2v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'f' androidx.fragment.app.Fragment A[D('f' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'intent' android.content.Intent A[D('intent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'requestCode' int A[D('requestCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'options' android.os.Bundle A[D('options' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0012 \-\> B:20:0x0019, CROSS_EDGE: B:17:0x0010 \-\> B:20:0x0019, CROSS_EDGE: B:21:0x001f \-\> B:22:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_23;
+Node_23 -> Node_13;
+Node_21 -> Node_22;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_22 -> Node_13;
+}
+

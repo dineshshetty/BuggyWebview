@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.core.content.res.FontResourcesParserCompat.readFamilies(Lorg\/xmlpull\/v1\/XmlPullParser;Landroid\/content\/res\/Resources;)Landroidx\/core\/content\/res\/FontResourcesParserCompat$FamilyResourceEntry;" {
+subgraph cluster_Region_1811378038 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|r3.require(2, null, \"font\-family\")\ljava.lang.String java.lang.String r0 = r3.getName()\l}"];
+subgraph cluster_Region_1367299746 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_966935704 {
+label = "IF [B:11:0x000f] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000f|if (r0.equals(\"font\-family\") != false) goto L3\l}"];
+subgraph cluster_Region_2139585450 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0015|RETURN\l|return readFamily(r3, r4)\l}"];
+}
+}
+subgraph cluster_Region_888477066 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0016|skip(r3)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0019|RETURN\l|return null\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0011}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static androidx.core.content.res.FontResourcesParserCompat$FamilyResourceEntry androidx.core.content.res.FontResourcesParserCompat.readFamilies((r3v0 'parser' org.xmlpull.v1.XmlPullParser A[D('parser' org.xmlpull.v1.XmlPullParser), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'resources' android.content.res.Resources A[D('resources' android.content.res.Resources), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0019 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Lorg\/xmlpull\/v1\/XmlPullParserException;, Ljava\/io\/IOException;]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

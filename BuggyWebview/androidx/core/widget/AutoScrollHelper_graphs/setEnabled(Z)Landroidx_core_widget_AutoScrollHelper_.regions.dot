@@ -1,0 +1,33 @@
+digraph "CFG forandroidx.core.widget.AutoScrollHelper.setEnabled(Z)Landroidx\/core\/widget\/AutoScrollHelper;" {
+subgraph cluster_Region_298347394 {
+label = "R(3:(1:4)|5|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1487237875 {
+label = "IF [B:11:0x0002, B:12:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r1.mEnabled != false) goto L3\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0004|ADDED_TO_REGION\l|if (r2 == false) goto L4\l}"];
+subgraph cluster_Region_714020308 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|requestStop()\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0009|r1.mEnabled = r2\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000b|RETURN\l|return r1\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.core.widget.AutoScrollHelper androidx.core.widget.AutoScrollHelper.setEnabled((r1v0 'this' androidx.core.widget.AutoScrollHelper A[IMMUTABLE_TYPE, THIS]), (r2v0 'enabled' boolean A[D('enabled' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0004 \-\> B:14:0x0009, CROSS_EDGE: B:11:0x0002 \-\> B:14:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+}
+

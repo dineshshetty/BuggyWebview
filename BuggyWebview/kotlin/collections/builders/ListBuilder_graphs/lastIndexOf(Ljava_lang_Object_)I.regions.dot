@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.builders.ListBuilder.lastIndexOf(Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_1836812752 {
+label = "R(3:1|(1:(2:(1:7)|(1:5)))|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r3.length \- 1\l}"];
+subgraph cluster_LoopRegion_471677398 {
+label = "LOOP:0: (1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|LOOP_START\lLOOP:0: B:3:0x0004\-\>B:7:0x0014\lPHI: r0 \l  PHI: (r0v2 'i' int) = (r0v1 'i' int), (r0v3 'i' int) binds: [B:2:0x0000, B:7:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1642372342 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_258546916 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1417294791 {
+label = "IF [B:5:0x0011] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|if (kotlin.jvm.internal.Intrinsics.areEqual(r3.array[r3.offset + r0], r4) == true) goto L6\l}"];
+subgraph cluster_Region_1711150481 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1113145263 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|LOOP_END\lLOOP:0: B:3:0x0004\-\>B:7:0x0014\l|r0\-\-\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0017|RETURN\l|return \-1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0013|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0017|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int kotlin.collections.builders.ListBuilder.lastIndexOf((r3v0 'this' kotlin.collections.builders.ListBuilder\<E\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'element' java.lang.Object A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:7:0x0014 \-\> B:3:0x0004, CROSS_EDGE: B:9:0x0018 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lMETHOD_OVERRIDE: [ClspMth\{java.util.AbstractList.lastIndexOf(java.lang.Object):int\}, ClspMth\{java.util.List.lastIndexOf(java.lang.Object):int\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_10;
+Node_6 -> Node_1;
+Node_7 -> Node_3;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_10 -> Node_6;
+Node_11 -> Node_8;
+}
+

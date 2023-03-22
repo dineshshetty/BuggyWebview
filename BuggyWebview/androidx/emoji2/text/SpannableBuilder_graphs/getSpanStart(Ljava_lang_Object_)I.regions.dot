@@ -1,0 +1,35 @@
+digraph "CFG forandroidx.emoji2.text.SpannableBuilder.getSpanStart(Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_161480887 {
+label = "R(2:(1:5)|7) | DECL_VAR: androidx.emoji2.text.SpannableBuilder$WatcherWrapper watcher\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1566749999 {
+label = "IF [B:12:0x0004, B:14:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|if (isWatcher(r2) != false) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000a|ADDED_TO_REGION\l|if ((r0 = getWatcherFor(r2)) != null) goto L5\l}"];
+subgraph cluster_Region_1987532990 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|r2 = r0\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0011|RETURN\l|return super.getSpanStart(r2)\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0006}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000d|PHI: r2 \l  PHI: (r2v1 'tag' java.lang.Object) = (r2v0 'tag' java.lang.Object), (r2v0 'tag' java.lang.Object), (r2v2 'tag' java.lang.Object) binds: [B:12:0x0004, B:14:0x000a, B:15:0x000c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.emoji2.text.SpannableBuilder.getSpanStart((r1v0 'this' androidx.emoji2.text.SpannableBuilder A[IMMUTABLE_TYPE, THIS]), (r2v0 'tag' java.lang.Object A[D('tag' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:14:0x000a \-\> B:16:0x000d, CROSS_EDGE: B:12:0x0004 \-\> B:16:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.text.Spanned.getSpanStart(java.lang.Object):int\}, ClspMth\{android.text.SpannableStringBuilder.getSpanStart(java.lang.Object):int\}]\l}"];
+MethodNode -> Node_9;Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_10;
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+}
+

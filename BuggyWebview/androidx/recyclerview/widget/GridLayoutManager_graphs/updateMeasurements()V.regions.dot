@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.recyclerview.widget.GridLayoutManager.updateMeasurements()V" {
+subgraph cluster_Region_1036215365 {
+label = "R(2:(1:3)(1:7)|4) | DECL_VAR: int totalSpace\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1130647530 {
+label = "IF [B:11:0x0005] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0005|if (getOrientation() == 1) goto L3\l}"];
+subgraph cluster_Region_162353257 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0007|int r0 = (getWidth() \- getPaddingRight()) \- getPaddingLeft()\l}"];
+}
+subgraph cluster_Region_1067501157 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0016|int int r0 = getHeight()\lint r0 = (r0 \- getPaddingBottom()) \- getPaddingTop()\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0024|PHI: r0 \l  PHI: (r0v4 'totalSpace' int) = (r0v3 'totalSpace' int), (r0v7 'totalSpace' int) binds: [B:13:0x0016, B:12:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|calculateItemBorders(r0)\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0027}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.GridLayoutManager.updateMeasurements((r2v0 'this' androidx.recyclerview.widget.GridLayoutManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0016 \-\> B:14:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+}
+

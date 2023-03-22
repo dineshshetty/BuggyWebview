@@ -1,0 +1,75 @@
+digraph "CFG forkotlin.io.FilesKt__UtilsKt.resolve(Ljava\/io\/File;Ljava\/io\/File;)Ljava\/io\/File;" {
+subgraph cluster_Region_1589848939 {
+label = "R(2:1|(2:(1:3)|(2:5|(2:(2:13|14)|(2:11|12)))))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"relative\")\l}"];
+subgraph cluster_Region_414166007 {
+label = "R(2:(1:3)|(2:5|(2:(2:13|14)|(2:11|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1889707844 {
+label = "IF [B:20:0x000e] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|if (kotlin.p004io.FilesKt.isRooted(r7) != false) goto L3\l}"];
+subgraph cluster_Region_1856766743 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|RETURN\l|return r7\l}"];
+}
+}
+subgraph cluster_Region_1593245290 {
+label = "R(2:5|(2:(2:13|14)|(2:11|12)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|java.lang.String java.lang.String r0 = r6.toString()\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"this.toString()\")\l}"];
+subgraph cluster_Region_695461338 {
+label = "R(2:(2:13|14)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_109932663 {
+label = "IF [B:26:0x0027, B:28:0x0034] THEN: R(2:13|14) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0027|PHI: r1 \l  PHI: (r1v5 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r0.length() == 0) == true) goto L13\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0034|ADDED_TO_REGION\l|if (kotlin.text.StringsKt.endsWith$default((java.lang.CharSequence) r0, java.io.File.separatorChar, false, 2, (java.lang.Object) null) == true) goto L13\l}"];
+subgraph cluster_Region_195317357 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0051}"];
+Node_32 [shape=record,label="{32\:\ 0x0065|RETURN\lORIG_RETURN\l|return new java.io.File(r0 + r7)\l}"];
+}
+}
+subgraph cluster_Region_2101504493 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0037}"];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return new java.io.File(r0 + java.io.File.separatorChar + r7)\l}"];
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0022}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0024}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0029}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0026}"];
+MethodNode[shape=record,label="{public static final java.io.File kotlin.io.FilesKt__UtilsKt.resolve((r6v0 '$this$resolve' java.io.File A[D('$this$resolve' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'relative' java.io.File A[D('relative' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x0065 \-\> B:18:?, CROSS_EDGE: B:31:0x0051 \-\> B:32:0x0065, CROSS_EDGE: B:26:0x0027 \-\> B:31:0x0051, CROSS_EDGE: B:25:0x0026 \-\> B:26:0x0027\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_18;
+Node_22 -> Node_23;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_31;
+Node_28 -> Node_30[style=dashed];
+Node_28 -> Node_31;
+Node_31 -> Node_32;
+Node_32 -> Node_18;
+Node_30 -> Node_33;
+Node_33 -> Node_18;
+Node_17 -> Node_19;
+Node_23 -> Node_24;
+Node_23 -> Node_25;
+Node_24 -> Node_26;
+Node_27 -> Node_28;
+Node_25 -> Node_26;
+}
+

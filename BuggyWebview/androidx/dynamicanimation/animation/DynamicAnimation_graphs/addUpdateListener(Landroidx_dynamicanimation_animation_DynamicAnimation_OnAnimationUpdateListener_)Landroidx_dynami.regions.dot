@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.dynamicanimation.animation.DynamicAnimation.addUpdateListener(Landroidx\/dynamicanimation\/animation\/DynamicAnimation$OnAnimationUpdateListener;)Landroidx\/dynamicanimation\/animation\/DynamicAnimation;" {
+subgraph cluster_Region_145706238 {
+label = "R(1:(2:(1:9)|(2:(1:5)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2120122751 {
+label = "R(2:(1:9)|(2:(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1203298088 {
+label = "IF [B:13:0x0004] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|if (isRunning() != false) goto L8\l}"];
+subgraph cluster_Region_328048920 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001b|throw new java.lang.UnsupportedOperationException(\"Error: Update listeners must be added beforethe animation.\")\l}"];
+}
+}
+subgraph cluster_Region_1639438123 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1802037019 {
+label = "IF [B:15:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|if (r2.mUpdateListeners.contains(r3) == false) goto L5\l}"];
+subgraph cluster_Region_1781019841 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000e|r2.mUpdateListeners.add(r3)\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0013|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0014}"];
+MethodNode[shape=record,label="{public T extends androidx.dynamicanimation.animation.DynamicAnimation\<T\> androidx.dynamicanimation.animation.DynamicAnimation.addUpdateListener((r2v0 'this' androidx.dynamicanimation.animation.DynamicAnimation\<T extends androidx.dynamicanimation.animation.DynamicAnimation\<T\>\> A[D('this' androidx.dynamicanimation.animation.DynamicAnimation\<T extends androidx.dynamicanimation.animation.DynamicAnimation\<T\>\>), IMMUTABLE_TYPE, THIS]), (r3v0 'listener' androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationUpdateListener A[D('listener' androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationUpdateListener), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000c \-\> B:17:0x0013, CROSS_EDGE: B:19:0x001b \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends androidx.dynamicanimation.animation.DynamicAnimation\<T\>]\lSIGNATURE: (Landroidx\/dynamicanimation\/animation\/DynamicAnimation$OnAnimationUpdateListener;)TT;\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_18;
+Node_19 -> Node_11;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+}
+

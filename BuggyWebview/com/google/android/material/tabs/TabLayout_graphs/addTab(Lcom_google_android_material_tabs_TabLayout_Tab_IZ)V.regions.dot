@@ -1,0 +1,59 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.addTab(Lcom\/google\/android\/material\/tabs\/TabLayout$Tab;IZ)V" {
+subgraph cluster_Region_1418607906 {
+label = "R(1:(2:(1:10)|(2:3|(1:(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1687141602 {
+label = "R(2:(1:10)|(2:3|(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1130625670 {
+label = "IF [B:14:0x0002] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r3.parent != r2) goto L9\l}"];
+subgraph cluster_Region_1770653652 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0017|throw new java.lang.IllegalArgumentException(\"Tab belongs to a different TabLayout.\")\l}"];
+}
+}
+subgraph cluster_Region_1279807722 {
+label = "R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|configureTab(r3, r4)\laddTabView(r3)\l}"];
+subgraph cluster_Region_1429839149 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_156428998 {
+label = "IF [B:16:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (r5 != false) goto L5\l}"];
+subgraph cluster_Region_811591839 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|r3.select()\l}"];
+}
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000f|ORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0010}"];
+MethodNode[shape=record,label="{public void com.google.android.material.tabs.TabLayout.addTab((r2v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 'tab' com.google.android.material.tabs.TabLayout$Tab A[D('tab' com.google.android.material.tabs.TabLayout$Tab), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'setSelected' boolean A[D('setSelected' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000a \-\> B:18:0x000f, CROSS_EDGE: B:20:0x0017 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_20 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_18 -> Node_12;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+}
+

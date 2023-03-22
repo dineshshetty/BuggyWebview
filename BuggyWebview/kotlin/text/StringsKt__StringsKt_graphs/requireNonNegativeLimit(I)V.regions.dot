@@ -1,0 +1,43 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.requireNonNegativeLimit(I)V" {
+subgraph cluster_Region_1249663133 {
+label = "R(1:(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1458221162 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_230602029 {
+label = "IF [B:23:0x0005] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0005|PHI: r0 \l  PHI: (r0v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r3 \>= 0) == true) goto L4\l}"];
+subgraph cluster_Region_1256370710 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0007|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1660068711 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0008}"];
+Node_26 [shape=record,label="{26\:\ 0x0023|throw new java.lang.IllegalArgumentException((\"Limit must be non\-negative, but was \" + r3).toString())\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0002}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0004}"];
+MethodNode[shape=record,label="{public static final void kotlin.text.StringsKt__StringsKt.requireNonNegativeLimit((r3v0 'limit' int A[D('limit' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0023 \-\> B:19:?, CROSS_EDGE: B:22:0x0004 \-\> B:23:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_19;
+Node_25 -> Node_26;
+Node_26 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22;
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+}
+

@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlatBufferBuilder.\<init\>(ILandroidx\/emoji2\/text\/flatbuffer\/FlatBufferBuilder$ByteBufferFactory;Ljava\/nio\/ByteBuffer;Landroidx\/emoji2\/text\/flatbuffer\/Utf8;)V" {
+subgraph cluster_Region_1949785611 {
+label = "R(5:1|2|4|(1:6)(1:10)|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r2.minalign = 1\lr2.vtable = null\lr2.vtable_in_use = 0\lr2.nested = false\lr2.finished = false\lr2.vtables = new int[16]\lr2.num_vtables = 0\lr2.vector_num_elems = 0\lr2.force_defaults = false\l}"];
+Node_14 [shape=record,label="{14\:\ 0x001c|r3 = r3 \<= 0 ? 1 : r3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x001f|PHI: r3 \l  PHI: (r3v1 'initial_size' int) = (r3v0 'initial_size' int) binds: [B:14:0x001c] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r2.bb_factory = r4\l}"];
+subgraph cluster_IfRegion_589960641 {
+label = "IF [B:17:0x0021] THEN: R(1:6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0021|if (r5 != null) goto L6\l}"];
+subgraph cluster_Region_1484919868 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0023|r2.f83bb = r5\lr5.clear()\lr2.f83bb.order(java.nio.ByteOrder.LITTLE_ENDIAN)\l}"];
+}
+subgraph cluster_Region_1826976338 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0030|r2.f83bb = r4.newByteBuffer(r3)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0036|r2.utf8 = r6\lr2.space = r2.f83bb.capacity()\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001e}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0040}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.emoji2.text.flatbuffer.FlatBufferBuilder.\<init\>((r2v0 'this' androidx.emoji2.text.flatbuffer.FlatBufferBuilder A[IMMUTABLE_TYPE, THIS]), (r3v0 'initial_size' int A[D('initial_size' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'bb_factory' androidx.emoji2.text.flatbuffer.FlatBufferBuilder$ByteBufferFactory A[D('bb_factory' androidx.emoji2.text.flatbuffer.FlatBufferBuilder$ByteBufferFactory), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'existing_bb' java.nio.ByteBuffer A[D('existing_bb' java.nio.ByteBuffer), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'utf8' androidx.emoji2.text.flatbuffer.Utf8 A[D('utf8' androidx.emoji2.text.flatbuffer.Utf8), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0030 \-\> B:20:0x0036, CROSS_EDGE: B:14:0x001c \-\> B:16:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_21 -> Node_12;
+}
+

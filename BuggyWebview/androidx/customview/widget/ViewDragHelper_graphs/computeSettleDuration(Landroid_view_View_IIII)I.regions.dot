@@ -1,0 +1,31 @@
+digraph "CFG forandroidx.customview.widget.ViewDragHelper.computeSettleDuration(Landroid\/view\/View;IIII)I" {
+subgraph cluster_Region_733854862 {
+label = "R(5:1|2|4|6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r2 = clampMag(r20, (int) r16.mMinVelocity, (int) r16.mMaxVelocity)\lint int r3 = clampMag(r21, (int) r16.mMinVelocity, (int) r16.mMaxVelocity)\lint int r4 = java.lang.Math.abs(r18)\lint int r5 = java.lang.Math.abs(r19)\lint int r6 = java.lang.Math.abs(r2)\lint int r7 = java.lang.Math.abs(r3)\lint int r8 = r6 + r7\lint int r9 = r4 + r5\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0030|float r10 = r2 != 0 ? r6 \/ r8 : r4 \/ r9\l}"];
+Node_19 [shape=record,label="{19\:\ 0x003a|PHI: r10 \l  PHI: (r10v2 'xweight' float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float r11 = r3 != 0 ? r7 \/ r8 : r5 \/ r9\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0043|PHI: r11 \l  PHI: (r11v3 'yweight' float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r12 = computeAxisDuration(r18, r2, r16.mCallback.getViewHorizontalDragRange(r17))\lint int r14 = computeAxisDuration(r19, r3, r16.mCallback.getViewVerticalDragRange(r17))\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0064|RETURN\l|return (int) ((r12 * r10) + (r14 * r11))\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0032}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x003c}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0040}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0036}"];
+MethodNode[shape=record,label="{private int androidx.customview.widget.ViewDragHelper.computeSettleDuration((r16v0 'this' androidx.customview.widget.ViewDragHelper A[IMMUTABLE_TYPE, THIS]), (r17v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'dx' int A[D('dx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'dy' int A[D('dy' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 'xvel' int A[D('xvel' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 'yvel' int A[D('yvel' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0040 \-\> B:22:0x0043, CROSS_EDGE: B:17:0x0036 \-\> B:19:0x003a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_19;
+Node_20 -> Node_22;
+Node_21 -> Node_22;
+Node_17 -> Node_19;
+}
+

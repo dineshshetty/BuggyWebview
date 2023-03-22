@@ -1,0 +1,85 @@
+digraph "CFG forandroidx.transition.TransitionInflater.loadTransition(Landroid\/util\/AttributeSet;Lorg\/xmlpull\/v1\/XmlPullParser;Landroid\/view\/ViewGroup;Landroidx\/transition\/TransitionManager;)V" {
+subgraph cluster_Region_1723053262 {
+label = "R(6:1|2|4|5|(1:(2:14|15)(1:(1:12)(1:13)))|17) | DECL_VAR: androidx.transition.Transition transition\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.content.res.TypedArray android.content.res.TypedArray r0 = r10.mContext.obtainStyledAttributes(r11, androidx.transition.Styleable.TRANSITION_MANAGER)\lint int r1 = androidx.core.content.res.TypedArrayUtils.getNamedResourceId(r0, r12, \"transition\", 2, \-1)\lint int r2 = androidx.core.content.res.TypedArrayUtils.getNamedResourceId(r0, r12, \"fromScene\", 0, \-1)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|androidx.transition.Scene r5 = r2 \< 0 ? null : androidx.transition.Scene.getSceneForLayout(r13, r2, r10.mContext)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|PHI: r5 \l  PHI: (r5v2 'fromScene' androidx.transition.Scene) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r3 = androidx.core.content.res.TypedArrayUtils.getNamedResourceId(r0, r12, \"toScene\", 1, \-1)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0029|androidx.transition.Scene r4 = r3 \>= 0 ? androidx.transition.Scene.getSceneForLayout(r13, r3, r10.mContext) : null\l}"];
+subgraph cluster_IfRegion_1677199738 {
+label = "IF [B:10:0x0032, B:12:0x0038] THEN: R(1:(2:14|15)(1:(1:12)(1:13))) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0032|PHI: r4 \l  PHI: (r4v2 'toScene' androidx.transition.Scene) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (r1 \>= 0) goto L8\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0038|ADDED_TO_REGION\l|if ((r6 = inflateTransition(r1)) != null) goto L10\l}"];
+subgraph cluster_Region_2130892512 {
+label = "R(1:(2:14|15)(1:(1:12)(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_461694853 {
+label = "IF [B:13:0x003a] THEN: R(2:14|15) ELSE: R(1:(1:12)(1:13))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003a|if (r4 == null) goto L14\l}"];
+subgraph cluster_Region_1876611770 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0046}"];
+Node_18 [shape=record,label="{18\:\ 0x005c|throw new java.lang.RuntimeException(\"No toScene for transition ID \" + r1)\l}"];
+}
+subgraph cluster_Region_1745482278 {
+label = "R(1:(1:12)(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1132086097 {
+label = "IF [B:14:0x003c] THEN: R(1:12) ELSE: R(1:13) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003c|if (r5 == null) goto L12\l}"];
+subgraph cluster_Region_577943885 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x003e|r14.setTransition(r4, r6)\l}"];
+}
+subgraph cluster_Region_949258804 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0042|r14.setTransition(r5, r4, r6)\l}"];
+}
+}
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x005d|r0.recycle()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002c}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0034}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0060}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001c}"];
+MethodNode[shape=record,label="{private void androidx.transition.TransitionInflater.loadTransition((r10v0 'this' androidx.transition.TransitionInflater A[IMMUTABLE_TYPE, THIS]), (r11v0 'attrs' android.util.AttributeSet A[D('attrs' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'parser' org.xmlpull.v1.XmlPullParser A[D('parser' org.xmlpull.v1.XmlPullParser), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'sceneRoot' android.view.ViewGroup A[D('sceneRoot' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'transitionManager' androidx.transition.TransitionManager A[D('transitionManager' androidx.transition.TransitionManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0042 \-\> B:19:0x005d, CROSS_EDGE: B:18:0x005c \-\> B:1:?, CROSS_EDGE: B:12:0x0038 \-\> B:19:0x005d, CROSS_EDGE: B:10:0x0032 \-\> B:19:0x005d, CROSS_EDGE: B:7:0x0029 \-\> B:10:0x0032, CROSS_EDGE: B:5:0x001c \-\> B:6:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroid\/content\/res\/Resources$NotFoundException;]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_9;
+Node_7 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_19[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_19[style=dashed];
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_1;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_19;
+Node_16 -> Node_19;
+Node_19 -> Node_20;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_20 -> Node_1;
+Node_5 -> Node_6;
+}
+

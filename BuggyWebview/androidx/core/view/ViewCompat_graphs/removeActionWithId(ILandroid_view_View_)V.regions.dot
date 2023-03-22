@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.core.view.ViewCompat.removeActionWithId(ILandroid\/view\/View;)V" {
+subgraph cluster_Region_188647683 {
+label = "R(2:1|(1:(2:(2:8|9)|(1:6))))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.util.List java.util.List\<androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat\> r0 = getActionList(r4)\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1153105234 {
+label = "LOOP:0: (1:(2:(2:8|9)|(1:6)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0009|if (r1 \< r0.size()) goto L4\l}"];
+subgraph cluster_Region_802445844 {
+label = "R(1:(2:(2:8|9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1164182567 {
+label = "R(2:(2:8|9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_681810869 {
+label = "IF [B:19:0x0015] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|if (r0.get(r1).getId() == r3) goto L7\l}"];
+subgraph cluster_Region_1688807061 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0017|r0.remove(r1)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001e|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_463523218 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001b|LOOP_END\lLOOP:0: B:16:0x0005\-\>B:21:0x001b\l|r1++\l}"];
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0005|LOOP_START\lLOOP:0: B:16:0x0005\-\>B:21:0x001b\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:15:0x0000, B:21:0x001b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0017|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001e|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void androidx.core.view.ViewCompat.removeActionWithId((r3v0 'actionId' int A[D('actionId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x001b \-\> B:16:0x0005, CROSS_EDGE: B:17:0x0009 \-\> B:22:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_19 -> Node_21[style=dashed];
+Node_19 -> Node_23;
+Node_20 -> Node_22;
+Node_22 -> Node_14;
+Node_21 -> Node_16;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_23 -> Node_20;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+}
+

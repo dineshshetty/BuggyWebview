@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.documentfile.provider.RawDocumentFile.createFile(Ljava\/lang\/String;Ljava\/lang\/String;)Landroidx\/documentfile\/provider\/DocumentFile;" {
+subgraph cluster_Region_1884563836 {
+label = "R(4:1|(1:3)|4|(2:6|7))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.String java.lang.String r0 = android.webkit.MimeTypeMap.getSingleton().getExtensionFromMimeType(r6)\l}"];
+subgraph cluster_IfRegion_1629967083 {
+label = "IF [B:3:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1536866437 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|java.lang.String r7 = r7 + \".\" + r0\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001e|PHI: r7 \l  PHI: (r7v1 'displayName' java.lang.String) = (r7v0 'displayName' java.lang.String), (r7v2 'displayName' java.lang.String) binds: [B:3:0x0008, B:4:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|java.io.File java.io.File r1 = new java.io.File(r5.mFile, r7)\l}"];
+subgraph cluster_TryCatchRegion_581307684 {
+label = "Try: R(2:6|7) catches: R(3:10|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_834956165 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0025|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IOException \-\> 0x002e, blocks: (B:6:0x0025), top: B:11:0x0025 \}\lCatch: IOException \-\> 0x002e\l|r1.createNewFile()     \/\/ Catch: java.io.IOException \-\> L2e\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002d|RETURN\l|return new androidx.documentfile.provider.RawDocumentFile(r5, r1)\l}"];
+}
+subgraph cluster_Region_230676347 {
+label = "R(3:10|11|12) | ExcHandler: IOException \-\> 0x002e\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002e|ExcHandler: IOException \-\> 0x002e\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002f|android.util.Log.w(\"DocumentFile\", \"Failed to createFile: \" + r2)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0046|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_230676347 {
+label = "R(3:10|11|12) | ExcHandler: IOException \-\> 0x002e\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002e|ExcHandler: IOException \-\> 0x002e\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002f|android.util.Log.w(\"DocumentFile\", \"Failed to createFile: \" + r2)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0046|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0025|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public androidx.documentfile.provider.DocumentFile androidx.documentfile.provider.RawDocumentFile.createFile((r5v0 'this' androidx.documentfile.provider.RawDocumentFile A[IMMUTABLE_TYPE, THIS]), (r6v0 'mimeType' java.lang.String A[D('mimeType' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'displayName' java.lang.String A[D('displayName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0046 \-\> B:1:?, CROSS_EDGE: B:11:0x0025 \-\> B:8:0x002e, CROSS_EDGE: B:3:0x0008 \-\> B:5:0x001e\lINLINE_NOT_NEEDED\lTryCatch #0 \{IOException \-\> 0x002e, blocks: (B:6:0x0025), top: B:11:0x0025 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.documentfile.provider.DocumentFile.createFile(java.lang.String, java.lang.String):androidx.documentfile.provider.DocumentFile]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_11;
+Node_6 -> Node_7;
+Node_6 -> Node_12;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_11 -> Node_6;
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+}
+

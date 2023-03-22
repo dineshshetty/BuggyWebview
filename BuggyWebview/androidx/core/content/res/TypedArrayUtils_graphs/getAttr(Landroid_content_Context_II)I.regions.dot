@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.content.res.TypedArrayUtils.getAttr(Landroid\/content\/Context;II)I" {
+subgraph cluster_Region_886736323 {
+label = "R(2:1|(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|android.util.TypedValue android.util.TypedValue r0 = new android.util.TypedValue()\lr3.getTheme().resolveAttribute(r4, r0, true)\l}"];
+subgraph cluster_Region_1811303057 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_314122368 {
+label = "IF [B:9:0x000f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x000f|if (r0.resourceId != 0) goto L3\l}"];
+subgraph cluster_Region_2095530370 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0011|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1446112926 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0012|RETURN\l|return r5\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static int androidx.core.content.res.TypedArrayUtils.getAttr((r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'attr' int A[D('attr' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'fallbackAttr' int A[D('fallbackAttr' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0012 \-\> B:7:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_7;
+Node_11 -> Node_7;
+Node_6 -> Node_8;
+}
+

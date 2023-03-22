@@ -1,0 +1,25 @@
+digraph "CFG forandroidx.core.view.DisplayCompat.getDisplaySize(Landroid\/content\/Context;Landroid\/view\/Display;)Landroid\/graphics\/Point;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.graphics.Point r0 = getCurrentDisplaySizeFromWorkarounds(r3, r4)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 == null) goto L5\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return r0\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0007|android.graphics.Point r1 = new android.graphics.Point()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|if (android.os.Build.VERSION.SDK_INT \< 17) goto L9\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0013|androidx.core.view.DisplayCompat.Api17Impl.getRealSize(r4, r1)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001a|RETURN\l|return r1\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0017|r4.getSize(r1)\l}"];
+MethodNode[shape=record,label="{private static android.graphics.Point androidx.core.view.DisplayCompat.getDisplaySize((r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'display' android.view.Display A[D('display' android.view.Display), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x001a \-\> B:1:?, CROSS_EDGE: B:8:0x0017 \-\> B:9:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_9;
+Node_9 -> Node_1;
+Node_8 -> Node_9;
+}
+

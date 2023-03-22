@@ -1,0 +1,84 @@
+digraph "CFG forandroidx.lifecycle.ClassesInfoCache.hasLifecycleMethods(Ljava\/lang\/Class;)Z" {
+subgraph cluster_Region_39387031 {
+label = "R(2:1|(2:(1:4)|(4:6|(2:8|(2:(2:12|13)|(1:10)))|15|16)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|java.lang.Boolean java.lang.Boolean r0 = r7.mHasLifecycleMethods.get(r8)\l}"];
+subgraph cluster_Region_1256773465 {
+label = "R(2:(1:4)|(4:6|(2:8|(2:(2:12|13)|(1:10)))|15|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1337569906 {
+label = "IF [B:20:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_261299804 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000e|RETURN\l|return r0.booleanValue()\l}"];
+}
+}
+subgraph cluster_Region_7980965 {
+label = "R(4:6|(2:8|(2:(2:12|13)|(1:10)))|15|16)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000f|java.lang.reflect.Method[] java.lang.reflect.Method[] r1 = getDeclaredMethods(r8)\lint r4 = 0\l\l}"];
+subgraph cluster_LoopRegion_1290446940 {
+label = "LOOP:0: (2:8|(2:(2:12|13)|(1:10)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0016|LOOP_START\lLOOP:0: B:24:0x0016\-\>B:29:0x0029\lPHI: r4 \l  PHI: (r4v1 int) = (r4v0 int), (r4v3 int) binds: [B:23:0x000f, B:29:0x0029] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \< r2) goto L8\l}"];
+subgraph cluster_Region_1159214202 {
+label = "R(2:8|(2:(2:12|13)|(1:10)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0018|r5 = r1[r4]\landroidx.lifecycle.OnLifecycleEvent androidx.lifecycle.OnLifecycleEvent r6 = (androidx.lifecycle.OnLifecycleEvent) r5.getAnnotation(androidx.lifecycle.OnLifecycleEvent.class)\l}"];
+subgraph cluster_Region_1926627926 {
+label = "R(2:(2:12|13)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_508301983 {
+label = "IF [B:26:0x0022] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0022|if (r6 != null) goto L11\l}"];
+subgraph cluster_Region_1202730121 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0024|createInfo(r8, r1)\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0028|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1346810845 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0029|LOOP_END\lLOOP:0: B:24:0x0016\-\>B:29:0x0029\l|r4++\l}"];
+}
+}
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x002c|r7.mHasLifecycleMethods.put(r8, false)\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0035|RETURN\l|return false\l}"];
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0024|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean androidx.lifecycle.ClassesInfoCache.hasLifecycleMethods((r7v0 'this' androidx.lifecycle.ClassesInfoCache A[IMMUTABLE_TYPE, THIS]), (r8v0 'klass' java.lang.Class\<?\> A[D('klass' java.lang.Class\<?\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x0028 \-\> B:18:?, BACK_EDGE: B:29:0x0029 \-\> B:24:0x0016, CROSS_EDGE: B:31:0x0035 \-\> B:18:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/Class\<*\>;)Z\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_22 -> Node_18;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_33[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_29[style=dashed];
+Node_26 -> Node_32;
+Node_27 -> Node_28;
+Node_28 -> Node_18;
+Node_29 -> Node_24;
+Node_30 -> Node_31;
+Node_31 -> Node_18;
+Node_17 -> Node_19;
+Node_21 -> Node_22;
+Node_32 -> Node_27;
+Node_33 -> Node_30;
+}
+

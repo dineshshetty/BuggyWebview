@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.constraintlayout.core.ArrayLinkedVariables.hasAtLeastOnePositiveVariable()Z" {
+subgraph cluster_Region_1029331284 {
+label = "R(3:1|(1:(2:(1:10)|(1:8)))|13)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r4.mHead\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_943990415 {
+label = "LOOP:0: (1:(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|if (r0 != (\-1)) goto L4\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0008|ADDED_TO_REGION\l|if (r1 \< r4.currentSize) goto L6\l}"];
+subgraph cluster_Region_382963500 {
+label = "R(1:(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_998752851 {
+label = "R(2:(1:10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1848556857 {
+label = "IF [B:8:0x0011] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0011|if (r4.mArrayValues[r0] \> 0.0f) goto L9\l}"];
+subgraph cluster_Region_486320174 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0013|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_771651887 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0015|LOOP_END\lLOOP:0: B:3:0x0003\-\>B:11:0x0015\l|r0 = r4.mArrayNextIndices[r0]\lr1++\l}"];
+}
+}
+}
+}
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0003|LOOP_START\lLOOP:0: B:3:0x0003\-\>B:11:0x0015\lPHI: r0 r1 \l  PHI: (r0v1 'current' int) = (r0v0 'current' int), (r0v2 'current' int) binds: [B:2:0x0000, B:11:0x0015] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'counter' int) = (r1v0 'counter' int), (r1v2 'counter' int) binds: [B:2:0x0000, B:11:0x0015] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0006}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000a}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0013|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001c|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001c|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001c|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{boolean androidx.constraintlayout.core.ArrayLinkedVariables.hasAtLeastOnePositiveVariable((r4v0 'this' androidx.constraintlayout.core.ArrayLinkedVariables A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0015 \-\> B:3:0x0003, CROSS_EDGE: B:13:0x001d \-\> B:1:?, CROSS_EDGE: B:4:0x0004 \-\> B:12:0x001c\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_15[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_16[style=dashed];
+Node_8 -> Node_11[style=dashed];
+Node_8 -> Node_14;
+Node_9 -> Node_1;
+Node_11 -> Node_3;
+Node_17 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_14 -> Node_9;
+Node_16 -> Node_17;
+Node_15 -> Node_12;
+Node_12 -> Node_1;
+}
+

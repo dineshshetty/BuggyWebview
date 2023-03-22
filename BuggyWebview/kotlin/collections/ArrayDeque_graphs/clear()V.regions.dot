@@ -1,0 +1,49 @@
+digraph "CFG forkotlin.collections.ArrayDeque.clear()V" {
+subgraph cluster_Region_1698143599 {
+label = "R(3:1|(1:3)(1:(1:9))|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|int int r0 = positiveMod(r6.head + size())\lint int r1 = r6.head\l}"];
+subgraph cluster_IfRegion_649199725 {
+label = "IF [B:13:0x000f] THEN: R(1:3) ELSE: R(1:(1:9))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_1694875488 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0011|kotlin.collections.ArraysKt.fill(r6.elementData, (java.lang.Object) null, r1, r0)\l}"];
+}
+subgraph cluster_Region_335265453 {
+label = "R(1:(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1812650212 {
+label = "IF [B:16:0x0020] THEN: R(1:9) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0020|if ((!isEmpty()) != false) goto L9\l}"];
+subgraph cluster_Region_1441532954 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0022|java.lang.Object[] java.lang.Object[] r1 = r6.elementData\lkotlin.collections.ArraysKt.fill(r1, (java.lang.Object) null, r6.head, r1.length)\lkotlin.collections.ArraysKt.fill(r6.elementData, (java.lang.Object) null, 0, r0)\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x002f|r6.head = 0\lr6.size = 0\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0033}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0017}"];
+MethodNode[shape=record,label="{public void kotlin.collections.ArrayDeque.clear((r6v0 'this' kotlin.collections.ArrayDeque\<E\> A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:17:0x0022 \-\> B:18:0x002f, CROSS_EDGE: B:16:0x0020 \-\> B:18:0x002f\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lMETHOD_OVERRIDE: [ClspMth\{java.util.Collection.clear():void\}]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_18;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_19 -> Node_11;
+Node_15 -> Node_16;
+}
+

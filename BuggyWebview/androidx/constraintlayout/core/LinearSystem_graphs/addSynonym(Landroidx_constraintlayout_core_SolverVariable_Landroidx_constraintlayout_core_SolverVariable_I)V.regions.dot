@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.constraintlayout.core.LinearSystem.addSynonym(Landroidx\/constraintlayout\/core\/SolverVariable;Landroidx\/constraintlayout\/core\/SolverVariable;I)V" {
+subgraph cluster_Region_1312411395 {
+label = "R(1:(2:(2:(1:6)|(2:(2:9|10)|(2:12|13)))|(1:14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_142877139 {
+label = "R(2:(2:(1:6)|(2:(2:9|10)|(2:12|13)))|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1669816814 {
+label = "IF [B:19:0x0003, B:20:0x0005] THEN: R(2:(1:6)|(2:(2:9|10)|(2:12|13))) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0003|if (r3.definitionId == (\-1)) goto L3\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0005|ADDED_TO_REGION\l|if (r5 == 0) goto L4\l}"];
+subgraph cluster_Region_1354485891 {
+label = "R(2:(1:6)|(2:(2:9|10)|(2:12|13)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1350196288 {
+label = "IF [B:22:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0009|if (r4.isSynonym != false) goto L6\l}"];
+subgraph cluster_Region_2044290341 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000b|int r5 = (int) (r5 + r4.synonymDelta)\lr4 = r2.mCache.mIndexedVariables[r4.synonym]\l}"];
+}
+}
+subgraph cluster_Region_562688993 {
+label = "R(2:(2:9|10)|(2:12|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_800592027 {
+label = "IF [B:25:0x001a] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|if (r3.isSynonym != false) goto L9\l}"];
+subgraph cluster_Region_1767047721 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001c|int int r5 = (int) (r5 \- r3.synonymDelta)\landroidx.constraintlayout.core.SolverVariable r3 = r2.mCache.mIndexedVariables[r3.synonym]\l}"];
+Node_30 [shape=record,label="{30\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_765641072 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002a|r3.setSynonym(r2, r4, 0.0f)\l}"];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_534804908 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x002f|addEquality(r3, r4, r5, 8)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0007}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0018|PHI: r4 r5 \l  PHI: (r4v1 'b' androidx.constraintlayout.core.SolverVariable) = (r4v0 'b' androidx.constraintlayout.core.SolverVariable), (r4v2 'b' androidx.constraintlayout.core.SolverVariable) binds: [B:22:0x0009, B:23:0x000b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 'margin' int) = (r5v0 'margin' int), (r5v3 'margin' int) binds: [B:22:0x0009, B:23:0x000b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0034|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.LinearSystem.addSynonym((r2v0 'this' androidx.constraintlayout.core.LinearSystem A[IMMUTABLE_TYPE, THIS]), (r3v0 'a' androidx.constraintlayout.core.SolverVariable A[D('a' androidx.constraintlayout.core.SolverVariable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'b' androidx.constraintlayout.core.SolverVariable A[D('b' androidx.constraintlayout.core.SolverVariable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'margin' int A[D('margin' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x002a \-\> B:29:0x0034, CROSS_EDGE: B:22:0x0009 \-\> B:24:0x0018, CROSS_EDGE: B:28:0x002f \-\> B:29:0x0034, CROSS_EDGE: B:19:0x0003 \-\> B:28:0x002f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_28[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_28[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_30;
+Node_30 -> Node_17;
+Node_27 -> Node_31;
+Node_31 -> Node_17;
+Node_28 -> Node_29;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_29 -> Node_17;
+}
+

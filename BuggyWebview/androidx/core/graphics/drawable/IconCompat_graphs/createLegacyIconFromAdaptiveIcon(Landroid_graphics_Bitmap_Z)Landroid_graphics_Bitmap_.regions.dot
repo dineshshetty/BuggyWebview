@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.core.graphics.drawable.IconCompat.createLegacyIconFromAdaptiveIcon(Landroid\/graphics\/Bitmap;Z)Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_2035009089 {
+label = "R(4:1|(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = (int) (java.lang.Math.min(r11.getWidth(), r11.getHeight()) * androidx.core.graphics.drawable.IconCompat.DEFAULT_VIEW_PORT_SCALE)\landroid.graphics.Bitmap android.graphics.Bitmap r1 = android.graphics.Bitmap.createBitmap(r0, r0, android.graphics.Bitmap.Config.ARGB_8888)\landroid.graphics.Canvas android.graphics.Canvas r2 = new android.graphics.Canvas(r1)\landroid.graphics.Paint android.graphics.Paint r3 = new android.graphics.Paint(3)\lfloat float r4 = r0 * 0.5f\lfloat float r5 = androidx.core.graphics.drawable.IconCompat.ICON_DIAMETER_FACTOR * r4\l}"];
+subgraph cluster_IfRegion_775946565 {
+label = "IF [B:10:0x002e] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002e|if (r12 != false) goto L3\l}"];
+subgraph cluster_Region_1449752453 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0030|float float r7 = r0 * androidx.core.graphics.drawable.IconCompat.BLUR_FACTOR\lr3.setColor(0)\lr3.setShadowLayer(r7, 0.0f, r0 * androidx.core.graphics.drawable.IconCompat.KEY_SHADOW_OFFSET_FACTOR, 1023410176)\lr2.drawCircle(r4, r4, r5, r3)\lr3.setShadowLayer(r7, 0.0f, 0.0f, 503316480)\lr2.drawCircle(r4, r4, r5, r3)\lr3.clearShadowLayer()\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0054|r3.setColor(androidx.core.view.ViewCompat.MEASURED_STATE_MASK)\landroid.graphics.BitmapShader android.graphics.BitmapShader r6 = new android.graphics.BitmapShader(r11, android.graphics.Shader.TileMode.CLAMP, android.graphics.Shader.TileMode.CLAMP)\landroid.graphics.Matrix android.graphics.Matrix r7 = new android.graphics.Matrix()\lr7.setTranslate((\-(r11.getWidth() \- r0)) \/ 2.0f, (\-(r11.getHeight() \- r0)) \/ 2.0f)\lr6.setLocalMatrix(r7)\lr3.setShader(r6)\lr2.drawCircle(r4, r4, r5, r3)\lr2.setBitmap(null)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0089|RETURN\l|return r1\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static android.graphics.Bitmap androidx.core.graphics.drawable.IconCompat.createLegacyIconFromAdaptiveIcon((r11v0 'adaptiveIconBitmap' android.graphics.Bitmap A[D('adaptiveIconBitmap' android.graphics.Bitmap), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'addShadow' boolean A[D('addShadow' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x002e \-\> B:12:0x0054\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

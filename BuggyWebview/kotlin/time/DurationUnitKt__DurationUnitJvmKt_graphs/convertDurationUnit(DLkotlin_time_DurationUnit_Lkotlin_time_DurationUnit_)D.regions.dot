@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.time.DurationUnitKt__DurationUnitJvmKt.convertDurationUnit(DLkotlin\/time\/DurationUnit;Lkotlin\/time\/DurationUnit;)D" {
+subgraph cluster_Region_992940247 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"sourceUnit\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"targetUnit\")\llong long r0 = r10.getTimeUnit$kotlin_stdlib().convert(1L, r9.getTimeUnit$kotlin_stdlib())\l}"];
+subgraph cluster_Region_599600772 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1207424466 {
+label = "IF [B:11:0x001c] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001c|if (r0 \> 0) goto L3\l}"];
+subgraph cluster_Region_194207983 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0021|RETURN\l|return r0 * r7\l}"];
+}
+}
+subgraph cluster_Region_1016006526 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0022|long long r2 = r9.getTimeUnit$kotlin_stdlib().convert(1L, r10.getTimeUnit$kotlin_stdlib())\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0031|RETURN\l|return r7 \/ r2\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001e}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final double kotlin.time.DurationUnitKt__DurationUnitJvmKt.convertDurationUnit((r7v0 'value' double A[D('value' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'sourceUnit' kotlin.time.DurationUnit A[D('sourceUnit' kotlin.time.DurationUnit), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'targetUnit' kotlin.time.DurationUnit A[D('targetUnit' kotlin.time.DurationUnit), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0031 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

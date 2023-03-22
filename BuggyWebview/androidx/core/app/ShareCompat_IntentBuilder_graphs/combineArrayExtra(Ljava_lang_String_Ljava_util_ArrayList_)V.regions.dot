@@ -1,0 +1,39 @@
+digraph "CFG forandroidx.core.app.ShareCompat.IntentBuilder.combineArrayExtra(Ljava\/lang\/String;Ljava\/util\/ArrayList;)V" {
+subgraph cluster_Region_2024338630 {
+label = "R(5:1|2|4|(1:6)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.String[] java.lang.String[] r0 = r5.mIntent.getStringArrayExtra(r6)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|int r2 = r0 != null ? r0.length : 0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000c|PHI: r2 \l  PHI: (r2v1 'currentLength' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.String[] java.lang.String[] r3 = new java.lang.String[r7.size() + r2]\lr7.toArray(r3)\l}"];
+subgraph cluster_IfRegion_161247088 {
+label = "IF [B:7:0x0016] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_1801857574 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|java.lang.System.arraycopy(r0, 0, r3, r7.size(), r2)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001f|r5.mIntent.putExtra(r6, r3)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0024}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b}"];
+MethodNode[shape=record,label="{private void androidx.core.app.ShareCompat.IntentBuilder.combineArrayExtra((r5v0 'this' androidx.core.app.ShareCompat$IntentBuilder A[IMMUTABLE_TYPE, THIS]), (r6v0 'extra' java.lang.String A[D('extra' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'add' java.util.ArrayList\<java.lang.String\> A[D('add' java.util.ArrayList\<java.lang.String\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0016 \-\> B:9:0x001f, CROSS_EDGE: B:5:0x000b \-\> B:6:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/String;Ljava\/util\/ArrayList\<Ljava\/lang\/String;\>;)V\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_10 -> Node_1;
+Node_5 -> Node_6;
+}
+

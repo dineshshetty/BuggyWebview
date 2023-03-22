@@ -1,0 +1,68 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.last([Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_773975461 {
+label = "R(2:1|(2:(2:(2:3|(1:8))|11)|(1:11)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"predicate\")\lint int r1 = r5.length \- 1\l}"];
+subgraph cluster_Region_983439904 {
+label = "R(2:(2:(2:3|(1:8))|11)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_919594870 {
+label = "IF [B:16:0x000e] THEN: R(2:(2:3|(1:8))|11) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000e|if (r1 \>= 0) goto L3\l}"];
+subgraph cluster_Region_793542490 {
+label = "R(2:(2:3|(1:8))|11)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1764642442 {
+label = "LOOP:0: (2:3|(1:8))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0022|LOOP_END\lLOOP:0: B:17:0x0010\-\>B:20:0x0022\l|if (r1 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1634579555 {
+label = "R(2:3|(1:8))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|LOOP_START\lLOOP:0: B:17:0x0010\-\>B:20:0x0022\lPHI: r1 \l  PHI: (r1v3 int) = (r1v1 int), (r1v4 int) binds: [B:16:0x000e, B:20:0x0022] A[DONT_GENERATE, DONT_INLINE]\l|int r2 = r1\lr1\-\-\lT r3 = r5[r2]\l}"];
+subgraph cluster_IfRegion_1212402383 {
+label = "IF [B:18:0x001f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001f|if (r6.invoke(r3).booleanValue() != false) goto L7\l}"];
+subgraph cluster_Region_1140957448 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0021|RETURN\l|return r3\l}"];
+}
+}
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x002c|throw new java.util.NoSuchElementException(\"Array contains no element matching the predicate.\")\l}"];
+}
+}
+subgraph cluster_Region_1607747282 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002c|throw new java.util.NoSuchElementException(\"Array contains no element matching the predicate.\")\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0025|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0021|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0025}"];
+MethodNode[shape=record,label="{public static final T kotlin.collections.ArraysKt___ArraysKt.last((r5v0 T[] A[D('$this$last' java.lang.Object[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'predicate' kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x002c \-\> B:14:?, BACK_EDGE: B:20:0x0022 \-\> B:17:0x0010, CROSS_EDGE: B:16:0x000e \-\> B:22:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>([TT;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Boolean;\>;)TT;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_22[style=dashed];
+Node_20 -> Node_17;
+Node_20 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_20[style=dashed];
+Node_18 -> Node_25;
+Node_19 -> Node_14;
+Node_23 -> Node_14;
+Node_23 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_22;
+Node_25 -> Node_19;
+Node_22 -> Node_23;
+}
+

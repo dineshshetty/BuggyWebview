@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.fragment.app.FragmentTransaction.createFragment(Ljava\/lang\/Class;Landroid\/os\/Bundle;)Landroidx\/fragment\/app\/Fragment;" {
+subgraph cluster_Region_1037585104 {
+label = "R(2:1|(2:(1:13)|(2:3|(2:(1:11)|(3:5|(1:7)|8)))))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|androidx.fragment.app.FragmentFactory androidx.fragment.app.FragmentFactory r0 = r3.mFragmentFactory\l}"];
+subgraph cluster_Region_339843678 {
+label = "R(2:(1:13)|(2:3|(2:(1:11)|(3:5|(1:7)|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1311393940 {
+label = "IF [B:17:0x0002] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (r0 == null) goto L12\l}"];
+subgraph cluster_Region_1730601837 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0025|throw new java.lang.IllegalStateException(\"Creating a Fragment requires that this FragmentTransaction was built with FragmentManager.beginTransaction()\")\l}"];
+}
+}
+subgraph cluster_Region_801053017 {
+label = "R(2:3|(2:(1:11)|(3:5|(1:7)|8)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|java.lang.ClassLoader java.lang.ClassLoader r1 = r3.mClassLoader\l}"];
+subgraph cluster_Region_1276881955 {
+label = "R(2:(1:11)|(3:5|(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1347307700 {
+label = "IF [B:19:0x0006] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|if (r1 == null) goto L10\l}"];
+subgraph cluster_Region_1787559400 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001d|throw new java.lang.IllegalStateException(\"The FragmentManager must be attached to itshost to create a Fragment\")\l}"];
+}
+}
+subgraph cluster_Region_1953524601 {
+label = "R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|androidx.fragment.app.Fragment androidx.fragment.app.Fragment r0 = r0.instantiate(r1, r4.getName())\l}"];
+subgraph cluster_IfRegion_1912605069 {
+label = "IF [B:21:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|if (r5 != null) goto L7\l}"];
+subgraph cluster_Region_1287443649 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0012|r0.setArguments(r5)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0015|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0016}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001e}"];
+MethodNode[shape=record,label="{private androidx.fragment.app.Fragment androidx.fragment.app.FragmentTransaction.createFragment((r3v0 'this' androidx.fragment.app.FragmentTransaction A[IMMUTABLE_TYPE, THIS]), (r4v0 'fragmentClass' java.lang.Class\<? extends androidx.fragment.app.Fragment\> A[D('fragmentClass' java.lang.Class\<? extends androidx.fragment.app.Fragment\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'args' android.os.Bundle A[D('args' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0010 \-\> B:23:0x0015, CROSS_EDGE: B:25:0x001d \-\> B:15:?, CROSS_EDGE: B:27:0x0025 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/Class\<+Landroidx\/fragment\/app\/Fragment;\>;Landroid\/os\/Bundle;)Landroidx\/fragment\/app\/Fragment;\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_26;
+Node_27 -> Node_15;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_24;
+Node_25 -> Node_15;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_15;
+Node_14 -> Node_16;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+}
+

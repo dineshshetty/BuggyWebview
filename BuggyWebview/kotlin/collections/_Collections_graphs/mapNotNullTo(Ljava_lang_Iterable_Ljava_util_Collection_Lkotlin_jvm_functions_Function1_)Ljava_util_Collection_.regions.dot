@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.mapNotNullTo(Ljava\/lang\/Iterable;Ljava\/util\/Collection;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Collection;" {
+subgraph cluster_Region_1268001762 {
+label = "R(3:1|(2:4|(1:7)(0))|12)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"destination\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, \"transform\")\ljava.util.Iterator java.util.Iterator\<? extends T\> r3 = r9.iterator()\l}"];
+subgraph cluster_LoopRegion_109173278 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x001a|if (r3.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_157693850 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x001c|java.lang.Object java.lang.Object r4 = (T) r3.next()\ljava.lang.Object R r7 = r11.invoke(r4)\l}"];
+subgraph cluster_IfRegion_1995512976 {
+label = "IF [B:38:0x0026] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0026|if (r7 != null) goto L6\l}"];
+subgraph cluster_Region_475062935 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0028|r10.add(r7)\l}"];
+}
+subgraph cluster_Region_1809536120 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_42 [shape=record,label="{42\:\ 0x002f|RETURN\l|return r10\l}"];
+}
+Node_32 [shape=record,color=red,label="{32\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0016|LOOP_START\lLOOP:0: B:35:0x0016\-\>B:45:0x0016\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0028|SYNTHETIC\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x0016|SYNTHETIC\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0016|LOOP_END\lSYNTHETIC\lLOOP:0: B:35:0x0016\-\>B:45:0x0016\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x0016|SYNTHETIC\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x002f|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final C extends java.util.Collection\<? super R\> kotlin.collections.CollectionsKt___CollectionsKt.mapNotNullTo((r9v0 java.lang.Iterable\<? extends T\> A[D('$this$mapNotNullTo' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'destination' C extends java.util.Collection\<? super R\> A[D('destination' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'transform' kotlin.jvm.functions.Function1\<? super T, ? extends R\> A[D('transform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:39:0x0028 \-\> B:35:0x0016, BACK_EDGE: B:38:0x0026 \-\> B:35:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, C extends java.util.Collection\<? super R\>, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;C::Ljava\/util\/Collection\<\-TR;\>;\>(Ljava\/lang\/Iterable\<+TT;\>;TC;Lkotlin\/jvm\/functions\/Function1\<\-TT;+TR;\>;)TC;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r4v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_32;Node_34 -> Node_35;
+Node_36 -> Node_37;
+Node_36 -> Node_44[style=dashed];
+Node_37 -> Node_38;
+Node_38 -> Node_43;
+Node_38 -> Node_46[style=dashed];
+Node_39 -> Node_47;
+Node_42 -> Node_33;
+Node_32 -> Node_34;
+Node_35 -> Node_36;
+Node_43 -> Node_39;
+Node_47 -> Node_45;
+Node_45 -> Node_35;
+Node_46 -> Node_45;
+Node_44 -> Node_42;
+}
+

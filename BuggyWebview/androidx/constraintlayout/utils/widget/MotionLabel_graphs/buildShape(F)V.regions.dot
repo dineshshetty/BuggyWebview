@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.constraintlayout.utils.widget.MotionLabel.buildShape(F)V" {
+subgraph cluster_Region_1301529537 {
+label = "R(1:(2:(1:5)|(3:7|(1:9)|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_820402151 {
+label = "R(2:(1:5)|(3:7|(1:9)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_980285870 {
+label = "IF [B:3:0x0004, B:5:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r11.mUseOutline == false) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0008|ADDED_TO_REGION\l|if (r12 == 1.0f) goto L5\l}"];
+subgraph cluster_Region_834759186 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1856983281 {
+label = "R(3:7|(1:9)|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000b|r11.mPath.reset()\ljava.lang.String java.lang.String r0 = r11.mText\lint int r9 = r0.length()\lr11.mPaint.getTextBounds(r0, 0, r9, r11.mTextBounds)\lr11.mPaint.getTextPath(r0, 0, r9, 0.0f, 0.0f, r11.mPath)\l}"];
+subgraph cluster_IfRegion_1654598176 {
+label = "IF [B:8:0x002c] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|if (r12 != 1.0f) goto L9\l}"];
+subgraph cluster_Region_556865240 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002e|android.util.Log.v(androidx.constraintlayout.utils.widget.MotionLabel.TAG, androidx.constraintlayout.motion.widget.Debug.getLoc() + \" scale \" + r12)\landroid.graphics.Matrix android.graphics.Matrix r1 = new android.graphics.Matrix()\lr1.postScale(r12, r12)\lr11.mPath.transform(r1)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0058|android.graphics.Rect android.graphics.Rect r1 = r11.mTextBounds\lr1.right\-\-\lr11.mTextBounds.left++\lr11.mTextBounds.bottom++\landroid.graphics.Rect android.graphics.Rect r1 = r11.mTextBounds\lr1.top\-\-\landroid.graphics.RectF android.graphics.RectF r1 = new android.graphics.RectF()\lr1.bottom = getHeight()\lr1.right = getWidth()\lr11.mNotBuilt = false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x008d}"];
+MethodNode[shape=record,label="{void androidx.constraintlayout.utils.widget.MotionLabel.buildShape((r11v0 'this' androidx.constraintlayout.utils.widget.MotionLabel A[IMMUTABLE_TYPE, THIS]), (r12v0 'scale' float A[D('scale' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x008d \-\> B:1:?, CROSS_EDGE: B:8:0x002c \-\> B:10:0x0058, CROSS_EDGE: B:3:0x0004 \-\> B:7:0x000b\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [scale]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_11 -> Node_1;
+}
+

@@ -1,0 +1,43 @@
+digraph "CFG forkotlinx.coroutines.internal.StackTraceRecoveryKt.recoverStackTrace(Ljava\/lang\/Throwable;Lkotlin\/coroutines\/Continuation;)Ljava\/lang\/Throwable;" {
+subgraph cluster_Region_1498620460 {
+label = "R(1:(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1829709181 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_460527042 {
+label = "IF [B:13:0x0005, B:15:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0005|if (kotlinx.coroutines.Debug.getRECOVER_STACK_TRACES() != false) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0009|ADDED_TO_REGION\l|if ((r3 instanceof kotlin.coroutines.jvm.internal.CoroutineStackFrame) != false) goto L5\l}"];
+subgraph cluster_Region_1440401109 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|RETURN\l|return (E) recoverFromStackFrame(r2, (kotlin.coroutines.jvm.internal.CoroutineStackFrame) r3)\l}"];
+}
+}
+subgraph cluster_Region_358140928 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0014|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0007}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000c}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final E extends java.lang.Throwable kotlinx.coroutines.internal.StackTraceRecoveryKt.recoverStackTrace((r2v0 E extends java.lang.Throwable A[D('exception' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 kotlin.coroutines.Continuation\<?\> A[D('continuation' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0014 \-\> B:11:?, CROSS_EDGE: B:13:0x0005 \-\> B:19:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: [E extends java.lang.Throwable]\lSIGNATURE: \<E:Ljava\/lang\/Throwable;\>(TE;Lkotlin\/coroutines\/Continuation\<*\>;)TE;\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_19[style=dashed];
+Node_15 -> Node_17;
+Node_15 -> Node_19[style=dashed];
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+}
+

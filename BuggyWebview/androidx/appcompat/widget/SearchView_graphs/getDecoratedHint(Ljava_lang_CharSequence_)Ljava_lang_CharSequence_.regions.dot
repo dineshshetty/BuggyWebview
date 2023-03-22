@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.appcompat.widget.SearchView.getDecoratedHint(Ljava\/lang\/CharSequence;)Ljava\/lang\/CharSequence;" {
+subgraph cluster_Region_1578661379 {
+label = "R(1:(2:(1:8)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1299515860 {
+label = "R(2:(1:8)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_307532219 {
+label = "IF [B:13:0x0002, B:15:0x0006] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r6.mIconifiedByDefault == false) goto L8\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0006|ADDED_TO_REGION\l|if (r6.mSearchHintIcon == null) goto L8\l}"];
+subgraph cluster_Region_1322680617 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0034|RETURN\l|return r7\l}"];
+}
+}
+subgraph cluster_Region_119731218 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0009|int int r0 = (int) (r6.mSearchSrcTextView.getTextSize() * 1.25d)\lr6.mSearchHintIcon.setBounds(0, 0, r0, r0)\landroid.text.SpannableStringBuilder android.text.SpannableStringBuilder r1 = new android.text.SpannableStringBuilder(\"   \")\lr1.setSpan(new android.text.style.ImageSpan(r6.mSearchHintIcon), 1, 2, 33)\lr1.append(r7)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0033|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0004}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private java.lang.CharSequence androidx.appcompat.widget.SearchView.getDecoratedHint((r6v0 'this' androidx.appcompat.widget.SearchView A[IMMUTABLE_TYPE, THIS]), (r7v0 'hintText' java.lang.CharSequence A[D('hintText' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0034 \-\> B:11:?, CROSS_EDGE: B:13:0x0002 \-\> B:19:0x0034\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_19;
+Node_15 -> Node_17[style=dashed];
+Node_15 -> Node_19;
+Node_19 -> Node_11;
+Node_17 -> Node_18;
+Node_18 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

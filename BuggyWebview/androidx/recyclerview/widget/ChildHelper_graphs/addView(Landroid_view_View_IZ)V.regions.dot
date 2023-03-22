@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.recyclerview.widget.ChildHelper.addView(Landroid\/view\/View;IZ)V" {
+subgraph cluster_Region_240811471 {
+label = "R(4:(1:2)(1:9)|3|(1:5)|6) | DECL_VAR: int offset\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_364904346 {
+label = "IF [B:12:0x0000] THEN: R(1:2) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r4 \< 0) goto L2\l}"];
+subgraph cluster_Region_1616549972 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|int r0 = r2.mCallback.getChildCount()\l}"];
+}
+subgraph cluster_Region_1631959575 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0009|int r0 = getOffset(r4)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x000d|PHI: r0 \l  PHI: (r0v1 'offset' int) = (r0v0 'offset' int), (r0v3 'offset' int) binds: [B:14:0x0009, B:13:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|r2.mBucket.insert(r0, r5)\l}"];
+subgraph cluster_IfRegion_395256512 {
+label = "IF [B:16:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|if (r5 != false) goto L5\l}"];
+subgraph cluster_Region_1096669207 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|hideViewInternal(r3)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0017|r2.mCallback.addView(r3, r0)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001c}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.ChildHelper.addView((r2v0 'this' androidx.recyclerview.widget.ChildHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'hidden' boolean A[D('hidden' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0012 \-\> B:18:0x0017, CROSS_EDGE: B:14:0x0009 \-\> B:15:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_19 -> Node_11;
+}
+

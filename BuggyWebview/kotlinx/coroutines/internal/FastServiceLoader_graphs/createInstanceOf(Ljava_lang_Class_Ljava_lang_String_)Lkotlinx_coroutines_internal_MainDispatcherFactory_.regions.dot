@@ -1,0 +1,47 @@
+digraph "CFG forkotlinx.coroutines.internal.FastServiceLoader.createInstanceOf(Ljava\/lang\/Class;Ljava\/lang\/String;)Lkotlinx\/coroutines\/internal\/MainDispatcherFactory;" {
+subgraph cluster_Region_770836991 {
+label = "R(1:(2:3|5))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1394602093 {
+label = "Try: R(2:3|5) catches: R(1:9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2105440133 {
+label = "R(2:3|5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0003|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{ClassNotFoundException \-\> 0x001f, blocks: (B:14:0x0003), top: B:19:0x0003 \}\lCatch: ClassNotFoundException \-\> 0x001f\l|java.lang.Class java.lang.Class r1 = java.lang.Class.forName(r6, true, r5.getClassLoader())     \/\/ Catch: java.lang.ClassNotFoundException \-\> L1f\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return r5.cast(r1.getDeclaredConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0]))\l}"];
+}
+subgraph cluster_Region_1974158807 {
+label = "R(1:9) | ExcHandler: ClassNotFoundException \-\> 0x001f\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0024|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_1974158807 {
+label = "R(1:9) | ExcHandler: ClassNotFoundException \-\> 0x001f\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0024|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001f|ExcHandler: ClassNotFoundException \-\> 0x001f\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0020}"];
+MethodNode[shape=record,label="{private final kotlinx.coroutines.internal.MainDispatcherFactory kotlinx.coroutines.internal.FastServiceLoader.createInstanceOf((r4v0 'this' kotlinx.coroutines.internal.FastServiceLoader A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.Class\<kotlinx.coroutines.internal.MainDispatcherFactory\> A[D('baseClass' java.lang.Class), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'serviceClass' java.lang.String A[D('serviceClass' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0020 \-\> B:18:0x0024, CROSS_EDGE: B:19:0x0003 \-\> B:16:0x001f\lINLINE_NOT_NEEDED\lTryCatch #0 \{ClassNotFoundException \-\> 0x001f, blocks: (B:14:0x0003), top: B:19:0x0003 \}\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/Class\<Lkotlinx\/coroutines\/internal\/MainDispatcherFactory;\>;Ljava\/lang\/String;)Lkotlinx\/coroutines\/internal\/MainDispatcherFactory;\l}"];
+MethodNode -> Node_11;Node_14 -> Node_20;
+Node_14 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_12;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_19;
+Node_19 -> Node_14;
+Node_19 -> Node_16;
+Node_20 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+}
+

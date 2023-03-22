@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.core.app.ShareCompat.Api16Impl.migrateExtraStreamToClipData(Landroid\/content\/Intent;Ljava\/util\/ArrayList;)V" {
+subgraph cluster_Region_1691545464 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.CharSequence java.lang.CharSequence r0 = r8.getCharSequenceExtra(\"android.intent.extra.TEXT\")\ljava.lang.String java.lang.String r1 = r8.getStringExtra(androidx.core.content.IntentCompat.EXTRA_HTML_TEXT)\landroid.content.ClipData android.content.ClipData r2 = new android.content.ClipData(null, new java.lang.String[]\{r8.getType()\}, new android.content.ClipData.Item(r0, r1, null, r9.get(0)))\lint r4 = 1\lint int r5 = r9.size()\l}"];
+subgraph cluster_LoopRegion_1580369544 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002c|LOOP_START\lLOOP:0: B:3:0x002c\-\>B:4:0x002e\lPHI: r4 \l  PHI: (r4v2 'i' int) = (r4v1 'i' int), (r4v3 'i' int) binds: [B:2:0x0000, B:4:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \< r5) goto L3\l}"];
+subgraph cluster_Region_248556977 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002e|LOOP_END\lLOOP:0: B:3:0x002c\-\>B:4:0x002e\l|android.net.Uri android.net.Uri r6 = r9.get(r4)\lr2.addItem(new android.content.ClipData.Item(r6))\lr4++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x003f|r8.setClipData(r2)\lr8.addFlags(1)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x003f|SYNTHETIC\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0045}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static void androidx.core.app.ShareCompat.Api16Impl.migrateExtraStreamToClipData((r8v0 'intent' android.content.Intent A[D('intent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'streams' java.util.ArrayList\<android.net.Uri\> A[D('streams' java.util.ArrayList\<android.net.Uri\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x002e \-\> B:3:0x002c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/content\/Intent;Ljava\/util\/ArrayList\<Landroid\/net\/Uri;\>;)V\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_7 -> Node_5;
+Node_6 -> Node_1;
+}
+

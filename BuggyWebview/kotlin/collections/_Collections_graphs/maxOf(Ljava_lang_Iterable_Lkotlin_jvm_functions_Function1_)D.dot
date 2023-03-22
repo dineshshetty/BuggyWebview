@@ -1,0 +1,29 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.maxOf(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)D" {
+Node_24 [shape=record,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"selector\")\ljava.util.Iterator r0 = r5.iterator()\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0012|if (r0.hasNext() == false) goto L10\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0014|double r1 = r6.invoke((T) r0.next()).doubleValue()\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0022|LOOP_START\lLOOP:0: B:29:0x0022\-\>B:31:0x0028\lPHI: r1 \l  PHI: (r1v6 'maxValue' double) = (r1v5 'maxValue' double), (r1v7 'maxValue' double) binds: [B:28:0x0014, B:31:0x0028] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0026|if (r0.hasNext() == false) goto L7\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0028|LOOP_END\lLOOP:0: B:29:0x0022\-\>B:31:0x0028\l|double r3 = r6.invoke((T) r0.next()).doubleValue()\ldouble r1 = java.lang.Math.max(r1, r3)\l}"];
+Node_35 [shape=record,label="{35\:\ 0x003b|SYNTHETIC\l}"];
+Node_32 [shape=record,label="{32\:\ 0x003b|RETURN\l|return r1\l}"];
+Node_25 [shape=record,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,label="{33\:\ 0x003c}"];
+Node_34 [shape=record,label="{34\:\ 0x0041|throw new java.util.NoSuchElementException()\l}"];
+MethodNode[shape=record,label="{private static final double kotlin.collections.CollectionsKt___CollectionsKt.maxOf((r5v0 java.lang.Iterable\<? extends T\> A[D('$this$maxOf' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'selector' kotlin.jvm.functions.Function1\<? super T, java.lang.Double\> A[D('selector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:31:0x0028 \-\> B:29:0x0022, CROSS_EDGE: B:34:0x0041 \-\> B:25:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Double;\>;)D\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r1v2. Raw type applied. Possible types: T, ? super T\l \-\> Type inference failed for r3v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_24;Node_24 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_33;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_35;
+Node_31 -> Node_29;
+Node_35 -> Node_32;
+Node_32 -> Node_25;
+Node_33 -> Node_34;
+Node_34 -> Node_25;
+}
+

@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.DecoratedCustomViewStyle.createRemoteViews(Landroid\/widget\/RemoteViews;Z)Landroid\/widget\/RemoteViews;" {
+subgraph cluster_Region_1822195515 {
+label = "R(5:1|(2:6|(1:8))|10|12|13) | DECL_VAR: int numActions\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|android.widget.RemoteViews android.widget.RemoteViews r0 = applyStandardTemplate(true, androidx.core.C0180R.layout.notification_template_custom_big, false)\lr0.removeAllViews(androidx.core.C0180R.C0183id.actions)\lboolean r1 = false\ljava.util.List java.util.List\<androidx.core.app.NotificationCompat.Action\> r3 = getNonContextualActions(r8.mBuilder.mActions)\l}"];
+subgraph cluster_IfRegion_2082810099 {
+label = "IF [B:19:0x0016, B:20:0x0018, B:22:0x0023] THEN: R(2:6|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0016|if (r10 != false) goto L3\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0018|ADDED_TO_REGION\l|if (r3 != null) goto L4\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0023|ADDED_TO_REGION\l|if ((r4 = java.lang.Math.min(r3.size(), 3)) \> 0) goto L6\l}"];
+subgraph cluster_Region_1091136569 {
+label = "R(2:6|(1:8))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0025|r1 = true\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_1943004651 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0027|LOOP_START\lLOOP:0: B:24:0x0027\-\>B:25:0x002a\lPHI: r5 \l  PHI: (r5v2 'i' int) = (r5v1 'i' int), (r5v3 'i' int) binds: [B:23:0x0025, B:25:0x002a] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r4) goto L8\l}"];
+subgraph cluster_Region_1149815989 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002a|LOOP_END\lLOOP:0: B:24:0x0027\-\>B:25:0x002a\l|android.widget.RemoteViews android.widget.RemoteViews r6 = generateActionButton(r3.get(r5))\lr0.addView(androidx.core.C0180R.C0183id.actions, r6)\lr5++\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x003c|PHI: r1 \l  PHI: (r1v3 'actionsVisible' boolean) = (r1v2 'actionsVisible' boolean), (r1v2 'actionsVisible' boolean), (r1v2 'actionsVisible' boolean), (r1v4 'actionsVisible' boolean) binds: [B:19:0x0016, B:20:0x0018, B:22:0x0023, B:31:0x003c] A[DONT_GENERATE, DONT_INLINE]\l|int r2 = r1 ? 0 : 8\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0041|PHI: r2 \l  PHI: (r2v1 'actionVisibility' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r0.setViewVisibility(androidx.core.C0180R.C0183id.actions, r2)\lr0.setViewVisibility(androidx.core.C0180R.C0183id.action_divider, r2)\lbuildIntoRemoteViews(r0, r9)\l}"];
+Node_30 [shape=record,label="{30\:\ 0x004e|RETURN\l|return r0\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001a}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x003c|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x003f}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.widget.RemoteViews androidx.core.app.NotificationCompat.DecoratedCustomViewStyle.createRemoteViews((r8v0 'this' androidx.core.app.NotificationCompat$DecoratedCustomViewStyle A[IMMUTABLE_TYPE, THIS]), (r9v0 'innerView' android.widget.RemoteViews A[D('innerView' android.widget.RemoteViews), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'showActions' boolean A[D('showActions' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x002a \-\> B:24:0x0027, CROSS_EDGE: B:26:0x003c \-\> B:29:0x0041, CROSS_EDGE: B:22:0x0023 \-\> B:26:0x003c, CROSS_EDGE: B:20:0x0018 \-\> B:26:0x003c, CROSS_EDGE: B:19:0x0016 \-\> B:26:0x003c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_26[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_26[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_26[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_31[style=dashed];
+Node_25 -> Node_24;
+Node_26 -> Node_28;
+Node_26 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_17;
+Node_16 -> Node_18;
+Node_21 -> Node_22;
+Node_31 -> Node_26;
+Node_28 -> Node_29;
+}
+

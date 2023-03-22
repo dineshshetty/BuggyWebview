@@ -1,0 +1,74 @@
+digraph "CFG forandroidx.core.app.ShareCompat.IntentReader.getCallingApplicationLabel()Ljava\/lang\/CharSequence;" {
+subgraph cluster_Region_1426582770 {
+label = "R(1:(2:(1:3)|(2:5|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_836017690 {
+label = "R(2:(1:3)|(2:5|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2075624526 {
+label = "IF [B:3:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r5.mCallingPackage == null) goto L3\l}"];
+subgraph cluster_Region_1159121800 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1598468413 {
+label = "R(2:5|(1:8))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0006|android.content.pm.PackageManager android.content.pm.PackageManager r0 = r5.mContext.getPackageManager()\l}"];
+subgraph cluster_TryCatchRegion_790421412 {
+label = "Try: R(1:8) catches: R(3:10|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_707364493 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|RETURN\l|return r0.getApplicationLabel(r0.getApplicationInfo(r5.mCallingPackage, 0))\l}"];
+}
+subgraph cluster_Region_976072723 {
+label = "R(3:10|11|12) | ExcHandler: NameNotFoundException \-\> 0x0018\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|ExcHandler: NameNotFoundException \-\> 0x0018\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0019|android.util.Log.e(androidx.core.app.ShareCompat.IntentReader.TAG, \"Could not retrieve label for calling application\", r2)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0020|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_976072723 {
+label = "R(3:10|11|12) | ExcHandler: NameNotFoundException \-\> 0x0018\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|ExcHandler: NameNotFoundException \-\> 0x0018\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0019|android.util.Log.e(androidx.core.app.ShareCompat.IntentReader.TAG, \"Could not retrieve label for calling application\", r2)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0020|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000c|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000c|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{NameNotFoundException \-\> 0x0018, blocks: (B:6:0x000c), top: B:11:0x000c \}\lCatch: NameNotFoundException \-\> 0x0018\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public java.lang.CharSequence androidx.core.app.ShareCompat.IntentReader.getCallingApplicationLabel((r5v0 'this' androidx.core.app.ShareCompat$IntentReader A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0017 \-\> B:1:?, CROSS_EDGE: B:10:0x0020 \-\> B:1:?, CROSS_EDGE: B:11:0x000c \-\> B:8:0x0018\lINLINE_NOT_NEEDED\lTryCatch #0 \{NameNotFoundException \-\> 0x0018, blocks: (B:6:0x000c), top: B:11:0x000c \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_11;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_11 -> Node_6;
+Node_11 -> Node_8;
+Node_6 -> Node_7;
+Node_6 -> Node_12;
+Node_12 -> Node_8;
+}
+

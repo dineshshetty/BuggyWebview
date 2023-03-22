@@ -1,0 +1,583 @@
+digraph "CFG forandroidx.core.view.GestureDetectorCompat.GestureDetectorCompatImplBase.onTouchEvent(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_829132871 {
+label = "R(10:1|(1:3)|4|5|7|9|(2:(1:12)(0)|14)|17|19|20) | DECL_VAR: android.view.MotionEvent null, android.view.GestureDetector$OnDoubleTapListener null, boolean pointerUp, int skipIndex, int upIndex\l";
+node [shape=record,color=blue];
+Node_125 [shape=record,label="{125\:\ 0x0000|int int r2 = r23.getAction()\l}"];
+subgraph cluster_IfRegion_1557453958 {
+label = "IF [B:126:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_126 [shape=record,label="{126\:\ 0x000a|if (r22.mVelocityTracker == null) goto L3\l}"];
+subgraph cluster_Region_136731170 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_127 [shape=record,label="{127\:\ 0x000c|r22.mVelocityTracker = android.view.VelocityTracker.obtain()\l}"];
+}
+}
+Node_128 [shape=record,label="{128\:\ 0x0012|r22.mVelocityTracker.addMovement(r23)\l}"];
+Node_129 [shape=record,label="{129\:\ 0x001a|boolean r3 = (r2 & 255) == 6\l}"];
+Node_132 [shape=record,label="{132\:\ 0x001f|PHI: r3 \l  PHI: (r3v4 'pointerUp' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int r4 = r3 ? r23.getActionIndex() : \-1\l}"];
+Node_135 [shape=record,label="{135\:\ 0x0027|PHI: r4 \l  PHI: (r4v2 'skipIndex' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float r7 = 0.0f\lfloat r8 = 0.0f\lint int r9 = r23.getPointerCount()\lint r10 = 0\l}"];
+subgraph cluster_LoopRegion_268034891 {
+label = "LOOP:0: (2:(1:12)(0)|14)";
+node [shape=record,color=blue];
+Node_136 [shape=record,label="{136\:\ 0x002e|LOOP_START\lLOOP:0: B:136:0x002e\-\>B:140:0x003d\lPHI: r7 r8 r10 \l  PHI: (r7v1 'sumX' float) = (r7v0 'sumX' float), (r7v2 'sumX' float) binds: [B:135:0x0027, B:140:0x003d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'sumY' float) = (r8v0 'sumY' float), (r8v2 'sumY' float) binds: [B:135:0x0027, B:140:0x003d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r10v1 'i' int) = (r10v0 'i' int), (r10v5 'i' int) binds: [B:135:0x0027, B:140:0x003d] A[DONT_GENERATE, DONT_INLINE]\l|if (r10 \< r9) goto L11\l}"];
+subgraph cluster_Region_1795827856 {
+label = "R(2:(1:12)(0)|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_807741433 {
+label = "IF [B:137:0x0030] THEN: R(1:12) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_137 [shape=record,label="{137\:\ 0x0030|if (r4 != r10) goto L12\l}"];
+subgraph cluster_Region_1032001722 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_139 [shape=record,label="{139\:\ 0x0033|r7 += r23.getX(r10)\lr8 += r23.getY(r10)\l}"];
+}
+subgraph cluster_Region_1747396452 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_140 [shape=record,label="{140\:\ 0x003d|LOOP_END\lLOOP:0: B:136:0x002e\-\>B:140:0x003d\lPHI: r7 r8 \l  PHI: (r7v2 'sumX' float) = (r7v1 'sumX' float), (r7v3 'sumX' float) binds: [B:229:0x003d, B:228:0x003d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v2 'sumY' float) = (r8v1 'sumY' float), (r8v3 'sumY' float) binds: [B:229:0x003d, B:228:0x003d] A[DONT_GENERATE, DONT_INLINE]\l|r10++\l}"];
+}
+}
+Node_141 [shape=record,label="{141\:\ 0x0040|int r10 = r3 ? r9 \- 1 : r9\l}"];
+Node_144 [shape=record,label="{144\:\ 0x0046|PHI: r10 \l  PHI: (r10v3 'div' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float float r11 = r7 \/ r10\lfloat float r12 = r8 \/ r10\lboolean r13 = false\l}"];
+subgraph cluster_SwitchRegion_1980543545 {
+label = "Switch: 7
+ case 0 -> R(7:(4:96|(1:98)|99|(1:106)(1:107))|108|(1:110)|111|(1:113)|114|115)
+ case 1 -> R(8:68|(1:70)(1:(1:81)(1:(2:84|(1:88))(2:89|(1:93))))|71|(1:73)|74|(1:76)|77|78)
+ case 2 -> R(1:(2:(1:67)|(2:46|(2:(1:49)|(1:(2:(1:(2:(2:65|66)|(1:64)))|(3:52|(1:54)|(2:(2:57|58)|(1:59)))))))))
+ case 3 -> R(2:42|43)
+ case 4, default -> R(1:22)
+ case 5 -> R(2:40|41)
+ case 6 -> R(3:24|(2:(1:27)(2:30|(1:(2:35|36)))|29)|39)";
+node [shape=record,color=blue];
+Node_145 [shape=record,label="{145\:\ 0x0051|switch((r2 & 255)) \{\l    case 0: goto L94;\l    case 1: goto L68;\l    case 2: goto L44;\l    case 3: goto L42;\l    case 4: goto L21;\l    case 5: goto L40;\l    case 6: goto L24;\l    default: goto L21;\l\}\l}"];
+subgraph cluster_Region_1323940739 {
+label = "R(7:(4:96|(1:98)|99|(1:106)(1:107))|108|(1:110)|111|(1:113)|114|115)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1025388025 {
+label = "IF [B:206:0x020c] THEN: R(4:96|(1:98)|99|(1:106)(1:107)) ELSE: null";
+node [shape=record,color=blue];
+Node_206 [shape=record,label="{206\:\ 0x020c|if (r22.mDoubleTapListener != null) goto L96\l}"];
+subgraph cluster_Region_2018035366 {
+label = "R(4:96|(1:98)|99|(1:106)(1:107))";
+node [shape=record,color=blue];
+Node_207 [shape=record,label="{207\:\ 0x020e|boolean boolean r2 = r22.mHandler.hasMessages(3)\l}"];
+subgraph cluster_IfRegion_983729666 {
+label = "IF [B:208:0x0215] THEN: R(1:98) ELSE: null";
+node [shape=record,color=blue];
+Node_208 [shape=record,label="{208\:\ 0x0215|if (r2 != false) goto L98\l}"];
+subgraph cluster_Region_1205138992 {
+label = "R(1:98)";
+node [shape=record,color=blue];
+Node_209 [shape=record,label="{209\:\ 0x0217|r22.mHandler.removeMessages(3)\l}"];
+}
+}
+Node_210 [shape=record,label="{210\:\ 0x021c|android.view.MotionEvent android.view.MotionEvent r3 = r22.mCurrentDownEvent\l}"];
+subgraph cluster_IfRegion_698761577 {
+label = "IF [B:211:0x021e, B:213:0x0222, B:214:0x0224, B:216:0x022a] THEN: R(1:106) ELSE: R(1:107)";
+node [shape=record,color=blue];
+Node_211 [shape=record,label="{211\:\ 0x021e|if (r3 != null) goto L101\l}"];
+Node_213 [shape=record,label="{213\:\ 0x0222|ADDED_TO_REGION\l|if ((r4 = r22.mPreviousUpEvent) != null) goto L103\l}"];
+Node_214 [shape=record,label="{214\:\ 0x0224|ADDED_TO_REGION\l|if (r2 != false) goto L104\l}"];
+Node_216 [shape=record,label="{216\:\ 0x022a|ADDED_TO_REGION\l|if (isConsideredDoubleTap(r3, r4, r23) != false) goto L106\l}"];
+subgraph cluster_Region_1326404789 {
+label = "R(1:106)";
+node [shape=record,color=blue];
+Node_217 [shape=record,label="{217\:\ 0x022c|r22.mIsDoubleTapping = true\lr13 = r22.mDoubleTapListener.onDoubleTap(r22.mCurrentDownEvent) \| false \| r22.mDoubleTapListener.onDoubleTapEvent(r23)\l}"];
+}
+subgraph cluster_Region_2107200418 {
+label = "R(1:107)";
+node [shape=record,color=blue];
+Node_218 [shape=record,label="{218\:\ 0x0241|r22.mHandler.sendEmptyMessageDelayed(3, androidx.core.view.GestureDetectorCompat.GestureDetectorCompatImplBase.DOUBLE_TAP_TIMEOUT)\l}"];
+}
+}
+}
+}
+Node_219 [shape=record,label="{219\:\ 0x024a|PHI: r13 \l  PHI: (r13v1 'handled' boolean) = (r13v0 'handled' boolean), (r13v0 'handled' boolean), (r13v3 'handled' boolean) binds: [B:206:0x020c, B:218:0x0241, B:217:0x022c] A[DONT_GENERATE, DONT_INLINE]\l|r22.mLastFocusX = r11\lr22.mDownFocusX = r11\lr22.mLastFocusY = r12\lr22.mDownFocusY = r12\landroid.view.MotionEvent android.view.MotionEvent r2 = r22.mCurrentDownEvent\l}"];
+subgraph cluster_IfRegion_1395132408 {
+label = "IF [B:220:0x0254] THEN: R(1:110) ELSE: null";
+node [shape=record,color=blue];
+Node_220 [shape=record,label="{220\:\ 0x0254|if (r2 != null) goto L110\l}"];
+subgraph cluster_Region_1016686780 {
+label = "R(1:110)";
+node [shape=record,color=blue];
+Node_221 [shape=record,label="{221\:\ 0x0256|r2.recycle()\l}"];
+}
+}
+Node_222 [shape=record,label="{222\:\ 0x0259|r22.mCurrentDownEvent = android.view.MotionEvent.obtain(r23)\lr22.mAlwaysInTapRegion = true\lr22.mAlwaysInBiggerTapRegion = true\lr22.mStillDown = true\lr22.mInLongPress = false\lr22.mDeferConfirmSingleTap = false\l}"];
+subgraph cluster_IfRegion_743720818 {
+label = "IF [B:223:0x026d] THEN: R(1:113) ELSE: null";
+node [shape=record,color=blue];
+Node_223 [shape=record,label="{223\:\ 0x026d|if (r22.mIsLongpressEnabled != false) goto L113\l}"];
+subgraph cluster_Region_1625933540 {
+label = "R(1:113)";
+node [shape=record,color=blue];
+Node_224 [shape=record,label="{224\:\ 0x026f|r22.mHandler.removeMessages(2)\lr22.mHandler.sendEmptyMessageAtTime(2, r22.mCurrentDownEvent.getDownTime() + androidx.core.view.GestureDetectorCompat.GestureDetectorCompatImplBase.TAP_TIMEOUT + android.view.ViewConfiguration.getLongPressTimeout())\l}"];
+}
+}
+Node_225 [shape=record,label="{225\:\ 0x028b|r22.mHandler.sendEmptyMessageAtTime(1, r22.mCurrentDownEvent.getDownTime() + androidx.core.view.GestureDetectorCompat.GestureDetectorCompatImplBase.TAP_TIMEOUT)\l}"];
+Node_226 [shape=record,label="{226\:\ 0x02a3|RETURN\lORIG_RETURN\l|return r13 \| r22.mListener.onDown(r23)\l}"];
+}
+subgraph cluster_Region_1476848410 {
+label = "R(8:68|(1:70)(1:(1:81)(1:(2:84|(1:88))(2:89|(1:93))))|71|(1:73)|74|(1:76)|77|78)";
+node [shape=record,color=blue];
+Node_180 [shape=record,label="{180\:\ 0x016e|r22.mStillDown = false\landroid.view.MotionEvent android.view.MotionEvent r2 = android.view.MotionEvent.obtain(r23)\l}"];
+subgraph cluster_IfRegion_15522239 {
+label = "IF [B:181:0x017d] THEN: R(1:70) ELSE: R(1:(1:81)(1:(2:84|(1:88))(2:89|(1:93))))";
+node [shape=record,color=blue];
+Node_181 [shape=record,label="{181\:\ 0x017d|if (r22.mIsDoubleTapping != false) goto L70\l}"];
+subgraph cluster_Region_1838784736 {
+label = "R(1:70)";
+node [shape=record,color=blue];
+Node_182 [shape=record,label="{182\:\ 0x017f|r13 = false \| r22.mDoubleTapListener.onDoubleTapEvent(r23)\l}"];
+}
+subgraph cluster_Region_929013315 {
+label = "R(1:(1:81)(1:(2:84|(1:88))(2:89|(1:93)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_960376845 {
+label = "IF [B:184:0x0189] THEN: R(1:81) ELSE: R(1:(2:84|(1:88))(2:89|(1:93))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_184 [shape=record,label="{184\:\ 0x0189|if (r22.mInLongPress != false) goto L81\l}"];
+subgraph cluster_Region_399384360 {
+label = "R(1:81)";
+node [shape=record,color=blue];
+Node_185 [shape=record,label="{185\:\ 0x018b|r22.mHandler.removeMessages(3)\lr22.mInLongPress = false\l}"];
+}
+subgraph cluster_Region_1904807247 {
+label = "R(1:(2:84|(1:88))(2:89|(1:93))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_980367547 {
+label = "IF [B:187:0x0197] THEN: R(2:84|(1:88)) ELSE: R(2:89|(1:93)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_187 [shape=record,label="{187\:\ 0x0197|if (r22.mAlwaysInTapRegion != false) goto L84\l}"];
+subgraph cluster_Region_570832615 {
+label = "R(2:84|(1:88))";
+node [shape=record,color=blue];
+Node_188 [shape=record,label="{188\:\ 0x0199|boolean r13 = r22.mListener.onSingleTapUp(r23)\l}"];
+subgraph cluster_IfRegion_1922681251 {
+label = "IF [B:189:0x01a1, B:191:0x01a5] THEN: R(1:88) ELSE: null";
+node [shape=record,color=blue];
+Node_189 [shape=record,label="{189\:\ 0x01a1|if (r22.mDeferConfirmSingleTap != false) goto L86\l}"];
+Node_191 [shape=record,label="{191\:\ 0x01a5|ADDED_TO_REGION\l|if ((r3 = r22.mDoubleTapListener) != null) goto L88\l}"];
+subgraph cluster_Region_357154695 {
+label = "R(1:88)";
+node [shape=record,color=blue];
+Node_192 [shape=record,label="{192\:\ 0x01a7|r3.onSingleTapConfirmed(r23)\l}"];
+}
+}
+}
+subgraph cluster_Region_1577910377 {
+label = "R(2:89|(1:93))";
+node [shape=record,color=blue];
+Node_193 [shape=record,label="{193\:\ 0x01ab|android.view.VelocityTracker android.view.VelocityTracker r3 = r22.mVelocityTracker\lint int r5 = r23.getPointerId(0)\lr3.computeCurrentVelocity(1000, r22.mMaximumFlingVelocity)\lfloat float r4 = r3.getYVelocity(r5)\lfloat float r6 = r3.getXVelocity(r5)\l}"];
+subgraph cluster_IfRegion_1615761656 {
+label = "IF [B:194:0x01c9, B:196:0x01d4] THEN: R(1:93) ELSE: null";
+node [shape=record,color=blue];
+Node_194 [shape=record,label="{194\:\ 0x01c9|if (java.lang.Math.abs(r4) \> r22.mMinimumFlingVelocity) goto L93\l}"];
+Node_196 [shape=record,label="{196\:\ 0x01d4|ADDED_TO_REGION\l|if (java.lang.Math.abs(r6) \> r22.mMinimumFlingVelocity) goto L93\l}"];
+subgraph cluster_Region_1597830849 {
+label = "R(1:93)";
+node [shape=record,color=blue];
+Node_197 [shape=record,label="{197\:\ 0x01d6|boolean r13 = r22.mListener.onFling(r22.mCurrentDownEvent, r23, r6, r4)\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_198 [shape=record,label="{198\:\ 0x01de|PHI: r13 \l  PHI: (r13v6 'handled' boolean) = (r13v4 'handled' boolean), (r13v0 'handled' boolean), (r13v5 'handled' boolean), (r13v5 'handled' boolean), (r13v5 'handled' boolean), (r13v0 'handled' boolean), (r13v7 'handled' boolean) binds: [B:197:0x01d6, B:196:0x01d4, B:189:0x01a1, B:191:0x01a5, B:192:0x01a7, B:185:0x018b, B:182:0x017f] A[DONT_GENERATE, DONT_INLINE]\l|android.view.MotionEvent android.view.MotionEvent r3 = r22.mPreviousUpEvent\l}"];
+subgraph cluster_IfRegion_1316128869 {
+label = "IF [B:199:0x01e0] THEN: R(1:73) ELSE: null";
+node [shape=record,color=blue];
+Node_199 [shape=record,label="{199\:\ 0x01e0|if (r3 != null) goto L73\l}"];
+subgraph cluster_Region_1430529483 {
+label = "R(1:73)";
+node [shape=record,color=blue];
+Node_200 [shape=record,label="{200\:\ 0x01e2|r3.recycle()\l}"];
+}
+}
+Node_201 [shape=record,label="{201\:\ 0x01e5|r22.mPreviousUpEvent = r2\landroid.view.VelocityTracker android.view.VelocityTracker r3 = r22.mVelocityTracker\l}"];
+subgraph cluster_IfRegion_1677490498 {
+label = "IF [B:202:0x01e9] THEN: R(1:76) ELSE: null";
+node [shape=record,color=blue];
+Node_202 [shape=record,label="{202\:\ 0x01e9|if (r3 != null) goto L76\l}"];
+subgraph cluster_Region_2007100565 {
+label = "R(1:76)";
+node [shape=record,color=blue];
+Node_203 [shape=record,label="{203\:\ 0x01eb|r3.recycle()\lr22.mVelocityTracker = null\l}"];
+}
+}
+Node_204 [shape=record,label="{204\:\ 0x01f1|r22.mIsDoubleTapping = false\lr22.mDeferConfirmSingleTap = false\lr22.mHandler.removeMessages(1)\lr22.mHandler.removeMessages(2)\l}"];
+Node_239 [shape=record,label="{239\:\ ?|SYNTHETIC\lRETURN\l|return r13\l}"];
+}
+subgraph cluster_Region_739453716 {
+label = "R(1:(2:(1:67)|(2:46|(2:(1:49)|(1:(2:(1:(2:(2:65|66)|(1:64)))|(3:52|(1:54)|(2:(2:57|58)|(1:59)))))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1870296269 {
+label = "R(2:(1:67)|(2:46|(2:(1:49)|(1:(2:(1:(2:(2:65|66)|(1:64)))|(3:52|(1:54)|(2:(2:57|58)|(1:59))))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1402109008 {
+label = "IF [B:161:0x00f4] THEN: R(1:67) ELSE: null";
+node [shape=record,color=blue];
+Node_161 [shape=record,label="{161\:\ 0x00f4|if (r22.mInLongPress != false) goto L67\l}"];
+subgraph cluster_Region_192889890 {
+label = "R(1:67)";
+node [shape=record,color=blue];
+Node_242 [shape=record,label="{242\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_239790766 {
+label = "R(2:46|(2:(1:49)|(1:(2:(1:(2:(2:65|66)|(1:64)))|(3:52|(1:54)|(2:(2:57|58)|(1:59)))))))";
+node [shape=record,color=blue];
+Node_163 [shape=record,label="{163\:\ 0x00f8|float float r2 = r22.mLastFocusX \- r11\lfloat float r3 = r22.mLastFocusY \- r12\l}"];
+subgraph cluster_Region_1040287186 {
+label = "R(2:(1:49)|(1:(2:(1:(2:(2:65|66)|(1:64)))|(3:52|(1:54)|(2:(2:57|58)|(1:59))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_39928515 {
+label = "IF [B:164:0x0100] THEN: R(1:49) ELSE: null";
+node [shape=record,color=blue];
+Node_164 [shape=record,label="{164\:\ 0x0100|if (r22.mIsDoubleTapping != false) goto L48\l}"];
+subgraph cluster_Region_1121050147 {
+label = "R(1:49)";
+node [shape=record,color=blue];
+Node_237 [shape=record,label="{237\:\ ?|SYNTHETIC\lRETURN\l|return false \| r22.mDoubleTapListener.onDoubleTapEvent(r23)\l}"];
+}
+}
+subgraph cluster_Region_863951887 {
+label = "R(1:(2:(1:(2:(2:65|66)|(1:64)))|(3:52|(1:54)|(2:(2:57|58)|(1:59)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_23326887 {
+label = "R(2:(1:(2:(2:65|66)|(1:64)))|(3:52|(1:54)|(2:(2:57|58)|(1:59))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_161271058 {
+label = "IF [B:167:0x010d] THEN: R(1:(2:(2:65|66)|(1:64))) ELSE: null";
+node [shape=record,color=blue];
+Node_167 [shape=record,label="{167\:\ 0x010d|if (r22.mAlwaysInTapRegion != true) goto L60\l}"];
+subgraph cluster_Region_1164978884 {
+label = "R(1:(2:(2:65|66)|(1:64)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_11208897 {
+label = "R(2:(2:65|66)|(1:64))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_759849892 {
+label = "IF [B:176:0x0156, B:178:0x015e] THEN: R(2:65|66) ELSE: null";
+node [shape=record,color=blue];
+Node_176 [shape=record,label="{176\:\ 0x0156|if (java.lang.Math.abs(r2) \>= 1.0f) goto L65\l}"];
+Node_178 [shape=record,label="{178\:\ 0x015e|ADDED_TO_REGION\l|if (java.lang.Math.abs(r3) \>= 1.0f) goto L65\l}"];
+subgraph cluster_Region_853608283 {
+label = "R(2:65|66)";
+node [shape=record,color=blue];
+Node_179 [shape=record,label="{179\:\ 0x0160|boolean boolean r13 = r22.mListener.onScroll(r22.mCurrentDownEvent, r23, r2, r3)\lr22.mLastFocusX = r11\lr22.mLastFocusY = r12\l}"];
+Node_238 [shape=record,label="{238\:\ ?|SYNTHETIC\lRETURN\l|return r13\l}"];
+}
+}
+subgraph cluster_Region_517158587 {
+label = "R(1:64)";
+node [shape=record,color=blue];
+Node_245 [shape=record,label="{245\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_135657279 {
+label = "R(3:52|(1:54)|(2:(2:57|58)|(1:59)))";
+node [shape=record,color=blue];
+Node_168 [shape=record,label="{168\:\ 0x010f|int int r4 = (int) (r11 \- r22.mDownFocusX)\lint int r14 = (int) (r12 \- r22.mDownFocusY)\lint int r15 = (r4 * r4) + (r14 * r14)\l}"];
+subgraph cluster_IfRegion_1507094971 {
+label = "IF [B:169:0x0121] THEN: R(1:54) ELSE: null";
+node [shape=record,color=blue];
+Node_169 [shape=record,label="{169\:\ 0x0121|if (r15 \> r22.mTouchSlopSquare) goto L54\l}"];
+subgraph cluster_Region_186867741 {
+label = "R(1:54)";
+node [shape=record,color=blue];
+Node_170 [shape=record,label="{170\:\ 0x0123|boolean boolean r5 = r22.mListener.onScroll(r22.mCurrentDownEvent, r23, r2, r3)\lr22.mLastFocusX = r11\lr22.mLastFocusY = r12\lr22.mAlwaysInTapRegion = false\lr22.mHandler.removeMessages(3)\lr22.mHandler.removeMessages(1)\lr22.mHandler.removeMessages(2)\lr13 = r5\l}"];
+}
+}
+subgraph cluster_Region_1908972590 {
+label = "R(2:(2:57|58)|(1:59))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1499608490 {
+label = "IF [B:172:0x0147] THEN: R(2:57|58) ELSE: null";
+node [shape=record,color=blue];
+Node_172 [shape=record,label="{172\:\ 0x0147|if (r15 \> r22.mTouchSlopSquare) goto L57\l}"];
+subgraph cluster_Region_1614054437 {
+label = "R(2:57|58)";
+node [shape=record,color=blue];
+Node_173 [shape=record,label="{173\:\ 0x0149|r22.mAlwaysInBiggerTapRegion = false\l}"];
+Node_243 [shape=record,label="{243\:\ ?|SYNTHETIC\lRETURN\l|return r13\l}"];
+}
+}
+subgraph cluster_Region_1939224522 {
+label = "R(1:59)";
+node [shape=record,color=blue];
+Node_244 [shape=record,label="{244\:\ ?|SYNTHETIC\lRETURN\l|return r13\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_900378329 {
+label = "R(2:42|43)";
+node [shape=record,color=blue];
+Node_159 [shape=record,label="{159\:\ 0x00e1|cancel()\l}"];
+Node_236 [shape=record,label="{236\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1839158701 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_234 [shape=record,label="{234\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1382409293 {
+label = "R(2:40|41)";
+node [shape=record,color=blue];
+Node_158 [shape=record,label="{158\:\ 0x00ce|r22.mLastFocusX = r11\lr22.mDownFocusX = r11\lr22.mLastFocusY = r12\lr22.mDownFocusY = r12\lcancelTaps()\l}"];
+Node_235 [shape=record,label="{235\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1745152645 {
+label = "R(3:24|(2:(1:27)(2:30|(1:(2:35|36)))|29)|39)";
+node [shape=record,color=blue];
+Node_147 [shape=record,label="{147\:\ 0x005c|r22.mLastFocusX = r11\lr22.mDownFocusX = r11\lr22.mLastFocusY = r12\lr22.mDownFocusY = r12\lr22.mVelocityTracker.computeCurrentVelocity(1000, r22.mMaximumFlingVelocity)\lint int r5 = r23.getActionIndex()\lint int r6 = r23.getPointerId(r5)\lfloat float r14 = r22.mVelocityTracker.getXVelocity(r6)\lfloat float r15 = r22.mVelocityTracker.getYVelocity(r6)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1913242567 {
+label = "LOOP:1: (2:(1:27)(2:30|(1:(2:35|36)))|29)";
+node [shape=record,color=blue];
+Node_148 [shape=record,label="{148\:\ 0x0086|LOOP_START\lLOOP:1: B:148:0x0086\-\>B:155:0x00bd\lPHI: r2 r3 r4 r5 \l  PHI: (r2v20 'action' int) = (r2v19 'action' int), (r2v21 'action' int) binds: [B:147:0x005c, B:155:0x00bd] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v40 'pointerUp' boolean) = (r3v4 'pointerUp' boolean), (r3v43 'pointerUp' boolean) binds: [B:147:0x005c, B:155:0x00bd] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v29 'skipIndex' int) = (r4v2 'skipIndex' int), (r4v33 'skipIndex' int) binds: [B:147:0x005c, B:155:0x00bd] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v17 'upIndex' int) = (r5v16 'upIndex' int), (r5v21 'upIndex' int) binds: [B:147:0x005c, B:155:0x00bd] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r9) goto L26\l}"];
+subgraph cluster_Region_1090107989 {
+label = "R(2:(1:27)(2:30|(1:(2:35|36)))|29)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_559923031 {
+label = "IF [B:149:0x0088] THEN: R(1:27) ELSE: R(2:30|(1:(2:35|36)))";
+node [shape=record,color=blue];
+Node_149 [shape=record,label="{149\:\ 0x0088|if (r2 == r5) goto L27\l}"];
+subgraph cluster_Region_1311739109 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_150 [shape=record,label="{150\:\ 0x008a|r19 = r3\lr20 = r4\lr16 = r5\l}"];
+}
+subgraph cluster_Region_598459599 {
+label = "R(2:30|(1:(2:35|36)))";
+node [shape=record,color=blue];
+Node_151 [shape=record,label="{151\:\ 0x0091|r19 = r3\lint int r3 = r23.getPointerId(r2)\lr20 = r4\lfloat float r4 = r22.mVelocityTracker.getXVelocity(r3) * r14\lr16 = r5\lfloat float r5 = r22.mVelocityTracker.getYVelocity(r3) * r15\lfloat float r17 = r4 + r5\l}"];
+subgraph cluster_Region_1786695755 {
+label = "R(1:(2:35|36))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1601617819 {
+label = "IF [B:152:0x00b1] THEN: R(2:35|36) ELSE: null";
+node [shape=record,color=blue];
+Node_152 [shape=record,label="{152\:\ 0x00b1|if (r17 \< 0.0f) goto L34\l}"];
+subgraph cluster_Region_1608648902 {
+label = "R(2:35|36)";
+node [shape=record,color=blue];
+Node_153 [shape=record,label="{153\:\ 0x00b3|r22.mVelocityTracker.clear()\l}"];
+Node_241 [shape=record,label="{241\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_155 [shape=record,label="{155\:\ 0x00bd|LOOP_END\lLOOP:1: B:148:0x0086\-\>B:155:0x00bd\lPHI: r16 r19 r20 \l  PHI: (r16v3 'upIndex' int) = (r16v2 'upIndex' int), (r16v4 'upIndex' int) binds: [B:232:0x00bd, B:233:0x00bd] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r19v7 'pointerUp' boolean) = (r19v6 'pointerUp' boolean), (r19v8 'pointerUp' boolean) binds: [B:232:0x00bd, B:233:0x00bd] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r20v7 'skipIndex' int) = (r20v6 'skipIndex' int), (r20v8 'skipIndex' int) binds: [B:232:0x00bd, B:233:0x00bd] A[DONT_GENERATE, DONT_INLINE]\l|r2++\lr5 = r16\lr3 = r19\lr4 = r20\l}"];
+}
+}
+Node_240 [shape=record,label="{240\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_123 [shape=record,color=red,label="{123\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_130 [shape=record,color=red,label="{130\:\ 0x001c}"];
+Node_133 [shape=record,color=red,label="{133\:\ 0x0021}"];
+Node_228 [shape=record,color=red,label="{228\:\ 0x003d|SYNTHETIC\l}"];
+Node_229 [shape=record,color=red,label="{229\:\ 0x003d|SYNTHETIC\l}"];
+Node_227 [shape=record,color=red,label="{227\:\ 0x0040|SYNTHETIC\l}"];
+Node_142 [shape=record,color=red,label="{142\:\ 0x0042}"];
+Node_146 [shape=record,color=red,label="{146\:\ 0x0054}"];
+Node_124 [shape=record,color=red,label="{124\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_233 [shape=record,color=red,label="{233\:\ 0x00bd|SYNTHETIC\l}"];
+Node_154 [shape=record,color=red,label="{154\:\ 0x00bb}"];
+Node_232 [shape=record,color=red,label="{232\:\ 0x00bd|SYNTHETIC\l}"];
+Node_230 [shape=record,color=red,label="{230\:\ 0x00b3|SYNTHETIC\l}"];
+Node_231 [shape=record,color=red,label="{231\:\ 0x00c6|SYNTHETIC\l}"];
+Node_156 [shape=record,color=red,label="{156\:\ 0x00c6}"];
+Node_160 [shape=record,color=red,label="{160\:\ 0x00ec}"];
+Node_165 [shape=record,color=red,label="{165\:\ 0x0102}"];
+Node_166 [shape=record,color=red,label="{166\:\ 0x010b}"];
+Node_171 [shape=record,color=red,label="{171\:\ 0x0145|PHI: r13 \l  PHI: (r13v9 'handled' boolean) = (r13v0 'handled' boolean), (r13v13 'handled' boolean) binds: [B:169:0x0121, B:170:0x0123] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_175 [shape=record,color=red,label="{175\:\ 0x014e}"];
+Node_177 [shape=record,color=red,label="{177\:\ 0x0158}"];
+Node_183 [shape=record,color=red,label="{183\:\ 0x0187}"];
+Node_186 [shape=record,color=red,label="{186\:\ 0x0195}"];
+Node_190 [shape=record,color=red,label="{190\:\ 0x01a3}"];
+Node_195 [shape=record,color=red,label="{195\:\ 0x01cb}"];
+Node_205 [shape=record,color=red,label="{205\:\ 0x0204}"];
+Node_212 [shape=record,color=red,label="{212\:\ 0x0220}"];
+Node_215 [shape=record,color=red,label="{215\:\ 0x0226}"];
+Node_143 [shape=record,color=red,label="{143\:\ 0x0045}"];
+Node_134 [shape=record,color=red,label="{134\:\ 0x0026}"];
+Node_131 [shape=record,color=red,label="{131\:\ 0x001e}"];
+MethodNode[shape=record,label="{public boolean androidx.core.view.GestureDetectorCompat.GestureDetectorCompatImplBase.onTouchEvent((r22v0 'this' androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplBase A[IMMUTABLE_TYPE, THIS]), (r23v0 'ev' android.view.MotionEvent A[D('ev' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:140:0x003d \-\> B:136:0x002e, CROSS_EDGE: B:137:0x0030 \-\> B:140:0x003d, BACK_EDGE: B:155:0x00bd \-\> B:148:0x0086, CROSS_EDGE: B:153:0x00b3 \-\> B:226:0x02a3, CROSS_EDGE: B:154:0x00bb \-\> B:155:0x00bd, CROSS_EDGE: B:156:0x00c6 \-\> B:226:0x02a3, CROSS_EDGE: B:158:0x00ce \-\> B:226:0x02a3, CROSS_EDGE: B:159:0x00e1 \-\> B:226:0x02a3, CROSS_EDGE: B:165:0x0102 \-\> B:226:0x02a3, CROSS_EDGE: B:173:0x0149 \-\> B:226:0x02a3, CROSS_EDGE: B:172:0x0147 \-\> B:226:0x02a3, CROSS_EDGE: B:169:0x0121 \-\> B:171:0x0145, CROSS_EDGE: B:179:0x0160 \-\> B:226:0x02a3, CROSS_EDGE: B:178:0x015e \-\> B:226:0x02a3, CROSS_EDGE: B:176:0x0156 \-\> B:179:0x0160, CROSS_EDGE: B:161:0x00f4 \-\> B:226:0x02a3, CROSS_EDGE: B:204:0x01f1 \-\> B:226:0x02a3, CROSS_EDGE: B:202:0x01e9 \-\> B:204:0x01f1, CROSS_EDGE: B:199:0x01e0 \-\> B:201:0x01e5, CROSS_EDGE: B:185:0x018b \-\> B:198:0x01de, CROSS_EDGE: B:192:0x01a7 \-\> B:198:0x01de, CROSS_EDGE: B:191:0x01a5 \-\> B:198:0x01de, CROSS_EDGE: B:189:0x01a1 \-\> B:198:0x01de, CROSS_EDGE: B:197:0x01d6 \-\> B:198:0x01de, CROSS_EDGE: B:196:0x01d4 \-\> B:198:0x01de, CROSS_EDGE: B:194:0x01c9 \-\> B:197:0x01d6, CROSS_EDGE: B:225:0x028b \-\> B:226:0x02a3, CROSS_EDGE: B:223:0x026d \-\> B:225:0x028b, CROSS_EDGE: B:220:0x0254 \-\> B:222:0x0259, CROSS_EDGE: B:218:0x0241 \-\> B:219:0x024a, CROSS_EDGE: B:214:0x0224 \-\> B:218:0x0241, CROSS_EDGE: B:213:0x0222 \-\> B:218:0x0241, CROSS_EDGE: B:211:0x021e \-\> B:218:0x0241, CROSS_EDGE: B:208:0x0215 \-\> B:210:0x021c, CROSS_EDGE: B:206:0x020c \-\> B:219:0x024a, CROSS_EDGE: B:143:0x0045 \-\> B:144:0x0046, CROSS_EDGE: B:134:0x0026 \-\> B:135:0x0027, CROSS_EDGE: B:131:0x001e \-\> B:132:0x001f, CROSS_EDGE: B:126:0x000a \-\> B:128:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.GestureDetectorCompat.GestureDetectorCompatImpl.onTouchEvent(android.view.MotionEvent):boolean]\l}"];
+MethodNode -> Node_123;Node_125 -> Node_126;
+Node_126 -> Node_127;
+Node_126 -> Node_128[style=dashed];
+Node_127 -> Node_128;
+Node_128 -> Node_129;
+Node_129 -> Node_130;
+Node_129 -> Node_131;
+Node_132 -> Node_133;
+Node_132 -> Node_134;
+Node_135 -> Node_136;
+Node_136 -> Node_137;
+Node_136 -> Node_227[style=dashed];
+Node_137 -> Node_139;
+Node_137 -> Node_229[style=dashed];
+Node_139 -> Node_228;
+Node_140 -> Node_136;
+Node_141 -> Node_142;
+Node_141 -> Node_143;
+Node_144 -> Node_145;
+Node_145 -> Node_146;
+Node_145 -> Node_147;
+Node_145 -> Node_158;
+Node_145 -> Node_159;
+Node_145 -> Node_160;
+Node_145 -> Node_180;
+Node_145 -> Node_205;
+Node_206 -> Node_207;
+Node_206 -> Node_219[style=dashed];
+Node_207 -> Node_208;
+Node_208 -> Node_209;
+Node_208 -> Node_210[style=dashed];
+Node_209 -> Node_210;
+Node_210 -> Node_211;
+Node_211 -> Node_212;
+Node_211 -> Node_218[style=dashed];
+Node_213 -> Node_214;
+Node_213 -> Node_218[style=dashed];
+Node_214 -> Node_215;
+Node_214 -> Node_218[style=dashed];
+Node_216 -> Node_217;
+Node_216 -> Node_218[style=dashed];
+Node_217 -> Node_219;
+Node_218 -> Node_219;
+Node_219 -> Node_220;
+Node_220 -> Node_221;
+Node_220 -> Node_222[style=dashed];
+Node_221 -> Node_222;
+Node_222 -> Node_223;
+Node_223 -> Node_224;
+Node_223 -> Node_225[style=dashed];
+Node_224 -> Node_225;
+Node_225 -> Node_226;
+Node_226 -> Node_124;
+Node_180 -> Node_181;
+Node_181 -> Node_182;
+Node_181 -> Node_183[style=dashed];
+Node_182 -> Node_198;
+Node_184 -> Node_185;
+Node_184 -> Node_186[style=dashed];
+Node_185 -> Node_198;
+Node_187 -> Node_188;
+Node_187 -> Node_193[style=dashed];
+Node_188 -> Node_189;
+Node_189 -> Node_190;
+Node_189 -> Node_198[style=dashed];
+Node_191 -> Node_192;
+Node_191 -> Node_198[style=dashed];
+Node_192 -> Node_198;
+Node_193 -> Node_194;
+Node_194 -> Node_195[style=dashed];
+Node_194 -> Node_197;
+Node_196 -> Node_197;
+Node_196 -> Node_198[style=dashed];
+Node_197 -> Node_198;
+Node_198 -> Node_199;
+Node_199 -> Node_200;
+Node_199 -> Node_201[style=dashed];
+Node_200 -> Node_201;
+Node_201 -> Node_202;
+Node_202 -> Node_203;
+Node_202 -> Node_204[style=dashed];
+Node_203 -> Node_204;
+Node_204 -> Node_239;
+Node_239 -> Node_124;
+Node_161 -> Node_163[style=dashed];
+Node_161 -> Node_242;
+Node_242 -> Node_124;
+Node_163 -> Node_164;
+Node_164 -> Node_165;
+Node_164 -> Node_166[style=dashed];
+Node_237 -> Node_124;
+Node_167 -> Node_168[style=dashed];
+Node_167 -> Node_175;
+Node_176 -> Node_177[style=dashed];
+Node_176 -> Node_179;
+Node_178 -> Node_179;
+Node_178 -> Node_245[style=dashed];
+Node_179 -> Node_238;
+Node_238 -> Node_124;
+Node_245 -> Node_124;
+Node_168 -> Node_169;
+Node_169 -> Node_170;
+Node_169 -> Node_171[style=dashed];
+Node_170 -> Node_171;
+Node_172 -> Node_173;
+Node_172 -> Node_244[style=dashed];
+Node_173 -> Node_243;
+Node_243 -> Node_124;
+Node_244 -> Node_124;
+Node_159 -> Node_236;
+Node_236 -> Node_124;
+Node_234 -> Node_124;
+Node_158 -> Node_235;
+Node_235 -> Node_124;
+Node_147 -> Node_148;
+Node_148 -> Node_149;
+Node_148 -> Node_231[style=dashed];
+Node_149 -> Node_150;
+Node_149 -> Node_151[style=dashed];
+Node_150 -> Node_233;
+Node_151 -> Node_152;
+Node_152 -> Node_154[style=dashed];
+Node_152 -> Node_230;
+Node_153 -> Node_241;
+Node_241 -> Node_124;
+Node_155 -> Node_148;
+Node_240 -> Node_124;
+Node_123 -> Node_125;
+Node_130 -> Node_132;
+Node_133 -> Node_135;
+Node_228 -> Node_140;
+Node_229 -> Node_140;
+Node_227 -> Node_141;
+Node_142 -> Node_144;
+Node_146 -> Node_234;
+Node_233 -> Node_155;
+Node_154 -> Node_232;
+Node_232 -> Node_155;
+Node_230 -> Node_153;
+Node_231 -> Node_156;
+Node_156 -> Node_240;
+Node_160 -> Node_161;
+Node_165 -> Node_237;
+Node_166 -> Node_167;
+Node_171 -> Node_172;
+Node_175 -> Node_176;
+Node_177 -> Node_178;
+Node_183 -> Node_184;
+Node_186 -> Node_187;
+Node_190 -> Node_191;
+Node_195 -> Node_196;
+Node_205 -> Node_206;
+Node_212 -> Node_213;
+Node_215 -> Node_216;
+Node_143 -> Node_144;
+Node_134 -> Node_135;
+Node_131 -> Node_132;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forkotlinx.coroutines.scheduling.WorkQueue.add$default(Lkotlinx\/coroutines\/scheduling\/WorkQueue;Lkotlinx\/coroutines\/scheduling\/Task;ZILjava\/lang\/Object;)Lkotlinx\/coroutines\/scheduling\/Task;" {
+subgraph cluster_Region_414767839 {
+label = "R(2:(1:3)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_435669798 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if ((r3 & 2) != 0) goto L3\l}"];
+subgraph cluster_Region_1864027816 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|r2 = false\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0009|RETURN\l|return r0.add(r1, r2)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0005|PHI: r2 \l  PHI: (r2v1 boolean) = (r2v0 boolean), (r2v2 boolean) binds: [B:3:0x0002, B:4:0x0004] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static \/* synthetic *\/ kotlinx.coroutines.scheduling.Task kotlinx.coroutines.scheduling.WorkQueue.add$default((r0v0 kotlinx.coroutines.scheduling.WorkQueue A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 kotlinx.coroutines.scheduling.Task A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:3:0x0002 \-\> B:5:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

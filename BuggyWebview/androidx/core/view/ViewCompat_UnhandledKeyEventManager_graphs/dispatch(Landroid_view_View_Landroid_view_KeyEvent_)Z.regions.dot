@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.core.view.ViewCompat.UnhandledKeyEventManager.dispatch(Landroid\/view\/View;Landroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_1371417511 {
+label = "R(4:(1:3)|4|(2:6|(1:10))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1989024390 {
+label = "IF [B:20:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0004|if (r6.getAction() == 0) goto L3\l}"];
+subgraph cluster_Region_894763250 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0006|recalcViewsWithUnhandled()\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0009|android.view.View android.view.View r0 = dispatchInOrder(r5, r6)\l}"];
+subgraph cluster_IfRegion_952500918 {
+label = "IF [B:23:0x0011] THEN: R(2:6|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0011|if (r6.getAction() == 0) goto L6\l}"];
+subgraph cluster_Region_1819262326 {
+label = "R(2:6|(1:10))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0013|int int r1 = r6.getKeyCode()\l}"];
+subgraph cluster_IfRegion_1183825111 {
+label = "IF [B:25:0x0017, B:27:0x001d] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0017|if (r0 != null) goto L8\l}"];
+Node_27 [shape=record,label="{27\:\ 0x001d|ADDED_TO_REGION\l|if (android.view.KeyEvent.isModifierKey(r1) == false) goto L10\l}"];
+subgraph cluster_Region_102572550 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001f|getCapturedKeys().put(r1, new java.lang.ref.WeakReference\<\>(r0))\l}"];
+}
+}
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x002b|RETURN\l|return r0 != null\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0019}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002d|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x002f|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{boolean androidx.core.view.ViewCompat.UnhandledKeyEventManager.dispatch((r4v0 'this' androidx.core.view.ViewCompat$UnhandledKeyEventManager A[IMMUTABLE_TYPE, THIS]), (r5v0 'root' android.view.View A[D('root' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x002f \-\> B:32:0x0030, CROSS_EDGE: B:27:0x001d \-\> B:29:0x002b, CROSS_EDGE: B:25:0x0017 \-\> B:29:0x002b, CROSS_EDGE: B:23:0x0011 \-\> B:29:0x002b, CROSS_EDGE: B:20:0x0004 \-\> B:22:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_29[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_26 -> Node_27;
+Node_30 -> Node_18;
+Node_31 -> Node_18;
+}
+

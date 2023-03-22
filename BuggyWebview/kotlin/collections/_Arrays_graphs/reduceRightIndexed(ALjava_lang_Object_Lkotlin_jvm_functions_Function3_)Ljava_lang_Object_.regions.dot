@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.reduceRightIndexed([Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function3;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_2133298906 {
+label = "R(2:1|(2:(1:10)|(3:3|(1:5)|7)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"operation\")\lint int r1 = kotlin.collections.ArraysKt.getLastIndex(r5)\l}"];
+subgraph cluster_Region_496801192 {
+label = "R(2:(1:10)|(3:3|(1:5)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_574713112 {
+label = "IF [B:14:0x000f] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000f|if (r1 \< 0) goto L9\l}"];
+subgraph cluster_Region_1500952853 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002c|throw new java.lang.UnsupportedOperationException(\"Empty array can't be reduced.\")\l}"];
+}
+}
+subgraph cluster_Region_219158269 {
+label = "R(3:3|(1:5)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|int int r2 = r1 \- 1\ljava.lang.Object r1 = (S) r5[r1]\l}"];
+subgraph cluster_LoopRegion_1249678229 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0015|LOOP_START\lLOOP:0: B:16:0x0015\-\>B:17:0x0017\lPHI: r1 r2 \l  PHI: (r1v2 'accumulator' java.lang.Object) = (r1v1 'accumulator' java.lang.Object), (r1v3 'accumulator' java.lang.Object) binds: [B:15:0x0011, B:17:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 'index' int) = (r2v1 'index' int), (r2v3 'index' int) binds: [B:15:0x0011, B:17:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= 0) goto L5\l}"];
+subgraph cluster_Region_166630750 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0015\-\>B:17:0x0017\l|java.lang.Object r1 = (S) r6.invoke(java.lang.Integer.valueOf(r2), (java.lang.Object) r5[r2], r1)\lr2\-\-\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0024|RETURN\l|return (S) r1\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0024|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0025}"];
+MethodNode[shape=record,label="{public static final S kotlin.collections.ArraysKt___ArraysKt.reduceRightIndexed((r5v0 T extends S[] A[D('$this$reduceRightIndexed' java.lang.Object[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'operation' kotlin.jvm.functions.Function3\<? super java.lang.Integer, ? super T extends S, ? super S, ? extends S\> A[D('operation' kotlin.jvm.functions.Function3), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x0017 \-\> B:16:0x0015, CROSS_EDGE: B:20:0x002c \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [S, T extends S]\lSIGNATURE: \<S:Ljava\/lang\/Object;T::TS;\>([TT;Lkotlin\/jvm\/functions\/Function3\<\-Ljava\/lang\/Integer;\-TT;\-TS;+TS;\>;)TS;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r1v6. Raw type applied. Possible types: S, ? super S\}\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_20 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_16;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_21 -> Node_18;
+Node_19 -> Node_20;
+}
+

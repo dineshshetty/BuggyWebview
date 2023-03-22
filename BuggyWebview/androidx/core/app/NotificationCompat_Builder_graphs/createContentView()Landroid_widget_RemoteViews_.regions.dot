@@ -1,0 +1,98 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.Builder.createContentView()Landroid\/widget\/RemoteViews;" {
+subgraph cluster_Region_370937229 {
+label = "R(1:(2:(1:6)|(2:8|(2:(1:12)|(2:13|(2:(1:16)|(1:18))))))) | DECL_VAR: android.widget.RemoteViews styleView\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_6500366 {
+label = "R(2:(1:6)|(2:8|(2:(1:12)|(2:13|(2:(1:16)|(1:18))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1715207767 {
+label = "IF [B:22:0x0002, B:24:0x0008] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0002|if (r4.mContentView != null) goto L3\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0008|ADDED_TO_REGION\l|if (useExistingRemoteView() != false) goto L5\l}"];
+subgraph cluster_Region_233264821 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000c|RETURN\l|return r4.mContentView\l}"];
+}
+}
+subgraph cluster_Region_1089469291 {
+label = "R(2:8|(2:(1:12)|(2:13|(2:(1:16)|(1:18)))))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000d|androidx.core.app.NotificationCompatBuilder androidx.core.app.NotificationCompatBuilder r0 = new androidx.core.app.NotificationCompatBuilder(r4)\landroidx.core.app.NotificationCompat$Style androidx.core.app.NotificationCompat.Style r1 = r4.mStyle\l}"];
+subgraph cluster_Region_2078360289 {
+label = "R(2:(1:12)|(2:13|(2:(1:16)|(1:18))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_959539784 {
+label = "IF [B:28:0x0014, B:30:0x001a] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0014|if (r1 != null) goto L10\l}"];
+Node_30 [shape=record,label="{30\:\ 0x001a|ADDED_TO_REGION\l|if ((r1 = r1.makeContentView(r0)) != null) goto L12\l}"];
+subgraph cluster_Region_1654386387 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001c|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1679384923 {
+label = "R(2:13|(2:(1:16)|(1:18)))";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x001d|android.app.Notification android.app.Notification r1 = r0.build()\l}"];
+subgraph cluster_Region_1542159761 {
+label = "R(2:(1:16)|(1:18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1821301415 {
+label = "IF [B:33:0x0025] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0025|if (android.os.Build.VERSION.SDK_INT \>= 24) goto L15\l}"];
+subgraph cluster_Region_1600333176 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0031|RETURN\l|return android.app.Notification.Builder.recoverBuilder(r4.mContext, r1).createContentView()\l}"];
+}
+}
+subgraph cluster_Region_1625860444 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0034|RETURN\l|return r1.contentView\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0004}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000a}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0016}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0027}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0032}"];
+MethodNode[shape=record,label="{public android.widget.RemoteViews androidx.core.app.NotificationCompat.Builder.createContentView((r4v0 'this' androidx.core.app.NotificationCompat$Builder A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x001c \-\> B:20:?, CROSS_EDGE: B:35:0x0031 \-\> B:20:?, CROSS_EDGE: B:37:0x0034 \-\> B:20:?, CROSS_EDGE: B:28:0x0014 \-\> B:32:0x001d, CROSS_EDGE: B:22:0x0002 \-\> B:27:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_27[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_26 -> Node_20;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_32[style=dashed];
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_20;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_36[style=dashed];
+Node_35 -> Node_20;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_29 -> Node_30;
+Node_34 -> Node_35;
+Node_36 -> Node_37;
+}
+

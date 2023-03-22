@@ -1,0 +1,42 @@
+digraph "CFG forandroidx.core.util.AtomicFile.failWrite(Ljava\/io\/FileOutputStream;)V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r4 != null) goto L4\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|return\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0003}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|if (sync(r4) != false) goto L7\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000b|android.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, \"Failed to sync file output stream\")\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0010|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0010|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IOException \-\> 0x0014, blocks: (B:7:0x0010), top: B:15:0x0010 \}\lCatch: IOException \-\> 0x0014\l|r4.close()     \/\/ Catch: java.io.IOException \-\> L14\l}"];
+Node_11 [shape=record,label="{11\:\ 0x001a}"];
+Node_12 [shape=record,label="{12\:\ 0x0020|if (r3.mNewName.delete() != false) goto L13\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0022|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"Failed to delete new file \")\lr0.append(r3.mNewName)\landroid.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, r0.toString())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0038|RETURN\lORIG_RETURN\l|return\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0014|ExcHandler: IOException \-\> 0x0014\l|java.io.IOException r0 = move\-exception\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0015|android.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, \"Failed to close file output stream\", r0)\l}"];
+MethodNode[shape=record,label="{public void androidx.core.util.AtomicFile.failWrite((r3v0 'this' androidx.core.util.AtomicFile A[IMMUTABLE_TYPE, THIS]), (r4v0 'str' java.io.FileOutputStream A[D('str' java.io.FileOutputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0038 \-\> B:1:?, CROSS_EDGE: B:12:0x0020 \-\> B:14:0x0038, CROSS_EDGE: B:10:0x0015 \-\> B:11:0x001a, CROSS_EDGE: B:15:0x0010 \-\> B:9:0x0014, CROSS_EDGE: B:5:0x0009 \-\> B:15:0x0010\lTryCatch #0 \{IOException \-\> 0x0014, blocks: (B:7:0x0010), top: B:15:0x0010 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_15;
+Node_6 -> Node_15;
+Node_15 -> Node_7;
+Node_15 -> Node_9;
+Node_7 -> Node_11;
+Node_7 -> Node_16;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_17;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+Node_17 -> Node_1;
+Node_16 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

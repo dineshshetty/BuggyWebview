@@ -1,0 +1,47 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.initFastScroller(Landroid\/graphics\/drawable\/StateListDrawable;Landroid\/graphics\/drawable\/Drawable;Landroid\/graphics\/drawable\/StateListDrawable;Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_582587329 {
+label = "R(1:(2:(2:8|9)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1903099384 {
+label = "R(2:(2:8|9)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1329817879 {
+label = "IF [B:12:0x0000, B:13:0x0002, B:14:0x0004, B:15:0x0006] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r11 == null) goto L8\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0002|ADDED_TO_REGION\l|if (r12 == null) goto L8\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0004|ADDED_TO_REGION\l|if (r13 == null) goto L8\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0006|ADDED_TO_REGION\l|if (r14 == null) goto L8\l}"];
+subgraph cluster_Region_770262128 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002d}"];
+Node_19 [shape=record,label="{19\:\ 0x0047|throw new java.lang.IllegalArgumentException(\"Trying to set fast scroller without both required drawables.\" + exceptionLabel())\l}"];
+}
+}
+subgraph cluster_Region_399699977 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|android.content.res.Resources android.content.res.Resources r0 = getContext().getResources()\lnew androidx.recyclerview.widget.FastScroller(r10, r11, r12, r13, r14, r0.getDimensionPixelSize(androidx.recyclerview.C0417R.dimen.fastscroll_default_thickness), r0.getDimensionPixelSize(androidx.recyclerview.C0417R.dimen.fastscroll_minimum_range), r0.getDimensionPixelOffset(androidx.recyclerview.C0417R.dimen.fastscroll_margin))\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x002c}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.initFastScroller((r10v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r11v0 'verticalThumbDrawable' android.graphics.drawable.StateListDrawable A[D('verticalThumbDrawable' android.graphics.drawable.StateListDrawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'verticalTrackDrawable' android.graphics.drawable.Drawable A[D('verticalTrackDrawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'horizontalThumbDrawable' android.graphics.drawable.StateListDrawable A[D('horizontalThumbDrawable' android.graphics.drawable.StateListDrawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'horizontalTrackDrawable' android.graphics.drawable.Drawable A[D('horizontalTrackDrawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0047 \-\> B:11:?, CROSS_EDGE: B:14:0x0004 \-\> B:18:0x002d, CROSS_EDGE: B:13:0x0002 \-\> B:18:0x002d, CROSS_EDGE: B:12:0x0000 \-\> B:18:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_18;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_18;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_18;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_17 -> Node_11;
+}
+

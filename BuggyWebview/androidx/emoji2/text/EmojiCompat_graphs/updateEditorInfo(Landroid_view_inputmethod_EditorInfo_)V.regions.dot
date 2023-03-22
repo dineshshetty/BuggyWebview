@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.emoji2.text.EmojiCompat.updateEditorInfo(Landroid\/view\/inputmethod\/EditorInfo;)V" {
+subgraph cluster_Region_1590850473 {
+label = "R(1:(2:(1:10)|(2:(1:6)|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2050292837 {
+label = "R(2:(1:10)|(2:(1:6)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1232524377 {
+label = "IF [B:16:0x0004, B:17:0x0006] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|if (isInitialized() == false) goto L11\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0006|ADDED_TO_REGION\l|if (r2 == null) goto L10\l}"];
+subgraph cluster_Region_935177084 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2059393305 {
+label = "R(2:(1:6)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_657839615 {
+label = "IF [B:20:0x000b] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|if (r2.extras == null) goto L6\l}"];
+subgraph cluster_Region_1478367580 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000d|r2.extras = new android.os.Bundle()\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0014|r1.mHelper.updateEditorInfoAttrs(r2)\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0009}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0019}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001a|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.emoji2.text.EmojiCompat.updateEditorInfo((r1v0 'this' androidx.emoji2.text.EmojiCompat A[IMMUTABLE_TYPE, THIS]), (r2v0 'outAttrs' android.view.inputmethod.EditorInfo A[D('outAttrs' android.view.inputmethod.EditorInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x000b \-\> B:22:0x0014, CROSS_EDGE: B:24:0x001a \-\> B:14:?, CROSS_EDGE: B:16:0x0004 \-\> B:24:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_24;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_25;
+Node_25 -> Node_14;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_19 -> Node_20;
+Node_23 -> Node_14;
+Node_24 -> Node_14;
+}
+

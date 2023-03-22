@@ -1,0 +1,82 @@
+digraph "CFG forandroidx.constraintlayout.core.PriorityGoalRow.GoalVariableAccessor.isNegative()Z" {
+subgraph cluster_Region_48093213 {
+label = "R(3:1|(2:4|(2:(1:13)|(1:(2:(1:10)|(1:8)))))|15)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r0 = 8\l}"];
+subgraph cluster_LoopRegion_969024916 {
+label = "LOOP:0: (2:4|(2:(1:13)|(1:(2:(1:10)|(1:8)))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0003|if (r0 \>= 0) goto L4\l}"];
+subgraph cluster_Region_282037153 {
+label = "R(2:4|(2:(1:13)|(1:(2:(1:10)|(1:8)))))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|float r2 = r5.variable.goalStrengthVector[r0]\l}"];
+subgraph cluster_Region_1454860120 {
+label = "R(2:(1:13)|(1:(2:(1:10)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2092872853 {
+label = "IF [B:6:0x000e] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|if (r2 \> 0.0f) goto L12\l}"];
+subgraph cluster_Region_8907368 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1308437661 {
+label = "R(1:(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_260126143 {
+label = "R(2:(1:10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1425588243 {
+label = "IF [B:9:0x0013] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0013|if (r2 \< 0.0f) goto L9\l}"];
+subgraph cluster_Region_1658916528 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0015|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1264674910 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0017|LOOP_END\lLOOP:0: B:3:0x0002\-\>B:12:0x0017\l|r0\-\-\l}"];
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x001a|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0002|LOOP_START\lLOOP:0: B:3:0x0002\-\>B:12:0x0017\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v2 'i' int) binds: [B:2:0x0000, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0011}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0015|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0010|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final boolean androidx.constraintlayout.core.PriorityGoalRow.GoalVariableAccessor.isNegative((r5v0 'this' androidx.constraintlayout.core.PriorityGoalRow$GoalVariableAccessor A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0016 \-\> B:1:?, BACK_EDGE: B:12:0x0017 \-\> B:3:0x0002, CROSS_EDGE: B:13:0x001a \-\> B:1:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_15[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_8[style=dashed];
+Node_6 -> Node_16;
+Node_7 -> Node_1;
+Node_9 -> Node_12[style=dashed];
+Node_9 -> Node_14;
+Node_10 -> Node_1;
+Node_12 -> Node_3;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+Node_14 -> Node_10;
+Node_16 -> Node_7;
+Node_15 -> Node_13;
+}
+

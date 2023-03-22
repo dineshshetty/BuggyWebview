@@ -1,0 +1,87 @@
+digraph "CFG forandroidx.core.os.LocaleListCompat.forLanguageTags(Ljava\/lang\/String;)Landroidx\/core\/os\/LocaleListCompat;" {
+subgraph cluster_Region_1803229691 {
+label = "R(1:(2:(1:19)|(3:4|(2:(1:9)(1:12)|11)|16))) | DECL_VAR: java.util.Locale null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1784587151 {
+label = "R(2:(1:19)|(3:4|(2:(1:9)(1:12)|11)|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1939934574 {
+label = "IF [B:23:0x0000, B:25:0x0006] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|if (r5 == null) goto L18\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0006|ADDED_TO_REGION\l|if (r5.isEmpty() != false) goto L18\l}"];
+subgraph cluster_Region_402375524 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0038|RETURN\l|return getEmptyLocaleList()\l}"];
+}
+}
+subgraph cluster_Region_17656793 {
+label = "R(3:4|(2:(1:9)(1:12)|11)|16)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0009|java.lang.String[] java.lang.String[] r0 = r5.split(\",\", \-1)\ljava.util.Locale[] java.util.Locale[] r1 = new java.util.Locale[r0.length]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1175022937 {
+label = "LOOP:0: (2:(1:9)(1:12)|11)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0015|if (r2 \< r1.length) goto L7\l}"];
+subgraph cluster_Region_741381602 {
+label = "R(2:(1:9)(1:12)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_612148385 {
+label = "IF [B:31:0x001b] THEN: R(1:9) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001b|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L9\l}"];
+subgraph cluster_Region_1992009100 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x001d|java.util.Locale r3 = androidx.core.p003os.LocaleListCompat.Api21Impl.forLanguageTag(r0[r2])\l}"];
+}
+subgraph cluster_Region_368953797 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0024|java.util.Locale r3 = forLanguageTagCompat(r0[r2])\l}"];
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x002a|LOOP_END\lLOOP:0: B:28:0x0014\-\>B:34:0x002a\lPHI: r3 \l  PHI: (r3v4 java.util.Locale) = (r3v3 java.util.Locale), (r3v6 java.util.Locale) binds: [B:40:0x002a, B:41:0x002a] A[DONT_GENERATE, DONT_INLINE]\l|r1[r2] = r3\lr2++\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0033|RETURN\l|return create(r1)\l}"];
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0002}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0014|LOOP_START\lLOOP:0: B:28:0x0014\-\>B:34:0x002a\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v3 'i' int) binds: [B:27:0x0009, B:34:0x002a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0017}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x002a|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x002a|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x002f|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x002f}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0034}"];
+MethodNode[shape=record,label="{public static androidx.core.os.LocaleListCompat androidx.core.os.LocaleListCompat.forLanguageTags((r5v0 'list' java.lang.String A[D('list' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:34:0x002a \-\> B:28:0x0014, CROSS_EDGE: B:33:0x0024 \-\> B:34:0x002a, CROSS_EDGE: B:38:0x0038 \-\> B:22:?, CROSS_EDGE: B:23:0x0000 \-\> B:37:0x0034\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_37;
+Node_25 -> Node_27[style=dashed];
+Node_25 -> Node_37;
+Node_38 -> Node_22;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_29 -> Node_39[style=dashed];
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_41;
+Node_33 -> Node_40;
+Node_34 -> Node_28;
+Node_36 -> Node_22;
+Node_21 -> Node_23;
+Node_24 -> Node_25;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_41 -> Node_34;
+Node_40 -> Node_34;
+Node_39 -> Node_35;
+Node_35 -> Node_36;
+Node_37 -> Node_38;
+}
+

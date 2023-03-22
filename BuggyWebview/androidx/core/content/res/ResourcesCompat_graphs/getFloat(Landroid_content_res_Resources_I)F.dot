@@ -1,0 +1,29 @@
+digraph "CFG forandroidx.core.content.res.ResourcesCompat.getFloat(Landroid\/content\/res\/Resources;I)F" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000}"];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \< 29) goto L6\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0006}"];
+Node_17 [shape=record,label="{17\:\ 0x000a|RETURN\l|return androidx.core.content.res.ResourcesCompat.Api29Impl.getFloat(r4, r5)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000b|android.util.TypedValue r0 = getTypedValue()\lr4.getValue(r5, r0, true)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0016|if (r0.type != 4) goto L10\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0018}"];
+Node_21 [shape=record,label="{21\:\ 0x001c|RETURN\l|return r0.getFloat()\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001d|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Resource ID #0x\")\lr2.append(java.lang.Integer.toHexString(r5))\lr2.append(\" type #0x\")\lr2.append(java.lang.Integer.toHexString(r0.type))\lr2.append(\" is not valid\")\l}"];
+Node_23 [shape=record,label="{23\:\ 0x004a|throw new android.content.res.Resources.NotFoundException(r2.toString())\l}"];
+MethodNode[shape=record,label="{public static float androidx.core.content.res.ResourcesCompat.getFloat((r4v0 'res' android.content.res.Resources A[D('res' android.content.res.Resources), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'id' int A[D('id' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001c \-\> B:13:?, CROSS_EDGE: B:23:0x004a \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_18;
+Node_16 -> Node_17;
+Node_17 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_22;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+}
+

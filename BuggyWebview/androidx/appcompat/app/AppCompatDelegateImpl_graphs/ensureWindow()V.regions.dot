@@ -1,0 +1,62 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.ensureWindow()V" {
+subgraph cluster_Region_957269090 {
+label = "R(2:(2:3|(1:5))|(1:(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_81104015 {
+label = "IF [B:15:0x0002] THEN: R(2:3|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r2.mWindow == null) goto L3\l}"];
+subgraph cluster_Region_1711792206 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|java.lang.Object java.lang.Object r0 = r2.mHost\l}"];
+subgraph cluster_IfRegion_231816143 {
+label = "IF [B:17:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if ((r0 instanceof android.app.Activity) != false) goto L5\l}"];
+subgraph cluster_Region_1822940017 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|attachToWindow(((android.app.Activity) r0).getWindow())\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1065359657 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_680737616 {
+label = "IF [B:20:0x0015] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0015|if (r2.mWindow == null) goto L10\l}"];
+subgraph cluster_Region_1743902708 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001f|throw new java.lang.IllegalStateException(\"We have not been given a Window\")\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0013}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0017}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0018}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.app.AppCompatDelegateImpl.ensureWindow((r2v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001f \-\> B:13:?, CROSS_EDGE: B:17:0x0008 \-\> B:19:0x0013, CROSS_EDGE: B:15:0x0002 \-\> B:19:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_19 -> Node_20;
+Node_21 -> Node_13;
+Node_22 -> Node_23;
+}
+

@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.animateScrim(I)V" {
+subgraph cluster_Region_744808368 {
+label = "R(3:1|(3:3|(1:5)(1:10)|6)(1:(1:13))|7) | DECL_VAR: android.animation.TimeInterpolator null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|ensureToolbar()\landroid.animation.ValueAnimator android.animation.ValueAnimator r0 = r4.scrimAnimator\l}"];
+subgraph cluster_IfRegion_1152182805 {
+label = "IF [B:3:0x0005] THEN: R(3:3|(1:5)(1:10)|6) ELSE: R(1:(1:13))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1015915064 {
+label = "R(3:3|(1:5)(1:10)|6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|android.animation.ValueAnimator android.animation.ValueAnimator r0 = new android.animation.ValueAnimator()\lr4.scrimAnimator = r0\l}"];
+subgraph cluster_IfRegion_1757705269 {
+label = "IF [B:5:0x0011] THEN: R(1:5) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|if (r5 \> r4.scrimAlpha) goto L5\l}"];
+subgraph cluster_Region_365026258 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|android.animation.TimeInterpolator r1 = r4.scrimAnimationFadeInInterpolator\l}"];
+}
+subgraph cluster_Region_907965254 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|android.animation.TimeInterpolator r1 = r4.scrimAnimationFadeOutInterpolator\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0018|PHI: r1 \l  PHI: (r1v5 android.animation.TimeInterpolator) = (r1v4 android.animation.TimeInterpolator), (r1v7 android.animation.TimeInterpolator) binds: [B:7:0x0016, B:6:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|r0.setInterpolator(r1)\lr4.scrimAnimator.addUpdateListener(new com.google.android.material.appbar.CollapsingToolbarLayout.C05832())\l}"];
+}
+subgraph cluster_Region_2103517095 {
+label = "R(1:(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1979397210 {
+label = "IF [B:10:0x002a] THEN: R(1:13) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002a|if (r0.isRunning() != false) goto L13\l}"];
+subgraph cluster_Region_579134408 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002c|r4.scrimAnimator.cancel()\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0031|r4.scrimAnimator.setDuration(r4.scrimAnimationDuration)\lr4.scrimAnimator.setIntValues(r4.scrimAlpha, r5)\lr4.scrimAnimator.start()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004d}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0026}"];
+MethodNode[shape=record,label="{private void com.google.android.material.appbar.CollapsingToolbarLayout.animateScrim((r4v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'targetAlpha' int A[D('targetAlpha' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0016 \-\> B:8:0x0018, CROSS_EDGE: B:11:0x002c \-\> B:12:0x0031, CROSS_EDGE: B:10:0x002a \-\> B:12:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_12;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_0 -> Node_2;
+Node_13 -> Node_1;
+Node_9 -> Node_10;
+}
+

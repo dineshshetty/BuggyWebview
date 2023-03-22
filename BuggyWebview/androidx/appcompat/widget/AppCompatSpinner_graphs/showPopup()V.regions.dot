@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatSpinner.showPopup()V" {
+subgraph cluster_Region_1610066621 {
+label = "R(1:(1:3)(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1286962458 {
+label = "IF [B:11:0x0004] THEN: R(1:3) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 17) goto L3\l}"];
+subgraph cluster_Region_996882897 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|r3.mPopup.show(androidx.appcompat.widget.AppCompatSpinner.Api17Impl.getTextDirection(r3), androidx.appcompat.widget.AppCompatSpinner.Api17Impl.getTextAlignment(r3))\l}"];
+}
+subgraph cluster_Region_2000521531 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0014|r3.mPopup.show(\-1, \-1)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001a|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.widget.AppCompatSpinner.showPopup((r3v0 'this' androidx.appcompat.widget.AppCompatSpinner A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0014 \-\> B:14:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+Node_14 -> Node_9;
+}
+

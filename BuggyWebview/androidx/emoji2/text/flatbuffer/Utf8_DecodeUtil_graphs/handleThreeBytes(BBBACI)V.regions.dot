@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.Utf8.DecodeUtil.handleThreeBytes(BBB[CI)V" {
+subgraph cluster_Region_526468252 {
+label = "R(1:(2:(1:15)|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1195140130 {
+label = "R(2:(1:15)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1031375682 {
+label = "IF [B:19:0x0004, B:21:0x000a, B:22:0x000c, B:24:0x0010, B:25:0x0012, B:27:0x0018] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (isNotTrailingByte(r3) != false) goto L14\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000a|ADDED_TO_REGION\l|if (r2 == (\-32)) goto L5\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000c|ADDED_TO_REGION\l|if (r3 \< (\-96)) goto L14\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0010|ADDED_TO_REGION\l|if (r2 == (\-19)) goto L8\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0012|ADDED_TO_REGION\l|if (r3 \>= (\-96)) goto L14\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0018|ADDED_TO_REGION\l|if (isNotTrailingByte(r4) != false) goto L14\l}"];
+subgraph cluster_Region_710870990 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0035|throw new java.lang.IllegalArgumentException(\"Invalid UTF\-8\")\l}"];
+}
+}
+subgraph cluster_Region_1058005949 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001a|r5[r6] = (char) (((r2 & 15) \<\< 12) \| (trailingByteValue(r3) \<\< 6) \| trailingByteValue(r4))\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0006}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000e}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0014}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x002d}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002e}"];
+MethodNode[shape=record,label="{public static void androidx.emoji2.text.flatbuffer.Utf8.DecodeUtil.handleThreeBytes((r2v0 'byte1' byte A[D('byte1' byte), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'byte2' byte A[D('byte2' byte), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'byte3' byte A[D('byte3' byte), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'resultArr' char[] A[D('resultArr' char[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'resultPos' int A[D('resultPos' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0035 \-\> B:17:?, CROSS_EDGE: B:25:0x0012 \-\> B:30:0x002e, CROSS_EDGE: B:24:0x0010 \-\> B:26:0x0014, CROSS_EDGE: B:22:0x000c \-\> B:30:0x002e, CROSS_EDGE: B:21:0x000a \-\> B:23:0x000e, CROSS_EDGE: B:19:0x0004 \-\> B:30:0x002e\lINLINE_NOT_NEEDED\lEXCEPTIONS:[Ljava\/lang\/IllegalArgumentException;]\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_30;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_30;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_30;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_30;
+Node_31 -> Node_17;
+Node_28 -> Node_29;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_23 -> Node_24;
+Node_26 -> Node_27;
+Node_29 -> Node_17;
+Node_30 -> Node_31;
+}
+

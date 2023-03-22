@@ -1,0 +1,27 @@
+digraph "CFG forkotlinx.coroutines.sync.MutexImpl.TryLockDesc.PrepareOp.perform(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|0x0000: INVOKE  (r0 I:kotlinx.coroutines.internal.AtomicOp) = (r3 I:kotlinx.coroutines.sync.MutexImpl$TryLockDesc$PrepareOp) type: VIRTUAL call: kotlinx.coroutines.sync.MutexImpl.TryLockDesc.PrepareOp.getAtomicOp():kotlinx.coroutines.internal.AtomicOp A[MD:():kotlinx.coroutines.internal.AtomicOp\<?\> (m)] (LINE:292)\l0x0004: INVOKE  (r0 I:boolean) = (r0 I:kotlinx.coroutines.internal.AtomicOp) type: VIRTUAL call: kotlinx.coroutines.internal.AtomicOp.isDecided():boolean A[MD:():boolean (m)]\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0008|0x0008: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:16:0x000f \l}"];
+Node_15 [shape=record,label="{15\:\ 0x000a|0x000a: INVOKE  (r0 I:kotlinx.coroutines.sync.Empty) =  type: STATIC call: kotlinx.coroutines.sync.MutexKt.access$getEMPTY_UNLOCKED$p():kotlinx.coroutines.sync.Empty A[MD:():kotlinx.coroutines.sync.Empty (m)]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0013|0x0013: IF  (r4 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('affected' java.lang.Object)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:20:0x001f  (LINE:293)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0015|0x0015: MOVE  (r1 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY] A[D('affected' java.lang.Object)]) \l0x0016: CHECK_CAST (r1 I:kotlinx.coroutines.sync.MutexImpl) = (kotlinx.coroutines.sync.MutexImpl) (r1 I:??[OBJECT, ARRAY]) \l0x0018: SGET  (r2 I:java.util.concurrent.atomic.AtomicReferenceFieldUpdater) =  kotlinx.coroutines.sync.MutexImpl._state$FU java.util.concurrent.atomic.AtomicReferenceFieldUpdater \l0x001a: INVOKE  \l  (r2 I:java.util.concurrent.atomic.AtomicReferenceFieldUpdater)\l  (r1 I:java.lang.Object)\l  (r3 I:java.lang.Object)\l  (r0 I:java.lang.Object A[D('update' java.lang.Object)])\l type: STATIC call: androidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(java.util.concurrent.atomic.AtomicReferenceFieldUpdater, java.lang.Object, java.lang.Object, java.lang.Object):boolean A[MD:(java.util.concurrent.atomic.AtomicReferenceFieldUpdater, java.lang.Object, java.lang.Object, java.lang.Object):boolean (m)]\l0x001d: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:294)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001e|RETURN\l|0x001e: RETURN  (r1 I:java.lang.Object) \l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x001f|0x001f: NEW_INSTANCE  (r1 I:java.lang.NullPointerException) =  java.lang.NullPointerException  (LINE:293)\l0x0021: CONST_STR  (r2 I:java.lang.String) =  \"null cannot be cast to non\-null type kotlinx.coroutines.sync.MutexImpl\" \l0x0023: INVOKE  (r1 I:java.lang.NullPointerException), (r2 I:java.lang.String) type: DIRECT call: java.lang.NullPointerException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0026|0x0026: THROW  (r1 I:java.lang.Throwable) \l}"];
+Node_16 [shape=record,label="{16\:\ 0x000f|0x000f: INVOKE  (r0 I:kotlinx.coroutines.internal.AtomicOp) = (r3 I:kotlinx.coroutines.sync.MutexImpl$TryLockDesc$PrepareOp) type: VIRTUAL call: kotlinx.coroutines.sync.MutexImpl.TryLockDesc.PrepareOp.getAtomicOp():kotlinx.coroutines.internal.AtomicOp A[MD:():kotlinx.coroutines.internal.AtomicOp\<?\> (m)]\l}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.sync.MutexImpl.TryLockDesc.PrepareOp.perform((r3 'this' I:kotlinx.coroutines.sync.MutexImpl$TryLockDesc$PrepareOp A[IMMUTABLE_TYPE, THIS]), (r4 I:java.lang.Object A[D('affected' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0026 \-\> B:12:?, CROSS_EDGE: B:16:0x000f \-\> B:17:0x0013\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0013\-0x0026: r0 'update' Ljava\/lang\/Object;\l  \-1 \-0x0026: r4 'affected' Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.internal.OpDescriptor.perform(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_16 -> Node_17;
+}
+

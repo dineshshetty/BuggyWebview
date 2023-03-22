@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.unsigned.UArraysKt___UArraysKt.takeWhile\-jgv0xPQ([ILkotlin\/jvm\/functions\/Function1;)Ljava\/util\/List;" {
+subgraph cluster_Region_620917137 {
+label = "R(3:1|(2:3|(2:(1:6)|(1:5)))|8)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"$this$takeWhile\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"predicate\")\ljava.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList()\lint int r1 = kotlin.UIntArray.m298getSizeimpl(r5)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1894773032 {
+label = "LOOP:0: (2:3|(2:(1:6)|(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0014|LOOP_START\lLOOP:0: B:15:0x0014\-\>B:19:0x002b\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:14:0x0000, B:19:0x002b] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_521141459 {
+label = "R(2:3|(2:(1:6)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0016|int int r3 = kotlin.UIntArray.m297getpVg5ArA(r5, r2)\l}"];
+subgraph cluster_Region_2065954185 {
+label = "R(2:(1:6)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_691505242 {
+label = "IF [B:17:0x0028] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0028|if (r6.invoke(kotlin.UInt.m232boximpl(r3)).booleanValue() != true) goto L6\l}"];
+subgraph cluster_Region_845732913 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0035|SYNTHETIC\lEDGE_INSN: B:23:0x0035\-\>B:20:0x0035 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1922689931 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002b|LOOP_END\lLOOP:0: B:15:0x0014\-\>B:19:0x002b\l|r0.add(kotlin.UInt.m232boximpl(r3))\lr2++\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0038|RETURN\l|return r0\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0035|EDGE_INSN: B:23:0x0035\-\>B:20:0x0035 ?: BREAK  \l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0035|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static final java.util.List\<kotlin.UInt\> kotlin.collections.unsigned.UArraysKt___UArraysKt.takeWhile\-jgv0xPQ((r5v0 'takeWhile' int[] A[D('$this$takeWhile_u2djgv0xPQ' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'predicate' kotlin.jvm.functions.Function1\<? super kotlin.UInt, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x002b \-\> B:15:0x0014, CROSS_EDGE: B:15:0x0014 \-\> B:20:0x0035\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([ILkotlin\/jvm\/functions\/Function1\<\-Lkotlin\/UInt;Ljava\/lang\/Boolean;\>;)Ljava\/util\/List\<Lkotlin\/UInt;\>;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_23;
+Node_23 -> Node_20;
+Node_19 -> Node_15;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_20 -> Node_21;
+Node_22 -> Node_20;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.fragment.app.FragmentActivity.dump(Ljava\/lang\/String;Ljava\/io\/FileDescriptor;Ljava\/io\/PrintWriter;[Ljava\/lang\/String;)V" {
+subgraph cluster_Region_2639022 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|super.dump(r3, r4, r5, r6)\lr5.print(r3)\lr5.print(\"Local FragmentActivity \")\lr5.print(java.lang.Integer.toHexString(java.lang.System.identityHashCode(r2)))\lr5.println(\" State:\")\ljava.lang.String java.lang.String r0 = r3 + \"  \"\lr5.print(r0)\lr5.print(\"mCreated=\")\lr5.print(r2.mCreated)\lr5.print(\" mResumed=\")\lr5.print(r2.mResumed)\lr5.print(\" mStopped=\")\lr5.print(r2.mStopped)\l}"];
+subgraph cluster_IfRegion_1075804513 {
+label = "IF [B:3:0x0051] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0051|if (getApplication() != null) goto L3\l}"];
+subgraph cluster_Region_353486103 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0053|androidx.loader.app.LoaderManager.getInstance(r2).dump(r0, r4, r5, r6)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x005a|r2.mFragments.getSupportFragmentManager().dump(r3, r4, r5, r6)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0063}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentActivity.dump((r2v0 'this' androidx.fragment.app.FragmentActivity A[IMMUTABLE_TYPE, THIS]), (r3v0 'prefix' java.lang.String A[D('prefix' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'fd' java.io.FileDescriptor A[D('fd' java.io.FileDescriptor), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'writer' java.io.PrintWriter A[D('writer' java.io.PrintWriter), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'args' java.lang.String[] A[D('args' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lMETHOD_OVERRIDE: [ClspMth\{android.app.Activity.dump(java.lang.String, java.io.FileDescriptor, java.io.PrintWriter, java.lang.String[]):void\}]\lCROSS_EDGE: B:3:0x0051 \-\> B:5:0x005a\lTYPE_VARS: EMPTY\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_6 -> Node_1;
+}
+

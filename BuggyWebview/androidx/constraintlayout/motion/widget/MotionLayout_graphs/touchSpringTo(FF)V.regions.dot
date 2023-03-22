@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.MotionLayout.touchSpringTo(FF)V" {
+subgraph cluster_Region_348982216 {
+label = "R(1:(2:(1:7)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1566814595 {
+label = "R(2:(1:7)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_78656212 {
+label = "IF [B:13:0x0002, B:16:0x0009] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r11.mScene == null) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0009|ADDED_TO_REGION\l|if (r11.mTransitionLastPosition == r12) goto L7\l}"];
+subgraph cluster_Region_674623369 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1498042841 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|r11.mTemporalInterpolator = true\lr11.mAnimationStartTime = getNanoTime()\lr11.mTransitionDuration = r11.mScene.getDuration() \/ 1000.0f\lr11.mTransitionGoalPosition = r12\lr11.mInTransition = true\lr11.mStopLogic.springConfig(r11.mTransitionLastPosition, r12, r13, r11.mScene.getSpringMass(), r11.mScene.getSpringStiffiness(), r11.mScene.getSpringDamping(), r11.mScene.getSpringStopThreshold(), r11.mScene.getSpringBoundary())\lint int r0 = r11.mCurrentState\lr11.mTransitionGoalPosition = r12\lr11.mCurrentState = r0\lr11.mInterpolator = r11.mStopLogic\lr11.mTransitionInstantly = false\lr11.mAnimationStartTime = getNanoTime()\linvalidate()\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0004|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0005}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0062}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.motion.widget.MotionLayout.touchSpringTo((r11v0 'this' androidx.constraintlayout.motion.widget.MotionLayout A[IMMUTABLE_TYPE, THIS]), (r12v0 'position' float A[D('position' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'currentVelocity' float A[D('currentVelocity' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000b \-\> B:11:?, CROSS_EDGE: B:19:0x0062 \-\> B:11:?\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [position, currentVelocity]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_19 -> Node_11;
+}
+

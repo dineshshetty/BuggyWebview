@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.activity.result.ActivityResultRegistry.2.launch(Ljava\/lang\/Object;Landroidx\/core\/app\/ActivityOptionsCompat;)V" {
+subgraph cluster_Region_1510007909 {
+label = "R(2:1|(2:(2:12|13)|(2:3|(1:5))))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|java.lang.Integer java.lang.Integer r0 = androidx.activity.result.ActivityResultRegistry.this.mKeyToRc.get(r2)\l}"];
+subgraph cluster_Region_1223916848 {
+label = "R(2:(2:12|13)|(2:3|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1750149183 {
+label = "IF [B:17:0x000c] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|if (r0 == null) goto L12\l}"];
+subgraph cluster_Region_1993770311 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002f}"];
+Node_25 [shape=record,label="{25\:\ 0x0054|throw new java.lang.IllegalStateException(\"Attempting to launch an unregistered ActivityResultLauncher with contract \" + r3 + \" and input \" + r5 + \". You must ensure the ActivityResultLauncher is registered before calling launch().\")\l}"];
+}
+}
+subgraph cluster_Region_1745537790 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|androidx.activity.result.ActivityResultRegistry.this.mLaunchedKeys.add(r2)\l}"];
+subgraph cluster_TryCatchRegion_156600741 {
+label = "Try: R(1:5) catches: R(3:9|10|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_971807550 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x0024, blocks: (B:19:0x0017), top: B:26:0x0017 \}\lCatch: Exception \-\> 0x0024\l|androidx.activity.result.ActivityResultRegistry.this.onLaunch(r0.intValue(), r3, r5, r6)     \/\/ Catch: java.lang.Exception \-\> L24\l}"];
+}
+subgraph cluster_Region_1520201538 {
+label = "R(3:9|10|11) | ExcHandler: Exception \-\> 0x0024\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|ExcHandler: Exception \-\> 0x0024\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0025|androidx.activity.result.ActivityResultRegistry.this.mLaunchedKeys.remove(r2)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x002e|throw r1\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1520201538 {
+label = "R(3:9|10|11) | ExcHandler: Exception \-\> 0x0024\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|ExcHandler: Exception \-\> 0x0024\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0025|androidx.activity.result.ActivityResultRegistry.this.mLaunchedKeys.remove(r2)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x002e|throw r1\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0017|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0023}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public void androidx.activity.result.ActivityResultRegistry.2.launch((r4v0 'this' androidx.activity.result.ActivityResultRegistry$2 A[IMMUTABLE_TYPE, THIS]), (r5v0 'input' I A[D('input' I), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'options' androidx.core.app.ActivityOptionsCompat A[D('options' androidx.core.app.ActivityOptionsCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x002e \-\> B:15:?, CROSS_EDGE: B:26:0x0017 \-\> B:21:0x0024, CROSS_EDGE: B:25:0x0054 \-\> B:15:?\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x0024, blocks: (B:19:0x0017), top: B:26:0x0017 \}\lTYPE_VARS: EMPTY\lSIGNATURE: (TI;Landroidx\/core\/app\/ActivityOptionsCompat;)V\lMETHOD_OVERRIDE: [androidx.activity.result.ActivityResultLauncher.launch(I, androidx.core.app.ActivityOptionsCompat):void]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_18 -> Node_26;
+Node_19 -> Node_20;
+Node_19 -> Node_27;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_15;
+Node_14 -> Node_16;
+Node_26 -> Node_19;
+Node_26 -> Node_21;
+Node_20 -> Node_15;
+Node_27 -> Node_21;
+}
+

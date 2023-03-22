@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.arch.core.executor.TaskExecutor.executeOnMainThread(Ljava\/lang\/Runnable;)V" {
+subgraph cluster_Region_423680947 {
+label = "R(1:(1:3)(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_700309222 {
+label = "IF [B:11:0x0004] THEN: R(1:3) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (isMainThread() != false) goto L3\l}"];
+subgraph cluster_Region_667736990 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|r2.run()\l}"];
+}
+subgraph cluster_Region_363654150 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|postToMainThread(r2)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000d|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.arch.core.executor.TaskExecutor.executeOnMainThread((r1v0 'this' androidx.arch.core.executor.TaskExecutor A[IMMUTABLE_TYPE, THIS]), (r2v0 'runnable' java.lang.Runnable A[D('runnable' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000a \-\> B:14:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+Node_14 -> Node_9;
+}
+

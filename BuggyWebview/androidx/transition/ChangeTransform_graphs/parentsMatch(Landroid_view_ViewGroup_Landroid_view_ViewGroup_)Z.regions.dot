@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.transition.ChangeTransform.parentsMatch(Landroid\/view\/ViewGroup;Landroid\/view\/ViewGroup;)Z" {
+subgraph cluster_Region_1010455328 {
+label = "R(1:(2:(2:16|17)|(2:5|(2:(1:13)|(2:10|11)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_65241530 {
+label = "R(2:(2:16|17)|(2:5|(2:(1:13)|(2:10|11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_32002144 {
+label = "IF [B:22:0x0007, B:24:0x000d] THEN: R(2:16|17) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0007|if (isValidTarget(r6) == false) goto L14\l}"];
+Node_24 [shape=record,label="{24\:\ 0x000d|ADDED_TO_REGION\l|if (isValidTarget(r7) == false) goto L14\l}"];
+subgraph cluster_Region_1304441365 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0020|PHI: r2 \l  PHI: (r2v1 boolean A[REMOVE]) = (r2v0 boolean) binds: [B:32:0x001d] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|boolean r0 = r6 == r7\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0021|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_346097867 {
+label = "R(2:5|(2:(1:13)|(2:10|11)))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0010|androidx.transition.TransitionValues androidx.transition.TransitionValues r1 = getMatchedTransitionValues(r6, true)\l}"];
+subgraph cluster_Region_1506072498 {
+label = "R(2:(1:13)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_675076627 {
+label = "IF [B:27:0x0014] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0014|if (r1 == null) goto L13\l}"];
+subgraph cluster_Region_931736825 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_597701563 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001b|PHI: r2 \l  PHI: (r2v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|boolean r0 = r7 == r1.view\l}"];
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0009}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0016}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0018}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001a}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001d}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001f}"];
+MethodNode[shape=record,label="{private boolean androidx.transition.ChangeTransform.parentsMatch((r5v0 'this' androidx.transition.ChangeTransform A[IMMUTABLE_TYPE, THIS]), (r6v0 'startParent' android.view.ViewGroup A[D('startParent' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'endParent' android.view.ViewGroup A[D('endParent' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x0018 \-\> B:31:0x001b, CROSS_EDGE: B:27:0x0014 \-\> B:35:0x0021, CROSS_EDGE: B:34:0x0020 \-\> B:35:0x0021, CROSS_EDGE: B:32:0x001d \-\> B:34:0x0020, CROSS_EDGE: B:22:0x0007 \-\> B:32:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_32;
+Node_24 -> Node_26[style=dashed];
+Node_24 -> Node_32;
+Node_34 -> Node_35;
+Node_35 -> Node_20;
+Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_36;
+Node_36 -> Node_20;
+Node_31 -> Node_37;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_32 -> Node_34;
+Node_33 -> Node_34;
+}
+

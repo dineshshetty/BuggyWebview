@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.appcompat.app.WindowDecorActionBar.cleanupTabs()V" {
+subgraph cluster_Region_1006862399 {
+label = "R(4:(1:3)|4|(1:6)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1843717462 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r1.mSelectedTab != null) goto L3\l}"];
+subgraph cluster_Region_1273544607 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|selectTab(null)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0008|r1.mTabs.clear()\landroidx.appcompat.widget.ScrollingTabContainerView androidx.appcompat.widget.ScrollingTabContainerView r0 = r1.mTabScrollView\l}"];
+subgraph cluster_IfRegion_1916138997 {
+label = "IF [B:6:0x000f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_1155816456 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|r0.removeAllTabs()\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0014|r1.mSavedTabPosition = \-1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0017}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.app.WindowDecorActionBar.cleanupTabs((r1v0 'this' androidx.appcompat.app.WindowDecorActionBar A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x000f \-\> B:8:0x0014, CROSS_EDGE: B:3:0x0002 \-\> B:5:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_9 -> Node_1;
+}
+

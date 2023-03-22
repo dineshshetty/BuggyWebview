@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.assertNotInLayoutOrScroll(Ljava\/lang\/String;)V" {
+subgraph cluster_Region_413813505 {
+label = "R(1:(1:(2:(2:4|5)|(1:8)))(1:(1:11)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_208174127 {
+label = "IF [B:17:0x0004] THEN: R(1:(2:(2:4|5)|(1:8))) ELSE: R(1:(1:11)(0))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (isComputingLayout() != false) goto L3\l}"];
+subgraph cluster_Region_1156751768 {
+label = "R(1:(2:(2:4|5)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_106453938 {
+label = "R(2:(2:4|5)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1281419835 {
+label = "IF [B:18:0x0006] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|if (r4 == null) goto L4\l}"];
+subgraph cluster_Region_61243036 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0008}"];
+Node_20 [shape=record,label="{20\:\ 0x0022|throw new java.lang.IllegalStateException(\"Cannot call this method while RecyclerView is computing a layout or scrolling\" + exceptionLabel())\l}"];
+}
+}
+subgraph cluster_Region_1384771857 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0028|throw new java.lang.IllegalStateException(r4)\l}"];
+}
+}
+}
+subgraph cluster_Region_382252345 {
+label = "R(1:(1:11)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1563600105 {
+label = "IF [B:24:0x002b] THEN: R(1:11) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002b|if (r3.mDispatchScrollCounter \> 0) goto L11\l}"];
+subgraph cluster_Region_1842373453 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002d|android.util.Log.w(androidx.recyclerview.widget.RecyclerView.TAG, \"Cannot call this method in a scroll callback. Scroll callbacks mightbe run during a measure & layout pass where you cannot change theRecyclerView data. Any method call that might change the structureof the RecyclerView or the adapter contents should be postponed tothe next frame.\", new java.lang.IllegalStateException(\"\" + exceptionLabel()))\l}"];
+}
+subgraph cluster_Region_1892419231 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0023}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0029}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x004e|ORIG_RETURN\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.assertNotInLayoutOrScroll((r3v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r4v0 'message' java.lang.String A[D('message' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0028 \-\> B:15:?, CROSS_EDGE: B:26:0x004e \-\> B:15:?, CROSS_EDGE: B:24:0x002b \-\> B:26:0x004e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_15;
+Node_22 -> Node_15;
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_26 -> Node_15;
+Node_27 -> Node_15;
+}
+

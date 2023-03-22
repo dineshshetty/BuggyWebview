@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.addToGlobalQueue(Lkotlinx\/coroutines\/scheduling\/Task;)Z" {
+subgraph cluster_Region_862921656 {
+label = "R(1:(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1223459429 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1749780461 {
+label = "IF [B:17:0x000d] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000d|PHI: r3 \l  PHI: (r3v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if ((r5.taskContext.getTaskMode() == 1) != false) goto L5\l}"];
+subgraph cluster_Region_903826716 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return r4.globalBlockingQueue.addLast(r5)\l}"];
+}
+}
+subgraph cluster_Region_2145897212 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001c|RETURN\lORIG_RETURN\l|return r4.globalCpuQueue.addLast(r5)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0009}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000c}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000f}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0016}"];
+MethodNode[shape=record,label="{private final boolean kotlinx.coroutines.scheduling.CoroutineScheduler.addToGlobalQueue((r4v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler A[IMMUTABLE_TYPE, THIS]), (r5v0 'task' kotlinx.coroutines.scheduling.Task A[D('task' kotlinx.coroutines.scheduling.Task), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0016 \-\> B:20:0x001c, CROSS_EDGE: B:14:0x0009 \-\> B:17:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_21 -> Node_12;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_16;
+Node_14 -> Node_17;
+Node_16 -> Node_17;
+Node_18 -> Node_21;
+Node_19 -> Node_20;
+}
+

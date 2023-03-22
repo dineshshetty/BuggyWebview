@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerViewAccessibilityDelegate.onInitializeAccessibilityNodeInfo(Landroid\/view\/View;Landroidx\/core\/view\/accessibility\/AccessibilityNodeInfoCompat;)V" {
+subgraph cluster_Region_1991157694 {
+label = "R(2:1|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|super.onInitializeAccessibilityNodeInfo(r2, r3)\l}"];
+subgraph cluster_Region_1292610903 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1782312626 {
+label = "IF [B:13:0x0007, B:15:0x000f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0007|if (shouldIgnore() == false) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000f|ADDED_TO_REGION\l|if (r1.mRecyclerView.getLayoutManager() != null) goto L5\l}"];
+subgraph cluster_Region_513669708 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0011|r1.mRecyclerView.getLayoutManager().onInitializeAccessibilityNodeInfo(r3)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0009}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001a|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate.onInitializeAccessibilityNodeInfo((r1v0 'this' androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate A[IMMUTABLE_TYPE, THIS]), (r2v0 'host' android.view.View A[D('host' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'info' androidx.core.view.accessibility.AccessibilityNodeInfoCompat A[D('info' androidx.core.view.accessibility.AccessibilityNodeInfoCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000f \-\> B:17:0x001a, CROSS_EDGE: B:13:0x0007 \-\> B:17:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.AccessibilityDelegateCompat.onInitializeAccessibilityNodeInfo(android.view.View, androidx.core.view.accessibility.AccessibilityNodeInfoCompat):void]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_18 -> Node_11;
+}
+

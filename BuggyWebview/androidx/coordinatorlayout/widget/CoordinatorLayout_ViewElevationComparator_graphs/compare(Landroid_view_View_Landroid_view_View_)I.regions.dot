@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.coordinatorlayout.widget.CoordinatorLayout.ViewElevationComparator.compare(Landroid\/view\/View;Landroid\/view\/View;)I" {
+subgraph cluster_Region_210915455 {
+label = "R(2:1|(2:(1:3)|(1:(2:(1:7)|(1:8)))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|float float r0 = androidx.core.view.ViewCompat.getZ(r4)\lfloat float r1 = androidx.core.view.ViewCompat.getZ(r5)\l}"];
+subgraph cluster_Region_1850394375 {
+label = "R(2:(1:3)|(1:(2:(1:7)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1397666500 {
+label = "IF [B:15:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000a|if (r0 \> r1) goto L3\l}"];
+subgraph cluster_Region_1189008227 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000c|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_449753011 {
+label = "R(1:(2:(1:7)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_965121779 {
+label = "R(2:(1:7)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1754432326 {
+label = "IF [B:19:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0010|if (r0 \< r1) goto L7\l}"];
+subgraph cluster_Region_21761083 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0012|RETURN\l|return 1\l}"];
+}
+}
+subgraph cluster_Region_834241210 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0014|RETURN\l|return 0\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e}"];
+MethodNode[shape=record,label="{public int androidx.coordinatorlayout.widget.CoordinatorLayout.ViewElevationComparator.compare((r3v0 'this' androidx.coordinatorlayout.widget.CoordinatorLayout$ViewElevationComparator A[IMMUTABLE_TYPE, THIS]), (r4v0 'lhs' android.view.View A[D('lhs' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'rhs' android.view.View A[D('rhs' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0013 \-\> B:13:?, CROSS_EDGE: B:23:0x0015 \-\> B:13:?\lINLINE_NOT_NEEDED\lREPLACED_BY: androidx.coordinatorlayout.widget.CoordinatorLayout.ViewElevationComparator.compare(android.view.View, android.view.View):int\lBRIDGED_BY: androidx.coordinatorlayout.widget.CoordinatorLayout.ViewElevationComparator.compare(android.view.View, android.view.View):int\lMETHOD_OVERRIDE: [ClspMth\{java.util.Comparator.compare(T, T):int\}]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_13;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_18 -> Node_19;
+}
+

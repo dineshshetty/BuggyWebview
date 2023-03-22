@@ -1,0 +1,78 @@
+digraph "CFG forkotlin.collections.builders.ListBuilderKt.subarrayContentEquals([Ljava\/lang\/Object;IILjava\/util\/List;)Z" {
+subgraph cluster_Region_1737956971 {
+label = "R(1:(2:(1:3)|(3:5|(1:(2:(1:11)|(1:9)))|13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1916097354 {
+label = "R(2:(1:3)|(3:5|(1:(2:(1:11)|(1:9)))|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1334948827 {
+label = "IF [B:18:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|if (r6 != r7.size()) goto L3\l}"];
+subgraph cluster_Region_838960049 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0007|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1413781585 {
+label = "R(3:5|(1:(2:(1:11)|(1:9)))|13)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_1950299423 {
+label = "LOOP:0: (1:(2:(1:11)|(1:9)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0009|LOOP_START\lLOOP:0: B:21:0x0009\-\>B:25:0x001a\lPHI: r0 \l  PHI: (r0v2 'i' int) = (r0v1 'i' int), (r0v3 'i' int) binds: [B:20:0x0008, B:25:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< r6) goto L7\l}"];
+subgraph cluster_Region_1840949212 {
+label = "R(1:(2:(1:11)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_902632994 {
+label = "R(2:(1:11)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_288072366 {
+label = "IF [B:23:0x0017] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|if (kotlin.jvm.internal.Intrinsics.areEqual(r4[r5 + r0], r7.get(r0)) != true) goto L10\l}"];
+subgraph cluster_Region_1996518443 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_868342725 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|LOOP_END\lLOOP:0: B:21:0x0009\-\>B:25:0x001a\l|r0++\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x001d|RETURN\l|return true\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000b}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0019|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.collections.builders.ListBuilderKt.subarrayContentEquals((r4v0 T[] A[D('$this$subarrayContentEquals' java.lang.Object[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'offset' int A[D('offset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'length' int A[D('length' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.util.List\<?\> A[D('other' java.util.List), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0019 \-\> B:16:?, BACK_EDGE: B:25:0x001a \-\> B:21:0x0009, CROSS_EDGE: B:27:0x001e \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>([TT;IILjava\/util\/List\<*\>;)Z\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_16;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_29[style=dashed];
+Node_23 -> Node_25[style=dashed];
+Node_23 -> Node_28;
+Node_24 -> Node_16;
+Node_25 -> Node_21;
+Node_26 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_22 -> Node_23;
+Node_28 -> Node_24;
+Node_29 -> Node_26;
+}
+

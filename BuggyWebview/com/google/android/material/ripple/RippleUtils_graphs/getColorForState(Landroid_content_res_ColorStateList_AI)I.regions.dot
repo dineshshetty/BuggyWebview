@@ -1,0 +1,43 @@
+digraph "CFG forcom.google.android.material.ripple.RippleUtils.getColorForState(Landroid\/content\/res\/ColorStateList;[I)I" {
+subgraph cluster_Region_485096855 {
+label = "R(2:(1:2)(1:10)|4) | DECL_VAR: int color\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1436739965 {
+label = "IF [B:13:0x0000] THEN: R(1:2) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|if (r2 != null) goto L2\l}"];
+subgraph cluster_Region_1067450187 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|int r0 = r2.getColorForState(r3, r2.getDefaultColor())\l}"];
+}
+subgraph cluster_Region_359399304 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000b|r0 = 0\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x000e|RETURN\l|return com.google.android.material.ripple.RippleUtils.USE_FRAMEWORK_RIPPLE ? doubleAlpha(r0) : r0\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000c|PHI: r0 \l  PHI: (r0v1 'color' int) = (r0v0 'color' int), (r0v3 'color' int) binds: [B:15:0x000b, B:14:0x0002] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0010}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0015}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private static int com.google.android.material.ripple.RippleUtils.getColorForState((r2v0 'rippleColor' android.content.res.ColorStateList A[D('rippleColor' android.content.res.ColorStateList), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'state' int[] A[D('state' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0015 \-\> B:20:0x0016, CROSS_EDGE: B:15:0x000b \-\> B:16:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_11 -> Node_13;
+Node_16 -> Node_17;
+Node_18 -> Node_21;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+Node_20 -> Node_12;
+}
+

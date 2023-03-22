@@ -1,0 +1,59 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.tryCreateWorker(J)Z" {
+subgraph cluster_Region_1372787034 {
+label = "R(3:1|(3:3|(1:7)|(1:9))|11)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = (int) (2097151 & r8)\lint int r1 = (int) ((kotlinx.coroutines.scheduling.CoroutineScheduler.BLOCKING_MASK & r8) \>\> 21)\lint int r2 = kotlin.ranges.RangesKt.coerceAtLeast(r0 \- r1, 0)\l}"];
+subgraph cluster_IfRegion_1826090217 {
+label = "IF [B:15:0x001e] THEN: R(3:3|(1:7)|(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001e|if (r2 \< r7.corePoolSize) goto L3\l}"];
+subgraph cluster_Region_274877525 {
+label = "R(3:3|(1:7)|(1:9))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0020|int int r4 = createNewWorker()\l}"];
+subgraph cluster_IfRegion_1940497941 {
+label = "IF [B:17:0x0025, B:19:0x0029] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0025|if (r4 == 1) goto L5\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0029|ADDED_TO_REGION\l|if (r7.corePoolSize \> 1) goto L7\l}"];
+subgraph cluster_Region_341983761 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002b|createNewWorker()\l}"];
+}
+}
+subgraph cluster_IfRegion_985215227 {
+label = "IF [B:21:0x002e] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x002e|if (r4 \> 0) goto L9\l}"];
+subgraph cluster_Region_687305980 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0030|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0031|RETURN\l|return false\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0027}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final boolean kotlinx.coroutines.scheduling.CoroutineScheduler.tryCreateWorker((r7v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler A[IMMUTABLE_TYPE, THIS]), (r8v0 'state' long A[D('state' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0031 \-\> B:13:?, CROSS_EDGE: B:19:0x0029 \-\> B:21:0x002e, CROSS_EDGE: B:17:0x0025 \-\> B:21:0x002e, CROSS_EDGE: B:15:0x001e \-\> B:23:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_23[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_13;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_18 -> Node_19;
+}
+

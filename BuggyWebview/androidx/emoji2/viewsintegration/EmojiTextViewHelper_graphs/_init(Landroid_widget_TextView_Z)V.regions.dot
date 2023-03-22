@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.emoji2.viewsintegration.EmojiTextViewHelper.\<init\>(Landroid\/widget\/TextView;Z)V" {
+subgraph cluster_Region_845593596 {
+label = "R(2:1|(1:3)(1:(1:7)(1:9)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|androidx.core.util.Preconditions.checkNotNull(r3, \"textView cannot be null\")\l}"];
+subgraph cluster_IfRegion_364999245 {
+label = "IF [B:14:0x000c] THEN: R(1:3) ELSE: R(1:(1:7)(1:9))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000c|if (android.os.Build.VERSION.SDK_INT \< 19) goto L3\l}"];
+subgraph cluster_Region_218644324 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000e|r2.mHelper = new androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal()\l}"];
+}
+subgraph cluster_Region_1937990225 {
+label = "R(1:(1:7)(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1958583942 {
+label = "IF [B:16:0x0016] THEN: R(1:7) ELSE: R(1:9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0016|if (r4 == false) goto L7\l}"];
+subgraph cluster_Region_1785780550 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|r2.mHelper = new androidx.emoji2.viewsintegration.EmojiTextViewHelper.SkippingHelper19(r3)\l}"];
+}
+subgraph cluster_Region_651110515 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0020|r2.mHelper = new androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal19(r3)\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0027|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.emoji2.viewsintegration.EmojiTextViewHelper.\<init\>((r2v0 'this' androidx.emoji2.viewsintegration.EmojiTextViewHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 'textView' android.widget.TextView A[D('textView' android.widget.TextView), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'expectInitializedEmojiCompat' boolean A[D('expectInitializedEmojiCompat' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0018 \-\> B:19:0x0027, CROSS_EDGE: B:18:0x0020 \-\> B:19:0x0027\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_20;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_20 -> Node_12;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+}
+

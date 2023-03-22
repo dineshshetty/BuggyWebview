@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.CarExtender.extend(Landroidx\/core\/app\/NotificationCompat$Builder;)Landroidx\/core\/app\/NotificationCompat$Builder;" {
+subgraph cluster_Region_159842386 {
+label = "R(1:(2:(1:3)|(8:5|(1:7)|8|(1:10)|11|(1:13)|14|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1348363757 {
+label = "R(2:(1:3)|(8:5|(1:7)|8|(1:10)|11|(1:13)|14|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1104386373 {
+label = "IF [B:19:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \< 21) goto L3\l}"];
+subgraph cluster_Region_796210686 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_114571415 {
+label = "R(8:5|(1:7)|8|(1:10)|11|(1:13)|14|15)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|android.os.Bundle android.os.Bundle r0 = new android.os.Bundle()\landroid.graphics.Bitmap android.graphics.Bitmap r1 = r3.mLargeIcon\l}"];
+subgraph cluster_IfRegion_782520163 {
+label = "IF [B:22:0x000e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000e|if (r1 != null) goto L7\l}"];
+subgraph cluster_Region_1750503205 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0010|r0.putParcelable(androidx.core.app.NotificationCompat.CarExtender.EXTRA_LARGE_ICON, r1)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0015|int int r1 = r3.mColor\l}"];
+subgraph cluster_IfRegion_1918353973 {
+label = "IF [B:25:0x0017] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0017|if (r1 != 0) goto L10\l}"];
+subgraph cluster_Region_701316759 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0019|r0.putInt(androidx.core.app.NotificationCompat.CarExtender.EXTRA_COLOR, r1)\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x001e|androidx.core.app.NotificationCompat$CarExtender$UnreadConversation androidx.core.app.NotificationCompat.CarExtender.UnreadConversation r1 = r3.mUnreadConversation\l}"];
+subgraph cluster_IfRegion_850289518 {
+label = "IF [B:28:0x0020] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0020|if (r1 != null) goto L13\l}"];
+subgraph cluster_Region_152292950 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0022|android.os.Bundle android.os.Bundle r1 = getBundleForUnreadConversation(r1)\lr0.putBundle(androidx.core.app.NotificationCompat.CarExtender.EXTRA_CONVERSATION, r1)\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x002b|android.os.Bundle android.os.Bundle r1 = r4.getExtras()\lr1.putBundle(androidx.core.app.NotificationCompat.CarExtender.EXTRA_CAR_EXTENDER, r0)\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0034|RETURN\l|return r4\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat.CarExtender.extend((r3v0 'this' androidx.core.app.NotificationCompat$CarExtender A[IMMUTABLE_TYPE, THIS]), (r4v0 'builder' androidx.core.app.NotificationCompat$Builder A[D('builder' androidx.core.app.NotificationCompat$Builder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0034 \-\> B:17:?, CROSS_EDGE: B:28:0x0020 \-\> B:30:0x002b, CROSS_EDGE: B:25:0x0017 \-\> B:27:0x001e, CROSS_EDGE: B:22:0x000e \-\> B:24:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.app.NotificationCompat.Extender.extend(androidx.core.app.NotificationCompat$Builder):androidx.core.app.NotificationCompat$Builder]\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_17;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+}
+

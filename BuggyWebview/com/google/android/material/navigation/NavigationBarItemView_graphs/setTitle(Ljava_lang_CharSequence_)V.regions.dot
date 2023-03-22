@@ -1,0 +1,85 @@
+digraph "CFG forcom.google.android.material.navigation.NavigationBarItemView.setTitle(Ljava\/lang\/CharSequence;)V" {
+subgraph cluster_Region_892823262 {
+label = "R(5:1|(1:19)|5|(1:18)(1:9)|(1:(1:16))) | DECL_VAR: java.lang.CharSequence tooltipText\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|r3.smallLabel.setText(r4)\lr3.largeLabel.setText(r4)\landroidx.appcompat.view.menu.MenuItemImpl androidx.appcompat.view.menu.MenuItemImpl r0 = r3.itemData\l}"];
+subgraph cluster_IfRegion_183218553 {
+label = "IF [B:24:0x000c, B:26:0x0016] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000c|if (r0 == null) goto L19\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0016|ADDED_TO_REGION\l|if (android.text.TextUtils.isEmpty(r0.getContentDescription()) != false) goto L19\l}"];
+subgraph cluster_Region_145524143 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0018|setContentDescription(r4)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x001b|androidx.appcompat.view.menu.MenuItemImpl androidx.appcompat.view.menu.MenuItemImpl r0 = r3.itemData\l}"];
+subgraph cluster_IfRegion_1632062850 {
+label = "IF [B:29:0x001d, B:31:0x0027] THEN: R(1:18) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001d|if (r0 == null) goto L18\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0027|ADDED_TO_REGION\l|if (android.text.TextUtils.isEmpty(r0.getTooltipText()) != false) goto L18\l}"];
+subgraph cluster_Region_1128791950 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0031|r0 = r4\l}"];
+}
+subgraph cluster_Region_1304981678 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x002a|java.lang.CharSequence r0 = r3.itemData.getTooltipText()\l}"];
+}
+}
+subgraph cluster_Region_1257730012 {
+label = "R(1:(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_894586376 {
+label = "IF [B:36:0x0037, B:38:0x003d] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0037|if (android.os.Build.VERSION.SDK_INT \< 21) goto L16\l}"];
+Node_38 [shape=record,label="{38\:\ 0x003d|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \> 23) goto L16\l}"];
+subgraph cluster_Region_666651533 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x003f|androidx.appcompat.widget.TooltipCompat.setTooltipText(r3, r0)\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000e}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001f}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0032|PHI: r0 \l  PHI: (r0v5 'tooltipText' java.lang.CharSequence) = (r0v4 'tooltipText' java.lang.CharSequence), (r0v9 'tooltipText' java.lang.CharSequence) binds: [B:34:0x0031, B:33:0x002a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0039}"];
+Node_41 [shape=record,color=red,label="{41\:\ ?|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0042|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.navigation.NavigationBarItemView.setTitle((r3v0 'this' com.google.android.material.navigation.NavigationBarItemView A[IMMUTABLE_TYPE, THIS]), (r4v0 'title' java.lang.CharSequence A[D('title' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:38:0x003d \-\> B:40:0x0042, CROSS_EDGE: B:36:0x0037 \-\> B:39:0x003f, CROSS_EDGE: B:34:0x0031 \-\> B:35:0x0032, CROSS_EDGE: B:29:0x001d \-\> B:34:0x0031, CROSS_EDGE: B:26:0x0016 \-\> B:28:0x001b, CROSS_EDGE: B:24:0x000c \-\> B:27:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.view.menu.MenuView.ItemView.setTitle(java.lang.CharSequence):void]\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_27;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_34;
+Node_31 -> Node_33[style=dashed];
+Node_31 -> Node_34;
+Node_34 -> Node_35;
+Node_33 -> Node_35;
+Node_36 -> Node_37[style=dashed];
+Node_36 -> Node_39;
+Node_38 -> Node_39;
+Node_38 -> Node_41[style=dashed];
+Node_39 -> Node_40;
+Node_21 -> Node_23;
+Node_25 -> Node_26;
+Node_30 -> Node_31;
+Node_35 -> Node_36;
+Node_37 -> Node_38;
+Node_41 -> Node_22;
+Node_40 -> Node_22;
+}
+

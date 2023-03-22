@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.app.NavUtils.getParentActivityIntent(Landroid\/content\/Context;Ljava\/lang\/Class;)Landroid\/content\/Intent;" {
+subgraph cluster_Region_2113077309 {
+label = "R(2:1|(2:(1:3)|(2:5|(2:(2:7|8)|(2:9|10)))))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.lang.String java.lang.String r0 = getParentActivityName(r4, new android.content.ComponentName(r4, r5))\l}"];
+subgraph cluster_Region_1038532391 {
+label = "R(2:(1:3)|(2:5|(2:(2:7|8)|(2:9|10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1176214932 {
+label = "IF [B:16:0x0009] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_869448458 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_422145447 {
+label = "R(2:5|(2:(2:7|8)|(2:9|10)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000d|android.content.ComponentName android.content.ComponentName r1 = new android.content.ComponentName(r4, r0)\ljava.lang.String java.lang.String r2 = getParentActivityName(r4, r1)\l}"];
+subgraph cluster_Region_289908313 {
+label = "R(2:(2:7|8)|(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2099109111 {
+label = "IF [B:20:0x0016] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0016|if (r2 == null) goto L7\l}"];
+subgraph cluster_Region_48697385 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0018|android.content.Intent android.content.Intent r3 = android.content.Intent.makeMainActivity(r1)\l}"];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1743784608 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001d|android.content.Intent android.content.Intent r3 = new android.content.Intent().setComponent(r1)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0027|RETURN\lORIG_RETURN\l|return r3\l}"];
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static android.content.Intent androidx.core.app.NavUtils.getParentActivityIntent((r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'sourceActivityClass' java.lang.Class\<?\> A[D('sourceActivityClass' java.lang.Class\<?\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0027 \-\> B:14:?, CROSS_EDGE: B:22:0x001d \-\> B:24:0x0027\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/content\/Context;Ljava\/lang\/Class\<*\>;)Landroid\/content\/Intent;\lEXCEPTIONS:[Landroid\/content\/pm\/PackageManager$NameNotFoundException;]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_14;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_25;
+Node_25 -> Node_14;
+Node_22 -> Node_24;
+Node_24 -> Node_14;
+Node_13 -> Node_15;
+}
+

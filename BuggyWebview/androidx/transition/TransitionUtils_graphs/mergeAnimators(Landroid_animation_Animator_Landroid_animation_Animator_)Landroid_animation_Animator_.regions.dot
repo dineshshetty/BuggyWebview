@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.transition.TransitionUtils.mergeAnimators(Landroid\/animation\/Animator;Landroid\/animation\/Animator;)Landroid\/animation\/Animator;" {
+subgraph cluster_Region_177733849 {
+label = "R(1:(2:(1:2)|(1:(2:(1:5)|(2:6|7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_78561724 {
+label = "R(2:(1:2)|(1:(2:(1:5)|(2:6|7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1662551227 {
+label = "IF [B:10:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|if (r3 == null) goto L2\l}"];
+subgraph cluster_Region_245425573 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1156883040 {
+label = "R(1:(2:(1:5)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_916793443 {
+label = "R(2:(1:5)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_289365840 {
+label = "IF [B:12:0x0003] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0003|if (r4 == null) goto L5\l}"];
+subgraph cluster_Region_406527263 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0005|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_592480964 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|android.animation.AnimatorSet android.animation.AnimatorSet r0 = new android.animation.AnimatorSet()\lr0.playTogether(r3, r4)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0017|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static android.animation.Animator androidx.transition.TransitionUtils.mergeAnimators((r3v0 'animator1' android.animation.Animator A[D('animator1' android.animation.Animator), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'animator2' android.animation.Animator A[D('animator2' android.animation.Animator), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0005 \-\> B:9:?, CROSS_EDGE: B:15:0x0017 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_9;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+}
+

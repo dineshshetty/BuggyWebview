@@ -1,0 +1,80 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.elementAtOrElse(Lkotlin\/sequences\/Sequence;ILkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_736368550 {
+label = "R(2:1|(2:(1:4)|(4:6|(2:9|(1:11)(1:13))|15|16)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"defaultValue\")\l}"];
+subgraph cluster_Region_1200931971 {
+label = "R(2:(1:4)|(4:6|(2:9|(1:11)(1:13))|15|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_554343307 {
+label = "IF [B:20:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000a|if (r5 \< 0) goto L3\l}"];
+subgraph cluster_Region_1129395351 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0014|RETURN\l|return r6.invoke(java.lang.Integer.valueOf(r5))\l}"];
+}
+}
+subgraph cluster_Region_1458871314 {
+label = "R(4:6|(2:9|(1:11)(1:13))|15|16)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0015|java.util.Iterator r0 = r4.iterator()\lint r1 = 0\l\l}"];
+subgraph cluster_LoopRegion_1208173180 {
+label = "LOOP:0: (2:9|(1:11)(1:13))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001e|java.lang.Object \lif (r0.hasNext() != false) goto L9\l}"];
+subgraph cluster_Region_1063877663 {
+label = "R(2:9|(1:11)(1:13))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0020|java.lang.Object r2 = r0.next()\lint int r3 = r1 + 1\l}"];
+subgraph cluster_IfRegion_1728278520 {
+label = "IF [B:27:0x0026] THEN: R(1:11) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0026|if (r5 != r1) goto L11\l}"];
+subgraph cluster_Region_1225144256 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0029|LOOP_END\lLOOP:0: B:24:0x001a\-\>B:29:0x0029\l|r1 = r3\l}"];
+}
+subgraph cluster_Region_693249827 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0028|RETURN\l|return r2\l}"];
+}
+}
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x002b|java.lang.Integer java.lang.Object r2 = java.lang.Integer.valueOf(r5)\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0033|RETURN\l|return r6.invoke(r2)\l}"];
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000c}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001a|LOOP_START\lLOOP:0: B:24:0x001a\-\>B:29:0x0029\lPHI: r1 \l  PHI: (r1v1 'count' int) = (r1v0 'count' int), (r1v2 'count' int) binds: [B:23:0x0015, B:29:0x0029] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0028|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final T kotlin.sequences.SequencesKt___SequencesKt.elementAtOrElse((r4v0 kotlin.sequences.Sequence\<? extends T\> A[D('$this$elementAtOrElse' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'defaultValue' kotlin.jvm.functions.Function1\<? super java.lang.Integer, ? extends T\> A[D('defaultValue' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x0028 \-\> B:18:?, BACK_EDGE: B:29:0x0029 \-\> B:24:0x001a, CROSS_EDGE: B:31:0x0033 \-\> B:18:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;ILkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Integer;+TT;\>;)TT;\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_22 -> Node_18;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_33[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_29;
+Node_27 -> Node_32[style=dashed];
+Node_29 -> Node_24;
+Node_28 -> Node_18;
+Node_30 -> Node_31;
+Node_31 -> Node_18;
+Node_17 -> Node_19;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_32 -> Node_28;
+Node_33 -> Node_30;
+}
+

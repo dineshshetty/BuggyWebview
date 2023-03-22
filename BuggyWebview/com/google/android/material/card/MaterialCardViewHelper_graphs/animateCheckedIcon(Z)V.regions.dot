@@ -1,0 +1,67 @@
+digraph "CFG forcom.google.android.material.card.MaterialCardViewHelper.animateCheckedIcon(Z)V" {
+subgraph cluster_Region_1476345516 {
+label = "R(7:2|4|6|(1:8)|9|(1:11)(1:15)|12) | DECL_VAR: long null\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0002|float r1 = r6 ? 1.0f : 0.0f\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0008|PHI: r1 \l  PHI: (r1v1 'targetCheckedProgress' float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float r0 = r6 ? 1.0f \- r5.checkedAnimationProgress : r5.checkedAnimationProgress\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0010|PHI: r0 \l  PHI: (r0v2 'delta' float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.animation.ValueAnimator android.animation.ValueAnimator r2 = r5.iconAnimator\l}"];
+subgraph cluster_IfRegion_890016802 {
+label = "IF [B:28:0x0012] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0012|if (r2 != null) goto L8\l}"];
+subgraph cluster_Region_464045681 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0014|r2.cancel()\lr5.iconAnimator = null\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x001a|android.animation.ValueAnimator android.animation.ValueAnimator r2 = android.animation.ValueAnimator.ofFloat(r5.checkedAnimationProgress, r1)\lr5.iconAnimator = r2\lr2.addUpdateListener(new com.google.android.material.card.MaterialCardViewHelper$$ExternalSyntheticLambda0())\lr5.iconAnimator.setInterpolator(r5.iconFadeAnimInterpolator)\landroid.animation.ValueAnimator android.animation.ValueAnimator r2 = r5.iconAnimator\l}"];
+subgraph cluster_IfRegion_1831365905 {
+label = "IF [B:31:0x003c] THEN: R(1:11) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x003c|if (r6 != false) goto L11\l}"];
+subgraph cluster_Region_567709748 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x003e|long r3 = r5.iconFadeInAnimDuration * r0\l}"];
+}
+subgraph cluster_Region_1573404474 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0045|long r3 = r5.iconFadeOutAnimDuration * r0\l}"];
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x004b|PHI: r3 \l  PHI: (r3v8 long) = (r3v7 long), (r3v12 long) binds: [B:33:0x0045, B:32:0x003e] A[DONT_GENERATE, DONT_INLINE]\l|r2.setDuration(r3)\lr5.iconAnimator.start()\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0004}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000a}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0053}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000e}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0007}"];
+MethodNode[shape=record,label="{public void com.google.android.material.card.MaterialCardViewHelper.animateCheckedIcon((r5v0 'this' com.google.android.material.card.MaterialCardViewHelper A[IMMUTABLE_TYPE, THIS]), (r6v0 'checked' boolean A[D('checked' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:33:0x0045 \-\> B:34:0x004b, CROSS_EDGE: B:28:0x0012 \-\> B:30:0x001a, CROSS_EDGE: B:26:0x000e \-\> B:27:0x0010, CROSS_EDGE: B:23:0x0007 \-\> B:24:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_26;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_34;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_24;
+Node_25 -> Node_27;
+Node_35 -> Node_19;
+Node_26 -> Node_27;
+Node_23 -> Node_24;
+}
+

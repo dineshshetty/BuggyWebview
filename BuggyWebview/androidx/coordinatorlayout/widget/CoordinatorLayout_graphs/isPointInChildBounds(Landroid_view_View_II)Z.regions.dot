@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.coordinatorlayout.widget.CoordinatorLayout.isPointInChildBounds(Landroid\/view\/View;II)Z" {
+subgraph cluster_Region_1430460889 {
+label = "R(2:1|(1:5))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|android.graphics.Rect android.graphics.Rect r0 = acquireTempRect()\lgetDescendantRect(r3, r0)\l}"];
+subgraph cluster_TryCatchRegion_105395317 {
+label = "Try: R(1:5) finally: R(3:8|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_586602540 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000e|RETURN\l|return r0.contains(r4, r5)\l}"];
+}
+subgraph cluster_Region_503940364 {
+label = "R(3:8|9|10) | ExcHandler: all \-\> 0x000f\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|ExcHandler: all \-\> 0x000f\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0010|FINALLY_INSNS\l|releaseTempRect(r0)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0013|throw r1\l}"];
+}
+}
+}
+subgraph cluster_Region_503940364 {
+label = "R(3:8|9|10) | ExcHandler: all \-\> 0x000f\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|ExcHandler: all \-\> 0x000f\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0010|FINALLY_INSNS\l|releaseTempRect(r0)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0013|throw r1\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0007|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0007|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x000f, blocks: (B:14:0x0007), top: B:20:0x0007 \}\lCatch: all \-\> 0x000f\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000b|DONT_GENERATE\l|releaseTempRect(r0)\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public boolean androidx.coordinatorlayout.widget.CoordinatorLayout.isPointInChildBounds((r2v0 'this' androidx.coordinatorlayout.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'x' int A[D('x' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'y' int A[D('y' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0013 \-\> B:12:?, CROSS_EDGE: B:20:0x0007 \-\> B:17:0x000f\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x000f, blocks: (B:14:0x0007), top: B:20:0x0007 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_20;
+Node_16 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_20 -> Node_14;
+Node_20 -> Node_17;
+Node_14 -> Node_15;
+Node_14 -> Node_21;
+Node_15 -> Node_16;
+Node_21 -> Node_17;
+}
+

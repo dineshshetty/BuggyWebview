@@ -1,0 +1,80 @@
+digraph "CFG forkotlinx.coroutines.scheduling.WorkQueue.pollBuffer()Lkotlinx\/coroutines\/scheduling\/Task;" {
+subgraph cluster_Region_482322868 {
+label = "R(1:(2:1|(2:(1:16)|(2:3|(1:(2:9|10)))))) | DECL_VAR: kotlinx.coroutines.scheduling.Task value\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1119332515 {
+label = "LOOP:0: (2:1|(2:(1:16)|(2:3|(1:(2:9|10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_147398895 {
+label = "R(2:1|(2:(1:16)|(2:3|(1:(2:9|10)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|LOOP_START\lLOOP:0: B:2:0x0000\-\>B:16:0x0000\l|int int r0 = r5.consumerIndex\l}"];
+subgraph cluster_Region_729090340 {
+label = "R(2:(1:16)|(2:3|(1:(2:9|10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_705415652 {
+label = "IF [B:3:0x0008] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if ((r0 \- r5.producerIndex) == 0) goto L15\l}"];
+subgraph cluster_Region_72475047 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_973862264 {
+label = "R(2:3|(1:(2:9|10)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|int r1 = r0 & kotlinx.coroutines.scheduling.WorkQueueKt.MASK\l}"];
+subgraph cluster_Region_1707215504 {
+label = "R(1:(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1870450459 {
+label = "IF [B:6:0x0015, B:8:0x001f] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (kotlinx.coroutines.scheduling.WorkQueue.consumerIndex$FU.compareAndSet(r5, r0, r0 + 1) != false) goto L5\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001f|ADDED_TO_REGION\l|if ((r2 = r5.buffer.getAndSet(r1, null)) != null) goto L8\l}"];
+subgraph cluster_Region_441406523 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0022|decrementIfBlocking(r2)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0025|RETURN\l|return r2\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0017|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0017}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0022|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000|LOOP_END\lSYNTHETIC\lLOOP:0: B:2:0x0000\-\>B:16:0x0000\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final kotlinx.coroutines.scheduling.Task kotlinx.coroutines.scheduling.WorkQueue.pollBuffer((r5v0 'this' kotlinx.coroutines.scheduling.WorkQueue A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0025 \-\> B:1:?, BACK_EDGE: B:8:0x001f \-\> B:2:0x0000, BACK_EDGE: B:6:0x0015 \-\> B:2:0x0000\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_14;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_13;
+Node_6 -> Node_17[style=dashed];
+Node_8 -> Node_15;
+Node_8 -> Node_18[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_13 -> Node_7;
+Node_7 -> Node_8;
+Node_15 -> Node_10;
+Node_18 -> Node_16;
+Node_16 -> Node_2;
+Node_17 -> Node_16;
+Node_14 -> Node_4;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.reduceOrNull(Lkotlin\/sequences\/Sequence;Lkotlin\/jvm\/functions\/Function2;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1010915775 {
+label = "R(2:1|(2:(3:5|(1:8)|10)|(1:3)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"operation\")\ljava.util.Iterator java.util.Iterator r1 = r4.iterator()\l}"];
+subgraph cluster_Region_642067607 {
+label = "R(2:(3:5|(1:8)|10)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1834020097 {
+label = "IF [B:15:0x0013] THEN: R(3:5|(1:8)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0013|if (r1.hasNext() == true) goto L5\l}"];
+subgraph cluster_Region_1701718268 {
+label = "R(3:5|(1:8)|10)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0017|java.lang.Object T r2 = r1.next()\l}"];
+subgraph cluster_LoopRegion_2017595893 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001f|if (r1.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_1324889059 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0021|LOOP_END\lLOOP:0: B:19:0x001b\-\>B:21:0x0021\l|java.lang.Object r2 = (S) r5.invoke(r2, (T) r1.next())\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x002a|RETURN\l|return (S) r2\l}"];
+}
+}
+subgraph cluster_Region_1760114909 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0015|RETURN\l|return null\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001b|LOOP_START\lLOOP:0: B:19:0x001b\-\>B:21:0x0021\lPHI: r2 \l  PHI: (r2v2 'accumulator' java.lang.Object) = (r2v1 'accumulator' T extends S), (r2v3 'accumulator' java.lang.Object) binds: [B:18:0x0017, B:21:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x002a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final S kotlin.sequences.SequencesKt___SequencesKt.reduceOrNull((r4v0 kotlin.sequences.Sequence\<? extends T extends S\> A[D('$this$reduceOrNull' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'operation' kotlin.jvm.functions.Function2\<? super S, ? super T extends S, ? extends S\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0021 \-\> B:19:0x001b, CROSS_EDGE: B:22:0x002a \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [S, T extends S]\lSIGNATURE: \<S:Ljava\/lang\/Object;T::TS;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;Lkotlin\/jvm\/functions\/Function2\<\-TS;\-TT;+TS;\>;)TS;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r3v1. Raw type applied. Possible types: T extends S, ? super T extends S\}\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_18;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_19;
+Node_22 -> Node_13;
+Node_16 -> Node_13;
+Node_12 -> Node_14;
+Node_19 -> Node_20;
+Node_23 -> Node_22;
+}
+

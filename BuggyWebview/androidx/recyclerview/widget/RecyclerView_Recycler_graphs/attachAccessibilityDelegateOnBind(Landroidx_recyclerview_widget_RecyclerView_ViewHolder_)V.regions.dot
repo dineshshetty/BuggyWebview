@@ -1,0 +1,87 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.Recycler.attachAccessibilityDelegateOnBind(Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;)V" {
+subgraph cluster_Region_1494944204 {
+label = "R(1:(1:(3:3|(1:5)|(2:(1:8)|(3:10|(1:12)|13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1363384426 {
+label = "R(1:(3:3|(1:5)|(2:(1:8)|(3:10|(1:12)|13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1109960437 {
+label = "IF [B:19:0x0006] THEN: R(3:3|(1:5)|(2:(1:8)|(3:10|(1:12)|13))) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|if (androidx.recyclerview.widget.RecyclerView.this.isAccessibilityEnabled() != false) goto L3\l}"];
+subgraph cluster_Region_1991683799 {
+label = "R(3:3|(1:5)|(2:(1:8)|(3:10|(1:12)|13)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|android.view.View android.view.View r0 = r4.itemView\l}"];
+subgraph cluster_IfRegion_775044847 {
+label = "IF [B:21:0x000e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|if (androidx.core.view.ViewCompat.getImportantForAccessibility(r0) == 0) goto L5\l}"];
+subgraph cluster_Region_1958190972 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|androidx.core.view.ViewCompat.setImportantForAccessibility(r0, 1)\l}"];
+}
+}
+subgraph cluster_Region_2005963269 {
+label = "R(2:(1:8)|(3:10|(1:12)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1984213074 {
+label = "IF [B:24:0x0018] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|if (androidx.recyclerview.widget.RecyclerView.this.mAccessibilityDelegate == null) goto L8\l}"];
+subgraph cluster_Region_998897208 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_587437201 {
+label = "R(3:10|(1:12)|13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001b|androidx.core.view.AccessibilityDelegateCompat androidx.core.view.AccessibilityDelegateCompat r1 = androidx.recyclerview.widget.RecyclerView.this.mAccessibilityDelegate.getItemDelegate()\l}"];
+subgraph cluster_IfRegion_486085464 {
+label = "IF [B:27:0x0025] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0025|if ((r1 instanceof androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate.ItemDelegate) != false) goto L12\l}"];
+subgraph cluster_Region_1610636880 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0027|((androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate.ItemDelegate) r1).saveOriginalDelegate(r0)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x002d|androidx.core.view.ViewCompat.setAccessibilityDelegate(r0, r1)\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0014}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0030|ORIG_RETURN\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.RecyclerView.Recycler.attachAccessibilityDelegateOnBind((r3v0 'this' androidx.recyclerview.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, THIS]), (r4v0 'holder' androidx.recyclerview.widget.RecyclerView$ViewHolder A[D('holder' androidx.recyclerview.widget.RecyclerView$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:30:0x0030 \-\> B:17:?, CROSS_EDGE: B:27:0x0025 \-\> B:29:0x002d, CROSS_EDGE: B:21:0x000e \-\> B:23:0x0014, CROSS_EDGE: B:19:0x0006 \-\> B:30:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_31[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_17;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_23 -> Node_24;
+Node_30 -> Node_17;
+Node_31 -> Node_17;
+}
+

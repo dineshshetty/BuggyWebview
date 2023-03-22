@@ -1,0 +1,57 @@
+digraph "CFG forcom.google.android.material.datepicker.RangeDateSelector.getSelectionContentDescription(Landroid\/content\/Context;)Ljava\/lang\/String;" {
+subgraph cluster_Region_12854430 {
+label = "R(4:1|(1:3)(1:11)|(1:6)(1:10)|8) | DECL_VAR: java.lang.String startPlaceholder, java.lang.String endPlaceholder\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.content.res.Resources android.content.res.Resources r0 = r8.getResources()\landroidx.core.util.Pair androidx.core.util.Pair\<java.lang.String, java.lang.String\> r1 = com.google.android.material.datepicker.DateStrings.getDateRangeString(r7.selectedStartItem, r7.selectedEndItem)\l}"];
+subgraph cluster_IfRegion_1554083852 {
+label = "IF [B:3:0x000e] THEN: R(1:3) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r1.first == null) goto L3\l}"];
+subgraph cluster_Region_1213900338 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|java.lang.String r2 = r0.getString(com.google.android.material.C0571R.string.mtrl_picker_announce_current_selection_none)\l}"];
+}
+subgraph cluster_Region_2111856594 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|java.lang.String r2 = r1.first\l}"];
+}
+}
+subgraph cluster_IfRegion_1620446570 {
+label = "IF [B:7:0x001e] THEN: R(1:6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|if (r1.second == null) goto L6\l}"];
+subgraph cluster_Region_787958611 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|java.lang.String r3 = r0.getString(com.google.android.material.C0571R.string.mtrl_picker_announce_current_selection_none)\l}"];
+}
+subgraph cluster_Region_1957658616 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0027|java.lang.String r3 = r1.second\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x003b|RETURN\l|return r0.getString(com.google.android.material.C0571R.string.mtrl_picker_announce_current_range_selection, r2, r3)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001b|PHI: r2 \l  PHI: (r2v4 'startPlaceholder' java.lang.String) = (r2v3 'startPlaceholder' java.lang.String), (r2v6 'startPlaceholder' java.lang.String) binds: [B:5:0x0017, B:4:0x0010] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002b|PHI: r3 \l  PHI: (r3v3 'endPlaceholder' java.lang.String) = (r3v2 'endPlaceholder' java.lang.String), (r3v5 'endPlaceholder' java.lang.String) binds: [B:9:0x0027, B:8:0x0020] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String com.google.android.material.datepicker.RangeDateSelector.getSelectionContentDescription((r7v0 'this' com.google.android.material.datepicker.RangeDateSelector A[IMMUTABLE_TYPE, THIS]), (r8v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0027 \-\> B:10:0x002b, CROSS_EDGE: B:5:0x0017 \-\> B:6:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [com.google.android.material.datepicker.DateSelector.getSelectionContentDescription(android.content.Context):java.lang.String]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+}
+

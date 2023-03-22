@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.collections.builders.ListBuilder.writeReplace()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1773895408 {
+label = "R(1:(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1693628913 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_541406220 {
+label = "IF [B:3:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (isEffectivelyReadOnly() == true) goto L3\l}"];
+subgraph cluster_Region_1237082227 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|RETURN\l|return new kotlin.collections.builders.SerializedCollection(r3, 0)\l}"];
+}
+}
+subgraph cluster_Region_2076367690 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|throw new java.io.NotSerializableException(\"The list cannot be serialized while it is being built.\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+MethodNode[shape=record,label="{private final java.lang.Object kotlin.collections.builders.ListBuilder.writeReplace((r3v0 'this' kotlin.collections.builders.ListBuilder\<E\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0017 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

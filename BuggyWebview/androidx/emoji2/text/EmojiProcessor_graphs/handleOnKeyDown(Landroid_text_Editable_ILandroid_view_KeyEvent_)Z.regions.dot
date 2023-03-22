@@ -1,0 +1,70 @@
+digraph "CFG forandroidx.emoji2.text.EmojiProcessor.handleOnKeyDown(Landroid\/text\/Editable;ILandroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_2139194429 {
+label = "R(2:2|(2:(2:5|6)|(1:8))) | DECL_VAR: boolean handled\l";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_369927302 {
+label = "Switch: 3
+ case 67 -> R(2:10|1)
+ case 112 -> R(2:9|1)
+ case default -> R(2:3|1)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|switch(r4) \{\l    case 67: goto L10;\l    case 112: goto L9;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_2143495353 {
+label = "R(2:10|1)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|boolean r2 = delete(r3, r5, false)\l}"];
+Node_InsnContainer_252301348 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1385715477 {
+label = "R(2:9|1)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|boolean r2 = delete(r3, r5, true)\l}"];
+Node_InsnContainer_1125656990 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1931607946 {
+label = "R(2:3|1)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|r2 = false\l}"];
+Node_InsnContainer_818675116 [shape=record,label="{|break\l}"];
+}
+}
+subgraph cluster_Region_1125144487 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_39397137 {
+label = "IF [B:7:0x0011] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|PHI: r2 \l  PHI: (r2v2 'handled' boolean) = (r2v0 'handled' boolean), (r2v1 'handled' boolean), (r2v3 'handled' boolean) binds: [B:6:0x000c, B:5:0x0007, B:4:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 == true) goto L5\l}"];
+subgraph cluster_Region_1030685 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|android.text.method.MetaKeyKeyListener.adjustMetaAfterKeypress(r3)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0016|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1875251501 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0017|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.emoji2.text.EmojiProcessor.handleOnKeyDown((r3v0 'editable' android.text.Editable A[D('editable' android.text.Editable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'keyCode' int A[D('keyCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0017 \-\> B:1:?, CROSS_EDGE: B:5:0x0007 \-\> B:7:0x0011, CROSS_EDGE: B:6:0x000c \-\> B:7:0x0011\lINLINE_NOT_NEEDED\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_3 -> Node_6;
+Node_6 -> Node_7;
+Node_5 -> Node_7;
+Node_4 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+}
+

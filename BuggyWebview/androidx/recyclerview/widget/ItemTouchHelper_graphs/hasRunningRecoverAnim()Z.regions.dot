@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.recyclerview.widget.ItemTouchHelper.hasRunningRecoverAnim()Z" {
+subgraph cluster_Region_1542684804 {
+label = "R(3:1|(1:(2:(1:7)|(1:5)))|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r3.mRecoverAnimations.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1620629107 {
+label = "LOOP:0: (1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|LOOP_START\lLOOP:0: B:3:0x0007\-\>B:8:0x0017\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:2:0x0000, B:8:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_38112888 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_962247663 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1820247763 {
+label = "IF [B:5:0x0013] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r3.mRecoverAnimations.get(r1).mEnded == false) goto L6\l}"];
+subgraph cluster_Region_206388230 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_275413502 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|LOOP_END\lLOOP:0: B:3:0x0007\-\>B:8:0x0017\l|r1++\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001a|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0015|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{boolean androidx.recyclerview.widget.ItemTouchHelper.hasRunningRecoverAnim((r3v0 'this' androidx.recyclerview.widget.ItemTouchHelper A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x0017 \-\> B:3:0x0007, CROSS_EDGE: B:10:0x001b \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_8[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_1;
+Node_8 -> Node_3;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_11 -> Node_6;
+Node_12 -> Node_9;
+}
+

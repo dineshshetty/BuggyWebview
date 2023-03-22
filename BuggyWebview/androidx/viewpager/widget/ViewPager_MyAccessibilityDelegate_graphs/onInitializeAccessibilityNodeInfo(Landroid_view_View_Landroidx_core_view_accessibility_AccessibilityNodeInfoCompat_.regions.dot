@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.MyAccessibilityDelegate.onInitializeAccessibilityNodeInfo(Landroid\/view\/View;Landroidx\/core\/view\/accessibility\/AccessibilityNodeInfoCompat;)V" {
+subgraph cluster_Region_652271723 {
+label = "R(3:1|(1:3)|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|super.onInitializeAccessibilityNodeInfo(r3, r4)\lr4.setClassName(androidx.viewpager.widget.ViewPager.class.getName())\lr4.setScrollable(canScroll())\l}"];
+subgraph cluster_IfRegion_1939725602 {
+label = "IF [B:13:0x001a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001a|if (androidx.viewpager.widget.ViewPager.this.canScrollHorizontally(1) != false) goto L3\l}"];
+subgraph cluster_Region_118960357 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001c|r4.addAction(4096)\l}"];
+}
+}
+subgraph cluster_Region_405710606 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_963444696 {
+label = "IF [B:16:0x0028] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0028|if (androidx.viewpager.widget.ViewPager.this.canScrollHorizontally(\-1) != false) goto L6\l}"];
+subgraph cluster_Region_604328218 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x002a|r4.addAction(8192)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0021}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x002f|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.viewpager.widget.ViewPager.MyAccessibilityDelegate.onInitializeAccessibilityNodeInfo((r2v0 'this' androidx.viewpager.widget.ViewPager$MyAccessibilityDelegate A[IMMUTABLE_TYPE, THIS]), (r3v0 'host' android.view.View A[D('host' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'info' androidx.core.view.accessibility.AccessibilityNodeInfoCompat A[D('info' androidx.core.view.accessibility.AccessibilityNodeInfoCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0028 \-\> B:18:0x002f, CROSS_EDGE: B:13:0x001a \-\> B:15:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.AccessibilityDelegateCompat.onInitializeAccessibilityNodeInfo(android.view.View, androidx.core.view.accessibility.AccessibilityNodeInfoCompat):void]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_15 -> Node_16;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

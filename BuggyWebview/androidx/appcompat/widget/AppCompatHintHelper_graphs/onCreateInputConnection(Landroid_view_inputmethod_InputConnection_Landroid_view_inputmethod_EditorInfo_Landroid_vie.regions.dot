@@ -1,0 +1,86 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatHintHelper.onCreateInputConnection(Landroid\/view\/inputmethod\/InputConnection;Landroid\/view\/inputmethod\/EditorInfo;Landroid\/view\/View;)Landroid\/view\/inputmethod\/InputConnection;" {
+subgraph cluster_Region_567481779 {
+label = "R(2:(2:4|(1:(1:12)(1:(2:11|1)(1:9))))(0)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1527289566 {
+label = "IF [B:17:0x0000, B:19:0x0004] THEN: R(2:4|(1:(1:12)(1:(2:11|1)(1:9)))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|if (r2 != null) goto L2\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0004|ADDED_TO_REGION\l|if (r3.hintText == null) goto L4\l}"];
+subgraph cluster_Region_383103641 {
+label = "R(2:4|(1:(1:12)(1:(2:11|1)(1:9))))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|android.view.ViewParent android.view.ViewParent r0 = r4.getParent()\l}"];
+subgraph cluster_LoopRegion_1272421915 {
+label = "LOOP:0: (1:(1:12)(1:(2:11|1)(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_651759650 {
+label = "R(1:(1:12)(1:(2:11|1)(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1713574173 {
+label = "IF [B:22:0x000c] THEN: R(1:12) ELSE: R(1:(2:11|1)(1:9))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|if ((r0 instanceof android.view.View) != true) goto L12\l}"];
+subgraph cluster_Region_522123207 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0021|SYNTHETIC\lEDGE_INSN: B:29:0x0021\-\>B:27:0x0021 ?: BREAK  \l|break\l}"];
+}
+subgraph cluster_Region_4140188 {
+label = "R(1:(2:11|1)(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1263939313 {
+label = "IF [B:24:0x0010] THEN: R(2:11|1) ELSE: R(1:9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0010|if ((r0 instanceof androidx.appcompat.widget.WithHint) != false) goto L10\l}"];
+subgraph cluster_Region_1881939064 {
+label = "R(2:11|1)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0012|EDGE_INSN: B:25:0x0012\-\>B:27:0x0021 ?: BREAK  \l|r3.hintText = ((androidx.appcompat.widget.WithHint) r0).getHint()\l}"];
+Node_InsnContainer_2003787206 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1637471121 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001c|LOOP_END\lLOOP:0: B:21:0x000a\-\>B:26:0x001c\l|android.view.ViewParent r0 = r0.getParent()\l}"];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_425270025 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0021|RETURN\lEDGE_INSN: B:25:0x0012\-\>B:27:0x0021 ?: BREAK  , EDGE_INSN: B:29:0x0021\-\>B:27:0x0021 ?: BREAK  \l|return r2\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0002}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a|LOOP_START\lLOOP:0: B:21:0x000a\-\>B:26:0x001c\lPHI: r0 \l  PHI: (r0v2 'parent' android.view.ViewParent) = (r0v1 'parent' android.view.ViewParent), (r0v3 'parent' android.view.ViewParent) binds: [B:20:0x0006, B:26:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000e}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0012|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static android.view.inputmethod.InputConnection androidx.appcompat.widget.AppCompatHintHelper.onCreateInputConnection((r2v0 'ic' android.view.inputmethod.InputConnection A[D('ic' android.view.inputmethod.InputConnection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'outAttrs' android.view.inputmethod.EditorInfo A[D('outAttrs' android.view.inputmethod.EditorInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x001c \-\> B:21:0x000a, CROSS_EDGE: B:22:0x000c \-\> B:27:0x0021, CROSS_EDGE: B:19:0x0004 \-\> B:27:0x0021, CROSS_EDGE: B:17:0x0000 \-\> B:27:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_17 -> Node_27[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_27[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_29;
+Node_29 -> Node_27;
+Node_24 -> Node_26[style=dashed];
+Node_24 -> Node_28;
+Node_25 -> Node_27;
+Node_26 -> Node_21;
+Node_27 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_28 -> Node_25;
+}
+

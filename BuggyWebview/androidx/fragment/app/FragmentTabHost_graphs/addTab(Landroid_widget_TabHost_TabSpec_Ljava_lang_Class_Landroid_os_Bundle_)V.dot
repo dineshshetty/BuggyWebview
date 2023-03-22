@@ -1,0 +1,28 @@
+digraph "CFG forandroidx.fragment.app.FragmentTabHost.addTab(Landroid\/widget\/TabHost$TabSpec;Ljava\/lang\/Class;Landroid\/os\/Bundle;)V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|r5.setContent(new androidx.fragment.app.FragmentTabHost.DummyTabFactory(r4.mContext))\ljava.lang.String r0 = r5.getTag()\landroidx.fragment.app.FragmentTabHost$TabInfo r1 = new androidx.fragment.app.FragmentTabHost.TabInfo(r0, r6, r7)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|if (r4.mAttached == false) goto L8\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|r1.fragment = r4.mFragmentManager.findFragmentByTag(r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0021|if (r1.fragment == null) goto L8\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0023}"];
+Node_7 [shape=record,label="{7\:\ 0x0029|if (r1.fragment.isDetached() != false) goto L8\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002b|androidx.fragment.app.FragmentTransaction r2 = r4.mFragmentManager.beginTransaction()\lr2.detach(r1.fragment)\lr2.commit()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0039|r4.mTabs.add(r1)\laddTab(r5)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0041|RETURN\l|return\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentTabHost.addTab((r4v0 'this' androidx.fragment.app.FragmentTabHost A[IMMUTABLE_TYPE, THIS]), (r5v0 'tabSpec' android.widget.TabHost$TabSpec A[D('tabSpec' android.widget.TabHost$TabSpec), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'clss' java.lang.Class\<?\> A[D('clss' java.lang.Class\<?\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'args' android.os.Bundle A[D('args' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lCROSS_EDGE: B:7:0x0029 \-\> B:9:0x0039, CROSS_EDGE: B:5:0x0021 \-\> B:9:0x0039, CROSS_EDGE: B:3:0x0015 \-\> B:9:0x0039\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/widget\/TabHost$TabSpec;Ljava\/lang\/Class\<*\>;Landroid\/os\/Bundle;)V\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.MotionLayout.onNestedScroll(Landroid\/view\/View;IIIII[I)V" {
+subgraph cluster_Region_463525231 {
+label = "R(2:(1:8)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1148240830 {
+label = "IF [B:12:0x0003, B:13:0x0005, B:14:0x0007] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0003|if (r3.mUndergoingMotion != false) goto L8\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0005|ADDED_TO_REGION\l|if (r5 != 0) goto L8\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0007|ADDED_TO_REGION\l|if (r6 != 0) goto L8\l}"];
+subgraph cluster_Region_114550997 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0009|r10[0] = r10[0] + r7\lr10[1] = r10[1] + r8\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0014|r3.mUndergoingMotion = false\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0016}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.motion.widget.MotionLayout.onNestedScroll((r3v0 'this' androidx.constraintlayout.motion.widget.MotionLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'target' android.view.View A[D('target' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'dxConsumed' int A[D('dxConsumed' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'dyConsumed' int A[D('dyConsumed' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'dxUnconsumed' int A[D('dxUnconsumed' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'dyUnconsumed' int A[D('dyUnconsumed' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'type' int A[D('type' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'consumed' int[] A[D('consumed' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0007 \-\> B:16:0x0014, CROSS_EDGE: B:13:0x0005 \-\> B:15:0x0009, CROSS_EDGE: B:12:0x0003 \-\> B:15:0x0009\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type, consumed]\lMETHOD_OVERRIDE: [androidx.core.view.NestedScrollingParent3.onNestedScroll(android.view.View, int, int, int, int, int, int[]):void]\l}"];
+MethodNode -> Node_9;Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_17 -> Node_10;
+}
+

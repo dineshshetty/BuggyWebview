@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.flow.internal.SafeCollector.invokeSuspend(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_420233446 {
+label = "R(5:1|(1:3)|4|(1:6)|8)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|java.lang.Throwable java.lang.Throwable r0 = kotlin.Result.m147exceptionOrNullimpl(r5)\l}"];
+subgraph cluster_IfRegion_1237233165 {
+label = "IF [B:15:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1540292933 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|r4.lastEmissionContext = new kotlinx.coroutines.flow.internal.DownstreamExceptionContext(r0, getContext())\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0015|kotlin.coroutines.Continuation\<? super kotlin.Unit\> kotlin.coroutines.Continuation\<? super kotlin.Unit\> r0 = r4.completion\l}"];
+subgraph cluster_IfRegion_1466929797 {
+label = "IF [B:19:0x0017] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_740291582 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001a|r0.resumeWith(r5)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0021|RETURN\l|return kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001d}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.flow.internal.SafeCollector.invokeSuspend((r4v0 'this' kotlinx.coroutines.flow.internal.SafeCollector\<T\> A[IMMUTABLE_TYPE, THIS]), (r5v0 'result' java.lang.Object A[D('result' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0017 \-\> B:22:0x001d, CROSS_EDGE: B:15:0x0004 \-\> B:18:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [kotlin.coroutines.jvm.internal.BaseContinuationImpl.invokeSuspend(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_17;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_21;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_22 -> Node_23;
+}
+

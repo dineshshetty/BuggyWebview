@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysJvmKt$asList$5.lastIndexOf(Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_1985355521 {
+label = "R(1:(2:(1:6)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_81871340 {
+label = "R(2:(1:6)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1649553006 {
+label = "IF [B:11:0x0002] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if ((r2 instanceof java.lang.Float) == true) goto L5\l}"];
+subgraph cluster_Region_1097698994 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|RETURN\l|return lastIndexOf(((java.lang.Number) r2).floatValue())\l}"];
+}
+}
+subgraph cluster_Region_117780361 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|RETURN\l|return \-1\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006}"];
+MethodNode[shape=record,label="{public final \/* bridge *\/ int kotlin.collections.ArraysKt___ArraysJvmKt$asList$5.lastIndexOf((r1v0 'this' kotlin.collections.ArraysKt___ArraysJvmKt$asList$5 A[IMMUTABLE_TYPE, THIS]), (r2v0 'element' java.lang.Object A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x0011 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{java.util.List.lastIndexOf(java.lang.Object):int\}]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_12 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+}
+

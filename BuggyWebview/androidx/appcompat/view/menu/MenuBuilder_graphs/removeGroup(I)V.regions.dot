@@ -1,0 +1,77 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuBuilder.removeGroup(I)V" {
+subgraph cluster_Region_1089077579 {
+label = "R(2:1|(1:(3:3|(2:4|(2:(1:1)|(1:8)))|10)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|int int r0 = findGroupIndex(r5)\l}"];
+subgraph cluster_Region_83251703 {
+label = "R(1:(3:3|(2:4|(2:(1:1)|(1:8)))|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_316902420 {
+label = "IF [B:18:0x0004] THEN: R(3:3|(2:4|(2:(1:1)|(1:8)))|10) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1592391425 {
+label = "R(3:3|(2:4|(2:(1:1)|(1:8)))|10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|int int r1 = r4.mItems.size() \- r0\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_152377760 {
+label = "LOOP:0: (2:4|(2:(1:1)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_356610803 {
+label = "R(2:4|(2:(1:1)|(1:8)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|LOOP_START\lLOOP:0: B:20:0x000e\-\>B:24:0x0020\lPHI: r2 \l  PHI: (r2v1 'numRemoved' int) = (r2v0 'numRemoved' int), (r2v8 'numRemoved' int) binds: [B:19:0x0006, B:24:0x0020] A[DONT_GENERATE, DONT_INLINE]\l|int int r3 = r2 + 1\l}"];
+subgraph cluster_Region_756219698 {
+label = "R(2:(1:1)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_196900567 {
+label = "IF [B:21:0x0010, B:23:0x001e] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|if (r2 \>= r1) goto L13\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001e|ADDED_TO_REGION\l|if (r4.mItems.get(r0).getGroupId() != r5) goto L9\l}"];
+subgraph cluster_Region_752355675 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_437751006 [shape=record,label="{|break\l}"];
+}
+}
+subgraph cluster_Region_466411186 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0020|LOOP_END\lLOOP:0: B:20:0x000e\-\>B:24:0x0020\l|removeItemAtInt(r0, false)\lr2 = r3\l}"];
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0026|EDGE_INSN: B:27:0x0026\-\>B:25:0x0026 ?: BREAK  , EDGE_INSN: B:28:0x0026\-\>B:25:0x0026 ?: BREAK  \l|onItemsChanged(true)\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0012}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0026|SYNTHETIC\lADDED_TO_REGION\lEDGE_INSN: B:28:0x0026\-\>B:25:0x0026 ?: BREAK  \l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002a|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0026|SYNTHETIC\lADDED_TO_REGION\lEDGE_INSN: B:27:0x0026\-\>B:25:0x0026 ?: BREAK  \l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.view.menu.MenuBuilder.removeGroup((r4v0 'this' androidx.appcompat.view.menu.MenuBuilder A[IMMUTABLE_TYPE, THIS]), (r5v0 'group' int A[D('group' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:24:0x0020 \-\> B:20:0x000e, CROSS_EDGE: B:21:0x0010 \-\> B:25:0x0026, CROSS_EDGE: B:18:0x0004 \-\> B:26:0x002a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.Menu.removeGroup(int):void\}]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_29[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_27;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_28;
+Node_24 -> Node_20;
+Node_25 -> Node_26;
+Node_15 -> Node_17;
+Node_22 -> Node_23;
+Node_28 -> Node_25;
+Node_26 -> Node_16;
+Node_27 -> Node_25;
+Node_29 -> Node_16;
+}
+

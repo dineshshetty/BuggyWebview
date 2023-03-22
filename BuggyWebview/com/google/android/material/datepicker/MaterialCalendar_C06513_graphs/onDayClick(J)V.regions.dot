@@ -1,0 +1,72 @@
+digraph "CFG forcom.google.android.material.datepicker.MaterialCalendar.3.onDayClick(J)V" {
+subgraph cluster_Region_636422436 {
+label = "R(1:(1:(4:3|(1:6)|8|(1:(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1782555812 {
+label = "R(1:(4:3|(1:6)|8|(1:(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1184955881 {
+label = "IF [B:18:0x000e] THEN: R(4:3|(1:6)|8|(1:(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|if (com.google.android.material.datepicker.MaterialCalendar.this.calendarConstraints.getDateValidator().isValid(r4) != false) goto L3\l}"];
+subgraph cluster_Region_1312377153 {
+label = "R(4:3|(1:6)|8|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0010|com.google.android.material.datepicker.MaterialCalendar.this.dateSelector.select(r4)\ljava.util.Iterator java.util.Iterator\<com.google.android.material.datepicker.OnSelectionChangedListener\<S\>\> r0 = com.google.android.material.datepicker.MaterialCalendar.this.onSelectionChangedListeners.iterator()\l}"];
+subgraph cluster_LoopRegion_570866301 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0025|if (r0.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_1638909271 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0027|LOOP_END\lLOOP:0: B:20:0x0021\-\>B:22:0x0027\l|com.google.android.material.datepicker.OnSelectionChangedListener com.google.android.material.datepicker.OnSelectionChangedListener\<S\> r1 = r0.next()\lr1.onSelectionChanged((S) com.google.android.material.datepicker.MaterialCalendar.this.dateSelector.getSelection())\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x003b|com.google.android.material.datepicker.MaterialCalendar.this.recyclerView.getAdapter().notifyDataSetChanged()\l}"];
+subgraph cluster_Region_1504738393 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_80476258 {
+label = "IF [B:24:0x004e] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x004e|if (com.google.android.material.datepicker.MaterialCalendar.this.yearSelector != null) goto L10\l}"];
+subgraph cluster_Region_331773659 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0050|com.google.android.material.datepicker.MaterialCalendar.this.yearSelector.getAdapter().notifyDataSetChanged()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0021|LOOP_START\lLOOP:0: B:20:0x0021\-\>B:22:0x0027\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x003b|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x005d|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.datepicker.MaterialCalendar.3.onDayClick((r3v0 'this' com.google.android.material.datepicker.MaterialCalendar$3 A[D('this' com.google.android.material.datepicker.MaterialCalendar$3), IMMUTABLE_TYPE, THIS]), (r4v0 'day' long A[D('day' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x0027 \-\> B:20:0x0021, CROSS_EDGE: B:24:0x004e \-\> B:26:0x005d, CROSS_EDGE: B:18:0x000e \-\> B:26:0x005d\lINLINE_NOT_NEEDED\lTYPE_VARS: [S]\lMETHOD_OVERRIDE: [com.google.android.material.datepicker.MaterialCalendar.OnDayClickListener.onDayClick(long):void]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_28[style=dashed];
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_27[style=dashed];
+Node_22 -> Node_20;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_29[style=dashed];
+Node_25 -> Node_26;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+Node_27 -> Node_23;
+Node_26 -> Node_16;
+Node_29 -> Node_16;
+Node_28 -> Node_16;
+}
+

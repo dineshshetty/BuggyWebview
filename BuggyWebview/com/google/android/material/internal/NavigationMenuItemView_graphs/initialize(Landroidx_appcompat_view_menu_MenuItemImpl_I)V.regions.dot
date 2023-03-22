@@ -1,0 +1,54 @@
+digraph "CFG forcom.google.android.material.internal.NavigationMenuItemView.initialize(Landroidx\/appcompat\/view\/menu\/MenuItemImpl;I)V" {
+subgraph cluster_Region_1827147622 {
+label = "R(5:1|(1:3)|7|(1:9)|10)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|r1.itemData = r2\l}"];
+subgraph cluster_IfRegion_1962062115 {
+label = "IF [B:17:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|if (r2.getItemId() \> 0) goto L3\l}"];
+subgraph cluster_Region_789634862 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|setId(r2.getItemId())\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0019|PHI: r0 \l  PHI: (r0v3 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|setVisibility(r2.isVisible() ? 0 : 8)\l}"];
+subgraph cluster_IfRegion_404926303 {
+label = "IF [B:24:0x0020] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0020|if (getBackground() == null) goto L9\l}"];
+subgraph cluster_Region_882704386 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0022|androidx.core.view.ViewCompat.setBackground(r1, createDefaultBackground())\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0029|setCheckable(r2.isCheckable())\lsetChecked(r2.isChecked())\lsetEnabled(r2.isEnabled())\lsetTitle(r2.getTitle())\lsetIcon(r2.getIcon())\lsetActionView(r2.getActionView())\lsetContentDescription(r2.getContentDescription())\landroidx.appcompat.widget.TooltipCompat.setTooltipText(r1, r2.getTooltipText())\ladjustAppearance()\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000f}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0013}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0015}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0064}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0017}"];
+MethodNode[shape=record,label="{public void com.google.android.material.internal.NavigationMenuItemView.initialize((r1v0 'this' com.google.android.material.internal.NavigationMenuItemView A[IMMUTABLE_TYPE, THIS]), (r2v0 'itemData' androidx.appcompat.view.menu.MenuItemImpl A[D('itemData' androidx.appcompat.view.menu.MenuItemImpl), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'menuType' int A[D('menuType' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0020 \-\> B:26:0x0029, CROSS_EDGE: B:22:0x0017 \-\> B:23:0x0019, CROSS_EDGE: B:17:0x0006 \-\> B:19:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.view.menu.MenuView.ItemView.initialize(androidx.appcompat.view.menu.MenuItemImpl, int):void]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22;
+Node_21 -> Node_23;
+Node_27 -> Node_15;
+Node_22 -> Node_23;
+}
+

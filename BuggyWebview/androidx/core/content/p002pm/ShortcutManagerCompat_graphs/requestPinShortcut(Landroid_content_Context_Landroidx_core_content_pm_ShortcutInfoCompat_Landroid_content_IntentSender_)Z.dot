@@ -1,0 +1,48 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutManagerCompat.requestPinShortcut(Landroid\/content\/Context;Landroidx\/core\/content\/pm\/ShortcutInfoCompat;Landroid\/content\/IntentSender;)Z" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (android.os.Build.VERSION.SDK_INT \> 31) goto L7\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r12.isExcludedFromSurfaces(1) == false) goto L7\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|RETURN\l|return false\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000f}"];
+Node_8 [shape=record,label="{8\:\ 0x0013|if (android.os.Build.VERSION.SDK_INT \< 26) goto L11\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0015}"];
+Node_10 [shape=record,label="{10\:\ 0x0025|RETURN\l|return ((android.content.pm.ShortcutManager) r11.getSystemService(android.content.pm.ShortcutManager.class)).requestPinShortcut(r12.toShortcutInfo(), r13)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0026}"];
+Node_12 [shape=record,label="{12\:\ 0x002a|if (isRequestPinShortcutSupported(r11) != false) goto L14\l}"];
+Node_13 [shape=record,label="{13\:\ 0x002c|RETURN\l|return false\l}"];
+Node_14 [shape=record,label="{14\:\ 0x002d|android.content.Intent r0 = r12.addToIntent(new android.content.Intent(androidx.core.content.p002pm.ShortcutManagerCompat.ACTION_INSTALL_SHORTCUT))\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0038|if (r13 != null) goto L18\l}"];
+Node_16 [shape=record,label="{16\:\ 0x003a|r11.sendBroadcast(r0)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x003d|RETURN\l|return true\l}"];
+Node_18 [shape=record,label="{18\:\ 0x003e|r11.sendOrderedBroadcast(r0, null, new androidx.core.content.p002pm.ShortcutManagerCompat.C01931(), null, \-1, null, null)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x004d|RETURN\l|return true\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.content.pm.ShortcutManagerCompat.requestPinShortcut((r11v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'shortcut' androidx.core.content.pm.ShortcutInfoCompat A[D('shortcut' androidx.core.content.pm.ShortcutInfoCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'callback' android.content.IntentSender A[D('callback' android.content.IntentSender), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0025 \-\> B:1:?, CROSS_EDGE: B:13:0x002c \-\> B:1:?, CROSS_EDGE: B:17:0x003d \-\> B:1:?, CROSS_EDGE: B:19:0x004d \-\> B:1:?, CROSS_EDGE: B:3:0x0006 \-\> B:7:0x000f\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_1;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_18;
+Node_16 -> Node_17;
+Node_17 -> Node_1;
+Node_18 -> Node_19;
+Node_19 -> Node_1;
+}
+

@@ -1,0 +1,79 @@
+digraph "CFG forkotlin.time.TestTimeSource.plusAssign\-LRDsOJo(J)V" {
+subgraph cluster_Region_41217019 {
+label = "R(3:1|(2:5|(1:9))(3:13|(1:18)|17)|10) | DECL_VAR: long newReading\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|long long r0 = kotlin.time.Duration.m1505toLongimpl(r12, getUnit())\l}"];
+subgraph cluster_IfRegion_1094722822 {
+label = "IF [B:3:0x000c, B:5:0x0015] THEN: R(2:5|(1:9)) ELSE: R(3:13|(1:18)|17)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r0 != Long.MIN_VALUE) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ADDED_TO_REGION\l|if (r0 != Long.MAX_VALUE) goto L5\l}"];
+subgraph cluster_Region_653592748 {
+label = "R(2:5|(1:9))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|long long r2 = r11.reading\llong r4 = r2 + r0\l}"];
+subgraph cluster_IfRegion_1450441590 {
+label = "IF [B:7:0x0021, B:9:0x0026] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|if ((r2 ^ r0) \>= 0) goto L7\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0026|ADDED_TO_REGION\l|if ((r2 ^ r4) \< 0) goto L9\l}"];
+subgraph cluster_Region_1755341226 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0028|m1592overflowLRDsOJo(r12)\l}"];
+}
+}
+}
+subgraph cluster_Region_1946020208 {
+label = "R(3:13|(1:18)|17)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002d|double double r2 = kotlin.time.Duration.m1502toDoubleimpl(r12, getUnit())\ldouble double r4 = r11.reading + r2\l}"];
+subgraph cluster_IfRegion_869632540 {
+label = "IF [B:13:0x003d, B:15:0x0043] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003d|if (r4 \> 9.223372036854776E18d) goto L18\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0043|ADDED_TO_REGION\l|if (r4 \< (\-9.223372036854776E18d)) goto L18\l}"];
+subgraph cluster_Region_2000323528 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0045|m1592overflowLRDsOJo(r12)\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0048|r4 = (long) r4\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x004a|PHI: r4 \l  PHI: (r4v5 'newReading' long) = (r4v4 'newReading' long), (r4v7 'newReading' long), (r4v7 'newReading' long), (r4v7 'newReading' long) binds: [B:17:0x0048, B:7:0x0021, B:9:0x0026, B:10:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|r11.reading = r4\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0023}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x004c}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003f}"];
+MethodNode[shape=record,label="{public final void kotlin.time.TestTimeSource.plusAssign\-LRDsOJo((r11v0 'this' kotlin.time.TestTimeSource A[IMMUTABLE_TYPE, THIS]), (r12v0 'duration' long A[D('duration' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0026 \-\> B:18:0x004a, CROSS_EDGE: B:7:0x0021 \-\> B:18:0x004a, CROSS_EDGE: B:17:0x0048 \-\> B:18:0x004a, CROSS_EDGE: B:15:0x0043 \-\> B:17:0x0048, CROSS_EDGE: B:13:0x003d \-\> B:16:0x0045, CROSS_EDGE: B:3:0x000c \-\> B:12:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lRENAME_REASON:not valid java name\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_18[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_18[style=dashed];
+Node_10 -> Node_18;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_16;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_19 -> Node_1;
+Node_14 -> Node_15;
+}
+

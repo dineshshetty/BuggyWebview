@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.writeIntArray([I)V" {
+subgraph cluster_Region_766836790 {
+label = "R(1:(2:(3:2|(1:4)|6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_669156672 {
+label = "R(2:(3:2|(1:4)|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1005007036 {
+label = "IF [B:13:0x0000] THEN: R(3:2|(1:4)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|if (r4 != null) goto L2\l}"];
+subgraph cluster_Region_1299007259 {
+label = "R(3:2|(1:4)|6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|int int r0 = r4.length\lwriteInt(r0)\lint r1 = 0\l\l}"];
+subgraph cluster_LoopRegion_739556533 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0007|LOOP_START\lLOOP:0: B:15:0x0007\-\>B:16:0x0009\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:14:0x0002, B:16:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L4\l}"];
+subgraph cluster_Region_393830399 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|LOOP_END\lLOOP:0: B:15:0x0007\-\>B:16:0x0009\l|writeInt(r2)\lr1++\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_690335153 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0012|writeInt(\-1)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0016|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.versionedparcelable.VersionedParcel.writeIntArray((r3v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]), (r4v0 'val' int[] A[D('val' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:16:0x0009 \-\> B:15:0x0007, CROSS_EDGE: B:18:0x0012 \-\> B:19:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_20[style=dashed];
+Node_16 -> Node_15;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_20 -> Node_21;
+Node_19 -> Node_12;
+}
+

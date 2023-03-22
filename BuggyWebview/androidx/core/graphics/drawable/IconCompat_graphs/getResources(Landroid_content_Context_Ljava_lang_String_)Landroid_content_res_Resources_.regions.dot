@@ -1,0 +1,99 @@
+digraph "CFG forandroidx.core.graphics.drawable.IconCompat.getResources(Landroid\/content\/Context;Ljava\/lang\/String;)Landroid\/content\/res\/Resources;" {
+subgraph cluster_Region_518766384 {
+label = "R(1:(2:(1:4)|(2:6|(2:8|(2:(1:11)|(1:13))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_580751547 {
+label = "R(2:(1:4)|(2:6|(2:8|(2:(1:11)|(1:13)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1942484909 {
+label = "IF [B:20:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|if (\"android\".equals(r6) != false) goto L3\l}"];
+subgraph cluster_Region_546042481 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|RETURN\l|return android.content.res.Resources.getSystem()\l}"];
+}
+}
+subgraph cluster_Region_1435545072 {
+label = "R(2:6|(2:8|(2:(1:11)|(1:13))))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000d|android.content.pm.PackageManager android.content.pm.PackageManager r0 = r5.getPackageManager()\l}"];
+subgraph cluster_TryCatchRegion_1666898799 {
+label = "Try: R(2:8|(2:(1:11)|(1:13))) catches: R(3:14|15|16)";
+node [shape=record,color=blue];
+subgraph cluster_Region_733684701 {
+label = "R(2:8|(2:(1:11)|(1:13)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0014|TRY_ENTER\lTryCatch #0 \{NameNotFoundException \-\> 0x0020, blocks: (B:24:0x0014, B:26:0x001a), top: B:32:0x0014 \}\lCatch: NameNotFoundException \-\> 0x0020\l|android.content.pm.ApplicationInfo android.content.pm.ApplicationInfo r1 = r0.getApplicationInfo(r6, 8192)     \/\/ Catch: android.content.pm.PackageManager.NameNotFoundException \-\> L20\l}"];
+subgraph cluster_Region_764188663 {
+label = "R(2:(1:11)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_105787 {
+label = "IF [B:25:0x0018] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0018|if (r1 != null) goto L10\l}"];
+subgraph cluster_Region_2072150056 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001e|RETURN\l|return r0.getResourcesForApplication(r1)\l}"];
+}
+}
+subgraph cluster_Region_1631221620 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001f|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_509413720 {
+label = "R(3:14|15|16) | ExcHandler: NameNotFoundException \-\> 0x0020\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0020|ExcHandler: NameNotFoundException \-\> 0x0020\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0021|android.util.Log.e(androidx.core.graphics.drawable.IconCompat.TAG, java.lang.String.format(\"Unable to find pkg=%s for icon\", r6), r1)\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0032|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_509413720 {
+label = "R(3:14|15|16) | ExcHandler: NameNotFoundException \-\> 0x0020\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0020|ExcHandler: NameNotFoundException \-\> 0x0020\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0021|android.util.Log.e(androidx.core.graphics.drawable.IconCompat.TAG, java.lang.String.format(\"Unable to find pkg=%s for icon\", r6), r1)\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0032|RETURN\l|return null\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0008}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0014|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001a|TRY_LEAVE\lTryCatch #0 \{NameNotFoundException \-\> 0x0020, blocks: (B:24:0x0014, B:26:0x001a), top: B:32:0x0014 \}\lCatch: NameNotFoundException \-\> 0x0020\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{static android.content.res.Resources androidx.core.graphics.drawable.IconCompat.getResources((r5v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'resPackage' java.lang.String A[D('resPackage' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x001e \-\> B:18:?, CROSS_EDGE: B:31:0x0032 \-\> B:18:?, CROSS_EDGE: B:28:0x001f \-\> B:18:?, CROSS_EDGE: B:32:0x0014 \-\> B:29:0x0020\lINLINE_NOT_NEEDED\lTryCatch #0 \{NameNotFoundException \-\> 0x0020, blocks: (B:24:0x0014, B:26:0x001a), top: B:32:0x0014 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_22 -> Node_18;
+Node_23 -> Node_32;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_28[style=dashed];
+Node_27 -> Node_18;
+Node_28 -> Node_18;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_18;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_18;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_32 -> Node_24;
+Node_32 -> Node_29;
+Node_26 -> Node_27;
+Node_26 -> Node_33;
+Node_33 -> Node_29;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.customview.widget.ViewDragHelper.isEdgeTouched(I)Z" {
+subgraph cluster_Region_367759092 {
+label = "R(3:1|(1:(2:(1:7)|(1:5)))|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = r3.mInitialEdgesTouched.length\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_812266346 {
+label = "LOOP:0: (1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|LOOP_START\lLOOP:0: B:16:0x0004\-\>B:21:0x000e\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:15:0x0000, B:21:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_978830585 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1193115819 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_471203836 {
+label = "IF [B:18:0x000a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|if (isEdgeTouched(r4, r1) != false) goto L6\l}"];
+subgraph cluster_Region_2035676707 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_53321588 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|LOOP_END\lLOOP:0: B:16:0x0004\-\>B:21:0x000e\l|r1++\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0011|RETURN\l|return false\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0006}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000c|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0011|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean androidx.customview.widget.ViewDragHelper.isEdgeTouched((r3v0 'this' androidx.customview.widget.ViewDragHelper A[IMMUTABLE_TYPE, THIS]), (r4v0 'edges' int A[D('edges' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x000e \-\> B:16:0x0004, CROSS_EDGE: B:23:0x0012 \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_25;
+Node_19 -> Node_14;
+Node_21 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_25 -> Node_19;
+Node_24 -> Node_22;
+}
+

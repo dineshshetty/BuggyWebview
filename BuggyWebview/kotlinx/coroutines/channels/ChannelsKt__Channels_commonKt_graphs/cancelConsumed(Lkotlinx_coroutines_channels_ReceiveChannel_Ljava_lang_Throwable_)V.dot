@@ -1,0 +1,28 @@
+digraph "CFG forkotlinx.coroutines.channels.ChannelsKt__Channels_commonKt.cancelConsumed(Lkotlinx\/coroutines\/channels\/ReceiveChannel;Ljava\/lang\/Throwable;)V" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000|r0 = null\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0001|if (r5 != null) goto L3\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0004}"];
+Node_18 [shape=record,label="{18\:\ 0x0008|if ((r5 instanceof java.util.concurrent.CancellationException) == false) goto L6\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000a|java.util.concurrent.CancellationException r0 = (java.util.concurrent.CancellationException) r5\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000d|PHI: r0 \l  PHI: (r0v2 java.util.concurrent.CancellationException) = (r0v0 java.util.concurrent.CancellationException), (r0v6 java.util.concurrent.CancellationException) binds: [B:18:0x0008, B:19:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L8\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000f|java.util.concurrent.CancellationException r0 = kotlinx.coroutines.ExceptionsKt.CancellationException(\"Channel was consumed, consumer had failed\", r5)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0016|PHI: r0 \l  PHI: (r0v1 java.util.concurrent.CancellationException) = (r0v0 java.util.concurrent.CancellationException), (r0v2 java.util.concurrent.CancellationException), (r0v4 java.util.concurrent.CancellationException) binds: [B:15:0x0001, B:20:0x000d, B:21:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|r4.cancel(r0)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0019|RETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlinx.coroutines.channels.ChannelsKt__Channels_commonKt.cancelConsumed((r4v0 kotlinx.coroutines.channels.ReceiveChannel\<?\> A[D('$this$cancelConsumed' kotlinx.coroutines.channels.ReceiveChannel), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x000d \-\> B:22:0x0016, CROSS_EDGE: B:18:0x0008 \-\> B:20:0x000d, CROSS_EDGE: B:15:0x0001 \-\> B:22:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlinx\/coroutines\/channels\/ReceiveChannel\<*\>;Ljava\/lang\/Throwable;)V\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_17;
+Node_15 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+}
+

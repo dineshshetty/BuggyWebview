@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.collection.ArraySet.addAll(Ljava\/util\/Collection;)Z" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: IGET  (r0 I:int) = (r4 I:androidx.collection.ArraySet A[D('this' androidx.collection.ArraySet\<E\>)]) androidx.collection.ArraySet.mSize int  (LINE:719)\l0x0002: INVOKE  (r1 I:int) = (r5 I:java.util.Collection A[D('collection' java.util.Collection\<? extends E\>)]) type: INTERFACE call: java.util.Collection.size():int A[MD:():int (c)]\l0x0006: ARITH  (r0 I:int) = (r0 I:int) + (r1 I:int) \l0x0007: INVOKE  (r4 I:androidx.collection.ArraySet A[D('this' androidx.collection.ArraySet\<E\>)]), (r0 I:int) type: VIRTUAL call: androidx.collection.ArraySet.ensureCapacity(int):void A[MD:(int):void (m)]\l0x000a: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:720)\l0x000b: INVOKE  (r1 I:java.util.Iterator) = (r5 I:java.util.Collection A[D('collection' java.util.Collection\<? extends E\>)]) type: INTERFACE call: java.util.Collection.iterator():java.util.Iterator A[MD:():java.util.Iterator\<E\> (c)] (LINE:721)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x000f|LOOP_START\lLOOP:0: B:11:0x000f\-\>B:13:0x0015\l|0x000f: INVOKE  (r2 I:boolean) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0013|0x0013: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:15:0x001f \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0015|LOOP_END\lLOOP:0: B:11:0x000f\-\>B:13:0x0015\l|0x0015: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x0019: INVOKE  (r3 I:boolean) = \l  (r4 I:androidx.collection.ArraySet A[D('this' androidx.collection.ArraySet\<E\>)])\l  (r2 I:java.lang.Object A[D('value' E)])\l type: VIRTUAL call: androidx.collection.ArraySet.add(java.lang.Object):boolean A[MD:(E):boolean (m)] (LINE:722)\l0x001d: ARITH  (r0 I:??[int, boolean]) = (r0 I:??[int, boolean, short, byte, char] A[D('added' boolean)]) \| (r3 I:??[int, boolean, short, byte, char]) \l}"];
+Node_15 [shape=record,label="{15\:\ 0x001f|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x001f|RETURN\l|0x001f: RETURN  (r0 I:boolean A[D('added' boolean)])  (LINE:724)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.collection.ArraySet.addAll((r4 'this' I:androidx.collection.ArraySet\<E\> A[D('this' androidx.collection.ArraySet\<E\>), IMMUTABLE_TYPE, THIS]), (r5 I:java.util.Collection\<? extends E\> A[D('collection' java.util.Collection\<? extends E\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:13:0x0015 \-\> B:11:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (Ljava\/util\/Collection\<+TE;\>;)Z\lDebug Info:\l  0x0019\-0x001e: r2 'value' Ljava\/lang\/Object;, signature: TE;\l  0x000b\-0x001f: r0 'added' Z\l  0x0000\-0x001f: r4 'this' Landroidx\/collection\/ArraySet;, signature: Landroidx\/collection\/ArraySet\<TE;\>;\l  0x0000\-0x001f: r5 'collection' Ljava\/util\/Collection;, signature: Ljava\/util\/Collection\<+TE;\>;\lMETHOD_OVERRIDE: [ClspMth\{java.util.Collection.addAll(java.util.Collection\<? extends E\>):boolean\}]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_11;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

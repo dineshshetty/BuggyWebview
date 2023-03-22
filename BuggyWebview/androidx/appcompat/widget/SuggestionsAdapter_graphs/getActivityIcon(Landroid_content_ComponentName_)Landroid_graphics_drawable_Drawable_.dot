@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.appcompat.widget.SuggestionsAdapter.getActivityIcon(Landroid\/content\/ComponentName;)Landroid\/graphics\/drawable\/Drawable;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.content.pm.PackageManager r1 = r9.mProviderContext.getPackageManager()\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000b|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{NameNotFoundException \-\> 0x0045, blocks: (B:3:0x000b), top: B:15:0x000b \}\lCatch: NameNotFoundException \-\> 0x0045\l|android.content.pm.ActivityInfo r2 = r1.getActivityInfo(r10, 128)     \/\/ Catch: android.content.pm.PackageManager.NameNotFoundException \-\> L45\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|int r4 = r2.getIconResource()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (r4 != 0) goto L8\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|RETURN\l|return null\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|java.lang.String r5 = r10.getPackageName()\landroid.graphics.drawable.Drawable r6 = r1.getDrawable(r5, r4, r2.applicationInfo)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0021|if (r6 != null) goto L12\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0023|java.lang.StringBuilder r7 = new java.lang.StringBuilder()\lr7.append(\"Invalid icon resource \")\lr7.append(r4)\lr7.append(\" for \")\lr7.append(r10.flattenToShortString())\landroid.util.Log.w(androidx.appcompat.widget.SuggestionsAdapter.LOG_TAG, r7.toString())\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0043|RETURN\l|return null\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0044|RETURN\l|return r6\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0045|ExcHandler: NameNotFoundException \-\> 0x0045\l|android.content.pm.PackageManager$NameNotFoundException r2 = move\-exception\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0046|android.util.Log.w(androidx.appcompat.widget.SuggestionsAdapter.LOG_TAG, r2.toString())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x004d|RETURN\l|return null\l}"];
+MethodNode[shape=record,label="{private android.graphics.drawable.Drawable androidx.appcompat.widget.SuggestionsAdapter.getActivityIcon((r9v0 'this' androidx.appcompat.widget.SuggestionsAdapter A[IMMUTABLE_TYPE, THIS]), (r10v0 'component' android.content.ComponentName A[D('component' android.content.ComponentName), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0043 \-\> B:1:?, CROSS_EDGE: B:11:0x0044 \-\> B:1:?, CROSS_EDGE: B:14:0x004d \-\> B:1:?, CROSS_EDGE: B:15:0x000b \-\> B:12:0x0045\lINLINE_NOT_NEEDED\lTryCatch #0 \{NameNotFoundException \-\> 0x0045, blocks: (B:3:0x000b), top: B:15:0x000b \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_15;
+Node_15 -> Node_3;
+Node_15 -> Node_12;
+Node_3 -> Node_4;
+Node_3 -> Node_16;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_11 -> Node_1;
+Node_16 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+}
+

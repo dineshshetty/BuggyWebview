@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.firstOrNull([JLkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Long;" {
+subgraph cluster_Region_1097599145 {
+label = "R(3:1|(2:3|(2:(1:8)|(1:5)))|11)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"predicate\")\lint r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_513807329 {
+label = "LOOP:0: (2:3|(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000d|LOOP_START\lLOOP:0: B:16:0x000d\-\>B:21:0x0026\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:15:0x0000, B:21:0x0026] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_1500197451 {
+label = "R(2:3|(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|r3 = r6[r2]\l}"];
+subgraph cluster_Region_2124999709 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_931334105 {
+label = "IF [B:18:0x001f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001f|if (r7.invoke(java.lang.Long.valueOf(r3)).booleanValue() == true) goto L6\l}"];
+subgraph cluster_Region_952663223 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0025|RETURN\l|return java.lang.Long.valueOf(r3)\l}"];
+}
+}
+subgraph cluster_Region_1653783438 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0026|LOOP_END\lLOOP:0: B:16:0x000d\-\>B:21:0x0026\l|r2++\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0029|RETURN\l|return null\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0021|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0021}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0029|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.lang.Long kotlin.collections.ArraysKt___ArraysKt.firstOrNull((r6v0 '$this$firstOrNull' long[] A[D('$this$firstOrNull' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Long, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0026 \-\> B:16:0x000d, CROSS_EDGE: B:23:0x002a \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([JLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Long;Ljava\/lang\/Boolean;\>;)Ljava\/lang\/Long;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_25;
+Node_20 -> Node_14;
+Node_21 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_25 -> Node_19;
+Node_19 -> Node_20;
+Node_24 -> Node_22;
+}
+

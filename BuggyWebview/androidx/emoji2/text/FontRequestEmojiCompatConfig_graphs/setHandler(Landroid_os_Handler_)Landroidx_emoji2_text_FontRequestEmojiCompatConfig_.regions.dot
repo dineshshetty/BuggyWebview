@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.emoji2.text.FontRequestEmojiCompatConfig.setHandler(Landroid\/os\/Handler;)Landroidx\/emoji2\/text\/FontRequestEmojiCompatConfig;" {
+subgraph cluster_Region_1775661130 {
+label = "R(1:(2:(1:2)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_983776192 {
+label = "R(2:(1:2)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_130759838 {
+label = "IF [B:8:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|if (r2 == null) goto L2\l}"];
+subgraph cluster_Region_1648165795 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0002|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_951286670 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0003|setLoadingExecutor(androidx.emoji2.text.ConcurrencyHelpers.convertHandlerToExecutor(r2))\l}"];
+Node_11 [shape=record,label="{11\:\ 0x000a|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.emoji2.text.FontRequestEmojiCompatConfig androidx.emoji2.text.FontRequestEmojiCompatConfig.setHandler((r1v0 'this' androidx.emoji2.text.FontRequestEmojiCompatConfig A[IMMUTABLE_TYPE, THIS]), (r2v0 'handler' android.os.Handler A[D('handler' android.os.Handler), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:11:0x000a \-\> B:7:?\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_7;
+Node_10 -> Node_11;
+Node_11 -> Node_7;
+Node_6 -> Node_8;
+}
+

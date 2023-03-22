@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.builders.MapBuilder.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1656167276 {
+label = "R(4:1|(2:(1:5)(0)|7)|10|11)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder((size() * 3) + 2)\lr0.append(\"\{\")\lint r1 = 0\lkotlin.collections.builders.MapBuilder$EntriesItr kotlin.collections.builders.MapBuilder.EntriesItr r2 = entriesIterator$kotlin_stdlib()\l}"];
+subgraph cluster_LoopRegion_639466441 {
+label = "LOOP:0: (2:(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001b|if (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_650704174 {
+label = "R(2:(1:5)(0)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2083222363 {
+label = "IF [B:18:0x001d] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001d|if (r1 \> 0) goto L5\l}"];
+subgraph cluster_Region_503731163 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001f|r0.append(\", \")\l}"];
+}
+subgraph cluster_Region_950502680 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0024|LOOP_END\lLOOP:0: B:16:0x0017\-\>B:20:0x0024\l|r2.nextAppendString(r0)\lr1++\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x002a|r0.append(\"\}\")\ljava.lang.String java.lang.String r3 = r0.toString()\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, \"sb.toString()\")\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0038|RETURN\l|return r3\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0017|LOOP_START\lLOOP:0: B:16:0x0017\-\>B:20:0x0024\lPHI: r1 \l  PHI: (r1v5 'i' int) = (r1v4 'i' int), (r1v6 'i' int) binds: [B:15:0x0000, B:20:0x0024] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0024|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0024|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x002a|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String kotlin.collections.builders.MapBuilder.toString((r5v0 'this' kotlin.collections.builders.MapBuilder\<K, V\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0024 \-\> B:16:0x0017, CROSS_EDGE: B:18:0x001d \-\> B:20:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_24;
+Node_20 -> Node_16;
+Node_21 -> Node_22;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_24 -> Node_20;
+Node_25 -> Node_20;
+Node_23 -> Node_21;
+}
+

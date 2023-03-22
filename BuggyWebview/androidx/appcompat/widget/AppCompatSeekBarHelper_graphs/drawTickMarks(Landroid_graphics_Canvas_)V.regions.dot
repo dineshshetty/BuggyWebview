@@ -1,0 +1,84 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatSeekBarHelper.drawTickMarks(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_1769902391 {
+label = "R(1:(1:(2:3|(1:(6:5|6|8|10|(1:12)|14)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_564117816 {
+label = "R(1:(2:3|(1:(6:5|6|8|10|(1:12)|14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1451891301 {
+label = "IF [B:23:0x0002] THEN: R(2:3|(1:(6:5|6|8|10|(1:12)|14))) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0002|if (r9.mTickMark != null) goto L3\l}"];
+subgraph cluster_Region_294695891 {
+label = "R(2:3|(1:(6:5|6|8|10|(1:12)|14)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0004|int int r0 = r9.mView.getMax()\l}"];
+subgraph cluster_Region_2065384263 {
+label = "R(1:(6:5|6|8|10|(1:12)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1404747576 {
+label = "IF [B:25:0x000b] THEN: R(6:5|6|8|10|(1:12)|14) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000b|if (r0 \> 1) goto L5\l}"];
+subgraph cluster_Region_1139841992 {
+label = "R(6:5|6|8|10|(1:12)|14)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000d|int int r2 = r9.mTickMark.getIntrinsicWidth()\lint int r3 = r9.mTickMark.getIntrinsicHeight()\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0019|int r4 = r2 \>= 0 ? r2 \/ 2 : 1\l}"];
+Node_30 [shape=record,label="{30\:\ 0x001f|PHI: r4 \l  PHI: (r4v1 'halfW' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int r1 = r3 \>= 0 ? r3 \/ 2 : 1\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0023|PHI: r1 \l  PHI: (r1v1 'halfH' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r9.mTickMark.setBounds(\-r4, \-r1, r4, r1)\lfloat float r5 = ((r9.mView.getWidth() \- r9.mView.getPaddingLeft()) \- r9.mView.getPaddingRight()) \/ r0\lint int r6 = r10.save()\lr10.translate(r9.mView.getPaddingLeft(), r9.mView.getHeight() \/ 2)\lint r7 = 0\l}"];
+subgraph cluster_LoopRegion_33817724 {
+label = "LOOP:0: (1:12)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0059|LOOP_START\lLOOP:0: B:33:0x0059\-\>B:34:0x005b\lPHI: r7 \l  PHI: (r7v5 'i' int) = (r7v4 'i' int), (r7v6 'i' int) binds: [B:32:0x0023, B:34:0x005b] A[DONT_GENERATE, DONT_INLINE]\l|if (r7 \<= r0) goto L12\l}"];
+subgraph cluster_Region_379466180 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x005b|LOOP_END\lLOOP:0: B:33:0x0059\-\>B:34:0x005b\l|r9.mTickMark.draw(r10)\lr10.translate(r5, 0.0f)\lr7++\l}"];
+}
+}
+Node_35 [shape=record,label="{35\:\ 0x0067|r10.restoreToCount(r6)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0000}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x001b}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0021}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0067|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x006a|ORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001e}"];
+Node_39 [shape=record,color=red,label="{39\:\ ?|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.AppCompatSeekBarHelper.drawTickMarks((r9v0 'this' androidx.appcompat.widget.AppCompatSeekBarHelper A[IMMUTABLE_TYPE, THIS]), (r10v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:34:0x005b \-\> B:33:0x0059, CROSS_EDGE: B:30:0x001f \-\> B:32:0x0023, CROSS_EDGE: B:29:0x001e \-\> B:30:0x001f, CROSS_EDGE: B:25:0x000b \-\> B:36:0x006a, CROSS_EDGE: B:23:0x0002 \-\> B:36:0x006a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_23 -> Node_24;
+Node_23 -> Node_38[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_39[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_32;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_37[style=dashed];
+Node_34 -> Node_33;
+Node_35 -> Node_36;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_28 -> Node_30;
+Node_31 -> Node_32;
+Node_37 -> Node_35;
+Node_36 -> Node_21;
+Node_29 -> Node_30;
+Node_39 -> Node_21;
+Node_38 -> Node_21;
+}
+

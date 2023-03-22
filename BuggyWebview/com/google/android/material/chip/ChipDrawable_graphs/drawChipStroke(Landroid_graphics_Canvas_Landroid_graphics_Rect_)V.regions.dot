@@ -1,0 +1,56 @@
+digraph "CFG forcom.google.android.material.chip.ChipDrawable.drawChipStroke(Landroid\/graphics\/Canvas;Landroid\/graphics\/Rect;)V" {
+subgraph cluster_Region_412203680 {
+label = "R(1:(1:(3:5|(1:7)|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_814902463 {
+label = "R(1:(3:5|(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1626639963 {
+label = "IF [B:3:0x0005, B:5:0x0009] THEN: R(3:5|(1:7)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r7.chipStrokeWidth \> 0.0f) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|ADDED_TO_REGION\l|if (r7.isShapeThemingEnabled == false) goto L5\l}"];
+subgraph cluster_Region_1240921927 {
+label = "R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|r7.chipPaint.setColor(r7.currentChipStrokeColor)\lr7.chipPaint.setStyle(android.graphics.Paint.Style.STROKE)\l}"];
+subgraph cluster_IfRegion_1848195847 {
+label = "IF [B:7:0x001b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|if (r7.isShapeThemingEnabled == false) goto L7\l}"];
+subgraph cluster_Region_2079906008 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001d|r7.chipPaint.setColorFilter(getTintColorFilter())\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0026|r7.rectF.set(r9.left + (r7.chipStrokeWidth \/ 2.0f), r9.top + (r7.chipStrokeWidth \/ 2.0f), r9.right \- (r7.chipStrokeWidth \/ 2.0f), r9.bottom \- (r7.chipStrokeWidth \/ 2.0f))\lfloat float r0 = r7.chipCornerRadius \- (r7.chipStrokeWidth \/ 2.0f)\lr8.drawRoundRect(r7.rectF, r0, r0, r7.chipPaint)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0056|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.chip.ChipDrawable.drawChipStroke((r7v0 'this' com.google.android.material.chip.ChipDrawable A[IMMUTABLE_TYPE, THIS]), (r8v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'bounds' android.graphics.Rect A[D('bounds' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x001b \-\> B:9:0x0026, CROSS_EDGE: B:5:0x0009 \-\> B:10:0x0056, CROSS_EDGE: B:3:0x0005 \-\> B:10:0x0056\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_10 -> Node_1;
+Node_12 -> Node_1;
+Node_11 -> Node_1;
+}
+

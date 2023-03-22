@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.core.util.AtomicFile.finishWrite(Ljava\/io\/FileOutputStream;)V" {
+subgraph cluster_Region_1554093789 {
+label = "R(1:(2:(1:2)|(3:(1:6)|(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1473910846 {
+label = "R(2:(1:2)|(3:(1:6)|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1690878249 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r4 == null) goto L2\l}"];
+subgraph cluster_Region_1564052938 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_226422734 {
+label = "R(3:(1:6)|(1:8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_174202295 {
+label = "IF [B:5:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|if (sync(r4) == false) goto L6\l}"];
+subgraph cluster_Region_679564379 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|android.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, \"Failed to sync file output stream\")\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_961010524 {
+label = "Try: R(1:8) catches: R(2:12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1136481061 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IOException \-\> 0x0014, blocks: (B:7:0x0010), top: B:13:0x0010 \}\lCatch: IOException \-\> 0x0014\l|r4.close()     \/\/ Catch: java.io.IOException \-\> L14\l}"];
+}
+subgraph cluster_Region_1495822656 {
+label = "R(2:12|13) | ExcHandler: IOException \-\> 0x0014\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0014|ExcHandler: IOException \-\> 0x0014\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0015|android.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, \"Failed to close file output stream\", r0)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x001a|rename(r3.mNewName, r3.mBaseName)\l}"];
+}
+}
+}
+subgraph cluster_Region_1495822656 {
+label = "R(2:12|13) | ExcHandler: IOException \-\> 0x0014\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0014|ExcHandler: IOException \-\> 0x0014\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0015|android.util.Log.e(androidx.core.util.AtomicFile.LOG_TAG, \"Failed to close file output stream\", r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0003}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0010|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0021}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public void androidx.core.util.AtomicFile.finishWrite((r3v0 'this' androidx.core.util.AtomicFile A[IMMUTABLE_TYPE, THIS]), (r4v0 'str' java.io.FileOutputStream A[D('str' java.io.FileOutputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0021 \-\> B:1:?, CROSS_EDGE: B:10:0x0015 \-\> B:11:0x001a, CROSS_EDGE: B:13:0x0010 \-\> B:9:0x0014, CROSS_EDGE: B:5:0x0009 \-\> B:13:0x0010\lINLINE_NOT_NEEDED\lTryCatch #0 \{IOException \-\> 0x0014, blocks: (B:7:0x0010), top: B:13:0x0010 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_1;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_6 -> Node_13;
+Node_7 -> Node_11;
+Node_7 -> Node_14;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_13 -> Node_7;
+Node_13 -> Node_9;
+Node_12 -> Node_1;
+Node_14 -> Node_9;
+}
+

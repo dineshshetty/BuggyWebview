@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.analyzer.DependencyNode.name()Ljava\/lang\/String;" {
+subgraph cluster_Region_510435794 {
+label = "R(4:1|(1:9)(1:5)|6|7) | DECL_VAR: java.lang.String definition\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.lang.String java.lang.String r0 = r3.run.widget.getDebugName()\l}"];
+subgraph cluster_IfRegion_1734369853 {
+label = "IF [B:14:0x000c, B:16:0x0012] THEN: R(1:9) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000c|if (r3.type == androidx.constraintlayout.core.widgets.analyzer.DependencyNode.Type.LEFT) goto L9\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0012|ADDED_TO_REGION\l|if (r3.type == androidx.constraintlayout.core.widgets.analyzer.DependencyNode.Type.RIGHT) goto L9\l}"];
+subgraph cluster_Region_214888270 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0027|java.lang.String r0 = r0 + \"_HORIZONTAL\"\l}"];
+}
+subgraph cluster_Region_2012594216 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|java.lang.String r0 = r0 + \"_VERTICAL\"\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0038|PHI: r0 \l  PHI: (r0v4 'definition' java.lang.String) = (r0v3 'definition' java.lang.String), (r0v6 'definition' java.lang.String) binds: [B:19:0x0027, B:18:0x0015] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0052|RETURN\l|return r0 + \":\" + r3.type.name()\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000e}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.constraintlayout.core.widgets.analyzer.DependencyNode.name((r3v0 'this' androidx.constraintlayout.core.widgets.analyzer.DependencyNode A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0027 \-\> B:20:0x0038, CROSS_EDGE: B:14:0x000c \-\> B:19:0x0027\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_19;
+Node_19 -> Node_20;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+}
+

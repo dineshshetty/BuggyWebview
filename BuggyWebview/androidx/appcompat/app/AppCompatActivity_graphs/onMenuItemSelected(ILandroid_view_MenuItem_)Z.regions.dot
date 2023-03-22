@@ -1,0 +1,73 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatActivity.onMenuItemSelected(ILandroid\/view\/MenuItem;)Z" {
+subgraph cluster_Region_1260836412 {
+label = "R(1:(2:(1:3)|(2:5|(2:(1:11)|(1:12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1932317274 {
+label = "R(2:(1:3)|(2:5|(2:(1:11)|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1798267191 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (super.onMenuItemSelected(r4, r5) != false) goto L3\l}"];
+subgraph cluster_Region_2028612992 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1738027869 {
+label = "R(2:5|(2:(1:11)|(1:12)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0008|androidx.appcompat.app.ActionBar androidx.appcompat.app.ActionBar r0 = getSupportActionBar()\l}"];
+subgraph cluster_Region_92308375 {
+label = "R(2:(1:11)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1847865308 {
+label = "IF [B:7:0x0013, B:8:0x0015, B:10:0x001d] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013|if (r5.getItemId() == 16908332) goto L7\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0015|ADDED_TO_REGION\l|if (r0 != null) goto L8\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001d|ADDED_TO_REGION\l|if ((r0.getDisplayOptions() & 4) != 0) goto L10\l}"];
+subgraph cluster_Region_279654271 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0023|RETURN\l|return onSupportNavigateUp()\l}"];
+}
+}
+subgraph cluster_Region_10343044 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0017}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001f}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0024|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public final boolean androidx.appcompat.app.AppCompatActivity.onMenuItemSelected((r3v0 'this' androidx.appcompat.app.AppCompatActivity A[IMMUTABLE_TYPE, THIS]), (r4v0 'featureId' int A[D('featureId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'item' android.view.MenuItem A[D('item' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lMETHOD_OVERRIDE: [ClspMth\{android.view.Window.Callback.onMenuItemSelected(int, android.view.MenuItem):boolean\}, ClspMth\{android.app.Activity.onMenuItemSelected(int, android.view.MenuItem):boolean\}]\lCROSS_EDGE: B:12:0x0023 \-\> B:1:?, CROSS_EDGE: B:14:0x0025 \-\> B:1:?, CROSS_EDGE: B:8:0x0015 \-\> B:13:0x0024, CROSS_EDGE: B:7:0x0013 \-\> B:13:0x0024\lTYPE_VARS: EMPTY\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_15[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_16[style=dashed];
+Node_12 -> Node_1;
+Node_16 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_1;
+Node_13 -> Node_1;
+}
+

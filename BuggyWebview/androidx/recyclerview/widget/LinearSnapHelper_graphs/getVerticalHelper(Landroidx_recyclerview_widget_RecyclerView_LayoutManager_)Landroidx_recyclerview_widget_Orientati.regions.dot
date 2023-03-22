@@ -1,0 +1,35 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearSnapHelper.getVerticalHelper(Landroidx\/recyclerview\/widget\/RecyclerView$LayoutManager;)Landroidx\/recyclerview\/widget\/OrientationHelper;" {
+subgraph cluster_Region_556377797 {
+label = "R(3:1|(1:8)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.recyclerview.widget.OrientationHelper androidx.recyclerview.widget.OrientationHelper r0 = r1.mVerticalHelper\l}"];
+subgraph cluster_IfRegion_871701456 {
+label = "IF [B:3:0x0002, B:5:0x0006] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 == null) goto L8\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0006|ADDED_TO_REGION\l|if (r0.mLayoutManager != r2) goto L8\l}"];
+subgraph cluster_Region_1611966848 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0008|r1.mVerticalHelper = androidx.recyclerview.widget.OrientationHelper.createVerticalHelper(r2)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0010|RETURN\l|return r1.mVerticalHelper\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000e}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private androidx.recyclerview.widget.OrientationHelper androidx.recyclerview.widget.LinearSnapHelper.getVerticalHelper((r1v0 'this' androidx.recyclerview.widget.LinearSnapHelper A[IMMUTABLE_TYPE, THIS]), (r2v0 'layoutManager' androidx.recyclerview.widget.RecyclerView$LayoutManager A[D('layoutManager' androidx.recyclerview.widget.RecyclerView$LayoutManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0006 \-\> B:7:0x000e, CROSS_EDGE: B:3:0x0002 \-\> B:6:0x0008\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+}
+

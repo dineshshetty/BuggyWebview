@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.recyclerview.widget.SortedList.addToData(ILjava\/lang\/Object;)V" {
+subgraph cluster_Region_1688844960 {
+label = "R(2:1|(2:(2:10|11)|(3:3|(1:5)(1:9)|6)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = r4.mSize\l}"];
+subgraph cluster_Region_1295772887 {
+label = "R(2:(2:10|11)|(3:3|(1:5)(1:9)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_630175898 {
+label = "IF [B:15:0x0002] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r5 \> r0) goto L10\l}"];
+subgraph cluster_Region_1181982256 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x003c}"];
+Node_23 [shape=record,label="{23\:\ 0x005c|throw new java.lang.IndexOutOfBoundsException(\"cannot add item to \" + r5 + \" because size is \" + r4.mSize)\l}"];
+}
+}
+subgraph cluster_Region_2119646017 {
+label = "R(3:3|(1:5)(1:9)|6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|T[] T[] r1 = r4.mData\l}"];
+subgraph cluster_IfRegion_1616499763 {
+label = "IF [B:17:0x0007] THEN: R(1:5) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|if (r0 == r1.length) goto L5\l}"];
+subgraph cluster_Region_641996665 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0009|java.lang.Object[] T[] r0 = (T[]) ((java.lang.Object[]) java.lang.reflect.Array.newInstance((java.lang.Class\<?\>) r4.mTClass, r1.length + 10))\ljava.lang.System.arraycopy(r4.mData, 0, r0, 0, r5)\lr0[r5] = r6\ljava.lang.System.arraycopy(r4.mData, r5, r0, r5 + 1, r4.mSize \- r5)\lr4.mData = r0\l}"];
+}
+subgraph cluster_Region_1468196779 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002b|java.lang.System.arraycopy(r1, r5, r1, r5 + 1, r0 \- r5)\lr4.mData[r5] = r6\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0035|r4.mSize++\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x003b}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.SortedList.addToData((r4v0 'this' androidx.recyclerview.widget.SortedList\<T\> A[D('this' androidx.recyclerview.widget.SortedList\<T\>), IMMUTABLE_TYPE, THIS]), (r5v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'item' T A[D('item' T), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x002b \-\> B:20:0x0035, CROSS_EDGE: B:23:0x005c \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (ITT;)V\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_12 -> Node_14;
+Node_21 -> Node_13;
+}
+

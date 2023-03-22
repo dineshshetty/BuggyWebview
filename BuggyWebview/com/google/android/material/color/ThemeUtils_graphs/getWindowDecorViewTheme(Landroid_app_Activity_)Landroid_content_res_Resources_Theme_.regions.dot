@@ -1,0 +1,52 @@
+digraph "CFG forcom.google.android.material.color.ThemeUtils.getWindowDecorViewTheme(Landroid\/app\/Activity;)Landroid\/content\/res\/Resources$Theme;" {
+subgraph cluster_Region_655591457 {
+label = "R(2:1|(2:(1:8)|(1:10))) | DECL_VAR: android.view.View decorView, android.content.Context context\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|android.view.Window android.view.Window r0 = r4.getWindow()\l}"];
+subgraph cluster_Region_1057152851 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_614373890 {
+label = "IF [B:17:0x0004, B:19:0x000a, B:21:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (r0 != null) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000a|ADDED_TO_REGION\l|if ((r1 = r0.peekDecorView()) != null) goto L5\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0010|ADDED_TO_REGION\l|if ((r2 = r1.getContext()) != null) goto L7\l}"];
+subgraph cluster_Region_1626263901 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0016|RETURN\l|return r2.getTheme()\l}"];
+}
+}
+subgraph cluster_Region_426604320 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0012}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return null\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0017|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{private static android.content.res.Resources$Theme com.google.android.material.color.ThemeUtils.getWindowDecorViewTheme((r4v0 'activity' android.app.Activity A[D('activity' android.app.Activity), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0018 \-\> B:15:?, CROSS_EDGE: B:19:0x000a \-\> B:24:0x0017, CROSS_EDGE: B:17:0x0004 \-\> B:24:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_26[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_27[style=dashed];
+Node_23 -> Node_15;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_26 -> Node_15;
+Node_24 -> Node_15;
+}
+

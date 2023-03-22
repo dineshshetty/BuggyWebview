@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.appcompat.widget.ActionMenuPresenter.onRestoreInstanceState(Landroid\/os\/Parcelable;)V" {
+subgraph cluster_Region_1212836423 {
+label = "R(1:(2:(1:3)|(2:5|(1:(1:9))))) | DECL_VAR: android.view.MenuItem item\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1663321569 {
+label = "R(2:(1:3)|(2:5|(1:(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_514502366 {
+label = "IF [B:16:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if ((r4 instanceof androidx.appcompat.widget.ActionMenuPresenter.SavedState) == false) goto L3\l}"];
+subgraph cluster_Region_784210491 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1745005221 {
+label = "R(2:5|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|androidx.appcompat.widget.ActionMenuPresenter$SavedState androidx.appcompat.widget.ActionMenuPresenter.SavedState r0 = (androidx.appcompat.widget.ActionMenuPresenter.SavedState) r4\l}"];
+subgraph cluster_Region_893208057 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_122525786 {
+label = "IF [B:19:0x000a, B:21:0x0014] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|if (r0.openSubMenuId \> 0) goto L7\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0014|ADDED_TO_REGION\l|if ((r1 = r3.mMenu.findItem(r0.openSubMenuId)) != null) goto L9\l}"];
+subgraph cluster_Region_1454983544 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0016|androidx.appcompat.view.menu.SubMenuBuilder androidx.appcompat.view.menu.SubMenuBuilder r2 = (androidx.appcompat.view.menu.SubMenuBuilder) r1.getSubMenu()\lonSubMenuSelected(r2)\l}"];
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001f|ORIG_RETURN\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.ActionMenuPresenter.onRestoreInstanceState((r3v0 'this' androidx.appcompat.widget.ActionMenuPresenter A[IMMUTABLE_TYPE, THIS]), (r4v0 'state' android.os.Parcelable A[D('state' android.os.Parcelable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001f \-\> B:14:?, CROSS_EDGE: B:21:0x0014 \-\> B:23:0x001f, CROSS_EDGE: B:19:0x000a \-\> B:23:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.view.menu.MenuPresenter.onRestoreInstanceState(android.os.Parcelable):void]\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_14;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_24[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_23;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+Node_23 -> Node_14;
+Node_25 -> Node_14;
+Node_24 -> Node_14;
+}
+

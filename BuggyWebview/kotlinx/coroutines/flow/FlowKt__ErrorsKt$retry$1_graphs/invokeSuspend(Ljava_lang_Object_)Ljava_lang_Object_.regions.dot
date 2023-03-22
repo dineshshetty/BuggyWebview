@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.flow.FlowKt__ErrorsKt$retry$1.invokeSuspend(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1966799625 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+subgraph cluster_SwitchRegion_1159640910 {
+label = "Switch: 2
+ case 0 -> R(2:6|7)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0005|switch(r2.label) \{\l    case 0: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_725494927 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0010|kotlin.ResultKt.throwOnFailure(r3)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0019|RETURN\l|return kotlin.coroutines.jvm.internal.boxing.boxBoolean(true)\l}"];
+}
+subgraph cluster_Region_1717457610 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|throw new java.lang.IllegalStateException(\"call to 'resume' before 'invoke' with coroutine\")\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0008}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.flow.FlowKt__ErrorsKt$retry$1.invokeSuspend((r2v0 'this' kotlinx.coroutines.flow.FlowKt__ErrorsKt$retry$1 A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0019 \-\> B:9:?\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [kotlin.coroutines.jvm.internal.BaseContinuationImpl.invokeSuspend(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

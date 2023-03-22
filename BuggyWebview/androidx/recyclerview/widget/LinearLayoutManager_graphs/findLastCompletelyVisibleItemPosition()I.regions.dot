@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.findLastCompletelyVisibleItemPosition()I" {
+subgraph cluster_Region_845754465 {
+label = "R(2:1|(2:(1:6)|(1:4)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.view.View android.view.View r0 = findOneVisibleChild(getChildCount() \- 1, \-1, true, false)\l}"];
+subgraph cluster_Region_343158064 {
+label = "R(2:(1:6)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_712483840 {
+label = "IF [B:11:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000c|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_900011232 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1527962079 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0013|RETURN\lORIG_RETURN\l|return getPosition(r0)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000f}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.recyclerview.widget.LinearLayoutManager.findLastCompletelyVisibleItemPosition((r4v0 'this' androidx.recyclerview.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x000c \-\> B:14:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_13[style=dashed];
+Node_11 -> Node_15;
+Node_15 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_13 -> Node_14;
+}
+

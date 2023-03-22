@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.core.content.MimeTypeFilter.matchesMany([Ljava\/lang\/String;Ljava\/lang\/String;)[Ljava\/lang\/String;" {
+subgraph cluster_Region_1121850459 {
+label = "R(2:1|(2:(1:4)|(3:6|(3:8|(1:10)(0)|12)|16)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r0 = 0\l}"];
+subgraph cluster_Region_1586008352 {
+label = "R(2:(1:4)|(3:6|(3:8|(1:10)(0)|12)|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_550002003 {
+label = "IF [B:3:0x0001] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0001|if (r8 == null) goto L3\l}"];
+subgraph cluster_Region_75263914 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|RETURN\l|return new java.lang.String[0]\l}"];
+}
+}
+subgraph cluster_Region_1919960580 {
+label = "R(3:6|(3:8|(1:10)(0)|12)|16)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0006|java.util.ArrayList java.util.ArrayList\<java.lang.String\> r1 = new java.util.ArrayList\<\>()\ljava.lang.String[] java.lang.String[] r3 = r9.split(\"\/\")\l\l}"];
+subgraph cluster_LoopRegion_1302315813 {
+label = "LOOP:0: (3:8|(1:10)(0)|12)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|LOOP_START\lLOOP:0: B:7:0x0012\-\>B:11:0x0023\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v6 int) binds: [B:6:0x0006, B:11:0x0023] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< r4) goto L8\l}"];
+subgraph cluster_Region_1400169253 {
+label = "R(3:8|(1:10)(0)|12)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|r5 = r8[r0]\ljava.lang.String[] java.lang.String[] r6 = r5.split(\"\/\")\l}"];
+subgraph cluster_IfRegion_393855103 {
+label = "IF [B:9:0x001e] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001e|if (mimeTypeAgainstFilter(r6, r3) != false) goto L10\l}"];
+subgraph cluster_Region_624391246 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0020|r1.add(r5)\l}"];
+}
+subgraph cluster_Region_1468291623 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0023|LOOP_END\lLOOP:0: B:7:0x0012\-\>B:11:0x0023\l|r0++\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0032|RETURN\l|return (java.lang.String[]) r1.toArray(new java.lang.String[r1.size()])\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0003}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0023|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0023|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0026|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0026}"];
+MethodNode[shape=record,label="{public static java.lang.String[] androidx.core.content.MimeTypeFilter.matchesMany((r8v0 'mimeTypes' java.lang.String[] A[D('mimeTypes' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'filter' java.lang.String A[D('filter' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0023 \-\> B:7:0x0012, CROSS_EDGE: B:9:0x001e \-\> B:11:0x0023, CROSS_EDGE: B:13:0x0032 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_16[style=dashed];
+Node_10 -> Node_15;
+Node_11 -> Node_7;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_15 -> Node_11;
+Node_16 -> Node_11;
+Node_14 -> Node_12;
+Node_12 -> Node_13;
+}
+

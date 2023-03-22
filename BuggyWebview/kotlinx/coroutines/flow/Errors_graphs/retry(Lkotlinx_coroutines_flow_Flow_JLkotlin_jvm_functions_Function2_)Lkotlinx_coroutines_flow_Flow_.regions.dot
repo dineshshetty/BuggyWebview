@@ -1,0 +1,47 @@
+digraph "CFG forkotlinx.coroutines.flow.FlowKt__ErrorsKt.retry(Lkotlinx\/coroutines\/flow\/Flow;JLkotlin\/jvm\/functions\/Function2;)Lkotlinx\/coroutines\/flow\/Flow;" {
+subgraph cluster_Region_1852676985 {
+label = "R(1:(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_927382604 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1359613906 {
+label = "IF [B:17:0x0009] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0009|PHI: r0 \l  PHI: (r0v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4 \> 0) == false) goto L8\l}"];
+subgraph cluster_Region_614836979 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x002c|throw new java.lang.IllegalArgumentException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Expected positive amount of retries, but had \", java.lang.Long.valueOf(r4)).toString())\l}"];
+}
+}
+subgraph cluster_Region_638667597 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|RETURN\l|return kotlinx.coroutines.flow.FlowKt.retryWhen(r3, new kotlinx.coroutines.flow.FlowKt__ErrorsKt$retry$3(r4, r6, null))\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0004}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0018}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0008}"];
+MethodNode[shape=record,label="{public static final kotlinx.coroutines.flow.Flow\<T\> kotlinx.coroutines.flow.FlowKt__ErrorsKt.retry((r3v0 kotlinx.coroutines.flow.Flow\<? extends T\> A[D('$this$retry' kotlinx.coroutines.flow.Flow), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'retries' long A[D('retries' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 kotlin.jvm.functions.Function2\<? super java.lang.Throwable, ? super kotlin.coroutines.Continuation\<? super java.lang.Boolean\>, ? extends java.lang.Object\> A[D('predicate' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x002c \-\> B:12:?, CROSS_EDGE: B:16:0x0008 \-\> B:17:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlinx\/coroutines\/flow\/Flow\<+TT;\>;JLkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Throwable;\-Lkotlin\/coroutines\/Continuation\<\-Ljava\/lang\/Boolean;\>;+Ljava\/lang\/Object;\>;)Lkotlinx\/coroutines\/flow\/Flow\<TT;\>;\l}"];
+MethodNode -> Node_11;Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_16 -> Node_17;
+}
+

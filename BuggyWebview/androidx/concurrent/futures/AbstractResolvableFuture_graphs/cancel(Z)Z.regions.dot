@@ -1,0 +1,203 @@
+digraph "CFG forandroidx.concurrent.futures.AbstractResolvableFuture.cancel(Z)Z" {
+subgraph cluster_Region_1485158495 {
+label = "R(3:1|(3:7|9|(1:(4:19|(1:21)|22|(2:(1:37)|(2:24|(2:26|(2:(1:33)|(1:31)))(2:36|1))))(2:13|(1:(1:15)))))(0)|41)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x0000|java.lang.Object java.lang.Object r0 = r10.value\lboolean r1 = false\l}"];
+subgraph cluster_IfRegion_49744600 {
+label = "IF [B:53:0x000d] THEN: R(3:7|9|(1:(4:19|(1:21)|22|(2:(1:37)|(2:24|(2:26|(2:(1:33)|(1:31)))(2:36|1))))(2:13|(1:(1:15))))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x000d|if (((r0 == null) \| (r0 instanceof androidx.concurrent.futures.AbstractResolvableFuture.SetFuture)) != false) goto L6\l}"];
+subgraph cluster_Region_872400152 {
+label = "R(3:7|9|(1:(4:19|(1:21)|22|(2:(1:37)|(2:24|(2:26|(2:(1:33)|(1:31)))(2:36|1))))(2:13|(1:(1:15)))))";
+node [shape=record,color=blue];
+Node_55 [shape=record,label="{55\:\ 0x0011|java.lang.Object r4 = androidx.concurrent.futures.AbstractResolvableFuture.GENERATE_CANCELLATION_CAUSES ? new androidx.concurrent.futures.AbstractResolvableFuture.Cancellation(r11, new java.util.concurrent.CancellationException(\"Future.cancel() was called.\")) : r11 ? androidx.concurrent.futures.AbstractResolvableFuture.Cancellation.CAUSELESS_INTERRUPTED : androidx.concurrent.futures.AbstractResolvableFuture.Cancellation.CAUSELESS_CANCELLED\l}"];
+Node_60 [shape=record,label="{60\:\ 0x0027|PHI: r4 \l  PHI: (r4v6 'valueToSet' java.lang.Object) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|androidx.concurrent.futures.AbstractResolvableFuture\<V\> r5 = r10\l}"];
+subgraph cluster_LoopRegion_1201936133 {
+label = "LOOP:0: (1:(4:19|(1:21)|22|(2:(1:37)|(2:24|(2:26|(2:(1:33)|(1:31)))(2:36|1))))(2:13|(1:(1:15))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1362215938 {
+label = "R(1:(4:19|(1:21)|22|(2:(1:37)|(2:24|(2:26|(2:(1:33)|(1:31)))(2:36|1))))(2:13|(1:(1:15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2009402777 {
+label = "IF [B:62:0x002e] THEN: R(4:19|(1:21)|22|(2:(1:37)|(2:24|(2:26|(2:(1:33)|(1:31)))(2:36|1)))) ELSE: R(2:13|(1:(1:15)))";
+node [shape=record,color=blue];
+Node_62 [shape=record,label="{62\:\ 0x002e|if (androidx.concurrent.futures.AbstractResolvableFuture.ATOMIC_HELPER.casValue(r5, r0, r4) != false) goto L18\l}"];
+subgraph cluster_Region_874159293 {
+label = "R(4:19|(1:21)|22|(2:(1:37)|(2:24|(2:26|(2:(1:33)|(1:31)))(2:36|1))))";
+node [shape=record,color=blue];
+Node_63 [shape=record,label="{63\:\ 0x0030|r1 = true\l}"];
+subgraph cluster_IfRegion_1953144103 {
+label = "IF [B:64:0x0031] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_64 [shape=record,label="{64\:\ 0x0031|if (r11 != false) goto L21\l}"];
+subgraph cluster_Region_1598674445 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_65 [shape=record,label="{65\:\ 0x0033|r5.interruptTask()\l}"];
+}
+}
+Node_66 [shape=record,label="{66\:\ 0x0036|complete(r5)\l}"];
+subgraph cluster_Region_601254133 {
+label = "R(2:(1:37)|(2:24|(2:26|(2:(1:33)|(1:31)))(2:36|1)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_480716648 {
+label = "IF [B:67:0x003b] THEN: R(1:37) ELSE: null";
+node [shape=record,color=blue];
+Node_67 [shape=record,label="{67\:\ 0x003b|if ((r0 instanceof androidx.concurrent.futures.AbstractResolvableFuture.SetFuture) != true) goto L37\l}"];
+subgraph cluster_Region_1143824309 {
+label = "R(1:37)";
+node [shape=record,color=blue];
+Node_86 [shape=record,label="{86\:\ 0x0062|SYNTHETIC\lEDGE_INSN: B:86:0x0062\-\>B:82:0x0062 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1959683483 {
+label = "R(2:24|(2:26|(2:(1:33)|(1:31)))(2:36|1))";
+node [shape=record,color=blue];
+Node_68 [shape=record,label="{68\:\ 0x003d|com.google.common.util.concurrent.ListenableFuture\<? extends V\> com.google.common.util.concurrent.ListenableFuture\<?\> r6 = ((androidx.concurrent.futures.AbstractResolvableFuture.SetFuture) r0).future\l}"];
+subgraph cluster_IfRegion_1062618669 {
+label = "IF [B:69:0x0044] THEN: R(2:26|(2:(1:33)|(1:31))) ELSE: R(2:36|1)";
+node [shape=record,color=blue];
+Node_69 [shape=record,label="{69\:\ 0x0044|if ((r6 instanceof androidx.concurrent.futures.AbstractResolvableFuture) != false) goto L26\l}"];
+subgraph cluster_Region_1340378532 {
+label = "R(2:26|(2:(1:33)|(1:31)))";
+node [shape=record,color=blue];
+Node_70 [shape=record,label="{70\:\ 0x0046|androidx.concurrent.futures.AbstractResolvableFuture androidx.concurrent.futures.AbstractResolvableFuture\<V\> r7 = (androidx.concurrent.futures.AbstractResolvableFuture) r6\ljava.lang.Object r0 = r7.value\l}"];
+subgraph cluster_Region_467899110 {
+label = "R(2:(1:33)|(1:31))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1322582032 {
+label = "IF [B:75:0x0053] THEN: R(1:33) ELSE: null";
+node [shape=record,color=blue];
+Node_75 [shape=record,label="{75\:\ 0x0053|if (((r0 == null) \| (r0 instanceof androidx.concurrent.futures.AbstractResolvableFuture.SetFuture)) != false) goto L31\l}"];
+subgraph cluster_Region_994092824 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_85 [shape=record,label="{85\:\ 0x0062|SYNTHETIC\lEDGE_INSN: B:85:0x0062\-\>B:82:0x0062 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1431082743 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_76 [shape=record,label="{76\:\ 0x0055|r5 = r7\l}"];
+}
+}
+}
+subgraph cluster_Region_1917621210 {
+label = "R(2:36|1)";
+node [shape=record,color=blue];
+Node_78 [shape=record,label="{78\:\ 0x0058|EDGE_INSN: B:78:0x0058\-\>B:82:0x0062 ?: BREAK  \l|r6.cancel(r11)\l}"];
+Node_InsnContainer_734126405 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1271163063 {
+label = "R(2:13|(1:(1:15)))";
+node [shape=record,color=blue];
+Node_80 [shape=record,label="{80\:\ 0x005c|java.lang.Object r0 = r5.value\l}"];
+subgraph cluster_Region_88068991 {
+label = "R(1:(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_287536534 {
+label = "IF [B:81:0x0060] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_81 [shape=record,label="{81\:\ 0x0060|if ((r0 instanceof androidx.concurrent.futures.AbstractResolvableFuture.SetFuture) == false) goto L15\l}"];
+subgraph cluster_Region_46929308 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_87 [shape=record,label="{87\:\ 0x0062|SYNTHETIC\lEDGE_INSN: B:87:0x0062\-\>B:82:0x0062 ?: BREAK  \l|break\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1007291066 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_82 [shape=record,label="{82\:\ 0x0062|RETURN\lEDGE_INSN: B:87:0x0062\-\>B:82:0x0062 ?: BREAK  , EDGE_INSN: B:78:0x0058\-\>B:82:0x0062 ?: BREAK  , EDGE_INSN: B:85:0x0062\-\>B:82:0x0062 ?: BREAK  , EDGE_INSN: B:86:0x0062\-\>B:82:0x0062 ?: BREAK  \lPHI: r1 \l  PHI: (r1v1 'rValue' boolean) = (r1v0 'rValue' boolean), (r1v3 'rValue' boolean), (r1v3 'rValue' boolean), (r1v3 'rValue' boolean), (r1v2 'rValue' boolean) binds: [B:53:0x000d, B:86:0x0062, B:78:0x0058, B:85:0x0062, B:87:0x0062] A[DONT_GENERATE, DONT_INLINE]\l|return r1\l}"];
+}
+Node_46 [shape=record,color=red,label="{46\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x0005}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x0007}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x000a|PHI: r4 \l  PHI: (r4v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_54 [shape=record,color=red,label="{54\:\ 0x000f}"];
+Node_56 [shape=record,color=red,label="{56\:\ 0x0013}"];
+Node_61 [shape=record,color=red,label="{61\:\ 0x0028|LOOP_START\lLOOP:0: B:61:0x0028\-\>B:89:0x0028\lPHI: r0 r1 r5 \l  PHI: (r0v1 'localValue' java.lang.Object) = (r0v0 'localValue' java.lang.Object), (r0v3 'localValue' java.lang.Object) binds: [B:60:0x0027, B:89:0x0028] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v2 'rValue' boolean) = (r1v0 'rValue' boolean), (r1v4 'rValue' boolean) binds: [B:60:0x0027, B:89:0x0028] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v2 androidx.concurrent.futures.AbstractResolvableFuture\<V\>) = (r5v1 androidx.concurrent.futures.AbstractResolvableFuture\<V\>), (r5v4 androidx.concurrent.futures.AbstractResolvableFuture\<V\>) binds: [B:60:0x0027, B:89:0x0028] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_84 [shape=record,color=red,label="{84\:\ 0x005c|SYNTHETIC\l}"];
+Node_90 [shape=record,color=red,label="{90\:\ 0x0028|SYNTHETIC\l}"];
+Node_89 [shape=record,color=red,label="{89\:\ 0x0028|LOOP_END\lSYNTHETIC\lLOOP:0: B:61:0x0028\-\>B:89:0x0028\lPHI: r0 r1 r5 \l  PHI: (r0v3 'localValue' java.lang.Object) = (r0v2 'localValue' java.lang.Object), (r0v4 'localValue' java.lang.Object) binds: [B:91:0x0028, B:90:0x0028] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v4 'rValue' boolean) = (r1v3 'rValue' boolean), (r1v2 'rValue' boolean) binds: [B:91:0x0028, B:90:0x0028] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v4 androidx.concurrent.futures.AbstractResolvableFuture\<V\>) = (r5v3 androidx.concurrent.futures.AbstractResolvableFuture\<V\>), (r5v2 androidx.concurrent.futures.AbstractResolvableFuture\<V\>) binds: [B:91:0x0028, B:90:0x0028] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_88 [shape=record,color=red,label="{88\:\ 0x0030|SYNTHETIC\l}"];
+Node_71 [shape=record,color=red,label="{71\:\ 0x004b}"];
+Node_72 [shape=record,color=red,label="{72\:\ 0x004d}"];
+Node_74 [shape=record,color=red,label="{74\:\ 0x0050|PHI: r8 \l  PHI: (r8v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_91 [shape=record,color=red,label="{91\:\ 0x0028|SYNTHETIC\l}"];
+Node_73 [shape=record,color=red,label="{73\:\ 0x004f}"];
+Node_83 [shape=record,color=red,label="{83\:\ 0x0058|SYNTHETIC\l}"];
+Node_57 [shape=record,color=red,label="{57\:\ 0x0020}"];
+Node_58 [shape=record,color=red,label="{58\:\ 0x0022}"];
+Node_59 [shape=record,color=red,label="{59\:\ 0x0025}"];
+Node_47 [shape=record,color=red,label="{47\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x0009}"];
+MethodNode[shape=record,label="{public final boolean androidx.concurrent.futures.AbstractResolvableFuture.cancel((r10v0 'this' androidx.concurrent.futures.AbstractResolvableFuture\<V\> A[D('this' androidx.concurrent.futures.AbstractResolvableFuture\<V\>), IMMUTABLE_TYPE, THIS]), (r11v0 'mayInterruptIfRunning' boolean A[D('mayInterruptIfRunning' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:76:0x0055 \-\> B:61:0x0028, CROSS_EDGE: B:73:0x004f \-\> B:74:0x0050, CROSS_EDGE: B:78:0x0058 \-\> B:82:0x0062, CROSS_EDGE: B:67:0x003b \-\> B:82:0x0062, CROSS_EDGE: B:64:0x0031 \-\> B:66:0x0036, BACK_EDGE: B:81:0x0060 \-\> B:61:0x0028, CROSS_EDGE: B:81:0x0060 \-\> B:82:0x0062, CROSS_EDGE: B:58:0x0022 \-\> B:60:0x0027, CROSS_EDGE: B:59:0x0025 \-\> B:60:0x0027, CROSS_EDGE: B:53:0x000d \-\> B:82:0x0062, CROSS_EDGE: B:51:0x0009 \-\> B:52:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: [V]\lMETHOD_OVERRIDE: [ClspMth\{java.util.concurrent.Future.cancel(boolean):boolean\}]\l}"];
+MethodNode -> Node_46;Node_48 -> Node_49;
+Node_53 -> Node_54;
+Node_53 -> Node_82[style=dashed];
+Node_55 -> Node_56;
+Node_55 -> Node_57;
+Node_60 -> Node_61;
+Node_62 -> Node_84[style=dashed];
+Node_62 -> Node_88;
+Node_63 -> Node_64;
+Node_64 -> Node_65;
+Node_64 -> Node_66[style=dashed];
+Node_65 -> Node_66;
+Node_66 -> Node_67;
+Node_67 -> Node_68[style=dashed];
+Node_67 -> Node_86;
+Node_86 -> Node_82;
+Node_68 -> Node_69;
+Node_69 -> Node_70;
+Node_69 -> Node_83[style=dashed];
+Node_70 -> Node_71;
+Node_75 -> Node_76;
+Node_75 -> Node_85[style=dashed];
+Node_85 -> Node_82;
+Node_76 -> Node_91;
+Node_78 -> Node_82;
+Node_80 -> Node_81;
+Node_81 -> Node_87;
+Node_81 -> Node_90[style=dashed];
+Node_87 -> Node_82;
+Node_82 -> Node_47;
+Node_46 -> Node_48;
+Node_49 -> Node_50;
+Node_49 -> Node_51;
+Node_50 -> Node_52;
+Node_52 -> Node_53;
+Node_54 -> Node_55;
+Node_56 -> Node_60;
+Node_61 -> Node_62;
+Node_84 -> Node_80;
+Node_90 -> Node_89;
+Node_89 -> Node_61;
+Node_88 -> Node_63;
+Node_71 -> Node_72;
+Node_71 -> Node_73;
+Node_72 -> Node_74;
+Node_74 -> Node_75;
+Node_91 -> Node_89;
+Node_73 -> Node_74;
+Node_83 -> Node_78;
+Node_57 -> Node_58;
+Node_57 -> Node_59;
+Node_58 -> Node_60;
+Node_59 -> Node_60;
+Node_51 -> Node_52;
+}
+

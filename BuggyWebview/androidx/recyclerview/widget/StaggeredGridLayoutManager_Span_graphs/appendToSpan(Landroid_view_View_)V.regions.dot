@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.Span.appendToSpan(Landroid\/view\/View;)V" {
+subgraph cluster_Region_2127118653 {
+label = "R(3:1|(1:3)|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.recyclerview.widget.StaggeredGridLayoutManager$LayoutParams androidx.recyclerview.widget.StaggeredGridLayoutManager.LayoutParams r0 = getLayoutParams(r5)\lr0.mSpan = r4\lr4.mViews.add(r5)\lr4.mCachedEnd = Integer.MIN_VALUE\l}"];
+subgraph cluster_IfRegion_140364292 {
+label = "IF [B:3:0x0016] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0016|if (r4.mViews.size() == 1) goto L3\l}"];
+subgraph cluster_Region_1484374110 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|r4.mCachedStart = Integer.MIN_VALUE\l}"];
+}
+}
+subgraph cluster_Region_419352411 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2051270656 {
+label = "IF [B:6:0x001e, B:8:0x0024] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|if (r0.isItemRemoved() != false) goto L10\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0024|ADDED_TO_REGION\l|if (r0.isItemChanged() != false) goto L10\l}"];
+subgraph cluster_Region_1058016747 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0026|r4.mDeletedSize += androidx.recyclerview.widget.StaggeredGridLayoutManager.this.mPrimaryOrientation.getDecoratedMeasurement(r5)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0020}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0033|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.StaggeredGridLayoutManager.Span.appendToSpan((r4v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager$Span A[IMMUTABLE_TYPE, THIS]), (r5v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0024 \-\> B:10:0x0033, CROSS_EDGE: B:6:0x001e \-\> B:9:0x0026, CROSS_EDGE: B:3:0x0016 \-\> B:5:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_11 -> Node_1;
+Node_10 -> Node_1;
+}
+

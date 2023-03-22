@@ -1,0 +1,53 @@
+digraph "CFG forkotlin.collections.unsigned.UArraysKt___UArraysKt.count\-MShoTSo([JLkotlin\/jvm\/functions\/Function1;)I" {
+subgraph cluster_Region_1044979151 {
+label = "R(3:1|(3:3|(1:5)(0)|7)|10)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"$this$count\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"predicate\")\lint r0 = 0\lint int r1 = kotlin.ULongArray.m376getSizeimpl(r6)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_363687453 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|LOOP_START\lLOOP:0: B:15:0x0010\-\>B:19:0x0028\lPHI: r0 r2 \l  PHI: (r0v3 'count' int) = (r0v2 'count' int), (r0v4 'count' int) binds: [B:14:0x0000, B:19:0x0028] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:14:0x0000, B:19:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_295260553 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|long long r3 = kotlin.ULongArray.m375getsVKNKU(r6, r2)\l}"];
+subgraph cluster_IfRegion_1732804880 {
+label = "IF [B:17:0x0024] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0024|if (r7.invoke(kotlin.ULong.m310boximpl(r3)).booleanValue() != false) goto L5\l}"];
+subgraph cluster_Region_1069272745 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0026|r0++\l}"];
+}
+subgraph cluster_Region_472762787 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0028|LOOP_END\lLOOP:0: B:15:0x0010\-\>B:19:0x0028\lPHI: r0 \l  PHI: (r0v4 'count' int) = (r0v3 'count' int), (r0v5 'count' int) binds: [B:23:0x0028, B:22:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|r2++\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x002b|RETURN\l|return r0\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0028|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0028|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002b|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final int kotlin.collections.unsigned.UArraysKt___UArraysKt.count\-MShoTSo((r6v0 'count' long[] A[D('$this$count_u2dMShoTSo' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'predicate' kotlin.jvm.functions.Function1\<? super kotlin.ULong, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0028 \-\> B:15:0x0010, CROSS_EDGE: B:17:0x0024 \-\> B:19:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([JLkotlin\/jvm\/functions\/Function1\<\-Lkotlin\/ULong;Ljava\/lang\/Boolean;\>;)I\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_22;
+Node_19 -> Node_15;
+Node_20 -> Node_13;
+Node_12 -> Node_14;
+Node_22 -> Node_19;
+Node_23 -> Node_19;
+Node_21 -> Node_20;
+}
+

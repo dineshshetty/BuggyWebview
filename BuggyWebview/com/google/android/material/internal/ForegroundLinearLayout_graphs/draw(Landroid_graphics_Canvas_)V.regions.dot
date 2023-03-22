@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.material.internal.ForegroundLinearLayout.draw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_519030165 {
+label = "R(2:1|(1:(3:3|(3:5|(1:7)(1:9)|8)|10)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|super.draw(r10)\l}"];
+subgraph cluster_Region_792321278 {
+label = "R(1:(3:3|(3:5|(1:7)(1:9)|8)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_620421429 {
+label = "IF [B:17:0x0005] THEN: R(3:3|(3:5|(1:7)(1:9)|8)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0005|if (r9.foreground != null) goto L3\l}"];
+subgraph cluster_Region_411634914 {
+label = "R(3:3|(3:5|(1:7)(1:9)|8)|10)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0007|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = r9.foreground\l}"];
+subgraph cluster_IfRegion_20470515 {
+label = "IF [B:19:0x000b] THEN: R(3:5|(1:7)(1:9)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|if (r9.foregroundBoundsChanged != false) goto L5\l}"];
+subgraph cluster_Region_233666869 {
+label = "R(3:5|(1:7)(1:9)|8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|r9.foregroundBoundsChanged = false\landroid.graphics.Rect android.graphics.Rect r2 = r9.selfBounds\landroid.graphics.Rect android.graphics.Rect r3 = r9.overlayBounds\lint int r4 = getRight() \- getLeft()\lint int r5 = getBottom() \- getTop()\l}"];
+subgraph cluster_IfRegion_1637610540 {
+label = "IF [B:21:0x0028] THEN: R(1:7) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0028|if (r9.mForegroundInPadding != false) goto L7\l}"];
+subgraph cluster_Region_1620326320 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002a|r2.set(0, 0, r4, r5)\l}"];
+}
+subgraph cluster_Region_883753732 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002e|r2.set(getPaddingLeft(), getPaddingTop(), r4 \- getPaddingRight(), r5 \- getPaddingBottom())\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0046|android.view.Gravity.apply(r9.foregroundGravity, r0.getIntrinsicWidth(), r0.getIntrinsicHeight(), r2, r3)\lr0.setBounds(r3)\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0056|r0.draw(r10)\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0059|ORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.internal.ForegroundLinearLayout.draw((r9v0 'this' com.google.android.material.internal.ForegroundLinearLayout A[IMMUTABLE_TYPE, THIS]), (r10v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:23:0x002e \-\> B:24:0x0046, CROSS_EDGE: B:19:0x000b \-\> B:25:0x0056, CROSS_EDGE: B:17:0x0005 \-\> B:26:0x0059\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.draw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_27[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_26 -> Node_15;
+Node_27 -> Node_15;
+}
+

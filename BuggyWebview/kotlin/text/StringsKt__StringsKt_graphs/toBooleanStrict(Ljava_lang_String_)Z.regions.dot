@@ -1,0 +1,61 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.toBooleanStrict(Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_1245921867 {
+label = "R(2:1|(2:(1:3)|(1:(2:(1:7)|(2:8|9)))))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\l}"];
+subgraph cluster_Region_1879390275 {
+label = "R(2:(1:3)|(1:(2:(1:7)|(2:8|9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_117740353 {
+label = "IF [B:27:0x000c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000c|if (kotlin.jvm.internal.Intrinsics.areEqual(r3, \"true\") == true) goto L3\l}"];
+subgraph cluster_Region_722309813 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000e|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2072829061 {
+label = "R(1:(2:(1:7)|(2:8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_580002967 {
+label = "R(2:(1:7)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_19866911 {
+label = "IF [B:30:0x0016] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0016|if (kotlin.jvm.internal.Intrinsics.areEqual(r3, \"false\") == true) goto L7\l}"];
+subgraph cluster_Region_1190168501 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0018|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1527059226 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x001a}"];
+Node_34 [shape=record,label="{34\:\ 0x0030|throw new java.lang.IllegalArgumentException(\"The string doesn't represent a boolean value: \" + r3)\l}"];
+}
+}
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0010}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.text.StringsKt__StringsKt.toBooleanStrict((r3v0 '$this$toBooleanStrict' java.lang.String A[D('$this$toBooleanStrict' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0018 \-\> B:32:0x0019, CROSS_EDGE: B:34:0x0030 \-\> B:25:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_24;Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_25;
+Node_30 -> Node_31;
+Node_30 -> Node_33[style=dashed];
+Node_31 -> Node_25;
+Node_33 -> Node_34;
+Node_34 -> Node_25;
+Node_24 -> Node_26;
+Node_29 -> Node_30;
+}
+

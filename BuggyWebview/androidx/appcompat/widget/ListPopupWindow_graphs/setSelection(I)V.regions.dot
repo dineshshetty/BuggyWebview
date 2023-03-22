@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.appcompat.widget.ListPopupWindow.setSelection(I)V" {
+subgraph cluster_Region_803012151 {
+label = "R(2:1|(1:(2:4|(1:(1:6)))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|androidx.appcompat.widget.DropDownListView androidx.appcompat.widget.DropDownListView r0 = r2.mDropDownList\l}"];
+subgraph cluster_Region_163792669 {
+label = "R(1:(2:4|(1:(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_987415793 {
+label = "IF [B:15:0x0006, B:16:0x0008] THEN: R(2:4|(1:(1:6))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (isShowing() != false) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0008|ADDED_TO_REGION\l|if (r0 != null) goto L4\l}"];
+subgraph cluster_Region_118874096 {
+label = "R(2:4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|r0.setListSelectionHidden(false)\lr0.setSelection(r3)\l}"];
+subgraph cluster_Region_502645850 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1182758526 {
+label = "IF [B:18:0x0015] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|if (r0.getChoiceMode() != 0) goto L6\l}"];
+subgraph cluster_Region_236586432 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|r0.setItemChecked(r3, true)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001b|ORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.ListPopupWindow.setSelection((r2v0 'this' androidx.appcompat.widget.ListPopupWindow A[IMMUTABLE_TYPE, THIS]), (r3v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0015 \-\> B:20:0x001b, CROSS_EDGE: B:16:0x0008 \-\> B:20:0x001b, CROSS_EDGE: B:15:0x0006 \-\> B:20:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_20;
+Node_12 -> Node_14;
+Node_20 -> Node_13;
+Node_23 -> Node_13;
+Node_22 -> Node_13;
+Node_21 -> Node_13;
+}
+

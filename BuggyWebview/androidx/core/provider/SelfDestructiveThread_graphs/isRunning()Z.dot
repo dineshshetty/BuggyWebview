@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.provider.SelfDestructiveThread.isRunning()Z" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.Object r0 = r2.mLock\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|monitor\-enter(r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:4:0x0003, B:8:0x000a), top: B:13:0x0003 \}\lCatch: all \-\> 0x000c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0005|if (r2.mThread == null) goto L11\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0007|r1 = true\l}"];
+Node_8 [shape=record,label="{8\:\ 0x000a|TryCatch #0 \{, blocks: (B:4:0x0003, B:8:0x000a), top: B:13:0x0003 \}\lCatch: all \-\> 0x000c\lPHI: r1 \l  PHI: (r1v3 boolean) = (r1v2 boolean), (r1v4 boolean) binds: [B:7:0x0009, B:6:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit(r0)     \/\/ Catch: java.lang.Throwable \-\> Lc\l}"];
+Node_9 [shape=record,label="{9\:\ 0x000b|RETURN\l|return r1\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0009|r1 = false\l}"];
+Node_10 [shape=record,label="{10\:\ 0x000c|REMOVE\lExcHandler: all \-\> 0x000c\l|java.lang.Throwable r1 = move\-exception\l}"];
+Node_11 [shape=record,label="{11\:\ 0x000d|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x000c\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000e|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public boolean androidx.core.provider.SelfDestructiveThread.isRunning((r2v0 'this' androidx.core.provider.SelfDestructiveThread A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x000e \-\> B:1:?, CROSS_EDGE: B:7:0x0009 \-\> B:8:0x000a, CROSS_EDGE: B:13:0x0003 \-\> B:10:0x000c\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_13;
+Node_13 -> Node_4;
+Node_13 -> Node_10;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_14;
+Node_9 -> Node_1;
+Node_14 -> Node_10;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+}
+

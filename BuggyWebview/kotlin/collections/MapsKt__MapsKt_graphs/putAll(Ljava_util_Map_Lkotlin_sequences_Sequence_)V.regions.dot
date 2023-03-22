@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.collections.MapsKt__MapsKt.putAll(Ljava\/util\/Map;Lkotlin\/sequences\/Sequence;)V" {
+subgraph cluster_Region_303859112 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"pairs\")\ljava.util.Iterator r0 = r4.iterator()\l\l}"];
+subgraph cluster_LoopRegion_752104699 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0012|kotlin.Pair \lif (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_193584475 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0014|LOOP_END\lLOOP:0: B:11:0x000e\-\>B:13:0x0014\l|kotlin.Pair r1 = r0.next()\ljava.lang.Object java.lang.Object r2 = (K) r1.component1()\ljava.lang.Object java.lang.Object r1 = (V) r1.component2()\lr3.put(r2, r1)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000e|LOOP_START\lLOOP:0: B:11:0x000e\-\>B:13:0x0014\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0026|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0026}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.collections.MapsKt__MapsKt.putAll((r3v0 java.util.Map\<? super K, ? super V\> A[D('$this$putAll' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'pairs' kotlin.sequences.Sequence\<? extends kotlin.Pair\<? extends K, ? extends V\>\> A[D('pairs' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0014 \-\> B:11:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;\>(Ljava\/util\/Map\<\-TK;\-TV;\>;Lkotlin\/sequences\/Sequence\<+Lkotlin\/Pair\<+TK;+TV;\>;\>;)V\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r2v0. Raw type applied. Possible types: K, ? super K\l \-\> Type inference failed for r1v3. Raw type applied. Possible types: V, ? super V\}\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

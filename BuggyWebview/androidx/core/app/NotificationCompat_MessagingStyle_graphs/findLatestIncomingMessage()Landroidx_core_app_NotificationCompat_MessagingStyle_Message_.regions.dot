@@ -1,0 +1,89 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.MessagingStyle.findLatestIncomingMessage()Landroidx\/core\/app\/NotificationCompat$MessagingStyle$Message;" {
+subgraph cluster_Region_74676010 {
+label = "R(3:1|(2:3|(2:(1:8)|(1:11)))|(2:(2:16|17)|(1:18))) | DECL_VAR: java.util.List\<androidx.core.app.NotificationCompat$MessagingStyle$Message\> null\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|int int r0 = r3.mMessages.size() \- 1\l}"];
+subgraph cluster_LoopRegion_14043706 {
+label = "LOOP:0: (2:3|(2:(1:8)|(1:11)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0008|LOOP_START\lLOOP:0: B:23:0x0008\-\>B:29:0x0027\lPHI: r0 \l  PHI: (r0v3 'i' int) = (r0v2 'i' int), (r0v10 'i' int) binds: [B:22:0x0000, B:29:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1232445950 {
+label = "R(2:3|(2:(1:8)|(1:11)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000a|androidx.core.app.NotificationCompat$MessagingStyle$Message androidx.core.app.NotificationCompat.MessagingStyle.Message r1 = r3.mMessages.get(r0)\l}"];
+subgraph cluster_Region_1306454981 {
+label = "R(2:(1:8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1453344221 {
+label = "IF [B:25:0x0016, B:27:0x0024] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0016|if (r1.getPerson() != null) goto L5\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0024|ADDED_TO_REGION\l|if (android.text.TextUtils.isEmpty(r1.getPerson().getName()) == false) goto L7\l}"];
+subgraph cluster_Region_1679119017 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0026|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1608320546 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0027|LOOP_END\lLOOP:0: B:23:0x0008\-\>B:29:0x0027\l|r0\-\-\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1721854292 {
+label = "R(2:(2:16|17)|(1:18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_711969899 {
+label = "IF [B:31:0x0030] THEN: R(2:16|17) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0030|if (r3.mMessages.isEmpty() == false) goto L16\l}"];
+subgraph cluster_Region_4166468 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0032}"];
+Node_33 [shape=record,label="{33\:\ 0x0040|RETURN\l|return r3.mMessages.get(r0.size() \- 1)\l}"];
+}
+}
+subgraph cluster_Region_973455429 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0041|RETURN\l|return null\l}"];
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0018}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0026|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0027|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0027|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x002a|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002a}"];
+MethodNode[shape=record,label="{private androidx.core.app.NotificationCompat$MessagingStyle$Message androidx.core.app.NotificationCompat.MessagingStyle.findLatestIncomingMessage((r3v0 'this' androidx.core.app.NotificationCompat$MessagingStyle A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:29:0x0027 \-\> B:23:0x0008, CROSS_EDGE: B:25:0x0016 \-\> B:29:0x0027, CROSS_EDGE: B:33:0x0040 \-\> B:21:?, CROSS_EDGE: B:35:0x0042 \-\> B:21:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_37[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_38[style=dashed];
+Node_27 -> Node_36;
+Node_27 -> Node_39[style=dashed];
+Node_28 -> Node_21;
+Node_29 -> Node_23;
+Node_31 -> Node_32;
+Node_31 -> Node_34[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_21;
+Node_34 -> Node_21;
+Node_20 -> Node_22;
+Node_26 -> Node_27;
+Node_36 -> Node_28;
+Node_39 -> Node_29;
+Node_38 -> Node_29;
+Node_37 -> Node_30;
+Node_30 -> Node_31;
+}
+

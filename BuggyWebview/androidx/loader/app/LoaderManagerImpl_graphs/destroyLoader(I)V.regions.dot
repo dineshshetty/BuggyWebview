@@ -1,0 +1,99 @@
+digraph "CFG forandroidx.loader.app.LoaderManagerImpl.destroyLoader(I)V" {
+subgraph cluster_Region_59607499 {
+label = "R(1:(2:(1:17)|(1:(2:(1:15)|(3:(1:7)|8|(1:(1:10)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1254817590 {
+label = "R(2:(1:17)|(1:(2:(1:15)|(3:(1:7)|8|(1:(1:10))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1421775977 {
+label = "IF [B:21:0x0006] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0006|if (r2.mLoaderViewModel.isCreatingLoader() != false) goto L16\l}"];
+subgraph cluster_Region_75543508 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0055|throw new java.lang.IllegalStateException(\"Called while creating a loader\")\l}"];
+}
+}
+subgraph cluster_Region_1798091102 {
+label = "R(1:(2:(1:15)|(3:(1:7)|8|(1:(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1979895874 {
+label = "R(2:(1:15)|(3:(1:7)|8|(1:(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1446973239 {
+label = "IF [B:23:0x0010] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0010|if (android.os.Looper.getMainLooper() != android.os.Looper.myLooper()) goto L14\l}"];
+subgraph cluster_Region_1470109751 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x004d|throw new java.lang.IllegalStateException(\"destroyLoader must be called on the main thread\")\l}"];
+}
+}
+subgraph cluster_Region_1331114545 {
+label = "R(3:(1:7)|8|(1:(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1502148060 {
+label = "IF [B:25:0x0014] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0014|if (androidx.loader.app.LoaderManagerImpl.DEBUG != false) goto L7\l}"];
+subgraph cluster_Region_971550319 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0016|android.util.Log.v(androidx.loader.app.LoaderManagerImpl.TAG, \"destroyLoader in \" + r2 + \" of \" + r3)\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0034|androidx.loader.app.LoaderManagerImpl$LoaderInfo androidx.loader.app.LoaderManagerImpl.LoaderInfo r0 = r2.mLoaderViewModel.getLoader(r3)\l}"];
+subgraph cluster_Region_394287314 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1768576572 {
+label = "IF [B:28:0x003a] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x003a|if (r0 != null) goto L10\l}"];
+subgraph cluster_Region_315319653 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003c|r0.destroy(true)\lr2.mLoaderViewModel.removeLoader(r3)\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0008}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0012}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0045|ORIG_RETURN\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0046}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x004e}"];
+MethodNode[shape=record,label="{public void androidx.loader.app.LoaderManagerImpl.destroyLoader((r2v0 'this' androidx.loader.app.LoaderManagerImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 'id' int A[D('id' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x003a \-\> B:30:0x0045, CROSS_EDGE: B:25:0x0014 \-\> B:27:0x0034, CROSS_EDGE: B:32:0x004d \-\> B:19:?, CROSS_EDGE: B:34:0x0055 \-\> B:19:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.loader.app.LoaderManager.destroyLoader(int):void]\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_33;
+Node_34 -> Node_19;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_31;
+Node_32 -> Node_19;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_35[style=dashed];
+Node_29 -> Node_30;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_30 -> Node_19;
+Node_35 -> Node_19;
+Node_31 -> Node_32;
+Node_33 -> Node_34;
+}
+

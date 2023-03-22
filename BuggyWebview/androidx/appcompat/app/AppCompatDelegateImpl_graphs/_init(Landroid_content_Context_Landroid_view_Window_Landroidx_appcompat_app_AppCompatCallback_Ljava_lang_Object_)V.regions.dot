@@ -1,0 +1,73 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.\<init\>(Landroid\/content\/Context;Landroid\/view\/Window;Landroidx\/appcompat\/app\/AppCompatCallback;Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_574868730 {
+label = "R(5:1|(1:7)|(1:12)|(1:14)|15) | DECL_VAR: androidx.collection.SimpleArrayMap\<java.lang.String, java.lang.Integer\> null, java.lang.Integer value, androidx.appcompat.app.AppCompatActivity activity\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|r3.mFadeAnim = null\lr3.mHandleNativeActionModes = true\lr3.mLocalNightMode = \-100\lr3.mInvalidatePanelMenuRunnable = new androidx.appcompat.app.AppCompatDelegateImpl.RunnableC00372()\lr3.mContext = r4\lr3.mAppCompatCallback = r6\lr3.mHost = r7\l}"];
+subgraph cluster_IfRegion_810986483 {
+label = "IF [B:21:0x001c, B:23:0x0020, B:25:0x0026] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001c|if (r3.mLocalNightMode == (\-100)) goto L3\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0020|ADDED_TO_REGION\l|if ((r7 instanceof android.app.Dialog) != false) goto L5\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0026|ADDED_TO_REGION\l|if ((r1 = tryUnwrapContext()) != null) goto L7\l}"];
+subgraph cluster_Region_1629083793 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0028|r3.mLocalNightMode = r1.getDelegate().getLocalNightMode()\l}"];
+}
+}
+subgraph cluster_IfRegion_354139828 {
+label = "IF [B:28:0x0034, B:30:0x0046] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0034|if (r3.mLocalNightMode == (\-100)) goto L10\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0046|ADDED_TO_REGION\l|if ((r1 = (r0 = androidx.appcompat.app.AppCompatDelegateImpl.sLocalNightModes).get(r7.getClass().getName())) != null) goto L12\l}"];
+subgraph cluster_Region_688096497 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0048|r3.mLocalNightMode = r1.intValue()\lr0.remove(r7.getClass().getName())\l}"];
+}
+}
+subgraph cluster_IfRegion_739228433 {
+label = "IF [B:32:0x0059] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0059|if (r5 != null) goto L14\l}"];
+subgraph cluster_Region_66925393 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x005b|attachToWindow(r5)\l}"];
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x005e|androidx.appcompat.widget.AppCompatDrawableManager.preload()\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001e}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0022}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0032}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0036}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0061}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.app.AppCompatDelegateImpl.\<init\>((r3v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'window' android.view.Window A[D('window' android.view.Window), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'callback' androidx.appcompat.app.AppCompatCallback A[D('callback' androidx.appcompat.app.AppCompatCallback), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'host' java.lang.Object A[D('host' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x0059 \-\> B:34:0x005e, CROSS_EDGE: B:30:0x0046 \-\> B:32:0x0059, CROSS_EDGE: B:28:0x0034 \-\> B:32:0x0059, CROSS_EDGE: B:25:0x0026 \-\> B:27:0x0032, CROSS_EDGE: B:23:0x0020 \-\> B:27:0x0032, CROSS_EDGE: B:21:0x001c \-\> B:27:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_27[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_27[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_28 -> Node_32[style=dashed];
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_34[style=dashed];
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_18 -> Node_20;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_35 -> Node_19;
+}
+

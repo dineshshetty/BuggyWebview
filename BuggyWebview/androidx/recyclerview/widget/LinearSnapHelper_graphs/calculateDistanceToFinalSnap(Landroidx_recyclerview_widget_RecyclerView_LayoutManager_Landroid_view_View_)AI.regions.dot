@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearSnapHelper.calculateDistanceToFinalSnap(Landroidx\/recyclerview\/widget\/RecyclerView$LayoutManager;Landroid\/view\/View;)[I" {
+subgraph cluster_Region_1190036253 {
+label = "R(4:1|(1:3)(1:10)|(1:6)(1:9)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int[] int[] r0 = new int[2]\l}"];
+subgraph cluster_IfRegion_2145651818 {
+label = "IF [B:3:0x0008] THEN: R(1:3) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r5.canScrollHorizontally() != false) goto L3\l}"];
+subgraph cluster_Region_1067129192 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|r0[0] = distanceToCenter(r5, r6, getHorizontalHelper(r5))\l}"];
+}
+subgraph cluster_Region_1670834367 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|r0[0] = 0\l}"];
+}
+}
+subgraph cluster_IfRegion_777752378 {
+label = "IF [B:7:0x001d] THEN: R(1:6) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r5.canScrollVertically() != false) goto L6\l}"];
+subgraph cluster_Region_1336098288 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|r0[1] = distanceToCenter(r5, r6, getVerticalHelper(r5))\l}"];
+}
+subgraph cluster_Region_2103945586 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002b|r0[1] = 0\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x002d|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0018}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int[] androidx.recyclerview.widget.LinearSnapHelper.calculateDistanceToFinalSnap((r4v0 'this' androidx.recyclerview.widget.LinearSnapHelper A[IMMUTABLE_TYPE, THIS]), (r5v0 'layoutManager' androidx.recyclerview.widget.RecyclerView$LayoutManager A[D('layoutManager' androidx.recyclerview.widget.RecyclerView$LayoutManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'targetView' android.view.View A[D('targetView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x002b \-\> B:10:0x002d, CROSS_EDGE: B:5:0x0016 \-\> B:6:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.SnapHelper.calculateDistanceToFinalSnap(androidx.recyclerview.widget.RecyclerView$LayoutManager, android.view.View):int[]]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+}
+

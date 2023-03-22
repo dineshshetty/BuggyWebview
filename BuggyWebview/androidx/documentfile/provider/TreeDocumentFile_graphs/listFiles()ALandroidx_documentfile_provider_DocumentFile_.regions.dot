@@ -1,0 +1,115 @@
+digraph "CFG forandroidx.documentfile.provider.TreeDocumentFile.listFiles()[Landroidx\/documentfile\/provider\/DocumentFile;" {
+subgraph cluster_Region_499610441 {
+label = "R(2:1|(4:(2:3|(1:6))|9|(1:12)|14))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.content.ContentResolver android.content.ContentResolver r0 = r10.mContext.getContentResolver()\landroid.net.Uri android.net.Uri r1 = r10.mUri\landroid.net.Uri android.net.Uri r7 = android.provider.DocumentsContract.buildChildDocumentsUriUsingTree(r1, android.provider.DocumentsContract.getDocumentId(r1))\ljava.util.ArrayList java.util.ArrayList\<android.net.Uri\> r1 = new java.util.ArrayList\<\>()\landroid.database.Cursor r9 = null\l}"];
+subgraph cluster_TryCatchRegion_747411223 {
+label = "Try: R(4:(2:3|(1:6))|9|(1:12)|14) finally: R(3:17|18|19)";
+node [shape=record,color=blue];
+subgraph cluster_Region_405988271 {
+label = "R(4:(2:3|(1:6))|9|(1:12)|14)";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1659181421 {
+label = "Try: R(2:3|(1:6)) catches: R(2:20|21)";
+node [shape=record,color=blue];
+subgraph cluster_Region_99406822 {
+label = "R(2:3|(1:6))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|TRY_ENTER\lTryCatch #1 \{Exception \-\> 0x0044, blocks: (B:3:0x0017, B:4:0x0027, B:6:0x002d), top: B:22:0x0017, outer: #0 \}\lCatch: all \-\> 0x0042, Exception \-\> 0x0044\l|r9 = r0.query(r7, new java.lang.String[]\{\"document_id\"\}, null, null, null)     \/\/ Catch: java.lang.Throwable \-\> L42 java.lang.Exception \-\> L44\l}"];
+subgraph cluster_LoopRegion_1566118167 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002b|if (r9.moveToNext() != false) goto L6\l}"];
+subgraph cluster_Region_718187135 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002d|TRY_LEAVE\lLOOP_END\lTryCatch #1 \{Exception \-\> 0x0044, blocks: (B:3:0x0017, B:4:0x0027, B:6:0x002d), top: B:22:0x0017, outer: #0 \}\lLOOP:0: B:4:0x0027\-\>B:6:0x002d\lCatch: all \-\> 0x0042, Exception \-\> 0x0044\l|java.lang.String java.lang.String r1 = r9.getString(0)     \/\/ Catch: java.lang.Throwable \-\> L42 java.lang.Exception \-\> L44\landroid.net.Uri android.net.Uri r2 = android.provider.DocumentsContract.buildDocumentUriUsingTree(r10.mUri, r1)     \/\/ Catch: java.lang.Throwable \-\> L42 java.lang.Exception \-\> L44\lr1.add(r2)     \/\/ Catch: java.lang.Throwable \-\> L42 java.lang.Exception \-\> L44\l}"];
+}
+}
+}
+subgraph cluster_Region_1343187625 {
+label = "R(2:20|21) | ExcHandler: Exception \-\> 0x0044\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0044|ExcHandler: Exception \-\> 0x0044\lPHI: r9 \l  PHI: (r9v1 'c' android.database.Cursor) = (r9v0 'c' android.database.Cursor), (r9v4 'c' android.database.Cursor) binds: [B:22:0x0017, B:23:?] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0045|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0042, blocks: (B:3:0x0017, B:4:0x0027, B:6:0x002d, B:13:0x0045), top: B:22:0x0017, inners: #1 \}\lCatch: all \-\> 0x0042\l|android.util.Log.w(\"DocumentFile\", \"Failed query: \" + r1)     \/\/ Catch: java.lang.Throwable \-\> L42\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x005d|android.net.Uri[] android.net.Uri[] r1 = (android.net.Uri[]) r1.toArray(new android.net.Uri[r1.size()])\landroidx.documentfile.provider.DocumentFile[] androidx.documentfile.provider.DocumentFile[] r2 = new androidx.documentfile.provider.DocumentFile[r1.length]\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_43763089 {
+label = "LOOP:1: (1:12)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x006e|if (r3 \< r1.length) goto L12\l}"];
+subgraph cluster_Region_230384118 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0070|LOOP_END\lLOOP:1: B:16:0x006d\-\>B:18:0x0070\l|r2[r3] = new androidx.documentfile.provider.TreeDocumentFile(r10, r10.mContext, r1[r3])\lr3++\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x007e|RETURN\l|return r2\l}"];
+}
+subgraph cluster_Region_1045010139 {
+label = "R(3:17|18|19) | ExcHandler: all \-\> 0x0042\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0042|ExcHandler: all \-\> 0x0042\lPHI: r9 \l  PHI: (r9v2 'c' android.database.Cursor) = (r9v0 'c' android.database.Cursor), (r9v4 'c' android.database.Cursor) binds: [B:22:0x0017, B:23:?] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,label="{20\:\ 0x007f|FINALLY_INSNS\l|closeQuietly(r9)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0082|throw r1\l}"];
+}
+}
+}
+subgraph cluster_Region_1343187625 {
+label = "R(2:20|21) | ExcHandler: Exception \-\> 0x0044\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0044|ExcHandler: Exception \-\> 0x0044\lPHI: r9 \l  PHI: (r9v1 'c' android.database.Cursor) = (r9v0 'c' android.database.Cursor), (r9v4 'c' android.database.Cursor) binds: [B:22:0x0017, B:23:?] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0045|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0042, blocks: (B:3:0x0017, B:4:0x0027, B:6:0x002d, B:13:0x0045), top: B:22:0x0017, inners: #1 \}\lCatch: all \-\> 0x0042\l|android.util.Log.w(\"DocumentFile\", \"Failed query: \" + r1)     \/\/ Catch: java.lang.Throwable \-\> L42\l}"];
+}
+subgraph cluster_Region_1045010139 {
+label = "R(3:17|18|19) | ExcHandler: all \-\> 0x0042\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0042|ExcHandler: all \-\> 0x0042\lPHI: r9 \l  PHI: (r9v2 'c' android.database.Cursor) = (r9v0 'c' android.database.Cursor), (r9v4 'c' android.database.Cursor) binds: [B:22:0x0017, B:23:?] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,label="{20\:\ 0x007f|FINALLY_INSNS\l|closeQuietly(r9)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0082|throw r1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0017|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0027|LOOP_START\lTryCatch #1 \{Exception \-\> 0x0044, blocks: (B:3:0x0017, B:4:0x0027, B:6:0x002d), top: B:22:0x0017, outer: #0 \}\lLOOP:0: B:4:0x0027\-\>B:6:0x002d\lCatch: all \-\> 0x0042, Exception \-\> 0x0044\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x003e|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003e|DONT_GENERATE\lPHI: r9 \l  PHI: (r9v3 'c' android.database.Cursor) = (r9v1 'c' android.database.Cursor), (r9v4 'c' android.database.Cursor) binds: [B:13:0x0045, B:24:0x003e] A[DONT_GENERATE, DONT_INLINE]\l|closeQuietly(r9)\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x006d|LOOP_START\lLOOP:1: B:16:0x006d\-\>B:18:0x0070\lPHI: r3 \l  PHI: (r3v3 'i' int) = (r3v2 'i' int), (r3v4 'i' int) binds: [B:15:0x005d, B:18:0x0070] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x007e|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public androidx.documentfile.provider.DocumentFile[] androidx.documentfile.provider.TreeDocumentFile.listFiles((r10v0 'this' androidx.documentfile.provider.TreeDocumentFile A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:6:0x002d \-\> B:4:0x0027, BACK_EDGE: B:18:0x0070 \-\> B:16:0x006d, CROSS_EDGE: B:13:0x0045 \-\> B:9:0x003e, CROSS_EDGE: B:21:0x0082 \-\> B:1:?, CROSS_EDGE: B:22:0x0017 \-\> B:10:0x0042, CROSS_EDGE: B:22:0x0017 \-\> B:12:0x0044\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0042, blocks: (B:3:0x0017, B:4:0x0027, B:6:0x002d, B:13:0x0045), top: B:22:0x0017, inners: #1 \}, TryCatch #1 \{Exception \-\> 0x0044, blocks: (B:3:0x0017, B:4:0x0027, B:6:0x002d), top: B:22:0x0017, outer: #0 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.documentfile.provider.DocumentFile.listFiles():androidx.documentfile.provider.DocumentFile[]]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_22;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_24[style=dashed];
+Node_6 -> Node_4;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_25[style=dashed];
+Node_18 -> Node_16;
+Node_19 -> Node_1;
+Node_10 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_1;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_10 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_1;
+Node_0 -> Node_2;
+Node_22 -> Node_3;
+Node_22 -> Node_10;
+Node_22 -> Node_12;
+Node_4 -> Node_5;
+Node_4 -> Node_23;
+Node_24 -> Node_9;
+Node_9 -> Node_15;
+Node_16 -> Node_17;
+Node_25 -> Node_19;
+Node_23 -> Node_12;
+Node_23 -> Node_10;
+}
+

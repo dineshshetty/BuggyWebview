@@ -1,0 +1,51 @@
+digraph "CFG forcom.google.android.material.transition.TransitionUtils.transform(Landroid\/graphics\/Canvas;Landroid\/graphics\/Rect;FFFILcom\/google\/android\/material\/transition\/TransitionUtils$CanvasOperation;)V" {
+subgraph cluster_Region_2046803820 {
+label = "R(1:(2:(1:2)|(3:4|(1:6)|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_963201653 {
+label = "R(2:(1:2)|(3:4|(1:6)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_249403871 {
+label = "IF [B:20:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|if (r7 \<= 0) goto L2\l}"];
+subgraph cluster_Region_1176620017 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0002|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1373975276 {
+label = "R(3:4|(1:6)|7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0003|int int r0 = r2.save()\lr2.translate(r4, r5)\lr2.scale(r6, r6)\l}"];
+subgraph cluster_IfRegion_1109461126 {
+label = "IF [B:23:0x000f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000f|if (r7 \< 255) goto L6\l}"];
+subgraph cluster_Region_828950613 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0011|saveLayerAlphaCompat(r2, r3, r7)\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0014|r8.run(r2)\lr2.restoreToCount(r0)\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001a}"];
+MethodNode[shape=record,label="{public static void com.google.android.material.transition.TransitionUtils.transform((r2v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'bounds' android.graphics.Rect A[D('bounds' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'dx' float A[D('dx' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'dy' float A[D('dy' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'scale' float A[D('scale' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'alpha' int A[D('alpha' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'op' com.google.android.material.transition.TransitionUtils$CanvasOperation A[D('op' com.google.android.material.transition.TransitionUtils$CanvasOperation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x001a \-\> B:19:?, CROSS_EDGE: B:23:0x000f \-\> B:25:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_19;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_18 -> Node_20;
+Node_26 -> Node_19;
+}
+

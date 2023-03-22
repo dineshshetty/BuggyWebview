@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.collection.CircularIntArray.getFirst()I" {
+subgraph cluster_Region_1460072783 {
+label = "R(2:1|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r2.mHead\l}"];
+subgraph cluster_Region_1545933268 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1863695276 {
+label = "IF [B:3:0x0004] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 == r2.mTail) goto L6\l}"];
+subgraph cluster_Region_111298459 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|throw new java.lang.ArrayIndexOutOfBoundsException()\l}"];
+}
+}
+subgraph cluster_Region_1085310261 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|RETURN\l|return r2.mElements[r0]\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000b}"];
+MethodNode[shape=record,label="{public int androidx.collection.CircularIntArray.getFirst((r2v0 'this' androidx.collection.CircularIntArray A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0010 \-\> B:1:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_7 -> Node_1;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

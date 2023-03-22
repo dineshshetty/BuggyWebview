@@ -1,0 +1,98 @@
+digraph "CFG forandroidx.core.location.LocationManagerCompat.hasProvider(Landroid\/location\/LocationManager;Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_42661487 {
+label = "R(1:(2:(1:4)|(1:(2:(1:8)|(1:(1:12))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1913943699 {
+label = "R(2:(1:4)|(1:(2:(1:8)|(1:(1:12)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_819845863 {
+label = "IF [B:23:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 31) goto L3\l}"];
+subgraph cluster_Region_2023886986 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000a|RETURN\l|return androidx.core.location.LocationManagerCompat.Api31Impl.hasProvider(r3, r4)\l}"];
+}
+}
+subgraph cluster_Region_760133759 {
+label = "R(1:(2:(1:8)|(1:(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2084565931 {
+label = "R(2:(1:8)|(1:(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_577438761 {
+label = "IF [B:27:0x0014] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0014|if (r3.getAllProviders().contains(r4) == true) goto L8\l}"];
+subgraph cluster_Region_1252357806 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0016|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_309375685 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_298957195 {
+label = "Try: R(1:12) catches: R(1:17)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1801567700 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001c|RETURN\l|return r3.getProvider(r4) != null\l}"];
+}
+subgraph cluster_Region_168867344 {
+label = "R(1:17) | ExcHandler: SecurityException \-\> 0x0021\l";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0022|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_168867344 {
+label = "R(1:17) | ExcHandler: SecurityException \-\> 0x0021\l";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0022|RETURN\l|return false\l}"];
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0000}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0006}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000b}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0017}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0018|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0018|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{SecurityException \-\> 0x0021, blocks: (B:30:0x0018), top: B:37:0x0018 \}\lCatch: SecurityException \-\> 0x0021\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001f|ORIG_RETURN\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ ?|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0021|ExcHandler: SecurityException \-\> 0x0021\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.location.LocationManagerCompat.hasProvider((r3v0 'locationManager' android.location.LocationManager A[D('locationManager' android.location.LocationManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'provider' java.lang.String A[D('provider' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x0016 \-\> B:21:?, CROSS_EDGE: B:34:0x0020 \-\> B:21:?, CROSS_EDGE: B:31:0x001c \-\> B:34:0x0020, CROSS_EDGE: B:36:0x0022 \-\> B:21:?, CROSS_EDGE: B:37:0x0018 \-\> B:35:0x0021\lINLINE_NOT_NEEDED\lTryCatch #0 \{SecurityException \-\> 0x0021, blocks: (B:30:0x0018), top: B:37:0x0018 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_23 -> Node_24;
+Node_23 -> Node_26[style=dashed];
+Node_25 -> Node_21;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_21;
+Node_31 -> Node_33;
+Node_31 -> Node_39;
+Node_36 -> Node_21;
+Node_36 -> Node_21;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_29 -> Node_37;
+Node_37 -> Node_30;
+Node_37 -> Node_35;
+Node_30 -> Node_31;
+Node_30 -> Node_38;
+Node_33 -> Node_21;
+Node_39 -> Node_21;
+Node_38 -> Node_35;
+Node_35 -> Node_36;
+}
+

@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.AutoNightModeManager.cleanup()V" {
+subgraph cluster_Region_1005700548 {
+label = "R(1:(1:(2:(1:4)|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1873144074 {
+label = "R(1:(2:(1:4)|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_709616851 {
+label = "IF [B:15:0x0002] THEN: R(2:(1:4)|5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r2.mReceiver != null) goto L3\l}"];
+subgraph cluster_Region_1548096682 {
+label = "R(2:(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1764504835 {
+label = "Try: R(1:4) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_696347797 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IllegalArgumentException \-\> 0x000e, blocks: (B:16:0x0004), top: B:21:0x0004 \}\lCatch: IllegalArgumentException \-\> 0x000e\l|androidx.appcompat.app.AppCompatDelegateImpl.this.mContext.unregisterReceiver(r2.mReceiver)     \/\/ Catch: java.lang.IllegalArgumentException \-\> Le\l}"];
+}
+subgraph cluster_Region_1545173002 {
+label = "R(0) | ExcHandler: IllegalArgumentException \-\> 0x000e\l";
+node [shape=record,color=blue];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x000f|r2.mReceiver = null\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1545173002 {
+label = "R(0) | ExcHandler: IllegalArgumentException \-\> 0x000e\l";
+node [shape=record,color=blue];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0004|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0012|ORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e|ExcHandler: IllegalArgumentException \-\> 0x000e\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.app.AppCompatDelegateImpl.AutoNightModeManager.cleanup((r2v0 'this' androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x000f \-\> B:20:0x0012, CROSS_EDGE: B:18:0x000e \-\> B:19:0x000f, CROSS_EDGE: B:21:0x0004 \-\> B:18:0x000e\lINLINE_NOT_NEEDED\lTryCatch #0 \{IllegalArgumentException \-\> 0x000e, blocks: (B:16:0x0004), top: B:21:0x0004 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_21;
+Node_15 -> Node_23[style=dashed];
+Node_16 -> Node_19;
+Node_16 -> Node_22;
+Node_19 -> Node_20;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_21 -> Node_16;
+Node_21 -> Node_18;
+Node_20 -> Node_13;
+Node_22 -> Node_18;
+Node_18 -> Node_19;
+Node_23 -> Node_13;
+}
+

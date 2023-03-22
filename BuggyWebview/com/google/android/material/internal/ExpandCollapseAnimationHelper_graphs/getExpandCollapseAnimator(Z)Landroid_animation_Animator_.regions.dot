@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.material.internal.ExpandCollapseAnimationHelper.getExpandCollapseAnimator(Z)Landroid\/animation\/Animator;" {
+subgraph cluster_Region_875701611 {
+label = "R(4:1|(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|android.graphics.Rect android.graphics.Rect r0 = com.google.android.material.internal.ViewUtils.calculateRectFromBounds(r6.collapsedView, r6.collapsedViewOffsetY)\landroid.graphics.Rect android.graphics.Rect r1 = com.google.android.material.internal.ViewUtils.calculateRectFromBounds(r6.expandedView, r6.expandedViewOffsetY)\landroid.graphics.Rect final android.graphics.Rect r2 = new android.graphics.Rect(r0)\landroid.animation.ValueAnimator android.animation.ValueAnimator r3 = android.animation.ValueAnimator.ofObject(new com.google.android.material.internal.RectEvaluator(r2), r0, r1)\lr3.addUpdateListener(new com.google.android.material.internal.ExpandCollapseAnimationHelper$$ExternalSyntheticLambda0())\landroid.animation.ValueAnimator$AnimatorUpdateListener android.animation.ValueAnimator.AnimatorUpdateListener r4 = r6.additionalUpdateListener\l}"];
+subgraph cluster_IfRegion_1954483821 {
+label = "IF [B:10:0x0031] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0031|if (r4 != null) goto L3\l}"];
+subgraph cluster_Region_2136984788 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0033|r3.addUpdateListener(r4)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0036|r3.setDuration(r6.duration)\lr3.setInterpolator(com.google.android.material.internal.ReversableAnimatedValueInterpolator.m59of(r7, com.google.android.material.animation.AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR))\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0044|RETURN\l|return r3\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.animation.Animator com.google.android.material.internal.ExpandCollapseAnimationHelper.getExpandCollapseAnimator((r6v0 'this' com.google.android.material.internal.ExpandCollapseAnimationHelper A[IMMUTABLE_TYPE, THIS]), (r7v0 'expand' boolean A[D('expand' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0031 \-\> B:12:0x0036\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

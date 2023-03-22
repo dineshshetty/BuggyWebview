@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.fragment.app.Fragment.setHasOptionsMenu(Z)V" {
+subgraph cluster_Region_532420016 {
+label = "R(1:(1:(2:3|(1:(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1993788409 {
+label = "R(1:(2:3|(1:(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_561197424 {
+label = "IF [B:16:0x0002] THEN: R(2:3|(1:(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if (r1.mHasMenu != r2) goto L3\l}"];
+subgraph cluster_Region_1345704391 {
+label = "R(2:3|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|r1.mHasMenu = r2\l}"];
+subgraph cluster_Region_794513380 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1871892725 {
+label = "IF [B:18:0x000a, B:20:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|if (isAdded() != false) goto L5\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0010|ADDED_TO_REGION\l|if (isHidden() == false) goto L7\l}"];
+subgraph cluster_Region_1465025734 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0012|r1.mHost.onSupportInvalidateOptionsMenu()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000c}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0017|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.setHasOptionsMenu((r1v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r2v0 'hasMenu' boolean A[D('hasMenu' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0010 \-\> B:22:0x0017, CROSS_EDGE: B:18:0x000a \-\> B:22:0x0017, CROSS_EDGE: B:16:0x0002 \-\> B:22:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_24[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_25[style=dashed];
+Node_21 -> Node_22;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_19 -> Node_20;
+Node_22 -> Node_14;
+Node_25 -> Node_14;
+Node_24 -> Node_14;
+Node_23 -> Node_14;
+}
+

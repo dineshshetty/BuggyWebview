@@ -1,0 +1,51 @@
+digraph "CFG forkotlin.collections.builders.MapBuilder.Itr.initNext$kotlin_stdlib()V" {
+subgraph cluster_Region_2070451398 {
+label = "R(1:(2:3|(1:5)(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1252313826 {
+label = "LOOP:0: (2:3|(1:5)(1:7))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|if (r2.index \< ((kotlin.collections.builders.MapBuilder) r2.map).length) goto L3\l}"];
+subgraph cluster_Region_1093562632 {
+label = "R(2:3|(1:5)(1:7))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000a|int[] int[] r0 = ((kotlin.collections.builders.MapBuilder) r2.map).presenceArray\lint int r1 = r2.index\l}"];
+subgraph cluster_IfRegion_1654042543 {
+label = "IF [B:16:0x0014] THEN: R(1:5) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0014|if (r0[r1] \< 0) goto L5\l}"];
+subgraph cluster_Region_1893216584 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0016|LOOP_END\lLOOP:0: B:13:0x0000\-\>B:17:0x0016\l|r2.index = r1 + 1\l}"];
+}
+subgraph cluster_Region_1181855401 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001b|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000|LOOP_START\lLOOP:0: B:13:0x0000\-\>B:17:0x0016\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001b|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001b|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final void kotlin.collections.builders.MapBuilder.Itr.initNext$kotlin_stdlib((r2v0 'this' kotlin.collections.builders.MapBuilder$Itr\<K, V\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x0016 \-\> B:13:0x0000, CROSS_EDGE: B:14:0x0008 \-\> B:18:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_13;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_19 -> Node_18;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+}
+

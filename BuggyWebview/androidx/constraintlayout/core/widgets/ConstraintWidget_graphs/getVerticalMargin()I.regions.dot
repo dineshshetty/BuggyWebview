@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.ConstraintWidget.getVerticalMargin()I" {
+subgraph cluster_Region_419162748 {
+label = "R(2:2|(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0003|int r0 = r2.mLeft != null ? 0 + r2.mTop.mMargin : 0\l}"];
+subgraph cluster_Region_692540121 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_55738944 {
+label = "IF [B:16:0x000c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000c|if (r2.mRight != null) goto L6\l}"];
+subgraph cluster_Region_939343291 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|RETURN\lORIG_RETURN\l|return r0 + r2.mBottom.mMargin\l}"];
+}
+}
+subgraph cluster_Region_729112867 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0005}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000a|PHI: r0 \l  PHI: (r0v1 'margin' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000e}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.constraintlayout.core.widgets.ConstraintWidget.getVerticalMargin((r2v0 'this' androidx.constraintlayout.core.widgets.ConstraintWidget A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000c \-\> B:18:0x0013, CROSS_EDGE: B:13:0x0003 \-\> B:15:0x000a\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+}
+

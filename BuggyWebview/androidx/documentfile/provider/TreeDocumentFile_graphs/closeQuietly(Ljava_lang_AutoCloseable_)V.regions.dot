@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.documentfile.provider.TreeDocumentFile.closeQuietly(Ljava\/lang\/AutoCloseable;)V" {
+subgraph cluster_Region_710858834 {
+label = "R(1:(1:(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_327897873 {
+label = "R(1:(1:(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1841632983 {
+label = "IF [B:2:0x0000] THEN: R(1:(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r1 != null) goto L4\l}"];
+subgraph cluster_Region_548308974 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_2087606241 {
+label = "Try: R(1:5) catches: R(2:8|9), R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_892637350 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|TRY_ENTER\lTRY_LEAVE\lTryCatch #2 \{RuntimeException \-\> 0x0008, Exception \-\> 0x0006, blocks: (B:3:0x0002), top: B:10:0x0002 \}\lCatch: Exception \-\> 0x0006, RuntimeException \-\> 0x0008\l|r1.close()     \/\/ Catch: java.lang.Exception \-\> L6 java.lang.RuntimeException \-\> L8\l}"];
+}
+subgraph cluster_Region_1887587193 {
+label = "R(2:8|9) | ExcHandler: RuntimeException \-\> 0x0008\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0008|ExcHandler: RuntimeException \-\> 0x0008\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0009|throw r0\l}"];
+}
+subgraph cluster_Region_608646000 {
+label = "R(0) | ExcHandler: Exception \-\> 0x0006\l";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1887587193 {
+label = "R(2:8|9) | ExcHandler: RuntimeException \-\> 0x0008\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0008|ExcHandler: RuntimeException \-\> 0x0008\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0009|throw r0\l}"];
+}
+subgraph cluster_Region_608646000 {
+label = "R(0) | ExcHandler: Exception \-\> 0x0006\l";
+node [shape=record,color=blue];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x000a|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0002|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0006|ExcHandler: Exception \-\> 0x0006\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void androidx.documentfile.provider.TreeDocumentFile.closeQuietly((r1v0 'closeable' java.lang.AutoCloseable A[D('closeable' java.lang.AutoCloseable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0002 \-\> B:9:0x000a, CROSS_EDGE: B:8:0x0009 \-\> B:1:?, CROSS_EDGE: B:5:0x0006 \-\> B:9:0x000a, CROSS_EDGE: B:10:0x0002 \-\> B:7:0x0008, CROSS_EDGE: B:10:0x0002 \-\> B:5:0x0006\lINLINE_NOT_NEEDED\lTryCatch #2 \{RuntimeException \-\> 0x0008, Exception \-\> 0x0006, blocks: (B:3:0x0002), top: B:10:0x0002 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_9[style=dashed];
+Node_2 -> Node_10;
+Node_3 -> Node_11;
+Node_3 -> Node_12;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_9 -> Node_1;
+Node_10 -> Node_3;
+Node_10 -> Node_7;
+Node_10 -> Node_5;
+Node_11 -> Node_7;
+Node_11 -> Node_5;
+Node_12 -> Node_1;
+Node_5 -> Node_13;
+Node_13 -> Node_1;
+}
+

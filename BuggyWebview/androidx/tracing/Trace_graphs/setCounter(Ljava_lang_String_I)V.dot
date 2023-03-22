@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.tracing.Trace.setCounter(Ljava\/lang\/String;I)V" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000|TRY_ENTER\lTryCatch #2 \{NoClassDefFoundError \-\> 0x0009, NoSuchMethodError \-\> 0x000b, blocks: (B:16:0x0000, B:18:0x0004), top: B:26:0x0000 \}\lCatch: NoClassDefFoundError \-\> 0x0009, NoSuchMethodError \-\> 0x000b\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (androidx.tracing.Trace.sTraceCounterMethod != null) goto L8\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0004|TRY_LEAVE\lTryCatch #2 \{NoClassDefFoundError \-\> 0x0009, NoSuchMethodError \-\> 0x000b, blocks: (B:16:0x0000, B:18:0x0004), top: B:26:0x0000 \}\lCatch: NoClassDefFoundError \-\> 0x0009, NoSuchMethodError \-\> 0x000b\l|androidx.tracing.TraceApi29Impl.setCounter(r1, r2)     \/\/ Catch: java.lang.NoClassDefFoundError \-\> L9 java.lang.NoSuchMethodError \-\> Lb\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0007|RETURN\l|return\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_24 [shape=record,label="{24\:\ 0x000c|setCounterFallback(r1, r2)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000f|RETURN\l|return\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0009|ExcHandler: NoClassDefFoundError \-\> 0x0009\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000b|ExcHandler: NoSuchMethodError \-\> 0x000b\l}"];
+MethodNode[shape=record,label="{public static void androidx.tracing.Trace.setCounter((r1v0 'counterName' java.lang.String A[D('counterName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'counterValue' int A[D('counterValue' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x000f \-\> B:15:?, CROSS_EDGE: B:23:0x000b \-\> B:24:0x000c, CROSS_EDGE: B:17:0x0002 \-\> B:24:0x000c, CROSS_EDGE: B:26:0x0000 \-\> B:21:0x0009, CROSS_EDGE: B:26:0x0000 \-\> B:23:0x000b\lINLINE_NOT_NEEDED\lTryCatch #2 \{NoClassDefFoundError \-\> 0x0009, NoSuchMethodError \-\> 0x000b, blocks: (B:16:0x0000, B:18:0x0004), top: B:26:0x0000 \}\l}"];
+MethodNode -> Node_14;Node_14 -> Node_26;
+Node_26 -> Node_16;
+Node_26 -> Node_21;
+Node_26 -> Node_23;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_24;
+Node_18 -> Node_19;
+Node_18 -> Node_27;
+Node_19 -> Node_15;
+Node_27 -> Node_21;
+Node_27 -> Node_23;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_21 -> Node_24;
+Node_23 -> Node_24;
+}
+

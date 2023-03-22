@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuAdapter.findExpandedIndex()V" {
+subgraph cluster_Region_124788311 {
+label = "R(3:1|(2:3|(2:5|(2:(2:9|10)|(1:7))))|13)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|androidx.appcompat.view.menu.MenuItemImpl androidx.appcompat.view.menu.MenuItemImpl r0 = r5.mAdapterMenu.getExpandedItem()\l}"];
+subgraph cluster_IfRegion_803424382 {
+label = "IF [B:18:0x0006] THEN: R(2:3|(2:5|(2:(2:9|10)|(1:7)))) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_805304414 {
+label = "R(2:3|(2:5|(2:(2:9|10)|(1:7))))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0008|java.util.ArrayList java.util.ArrayList\<androidx.appcompat.view.menu.MenuItemImpl\> r1 = r5.mAdapterMenu.getNonActionItems()\lint int r2 = r1.size()\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_493864089 {
+label = "LOOP:0: (2:5|(2:(2:9|10)|(1:7)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0013|LOOP_START\lLOOP:0: B:20:0x0013\-\>B:25:0x0020\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:19:0x0008, B:25:0x0020] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L5\l}"];
+subgraph cluster_Region_679135568 {
+label = "R(2:5|(2:(2:9|10)|(1:7)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|androidx.appcompat.view.menu.MenuItemImpl androidx.appcompat.view.menu.MenuItemImpl r4 = r1.get(r3)\l}"];
+subgraph cluster_Region_1980076184 {
+label = "R(2:(2:9|10)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1041733731 {
+label = "IF [B:22:0x001b] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001b|if (r4 == r0) goto L8\l}"];
+subgraph cluster_Region_1339336054 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001d|r5.mExpandedIndex = r3\l}"];
+Node_24 [shape=record,label="{24\:\ 0x001f|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_532255703 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0020|LOOP_END\lLOOP:0: B:20:0x0013\-\>B:25:0x0020\l|r3++\l}"];
+}
+}
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0023|r5.mExpandedIndex = \-1\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001d|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0023|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0026}"];
+MethodNode[shape=record,label="{void androidx.appcompat.view.menu.MenuAdapter.findExpandedIndex((r5v0 'this' androidx.appcompat.view.menu.MenuAdapter A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x0020 \-\> B:20:0x0013, CROSS_EDGE: B:27:0x0026 \-\> B:16:?, CROSS_EDGE: B:18:0x0006 \-\> B:26:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_26[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_28[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_25[style=dashed];
+Node_22 -> Node_29;
+Node_23 -> Node_24;
+Node_24 -> Node_16;
+Node_25 -> Node_20;
+Node_26 -> Node_27;
+Node_15 -> Node_17;
+Node_29 -> Node_23;
+Node_28 -> Node_26;
+Node_27 -> Node_16;
+}
+

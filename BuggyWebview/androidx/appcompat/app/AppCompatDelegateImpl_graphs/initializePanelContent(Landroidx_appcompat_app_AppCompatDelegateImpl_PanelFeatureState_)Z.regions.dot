@@ -1,0 +1,75 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.initializePanelContent(Landroidx\/appcompat\/app\/AppCompatDelegateImpl$PanelFeatureState;)Z" {
+subgraph cluster_Region_1106504964 {
+label = "R(1:(2:3|4)(1:(1:8)(3:(1:11)|12|13)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_705644368 {
+label = "IF [B:21:0x0003] THEN: R(2:3|4) ELSE: R(1:(1:8)(3:(1:11)|12|13))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0003|if (r5.createdPanelView != null) goto L3\l}"];
+subgraph cluster_Region_717863275 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0005|r5.shownPanelView = r5.createdPanelView\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0009|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_679975903 {
+label = "R(1:(1:8)(3:(1:11)|12|13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1984092166 {
+label = "IF [B:25:0x000d] THEN: R(1:8) ELSE: R(3:(1:11)|12|13) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000d|if (r5.menu == null) goto L8\l}"];
+subgraph cluster_Region_648492121 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000f|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_802866337 {
+label = "R(3:(1:11)|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1094898439 {
+label = "IF [B:28:0x0012] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0012|if (r4.mPanelMenuPresenterCallback == null) goto L11\l}"];
+subgraph cluster_Region_1435496851 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0014|r4.mPanelMenuPresenterCallback = new androidx.appcompat.app.AppCompatDelegateImpl.PanelMenuPresenterCallback()\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x001b|androidx.appcompat.view.menu.MenuView androidx.appcompat.view.menu.MenuView r0 = r5.getListMenuView(r4.mPanelMenuPresenterCallback)\lr5.shownPanelView = (android.view.View) r0\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0028|RETURN\l|return r5.shownPanelView != null\l}"];
+}
+}
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000a}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0010}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002b|ORIG_RETURN\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean androidx.appcompat.app.AppCompatDelegateImpl.initializePanelContent((r4v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 'st' androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState A[D('st' androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x000f \-\> B:19:?, CROSS_EDGE: B:34:0x002c \-\> B:19:?, CROSS_EDGE: B:31:0x0028 \-\> B:34:0x002c, CROSS_EDGE: B:28:0x0012 \-\> B:30:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_19;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_19;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_33;
+Node_31 -> Node_35;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_24 -> Node_25;
+Node_27 -> Node_28;
+Node_33 -> Node_19;
+Node_35 -> Node_19;
+}
+

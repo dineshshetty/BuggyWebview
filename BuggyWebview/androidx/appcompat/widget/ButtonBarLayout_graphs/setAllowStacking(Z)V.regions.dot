@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.appcompat.widget.ButtonBarLayout.setAllowStacking(Z)V" {
+subgraph cluster_Region_1542369609 {
+label = "R(1:(1:(3:3|(1:7)|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1947945990 {
+label = "R(1:(3:3|(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1069115149 {
+label = "IF [B:3:0x0002] THEN: R(3:3|(1:7)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r1.mAllowStacking != r2) goto L3\l}"];
+subgraph cluster_Region_2055628386 {
+label = "R(3:3|(1:7)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|r1.mAllowStacking = r2\l}"];
+subgraph cluster_IfRegion_1422718082 {
+label = "IF [B:5:0x0006, B:7:0x000c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0006|if (r2 == false) goto L5\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000c|ADDED_TO_REGION\l|if (isStacked() != false) goto L7\l}"];
+subgraph cluster_Region_2056911201 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000e|setStacked(false)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0012|requestLayout()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0008}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0015|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.ButtonBarLayout.setAllowStacking((r1v0 'this' androidx.appcompat.widget.ButtonBarLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 'allowStacking' boolean A[D('allowStacking' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x000c \-\> B:9:0x0012, CROSS_EDGE: B:5:0x0006 \-\> B:9:0x0012, CROSS_EDGE: B:3:0x0002 \-\> B:10:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_10 -> Node_1;
+Node_11 -> Node_1;
+}
+

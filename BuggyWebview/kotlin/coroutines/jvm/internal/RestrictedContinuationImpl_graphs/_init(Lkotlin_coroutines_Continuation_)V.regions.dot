@@ -1,0 +1,68 @@
+digraph "CFG forkotlin.coroutines.jvm.internal.RestrictedContinuationImpl.\<init\>(Lkotlin\/coroutines\/Continuation;)V" {
+subgraph cluster_Region_1377391208 {
+label = "R(2:1|(2:(1:12)|(1:(2:(1:10)|(1:8)))))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|super(r5)\l}"];
+subgraph cluster_Region_1643646028 {
+label = "R(2:(1:12)|(1:(2:(1:10)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1248705595 {
+label = "IF [B:18:0x0004] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (r5 == null) goto L12\l}"];
+subgraph cluster_Region_145397350 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0026|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_272113417 {
+label = "R(1:(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_822344494 {
+label = "R(2:(1:10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_371725649 {
+label = "IF [B:23:0x0013] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0013|PHI: r2 \l  PHI: (r2v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r5.getContext() == kotlin.coroutines.EmptyCoroutineContext.INSTANCE) != false) goto L10\l}"];
+subgraph cluster_Region_1257093204 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_444409431 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0024|throw new java.lang.IllegalArgumentException(\"Coroutines with restricted suspension must have EmptyCoroutineContext\".toString())\l}"];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0006}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000e}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0010}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0017}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0012}"];
+MethodNode[shape=record,label="{public void kotlin.coroutines.jvm.internal.RestrictedContinuationImpl.\<init\>((r4v0 'this' kotlin.coroutines.jvm.internal.RestrictedContinuationImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 kotlin.coroutines.Continuation\<java.lang.Object\> A[D('completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x0026 \-\> B:16:?, CROSS_EDGE: B:22:0x0012 \-\> B:23:0x0013, CROSS_EDGE: B:18:0x0004 \-\> B:28:0x0026\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlin\/coroutines\/Continuation\<Ljava\/lang\/Object;\>;)V\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_28;
+Node_28 -> Node_16;
+Node_23 -> Node_25[style=dashed];
+Node_23 -> Node_29;
+Node_29 -> Node_16;
+Node_26 -> Node_16;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22;
+Node_21 -> Node_23;
+Node_25 -> Node_26;
+Node_22 -> Node_23;
+}
+

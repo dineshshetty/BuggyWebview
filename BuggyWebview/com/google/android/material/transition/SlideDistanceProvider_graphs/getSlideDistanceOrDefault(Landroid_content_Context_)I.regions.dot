@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.material.transition.SlideDistanceProvider.getSlideDistanceOrDefault(Landroid\/content\/Context;)I" {
+subgraph cluster_Region_1616883667 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = r2.slideDistance\l}"];
+subgraph cluster_Region_750364177 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_900664838 {
+label = "IF [B:10:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0003|if (r0 != (\-1)) goto L3\l}"];
+subgraph cluster_Region_613835674 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0005|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1687659341 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0011|RETURN\l|return r3.getResources().getDimensionPixelSize(com.google.android.material.C0571R.dimen.mtrl_transition_shared_axis_slide_distance)\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0006}"];
+MethodNode[shape=record,label="{private int com.google.android.material.transition.SlideDistanceProvider.getSlideDistanceOrDefault((r2v0 'this' com.google.android.material.transition.SlideDistanceProvider A[IMMUTABLE_TYPE, THIS]), (r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0011 \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_12 -> Node_13;
+}
+

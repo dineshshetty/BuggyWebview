@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlexBuffers.KeyVector.get(I)Landroidx\/emoji2\/text\/flatbuffer\/FlexBuffers$Key;" {
+subgraph cluster_Region_639745581 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|int int r0 = size()\l}"];
+subgraph cluster_Region_341877120 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1316721401 {
+label = "IF [B:11:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (r7 \>= r0) goto L3\l}"];
+subgraph cluster_Region_1743777341 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|RETURN\l|return androidx.emoji2.text.flatbuffer.FlexBuffers.Key.EMPTY\l}"];
+}
+}
+subgraph cluster_Region_1925775623 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000b|int int r1 = r6.vec.end + (r6.vec.byteWidth * r7)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x002c|RETURN\l|return new androidx.emoji2.text.flatbuffer.FlexBuffers.Key(r6.vec.f84bb, androidx.emoji2.text.flatbuffer.FlexBuffers.indirect(r6.vec.f84bb, r1, r6.vec.byteWidth), 1)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0006}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.emoji2.text.flatbuffer.FlexBuffers$Key androidx.emoji2.text.flatbuffer.FlexBuffers.KeyVector.get((r6v0 'this' androidx.emoji2.text.flatbuffer.FlexBuffers$KeyVector A[IMMUTABLE_TYPE, THIS]), (r7v0 'pos' int A[D('pos' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x002c \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatEditText.initEmojiKeyListener(Landroidx\/appcompat\/widget\/AppCompatEmojiEditTextHelper;)V" {
+subgraph cluster_Region_513568839 {
+label = "R(2:1|(1:(2:3|(2:(1:5)|(1:7)))))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|android.text.method.KeyListener android.text.method.KeyListener r0 = getKeyListener()\l}"];
+subgraph cluster_Region_222361161 {
+label = "R(1:(2:3|(2:(1:5)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1614522209 {
+label = "IF [B:13:0x0008] THEN: R(2:3|(2:(1:5)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|if (r7.isEmojiCapableKeyListener(r0) != false) goto L3\l}"];
+subgraph cluster_Region_290377513 {
+label = "R(2:3|(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|boolean boolean r1 = super.isFocusable()\lboolean boolean r2 = super.isClickable()\lboolean boolean r3 = super.isLongClickable()\lint int r4 = super.getInputType()\landroid.text.method.KeyListener android.text.method.KeyListener r5 = r7.getKeyListener(r0)\l}"];
+subgraph cluster_Region_2009500576 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1696987942 {
+label = "IF [B:15:0x001e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001e|if (r5 == r0) goto L5\l}"];
+subgraph cluster_Region_845993442 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0020|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_415670669 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0021|super.setKeyListener(r5)\lsuper.setRawInputType(r4)\lsuper.setFocusable(r1)\lsuper.setClickable(r2)\lsuper.setLongClickable(r3)\l}"];
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0030|ORIG_RETURN\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.widget.AppCompatEditText.initEmojiKeyListener((r6v0 'this' androidx.appcompat.widget.AppCompatEditText A[IMMUTABLE_TYPE, THIS]), (r7v0 'appCompatEmojiEditTextHelper' androidx.appcompat.widget.AppCompatEmojiEditTextHelper A[D('appCompatEmojiEditTextHelper' androidx.appcompat.widget.AppCompatEmojiEditTextHelper), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0030 \-\> B:11:?, CROSS_EDGE: B:13:0x0008 \-\> B:18:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_19[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_11;
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

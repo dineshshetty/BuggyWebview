@@ -1,0 +1,23 @@
+digraph "CFG forcom.google.android.material.motion.MotionUtils.getLegacyControlPoint([Ljava\/lang\/String;I)F" {
+Node_9 [shape=record,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0000|0x0000: AGET  (r0 I:??[OBJECT, ARRAY]) = \l  (r4 I:??[OBJECT, ARRAY][] A[D('controlPoints' java.lang.String[])])\l  (r5 I:??[int, short, byte, char] A[D('index' int)])\l  (LINE:129)\l0x0002: INVOKE  (r0 I:float) = (r0 I:java.lang.String) type: STATIC call: java.lang.Float.parseFloat(java.lang.String):float A[MD:(java.lang.String):float throws java.lang.NumberFormatException (c)]\l0x0006: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:130)\l0x0007: CMP_G  (r1 I:int) = (r0 I:float A[D('controlPoint' float)]), (r1 I:float) \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0009|0x0009: IF  (r1 I:??[int, byte, short, char]) \< (0 ??[int, byte, short, char])  \-\> B:16:0x0012 \l}"];
+Node_13 [shape=record,label="{13\:\ 0x000b|0x000b: CONST  (r1 I:??[int, float, short, byte, char]) = (1065353216(0x3f800000, float:1.0) ??[int, float, short, byte, char]) \l0x000d: CMP_L  (r1 I:int) = (r0 I:float A[D('controlPoint' float)]), (r1 I:float) \l}"];
+Node_14 [shape=record,label="{14\:\ 0x000f|0x000f: IF  (r1 I:??[int, byte, short, char]) \> (0 ??[int, byte, short, char])  \-\> B:16:0x0012 \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0011|RETURN\l|0x0011: RETURN  (r0 I:float A[D('controlPoint' float)])  (LINE:135)\l}"];
+Node_10 [shape=record,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0012|0x0012: NEW_INSTANCE  (r1 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException  (LINE:131)\l0x0014: NEW_INSTANCE  (r2 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0016: INVOKE  (r2 I:java.lang.StringBuilder) type: DIRECT call: java.lang.StringBuilder.\<init\>():void A[MD:():void (c)]\l0x0019: CONST_STR  (r3 I:java.lang.String) =  \"Motion easing control point value must be between 0 and 1; instead got: \" \l0x001b: INVOKE  (r2 I:java.lang.StringBuilder), (r3 I:java.lang.String) type: VIRTUAL call: java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder A[MD:(java.lang.String):java.lang.StringBuilder (c)]\l0x001e: INVOKE  (r2 I:java.lang.StringBuilder), (r0 I:float A[D('controlPoint' float)]) type: VIRTUAL call: java.lang.StringBuilder.append(float):java.lang.StringBuilder A[MD:(float):java.lang.StringBuilder (c)]\l0x0021: INVOKE  (r2 I:java.lang.String) = (r2 I:java.lang.StringBuilder) type: VIRTUAL call: java.lang.StringBuilder.toString():java.lang.String A[MD:():java.lang.String (c)]\l0x0025: INVOKE  (r1 I:java.lang.IllegalArgumentException), (r2 I:java.lang.String) type: DIRECT call: java.lang.IllegalArgumentException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0028|0x0028: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private static float com.google.android.material.motion.MotionUtils.getLegacyControlPoint((r4 I:java.lang.String[] A[D('controlPoints' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0028 \-\> B:10:?, CROSS_EDGE: B:12:0x0009 \-\> B:16:0x0012\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0006\-0x0028: r0 'controlPoint' F\l  \-1 \-0x0028: r4 'controlPoints' [Ljava\/lang\/String;\l  \-1 \-0x0028: r5 'index' I\l}"];
+MethodNode -> Node_9;Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_16;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_10;
+Node_16 -> Node_17;
+Node_17 -> Node_10;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.documentfile.provider.TreeDocumentFile.createDirectory(Ljava\/lang\/String;)Landroidx\/documentfile\/provider\/DocumentFile;" {
+subgraph cluster_Region_1693107315 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.net.Uri android.net.Uri r0 = createFile(r3.mContext, r3.mUri, \"vnd.android.document\/directory\", r4)\l}"];
+subgraph cluster_Region_328219223 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_153047938 {
+label = "IF [B:3:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1192153711 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return new androidx.documentfile.provider.TreeDocumentFile(r3, r3.mContext, r0)\l}"];
+}
+}
+subgraph cluster_Region_1126249892 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.documentfile.provider.DocumentFile androidx.documentfile.provider.TreeDocumentFile.createDirectory((r3v0 'this' androidx.documentfile.provider.TreeDocumentFile A[IMMUTABLE_TYPE, THIS]), (r4v0 'displayName' java.lang.String A[D('displayName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0014 \-\> B:6:0x0015\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [androidx.documentfile.provider.DocumentFile.createDirectory(java.lang.String):androidx.documentfile.provider.DocumentFile]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_7 -> Node_1;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_7;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.removePrefix(Ljava\/lang\/CharSequence;Ljava\/lang\/CharSequence;)Ljava\/lang\/CharSequence;" {
+subgraph cluster_Region_1776290839 {
+label = "R(2:1|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"prefix\")\l}"];
+subgraph cluster_Region_803271407 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1036510954 {
+label = "IF [B:19:0x0011] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|if (kotlin.text.StringsKt.startsWith$default(r3, r4, false, 2, (java.lang.Object) null) == false) goto L6\l}"];
+subgraph cluster_Region_608910355 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0028|RETURN\l|return r3.subSequence(0, r3.length())\l}"];
+}
+}
+subgraph cluster_Region_1294076985 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001f|RETURN\l|return r3.subSequence(r4.length(), r3.length())\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0013}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0020}"];
+MethodNode[shape=record,label="{public static final java.lang.CharSequence kotlin.text.StringsKt__StringsKt.removePrefix((r3v0 '$this$removePrefix' java.lang.CharSequence A[D('$this$removePrefix' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'prefix' java.lang.CharSequence A[D('prefix' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0028 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_22;
+Node_23 -> Node_17;
+Node_21 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+}
+

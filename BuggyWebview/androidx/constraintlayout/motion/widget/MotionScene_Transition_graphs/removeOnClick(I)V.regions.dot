@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.MotionScene.Transition.removeOnClick(I)V" {
+subgraph cluster_Region_626202911 {
+label = "R(3:1|(1:(2:(1:13)|(2:4|(2:7|1))))|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|androidx.constraintlayout.motion.widget.MotionScene.Transition.TransitionOnClick r0 = null\ljava.util.Iterator java.util.Iterator\<androidx.constraintlayout.motion.widget.MotionScene.Transition.TransitionOnClick\> r1 = r4.mOnClicks.iterator()\l}"];
+subgraph cluster_LoopRegion_596617585 {
+label = "LOOP:0: (1:(2:(1:13)|(2:4|(2:7|1))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_660352267 {
+label = "R(1:(2:(1:13)|(2:4|(2:7|1))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1868681078 {
+label = "R(2:(1:13)|(2:4|(2:7|1)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_337774861 {
+label = "IF [B:19:0x000b] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|if (r1.hasNext() != true) goto L13\l}"];
+subgraph cluster_Region_512916738 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001a|SYNTHETIC\lEDGE_INSN: B:28:0x001a\-\>B:24:0x001a ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_714667100 {
+label = "R(2:4|(2:7|1))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|androidx.constraintlayout.motion.widget.MotionScene$Transition$TransitionOnClick androidx.constraintlayout.motion.widget.MotionScene.Transition.TransitionOnClick r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_313870020 {
+label = "IF [B:21:0x0015] THEN: R(2:7|1) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|LOOP_END\lLOOP:0: B:18:0x0007\-\>B:21:0x0015\l|if (r2.mTargetId == r5) goto L6\l}"];
+subgraph cluster_Region_1918475198 {
+label = "R(2:7|1)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0017|EDGE_INSN: B:22:0x0017\-\>B:24:0x001a ?: BREAK  \l|r0 = r2\l}"];
+Node_InsnContainer_1074301824 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_117101311 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_197556857 {
+label = "IF [B:24:0x001a] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001a|EDGE_INSN: B:22:0x0017\-\>B:24:0x001a ?: BREAK  , EDGE_INSN: B:28:0x001a\-\>B:24:0x001a ?: BREAK  \lPHI: r0 \l  PHI: (r0v1 'toRemove' androidx.constraintlayout.motion.widget.MotionScene$Transition$TransitionOnClick) = (r0v0 'toRemove' androidx.constraintlayout.motion.widget.MotionScene$Transition$TransitionOnClick), (r0v2 'toRemove' androidx.constraintlayout.motion.widget.MotionScene$Transition$TransitionOnClick) binds: [B:28:0x001a, B:22:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L9\l}"];
+subgraph cluster_Region_688158419 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001c|r4.mOnClicks.remove(r0)\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0007|LOOP_START\lLOOP:0: B:18:0x0007\-\>B:21:0x0015\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0017|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0021|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.motion.widget.MotionScene.Transition.removeOnClick((r4v0 'this' androidx.constraintlayout.motion.widget.MotionScene$Transition A[IMMUTABLE_TYPE, THIS]), (r5v0 'id' int A[D('id' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x001a \-\> B:26:0x0021, BACK_EDGE: B:21:0x0015 \-\> B:18:0x0007, CROSS_EDGE: B:19:0x000b \-\> B:24:0x001a\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [id]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_28;
+Node_28 -> Node_24;
+Node_20 -> Node_21;
+Node_21 -> Node_18[style=dashed];
+Node_21 -> Node_27;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_29[style=dashed];
+Node_25 -> Node_26;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_27 -> Node_22;
+Node_26 -> Node_16;
+Node_29 -> Node_16;
+}
+

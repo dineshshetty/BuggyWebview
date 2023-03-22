@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.MessagingStyle.hasMessagesWithoutSender()Z" {
+subgraph cluster_Region_1670033491 {
+label = "R(3:1|(2:3|(2:(1:8)|(1:11)))|14)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|int int r0 = r4.mMessages.size() \- 1\l}"];
+subgraph cluster_LoopRegion_767833745 {
+label = "LOOP:0: (2:3|(2:(1:8)|(1:11)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0008|LOOP_START\lLOOP:0: B:19:0x0008\-\>B:25:0x0023\lPHI: r0 \l  PHI: (r0v3 'i' int) = (r0v2 'i' int), (r0v5 'i' int) binds: [B:18:0x0000, B:25:0x0023] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_943797007 {
+label = "R(2:3|(2:(1:8)|(1:11)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000a|androidx.core.app.NotificationCompat$MessagingStyle$Message androidx.core.app.NotificationCompat.MessagingStyle.Message r2 = r4.mMessages.get(r0)\l}"];
+subgraph cluster_Region_1468261784 {
+label = "R(2:(1:8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_251597948 {
+label = "IF [B:21:0x0016, B:23:0x0020] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|if (r2.getPerson() != null) goto L5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0020|ADDED_TO_REGION\l|if (r2.getPerson().getName() == null) goto L7\l}"];
+subgraph cluster_Region_56326039 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0022|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_185368938 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0023|LOOP_END\lLOOP:0: B:19:0x0008\-\>B:25:0x0023\l|r0\-\-\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0026|RETURN\l|return false\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0018}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0022|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0023|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0023|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0026|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean androidx.core.app.NotificationCompat.MessagingStyle.hasMessagesWithoutSender((r4v0 'this' androidx.core.app.NotificationCompat$MessagingStyle A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x0023 \-\> B:19:0x0008, CROSS_EDGE: B:21:0x0016 \-\> B:25:0x0023, CROSS_EDGE: B:27:0x0027 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_29[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_30[style=dashed];
+Node_23 -> Node_28;
+Node_23 -> Node_31[style=dashed];
+Node_24 -> Node_17;
+Node_25 -> Node_19;
+Node_26 -> Node_17;
+Node_16 -> Node_18;
+Node_22 -> Node_23;
+Node_28 -> Node_24;
+Node_31 -> Node_25;
+Node_30 -> Node_25;
+Node_29 -> Node_26;
+}
+

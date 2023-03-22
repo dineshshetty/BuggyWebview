@@ -1,0 +1,81 @@
+digraph "CFG forcom.google.android.material.progressindicator.BaseProgressIndicator.isEffectivelyVisible()Z" {
+subgraph cluster_Region_1903431854 {
+label = "R(3:1|(2:4|(1:14)(1:(1:10)(1:8)))|18)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.View r0 = r5\l}"];
+subgraph cluster_LoopRegion_1490423154 {
+label = "LOOP:0: (2:4|(1:14)(1:(1:10)(1:8)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|if (r0.getVisibility() == 0) goto L4\l}"];
+subgraph cluster_Region_871431273 {
+label = "R(2:4|(1:14)(1:(1:10)(1:8)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|android.view.ViewParent android.view.ViewParent r1 = r0.getParent()\l}"];
+subgraph cluster_IfRegion_1657826265 {
+label = "IF [B:7:0x000e] THEN: R(1:14) ELSE: R(1:(1:10)(1:8))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|if (r1 == null) goto L12\l}"];
+subgraph cluster_Region_998355384 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0014|RETURN\l|return getWindowVisibility() == 0\l}"];
+}
+subgraph cluster_Region_1186516006 {
+label = "R(1:(1:10)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1740533768 {
+label = "IF [B:13:0x001a] THEN: R(1:10) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001a|if ((r1 instanceof android.view.View) == false) goto L9\l}"];
+subgraph cluster_Region_787478755 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001c|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1128846439 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001d|LOOP_END\lLOOP:0: B:3:0x0001\-\>B:15:0x001d\l|android.view.View r0 = (android.view.View) r1\l}"];
+}
+}
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0008|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0001|LOOP_START\lLOOP:0: B:3:0x0001\-\>B:15:0x001d\lPHI: r0 \l  PHI: (r0v1 'current' android.view.View) = (r0v0 'current' android.view.View), (r0v3 'current' android.view.View) binds: [B:2:0x0000, B:15:0x001d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0018}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001c|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0010|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0010}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0016|ORIG_RETURN\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0008|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{boolean com.google.android.material.progressindicator.BaseProgressIndicator.isEffectivelyVisible((r5v0 'this' com.google.android.material.progressindicator.BaseProgressIndicator\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\> A[D('this' com.google.android.material.progressindicator.BaseProgressIndicator\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0017 \-\> B:1:?, CROSS_EDGE: B:9:0x0014 \-\> B:11:0x0017, CROSS_EDGE: B:14:0x001c \-\> B:1:?, BACK_EDGE: B:15:0x001d \-\> B:3:0x0001\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_4 -> Node_16[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_12[style=dashed];
+Node_7 -> Node_18;
+Node_9 -> Node_10;
+Node_9 -> Node_19;
+Node_13 -> Node_15[style=dashed];
+Node_13 -> Node_17;
+Node_14 -> Node_1;
+Node_15 -> Node_3;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_12 -> Node_13;
+Node_17 -> Node_14;
+Node_18 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_1;
+Node_19 -> Node_1;
+Node_16 -> Node_5;
+}
+

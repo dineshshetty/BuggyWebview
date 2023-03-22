@@ -1,0 +1,157 @@
+digraph "CFG forkotlin.collections.builders.MapBuilder.addKey$kotlin_stdlib(Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_416273591 {
+label = "R(2:1|(2:2|(2:3|(1:(1:29)(3:32|(1:34)|35))(1:(1:24)(2:7|(1:10)(2:19|20))))))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0000|checkIsMutable$kotlin_stdlib()\l}"];
+subgraph cluster_LoopRegion_700651586 {
+label = "LOOP:0: (2:2|(2:3|(1:(1:29)(3:32|(1:34)|35))(1:(1:24)(2:7|(1:10)(2:19|20)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1352611045 {
+label = "R(2:2|(2:3|(1:(1:29)(3:32|(1:34)|35))(1:(1:24)(2:7|(1:10)(2:19|20)))))";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0003|LOOP_START\lLOOP:0: B:39:0x0003\-\>B:64:0x0003\l|int int r0 = hash(r9)\lint int r1 = kotlin.ranges.RangesKt.coerceAtMost(r8.maxProbeDistance * 2, getHashSize() \/ 2)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_302336061 {
+label = "LOOP:1: (2:3|(1:(1:29)(3:32|(1:34)|35))(1:(1:24)(2:7|(1:10)(2:19|20))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_165397542 {
+label = "R(2:3|(1:(1:29)(3:32|(1:34)|35))(1:(1:24)(2:7|(1:10)(2:19|20))))";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0017|LOOP_START\lLOOP:1: B:40:0x0017\-\>B:69:0x0017\lPHI: r0 r2 \l  PHI: (r0v1 'hash' int) = (r0v0 'hash' int), (r0v4 'hash' int) binds: [B:39:0x0003, B:69:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v3 'probeDistance' int) = (r2v2 'probeDistance' int), (r2v4 'probeDistance' int) binds: [B:39:0x0003, B:69:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|int r3 = r8.hashArray[r0]\l}"];
+subgraph cluster_IfRegion_268294350 {
+label = "IF [B:41:0x001d] THEN: R(1:(1:29)(3:32|(1:34)|35)) ELSE: R(1:(1:24)(2:7|(1:10)(2:19|20)))";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x001d|if (r3 \<= 0) goto L26\l}"];
+subgraph cluster_Region_161951148 {
+label = "R(1:(1:29)(3:32|(1:34)|35))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1865103939 {
+label = "IF [B:43:0x0025] THEN: R(1:29) ELSE: R(3:32|(1:34)|35)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0025|if (r8.length \>= getCapacity()) goto L29\l}"];
+subgraph cluster_Region_1578843884 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0027|ensureExtraCapacity(1)\l}"];
+}
+subgraph cluster_Region_1179774871 {
+label = "R(3:32|(1:34)|35)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x002b|int int r5 = r8.length\lr8.length = r5 + 1\lr8.keysArray[r5] = r9\lr8.presenceArray[r5] = r0\lr8.hashArray[r0] = r5 + 1\lr8.size = size() + 1\l}"];
+subgraph cluster_IfRegion_791479669 {
+label = "IF [B:46:0x0048] THEN: R(1:34) ELSE: null";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0048|if (r2 \> r8.maxProbeDistance) goto L34\l}"];
+subgraph cluster_Region_1724475984 {
+label = "R(1:34)";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ 0x004a|r8.maxProbeDistance = r2\l}"];
+}
+}
+Node_48 [shape=record,label="{48\:\ 0x004c|RETURN\l|return r5\l}"];
+}
+}
+}
+subgraph cluster_Region_1718079922 {
+label = "R(1:(1:24)(2:7|(1:10)(2:19|20))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1998606378 {
+label = "IF [B:50:0x0057] THEN: R(1:24) ELSE: R(2:7|(1:10)(2:19|20)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x0057|if (kotlin.jvm.internal.Intrinsics.areEqual(r8.keysArray[r3 \- 1], r9) != false) goto L22\l}"];
+subgraph cluster_Region_820110614 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_52 [shape=record,label="{52\:\ 0x005a|RETURN\l|return \-r3\l}"];
+}
+subgraph cluster_Region_2021659831 {
+label = "R(2:7|(1:10)(2:19|20))";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x005b|r2++\l}"];
+subgraph cluster_IfRegion_1866515364 {
+label = "IF [B:54:0x005d] THEN: R(1:10) ELSE: R(2:19|20)";
+node [shape=record,color=blue];
+Node_54 [shape=record,label="{54\:\ 0x005d|if (r2 \<= r1) goto L9\l}"];
+subgraph cluster_Region_1992047990 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_57 [shape=record,label="{57\:\ 0x006b|r0 = r0 == 0 ? getHashSize() \- 1 : r0 \- 1\l}"];
+}
+subgraph cluster_Region_1444764319 {
+label = "R(2:19|20)";
+node [shape=record,color=blue];
+Node_55 [shape=record,label="{55\:\ 0x005f|rehash(getHashSize() * 2)\l}"];
+Node_65 [shape=record,label="{65\:\ 0x0003|SYNTHETIC\lEDGE_INSN: B:65:0x0003\-\>B:64:0x0003 ?: BREAK  \l|break\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+Node_36 [shape=record,color=red,label="{36\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x004d}"];
+Node_56 [shape=record,color=red,label="{56\:\ 0x0069}"];
+Node_67 [shape=record,color=red,label="{67\:\ 0x0073|SYNTHETIC\l}"];
+Node_59 [shape=record,color=red,label="{59\:\ 0x0073}"];
+Node_70 [shape=record,color=red,label="{70\:\ 0x0017|SYNTHETIC\l}"];
+Node_69 [shape=record,color=red,label="{69\:\ 0x0017|LOOP_END\lSYNTHETIC\lLOOP:1: B:40:0x0017\-\>B:69:0x0017\lPHI: r0 \l  PHI: (r0v4 'hash' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_68 [shape=record,color=red,label="{68\:\ 0x006d|SYNTHETIC\l}"];
+Node_58 [shape=record,color=red,label="{58\:\ 0x006d}"];
+Node_71 [shape=record,color=red,label="{71\:\ 0x0017|SYNTHETIC\l}"];
+Node_62 [shape=record,color=red,label="{62\:\ 0x005f|SYNTHETIC\l}"];
+Node_64 [shape=record,color=red,label="{64\:\ 0x0003|LOOP_END\lSYNTHETIC\lEDGE_INSN: B:65:0x0003\-\>B:64:0x0003 ?: BREAK  \lLOOP:0: B:39:0x0003\-\>B:64:0x0003\l}"];
+Node_61 [shape=record,color=red,label="{61\:\ 0x0059|SYNTHETIC\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x0059}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_63 [shape=record,color=red,label="{63\:\ 0x001f|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x001f}"];
+Node_66 [shape=record,color=red,label="{66\:\ 0x0003|SYNTHETIC\l}"];
+Node_60 [shape=record,color=red,label="{60\:\ 0x002b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final int kotlin.collections.builders.MapBuilder.addKey$kotlin_stdlib((r8v0 'this' kotlin.collections.builders.MapBuilder\<K, V\> A[IMMUTABLE_TYPE, THIS]), (r9v0 K A[D('key' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:44:0x0027 \-\> B:39:0x0003, CROSS_EDGE: B:46:0x0048 \-\> B:48:0x004c, CROSS_EDGE: B:52:0x005a \-\> B:37:?, BACK_EDGE: B:55:0x005f \-\> B:39:0x0003, BACK_EDGE: B:58:0x006d \-\> B:40:0x0017, BACK_EDGE: B:59:0x0073 \-\> B:40:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: (TK;)I\l}"];
+MethodNode -> Node_36;Node_38 -> Node_39;
+Node_39 -> Node_40;
+Node_40 -> Node_41;
+Node_41 -> Node_49[style=dashed];
+Node_41 -> Node_63;
+Node_43 -> Node_44;
+Node_43 -> Node_60[style=dashed];
+Node_44 -> Node_66;
+Node_45 -> Node_46;
+Node_46 -> Node_47;
+Node_46 -> Node_48[style=dashed];
+Node_47 -> Node_48;
+Node_48 -> Node_37;
+Node_50 -> Node_53[style=dashed];
+Node_50 -> Node_61;
+Node_52 -> Node_37;
+Node_53 -> Node_54;
+Node_54 -> Node_56;
+Node_54 -> Node_62[style=dashed];
+Node_57 -> Node_67;
+Node_57 -> Node_68;
+Node_55 -> Node_65;
+Node_65 -> Node_64;
+Node_36 -> Node_38;
+Node_49 -> Node_50;
+Node_56 -> Node_57;
+Node_67 -> Node_59;
+Node_59 -> Node_70;
+Node_70 -> Node_69;
+Node_69 -> Node_40;
+Node_68 -> Node_58;
+Node_58 -> Node_71;
+Node_71 -> Node_69;
+Node_62 -> Node_55;
+Node_64 -> Node_39;
+Node_61 -> Node_51;
+Node_51 -> Node_52;
+Node_63 -> Node_42;
+Node_42 -> Node_43;
+Node_66 -> Node_64;
+Node_60 -> Node_45;
+}
+

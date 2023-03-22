@@ -1,0 +1,85 @@
+digraph "CFG forkotlinx.coroutines.flow.internal.AbstractSharedFlow.forEachSlotLocked(Lkotlin\/jvm\/functions\/Function1;)V" {
+subgraph cluster_Region_158526923 {
+label = "R(1:(2:(1:18)|(2:7|(2:9|(1:12)(0))))) | DECL_VAR: java.lang.Object[] $this$forEach$iv\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1412704758 {
+label = "R(2:(1:18)|(2:7|(2:9|(1:12)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_488111183 {
+label = "IF [B:25:0x0005, B:28:0x000c] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0005|if (r8.nCollectors == 0) goto L3\l}"];
+Node_28 [shape=record,label="{28\:\ 0x000c|ADDED_TO_REGION\l|if ((r1 = r8.slots) == null) goto L18\l}"];
+subgraph cluster_Region_790753588 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0022|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1813936133 {
+label = "R(2:7|(2:9|(1:12)(0)))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x000f|int r3 = 0\lint int r4 = r1.length\l}"];
+subgraph cluster_LoopRegion_407588808 {
+label = "LOOP:0: (2:9|(1:12)(0))";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0012|LOOP_START\lLOOP:0: B:31:0x0012\-\>B:40:0x0012\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:30:0x000f, B:40:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r4) goto L9\l}"];
+subgraph cluster_Region_2005736766 {
+label = "R(2:9|(1:12)(0))";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0014|java.lang.Object r5 = r1[r3]\lr3++\l}"];
+subgraph cluster_IfRegion_916911254 {
+label = "IF [B:33:0x001a] THEN: R(1:12) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x001a|if (r5 != null) goto L11\l}"];
+subgraph cluster_Region_694643735 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x001c|r9.invoke(r5)\l}"];
+}
+subgraph cluster_Region_832789934 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0000}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0007|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0008}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x001c|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x0012|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0012|LOOP_END\lSYNTHETIC\lLOOP:0: B:31:0x0012\-\>B:40:0x0012\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0012|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0022|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected final void kotlinx.coroutines.flow.internal.AbstractSharedFlow.forEachSlotLocked((r8v0 'this' kotlinx.coroutines.flow.internal.AbstractSharedFlow\<S extends kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot\<?\>\> A[IMMUTABLE_TYPE, THIS]), (r9v0 kotlin.jvm.functions.Function1\<? super S extends kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot\<?\>, kotlin.Unit\> A[D('block' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:34:0x001c \-\> B:31:0x0012, BACK_EDGE: B:33:0x001a \-\> B:31:0x0012, CROSS_EDGE: B:37:0x0022 \-\> B:23:?, CROSS_EDGE: B:28:0x000c \-\> B:37:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot\<?\>]\lSIGNATURE: (Lkotlin\/jvm\/functions\/Function1\<\-TS;Lkotlin\/Unit;\>;)V\l}"];
+MethodNode -> Node_22;Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_28 -> Node_30[style=dashed];
+Node_28 -> Node_37;
+Node_37 -> Node_23;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_38[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_39;
+Node_33 -> Node_41[style=dashed];
+Node_34 -> Node_42;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_26 -> Node_23;
+Node_27 -> Node_28;
+Node_39 -> Node_34;
+Node_42 -> Node_40;
+Node_40 -> Node_31;
+Node_41 -> Node_40;
+Node_38 -> Node_43;
+Node_43 -> Node_23;
+}
+

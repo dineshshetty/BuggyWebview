@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.core.location.LocationManagerCompat.registerLocationListenerTransport(Landroid\/location\/LocationManager;Landroidx\/core\/location\/LocationManagerCompat$LocationListenerTransport;)V" {
+subgraph cluster_Region_749573568 {
+label = "R(3:1|2|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|java.lang.ref.WeakReference java.lang.ref.WeakReference\<androidx.core.location.LocationManagerCompat.LocationListenerTransport\> r0 = androidx.core.location.LocationManagerCompat.sLocationListeners.put(r4.getKey(), new java.lang.ref.WeakReference\<\>(r4))\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0011|androidx.core.location.LocationManagerCompat.LocationListenerTransport r1 = r0 != null ? r0.get() : null\l}"];
+subgraph cluster_Region_593124940 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_623596703 {
+label = "IF [B:16:0x001b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001b|PHI: r1 \l  PHI: (r1v2 'oldTransport' androidx.core.location.LocationManagerCompat$LocationListenerTransport) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != null) goto L5\l}"];
+subgraph cluster_Region_1782080672 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001d|r1.unregister()\lr3.removeUpdates(r1)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0013}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0023|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001a}"];
+MethodNode[shape=record,label="{static void androidx.core.location.LocationManagerCompat.registerLocationListenerTransport((r3v0 'locationManager' android.location.LocationManager A[D('locationManager' android.location.LocationManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'transport' androidx.core.location.LocationManagerCompat$LocationListenerTransport A[D('transport' androidx.core.location.LocationManagerCompat$LocationListenerTransport), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x001b \-\> B:18:0x0023, CROSS_EDGE: B:15:0x001a \-\> B:16:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_14 -> Node_16;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+Node_15 -> Node_16;
+}
+

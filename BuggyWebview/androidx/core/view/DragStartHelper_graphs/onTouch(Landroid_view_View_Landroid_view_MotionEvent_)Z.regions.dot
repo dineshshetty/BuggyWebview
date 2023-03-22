@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.core.view.DragStartHelper.onTouch(Landroid\/view\/View;Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_2100411362 {
+label = "R(3:1|2|18)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = (int) r6.getX()\lint int r1 = (int) r6.getY()\l}"];
+subgraph cluster_SwitchRegion_2120952553 {
+label = "Switch: 3
+ case 0 -> R(2:17|1)
+ case 1, 3 -> R(2:16|1)
+ case 2 -> R(2:(2:13|14)|1)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|switch(r6.getAction()) \{\l    case 0: goto L17;\l    case 1: goto L16;\l    case 2: goto L3;\l    case 3: goto L16;\l    default: goto L18;\l\}\l}"];
+subgraph cluster_Region_387465963 {
+label = "R(2:17|1)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0042|r4.mLastTouchX = r0\lr4.mLastTouchY = r1\l}"];
+Node_InsnContainer_1989480215 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_54547202 {
+label = "R(2:16|1)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x003f|r4.mDragging = false\l}"];
+Node_InsnContainer_1808468874 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1280333944 {
+label = "R(2:(2:13|14)|1)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_903964377 {
+label = "IF [B:6:0x0019, B:8:0x0021, B:11:0x0026, B:14:0x002b, B:16:0x002f] THEN: R(2:13|14) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0019|if (androidx.core.view.MotionEventCompat.isFromSource(r6, 8194) != false) goto L5\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0021|ADDED_TO_REGION\l|if ((r6.getButtonState() & 1) != 0) goto L7\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0026|ADDED_TO_REGION\l|if (r4.mDragging == false) goto L9\l}"];
+Node_14 [shape=record,label="{14\:\ 0x002b|ADDED_TO_REGION\l|if (r4.mLastTouchX != r0) goto L13\l}"];
+Node_16 [shape=record,label="{16\:\ 0x002f|ADDED_TO_REGION\l|if (r4.mLastTouchY != r1) goto L13\l}"];
+subgraph cluster_Region_444339396 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0032|r4.mLastTouchX = r0\lr4.mLastTouchY = r1\lboolean boolean r2 = r4.mListener.onDragStart(r5, r4)\lr4.mDragging = r2\l}"];
+Node_19 [shape=record,label="{19\:\ 0x003e|RETURN\l|return r2\l}"];
+}
+}
+Node_InsnContainer_316873554 [shape=record,label="{|break\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0047|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001b}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0024}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0029}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002d}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.core.view.DragStartHelper.onTouch((r4v0 'this' androidx.core.view.DragStartHelper A[IMMUTABLE_TYPE, THIS]), (r5v0 'v' android.view.View A[D('v' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'event' android.view.MotionEvent A[D('event' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0047 \-\> B:1:?, CROSS_EDGE: B:14:0x002b \-\> B:18:0x0032, CROSS_EDGE: B:11:0x0026 \-\> B:22:0x0047, CROSS_EDGE: B:8:0x0021 \-\> B:22:0x0047, CROSS_EDGE: B:6:0x0019 \-\> B:22:0x0047, CROSS_EDGE: B:20:0x003f \-\> B:22:0x0047, CROSS_EDGE: B:21:0x0042 \-\> B:22:0x0047, CROSS_EDGE: B:3:0x000f \-\> B:22:0x0047\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_3 -> Node_20;
+Node_3 -> Node_21;
+Node_3 -> Node_22;
+Node_21 -> Node_22;
+Node_20 -> Node_22;
+Node_6 -> Node_7;
+Node_6 -> Node_22[style=dashed];
+Node_8 -> Node_10;
+Node_8 -> Node_22[style=dashed];
+Node_11 -> Node_13;
+Node_11 -> Node_22[style=dashed];
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_18;
+Node_16 -> Node_18;
+Node_16 -> Node_22[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_1;
+Node_22 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

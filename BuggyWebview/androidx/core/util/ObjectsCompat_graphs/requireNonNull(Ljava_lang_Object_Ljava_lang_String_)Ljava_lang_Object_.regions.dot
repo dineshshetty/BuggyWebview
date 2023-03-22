@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.util.ObjectsCompat.requireNonNull(Ljava\/lang\/Object;Ljava\/lang\/String;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_691407612 {
+label = "R(1:(2:(1:5)|(1:2)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_143350922 {
+label = "R(2:(1:5)|(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1504726049 {
+label = "IF [B:8:0x0000] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|if (r1 == null) goto L4\l}"];
+subgraph cluster_Region_354185137 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|throw new java.lang.NullPointerException(r2)\l}"];
+}
+}
+subgraph cluster_Region_216327684 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0002|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0003}"];
+MethodNode[shape=record,label="{public static T androidx.core.util.ObjectsCompat.requireNonNull((r1v0 'obj' T A[D('obj' T), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'message' java.lang.String A[D('message' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0008 \-\> B:7:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(TT;Ljava\/lang\/String;)TT;\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_11 -> Node_7;
+Node_9 -> Node_7;
+Node_6 -> Node_8;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.recyclerview.widget.FastScroller.isPointInsideVerticalThumb(FF)Z" {
+subgraph cluster_Region_1137206970 {
+label = "R(2:(2:7|(1:(1:11)))|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_500052620 {
+label = "IF [B:3:0x0004, B:8:0x0018, B:5:0x000d] THEN: R(2:7|(1:(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (isLayoutRTL() == false) goto L12\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|ADDED_TO_REGION\l|if (r4 \>= (r3.mRecyclerViewWidth \- r3.mVerticalThumbWidth)) goto L7\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|ADDED_TO_REGION\l|if (r4 \<= (r3.mVerticalThumbWidth \/ 2)) goto L7\l}"];
+subgraph cluster_Region_760341418 {
+label = "R(2:7|(1:(1:11)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|int int r0 = r3.mVerticalThumbCenterY\lint int r1 = r3.mVerticalThumbHeight\l}"];
+subgraph cluster_Region_770153168 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_927743255 {
+label = "IF [B:10:0x0025, B:12:0x002d] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0025|if (r5 \>= (r0 \- (r1 \/ 2))) goto L9\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002d|ADDED_TO_REGION\l|if (r5 \<= (r0 + (r1 \/ 2))) goto L11\l}"];
+subgraph cluster_Region_2060625507 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002f|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0031|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0027}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0010}"];
+MethodNode[shape=record,label="{boolean androidx.recyclerview.widget.FastScroller.isPointInsideVerticalThumb((r3v0 'this' androidx.recyclerview.widget.FastScroller A[IMMUTABLE_TYPE, THIS]), (r4v0 'x' float A[D('x' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'y' float A[D('y' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x002f \-\> B:15:0x0032, CROSS_EDGE: B:12:0x002d \-\> B:14:0x0031, CROSS_EDGE: B:10:0x0025 \-\> B:14:0x0031, CROSS_EDGE: B:8:0x0018 \-\> B:9:0x001a, CROSS_EDGE: B:8:0x0018 \-\> B:14:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_14[style=dashed];
+Node_5 -> Node_14[style=dashed];
+Node_5 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_1;
+Node_14 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_11 -> Node_12;
+Node_7 -> Node_8;
+}
+

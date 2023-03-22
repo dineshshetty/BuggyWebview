@@ -1,0 +1,101 @@
+digraph "CFG forcom.google.android.material.shadow.ShadowDrawableWrapper.setShadowSize(FF)V" {
+subgraph cluster_Region_1937419221 {
+label = "R(1:(2:(1:19)|(3:5|(2:7|(1:9))|(2:(1:14)|(1:16)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2124360298 {
+label = "R(2:(1:19)|(3:5|(2:7|(1:9))|(2:(1:14)|(1:16))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1443216667 {
+label = "IF [B:3:0x0003, B:5:0x0007] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r3 \< 0.0f) goto L18\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0007|ADDED_TO_REGION\l|if (r4 \< 0.0f) goto L18\l}"];
+subgraph cluster_Region_711040838 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x004a|throw new java.lang.IllegalArgumentException(\"invalid shadow size\")\l}"];
+}
+}
+subgraph cluster_Region_404954954 {
+label = "R(3:5|(2:7|(1:9))|(2:(1:14)|(1:16)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|float float r3 = toEven(r3)\lfloat float r4 = toEven(r4)\l}"];
+subgraph cluster_IfRegion_141572341 {
+label = "IF [B:7:0x0016] THEN: R(2:7|(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|if (r3 \> r4) goto L7\l}"];
+subgraph cluster_Region_1362223989 {
+label = "R(2:7|(1:9))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|r3 = r4\l}"];
+subgraph cluster_IfRegion_216251868 {
+label = "IF [B:9:0x001b] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|if (r2.printedShadowClipWarning == false) goto L9\l}"];
+subgraph cluster_Region_195566160 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001d|r2.printedShadowClipWarning = true\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1891537755 {
+label = "R(2:(1:14)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1221188648 {
+label = "IF [B:12:0x0023, B:14:0x0029] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0023|if (r2.rawShadowSize == r3) goto L12\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0029|ADDED_TO_REGION\l|if (r2.rawMaxShadowSize == r4) goto L14\l}"];
+subgraph cluster_Region_1443084709 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x002b|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1217413940 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x002c|r2.rawShadowSize = r3\lr2.rawMaxShadowSize = r4\lr2.shadowSize = java.lang.Math.round(com.google.android.material.shadow.ShadowDrawableWrapper.SHADOW_MULTIPLIER * r3)\lr2.maxShadowSize = r4\lr2.dirty = true\linvalidateSelf()\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0005}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001f|PHI: r3 \l  PHI: (r3v2 'shadowSize' float) = (r3v1 'shadowSize' float), (r3v3 'shadowSize' float), (r3v3 'shadowSize' float) binds: [B:7:0x0016, B:9:0x001b, B:10:0x001d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0025}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0042}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0043}"];
+MethodNode[shape=record,label="{public void com.google.android.material.shadow.ShadowDrawableWrapper.setShadowSize((r2v0 'this' com.google.android.material.shadow.ShadowDrawableWrapper A[IMMUTABLE_TYPE, THIS]), (r3v0 'shadowSize' float A[D('shadowSize' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'maxShadowSize' float A[D('maxShadowSize' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0042 \-\> B:1:?, CROSS_EDGE: B:12:0x0023 \-\> B:16:0x002c, CROSS_EDGE: B:9:0x001b \-\> B:11:0x001f, CROSS_EDGE: B:7:0x0016 \-\> B:11:0x001f, CROSS_EDGE: B:19:0x004a \-\> B:1:?, CROSS_EDGE: B:3:0x0003 \-\> B:18:0x0043\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_18;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_18;
+Node_19 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_1;
+Node_16 -> Node_17;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_17 -> Node_1;
+Node_18 -> Node_19;
+}
+

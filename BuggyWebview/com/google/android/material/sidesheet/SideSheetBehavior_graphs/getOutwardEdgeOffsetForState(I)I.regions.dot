@@ -1,0 +1,46 @@
+digraph "CFG forcom.google.android.material.sidesheet.SideSheetBehavior.getOutwardEdgeOffsetForState(I)I" {
+subgraph cluster_Region_1938944674 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_12940434 {
+label = "Switch: 3
+ case 3 -> R(1:8)
+ case 4, default -> R(2:2|3)
+ case 5 -> R(1:6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|switch(r4) \{\l    case 3: goto L7;\l    case 4: goto L2;\l    case 5: goto L5;\l    default: goto L2;\l\}\l}"];
+subgraph cluster_Region_1863369230 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0025|RETURN\l|return getExpandedOffset()\l}"];
+}
+subgraph cluster_Region_134768380 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0003}"];
+Node_13 [shape=record,label="{13\:\ 0x0019|throw new java.lang.IllegalArgumentException(\"Invalid state to get outward edge offset: \" + r4)\l}"];
+}
+subgraph cluster_Region_1961923005 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0020|RETURN\l|return r3.sheetDelegate.getHiddenOffset()\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001a}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0021}"];
+MethodNode[shape=record,label="{public int com.google.android.material.sidesheet.SideSheetBehavior.getOutwardEdgeOffsetForState((r3v0 'this' com.google.android.material.sidesheet.SideSheetBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.sidesheet.SideSheetBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r4v0 'state' int A[D('state' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0020 \-\> B:10:?, CROSS_EDGE: B:17:0x0025 \-\> B:10:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_11 -> Node_14;
+Node_11 -> Node_16;
+Node_17 -> Node_10;
+Node_12 -> Node_13;
+Node_13 -> Node_10;
+Node_15 -> Node_10;
+Node_9 -> Node_11;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+}
+

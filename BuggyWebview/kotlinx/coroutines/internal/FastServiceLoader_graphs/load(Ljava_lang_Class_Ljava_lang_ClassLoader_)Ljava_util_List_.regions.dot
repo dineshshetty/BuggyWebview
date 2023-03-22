@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.internal.FastServiceLoader.load(Ljava\/lang\/Class;Ljava\/lang\/ClassLoader;)Ljava\/util\/List;" {
+subgraph cluster_Region_2039327246 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1438491082 {
+label = "Try: R(1:4) catches: R(1:8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2056766295 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return loadProviders$kotlinx_coroutines_core(r3, r4)\l}"];
+}
+subgraph cluster_Region_1363526626 {
+label = "R(1:8) | ExcHandler: all \-\> 0x0006\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|RETURN\lORIG_RETURN\l|return kotlin.collections.CollectionsKt.toList(java.util.ServiceLoader.load(r3, r4))\l}"];
+}
+}
+}
+subgraph cluster_Region_1363526626 {
+label = "R(1:8) | ExcHandler: all \-\> 0x0006\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|RETURN\lORIG_RETURN\l|return kotlin.collections.CollectionsKt.toList(java.util.ServiceLoader.load(r3, r4))\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0001|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0006, blocks: (B:12:0x0001), top: B:17:0x0001 \}\lCatch: all \-\> 0x0006\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006|ExcHandler: all \-\> 0x0006\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0007}"];
+MethodNode[shape=record,label="{private final java.util.List\<S\> kotlinx.coroutines.internal.FastServiceLoader.load((r2v0 'this' kotlinx.coroutines.internal.FastServiceLoader A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.Class\<S\> A[D('service' java.lang.Class), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'loader' java.lang.ClassLoader A[D('loader' java.lang.ClassLoader), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0007 \-\> B:16:0x0012, CROSS_EDGE: B:17:0x0001 \-\> B:14:0x0006\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0006, blocks: (B:12:0x0001), top: B:17:0x0001 \}\lTYPE_VARS: [S]\lSIGNATURE: \<S:Ljava\/lang\/Object;\>(Ljava\/lang\/Class\<TS;\>;Ljava\/lang\/ClassLoader;)Ljava\/util\/List\<TS;\>;\l}"];
+MethodNode -> Node_10;Node_19 -> Node_11;
+Node_16 -> Node_11;
+Node_16 -> Node_11;
+Node_10 -> Node_17;
+Node_17 -> Node_12;
+Node_17 -> Node_14;
+Node_12 -> Node_18;
+Node_12 -> Node_19;
+Node_18 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+}
+

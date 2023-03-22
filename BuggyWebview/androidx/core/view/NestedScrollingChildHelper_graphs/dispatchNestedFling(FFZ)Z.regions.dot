@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.core.view.NestedScrollingChildHelper.dispatchNestedFling(FFZ)Z" {
+subgraph cluster_Region_1023370597 {
+label = "R(1:(2:(1:8)|(1:6))) | DECL_VAR: android.view.ViewParent parent\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1306777106 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_902558546 {
+label = "IF [B:12:0x0005, B:14:0x000b] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0005|if (isNestedScrollingEnabled() == true) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000b|ADDED_TO_REGION\l|if ((r0 = getNestedScrollingParentForType(0)) == null) goto L8\l}"];
+subgraph cluster_Region_556940095 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1713485361 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0013|RETURN\l|return androidx.core.view.ViewParentCompat.onNestedFling(r0, r2.mView, r3, r4, r5)\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0007}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000d}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.core.view.NestedScrollingChildHelper.dispatchNestedFling((r2v0 'this' androidx.core.view.NestedScrollingChildHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 'velocityX' float A[D('velocityX' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'velocityY' float A[D('velocityY' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'consumed' boolean A[D('consumed' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0014 \-\> B:10:?, CROSS_EDGE: B:12:0x0005 \-\> B:17:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_12 -> Node_13;
+Node_12 -> Node_17[style=dashed];
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_17;
+Node_17 -> Node_10;
+Node_16 -> Node_10;
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

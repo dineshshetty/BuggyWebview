@@ -1,0 +1,20 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.sumOfFloat(Ljava\/lang\/Iterable;)F" {
+Node_16 [shape=record,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0000|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"\<this\>\" \l0x0002: INVOKE  (r3 I:java.lang.Object A[D('$this$sum' java.lang.Iterable)]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x0005: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:3673)\l0x0006: INVOKE  (r1 I:java.util.Iterator) = (r3 I:java.lang.Iterable A[D('$this$sum' java.lang.Iterable)]) type: INTERFACE call: java.lang.Iterable.iterator():java.util.Iterator A[MD:():java.util.Iterator\<T\> (c)] (LINE:3674)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000a|LOOP_START\lLOOP:0: B:19:0x000a\-\>B:21:0x0010\l|0x000a: INVOKE  (r2 I:boolean) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000e|0x000e: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:23:0x001c \l}"];
+Node_21 [shape=record,label="{21\:\ 0x0010|LOOP_END\lLOOP:0: B:19:0x000a\-\>B:21:0x0010\l|0x0010: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x0014: CHECK_CAST (r2 I:java.lang.Number) = (java.lang.Number) (r2 I:??[OBJECT, ARRAY]) \l0x0016: INVOKE  (r2 I:float) = (r2 I:java.lang.Number) type: VIRTUAL call: java.lang.Number.floatValue():float A[MD:():float (c)]\l0x001a: ARITH  (r0 I:float) = (r0 I:float A[D('sum' float)]) + (r2 I:float A[D('element' float)])  (LINE:3675)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001c|SYNTHETIC\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001c|RETURN\l|0x001c: RETURN  (r0 I:float A[D('sum' float)])  (LINE:3677)\l}"];
+Node_17 [shape=record,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final float kotlin.collections.CollectionsKt___CollectionsKt.sumOfFloat((r3 I:java.lang.Iterable\<java.lang.Float\> A[D('$this$sum' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0010 \-\> B:19:0x000a\lINLINE_NOT_NEEDED\lDebug Info:\l  0x001a\-0x001b: r2 'element' F\l  0x0006\-0x001c: r0 'sum' F\l  \-1 \-0x001c: r3 '$this$sum' Ljava\/lang\/Iterable;\lSIGNATURE: (Ljava\/lang\/Iterable\<Ljava\/lang\/Float;\>;)F\l}"];
+MethodNode -> Node_16;Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_23;
+Node_21 -> Node_19;
+Node_23 -> Node_22;
+Node_22 -> Node_17;
+}
+

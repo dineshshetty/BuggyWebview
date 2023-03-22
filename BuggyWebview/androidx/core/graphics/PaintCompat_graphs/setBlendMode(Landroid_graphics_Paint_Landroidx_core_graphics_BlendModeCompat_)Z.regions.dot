@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.core.graphics.PaintCompat.setBlendMode(Landroid\/graphics\/Paint;Landroidx\/core\/graphics\/BlendModeCompat;)Z" {
+subgraph cluster_Region_2090440168 {
+label = "R(1:(2:5|6)(1:(3:9|12|13)(2:16|17)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_213591208 {
+label = "IF [B:24:0x0006] THEN: R(2:5|6) ELSE: R(1:(3:9|12|13)(2:16|17))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0006|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L3\l}"];
+subgraph cluster_Region_101658135 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0010|PHI: r2 \l  PHI: (r2v3 java.lang.Object A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|java.lang.Object r0 = r5 != null ? androidx.core.graphics.BlendModeUtils.Api29Impl.obtainBlendModeFromCompat(r5) : null\landroidx.core.graphics.PaintCompat.Api29Impl.setBlendMode(r4, r0)\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0014|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_774541088 {
+label = "R(1:(3:9|12|13)(2:16|17)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1007130471 {
+label = "IF [B:30:0x0015] THEN: R(3:9|12|13) ELSE: R(2:16|17) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0015|if (r5 != null) goto L9\l}"];
+subgraph cluster_Region_590290673 {
+label = "R(3:9|12|13)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0017|android.graphics.PorterDuff$Mode android.graphics.PorterDuff.Mode r0 = androidx.core.graphics.BlendModeUtils.obtainPorterDuffFromCompat(r5)\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0022|PHI: r2 \l  PHI: (r2v1 android.graphics.PorterDuffXfermode A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r4.setXfermode(r0 != null ? new android.graphics.PorterDuffXfermode(r0) : null)\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0025|RETURN\l|return r0 != null\l}"];
+}
+subgraph cluster_Region_209810394 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x002a|r4.setXfermode(null)\l}"];
+Node_40 [shape=record,label="{40\:\ 0x002d|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0008}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000a}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001b}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001d}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0028|ORIG_RETURN\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.graphics.PaintCompat.setBlendMode((r4v0 'paint' android.graphics.Paint A[D('paint' android.graphics.Paint), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'blendMode' androidx.core.graphics.BlendModeCompat A[D('blendMode' androidx.core.graphics.BlendModeCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0008 \-\> B:28:0x0010, CROSS_EDGE: B:38:0x0029 \-\> B:22:?, CROSS_EDGE: B:35:0x0025 \-\> B:38:0x0029, CROSS_EDGE: B:32:0x001b \-\> B:34:0x0022, CROSS_EDGE: B:40:0x002d \-\> B:22:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_21;Node_24 -> Node_25;
+Node_24 -> Node_30[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_22;
+Node_30 -> Node_31;
+Node_30 -> Node_39[style=dashed];
+Node_31 -> Node_32;
+Node_34 -> Node_35;
+Node_35 -> Node_37;
+Node_35 -> Node_41;
+Node_39 -> Node_40;
+Node_40 -> Node_22;
+Node_21 -> Node_23;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_28;
+Node_26 -> Node_28;
+Node_32 -> Node_33;
+Node_32 -> Node_34;
+Node_33 -> Node_34;
+Node_37 -> Node_22;
+Node_41 -> Node_22;
+}
+

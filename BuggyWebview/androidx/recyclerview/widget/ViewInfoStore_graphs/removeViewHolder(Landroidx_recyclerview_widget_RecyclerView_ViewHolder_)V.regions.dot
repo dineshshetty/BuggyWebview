@@ -1,0 +1,85 @@
+digraph "CFG forandroidx.recyclerview.widget.ViewInfoStore.removeViewHolder(Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;)V" {
+subgraph cluster_Region_211943051 {
+label = "R(4:1|(1:(1:14)(1:(1:5)(2:7|1)))|8|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r2.mOldChangedHolders.size() \- 1\l}"];
+subgraph cluster_LoopRegion_91861043 {
+label = "LOOP:0: (1:(1:14)(1:(1:5)(2:7|1)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1421679683 {
+label = "R(1:(1:14)(1:(1:5)(2:7|1)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1529220130 {
+label = "IF [B:3:0x0008] THEN: R(1:14) ELSE: R(1:(1:5)(2:7|1))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_START\lLOOP:0: B:3:0x0008\-\>B:7:0x0018\lPHI: r0 \l  PHI: (r0v3 'i' int) = (r0v2 'i' int), (r0v7 'i' int) binds: [B:2:0x0000, B:7:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< 0) goto L14\l}"];
+subgraph cluster_Region_1464244006 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001b|SYNTHETIC\lEDGE_INSN: B:13:0x001b\-\>B:8:0x001b ?: BREAK  \l|break\l}"];
+}
+subgraph cluster_Region_1668656456 {
+label = "R(1:(1:5)(2:7|1)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2067563648 {
+label = "IF [B:5:0x0010] THEN: R(1:5) ELSE: R(2:7|1) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|if (r3 != r2.mOldChangedHolders.valueAt(r0)) goto L5\l}"];
+subgraph cluster_Region_939002220 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:7:0x0018\l|r0\-\-\l}"];
+}
+subgraph cluster_Region_2020243658 {
+label = "R(2:7|1)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|EDGE_INSN: B:6:0x0012\-\>B:8:0x001b ?: BREAK  \l|r2.mOldChangedHolders.removeAt(r0)\l}"];
+Node_InsnContainer_734359869 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x001b|EDGE_INSN: B:6:0x0012\-\>B:8:0x001b ?: BREAK  , EDGE_INSN: B:13:0x001b\-\>B:8:0x001b ?: BREAK  \l|androidx.recyclerview.widget.ViewInfoStore$InfoRecord androidx.recyclerview.widget.ViewInfoStore.InfoRecord r0 = r2.mLayoutHolderMap.remove(r3)\l}"];
+subgraph cluster_Region_388378370 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_254717378 {
+label = "IF [B:9:0x0023] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|if (r0 != null) goto L10\l}"];
+subgraph cluster_Region_1686300441 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0025|androidx.recyclerview.widget.ViewInfoStore.InfoRecord.recycle(r0)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0012|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0028|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.ViewInfoStore.removeViewHolder((r2v0 'this' androidx.recyclerview.widget.ViewInfoStore A[IMMUTABLE_TYPE, THIS]), (r3v0 'holder' androidx.recyclerview.widget.RecyclerView$ViewHolder A[D('holder' androidx.recyclerview.widget.RecyclerView$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0023 \-\> B:11:0x0028, BACK_EDGE: B:7:0x0018 \-\> B:3:0x0008, CROSS_EDGE: B:3:0x0008 \-\> B:8:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_13 -> Node_8;
+Node_5 -> Node_7;
+Node_5 -> Node_12[style=dashed];
+Node_7 -> Node_3;
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_12 -> Node_6;
+Node_11 -> Node_1;
+Node_14 -> Node_1;
+}
+

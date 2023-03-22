@@ -1,0 +1,44 @@
+digraph "CFG forandroidx.core.content.res.ResourcesCompat.loadFont(Landroid\/content\/Context;ILandroid\/util\/TypedValue;ILandroidx\/core\/content\/res\/ResourcesCompat$FontCallback;Landroid\/os\/Handler;ZZ)Landroid\/graphics\/Typeface;" {
+subgraph cluster_Region_1878333903 {
+label = "R(2:1|(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|android.content.res.Resources android.content.res.Resources r9 = r12.getResources()\lr9.getValue(r13, r14, true)\landroid.graphics.Typeface android.graphics.Typeface r0 = loadFont(r12, r9, r14, r13, r15, r16, r17, r18, r19)\l}"];
+subgraph cluster_Region_695470409 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_575948077 {
+label = "IF [B:13:0x001b, B:14:0x001d, B:15:0x001f] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001b|if (r0 == null) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x001d|ADDED_TO_REGION\l|if (r16 == null) goto L4\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001f|ADDED_TO_REGION\l|if (r19 == false) goto L5\l}"];
+subgraph cluster_Region_683281878 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0022}"];
+Node_18 [shape=record,label="{18\:\ 0x0041|throw new android.content.res.Resources.NotFoundException(\"Font resource ID #0x\" + java.lang.Integer.toHexString(r13) + \" could not be retrieved.\")\l}"];
+}
+}
+subgraph cluster_Region_1922881991 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0042|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static android.graphics.Typeface androidx.core.content.res.ResourcesCompat.loadFont((r12v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'id' int A[D('id' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'value' android.util.TypedValue A[D('value' android.util.TypedValue), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 'style' int A[D('style' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 'fontCallback' androidx.core.content.res.ResourcesCompat$FontCallback A[D('fontCallback' androidx.core.content.res.ResourcesCompat$FontCallback), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 'handler' android.os.Handler A[D('handler' android.os.Handler), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'isRequestFromLayoutInflator' boolean A[D('isRequestFromLayoutInflator' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'isCachedOnly' boolean A[D('isCachedOnly' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0042 \-\> B:11:?, CROSS_EDGE: B:14:0x001d \-\> B:19:0x0042, CROSS_EDGE: B:13:0x001b \-\> B:19:0x0042\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_19[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_19[style=dashed];
+Node_15 -> Node_17;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+}
+

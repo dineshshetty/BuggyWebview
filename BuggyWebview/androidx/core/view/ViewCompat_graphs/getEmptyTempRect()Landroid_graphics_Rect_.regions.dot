@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.view.ViewCompat.getEmptyTempRect()Landroid\/graphics\/Rect;" {
+subgraph cluster_Region_1025801422 {
+label = "R(5:(1:3)|4|(1:6)|7|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_384867016 {
+label = "IF [B:13:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (androidx.core.view.ViewCompat.sThreadLocalRect == null) goto L3\l}"];
+subgraph cluster_Region_191855364 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|androidx.core.view.ViewCompat.sThreadLocalRect = new java.lang.ThreadLocal\<\>()\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x000b|android.graphics.Rect android.graphics.Rect r0 = androidx.core.view.ViewCompat.sThreadLocalRect.get()\l}"];
+subgraph cluster_IfRegion_889085452 {
+label = "IF [B:16:0x0013] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0013|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_921764939 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|r0 = new android.graphics.Rect()\landroidx.core.view.ViewCompat.sThreadLocalRect.set(r0)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0020|PHI: r0 \l  PHI: (r0v4 'rect' android.graphics.Rect) = (r0v3 'rect' android.graphics.Rect), (r0v5 'rect' android.graphics.Rect) binds: [B:16:0x0013, B:17:0x0015] A[DONT_GENERATE, DONT_INLINE]\l|r0.setEmpty()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0023|RETURN\l|return r0\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static android.graphics.Rect androidx.core.view.ViewCompat.getEmptyTempRect()  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0013 \-\> B:18:0x0020, CROSS_EDGE: B:13:0x0002 \-\> B:15:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+}
+

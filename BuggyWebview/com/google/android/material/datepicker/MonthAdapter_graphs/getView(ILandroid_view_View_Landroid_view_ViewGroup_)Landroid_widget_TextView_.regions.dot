@@ -1,0 +1,79 @@
+digraph "CFG forcom.google.android.material.datepicker.MonthAdapter.getView(ILandroid\/view\/View;Landroid\/view\/ViewGroup;)Landroid\/widget\/TextView;" {
+subgraph cluster_Region_1453819214 {
+label = "R(6:1|(1:3)|4|(1:15)(1:8)|9|(2:(1:11)|(2:13|14)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|initializeStyles(r11.getContext())\landroid.widget.TextView android.widget.TextView r0 = (android.widget.TextView) r10\l}"];
+subgraph cluster_IfRegion_587027415 {
+label = "IF [B:20:0x000b] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|if (r10 == null) goto L3\l}"];
+subgraph cluster_Region_1350369366 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000d|android.view.LayoutInflater android.view.LayoutInflater r2 = android.view.LayoutInflater.from(r11.getContext())\landroid.widget.TextView r0 = (android.widget.TextView) r2.inflate(com.google.android.material.C0571R.layout.mtrl_calendar_day, r11, false)\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001e|PHI: r0 \l  PHI: (r0v3 'dayTextView' android.widget.TextView) = (r0v2 'dayTextView' android.widget.TextView), (r0v5 'dayTextView' android.widget.TextView) binds: [B:20:0x000b, B:21:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|int int r2 = r9 \- firstPositionInMonth()\lint r3 = \-1\l}"];
+subgraph cluster_IfRegion_2036407210 {
+label = "IF [B:23:0x0025, B:25:0x002b] THEN: R(1:15) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0025|if (r2 \< 0) goto L15\l}"];
+Node_25 [shape=record,label="{25\:\ 0x002b|ADDED_TO_REGION\l|if (r2 \>= r8.month.daysInMonth) goto L15\l}"];
+subgraph cluster_Region_1677408283 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0058|r0.setVisibility(8)\lr0.setEnabled(false)\l}"];
+}
+subgraph cluster_Region_289432124 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002e|int r3 = r2 + 1\lr0.setTag(r8.month)\ljava.util.Locale java.util.Locale r4 = r0.getResources().getConfiguration().locale\lr0.setText(java.lang.String.format(r4, com.google.android.material.timepicker.TimeModel.NUMBER_FORMAT, java.lang.Integer.valueOf(r3)))\lr0.setVisibility(0)\lr0.setEnabled(true)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0060|PHI: r3 \l  PHI: (r3v1 'dayNumber' int) = (r3v0 'dayNumber' int), (r3v2 'dayNumber' int) binds: [B:28:0x0058, B:27:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Long java.lang.Long r1 = getItem(r9)\l}"];
+subgraph cluster_Region_469608258 {
+label = "R(2:(1:11)|(2:13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1797445432 {
+label = "IF [B:30:0x0064] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0064|if (r1 == null) goto L11\l}"];
+subgraph cluster_Region_2066159791 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0066|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1138804781 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0067|updateSelectedState(r0, r1.longValue(), r3)\l}"];
+Node_33 [shape=record,label="{33\:\ 0x006e|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0027}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.widget.TextView com.google.android.material.datepicker.MonthAdapter.getView((r8v0 'this' com.google.android.material.datepicker.MonthAdapter A[IMMUTABLE_TYPE, THIS]), (r9v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'convertView' android.view.View A[D('convertView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'parent' android.view.ViewGroup A[D('parent' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:33:0x006e \-\> B:18:?, CROSS_EDGE: B:28:0x0058 \-\> B:29:0x0060, CROSS_EDGE: B:23:0x0025 \-\> B:28:0x0058, CROSS_EDGE: B:20:0x000b \-\> B:22:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: com.google.android.material.datepicker.MonthAdapter.getView(int, android.view.View, android.view.ViewGroup):android.view.View\lMETHOD_OVERRIDE: [ClspMth\{android.widget.Adapter.getView(int, android.view.View, android.view.ViewGroup):android.view.View\}]\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_28;
+Node_25 -> Node_27[style=dashed];
+Node_25 -> Node_28;
+Node_28 -> Node_29;
+Node_27 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_18;
+Node_32 -> Node_33;
+Node_33 -> Node_18;
+Node_17 -> Node_19;
+Node_24 -> Node_25;
+}
+

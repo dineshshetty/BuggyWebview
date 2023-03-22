@@ -1,0 +1,16 @@
+digraph "CFG forandroidx.core.content.MimeTypeFilter.matches(Ljava\/lang\/String;Ljava\/lang\/String;)Z" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: IF  (r3 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('mimeType' java.lang.String)]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0004  (LINE:76)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|0x0002: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:77)\l0x0003: RETURN  (r0 I:boolean) \l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0004|0x0004: CONST_STR  (r0 I:java.lang.String) =  \"\/\"  (LINE:80)\l0x0006: INVOKE  (r1 I:java.lang.String[]) = (r3 I:java.lang.String A[D('mimeType' java.lang.String)]), (r0 I:java.lang.String) type: VIRTUAL call: java.lang.String.split(java.lang.String):java.lang.String[] A[MD:(java.lang.String):java.lang.String[] (c)]\l0x000a: INVOKE  (r0 I:java.lang.String[]) = (r4 I:java.lang.String A[D('filter' java.lang.String)]), (r0 I:java.lang.String) type: VIRTUAL call: java.lang.String.split(java.lang.String):java.lang.String[] A[MD:(java.lang.String):java.lang.String[] (c)] (LINE:81)\l0x000e: INVOKE  (r2 I:boolean) = \l  (r1 I:java.lang.String[] A[D('mimeTypeParts' java.lang.String[])])\l  (r0 I:java.lang.String[] A[D('filterParts' java.lang.String[])])\l type: STATIC call: androidx.core.content.MimeTypeFilter.mimeTypeAgainstFilter(java.lang.String[], java.lang.String[]):boolean A[MD:(java.lang.String[], java.lang.String[]):boolean (m)] (LINE:83)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|RETURN\l|0x0012: RETURN  (r2 I:boolean) \l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.content.MimeTypeFilter.matches((r3 I:java.lang.String A[D('mimeType' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:java.lang.String A[D('filter' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x0012 \-\> B:1:?\lDebug Info:\l  0x000e\-0x0012: r0 'filterParts' [Ljava\/lang\/String;\l  0x000a\-0x0012: r1 'mimeTypeParts' [Ljava\/lang\/String;\l  \-1 \-0x0012: r3 'mimeType' Ljava\/lang\/String;\l  \-1 \-0x0012: r4 'filter' Ljava\/lang\/String;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+}
+

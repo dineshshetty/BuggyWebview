@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.core.util.LogWriter.flushBuilder()V" {
+subgraph cluster_Region_1292627273 {
+label = "R(1:(1:(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1331471055 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_783064906 {
+label = "IF [B:3:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r3.mBuilder.length() \> 0) goto L3\l}"];
+subgraph cluster_Region_1886209042 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|android.util.Log.d(r3.mTag, r3.mBuilder.toString())\ljava.lang.StringBuilder java.lang.StringBuilder r0 = r3.mBuilder\lr0.delete(0, r0.length())\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.core.util.LogWriter.flushBuilder((r3v0 'this' androidx.core.util.LogWriter A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0006 \-\> B:5:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_1;
+Node_6 -> Node_1;
+}
+

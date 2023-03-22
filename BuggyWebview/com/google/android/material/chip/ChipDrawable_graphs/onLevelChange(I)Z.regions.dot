@@ -1,0 +1,71 @@
+digraph "CFG forcom.google.android.material.chip.ChipDrawable.onLevelChange(I)Z" {
+subgraph cluster_Region_340721491 {
+label = "R(6:1|(1:3)|(1:6)|(1:9)|(1:11)|12)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|boolean boolean r0 = super.onLevelChange(r3)\l}"];
+subgraph cluster_IfRegion_1712896332 {
+label = "IF [B:3:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (showsChipIcon() != false) goto L3\l}"];
+subgraph cluster_Region_1296561115 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|r0 \|= r2.chipIcon.setLevel(r3)\l}"];
+}
+}
+subgraph cluster_IfRegion_1613773492 {
+label = "IF [B:6:0x0015] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (showsCheckedIcon() != false) goto L6\l}"];
+subgraph cluster_Region_1528301557 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|r0 \|= r2.checkedIcon.setLevel(r3)\l}"];
+}
+}
+subgraph cluster_IfRegion_380504649 {
+label = "IF [B:9:0x0022] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0022|if (showsCloseIcon() != false) goto L9\l}"];
+subgraph cluster_Region_969860828 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0024|r0 \|= r2.closeIcon.setLevel(r3)\l}"];
+}
+}
+subgraph cluster_IfRegion_781203783 {
+label = "IF [B:11:0x002b] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002b|PHI: r0 \l  PHI: (r0v3 'invalidate' boolean) = (r0v2 'invalidate' boolean), (r0v4 'invalidate' boolean) binds: [B:9:0x0022, B:10:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != false) goto L11\l}"];
+subgraph cluster_Region_1795980113 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002d|invalidateSelf()\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0030|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011|PHI: r0 \l  PHI: (r0v1 'invalidate' boolean) = (r0v0 'invalidate' boolean), (r0v6 'invalidate' boolean) binds: [B:3:0x0008, B:4:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001e|PHI: r0 \l  PHI: (r0v2 'invalidate' boolean) = (r0v1 'invalidate' boolean), (r0v5 'invalidate' boolean) binds: [B:6:0x0015, B:7:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.material.chip.ChipDrawable.onLevelChange((r2v0 'this' com.google.android.material.chip.ChipDrawable A[IMMUTABLE_TYPE, THIS]), (r3v0 'level' int A[D('level' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:11:0x002b \-\> B:13:0x0030, CROSS_EDGE: B:9:0x0022 \-\> B:11:0x002b, CROSS_EDGE: B:6:0x0015 \-\> B:8:0x001e, CROSS_EDGE: B:3:0x0008 \-\> B:5:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.onLevelChange(int):boolean\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+}
+

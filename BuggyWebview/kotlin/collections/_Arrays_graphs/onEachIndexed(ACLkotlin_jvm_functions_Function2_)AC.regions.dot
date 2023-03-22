@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.onEachIndexed([CLkotlin\/jvm\/functions\/Function2;)[C" {
+subgraph cluster_Region_494768283 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, \"action\")\lint r4 = 0\lint int r5 = r10.length\lint r6 = 0\l}"];
+subgraph cluster_LoopRegion_1566540778 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0011|LOOP_START\lLOOP:0: B:11:0x0011\-\>B:12:0x0013\lPHI: r4 r6 \l  PHI: (r4v1 'index$iv' int) = (r4v0 'index$iv' int), (r4v3 'index$iv' int) binds: [B:10:0x0000, B:12:0x0013] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 int) = (r6v0 int), (r6v2 int) binds: [B:10:0x0000, B:12:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 \< r5) goto L3\l}"];
+subgraph cluster_Region_1872036913 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0013|LOOP_END\lLOOP:0: B:11:0x0011\-\>B:12:0x0013\l|char char r7 = r10[r6]\lr11.invoke(java.lang.Integer.valueOf(r4), java.lang.Character.valueOf(r7))\lr6++\lr4++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0028|RETURN\l|return r10\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0028|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final char[] kotlin.collections.ArraysKt___ArraysKt.onEachIndexed((r10v0 '$this$onEachIndexed' char[] A[D('$this$onEachIndexed' char[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'action' kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super java.lang.Character, kotlin.Unit\> A[D('action' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0013 \-\> B:11:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([CLkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Integer;\-Ljava\/lang\/Character;Lkotlin\/Unit;\>;)[C\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_15 -> Node_14;
+}
+

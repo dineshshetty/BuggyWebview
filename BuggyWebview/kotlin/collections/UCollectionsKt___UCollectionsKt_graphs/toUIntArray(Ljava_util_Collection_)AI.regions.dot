@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.collections.UCollectionsKt___UCollectionsKt.toUIntArray(Ljava\/util\/Collection;)[I" {
+subgraph cluster_Region_2001337160 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lint[] int[] r0 = kotlin.UIntArray.m291constructorimpl(r5.size())\lint r1 = 0\ljava.util.Iterator r2 = r5.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1531232964 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0016|java.lang.Object \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_467358897 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0018|LOOP_END\lLOOP:0: B:11:0x0012\-\>B:13:0x0018\l|int int r3 = r3.m289unboximpl()\lkotlin.UIntArray.m302setVXSXFK8(r0, r1, r3)\lr1++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0029|RETURN\l|return r0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0012|LOOP_START\lLOOP:0: B:11:0x0012\-\>B:13:0x0018\lPHI: r1 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v2 'index' int) binds: [B:10:0x0000, B:13:0x0018] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0029|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final int[] kotlin.collections.UCollectionsKt___UCollectionsKt.toUIntArray((r5v0 java.util.Collection\<kotlin.UInt\> A[D('$this$toUIntArray' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0018 \-\> B:11:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/Collection\<Lkotlin\/UInt;\>;)[I\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

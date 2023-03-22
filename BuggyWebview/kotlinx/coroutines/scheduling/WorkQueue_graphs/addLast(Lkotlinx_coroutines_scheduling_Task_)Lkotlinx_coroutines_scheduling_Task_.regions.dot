@@ -1,0 +1,77 @@
+digraph "CFG forkotlinx.coroutines.scheduling.WorkQueue.addLast(Lkotlinx\/coroutines\/scheduling\/Task;)Lkotlinx\/coroutines\/scheduling\/Task;" {
+subgraph cluster_Region_2055197875 {
+label = "R(2:(1:5)|(2:(1:8)|(4:10|(1:13)|15|16)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_609195777 {
+label = "IF [B:6:0x000d] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|PHI: r3 \l  PHI: (r3v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if ((r5.taskContext.getTaskMode() == 1) != false) goto L5\l}"];
+subgraph cluster_Region_63358549 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|kotlinx.coroutines.scheduling.WorkQueue.blockingTasksInBuffer$FU.incrementAndGet(r4)\l}"];
+}
+}
+subgraph cluster_Region_974137099 {
+label = "R(2:(1:8)|(4:10|(1:13)|15|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1045341878 {
+label = "IF [B:9:0x001a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|if (getBufferSize$kotlinx_coroutines_core() == 127) goto L8\l}"];
+subgraph cluster_Region_1726073313 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001c|RETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_1942411734 {
+label = "R(4:10|(1:13)|15|16)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001d|int r0 = r4.producerIndex & kotlinx.coroutines.scheduling.WorkQueueKt.MASK\l}"];
+subgraph cluster_LoopRegion_1534951441 {
+label = "LOOP:0: (1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0026|if (r4.buffer.get(r0) != null) goto L13\l}"];
+subgraph cluster_Region_1394630406 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0028|LOOP_END\lLOOP:0: B:12:0x0020\-\>B:14:0x0028\l|java.lang.Thread.yield()\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x002c|r4.buffer.lazySet(r0, r5)\lkotlinx.coroutines.scheduling.WorkQueue.producerIndex$FU.incrementAndGet(r4)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0037|RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000c}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0014}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0020|LOOP_START\lLOOP:0: B:12:0x0020\-\>B:14:0x0028\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x002c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final kotlinx.coroutines.scheduling.Task kotlinx.coroutines.scheduling.WorkQueue.addLast((r4v0 'this' kotlinx.coroutines.scheduling.WorkQueue A[IMMUTABLE_TYPE, THIS]), (r5v0 'task' kotlinx.coroutines.scheduling.Task A[D('task' kotlinx.coroutines.scheduling.Task), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x0028 \-\> B:12:0x0020, CROSS_EDGE: B:16:0x0037 \-\> B:1:?, CROSS_EDGE: B:6:0x000d \-\> B:8:0x0014, CROSS_EDGE: B:3:0x0009 \-\> B:6:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_1;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_14 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_3 -> Node_6;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+Node_17 -> Node_15;
+}
+

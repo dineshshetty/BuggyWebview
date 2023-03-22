@@ -1,0 +1,78 @@
+digraph "CFG forkotlin.reflect.KTypeProjection.\<init\>(Lkotlin\/reflect\/KVariance;Lkotlin\/reflect\/KType;)V" {
+subgraph cluster_Region_2067574248 {
+label = "R(2:1|(2:(1:16)|(2:(1:11)(1:15)|13))) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|r4.variance = r5\lr4.type = r6\l}"];
+subgraph cluster_Region_837126291 {
+label = "R(2:(1:16)|(2:(1:11)(1:15)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1161721064 {
+label = "IF [B:33:0x0018] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0018|PHI: r0 \l  PHI: (r0v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (((r5 == null) == (r6 == null)) != false) goto L16\l}"];
+subgraph cluster_Region_1769371203 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0042|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2008798568 {
+label = "R(2:(1:11)(1:15)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1787259420 {
+label = "IF [B:35:0x001b] THEN: R(1:11) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x001b|if (r5 == null) goto L11\l}"];
+subgraph cluster_Region_455983487 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x001d|java.lang.String r1 = \"Star projection must have no type specified.\"\l}"];
+}
+subgraph cluster_Region_1331303102 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0020|java.lang.String r1 = \"The projection variance \" + r5 + \" requires type to be specified.\"\l}"];
+}
+}
+Node_39 [shape=record,label="{39\:\ 0x0040|throw new java.lang.IllegalArgumentException(r1.toString())\l}"];
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000a}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000c}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000f|PHI: r2 \l  PHI: (r2v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0011}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0014|PHI: r3 \l  PHI: (r3v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0017}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x001a}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0036|PHI: r1 \l  PHI: (r1v3 java.lang.String) = (r1v2 java.lang.String), (r1v5 java.lang.String) binds: [B:37:0x0020, B:36:0x001d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0013}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000e}"];
+MethodNode[shape=record,label="{public void kotlin.reflect.KTypeProjection.\<init\>((r4v0 'this' kotlin.reflect.KTypeProjection A[IMMUTABLE_TYPE, THIS]), (r5v0 'variance' kotlin.reflect.KVariance A[D('variance' kotlin.reflect.KVariance), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'type' kotlin.reflect.KType A[D('type' kotlin.reflect.KType), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:37:0x0020 \-\> B:38:0x0036, CROSS_EDGE: B:41:0x0042 \-\> B:22:?, CROSS_EDGE: B:30:0x0014 \-\> B:33:0x0018, CROSS_EDGE: B:29:0x0013 \-\> B:30:0x0014, CROSS_EDGE: B:26:0x000e \-\> B:27:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24;
+Node_33 -> Node_34[style=dashed];
+Node_33 -> Node_41;
+Node_41 -> Node_22;
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_38;
+Node_37 -> Node_38;
+Node_39 -> Node_22;
+Node_21 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_26;
+Node_25 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29;
+Node_28 -> Node_30;
+Node_30 -> Node_32;
+Node_30 -> Node_33;
+Node_32 -> Node_33;
+Node_34 -> Node_35;
+Node_38 -> Node_39;
+Node_29 -> Node_30;
+Node_26 -> Node_27;
+}
+

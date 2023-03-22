@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.timepicker.ClockHandView.getValuesForAnimation(F)Landroid\/util\/Pair;" {
+subgraph cluster_Region_2040574687 {
+label = "R(3:1|(2:(1:7)|(1:12))|14)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|float float r0 = getHandRotation()\l}"];
+subgraph cluster_IfRegion_1113253058 {
+label = "IF [B:19:0x000e] THEN: R(2:(1:7)|(1:12)) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|if (java.lang.Math.abs(r0 \- r5) \> 180.0f) goto L3\l}"];
+subgraph cluster_Region_372880513 {
+label = "R(2:(1:7)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_824777316 {
+label = "IF [B:21:0x0014, B:23:0x0018] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0014|if (r0 \> 180.0f) goto L5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0018|ADDED_TO_REGION\l|if (r5 \< 180.0f) goto L7\l}"];
+subgraph cluster_Region_1516200215 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001a|r5 += 360.0f\l}"];
+}
+}
+subgraph cluster_IfRegion_1306751188 {
+label = "IF [B:26:0x001d, B:28:0x0021] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001d|if (r0 \< 180.0f) goto L10\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0021|ADDED_TO_REGION\l|if (r5 \> 180.0f) goto L12\l}"];
+subgraph cluster_Region_1730767530 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0023|r0 += 360.0f\l}"];
+}
+}
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0031|RETURN\l|return new android.util.Pair\<\>(java.lang.Float.valueOf(r0), java.lang.Float.valueOf(r5))\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0010}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0016}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001b|PHI: r5 \l  PHI: (r5v2 'degrees' float) = (r5v0 'degrees' float), (r5v0 'degrees' float), (r5v3 'degrees' float) binds: [B:21:0x0014, B:23:0x0018, B:24:0x001a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001f}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0024|PHI: r0 r5 \l  PHI: (r0v1 'currentDegrees' float) = (r0v0 'currentDegrees' float), (r0v0 'currentDegrees' float), (r0v0 'currentDegrees' float), (r0v2 'currentDegrees' float) binds: [B:19:0x000e, B:26:0x001d, B:28:0x0021, B:29:0x0023] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 'degrees' float) = (r5v0 'degrees' float), (r5v2 'degrees' float), (r5v2 'degrees' float), (r5v2 'degrees' float) binds: [B:19:0x000e, B:26:0x001d, B:28:0x0021, B:29:0x0023] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.util.Pair\<java.lang.Float, java.lang.Float\> com.google.android.material.timepicker.ClockHandView.getValuesForAnimation((r4v0 'this' com.google.android.material.timepicker.ClockHandView A[IMMUTABLE_TYPE, THIS]), (r5v0 'degrees' float A[D('degrees' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x0021 \-\> B:30:0x0024, CROSS_EDGE: B:26:0x001d \-\> B:30:0x0024, CROSS_EDGE: B:23:0x0018 \-\> B:25:0x001b, CROSS_EDGE: B:21:0x0014 \-\> B:25:0x001b, CROSS_EDGE: B:19:0x000e \-\> B:30:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (F)Landroid\/util\/Pair\<Ljava\/lang\/Float;Ljava\/lang\/Float;\>;\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_30[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_30[style=dashed];
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_30 -> Node_31;
+}
+

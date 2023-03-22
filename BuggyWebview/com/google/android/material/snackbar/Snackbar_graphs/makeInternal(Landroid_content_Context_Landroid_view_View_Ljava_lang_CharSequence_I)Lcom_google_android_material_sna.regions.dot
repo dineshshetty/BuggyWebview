@@ -1,0 +1,74 @@
+digraph "CFG forcom.google.android.material.snackbar.Snackbar.makeInternal(Landroid\/content\/Context;Landroid\/view\/View;Ljava\/lang\/CharSequence;I)Lcom\/google\/android\/material\/snackbar\/Snackbar;" {
+subgraph cluster_Region_1722346914 {
+label = "R(2:1|(2:(1:13)|(5:(1:4)|5|(1:7)(1:11)|8|9))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.ViewGroup android.view.ViewGroup r0 = findSuitableParent(r5)\l}"];
+subgraph cluster_Region_532918448 {
+label = "R(2:(1:13)|(5:(1:4)|5|(1:7)(1:11)|8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1458493107 {
+label = "IF [B:3:0x0004] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 == null) goto L12\l}"];
+subgraph cluster_Region_661996442 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0036|throw new java.lang.IllegalArgumentException(\"No suitable parent found from the given view. Please provide a valid view.\")\l}"];
+}
+}
+subgraph cluster_Region_1607905242 {
+label = "R(5:(1:4)|5|(1:7)(1:11)|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_772914404 {
+label = "IF [B:4:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|if (r4 == null) goto L4\l}"];
+subgraph cluster_Region_1238131286 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0008|android.content.Context r4 = r0.getContext()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x000c|PHI: r4 \l  PHI: (r4v1 'context' android.content.Context) = (r4v0 'context' android.content.Context), (r4v2 'context' android.content.Context) binds: [B:4:0x0006, B:5:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|android.view.LayoutInflater android.view.LayoutInflater r1 = android.view.LayoutInflater.from(r4)\l}"];
+subgraph cluster_IfRegion_347189505 {
+label = "IF [B:7:0x0015] THEN: R(1:7) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|if (hasSnackbarContentStyleAttrs(r4) != false) goto L7\l}"];
+subgraph cluster_Region_1581880916 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|int r2 = com.google.android.material.C0571R.layout.mtrl_layout_snackbar_include\l}"];
+}
+subgraph cluster_Region_2125634687 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|int r2 = com.google.android.material.C0571R.layout.design_layout_snackbar_include\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001c|PHI: r2 \l  PHI: (r2v3 int) = (r2v2 int), (r2v6 int) binds: [B:9:0x001a, B:8:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.material.snackbar.SnackbarContentLayout com.google.android.material.snackbar.SnackbarContentLayout r2 = (com.google.android.material.snackbar.SnackbarContentLayout) r1.inflate(r2, r0, false)\lcom.google.android.material.snackbar.Snackbar com.google.android.material.snackbar.Snackbar r3 = new com.google.android.material.snackbar.Snackbar(r4, r0, r2, r2)\lr3.setText(r6)\lr3.setDuration(r7)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x002e|RETURN\l|return r3\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002f}"];
+MethodNode[shape=record,label="{private static com.google.android.material.snackbar.Snackbar com.google.android.material.snackbar.Snackbar.makeInternal((r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'text' java.lang.CharSequence A[D('text' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'duration' int A[D('duration' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x001a \-\> B:10:0x001c, CROSS_EDGE: B:4:0x0006 \-\> B:6:0x000c, CROSS_EDGE: B:13:0x0036 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_13 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_12 -> Node_13;
+}
+

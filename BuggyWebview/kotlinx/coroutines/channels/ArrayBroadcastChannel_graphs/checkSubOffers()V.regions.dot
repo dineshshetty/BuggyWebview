@@ -1,0 +1,79 @@
+digraph "CFG forkotlinx.coroutines.channels.ArrayBroadcastChannel.checkSubOffers()V" {
+subgraph cluster_Region_392668469 {
+label = "R(3:1|(2:4|(1:7)(0))|(1:(1:16)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|boolean r0 = false\lboolean r1 = false\ljava.util.Iterator r2 = r5.subscribers.iterator()\l\l}"];
+subgraph cluster_LoopRegion_875685434 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|kotlinx.coroutines.channels.ArrayBroadcastChannel$Subscriber \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1419841082 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000e|kotlinx.coroutines.channels.ArrayBroadcastChannel$Subscriber r3 = r2.next()\lr1 = true\l}"];
+subgraph cluster_IfRegion_324918292 {
+label = "IF [B:24:0x0019] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|if (r3.checkOffer() != false) goto L6\l}"];
+subgraph cluster_Region_1802004032 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001b|r0 = true\l}"];
+}
+subgraph cluster_Region_1379382015 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+subgraph cluster_Region_1353580804 {
+label = "R(1:(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_507443998 {
+label = "IF [B:26:0x001d, B:27:0x001f] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001d|if (r0 != false) goto L16\l}"];
+Node_27 [shape=record,label="{27\:\ 0x001f|ADDED_TO_REGION\l|if (r1 == false) goto L16\l}"];
+subgraph cluster_Region_1804942621 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0021|updateHead$default(r5, null, null, 3, null)\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0008|LOOP_START\lLOOP:0: B:21:0x0008\-\>B:32:0x0008\lPHI: r0 r1 \l  PHI: (r0v1 'updated' boolean) = (r0v0 'updated' boolean), (r0v2 'updated' boolean) binds: [B:20:0x0000, B:32:0x0008] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'hasSubs' boolean) = (r1v0 'hasSubs' boolean), (r1v2 'hasSubs' boolean) binds: [B:20:0x0000, B:32:0x0008] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001b|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0008|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0008|LOOP_END\lSYNTHETIC\lLOOP:0: B:21:0x0008\-\>B:32:0x0008\lPHI: r0 \l  PHI: (r0v2 'updated' boolean) = (r0v1 'updated' boolean), (r0v3 'updated' boolean) binds: [B:33:0x0008, B:34:0x0008] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0008|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001d|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0026|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.channels.ArrayBroadcastChannel.checkSubOffers((r5v0 'this' kotlinx.coroutines.channels.ArrayBroadcastChannel\<E\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:24:0x0019 \-\> B:21:0x0008, BACK_EDGE: B:25:0x001b \-\> B:21:0x0008, CROSS_EDGE: B:27:0x001f \-\> B:29:0x0026, CROSS_EDGE: B:26:0x001d \-\> B:28:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_31[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_30;
+Node_24 -> Node_33[style=dashed];
+Node_25 -> Node_34;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_28;
+Node_27 -> Node_35[style=dashed];
+Node_28 -> Node_29;
+Node_18 -> Node_20;
+Node_21 -> Node_22;
+Node_30 -> Node_25;
+Node_34 -> Node_32;
+Node_32 -> Node_21;
+Node_33 -> Node_32;
+Node_31 -> Node_26;
+Node_35 -> Node_19;
+Node_29 -> Node_19;
+}
+

@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.core.widget.ContentLoadingProgressBar.hideOnUiThread()V" {
+subgraph cluster_Region_721285037 {
+label = "R(2:1|(1:11)(1:(1:7)(0)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|r10.mDismissed = true\lremoveCallbacks(r10.mDelayedShow)\lr10.mPostedShow = false\llong long r1 = java.lang.System.currentTimeMillis()\llong long r3 = r10.mStartTime\llong long r1 = r1 \- r3\l}"];
+subgraph cluster_IfRegion_366194871 {
+label = "IF [B:3:0x0016, B:5:0x001c] THEN: R(1:11) ELSE: R(1:(1:7)(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0016|if (r1 \>= 500) goto L11\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|ADDED_TO_REGION\l|if (r3 == (\-1)) goto L11\l}"];
+subgraph cluster_Region_1013878389 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002c|setVisibility(8)\l}"];
+}
+subgraph cluster_Region_1303800115 {
+label = "R(1:(1:7)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1187289412 {
+label = "IF [B:8:0x0021] THEN: R(1:7) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|if (r10.mPostedHide == false) goto L7\l}"];
+subgraph cluster_Region_363387822 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|postDelayed(r10.mDelayedHide, 500 \- r1)\lr10.mPostedHide = true\l}"];
+}
+subgraph cluster_Region_678862191 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0018}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001f}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0031|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.core.widget.ContentLoadingProgressBar.hideOnUiThread((r10v0 'this' androidx.core.widget.ContentLoadingProgressBar A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0021 \-\> B:11:0x0031, CROSS_EDGE: B:10:0x002c \-\> B:11:0x0031, CROSS_EDGE: B:3:0x0016 \-\> B:10:0x002c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: private\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_10;
+Node_10 -> Node_11;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_9 -> Node_13;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_13 -> Node_1;
+Node_12 -> Node_1;
+Node_11 -> Node_1;
+}
+

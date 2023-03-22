@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.reduceRight([JLkotlin\/jvm\/functions\/Function2;)J" {
+subgraph cluster_Region_89026261 {
+label = "R(2:1|(2:(1:10)|(3:3|(1:5)|7)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"operation\")\lint int r1 = kotlin.collections.ArraysKt.getLastIndex(r7)\l}"];
+subgraph cluster_Region_728822335 {
+label = "R(2:(1:10)|(3:3|(1:5)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_10327732 {
+label = "IF [B:14:0x000f] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000f|if (r1 \< 0) goto L9\l}"];
+subgraph cluster_Region_618575931 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0037|throw new java.lang.UnsupportedOperationException(\"Empty array can't be reduced.\")\l}"];
+}
+}
+subgraph cluster_Region_1013846096 {
+label = "R(3:3|(1:5)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|int int r2 = r1 \- 1\llong r3 = r7[r1]\l}"];
+subgraph cluster_LoopRegion_1321804095 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0015|LOOP_START\lLOOP:0: B:16:0x0015\-\>B:17:0x0017\lPHI: r2 r3 \l  PHI: (r2v2 'index' int) = (r2v1 'index' int), (r2v6 'index' int) binds: [B:15:0x0011, B:17:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v2 'accumulator' long) = (r3v1 'accumulator' long), (r3v3 'accumulator' long) binds: [B:15:0x0011, B:17:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= 0) goto L5\l}"];
+subgraph cluster_Region_948422389 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0015\-\>B:17:0x0017\l|long r3 = r8.invoke(java.lang.Long.valueOf(r7[r2]), java.lang.Long.valueOf(r3)).longValue()\lr2\-\-\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x002f|RETURN\l|return r3\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002f|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0030}"];
+MethodNode[shape=record,label="{public static final long kotlin.collections.ArraysKt___ArraysKt.reduceRight((r7v0 '$this$reduceRight' long[] A[D('$this$reduceRight' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'operation' kotlin.jvm.functions.Function2\<? super java.lang.Long, ? super java.lang.Long, java.lang.Long\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x0017 \-\> B:16:0x0015, CROSS_EDGE: B:20:0x0037 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([JLkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Long;\-Ljava\/lang\/Long;Ljava\/lang\/Long;\>;)J\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_20 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_16;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_21 -> Node_18;
+Node_19 -> Node_20;
+}
+

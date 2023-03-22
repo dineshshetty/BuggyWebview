@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.recyclerview.widget.DefaultItemAnimator.endChangeAnimationIfNecessary(Landroidx\/recyclerview\/widget\/DefaultItemAnimator$ChangeInfo;Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;)Z" {
+subgraph cluster_Region_1081724462 {
+label = "R(4:1|(1:3)(1:(1:9)(1:10))|4|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|boolean r0 = false\l}"];
+subgraph cluster_IfRegion_1798950928 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: R(1:(1:9)(1:10))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r4.newHolder == r5) goto L3\l}"];
+subgraph cluster_Region_598676784 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|r4.newHolder = null\l}"];
+}
+subgraph cluster_Region_1826100008 {
+label = "R(1:(1:9)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1838786649 {
+label = "IF [B:6:0x000b] THEN: R(1:9) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|if (r4.oldHolder == r5) goto L9\l}"];
+subgraph cluster_Region_374391071 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|r4.oldHolder = null\lr0 = true\l}"];
+}
+subgraph cluster_Region_1208306858 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0027|RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0010|PHI: r0 \l  PHI: (r0v2 'oldItem' boolean) = (r0v1 'oldItem' boolean), (r0v0 'oldItem' boolean) binds: [B:7:0x000d, B:4:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|r5.itemView.setAlpha(1.0f)\lr5.itemView.setTranslationX(0.0f)\lr5.itemView.setTranslationY(0.0f)\ldispatchChangeFinished(r5, r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0026|RETURN\l|return true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+MethodNode[shape=record,label="{private boolean androidx.recyclerview.widget.DefaultItemAnimator.endChangeAnimationIfNecessary((r3v0 'this' androidx.recyclerview.widget.DefaultItemAnimator A[IMMUTABLE_TYPE, THIS]), (r4v0 'changeInfo' androidx.recyclerview.widget.DefaultItemAnimator$ChangeInfo A[D('changeInfo' androidx.recyclerview.widget.DefaultItemAnimator$ChangeInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'item' androidx.recyclerview.widget.RecyclerView$ViewHolder A[D('item' androidx.recyclerview.widget.RecyclerView$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x000d \-\> B:8:0x0010, CROSS_EDGE: B:11:0x0028 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_10 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+}
+

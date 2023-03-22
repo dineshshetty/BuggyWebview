@@ -1,0 +1,32 @@
+digraph "CFG forkotlinx.coroutines.CancelFutureOnCancel.invoke(Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_877823281 {
+label = "R(1:(1:(1:2)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1765398551 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1209023013 {
+label = "IF [B:8:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|if (r3 != null) goto L2\l}"];
+subgraph cluster_Region_396271454 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0002|r2.future.cancel(false)\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0008|ORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.CancelFutureOnCancel.invoke((r2v0 'this' kotlinx.coroutines.CancelFutureOnCancel A[IMMUTABLE_TYPE, THIS]), (r3v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0000 \-\> B:10:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lBRIDGED_BY: kotlinx.coroutines.CancelFutureOnCancel.invoke(java.lang.Throwable):kotlin.Unit\lMETHOD_OVERRIDE: [kotlinx.coroutines.CancelHandlerBase.invoke(java.lang.Throwable):void]\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_6 -> Node_8;
+Node_10 -> Node_7;
+Node_11 -> Node_7;
+}
+

@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.minOrThrow(Ljava\/lang\/Iterable;)F" {
+subgraph cluster_Region_262053099 {
+label = "R(2:1|(2:(1:11)|(3:3|(1:6)|8)))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\ljava.util.Iterator java.util.Iterator r0 = r3.iterator()\l}"];
+subgraph cluster_Region_1710500203 {
+label = "R(2:(1:11)|(3:3|(1:6)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1957241984 {
+label = "IF [B:27:0x000d] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000d|if (r0.hasNext() == false) goto L10\l}"];
+subgraph cluster_Region_693559895 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0034|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_1956858418 {
+label = "R(3:3|(1:6)|8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000f|float float r1 = r0.next().floatValue()\l}"];
+subgraph cluster_LoopRegion_1523202811 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x001d|if (r0.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_558406797 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001f|LOOP_END\lLOOP:0: B:29:0x0019\-\>B:31:0x001f\l|float float r2 = r0.next().floatValue()\lfloat r1 = java.lang.Math.min(r1, r2)\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x002e|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0019|LOOP_START\lLOOP:0: B:29:0x0019\-\>B:31:0x001f\lPHI: r1 \l  PHI: (r1v5 'min' float) = (r1v4 'min' float), (r1v6 'min' float) binds: [B:28:0x000f, B:31:0x001f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x002e|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002f}"];
+MethodNode[shape=record,label="{public static final float kotlin.collections.CollectionsKt___CollectionsKt.minOrThrow((r3v0 java.lang.Iterable\<java.lang.Float\> A[D('$this$min' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:31:0x001f \-\> B:29:0x0019, CROSS_EDGE: B:34:0x0034 \-\> B:25:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/Iterable\<Ljava\/lang\/Float;\>;)F\l}"];
+MethodNode -> Node_24;Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_33;
+Node_34 -> Node_25;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_35[style=dashed];
+Node_31 -> Node_29;
+Node_32 -> Node_25;
+Node_24 -> Node_26;
+Node_29 -> Node_30;
+Node_35 -> Node_32;
+Node_33 -> Node_34;
+}
+

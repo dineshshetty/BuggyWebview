@@ -1,0 +1,24 @@
+digraph "CFG forandroidx.core.content.PermissionChecker.checkCallingOrSelfPermission(Landroid\/content\/Context;Ljava\/lang\/String;)I" {
+subgraph cluster_Region_1588369839 {
+label = "R(2:2|5)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|java.lang.String r0 = android.os.Binder.getCallingPid() == android.os.Process.myPid() ? r3.getPackageName() : null\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001c|RETURN\l|return checkPermission(r3, r4, android.os.Binder.getCallingPid(), android.os.Binder.getCallingUid(), r0)\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000a}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0010|PHI: r0 \l  PHI: (r0v2 'packageName' java.lang.String) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000f}"];
+MethodNode[shape=record,label="{public static int androidx.core.content.PermissionChecker.checkCallingOrSelfPermission((r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'permission' java.lang.String A[D('permission' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000f \-\> B:14:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_13 -> Node_14;
+}
+

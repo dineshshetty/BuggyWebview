@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.appcompat.view.ContextThemeWrapper.getTheme()Landroid\/content\/res\/Resources$Theme;" {
+subgraph cluster_Region_129738218 {
+label = "R(2:1|(2:(1:3)|(3:(1:7)|8|9)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|android.content.res.Resources$Theme android.content.res.Resources.Theme r0 = r1.mTheme\l}"];
+subgraph cluster_Region_134658419 {
+label = "R(2:(1:3)|(3:(1:7)|8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_393468097 {
+label = "IF [B:13:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_2037507579 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1221745611 {
+label = "R(3:(1:7)|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_690522978 {
+label = "IF [B:16:0x0007] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0007|if (r1.mThemeResource == 0) goto L7\l}"];
+subgraph cluster_Region_1452263991 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0009|r1.mThemeResource = androidx.appcompat.C0019R.style.Theme_AppCompat_Light\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x000d|initializeTheme()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0012|RETURN\l|return r1.mTheme\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0005}"];
+MethodNode[shape=record,label="{public android.content.res.Resources$Theme androidx.appcompat.view.ContextThemeWrapper.getTheme((r1v0 'this' androidx.appcompat.view.ContextThemeWrapper A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0012 \-\> B:11:?, CROSS_EDGE: B:16:0x0007 \-\> B:18:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.content.Context.getTheme():android.content.res.Resources$Theme\}]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_11;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_15 -> Node_16;
+}
+

@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.Recycler.viewRangeUpdate(II)V" {
+subgraph cluster_Region_1478040057 {
+label = "R(2:1|(3:3|(1:8)|10)) | DECL_VAR: int pos\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|int int r0 = r7 + r8\lint int r1 = r6.mCachedViews.size()\lint int r2 = r1 \- 1\l}"];
+subgraph cluster_LoopRegion_112364470 {
+label = "LOOP:0: (3:3|(1:8)|10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000a|LOOP_START\lLOOP:0: B:21:0x000a\-\>B:29:0x0024\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:20:0x0000, B:29:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= 0) goto L3\l}"];
+subgraph cluster_Region_956832064 {
+label = "R(3:3|(1:8)|10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.RecyclerView.ViewHolder r3 = r6.mCachedViews.get(r2)\l}"];
+subgraph cluster_IfRegion_749937970 {
+label = "IF [B:23:0x0014, B:26:0x0019, B:27:0x001b] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0014|if (r3 != null) goto L5\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0019|ADDED_TO_REGION\l|if ((r4 = r3.mPosition) \>= r7) goto L7\l}"];
+Node_27 [shape=record,label="{27\:\ 0x001b|ADDED_TO_REGION\l|if (r4 \< r0) goto L8\l}"];
+subgraph cluster_Region_701372745 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001d|r3.addFlags(2)\lrecycleCachedViewAt(r2)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0024|LOOP_END\lADDED_TO_REGION\lLOOP:0: B:21:0x000a\-\>B:29:0x0024\l|r2\-\-\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0017}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0024|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0024|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0024|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0024|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0027|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0027}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.Recycler.viewRangeUpdate((r6v0 'this' androidx.recyclerview.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, THIS]), (r7v0 'positionStart' int A[D('positionStart' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'itemCount' int A[D('itemCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:29:0x0024 \-\> B:21:0x000a, CROSS_EDGE: B:27:0x001b \-\> B:29:0x0024, CROSS_EDGE: B:26:0x0019 \-\> B:29:0x0024, CROSS_EDGE: B:23:0x0014 \-\> B:29:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_31[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_25;
+Node_23 -> Node_35[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_33[style=dashed];
+Node_27 -> Node_28;
+Node_27 -> Node_34[style=dashed];
+Node_28 -> Node_32;
+Node_29 -> Node_21;
+Node_18 -> Node_20;
+Node_25 -> Node_26;
+Node_32 -> Node_29;
+Node_34 -> Node_29;
+Node_33 -> Node_29;
+Node_35 -> Node_29;
+Node_31 -> Node_30;
+Node_30 -> Node_19;
+}
+

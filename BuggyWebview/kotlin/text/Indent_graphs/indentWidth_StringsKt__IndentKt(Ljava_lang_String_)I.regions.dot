@@ -1,0 +1,75 @@
+digraph "CFG forkotlin.text.StringsKt__IndentKt.indentWidth$StringsKt__IndentKt(Ljava\/lang\/String;)I" {
+subgraph cluster_Region_1725237489 {
+label = "R(4:1|(1:(2:15|1)(1:(1:7)(1:6)))|8|9)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.CharSequence java.lang.String r0 = r8\lint r2 = 0\lint int r3 = r0.length()\l}"];
+subgraph cluster_LoopRegion_1723531068 {
+label = "LOOP:0: (1:(2:15|1)(1:(1:7)(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_799373575 {
+label = "R(1:(2:15|1)(1:(1:7)(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_212103256 {
+label = "IF [B:4:0x000a] THEN: R(2:15|1) ELSE: R(1:(1:7)(1:6))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|if (r2 \>= r3) goto L14\l}"];
+subgraph cluster_Region_1899676738 {
+label = "R(2:15|1)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001d|EDGE_INSN: B:9:0x001d\-\>B:10:0x001e ?: BREAK  \l|r2 = \-1\l}"];
+Node_InsnContainer_174719184 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1002555582 {
+label = "R(1:(1:7)(1:6)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1974304516 {
+label = "IF [B:6:0x0017] THEN: R(1:7) ELSE: R(1:6) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|if ((!kotlin.text.CharsKt.isWhitespace(r0.charAt(r2))) == true) goto L7\l}"];
+subgraph cluster_Region_171148261 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001e|SYNTHETIC\lEDGE_INSN: B:14:0x001e\-\>B:10:0x001e ?: BREAK  \l|break\l}"];
+}
+subgraph cluster_Region_1115187814 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|LOOP_END\lLOOP:0: B:3:0x0009\-\>B:8:0x001a\l|r2++\l}"];
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001e|EDGE_INSN: B:14:0x001e\-\>B:10:0x001e ?: BREAK  , EDGE_INSN: B:9:0x001d\-\>B:10:0x001e ?: BREAK  \lPHI: r2 \l  PHI: (r2v3 'index$iv' int) = (r2v2 'index$iv' int), (r2v1 'index$iv' int) binds: [B:9:0x001d, B:14:0x001e] A[DONT_GENERATE, DONT_INLINE]\l|int r0 = r2\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0020|RETURN\l|return r0 == \-1 ? r8.length() : r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009|LOOP_START\lLOOP:0: B:3:0x0009\-\>B:8:0x001a\lPHI: r2 \l  PHI: (r2v1 'index$iv' int) = (r2v0 'index$iv' int), (r2v5 'index$iv' int) binds: [B:2:0x0000, B:8:0x001a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000c}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0022}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0027|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static final int kotlin.text.StringsKt__IndentKt.indentWidth$StringsKt__IndentKt((r8v0 '$this$indentWidth' java.lang.String A[D('$this$indentWidth' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lBACK_EDGE: B:8:0x001a \-\> B:3:0x0009, CROSS_EDGE: B:11:0x0020 \-\> B:13:0x0027, CROSS_EDGE: B:9:0x001d \-\> B:10:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l DEBUG: \l \-\> Don't trust debug lines info. Repeating lines: [99=4]\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_15;
+Node_9 -> Node_10;
+Node_6 -> Node_8[style=dashed];
+Node_6 -> Node_14;
+Node_14 -> Node_10;
+Node_8 -> Node_3;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_16;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_16 -> Node_1;
+Node_15 -> Node_9;
+}
+

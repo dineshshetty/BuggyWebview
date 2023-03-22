@@ -1,0 +1,39 @@
+digraph "CFG forkotlin.time.DurationKt.skipWhile(Ljava\/lang\/String;ILkotlin\/jvm\/functions\/Function1;)I" {
+subgraph cluster_Region_553872647 {
+label = "R(3:1|(1:6)|8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0000|int r1 = r4\l}"];
+subgraph cluster_LoopRegion_1578867797 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0006|if (r1 \< r3.length()) goto L4\l}"];
+Node_28 [shape=record,label="{28\:\ 0x001a|ADDED_TO_REGION\l|if (r5.invoke(java.lang.Character.valueOf(r3.charAt(r1))).booleanValue() != false) goto L6\l}"];
+subgraph cluster_Region_914901279 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001c|LOOP_END\lLOOP:0: B:25:0x0002\-\>B:29:0x001c\l|r1++\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x001f|RETURN\l|return r1\l}"];
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0002|LOOP_START\lLOOP:0: B:25:0x0002\-\>B:29:0x001c\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:24:0x0000, B:29:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0008}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001f|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001f|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{private static final int kotlin.time.DurationKt.skipWhile((r3v0 '$this$skipWhile' java.lang.String A[D('$this$skipWhile' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'startIndex' int A[D('startIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 kotlin.jvm.functions.Function1\<? super java.lang.Character, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:29:0x001c \-\> B:25:0x0002, CROSS_EDGE: B:26:0x0006 \-\> B:30:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/String;ILkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;Ljava\/lang\/Boolean;\>;)I\l}"];
+MethodNode -> Node_22;Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_31[style=dashed];
+Node_28 -> Node_29;
+Node_28 -> Node_32[style=dashed];
+Node_29 -> Node_25;
+Node_30 -> Node_23;
+Node_22 -> Node_24;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_32 -> Node_30;
+Node_31 -> Node_30;
+}
+

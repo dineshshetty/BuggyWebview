@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.flatMapIndexedIterableTo(Lkotlin\/sequences\/Sequence;Ljava\/util\/Collection;Lkotlin\/jvm\/functions\/Function2;)Ljava\/util\/Collection;" {
+subgraph cluster_Region_66323853 {
+label = "R(3:1|(3:4|(1:6)(0)|8)|11)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"destination\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"transform\")\lint r0 = 0\ljava.util.Iterator java.util.Iterator\<? extends T\> r1 = r4.iterator()\l}"];
+subgraph cluster_LoopRegion_459482832 {
+label = "LOOP:0: (3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|if (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1463416970 {
+label = "R(3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001a|java.lang.Object java.lang.Object r2 = (T) r1.next()\lint int r3 = r0 + 1\l}"];
+subgraph cluster_IfRegion_661314196 {
+label = "IF [B:19:0x0020] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0020|if (r0 \< 0) goto L6\l}"];
+subgraph cluster_Region_732974575 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0022|kotlin.collections.CollectionsKt.throwIndexOverflow()\l}"];
+}
+subgraph cluster_Region_908254462 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0025|LOOP_END\lLOOP:0: B:16:0x0014\-\>B:21:0x0025\l|java.lang.Iterable java.lang.Iterable r0 = r6.invoke(java.lang.Integer.valueOf(r0), r2)\lkotlin.collections.CollectionsKt.addAll(r5, r0)\lr0 = r3\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0034|RETURN\l|return r5\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0014|LOOP_START\lLOOP:0: B:16:0x0014\-\>B:21:0x0025\lPHI: r0 \l  PHI: (r0v4 'index' int) = (r0v3 'index' int), (r0v8 'index' int) binds: [B:15:0x0000, B:21:0x0025] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0025|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0025|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0034|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final C extends java.util.Collection\<? super R\> kotlin.sequences.SequencesKt___SequencesKt.flatMapIndexedIterableTo((r4v0 kotlin.sequences.Sequence\<? extends T\> A[D('$this$flatMapIndexedTo' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'destination' C extends java.util.Collection\<? super R\> A[D('destination' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'transform' kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super T, ? extends java.lang.Iterable\<? extends R\>\> A[D('transform' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0025 \-\> B:16:0x0014, CROSS_EDGE: B:19:0x0020 \-\> B:21:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, C extends java.util.Collection\<? super R\>, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;C::Ljava\/util\/Collection\<\-TR;\>;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;TC;Lkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Integer;\-TT;+Ljava\/lang\/Iterable\<+TR;\>;\>;)TC;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r2v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_24;
+Node_21 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_24 -> Node_21;
+Node_25 -> Node_21;
+Node_23 -> Node_22;
+}
+

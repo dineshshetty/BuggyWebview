@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.collection.ContainerHelpers.binarySearch([III)I" {
+subgraph cluster_Region_1273869872 {
+label = "R(3:1|(2:3|(1:14)(1:(1:7)(1:11)))|18)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|int r0 = 0\lint int r1 = r5 \- 1\l}"];
+subgraph cluster_LoopRegion_15982363 {
+label = "LOOP:0: (2:3|(1:14)(1:(1:7)(1:11)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0003|LOOP_START\lLOOP:0: B:23:0x0003\-\>B:37:0x0003\lPHI: r0 r1 \l  PHI: (r0v1 'lo' int) = (r0v0 'lo' int), (r0v3 'lo' int) binds: [B:22:0x0000, B:37:0x0003] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'hi' int) = (r1v0 'hi' int), (r1v2 'hi' int) binds: [B:22:0x0000, B:37:0x0003] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \<= r1) goto L3\l}"];
+subgraph cluster_Region_22356495 {
+label = "R(2:3|(1:14)(1:(1:7)(1:11)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0005|int int r2 = (r0 + r1) \>\>\> 1\lint r3 = r4[r2]\l}"];
+subgraph cluster_IfRegion_929876548 {
+label = "IF [B:25:0x000b] THEN: R(1:14) ELSE: R(1:(1:7)(1:11))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000b|if (r3 \< r6) goto L13\l}"];
+subgraph cluster_Region_828897270 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000d|int r0 = r2 + 1\l}"];
+}
+subgraph cluster_Region_373419417 {
+label = "R(1:(1:7)(1:11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_528598012 {
+label = "IF [B:27:0x0010] THEN: R(1:7) ELSE: R(1:11) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0010|if (r3 \> r6) goto L7\l}"];
+subgraph cluster_Region_665798691 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0012|int r1 = r2 \- 1\l}"];
+}
+subgraph cluster_Region_704234343 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0015|RETURN\l|return r2\l}"];
+}
+}
+}
+}
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0017|RETURN\l|return ~r0\l}"];
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0010|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0003|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0003|LOOP_END\lSYNTHETIC\lLOOP:0: B:23:0x0003\-\>B:37:0x0003\lPHI: r0 r1 \l  PHI: (r0v3 'lo' int) = (r0v2 'lo' int), (r0v1 'lo' int) binds: [B:39:0x0003, B:38:0x0003] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v2 'hi' int) = (r1v1 'hi' int), (r1v3 'hi' int) binds: [B:39:0x0003, B:38:0x0003] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0015|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x000d|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0003|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0016|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0016}"];
+MethodNode[shape=record,label="{public static int androidx.collection.ContainerHelpers.binarySearch((r4v0 'array' int[] A[D('array' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'size' int A[D('size' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'value' int A[D('value' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x000d \-\> B:23:0x0003, BACK_EDGE: B:28:0x0012 \-\> B:23:0x0003, CROSS_EDGE: B:32:0x0017 \-\> B:21:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_33[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_34[style=dashed];
+Node_25 -> Node_36;
+Node_26 -> Node_39;
+Node_27 -> Node_28;
+Node_27 -> Node_35[style=dashed];
+Node_28 -> Node_38;
+Node_30 -> Node_21;
+Node_32 -> Node_21;
+Node_20 -> Node_22;
+Node_34 -> Node_27;
+Node_38 -> Node_37;
+Node_37 -> Node_23;
+Node_35 -> Node_30;
+Node_36 -> Node_26;
+Node_39 -> Node_37;
+Node_33 -> Node_31;
+Node_31 -> Node_32;
+}
+

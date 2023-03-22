@@ -1,0 +1,74 @@
+digraph "CFG forcom.google.android.material.navigation.NavigationBarMenuView.removeUnusedBadges()V" {
+subgraph cluster_Region_843886449 {
+label = "R(4:1|(1:4)|6|(3:9|(1:11)(0)|13))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|java.util.HashSet java.util.HashSet\<java.lang.Integer\> r0 = new java.util.HashSet\<\>()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_924526156 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|if (r1 \< r4.menu.size()) goto L4\l}"];
+subgraph cluster_Region_1606658631 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000e|LOOP_END\lLOOP:0: B:21:0x0006\-\>B:23:0x000e\l|r0.add(java.lang.Integer.valueOf(r4.menu.getItem(r1).getItemId()))\lr1++\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0022|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_1618686201 {
+label = "LOOP:1: (3:9|(1:11)(0)|13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0029|if (r1 \< r4.badgeDrawables.size()) goto L9\l}"];
+subgraph cluster_Region_581451555 {
+label = "R(3:9|(1:11)(0)|13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002b|int int r2 = r4.badgeDrawables.keyAt(r1)\l}"];
+subgraph cluster_IfRegion_721871807 {
+label = "IF [B:28:0x0039] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0039|if (r0.contains(java.lang.Integer.valueOf(r2)) == false) goto L11\l}"];
+subgraph cluster_Region_1043282898 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003b|r4.badgeDrawables.delete(r2)\l}"];
+}
+subgraph cluster_Region_261726266 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x0040|LOOP_END\lLOOP:1: B:25:0x0023\-\>B:30:0x0040\l|r1++\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0006|LOOP_START\lLOOP:0: B:21:0x0006\-\>B:23:0x000e\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v5 'i' int) binds: [B:20:0x0000, B:23:0x000e] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0022|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0023|LOOP_START\lLOOP:1: B:25:0x0023\-\>B:30:0x0040\lPHI: r1 \l  PHI: (r1v3 'i' int) = (r1v2 'i' int), (r1v4 'i' int) binds: [B:24:0x0022, B:30:0x0040] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0040|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0040|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0043|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0043}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.navigation.NavigationBarMenuView.removeUnusedBadges((r4v0 'this' com.google.android.material.navigation.NavigationBarMenuView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x000e \-\> B:21:0x0006, BACK_EDGE: B:30:0x0040 \-\> B:25:0x0023, CROSS_EDGE: B:28:0x0039 \-\> B:30:0x0040\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_32[style=dashed];
+Node_23 -> Node_21;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_33[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_35[style=dashed];
+Node_29 -> Node_34;
+Node_30 -> Node_25;
+Node_18 -> Node_20;
+Node_21 -> Node_22;
+Node_32 -> Node_24;
+Node_25 -> Node_26;
+Node_34 -> Node_30;
+Node_35 -> Node_30;
+Node_33 -> Node_31;
+Node_31 -> Node_19;
+}
+

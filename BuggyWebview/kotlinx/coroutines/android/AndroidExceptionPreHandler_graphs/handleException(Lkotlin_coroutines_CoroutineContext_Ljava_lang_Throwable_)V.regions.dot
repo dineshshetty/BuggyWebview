@@ -1,0 +1,83 @@
+digraph "CFG forkotlinx.coroutines.android.AndroidExceptionPreHandler.handleException(Lkotlin\/coroutines\/CoroutineContext;Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_1970388048 {
+label = "R(2:1|(1:(4:7|8|11|(2:(1:17)|(1:14)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = android.os.Build.VERSION.SDK_INT\l}"];
+subgraph cluster_Region_308056370 {
+label = "R(1:(4:7|8|11|(2:(1:17)|(1:14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_486512639 {
+label = "IF [B:8:0x000e] THEN: R(4:7|8|11|(2:(1:17)|(1:14))) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000e|PHI: r0 \l  PHI: (r0v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((26 \<= r0 && r0 \< 28) != false) goto L7\l}"];
+subgraph cluster_Region_741973649 {
+label = "R(4:7|8|11|(2:(1:17)|(1:14)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0010|java.lang.reflect.Method java.lang.reflect.Method r0 = preHandler()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0015|java.lang.Object r0 = r0 == null ? null : r0.invoke(null, new java.lang.Object[0])\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0021|java.lang.Thread.UncaughtExceptionHandler r2 = r0 instanceof java.lang.Thread.UncaughtExceptionHandler ? (java.lang.Thread.UncaughtExceptionHandler) r0 : null\l}"];
+subgraph cluster_Region_1026223549 {
+label = "R(2:(1:17)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1097357547 {
+label = "IF [B:17:0x0027] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0027|PHI: r2 \l  PHI: (r2v2 java.lang.Thread$UncaughtExceptionHandler) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (r2 == null) goto L17\l}"];
+subgraph cluster_Region_1926635603 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_964951978 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002a|r2.uncaughtException(java.lang.Thread.currentThread(), r5)\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009|REMOVE\lADDED_TO_REGION\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000b}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0017}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001f|PHI: r0 \l  PHI: (r0v5 java.lang.Object) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0023}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0031|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0019}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000d}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.android.AndroidExceptionPreHandler.handleException((r3v0 'this' kotlinx.coroutines.android.AndroidExceptionPreHandler A[IMMUTABLE_TYPE, THIS]), (r4v0 'context' kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'exception' java.lang.Throwable A[D('exception' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0027 \-\> B:20:0x0031, CROSS_EDGE: B:14:0x0021 \-\> B:17:0x0027, CROSS_EDGE: B:12:0x0019 \-\> B:13:0x001f, CROSS_EDGE: B:8:0x000e \-\> B:20:0x0031, CROSS_EDGE: B:7:0x000d \-\> B:8:0x000e, CROSS_EDGE: B:3:0x0005 \-\> B:7:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.CoroutineExceptionHandler.handleException(kotlin.coroutines.CoroutineContext, java.lang.Throwable):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_8 -> Node_9;
+Node_8 -> Node_21[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_14 -> Node_17;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_22;
+Node_22 -> Node_1;
+Node_19 -> Node_20;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_17;
+Node_20 -> Node_1;
+Node_12 -> Node_13;
+Node_21 -> Node_1;
+Node_7 -> Node_8;
+}
+

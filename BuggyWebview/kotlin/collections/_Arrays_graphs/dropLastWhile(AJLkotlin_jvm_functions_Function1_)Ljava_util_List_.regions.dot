@@ -1,0 +1,61 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.dropLastWhile([JLkotlin\/jvm\/functions\/Function1;)Ljava\/util\/List;" {
+subgraph cluster_Region_935980859 {
+label = "R(3:1|(1:(2:(1:9)|(1:6)))|13)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"predicate\")\lint int r1 = kotlin.collections.ArraysKt.getLastIndex(r4)\l}"];
+subgraph cluster_LoopRegion_1418764996 {
+label = "LOOP:0: (1:(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0010|if ((\-1) \< r1) goto L4\l}"];
+subgraph cluster_Region_1012872821 {
+label = "R(1:(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_968456223 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1042681145 {
+label = "IF [B:20:0x0022] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0022|if (r5.invoke(java.lang.Long.valueOf(r4[r1])).booleanValue() == false) goto L7\l}"];
+subgraph cluster_Region_1181654513 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002a|RETURN\l|return kotlin.collections.ArraysKt.take(r4, r1 + 1)\l}"];
+}
+}
+subgraph cluster_Region_508092384 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002b|LOOP_END\lLOOP:0: B:17:0x000f\-\>B:23:0x002b\l|r1\-\-\l}"];
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0032|RETURN\l|return kotlin.collections.CollectionsKt.emptyList()\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000f|LOOP_START\lLOOP:0: B:17:0x000f\-\>B:23:0x002b\lPHI: r1 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v3 'index' int) binds: [B:16:0x0000, B:23:0x002b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0012}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0024|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0024}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002e|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002e}"];
+MethodNode[shape=record,label="{public static final java.util.List\<java.lang.Long\> kotlin.collections.ArraysKt___ArraysKt.dropLastWhile((r4v0 '$this$dropLastWhile' long[] A[D('$this$dropLastWhile' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Long, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x002b \-\> B:17:0x000f, CROSS_EDGE: B:25:0x0032 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([JLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Long;Ljava\/lang\/Boolean;\>;)Ljava\/util\/List\<Ljava\/lang\/Long;\>;\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_26[style=dashed];
+Node_20 -> Node_23[style=dashed];
+Node_20 -> Node_27;
+Node_22 -> Node_15;
+Node_23 -> Node_17;
+Node_25 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_27 -> Node_21;
+Node_21 -> Node_22;
+Node_26 -> Node_24;
+Node_24 -> Node_25;
+}
+

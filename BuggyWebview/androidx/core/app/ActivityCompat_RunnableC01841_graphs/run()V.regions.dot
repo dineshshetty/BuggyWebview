@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.core.app.ActivityCompat.1.run()V" {
+subgraph cluster_Region_495899705 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|int[] int[] r0 = new int[r1.length]\landroid.content.pm.PackageManager android.content.pm.PackageManager r1 = r2.getPackageManager()\ljava.lang.String java.lang.String r2 = r2.getPackageName()\lint int r3 = r1.length\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_240274830 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|LOOP_START\lLOOP:0: B:19:0x0015\-\>B:20:0x0017\lPHI: r4 \l  PHI: (r4v1 'i' int) = (r4v0 'i' int), (r4v4 'i' int) binds: [B:18:0x0000, B:20:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \< r3) goto L3\l}"];
+subgraph cluster_Region_1563034603 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0017|LOOP_END\lLOOP:0: B:19:0x0015\-\>B:20:0x0017\l|r0[r4] = r1.checkPermission(r1[r4], r2)\lr4++\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0024|((androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback) r2).onRequestPermissionsResult(r3, r1, r0)\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0024|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x002f}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.core.app.ActivityCompat.1.run((r7v0 'this' androidx.core.app.ActivityCompat$1 A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:20:0x0017 \-\> B:19:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{java.lang.Runnable.run():void\}]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_20 -> Node_19;
+Node_21 -> Node_22;
+Node_16 -> Node_18;
+Node_23 -> Node_21;
+Node_22 -> Node_17;
+}
+

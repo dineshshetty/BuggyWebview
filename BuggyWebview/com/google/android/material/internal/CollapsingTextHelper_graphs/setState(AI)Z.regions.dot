@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.material.internal.CollapsingTextHelper.setState([I)Z" {
+subgraph cluster_Region_96717219 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|r1.state = r2\l}"];
+subgraph cluster_Region_766679830 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2060086705 {
+label = "IF [B:11:0x0006] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0006|if (isStateful() != false) goto L3\l}"];
+subgraph cluster_Region_492854049 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|recalculate()\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000c|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_108337151 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000d|RETURN\l|return false\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final boolean com.google.android.material.internal.CollapsingTextHelper.setState((r1v0 'this' com.google.android.material.internal.CollapsingTextHelper A[IMMUTABLE_TYPE, THIS]), (r2v0 'state' int[] A[D('state' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000e \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+}
+

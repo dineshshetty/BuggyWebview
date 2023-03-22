@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.core.view.ViewCompat.UnhandledKeyEventManager.onUnhandledKeyEvent(Landroid\/view\/View;Landroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_2041582414 {
+label = "R(2:1|(2:(3:3|(1:(2:(1:9)|(1:7)))|12)|(1:13)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|java.util.ArrayList java.util.ArrayList\<androidx.core.view.ViewCompat.OnUnhandledKeyEventListenerCompat\> r0 = (java.util.ArrayList) r5.getTag(androidx.core.C0180R.C0183id.tag_unhandled_key_listeners)\l}"];
+subgraph cluster_Region_624176554 {
+label = "R(2:(3:3|(1:(2:(1:9)|(1:7)))|12)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_290199134 {
+label = "IF [B:18:0x0008] THEN: R(3:3|(1:(2:(1:9)|(1:7)))|12) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1543049690 {
+label = "R(3:3|(1:(2:(1:9)|(1:7)))|12)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|int int r1 = r0.size() \- 1\l}"];
+subgraph cluster_LoopRegion_1941094169 {
+label = "LOOP:0: (1:(2:(1:9)|(1:7)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0010|LOOP_START\lLOOP:0: B:20:0x0010\-\>B:24:0x001f\lPHI: r1 \l  PHI: (r1v3 'i' int) = (r1v2 'i' int), (r1v5 'i' int) binds: [B:19:0x000a, B:24:0x001f] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \>= 0) goto L5\l}"];
+subgraph cluster_Region_476319450 {
+label = "R(1:(2:(1:9)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_277844276 {
+label = "R(2:(1:9)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_174188610 {
+label = "IF [B:22:0x001c] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001c|if (r0.get(r1).onUnhandledKeyEvent(r5, r6) == true) goto L8\l}"];
+subgraph cluster_Region_1633081179 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001e|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2070868406 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001f|LOOP_END\lLOOP:0: B:20:0x0010\-\>B:24:0x001f\l|r1\-\-\l}"];
+}
+}
+}
+}
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1695285158 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0022|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0012}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x001e|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0022|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean androidx.core.view.ViewCompat.UnhandledKeyEventManager.onUnhandledKeyEvent((r4v0 'this' androidx.core.view.ViewCompat$UnhandledKeyEventManager A[IMMUTABLE_TYPE, THIS]), (r5v0 'v' android.view.View A[D('v' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:24:0x001f \-\> B:20:0x0010, CROSS_EDGE: B:26:0x0023 \-\> B:16:?, CROSS_EDGE: B:18:0x0008 \-\> B:25:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_27[style=dashed];
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_28;
+Node_23 -> Node_16;
+Node_24 -> Node_20;
+Node_29 -> Node_16;
+Node_25 -> Node_16;
+Node_15 -> Node_17;
+Node_21 -> Node_22;
+Node_28 -> Node_23;
+Node_27 -> Node_29;
+}
+

@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.areAllStartsEqual()Z" {
+subgraph cluster_Region_1363198619 {
+label = "R(3:1|(1:(2:(1:8)|(1:6)))|11)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r5.mSpans[0].getStartLine(Integer.MIN_VALUE)\lint r3 = 1\l}"];
+subgraph cluster_LoopRegion_1334787892 {
+label = "LOOP:0: (1:(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r3 \< r5.mSpanCount) goto L4\l}"];
+subgraph cluster_Region_256745201 {
+label = "R(1:(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1432196814 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_285189710 {
+label = "IF [B:6:0x0018] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|if (r5.mSpans[r3].getStartLine(Integer.MIN_VALUE) != r0) goto L7\l}"];
+subgraph cluster_Region_168289445 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1293419506 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|LOOP_END\lLOOP:0: B:3:0x000c\-\>B:8:0x001b\l|r3++\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001e|RETURN\l|return true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000c|LOOP_START\lLOOP:0: B:3:0x000c\-\>B:8:0x001b\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:2:0x0000, B:8:0x001b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001a|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{boolean androidx.recyclerview.widget.StaggeredGridLayoutManager.areAllStartsEqual((r5v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x001b \-\> B:3:0x000c, CROSS_EDGE: B:10:0x001f \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_12[style=dashed];
+Node_6 -> Node_8[style=dashed];
+Node_6 -> Node_11;
+Node_7 -> Node_1;
+Node_8 -> Node_3;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_11 -> Node_7;
+Node_12 -> Node_9;
+}
+

@@ -1,0 +1,258 @@
+digraph "CFG forcom.google.android.material.internal.CollapsingTextHelper.calculateUsingTextSize(FZ)V" {
+subgraph cluster_Region_2053319868 {
+label = "R(1:(2:(1:3)|(4:5|(1:7)(4:55|(1:66)(1:57)|58|(1:60)(2:(1:63)(1:65)|64))|(8:11|14|17|19|20|24|31|34)(1:54)|(1:(4:39|(1:41)|42|45))))) | DECL_VAR: float newTextSize, float newLetterSpacing, android.graphics.Typeface newTypeface, float null, float textSizeRatio, boolean updateDrawText\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_104731497 {
+label = "R(2:(1:3)|(4:5|(1:7)(4:55|(1:66)(1:57)|58|(1:60)(2:(1:63)(1:65)|64))|(8:11|14|17|19|20|24|31|34)(1:54)|(1:(4:39|(1:41)|42|45))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1095079836 {
+label = "IF [B:71:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_71 [shape=record,label="{71\:\ 0x0006|if (r16.text == null) goto L3\l}"];
+subgraph cluster_Region_1224979597 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_72 [shape=record,label="{72\:\ 0x0008|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_903418954 {
+label = "R(4:5|(1:7)(4:55|(1:66)(1:57)|58|(1:60)(2:(1:63)(1:65)|64))|(8:11|14|17|19|20|24|31|34)(1:54)|(1:(4:39|(1:41)|42|45)))";
+node [shape=record,color=blue];
+Node_73 [shape=record,label="{73\:\ 0x0009|float float r2 = r16.collapsedBounds.width()\lfloat float r3 = r16.expandedBounds.width()\l}"];
+subgraph cluster_IfRegion_711358429 {
+label = "IF [B:74:0x001e] THEN: R(1:7) ELSE: R(4:55|(1:66)(1:57)|58|(1:60)(2:(1:63)(1:65)|64))";
+node [shape=record,color=blue];
+Node_74 [shape=record,label="{74\:\ 0x001e|if (isClose(r17, 1.0f) != false) goto L7\l}"];
+subgraph cluster_Region_1338363918 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_75 [shape=record,label="{75\:\ 0x0020|float r5 = r16.collapsedTextSize\lfloat r7 = r16.collapsedLetterSpacing\lr16.scale = 1.0f\landroid.graphics.Typeface r8 = r16.collapsedTypeface\lr9 = r2\l}"];
+}
+subgraph cluster_Region_35337200 {
+label = "R(4:55|(1:66)(1:57)|58|(1:60)(2:(1:63)(1:65)|64))";
+node [shape=record,color=blue];
+Node_76 [shape=record,label="{76\:\ 0x002a|float r5 = r16.expandedTextSize\lfloat r7 = r16.expandedLetterSpacing\landroid.graphics.Typeface r8 = r16.expandedTypeface\l}"];
+subgraph cluster_IfRegion_1555401891 {
+label = "IF [B:77:0x0034] THEN: R(1:66) ELSE: R(1:57)";
+node [shape=record,color=blue];
+Node_77 [shape=record,label="{77\:\ 0x0034|if (isClose(r17, 0.0f) == false) goto L66\l}"];
+subgraph cluster_Region_832637406 {
+label = "R(1:66)";
+node [shape=record,color=blue];
+Node_79 [shape=record,label="{79\:\ 0x0039|r16.scale = lerp(r16.expandedTextSize, r16.collapsedTextSize, r17, r16.textSizeInterpolator) \/ r16.expandedTextSize\l}"];
+}
+subgraph cluster_Region_1699898555 {
+label = "R(1:57)";
+node [shape=record,color=blue];
+Node_78 [shape=record,label="{78\:\ 0x0036|r16.scale = 1.0f\l}"];
+}
+}
+Node_80 [shape=record,label="{80\:\ 0x0048|float float r9 = r16.collapsedTextSize \/ r16.expandedTextSize\lfloat float r10 = r3 * r9\l}"];
+subgraph cluster_IfRegion_2090024787 {
+label = "IF [B:81:0x004f] THEN: R(1:60) ELSE: R(2:(1:63)(1:65)|64)";
+node [shape=record,color=blue];
+Node_81 [shape=record,label="{81\:\ 0x004f|if (r18 != false) goto L60\l}"];
+subgraph cluster_Region_1665123869 {
+label = "R(1:60)";
+node [shape=record,color=blue];
+Node_82 [shape=record,label="{82\:\ 0x0051|r9 = r3\l}"];
+}
+subgraph cluster_Region_338758298 {
+label = "R(2:(1:63)(1:65)|64)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_787075760 {
+label = "IF [B:84:0x0056] THEN: R(1:63) ELSE: R(1:65)";
+node [shape=record,color=blue];
+Node_84 [shape=record,label="{84\:\ 0x0056|if (r10 \> r2) goto L63\l}"];
+subgraph cluster_Region_2140996365 {
+label = "R(1:63)";
+node [shape=record,color=blue];
+Node_85 [shape=record,label="{85\:\ 0x0058|float r11 = java.lang.Math.min(r2 \/ r9, r3)\l}"];
+}
+subgraph cluster_Region_52688024 {
+label = "R(1:65)";
+node [shape=record,color=blue];
+Node_86 [shape=record,label="{86\:\ 0x005f|r11 = r3\l}"];
+}
+}
+Node_87 [shape=record,label="{87\:\ 0x0060|PHI: r11 \l  PHI: (r11v3 float) = (r11v2 float), (r11v5 float) binds: [B:86:0x005f, B:85:0x0058] A[DONT_GENERATE, DONT_INLINE]\l|r9 = r11\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_213083382 {
+label = "IF [B:89:0x0063] THEN: R(8:11|14|17|19|20|24|31|34) ELSE: R(1:54)";
+node [shape=record,color=blue];
+Node_89 [shape=record,label="{89\:\ 0x0063|if (r9 \> 0.0f) goto L10\l}"];
+subgraph cluster_Region_1392252817 {
+label = "R(8:11|14|17|19|20|24|31|34)";
+node [shape=record,color=blue];
+Node_91 [shape=record,label="{91\:\ 0x006a|boolean r6 = r16.currentTextSize != r5\l}"];
+Node_95 [shape=record,label="{95\:\ 0x0073|boolean r12 = r16.currentLetterSpacing != r7\l}"];
+Node_99 [shape=record,label="{99\:\ 0x007a|boolean r13 = r16.currentTypeface != r8\l}"];
+Node_102 [shape=record,label="{102\:\ 0x007f|PHI: r13 \l  PHI: (r13v2 'typefaceChanged' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.text.StaticLayout android.text.StaticLayout r14 = r16.textLayout\l}"];
+Node_103 [shape=record,label="{103\:\ 0x0081|boolean r14 = (r14 == null \|\| r9 == ((float) r14.getWidth())) ? false : true\l}"];
+Node_108 [shape=record,label="{108\:\ 0x008f|PHI: r14 \l  PHI: (r14v2 'availableWidthChanged' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r15 = r6 \|\| r12 \|\| r14 \|\| r13 \|\| r16.boundsChanged\l}"];
+Node_117 [shape=record,label="{117\:\ 0x009f|PHI: r15 \l  PHI: (r15v3 'updateDrawText' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r16.currentTextSize = r5\lr16.currentLetterSpacing = r7\lr16.currentTypeface = r8\lr16.boundsChanged = false\l}"];
+Node_121 [shape=record,label="{121\:\ 0x00b2|PHI: r11 \l  PHI: (r11v10 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r16.textPaint.setLinearText(r16.scale != 1.0f)\l}"];
+}
+subgraph cluster_Region_1341013855 {
+label = "R(1:54)";
+node [shape=record,color=blue];
+Node_122 [shape=record,label="{122\:\ 0x00b6|r15 = false\l}"];
+}
+}
+subgraph cluster_Region_904229703 {
+label = "R(1:(4:39|(1:41)|42|45))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1139060476 {
+label = "IF [B:124:0x00b9, B:125:0x00bb] THEN: R(4:39|(1:41)|42|45) ELSE: null";
+node [shape=record,color=blue];
+Node_124 [shape=record,label="{124\:\ 0x00b9|if (r16.textToDraw == null) goto L39\l}"];
+Node_125 [shape=record,label="{125\:\ 0x00bb|ADDED_TO_REGION\l|if (r15 != false) goto L39\l}"];
+subgraph cluster_Region_1323806306 {
+label = "R(4:39|(1:41)|42|45)";
+node [shape=record,color=blue];
+Node_126 [shape=record,label="{126\:\ 0x00bd|r16.textPaint.setTextSize(r16.currentTextSize)\lr16.textPaint.setTypeface(r16.currentTypeface)\l}"];
+subgraph cluster_IfRegion_652769396 {
+label = "IF [B:127:0x00cf] THEN: R(1:41) ELSE: null";
+node [shape=record,color=blue];
+Node_127 [shape=record,label="{127\:\ 0x00cf|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L41\l}"];
+subgraph cluster_Region_837495947 {
+label = "R(1:41)";
+node [shape=record,color=blue];
+Node_128 [shape=record,label="{128\:\ 0x00d1|r16.textPaint.setLetterSpacing(r16.currentLetterSpacing)\l}"];
+}
+}
+Node_129 [shape=record,label="{129\:\ 0x00d8|r16.isRtl = calculateIsRtl(r16.text)\l}"];
+Node_133 [shape=record,label="{133\:\ 0x00ea|PHI: r10 \l  PHI: (r10v5 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.text.StaticLayout android.text.StaticLayout r4 = createStaticLayout(shouldDrawMultiline() ? r16.maxLines : 1, r9, r16.isRtl)\lr16.textLayout = r4\lr16.textToDraw = r4.getText()\l}"];
+}
+}
+}
+}
+}
+}
+Node_68 [shape=record,color=red,label="{68\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_70 [shape=record,color=red,label="{70\:\ 0x0000}"];
+Node_69 [shape=record,color=red,label="{69\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_88 [shape=record,color=red,label="{88\:\ 0x0061|PHI: r5 r7 r8 r9 \l  PHI: (r5v2 'newTextSize' float) = (r5v1 'newTextSize' float), (r5v1 'newTextSize' float), (r5v3 'newTextSize' float) binds: [B:87:0x0060, B:82:0x0051, B:75:0x0020] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r7v1 'newLetterSpacing' float) = (r7v0 'newLetterSpacing' float), (r7v0 'newLetterSpacing' float), (r7v2 'newLetterSpacing' float) binds: [B:87:0x0060, B:82:0x0051, B:75:0x0020] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'newTypeface' android.graphics.Typeface) = (r8v0 'newTypeface' android.graphics.Typeface), (r8v0 'newTypeface' android.graphics.Typeface), (r8v2 'newTypeface' android.graphics.Typeface) binds: [B:87:0x0060, B:82:0x0051, B:75:0x0020] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r9v8 'textSizeRatio' float) = (r9v6 'textSizeRatio' float), (r9v7 'textSizeRatio' float), (r9v9 'textSizeRatio' float) binds: [B:87:0x0060, B:82:0x0051, B:75:0x0020] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_90 [shape=record,color=red,label="{90\:\ 0x0065}"];
+Node_92 [shape=record,color=red,label="{92\:\ 0x006c}"];
+Node_94 [shape=record,color=red,label="{94\:\ 0x006f|PHI: r6 \l  PHI: (r6v9 'textSizeChanged' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_96 [shape=record,color=red,label="{96\:\ 0x0075}"];
+Node_98 [shape=record,color=red,label="{98\:\ 0x0078|PHI: r12 \l  PHI: (r12v3 'letterSpacingChanged' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_100 [shape=record,color=red,label="{100\:\ 0x007c}"];
+Node_104 [shape=record,color=red,label="{104\:\ 0x0083}"];
+Node_105 [shape=record,color=red,label="{105\:\ 0x008a|REMOVE\lADDED_TO_REGION\l}"];
+Node_106 [shape=record,color=red,label="{106\:\ 0x008c}"];
+Node_109 [shape=record,color=red,label="{109\:\ 0x0091|REMOVE\lADDED_TO_REGION\l}"];
+Node_110 [shape=record,color=red,label="{110\:\ 0x0093|REMOVE\lADDED_TO_REGION\l}"];
+Node_111 [shape=record,color=red,label="{111\:\ 0x0095|REMOVE\lADDED_TO_REGION\l}"];
+Node_112 [shape=record,color=red,label="{112\:\ 0x0097}"];
+Node_113 [shape=record,color=red,label="{113\:\ 0x0099|REMOVE\lADDED_TO_REGION\l}"];
+Node_115 [shape=record,color=red,label="{115\:\ 0x009c}"];
+Node_118 [shape=record,color=red,label="{118\:\ 0x00ad}"];
+Node_119 [shape=record,color=red,label="{119\:\ 0x00af}"];
+Node_123 [shape=record,color=red,label="{123\:\ 0x00b7|PHI: r15 \l  PHI: (r15v1 'updateDrawText' boolean) = (r15v0 'updateDrawText' boolean), (r15v3 'updateDrawText' boolean) binds: [B:122:0x00b6, B:121:0x00b2] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_135 [shape=record,color=red,label="{135\:\ ?|SYNTHETIC\l}"];
+Node_130 [shape=record,color=red,label="{130\:\ 0x00e4}"];
+Node_131 [shape=record,color=red,label="{131\:\ 0x00e6}"];
+Node_134 [shape=record,color=red,label="{134\:\ 0x00f8|ORIG_RETURN\l}"];
+Node_132 [shape=record,color=red,label="{132\:\ 0x00e9}"];
+Node_120 [shape=record,color=red,label="{120\:\ 0x00b1}"];
+Node_116 [shape=record,color=red,label="{116\:\ 0x009e}"];
+Node_107 [shape=record,color=red,label="{107\:\ 0x008e}"];
+Node_101 [shape=record,color=red,label="{101\:\ 0x007e}"];
+Node_97 [shape=record,color=red,label="{97\:\ 0x0077}"];
+Node_93 [shape=record,color=red,label="{93\:\ 0x006e}"];
+Node_83 [shape=record,color=red,label="{83\:\ 0x0054}"];
+MethodNode[shape=record,label="{private void com.google.android.material.internal.CollapsingTextHelper.calculateUsingTextSize((r16v0 'this' com.google.android.material.internal.CollapsingTextHelper A[IMMUTABLE_TYPE, THIS]), (r17v0 'fraction' float A[D('fraction' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'forceRecalculate' boolean A[D('forceRecalculate' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:134:0x00f8 \-\> B:69:?, CROSS_EDGE: B:132:0x00e9 \-\> B:133:0x00ea, CROSS_EDGE: B:127:0x00cf \-\> B:129:0x00d8, CROSS_EDGE: B:125:0x00bb \-\> B:134:0x00f8, CROSS_EDGE: B:124:0x00b9 \-\> B:126:0x00bd, CROSS_EDGE: B:120:0x00b1 \-\> B:121:0x00b2, CROSS_EDGE: B:116:0x009e \-\> B:117:0x009f, CROSS_EDGE: B:111:0x0095 \-\> B:116:0x009e, CROSS_EDGE: B:110:0x0093 \-\> B:116:0x009e, CROSS_EDGE: B:109:0x0091 \-\> B:116:0x009e, CROSS_EDGE: B:108:0x008f \-\> B:116:0x009e, CROSS_EDGE: B:107:0x008e \-\> B:108:0x008f, CROSS_EDGE: B:103:0x0081 \-\> B:107:0x008e, CROSS_EDGE: B:101:0x007e \-\> B:102:0x007f, CROSS_EDGE: B:97:0x0077 \-\> B:98:0x0078, CROSS_EDGE: B:93:0x006e \-\> B:94:0x006f, CROSS_EDGE: B:122:0x00b6 \-\> B:123:0x00b7, CROSS_EDGE: B:82:0x0051 \-\> B:88:0x0061, CROSS_EDGE: B:87:0x0060 \-\> B:88:0x0061, CROSS_EDGE: B:86:0x005f \-\> B:87:0x0060, CROSS_EDGE: B:79:0x0039 \-\> B:80:0x0048\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_68;Node_71 -> Node_72;
+Node_71 -> Node_73[style=dashed];
+Node_72 -> Node_69;
+Node_73 -> Node_74;
+Node_74 -> Node_75;
+Node_74 -> Node_76[style=dashed];
+Node_75 -> Node_88;
+Node_76 -> Node_77;
+Node_77 -> Node_78[style=dashed];
+Node_77 -> Node_79;
+Node_79 -> Node_80;
+Node_78 -> Node_80;
+Node_80 -> Node_81;
+Node_81 -> Node_82;
+Node_81 -> Node_83[style=dashed];
+Node_82 -> Node_88;
+Node_84 -> Node_85;
+Node_84 -> Node_86[style=dashed];
+Node_85 -> Node_87;
+Node_86 -> Node_87;
+Node_87 -> Node_88;
+Node_89 -> Node_90;
+Node_89 -> Node_122[style=dashed];
+Node_91 -> Node_92;
+Node_91 -> Node_93;
+Node_95 -> Node_96;
+Node_95 -> Node_97;
+Node_99 -> Node_100;
+Node_99 -> Node_101;
+Node_102 -> Node_103;
+Node_103 -> Node_104;
+Node_103 -> Node_107;
+Node_108 -> Node_109;
+Node_108 -> Node_116;
+Node_117 -> Node_118;
+Node_121 -> Node_123;
+Node_122 -> Node_123;
+Node_124 -> Node_125[style=dashed];
+Node_124 -> Node_126;
+Node_125 -> Node_126;
+Node_125 -> Node_135[style=dashed];
+Node_126 -> Node_127;
+Node_127 -> Node_128;
+Node_127 -> Node_129[style=dashed];
+Node_128 -> Node_129;
+Node_129 -> Node_130;
+Node_133 -> Node_134;
+Node_68 -> Node_70;
+Node_70 -> Node_71;
+Node_88 -> Node_89;
+Node_90 -> Node_91;
+Node_92 -> Node_94;
+Node_94 -> Node_95;
+Node_96 -> Node_98;
+Node_98 -> Node_99;
+Node_100 -> Node_102;
+Node_104 -> Node_105;
+Node_105 -> Node_106;
+Node_105 -> Node_107;
+Node_106 -> Node_108;
+Node_109 -> Node_110;
+Node_109 -> Node_116;
+Node_110 -> Node_111;
+Node_110 -> Node_116;
+Node_111 -> Node_112;
+Node_111 -> Node_116;
+Node_112 -> Node_113;
+Node_113 -> Node_115;
+Node_113 -> Node_116;
+Node_115 -> Node_117;
+Node_118 -> Node_119;
+Node_118 -> Node_120;
+Node_119 -> Node_121;
+Node_123 -> Node_124;
+Node_135 -> Node_69;
+Node_130 -> Node_131;
+Node_130 -> Node_132;
+Node_131 -> Node_133;
+Node_134 -> Node_69;
+Node_132 -> Node_133;
+Node_120 -> Node_121;
+Node_116 -> Node_117;
+Node_107 -> Node_108;
+Node_101 -> Node_102;
+Node_97 -> Node_98;
+Node_93 -> Node_94;
+Node_83 -> Node_84;
+}
+

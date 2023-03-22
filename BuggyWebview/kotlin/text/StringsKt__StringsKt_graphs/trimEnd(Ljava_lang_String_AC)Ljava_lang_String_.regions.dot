@@ -1,0 +1,67 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.trimEnd(Ljava\/lang\/String;[C)Ljava\/lang\/String;" {
+subgraph cluster_Region_223499260 {
+label = "R(4:1|(2:(2:3|(2:8|1))|12)(1:12)|9|10) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"chars\")\ljava.lang.CharSequence java.lang.String r2 = r8\lint int r4 = r2.length() \- 1\l}"];
+subgraph cluster_IfRegion_2013270695 {
+label = "IF [B:29:0x0016] THEN: R(2:(2:3|(2:8|1))|12) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0016|if (r4 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1393124326 {
+label = "R(2:(2:3|(2:8|1))|12)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1733456872 {
+label = "LOOP:0: (2:3|(2:8|1))";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x002e|LOOP_END\lLOOP:0: B:30:0x0018\-\>B:33:0x002e\l|if (r4 \>= 0) goto L3\l}"];
+subgraph cluster_Region_708037527 {
+label = "R(2:3|(2:8|1))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0018|LOOP_START\lLOOP:0: B:30:0x0018\-\>B:33:0x002e\lPHI: r4 \l  PHI: (r4v5 int) = (r4v1 int), (r4v6 int) binds: [B:29:0x0016, B:33:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|int r5 = r4\lr4\-\-\lchar char r6 = r2.charAt(r5)\l}"];
+subgraph cluster_IfRegion_2077420479 {
+label = "IF [B:31:0x0024] THEN: R(2:8|1) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0024|if (kotlin.collections.ArraysKt.contains(r9, r6) == false) goto L7\l}"];
+subgraph cluster_Region_545133337 {
+label = "R(2:8|1)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0026|EDGE_INSN: B:32:0x0026\-\>B:35:0x0034 ?: BREAK  \l|java.lang.CharSequence r4 = r2.subSequence(0, r5 + 1)\l}"];
+Node_InsnContainer_505563545 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x0030|java.lang.CharSequence r4 = \"\"\l}"];
+}
+subgraph cluster_Region_62870597 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0030|java.lang.CharSequence r4 = \"\"\l}"];
+}
+}
+Node_35 [shape=record,label="{35\:\ 0x0034|EDGE_INSN: B:32:0x0026\-\>B:35:0x0034 ?: BREAK  \lPHI: r4 \l  PHI: (r4v4 java.lang.CharSequence) = (r4v3 java.lang.String), (r4v8 java.lang.CharSequence) binds: [B:34:0x0030, B:32:0x0026] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.String java.lang.String r0 = r4.toString()\l}"];
+Node_36 [shape=record,label="{36\:\ 0x0038|RETURN\l|return r0\l}"];
+}
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0030|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0026|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.text.StringsKt__StringsKt.trimEnd((r8v0 '$this$trimEnd' java.lang.String A[D('$this$trimEnd' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'chars' char[] A[D('chars' char[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:33:0x002e \-\> B:30:0x0018, CROSS_EDGE: B:34:0x0030 \-\> B:35:0x0034, CROSS_EDGE: B:29:0x0016 \-\> B:34:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_26;Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_34[style=dashed];
+Node_33 -> Node_30;
+Node_33 -> Node_38[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_33[style=dashed];
+Node_31 -> Node_37;
+Node_32 -> Node_35;
+Node_34 -> Node_35;
+Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_36 -> Node_27;
+Node_26 -> Node_28;
+Node_38 -> Node_34;
+Node_37 -> Node_32;
+}
+

@@ -1,0 +1,69 @@
+digraph "CFG forandroidx.viewpager2.widget.ScrollEventAdapter.dispatchStateChanged(I)V" {
+subgraph cluster_Region_328508491 {
+label = "R(1:(2:(1:9)|(2:10|(1:(1:12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_73856707 {
+label = "R(2:(1:9)|(2:10|(1:(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2119519199 {
+label = "IF [B:18:0x0003, B:20:0x0007, B:23:0x000c] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0003|if (r2.mAdapterState == 3) goto L3\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0007|ADDED_TO_REGION\l|if (r2.mScrollState == 0) goto L5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000c|ADDED_TO_REGION\l|if (r2.mScrollState == r3) goto L9\l}"];
+subgraph cluster_Region_1275944976 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000e|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1115432333 {
+label = "R(2:10|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000f|r2.mScrollState = r3\landroidx.viewpager2.widget.ViewPager2$OnPageChangeCallback androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback r0 = r2.mCallback\l}"];
+subgraph cluster_Region_2056069926 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_795841926 {
+label = "IF [B:26:0x0013] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0013|if (r0 != null) goto L12\l}"];
+subgraph cluster_Region_827566485 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0015|r0.onPageScrollStateChanged(r3)\l}"];
+}
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0005}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0009|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000a}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0018|ORIG_RETURN\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.viewpager2.widget.ScrollEventAdapter.dispatchStateChanged((r2v0 'this' androidx.viewpager2.widget.ScrollEventAdapter A[IMMUTABLE_TYPE, THIS]), (r3v0 'state' int A[D('state' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x000e \-\> B:16:?, CROSS_EDGE: B:28:0x0018 \-\> B:16:?, CROSS_EDGE: B:26:0x0013 \-\> B:28:0x0018, CROSS_EDGE: B:18:0x0003 \-\> B:22:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_16;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_29[style=dashed];
+Node_27 -> Node_28;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_21 -> Node_16;
+Node_22 -> Node_23;
+Node_28 -> Node_16;
+Node_29 -> Node_16;
+}
+

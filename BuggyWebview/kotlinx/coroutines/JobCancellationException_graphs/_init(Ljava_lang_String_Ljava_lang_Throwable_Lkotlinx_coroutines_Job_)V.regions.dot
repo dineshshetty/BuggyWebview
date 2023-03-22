@@ -1,0 +1,34 @@
+digraph "CFG forkotlinx.coroutines.JobCancellationException.\<init\>(Ljava\/lang\/String;Ljava\/lang\/Throwable;Lkotlinx\/coroutines\/Job;)V" {
+subgraph cluster_Region_1366623932 {
+label = "R(2:1|(1:(1:3)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|super(r1)\lr0.job = r3\l}"];
+subgraph cluster_Region_1243825883 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1452470488 {
+label = "IF [B:11:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0006|if (r2 != null) goto L3\l}"];
+subgraph cluster_Region_1528045608 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|initCause(r2)\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000c|ORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.JobCancellationException.\<init\>((r0v0 'this' kotlinx.coroutines.JobCancellationException A[IMMUTABLE_TYPE, THIS]), (r1v0 'message' java.lang.String A[D('message' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'job' kotlinx.coroutines.Job A[D('job' kotlinx.coroutines.Job), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0006 \-\> B:14:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_14;
+Node_8 -> Node_10;
+Node_14 -> Node_9;
+Node_15 -> Node_9;
+}
+

@@ -1,0 +1,34 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractChannel.RemoveReceiveOnCancel.invoke(Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_1714587237 {
+label = "R(1:(1:(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1316598815 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1717798045 {
+label = "IF [B:17:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|if (r1.receive.remove() != false) goto L3\l}"];
+subgraph cluster_Region_1933666279 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|kotlinx.coroutines.channels.AbstractChannel.this.onReceiveDequeued()\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000d|ORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.channels.AbstractChannel.RemoveReceiveOnCancel.invoke((r1v0 'this' kotlinx.coroutines.channels.AbstractChannel$RemoveReceiveOnCancel A[IMMUTABLE_TYPE, THIS]), (r2v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0006 \-\> B:19:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lBRIDGED_BY: kotlinx.coroutines.channels.AbstractChannel.RemoveReceiveOnCancel.invoke(java.lang.Throwable):kotlin.Unit\lMETHOD_OVERRIDE: [kotlinx.coroutines.CancelHandlerBase.invoke(java.lang.Throwable):void]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_19 -> Node_15;
+Node_20 -> Node_15;
+}
+

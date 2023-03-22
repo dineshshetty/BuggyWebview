@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.collections.ArraysKt__ArraysJVMKt.copyOfRangeToIndexCheck(II)V" {
+subgraph cluster_Region_1236199827 {
+label = "R(1:(1:(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_38986073 {
+label = "R(1:(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1945633594 {
+label = "IF [B:8:0x0000] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|if (r3 \> r4) goto L4\l}"];
+subgraph cluster_Region_1476793115 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0003}"];
+Node_11 [shape=record,label="{11\:\ 0x0026|throw new java.lang.IndexOutOfBoundsException(\"toIndex (\" + r3 + \") is greater than size (\" + r4 + \").\")\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0002}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.collections.ArraysKt__ArraysJVMKt.copyOfRangeToIndexCheck((r3v0 'toIndex' int A[D('toIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'size' int A[D('size' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0026 \-\> B:7:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_7;
+Node_6 -> Node_8;
+Node_9 -> Node_7;
+}
+

@@ -1,0 +1,49 @@
+digraph "CFG forkotlin.ranges.URangesKt___URangesKt.random(Lkotlin\/ranges\/ULongRange;Lkotlin\/random\/Random;)J" {
+subgraph cluster_Region_1323569246 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"random\")\l}"];
+subgraph cluster_TryCatchRegion_989202923 {
+label = "Try: R(1:4) catches: R(2:7|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_946888184 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000f|RETURN\l|return kotlin.random.URandom.nextULong(r4, r3)\l}"];
+}
+subgraph cluster_Region_53544046 {
+label = "R(2:7|9) | ExcHandler: IllegalArgumentException \-\> 0x0010\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|ExcHandler: IllegalArgumentException \-\> 0x0010\l}"];
+Node_17 [shape=record,label="{17\:\ 0x001a|throw new java.util.NoSuchElementException(r0.getMessage())\l}"];
+}
+}
+}
+subgraph cluster_Region_53544046 {
+label = "R(2:7|9) | ExcHandler: IllegalArgumentException \-\> 0x0010\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|ExcHandler: IllegalArgumentException \-\> 0x0010\l}"];
+Node_17 [shape=record,label="{17\:\ 0x001a|throw new java.util.NoSuchElementException(r0.getMessage())\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000b|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IllegalArgumentException \-\> 0x0010, blocks: (B:13:0x000b), top: B:18:0x000b \}\lCatch: IllegalArgumentException \-\> 0x0010\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0011}"];
+MethodNode[shape=record,label="{public static final long kotlin.ranges.URangesKt___URangesKt.random((r3v0 '$this$random' kotlin.ranges.ULongRange A[D('$this$random' kotlin.ranges.ULongRange), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'random' kotlin.random.Random A[D('random' kotlin.random.Random), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x001a \-\> B:11:?, CROSS_EDGE: B:18:0x000b \-\> B:15:0x0010\lINLINE_NOT_NEEDED\lTryCatch #0 \{IllegalArgumentException \-\> 0x0010, blocks: (B:13:0x000b), top: B:18:0x000b \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_18;
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_17 -> Node_11;
+Node_15 -> Node_16;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_18 -> Node_13;
+Node_18 -> Node_15;
+Node_13 -> Node_14;
+Node_13 -> Node_19;
+Node_19 -> Node_15;
+Node_16 -> Node_17;
+}
+

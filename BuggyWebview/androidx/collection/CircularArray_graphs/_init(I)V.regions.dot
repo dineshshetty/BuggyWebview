@@ -1,0 +1,86 @@
+digraph "CFG forandroidx.collection.CircularArray.\<init\>(I)V" {
+subgraph cluster_Region_747204194 {
+label = "R(1:(2:(1:15)|(1:(2:(3:(1:7)(1:11)|8|9)|(1:13))))) | DECL_VAR: int arrayCapacity\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1863129120 {
+label = "R(2:(1:15)|(1:(2:(3:(1:7)(1:11)|8|9)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1657957334 {
+label = "IF [B:3:0x0004] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r3 \< 1) goto L14\l}"];
+subgraph cluster_Region_690195380 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0034|throw new java.lang.IllegalArgumentException(\"capacity must be \>= 1\")\l}"];
+}
+}
+subgraph cluster_Region_1321077388 {
+label = "R(1:(2:(3:(1:7)(1:11)|8|9)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1232459619 {
+label = "R(2:(3:(1:7)(1:11)|8|9)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_948472128 {
+label = "IF [B:5:0x0008] THEN: R(3:(1:7)(1:11)|8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0008|if (r3 \<= 1073741824) goto L5\l}"];
+subgraph cluster_Region_230939598 {
+label = "R(3:(1:7)(1:11)|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_865557136 {
+label = "IF [B:7:0x000e] THEN: R(1:7) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|if (java.lang.Integer.bitCount(r3) != 1) goto L7\l}"];
+subgraph cluster_Region_1285482811 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0010|int r0 = java.lang.Integer.highestOneBit(r3 \- 1) \<\< 1\l}"];
+}
+subgraph cluster_Region_194205693 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0019|r0 = r3\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001a|PHI: r0 \l  PHI: (r0v4 'arrayCapacity' int A[IMMUTABLE_TYPE]) = (r0v3 'arrayCapacity' int), (r0v5 'arrayCapacity' int) binds: [B:9:0x0019, B:8:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|r2.mCapacityBitmask = r0 \- 1\lr2.mElements = (E[]) new java.lang.Object[r0]\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0024|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1421757774 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002c|throw new java.lang.IllegalArgumentException(\"capacity must be \<= 2^30\")\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0025}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002d}"];
+MethodNode[shape=record,label="{public void androidx.collection.CircularArray.\<init\>((r2v0 'this' androidx.collection.CircularArray\<E\> A[D('this' androidx.collection.CircularArray\<E\>), IMMUTABLE_TYPE, THIS]), (r3v0 'minCapacity' int A[D('minCapacity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0019 \-\> B:10:0x001a, CROSS_EDGE: B:13:0x002c \-\> B:1:?, CROSS_EDGE: B:15:0x0034 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_15 -> Node_1;
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_1;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.activity.OnBackPressedDispatcher.addCallback(Landroidx\/lifecycle\/LifecycleOwner;Landroidx\/activity\/OnBackPressedCallback;)V" {
+subgraph cluster_Region_698073325 {
+label = "R(2:1|(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|androidx.lifecycle.Lifecycle androidx.lifecycle.Lifecycle r0 = r4.getLifecycle()\l}"];
+subgraph cluster_Region_1004771744 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1277848591 {
+label = "IF [B:10:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000a|if (r0.getCurrentState() == androidx.lifecycle.Lifecycle.State.DESTROYED) goto L3\l}"];
+subgraph cluster_Region_547904724 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_628519538 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000d|r5.addCancellable(new androidx.activity.OnBackPressedDispatcher.LifecycleOnBackPressedCancellable(r0, r5))\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0015}"];
+MethodNode[shape=record,label="{public void androidx.activity.OnBackPressedDispatcher.addCallback((r3v0 'this' androidx.activity.OnBackPressedDispatcher A[IMMUTABLE_TYPE, THIS]), (r4v0 'owner' androidx.lifecycle.LifecycleOwner A[D('owner' androidx.lifecycle.LifecycleOwner), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'onBackPressedCallback' androidx.activity.OnBackPressedCallback A[D('onBackPressedCallback' androidx.activity.OnBackPressedCallback), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0015 \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_8;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

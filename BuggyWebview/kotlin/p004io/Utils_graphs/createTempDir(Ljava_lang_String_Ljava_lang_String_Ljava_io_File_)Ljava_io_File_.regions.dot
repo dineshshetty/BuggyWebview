@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.io.FilesKt__UtilsKt.createTempDir(Ljava\/lang\/String;Ljava\/lang\/String;Ljava\/io\/File;)Ljava\/io\/File;" {
+subgraph cluster_Region_1844119940 {
+label = "R(2:1|(2:(2:3|4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"prefix\")\ljava.io.File java.io.File r0 = java.io.File.createTempFile(r4, r5, r6)\lr0.delete()\l}"];
+subgraph cluster_Region_523022468 {
+label = "R(2:(2:3|4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1191052069 {
+label = "IF [B:11:0x0010] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0010|if (r0.mkdir() != false) goto L3\l}"];
+subgraph cluster_Region_382783806 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0012|kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"dir\")\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0017|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_2046320220 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0018}"];
+Node_15 [shape=record,label="{15\:\ 0x0033|throw new java.io.IOException(\"Unable to create temporary directory \" + r0 + '.')\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.io.File kotlin.io.FilesKt__UtilsKt.createTempDir((r4v0 'prefix' java.lang.String A[D('prefix' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'suffix' java.lang.String A[D('suffix' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'directory' java.io.File A[D('directory' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Lkotlin\/Deprecated;=Annotation\{RUNTIME, type=Lkotlin\/Deprecated;, values=\{message=Avoid creating temporary directories in the default temp location with this function due to too wide permissions on the newly created directory. Use kotlin.io.path.createTempDirectory instead.\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:15:0x0033 \-\> B:9:?\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+}
+

@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.constraintlayout.core.PriorityGoalRow.updateFromRow(Landroidx\/constraintlayout\/core\/LinearSystem;Landroidx\/constraintlayout\/core\/ArrayRow;Z)V" {
+subgraph cluster_Region_741100198 {
+label = "R(2:1|(2:(1:3)|(3:5|(3:7|(1:9)(0)|11)|14)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.constraintlayout.core.SolverVariable androidx.constraintlayout.core.SolverVariable r0 = r10.variable\l}"];
+subgraph cluster_Region_2107901164 {
+label = "R(2:(1:3)|(3:5|(3:7|(1:9)(0)|11)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1474674452 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_2085493620 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_257069113 {
+label = "R(3:5|(3:7|(1:9)(0)|11)|14)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|androidx.constraintlayout.core.ArrayRow$ArrayRowVariables androidx.constraintlayout.core.ArrayRow.ArrayRowVariables r1 = r10.variables\lint int r2 = r1.getCurrentSize()\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_990025768 {
+label = "LOOP:0: (3:7|(1:9)(0)|11)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|LOOP_START\lLOOP:0: B:6:0x000c\-\>B:10:0x0026\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:5:0x0005, B:10:0x0026] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L7\l}"];
+subgraph cluster_Region_1097175567 {
+label = "R(3:7|(1:9)(0)|11)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|androidx.constraintlayout.core.SolverVariable androidx.constraintlayout.core.SolverVariable r4 = r1.getVariable(r3)\lfloat float r5 = r1.getVariableValue(r3)\lr8.accessor.init(r4)\l}"];
+subgraph cluster_IfRegion_739966425 {
+label = "IF [B:8:0x0021] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|if (r8.accessor.addToGoal(r0, r5) != false) goto L9\l}"];
+subgraph cluster_Region_1074618020 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|addToGoal(r4)\l}"];
+}
+subgraph cluster_Region_1099868347 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0026|LOOP_END\lLOOP:0: B:6:0x000c\-\>B:10:0x0026\l|r8.constantValue += r10.constantValue * r5\lr3++\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0032|removeGoal(r0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0026|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0026|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0032|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0035}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.PriorityGoalRow.updateFromRow((r8v0 'this' androidx.constraintlayout.core.PriorityGoalRow A[IMMUTABLE_TYPE, THIS]), (r9v0 'system' androidx.constraintlayout.core.LinearSystem A[D('system' androidx.constraintlayout.core.LinearSystem), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'definition' androidx.constraintlayout.core.ArrayRow A[D('definition' androidx.constraintlayout.core.ArrayRow), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'removeFromDefinition' boolean A[D('removeFromDefinition' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:10:0x0026 \-\> B:6:0x000c, CROSS_EDGE: B:8:0x0021 \-\> B:10:0x0026, CROSS_EDGE: B:12:0x0035 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.constraintlayout.core.LinearSystem.Row.updateFromRow(androidx.constraintlayout.core.LinearSystem, androidx.constraintlayout.core.ArrayRow, boolean):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_13[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_15[style=dashed];
+Node_9 -> Node_14;
+Node_10 -> Node_6;
+Node_11 -> Node_12;
+Node_0 -> Node_2;
+Node_14 -> Node_10;
+Node_15 -> Node_10;
+Node_13 -> Node_11;
+Node_12 -> Node_1;
+}
+

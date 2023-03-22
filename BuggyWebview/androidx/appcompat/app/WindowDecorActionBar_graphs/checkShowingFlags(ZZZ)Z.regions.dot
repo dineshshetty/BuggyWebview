@@ -1,0 +1,62 @@
+digraph "CFG forandroidx.appcompat.app.WindowDecorActionBar.checkShowingFlags(ZZZ)Z" {
+subgraph cluster_Region_331853307 {
+label = "R(1:(2:(1:3)|(1:(2:(1:7)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_23282169 {
+label = "R(2:(1:3)|(1:(2:(1:7)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_44198839 {
+label = "IF [B:3:0x0001] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0001|if (r3 != false) goto L3\l}"];
+subgraph cluster_Region_392013847 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0003|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_962295666 {
+label = "R(1:(2:(1:7)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_581731625 {
+label = "R(2:(1:7)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_860007704 {
+label = "IF [B:5:0x0004, B:6:0x0006] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0004|if (r1 == false) goto L6\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0006|ADDED_TO_REGION\l|if (r2 == false) goto L7\l}"];
+subgraph cluster_Region_1235592823 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0009|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_724023510 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x000a|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{static boolean androidx.appcompat.app.WindowDecorActionBar.checkShowingFlags((r1v0 'hiddenByApp' boolean A[D('hiddenByApp' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'hiddenBySystem' boolean A[D('hiddenBySystem' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'showingForMode' boolean A[D('showingForMode' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0009 \-\> B:1:?, CROSS_EDGE: B:10:0x000b \-\> B:1:?, CROSS_EDGE: B:5:0x0004 \-\> B:9:0x000a\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_8;
+Node_6 -> Node_11[style=dashed];
+Node_8 -> Node_1;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_9 -> Node_1;
+}
+

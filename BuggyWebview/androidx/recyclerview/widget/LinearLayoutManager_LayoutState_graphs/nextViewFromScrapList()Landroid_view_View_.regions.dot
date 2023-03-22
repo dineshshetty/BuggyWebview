@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.LayoutState.nextViewFromScrapList()Landroid\/view\/View;" {
+subgraph cluster_Region_85434506 {
+label = "R(3:1|(2:3|(2:(2:8|9)|(1:12)))|15)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|int int r0 = r6.mScrapList.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_2027710624 {
+label = "LOOP:0: (2:3|(2:(2:8|9)|(1:12)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|LOOP_START\lLOOP:0: B:21:0x0007\-\>B:29:0x002c\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:20:0x0000, B:29:0x002c] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_935195576 {
+label = "R(2:3|(2:(2:8|9)|(1:12)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0009|android.view.View android.view.View r2 = r6.mScrapList.get(r1).itemView\landroidx.recyclerview.widget.RecyclerView$LayoutParams androidx.recyclerview.widget.RecyclerView.LayoutParams r3 = (androidx.recyclerview.widget.RecyclerView.LayoutParams) r2.getLayoutParams()\l}"];
+subgraph cluster_Region_196345509 {
+label = "R(2:(2:8|9)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_336918047 {
+label = "IF [B:23:0x001d, B:26:0x0026] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001d|if (r3.isItemRemoved() == false) goto L5\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0026|ADDED_TO_REGION\l|if (r6.mCurrentPosition == r3.getViewLayoutPosition()) goto L7\l}"];
+subgraph cluster_Region_253105717 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0028|assignPositionFromScrapList(r2)\l}"];
+Node_28 [shape=record,label="{28\:\ 0x002b|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1754585257 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002c|LOOP_END\lLOOP:0: B:21:0x0007\-\>B:29:0x002c\l|r1++\l}"];
+}
+}
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x002f|RETURN\l|return null\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0020}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0028|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x002c|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x002c|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private android.view.View androidx.recyclerview.widget.LinearLayoutManager.LayoutState.nextViewFromScrapList((r6v0 'this' androidx.recyclerview.widget.LinearLayoutManager$LayoutState A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:29:0x002c \-\> B:21:0x0007, CROSS_EDGE: B:23:0x001d \-\> B:29:0x002c, CROSS_EDGE: B:31:0x0030 \-\> B:19:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_33[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_25;
+Node_23 -> Node_35[style=dashed];
+Node_26 -> Node_32;
+Node_26 -> Node_34[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_19;
+Node_29 -> Node_21;
+Node_30 -> Node_19;
+Node_18 -> Node_20;
+Node_25 -> Node_26;
+Node_32 -> Node_27;
+Node_34 -> Node_29;
+Node_35 -> Node_29;
+Node_33 -> Node_30;
+}
+

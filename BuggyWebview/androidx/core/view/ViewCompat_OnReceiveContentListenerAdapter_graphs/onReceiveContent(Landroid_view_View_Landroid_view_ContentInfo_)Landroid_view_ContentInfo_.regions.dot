@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.core.view.ViewCompat.OnReceiveContentListenerAdapter.onReceiveContent(Landroid\/view\/View;Landroid\/view\/ContentInfo;)Landroid\/view\/ContentInfo;" {
+subgraph cluster_Region_1691738587 {
+label = "R(2:1|(2:(1:3)|(1:(2:(1:6)|(1:8)))))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|androidx.core.view.ContentInfoCompat androidx.core.view.ContentInfoCompat r0 = androidx.core.view.ContentInfoCompat.toContentInfoCompat(r5)\landroidx.core.view.ContentInfoCompat androidx.core.view.ContentInfoCompat r1 = r3.mJetpackListener.onReceiveContent(r4, r0)\l}"];
+subgraph cluster_Region_2115184471 {
+label = "R(2:(1:3)|(1:(2:(1:6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1653597603 {
+label = "IF [B:13:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_277847769 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000c|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_649501475 {
+label = "R(1:(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_765606808 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1814380738 {
+label = "IF [B:16:0x000e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000e|if (r1 == r0) goto L6\l}"];
+subgraph cluster_Region_1257019620 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|RETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_1213051068 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|RETURN\l|return r1.toContentInfo()\l}"];
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0011}"];
+MethodNode[shape=record,label="{public android.view.ContentInfo androidx.core.view.ViewCompat.OnReceiveContentListenerAdapter.onReceiveContent((r3v0 'this' androidx.core.view.ViewCompat$OnReceiveContentListenerAdapter A[IMMUTABLE_TYPE, THIS]), (r4v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'platPayload' android.view.ContentInfo A[D('platPayload' android.view.ContentInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:17:0x0010 \-\> B:11:?, CROSS_EDGE: B:19:0x0015 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.OnReceiveContentListener.onReceiveContent(android.view.View, android.view.ContentInfo):android.view.ContentInfo\}]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_16[style=dashed];
+Node_14 -> Node_11;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_18 -> Node_19;
+}
+

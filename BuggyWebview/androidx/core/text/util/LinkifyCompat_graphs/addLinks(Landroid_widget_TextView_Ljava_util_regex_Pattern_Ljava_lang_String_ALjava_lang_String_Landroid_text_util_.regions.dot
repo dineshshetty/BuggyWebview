@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.core.text.util.LinkifyCompat.addLinks(Landroid\/widget\/TextView;Ljava\/util\/regex\/Pattern;Ljava\/lang\/String;[Ljava\/lang\/String;Landroid\/text\/util\/Linkify$MatchFilter;Landroid\/text\/util\/Linkify$TransformFilter;)V" {
+subgraph cluster_Region_1726877763 {
+label = "R(1:(2:(2:3|4)|(2:6|(1:(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_538540583 {
+label = "R(2:(2:3|4)|(2:6|(1:(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1276024319 {
+label = "IF [B:14:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (shouldAddLinksFallbackToFramework() != false) goto L3\l}"];
+subgraph cluster_Region_1015833279 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|androidx.core.text.util.LinkifyCompat.Api24Impl.addLinks(r7, r8, r9, r10, r11, r12)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_54547214 {
+label = "R(2:6|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|android.text.SpannableString android.text.SpannableString r0 = android.text.SpannableString.valueOf(r7.getText())\lboolean boolean r1 = addLinks(r0, r8, r9, r10, r11, r12)\l}"];
+subgraph cluster_Region_720769381 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_973020943 {
+label = "IF [B:18:0x001c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001c|if (r1 != false) goto L8\l}"];
+subgraph cluster_Region_1533978985 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001e|r7.setText(r0)\laddLinkMovementMethod(r7)\l}"];
+}
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0024|ORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.text.util.LinkifyCompat.addLinks((r7v0 'text' android.widget.TextView A[D('text' android.widget.TextView), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'pattern' java.util.regex.Pattern A[D('pattern' java.util.regex.Pattern), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'defaultScheme' java.lang.String A[D('defaultScheme' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'schemes' java.lang.String[] A[D('schemes' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'matchFilter' android.text.util.Linkify$MatchFilter A[D('matchFilter' android.text.util.Linkify$MatchFilter), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'transformFilter' android.text.util.Linkify$TransformFilter A[D('transformFilter' android.text.util.Linkify$TransformFilter), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0024 \-\> B:12:?, CROSS_EDGE: B:18:0x001c \-\> B:20:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_20 -> Node_12;
+Node_21 -> Node_12;
+}
+

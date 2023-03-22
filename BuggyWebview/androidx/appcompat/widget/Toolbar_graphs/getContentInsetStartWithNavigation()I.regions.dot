@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.appcompat.widget.Toolbar.getContentInsetStartWithNavigation()I" {
+subgraph cluster_Region_596854754 {
+label = "R(2:1|(2:(1:6)|(1:4)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|int int r0 = r2.mContentInsetStartWithNavigation\l}"];
+subgraph cluster_Region_1844807691 {
+label = "R(2:(1:6)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1268770415 {
+label = "IF [B:11:0x0004] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (r0 != Integer.MIN_VALUE) goto L6\l}"];
+subgraph cluster_Region_622707011 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1166520787 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000b|RETURN\lORIG_RETURN\l|return getContentInsetStart()\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0007}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.appcompat.widget.Toolbar.getContentInsetStartWithNavigation((r2v0 'this' androidx.appcompat.widget.Toolbar A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0004 \-\> B:14:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_13[style=dashed];
+Node_11 -> Node_15;
+Node_15 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_13 -> Node_14;
+}
+

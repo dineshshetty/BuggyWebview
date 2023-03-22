@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.recyclerview.widget.AsyncListUtil.1.updateItemCount(II)V" {
+subgraph cluster_Region_1006974144 {
+label = "R(1:(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_960043950 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_985947555 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (isRequestedGeneration(r3) == false) goto L3\l}"];
+subgraph cluster_Region_1356285608 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_625644683 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|androidx.recyclerview.widget.AsyncListUtil.this.mItemCount = r4\landroidx.recyclerview.widget.AsyncListUtil.this.mViewCallback.onDataRefresh()\landroidx.recyclerview.widget.AsyncListUtil androidx.recyclerview.widget.AsyncListUtil r0 = androidx.recyclerview.widget.AsyncListUtil.this\lr0.mDisplayedGeneration = r0.mRequestedGeneration\lrecycleAllTiles()\landroidx.recyclerview.widget.AsyncListUtil.this.mAllowScrollHints = false\landroidx.recyclerview.widget.AsyncListUtil.this.updateRange()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0025}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.AsyncListUtil.1.updateItemCount((r2v0 'this' androidx.recyclerview.widget.AsyncListUtil$1 A[D('this' androidx.recyclerview.widget.AsyncListUtil$1), IMMUTABLE_TYPE, THIS]), (r3v0 'generation' int A[D('generation' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'itemCount' int A[D('itemCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x0025 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.ThreadUtil.MainThreadCallback.updateItemCount(int, int):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_1;
+}
+

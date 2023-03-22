@@ -1,0 +1,29 @@
+digraph "CFG forandroidx.fragment.app.FragmentTransitionImpl.getBoundsOnScreen(Landroid\/view\/View;Landroid\/graphics\/Rect;)V" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000}"];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (androidx.core.view.ViewCompat.isAttachedToWindow(r8) != false) goto L5\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0006|RETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0007|android.graphics.RectF r0 = new android.graphics.RectF()\lr0.set(0.0f, 0.0f, (float) r8.getWidth(), (float) r8.getHeight())\lr8.getMatrix().mapRect(r0)\lr0.offset((float) r8.getLeft(), (float) r8.getTop())\landroid.view.ViewParent r1 = r8.getParent()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0032|LOOP_START\lLOOP:0: B:18:0x0032\-\>B:20:0x0036\lPHI: r1 \l  PHI: (r1v6 'parent' android.view.ViewParent) = (r1v5 'parent' android.view.ViewParent), (r1v7 'parent' android.view.ViewParent) binds: [B:17:0x0007, B:20:0x0036] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0034|if ((r1 instanceof android.view.View) == false) goto L9\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0036|LOOP_END\lLOOP:0: B:18:0x0032\-\>B:20:0x0036\l|android.view.View r2 = (android.view.View) r1\lr0.offset((float) (\-r2.getScrollX()), (float) (\-r2.getScrollY()))\lr2.getMatrix().mapRect(r0)\lr0.offset((float) r2.getLeft(), (float) r2.getTop())\landroid.view.ViewParent r1 = r2.getParent()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0061|SYNTHETIC\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0061|int[] r2 = new int[2]\lr8.getRootView().getLocationOnScreen(r2)\lr0.offset((float) r2[0], (float) r2[1])\lr9.set(java.lang.Math.round(r0.left), java.lang.Math.round(r0.top), java.lang.Math.round(r0.right), java.lang.Math.round(r0.bottom))\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0091|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentTransitionImpl.getBoundsOnScreen((r7v0 'this' androidx.fragment.app.FragmentTransitionImpl A[IMMUTABLE_TYPE, THIS]), (r8v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'epicenter' android.graphics.Rect A[D('epicenter' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0036 \-\> B:18:0x0032, CROSS_EDGE: B:22:0x0091 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_16 -> Node_13;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_23;
+Node_20 -> Node_18;
+Node_23 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_13;
+}
+

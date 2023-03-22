@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.lifecycle.ViewModel.addCloseable(Ljava\/io\/Closeable;)V" {
+subgraph cluster_Region_695648896 {
+label = "R(2:1|(1:(1:4)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|java.util.Set\<java.io.Closeable\> java.util.Set\<java.io.Closeable\> r0 = r2.mCloseables\l}"];
+subgraph cluster_Region_607420056 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1952843236 {
+label = "IF [B:18:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1848447715 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_1306211262 {
+label = "Synchronized:R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004}"];
+subgraph cluster_Region_839572866 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0005|TRY_ENTER\lTryCatch #0 \{, blocks: (B:20:0x0005, B:21:0x000a), top: B:27:0x0005 \}\lCatch: all \-\> 0x000c\l|r2.mCloseables.add(r3)     \/\/ Catch: java.lang.Throwable \-\> Lc\l}"];
+}
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0005|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:20:0x0005, B:21:0x000a), top: B:27:0x0005 \}\lCatch: all \-\> 0x000c\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> Lc\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000b}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000c|REMOVE\lExcHandler: all \-\> 0x000c\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000d|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x000c\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000e|REMOVE\l|throw r1\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000f|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.lifecycle.ViewModel.addCloseable((r2v0 'this' androidx.lifecycle.ViewModel A[IMMUTABLE_TYPE, THIS]), (r3v0 'closeable' java.io.Closeable A[D('closeable' java.io.Closeable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x000e \-\> B:16:?, CROSS_EDGE: B:27:0x0005 \-\> B:23:0x000c, CROSS_EDGE: B:18:0x0002 \-\> B:26:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_26[style=dashed];
+Node_19 -> Node_27;
+Node_20 -> Node_21;
+Node_15 -> Node_17;
+Node_27 -> Node_20;
+Node_27 -> Node_23;
+Node_21 -> Node_22;
+Node_21 -> Node_28;
+Node_22 -> Node_29;
+Node_29 -> Node_16;
+Node_28 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_16;
+Node_26 -> Node_16;
+}
+

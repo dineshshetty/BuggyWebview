@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.constraintlayout.core.ArrayLinkedVariables.getVariable(I)Landroidx\/constraintlayout\/core\/SolverVariable;" {
+subgraph cluster_Region_1091782231 {
+label = "R(3:1|(1:(2:(1:10)|(1:7)))|13)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r4.mHead\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_199189701 {
+label = "LOOP:0: (1:(2:(1:10)|(1:7)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|if (r0 != (\-1)) goto L4\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0008|ADDED_TO_REGION\l|if (r1 \< r4.currentSize) goto L6\l}"];
+subgraph cluster_Region_933388262 {
+label = "R(1:(2:(1:10)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1686711827 {
+label = "R(2:(1:10)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_130288986 {
+label = "IF [B:7:0x000a] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000a|if (r1 == r5) goto L8\l}"];
+subgraph cluster_Region_1556011364 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0016|RETURN\l|return r4.mCache.mIndexedVariables[r4.mArrayIndices[r0]]\l}"];
+}
+}
+subgraph cluster_Region_788315950 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0017|LOOP_END\lLOOP:0: B:3:0x0003\-\>B:10:0x0017\l|r0 = r4.mArrayNextIndices[r0]\lr1++\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0003|LOOP_START\lLOOP:0: B:3:0x0003\-\>B:10:0x0017\lPHI: r0 r1 \l  PHI: (r0v1 'current' int) = (r0v0 'current' int), (r0v2 'current' int) binds: [B:2:0x0000, B:10:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'counter' int) = (r1v0 'counter' int), (r1v2 'counter' int) binds: [B:2:0x0000, B:10:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0006}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000c|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000c}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001e|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001e|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001e|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public androidx.constraintlayout.core.SolverVariable androidx.constraintlayout.core.ArrayLinkedVariables.getVariable((r4v0 'this' androidx.constraintlayout.core.ArrayLinkedVariables A[IMMUTABLE_TYPE, THIS]), (r5v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:10:0x0017 \-\> B:3:0x0003, CROSS_EDGE: B:12:0x001f \-\> B:1:?, CROSS_EDGE: B:4:0x0004 \-\> B:11:0x001e\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [androidx.constraintlayout.core.ArrayRow.ArrayRowVariables.getVariable(int):androidx.constraintlayout.core.SolverVariable]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_14[style=dashed];
+Node_7 -> Node_10[style=dashed];
+Node_7 -> Node_15;
+Node_9 -> Node_1;
+Node_10 -> Node_3;
+Node_16 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_15 -> Node_8;
+Node_8 -> Node_9;
+Node_14 -> Node_16;
+Node_13 -> Node_11;
+Node_11 -> Node_1;
+}
+

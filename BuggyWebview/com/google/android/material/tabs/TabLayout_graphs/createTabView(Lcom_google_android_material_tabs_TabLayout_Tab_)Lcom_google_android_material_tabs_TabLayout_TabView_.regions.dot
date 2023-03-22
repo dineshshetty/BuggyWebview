@@ -1,0 +1,56 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.createTabView(Lcom\/google\/android\/material\/tabs\/TabLayout$Tab;)Lcom\/google\/android\/material\/tabs\/TabLayout$TabView;" {
+subgraph cluster_Region_2127274498 {
+label = "R(6:1|2|(1:5)|6|(1:8)(1:11)|9)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|androidx.core.util.Pools$Pool\<com.google.android.material.tabs.TabLayout$TabView\> androidx.core.util.Pools.Pool\<com.google.android.material.tabs.TabLayout.TabView\> r0 = r3.tabViewPool\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0002|com.google.android.material.tabs.TabLayout.TabView r0 = r0 != null ? r0.acquire() : null\l}"];
+subgraph cluster_IfRegion_1847886804 {
+label = "IF [B:19:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|PHI: r0 \l  PHI: (r0v2 'tabView' com.google.android.material.tabs.TabLayout$TabView) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L5\l}"];
+subgraph cluster_Region_1393221602 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|r0 = new com.google.android.material.tabs.TabLayout.TabView(getContext())\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0018|PHI: r0 \l  PHI: (r0v3 'tabView' com.google.android.material.tabs.TabLayout$TabView) = (r0v2 'tabView' com.google.android.material.tabs.TabLayout$TabView), (r0v4 'tabView' com.google.android.material.tabs.TabLayout$TabView) binds: [B:19:0x000c, B:20:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|r0.setTab(r4)\lr0.setFocusable(true)\lr0.setMinimumWidth(getTabMinWidth())\l}"];
+subgraph cluster_IfRegion_349018231 {
+label = "IF [B:22:0x002e] THEN: R(1:8) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002e|if (android.text.TextUtils.isEmpty(r4.contentDesc) != false) goto L8\l}"];
+subgraph cluster_Region_481309532 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0030|r0.setContentDescription(r4.text)\l}"];
+}
+subgraph cluster_Region_1070094714 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0038|r0.setContentDescription(r4.contentDesc)\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x003f|RETURN\l|return r0\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0004}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+MethodNode[shape=record,label="{private com.google.android.material.tabs.TabLayout$TabView com.google.android.material.tabs.TabLayout.createTabView((r3v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'tab' com.google.android.material.tabs.TabLayout$Tab A[D('tab' com.google.android.material.tabs.TabLayout$Tab), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0038 \-\> B:25:0x003f, CROSS_EDGE: B:19:0x000c \-\> B:21:0x0018, CROSS_EDGE: B:18:0x000b \-\> B:19:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_17 -> Node_19;
+Node_18 -> Node_19;
+}
+

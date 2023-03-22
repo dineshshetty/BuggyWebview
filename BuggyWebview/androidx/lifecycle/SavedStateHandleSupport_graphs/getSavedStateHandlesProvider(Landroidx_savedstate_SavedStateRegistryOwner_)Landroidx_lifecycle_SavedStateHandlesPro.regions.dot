@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.lifecycle.SavedStateHandleSupport.getSavedStateHandlesProvider(Landroidx\/savedstate\/SavedStateRegistryOwner;)Landroidx\/lifecycle\/SavedStateHandlesProvider;" {
+subgraph cluster_Region_332232450 {
+label = "R(3:1|2|(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\landroidx.savedstate.SavedStateRegistry$SavedStateProvider androidx.savedstate.SavedStateRegistry.SavedStateProvider r0 = r2.getSavedStateRegistry().getSavedStateProvider(androidx.lifecycle.SavedStateHandleSupport.SAVED_STATE_KEY)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0011|androidx.lifecycle.SavedStateHandlesProvider r0 = r0 instanceof androidx.lifecycle.SavedStateHandlesProvider ? (androidx.lifecycle.SavedStateHandlesProvider) r0 : null\l}"];
+subgraph cluster_Region_1083703017 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1056602661 {
+label = "IF [B:16:0x0017] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0017|PHI: r0 \l  PHI: (r0v4 androidx.lifecycle.SavedStateHandlesProvider) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L7\l}"];
+subgraph cluster_Region_1564711333 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0021|throw new java.lang.IllegalStateException(\"enableSavedStateHandles() wasn't called prior to createSavedStateHandle() call\")\l}"];
+}
+}
+subgraph cluster_Region_91629558 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0019|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0013}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001a}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0016}"];
+MethodNode[shape=record,label="{public static final androidx.lifecycle.SavedStateHandlesProvider androidx.lifecycle.SavedStateHandleSupport.getSavedStateHandlesProvider((r2v0 '$this$savedStateHandlesProvider' androidx.savedstate.SavedStateRegistryOwner A[D('$this$savedStateHandlesProvider' androidx.savedstate.SavedStateRegistryOwner), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0021 \-\> B:11:?, CROSS_EDGE: B:15:0x0016 \-\> B:16:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_19 -> Node_11;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_15 -> Node_16;
+}
+

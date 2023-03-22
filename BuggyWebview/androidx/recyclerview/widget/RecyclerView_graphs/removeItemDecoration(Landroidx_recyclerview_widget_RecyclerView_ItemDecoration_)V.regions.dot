@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.removeItemDecoration(Landroidx\/recyclerview\/widget\/RecyclerView$ItemDecoration;)V" {
+subgraph cluster_Region_1379897375 {
+label = "R(5:1|(1:3)|4|(1:9)|11)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|androidx.recyclerview.widget.RecyclerView$LayoutManager androidx.recyclerview.widget.RecyclerView.LayoutManager r0 = r2.mLayout\l}"];
+subgraph cluster_IfRegion_1693363439 {
+label = "IF [B:17:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_867251683 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|r0.assertNotInLayoutOrScroll(\"Cannot remove item decoration during a scroll  or layout\")\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0009|r2.mItemDecorations.remove(r3)\l}"];
+subgraph cluster_IfRegion_1914355255 {
+label = "IF [B:20:0x0014] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0014|if (r2.mItemDecorations.isEmpty() != false) goto L6\l}"];
+subgraph cluster_Region_1703890999 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0020|PHI: r0 \l  PHI: (r0v6 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|setWillNotDraw(getOverScrollMode() == 2)\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0023|markItemDecorInsetsDirty()\lrequestLayout()\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0016}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001b}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001d}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001f}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0029}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.RecyclerView.removeItemDecoration((r2v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r3v0 'decor' androidx.recyclerview.widget.RecyclerView$ItemDecoration A[D('decor' androidx.recyclerview.widget.RecyclerView$ItemDecoration), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x001f \-\> B:25:0x0020, CROSS_EDGE: B:20:0x0014 \-\> B:26:0x0023, CROSS_EDGE: B:17:0x0002 \-\> B:19:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24;
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_27 -> Node_15;
+}
+

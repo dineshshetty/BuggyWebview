@@ -1,0 +1,47 @@
+digraph "CFG forcom.google.android.material.transformation.ExpandableBehavior.onDependentViewChanged(Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;Landroid\/view\/View;Landroid\/view\/View;)Z" {
+subgraph cluster_Region_1950114569 {
+label = "R(2:1|(2:(2:6|7)|(1:10)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|com.google.android.material.expandable.ExpandableWidget com.google.android.material.expandable.ExpandableWidget r0 = (com.google.android.material.expandable.ExpandableWidget) r8\lboolean boolean r1 = r0.isExpanded()\l}"];
+subgraph cluster_Region_169713476 {
+label = "R(2:(2:6|7)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1313912663 {
+label = "IF [B:15:0x000b] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000b|if (didStateChange(r1) != false) goto L3\l}"];
+subgraph cluster_Region_1093888773 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0017|PHI: r2 \l  PHI: (r2v4 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r5.currentState = r0.isExpanded() ? 1 : 2\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0024|RETURN\l|return onExpandedStateChange((android.view.View) r0, r7, r0.isExpanded(), true)\l}"];
+}
+}
+subgraph cluster_Region_1703177124 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0025|RETURN\l|return false\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000d}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0012}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0014}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0016}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.transformation.ExpandableBehavior.onDependentViewChanged((r5v0 'this' com.google.android.material.transformation.ExpandableBehavior A[IMMUTABLE_TYPE, THIS]), (r6v0 'parent' androidx.coordinatorlayout.widget.CoordinatorLayout A[D('parent' androidx.coordinatorlayout.widget.CoordinatorLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'dependency' android.view.View A[D('dependency' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0016 \-\> B:20:0x0017, CROSS_EDGE: B:23:0x0026 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior.onDependentViewChanged(androidx.coordinatorlayout.widget.CoordinatorLayout, V extends android.view.View, android.view.View):boolean]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forcom.google.android.material.floatingactionbutton.FloatingActionButton.setImageDrawable(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_774913486 {
+label = "R(1:(1:(2:3|(1:(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1730893924 {
+label = "R(1:(2:3|(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1516977879 {
+label = "IF [B:13:0x0004] THEN: R(2:3|(1:(1:5))) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|if (getDrawable() != r2) goto L3\l}"];
+subgraph cluster_Region_557561438 {
+label = "R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|super.setImageDrawable(r2)\lgetImpl().updateImageMatrixScale()\l}"];
+subgraph cluster_Region_248132090 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_866103359 {
+label = "IF [B:15:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0012|if (r1.imageTint != null) goto L5\l}"];
+subgraph cluster_Region_813804829 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0014|onApplySupportImageTint()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0017|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.floatingactionbutton.FloatingActionButton.setImageDrawable((r1v0 'this' com.google.android.material.floatingactionbutton.FloatingActionButton A[IMMUTABLE_TYPE, THIS]), (r2v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x0012 \-\> B:17:0x0017, CROSS_EDGE: B:13:0x0004 \-\> B:17:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.ImageView.setImageDrawable(android.graphics.drawable.Drawable):void\}]\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_18 -> Node_11;
+}
+

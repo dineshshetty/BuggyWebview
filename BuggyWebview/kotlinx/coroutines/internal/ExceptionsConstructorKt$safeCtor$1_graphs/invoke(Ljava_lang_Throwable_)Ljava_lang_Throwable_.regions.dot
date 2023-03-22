@@ -1,0 +1,64 @@
+digraph "CFG forkotlinx.coroutines.internal.ExceptionsConstructorKt$safeCtor$1.invoke(Ljava\/lang\/Throwable;)Ljava\/lang\/Throwable;" {
+subgraph cluster_Region_1014005803 {
+label = "R(4:1|(1:3)|(1:6)|8) | DECL_VAR: java.lang.Object null\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.functions.Function1\<java.lang.Throwable, java.lang.Throwable\> kotlin.jvm.functions.Function1\<java.lang.Throwable, java.lang.Throwable\> r0 = r2.$block\l}"];
+subgraph cluster_TryCatchRegion_677924678 {
+label = "Try: R(1:3) catches: R(2:11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_322875348 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0010, blocks: (B:17:0x0002), top: B:26:0x0002 \}\lCatch: all \-\> 0x0010\l|kotlin.Result$Companion kotlin.Result.Companion r1 = kotlin.Result.Companion     \/\/ Catch: java.lang.Throwable \-\> L10\ljava.lang.Object r0 = kotlin.Result.m144constructorimpl(r0.invoke(r3))     \/\/ Catch: java.lang.Throwable \-\> L10\l}"];
+}
+subgraph cluster_Region_377273508 {
+label = "R(2:11|12) | ExcHandler: all \-\> 0x0010\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0010|ExcHandler: all \-\> 0x0010\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0011|kotlin.Result$Companion kotlin.Result.Companion r1 = kotlin.Result.Companion\ljava.lang.Object r0 = kotlin.Result.m144constructorimpl(kotlin.ResultKt.createFailure(r0))\l}"];
+}
+}
+subgraph cluster_IfRegion_163114392 {
+label = "IF [B:22:0x001f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001f|if (kotlin.Result.m150isFailureimpl(r0) != false) goto L6\l}"];
+subgraph cluster_Region_1886261044 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0021|r0 = null\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0024|RETURN\l|return (java.lang.Throwable) r0\l}"];
+}
+subgraph cluster_Region_377273508 {
+label = "R(2:11|12) | ExcHandler: all \-\> 0x0010\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0010|ExcHandler: all \-\> 0x0010\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0011|kotlin.Result$Companion kotlin.Result.Companion r1 = kotlin.Result.Companion\ljava.lang.Object r0 = kotlin.Result.m144constructorimpl(kotlin.ResultKt.createFailure(r0))\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0002|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001b|PHI: r0 \l  PHI: (r0v4 java.lang.Object) = (r0v3 java.lang.Object), (r0v10 java.lang.Object) binds: [B:20:0x0011, B:17:0x0002] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0022|PHI: r0 \l  PHI: (r0v5 java.lang.Object) = (r0v4 java.lang.Object), (r0v7 java.lang.Object) binds: [B:22:0x001f, B:23:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public final java.lang.Throwable kotlinx.coroutines.internal.ExceptionsConstructorKt$safeCtor$1.invoke((r2v0 'this' kotlinx.coroutines.internal.ExceptionsConstructorKt$safeCtor$1 A[IMMUTABLE_TYPE, THIS]), (r3v0 'e' java.lang.Throwable A[D('e' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x001f \-\> B:24:0x0022, CROSS_EDGE: B:20:0x0011 \-\> B:21:0x001b, CROSS_EDGE: B:26:0x0002 \-\> B:19:0x0010\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0010, blocks: (B:17:0x0002), top: B:26:0x0002 \}\lTYPE_VARS: EMPTY\lREPLACED_BY: kotlinx.coroutines.internal.ExceptionsConstructorKt$safeCtor$1.invoke(java.lang.Throwable):java.lang.Throwable\lBRIDGED_BY: kotlinx.coroutines.internal.ExceptionsConstructorKt$safeCtor$1.invoke(java.lang.Throwable):java.lang.Throwable\lMETHOD_OVERRIDE: [kotlin.jvm.functions.Function1.invoke(P1):R]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_26;
+Node_17 -> Node_21;
+Node_17 -> Node_27;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_25 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_14 -> Node_16;
+Node_26 -> Node_17;
+Node_26 -> Node_19;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_27 -> Node_19;
+}
+

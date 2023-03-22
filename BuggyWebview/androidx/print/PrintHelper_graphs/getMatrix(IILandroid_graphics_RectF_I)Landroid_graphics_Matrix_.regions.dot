@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.print.PrintHelper.getMatrix(IILandroid\/graphics\/RectF;I)Landroid\/graphics\/Matrix;" {
+subgraph cluster_Region_1263261225 {
+label = "R(4:1|(1:3)(1:7)|4|5) | DECL_VAR: float scale\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.graphics.Matrix android.graphics.Matrix r0 = new android.graphics.Matrix()\lfloat float r1 = r8.width() \/ r6\l}"];
+subgraph cluster_IfRegion_1438646385 {
+label = "IF [B:3:0x000c] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r9 == 2) goto L3\l}"];
+subgraph cluster_Region_571554867 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|float r1 = java.lang.Math.max(r1, r8.height() \/ r7)\l}"];
+}
+subgraph cluster_Region_933308842 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0019|float r1 = java.lang.Math.min(r1, r8.height() \/ r7)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0023|PHI: r1 \l  PHI: (r1v3 'scale' float) = (r1v2 'scale' float), (r1v4 'scale' float) binds: [B:5:0x0019, B:4:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|r0.postScale(r1, r1)\lfloat float r2 = (r8.width() \- (r6 * r1)) \/ 2.0f\lfloat float r4 = (r8.height() \- (r7 * r1)) \/ 2.0f\lr0.postTranslate(r2, r4)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x003d|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static android.graphics.Matrix androidx.print.PrintHelper.getMatrix((r6v0 'imageWidth' int A[D('imageWidth' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'imageHeight' int A[D('imageHeight' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'content' android.graphics.RectF A[D('content' android.graphics.RectF), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'fittingMode' int A[D('fittingMode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0019 \-\> B:6:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+}
+

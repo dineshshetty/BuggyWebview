@@ -1,0 +1,48 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractSendChannel.invokeOnCloseHandler(Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_663948441 {
+label = "R(2:1|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.lang.Object java.lang.Object r0 = r3.onCloseHandler\l}"];
+subgraph cluster_Region_810284375 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_577161122 {
+label = "IF [B:16:0x0002, B:18:0x0006, B:20:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if (r0 != null) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0006|ADDED_TO_REGION\l|if (r0 != kotlinx.coroutines.channels.AbstractChannelKt.HANDLER_INVOKED) goto L5\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0010|ADDED_TO_REGION\l|if (androidx.concurrent.futures.C0125xc40028dd.m112m(kotlinx.coroutines.channels.AbstractSendChannel.onCloseHandler$FU, r3, r0, kotlinx.coroutines.channels.AbstractChannelKt.HANDLER_INVOKED) != false) goto L7\l}"];
+subgraph cluster_Region_667081845 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0012|((kotlin.jvm.functions.Function1) kotlin.jvm.internal.TypeIntrinsics.beforeCheckcastToFunctionOfArity(r0, 1)).invoke(r4)\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0004}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0008}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001c|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.channels.AbstractSendChannel.invokeOnCloseHandler((r3v0 'this' kotlinx.coroutines.channels.AbstractSendChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0010 \-\> B:22:0x001c, CROSS_EDGE: B:18:0x0006 \-\> B:22:0x001c, CROSS_EDGE: B:16:0x0002 \-\> B:22:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_24[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_25[style=dashed];
+Node_21 -> Node_22;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_22 -> Node_14;
+Node_25 -> Node_14;
+Node_24 -> Node_14;
+Node_23 -> Node_14;
+}
+

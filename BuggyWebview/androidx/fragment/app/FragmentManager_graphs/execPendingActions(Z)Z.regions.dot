@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.execPendingActions(Z)Z" {
+subgraph cluster_Region_693351085 {
+label = "R(4:1|(2:4|(2:6|7))|14|15)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|ensureExecReady(r4)\lboolean r0 = false\l}"];
+subgraph cluster_LoopRegion_633661067 {
+label = "LOOP:0: (2:4|(2:6|7))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000c|if (generateOpsForPendingActions(r3.mTmpRecords, r3.mTmpIsPop) != false) goto L4\l}"];
+subgraph cluster_Region_294750483 {
+label = "R(2:4|(2:6|7))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|r3.mExecutingActions = true\l}"];
+subgraph cluster_TryCatchRegion_685620739 {
+label = "Try: R(2:6|7) catches: R(3:9|10|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_807867016 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x001e, blocks: (B:22:0x0011), top: B:29:0x0011 \}\lCatch: all \-\> 0x001e\l|removeRedundantOperationsAndExecute(r3.mTmpRecords, r3.mTmpIsPop)     \/\/ Catch: java.lang.Throwable \-\> L1e\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0018|LOOP_END\lLOOP:0: B:19:0x0004\-\>B:23:0x0018\l|cleanupExec()\lr0 = true\l}"];
+}
+subgraph cluster_Region_971277566 {
+label = "R(3:9|10|11) | ExcHandler: all \-\> 0x001e\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|ExcHandler: all \-\> 0x001e\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001f|cleanupExec()\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0022|throw r1\l}"];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0023|updateOnBackPressedCallbackEnabled()\ldoPendingDeferredStart()\lr3.mFragmentStore.burpActive()\l}"];
+Node_28 [shape=record,label="{28\:\ 0x002e|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_971277566 {
+label = "R(3:9|10|11) | ExcHandler: all \-\> 0x001e\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|ExcHandler: all \-\> 0x001e\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001f|cleanupExec()\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0022|throw r1\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0004|LOOP_START\lLOOP:0: B:19:0x0004\-\>B:23:0x0018\lPHI: r0 \l  PHI: (r0v1 'didSomething' boolean) = (r0v0 'didSomething' boolean), (r0v2 'didSomething' boolean) binds: [B:18:0x0000, B:23:0x0018] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0011|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0023|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean androidx.fragment.app.FragmentManager.execPendingActions((r3v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r4v0 'allowStateLoss' boolean A[D('allowStateLoss' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x0018 \-\> B:19:0x0004, CROSS_EDGE: B:29:0x0011 \-\> B:24:0x001e, CROSS_EDGE: B:28:0x002e \-\> B:17:?\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x001e, blocks: (B:22:0x0011), top: B:29:0x0011 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_31[style=dashed];
+Node_21 -> Node_29;
+Node_22 -> Node_23;
+Node_22 -> Node_30;
+Node_23 -> Node_19;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_17;
+Node_27 -> Node_28;
+Node_28 -> Node_17;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_29 -> Node_22;
+Node_29 -> Node_24;
+Node_30 -> Node_24;
+Node_31 -> Node_27;
+}
+

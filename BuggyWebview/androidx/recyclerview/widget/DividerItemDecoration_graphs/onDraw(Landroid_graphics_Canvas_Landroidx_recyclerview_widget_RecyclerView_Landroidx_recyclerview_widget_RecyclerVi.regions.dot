@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.recyclerview.widget.DividerItemDecoration.onDraw(Landroid\/graphics\/Canvas;Landroidx\/recyclerview\/widget\/RecyclerView;Landroidx\/recyclerview\/widget\/RecyclerView$State;)V" {
+subgraph cluster_Region_412705038 {
+label = "R(1:(2:(1:12)|(1:(1:7)(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_91587941 {
+label = "R(2:(1:12)|(1:(1:7)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1163503179 {
+label = "IF [B:3:0x0004, B:5:0x0008] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r4.getLayoutManager() == null) goto L13\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0008|ADDED_TO_REGION\l|if (r2.mDivider == null) goto L12\l}"];
+subgraph cluster_Region_1876138888 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1007748717 {
+label = "R(1:(1:7)(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_359064103 {
+label = "IF [B:8:0x000e] THEN: R(1:7) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000e|if (r2.mOrientation == 1) goto L7\l}"];
+subgraph cluster_Region_495281470 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0010|drawVertical(r3, r4)\l}"];
+}
+subgraph cluster_Region_1861858013 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0014|drawHorizontal(r3, r4)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000b}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0017|ORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0018|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.DividerItemDecoration.onDraw((r2v0 'this' androidx.recyclerview.widget.DividerItemDecoration A[IMMUTABLE_TYPE, THIS]), (r3v0 'c' android.graphics.Canvas A[D('c' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'parent' androidx.recyclerview.widget.RecyclerView A[D('parent' androidx.recyclerview.widget.RecyclerView), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0014 \-\> B:11:0x0017, CROSS_EDGE: B:12:0x0018 \-\> B:1:?, CROSS_EDGE: B:3:0x0004 \-\> B:12:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.RecyclerView.ItemDecoration.onDraw(android.graphics.Canvas, androidx.recyclerview.widget.RecyclerView, androidx.recyclerview.widget.RecyclerView$State):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_14;
+Node_14 -> Node_1;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_13;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_13 -> Node_1;
+Node_11 -> Node_1;
+Node_12 -> Node_1;
+}
+

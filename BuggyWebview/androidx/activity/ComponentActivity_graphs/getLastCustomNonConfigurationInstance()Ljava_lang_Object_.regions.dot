@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.activity.ComponentActivity.getLastCustomNonConfigurationInstance()Ljava\/lang\/Object;" {
+subgraph cluster_Region_704808520 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0001|androidx.activity.ComponentActivity$NonConfigurationInstances androidx.activity.ComponentActivity.NonConfigurationInstances r0 = (androidx.activity.ComponentActivity.NonConfigurationInstances) getLastNonConfigurationInstance()\l}"];
+subgraph cluster_Region_1097140963 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_404417860 {
+label = "IF [B:11:0x0007] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0007|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1548212340 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r0.custom\l}"];
+}
+}
+subgraph cluster_Region_2142921482 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000c|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0009}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.Object androidx.activity.ComponentActivity.getLastCustomNonConfigurationInstance((r2v0 'this' androidx.activity.ComponentActivity A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:13:0x000c \-\> B:14:0x000d\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_15 -> Node_9;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_15;
+}
+

@@ -1,0 +1,34 @@
+digraph "CFG forcom.google.android.material.internal.ParcelableSparseBooleanArray.writeToParcel(Landroid\/os\/Parcel;I)V" {
+subgraph cluster_Region_1415182557 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int[] int[] r0 = new int[size()]\lboolean[] boolean[] r1 = new boolean[size()]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1960801250 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|if (r2 \< size()) goto L4\l}"];
+subgraph cluster_Region_920460462 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|LOOP_END\lLOOP:0: B:3:0x000d\-\>B:5:0x0013\l|r0[r2] = keyAt(r2)\lr1[r2] = valueAt(r2)\lr2++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0022|int int r2 = size()\lr5.writeInt(r2)\lr5.writeIntArray(r0)\lr5.writeBooleanArray(r1)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d|LOOP_START\lLOOP:0: B:3:0x000d\-\>B:5:0x0013\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v3 'i' int) binds: [B:2:0x0000, B:5:0x0013] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0022|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002f}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.internal.ParcelableSparseBooleanArray.writeToParcel((r4v0 'this' com.google.android.material.internal.ParcelableSparseBooleanArray A[IMMUTABLE_TYPE, THIS]), (r5v0 'dest' android.os.Parcel A[D('dest' android.os.Parcel), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'flags' int A[D('flags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:5:0x0013 \-\> B:3:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.os.Parcelable.writeToParcel(android.os.Parcel, int):void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_3;
+Node_6 -> Node_7;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_8 -> Node_6;
+Node_7 -> Node_1;
+}
+

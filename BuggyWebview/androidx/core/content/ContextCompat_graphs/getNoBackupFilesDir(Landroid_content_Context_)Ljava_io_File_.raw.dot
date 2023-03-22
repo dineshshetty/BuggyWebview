@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.core.content.ContextCompat.getNoBackupFilesDir(Landroid\/content\/Context;)Ljava\/io\/File;" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: SGET  (r0 I:int) =  android.os.Build.VERSION.SDK_INT int  (LINE:573)\l0x0002: CONST  (r1 I:??[int, float, short, byte, char]) = (21 ??[int, float, short, byte, char]) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0004|0x0004: IF  (r0 I:??[int, byte, short, char]) \< (r1 I:??[int, byte, short, char])  \-\> B:14:0x000b \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0006|0x0006: INVOKE  (r0 I:java.io.File) = (r4 I:android.content.Context A[D('context' android.content.Context)]) type: STATIC call: androidx.core.content.ContextCompat.Api21Impl.getNoBackupFilesDir(android.content.Context):java.io.File A[MD:(android.content.Context):java.io.File (m)] (LINE:574)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000a|RETURN\l|0x000a: RETURN  (r0 I:java.io.File) \l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000b|0x000b: INVOKE  (r0 I:android.content.pm.ApplicationInfo) = (r4 I:android.content.Context A[D('context' android.content.Context)]) type: VIRTUAL call: android.content.Context.getApplicationInfo():android.content.pm.ApplicationInfo A[MD:():android.content.pm.ApplicationInfo (c)] (LINE:576)\l0x000f: NEW_INSTANCE  (r1 I:java.io.File) =  java.io.File  (LINE:577)\l0x0011: IGET  (r2 I:java.lang.String) = (r0 I:android.content.pm.ApplicationInfo A[D('appInfo' android.content.pm.ApplicationInfo)]) android.content.pm.ApplicationInfo.dataDir java.lang.String \l0x0013: CONST_STR  (r3 I:java.lang.String) =  \"no_backup\" \l0x0015: INVOKE  (r1 I:java.io.File), (r2 I:java.lang.String), (r3 I:java.lang.String) type: DIRECT call: java.io.File.\<init\>(java.lang.String, java.lang.String):void A[MD:(java.lang.String, java.lang.String):void (c)]\l0x0018: INVOKE  (r1 I:java.io.File) = (r1 I:java.io.File) type: STATIC call: androidx.core.content.ContextCompat.createFilesDir(java.io.File):java.io.File A[MD:(java.io.File):java.io.File (m)]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001c|RETURN\l|0x001c: RETURN  (r1 I:java.io.File) \l}"];
+MethodNode[shape=record,label="{public static java.io.File androidx.core.content.ContextCompat.getNoBackupFilesDir((r4 I:android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x001c \-\> B:9:?\lINLINE_NOT_NEEDED\lDebug Info:\l  0x000f\-0x001c: r0 'appInfo' Landroid\/content\/pm\/ApplicationInfo;\l  \-1 \-0x001c: r4 'context' Landroid\/content\/Context;\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+}
+

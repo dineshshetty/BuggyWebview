@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.vectordrawable.graphics.drawable.VectorDrawableCompat.setColorFilter(Landroid\/graphics\/ColorFilter;)V" {
+subgraph cluster_Region_236620553 {
+label = "R(1:(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1749311802 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_134455761 {
+label = "IF [B:11:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r1.mDelegateDrawable != null) goto L3\l}"];
+subgraph cluster_Region_1940221590 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|r1.mDelegateDrawable.setColorFilter(r2)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_700309800 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|r1.mColorFilter = r2\linvalidateSelf()\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000f}"];
+MethodNode[shape=record,label="{public void androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.setColorFilter((r1v0 'this' androidx.vectordrawable.graphics.drawable.VectorDrawableCompat A[IMMUTABLE_TYPE, THIS]), (r2v0 'colorFilter' android.graphics.ColorFilter A[D('colorFilter' android.graphics.ColorFilter), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x000f \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.setColorFilter(android.graphics.ColorFilter):void\}]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forkotlin.collections.unsigned.UArraysKt___UArraysKt.groupBy\-3bBvP4M([SLkotlin\/jvm\/functions\/Function1;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_1986155773 {
+label = "R(3:1|(3:3|(1:5)(0)|7)|10)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"$this$groupBy\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"keySelector\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"valueTransform\")\ljava.util.Map java.util.LinkedHashMap r0 = new java.util.LinkedHashMap()\lint int r1 = kotlin.UShortArray.m480getSizeimpl(r6)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1259329288 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001b|LOOP_START\lLOOP:0: B:15:0x001b\-\>B:19:0x0039\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:14:0x0000, B:19:0x0039] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_1124297562 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001d|short short r3 = kotlin.UShortArray.m479getMh2AYeg(r6, r2)\ljava.lang.Object K r4 = r7.invoke(kotlin.UShort.m416boximpl(r3))\ljava.lang.Object java.util.ArrayList r5 = r0.get(r4)\l}"];
+subgraph cluster_IfRegion_799975208 {
+label = "IF [B:17:0x002d] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x002d|if (r5 == null) goto L5\l}"];
+subgraph cluster_Region_97025208 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002f|java.util.List r5 = new java.util.ArrayList()\lr0.put(r4, r5)\l}"];
+}
+subgraph cluster_Region_514947251 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0039|LOOP_END\lLOOP:0: B:15:0x001b\-\>B:19:0x0039\lPHI: r5 \l  PHI: (r5v1 java.util.List\<V\>) = (r5v0 java.util.List\<V\>), (r5v4 java.util.ArrayList) binds: [B:23:0x0039, B:22:0x0039] A[DONT_GENERATE, DONT_INLINE]\l|r5.add(r8.invoke(kotlin.UShort.m416boximpl(r3)))\lr2++\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0049|RETURN\l|return r0\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0039|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0039|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0049|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final java.util.Map\<K, java.util.List\<V\>\> kotlin.collections.unsigned.UArraysKt___UArraysKt.groupBy\-3bBvP4M((r6v0 'groupBy' short[] A[D('$this$groupBy_u2d3bBvP4M' short[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'keySelector' kotlin.jvm.functions.Function1\<? super kotlin.UShort, ? extends K\> A[D('keySelector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'valueTransform' kotlin.jvm.functions.Function1\<? super kotlin.UShort, ? extends V\> A[D('valueTransform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0039 \-\> B:15:0x001b, CROSS_EDGE: B:17:0x002d \-\> B:19:0x0039\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;\>([SLkotlin\/jvm\/functions\/Function1\<\-Lkotlin\/UShort;+TK;\>;Lkotlin\/jvm\/functions\/Function1\<\-Lkotlin\/UShort;+TV;\>;)Ljava\/util\/Map\<TK;Ljava\/util\/List\<TV;\>;\>;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_22;
+Node_19 -> Node_15;
+Node_20 -> Node_13;
+Node_12 -> Node_14;
+Node_22 -> Node_19;
+Node_23 -> Node_19;
+Node_21 -> Node_20;
+}
+

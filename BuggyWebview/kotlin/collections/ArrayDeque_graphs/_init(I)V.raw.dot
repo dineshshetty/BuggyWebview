@@ -1,0 +1,27 @@
+digraph "CFG forkotlin.collections.ArrayDeque.\<init\>(I)V" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|0x0000: INVOKE  (r3 I:kotlin.collections.AbstractMutableList) type: DIRECT call: kotlin.collections.AbstractMutableList.\<init\>():void A[MD:():void (m)] (LINE:28)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0004|0x0004: IF  (r4 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('initialCapacity' int)]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:16:0x0009  (LINE:30)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0006|0x0006: SGET  (r0 I:java.lang.Object[]) =  kotlin.collections.ArrayDeque.emptyElementData java.lang.Object[] \l}"];
+Node_18 [shape=record,label="{18\:\ 0x000d|0x000d: IPUT  (r0 I:java.lang.Object[]), (r3 I:kotlin.collections.ArrayDeque) kotlin.collections.ArrayDeque.elementData java.lang.Object[]  (LINE:29)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000f|RETURN\l|0x000f: RETURN    (LINE:34)\l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0009|0x0009: IF  (r4 I:??[int, byte, short, char] A[D('initialCapacity' int)]) \<= (0 ??[int, byte, short, char])  \-\> B:20:0x0010  (LINE:31)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000b|0x000b: NEW_ARRAY  (r0 I:java.lang.Object[]) = (r4 I:int A[D('initialCapacity' int), IMMUTABLE_TYPE]) type: java.lang.Object[] \l}"];
+Node_20 [shape=record,label="{20\:\ 0x0010|0x0010: NEW_INSTANCE  (r0 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException  (LINE:32)\l0x0012: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0014: INVOKE  (r1 I:java.lang.StringBuilder) type: DIRECT call: java.lang.StringBuilder.\<init\>():void A[MD:():void (c)]\l0x0017: CONST_STR  (r2 I:java.lang.String) =  \"Illegal Capacity: \" \l0x0019: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) type: VIRTUAL call: java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder A[MD:(java.lang.String):java.lang.StringBuilder (c)]\l0x001c: INVOKE  (r1 I:java.lang.StringBuilder), (r4 I:int A[D('initialCapacity' int)]) type: VIRTUAL call: java.lang.StringBuilder.append(int):java.lang.StringBuilder A[MD:(int):java.lang.StringBuilder (c)]\l0x001f: INVOKE  (r1 I:java.lang.String) = (r1 I:java.lang.StringBuilder) type: VIRTUAL call: java.lang.StringBuilder.toString():java.lang.String A[MD:():java.lang.String (c)]\l0x0023: INVOKE  (r0 I:java.lang.IllegalArgumentException), (r1 I:java.lang.String) type: DIRECT call: java.lang.IllegalArgumentException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0026|0x0026: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void kotlin.collections.ArrayDeque.\<init\>((r3 'this' I:kotlin.collections.ArrayDeque\<E\> A[IMMUTABLE_TYPE, THIS]), (r4 I:int A[D('initialCapacity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000b \-\> B:18:0x000d, CROSS_EDGE: B:21:0x0026 \-\> B:12:?\lINLINE_NOT_NEEDED\lDebug Info:\l  \-1 \-0x0026: r4 'initialCapacity' I\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_20;
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+}
+

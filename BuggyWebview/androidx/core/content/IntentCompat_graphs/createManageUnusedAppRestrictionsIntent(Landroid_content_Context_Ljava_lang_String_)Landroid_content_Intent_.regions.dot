@@ -1,0 +1,88 @@
+digraph "CFG forandroidx.core.content.IntentCompat.createManageUnusedAppRestrictionsIntent(Landroid\/content\/Context;Ljava\/lang\/String;)Landroid\/content\/Intent;" {
+subgraph cluster_Region_497293379 {
+label = "R(1:(2:(1:14)|(1:(2:(1:6)|(2:8|(2:(1:10)|(2:11|12)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_229432073 {
+label = "R(2:(1:14)|(1:(2:(1:6)|(2:8|(2:(1:10)|(2:11|12))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1396345503 {
+label = "IF [B:3:0x0008] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (androidx.core.content.PackageManagerCompat.areUnusedAppRestrictionsAvailable(r4.getPackageManager()) == false) goto L13\l}"];
+subgraph cluster_Region_121324004 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0055|throw new java.lang.UnsupportedOperationException(\"Unused App Restriction features are not available on this device\")\l}"];
+}
+}
+subgraph cluster_Region_979384128 {
+label = "R(1:(2:(1:6)|(2:8|(2:(1:10)|(2:11|12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1375717270 {
+label = "R(2:(1:6)|(2:8|(2:(1:10)|(2:11|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1452724548 {
+label = "IF [B:5:0x0011] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|if (android.os.Build.VERSION.SDK_INT \>= 31) goto L5\l}"];
+subgraph cluster_Region_201297427 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|RETURN\l|return new android.content.Intent(\"android.settings.APPLICATION_DETAILS_SETTINGS\").setData(android.net.Uri.fromParts(\"package\", r5, null))\l}"];
+}
+}
+subgraph cluster_Region_1130652483 {
+label = "R(2:8|(2:(1:10)|(2:11|12)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0023|android.content.Intent android.content.Intent r0 = new android.content.Intent(androidx.core.content.PackageManagerCompat.ACTION_PERMISSION_REVOCATION_SETTINGS).setData(android.net.Uri.fromParts(\"package\", r5, null))\l}"];
+subgraph cluster_Region_815686171 {
+label = "R(2:(1:10)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_536002793 {
+label = "IF [B:9:0x0036] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0036|if (android.os.Build.VERSION.SDK_INT \>= 30) goto L10\l}"];
+subgraph cluster_Region_6199303 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0038|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1008718358 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0039|java.lang.String java.lang.String r1 = androidx.core.content.PackageManagerCompat.getPermissionRevocationVerifierApp(r4.getPackageManager())\l}"];
+Node_12 [shape=record,label="{12\:\ 0x004d|RETURN\l|return r0.setPackage((java.lang.String) androidx.core.util.Preconditions.checkNotNull(r1))\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004e}"];
+MethodNode[shape=record,label="{public static android.content.Intent androidx.core.content.IntentCompat.createManageUnusedAppRestrictionsIntent((r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'packageName' java.lang.String A[D('packageName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0038 \-\> B:1:?, CROSS_EDGE: B:12:0x004d \-\> B:1:?, CROSS_EDGE: B:14:0x0055 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_14 -> Node_1;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_1;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_13 -> Node_14;
+}
+

@@ -1,0 +1,25 @@
+digraph "CFG forcom.google.android.material.datepicker.UtcDates.removeYearFromDateFormatPattern(Ljava\/lang\/String;)Ljava\/lang\/String;" {
+Node_10 [shape=record,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0000|int r2 = findCharactersInDateFormatPattern(r7, \"yY\", 1, 0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000c|if (r2 \< r7.length()) goto L5\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000e|RETURN\l|return r7\l}"];
+Node_11 [shape=record,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000f|java.lang.String r3 = \"EMd\"\lint r4 = findCharactersInDateFormatPattern(r7, \"EMd\", 1, r2)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x001a|if (r4 \>= r7.length()) goto L8\l}"];
+Node_17 [shape=record,label="{17\:\ 0x001c|java.lang.StringBuilder r5 = new java.lang.StringBuilder()\lr5.append(\"EMd\")\lr5.append(\",\")\ljava.lang.String r3 = r5.toString()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x002d|PHI: r3 \l  PHI: (r3v2 'monthDayCharacters' java.lang.String) = (r3v1 'monthDayCharacters' java.lang.String), (r3v3 'monthDayCharacters' java.lang.String) binds: [B:16:0x001a, B:17:0x001c] A[DONT_GENERATE, DONT_INLINE]\l|int r5 = findCharactersInDateFormatPattern(r7, r3, \-1, r2)\ljava.lang.String r1 = r7.substring(r5 + 1, r4)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0041|RETURN\l|return r7.replace(r1, \" \").trim()\l}"];
+MethodNode[shape=record,label="{private static java.lang.String com.google.android.material.datepicker.UtcDates.removeYearFromDateFormatPattern((r7v0 'pattern' java.lang.String A[D('pattern' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0041 \-\> B:11:?, CROSS_EDGE: B:16:0x001a \-\> B:18:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+}
+

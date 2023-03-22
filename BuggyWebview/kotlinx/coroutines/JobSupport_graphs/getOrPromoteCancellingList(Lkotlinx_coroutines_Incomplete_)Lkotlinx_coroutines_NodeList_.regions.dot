@@ -1,0 +1,88 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.getOrPromoteCancellingList(Lkotlinx\/coroutines\/Incomplete;)Lkotlinx\/coroutines\/NodeList;" {
+subgraph cluster_Region_931164905 {
+label = "R(2:1|(2:(1:(2:(1:6)|(1:(2:(2:10|11)|(1:13)))))|(1:14)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlinx.coroutines.NodeList kotlinx.coroutines.NodeList r0 = r3.getList()\l}"];
+subgraph cluster_Region_2116415583 {
+label = "R(2:(1:(2:(1:6)|(1:(2:(2:10|11)|(1:13)))))|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_133039835 {
+label = "IF [B:18:0x0004] THEN: R(1:(2:(1:6)|(1:(2:(2:10|11)|(1:13))))) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1773957117 {
+label = "R(1:(2:(1:6)|(1:(2:(2:10|11)|(1:13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_837413384 {
+label = "R(2:(1:6)|(1:(2:(2:10|11)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1511490312 {
+label = "IF [B:20:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0009|if ((r3 instanceof kotlinx.coroutines.Empty) == true) goto L5\l}"];
+subgraph cluster_Region_190916381 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ ?|SYNTHETIC\lRETURN\l|return new kotlinx.coroutines.NodeList()\l}"];
+}
+}
+subgraph cluster_Region_27816459 {
+label = "R(1:(2:(2:10|11)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2146398620 {
+label = "R(2:(2:10|11)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_419869354 {
+label = "IF [B:23:0x0013] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0013|if ((r3 instanceof kotlinx.coroutines.JobNode) != false) goto L10\l}"];
+subgraph cluster_Region_467482456 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0015|promoteSingleToNodeList((kotlinx.coroutines.JobNode) r3)\l}"];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1495737858 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002f|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"State should have list: \", r3).toString())\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_561103288 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0030|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0007}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000b}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0011}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0020}"];
+MethodNode[shape=record,label="{private final kotlinx.coroutines.NodeList kotlinx.coroutines.JobSupport.getOrPromoteCancellingList((r2v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]), (r3v0 'state' kotlinx.coroutines.Incomplete A[D('state' kotlinx.coroutines.Incomplete), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0015 \-\> B:27:0x0030, CROSS_EDGE: B:26:0x002f \-\> B:16:?, CROSS_EDGE: B:18:0x0004 \-\> B:27:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_27[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_28 -> Node_16;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_29;
+Node_29 -> Node_16;
+Node_26 -> Node_16;
+Node_27 -> Node_16;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_21 -> Node_28;
+Node_22 -> Node_23;
+Node_25 -> Node_26;
+}
+

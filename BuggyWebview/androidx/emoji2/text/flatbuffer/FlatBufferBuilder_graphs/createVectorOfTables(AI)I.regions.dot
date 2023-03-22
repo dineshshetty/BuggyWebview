@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlatBufferBuilder.createVectorOfTables([I)I" {
+subgraph cluster_Region_697850811 {
+label = "R(4:1|(1:3)|5|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|notNested()\lstartVector(4, r3.length, 4)\lint int r0 = r3.length \- 1\l}"];
+subgraph cluster_LoopRegion_865671437 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000b|LOOP_START\lLOOP:0: B:11:0x000b\-\>B:12:0x000d\lPHI: r0 \l  PHI: (r0v3 'i' int) = (r0v2 'i' int), (r0v5 'i' int) binds: [B:10:0x0000, B:12:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_2026203397 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000d|LOOP_END\lLOOP:0: B:11:0x000b\-\>B:12:0x000d\l|addOffset(r3[r0])\lr0\-\-\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0015|int int r0 = endVector()\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0019|RETURN\l|return r0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0015|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.emoji2.text.flatbuffer.FlatBufferBuilder.createVectorOfTables((r2v0 'this' androidx.emoji2.text.flatbuffer.FlatBufferBuilder A[IMMUTABLE_TYPE, THIS]), (r3v0 'offsets' int[] A[D('offsets' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x000d \-\> B:11:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_11;
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_15 -> Node_13;
+}
+

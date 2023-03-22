@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.viewpager2.widget.FakeDrag.endFakeDrag()Z" {
+subgraph cluster_Region_2091969772 {
+label = "R(1:(2:(1:3)|(2:5|(2:(2:7|8)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_556660767 {
+label = "R(2:(1:3)|(2:5|(2:(2:7|8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1881982679 {
+label = "IF [B:3:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r5.mScrollEventAdapter.isFakeDragging() == false) goto L3\l}"];
+subgraph cluster_Region_1938954358 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1228185547 {
+label = "R(2:5|(2:(2:7|8)|(1:9)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|r5.mScrollEventAdapter.notifyEndFakeDrag()\landroid.view.VelocityTracker android.view.VelocityTracker r1 = r5.mVelocityTracker\lr1.computeCurrentVelocity(1000, r5.mMaximumVelocity)\lint int r2 = (int) r1.getXVelocity()\lint int r3 = (int) r1.getYVelocity()\l}"];
+subgraph cluster_Region_146693476 {
+label = "R(2:(2:7|8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_76193214 {
+label = "IF [B:7:0x002b] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|if (r5.mRecyclerView.fling(r2, r3) == false) goto L7\l}"];
+subgraph cluster_Region_1184739692 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002d|r5.mViewPager.snapToPage()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0032|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1343343894 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.viewpager2.widget.FakeDrag.endFakeDrag((r5v0 'this' androidx.viewpager2.widget.FakeDrag A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0033 \-\> B:1:?, CROSS_EDGE: B:7:0x002b \-\> B:9:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+}
+

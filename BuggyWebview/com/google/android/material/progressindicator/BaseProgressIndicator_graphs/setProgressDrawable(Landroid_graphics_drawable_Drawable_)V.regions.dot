@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.material.progressindicator.BaseProgressIndicator.setProgressDrawable(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_1776182819 {
+label = "R(1:(1:2)(1:(1:7)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1302251984 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: R(1:(1:7)(1:10))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r4 == null) goto L2\l}"];
+subgraph cluster_Region_1609927545 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|super.setProgressDrawable(null)\l}"];
+}
+subgraph cluster_Region_1720521406 {
+label = "R(1:(1:7)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2096668466 {
+label = "IF [B:6:0x0009] THEN: R(1:7) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|if ((r4 instanceof com.google.android.material.progressindicator.DeterminateDrawable) != false) goto L7\l}"];
+subgraph cluster_Region_1393255299 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000b|com.google.android.material.progressindicator.DeterminateDrawable com.google.android.material.progressindicator.DeterminateDrawable\<S\> r0 = (com.google.android.material.progressindicator.DeterminateDrawable) r4\lr0.hideNow()\lsuper.setProgressDrawable(r0)\lr0.setLevelByFraction(getProgress() \/ getMax())\l}"];
+}
+subgraph cluster_Region_1192429876 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002b|throw new java.lang.IllegalArgumentException(\"Cannot set framework drawable as progress drawable.\")\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0023}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0024}"];
+MethodNode[shape=record,label="{public void com.google.android.material.progressindicator.BaseProgressIndicator.setProgressDrawable((r3v0 'this' com.google.android.material.progressindicator.BaseProgressIndicator\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\> A[D('this' com.google.android.material.progressindicator.BaseProgressIndicator\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\>), IMMUTABLE_TYPE, THIS]), (r4v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:8:0x0023 \-\> B:1:?, CROSS_EDGE: B:10:0x002b \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec]\lMETHOD_OVERRIDE: [ClspMth\{android.widget.ProgressBar.setProgressDrawable(android.graphics.drawable.Drawable):void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+}
+

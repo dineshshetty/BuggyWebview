@@ -1,0 +1,29 @@
+digraph "CFG forandroidx.core.os.LocaleListCompatWrapper.findFirstMatchIndex(Ljava\/util\/Locale;)I" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:213)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0001|LOOP_START\lLOOP:0: B:3:0x0001\-\>B:8:0x000f\l|0x0001: IGET  (r1 I:java.util.Locale[]) = (r3 I:androidx.core.os.LocaleListCompatWrapper) androidx.core.os.LocaleListCompatWrapper.mList java.util.Locale[] \l0x0003: ARRAY_LENGTH  (r2 I:int) = (r1 I:??[]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0004|0x0004: IF  (r0 I:??[int, byte, short, char] A[D('idx' int)]) \>= (r2 I:??[int, byte, short, char])  \-\> B:11:0x0012 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0006|0x0006: AGET  (r1 I:??[OBJECT, ARRAY]) = (r1 I:??[OBJECT, ARRAY][]), (r0 I:??[int, short, byte, char] A[D('idx' int)])  (LINE:214)\l0x0008: INVOKE  (r1 I:int) = (r4 I:java.util.Locale A[D('supportedLocale' java.util.Locale)]), (r1 I:java.util.Locale) type: STATIC call: androidx.core.os.LocaleListCompatWrapper.matchScore(java.util.Locale, java.util.Locale):int A[MD:(java.util.Locale, java.util.Locale):int (m)]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000c|0x000c: IF  (r1 I:??[int, byte, short, char] A[D('score' int)]) \<= (0 ??[int, byte, short, char])  \-\> B:8:0x000f  (LINE:215)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x000f|LOOP_END\lLOOP:0: B:3:0x0001\-\>B:8:0x000f\l|0x000f: ARITH  (r0 I:int) = (r0 I:int A[D('idx' int)]) + (1 int)  (LINE:213)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000e|SYNTHETIC\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000e|RETURN\l|0x000e: RETURN  (r0 I:int A[D('idx' int)])  (LINE:216)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0012|SYNTHETIC\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0012|RETURN\l|0x0012: CONST  (r0 I:??[int, float, short, byte, char] A[D('idx' int)]) = (2147483647(0x7fffffff, float:NaN) ??[int, float, short, byte, char])  (LINE:219)\l0x0015: RETURN  (r0 I:int) \l}"];
+MethodNode[shape=record,label="{private int androidx.core.os.LocaleListCompatWrapper.findFirstMatchIndex((r3 'this' I:androidx.core.os.LocaleListCompatWrapper A[IMMUTABLE_TYPE, THIS]), (r4 I:java.util.Locale A[D('supportedLocale' java.util.Locale), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x000f \-\> B:3:0x0001, CROSS_EDGE: B:10:0x0015 \-\> B:1:?\lDebug Info:\l  0x000c\-0x000f: r1 'score' I\l  0x0001\-0x0012: r0 'idx' I\l  \-1 \-0x0015: r4 'supportedLocale' Ljava\/util\/Locale;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_5 -> Node_6;
+Node_6 -> Node_8;
+Node_6 -> Node_12[style=dashed];
+Node_8 -> Node_3;
+Node_12 -> Node_7;
+Node_7 -> Node_1;
+Node_11 -> Node_9;
+Node_9 -> Node_1;
+}
+

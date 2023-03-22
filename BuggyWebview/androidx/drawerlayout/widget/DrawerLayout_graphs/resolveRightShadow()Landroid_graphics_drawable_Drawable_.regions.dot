@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.resolveRightShadow()Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_631657263 {
+label = "R(3:1|(2:3|(2:5|6))(2:10|(2:12|13))|9)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|int int r0 = androidx.core.view.ViewCompat.getLayoutDirection(r2)\l}"];
+subgraph cluster_IfRegion_1334010564 {
+label = "IF [B:17:0x0004] THEN: R(2:3|(2:5|6)) ELSE: R(2:10|(2:12|13))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (r0 == 0) goto L3\l}"];
+subgraph cluster_Region_1121849886 {
+label = "R(2:3|(2:5|6))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r1 = r2.mShadowEnd\l}"];
+subgraph cluster_IfRegion_1130173393 {
+label = "IF [B:19:0x0008] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0008|if (r1 != null) goto L5\l}"];
+subgraph cluster_Region_155147428 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000a|mirror(r1, r0)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000f|RETURN\l|return r2.mShadowEnd\l}"];
+}
+}
+}
+subgraph cluster_Region_1706457544 {
+label = "R(2:10|(2:12|13))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r1 = r2.mShadowStart\l}"];
+subgraph cluster_IfRegion_838316792 {
+label = "IF [B:23:0x0012] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0012|if (r1 != null) goto L12\l}"];
+subgraph cluster_Region_1914594191 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0014|mirror(r1, r0)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0019|RETURN\l|return r2.mShadowStart\l}"];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x001c|RETURN\l|return r2.mShadowRight\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001a}"];
+MethodNode[shape=record,label="{private android.graphics.drawable.Drawable androidx.drawerlayout.widget.DrawerLayout.resolveRightShadow((r2v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x001c \-\> B:15:?, CROSS_EDGE: B:25:0x0019 \-\> B:15:?, CROSS_EDGE: B:23:0x0012 \-\> B:26:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_22[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_26[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_15;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_26[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_26 -> Node_27;
+}
+

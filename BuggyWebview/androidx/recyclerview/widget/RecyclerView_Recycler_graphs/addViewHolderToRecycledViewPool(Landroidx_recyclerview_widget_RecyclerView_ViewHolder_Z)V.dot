@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.Recycler.addViewHolderToRecycledViewPool(Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;Z)V" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000|androidx.recyclerview.widget.RecyclerView.clearNestedRecyclerViewIfNotNested(r5)\landroid.view.View r0 = r5.itemView\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0009|if (androidx.recyclerview.widget.RecyclerView.this.mAccessibilityDelegate == null) goto L7\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000b|androidx.core.view.AccessibilityDelegateCompat r1 = androidx.recyclerview.widget.RecyclerView.this.mAccessibilityDelegate.getItemDelegate()\lr2 = null\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0016|if ((r1 instanceof androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate.ItemDelegate) == false) goto L6\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0018|androidx.core.view.AccessibilityDelegateCompat r2 = ((androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate.ItemDelegate) r1).getAndRemoveOriginalDelegateForItem(r0)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001f|PHI: r2 \l  PHI: (r2v1 'originalDelegate' androidx.core.view.AccessibilityDelegateCompat) = (r2v0 'originalDelegate' androidx.core.view.AccessibilityDelegateCompat), (r2v2 'originalDelegate' androidx.core.view.AccessibilityDelegateCompat) binds: [B:17:0x0016, B:18:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|androidx.core.view.ViewCompat.setAccessibilityDelegate(r0, r2)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0022|if (r6 == false) goto L9\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0024|dispatchViewRecycled(r5)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0027|r5.mOwnerRecyclerView = null\lgetRecycledViewPool().putRecycledView(r5)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0031|RETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.RecyclerView.Recycler.addViewHolderToRecycledViewPool((r4v0 'this' androidx.recyclerview.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, THIS]), (r5v0 'holder' androidx.recyclerview.widget.RecyclerView$ViewHolder A[D('holder' androidx.recyclerview.widget.RecyclerView$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'dispatchRecycled' boolean A[D('dispatchRecycled' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0022 \-\> B:22:0x0027, CROSS_EDGE: B:17:0x0016 \-\> B:19:0x001f, CROSS_EDGE: B:15:0x0009 \-\> B:20:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_20;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+}
+

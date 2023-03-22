@@ -1,0 +1,161 @@
+digraph "CFG forcom.google.android.material.appbar.AppBarLayout.BaseBehavior.setHeaderTopBottomOffset(Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;Lcom\/google\/android\/material\/appbar\/AppBarLayout;III)I" {
+subgraph cluster_Region_1296008991 {
+label = "R(4:1|(2:5|(6:(1:9)(1:34)|10|(2:12|(3:15|(1:19)|21))|(1:28)|29|32))(1:38)|35|36) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0000|int int r0 = getTopBottomOffsetForScrollingSibling()\lint r1 = 0\l}"];
+subgraph cluster_IfRegion_36769505 {
+label = "IF [B:42:0x0005, B:43:0x0007, B:44:0x0009] THEN: R(2:5|(6:(1:9)(1:34)|10|(2:12|(3:15|(1:19)|21))|(1:28)|29|32)) ELSE: R(1:38)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0005|if (r14 != 0) goto L3\l}"];
+Node_43 [shape=record,label="{43\:\ 0x0007|ADDED_TO_REGION\l|if (r0 \>= r14) goto L4\l}"];
+Node_44 [shape=record,label="{44\:\ 0x0009|ADDED_TO_REGION\l|if (r0 \<= r15) goto L5\l}"];
+subgraph cluster_Region_358707527 {
+label = "R(2:5|(6:(1:9)(1:34)|10|(2:12|(3:15|(1:19)|21))|(1:28)|29|32))";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x000b|int int r13 = androidx.core.math.MathUtils.clamp(r13, r14, r15)\l}"];
+subgraph cluster_IfRegion_1036041840 {
+label = "IF [B:46:0x000f] THEN: R(6:(1:9)(1:34)|10|(2:12|(3:15|(1:19)|21))|(1:28)|29|32) ELSE: null";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x000f|if (r0 != r13) goto L7\l}"];
+subgraph cluster_Region_618077629 {
+label = "R(6:(1:9)(1:34)|10|(2:12|(3:15|(1:19)|21))|(1:28)|29|32)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_358385384 {
+label = "IF [B:48:0x0015] THEN: R(1:9) ELSE: R(1:34)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x0015|if (r12.hasChildWithInterpolator() != false) goto L9\l}"];
+subgraph cluster_Region_531444492 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x0017|int r2 = interpolateOffset(r12, r13)\l}"];
+}
+subgraph cluster_Region_656813495 {
+label = "R(1:34)";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x001c|r2 = r13\l}"];
+}
+}
+Node_51 [shape=record,label="{51\:\ 0x001d|PHI: r2 \l  PHI: (r2v3 int) = (r2v2 int), (r2v8 int) binds: [B:50:0x001c, B:49:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|int r8 = r2\lboolean boolean r9 = setTopAndBottomOffset(r8)\lint r1 = r0 \- r13\lr10.offsetDelta = r13 \- r8\l}"];
+subgraph cluster_IfRegion_989914651 {
+label = "IF [B:52:0x0029] THEN: R(2:12|(3:15|(1:19)|21)) ELSE: null";
+node [shape=record,color=blue];
+Node_52 [shape=record,label="{52\:\ 0x0029|if (r9 != false) goto L12\l}"];
+subgraph cluster_Region_1396056468 {
+label = "R(2:12|(3:15|(1:19)|21))";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x002b|int r3 = 0\l}"];
+subgraph cluster_LoopRegion_1164699088 {
+label = "LOOP:0: (3:15|(1:19)|21)";
+node [shape=record,color=blue];
+Node_55 [shape=record,label="{55\:\ 0x0030|if (r3 \< r12.getChildCount()) goto L15\l}"];
+subgraph cluster_Region_2036855640 {
+label = "R(3:15|(1:19)|21)";
+node [shape=record,color=blue];
+Node_56 [shape=record,label="{56\:\ 0x0032|com.google.android.material.appbar.AppBarLayout$LayoutParams com.google.android.material.appbar.AppBarLayout.LayoutParams r4 = (com.google.android.material.appbar.AppBarLayout.LayoutParams) r12.getChildAt(r3).getLayoutParams()\lcom.google.android.material.appbar.AppBarLayout$ChildScrollEffect com.google.android.material.appbar.AppBarLayout.ChildScrollEffect r5 = r4.getScrollEffect()\l}"];
+subgraph cluster_IfRegion_341728319 {
+label = "IF [B:57:0x0040, B:59:0x0047] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_57 [shape=record,label="{57\:\ 0x0040|if (r5 != null) goto L17\l}"];
+Node_59 [shape=record,label="{59\:\ 0x0047|ADDED_TO_REGION\l|if ((r4.getScrollFlags() & 1) != 0) goto L19\l}"];
+subgraph cluster_Region_1980164586 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_60 [shape=record,label="{60\:\ 0x004a|r5.onOffsetChanged(r12, r12.getChildAt(r3), getTopAndBottomOffset())\l}"];
+}
+}
+Node_61 [shape=record,label="{61\:\ 0x0056|LOOP_END\lLOOP:0: B:54:0x002c\-\>B:61:0x0056\l|r3++\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_636830581 {
+label = "IF [B:62:0x0059, B:64:0x005f] THEN: R(1:28) ELSE: null";
+node [shape=record,color=blue];
+Node_62 [shape=record,label="{62\:\ 0x0059|if (r9 == false) goto L26\l}"];
+Node_64 [shape=record,label="{64\:\ 0x005f|ADDED_TO_REGION\l|if (r12.hasChildWithInterpolator() != false) goto L28\l}"];
+subgraph cluster_Region_1041388262 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_65 [shape=record,label="{65\:\ 0x0061|r11.dispatchDependentViewsChanged(r12)\l}"];
+}
+}
+Node_66 [shape=record,label="{66\:\ 0x0064|r12.onOffsetChanged(getTopAndBottomOffset())\l}"];
+Node_70 [shape=record,label="{70\:\ 0x0072|PHI: r6 \l  PHI: (r6v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|updateAppBarLayoutDrawableState(r11, r12, r13, r13 \< r0 ? \-1 : 1, false)\l}"];
+}
+}
+}
+subgraph cluster_Region_339360610 {
+label = "R(1:38)";
+node [shape=record,color=blue];
+Node_71 [shape=record,label="{71\:\ 0x007b|r10.offsetDelta = 0\l}"];
+}
+}
+Node_72 [shape=record,label="{72\:\ 0x007e|PHI: r1 \l  PHI: (r1v1 'consumed' int) = (r1v0 'consumed' int), (r1v0 'consumed' int), (r1v2 'consumed' int) binds: [B:71:0x007b, B:46:0x000f, B:70:0x0072] A[DONT_GENERATE, DONT_INLINE]\l|updateAccessibilityActions(r11, r12)\l}"];
+Node_73 [shape=record,label="{73\:\ 0x0081|RETURN\l|return r1\l}"];
+}
+Node_39 [shape=record,color=red,label="{39\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x0011}"];
+Node_54 [shape=record,color=red,label="{54\:\ 0x002c|LOOP_START\lLOOP:0: B:54:0x002c\-\>B:61:0x0056\lPHI: r3 \l  PHI: (r3v4 'i' int) = (r3v3 'i' int), (r3v5 'i' int) binds: [B:53:0x002b, B:61:0x0056] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_58 [shape=record,color=red,label="{58\:\ 0x0042}"];
+Node_75 [shape=record,color=red,label="{75\:\ 0x0056|SYNTHETIC\l}"];
+Node_77 [shape=record,color=red,label="{77\:\ 0x0056|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_76 [shape=record,color=red,label="{76\:\ 0x0056|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_74 [shape=record,color=red,label="{74\:\ 0x0059|SYNTHETIC\l}"];
+Node_63 [shape=record,color=red,label="{63\:\ 0x005b}"];
+Node_67 [shape=record,color=red,label="{67\:\ 0x006c}"];
+Node_68 [shape=record,color=red,label="{68\:\ 0x006e}"];
+Node_69 [shape=record,color=red,label="{69\:\ 0x0071}"];
+Node_40 [shape=record,color=red,label="{40\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{int com.google.android.material.appbar.AppBarLayout.BaseBehavior.setHeaderTopBottomOffset((r10v0 'this' com.google.android.material.appbar.AppBarLayout$BaseBehavior\<T extends com.google.android.material.appbar.AppBarLayout\> A[D('this' com.google.android.material.appbar.AppBarLayout$BaseBehavior\<T extends com.google.android.material.appbar.AppBarLayout\>), IMMUTABLE_TYPE, THIS]), (r11v0 'coordinatorLayout' androidx.coordinatorlayout.widget.CoordinatorLayout A[D('coordinatorLayout' androidx.coordinatorlayout.widget.CoordinatorLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'appBarLayout' T extends com.google.android.material.appbar.AppBarLayout A[D('appBarLayout' T extends com.google.android.material.appbar.AppBarLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'newOffset' int A[D('newOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'minOffset' int A[D('minOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 'maxOffset' int A[D('maxOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:61:0x0056 \-\> B:54:0x002c, CROSS_EDGE: B:59:0x0047 \-\> B:61:0x0056, CROSS_EDGE: B:57:0x0040 \-\> B:61:0x0056, CROSS_EDGE: B:69:0x0071 \-\> B:70:0x0072, CROSS_EDGE: B:64:0x005f \-\> B:66:0x0064, CROSS_EDGE: B:62:0x0059 \-\> B:66:0x0064, CROSS_EDGE: B:52:0x0029 \-\> B:62:0x0059, CROSS_EDGE: B:50:0x001c \-\> B:51:0x001d, CROSS_EDGE: B:46:0x000f \-\> B:72:0x007e, CROSS_EDGE: B:71:0x007b \-\> B:72:0x007e, CROSS_EDGE: B:43:0x0007 \-\> B:71:0x007b, CROSS_EDGE: B:42:0x0005 \-\> B:71:0x007b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends com.google.android.material.appbar.AppBarLayout]\lSIGNATURE: (Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;TT;III)I\l}"];
+MethodNode -> Node_39;Node_41 -> Node_42;
+Node_42 -> Node_43;
+Node_42 -> Node_71[style=dashed];
+Node_43 -> Node_44;
+Node_43 -> Node_71[style=dashed];
+Node_44 -> Node_45;
+Node_44 -> Node_71[style=dashed];
+Node_45 -> Node_46;
+Node_46 -> Node_47;
+Node_46 -> Node_72[style=dashed];
+Node_48 -> Node_49;
+Node_48 -> Node_50[style=dashed];
+Node_49 -> Node_51;
+Node_50 -> Node_51;
+Node_51 -> Node_52;
+Node_52 -> Node_53;
+Node_52 -> Node_62[style=dashed];
+Node_53 -> Node_54;
+Node_55 -> Node_56;
+Node_55 -> Node_74[style=dashed];
+Node_56 -> Node_57;
+Node_57 -> Node_58;
+Node_57 -> Node_76[style=dashed];
+Node_59 -> Node_60;
+Node_59 -> Node_77[style=dashed];
+Node_60 -> Node_75;
+Node_61 -> Node_54;
+Node_62 -> Node_63;
+Node_62 -> Node_66[style=dashed];
+Node_64 -> Node_65;
+Node_64 -> Node_66[style=dashed];
+Node_65 -> Node_66;
+Node_66 -> Node_67;
+Node_70 -> Node_72;
+Node_71 -> Node_72;
+Node_72 -> Node_73;
+Node_73 -> Node_40;
+Node_39 -> Node_41;
+Node_47 -> Node_48;
+Node_54 -> Node_55;
+Node_58 -> Node_59;
+Node_75 -> Node_61;
+Node_77 -> Node_61;
+Node_76 -> Node_61;
+Node_74 -> Node_62;
+Node_63 -> Node_64;
+Node_67 -> Node_68;
+Node_67 -> Node_69;
+Node_68 -> Node_70;
+Node_69 -> Node_70;
+}
+

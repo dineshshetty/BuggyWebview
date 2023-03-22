@@ -1,0 +1,43 @@
+digraph "CFG forcom.google.android.material.dialog.MaterialDialogs.getDialogBackgroundInsets(Landroid\/content\/Context;II)Landroid\/graphics\/Rect;" {
+subgraph cluster_Region_1211315916 {
+label = "R(3:1|(2:3|(1:5))|7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|android.content.res.TypedArray android.content.res.TypedArray r0 = com.google.android.material.internal.ThemeEnforcement.obtainStyledAttributes(r9, null, com.google.android.material.C0571R.styleable.MaterialAlertDialog, r10, r11, new int[0])\lint int r1 = r0.getDimensionPixelSize(com.google.android.material.C0571R.styleable.MaterialAlertDialog_backgroundInsetStart, r9.getResources().getDimensionPixelSize(com.google.android.material.C0571R.dimen.mtrl_alert_dialog_background_inset_start))\lint int r2 = r0.getDimensionPixelSize(com.google.android.material.C0571R.styleable.MaterialAlertDialog_backgroundInsetTop, r9.getResources().getDimensionPixelSize(com.google.android.material.C0571R.dimen.mtrl_alert_dialog_background_inset_top))\lint int r3 = r0.getDimensionPixelSize(com.google.android.material.C0571R.styleable.MaterialAlertDialog_backgroundInsetEnd, r9.getResources().getDimensionPixelSize(com.google.android.material.C0571R.dimen.mtrl_alert_dialog_background_inset_end))\lint int r4 = r0.getDimensionPixelSize(com.google.android.material.C0571R.styleable.MaterialAlertDialog_backgroundInsetBottom, r9.getResources().getDimensionPixelSize(com.google.android.material.C0571R.dimen.mtrl_alert_dialog_background_inset_bottom))\lr0.recycle()\lint r5 = r1\lint r6 = r3\l}"];
+subgraph cluster_IfRegion_541209313 {
+label = "IF [B:12:0x0056] THEN: R(2:3|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0056|if (android.os.Build.VERSION.SDK_INT \>= 17) goto L3\l}"];
+subgraph cluster_Region_1765899065 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0058|int int r7 = r9.getResources().getConfiguration().getLayoutDirection()\l}"];
+subgraph cluster_IfRegion_1362286421 {
+label = "IF [B:14:0x0065] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0065|if (r7 == 1) goto L5\l}"];
+subgraph cluster_Region_43049107 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0067|r5 = r3\lr6 = r1\l}"];
+}
+}
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x006e|RETURN\l|return new android.graphics.Rect(r5, r2, r6, r4)\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0069|PHI: r5 r6 \l  PHI: (r5v5 'backgroundInsetLeft' int) = (r5v4 'backgroundInsetLeft' int), (r5v4 'backgroundInsetLeft' int), (r5v6 'backgroundInsetLeft' int) binds: [B:12:0x0056, B:14:0x0065, B:15:0x0067] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v2 'backgroundInsetRight' int) = (r6v1 'backgroundInsetRight' int), (r6v1 'backgroundInsetRight' int), (r6v3 'backgroundInsetRight' int) binds: [B:12:0x0056, B:14:0x0065, B:15:0x0067] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static android.graphics.Rect com.google.android.material.dialog.MaterialDialogs.getDialogBackgroundInsets((r9v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'defaultStyleAttribute' int A[D('defaultStyleAttribute' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'defaultStyleResource' int A[D('defaultStyleResource' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0065 \-\> B:16:0x0069, CROSS_EDGE: B:12:0x0056 \-\> B:16:0x0069\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_10;
+Node_9 -> Node_11;
+Node_16 -> Node_17;
+}
+

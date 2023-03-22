@@ -1,0 +1,97 @@
+digraph "CFG forandroidx.fragment.app.SpecialEffectsController.FragmentStateManagerOperation.onStart()V" {
+subgraph cluster_Region_492674545 {
+label = "R(1:(1:(6:3|(2:5|(1:7))|8|(1:10)|(1:15)|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_721868679 {
+label = "R(1:(6:3|(2:5|(1:7))|8|(1:10)|(1:15)|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_545534464 {
+label = "IF [B:23:0x0006] THEN: R(6:3|(2:5|(1:7))|8|(1:10)|(1:15)|16) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0006|if (getLifecycleImpact() == androidx.fragment.app.SpecialEffectsController.Operation.LifecycleImpact.ADDING) goto L3\l}"];
+subgraph cluster_Region_1896667302 {
+label = "R(6:3|(2:5|(1:7))|8|(1:10)|(1:15)|16)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0008|androidx.fragment.app.Fragment androidx.fragment.app.Fragment r0 = r5.mFragmentStateManager.getFragment()\landroid.view.View android.view.View r1 = r0.mView.findFocus()\l}"];
+subgraph cluster_IfRegion_1146016019 {
+label = "IF [B:25:0x0014] THEN: R(2:5|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0014|if (r1 != null) goto L5\l}"];
+subgraph cluster_Region_425550009 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0016|r0.setFocusedView(r1)\l}"];
+subgraph cluster_IfRegion_591743179 {
+label = "IF [B:27:0x001e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001e|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(2) != false) goto L7\l}"];
+subgraph cluster_Region_1413841372 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0020|android.util.Log.v(\"FragmentManager\", \"requestFocus: Saved focused view \" + r1 + \" for Fragment \" + r0)\l}"];
+}
+}
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x003e|android.view.View android.view.View r2 = getFragment().requireView()\l}"];
+subgraph cluster_IfRegion_1402009812 {
+label = "IF [B:30:0x004b] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x004b|if (r2.getParent() == null) goto L10\l}"];
+subgraph cluster_Region_565838519 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x004d|r5.mFragmentStateManager.addViewToContainer()\lr2.setAlpha(0.0f)\l}"];
+}
+}
+subgraph cluster_IfRegion_1493773373 {
+label = "IF [B:33:0x005b, B:35:0x0061] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x005b|if (r2.getAlpha() == 0.0f) goto L13\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0061|ADDED_TO_REGION\l|if (r2.getVisibility() == 0) goto L15\l}"];
+subgraph cluster_Region_1811789894 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0063|r2.setVisibility(4)\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x0067|r2.setAlpha(r0.getPostOnViewCreatedAlpha())\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0000}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0055}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x005d}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x006e|ORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.fragment.app.SpecialEffectsController.FragmentStateManagerOperation.onStart((r5v0 'this' androidx.fragment.app.SpecialEffectsController$FragmentStateManagerOperation A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x0061 \-\> B:37:0x0067, CROSS_EDGE: B:33:0x005b \-\> B:37:0x0067, CROSS_EDGE: B:30:0x004b \-\> B:32:0x0055, CROSS_EDGE: B:27:0x001e \-\> B:29:0x003e, CROSS_EDGE: B:25:0x0014 \-\> B:29:0x003e, CROSS_EDGE: B:23:0x0006 \-\> B:38:0x006e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.fragment.app.SpecialEffectsController.Operation.onStart():void]\l}"];
+MethodNode -> Node_20;Node_23 -> Node_24;
+Node_23 -> Node_39[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_33 -> Node_34;
+Node_33 -> Node_37[style=dashed];
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_37;
+Node_37 -> Node_38;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_32 -> Node_33;
+Node_34 -> Node_35;
+Node_38 -> Node_21;
+Node_39 -> Node_21;
+}
+

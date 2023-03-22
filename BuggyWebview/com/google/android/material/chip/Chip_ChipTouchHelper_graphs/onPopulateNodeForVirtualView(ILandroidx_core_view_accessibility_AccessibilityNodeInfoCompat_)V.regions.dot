@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.chip.Chip.ChipTouchHelper.onPopulateNodeForVirtualView(ILandroidx\/core\/view\/accessibility\/AccessibilityNodeInfoCompat;)V" {
+subgraph cluster_Region_618909567 {
+label = "R(1:(2:(4:3|(1:5)(2:9|12)|6|7)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1147343626 {
+label = "R(2:(4:3|(1:5)(2:9|12)|6|7)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1577604690 {
+label = "IF [B:18:0x0003] THEN: R(4:3|(1:5)(2:9|12)|6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0003|if (r9 == 1) goto L3\l}"];
+subgraph cluster_Region_847664998 {
+label = "R(4:3|(1:5)(2:9|12)|6|7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|java.lang.CharSequence java.lang.CharSequence r2 = com.google.android.material.chip.Chip.this.getCloseIconContentDescription()\l}"];
+subgraph cluster_IfRegion_2135593546 {
+label = "IF [B:20:0x000b] THEN: R(1:5) ELSE: R(2:9|12)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|if (r2 != null) goto L5\l}"];
+subgraph cluster_Region_1965554347 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000d|r10.setContentDescription(r2)\l}"];
+}
+subgraph cluster_Region_1346565071 {
+label = "R(2:9|12)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|java.lang.CharSequence java.lang.CharSequence r3 = com.google.android.material.chip.Chip.this.getText()\landroid.content.Context android.content.Context r4 = com.google.android.material.chip.Chip.this.getContext()\lint int r5 = com.google.android.material.C0571R.string.mtrl_chip_close_icon_content_description\ljava.lang.Object[] java.lang.Object[] r1 = new java.lang.Object[1]\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0029|PHI: r0 \l  PHI: (r0v2 java.lang.String A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r1[0] = android.text.TextUtils.isEmpty(r3) ? \"\" : r3\lr10.setContentDescription(r4.getString(r5, r1).trim())\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0036|r10.setBoundsInParent(com.google.android.material.chip.Chip.this.getCloseIconTouchBoundsInt())\lr10.addAction(androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK)\lr10.setEnabled(com.google.android.material.chip.Chip.this.isEnabled())\l}"];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1398402370 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x004e|r10.setContentDescription(\"\")\lr10.setBoundsInParent(com.google.android.material.chip.Chip.EMPTY_BOUNDS)\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0026}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0028}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0058|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{protected void com.google.android.material.chip.Chip.ChipTouchHelper.onPopulateNodeForVirtualView((r8v0 'this' com.google.android.material.chip.Chip$ChipTouchHelper A[IMMUTABLE_TYPE, THIS]), (r9v0 'virtualViewId' int A[D('virtualViewId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'node' androidx.core.view.accessibility.AccessibilityNodeInfoCompat A[D('node' androidx.core.view.accessibility.AccessibilityNodeInfoCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0029 \-\> B:26:0x0036, CROSS_EDGE: B:23:0x0026 \-\> B:25:0x0029, CROSS_EDGE: B:27:0x004e \-\> B:28:0x0058\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.customview.widget.ExploreByTouchHelper.onPopulateNodeForVirtualView(int, androidx.core.view.accessibility.AccessibilityNodeInfoCompat):void]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_27[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_26;
+Node_22 -> Node_23;
+Node_25 -> Node_26;
+Node_26 -> Node_29;
+Node_29 -> Node_16;
+Node_27 -> Node_28;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_23 -> Node_24;
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_28 -> Node_16;
+}
+

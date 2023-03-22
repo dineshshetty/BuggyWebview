@@ -1,0 +1,29 @@
+digraph "CFG forkotlin.time.DurationKt.toDuration(DLkotlin\/time\/DurationUnit;)J" {
+Node_24 [shape=record,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, \"unit\")\ldouble r0 = kotlin.time.DurationUnitKt.convertDurationUnit(r9, r11, kotlin.time.DurationUnitJvm.NANOSECONDS)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0011|if ((java.lang.Double.isNaN(r0) ^ true) == false) goto L10\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0013|long r2 = kotlin.math.MathKt.roundToLong(r0)\l}"];
+Node_29 [shape=record,label="{29\:\ 0x002a|if (new kotlin.ranges.LongRange(\-4611686018426999999L, kotlin.time.DurationKt.MAX_NANOS).contains(r2) == false) goto L8\l}"];
+Node_30 [shape=record,label="{30\:\ 0x002c|long r4 = durationOfNanos(r2)\l}"];
+Node_35 [shape=record,label="{35\:\ ?|SYNTHETIC\lRETURN\l|return r4\l}"];
+Node_25 [shape=record,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0031|long r4 = kotlin.math.MathKt.roundToLong(kotlin.time.DurationUnitKt.convertDurationUnit(r9, r11, kotlin.time.DurationUnitJvm.MILLISECONDS))\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0040|RETURN\lORIG_RETURN\l|return durationOfMillisNormalized(r4)\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0041}"];
+Node_34 [shape=record,label="{34\:\ 0x004e|throw new java.lang.IllegalArgumentException(\"Duration value cannot be NaN.\".toString())\l}"];
+MethodNode[shape=record,label="{public static final long kotlin.time.DurationKt.toDuration((r9v0 '$this$toDuration' double A[D('$this$toDuration' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'unit' kotlin.time.DurationUnit A[D('unit' kotlin.time.DurationUnit), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0031 \-\> B:32:0x0040, CROSS_EDGE: B:34:0x004e \-\> B:25:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_24;Node_24 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_33;
+Node_28 -> Node_29;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_31;
+Node_30 -> Node_35;
+Node_35 -> Node_25;
+Node_31 -> Node_32;
+Node_32 -> Node_25;
+Node_33 -> Node_34;
+Node_34 -> Node_25;
+}
+

@@ -1,0 +1,59 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.runningFold(Ljava\/lang\/Iterable;Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function2;)Ljava\/util\/List;" {
+subgraph cluster_Region_605912187 {
+label = "R(2:1|(2:(1:4)|(3:6|(1:9)|12)))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"operation\")\lint int r1 = kotlin.collections.CollectionsKt.collectionSizeOrDefault(r6, 9)\l}"];
+subgraph cluster_Region_373720236 {
+label = "R(2:(1:4)|(3:6|(1:9)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_774101983 {
+label = "IF [B:29:0x0011] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0011|if (r1 == 0) goto L3\l}"];
+subgraph cluster_Region_58653940 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0017|RETURN\l|return kotlin.collections.CollectionsKt.listOf(r7)\l}"];
+}
+}
+subgraph cluster_Region_1427485103 {
+label = "R(3:6|(1:9)|12)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0018|java.util.ArrayList java.util.ArrayList r2 = new java.util.ArrayList(r1 + 1)\lr2.add(r7)\ljava.lang.Object r3 = (java.lang.Object) r7\ljava.util.Iterator java.util.Iterator\<? extends T\> r4 = r6.iterator()\l}"];
+subgraph cluster_LoopRegion_2097795762 {
+label = "LOOP:0: (1:9)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x002d|if (r4.hasNext() != false) goto L9\l}"];
+subgraph cluster_Region_842567210 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x002f|LOOP_END\lLOOP:0: B:33:0x0029\-\>B:35:0x002f\l|java.lang.Object java.lang.Object r5 = (T) r4.next()\ljava.lang.Object r3 = (R) r8.invoke(r3, r5)\lr2.add(r3)\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x003e|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0013}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0029|LOOP_START\lLOOP:0: B:33:0x0029\-\>B:35:0x002f\lPHI: r3 \l  PHI: (r3v3 'accumulator' java.lang.Object) = (r3v2 'accumulator' java.lang.Object), (r3v4 'accumulator' java.lang.Object) binds: [B:32:0x0018, B:35:0x002f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x003b|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x003b}"];
+MethodNode[shape=record,label="{public static final java.util.List\<R\> kotlin.collections.CollectionsKt___CollectionsKt.runningFold((r6v0 java.lang.Iterable\<? extends T\> A[D('$this$runningFold' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 R A[D('initial' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'operation' kotlin.jvm.functions.Function2\<? super R, ? super T, ? extends R\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:35:0x002f \-\> B:33:0x0029, CROSS_EDGE: B:37:0x003e \-\> B:27:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;TR;Lkotlin\/jvm\/functions\/Function2\<\-TR;\-TT;+TR;\>;)Ljava\/util\/List\<TR;\>;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r5v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_26;Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_32[style=dashed];
+Node_31 -> Node_27;
+Node_32 -> Node_33;
+Node_34 -> Node_35;
+Node_34 -> Node_38[style=dashed];
+Node_35 -> Node_33;
+Node_37 -> Node_27;
+Node_26 -> Node_28;
+Node_30 -> Node_31;
+Node_33 -> Node_34;
+Node_38 -> Node_36;
+Node_36 -> Node_37;
+}
+

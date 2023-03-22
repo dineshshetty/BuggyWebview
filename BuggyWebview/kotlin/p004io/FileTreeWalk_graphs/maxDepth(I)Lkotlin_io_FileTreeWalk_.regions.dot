@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.io.FileTreeWalk.maxDepth(I)Lkotlin\/io\/FileTreeWalk;" {
+subgraph cluster_Region_1938775758 {
+label = "R(1:(2:(2:5|6)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1827399511 {
+label = "R(2:(2:5|6)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1184622641 {
+label = "IF [B:9:0x0000] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r9 \<= 0) goto L5\l}"];
+subgraph cluster_Region_1543101898 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0014}"];
+Node_13 [shape=record,label="{13\:\ 0x002f|throw new java.lang.IllegalArgumentException(\"depth must be positive, but was \" + r9 + '.')\l}"];
+}
+}
+subgraph cluster_Region_1376354645 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0013|RETURN\l|return new kotlin.p004io.FileTreeWalk(r8.start, r8.direction, r8.onEnter, r8.onLeave, r8.onFail, r9)\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0002}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final kotlin.io.FileTreeWalk kotlin.io.FileTreeWalk.maxDepth((r8v0 'this' kotlin.io.FileTreeWalk A[IMMUTABLE_TYPE, THIS]), (r9v0 'depth' int A[D('depth' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x002f \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_11 -> Node_8;
+Node_7 -> Node_9;
+Node_10 -> Node_11;
+}
+

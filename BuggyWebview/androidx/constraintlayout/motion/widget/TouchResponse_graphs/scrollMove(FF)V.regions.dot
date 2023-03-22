@@ -1,0 +1,85 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.TouchResponse.scrollMove(FF)V" {
+subgraph cluster_Region_399999043 {
+label = "R(8:1|(1:3)|4|(1:6)|7|(1:9)(1:16)|10|(1:(1:12))) | DECL_VAR: float change\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|float float r0 = (r11.mTouchDirectionX * r12) + (r11.mTouchDirectionY * r13)\lfloat float r1 = r11.mMotionLayout.getProgress()\l}"];
+subgraph cluster_IfRegion_489694439 {
+label = "IF [B:3:0x0012] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r11.mDragStarted == false) goto L3\l}"];
+subgraph cluster_Region_650995199 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|r11.mDragStarted = true\lr11.mMotionLayout.setProgress(r1)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001b|r11.mMotionLayout.getAnchorDpDt(r11.mTouchAnchorId, r1, r11.mTouchAnchorX, r11.mTouchAnchorY, r11.mAnchorDpDt)\lfloat float r2 = r11.mTouchDirectionX\lfloat[] float[] r3 = r11.mAnchorDpDt\lfloat float r2 = (r2 * r3[0]) + (r11.mTouchDirectionY * r3[1])\l}"];
+subgraph cluster_IfRegion_371088603 {
+label = "IF [B:6:0x0045] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0045|if (java.lang.Math.abs(r2) \< 0.01d) goto L6\l}"];
+subgraph cluster_Region_95773127 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0047|float[] float[] r3 = r11.mAnchorDpDt\lr3[0] = 0.01f\lr3[1] = 0.01f\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0050|float float r3 = r11.mTouchDirectionX\l}"];
+subgraph cluster_IfRegion_1584333153 {
+label = "IF [B:9:0x0055] THEN: R(1:9) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0055|if (r3 != 0.0f) goto L9\l}"];
+subgraph cluster_Region_1972455287 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0057|float r3 = (r3 * r12) \/ r11.mAnchorDpDt[0]\l}"];
+}
+subgraph cluster_Region_951989927 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005f|float float r3 = r11.mTouchDirectionY\lfloat r3 = (r3 * r13) \/ r11.mAnchorDpDt[1]\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0068|PHI: r3 \l  PHI: (r3v9 'change' float) = (r3v8 'change' float), (r3v11 'change' float) binds: [B:11:0x005f, B:10:0x0057] A[DONT_GENERATE, DONT_INLINE]\l|float float r1 = java.lang.Math.max(java.lang.Math.min(r1 + r3, 1.0f), 0.0f)\l}"];
+subgraph cluster_Region_804289748 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1554144751 {
+label = "IF [B:13:0x007c] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x007c|if (r1 != r11.mMotionLayout.getProgress()) goto L12\l}"];
+subgraph cluster_Region_2061515539 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x007e|r11.mMotionLayout.setProgress(r1)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0083|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.motion.widget.TouchResponse.scrollMove((r11v0 'this' androidx.constraintlayout.motion.widget.TouchResponse A[IMMUTABLE_TYPE, THIS]), (r12v0 'dx' float A[D('dx' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'dy' float A[D('dy' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x007c \-\> B:15:0x0083, CROSS_EDGE: B:11:0x005f \-\> B:12:0x0068, CROSS_EDGE: B:6:0x0045 \-\> B:8:0x0050, CROSS_EDGE: B:3:0x0012 \-\> B:5:0x001b\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [dx, dy]\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_0 -> Node_2;
+Node_15 -> Node_1;
+Node_16 -> Node_1;
+}
+

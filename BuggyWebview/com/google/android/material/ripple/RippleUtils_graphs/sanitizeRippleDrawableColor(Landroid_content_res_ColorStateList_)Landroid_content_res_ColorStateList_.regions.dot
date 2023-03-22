@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.ripple.RippleUtils.sanitizeRippleDrawableColor(Landroid\/content\/res\/ColorStateList;)Landroid\/content\/res\/ColorStateList;" {
+subgraph cluster_Region_650916018 {
+label = "R(1:(2:(2:(1:11)|12)|(1:15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_600527880 {
+label = "R(2:(2:(1:11)|12)|(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1889337507 {
+label = "IF [B:19:0x0001] THEN: R(2:(1:11)|12) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0001|if (r3 != null) goto L3\l}"];
+subgraph cluster_Region_842462924 {
+label = "R(2:(1:11)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1974995352 {
+label = "IF [B:21:0x0007, B:23:0x000d, B:25:0x0017, B:27:0x0023] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|if (android.os.Build.VERSION.SDK_INT \>= 22) goto L5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000d|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \<= 27) goto L7\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0017|ADDED_TO_REGION\l|if (android.graphics.Color.alpha(r3.getDefaultColor()) == 0) goto L9\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0023|ADDED_TO_REGION\l|if (android.graphics.Color.alpha(r3.getColorForState(com.google.android.material.ripple.RippleUtils.ENABLED_PRESSED_STATE_SET, 0)) != 0) goto L11\l}"];
+subgraph cluster_Region_204109875 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0025|android.util.Log.w(com.google.android.material.ripple.RippleUtils.LOG_TAG, com.google.android.material.ripple.RippleUtils.TRANSPARENT_DEFAULT_COLOR_WARNING)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x002c|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_346745101 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0031|RETURN\l|return android.content.res.ColorStateList.valueOf(0)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0003}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0009}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000f}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0019}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002d}"];
+MethodNode[shape=record,label="{public static android.content.res.ColorStateList com.google.android.material.ripple.RippleUtils.sanitizeRippleDrawableColor((r3v0 'rippleColor' android.content.res.ColorStateList A[D('rippleColor' android.content.res.ColorStateList), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0023 \-\> B:29:0x002c, CROSS_EDGE: B:25:0x0017 \-\> B:29:0x002c, CROSS_EDGE: B:23:0x000d \-\> B:29:0x002c, CROSS_EDGE: B:21:0x0007 \-\> B:29:0x002c, CROSS_EDGE: B:31:0x0031 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_30[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_29[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_29[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_17;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_30 -> Node_31;
+}
+

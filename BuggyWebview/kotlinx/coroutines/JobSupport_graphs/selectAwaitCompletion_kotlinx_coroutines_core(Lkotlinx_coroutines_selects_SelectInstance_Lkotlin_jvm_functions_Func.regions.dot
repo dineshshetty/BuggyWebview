@@ -1,0 +1,36 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.selectAwaitCompletion$kotlinx_coroutines_core(Lkotlinx\/coroutines\/selects\/SelectInstance;Lkotlin\/jvm\/functions\/Function2;)V" {
+subgraph cluster_Region_251465163 {
+label = "R(2:1|(1:3)(1:6))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.lang.Object java.lang.Object r0 = getState$kotlinx_coroutines_core()\l}"];
+subgraph cluster_IfRegion_1721293805 {
+label = "IF [B:11:0x0006] THEN: R(1:3) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0006|if ((r0 instanceof kotlinx.coroutines.CompletedExceptionally) != false) goto L3\l}"];
+subgraph cluster_Region_1760900697 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|r9.resumeSelectWithException(((kotlinx.coroutines.CompletedExceptionally) r0).cause)\l}"];
+}
+subgraph cluster_Region_1962825674 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0011|kotlinx.coroutines.intrinsics.Cancellable.startCoroutineCancellable$default(r10, kotlinx.coroutines.JobSupportKt.unboxState(r0), r9.getCompletion(), null, 4, null)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0020|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.JobSupport.selectAwaitCompletion$kotlinx_coroutines_core((r8v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]), (r9v0 kotlinx.coroutines.selects.SelectInstance\<? super R\> A[D('select' kotlinx.coroutines.selects.SelectInstance), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 kotlin.jvm.functions.Function2\<? super T, ? super kotlin.coroutines.Continuation\<? super R\>, ? extends java.lang.Object\> A[D('block' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0011 \-\> B:14:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;\>(Lkotlinx\/coroutines\/selects\/SelectInstance\<\-TR;\>;Lkotlin\/jvm\/functions\/Function2\<\-TT;\-Lkotlin\/coroutines\/Continuation\<\-TR;\>;+Ljava\/lang\/Object;\>;)V\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_15 -> Node_9;
+Node_14 -> Node_9;
+}
+

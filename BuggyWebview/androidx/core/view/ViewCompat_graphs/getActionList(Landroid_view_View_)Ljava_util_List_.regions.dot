@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.view.ViewCompat.getActionList(Landroid\/view\/View;)Ljava\/util\/List;" {
+subgraph cluster_Region_868110571 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|java.util.ArrayList java.util.ArrayList\<androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat\> r0 = (java.util.ArrayList) r2.getTag(androidx.core.C0180R.C0183id.tag_accessibility_actions)\l}"];
+subgraph cluster_Region_369822997 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1461495177 {
+label = "IF [B:10:0x0008] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0008|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_541399012 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000a|java.util.ArrayList java.util.ArrayList\<androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat\> r1 = new java.util.ArrayList\<\>()\lr2.setTag(androidx.core.C0180R.C0183id.tag_accessibility_actions, r1)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0015|RETURN\lORIG_RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1484902544 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat\> androidx.core.view.ViewCompat.getActionList((r2v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0008 \-\> B:12:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/view\/View;)Ljava\/util\/List\<Landroidx\/core\/view\/accessibility\/AccessibilityNodeInfoCompat$AccessibilityActionCompat;\>;\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

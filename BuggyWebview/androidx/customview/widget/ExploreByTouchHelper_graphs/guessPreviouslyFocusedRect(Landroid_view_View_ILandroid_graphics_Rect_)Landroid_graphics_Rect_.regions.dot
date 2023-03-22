@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.customview.widget.ExploreByTouchHelper.guessPreviouslyFocusedRect(Landroid\/view\/View;ILandroid\/graphics\/Rect;)Landroid\/graphics\/Rect;" {
+subgraph cluster_Region_462408745 {
+label = "R(3:1|2|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = r4.getWidth()\lint int r1 = r4.getHeight()\l}"];
+subgraph cluster_SwitchRegion_342120825 {
+label = "Switch: 5
+ case 17 -> R(2:10|1)
+ case 33 -> R(2:9|1)
+ case 66 -> R(2:8|1)
+ case 130 -> R(2:6|1)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|switch(r5) \{\l    case 17: goto L10;\l    case 33: goto L9;\l    case 66: goto L8;\l    case 130: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_950754603 {
+label = "R(2:10|1)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0021|r6.set(r0, 0, r0, r1)\l}"];
+Node_InsnContainer_543114364 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1223775489 {
+label = "R(2:9|1)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001d|r6.set(0, r1, r0, r1)\l}"];
+Node_InsnContainer_1645489973 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_256887233 {
+label = "R(2:8|1)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0019|r6.set(\-1, 0, \-1, r1)\l}"];
+Node_InsnContainer_387878402 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1791278644 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|r6.set(0, \-1, r0, \-1)\l}"];
+Node_InsnContainer_554148361 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2074181361 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0014|throw new java.lang.IllegalArgumentException(\"direction must be one of \{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT\}.\")\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0025|RETURN\l|return r6\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000d}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static android.graphics.Rect androidx.customview.widget.ExploreByTouchHelper.guessPreviouslyFocusedRect((r4v0 'host' android.view.View A[D('host' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'direction' int A[D('direction' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'outBounds' android.graphics.Rect A[D('outBounds' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0025 \-\> B:12:?, CROSS_EDGE: B:18:0x0019 \-\> B:21:0x0025, CROSS_EDGE: B:19:0x001d \-\> B:21:0x0025, CROSS_EDGE: B:20:0x0021 \-\> B:21:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_17;
+Node_14 -> Node_18;
+Node_14 -> Node_19;
+Node_14 -> Node_20;
+Node_20 -> Node_21;
+Node_19 -> Node_21;
+Node_18 -> Node_21;
+Node_17 -> Node_21;
+Node_16 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+}
+

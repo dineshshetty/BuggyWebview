@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.graphics.drawable.IconCompat.getType()I" {
+subgraph cluster_Region_1166598759 {
+label = "R(1:(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_811387389 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1184582369 {
+label = "IF [B:13:0x0003, B:15:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0003|if (r2.mType == (\-1)) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0009|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L5\l}"];
+subgraph cluster_Region_882916769 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0011|RETURN\l|return androidx.core.graphics.drawable.IconCompat.Api23Impl.getType(r2.mObj1)\l}"];
+}
+}
+subgraph cluster_Region_918121096 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0014|RETURN\l|return r2.mType\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0005}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0012}"];
+MethodNode[shape=record,label="{public int androidx.core.graphics.drawable.IconCompat.getType((r2v0 'this' androidx.core.graphics.drawable.IconCompat A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0014 \-\> B:11:?, CROSS_EDGE: B:13:0x0003 \-\> B:18:0x0012\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

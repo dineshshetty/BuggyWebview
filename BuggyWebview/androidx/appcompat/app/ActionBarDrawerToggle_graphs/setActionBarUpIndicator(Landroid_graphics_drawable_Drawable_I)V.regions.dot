@@ -1,0 +1,35 @@
+digraph "CFG forandroidx.appcompat.app.ActionBarDrawerToggle.setActionBarUpIndicator(Landroid\/graphics\/drawable\/Drawable;I)V" {
+subgraph cluster_Region_1724337323 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_745044050 {
+label = "IF [B:12:0x0002, B:14:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0002|if (r2.mWarnedForDisplayHomeAsUp == false) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000a|ADDED_TO_REGION\l|if (r2.mActivityImpl.isNavigationVisible() == false) goto L5\l}"];
+subgraph cluster_Region_740991862 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|android.util.Log.w(\"ActionBarDrawerToggle\", \"DrawerToggle may not show up because NavigationIcon is not visible. You may need to call actionbar.setDisplayHomeAsUpEnabled(true);\")\lr2.mWarnedForDisplayHomeAsUp = true\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0016|r2.mActivityImpl.setActionBarUpIndicator(r3, r4)\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0004}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001b}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.app.ActionBarDrawerToggle.setActionBarUpIndicator((r2v0 'this' androidx.appcompat.app.ActionBarDrawerToggle A[IMMUTABLE_TYPE, THIS]), (r3v0 'upDrawable' android.graphics.drawable.Drawable A[D('upDrawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'contentDescRes' int A[D('contentDescRes' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x000a \-\> B:16:0x0016, CROSS_EDGE: B:12:0x0002 \-\> B:16:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_17 -> Node_10;
+}
+

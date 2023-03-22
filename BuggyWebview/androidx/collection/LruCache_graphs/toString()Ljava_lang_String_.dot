@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.collection.LruCache.toString()Ljava\/lang\/String;" {
+Node_15 [shape=record,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0000|monitor\-enter(r7)\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0001|TRY_ENTER\lTryCatch #0 \{, blocks: (B:18:0x0001, B:20:0x0009, B:22:0x000e), top: B:28:0x0001 \}\lCatch: all \-\> 0x003c\l|int r0 = r7.hitCount     \/\/ Catch: java.lang.Throwable \-\> L3c\lint r1 = r7.missCount + r0     \/\/ Catch: java.lang.Throwable \-\> L3c\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0007|if (r1 == 0) goto L11\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0009|TryCatch #0 \{, blocks: (B:18:0x0001, B:20:0x0009, B:22:0x000e), top: B:28:0x0001 \}\lCatch: all \-\> 0x003c\l|int r0 = (r0 * 100) \/ r1     \/\/ Catch: java.lang.Throwable \-\> L3c\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000e|TRY_LEAVE\lTryCatch #0 \{, blocks: (B:18:0x0001, B:20:0x0009, B:22:0x000e), top: B:28:0x0001 \}\lCatch: all \-\> 0x003c\lPHI: r0 \l  PHI: (r0v3 'hitPercent' int) = (r0v2 'hitPercent' int), (r0v5 'hitPercent' int) binds: [B:21:0x000d, B:20:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.String r2 = java.lang.String.format(java.util.Locale.US, \"LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]\", new java.lang.Object[]\{java.lang.Integer.valueOf(r7.maxSize), java.lang.Integer.valueOf(r7.hitCount), java.lang.Integer.valueOf(r7.missCount), java.lang.Integer.valueOf(r0)\})     \/\/ Catch: java.lang.Throwable \-\> L3c\l}"];
+Node_23 [shape=record,label="{23\:\ 0x003a|monitor\-exit(r7)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x003b|RETURN\l|return r2\l}"];
+Node_16 [shape=record,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000d|r0 = 0\l}"];
+Node_25 [shape=record,label="{25\:\ 0x003c|REMOVE\lExcHandler: all \-\> 0x003c\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_27 [shape=record,label="{27\:\ 0x003e|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public final synchronized java.lang.String androidx.collection.LruCache.toString((r7v0 'this' androidx.collection.LruCache\<K, V\> A[D('this' androidx.collection.LruCache\<K, V\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x003e \-\> B:16:?, CROSS_EDGE: B:21:0x000d \-\> B:22:0x000e, CROSS_EDGE: B:28:0x0001 \-\> B:25:0x003c\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_15;Node_15 -> Node_17;
+Node_17 -> Node_28;
+Node_28 -> Node_18;
+Node_28 -> Node_25;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_29;
+Node_23 -> Node_24;
+Node_24 -> Node_16;
+Node_29 -> Node_25;
+Node_21 -> Node_22;
+Node_25 -> Node_27;
+Node_27 -> Node_16;
+}
+

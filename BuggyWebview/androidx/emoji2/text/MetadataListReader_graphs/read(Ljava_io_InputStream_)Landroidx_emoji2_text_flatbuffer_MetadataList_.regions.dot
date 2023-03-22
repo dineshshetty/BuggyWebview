@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.emoji2.text.MetadataListReader.read(Ljava\/io\/InputStream;)Landroidx\/emoji2\/text\/flatbuffer\/MetadataList;" {
+subgraph cluster_Region_1465907226 {
+label = "R(2:1|(2:(2:6|7)|(1:4)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|androidx.emoji2.text.MetadataListReader$InputStreamOpenTypeReader androidx.emoji2.text.MetadataListReader.OpenTypeReader r0 = new androidx.emoji2.text.MetadataListReader.InputStreamOpenTypeReader(r9)\landroidx.emoji2.text.MetadataListReader$OffsetInfo androidx.emoji2.text.MetadataListReader.OffsetInfo r1 = findOffsetInfo(r0)\lr0.skip((int) (r1.getStartOffset() \- r0.getPosition()))\ljava.nio.ByteBuffer java.nio.ByteBuffer r2 = java.nio.ByteBuffer.allocate((int) r1.getLength())\lint int r3 = r9.read(r2.array())\l}"];
+subgraph cluster_Region_797159771 {
+label = "R(2:(2:6|7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_900574474 {
+label = "IF [B:11:0x002e] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002e|if (r3 != r1.getLength()) goto L6\l}"];
+subgraph cluster_Region_1607170607 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0035}"];
+Node_15 [shape=record,label="{15\:\ 0x0057|throw new java.io.IOException(\"Needed \" + r1.getLength() + \" bytes, got \" + r3)\l}"];
+}
+}
+subgraph cluster_Region_1015910269 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0034|RETURN\l|return androidx.emoji2.text.flatbuffer.MetadataList.getRootAsMetadataList(r2)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0030}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.emoji2.text.flatbuffer.MetadataList androidx.emoji2.text.MetadataListReader.read((r9v0 'inputStream' java.io.InputStream A[D('inputStream' java.io.InputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0057 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Ljava\/io\/IOException;]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.sumByDouble(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)D" {
+subgraph cluster_Region_981005849 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"selector\")\ldouble r1 = 0.0d\ljava.util.Iterator java.util.Iterator\<? extends T\> r3 = r7.iterator()\l}"];
+subgraph cluster_LoopRegion_828383997 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0015|if (r3.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_44999181 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|LOOP_END\lLOOP:0: B:19:0x0011\-\>B:21:0x0017\l|java.lang.Object java.lang.Object r4 = (T) r3.next()\lr1 += r8.invoke(r4).doubleValue()\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0027|RETURN\l|return r1\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0011|LOOP_START\lLOOP:0: B:19:0x0011\-\>B:21:0x0017\lPHI: r1 \l  PHI: (r1v1 'sum' double) = (r1v0 'sum' double), (r1v2 'sum' double) binds: [B:18:0x0000, B:21:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0027|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final double kotlin.collections.CollectionsKt___CollectionsKt.sumByDouble((r7v0 java.lang.Iterable\<? extends T\> A[D('$this$sumByDouble' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'selector' kotlin.jvm.functions.Function1\<? super T, java.lang.Double\> A[D('selector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Lkotlin\/Deprecated;=Annotation\{RUNTIME, type=Lkotlin\/Deprecated;, values=\{message=Use sumOf instead., replaceWith=\{ENCODED_ANNOTATION: Annotation\{null, type=Lkotlin\/ReplaceWith;, values=\{expression=this.sumOf(selector), imports=[[]]\}\}\}\}\}, Lkotlin\/DeprecatedSinceKotlin;=Annotation\{RUNTIME, type=Lkotlin\/DeprecatedSinceKotlin;, values=\{warningSince=1.5\}\}\}\lINLINE_NOT_NEEDED\lBACK_EDGE: B:21:0x0017 \-\> B:19:0x0011\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Double;\>;)D\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r4v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_19;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_23 -> Node_22;
+}
+

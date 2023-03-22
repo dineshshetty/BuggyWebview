@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.recyclerview.widget.DefaultItemAnimator.animateChangeImpl(Landroidx\/recyclerview\/widget\/DefaultItemAnimator$ChangeInfo;)V" {
+subgraph cluster_Region_1175249131 {
+label = "R(6:1|2|4|5|(1:9)|(1:(1:11)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.RecyclerView.ViewHolder r0 = r9.oldHolder\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0003|final android.view.View r2 = r0 == null ? null : r0.itemView\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0009|PHI: r2 \l  PHI: (r2v1 'view' android.view.View) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.RecyclerView.ViewHolder r3 = r9.newHolder\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000b|final android.view.View r1 = r3 != null ? r3.itemView : null\l}"];
+subgraph cluster_IfRegion_1770920075 {
+label = "IF [B:10:0x0010] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0010|if (r2 != null) goto L9\l}"];
+subgraph cluster_Region_1878319589 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0012|android.view.ViewPropertyAnimator final android.view.ViewPropertyAnimator r5 = r2.animate().setDuration(getChangeDuration())\lr8.mChangeAnimations.add(r9.oldHolder)\lr5.translationX(r9.toX \- r9.fromX)\lr5.translationY(r9.toY \- r9.fromY)\lr5.alpha(0.0f).setListener(new androidx.recyclerview.widget.DefaultItemAnimator.C04327()).start()\l}"];
+}
+}
+subgraph cluster_Region_2025698113 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1304624496 {
+label = "IF [B:12:0x0047] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0047|if (r1 != null) goto L11\l}"];
+subgraph cluster_Region_1818777499 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0049|android.view.ViewPropertyAnimator final android.view.ViewPropertyAnimator r5 = r1.animate()\lr8.mChangeAnimations.add(r9.newHolder)\lr5.translationX(0.0f).translationY(0.0f).setDuration(getChangeDuration()).alpha(1.0f).setListener(new androidx.recyclerview.widget.DefaultItemAnimator.C04338()).start()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0005}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000d}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x000f|PHI: r1 \l  PHI: (r1v1 'newView' android.view.View) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0076|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.DefaultItemAnimator.animateChangeImpl((r8v0 'this' androidx.recyclerview.widget.DefaultItemAnimator A[IMMUTABLE_TYPE, THIS]), (r9v0 'changeInfo' androidx.recyclerview.widget.DefaultItemAnimator$ChangeInfo A[D('changeInfo' androidx.recyclerview.widget.DefaultItemAnimator$ChangeInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0047 \-\> B:14:0x0076, CROSS_EDGE: B:10:0x0010 \-\> B:12:0x0047, CROSS_EDGE: B:7:0x000b \-\> B:9:0x000f, CROSS_EDGE: B:5:0x0007 \-\> B:6:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_14 -> Node_1;
+Node_15 -> Node_1;
+Node_5 -> Node_6;
+}
+

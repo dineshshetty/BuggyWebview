@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.scrollBy(ILandroidx\/recyclerview\/widget\/RecyclerView$Recycler;Landroidx\/recyclerview\/widget\/RecyclerView$State;)I" {
+subgraph cluster_Region_430707513 {
+label = "R(1:(2:(1:17)|(4:4|5|7|(2:(1:9)|(3:11|13|14)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1019275039 {
+label = "R(2:(1:17)|(4:4|5|7|(2:(1:9)|(3:11|13|14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1431434737 {
+label = "IF [B:22:0x0005, B:23:0x0007] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0005|if (getChildCount() == 0) goto L17\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0007|ADDED_TO_REGION\l|if (r7 == 0) goto L17\l}"];
+subgraph cluster_Region_1911586395 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x003d|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1502036925 {
+label = "R(4:4|5|7|(2:(1:9)|(3:11|13|14)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000a|ensureLayoutState()\lr6.mLayoutState.mRecycle = true\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0012|int r0 = r7 \> 0 ? 1 : \-1\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0017|PHI: r0 \l  PHI: (r0v3 'layoutDirection' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r3 = java.lang.Math.abs(r7)\lupdateLayoutState(r0, r3, true, r9)\lint int r2 = r6.mLayoutState.mScrollingOffset + fill(r8, r6.mLayoutState, r9, false)\l}"];
+subgraph cluster_Region_138186375 {
+label = "R(2:(1:9)|(3:11|13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1860910500 {
+label = "IF [B:30:0x0029] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0029|if (r2 \< 0) goto L9\l}"];
+subgraph cluster_Region_872376448 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x002b|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1766935847 {
+label = "R(3:11|13|14)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x002c|int r1 = r3 \> r2 ? r0 * r2 : r7\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0032|PHI: r1 \l  PHI: (r1v2 'scrolled' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r6.mOrientationHelper.offsetChildren(\-r1)\lr6.mLayoutState.mLastScrollDelta = r1\l}"];
+Node_36 [shape=record,label="{36\:\ 0x003c|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0014}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002e}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0031}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0016}"];
+MethodNode[shape=record,label="{int androidx.recyclerview.widget.LinearLayoutManager.scrollBy((r6v0 'this' androidx.recyclerview.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]), (r7v0 'delta' int A[D('delta' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'recycler' androidx.recyclerview.widget.RecyclerView$Recycler A[D('recycler' androidx.recyclerview.widget.RecyclerView$Recycler), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:36:0x003c \-\> B:20:?, CROSS_EDGE: B:34:0x0031 \-\> B:35:0x0032, CROSS_EDGE: B:28:0x0016 \-\> B:29:0x0017, CROSS_EDGE: B:37:0x003d \-\> B:20:?, CROSS_EDGE: B:22:0x0005 \-\> B:37:0x003d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_37;
+Node_23 -> Node_25[style=dashed];
+Node_23 -> Node_37;
+Node_37 -> Node_20;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_20;
+Node_32 -> Node_33;
+Node_32 -> Node_34;
+Node_35 -> Node_36;
+Node_36 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_27 -> Node_29;
+Node_33 -> Node_35;
+Node_34 -> Node_35;
+Node_28 -> Node_29;
+}
+

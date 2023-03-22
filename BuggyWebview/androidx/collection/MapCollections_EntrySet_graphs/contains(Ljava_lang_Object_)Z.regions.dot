@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.collection.MapCollections.EntrySet.contains(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_632514826 {
+label = "R(1:(2:(2:5|(2:(1:7)|(2:8|9)))|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_705148646 {
+label = "R(2:(2:5|(2:(1:7)|(2:8|9)))|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_987540286 {
+label = "IF [B:13:0x0003] THEN: R(2:5|(2:(1:7)|(2:8|9))) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0003|if ((r5 instanceof java.util.Map.Entry) == true) goto L5\l}"];
+subgraph cluster_Region_294432327 {
+label = "R(2:5|(2:(1:7)|(2:8|9)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|java.util.Map$Entry java.util.Map.Entry\<?, ?\> r0 = (java.util.Map.Entry) r5\lint int r2 = androidx.collection.MapCollections.this.colIndexOfKey(r0.getKey())\l}"];
+subgraph cluster_Region_2119418535 {
+label = "R(2:(1:7)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_329811971 {
+label = "IF [B:16:0x0013] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0013|if (r2 \< 0) goto L7\l}"];
+subgraph cluster_Region_1075191646 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_504695709 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0016|java.lang.Object java.lang.Object r1 = androidx.collection.MapCollections.this.colGetEntry(r2, 1)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0025|RETURN\l|return androidx.collection.ContainerHelpers.equal(r1, r0.getValue())\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1462837564 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0005|RETURN\l|return false\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.collection.MapCollections.EntrySet.contains((r4v0 'this' androidx.collection.MapCollections$EntrySet A[D('this' androidx.collection.MapCollections\<K, V\>$EntrySet), IMMUTABLE_TYPE, THIS]), (r5v0 'o' java.lang.Object A[D('o' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:17:0x0015 \-\> B:11:?, CROSS_EDGE: B:19:0x0025 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lMETHOD_OVERRIDE: [ClspMth\{java.util.Collection.contains(java.lang.Object):boolean\}]\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_14 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+}
+

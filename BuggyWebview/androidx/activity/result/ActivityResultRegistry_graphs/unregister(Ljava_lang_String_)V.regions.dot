@@ -1,0 +1,84 @@
+digraph "CFG forandroidx.activity.result.ActivityResultRegistry.unregister(Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1979462405 {
+label = "R(6:(1:5)|6|(1:8)|(1:11)|12|(1:(1:14))) | DECL_VAR: java.lang.Integer rc\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1532624112 {
+label = "IF [B:21:0x0006, B:23:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0006|if (r5.mLaunchedKeys.contains(r6) == false) goto L3\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0010|ADDED_TO_REGION\l|if ((r0 = r5.mKeyToRc.remove(r6)) != null) goto L5\l}"];
+subgraph cluster_Region_2012305736 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0012|r5.mRcToKey.remove(r0)\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0017|r5.mKeyToCallback.remove(r6)\l}"];
+subgraph cluster_IfRegion_1560375787 {
+label = "IF [B:26:0x0028] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0028|if (r5.mParsedPendingResults.containsKey(r6) != false) goto L8\l}"];
+subgraph cluster_Region_543531903 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002a|android.util.Log.w(androidx.activity.result.ActivityResultRegistry.LOG_TAG, \"Dropping pending result for request \" + r6 + \": \" + r5.mParsedPendingResults.get(r6))\lr5.mParsedPendingResults.remove(r6)\l}"];
+}
+}
+subgraph cluster_IfRegion_877618687 {
+label = "IF [B:29:0x0053] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0053|if (r5.mPendingResults.containsKey(r6) != false) goto L11\l}"];
+subgraph cluster_Region_1225347367 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0055|android.util.Log.w(androidx.activity.result.ActivityResultRegistry.LOG_TAG, \"Dropping pending result for request \" + r6 + \": \" + r5.mPendingResults.getParcelable(r6))\lr5.mPendingResults.remove(r6)\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0078|androidx.activity.result.ActivityResultRegistry$LifecycleContainer androidx.activity.result.ActivityResultRegistry.LifecycleContainer r0 = r5.mKeyToLifecycleContainers.get(r6)\l}"];
+subgraph cluster_Region_525463492 {
+label = "R(1:(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_131882564 {
+label = "IF [B:32:0x0080] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0080|if (r0 != null) goto L14\l}"];
+subgraph cluster_Region_1153975654 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0082|r0.clearObservers()\lr5.mKeyToLifecycleContainers.remove(r6)\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0008}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x004d}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x008a|ORIG_RETURN\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{final void androidx.activity.result.ActivityResultRegistry.unregister((r5v0 'this' androidx.activity.result.ActivityResultRegistry A[IMMUTABLE_TYPE, THIS]), (r6v0 'key' java.lang.String A[D('key' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x0080 \-\> B:34:0x008a, CROSS_EDGE: B:29:0x0053 \-\> B:31:0x0078, CROSS_EDGE: B:26:0x0028 \-\> B:28:0x004d, CROSS_EDGE: B:23:0x0010 \-\> B:25:0x0017, CROSS_EDGE: B:21:0x0006 \-\> B:25:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_35[style=dashed];
+Node_33 -> Node_34;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_28 -> Node_29;
+Node_34 -> Node_19;
+Node_35 -> Node_19;
+}
+

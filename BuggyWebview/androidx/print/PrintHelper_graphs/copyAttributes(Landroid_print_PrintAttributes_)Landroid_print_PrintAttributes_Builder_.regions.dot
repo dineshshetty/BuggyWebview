@@ -1,0 +1,48 @@
+digraph "CFG forandroidx.print.PrintHelper.copyAttributes(Landroid\/print\/PrintAttributes;)Landroid\/print\/PrintAttributes$Builder;" {
+subgraph cluster_Region_1445755346 {
+label = "R(4:1|(1:3)|(1:8)|9)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.print.PrintAttributes$Builder android.print.PrintAttributes.Builder r0 = new android.print.PrintAttributes.Builder().setMediaSize(r3.getMediaSize()).setResolution(r3.getResolution()).setMinMargins(r3.getMinMargins())\l}"];
+subgraph cluster_IfRegion_723955528 {
+label = "IF [B:3:0x0021] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0021|if (r3.getColorMode() != 0) goto L3\l}"];
+subgraph cluster_Region_1011803303 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0023|r0.setColorMode(r3.getColorMode())\l}"];
+}
+}
+subgraph cluster_IfRegion_1839347468 {
+label = "IF [B:6:0x002e, B:8:0x0034] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002e|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L6\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0034|ADDED_TO_REGION\l|if (r3.getDuplexMode() != 0) goto L8\l}"];
+subgraph cluster_Region_953348136 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0036|r0.setDuplexMode(r3.getDuplexMode())\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x003d|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0030}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static android.print.PrintAttributes$Builder androidx.print.PrintHelper.copyAttributes((r3v0 'other' android.print.PrintAttributes A[D('other' android.print.PrintAttributes), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0034 \-\> B:10:0x003d, CROSS_EDGE: B:6:0x002e \-\> B:10:0x003d, CROSS_EDGE: B:3:0x0021 \-\> B:5:0x002a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

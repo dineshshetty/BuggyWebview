@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatTextView.getAutoSizeTextType()I" {
+subgraph cluster_Region_933823799 {
+label = "R(1:(2:(1:4)|(2:8|(2:(1:11)|(1:12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_333954734 {
+label = "R(2:(1:4)|(2:8|(2:(1:11)|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2133637340 {
+label = "IF [B:18:0x0003] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0003|if (androidx.appcompat.widget.AppCompatTextView.PLATFORM_SUPPORTS_AUTOSIZE == true) goto L3\l}"];
+subgraph cluster_Region_1525512640 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000a|RETURN\l|return super.getAutoSizeTextType() == 1 ? 1 : 0\l}"];
+}
+}
+subgraph cluster_Region_835256654 {
+label = "R(2:8|(2:(1:11)|(1:12)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0010|androidx.appcompat.widget.AppCompatTextHelper androidx.appcompat.widget.AppCompatTextHelper r0 = r3.mTextHelper\l}"];
+subgraph cluster_Region_621960983 {
+label = "R(2:(1:11)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_139463404 {
+label = "IF [B:25:0x0012] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0012|if (r0 != null) goto L10\l}"];
+subgraph cluster_Region_555620846 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0018|RETURN\l|return r0.getAutoSizeTextType()\l}"];
+}
+}
+subgraph cluster_Region_195991509 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0019|RETURN\l|return 0\l}"];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0005}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000c|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0014}"];
+MethodNode[shape=record,label="{public int androidx.appcompat.widget.AppCompatTextView.getAutoSizeTextType((r3v0 'this' androidx.appcompat.widget.AppCompatTextView A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:20:0x000a \-\> B:23:0x000f, CROSS_EDGE: B:27:0x0018 \-\> B:16:?, CROSS_EDGE: B:28:0x0019 \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.widget.AutoSizeableTextView.getAutoSizeTextType():int, ClspMth\{android.widget.TextView.getAutoSizeTextType():int\}]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_24[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_29;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_28[style=dashed];
+Node_27 -> Node_16;
+Node_28 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_21 -> Node_16;
+Node_29 -> Node_16;
+Node_26 -> Node_27;
+}
+

@@ -1,0 +1,81 @@
+digraph "CFG forandroidx.appcompat.view.menu.ListMenuPresenter.initForMenu(Landroid\/content\/Context;Landroidx\/appcompat\/view\/menu\/MenuBuilder;)V" {
+subgraph cluster_Region_1588072214 {
+label = "R(3:(1:3)(1:(2:12|(1:14)))|4|(1:(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1159938053 {
+label = "IF [B:18:0x0002] THEN: R(1:3) ELSE: R(1:(2:12|(1:14)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|if (r2.mThemeRes != 0) goto L3\l}"];
+subgraph cluster_Region_1150953077 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|android.view.ContextThemeWrapper android.view.ContextThemeWrapper r0 = new android.view.ContextThemeWrapper(r3, r2.mThemeRes)\lr2.mContext = r0\lr2.mInflater = android.view.LayoutInflater.from(r0)\l}"];
+}
+subgraph cluster_Region_353813758 {
+label = "R(1:(2:12|(1:14))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1368303113 {
+label = "IF [B:21:0x0016] THEN: R(2:12|(1:14)) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|if (r2.mContext != null) goto L12\l}"];
+subgraph cluster_Region_422784972 {
+label = "R(2:12|(1:14))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0018|r2.mContext = r3\l}"];
+subgraph cluster_IfRegion_1179613063 {
+label = "IF [B:23:0x001c] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001c|if (r2.mInflater == null) goto L14\l}"];
+subgraph cluster_Region_1709009540 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|r2.mInflater = android.view.LayoutInflater.from(r3)\l}"];
+}
+}
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0024|r2.mMenu = r4\landroidx.appcompat.view.menu.ListMenuPresenter$MenuAdapter androidx.appcompat.view.menu.ListMenuPresenter.MenuAdapter r0 = r2.mAdapter\l}"];
+subgraph cluster_Region_1095186136 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_149023748 {
+label = "IF [B:26:0x0028] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0028|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_1468845237 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002a|r0.notifyDataSetChanged()\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x002d|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0014}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.view.menu.ListMenuPresenter.initForMenu((r2v0 'this' androidx.appcompat.view.menu.ListMenuPresenter A[IMMUTABLE_TYPE, THIS]), (r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'menu' androidx.appcompat.view.menu.MenuBuilder A[D('menu' androidx.appcompat.view.menu.MenuBuilder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0028 \-\> B:28:0x002d, CROSS_EDGE: B:24:0x001e \-\> B:25:0x0024, CROSS_EDGE: B:23:0x001c \-\> B:25:0x0024, CROSS_EDGE: B:21:0x0016 \-\> B:25:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.view.menu.MenuPresenter.initForMenu(android.content.Context, androidx.appcompat.view.menu.MenuBuilder):void]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_25;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_29[style=dashed];
+Node_27 -> Node_28;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_28 -> Node_16;
+Node_29 -> Node_16;
+Node_20 -> Node_21;
+}
+

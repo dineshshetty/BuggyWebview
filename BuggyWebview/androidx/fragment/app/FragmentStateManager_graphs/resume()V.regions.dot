@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.fragment.app.FragmentStateManager.resume()V" {
+subgraph cluster_Region_1513867298 {
+label = "R(4:(1:3)|4|(2:8|(2:10|13))|15)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1679807586 {
+label = "IF [B:21:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(3) != false) goto L3\l}"];
+subgraph cluster_Region_2097399229 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0009|android.util.Log.d(androidx.fragment.app.FragmentStateManager.TAG, \"moveto RESUMED: \" + r5.mFragment)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x001f|android.view.View android.view.View r0 = r5.mFragment.getFocusedView()\l}"];
+subgraph cluster_IfRegion_36315750 {
+label = "IF [B:24:0x0025, B:26:0x002b] THEN: R(2:8|(2:10|13)) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0025|if (r0 != null) goto L6\l}"];
+Node_26 [shape=record,label="{26\:\ 0x002b|ADDED_TO_REGION\l|if (isFragmentViewChild(r0) != false) goto L8\l}"];
+subgraph cluster_Region_844959747 {
+label = "R(2:8|(2:10|13))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002d|boolean boolean r2 = r0.requestFocus()\l}"];
+subgraph cluster_IfRegion_1630732436 {
+label = "IF [B:28:0x0036] THEN: R(2:10|13) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0036|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(2) != false) goto L10\l}"];
+subgraph cluster_Region_724869237 {
+label = "R(2:10|13)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0038|java.lang.StringBuilder java.lang.StringBuilder r3 = new java.lang.StringBuilder()\lr3.append(\"requestFocus: Restoring focused view \")\lr3.append(r0)\lr3.append(\" \")\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0051|PHI: r4 \l  PHI: (r4v4 java.lang.String A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.append(r2 ? \"succeeded\" : \"failed\")\lr3.append(\" on Fragment \")\lr3.append(r5.mFragment)\lr3.append(\" resulting in focused view \")\lr3.append(r5.mFragment.mView.findFocus())\landroid.util.Log.v(androidx.fragment.app.FragmentStateManager.TAG, r3.toString())\l}"];
+}
+}
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x0075|r5.mFragment.setFocusedView(null)\lr5.mFragment.performResume()\lr5.mDispatcher.dispatchOnFragmentResumed(r5.mFragment, false)\lr5.mFragment.mSavedFragmentState = null\lr5.mFragment.mSavedViewState = null\lr5.mFragment.mSavedViewRegistryState = null\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0027}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x004a}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x004c}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x004f}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0094}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentStateManager.resume((r5v0 'this' androidx.fragment.app.FragmentStateManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x004f \-\> B:33:0x0051, CROSS_EDGE: B:28:0x0036 \-\> B:34:0x0075, CROSS_EDGE: B:26:0x002b \-\> B:34:0x0075, CROSS_EDGE: B:24:0x0025 \-\> B:34:0x0075, CROSS_EDGE: B:21:0x0007 \-\> B:23:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_34[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_34[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_34[style=dashed];
+Node_29 -> Node_30;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_25 -> Node_26;
+Node_30 -> Node_31;
+Node_30 -> Node_32;
+Node_31 -> Node_33;
+Node_32 -> Node_33;
+Node_35 -> Node_19;
+}
+

@@ -1,0 +1,64 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.runningFold([ZLjava\/lang\/Object;Lkotlin\/jvm\/functions\/Function2;)Ljava\/util\/List;" {
+subgraph cluster_Region_1741280255 {
+label = "R(2:1|(2:(1:6)|(3:8|(1:10)|13)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"operation\")\lint r1 = 0\l}"];
+subgraph cluster_Region_1625428293 {
+label = "R(2:(1:6)|(3:8|(1:10)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_544265572 {
+label = "IF [B:21:0x0012] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0012|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r6.length == 0) == true) goto L5\l}"];
+subgraph cluster_Region_878962405 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0018|RETURN\l|return kotlin.collections.CollectionsKt.listOf(r7)\l}"];
+}
+}
+subgraph cluster_Region_1593016646 {
+label = "R(3:8|(1:10)|13)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList(r6.length + 1)\lr0.add(r7)\ljava.lang.Object r2 = (java.lang.Object) r7\l\l}"];
+subgraph cluster_LoopRegion_1465100233 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0027|LOOP_START\lLOOP:0: B:25:0x0027\-\>B:26:0x0029\lPHI: r1 r2 \l  PHI: (r1v1 int) = (r1v0 int), (r1v4 int) binds: [B:24:0x0019, B:26:0x0029] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v3 'accumulator' java.lang.Object) = (r2v2 'accumulator' java.lang.Object), (r2v4 'accumulator' java.lang.Object) binds: [B:24:0x0019, B:26:0x0029] A[DONT_GENERATE, DONT_INLINE]\l|boolean \lif (r1 \< r3) goto L10\l}"];
+subgraph cluster_Region_352432447 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0029|LOOP_END\lLOOP:0: B:25:0x0027\-\>B:26:0x0029\l|boolean r4 = r6[r1]\ljava.lang.Object r2 = (R) r8.invoke(r2, java.lang.Boolean.valueOf(r4))\lr0.add(r2)\lr1++\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x003c|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000d}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000f}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0014}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0039|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0039}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0011}"];
+MethodNode[shape=record,label="{private static final java.util.List\<R\> kotlin.collections.ArraysKt___ArraysKt.runningFold((r6v0 '$this$runningFold' boolean[] A[D('$this$runningFold' boolean[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 R A[D('initial' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'operation' kotlin.jvm.functions.Function2\<? super R, ? super java.lang.Boolean, ? extends R\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x0029 \-\> B:25:0x0027, CROSS_EDGE: B:28:0x003c \-\> B:16:?, CROSS_EDGE: B:20:0x0011 \-\> B:21:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lSIGNATURE: \<R:Ljava\/lang\/Object;\>([ZTR;Lkotlin\/jvm\/functions\/Function2\<\-TR;\-Ljava\/lang\/Boolean;+TR;\>;)Ljava\/util\/List\<TR;\>;\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_23 -> Node_16;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_26 -> Node_25;
+Node_28 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_29 -> Node_27;
+Node_27 -> Node_28;
+Node_20 -> Node_21;
+}
+

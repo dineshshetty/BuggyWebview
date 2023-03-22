@@ -1,0 +1,62 @@
+digraph "CFG forkotlin.sequences.SequenceBuilderIterator.yieldAll(Ljava\/util\/Iterator;Lkotlin\/coroutines\/Continuation;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_275227043 {
+label = "R(1:(2:(3:6|(1:8)|10)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_702136663 {
+label = "R(2:(3:6|(1:8)|10)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1873857546 {
+label = "IF [B:3:0x0004] THEN: R(3:6|(1:8)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r3.hasNext() == true) goto L6\l}"];
+subgraph cluster_Region_1067326074 {
+label = "R(3:6|(1:8)|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|r2.nextIterator = r3\lr2.state = 2\lr2.nextStep = r4\ljava.lang.Object java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+subgraph cluster_IfRegion_2078594663 {
+label = "IF [B:7:0x001a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|if (r0 == kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L8\l}"];
+subgraph cluster_Region_1215812023 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|kotlin.coroutines.jvm.internal.DebugProbes.probeCoroutineSuspended(r4)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0023|RETURN\l|return r0 == kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED() ? r0 : kotlin.Unit.INSTANCE\l}"];
+}
+}
+subgraph cluster_Region_1697651619 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0008|RETURN\l|return kotlin.Unit.INSTANCE\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001f}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0025}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0026}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0028}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlin.sequences.SequenceBuilderIterator.yieldAll((r2v0 'this' kotlin.sequences.SequenceBuilderIterator\<T\> A[IMMUTABLE_TYPE, THIS]), (r3v0 java.util.Iterator\<? extends T\> A[D('iterator' java.util.Iterator), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 kotlin.coroutines.Continuation\<? super kotlin.Unit\> A[D('$completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0025 \-\> B:1:?, CROSS_EDGE: B:13:0x0028 \-\> B:1:?, CROSS_EDGE: B:7:0x001a \-\> B:9:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (Ljava\/util\/Iterator\<+TT;\>;Lkotlin\/coroutines\/Continuation\<\-Lkotlin\/Unit;\>;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlin.sequences.SequenceScope.yieldAll(java.util.Iterator\<? extends T\>, kotlin.coroutines.Continuation\<? super kotlin.Unit\>):java.lang.Object]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_12;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_11 -> Node_1;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+}
+

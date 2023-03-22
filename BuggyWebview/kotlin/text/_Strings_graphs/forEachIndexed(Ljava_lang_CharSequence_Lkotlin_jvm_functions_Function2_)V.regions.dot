@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.forEachIndexed(Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function2;)V" {
+subgraph cluster_Region_628458040 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"action\")\lint r1 = 0\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_816592659 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0011|if (r2 \< r6.length()) goto L4\l}"];
+subgraph cluster_Region_2130192634 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0013|LOOP_END\lLOOP:0: B:11:0x000d\-\>B:13:0x0013\l|char char r3 = r6.charAt(r2)\lr7.invoke(java.lang.Integer.valueOf(r1), java.lang.Character.valueOf(r3))\lr2++\lr1++\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000d|LOOP_START\lLOOP:0: B:11:0x000d\-\>B:13:0x0013\lPHI: r1 r2 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v3 'index' int) binds: [B:10:0x0000, B:13:0x0013] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:10:0x0000, B:13:0x0013] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0028|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0028}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.text.StringsKt___StringsKt.forEachIndexed((r6v0 '$this$forEachIndexed' java.lang.CharSequence A[D('$this$forEachIndexed' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'action' kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super java.lang.Character, kotlin.Unit\> A[D('action' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0013 \-\> B:11:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Integer;\-Ljava\/lang\/Character;Lkotlin\/Unit;\>;)V\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

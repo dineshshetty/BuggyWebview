@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.zipWithNext(Ljava\/lang\/CharSequence;)Ljava\/util\/List;" {
+subgraph cluster_Region_1236445959 {
+label = "R(2:1|(2:(1:4)|(3:6|(1:8)|11)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"\<this\>\")\lint int r2 = r10.length() \- 1\l}"];
+subgraph cluster_Region_641408398 {
+label = "R(2:(1:4)|(3:6|(1:8)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1362170082 {
+label = "IF [B:15:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|if (r2 \< 1) goto L3\l}"];
+subgraph cluster_Region_283787962 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return kotlin.collections.CollectionsKt.emptyList()\l}"];
+}
+}
+subgraph cluster_Region_561262770 {
+label = "R(3:6|(1:8)|11)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|java.util.ArrayList java.util.ArrayList r3 = new java.util.ArrayList(r2)\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_2035740194 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001a|LOOP_START\lLOOP:0: B:18:0x001a\-\>B:19:0x001c\lPHI: r4 \l  PHI: (r4v1 'index$iv' int) = (r4v0 'index$iv' int), (r4v4 'index$iv' int) binds: [B:17:0x0014, B:19:0x001c] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \< r2) goto L8\l}"];
+subgraph cluster_Region_635476124 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|LOOP_END\lLOOP:0: B:18:0x001a\-\>B:19:0x001c\l|char char r5 = r10.charAt(r4)\lchar char r6 = r10.charAt(r4 + 1)\lr3.add(kotlin.TuplesKt.m15to(java.lang.Character.valueOf(r5), java.lang.Character.valueOf(r6)))\lr4++\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x003d|RETURN\lORIG_RETURN\l|return r3\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000f}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0039|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0039}"];
+MethodNode[shape=record,label="{public static final java.util.List\<kotlin.Pair\<java.lang.Character, java.lang.Character\>\> kotlin.text.StringsKt___StringsKt.zipWithNext((r10v0 '$this$zipWithNext' java.lang.CharSequence A[D('$this$zipWithNext' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x001c \-\> B:18:0x001a, CROSS_EDGE: B:20:0x0039 \-\> B:21:0x003d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/CharSequence;)Ljava\/util\/List\<Lkotlin\/Pair\<Ljava\/lang\/Character;Ljava\/lang\/Character;\>;\>;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_23 -> Node_13;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_22[style=dashed];
+Node_19 -> Node_18;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_23;
+Node_22 -> Node_20;
+Node_20 -> Node_21;
+}
+

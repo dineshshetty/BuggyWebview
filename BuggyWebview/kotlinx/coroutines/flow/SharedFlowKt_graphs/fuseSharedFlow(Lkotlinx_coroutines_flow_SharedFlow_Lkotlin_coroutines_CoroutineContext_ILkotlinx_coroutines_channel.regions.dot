@@ -1,0 +1,48 @@
+digraph "CFG forkotlinx.coroutines.flow.SharedFlowKt.fuseSharedFlow(Lkotlinx\/coroutines\/flow\/SharedFlow;Lkotlin\/coroutines\/CoroutineContext;ILkotlinx\/coroutines\/channels\/BufferOverflow;)Lkotlinx\/coroutines\/flow\/Flow;" {
+subgraph cluster_Region_938847579 {
+label = "R(1:(2:(1:10)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1243677805 {
+label = "R(2:(1:10)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_138215555 {
+label = "IF [B:13:0x0000, B:15:0x0003, B:17:0x0007] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|if (r4 == 0) goto L7\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0003|ADDED_TO_REGION\l|if (r4 == (\-3)) goto L7\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0007|ADDED_TO_REGION\l|if (r5 == kotlinx.coroutines.channels.BufferOverflow.SUSPEND) goto L9\l}"];
+subgraph cluster_Region_1654277924 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_2015338841 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|RETURN\l|return new kotlinx.coroutines.flow.internal.ChannelFlowOperatorImpl(r2, r3, r4, r5)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0002}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000d}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0005}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0009}"];
+MethodNode[shape=record,label="{public static final kotlinx.coroutines.flow.Flow\<T\> kotlinx.coroutines.flow.SharedFlowKt.fuseSharedFlow((r2v0 kotlinx.coroutines.flow.SharedFlow\<? extends T\> A[D('$this$fuseSharedFlow' kotlinx.coroutines.flow.SharedFlow), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'context' kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'capacity' int A[D('capacity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'onBufferOverflow' kotlinx.coroutines.channels.BufferOverflow A[D('onBufferOverflow' kotlinx.coroutines.channels.BufferOverflow), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0017 \-\> B:12:?, CROSS_EDGE: B:15:0x0003 \-\> B:20:0x000d, CROSS_EDGE: B:13:0x0000 \-\> B:16:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlinx\/coroutines\/flow\/SharedFlow\<+TT;\>;Lkotlin\/coroutines\/CoroutineContext;ILkotlinx\/coroutines\/channels\/BufferOverflow;)Lkotlinx\/coroutines\/flow\/Flow\<TT;\>;\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_16;
+Node_15 -> Node_16;
+Node_15 -> Node_20[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_20 -> Node_21;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

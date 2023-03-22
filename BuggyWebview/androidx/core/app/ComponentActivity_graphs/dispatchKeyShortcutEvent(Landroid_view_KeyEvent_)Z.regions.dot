@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.core.app.ComponentActivity.dispatchKeyShortcutEvent(Landroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_1941457908 {
+label = "R(2:1|(2:(1:5)|(1:8)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|android.view.View android.view.View r0 = getWindow().getDecorView()\l}"];
+subgraph cluster_Region_1810521489 {
+label = "R(2:(1:5)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_11843429 {
+label = "IF [B:13:0x0008, B:15:0x000e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|if (r0 != null) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000e|ADDED_TO_REGION\l|if (androidx.core.view.KeyEventDispatcher.dispatchBeforeHierarchy(r0, r3) != false) goto L5\l}"];
+subgraph cluster_Region_84621627 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0010|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1080393168 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0016|RETURN\l|return super.dispatchKeyShortcutEvent(r3)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000a}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0012}"];
+MethodNode[shape=record,label="{public boolean androidx.core.app.ComponentActivity.dispatchKeyShortcutEvent((r2v0 'this' androidx.core.app.ComponentActivity A[IMMUTABLE_TYPE, THIS]), (r3v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0016 \-\> B:11:?, CROSS_EDGE: B:13:0x0008 \-\> B:18:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.app.Activity.dispatchKeyShortcutEvent(android.view.KeyEvent):boolean\}, ClspMth\{android.view.Window.Callback.dispatchKeyShortcutEvent(android.view.KeyEvent):boolean\}]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+}
+

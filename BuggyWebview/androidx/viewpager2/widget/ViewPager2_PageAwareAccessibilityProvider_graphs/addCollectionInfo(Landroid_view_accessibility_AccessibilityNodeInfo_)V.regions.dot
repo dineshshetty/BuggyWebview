@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.viewpager2.widget.ViewPager2.PageAwareAccessibilityProvider.addCollectionInfo(Landroid\/view\/accessibility\/AccessibilityNodeInfo;)V" {
+subgraph cluster_Region_1540838387 {
+label = "R(3:1|(1:(1:5)(1:6))|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|int r0 = 0\lint r1 = 0\l}"];
+subgraph cluster_IfRegion_354876830 {
+label = "IF [B:13:0x0008] THEN: R(1:(1:5)(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|if (androidx.viewpager2.widget.ViewPager2.this.getAdapter() != null) goto L3\l}"];
+subgraph cluster_Region_739811700 {
+label = "R(1:(1:5)(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1897656512 {
+label = "IF [B:15:0x0011] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|if (androidx.viewpager2.widget.ViewPager2.this.getOrientation() == 1) goto L5\l}"];
+subgraph cluster_Region_382114463 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0013|int r0 = androidx.viewpager2.widget.ViewPager2.this.getAdapter().getItemCount()\l}"];
+}
+subgraph cluster_Region_1125741446 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001e|int r1 = androidx.viewpager2.widget.ViewPager2.this.getAdapter().getItemCount()\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0028|PHI: r0 r1 \l  PHI: (r0v1 'rowCount' int) = (r0v0 'rowCount' int), (r0v0 'rowCount' int), (r0v2 'rowCount' int) binds: [B:13:0x0008, B:17:0x001e, B:16:0x0013] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'colCount' int) = (r1v0 'colCount' int), (r1v2 'colCount' int), (r1v0 'colCount' int) binds: [B:13:0x0008, B:17:0x001e, B:16:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|androidx.core.view.accessibility.AccessibilityNodeInfoCompat androidx.core.view.accessibility.AccessibilityNodeInfoCompat r2 = androidx.core.view.accessibility.AccessibilityNodeInfoCompat.wrap(r5)\landroidx.core.view.accessibility.AccessibilityNodeInfoCompat$CollectionInfoCompat androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionInfoCompat r3 = androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionInfoCompat.obtain(r0, r1, false, 0)\lr2.setCollectionInfo(r3)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000a}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0035}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.viewpager2.widget.ViewPager2.PageAwareAccessibilityProvider.addCollectionInfo((r4v0 'this' androidx.viewpager2.widget.ViewPager2$PageAwareAccessibilityProvider A[IMMUTABLE_TYPE, THIS]), (r5v0 'info' android.view.accessibility.AccessibilityNodeInfo A[D('info' android.view.accessibility.AccessibilityNodeInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x001e \-\> B:18:0x0028, CROSS_EDGE: B:13:0x0008 \-\> B:18:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_19 -> Node_11;
+}
+

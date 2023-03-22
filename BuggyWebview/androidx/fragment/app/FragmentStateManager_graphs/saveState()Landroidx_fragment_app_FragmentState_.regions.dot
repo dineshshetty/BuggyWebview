@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.fragment.app.FragmentStateManager.saveState()Landroidx\/fragment\/app\/FragmentState;" {
+subgraph cluster_Region_640152571 {
+label = "R(3:1|(2:5|(3:(1:9)|10|(1:12)))(1:15)|13)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|androidx.fragment.app.FragmentState androidx.fragment.app.FragmentState r0 = new androidx.fragment.app.FragmentState(r4.mFragment)\l}"];
+subgraph cluster_IfRegion_681498690 {
+label = "IF [B:19:0x000c, B:21:0x0010] THEN: R(2:5|(3:(1:9)|10|(1:12))) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|if (r4.mFragment.mState \> (\-1)) goto L3\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0010|ADDED_TO_REGION\l|if (r0.mSavedFragmentState == null) goto L5\l}"];
+subgraph cluster_Region_1469376503 {
+label = "R(2:5|(3:(1:9)|10|(1:12)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0012|r0.mSavedFragmentState = saveBasicState()\l}"];
+subgraph cluster_IfRegion_2038216617 {
+label = "IF [B:23:0x001c] THEN: R(3:(1:9)|10|(1:12)) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001c|if (r4.mFragment.mTargetWho != null) goto L7\l}"];
+subgraph cluster_Region_1830886278 {
+label = "R(3:(1:9)|10|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_713166840 {
+label = "IF [B:25:0x0020] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0020|if (r0.mSavedFragmentState == null) goto L9\l}"];
+subgraph cluster_Region_866359672 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0022|r0.mSavedFragmentState = new android.os.Bundle()\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0029|r0.mSavedFragmentState.putString(androidx.fragment.app.FragmentStateManager.TARGET_STATE_TAG, r4.mFragment.mTargetWho)\l}"];
+subgraph cluster_IfRegion_349333227 {
+label = "IF [B:28:0x0038] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0038|if (r4.mFragment.mTargetRequestCode != 0) goto L12\l}"];
+subgraph cluster_Region_494592650 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003a|r0.mSavedFragmentState.putInt(androidx.fragment.app.FragmentStateManager.TARGET_REQUEST_CODE_STATE_TAG, r4.mFragment.mTargetRequestCode)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_666747666 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0046|r0.mSavedFragmentState = r4.mFragment.mSavedFragmentState\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x004c|RETURN\l|return r0\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000e}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001e}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.fragment.app.FragmentState androidx.fragment.app.FragmentStateManager.saveState((r4v0 'this' androidx.fragment.app.FragmentStateManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x0038 \-\> B:31:0x004c, CROSS_EDGE: B:25:0x0020 \-\> B:27:0x0029, CROSS_EDGE: B:23:0x001c \-\> B:31:0x004c, CROSS_EDGE: B:30:0x0046 \-\> B:31:0x004c, CROSS_EDGE: B:19:0x000c \-\> B:30:0x0046\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_30[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_30[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_31[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_31[style=dashed];
+Node_29 -> Node_31;
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_24 -> Node_25;
+}
+

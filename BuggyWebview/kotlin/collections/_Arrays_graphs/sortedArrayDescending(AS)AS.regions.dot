@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.sortedArrayDescending([S)[S" {
+subgraph cluster_Region_895650842 {
+label = "R(2:1|(2:(1:5)|(2:7|8)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\l}"];
+subgraph cluster_Region_904326747 {
+label = "R(2:(1:5)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_633154983 {
+label = "IF [B:16:0x000b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000b|PHI: r0 \l  PHI: (r0v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r3.length == 0) == true) goto L5\l}"];
+subgraph cluster_Region_226413441 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000d|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_614815630 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|short[] short[] r0 = java.util.Arrays.copyOf(r3, r3.length)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"copyOf(this, size)\")\lkotlin.collections.ArraysKt.sortDescending(r0)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001d|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0006}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0008}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000a}"];
+MethodNode[shape=record,label="{public static final short[] kotlin.collections.ArraysKt___ArraysKt.sortedArrayDescending((r3v0 '$this$sortedArrayDescending' short[] A[D('$this$sortedArrayDescending' short[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001d \-\> B:11:?, CROSS_EDGE: B:15:0x000a \-\> B:16:0x000b\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+}
+

@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.viewpager2.widget.ViewPager2.updateCurrentItem()V" {
+subgraph cluster_Region_923726948 {
+label = "R(2:1|(2:(1:15)|(2:3|(2:(1:5)|(3:7|(1:11)|12)))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|androidx.recyclerview.widget.PagerSnapHelper androidx.recyclerview.widget.PagerSnapHelper r0 = r3.mPagerSnapHelper\l}"];
+subgraph cluster_Region_637832118 {
+label = "R(2:(1:15)|(2:3|(2:(1:5)|(3:7|(1:11)|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1340679913 {
+label = "IF [B:19:0x0002] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|if (r0 == null) goto L14\l}"];
+subgraph cluster_Region_1989266171 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x002d|throw new java.lang.IllegalStateException(\"Design assumption violated.\")\l}"];
+}
+}
+subgraph cluster_Region_481091862 {
+label = "R(2:3|(2:(1:5)|(3:7|(1:11)|12)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0004|android.view.View android.view.View r0 = r0.findSnapView(r3.mLayoutManager)\l}"];
+subgraph cluster_Region_2097821183 {
+label = "R(2:(1:5)|(3:7|(1:11)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_483899330 {
+label = "IF [B:21:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000a|if (r0 == null) goto L5\l}"];
+subgraph cluster_Region_151298879 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1547357672 {
+label = "R(3:7|(1:11)|12)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000d|int int r1 = r3.mLayoutManager.getPosition(r0)\l}"];
+subgraph cluster_IfRegion_1524791016 {
+label = "IF [B:24:0x0015, B:26:0x001b] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0015|if (r1 != r3.mCurrentItem) goto L9\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001b|ADDED_TO_REGION\l|if (getScrollState() == 0) goto L11\l}"];
+subgraph cluster_Region_566069491 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001d|r3.mPageChangeEventDispatcher.onPageSelected(r1)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0022|r3.mCurrentItemDirty = false\l}"];
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0017}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0025}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0026}"];
+MethodNode[shape=record,label="{void androidx.viewpager2.widget.ViewPager2.updateCurrentItem((r3v0 'this' androidx.viewpager2.widget.ViewPager2 A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x0025 \-\> B:17:?, CROSS_EDGE: B:26:0x001b \-\> B:28:0x0022, CROSS_EDGE: B:24:0x0015 \-\> B:28:0x0022, CROSS_EDGE: B:31:0x002d \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_30;
+Node_31 -> Node_17;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_17;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_16 -> Node_18;
+Node_25 -> Node_26;
+Node_29 -> Node_17;
+Node_30 -> Node_31;
+}
+

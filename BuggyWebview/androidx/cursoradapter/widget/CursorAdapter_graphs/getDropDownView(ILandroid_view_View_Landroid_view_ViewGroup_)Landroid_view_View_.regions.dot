@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.cursoradapter.widget.CursorAdapter.getDropDownView(ILandroid\/view\/View;Landroid\/view\/ViewGroup;)Landroid\/view\/View;" {
+subgraph cluster_Region_77261897 {
+label = "R(1:(2:(4:3|(1:5)(1:9)|6|7)|(1:10))) | DECL_VAR: android.view.View v\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_541864133 {
+label = "R(2:(4:3|(1:5)(1:9)|6|7)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_672375929 {
+label = "IF [B:15:0x0002] THEN: R(4:3|(1:5)(1:9)|6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r3.mDataValid != false) goto L3\l}"];
+subgraph cluster_Region_1245657974 {
+label = "R(4:3|(1:5)(1:9)|6|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|r3.mCursor.moveToPosition(r4)\l}"];
+subgraph cluster_IfRegion_420773596 {
+label = "IF [B:17:0x0009] THEN: R(1:5) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0009|if (r5 == null) goto L5\l}"];
+subgraph cluster_Region_741872741 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|android.view.View r0 = newDropDownView(r3.mContext, r3.mCursor, r6)\l}"];
+}
+subgraph cluster_Region_1604809956 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0014|r0 = r5\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0015|PHI: r0 \l  PHI: (r0v4 'v' android.view.View) = (r0v3 'v' android.view.View), (r0v6 'v' android.view.View) binds: [B:19:0x0014, B:18:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|bindView(r0, r3.mContext, r3.mCursor)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x001c|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1486860067 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001d|RETURN\l|return null\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.view.View androidx.cursoradapter.widget.CursorAdapter.getDropDownView((r3v0 'this' androidx.cursoradapter.widget.CursorAdapter A[IMMUTABLE_TYPE, THIS]), (r4v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'convertView' android.view.View A[D('convertView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'parent' android.view.ViewGroup A[D('parent' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0014 \-\> B:20:0x0015, CROSS_EDGE: B:23:0x001e \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.BaseAdapter.getDropDownView(int, android.view.View, android.view.ViewGroup):android.view.View\}, ClspMth\{android.widget.SpinnerAdapter.getDropDownView(int, android.view.View, android.view.ViewGroup):android.view.View\}]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+}
+

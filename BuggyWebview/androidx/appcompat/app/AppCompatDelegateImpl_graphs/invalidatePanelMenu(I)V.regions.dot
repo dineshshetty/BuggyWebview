@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.invalidatePanelMenu(I)V" {
+subgraph cluster_Region_2113559142 {
+label = "R(2:1|(1:(1:3)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|r3.mInvalidatePanelMenuFeatures \|= 1 \<\< r4\l}"];
+subgraph cluster_Region_1473462051 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_241805284 {
+label = "IF [B:10:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000a|if (r3.mInvalidatePanelMenuPosted == false) goto L3\l}"];
+subgraph cluster_Region_528050467 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000c|androidx.core.view.ViewCompat.postOnAnimation(r3.mWindow.getDecorView(), r3.mInvalidatePanelMenuRunnable)\lr3.mInvalidatePanelMenuPosted = true\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0019|ORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.app.AppCompatDelegateImpl.invalidatePanelMenu((r3v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 'featureId' int A[D('featureId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x000a \-\> B:12:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_7 -> Node_9;
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+}
+

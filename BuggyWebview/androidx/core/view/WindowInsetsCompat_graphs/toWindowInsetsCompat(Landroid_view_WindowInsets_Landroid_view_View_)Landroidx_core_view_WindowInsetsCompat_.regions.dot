@@ -1,0 +1,33 @@
+digraph "CFG forandroidx.core.view.WindowInsetsCompat.toWindowInsetsCompat(Landroid\/view\/WindowInsets;Landroid\/view\/View;)Landroidx\/core\/view\/WindowInsetsCompat;" {
+subgraph cluster_Region_1006379305 {
+label = "R(3:1|(1:5)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|androidx.core.view.WindowInsetsCompat androidx.core.view.WindowInsetsCompat r0 = new androidx.core.view.WindowInsetsCompat((android.view.WindowInsets) androidx.core.util.Preconditions.checkNotNull(r2))\l}"];
+subgraph cluster_IfRegion_1917441585 {
+label = "IF [B:11:0x000b, B:13:0x0011] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000b|if (r3 != null) goto L3\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0011|ADDED_TO_REGION\l|if (androidx.core.view.ViewCompat.isAttachedToWindow(r3) != false) goto L5\l}"];
+subgraph cluster_Region_1456665838 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0013|r0.setRootWindowInsets(androidx.core.view.ViewCompat.getRootWindowInsets(r3))\lr0.copyRootViewBounds(r3.getRootView())\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0021|RETURN\l|return r0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000d}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.core.view.WindowInsetsCompat androidx.core.view.WindowInsetsCompat.toWindowInsetsCompat((r2v0 'insets' android.view.WindowInsets A[D('insets' android.view.WindowInsets), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0011 \-\> B:15:0x0021, CROSS_EDGE: B:11:0x000b \-\> B:15:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

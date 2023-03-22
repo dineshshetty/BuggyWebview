@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.recyclerview.widget.AdapterHelper.onItemRangeMoved(III)Z" {
+subgraph cluster_Region_971838038 {
+label = "R(1:(2:(1:3)|(1:(2:(1:12)|(2:7|8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_563064039 {
+label = "R(2:(1:3)|(1:(2:(1:12)|(2:7|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_852050706 {
+label = "IF [B:17:0x0001] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0001|if (r6 == r7) goto L3\l}"];
+subgraph cluster_Region_1568254584 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0003|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_215444515 {
+label = "R(1:(2:(1:12)|(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1348669898 {
+label = "R(2:(1:12)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_684333319 {
+label = "IF [B:20:0x0005] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0005|if (r8 != 1) goto L11\l}"];
+subgraph cluster_Region_955276300 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0029|throw new java.lang.IllegalArgumentException(\"Moving more than 1 item is not supported yet\")\l}"];
+}
+}
+subgraph cluster_Region_267491653 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|r5.mPendingUpdates.add(obtainUpdateOp(8, r6, r7, null))\lr5.mExistingUpdateTypes \|= 8\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001e|RETURN\l|return r5.mPendingUpdates.size() == 1\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0004}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0020|ORIG_RETURN\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0022}"];
+MethodNode[shape=record,label="{public boolean androidx.recyclerview.widget.AdapterHelper.onItemRangeMoved((r5v0 'this' androidx.recyclerview.widget.AdapterHelper A[IMMUTABLE_TYPE, THIS]), (r6v0 'from' int A[D('from' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'to' int A[D('to' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'itemCount' int A[D('itemCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0021 \-\> B:15:?, CROSS_EDGE: B:22:0x001e \-\> B:24:0x0021, CROSS_EDGE: B:26:0x0029 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_15;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_25;
+Node_26 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_27;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+Node_23 -> Node_15;
+Node_27 -> Node_15;
+Node_25 -> Node_26;
+}
+

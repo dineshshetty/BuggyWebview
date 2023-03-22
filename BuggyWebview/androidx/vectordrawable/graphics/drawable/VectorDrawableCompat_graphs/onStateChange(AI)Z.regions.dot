@@ -1,0 +1,90 @@
+digraph "CFG forandroidx.vectordrawable.graphics.drawable.VectorDrawableCompat.onStateChange([I)Z" {
+subgraph cluster_Region_1231766809 {
+label = "R(1:(2:(1:4)|(3:6|(1:10)|(2:(2:15|16)|(1:17)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_591457519 {
+label = "R(2:(1:4)|(3:6|(1:10)|(2:(2:15|16)|(1:17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2133167402 {
+label = "IF [B:22:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0002|if (r5.mDelegateDrawable != null) goto L3\l}"];
+subgraph cluster_Region_440618746 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000a|RETURN\l|return r5.mDelegateDrawable.setState(r6)\l}"];
+}
+}
+subgraph cluster_Region_1875025468 {
+label = "R(3:6|(1:10)|(2:(2:15|16)|(1:17)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000b|boolean r0 = false\landroidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.VectorDrawableCompatState r1 = r5.mVectorState\l}"];
+subgraph cluster_IfRegion_1312206067 {
+label = "IF [B:26:0x0010, B:28:0x0014] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0010|if (r1.mTint != null) goto L8\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0014|ADDED_TO_REGION\l|if (r1.mTintMode != null) goto L10\l}"];
+subgraph cluster_Region_461628230 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0016|r5.mTintFilter = updateTintFilter(r5.mTintFilter, r1.mTint, r1.mTintMode)\linvalidateSelf()\lr0 = true\l}"];
+}
+}
+subgraph cluster_Region_152277798 {
+label = "R(2:(2:15|16)|(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_905902199 {
+label = "IF [B:31:0x002a, B:33:0x0030] THEN: R(2:15|16) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x002a|if (r1.isStateful() != false) goto L13\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0030|ADDED_TO_REGION\l|if (r1.onStateChanged(r6) != false) goto L15\l}"];
+subgraph cluster_Region_756035967 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0032|invalidateSelf()\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0036|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1924346297 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0004}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0012}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0026|PHI: r0 \l  PHI: (r0v2 'changed' boolean) = (r0v1 'changed' boolean), (r0v1 'changed' boolean), (r0v4 'changed' boolean) binds: [B:26:0x0010, B:28:0x0014, B:29:0x0016] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x002c}"];
+Node_36 [shape=record,color=red,label="{36\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r0\l}"];
+MethodNode[shape=record,label="{protected boolean androidx.vectordrawable.graphics.drawable.VectorDrawableCompat.onStateChange((r5v0 'this' androidx.vectordrawable.graphics.drawable.VectorDrawableCompat A[IMMUTABLE_TYPE, THIS]), (r6v0 'stateSet' int[] A[D('stateSet' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:35:0x0036 \-\> B:20:?, CROSS_EDGE: B:33:0x0030 \-\> B:35:0x0036, CROSS_EDGE: B:31:0x002a \-\> B:35:0x0036, CROSS_EDGE: B:28:0x0014 \-\> B:30:0x0026, CROSS_EDGE: B:26:0x0010 \-\> B:30:0x0026\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.onStateChange(int[]):boolean\}]\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_24 -> Node_20;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_30[style=dashed];
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_31 -> Node_32;
+Node_31 -> Node_36[style=dashed];
+Node_33 -> Node_34;
+Node_33 -> Node_37[style=dashed];
+Node_34 -> Node_35;
+Node_35 -> Node_20;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_27 -> Node_28;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_36 -> Node_20;
+}
+

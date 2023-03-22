@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.core.view.WindowInsetsCompat.BuilderImpl29.\<init\>(Landroidx\/core\/view\/WindowInsetsCompat;)V" {
+subgraph cluster_Region_1475056292 {
+label = "R(2:1|(3:1|(1:3)(1:7)|4))";
+node [shape=record,color=blue];
+Node_InsnContainer_1038827766 [shape=record,label="{|super(r3)\l}"];
+subgraph cluster_Region_1245323544 {
+label = "R(3:1|(1:3)(1:7)|4) | DECL_VAR: android.view.WindowInsets$Builder null\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.view.WindowInsets android.view.WindowInsets r0 = r3.toWindowInsets()\l}"];
+subgraph cluster_IfRegion_1824418369 {
+label = "IF [B:11:0x0007] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0007|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1518672143 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0009|android.view.WindowInsets$Builder r1 = new android.view.WindowInsets.Builder(r0)\l}"];
+}
+subgraph cluster_Region_1401698204 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|android.view.WindowInsets$Builder r1 = new android.view.WindowInsets.Builder()\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0014|PHI: r1 \l  PHI: (r1v1 android.view.WindowInsets$Builder) = (r1v0 android.view.WindowInsets$Builder), (r1v2 android.view.WindowInsets$Builder) binds: [B:13:0x000f, B:12:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|r2.mPlatBuilder = r1\l}"];
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0016}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.core.view.WindowInsetsCompat.BuilderImpl29.\<init\>((r2v0 'this' androidx.core.view.WindowInsetsCompat$BuilderImpl29 A[IMMUTABLE_TYPE, THIS]), (r3v0 'insets' androidx.core.view.WindowInsetsCompat A[D('insets' androidx.core.view.WindowInsetsCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000f \-\> B:14:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_15 -> Node_9;
+}
+

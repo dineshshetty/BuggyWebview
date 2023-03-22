@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.fragment.app.DefaultSpecialEffectsController.TransitionInfo.getHandlingImpl()Landroidx\/fragment\/app\/FragmentTransitionImpl;" {
+subgraph cluster_Region_790224653 {
+label = "R(2:1|(2:(1:8)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.fragment.app.FragmentTransitionImpl androidx.fragment.app.FragmentTransitionImpl r0 = getHandlingImpl(r5.mTransition)\landroidx.fragment.app.FragmentTransitionImpl androidx.fragment.app.FragmentTransitionImpl r1 = getHandlingImpl(r5.mSharedElementTransition)\l}"];
+subgraph cluster_Region_67838755 {
+label = "R(2:(1:8)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1731322318 {
+label = "IF [B:3:0x000c, B:4:0x000e, B:5:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r0 == null) goto L8\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000e|ADDED_TO_REGION\l|if (r1 == null) goto L8\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if (r0 == r1) goto L8\l}"];
+subgraph cluster_Region_1188443737 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0046|RETURN\l|return r0 != null ? r0 : r1\l}"];
+}
+}
+subgraph cluster_Region_1391736156 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013}"];
+Node_8 [shape=record,label="{8\:\ 0x0045|throw new java.lang.IllegalArgumentException(\"Mixing framework transitions and AndroidX transitions is not allowed. Fragment \" + getOperation().getFragment() + \" returned Transition \" + r5.mTransition + \" which uses a different Transition  type than its shared element transition \" + r5.mSharedElementTransition)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0048}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004a}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x004b|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{androidx.fragment.app.FragmentTransitionImpl androidx.fragment.app.DefaultSpecialEffectsController.TransitionInfo.getHandlingImpl((r5v0 'this' androidx.fragment.app.DefaultSpecialEffectsController$TransitionInfo A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x004b \-\> B:1:?, CROSS_EDGE: B:11:0x004a \-\> B:12:0x004b, CROSS_EDGE: B:4:0x000e \-\> B:9:0x0046, CROSS_EDGE: B:3:0x000c \-\> B:9:0x0046\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_10 -> Node_13;
+Node_13 -> Node_1;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+}
+

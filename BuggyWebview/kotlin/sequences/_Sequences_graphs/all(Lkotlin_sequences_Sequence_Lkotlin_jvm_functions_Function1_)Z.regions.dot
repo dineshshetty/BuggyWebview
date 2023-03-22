@@ -1,0 +1,47 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.all(Lkotlin\/sequences\/Sequence;Lkotlin\/jvm\/functions\/Function1;)Z" {
+subgraph cluster_Region_1792188748 {
+label = "R(3:1|(2:4|(1:7))|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"predicate\")\ljava.util.Iterator java.util.Iterator\<? extends T\> r1 = r4.iterator()\l}"];
+subgraph cluster_LoopRegion_930050251 {
+label = "LOOP:0: (2:4|(1:7))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|if (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_487531801 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|java.lang.Object java.lang.Object r2 = (T) r1.next()\l}"];
+subgraph cluster_IfRegion_352239377 {
+label = "IF [B:19:0x0023] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0023|LOOP_END\lLOOP:0: B:16:0x000f\-\>B:19:0x0023\l|if (r5.invoke(r2).booleanValue() == false) goto L6\l}"];
+subgraph cluster_Region_1686357789 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0025|RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0027|RETURN\l|return true\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000f|LOOP_START\lLOOP:0: B:16:0x000f\-\>B:19:0x0023\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0025|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0027|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.sequences.SequencesKt___SequencesKt.all((r4v0 kotlin.sequences.Sequence\<? extends T\> A[D('$this$all' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'predicate' kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0023 \-\> B:16:0x000f, CROSS_EDGE: B:23:0x0028 \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Boolean;\>;)Z\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r2v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_25[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_16[style=dashed];
+Node_19 -> Node_24;
+Node_20 -> Node_14;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_24 -> Node_20;
+Node_25 -> Node_22;
+}
+

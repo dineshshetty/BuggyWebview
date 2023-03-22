@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.MotionScene.hasCycleDependency(I)Z" {
+subgraph cluster_Region_1497513077 {
+label = "R(3:1|(1:(2:(1:12)|(2:5|(2:(1:9)|(1:7)))))|14)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|int int r0 = r4.mDeriveMap.get(r5)\lint int r1 = r4.mDeriveMap.size()\l}"];
+subgraph cluster_LoopRegion_734061145 {
+label = "LOOP:0: (1:(2:(1:12)|(2:5|(2:(1:9)|(1:7)))))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|LOOP_START\lLOOP:0: B:19:0x000c\-\>B:26:0x0017\lPHI: r0 r1 \l  PHI: (r0v2 'derived' int) = (r0v1 'derived' int), (r0v3 'derived' int) binds: [B:18:0x0000, B:26:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v2 'len' int) = (r1v1 'len' int), (r1v4 'len' int) binds: [B:18:0x0000, B:26:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \> 0) goto L3\l}"];
+subgraph cluster_Region_581627474 {
+label = "R(1:(2:(1:12)|(2:5|(2:(1:9)|(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1720130980 {
+label = "R(2:(1:12)|(2:5|(2:(1:9)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1608220140 {
+label = "IF [B:21:0x000f] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|if (r0 == r5) goto L11\l}"];
+subgraph cluster_Region_1741266632 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_389170166 {
+label = "R(2:5|(2:(1:9)|(1:7)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0012|int int r3 = r1 \- 1\l}"];
+subgraph cluster_Region_932177441 {
+label = "R(2:(1:9)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1544948383 {
+label = "IF [B:24:0x0014] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0014|if (r1 \< 0) goto L8\l}"];
+subgraph cluster_Region_1117931260 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0016|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1007615019 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0017|LOOP_END\lLOOP:0: B:19:0x000c\-\>B:26:0x0017\l|int r0 = r4.mDeriveMap.get(r0)\lr1 = r3\l}"];
+}
+}
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x001f|RETURN\l|return false\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000e}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0016|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0011|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean androidx.constraintlayout.motion.widget.MotionScene.hasCycleDependency((r4v0 'this' androidx.constraintlayout.motion.widget.MotionScene A[IMMUTABLE_TYPE, THIS]), (r5v0 'key' int A[D('key' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0016 \-\> B:17:?, BACK_EDGE: B:26:0x0017 \-\> B:19:0x000c, CROSS_EDGE: B:28:0x0020 \-\> B:17:?\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [key]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_30[style=dashed];
+Node_21 -> Node_23[style=dashed];
+Node_21 -> Node_31;
+Node_22 -> Node_17;
+Node_23 -> Node_24;
+Node_24 -> Node_26[style=dashed];
+Node_24 -> Node_29;
+Node_25 -> Node_17;
+Node_26 -> Node_19;
+Node_27 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_29 -> Node_25;
+Node_31 -> Node_22;
+Node_30 -> Node_27;
+}
+

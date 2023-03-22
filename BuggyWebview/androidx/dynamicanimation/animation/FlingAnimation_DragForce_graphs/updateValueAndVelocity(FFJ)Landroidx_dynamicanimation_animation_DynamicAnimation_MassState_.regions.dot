@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.dynamicanimation.animation.FlingAnimation.DragForce.updateValueAndVelocity(FFJ)Landroidx\/dynamicanimation\/animation\/DynamicAnimation$MassState;" {
+subgraph cluster_Region_1871651348 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|r9.mMassState.mVelocity = (float) (r11 * java.lang.Math.exp((((float) r12) \/ 1000.0f) * r9.mFriction))\landroidx.dynamicanimation.animation.DynamicAnimation$MassState androidx.dynamicanimation.animation.DynamicAnimation.MassState r0 = r9.mMassState\lfloat float r1 = r9.mFriction\lr0.mValue = (float) ((r10 \- (r11 \/ r1)) + ((r11 \/ r1) * java.lang.Math.exp((r1 * ((float) r12)) \/ 1000.0f)))\l}"];
+subgraph cluster_IfRegion_817132782 {
+label = "IF [B:3:0x003c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x003c|if (isAtEquilibrium(r9.mMassState.mValue, r9.mMassState.mVelocity) != false) goto L3\l}"];
+subgraph cluster_Region_939166608 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x003e|r9.mMassState.mVelocity = 0.0f\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0045|RETURN\l|return r9.mMassState\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0043}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{androidx.dynamicanimation.animation.DynamicAnimation$MassState androidx.dynamicanimation.animation.FlingAnimation.DragForce.updateValueAndVelocity((r9v0 'this' androidx.dynamicanimation.animation.FlingAnimation$DragForce A[IMMUTABLE_TYPE, THIS]), (r10v0 'value' float A[D('value' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'velocity' float A[D('velocity' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'deltaT' long A[D('deltaT' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x003c \-\> B:5:0x0043\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+}
+

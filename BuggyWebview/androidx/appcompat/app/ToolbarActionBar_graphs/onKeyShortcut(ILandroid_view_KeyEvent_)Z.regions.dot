@@ -1,0 +1,52 @@
+digraph "CFG forandroidx.appcompat.app.ToolbarActionBar.onKeyShortcut(ILandroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_1908979485 {
+label = "R(2:1|(2:(1:12)|(3:5|8|9)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.Menu android.view.Menu r0 = getMenu()\l}"];
+subgraph cluster_Region_603901089 {
+label = "R(2:(1:12)|(3:5|8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2059825965 {
+label = "IF [B:3:0x0005] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r0 == null) goto L12\l}"];
+subgraph cluster_Region_289584264 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0024|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_258336819 {
+label = "R(3:5|8|9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|PHI: r2 \l  PHI: (r2v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.view.KeyCharacterMap android.view.KeyCharacterMap r2 = android.view.KeyCharacterMap.load(r7 != null ? r7.getDeviceId() : \-1)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x001c|PHI: r4 \l  PHI: (r4v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r0.setQwertyMode(r2.getKeyboardType() != 1)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0023|RETURN\l|return r0.performShortcut(r6, r7, 0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001b}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000e}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.app.ToolbarActionBar.onKeyShortcut((r5v0 'this' androidx.appcompat.app.ToolbarActionBar A[IMMUTABLE_TYPE, THIS]), (r6v0 'keyCode' int A[D('keyCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'ev' android.view.KeyEvent A[D('ev' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0018 \-\> B:11:0x001c, CROSS_EDGE: B:6:0x000e \-\> B:7:0x000f, CROSS_EDGE: B:13:0x0024 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.app.ActionBar.onKeyShortcut(int, android.view.KeyEvent):boolean]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_13 -> Node_1;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_8 -> Node_10;
+Node_8 -> Node_11;
+Node_10 -> Node_11;
+Node_6 -> Node_7;
+}
+

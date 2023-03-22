@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.getFragmentFactory()Landroidx\/fragment\/app\/FragmentFactory;" {
+subgraph cluster_Region_899552722 {
+label = "R(2:1|(2:(1:3)|(2:5|(2:(1:8)|(1:10)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|androidx.fragment.app.FragmentFactory androidx.fragment.app.FragmentFactory r0 = r1.mFragmentFactory\l}"];
+subgraph cluster_Region_1351925264 {
+label = "R(2:(1:3)|(2:5|(2:(1:8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2137918026 {
+label = "IF [B:14:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1626753802 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1401361560 {
+label = "R(2:5|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|androidx.fragment.app.Fragment androidx.fragment.app.Fragment r0 = r1.mParent\l}"];
+subgraph cluster_Region_1945597569 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_376617919 {
+label = "IF [B:17:0x0007] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|if (r0 != null) goto L7\l}"];
+subgraph cluster_Region_432136033 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|RETURN\l|return r0.mFragmentManager.getFragmentFactory()\l}"];
+}
+}
+subgraph cluster_Region_151228793 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0012|RETURN\l|return r1.mHostFragmentFactory\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0009}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0010}"];
+MethodNode[shape=record,label="{public androidx.fragment.app.FragmentFactory androidx.fragment.app.FragmentManager.getFragmentFactory((r1v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x000f \-\> B:12:?, CROSS_EDGE: B:21:0x0012 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

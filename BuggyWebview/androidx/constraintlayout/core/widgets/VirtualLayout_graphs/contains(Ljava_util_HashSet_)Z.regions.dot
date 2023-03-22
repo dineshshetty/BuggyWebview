@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.VirtualLayout.contains(Ljava\/util\/HashSet;)Z" {
+subgraph cluster_Region_335276840 {
+label = "R(3:1|(2:4|(2:(1:8)|(1:6)))|11)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_1713035241 {
+label = "LOOP:0: (2:4|(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0003|if (r0 \< r3.mWidgetsCount) goto L4\l}"];
+subgraph cluster_Region_1047592857 {
+label = "R(2:4|(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|androidx.constraintlayout.core.widgets.ConstraintWidget r1 = r3.mWidgets[r0]\l}"];
+subgraph cluster_Region_961715343 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1914630612 {
+label = "IF [B:20:0x000d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|if (r4.contains(r1) != false) goto L7\l}"];
+subgraph cluster_Region_1202364249 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1098401908 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0011|LOOP_END\lLOOP:0: B:17:0x0001\-\>B:23:0x0011\l|r0++\l}"];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0014|RETURN\l|return false\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0001|LOOP_START\lLOOP:0: B:17:0x0001\-\>B:23:0x0011\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v3 'i' int) binds: [B:16:0x0000, B:23:0x0011] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000f|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0014|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean androidx.constraintlayout.core.widgets.VirtualLayout.contains((r3v0 'this' androidx.constraintlayout.core.widgets.VirtualLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'widgets' java.util.HashSet\<androidx.constraintlayout.core.widgets.ConstraintWidget\> A[D('widgets' java.util.HashSet\<androidx.constraintlayout.core.widgets.ConstraintWidget\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x0011 \-\> B:17:0x0001, CROSS_EDGE: B:25:0x0015 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/HashSet\<Landroidx\/constraintlayout\/core\/widgets\/ConstraintWidget;\>;)Z\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_26[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_23[style=dashed];
+Node_20 -> Node_27;
+Node_21 -> Node_15;
+Node_23 -> Node_17;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_27 -> Node_21;
+Node_26 -> Node_24;
+}
+

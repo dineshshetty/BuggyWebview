@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.single(Lkotlin\/sequences\/Sequence;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1740907765 {
+label = "R(2:1|(2:(1:10)|(2:3|(2:(1:8)|(1:5)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\ljava.util.Iterator java.util.Iterator r0 = r4.iterator()\l}"];
+subgraph cluster_Region_251072790 {
+label = "R(2:(1:10)|(2:3|(2:(1:8)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1128219947 {
+label = "IF [B:14:0x000d] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000d|if (r0.hasNext() == false) goto L9\l}"];
+subgraph cluster_Region_1468455246 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0029|throw new java.util.NoSuchElementException(\"Sequence is empty.\")\l}"];
+}
+}
+subgraph cluster_Region_1694754978 {
+label = "R(2:3|(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000f|java.lang.Object T r1 = r0.next()\l}"];
+subgraph cluster_Region_13636846 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1668353525 {
+label = "IF [B:16:0x0017] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0017|if (r0.hasNext() != false) goto L7\l}"];
+subgraph cluster_Region_197602716 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0021|throw new java.lang.IllegalArgumentException(\"Sequence has more than one element.\")\l}"];
+}
+}
+subgraph cluster_Region_634679010 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0019|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001a}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0022}"];
+MethodNode[shape=record,label="{public static final T kotlin.sequences.SequencesKt___SequencesKt.single((r4v0 kotlin.sequences.Sequence\<? extends T\> A[D('$this$single' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0021 \-\> B:12:?, CROSS_EDGE: B:21:0x0029 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;)TT;\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_21 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_19 -> Node_12;
+Node_17 -> Node_12;
+Node_11 -> Node_13;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

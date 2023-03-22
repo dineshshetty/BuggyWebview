@@ -1,0 +1,46 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatActivity.dispatchKeyEvent(Landroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_1142870516 {
+label = "R(2:1|(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r4.getKeyCode()\landroidx.appcompat.app.ActionBar androidx.appcompat.app.ActionBar r1 = getSupportActionBar()\l}"];
+subgraph cluster_Region_2069718800 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1217409322 {
+label = "IF [B:3:0x000a, B:4:0x000c, B:6:0x0012] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r0 == 82) goto L3\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|ADDED_TO_REGION\l|if (r1 != null) goto L4\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|ADDED_TO_REGION\l|if (r1.onMenuKeyEvent(r4) != false) goto L6\l}"];
+subgraph cluster_Region_564793221 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1199770851 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001a|RETURN\l|return super.dispatchKeyEvent(r4)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0016}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.app.AppCompatActivity.dispatchKeyEvent((r3v0 'this' androidx.appcompat.app.AppCompatActivity A[IMMUTABLE_TYPE, THIS]), (r4v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lMETHOD_OVERRIDE: [ClspMth\{android.view.Window.Callback.dispatchKeyEvent(android.view.KeyEvent):boolean\}, ClspMth\{android.app.Activity.dispatchKeyEvent(android.view.KeyEvent):boolean\}]\lCROSS_EDGE: B:10:0x001a \-\> B:1:?, CROSS_EDGE: B:4:0x000c \-\> B:9:0x0016, CROSS_EDGE: B:3:0x000a \-\> B:9:0x0016\lTYPE_VARS: EMPTY\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_1;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+}
+

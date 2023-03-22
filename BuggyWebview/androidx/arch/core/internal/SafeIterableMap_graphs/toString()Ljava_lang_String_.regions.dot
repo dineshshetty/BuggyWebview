@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.arch.core.internal.SafeIterableMap.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_143694601 {
+label = "R(4:1|(2:4|(1:7)(0))|12|13)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"[\")\ljava.util.Iterator java.util.Iterator\<java.util.Map.Entry\<K, V\>\> r1 = iterator()\l}"];
+subgraph cluster_LoopRegion_1001162137 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|if (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_921493820 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0014|r0.append(r1.next().toString())\l}"];
+subgraph cluster_IfRegion_929569078 {
+label = "IF [B:21:0x0025] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0025|if (r1.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_1732298248 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0027|r0.append(\", \")\l}"];
+}
+subgraph cluster_Region_9264834 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x002d|r0.append(\"]\")\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0036|RETURN\l|return r0.toString()\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e|LOOP_START\lLOOP:0: B:18:0x000e\-\>B:27:0x000e\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0027|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000e|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000e|LOOP_END\lSYNTHETIC\lLOOP:0: B:18:0x000e\-\>B:27:0x000e\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x000e|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002d|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.arch.core.internal.SafeIterableMap.toString((r3v0 'this' androidx.arch.core.internal.SafeIterableMap\<K, V\> A[D('this' androidx.arch.core.internal.SafeIterableMap\<K, V\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0025 \-\> B:18:0x000e, BACK_EDGE: B:22:0x0027 \-\> B:18:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_26;
+Node_21 -> Node_28[style=dashed];
+Node_22 -> Node_29;
+Node_23 -> Node_24;
+Node_24 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_26 -> Node_22;
+Node_29 -> Node_27;
+Node_27 -> Node_18;
+Node_28 -> Node_27;
+Node_25 -> Node_23;
+}
+

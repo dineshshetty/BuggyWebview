@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.Key.matches(Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_1614937133 {
+label = "R(2:1|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.lang.String java.lang.String r0 = r1.mTargetString\l}"];
+subgraph cluster_Region_501641245 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1703233918 {
+label = "IF [B:14:0x0002, B:15:0x0004] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r0 == null) goto L8\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0004|ADDED_TO_REGION\l|if (r2 == null) goto L7\l}"];
+subgraph cluster_Region_124241184 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1720117652 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|RETURN\l|return r2.matches(r0)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000c|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean androidx.constraintlayout.motion.widget.Key.matches((r1v0 'this' androidx.constraintlayout.motion.widget.Key A[IMMUTABLE_TYPE, THIS]), (r2v0 'constraintTag' java.lang.String A[D('constraintTag' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x000d \-\> B:12:?, CROSS_EDGE: B:14:0x0002 \-\> B:19:0x000c\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [constraintTag]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_15 -> Node_17[style=dashed];
+Node_15 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_17 -> Node_18;
+Node_19 -> Node_12;
+}
+

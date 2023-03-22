@@ -1,0 +1,28 @@
+digraph "CFG forandroidx.core.view.DisplayCompat.parseDisplaySize(Ljava\/lang\/String;)Landroid\/graphics\/Point;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: INVOKE  (r0 I:java.lang.String) = (r4 I:java.lang.String A[D('displaySize' java.lang.String)]) type: VIRTUAL call: java.lang.String.trim():java.lang.String A[MD:():java.lang.String (c)] (LINE:113)\l0x0004: CONST_STR  (r1 I:java.lang.String) =  \"x\" \l0x0006: CONST  (r2 I:??[int, float, short, byte, char]) = (\-1 ??[int, float, short, byte, char]) \l0x0007: INVOKE  (r0 I:java.lang.String[]) = (r0 I:java.lang.String), (r1 I:java.lang.String), (r2 I:int) type: VIRTUAL call: java.lang.String.split(java.lang.String, int):java.lang.String[] A[MD:(java.lang.String, int):java.lang.String[] (c)]\l0x000b: ARRAY_LENGTH  (r1 I:int) = (r0 I:??[] A[D('displaySizeParts' java.lang.String[])])  (LINE:114)\l0x000c: CONST  (r2 I:??[int, float, short, byte, char]) = (2 ??[int, float, short, byte, char]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|0x000d: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0027 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|0x000f: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:115)\l0x0010: AGET  (r1 I:??[OBJECT, ARRAY]) = (r0 I:??[OBJECT, ARRAY][] A[D('displaySizeParts' java.lang.String[])]), (r1 I:??[int, short, byte, char]) \l0x0012: INVOKE  (r1 I:int) = (r1 I:java.lang.String) type: STATIC call: java.lang.Integer.parseInt(java.lang.String):int A[MD:(java.lang.String):int throws java.lang.NumberFormatException (c)]\l0x0016: CONST  (r2 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char])  (LINE:116)\l0x0017: AGET  (r2 I:??[OBJECT, ARRAY]) = (r0 I:??[OBJECT, ARRAY][] A[D('displaySizeParts' java.lang.String[])]), (r2 I:??[int, short, byte, char]) \l0x0019: INVOKE  (r2 I:int) = (r2 I:java.lang.String) type: STATIC call: java.lang.Integer.parseInt(java.lang.String):int A[MD:(java.lang.String):int throws java.lang.NumberFormatException (c)]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|0x001d: IF  (r1 I:??[int, byte, short, char] A[D('width' int)]) \<= (0 ??[int, byte, short, char])  \-\> B:9:0x0027  (LINE:117)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001f|0x001f: IF  (r2 I:??[int, byte, short, char] A[D('height' int)]) \<= (0 ??[int, byte, short, char])  \-\> B:9:0x0027 \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|0x0021: NEW_INSTANCE  (r3 I:android.graphics.Point) =  android.graphics.Point  (LINE:118)\l0x0023: INVOKE  (r3 I:android.graphics.Point), (r1 I:int A[D('width' int)]), (r2 I:int A[D('height' int)]) type: DIRECT call: android.graphics.Point.\<init\>(int, int):void A[MD:(int, int):void (c)]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0026|RETURN\l|0x0026: RETURN  (r3 I:android.graphics.Point) \l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027|0x0027: NEW_INSTANCE  (r1 I:java.lang.NumberFormatException A[D('width' int)]) =  java.lang.NumberFormatException  (LINE:121)\l0x0029: INVOKE  (r1 I:java.lang.NumberFormatException) type: DIRECT call: java.lang.NumberFormatException.\<init\>():void A[MD:():void (c)]\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002c|0x002c: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private static android.graphics.Point androidx.core.view.DisplayCompat.parseDisplaySize((r4 I:java.lang.String A[D('displaySize' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x002c \-\> B:1:?, CROSS_EDGE: B:5:0x001d \-\> B:9:0x0027, CROSS_EDGE: B:3:0x000d \-\> B:9:0x0027\lDebug Info:\l  0x0016\-0x0027: r1 'width' I\l  0x001d\-0x0027: r2 'height' I\l  0x000b\-0x002c: r0 'displaySizeParts' [Ljava\/lang\/String;\l  \-1 \-0x002c: r4 'displaySize' Ljava\/lang\/String;\lEXCEPTIONS:[Ljava\/lang\/NumberFormatException;]\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+}
+

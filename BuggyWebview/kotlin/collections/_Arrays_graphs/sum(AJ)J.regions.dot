@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.sum([J)J" {
+subgraph cluster_Region_1245257203 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\llong r0 = 0\lint r3 = 0\l\l}"];
+subgraph cluster_LoopRegion_635892060 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0009|LOOP_START\lLOOP:0: B:10:0x0009\-\>B:11:0x000b\lPHI: r0 r3 \l  PHI: (r0v2 'sum' long) = (r0v1 'sum' long), (r0v3 'sum' long) binds: [B:9:0x0000, B:11:0x000b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:9:0x0000, B:11:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L3\l}"];
+subgraph cluster_Region_1554306090 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000b|LOOP_END\lLOOP:0: B:10:0x0009\-\>B:11:0x000b\l|r4 = r6[r3]\lr0 += r4\lr3++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0011|RETURN\l|return r0\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0011|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final long kotlin.collections.ArraysKt___ArraysKt.sum((r6v0 '$this$sum' long[] A[D('$this$sum' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x000b \-\> B:10:0x0009\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_10;
+Node_12 -> Node_8;
+Node_7 -> Node_9;
+Node_13 -> Node_12;
+}
+

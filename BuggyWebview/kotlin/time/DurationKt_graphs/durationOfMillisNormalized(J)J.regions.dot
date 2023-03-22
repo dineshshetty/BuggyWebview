@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.time.DurationKt.durationOfMillisNormalized(J)J" {
+subgraph cluster_Region_976476372 {
+label = "R(1:(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_698247849 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1378664725 {
+label = "IF [B:19:0x0013] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0013|if (new kotlin.ranges.LongRange(\-4611686018426L, kotlin.time.DurationKt.MAX_NANOS_IN_MILLIS).contains(r8) != false) goto L3\l}"];
+subgraph cluster_Region_1089391731 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return durationOfNanos(millisToNanos(r8))\l}"];
+}
+}
+subgraph cluster_Region_1681873346 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0031|RETURN\lORIG_RETURN\l|return durationOfMillis(kotlin.ranges.RangesKt.coerceIn(r8, \-4611686018427387903L, (long) kotlin.time.DurationKt.MAX_MILLIS))\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0015}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001e}"];
+MethodNode[shape=record,label="{public static final long kotlin.time.DurationKt.durationOfMillisNormalized((r8v0 'millis' long A[D('millis' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001e \-\> B:22:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_17;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_20 -> Node_23;
+Node_21 -> Node_22;
+}
+

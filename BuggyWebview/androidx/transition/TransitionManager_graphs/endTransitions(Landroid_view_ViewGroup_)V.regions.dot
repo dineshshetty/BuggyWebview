@@ -1,0 +1,56 @@
+digraph "CFG forandroidx.transition.TransitionManager.endTransitions(Landroid\/view\/ViewGroup;)V" {
+subgraph cluster_Region_330952585 {
+label = "R(2:1|(1:(2:5|(1:7))))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|androidx.transition.TransitionManager.sPendingTransitions.remove(r4)\ljava.util.ArrayList java.util.ArrayList\<androidx.transition.Transition\> r0 = getRunningTransitions().get(r4)\l}"];
+subgraph cluster_Region_2097505578 {
+label = "R(1:(2:5|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1963814479 {
+label = "IF [B:16:0x000f, B:18:0x0015] THEN: R(2:5|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000f|if (r0 != null) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0015|ADDED_TO_REGION\l|if (r0.isEmpty() == false) goto L5\l}"];
+subgraph cluster_Region_841758565 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|java.util.ArrayList java.util.ArrayList\<androidx.transition.Transition\> r1 = new java.util.ArrayList\<\>(r0)\lint int r2 = r1.size() \- 1\l}"];
+subgraph cluster_LoopRegion_1071138241 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0022|LOOP_START\lLOOP:0: B:20:0x0022\-\>B:21:0x0024\lPHI: r2 \l  PHI: (r2v2 'i' int) = (r2v1 'i' int), (r2v3 'i' int) binds: [B:19:0x0017, B:21:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= 0) goto L7\l}"];
+subgraph cluster_Region_1665216532 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|LOOP_END\lLOOP:0: B:20:0x0022\-\>B:21:0x0024\l|androidx.transition.Transition androidx.transition.Transition r3 = r1.get(r2)\lr3.forceToEnd(r4)\lr2\-\-\l}"];
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0011}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0030|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0030|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public static void androidx.transition.TransitionManager.endTransitions((r4v0 'sceneRoot' android.view.ViewGroup A[D('sceneRoot' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0024 \-\> B:20:0x0022, CROSS_EDGE: B:18:0x0015 \-\> B:22:0x0030, CROSS_EDGE: B:16:0x000f \-\> B:22:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_22[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_24[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_20;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_23 -> Node_25;
+Node_25 -> Node_14;
+Node_24 -> Node_14;
+Node_22 -> Node_14;
+}
+

@@ -1,0 +1,82 @@
+digraph "CFG forkotlin.collections.builders.SerializedMap.readExternal(Ljava\/io\/ObjectInput;)V" {
+subgraph cluster_Region_1722756645 {
+label = "R(2:1|(2:(2:14|15)|(2:3|(2:(2:12|13)|(3:5|(1:7)|9)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, \"input\")\lbyte int r0 = r11.readByte()\l}"];
+subgraph cluster_Region_981105523 {
+label = "R(2:(2:14|15)|(2:3|(2:(2:12|13)|(3:5|(1:7)|9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1454953624 {
+label = "IF [B:3:0x0009] THEN: R(2:14|15) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r0 != 0) goto L14\l}"];
+subgraph cluster_Region_1044106854 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x004f}"];
+Node_14 [shape=record,label="{14\:\ 0x0065|throw new java.io.InvalidObjectException(\"Unsupported flags value: \" + r0)\l}"];
+}
+}
+subgraph cluster_Region_1091559048 {
+label = "R(2:3|(2:(2:12|13)|(3:5|(1:7)|9)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|int int r1 = r11.readInt()\l}"];
+subgraph cluster_Region_793010314 {
+label = "R(2:(2:12|13)|(3:5|(1:7)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1590566538 {
+label = "IF [B:5:0x000f] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (r1 \< 0) goto L12\l}"];
+subgraph cluster_Region_1312951775 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0033}"];
+Node_12 [shape=record,label="{12\:\ 0x004e|throw new java.io.InvalidObjectException(\"Illegal size value: \" + r1 + '.')\l}"];
+}
+}
+subgraph cluster_Region_787133071 {
+label = "R(3:5|(1:7)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|java.util.Map java.util.Map r2 = kotlin.collections.MapsKt.createMapBuilder(r1)\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_296665668 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|LOOP_START\lLOOP:0: B:7:0x0018\-\>B:8:0x001a\lPHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:6:0x0011, B:8:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r1) goto L7\l}"];
+subgraph cluster_Region_1060811957 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|LOOP_END\lLOOP:0: B:7:0x0018\-\>B:8:0x001a\l|java.lang.Object java.lang.Object r8 = r11.readObject()\ljava.lang.Object java.lang.Object r9 = r11.readObject()\lr2.put(r8, r9)\lr5++\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002b|r10.map = kotlin.collections.MapsKt.build(r2)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002b|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0032}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void kotlin.collections.builders.SerializedMap.readExternal((r10v0 'this' kotlin.collections.builders.SerializedMap A[IMMUTABLE_TYPE, THIS]), (r11v0 'input' java.io.ObjectInput A[D('input' java.io.ObjectInput), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:8:0x001a \-\> B:7:0x0018, CROSS_EDGE: B:12:0x004e \-\> B:1:?, CROSS_EDGE: B:14:0x0065 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{java.io.Externalizable.readExternal(java.io.ObjectInput):void throws java.lang.ClassNotFoundException, java.io.IOException\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_15[style=dashed];
+Node_8 -> Node_7;
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_15 -> Node_9;
+Node_10 -> Node_1;
+}
+

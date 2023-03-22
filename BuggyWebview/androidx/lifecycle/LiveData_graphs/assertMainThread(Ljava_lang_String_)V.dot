@@ -1,0 +1,18 @@
+digraph "CFG forandroidx.lifecycle.LiveData.assertMainThread(Ljava\/lang\/String;)V" {
+Node_7 [shape=record,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0000}"];
+Node_10 [shape=record,label="{10\:\ 0x0008|if (androidx.arch.core.executor.ArchTaskExecutor.getInstance().isMainThread() == false) goto L5\l}"];
+Node_11 [shape=record,label="{11\:\ 0x000a|RETURN\l|return\l}"];
+Node_8 [shape=record,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000b|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Cannot invoke \")\lr1.append(r3)\lr1.append(\" on a background thread\")\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0026|throw new java.lang.IllegalStateException(r1.toString())\l}"];
+MethodNode[shape=record,label="{static void androidx.lifecycle.LiveData.assertMainThread((r3v0 'methodName' java.lang.String A[D('methodName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0026 \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_7;Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_8;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+}
+

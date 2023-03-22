@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuPopupHelper.tryShow()Z" {
+subgraph cluster_Region_334632113 {
+label = "R(1:(2:(1:3)|(1:(2:(1:7)|(2:8|9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_919009116 {
+label = "R(2:(1:3)|(1:(2:(1:7)|(2:8|9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1718061580 {
+label = "IF [B:13:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0005|if (isShowing() == true) goto L3\l}"];
+subgraph cluster_Region_739747354 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0007|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_792950965 {
+label = "R(1:(2:(1:7)|(2:8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_784205334 {
+label = "R(2:(1:7)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1960042023 {
+label = "IF [B:16:0x000b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000b|if (r3.mAnchorView == null) goto L7\l}"];
+subgraph cluster_Region_1709539793 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000d|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1373100808 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|showPopup(0, 0, false, false)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0011|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0008}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.view.menu.MenuPopupHelper.tryShow((r3v0 'this' androidx.appcompat.view.menu.MenuPopupHelper A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000d \-\> B:11:?, CROSS_EDGE: B:19:0x0011 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_11;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+}
+

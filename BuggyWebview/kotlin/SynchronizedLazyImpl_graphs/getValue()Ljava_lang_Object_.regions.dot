@@ -1,0 +1,83 @@
+digraph "CFG forkotlin.SynchronizedLazyImpl.getValue()Ljava\/lang\/Object;" {
+subgraph cluster_Region_773418090 {
+label = "R(2:1|(2:(1:3)|(3:5|9|13))) | DECL_VAR: java.lang.Object typedValue\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|java.lang.Object T r0 = (T) r6._value\l}"];
+subgraph cluster_Region_178979053 {
+label = "R(2:(1:3)|(3:5|9|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_424885535 {
+label = "IF [B:23:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0004|if (r0 != kotlin.UNINITIALIZED_VALUE.INSTANCE) goto L3\l}"];
+subgraph cluster_Region_1364256466 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0006|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1913907154 {
+label = "R(3:5|9|13)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0007}"];
+subgraph cluster_SynchronizedRegion_1128641004 {
+label = "Synchronized:R(2:6|(2:9|(1:11)(1:14)))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0009}"];
+subgraph cluster_Region_1879812471 {
+label = "R(2:9|(1:11)(1:14))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000b|TRY_ENTER\lTryCatch #0 \{, blocks: (B:28:0x000b, B:31:0x0013), top: B:38:0x000b \}\lCatch: all \-\> 0x0025\l|java.lang.Object java.lang.Object r3 = r6._value     \/\/ Catch: java.lang.Throwable \-\> L25\l}"];
+subgraph cluster_IfRegion_362078496 {
+label = "IF [B:29:0x000f] THEN: R(1:11) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x000f|if (r3 != kotlin.UNINITIALIZED_VALUE.INSTANCE) goto L11\l}"];
+subgraph cluster_Region_363826504 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0011|r4 = (T) r3\l}"];
+}
+subgraph cluster_Region_1126145881 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0013|TRY_LEAVE\lTryCatch #0 \{, blocks: (B:28:0x000b, B:31:0x0013), top: B:38:0x000b \}\lCatch: all \-\> 0x0025\l|kotlin.jvm.functions.Function0\<? extends T\> kotlin.jvm.functions.Functions\<? extends T\> r4 = r6.initializer     \/\/ Catch: java.lang.Throwable \-\> L25\lkotlin.jvm.internal.Intrinsics.checkNotNull(r4)     \/\/ Catch: java.lang.Throwable \-\> L25\ljava.lang.Object r4 = (T) r4.invoke()\lr6._value = r4     \/\/ Catch: java.lang.Throwable \-\> L25\lr6.initializer = null     \/\/ Catch: java.lang.Throwable \-\> L25\l}"];
+}
+}
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x0024|RETURN\l|return (T) r4\l}"];
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000a}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x000b|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0023|DONT_GENERATE\lPHI: r4 \l  PHI: (r4v3 'typedValue' java.lang.Object) = (r4v2 'typedValue' java.lang.Object), (r4v4 'typedValue' java.lang.Object) binds: [B:31:0x0013, B:30:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit()\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0025|REMOVE\lExcHandler: all \-\> 0x0025\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0027|REMOVE\l|throw r2\l}"];
+MethodNode[shape=record,label="{public T kotlin.SynchronizedLazyImpl.getValue((r6v0 'this' kotlin.SynchronizedLazyImpl\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:34:0x0024 \-\> B:21:?, CROSS_EDGE: B:31:0x0013 \-\> B:33:0x0023, CROSS_EDGE: B:37:0x0027 \-\> B:21:?, CROSS_EDGE: B:38:0x000b \-\> B:35:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: ()TT;\lMETHOD_OVERRIDE: [kotlin.Lazy.getValue():T]\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_21;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_33;
+Node_31 -> Node_33;
+Node_31 -> Node_39;
+Node_34 -> Node_21;
+Node_20 -> Node_22;
+Node_27 -> Node_38;
+Node_38 -> Node_28;
+Node_38 -> Node_35;
+Node_33 -> Node_34;
+Node_39 -> Node_35;
+Node_35 -> Node_37;
+Node_37 -> Node_21;
+}
+

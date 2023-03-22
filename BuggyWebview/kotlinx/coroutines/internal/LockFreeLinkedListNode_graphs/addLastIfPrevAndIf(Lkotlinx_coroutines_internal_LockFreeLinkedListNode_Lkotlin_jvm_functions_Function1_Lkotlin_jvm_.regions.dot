@@ -1,0 +1,74 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeLinkedListNode.addLastIfPrevAndIf(Lkotlinx\/coroutines\/internal\/LockFreeLinkedListNode;Lkotlin\/jvm\/functions\/Function1;Lkotlin\/jvm\/functions\/Function0;)Z" {
+subgraph cluster_Region_111757377 {
+label = "R(2:1|(2:2|(2:(1:5)|(1:12))))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlinx.coroutines.internal.LockFreeLinkedListNode$CondAddOp kotlinx.coroutines.internal.LockFreeLinkedListNode.CondAddOp r3 = new kotlinx.coroutines.internal.LockFreeLinkedListNode$makeCondAddOp$1(r6, r8)\l}"];
+subgraph cluster_LoopRegion_582067496 {
+label = "LOOP:0: (2:2|(2:(1:5)|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1474476515 {
+label = "R(2:2|(2:(1:5)|(1:12)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|LOOP_START\lLOOP:0: B:18:0x000c\-\>B:22:0x0023\l|kotlinx.coroutines.internal.LockFreeLinkedListNode kotlinx.coroutines.internal.LockFreeLinkedListNode r2 = getPrevNode()\l}"];
+subgraph cluster_Region_111493730 {
+label = "R(2:(1:5)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1336593506 {
+label = "IF [B:19:0x001c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|if (r7.invoke(r2).booleanValue() == true) goto L4\l}"];
+subgraph cluster_Region_1603333631 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_884364770 {
+label = "Switch: 2
+ case 1 -> R(1:10)
+ case 2 -> R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0023|LOOP_END\lLOOP:0: B:18:0x000c\-\>B:22:0x0023\l|switch(r2.tryCondAddNext(r6, r5, r3)) \{\l    case 1: goto L9;\l    case 2: goto L6;\l    default: goto L2;\l\}\l}"];
+subgraph cluster_Region_291067025 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0028|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1047407479 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0027|RETURN\l|return false\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_309647498 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001e|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001f}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0027|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0028|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.internal.LockFreeLinkedListNode.addLastIfPrevAndIf((r5v0 'this' kotlinx.coroutines.internal.LockFreeLinkedListNode A[IMMUTABLE_TYPE, THIS]), (r6v0 'node' kotlinx.coroutines.internal.LockFreeLinkedListNode A[D('node' kotlinx.coroutines.internal.LockFreeLinkedListNode), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 kotlin.jvm.functions.Function1\<? super kotlinx.coroutines.internal.LockFreeLinkedListNode, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 kotlin.jvm.functions.Function0\<java.lang.Boolean\> A[D('condition' kotlin.jvm.functions.Function0), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0027 \-\> B:16:?, CROSS_EDGE: B:26:0x0029 \-\> B:16:?, BACK_EDGE: B:22:0x0023 \-\> B:18:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlinx\/coroutines\/internal\/LockFreeLinkedListNode;Lkotlin\/jvm\/functions\/Function1\<\-Lkotlinx\/coroutines\/internal\/LockFreeLinkedListNode;Ljava\/lang\/Boolean;\>;Lkotlin\/jvm\/functions\/Function0\<Ljava\/lang\/Boolean;\>;)Z\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_21;
+Node_19 -> Node_29[style=dashed];
+Node_22 -> Node_18;
+Node_22 -> Node_27;
+Node_22 -> Node_28;
+Node_25 -> Node_16;
+Node_24 -> Node_16;
+Node_20 -> Node_16;
+Node_15 -> Node_17;
+Node_21 -> Node_22;
+Node_27 -> Node_24;
+Node_28 -> Node_25;
+Node_29 -> Node_20;
+}
+

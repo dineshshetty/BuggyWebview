@@ -1,0 +1,46 @@
+digraph "CFG forandroidx.recyclerview.widget.FastScroller.hide(I)V" {
+subgraph cluster_Region_1318713812 {
+label = "R(2:2|4)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_704234764 {
+label = "Switch: 3
+ case 1 -> R(2:3|1)
+ case 2 -> R(1:1)
+ case default -> R(1:7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|switch(r4.mAnimationState) \{\l    case 1: goto L3;\l    case 2: goto L4;\l    default: goto L7;\l\}\l}"];
+subgraph cluster_Region_915669588 {
+label = "R(2:3|1)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0006|r4.mShowHideAnimator.cancel()\l}"];
+Node_InsnContainer_1421772081 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_166053488 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_1850975205 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2026085081 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x000b|r4.mAnimationState = 3\landroid.animation.ValueAnimator android.animation.ValueAnimator r0 = r4.mShowHideAnimator\lr0.setFloatValues(((java.lang.Float) r0.getAnimatedValue()).floatValue(), 0.0f)\lr4.mShowHideAnimator.setDuration(r5)\lr4.mShowHideAnimator.start()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0032|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.FastScroller.hide((r4v0 'this' androidx.recyclerview.widget.FastScroller A[IMMUTABLE_TYPE, THIS]), (r5v0 'duration' int A[D('duration' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0002 \-\> B:6:0x000b, CROSS_EDGE: B:3:0x0002 \-\> B:7:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Can't fix incorrect switch cases order, some code will duplicate\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_5;
+Node_3 -> Node_6;
+Node_3 -> Node_8;
+Node_5 -> Node_6;
+Node_8 -> Node_1;
+Node_6 -> Node_7;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_7 -> Node_1;
+}
+

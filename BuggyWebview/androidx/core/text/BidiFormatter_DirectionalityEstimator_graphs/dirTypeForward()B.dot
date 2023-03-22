@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.core.text.BidiFormatter.DirectionalityEstimator.dirTypeForward()B" {
+Node_18 [shape=record,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0000|char r0 = r3.text.charAt(r3.charIndex)\lr3.lastChar = r0\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000e|if (java.lang.Character.isHighSurrogate(r0) == false) goto L6\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0010|int r0 = java.lang.Character.codePointAt(r3.text, r3.charIndex)\lr3.charIndex = r3.charIndex + java.lang.Character.charCount(r0)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0025|RETURN\l|return java.lang.Character.getDirectionality(r0)\l}"];
+Node_19 [shape=record,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0026|r3.charIndex = r3.charIndex + 1\lbyte r0 = getCachedDirectionality(r3.lastChar)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0034|if (r3.isHtml == false) goto L17\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0036|char r1 = r3.lastChar\l}"];
+Node_27 [shape=record,label="{27\:\ 0x003a|if (r1 != '\<') goto L12\l}"];
+Node_28 [shape=record,label="{28\:\ 0x003c}"];
+Node_34 [shape=record,label="{34\:\ ?|SYNTHETIC\lRETURN\l|return skipTagForward()\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0041}"];
+Node_30 [shape=record,label="{30\:\ 0x0043|if (r1 != '&') goto L16\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0045}"];
+Node_32 [shape=record,label="{32\:\ 0x0049|RETURN\lORIG_RETURN\l|return skipEntityForward()\l}"];
+Node_35 [shape=record,label="{35\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+MethodNode[shape=record,label="{byte androidx.core.text.BidiFormatter.DirectionalityEstimator.dirTypeForward((r3v0 'this' androidx.core.text.BidiFormatter$DirectionalityEstimator A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x0049 \-\> B:19:?, CROSS_EDGE: B:31:0x0045 \-\> B:32:0x0049, CROSS_EDGE: B:30:0x0043 \-\> B:32:0x0049, CROSS_EDGE: B:25:0x0034 \-\> B:32:0x0049\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_24;
+Node_22 -> Node_23;
+Node_23 -> Node_19;
+Node_24 -> Node_25;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_33;
+Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_29;
+Node_28 -> Node_34;
+Node_34 -> Node_19;
+Node_29 -> Node_30;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_35;
+Node_31 -> Node_32;
+Node_32 -> Node_19;
+Node_35 -> Node_19;
+Node_33 -> Node_19;
+}
+

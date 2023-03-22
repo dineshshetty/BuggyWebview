@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.loader.app.LoaderManagerImpl.restartLoader(ILandroid\/os\/Bundle;Landroidx\/loader\/app\/LoaderManager$LoaderCallbacks;)Landroidx\/loader\/content\/Loader;" {
+Node_18 [shape=record,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0000}"];
+Node_21 [shape=record,label="{21\:\ 0x0006|if (r3.mLoaderViewModel.isCreatingLoader() != false) goto L16\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0008}"];
+Node_23 [shape=record,label="{23\:\ 0x0010|if (android.os.Looper.getMainLooper() != android.os.Looper.myLooper()) goto L14\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0012}"];
+Node_25 [shape=record,label="{25\:\ 0x0014|if (androidx.loader.app.LoaderManagerImpl.DEBUG == false) goto L8\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0016|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"restartLoader in \")\lr0.append(r3)\lr0.append(\": args=\")\lr0.append(r5)\landroid.util.Log.v(androidx.loader.app.LoaderManagerImpl.TAG, r0.toString())\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0034|androidx.loader.app.LoaderManagerImpl$LoaderInfo r0 = r3.mLoaderViewModel.getLoader(r4)\lr1 = null\l}"];
+Node_28 [shape=record,label="{28\:\ 0x003b|if (r0 == null) goto L11\l}"];
+Node_29 [shape=record,label="{29\:\ 0x003d|androidx.loader.content.Loader r1 = r0.destroy(false)\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0042|PHI: r1 \l  PHI: (r1v4 'priorLoader' androidx.loader.content.Loader\<D\>) = (r1v3 'priorLoader' androidx.loader.content.Loader\<D\>), (r1v5 'priorLoader' androidx.loader.content.Loader\<D\>) binds: [B:28:0x003b, B:29:0x003d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0046|RETURN\l|return createAndInstallLoader(r4, r5, r6, r1)\l}"];
+Node_19 [shape=record,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0047}"];
+Node_33 [shape=record,label="{33\:\ 0x004e|throw new java.lang.IllegalStateException(\"restartLoader must be called on the main thread\")\l}"];
+Node_34 [shape=record,label="{34\:\ 0x004f}"];
+Node_35 [shape=record,label="{35\:\ 0x0056|throw new java.lang.IllegalStateException(\"Called while creating a loader\")\l}"];
+MethodNode[shape=record,label="{public androidx.loader.content.Loader\<D\> androidx.loader.app.LoaderManagerImpl.restartLoader((r3v0 'this' androidx.loader.app.LoaderManagerImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 'id' int A[D('id' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'args' android.os.Bundle A[D('args' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'callback' androidx.loader.app.LoaderManager$LoaderCallbacks\<D\> A[D('callback' androidx.loader.app.LoaderManager$LoaderCallbacks\<D\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x003b \-\> B:30:0x0042, CROSS_EDGE: B:25:0x0014 \-\> B:27:0x0034, CROSS_EDGE: B:33:0x004e \-\> B:19:?, CROSS_EDGE: B:35:0x0056 \-\> B:19:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [D]\lSIGNATURE: \<D:Ljava\/lang\/Object;\>(ILandroid\/os\/Bundle;Landroidx\/loader\/app\/LoaderManager$LoaderCallbacks\<TD;\>;)Landroidx\/loader\/content\/Loader\<TD;\>;\lMETHOD_OVERRIDE: [androidx.loader.app.LoaderManager.restartLoader(int, android.os.Bundle, androidx.loader.app.LoaderManager$LoaderCallbacks\<D\>):androidx.loader.content.Loader\<D\>]\l}"];
+MethodNode -> Node_18;Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_34;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_32;
+Node_24 -> Node_25;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_27;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_29[style=dashed];
+Node_28 -> Node_30;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_19;
+Node_32 -> Node_33;
+Node_33 -> Node_19;
+Node_34 -> Node_35;
+Node_35 -> Node_19;
+}
+

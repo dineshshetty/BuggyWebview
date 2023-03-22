@@ -1,0 +1,82 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.minOrThrow(Ljava\/lang\/Iterable;)Ljava\/lang\/Comparable;" {
+subgraph cluster_Region_1091993299 {
+label = "R(2:1|(2:(1:17)|(3:3|(2:6|(1:9)(0))|14)))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\ljava.util.Iterator java.util.Iterator r0 = r4.iterator()\l}"];
+subgraph cluster_Region_1875942672 {
+label = "R(2:(1:17)|(3:3|(2:6|(1:9)(0))|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_326366116 {
+label = "IF [B:39:0x000d] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x000d|if (r0.hasNext() == false) goto L16\l}"];
+subgraph cluster_Region_1993179159 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x002f|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_2109092115 {
+label = "R(3:3|(2:6|(1:9)(0))|14)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x000f|java.lang.Comparable T r1 = r0.next()\l}"];
+subgraph cluster_LoopRegion_1009742532 {
+label = "LOOP:0: (2:6|(1:9)(0))";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0019|if (r0.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_1312646004 {
+label = "R(2:6|(1:9)(0))";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x001b|java.lang.Comparable T r2 = r0.next()\l}"];
+subgraph cluster_IfRegion_237881381 {
+label = "IF [B:44:0x0025] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0025|if (r1.compareTo(r2) \> 0) goto L8\l}"];
+subgraph cluster_Region_1121933252 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0027|r1 = r2\l}"];
+}
+subgraph cluster_Region_842416340 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_46 [shape=record,label="{46\:\ 0x0029|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_36 [shape=record,color=red,label="{36\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0015|LOOP_START\lLOOP:0: B:41:0x0015\-\>B:51:0x0015\lPHI: r1 \l  PHI: (r1v4 T extends java.lang.Comparable\<? super T\>) = (r1v3 T extends java.lang.Comparable\<? super T\>), (r1v5 T extends java.lang.Comparable\<? super T\>) binds: [B:40:0x000f, B:51:0x0015] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x0027|SYNTHETIC\l}"];
+Node_53 [shape=record,color=red,label="{53\:\ 0x0015|SYNTHETIC\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x0015|LOOP_END\lSYNTHETIC\lLOOP:0: B:41:0x0015\-\>B:51:0x0015\lPHI: r1 \l  PHI: (r1v5 T extends java.lang.Comparable\<? super T\>) = (r1v4 T extends java.lang.Comparable\<? super T\>), (r1v6 T extends java.lang.Comparable\<? super T\>) binds: [B:52:0x0015, B:53:0x0015] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x0015|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x0029|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x002a}"];
+MethodNode[shape=record,label="{public static final T extends java.lang.Comparable\<? super T\> kotlin.collections.CollectionsKt___CollectionsKt.minOrThrow((r4v0 java.lang.Iterable\<? extends T extends java.lang.Comparable\<? super T\>\> A[D('$this$min' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:44:0x0025 \-\> B:41:0x0015, BACK_EDGE: B:45:0x0027 \-\> B:41:0x0015, CROSS_EDGE: B:48:0x002f \-\> B:37:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends java.lang.Comparable\<? super T\>]\lSIGNATURE: \<T::Ljava\/lang\/Comparable\<\-TT;\>;\>(Ljava\/lang\/Iterable\<+TT;\>;)TT;\l}"];
+MethodNode -> Node_36;Node_38 -> Node_39;
+Node_39 -> Node_40[style=dashed];
+Node_39 -> Node_47;
+Node_48 -> Node_37;
+Node_40 -> Node_41;
+Node_42 -> Node_43;
+Node_42 -> Node_50[style=dashed];
+Node_43 -> Node_44;
+Node_44 -> Node_49;
+Node_44 -> Node_52[style=dashed];
+Node_45 -> Node_53;
+Node_46 -> Node_37;
+Node_36 -> Node_38;
+Node_41 -> Node_42;
+Node_49 -> Node_45;
+Node_53 -> Node_51;
+Node_51 -> Node_41;
+Node_52 -> Node_51;
+Node_50 -> Node_46;
+Node_47 -> Node_48;
+}
+

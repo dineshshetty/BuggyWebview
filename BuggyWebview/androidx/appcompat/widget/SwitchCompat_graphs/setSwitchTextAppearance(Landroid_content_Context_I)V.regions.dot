@@ -1,0 +1,77 @@
+digraph "CFG forandroidx.appcompat.widget.SwitchCompat.setSwitchTextAppearance(Landroid\/content\/Context;I)V" {
+subgraph cluster_Region_454899339 {
+label = "R(7:1|(1:3)(1:16)|4|(1:8)|9|(1:11)(1:15)|12)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|androidx.appcompat.widget.TintTypedArray androidx.appcompat.widget.TintTypedArray r0 = androidx.appcompat.widget.TintTypedArray.obtainStyledAttributes(r9, r10, androidx.appcompat.C0019R.styleable.TextAppearance)\landroid.content.res.ColorStateList android.content.res.ColorStateList r1 = r0.getColorStateList(androidx.appcompat.C0019R.styleable.TextAppearance_android_textColor)\l}"];
+subgraph cluster_IfRegion_1923045732 {
+label = "IF [B:20:0x000c] THEN: R(1:3) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000c|if (r1 != null) goto L3\l}"];
+subgraph cluster_Region_1626980513 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|r8.mTextColors = r1\l}"];
+}
+subgraph cluster_Region_1363036579 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|r8.mTextColors = getTextColors()\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0017|int int r2 = r0.getDimensionPixelSize(androidx.appcompat.C0019R.styleable.TextAppearance_android_textSize, 0)\l}"];
+subgraph cluster_IfRegion_1436522718 {
+label = "IF [B:24:0x001e, B:26:0x0029] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|if (r2 != 0) goto L6\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0029|ADDED_TO_REGION\l|if (r2 != r8.mTextPaint.getTextSize()) goto L8\l}"];
+subgraph cluster_Region_667174280 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002b|r8.mTextPaint.setTextSize(r2)\lrequestLayout()\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0034|int int r4 = r0.getInt(androidx.appcompat.C0019R.styleable.TextAppearance_android_typeface, \-1)\lint int r5 = r0.getInt(androidx.appcompat.C0019R.styleable.TextAppearance_android_textStyle, \-1)\lsetSwitchTypefaceByIndex(r4, r5)\lboolean boolean r3 = r0.getBoolean(androidx.appcompat.C0019R.styleable.TextAppearance_textAllCaps, false)\l}"];
+subgraph cluster_IfRegion_790129773 {
+label = "IF [B:29:0x004a] THEN: R(1:11) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x004a|if (r3 != false) goto L11\l}"];
+subgraph cluster_Region_1724950845 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x004c|r8.mSwitchTransformationMethod = new androidx.appcompat.text.AllCapsTransformationMethod(getContext())\l}"];
+}
+subgraph cluster_Region_593358139 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0058|r8.mSwitchTransformationMethod = null\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x005b|setTextOnInternal(r8.mTextOn)\lsetTextOffInternal(r8.mTextOff)\lr0.recycle()\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0020}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0068}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.SwitchCompat.setSwitchTextAppearance((r8v0 'this' androidx.appcompat.widget.SwitchCompat A[IMMUTABLE_TYPE, THIS]), (r9v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'resid' int A[D('resid' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0058 \-\> B:32:0x005b, CROSS_EDGE: B:26:0x0029 \-\> B:28:0x0034, CROSS_EDGE: B:24:0x001e \-\> B:28:0x0034, CROSS_EDGE: B:22:0x0011 \-\> B:23:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_32;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_17 -> Node_19;
+Node_25 -> Node_26;
+Node_33 -> Node_18;
+}
+

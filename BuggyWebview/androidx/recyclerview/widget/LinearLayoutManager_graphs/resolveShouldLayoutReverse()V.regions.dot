@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.resolveShouldLayoutReverse()V" {
+subgraph cluster_Region_1086635705 {
+label = "R(1:(1:8)(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1191847032 {
+label = "IF [B:14:0x0003, B:16:0x0009] THEN: R(1:8) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0003|if (r2.mOrientation == 1) goto L8\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0009|ADDED_TO_REGION\l|if (isLayoutRTL() == false) goto L8\l}"];
+subgraph cluster_Region_228435325 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|r2.mShouldReverseLayout = r2.mReverseLayout\l}"];
+}
+subgraph cluster_Region_1197581441 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|r2.mShouldReverseLayout = !r2.mReverseLayout\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0005}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.LinearLayoutManager.resolveShouldLayoutReverse((r2v0 'this' androidx.recyclerview.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0012 \-\> B:20:0x0016, CROSS_EDGE: B:14:0x0003 \-\> B:19:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_19;
+Node_19 -> Node_20;
+Node_18 -> Node_21;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_21 -> Node_12;
+Node_20 -> Node_12;
+}
+

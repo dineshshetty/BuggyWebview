@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.core.location.LocationManagerCompat.registerGnssStatusCallback(Landroid\/location\/LocationManager;Landroidx\/core\/location\/GnssStatusCompat$Callback;Landroid\/os\/Handler;)Z" {
+subgraph cluster_Region_631922244 {
+label = "R(1:(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1686320248 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1280491335 {
+label = "IF [B:11:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 30) goto L3\l}"];
+subgraph cluster_Region_1686922474 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000e|RETURN\l|return registerGnssStatusCallback(r2, androidx.core.p003os.ExecutorCompat.create(r4), r3)\l}"];
+}
+}
+subgraph cluster_Region_329469505 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0018|RETURN\l|return registerGnssStatusCallback(r2, new androidx.core.location.LocationManagerCompat.InlineHandlerExecutor(r4), r3)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0006}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000f}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.location.LocationManagerCompat.registerGnssStatusCallback((r2v0 'locationManager' android.location.LocationManager A[D('locationManager' android.location.LocationManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'callback' androidx.core.location.GnssStatusCompat$Callback A[D('callback' androidx.core.location.GnssStatusCompat$Callback), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'handler' android.os.Handler A[D('handler' android.os.Handler), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0018 \-\> B:9:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

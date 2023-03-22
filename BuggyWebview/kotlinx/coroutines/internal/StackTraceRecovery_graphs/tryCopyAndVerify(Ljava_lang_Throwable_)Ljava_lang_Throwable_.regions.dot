@@ -1,0 +1,64 @@
+digraph "CFG forkotlinx.coroutines.internal.StackTraceRecoveryKt.tryCopyAndVerify(Ljava\/lang\/Throwable;)Ljava\/lang\/Throwable;" {
+subgraph cluster_Region_1060023769 {
+label = "R(2:1|(2:(1:3)|(1:(2:(1:10)|(1:9)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.lang.Throwable E r0 = (E) kotlinx.coroutines.internal.ExceptionsConstructorKt.tryCopyException(r4)\l}"];
+subgraph cluster_Region_23607067 {
+label = "R(2:(1:3)|(1:(2:(1:10)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1482943645 {
+label = "IF [B:14:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0005|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_37158897 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0007|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_22641932 {
+label = "R(1:(2:(1:10)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1379047915 {
+label = "R(2:(1:10)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1235210190 {
+label = "IF [B:17:0x000a, B:19:0x0018] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|if ((r4 instanceof kotlinx.coroutines.CopyableThrowable) == true) goto L10\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0018|ADDED_TO_REGION\l|if (kotlin.jvm.internal.Intrinsics.areEqual(r0.getMessage(), r4.getMessage()) == true) goto L10\l}"];
+subgraph cluster_Region_1741163241 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001b|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_304266329 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001a|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0008}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000c}"];
+MethodNode[shape=record,label="{private static final E extends java.lang.Throwable kotlinx.coroutines.internal.StackTraceRecoveryKt.tryCopyAndVerify((r4v0 E extends java.lang.Throwable A[D('exception' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x001a \-\> B:12:?, CROSS_EDGE: B:21:0x001b \-\> B:12:?, CROSS_EDGE: B:17:0x000a \-\> B:21:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: [E extends java.lang.Throwable]\lSIGNATURE: \<E:Ljava\/lang\/Throwable;\>(TE;)TE;\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_21 -> Node_12;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.floatingactionbutton.ExtendedFloatingActionButton.setExtended(Z)V" {
+subgraph cluster_Region_1852138059 {
+label = "R(1:(2:(1:3)|(2:5|(2:(1:9)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_331394146 {
+label = "R(2:(1:3)|(2:5|(2:(1:9)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_549312163 {
+label = "IF [B:16:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if (r2.isExtended == r3) goto L3\l}"];
+subgraph cluster_Region_1453513705 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_441807045 {
+label = "R(2:5|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|com.google.android.material.floatingactionbutton.MotionStrategy r0 = r3 ? r2.extendStrategy : r2.shrinkStrategy\l}"];
+subgraph cluster_Region_319855692 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1421592507 {
+label = "IF [B:22:0x0010] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|if (r0.shouldCancel() != false) goto L9\l}"];
+subgraph cluster_Region_94736880 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0012|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_600366162 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0013|r0.performNow()\l}"];
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0007}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000c|PHI: r0 \l  PHI: (r0v2 'motionStrategy' com.google.android.material.floatingactionbutton.MotionStrategy) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0016}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000a}"];
+MethodNode[shape=record,label="{public void com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton.setExtended((r2v0 'this' com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton A[IMMUTABLE_TYPE, THIS]), (r3v0 'extended' boolean A[D('extended' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0012 \-\> B:14:?, CROSS_EDGE: B:25:0x0016 \-\> B:14:?, CROSS_EDGE: B:20:0x000a \-\> B:21:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_14;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_14;
+Node_24 -> Node_25;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_25 -> Node_14;
+Node_20 -> Node_21;
+}
+

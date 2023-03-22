@@ -1,0 +1,46 @@
+digraph "CFG forandroidx.loader.content.AsyncTaskLoader.executePendingTask()V" {
+Node_19 [shape=record,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0000}"];
+Node_22 [shape=record,label="{22\:\ 0x0002|if (r8.mCancellingTask != null) goto L18\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0004}"];
+Node_24 [shape=record,label="{24\:\ 0x0006|if (r8.mTask == null) goto L17\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0008}"];
+Node_26 [shape=record,label="{26\:\ 0x000c|if (r8.mTask.waiting == false) goto L8\l}"];
+Node_27 [shape=record,label="{27\:\ 0x000e|r8.mTask.waiting = false\lr8.mHandler.removeCallbacks(r8.mTask)\l}"];
+Node_28 [shape=record,label="{28\:\ 0x001a}"];
+Node_29 [shape=record,label="{29\:\ 0x0020|if ((r8.mUpdateThrottle \> 0 ? 1 : (r8.mUpdateThrottle == 0 ? 0 : \-1)) \<= 0) goto L15\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0022|long r0 = android.os.SystemClock.uptimeMillis()\l}"];
+Node_31 [shape=record,label="{31\:\ 0x002d|if ((r0 \> (r8.mLastLoadCompleteTime + r8.mUpdateThrottle) ? 1 : (r0 == (r8.mLastLoadCompleteTime + r8.mUpdateThrottle) ? 0 : \-1)) \>= 0) goto L15\l}"];
+Node_32 [shape=record,label="{32\:\ 0x002f|r8.mTask.waiting = true\lr8.mHandler.postAtTime(r8.mTask, r8.mLastLoadCompleteTime + r8.mUpdateThrottle)\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0040|RETURN\l|return\l}"];
+Node_20 [shape=record,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0041|r8.mTask.executeOnExecutor(r8.mExecutor, null)\l}"];
+Node_35 [shape=record,label="{35\:\ 0x004c|RETURN\lORIG_RETURN\l|return\l}"];
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_36 [shape=record,label="{36\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{void androidx.loader.content.AsyncTaskLoader.executePendingTask((r8v0 'this' androidx.loader.content.AsyncTaskLoader\<D\> A[D('this' androidx.loader.content.AsyncTaskLoader\<D\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x004c \-\> B:20:?, CROSS_EDGE: B:29:0x0020 \-\> B:34:0x0041, CROSS_EDGE: B:26:0x000c \-\> B:28:0x001a, CROSS_EDGE: B:24:0x0006 \-\> B:35:0x004c, CROSS_EDGE: B:22:0x0002 \-\> B:35:0x004c\lINLINE_NOT_NEEDED\lTYPE_VARS: [D]\l}"];
+MethodNode -> Node_19;Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_36;
+Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_37;
+Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_34;
+Node_30 -> Node_31;
+Node_31 -> Node_32[style=dashed];
+Node_31 -> Node_34;
+Node_32 -> Node_33;
+Node_33 -> Node_20;
+Node_34 -> Node_35;
+Node_35 -> Node_20;
+Node_37 -> Node_20;
+Node_36 -> Node_20;
+}
+

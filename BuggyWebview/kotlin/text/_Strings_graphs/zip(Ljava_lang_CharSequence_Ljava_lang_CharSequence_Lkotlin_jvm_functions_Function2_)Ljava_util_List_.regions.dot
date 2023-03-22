@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.zip(Ljava\/lang\/CharSequence;Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function2;)Ljava\/util\/List;" {
+subgraph cluster_Region_504674139 {
+label = "R(3:1|(1:3)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"other\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"transform\")\lint int r1 = java.lang.Math.min(r6.length(), r7.length())\ljava.util.ArrayList java.util.ArrayList r2 = new java.util.ArrayList(r1)\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_407806182 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0022|LOOP_START\lLOOP:0: B:11:0x0022\-\>B:12:0x0024\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v4 'i' int) binds: [B:10:0x0000, B:12:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r1) goto L3\l}"];
+subgraph cluster_Region_556366519 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0024|LOOP_END\lLOOP:0: B:11:0x0022\-\>B:12:0x0024\l|r2.add(r8.invoke(java.lang.Character.valueOf(r6.charAt(r3)), java.lang.Character.valueOf(r7.charAt(r3))))\lr3++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0041|RETURN\l|return r2\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003e|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003e}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<V\> kotlin.text.StringsKt___StringsKt.zip((r6v0 '$this$zip' java.lang.CharSequence A[D('$this$zip' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'other' java.lang.CharSequence A[D('other' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'transform' kotlin.jvm.functions.Function2\<? super java.lang.Character, ? super java.lang.Character, ? extends V\> A[D('transform' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0024 \-\> B:11:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: [V]\lSIGNATURE: \<V:Ljava\/lang\/Object;\>(Ljava\/lang\/CharSequence;Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Character;\-Ljava\/lang\/Character;+TV;\>;)Ljava\/util\/List\<TV;\>;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_15 -> Node_13;
+Node_13 -> Node_14;
+}
+

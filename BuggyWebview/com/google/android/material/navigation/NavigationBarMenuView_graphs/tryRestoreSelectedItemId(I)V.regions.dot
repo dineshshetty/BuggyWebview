@@ -1,0 +1,57 @@
+digraph "CFG forcom.google.android.material.navigation.NavigationBarMenuView.tryRestoreSelectedItemId(I)V" {
+subgraph cluster_Region_1731989333 {
+label = "R(2:1|(2:3|(2:(2:7|8)|(1:5))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = r4.menu.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_418072014 {
+label = "LOOP:0: (2:3|(2:(2:7|8)|(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0007|LOOP_START\lLOOP:0: B:15:0x0007\-\>B:19:0x001e\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:14:0x0000, B:19:0x001e] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_1567466799 {
+label = "R(2:3|(2:(2:7|8)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|android.view.MenuItem android.view.MenuItem r2 = r4.menu.getItem(r1)\l}"];
+subgraph cluster_Region_36473489 {
+label = "R(2:(2:7|8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_405513438 {
+label = "IF [B:17:0x0013] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|if (r5 == r2.getItemId()) goto L6\l}"];
+subgraph cluster_Region_1521246064 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|r4.selectedItemId = r5\lr4.selectedItemPosition = r1\lr2.setChecked(true)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0021|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_819278632 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001e|LOOP_END\lLOOP:0: B:15:0x0007\-\>B:19:0x001e\l|r1++\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0015|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0021|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.navigation.NavigationBarMenuView.tryRestoreSelectedItemId((r4v0 'this' com.google.android.material.navigation.NavigationBarMenuView A[IMMUTABLE_TYPE, THIS]), (r5v0 'itemId' int A[D('itemId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x001e \-\> B:15:0x0007, CROSS_EDGE: B:15:0x0007 \-\> B:20:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_21;
+Node_18 -> Node_20;
+Node_20 -> Node_13;
+Node_19 -> Node_15;
+Node_12 -> Node_14;
+Node_21 -> Node_18;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+}
+

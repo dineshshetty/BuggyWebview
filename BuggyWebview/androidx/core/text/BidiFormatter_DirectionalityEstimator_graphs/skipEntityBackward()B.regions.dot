@@ -1,0 +1,70 @@
+digraph "CFG forandroidx.core.text.BidiFormatter.DirectionalityEstimator.skipEntityBackward()B" {
+subgraph cluster_Region_1033498989 {
+label = "R(4:1|(2:2|(2:(1:13)|(2:4|(1:12))))|8|9) | DECL_VAR: char null\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|int int r0 = r4.charIndex\l}"];
+subgraph cluster_LoopRegion_68574898 {
+label = "LOOP:0: (2:2|(2:(1:13)|(2:4|(1:12))))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001b|LOOP_END\lLOOP:0: B:18:0x0002\-\>B:24:0x001b\l|if (r1 != ';') goto L2\l}"];
+subgraph cluster_Region_2047969002 {
+label = "R(2:2|(2:(1:13)|(2:4|(1:12))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|LOOP_START\lLOOP:0: B:18:0x0002\-\>B:24:0x001b\l|int int r1 = r4.charIndex\l}"];
+subgraph cluster_Region_342517539 {
+label = "R(2:(1:13)|(2:4|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_891007817 {
+label = "IF [B:19:0x0006] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|if (r1 \<= 0) goto L13\l}"];
+subgraph cluster_Region_1232193745 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001d|SYNTHETIC\lEDGE_INSN: B:28:0x001d\-\>B:25:0x001d ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1987500936 {
+label = "R(2:4|(1:12))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|java.lang.CharSequence java.lang.CharSequence r3 = r4.text\lint int r1 = r1 \- 1\lr4.charIndex = r1\lchar r1 = r3.charAt(r1)\lr4.lastChar = r1\l}"];
+subgraph cluster_IfRegion_1917234700 {
+label = "IF [B:21:0x0016] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|if (r1 == '&') goto L11\l}"];
+subgraph cluster_Region_1512141115 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0018|RETURN\l|return (byte) 12\l}"];
+}
+}
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x001d|EDGE_INSN: B:28:0x001d\-\>B:25:0x001d ?: BREAK  \l|r4.charIndex = r0\lr4.lastChar = ';'\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0023|RETURN\l|return (byte) 13\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001d|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0018|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private byte androidx.core.text.BidiFormatter.DirectionalityEstimator.skipEntityBackward((r4v0 'this' androidx.core.text.BidiFormatter$DirectionalityEstimator A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:24:0x001b \-\> B:18:0x0002, CROSS_EDGE: B:26:0x0023 \-\> B:16:?, CROSS_EDGE: B:19:0x0006 \-\> B:25:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_24 -> Node_18;
+Node_24 -> Node_29[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_28;
+Node_28 -> Node_25;
+Node_20 -> Node_21;
+Node_21 -> Node_24[style=dashed];
+Node_21 -> Node_27;
+Node_22 -> Node_16;
+Node_25 -> Node_26;
+Node_26 -> Node_16;
+Node_15 -> Node_17;
+Node_29 -> Node_25;
+Node_27 -> Node_22;
+}
+

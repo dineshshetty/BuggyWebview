@@ -1,0 +1,51 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.PanelFeatureState.setStyle(Landroid\/content\/Context;)V" {
+subgraph cluster_Region_1243055217 {
+label = "R(5:1|(1:3)|4|(1:6)(1:10)|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|android.util.TypedValue android.util.TypedValue r0 = new android.util.TypedValue()\landroid.content.res.Resources$Theme android.content.res.Resources.Theme r1 = r6.getResources().newTheme()\lr1.setTo(r6.getTheme())\lr1.resolveAttribute(androidx.appcompat.C0019R.attr.actionBarPopupTheme, r0, true)\l}"];
+subgraph cluster_IfRegion_102722244 {
+label = "IF [B:14:0x001c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001c|if (r0.resourceId != 0) goto L3\l}"];
+subgraph cluster_Region_313268529 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001e|r1.applyStyle(r0.resourceId, true)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0023|r1.resolveAttribute(androidx.appcompat.C0019R.attr.panelMenuListTheme, r0, true)\l}"];
+subgraph cluster_IfRegion_103310973 {
+label = "IF [B:17:0x002a] THEN: R(1:6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x002a|if (r0.resourceId != 0) goto L6\l}"];
+subgraph cluster_Region_1894403781 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002c|r1.applyStyle(r0.resourceId, true)\l}"];
+}
+subgraph cluster_Region_224281430 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0032|r1.applyStyle(androidx.appcompat.C0019R.style.Theme_AppCompat_CompactMenu, true)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0037|androidx.appcompat.view.ContextThemeWrapper android.content.Context r2 = new androidx.appcompat.view.ContextThemeWrapper(r6, 0)\lr2.getTheme().setTo(r1)\lr5.listPresenterContext = r2\landroid.content.res.TypedArray android.content.res.TypedArray r2 = r2.obtainStyledAttributes(androidx.appcompat.C0019R.styleable.AppCompatTheme)\lr5.background = r2.getResourceId(androidx.appcompat.C0019R.styleable.AppCompatTheme_panelBackground, 0)\lr5.windowAnimations = r2.getResourceId(androidx.appcompat.C0019R.styleable.AppCompatTheme_android_windowAnimationStyle, 0)\lr2.recycle()\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0060}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.app.AppCompatDelegateImpl.PanelFeatureState.setStyle((r5v0 'this' androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState A[IMMUTABLE_TYPE, THIS]), (r6v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0032 \-\> B:20:0x0037, CROSS_EDGE: B:14:0x001c \-\> B:16:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_21 -> Node_12;
+}
+

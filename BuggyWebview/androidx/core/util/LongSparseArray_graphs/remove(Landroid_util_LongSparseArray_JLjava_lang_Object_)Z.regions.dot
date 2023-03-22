@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.util.LongSparseArrayKt.remove(Landroid\/util\/LongSparseArray;JLjava\/lang\/Object;)Z" {
+subgraph cluster_Region_2113836859 {
+label = "R(2:1|(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\lint int r0 = r2.indexOfKey(r3)\l}"];
+subgraph cluster_Region_844421486 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_222493691 {
+label = "IF [B:3:0x0009, B:5:0x0013] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r0 \>= 0) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|ADDED_TO_REGION\l|if (kotlin.jvm.internal.Intrinsics.areEqual(r5, r2.valueAt(r0)) != false) goto L5\l}"];
+subgraph cluster_Region_1726794937 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|r2.removeAt(r0)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1948129787 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001a|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public static final boolean androidx.core.util.LongSparseArrayKt.remove((r2v0 android.util.LongSparseArray\<T\> A[D('$this$remove' android.util.LongSparseArray), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'key' long A[D('key' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 T A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x001b \-\> B:1:?, CROSS_EDGE: B:3:0x0009 \-\> B:8:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Landroid\/util\/LongSparseArray\<TT;\>;JTT;)Z\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_1;
+}
+

@@ -1,0 +1,89 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.recycleChildren(Landroidx\/recyclerview\/widget\/RecyclerView$Recycler;II)V" {
+subgraph cluster_Region_1886332466 {
+label = "R(1:(2:(1:2)|(1:(2:(3:5|(1:7)|9)|(2:10|(1:12))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_165190222 {
+label = "R(2:(1:2)|(1:(2:(3:5|(1:7)|9)|(2:10|(1:12)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1957142394 {
+label = "IF [B:18:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|if (r3 == r4) goto L2\l}"];
+subgraph cluster_Region_1144783023 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1307304108 {
+label = "R(1:(2:(3:5|(1:7)|9)|(2:10|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2890165 {
+label = "R(2:(3:5|(1:7)|9)|(2:10|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1220020869 {
+label = "IF [B:20:0x0003] THEN: R(3:5|(1:7)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0003|if (r4 \> r3) goto L5\l}"];
+subgraph cluster_Region_1525791707 {
+label = "R(3:5|(1:7)|9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0005|int int r0 = r4 \- 1\l}"];
+subgraph cluster_LoopRegion_302128069 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0007|LOOP_START\lLOOP:0: B:22:0x0007\-\>B:23:0x0009\lPHI: r0 \l  PHI: (r0v4 'i' int) = (r0v3 'i' int), (r0v5 'i' int) binds: [B:21:0x0005, B:23:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= r3) goto L7\l}"];
+subgraph cluster_Region_798926305 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0009|LOOP_END\lLOOP:0: B:22:0x0007\-\>B:23:0x0009\l|removeAndRecycleViewAt(r0, r2)\lr0\-\-\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0019|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_70881360 {
+label = "R(2:10|(1:12))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0010|int r0 = r3\l}"];
+subgraph cluster_LoopRegion_1795872121 {
+label = "LOOP:1: (1:12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0011|LOOP_START\lLOOP:1: B:26:0x0011\-\>B:27:0x0013\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v2 'i' int) binds: [B:25:0x0010, B:27:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \> r4) goto L12\l}"];
+subgraph cluster_Region_1698524286 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0013|LOOP_END\lLOOP:1: B:26:0x0011\-\>B:27:0x0013\l|removeAndRecycleViewAt(r0, r2)\lr0\-\-\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0019|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0019|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.LinearLayoutManager.recycleChildren((r1v0 'this' androidx.recyclerview.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]), (r2v0 'recycler' androidx.recyclerview.widget.RecyclerView$Recycler A[D('recycler' androidx.recyclerview.widget.RecyclerView$Recycler), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'startIndex' int A[D('startIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'endIndex' int A[D('endIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x0009 \-\> B:22:0x0007, CROSS_EDGE: B:28:0x0019 \-\> B:17:?, BACK_EDGE: B:27:0x0013 \-\> B:26:0x0011, CROSS_EDGE: B:26:0x0011 \-\> B:28:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_17;
+Node_20 -> Node_21;
+Node_20 -> Node_25[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_29[style=dashed];
+Node_23 -> Node_22;
+Node_28 -> Node_17;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_30[style=dashed];
+Node_27 -> Node_26;
+Node_16 -> Node_18;
+Node_29 -> Node_28;
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+}
+

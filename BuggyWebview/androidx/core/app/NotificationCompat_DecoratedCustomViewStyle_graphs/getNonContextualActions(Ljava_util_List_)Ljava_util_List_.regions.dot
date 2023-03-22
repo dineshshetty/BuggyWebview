@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.DecoratedCustomViewStyle.getNonContextualActions(Ljava\/util\/List;)Ljava\/util\/List;" {
+subgraph cluster_Region_1487513982 {
+label = "R(1:(2:(1:2)|(3:4|(2:7|(1:10)(0))|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_158297558 {
+label = "R(2:(1:2)|(3:4|(2:7|(1:10)(0))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_743669904 {
+label = "IF [B:20:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|if (r4 == null) goto L2\l}"];
+subgraph cluster_Region_90239708 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0002|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1148363741 {
+label = "R(3:4|(2:7|(1:10)(0))|15)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0004|java.util.ArrayList java.util.List\<androidx.core.app.NotificationCompat.Action\> r0 = new java.util.ArrayList\<\>()\ljava.util.Iterator r1 = r4.iterator()\l\l}"];
+subgraph cluster_LoopRegion_269961559 {
+label = "LOOP:0: (2:7|(1:10)(0))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0011|androidx.core.app.NotificationCompat$Action \lif (r1.hasNext() != false) goto L7\l}"];
+subgraph cluster_Region_1659144030 {
+label = "R(2:7|(1:10)(0))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0013|androidx.core.app.NotificationCompat$Action r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_1384373394 {
+label = "IF [B:27:0x001d] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001d|if (r2.isContextual() == false) goto L9\l}"];
+subgraph cluster_Region_1917165473 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001f|r0.add(r2)\l}"];
+}
+subgraph cluster_Region_1349988876 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x0023|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000d|LOOP_START\lLOOP:0: B:24:0x000d\-\>B:33:0x000d\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001f|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x000d|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x000d|LOOP_END\lSYNTHETIC\lLOOP:0: B:24:0x000d\-\>B:33:0x000d\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x000d|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0023|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<androidx.core.app.NotificationCompat$Action\> androidx.core.app.NotificationCompat.DecoratedCustomViewStyle.getNonContextualActions((r4v0 'actions' java.util.List\<androidx.core.app.NotificationCompat$Action\> A[D('actions' java.util.List\<androidx.core.app.NotificationCompat$Action\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:28:0x001f \-\> B:24:0x000d, BACK_EDGE: B:27:0x001d \-\> B:24:0x000d, CROSS_EDGE: B:30:0x0023 \-\> B:19:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/List\<Landroidx\/core\/app\/NotificationCompat$Action;\>;)Ljava\/util\/List\<Landroidx\/core\/app\/NotificationCompat$Action;\>;\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_19;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_31[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_32;
+Node_27 -> Node_34[style=dashed];
+Node_28 -> Node_35;
+Node_30 -> Node_19;
+Node_18 -> Node_20;
+Node_24 -> Node_25;
+Node_32 -> Node_28;
+Node_35 -> Node_33;
+Node_33 -> Node_24;
+Node_34 -> Node_33;
+Node_31 -> Node_30;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.fragment.app.Fragment.performCreate(Landroid\/os\/Bundle;)V" {
+subgraph cluster_Region_764748725 {
+label = "R(4:1|(1:3)|4|(2:(2:9|10)|(1:6)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r3.mChildFragmentManager.noteStateNotSaved()\lr3.mState = 1\lr3.mCalled = false\l}"];
+subgraph cluster_IfRegion_2145978712 {
+label = "IF [B:14:0x000f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000f|if (android.os.Build.VERSION.SDK_INT \>= 19) goto L3\l}"];
+subgraph cluster_Region_1894750597 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|r3.mLifecycleRegistry.addObserver(new androidx.fragment.app.Fragment.C03215())\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x001b|r3.mSavedStateRegistryController.performRestore(r4)\lonCreate(r4)\lr3.mIsCreated = true\l}"];
+subgraph cluster_Region_777697570 {
+label = "R(2:(2:9|10)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_710324183 {
+label = "IF [B:17:0x0027] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0027|if (r3.mCalled == false) goto L9\l}"];
+subgraph cluster_Region_499302412 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0031}"];
+Node_21 [shape=record,label="{21\:\ 0x004c|throw new androidx.fragment.app.SuperNotCalledException(\"Fragment \" + r3 + \" did not call through to super.onCreate()\")\l}"];
+}
+}
+subgraph cluster_Region_292376960 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0029|r3.mLifecycleRegistry.handleLifecycleEvent(androidx.lifecycle.Lifecycle.Event.ON_CREATE)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0030}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.performCreate((r3v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r4v0 'savedInstanceState' android.os.Bundle A[D('savedInstanceState' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x004c \-\> B:12:?, CROSS_EDGE: B:14:0x000f \-\> B:16:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_19 -> Node_12;
+}
+

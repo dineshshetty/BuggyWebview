@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.sequences.DropSequence.\<init\>(Lkotlin\/sequences\/Sequence;I)V" {
+subgraph cluster_Region_29883822 {
+label = "R(2:1|(2:(1:5)|(2:7|8)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"sequence\")\lr3.sequence = r4\lr3.count = r5\l}"];
+subgraph cluster_Region_2139581389 {
+label = "R(2:(1:5)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_16238814 {
+label = "IF [B:16:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|PHI: r0 \l  PHI: (r0v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r5 \>= 0) != false) goto L5\l}"];
+subgraph cluster_Region_1337256970 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1906328287 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0016}"];
+Node_19 [shape=record,label="{19\:\ 0x0036|throw new java.lang.IllegalArgumentException((\"count must be non\-negative, but was \" + r5 + '.').toString())\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000d}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000f}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0011}"];
+MethodNode[shape=record,label="{public void kotlin.sequences.DropSequence.\<init\>((r3v0 'this' kotlin.sequences.DropSequence\<T\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'sequence' kotlin.sequences.Sequence\<? extends T\> A[D('sequence' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'count' int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0036 \-\> B:11:?, CROSS_EDGE: B:15:0x0011 \-\> B:16:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (Lkotlin\/sequences\/Sequence\<+TT;\>;I)V\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r4v0, resolved type: kotlin.sequences.Sequence\<? extends T\>\}\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+}
+

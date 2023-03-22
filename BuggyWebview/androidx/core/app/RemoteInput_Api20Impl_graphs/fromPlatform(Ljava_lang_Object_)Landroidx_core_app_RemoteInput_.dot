@@ -1,0 +1,39 @@
+digraph "CFG forandroidx.core.app.RemoteInput.Api20Impl.fromPlatform(Ljava\/lang\/Object;)Landroidx\/core\/app\/RemoteInput;" {
+Node_16 [shape=record,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0000|android.app.RemoteInput r0 = (android.app.RemoteInput) r6\landroidx.core.app.RemoteInput$Builder r1 = new androidx.core.app.RemoteInput.Builder(r0.getResultKey()).setLabel(r0.getLabel()).setChoices(r0.getChoices()).setAllowFreeFormInput(r0.getAllowFreeFormInput()).addExtras(r0.getExtras())\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0030|if (android.os.Build.VERSION.SDK_INT \< 26) goto L10\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0032|java.util.Set r2 = androidx.core.app.RemoteInput.Api26Impl.getAllowedDataTypes(r0)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0036|if (r2 == null) goto L10\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0038|java.util.Iterator r3 = r2.iterator()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x003c|LOOP_START\lLOOP:0: B:23:0x003c\-\>B:25:0x0042\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0040|if (r3.hasNext() == false) goto L9\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0042|LOOP_END\lLOOP:0: B:23:0x003c\-\>B:25:0x0042\l|java.lang.String r4 = r3.next()\lr1.setAllowDataType(r4, true)\l}"];
+Node_31 [shape=record,label="{31\:\ 0x004d|SYNTHETIC\l}"];
+Node_26 [shape=record,label="{26\:\ 0x004d}"];
+Node_27 [shape=record,label="{27\:\ 0x0051|if (android.os.Build.VERSION.SDK_INT \< 29) goto L13\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0053|r1.setEditChoicesBeforeSending(androidx.core.app.RemoteInput.Api29Impl.getEditChoicesBeforeSending(r0))\l}"];
+Node_29 [shape=record,label="{29\:\ 0x005a}"];
+Node_30 [shape=record,label="{30\:\ 0x005e|RETURN\l|return r1.build()\l}"];
+Node_17 [shape=record,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static androidx.core.app.RemoteInput androidx.core.app.RemoteInput.Api20Impl.fromPlatform((r6v0 'srcObj' java.lang.Object A[D('srcObj' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x0042 \-\> B:23:0x003c, CROSS_EDGE: B:27:0x0051 \-\> B:29:0x005a, CROSS_EDGE: B:21:0x0036 \-\> B:26:0x004d, CROSS_EDGE: B:19:0x0030 \-\> B:26:0x004d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_26;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_26;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_31;
+Node_25 -> Node_23;
+Node_31 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_29;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_17;
+}
+

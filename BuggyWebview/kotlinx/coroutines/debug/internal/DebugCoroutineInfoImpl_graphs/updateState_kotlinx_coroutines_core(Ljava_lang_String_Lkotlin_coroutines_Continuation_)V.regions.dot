@@ -1,0 +1,78 @@
+digraph "CFG forkotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl.updateState$kotlinx_coroutines_core(Ljava\/lang\/String;Lkotlin\/coroutines\/Continuation;)V" {
+subgraph cluster_Region_877414340 {
+label = "R(1:(2:(1:7)|(4:9|12|(1:14)(0)|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_683435879 {
+label = "R(2:(1:7)|(4:9|12|(1:14)(0)|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1486353369 {
+label = "IF [B:22:0x0006, B:24:0x000e, B:26:0x0014] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0006|if (kotlin.jvm.internal.Intrinsics.areEqual(r2._state, r3) == true) goto L3\l}"];
+Node_24 [shape=record,label="{24\:\ 0x000e|ADDED_TO_REGION\l|if (kotlin.jvm.internal.Intrinsics.areEqual(r3, kotlinx.coroutines.debug.internal.DebugCoroutineInfoImplKt.SUSPENDED) == true) goto L5\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0014|ADDED_TO_REGION\l|if (getLastObservedFrame$kotlinx_coroutines_core() != null) goto L7\l}"];
+subgraph cluster_Region_339640915 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0016|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_397080480 {
+label = "R(4:9|12|(1:14)(0)|15)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0017|r2._state = r3\ljava.lang.Thread r1 = null\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0023|PHI: r0 \l  PHI: (r0v4 kotlin.coroutines.jvm.internal.CoroutineStackFrame A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|setLastObservedFrame$kotlinx_coroutines_core(r4 instanceof kotlin.coroutines.jvm.internal.CoroutineStackFrame ? (kotlin.coroutines.jvm.internal.CoroutineStackFrame) r4 : null)\l}"];
+subgraph cluster_IfRegion_1117422967 {
+label = "IF [B:33:0x002c] THEN: R(1:14) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x002c|if (kotlin.jvm.internal.Intrinsics.areEqual(r3, kotlinx.coroutines.debug.internal.DebugCoroutineInfoImplKt.RUNNING) != false) goto L14\l}"];
+subgraph cluster_Region_618873183 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x002e|java.lang.Thread r1 = java.lang.Thread.currentThread()\l}"];
+}
+subgraph cluster_Region_165041436 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0036|PHI: r1 \l  PHI: (r1v1 java.lang.Thread) = (r1v0 java.lang.Thread), (r1v2 java.lang.Thread) binds: [B:35:0x0033, B:34:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|r2.lastObservedThread = r1\l}"];
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0008}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0010}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001c}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001e}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0038}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0033}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0022}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl.updateState$kotlinx_coroutines_core((r2v0 'this' kotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 'state' java.lang.String A[D('state' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 kotlin.coroutines.Continuation\<?\> A[D('frame' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:37:0x0038 \-\> B:20:?, CROSS_EDGE: B:35:0x0033 \-\> B:36:0x0036, CROSS_EDGE: B:31:0x0022 \-\> B:32:0x0023, CROSS_EDGE: B:24:0x000e \-\> B:28:0x0017, CROSS_EDGE: B:22:0x0006 \-\> B:28:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/String;Lkotlin\/coroutines\/Continuation\<*\>;)V\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_20;
+Node_28 -> Node_29;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_35[style=dashed];
+Node_34 -> Node_36;
+Node_36 -> Node_37;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_29 -> Node_30;
+Node_29 -> Node_31;
+Node_30 -> Node_32;
+Node_37 -> Node_20;
+Node_35 -> Node_36;
+Node_31 -> Node_32;
+}
+

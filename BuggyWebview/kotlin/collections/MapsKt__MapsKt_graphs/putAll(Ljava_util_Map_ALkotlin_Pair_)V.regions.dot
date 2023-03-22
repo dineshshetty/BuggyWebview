@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.collections.MapsKt__MapsKt.putAll(Ljava\/util\/Map;[Lkotlin\/Pair;)V" {
+subgraph cluster_Region_907155833 {
+label = "R(2:1|(1:3))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"pairs\")\lint r1 = 0\l\l}"];
+subgraph cluster_LoopRegion_1564889036 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000c|LOOP_START\lLOOP:0: B:10:0x000c\-\>B:11:0x000e\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:9:0x0000, B:11:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_1575928330 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000e|LOOP_END\lLOOP:0: B:10:0x000c\-\>B:11:0x000e\l|r2 = r5[r1]\ljava.lang.Object java.lang.Object r3 = (K) r2.component1()\ljava.lang.Object java.lang.Object r2 = (V) r2.component2()\lr4.put(r3, r2)\lr1++\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001e|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001e}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.collections.MapsKt__MapsKt.putAll((r4v0 java.util.Map\<? super K, ? super V\> A[D('$this$putAll' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'pairs' kotlin.Pair\<? extends K, ? extends V\>[] A[D('pairs' kotlin.Pair[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x000e \-\> B:10:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;\>(Ljava\/util\/Map\<\-TK;\-TV;\>;[Lkotlin\/Pair\<+TK;+TV;\>;)V\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r3v0. Raw type applied. Possible types: K, ? super K\l \-\> Type inference failed for r2v1. Raw type applied. Possible types: V, ? super V\}\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_10;
+Node_7 -> Node_9;
+Node_13 -> Node_12;
+Node_12 -> Node_8;
+}
+

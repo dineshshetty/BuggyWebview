@@ -1,0 +1,93 @@
+digraph "CFG forandroidx.core.content.FileProvider.attachInfo(Landroid\/content\/Context;Landroid\/content\/pm\/ProviderInfo;)V" {
+subgraph cluster_Region_1646548198 {
+label = "R(2:1|(2:(1:20)|(1:(2:(1:18)|(3:5|18|10)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|super.attachInfo(r4, r5)\l}"];
+subgraph cluster_Region_419325652 {
+label = "R(2:(1:20)|(1:(2:(1:18)|(3:5|18|10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1395389118 {
+label = "IF [B:3:0x0005] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r5.exported != false) goto L19\l}"];
+subgraph cluster_Region_64050836 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0038|throw new java.lang.SecurityException(\"Provider must not be exported\")\l}"];
+}
+}
+subgraph cluster_Region_1125298540 {
+label = "R(1:(2:(1:18)|(3:5|18|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_682735388 {
+label = "R(2:(1:18)|(3:5|18|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_604180150 {
+label = "IF [B:5:0x0009] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|if (r5.grantUriPermissions == false) goto L17\l}"];
+subgraph cluster_Region_770677076 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0030|throw new java.lang.SecurityException(\"Provider must grant uri permissions\")\l}"];
+}
+}
+subgraph cluster_Region_1286439582 {
+label = "R(3:5|18|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|java.lang.String r0 = r5.authority.split(\";\")[0]\ljava.util.HashMap\<java.lang.String, androidx.core.content.FileProvider$PathStrategy\> java.util.HashMap\<java.lang.String, androidx.core.content.FileProvider.PathStrategy\> r1 = androidx.core.content.FileProvider.sCache\l}"];
+subgraph cluster_SynchronizedRegion_1068874825 {
+label = "Synchronized:R(2:6|(1:8))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018}"];
+subgraph cluster_Region_24616535 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|TRY_ENTER\lTryCatch #0 \{, blocks: (B:8:0x0019, B:9:0x001c), top: B:19:0x0019 \}\lCatch: all \-\> 0x0026\l|r1.remove(r0)     \/\/ Catch: java.lang.Throwable \-\> L26\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001d|r3.mStrategy = getPathStrategy(r4, r0, r3.mResourceId)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0019|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001c|TRY_LEAVE\lDONT_GENERATE\lTryCatch #0 \{, blocks: (B:8:0x0019, B:9:0x001c), top: B:19:0x0019 \}\lCatch: all \-\> 0x0026\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L26\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0025}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0026|REMOVE\lExcHandler: all \-\> 0x0026\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0027|TRY_ENTER\lTRY_LEAVE\lREMOVE\lCatch: all \-\> 0x0026\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0028|REMOVE\l|throw r2\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0029}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0031}"];
+MethodNode[shape=record,label="{public void androidx.core.content.FileProvider.attachInfo((r3v0 'this' androidx.core.content.FileProvider A[IMMUTABLE_TYPE, THIS]), (r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'info' android.content.pm.ProviderInfo A[D('info' android.content.pm.ProviderInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:14:0x0028 \-\> B:1:?, CROSS_EDGE: B:19:0x0019 \-\> B:12:0x0026, CROSS_EDGE: B:16:0x0030 \-\> B:1:?, CROSS_EDGE: B:18:0x0038 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.content.ContentProvider.attachInfo(android.content.Context, android.content.pm.ProviderInfo):void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_17;
+Node_18 -> Node_1;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_15;
+Node_16 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_19;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_19 -> Node_8;
+Node_19 -> Node_12;
+Node_9 -> Node_10;
+Node_9 -> Node_20;
+Node_11 -> Node_1;
+Node_20 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+}
+

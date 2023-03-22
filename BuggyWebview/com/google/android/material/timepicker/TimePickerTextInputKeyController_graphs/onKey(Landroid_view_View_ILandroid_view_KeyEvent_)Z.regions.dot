@@ -1,0 +1,59 @@
+digraph "CFG forcom.google.android.material.timepicker.TimePickerTextInputKeyController.onKey(Landroid\/view\/View;ILandroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_681751715 {
+label = "R(1:(2:(1:3)|(4:5|(1:7)(1:10)|8|9))) | DECL_VAR: boolean ret\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1661706262 {
+label = "R(2:(1:3)|(4:5|(1:7)(1:10)|8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2027272013 {
+label = "IF [B:14:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0003|if (r4.keyListenerRunning == true) goto L3\l}"];
+subgraph cluster_Region_410381576 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_987563589 {
+label = "R(4:5|(1:7)(1:10)|8|9)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|r4.keyListenerRunning = true\landroid.widget.EditText android.widget.EditText r0 = (android.widget.EditText) r5\l}"];
+subgraph cluster_IfRegion_625952009 {
+label = "IF [B:17:0x0012] THEN: R(1:7) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0012|if (r4.time.selection == 12) goto L7\l}"];
+subgraph cluster_Region_888277335 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0014|boolean r2 = onMinuteKeyPress(r6, r7, r0)\l}"];
+}
+subgraph cluster_Region_1043678261 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0019|boolean r2 = onHourKeyPress(r6, r7, r0)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x001d|PHI: r2 \l  PHI: (r2v3 'ret' boolean) = (r2v2 'ret' boolean), (r2v4 'ret' boolean) binds: [B:19:0x0019, B:18:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|r4.keyListenerRunning = false\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0020|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.timepicker.TimePickerTextInputKeyController.onKey((r4v0 'this' com.google.android.material.timepicker.TimePickerTextInputKeyController A[IMMUTABLE_TYPE, THIS]), (r5v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'keyCode' int A[D('keyCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:21:0x0020 \-\> B:12:?, CROSS_EDGE: B:19:0x0019 \-\> B:20:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.OnKeyListener.onKey(android.view.View, int, android.view.KeyEvent):boolean\}]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+}
+

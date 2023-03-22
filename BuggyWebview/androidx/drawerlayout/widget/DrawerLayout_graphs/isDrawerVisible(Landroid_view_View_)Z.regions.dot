@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.isDrawerVisible(Landroid\/view\/View;)Z" {
+subgraph cluster_Region_1099896141 {
+label = "R(1:(2:8|9)(1:(1:5)(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_875988537 {
+label = "IF [B:15:0x0004] THEN: R(2:8|9) ELSE: R(1:(1:5)(1:7))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (isDrawerView(r4) == false) goto L8\l}"];
+subgraph cluster_Region_1321518423 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017}"];
+Node_22 [shape=record,label="{22\:\ 0x0032|throw new java.lang.IllegalArgumentException(\"View \" + r4 + \" is not a drawer\")\l}"];
+}
+subgraph cluster_Region_233730253 {
+label = "R(1:(1:5)(1:7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_888285504 {
+label = "IF [B:17:0x0011] THEN: R(1:5) ELSE: R(1:7) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0011|if (((androidx.drawerlayout.widget.DrawerLayout.LayoutParams) r4.getLayoutParams()).onScreen \> 0.0f) goto L5\l}"];
+subgraph cluster_Region_888497833 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|SYNTHETIC\lRETURN\l|return androidx.drawerlayout.widget.DrawerLayout.CHILDREN_DISALLOW_INTERCEPT\l}"];
+}
+subgraph cluster_Region_1559491357 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.drawerlayout.widget.DrawerLayout.isDrawerVisible((r3v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'drawer' android.view.View A[D('drawer' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0015 \-\> B:20:0x0016, CROSS_EDGE: B:22:0x0032 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_13;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_13;
+Node_19 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+}
+

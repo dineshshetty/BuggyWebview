@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.setSpanCount(I)V" {
+subgraph cluster_Region_2070364034 {
+label = "R(2:1|(1:(3:3|(1:6)|8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|assertNotInLayoutOrScroll(null)\l}"];
+subgraph cluster_Region_869388179 {
+label = "R(1:(3:3|(1:6)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1203664403 {
+label = "IF [B:3:0x0006] THEN: R(3:3|(1:6)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r4 != r3.mSpanCount) goto L3\l}"];
+subgraph cluster_Region_1754011925 {
+label = "R(3:3|(1:6)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|invalidateSpanAssignments()\lr3.mSpanCount = r4\lr3.mRemainingSpans = new java.util.BitSet(r3.mSpanCount)\lr3.mSpans = new androidx.recyclerview.widget.StaggeredGridLayoutManager.Span[r3.mSpanCount]\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_1301249661 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|if (r0 \< r3.mSpanCount) goto L6\l}"];
+subgraph cluster_Region_366920469 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|LOOP_END\lLOOP:0: B:5:0x001d\-\>B:7:0x0021\l|r3.mSpans[r0] = new androidx.recyclerview.widget.StaggeredGridLayoutManager.Span(r0)\lr0++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002d|requestLayout()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d|LOOP_START\lLOOP:0: B:5:0x001d\-\>B:7:0x0021\lPHI: r0 \l  PHI: (r0v6 'i' int) = (r0v5 'i' int), (r0v7 'i' int) binds: [B:4:0x0008, B:7:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002d|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0030|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.StaggeredGridLayoutManager.setSpanCount((r3v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r4v0 'spanCount' int A[D('spanCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x0021 \-\> B:5:0x001d, CROSS_EDGE: B:3:0x0006 \-\> B:9:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_5;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_10 -> Node_8;
+Node_9 -> Node_1;
+Node_11 -> Node_1;
+}
+

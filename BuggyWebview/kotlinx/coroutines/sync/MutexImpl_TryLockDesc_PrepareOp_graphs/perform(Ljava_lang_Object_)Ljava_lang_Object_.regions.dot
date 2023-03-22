@@ -1,0 +1,47 @@
+digraph "CFG forkotlinx.coroutines.sync.MutexImpl.TryLockDesc.PrepareOp.perform(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1295720637 {
+label = "R(2:2|(2:(1:9)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|java.lang.Object r0 = getAtomicOp().isDecided() ? kotlinx.coroutines.sync.MutexKt.EMPTY_UNLOCKED : getAtomicOp()\l}"];
+subgraph cluster_Region_967211522 {
+label = "R(2:(1:9)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1627319082 {
+label = "IF [B:17:0x0013] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|PHI: r0 \l  PHI: (r0v3 'update' java.lang.Object) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 == null) goto L8\l}"];
+subgraph cluster_Region_607269075 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0026|throw new java.lang.NullPointerException(\"null cannot be cast to non\-null type kotlinx.coroutines.sync.MutexImpl\")\l}"];
+}
+}
+subgraph cluster_Region_867025487 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|androidx.concurrent.futures.C0125xc40028dd.m112m(kotlinx.coroutines.sync.MutexImpl._state$FU, (kotlinx.coroutines.sync.MutexImpl) r4, r3, r0)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001e|RETURN\l|return null\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000a}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001f}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000f}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.sync.MutexImpl.TryLockDesc.PrepareOp.perform((r3v0 'this' kotlinx.coroutines.sync.MutexImpl$TryLockDesc$PrepareOp A[IMMUTABLE_TYPE, THIS]), (r4v0 'affected' java.lang.Object A[D('affected' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0026 \-\> B:12:?, CROSS_EDGE: B:16:0x000f \-\> B:17:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.internal.OpDescriptor.perform(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_17;
+Node_20 -> Node_21;
+Node_16 -> Node_17;
+}
+

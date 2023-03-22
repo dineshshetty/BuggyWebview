@@ -1,0 +1,48 @@
+digraph "CFG forandroidx.recyclerview.widget.SimpleItemAnimator.animateAppearance(Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;Landroidx\/recyclerview\/widget\/RecyclerView$ItemAnimator$ItemHolderInfo;Landroidx\/recyclerview\/widget\/RecyclerView$ItemAnimator$ItemHolderInfo;)Z" {
+subgraph cluster_Region_664203828 {
+label = "R(1:(2:(1:7)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_428269189 {
+label = "R(2:(1:7)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1375234979 {
+label = "IF [B:13:0x0000, B:15:0x0006, B:17:0x000c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|if (r10 != null) goto L2\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0006|ADDED_TO_REGION\l|if (r10.left != r11.left) goto L6\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000c|ADDED_TO_REGION\l|if (r10.top != r11.top) goto L6\l}"];
+subgraph cluster_Region_399026665 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|RETURN\l|return animateMove(r9, r10.left, r10.top, r11.left, r11.top)\l}"];
+}
+}
+subgraph cluster_Region_123731574 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0021|RETURN\l|return animateAdd(r9)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0002}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0008}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001d}"];
+MethodNode[shape=record,label="{public boolean androidx.recyclerview.widget.SimpleItemAnimator.animateAppearance((r8v0 'this' androidx.recyclerview.widget.SimpleItemAnimator A[IMMUTABLE_TYPE, THIS]), (r9v0 'viewHolder' androidx.recyclerview.widget.RecyclerView$ViewHolder A[D('viewHolder' androidx.recyclerview.widget.RecyclerView$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'preLayoutInfo' androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo A[D('preLayoutInfo' androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'postLayoutInfo' androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo A[D('postLayoutInfo' androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0021 \-\> B:12:?, CROSS_EDGE: B:15:0x0006 \-\> B:18:0x000e, CROSS_EDGE: B:13:0x0000 \-\> B:20:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.RecyclerView.ItemAnimator.animateAppearance(androidx.recyclerview.widget.RecyclerView$ViewHolder, androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo, androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo):boolean]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_13 -> Node_20[style=dashed];
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_18;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

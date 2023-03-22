@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.launchRequestPermissions(Landroidx\/fragment\/app\/Fragment;[Ljava\/lang\/String;I)V" {
+subgraph cluster_Region_1070381629 {
+label = "R(1:(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_34532002 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1930493614 {
+label = "IF [B:11:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r2.mRequestPermissions != null) goto L3\l}"];
+subgraph cluster_Region_1715400871 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|androidx.fragment.app.FragmentManager$LaunchedFragmentInfo androidx.fragment.app.FragmentManager.LaunchedFragmentInfo r0 = new androidx.fragment.app.FragmentManager.LaunchedFragmentInfo(r3.mWho, r5)\lr2.mLaunchedFragments.addLast(r0)\lr2.mRequestPermissions.launch(r4)\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_17942910 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0016|r2.mHost.onRequestPermissionsFromFragment(r3, r4, r5)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001b|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentManager.launchRequestPermissions((r2v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'f' androidx.fragment.app.Fragment A[D('f' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'permissions' java.lang.String[] A[D('permissions' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'requestCode' int A[D('requestCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0016 \-\> B:14:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_14 -> Node_9;
+}
+

@@ -1,0 +1,87 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.firstNotNullOf(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_159768479 {
+label = "R(3:1|(1:(2:(2:13|1)|(2:4|(1:6))))|(2:(1:8)|(1:11))) | DECL_VAR: R null\l";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"transform\")\ljava.util.Iterator java.util.Iterator\<? extends T\> r0 = r2.iterator()\l}"];
+subgraph cluster_LoopRegion_36444101 {
+label = "LOOP:0: (1:(2:(2:13|1)|(2:4|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1072249765 {
+label = "R(1:(2:(2:13|1)|(2:4|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1161219745 {
+label = "R(2:(2:13|1)|(2:4|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1208187977 {
+label = "IF [B:34:0x0012] THEN: R(2:13|1) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0012|if (r0.hasNext() != true) goto L12\l}"];
+subgraph cluster_Region_217233490 {
+label = "R(2:13|1)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x001f|EDGE_INSN: B:38:0x001f\-\>B:39:0x0020 ?: BREAK  \l|r1 = null\l}"];
+Node_InsnContainer_1427662345 [shape=record,label="{|break\l}"];
+}
+}
+subgraph cluster_Region_1136705027 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0014|java.lang.Object r1 = r3.invoke((T) r0.next())\l}"];
+subgraph cluster_IfRegion_938004816 {
+label = "IF [B:36:0x001c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x001c|LOOP_END\lLOOP:0: B:33:0x000e\-\>B:36:0x001c\l|if (r1 != null) goto L6\l}"];
+subgraph cluster_Region_1101717531 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0020|SYNTHETIC\lEDGE_INSN: B:44:0x0020\-\>B:39:0x0020 ?: BREAK  \l|break\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_840596809 {
+label = "R(2:(1:8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_606371117 {
+label = "IF [B:39:0x0020] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0020|EDGE_INSN: B:38:0x001f\-\>B:39:0x0020 ?: BREAK  , EDGE_INSN: B:44:0x0020\-\>B:39:0x0020 ?: BREAK  \lPHI: r1 \l  PHI: (r1v2 R) = (r1v1 R), (r1v5 R) binds: [B:38:0x001f, B:44:0x0020] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != null) goto L8\l}"];
+subgraph cluster_Region_1438075560 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0022|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1133232701 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x002a|throw new java.util.NoSuchElementException(\"No element of the collection was transformed to a non\-null value.\")\l}"];
+}
+}
+}
+Node_30 [shape=record,color=red,label="{30\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x000e|LOOP_START\lLOOP:0: B:33:0x000e\-\>B:36:0x001c\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0023}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x001f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static final R kotlin.collections.CollectionsKt___CollectionsKt.firstNotNullOf((r2v0 java.lang.Iterable\<? extends T\> A[D('$this$firstNotNullOf' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'transform' kotlin.jvm.functions.Function1\<? super T, ? extends R\> A[D('transform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:42:0x002a \-\> B:31:?, BACK_EDGE: B:36:0x001c \-\> B:33:0x000e, CROSS_EDGE: B:38:0x001f \-\> B:39:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;+TR;\>;)TR;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r1v4. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_30;Node_32 -> Node_33;
+Node_34 -> Node_35[style=dashed];
+Node_34 -> Node_43;
+Node_38 -> Node_39;
+Node_35 -> Node_36;
+Node_36 -> Node_33[style=dashed];
+Node_36 -> Node_44;
+Node_44 -> Node_39;
+Node_39 -> Node_40;
+Node_39 -> Node_41[style=dashed];
+Node_40 -> Node_31;
+Node_42 -> Node_31;
+Node_30 -> Node_32;
+Node_33 -> Node_34;
+Node_41 -> Node_42;
+Node_43 -> Node_38;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.toCharArray(Ljava\/util\/Collection;)[C" {
+subgraph cluster_Region_791872476 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lchar[] char[] r0 = new char[r5.size()]\lint r1 = 0\ljava.util.Iterator r2 = r5.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1472597718 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0014|java.lang.Object \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1725043828 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|LOOP_END\lLOOP:0: B:19:0x0010\-\>B:21:0x0016\l|char char r3 = r3.charValue()\lr0[r1] = r3\lr1++\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0026|RETURN\l|return r0\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0010|LOOP_START\lLOOP:0: B:19:0x0010\-\>B:21:0x0016\lPHI: r1 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v2 'index' int) binds: [B:18:0x0000, B:21:0x0016] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0026|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final char[] kotlin.collections.CollectionsKt___CollectionsKt.toCharArray((r5v0 java.util.Collection\<java.lang.Character\> A[D('$this$toCharArray' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0016 \-\> B:19:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/Collection\<Ljava\/lang\/Character;\>;)[C\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_19;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_23 -> Node_22;
+}
+

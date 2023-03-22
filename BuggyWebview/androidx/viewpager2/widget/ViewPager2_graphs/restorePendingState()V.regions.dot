@@ -1,0 +1,75 @@
+digraph "CFG forandroidx.viewpager2.widget.ViewPager2.restorePendingState()V" {
+subgraph cluster_Region_1537985492 {
+label = "R(1:(2:(1:7)|(3:8|(2:(1:12)|13)|14))) | DECL_VAR: androidx.recyclerview.widget.RecyclerView$Adapter\<?\> adapter\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1195745289 {
+label = "R(2:(1:7)|(3:8|(2:(1:12)|13)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_662860460 {
+label = "IF [B:19:0x0003, B:22:0x000a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0003|if (r5.mPendingCurrentItem == (\-1)) goto L3\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000a|ADDED_TO_REGION\l|if ((r0 = getAdapter()) == null) goto L7\l}"];
+subgraph cluster_Region_1430121786 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_186673650 {
+label = "R(3:8|(2:(1:12)|13)|14)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000d|android.os.Parcelable android.os.Parcelable r2 = r5.mPendingAdapterState\l}"];
+subgraph cluster_IfRegion_1528919297 {
+label = "IF [B:25:0x000f] THEN: R(2:(1:12)|13) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000f|if (r2 != null) goto L10\l}"];
+subgraph cluster_Region_1355639074 {
+label = "R(2:(1:12)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_979558106 {
+label = "IF [B:27:0x0013] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0013|if ((r0 instanceof androidx.viewpager2.adapter.StatefulAdapter) != false) goto L12\l}"];
+subgraph cluster_Region_1280934747 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0015|((androidx.viewpager2.adapter.StatefulAdapter) r0).restoreState(r2)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x001b|r5.mPendingAdapterState = null\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x001e|int int r2 = java.lang.Math.max(0, java.lang.Math.min(r5.mPendingCurrentItem, r0.getItemCount() \- 1))\lr5.mCurrentItem = r2\lr5.mPendingCurrentItem = \-1\lr5.mRecyclerView.scrollToPosition(r2)\lr5.mAccessibilityProvider.onRestorePendingState()\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0005|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0006}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0011}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x003d}"];
+MethodNode[shape=record,label="{private void androidx.viewpager2.widget.ViewPager2.restorePendingState((r5v0 'this' androidx.viewpager2.widget.ViewPager2 A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x000c \-\> B:17:?, CROSS_EDGE: B:31:0x003d \-\> B:17:?, CROSS_EDGE: B:27:0x0013 \-\> B:29:0x001b, CROSS_EDGE: B:25:0x000f \-\> B:30:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_17;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_30[style=dashed];
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_20 -> Node_17;
+Node_21 -> Node_22;
+Node_26 -> Node_27;
+Node_31 -> Node_17;
+}
+

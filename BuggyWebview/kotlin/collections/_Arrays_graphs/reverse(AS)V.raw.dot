@@ -1,0 +1,27 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.reverse([S)V" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"\<this\>\" \l0x0002: INVOKE  (r6 I:java.lang.Object A[D('$this$reverse' short[])]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x0005: ARRAY_LENGTH  (r0 I:int) = (r6 I:??[] A[D('$this$reverse' short[])])  (LINE:5424)\l0x0006: ARITH  (r0 I:int) = (r0 I:int) \/ (2 int) \l0x0008: ARITH  (r0 I:int) = (r0 I:int) + (\-1 int) \l}"];
+Node_14 [shape=record,label="{14\:\ 0x000a|0x000a: IF  (r0 I:??[int, byte, short, char] A[D('midPoint' int)]) \>= (0 ??[int, byte, short, char])  \-\> B:16:0x000d  (LINE:5425)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000c|RETURN\l|0x000c: RETURN   \l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000d|0x000d: INVOKE  (r1 I:int) = (r6 I:short[] A[D('$this$reverse' short[])]) type: STATIC call: kotlin.collections.ArraysKt.getLastIndex(short[]):int A[MD:(short[]):int (m)] (LINE:5426)\l0x0011: NEW_INSTANCE  (r2 I:kotlin.ranges.IntRange) =  kotlin.ranges.IntRange  (LINE:5427)\l0x0013: CONST  (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x0014: INVOKE  (r2 I:kotlin.ranges.IntRange), (r3 I:int), (r0 I:int A[D('midPoint' int)]) type: DIRECT call: kotlin.ranges.IntRange.\<init\>(int, int):void A[MD:(int, int):void (m)]\l0x0017: INVOKE  (r2 I:kotlin.collections.IntIterator) = (r2 I:kotlin.ranges.IntRange) type: VIRTUAL call: kotlin.ranges.IntRange.iterator():kotlin.collections.IntIterator A[MD:():java.util.Iterator\<java.lang.Integer\> (m)]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x001b|LOOP_START\lLOOP:0: B:17:0x001b\-\>B:19:0x0021\l|0x001b: INVOKE  (r3 I:boolean) = (r2 I:kotlin.collections.IntIterator) type: VIRTUAL call: kotlin.collections.IntIterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_18 [shape=record,label="{18\:\ 0x001f|0x001f: IF  (r3 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:21:0x0031 \l}"];
+Node_19 [shape=record,label="{19\:\ 0x0021|LOOP_END\lLOOP:0: B:17:0x001b\-\>B:19:0x0021\l|0x0021: INVOKE  (r3 I:int) = (r2 I:kotlin.collections.IntIterator) type: VIRTUAL call: kotlin.collections.IntIterator.nextInt():int A[MD:():int (m)]\l0x0025: AGET  (r4 I:short A[IMMUTABLE_TYPE]) = (r6 I:short[] A[D('$this$reverse' short[]), IMMUTABLE_TYPE]), (r3 I:??[int, short, byte, char] A[D('index' int)])  (LINE:5428)\l0x0027: AGET  (r5 I:short A[IMMUTABLE_TYPE]) = \l  (r6 I:short[] A[D('$this$reverse' short[]), IMMUTABLE_TYPE])\l  (r1 I:??[int, short, byte, char] A[D('reverseIndex' int)])\l  (LINE:5429)\l0x0029: APUT  \l  (r6 I:short[] A[D('$this$reverse' short[]), IMMUTABLE_TYPE])\l  (r3 I:??[int, short, byte, char] A[D('index' int)])\l  (r5 I:short A[IMMUTABLE_TYPE])\l \l0x002b: APUT  \l  (r6 I:short[] A[D('$this$reverse' short[]), IMMUTABLE_TYPE])\l  (r1 I:??[int, short, byte, char] A[D('reverseIndex' int)])\l  (r4 I:short A[D('tmp' short), IMMUTABLE_TYPE])\l  (LINE:5430)\l0x002e: ARITH  (r1 I:int) = (r1 I:int A[D('reverseIndex' int)]) + (\-1 int) \l}"];
+Node_21 [shape=record,label="{21\:\ 0x0031|SYNTHETIC\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0031|RETURN\l|0x0031: RETURN    (LINE:5433)\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.collections.ArraysKt___ArraysKt.reverse((r6 I:short[] A[D('$this$reverse' short[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0021 \-\> B:17:0x001b, CROSS_EDGE: B:20:0x0031 \-\> B:12:?\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0025\-0x002e: r3 'index' I\l  0x0027\-0x002e: r4 'tmp' S\l  0x000a\-0x0031: r0 'midPoint' I\l  0x0011\-0x0031: r1 'reverseIndex' I\l  \-1 \-0x0031: r6 '$this$reverse' [S\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_19 -> Node_17;
+Node_21 -> Node_20;
+Node_20 -> Node_12;
+}
+

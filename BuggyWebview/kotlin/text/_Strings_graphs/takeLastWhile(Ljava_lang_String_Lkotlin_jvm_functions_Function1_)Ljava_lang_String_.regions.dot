@@ -1,0 +1,59 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.takeLastWhile(Ljava\/lang\/String;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/String;" {
+subgraph cluster_Region_1871547468 {
+label = "R(3:1|(1:(2:(2:8|9)|(1:6)))|12)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"predicate\")\lint int r1 = kotlin.text.StringsKt.getLastIndex(r4)\l}"];
+subgraph cluster_LoopRegion_1930677877 {
+label = "LOOP:0: (1:(2:(2:8|9)|(1:6)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|if ((\-1) \< r1) goto L4\l}"];
+subgraph cluster_Region_298357280 {
+label = "R(1:(2:(2:8|9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1237587895 {
+label = "R(2:(2:8|9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2105476918 {
+label = "IF [B:19:0x0027] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0027|if (r5.invoke(java.lang.Character.valueOf(r4.charAt(r1))).booleanValue() == false) goto L7\l}"];
+subgraph cluster_Region_2115181369 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0029|java.lang.String java.lang.String r2 = r4.substring(r1 + 1)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r2, \"this as java.lang.String).substring(startIndex)\")\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0034|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1761037242 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0035|LOOP_END\lLOOP:0: B:16:0x0012\-\>B:22:0x0035\l|r1\-\-\l}"];
+}
+}
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0038|RETURN\l|return r4\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0012|LOOP_START\lLOOP:0: B:16:0x0012\-\>B:22:0x0035\lPHI: r1 \l  PHI: (r1v3 'index' int) = (r1v2 'index' int), (r1v4 'index' int) binds: [B:15:0x0000, B:22:0x0035] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0015}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0029|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0038|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.text.StringsKt___StringsKt.takeLastWhile((r4v0 '$this$takeLastWhile' java.lang.String A[D('$this$takeLastWhile' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Character, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x0035 \-\> B:16:0x0012, CROSS_EDGE: B:23:0x0038 \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/String;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;Ljava\/lang\/Boolean;\>;)Ljava\/lang\/String;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_19 -> Node_22[style=dashed];
+Node_19 -> Node_25;
+Node_20 -> Node_21;
+Node_21 -> Node_14;
+Node_22 -> Node_16;
+Node_23 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_25 -> Node_20;
+Node_24 -> Node_23;
+}
+

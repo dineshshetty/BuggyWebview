@@ -1,0 +1,59 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.filterIsInstance(Ljava\/lang\/Iterable;)Ljava\/util\/List;" {
+subgraph cluster_Region_1892131857 {
+label = "R(3:1|(2:4|(1:7)(0))|13)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"\<this\>\")\ljava.util.Collection java.util.Collection r1 = new java.util.ArrayList()\ljava.util.Iterator r4 = r8.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1780344692 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0017|java.lang.Object \lif (r4.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1377977955 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0019|java.lang.Object r5 = r4.next()\lkotlin.jvm.internal.Intrinsics.reifiedOperationMarker(3, \"R\")\l}"];
+subgraph cluster_IfRegion_521230707 {
+label = "IF [B:36:0x0025] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0025|if ((r5 instanceof java.lang.Object) != false) goto L6\l}"];
+subgraph cluster_Region_1334067646 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0027|r1.add(r5)\l}"];
+}
+subgraph cluster_Region_780256085 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_39 [shape=record,label="{39\:\ 0x002e|RETURN\l|return (java.util.List) r1\l}"];
+}
+Node_30 [shape=record,color=red,label="{30\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0013|LOOP_START\lLOOP:0: B:33:0x0013\-\>B:42:0x0013\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0027|SYNTHETIC\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x0013|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x0013|LOOP_END\lSYNTHETIC\lLOOP:0: B:33:0x0013\-\>B:42:0x0013\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0013|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x002b|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x002b}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final \/* synthetic *\/ java.util.List\<R\> kotlin.collections.CollectionsKt___CollectionsKt.filterIsInstance((r8v0 java.lang.Iterable\<?\> A[D('$this$filterIsInstance' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lBACK_EDGE: B:36:0x0025 \-\> B:33:0x0013, BACK_EDGE: B:37:0x0027 \-\> B:33:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lSIGNATURE: \<R:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<*\>;)Ljava\/util\/List\<TR;\>;\l}"];
+MethodNode -> Node_30;Node_32 -> Node_33;
+Node_34 -> Node_35;
+Node_34 -> Node_41[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_40;
+Node_36 -> Node_43[style=dashed];
+Node_37 -> Node_44;
+Node_39 -> Node_31;
+Node_30 -> Node_32;
+Node_33 -> Node_34;
+Node_40 -> Node_37;
+Node_44 -> Node_42;
+Node_42 -> Node_33;
+Node_43 -> Node_42;
+Node_41 -> Node_38;
+Node_38 -> Node_39;
+}
+

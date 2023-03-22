@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.widget.NestedScrollView.requestChildFocus(Landroid\/view\/View;Landroid\/view\/View;)V" {
+subgraph cluster_Region_1252435331 {
+label = "R(2:(1:3)(1:7)|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_434375582 {
+label = "IF [B:11:0x0002] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r1.mIsLayoutDirty == false) goto L3\l}"];
+subgraph cluster_Region_1573572858 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|scrollToChild(r3)\l}"];
+}
+subgraph cluster_Region_1697489023 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|r1.mChildToScrollTo = r3\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x000a|super.requestChildFocus(r2, r3)\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000d}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.core.widget.NestedScrollView.requestChildFocus((r1v0 'this' androidx.core.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]), (r2v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'focused' android.view.View A[D('focused' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:13:0x0008 \-\> B:14:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewParent.requestChildFocus(android.view.View, android.view.View):void\}, ClspMth\{android.view.ViewGroup.requestChildFocus(android.view.View, android.view.View):void\}]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+}
+

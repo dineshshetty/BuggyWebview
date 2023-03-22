@@ -1,0 +1,20 @@
+digraph "CFG forkotlin.collections.builders.SetBuilder.writeReplace()Ljava\/lang\/Object;" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: IGET  (r0 I:kotlin.collections.builders.MapBuilder\<E, ?\>) = (r3 I:kotlin.collections.builders.SetBuilder) kotlin.collections.builders.SetBuilder.backing kotlin.collections.builders.MapBuilder  (LINE:24)\l0x0002: INVOKE  (r0 I:boolean) = (r0 I:kotlin.collections.builders.MapBuilder) type: VIRTUAL call: kotlin.collections.builders.MapBuilder.isReadOnly$kotlin_stdlib():boolean A[MD:():boolean (m)]\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0006|0x0006: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:14:0x0012 \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0008|0x0008: NEW_INSTANCE  (r0 I:kotlin.collections.builders.SerializedCollection) =  kotlin.collections.builders.SerializedCollection  (LINE:25)\l0x000a: MOVE  (r1 I:??[OBJECT, ARRAY]) = (r3 I:??[OBJECT, ARRAY]) \l0x000b: CHECK_CAST (r1 I:java.util.Collection) = (java.util.Collection) (r1 I:??[OBJECT, ARRAY]) \l0x000d: CONST  (r2 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char]) \l0x000e: INVOKE  (r0 I:kotlin.collections.builders.SerializedCollection), (r1 I:java.util.Collection), (r2 I:int) type: DIRECT call: kotlin.collections.builders.SerializedCollection.\<init\>(java.util.Collection, int):void A[MD:(java.util.Collection\<?\>, int):void (m)]\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0011|RETURN\l|0x0011: RETURN  (r0 I:java.lang.Object)  (LINE:27)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0012|0x0012: NEW_INSTANCE  (r0 I:java.io.NotSerializableException) =  java.io.NotSerializableException \l0x0014: CONST_STR  (r1 I:java.lang.String) =  \"The set cannot be serialized while it is being built.\" \l0x0016: INVOKE  (r0 I:java.io.NotSerializableException), (r1 I:java.lang.String) type: DIRECT call: java.io.NotSerializableException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0019|0x0019: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private final java.lang.Object kotlin.collections.builders.SetBuilder.writeReplace((r3 'this' I:kotlin.collections.builders.SetBuilder\<E\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0019 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+}
+

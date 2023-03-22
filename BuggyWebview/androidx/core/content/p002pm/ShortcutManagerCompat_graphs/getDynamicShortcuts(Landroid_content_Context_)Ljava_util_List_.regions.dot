@@ -1,0 +1,87 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutManagerCompat.getDynamicShortcuts(Landroid\/content\/Context;)Ljava\/util\/List;" {
+subgraph cluster_Region_1381161725 {
+label = "R(1:(2:(3:3|(1:6)|8)|(1:(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1465900072 {
+label = "R(2:(3:3|(1:6)|8)|(1:(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1529142773 {
+label = "IF [B:3:0x0004] THEN: R(3:3|(1:6)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 25) goto L3\l}"];
+subgraph cluster_Region_1636935493 {
+label = "R(3:3|(1:6)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|java.util.List java.util.List\<android.content.pm.ShortcutInfo\> r0 = ((android.content.pm.ShortcutManager) r5.getSystemService(android.content.pm.ShortcutManager.class)).getDynamicShortcuts()\ljava.util.ArrayList java.util.List\<androidx.core.content.p002pm.ShortcutInfoCompat\> r1 = new java.util.ArrayList\<\>(r0.size())\ljava.util.Iterator r2 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_612599711 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0023|android.content.pm.ShortcutInfo \lif (r2.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_738053026 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|LOOP_END\lLOOP:0: B:5:0x001f\-\>B:7:0x0025\l|android.content.pm.ShortcutInfo r3 = r2.next()\lr1.add(new androidx.core.content.p002pm.ShortcutInfoCompat.Builder(r5, r3).build())\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0038|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1614951616 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1230314108 {
+label = "Try: R(1:12) catches: R(1:16)";
+node [shape=record,color=blue];
+subgraph cluster_Region_878951894 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0041|RETURN\l|return getShortcutInfoSaverInstance(r5).getShortcuts()\l}"];
+}
+subgraph cluster_Region_216300474 {
+label = "R(1:16) | ExcHandler: Exception \-\> 0x0042\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0048|RETURN\l|return new java.util.ArrayList()\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_216300474 {
+label = "R(1:16) | ExcHandler: Exception \-\> 0x0042\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0048|RETURN\l|return new java.util.ArrayList()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001f|LOOP_START\lLOOP:0: B:5:0x001f\-\>B:7:0x0025\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0038|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0039|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0039|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x0042, blocks: (B:9:0x0039), top: B:14:0x0039 \}\lCatch: Exception \-\> 0x0042\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0042|ExcHandler: Exception \-\> 0x0042\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0043}"];
+MethodNode[shape=record,label="{public static java.util.List\<androidx.core.content.pm.ShortcutInfoCompat\> androidx.core.content.pm.ShortcutManagerCompat.getDynamicShortcuts((r5v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x0025 \-\> B:5:0x001f, CROSS_EDGE: B:10:0x0041 \-\> B:1:?, CROSS_EDGE: B:13:0x0048 \-\> B:1:?, CROSS_EDGE: B:14:0x0039 \-\> B:11:0x0042\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x0042, blocks: (B:9:0x0039), top: B:14:0x0039 \}\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/content\/Context;)Ljava\/util\/List\<Landroidx\/core\/content\/pm\/ShortcutInfoCompat;\>;\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_14[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_16[style=dashed];
+Node_7 -> Node_5;
+Node_8 -> Node_1;
+Node_10 -> Node_1;
+Node_13 -> Node_1;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_16 -> Node_8;
+Node_14 -> Node_9;
+Node_14 -> Node_11;
+Node_9 -> Node_10;
+Node_9 -> Node_15;
+Node_15 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+}
+

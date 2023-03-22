@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.constraintlayout.core.motion.utils.VelocityMatrix.setTranslationVelocity(Landroidx\/constraintlayout\/core\/motion\/utils\/KeyCycleOscillator;Landroidx\/constraintlayout\/core\/motion\/utils\/KeyCycleOscillator;F)V" {
+subgraph cluster_Region_897612124 {
+label = "R(2:(1:2)|(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_666335360 {
+label = "IF [B:10:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|if (r2 != null) goto L2\l}"];
+subgraph cluster_Region_1857284735 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|r1.mDTranslateX = r2.getSlope(r4)\l}"];
+}
+}
+subgraph cluster_Region_1095758192 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2008230556 {
+label = "IF [B:12:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|if (r3 != null) goto L4\l}"];
+subgraph cluster_Region_1809596306 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|r1.mDTranslateY = r3.getSlope(r4)\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0010|ORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.motion.utils.VelocityMatrix.setTranslationVelocity((r1v0 'this' androidx.constraintlayout.core.motion.utils.VelocityMatrix A[IMMUTABLE_TYPE, THIS]), (r2v0 'osc_x' androidx.constraintlayout.core.motion.utils.KeyCycleOscillator A[D('osc_x' androidx.constraintlayout.core.motion.utils.KeyCycleOscillator), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'osc_y' androidx.constraintlayout.core.motion.utils.KeyCycleOscillator A[D('osc_y' androidx.constraintlayout.core.motion.utils.KeyCycleOscillator), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'position' float A[D('position' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0008 \-\> B:14:0x0010, CROSS_EDGE: B:10:0x0000 \-\> B:12:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_14 -> Node_9;
+Node_15 -> Node_9;
+}
+

@@ -1,0 +1,72 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeLinkedListNode.finishAdd(Lkotlinx\/coroutines\/internal\/LockFreeLinkedListNode;)V" {
+subgraph cluster_Region_758983343 {
+label = "R(2:(2:2|(1:(1:14)))|(1:(1:9))) | DECL_VAR: kotlinx.coroutines.internal.LockFreeLinkedListNode nextPrev\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_530993736 {
+label = "LOOP:0: (2:2|(1:(1:14)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0015|LOOP_END\lLOOP:0: B:19:0x0002\-\>B:23:0x0015\l|if (androidx.concurrent.futures.C0125xc40028dd.m112m(kotlinx.coroutines.internal.LockFreeLinkedListNode._prev$FU, r6, r2, r5) == false) goto L2\l}"];
+subgraph cluster_Region_1773597430 {
+label = "R(2:2|(1:(1:14)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|LOOP_START\lLOOP:0: B:19:0x0002\-\>B:23:0x0015\l|kotlinx.coroutines.internal.LockFreeLinkedListNode r2 = (kotlinx.coroutines.internal.LockFreeLinkedListNode) r6._prev\l}"];
+subgraph cluster_Region_918147330 {
+label = "R(1:(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_706376175 {
+label = "IF [B:20:0x000c] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000c|if (getNext() != r6) goto L13\l}"];
+subgraph cluster_Region_324276201 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|RETURN\l|return\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1467492222 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_791792978 {
+label = "IF [B:25:0x001b] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001b|if (isRemoved() != false) goto L9\l}"];
+subgraph cluster_Region_1448952914 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001d|r6.correctPrev(null)\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000f}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0017|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0017}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0021|ORIG_RETURN\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x000e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.internal.LockFreeLinkedListNode.finishAdd((r5v0 'this' kotlinx.coroutines.internal.LockFreeLinkedListNode A[IMMUTABLE_TYPE, THIS]), (r6v0 'next' kotlinx.coroutines.internal.LockFreeLinkedListNode A[D('next' kotlinx.coroutines.internal.LockFreeLinkedListNode), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0021 \-\> B:17:?, CROSS_EDGE: B:25:0x001b \-\> B:27:0x0021, BACK_EDGE: B:23:0x0015 \-\> B:19:0x0002\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_23 -> Node_19;
+Node_23 -> Node_29[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_22[style=dashed];
+Node_20 -> Node_30;
+Node_21 -> Node_17;
+Node_25 -> Node_26;
+Node_25 -> Node_31[style=dashed];
+Node_26 -> Node_27;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_22 -> Node_23;
+Node_29 -> Node_24;
+Node_24 -> Node_25;
+Node_27 -> Node_17;
+Node_31 -> Node_17;
+Node_30 -> Node_21;
+}
+

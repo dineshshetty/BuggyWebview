@@ -1,0 +1,35 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractSendChannel.offer(Ljava\/lang\/Object;)Z" {
+Node_15 [shape=record,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0002|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0002|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x000a, blocks: (B:17:0x0002), top: B:28:0x0002 \}\lCatch: all \-\> 0x000a\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0009|RETURN\l|return kotlinx.coroutines.channels.SendChannel.DefaultImpls.offer(r4, r5)\l}"];
+Node_16 [shape=record,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000a|ExcHandler: all \-\> 0x000a\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000b|kotlin.jvm.functions.Function1\<E, kotlin.Unit\> r1 = r4.onUndeliveredElement\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000d|if (r1 == null) goto L13\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000f|kotlinx.coroutines.internal.UndeliveredElementException r1 = kotlinx.coroutines.internal.OnUndeliveredElement.callUndeliveredElementCatchingException$default(r1, r5, null, 2, null)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0015|if (r1 != null) goto L11\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0018|kotlin.Exceptions.addSuppressed(r1, r0)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001f|throw r1\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0020|throw r0\l}"];
+MethodNode[shape=record,label="{public boolean kotlinx.coroutines.channels.AbstractSendChannel.offer((r4v0 'this' kotlinx.coroutines.channels.AbstractSendChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r5v0 E A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x001f \-\> B:16:?, CROSS_EDGE: B:27:0x0020 \-\> B:16:?, CROSS_EDGE: B:21:0x000d \-\> B:27:0x0020, CROSS_EDGE: B:28:0x0002 \-\> B:19:0x000a\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x000a, blocks: (B:17:0x0002), top: B:28:0x0002 \}\lTYPE_VARS: [E]\lSIGNATURE: (TE;)Z\lJadxCommentsAttr\{\l DEBUG: \l \-\> Finally have unexpected throw blocks count: 2, expect 1\}\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.SendChannel.offer(E):boolean]\l}"];
+MethodNode -> Node_15;Node_15 -> Node_28;
+Node_28 -> Node_17;
+Node_28 -> Node_19;
+Node_17 -> Node_18;
+Node_17 -> Node_29;
+Node_18 -> Node_16;
+Node_29 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_27;
+Node_22 -> Node_23;
+Node_23 -> Node_25;
+Node_23 -> Node_27[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_16;
+Node_27 -> Node_16;
+}
+

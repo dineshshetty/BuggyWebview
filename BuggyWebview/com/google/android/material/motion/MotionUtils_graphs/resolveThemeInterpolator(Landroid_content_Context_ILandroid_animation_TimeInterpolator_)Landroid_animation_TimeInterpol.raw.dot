@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.material.motion.MotionUtils.resolveThemeInterpolator(Landroid\/content\/Context;ILandroid\/animation\/TimeInterpolator;)Landroid\/animation\/TimeInterpolator;" {
+Node_15 [shape=record,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0000|0x0000: NEW_INSTANCE  (r0 I:android.util.TypedValue) =  android.util.TypedValue  (LINE:68)\l0x0002: INVOKE  (r0 I:android.util.TypedValue) type: DIRECT call: android.util.TypedValue.\<init\>():void A[MD:():void (c)]\l0x0005: INVOKE  (r1 I:android.content.res.Resources$Theme) = (r3 I:android.content.Context A[D('context' android.content.Context)]) type: VIRTUAL call: android.content.Context.getTheme():android.content.res.Resources$Theme A[MD:():android.content.res.Resources$Theme (c)] (LINE:69)\l0x0009: CONST  (r2 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char]) \l0x000a: INVOKE  (r1 I:boolean) = \l  (r1 I:android.content.res.Resources$Theme)\l  (r4 I:int A[D('attrResId' int)])\l  (r0 I:android.util.TypedValue A[D('easingValue' android.util.TypedValue)])\l  (r2 I:boolean)\l type: VIRTUAL call: android.content.res.Resources.Theme.resolveAttribute(int, android.util.TypedValue, boolean):boolean A[MD:(int, android.util.TypedValue, boolean):boolean (c)]\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000e|0x000e: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:20:0x0011 \l}"];
+Node_19 [shape=record,label="{19\:\ 0x0010|RETURN\l|0x0010: RETURN  (r5 I:android.animation.TimeInterpolator A[D('defaultInterpolator' android.animation.TimeInterpolator)])  (LINE:70)\l}"];
+Node_16 [shape=record,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0011|0x0011: IGET  (r1 I:int) = (r0 I:android.util.TypedValue A[D('easingValue' android.util.TypedValue)]) android.util.TypedValue.type int  (LINE:73)\l0x0013: CONST  (r2 I:??[int, float, short, byte, char]) = (3 ??[int, float, short, byte, char]) \l}"];
+Node_21 [shape=record,label="{21\:\ 0x0014|0x0014: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:28:0x002e \l}"];
+Node_22 [shape=record,label="{22\:\ 0x0016|0x0016: IGET  (r1 I:java.lang.CharSequence) = (r0 I:android.util.TypedValue A[D('easingValue' android.util.TypedValue)]) android.util.TypedValue.string java.lang.CharSequence  (LINE:80)\l0x0018: INVOKE  (r1 I:java.lang.String) = (r1 I:java.lang.Object) type: STATIC call: java.lang.String.valueOf(java.lang.Object):java.lang.String A[MD:(java.lang.Object):java.lang.String (c)]\l0x001c: INVOKE  (r2 I:boolean) = (r1 I:java.lang.String A[D('easingString' java.lang.String)]) type: STATIC call: com.google.android.material.motion.MotionUtils.isLegacyEasingAttribute(java.lang.String):boolean A[MD:(java.lang.String):boolean (m)] (LINE:81)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0020|0x0020: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:26:0x0027 \l}"];
+Node_24 [shape=record,label="{24\:\ 0x0022|0x0022: INVOKE  (r2 I:android.animation.TimeInterpolator) = (r1 I:java.lang.String A[D('easingString' java.lang.String)]) type: STATIC call: com.google.android.material.motion.MotionUtils.getLegacyThemeInterpolator(java.lang.String):android.animation.TimeInterpolator A[MD:(java.lang.String):android.animation.TimeInterpolator (m)] (LINE:82)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0026|RETURN\l|0x0026: RETURN  (r2 I:android.animation.TimeInterpolator) \l}"];
+Node_26 [shape=record,label="{26\:\ 0x0027|0x0027: IGET  (r2 I:int) = (r0 I:android.util.TypedValue A[D('easingValue' android.util.TypedValue)]) android.util.TypedValue.resourceId int  (LINE:85)\l0x0029: INVOKE  (r2 I:android.view.animation.Interpolator) = (r3 I:android.content.Context A[D('context' android.content.Context)]), (r2 I:int) type: STATIC call: android.view.animation.AnimationUtils.loadInterpolator(android.content.Context, int):android.view.animation.Interpolator A[MD:(android.content.Context, int):android.view.animation.Interpolator throws android.content.res.Resources$NotFoundException (c)]\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002d|RETURN\l|0x002d: RETURN  (r2 I:android.animation.TimeInterpolator) \l}"];
+Node_28 [shape=record,label="{28\:\ 0x002e|0x002e: NEW_INSTANCE  (r1 I:java.lang.IllegalArgumentException A[D('easingString' java.lang.String)]) =  java.lang.IllegalArgumentException  (LINE:74)\l0x0030: CONST_STR  (r2 I:java.lang.String) =  \"Motion easing theme attribute must be an @interpolator resource for ?attr\/motionEasing*Interpolator attributes or a string for ?attr\/motionEasing* attributes.\" \l0x0032: INVOKE  (r1 I:java.lang.IllegalArgumentException), (r2 I:java.lang.String) type: DIRECT call: java.lang.IllegalArgumentException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0035|0x0035: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static android.animation.TimeInterpolator com.google.android.material.motion.MotionUtils.resolveThemeInterpolator((r3 I:android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:int A[D('attrResId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:android.animation.TimeInterpolator A[D('defaultInterpolator' android.animation.TimeInterpolator), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0026 \-\> B:16:?, CROSS_EDGE: B:27:0x002d \-\> B:16:?, CROSS_EDGE: B:29:0x0035 \-\> B:16:?\lINLINE_NOT_NEEDED\lDebug Info:\l  0x001c\-0x002e: r1 'easingString' Ljava\/lang\/String;\l  0x0005\-0x0035: r0 'easingValue' Landroid\/util\/TypedValue;\l  \-1 \-0x0035: r3 'context' Landroid\/content\/Context;\l  \-1 \-0x0035: r4 'attrResId' I\l  \-1 \-0x0035: r5 'defaultInterpolator' Landroid\/animation\/TimeInterpolator;\l}"];
+MethodNode -> Node_15;Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_16;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_28;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_26;
+Node_24 -> Node_25;
+Node_25 -> Node_16;
+Node_26 -> Node_27;
+Node_27 -> Node_16;
+Node_28 -> Node_29;
+Node_29 -> Node_16;
+}
+

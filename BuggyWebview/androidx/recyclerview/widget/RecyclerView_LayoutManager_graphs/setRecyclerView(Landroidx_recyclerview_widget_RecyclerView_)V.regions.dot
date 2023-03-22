@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.LayoutManager.setRecyclerView(Landroidx\/recyclerview\/widget\/RecyclerView;)V" {
+subgraph cluster_Region_2003144531 {
+label = "R(2:(1:2)(1:6)|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1614151682 {
+label = "IF [B:9:0x0000] THEN: R(1:2) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r2 == null) goto L2\l}"];
+subgraph cluster_Region_1403132758 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|r1.mRecyclerView = null\lr1.mChildHelper = null\lr1.mWidth = 0\lr1.mHeight = 0\l}"];
+}
+subgraph cluster_Region_250322416 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000d|r1.mRecyclerView = r2\lr1.mChildHelper = r2.mChildHelper\lr1.mWidth = r2.getWidth()\lr1.mHeight = r2.getHeight()\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x001f|r1.mWidthMode = androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.EXACTLY\lr1.mHeightMode = androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.EXACTLY\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0025}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.LayoutManager.setRecyclerView((r1v0 'this' androidx.recyclerview.widget.RecyclerView$LayoutManager A[IMMUTABLE_TYPE, THIS]), (r2v0 'recyclerView' androidx.recyclerview.widget.RecyclerView A[D('recyclerView' androidx.recyclerview.widget.RecyclerView), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x000d \-\> B:12:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

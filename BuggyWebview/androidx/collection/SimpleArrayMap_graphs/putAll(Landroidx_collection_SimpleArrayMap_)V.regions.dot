@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.collection.SimpleArrayMap.putAll(Landroidx\/collection\/SimpleArrayMap;)V" {
+subgraph cluster_Region_1703792902 {
+label = "R(2:1|(2:(1:(2:(2:4|5)|(1:7)))|(2:8|(1:10))))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = r6.mSize\lensureCapacity(r5.mSize + r0)\l}"];
+subgraph cluster_Region_1810338273 {
+label = "R(2:(1:(2:(2:4|5)|(1:7)))|(2:8|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_925552815 {
+label = "IF [B:16:0x000a] THEN: R(1:(2:(2:4|5)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (r5.mSize == 0) goto L3\l}"];
+subgraph cluster_Region_1601409377 {
+label = "R(1:(2:(2:4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1267173468 {
+label = "R(2:(2:4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_651167471 {
+label = "IF [B:17:0x000c] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|if (r0 \> 0) goto L4\l}"];
+subgraph cluster_Region_940045838 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|java.lang.System.arraycopy(r6.mHashes, 0, r5.mHashes, 0, r0)\ljava.lang.System.arraycopy(r6.mArray, 0, r5.mArray, 0, r0 \<\< 1)\lr5.mSize = r0\l}"];
+Node_24 [shape=record,label="{24\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_473460820 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0033|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1338705627 {
+label = "R(2:8|(1:10))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0022|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_1153821348 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0023|LOOP_START\lLOOP:0: B:20:0x0023\-\>B:21:0x0025\lPHI: r1 \l  PHI: (r1v4 'i' int) = (r1v3 'i' int), (r1v5 'i' int) binds: [B:19:0x0022, B:21:0x0025] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L10\l}"];
+subgraph cluster_Region_1762301619 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0025|LOOP_END\lLOOP:0: B:20:0x0023\-\>B:21:0x0025\l|put(r6.keyAt(r1), r6.valueAt(r1))\lr1++\l}"];
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0033|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.collection.SimpleArrayMap.putAll((r5v0 'this' androidx.collection.SimpleArrayMap\<K, V\> A[D('this' androidx.collection.SimpleArrayMap\<K, V\>), IMMUTABLE_TYPE, THIS]), (r6v0 'array' androidx.collection.SimpleArrayMap\<? extends K, ? extends V\> A[D('array' androidx.collection.SimpleArrayMap\<? extends K, ? extends V\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000c \-\> B:22:0x0033, BACK_EDGE: B:21:0x0025 \-\> B:20:0x0023, CROSS_EDGE: B:20:0x0023 \-\> B:22:0x0033\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: (Landroidx\/collection\/SimpleArrayMap\<+TK;+TV;\>;)V\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_22[style=dashed];
+Node_18 -> Node_24;
+Node_24 -> Node_14;
+Node_22 -> Node_14;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_20;
+Node_13 -> Node_15;
+Node_23 -> Node_25;
+Node_25 -> Node_14;
+}
+

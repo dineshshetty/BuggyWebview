@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.randomOrNull([SLkotlin\/random\/Random;)Ljava\/lang\/Short;" {
+subgraph cluster_Region_1671344888 {
+label = "R(2:1|(2:(1:5)|(1:8)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"random\")\l}"];
+subgraph cluster_Region_918041723 {
+label = "R(2:(1:5)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2011841335 {
+label = "IF [B:17:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r1.length == 0) != false) goto L5\l}"];
+subgraph cluster_Region_743818069 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0012|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_977976661 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001f|RETURN\l|return java.lang.Short.valueOf(r1[r2.nextInt(r1.length)])\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000b}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000d}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0014}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000f}"];
+MethodNode[shape=record,label="{public static final java.lang.Short kotlin.collections.ArraysKt___ArraysKt.randomOrNull((r1v0 '$this$randomOrNull' short[] A[D('$this$randomOrNull' short[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'random' kotlin.random.Random A[D('random' kotlin.random.Random), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001f \-\> B:12:?, CROSS_EDGE: B:16:0x000f \-\> B:17:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_20 -> Node_21;
+Node_16 -> Node_17;
+}
+

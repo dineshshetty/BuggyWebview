@@ -1,0 +1,20 @@
+digraph "CFG forkotlin.collections.RingBuffer.add(Ljava\/lang\/Object;)V" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: INVOKE  (r0 I:boolean) = (r7 I:kotlin.collections.RingBuffer) type: VIRTUAL call: kotlin.collections.RingBuffer.isFull():boolean A[MD:():boolean (m)] (LINE:172)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0004|0x0004: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:14:0x0022 \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0006|0x0006: IGET  (r0 I:java.lang.Object[]) = (r7 I:kotlin.collections.RingBuffer) kotlin.collections.RingBuffer.buffer java.lang.Object[]  (LINE:176)\l0x0008: IGET  (r1 I:int) = (r7 I:kotlin.collections.RingBuffer) kotlin.collections.RingBuffer.startIndex int \l0x000a: INVOKE  (r2 I:int) = (r7 I:kotlin.collections.RingBuffer) type: VIRTUAL call: kotlin.collections.RingBuffer.size():int A[MD:():int (m)]\l0x000e: MOVE  (r3 I:??[OBJECT, ARRAY]) = (r7 I:??[OBJECT, ARRAY]) \l0x000f: CONST  (r4 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x0010: ARITH  (r5 I:int) = (r1 I:int A[D('$this$forward$iv' int)]) + (r2 I:int A[D('n$iv' int)])  (LINE:210)\l0x0012: INVOKE  (r6 I:int) = (r3 I:kotlin.collections.RingBuffer A[D('this_$iv' kotlin.collections.RingBuffer)]) type: STATIC call: kotlin.collections.RingBuffer.access$getCapacity$p(kotlin.collections.RingBuffer):int A[MD:(kotlin.collections.RingBuffer):int (m)]\l0x0016: ARITH  (r5 I:int) = (r5 I:int) % (r6 I:int) \l0x0017: APUT  \l  (r0 I:??[OBJECT, ARRAY][])\l  (r5 I:??[int, short, byte, char])\l  (r8 I:??[OBJECT, ARRAY] A[D('element' java.lang.Object)])\l  (LINE:176)\l0x0019: INVOKE  (r0 I:int) = (r7 I:kotlin.collections.RingBuffer) type: VIRTUAL call: kotlin.collections.RingBuffer.size():int A[MD:():int (m)] (LINE:177)\l0x001d: ARITH  (r0 I:int) = (r0 I:int) + (1 int) \l0x001f: IPUT  (r0 I:int), (r7 I:kotlin.collections.RingBuffer) kotlin.collections.RingBuffer.size int \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0021|RETURN\l|0x0021: RETURN    (LINE:178)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0022|0x0022: NEW_INSTANCE  (r0 I:java.lang.IllegalStateException) =  java.lang.IllegalStateException  (LINE:173)\l0x0024: CONST_STR  (r1 I:java.lang.String) =  \"ring buffer is full\" \l0x0026: INVOKE  (r0 I:java.lang.IllegalStateException), (r1 I:java.lang.String) type: DIRECT call: java.lang.IllegalStateException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0029|0x0029: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public final void kotlin.collections.RingBuffer.add((r7 'this' I:kotlin.collections.RingBuffer\<T\> A[IMMUTABLE_TYPE, THIS]), (r8 I:T A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x0029 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (TT;)V\lDebug Info:\l  0x000a\-0x0017: r1 '$this$forward$iv' I\l  0x000e\-0x0017: r2 'n$iv' I\l  0x000f\-0x0017: r3 'this_$iv' Lkotlin\/collections\/RingBuffer;\l  0x0010\-0x0017: r4 '$i$f$forward' I\l  \-1 \-0x0029: r8 'element' Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [ClspMth\{java.util.Collection.add(E):boolean\}]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+}
+

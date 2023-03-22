@@ -1,0 +1,74 @@
+digraph "CFG forandroidx.cardview.widget.CardView.onMeasure(II)V" {
+subgraph cluster_Region_78642809 {
+label = "R(2:1|(2:(6:3|4|6|7|9|10)|(1:12)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|androidx.cardview.widget.CardViewImpl androidx.cardview.widget.CardViewImpl r0 = androidx.cardview.widget.CardView.IMPL\l}"];
+subgraph cluster_Region_298423918 {
+label = "R(2:(6:3|4|6|7|9|10)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_84329844 {
+label = "IF [B:19:0x0004] THEN: R(6:3|4|6|7|9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if ((r0 instanceof androidx.cardview.widget.CardViewApi21Impl) == false) goto L3\l}"];
+subgraph cluster_Region_1125495035 {
+label = "R(6:3|4|6|7|9|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|int int r1 = android.view.View.MeasureSpec.getMode(r6)\l}"];
+subgraph cluster_SwitchRegion_1888215176 {
+label = "Switch: 1
+ case -2147483648, androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.EXACTLY :int -> R(2:5|1)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000a|switch(r1) \{\l    case \-2147483648: goto L5;\l    case 1073741824: goto L5;\l    default: goto L6;\l\}\l}"];
+subgraph cluster_Region_2107924077 {
+label = "R(2:5|1)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000e|int int r2 = (int) java.lang.Math.ceil(r0.getMinWidth(r5.mCardViewDelegate))\lint r6 = android.view.View.MeasureSpec.makeMeasureSpec(java.lang.Math.max(r2, android.view.View.MeasureSpec.getSize(r6)), r1)\l}"];
+Node_InsnContainer_1246738916 [shape=record,label="{|break\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0028|PHI: r6 \l  PHI: (r6v1 'widthMeasureSpec' int) = (r6v0 'widthMeasureSpec' int), (r6v2 'widthMeasureSpec' int) binds: [B:21:0x000a, B:23:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|int int r2 = android.view.View.MeasureSpec.getMode(r7)\l}"];
+subgraph cluster_SwitchRegion_788762562 {
+label = "Switch: 1
+ case -2147483648, androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.EXACTLY :int -> R(2:8|1)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002c|switch(r2) \{\l    case \-2147483648: goto L8;\l    case 1073741824: goto L8;\l    default: goto L9;\l\}\l}"];
+subgraph cluster_Region_951246242 {
+label = "R(2:8|1)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0030|int int r0 = (int) java.lang.Math.ceil(r0.getMinHeight(r5.mCardViewDelegate))\lint r7 = android.view.View.MeasureSpec.makeMeasureSpec(java.lang.Math.max(r0, android.view.View.MeasureSpec.getSize(r7)), r2)\l}"];
+Node_InsnContainer_2102705210 [shape=record,label="{|break\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x004a|PHI: r7 \l  PHI: (r7v1 'heightMeasureSpec' int) = (r7v0 'heightMeasureSpec' int), (r7v2 'heightMeasureSpec' int) binds: [B:25:0x002c, B:27:0x0030] A[DONT_GENERATE, DONT_INLINE]\l|super.onMeasure(r6, r7)\l}"];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1522756671 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x004e|super.onMeasure(r6, r7)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0051|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.cardview.widget.CardView.onMeasure((r5v0 'this' androidx.cardview.widget.CardView A[IMMUTABLE_TYPE, THIS]), (r6v0 'widthMeasureSpec' int A[D('widthMeasureSpec' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'heightMeasureSpec' int A[D('heightMeasureSpec' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:25:0x002c \-\> B:28:0x004a, CROSS_EDGE: B:21:0x000a \-\> B:24:0x0028, CROSS_EDGE: B:29:0x004e \-\> B:30:0x0051\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onMeasure(int, int):void\}]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_29[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_23;
+Node_21 -> Node_24;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_27;
+Node_25 -> Node_28;
+Node_27 -> Node_28;
+Node_28 -> Node_31;
+Node_31 -> Node_17;
+Node_29 -> Node_30;
+Node_16 -> Node_18;
+Node_30 -> Node_17;
+}
+

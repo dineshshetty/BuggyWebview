@@ -1,0 +1,27 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.endFakeDrag()V" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000}"];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r10.mFakeDragging == false) goto L9\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0004}"];
+Node_16 [shape=record,label="{16\:\ 0x0006|if (r10.mAdapter == null) goto L6\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0008|android.view.VelocityTracker r0 = r10.mVelocityTracker\lr0.computeCurrentVelocity(1000, (float) r10.mMaximumVelocity)\lint r1 = (int) r0.getXVelocity(r10.mActivePointerId)\lr10.mPopulatePending = true\lint r3 = getClientWidth()\lint r4 = getScrollX()\landroidx.viewpager.widget.ViewPager$ItemInfo r5 = infoForCurrentScrollPosition()\lint r6 = r5.position\lfloat r7 = ((((float) r4) \/ ((float) r3)) \- r5.offset) \/ r5.widthFactor\lint r8 = (int) (r10.mLastMotionX \- r10.mInitialMotionX)\lint r9 = determineTargetPage(r6, r7, r1, r8)\lsetCurrentItemInternal(r9, true, true, r1)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0040|endDrag()\lr10.mFakeDragging = false\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0046|RETURN\l|return\l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0047}"];
+Node_21 [shape=record,label="{21\:\ 0x004e|throw new java.lang.IllegalStateException(\"No fake drag in progress. Call beginFakeDrag first.\")\l}"];
+MethodNode[shape=record,label="{public void androidx.viewpager.widget.ViewPager.endFakeDrag((r10v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0006 \-\> B:18:0x0040, CROSS_EDGE: B:21:0x004e \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+}
+

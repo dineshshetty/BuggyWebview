@@ -1,0 +1,48 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.drawChild(Landroid\/graphics\/Canvas;Landroid\/view\/View;J)Z" {
+subgraph cluster_Region_1406766187 {
+label = "R(3:1|(1:7)|9)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|boolean r0 = false\l}"];
+subgraph cluster_IfRegion_1664408366 {
+label = "IF [B:3:0x0003, B:5:0x0007, B:7:0x000d] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r4.contentScrim != null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0007|ADDED_TO_REGION\l|if (r4.scrimAlpha \> 0) goto L5\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000d|ADDED_TO_REGION\l|if (isToolbarChild(r6) != false) goto L7\l}"];
+subgraph cluster_Region_371860102 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|updateContentScrimBounds(r4.contentScrim, r6, getWidth(), getHeight())\lr4.contentScrim.mutate().setAlpha(r4.scrimAlpha)\lr4.contentScrim.draw(r5)\lr0 = true\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0031|RETURN\l|return super.drawChild(r5, r6, r7) \|\| r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0005}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0009}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002d|PHI: r0 \l  PHI: (r0v1 'invalidated' boolean) = (r0v0 'invalidated' boolean), (r0v0 'invalidated' boolean), (r0v0 'invalidated' boolean), (r0v2 'invalidated' boolean) binds: [B:3:0x0003, B:5:0x0007, B:7:0x000d, B:8:0x000f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0033|REMOVE\lADDED_TO_REGION\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0036|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0038|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.material.appbar.CollapsingToolbarLayout.drawChild((r4v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'drawingTime' long A[D('drawingTime' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:14:0x0038 \-\> B:15:0x0039, CROSS_EDGE: B:10:0x0031 \-\> B:14:0x0038, CROSS_EDGE: B:7:0x000d \-\> B:9:0x002d, CROSS_EDGE: B:5:0x0007 \-\> B:9:0x002d, CROSS_EDGE: B:3:0x0003 \-\> B:9:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewGroup.drawChild(android.graphics.Canvas, android.view.View, long):boolean\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_14;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_11 -> Node_13;
+Node_11 -> Node_14;
+Node_13 -> Node_1;
+Node_14 -> Node_1;
+}
+

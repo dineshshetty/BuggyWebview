@@ -1,0 +1,69 @@
+digraph "CFG forkotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$$inlined$combineTransformUnsafe$FlowKt__ZipKt$5.invokeSuspend(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_944719970 {
+label = "R(3:1|2|8) | DECL_VAR: kotlin.jvm.functions.Function0 null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.Object java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+subgraph cluster_SwitchRegion_1804568689 {
+label = "Switch: 3
+ case 0 -> R(2:9|(1:1)(1:11))
+ case 1 -> R(2:6|1)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|switch(r8.label) \{\l    case 0: goto L9;\l    case 1: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_1817107980 {
+label = "R(2:9|(1:1)(1:11))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|kotlin.ResultKt.throwOnFailure(r9)\lkotlinx.coroutines.flow.FlowCollector kotlinx.coroutines.flow.FlowCollector r2 = (kotlinx.coroutines.flow.FlowCollector) r8.L$0\lkotlinx.coroutines.flow.Flow[] kotlinx.coroutines.flow.Flow[] r3 = r8.$flows\lkotlin.jvm.functions.Function0 r4 = kotlinx.coroutines.flow.Zip.nullArrayFactory$FlowKt__ZipKt()\lr8.label = 1\l}"];
+subgraph cluster_IfRegion_1024241746 {
+label = "IF [B:8:0x0038] THEN: R(1:1) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0038|if (kotlinx.coroutines.flow.internal.Combine.combineInternal(r2, r3, r4, new kotlinx.coroutines.flow.C0956xd7c321ea.C09571(null, r8.$transform$inlined), r8) != r0) goto L12\l}"];
+subgraph cluster_Region_977120711 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_986098002 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1924510345 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003a|RETURN\l|return r0\l}"];
+}
+}
+}
+subgraph cluster_Region_1026738730 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|kotlin.ResultKt.throwOnFailure(r9)\l}"];
+Node_InsnContainer_711524861 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2112738018 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw new java.lang.IllegalStateException(\"call to 'resume' before 'invoke' with coroutine\")\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x003e|RETURN\l|return kotlin.Unit.INSTANCE\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003c}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003b}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$$inlined$combineTransformUnsafe$FlowKt__ZipKt$5.invokeSuspend((r8v0 'this' kotlinx.coroutines.flow.FlowKt__ZipKt$combineTransform$$inlined$combineTransformUnsafe$FlowKt__ZipKt$5 A[IMMUTABLE_TYPE, THIS]), (r9v0 '$result' java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x003e \-\> B:1:?, CROSS_EDGE: B:9:0x003a \-\> B:1:?, CROSS_EDGE: B:10:0x003b \-\> B:11:0x003c\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [kotlin.coroutines.jvm.internal.BaseContinuationImpl.invokeSuspend(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6;
+Node_3 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_1;
+Node_6 -> Node_11;
+Node_5 -> Node_1;
+Node_12 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_11 -> Node_12;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.app.AppOpsManagerCompat.Api29Impl.checkOpNoThrow(Landroid\/app\/AppOpsManager;Ljava\/lang\/String;ILjava\/lang\/String;)I" {
+subgraph cluster_Region_1742875953 {
+label = "R(1:(2:(1:2)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_151322491 {
+label = "R(2:(1:2)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_37224592 {
+label = "IF [B:9:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r1 == null) goto L2\l}"];
+subgraph cluster_Region_1204874231 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|RETURN\l|return 1\l}"];
+}
+}
+subgraph cluster_Region_825089433 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|RETURN\l|return r1.checkOpNoThrow(r2, r3, r4)\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+MethodNode[shape=record,label="{static int androidx.core.app.AppOpsManagerCompat.Api29Impl.checkOpNoThrow((r1v0 'appOpsManager' android.app.AppOpsManager A[D('appOpsManager' android.app.AppOpsManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'op' java.lang.String A[D('op' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'uid' int A[D('uid' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'packageName' java.lang.String A[D('packageName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0008 \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_12 -> Node_13;
+}
+

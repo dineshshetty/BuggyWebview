@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuItemImpl.setActionView(Landroid\/view\/View;)Landroidx\/core\/internal\/view\/SupportMenuItem;" {
+subgraph cluster_Region_527632584 {
+label = "R(4:1|(1:7)|8|9) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r2.mActionView = r3\lr2.mActionProvider = null\l}"];
+subgraph cluster_IfRegion_76803952 {
+label = "IF [B:14:0x0005, B:16:0x000c, B:18:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0005|if (r3 != null) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000c|ADDED_TO_REGION\l|if (r3.getId() == (\-1)) goto L5\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0010|ADDED_TO_REGION\l|if ((r0 = r2.mId) \> 0) goto L7\l}"];
+subgraph cluster_Region_1120898778 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|r3.setId(r0)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0015|r2.mMenu.onItemActionRequestChanged(r2)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x001a|RETURN\l|return r2\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0007}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000e}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.core.internal.view.SupportMenuItem androidx.appcompat.view.menu.MenuItemImpl.setActionView((r2v0 'this' androidx.appcompat.view.menu.MenuItemImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:18:0x0010 \-\> B:20:0x0015, CROSS_EDGE: B:16:0x000c \-\> B:20:0x0015, CROSS_EDGE: B:14:0x0005 \-\> B:20:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: androidx.appcompat.view.menu.MenuItemImpl.setActionView(android.view.View):android.view.MenuItem\lMETHOD_OVERRIDE: [ClspMth\{android.view.MenuItem.setActionView(android.view.View):android.view.MenuItem\}]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+}
+

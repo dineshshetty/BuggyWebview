@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlexBuffers.Map.toString(Ljava\/lang\/StringBuilder;)Ljava\/lang\/StringBuilder;" {
+subgraph cluster_Region_451354044 {
+label = "R(4:1|(3:3|(1:5)(0)|7)|10|11)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|r6.append(\"\{ \")\landroidx.emoji2.text.flatbuffer.FlexBuffers$KeyVector androidx.emoji2.text.flatbuffer.FlexBuffers.KeyVector r0 = keys()\lint int r1 = size()\landroidx.emoji2.text.flatbuffer.FlexBuffers$Vector androidx.emoji2.text.flatbuffer.FlexBuffers.Vector r2 = values()\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1995721901 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|LOOP_START\lLOOP:0: B:16:0x0012\-\>B:20:0x003d\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v3 'i' int) binds: [B:15:0x0000, B:20:0x003d] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r1) goto L3\l}"];
+subgraph cluster_Region_1051091186 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|r6.append(kotlin.text.Typography.quote)\lr6.append(r0.get(r3).toString())\lr6.append(\"\" : \")\lr6.append(r2.get(r3).toString())\l}"];
+subgraph cluster_IfRegion_1711799842 {
+label = "IF [B:18:0x0036] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0036|if (r3 != (r1 \- 1)) goto L5\l}"];
+subgraph cluster_Region_2087770239 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0038|r6.append(\", \")\l}"];
+}
+subgraph cluster_Region_981192347 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x003d|LOOP_END\lLOOP:0: B:16:0x0012\-\>B:20:0x003d\l|r3++\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0040|r6.append(\" \}\")\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0045|RETURN\l|return r6\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x003d|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x003d|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0040|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.StringBuilder androidx.emoji2.text.flatbuffer.FlexBuffers.Map.toString((r5v0 'this' androidx.emoji2.text.flatbuffer.FlexBuffers$Map A[IMMUTABLE_TYPE, THIS]), (r6v0 'builder' java.lang.StringBuilder A[D('builder' java.lang.StringBuilder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x003d \-\> B:16:0x0012, CROSS_EDGE: B:18:0x0036 \-\> B:20:0x003d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.emoji2.text.flatbuffer.FlexBuffers.Object.toString(java.lang.StringBuilder):java.lang.StringBuilder]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_24;
+Node_20 -> Node_16;
+Node_21 -> Node_22;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_20;
+Node_25 -> Node_20;
+Node_23 -> Node_21;
+}
+

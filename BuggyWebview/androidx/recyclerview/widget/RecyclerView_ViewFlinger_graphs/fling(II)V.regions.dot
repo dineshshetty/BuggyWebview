@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.ViewFlinger.fling(II)V" {
+subgraph cluster_Region_281123142 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|androidx.recyclerview.widget.RecyclerView.this.setScrollState(2)\lr12.mLastFlingY = 0\lr12.mLastFlingX = 0\l}"];
+subgraph cluster_IfRegion_873702578 {
+label = "IF [B:10:0x000f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000f|if (r12.mInterpolator != androidx.recyclerview.widget.RecyclerView.sQuinticInterpolator) goto L3\l}"];
+subgraph cluster_Region_163337516 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0011|r12.mInterpolator = androidx.recyclerview.widget.RecyclerView.sQuinticInterpolator\lr12.mOverScroller = new android.widget.OverScroller(androidx.recyclerview.widget.RecyclerView.this.getContext(), androidx.recyclerview.widget.RecyclerView.sQuinticInterpolator)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0024|r12.mOverScroller.fling(0, 0, r13, r14, Integer.MIN_VALUE, Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MAX_VALUE)\lpostOnAnimation()\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003a}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.RecyclerView.ViewFlinger.fling((r12v0 'this' androidx.recyclerview.widget.RecyclerView$ViewFlinger A[IMMUTABLE_TYPE, THIS]), (r13v0 'velocityX' int A[D('velocityX' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'velocityY' int A[D('velocityY' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x000f \-\> B:12:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

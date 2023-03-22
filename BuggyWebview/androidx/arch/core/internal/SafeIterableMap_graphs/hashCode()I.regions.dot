@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.arch.core.internal.SafeIterableMap.hashCode()I" {
+subgraph cluster_Region_282920864 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|int r0 = 0\ljava.util.Iterator java.util.Iterator\<java.util.Map.Entry\<K, V\>\> r1 = iterator()\l}"];
+subgraph cluster_LoopRegion_627040315 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0009|if (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_542269719 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000b|LOOP_END\lLOOP:0: B:11:0x0005\-\>B:13:0x000b\l|r0 += r1.next().hashCode()\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0017|RETURN\l|return r0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0005|LOOP_START\lLOOP:0: B:11:0x0005\-\>B:13:0x000b\lPHI: r0 \l  PHI: (r0v1 'h' int) = (r0v0 'h' int), (r0v2 'h' int) binds: [B:10:0x0000, B:13:0x000b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0017|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.arch.core.internal.SafeIterableMap.hashCode((r3v0 'this' androidx.arch.core.internal.SafeIterableMap\<K, V\> A[D('this' androidx.arch.core.internal.SafeIterableMap\<K, V\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x000b \-\> B:11:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

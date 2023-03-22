@@ -1,0 +1,64 @@
+digraph "CFG forcom.google.android.material.slider.BaseSlider.setHaloRadius(I)V" {
+subgraph cluster_Region_415448376 {
+label = "R(1:(2:(1:3)|(2:5|(1:9)(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1969962299 {
+label = "R(2:(1:3)|(2:5|(1:9)(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1430020458 {
+label = "IF [B:16:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if (r4 == r3.haloRadius) goto L3\l}"];
+subgraph cluster_Region_183626820 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_499969385 {
+label = "R(2:5|(1:9)(1:11))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|r3.haloRadius = r4\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = getBackground()\l}"];
+subgraph cluster_IfRegion_389258440 {
+label = "IF [B:19:0x000f, B:21:0x0013] THEN: R(1:9) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|if (shouldDrawCompatHalo() == false) goto L7\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0013|ADDED_TO_REGION\l|if ((r0 instanceof android.graphics.drawable.RippleDrawable) != false) goto L9\l}"];
+subgraph cluster_Region_568297543 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|com.google.android.material.drawable.DrawableUtils.setRippleDrawableRadius((android.graphics.drawable.RippleDrawable) r0, r3.haloRadius)\l}"];
+}
+subgraph cluster_Region_190458591 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|postInvalidate()\l}"];
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0011}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001d}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0021}"];
+MethodNode[shape=record,label="{public void com.google.android.material.slider.BaseSlider.setHaloRadius((r3v0 'this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\> A[D('this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\>), IMMUTABLE_TYPE, THIS]), (r4v0 'radius' int A[D('radius' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001d \-\> B:14:?, CROSS_EDGE: B:25:0x0021 \-\> B:14:?, CROSS_EDGE: B:19:0x000f \-\> B:24:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>]\lMETHOD_OVERRIDE: [com.google.android.material.slider.BaseSlider.setHaloRadius(int):void]\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_14;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_24[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+Node_23 -> Node_14;
+Node_25 -> Node_14;
+}
+

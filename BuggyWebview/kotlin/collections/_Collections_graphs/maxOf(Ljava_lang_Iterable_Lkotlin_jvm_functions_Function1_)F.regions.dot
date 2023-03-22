@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.maxOf(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)F" {
+subgraph cluster_Region_403185819 {
+label = "R(2:1|(2:(1:11)|(3:3|(1:6)|8)))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"selector\")\ljava.util.Iterator java.util.Iterator r0 = r3.iterator()\l}"];
+subgraph cluster_Region_374752765 {
+label = "R(2:(1:11)|(3:3|(1:6)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1640882019 {
+label = "IF [B:27:0x0012] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0012|if (r0.hasNext() == false) goto L10\l}"];
+subgraph cluster_Region_1117490425 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0041|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_952383145 {
+label = "R(3:3|(1:6)|8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0014|float float r1 = r4.invoke((T) r0.next()).floatValue()\l}"];
+subgraph cluster_LoopRegion_2116859189 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0026|if (r0.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_662261395 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0028|LOOP_END\lLOOP:0: B:29:0x0022\-\>B:31:0x0028\l|float float r2 = r4.invoke((T) r0.next()).floatValue()\lfloat r1 = java.lang.Math.max(r1, r2)\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x003b|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0022|LOOP_START\lLOOP:0: B:29:0x0022\-\>B:31:0x0028\lPHI: r1 \l  PHI: (r1v6 'maxValue' float) = (r1v5 'maxValue' float), (r1v7 'maxValue' float) binds: [B:28:0x0014, B:31:0x0028] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x003b|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x003c}"];
+MethodNode[shape=record,label="{private static final float kotlin.collections.CollectionsKt___CollectionsKt.maxOf((r3v0 java.lang.Iterable\<? extends T\> A[D('$this$maxOf' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'selector' kotlin.jvm.functions.Function1\<? super T, java.lang.Float\> A[D('selector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:31:0x0028 \-\> B:29:0x0022, CROSS_EDGE: B:34:0x0041 \-\> B:25:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Float;\>;)F\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r1v2. Raw type applied. Possible types: T, ? super T\l \-\> Type inference failed for r2v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_24;Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_33;
+Node_34 -> Node_25;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_35[style=dashed];
+Node_31 -> Node_29;
+Node_32 -> Node_25;
+Node_24 -> Node_26;
+Node_29 -> Node_30;
+Node_35 -> Node_32;
+Node_33 -> Node_34;
+}
+

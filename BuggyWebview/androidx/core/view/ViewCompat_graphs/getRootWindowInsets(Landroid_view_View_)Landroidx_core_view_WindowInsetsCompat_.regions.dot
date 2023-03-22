@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.view.ViewCompat.getRootWindowInsets(Landroid\/view\/View;)Landroidx\/core\/view\/WindowInsetsCompat;" {
+subgraph cluster_Region_1832731872 {
+label = "R(1:(2:(1:4)|(1:(2:(1:9)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1773117419 {
+label = "R(2:(1:4)|(1:(2:(1:9)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2032771845 {
+label = "IF [B:15:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L3\l}"];
+subgraph cluster_Region_84934692 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|RETURN\l|return androidx.core.view.ViewCompat.Api23Impl.getRootWindowInsets(r2)\l}"];
+}
+}
+subgraph cluster_Region_42815010 {
+label = "R(1:(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_399038815 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_600662312 {
+label = "IF [B:19:0x000f] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L8\l}"];
+subgraph cluster_Region_651777109 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|RETURN\l|return androidx.core.view.ViewCompat.Api21Impl.getRootWindowInsets(r2)\l}"];
+}
+}
+subgraph cluster_Region_1313731314 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0016|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0011}"];
+MethodNode[shape=record,label="{public static androidx.core.view.WindowInsetsCompat androidx.core.view.ViewCompat.getRootWindowInsets((r2v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0015 \-\> B:13:?, CROSS_EDGE: B:23:0x0017 \-\> B:13:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_13;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

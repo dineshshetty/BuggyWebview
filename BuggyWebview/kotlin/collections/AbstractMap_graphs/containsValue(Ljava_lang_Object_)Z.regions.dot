@@ -1,0 +1,75 @@
+digraph "CFG forkotlin.collections.AbstractMap.containsValue(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_1304991744 {
+label = "R(2:1|(2:(1:5)|(3:7|(2:10|(1:13))|15)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|java.lang.Iterable java.lang.Iterable r0 = entrySet()\l}"];
+subgraph cluster_Region_1835406314 {
+label = "R(2:(1:5)|(3:7|(2:10|(1:13))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1910607493 {
+label = "IF [B:22:0x000a, B:24:0x0013] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000a|if ((r0 instanceof java.util.Collection) == true) goto L3\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0013|ADDED_TO_REGION\l|if (((java.util.Collection) r0).isEmpty() == true) goto L5\l}"];
+subgraph cluster_Region_579172666 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_165590341 {
+label = "R(3:7|(2:10|(1:13))|15)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0016|java.util.Iterator r2 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_794026282 {
+label = "LOOP:0: (2:10|(1:13))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001e|java.lang.Object \lif (r2.hasNext() != false) goto L10\l}"];
+subgraph cluster_Region_1349734049 {
+label = "R(2:10|(1:13))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0020|java.lang.Object r4 = r2.next()\ljava.util.Map$Entry java.util.Map.Entry r5 = (java.util.Map.Entry) r4\l}"];
+subgraph cluster_IfRegion_1500697655 {
+label = "IF [B:30:0x0030] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0030|LOOP_END\lLOOP:0: B:27:0x001a\-\>B:30:0x0030\l|if (kotlin.jvm.internal.Intrinsics.areEqual(r5.getValue(), r9) != false) goto L12\l}"];
+subgraph cluster_Region_269400297 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0032|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000c}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001a|LOOP_START\lLOOP:0: B:27:0x001a\-\>B:30:0x0030\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0032|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0035|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean kotlin.collections.AbstractMap.containsValue((r8v0 'this' kotlin.collections.AbstractMap\<K, V\> A[IMMUTABLE_TYPE, THIS]), (r9v0 'value' java.lang.Object A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:30:0x0030 \-\> B:27:0x001a, CROSS_EDGE: B:28:0x001e \-\> B:33:0x0035, CROSS_EDGE: B:24:0x0013 \-\> B:33:0x0035, CROSS_EDGE: B:22:0x000a \-\> B:26:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lMETHOD_OVERRIDE: [ClspMth\{java.util.Map.containsValue(java.lang.Object):boolean\}]\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_26[style=dashed];
+Node_24 -> Node_26[style=dashed];
+Node_24 -> Node_36;
+Node_36 -> Node_20;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_28 -> Node_35[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_27[style=dashed];
+Node_30 -> Node_34;
+Node_31 -> Node_20;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_23 -> Node_24;
+Node_27 -> Node_28;
+Node_34 -> Node_31;
+Node_35 -> Node_37;
+}
+

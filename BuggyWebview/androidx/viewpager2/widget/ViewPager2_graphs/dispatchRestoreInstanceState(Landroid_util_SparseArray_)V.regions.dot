@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.viewpager2.widget.ViewPager2.dispatchRestoreInstanceState(Landroid\/util\/SparseArray;)V" {
+subgraph cluster_Region_501146912 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|android.os.Parcelable android.os.Parcelable r0 = r5.get(getId())\l}"];
+subgraph cluster_IfRegion_129537696 {
+label = "IF [B:10:0x000c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000c|if ((r0 instanceof androidx.viewpager2.widget.ViewPager2.SavedState) != false) goto L3\l}"];
+subgraph cluster_Region_1677565259 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000e|int int r1 = ((androidx.viewpager2.widget.ViewPager2.SavedState) r0).mRecyclerViewId\lint int r2 = r4.mRecyclerView.getId()\lr5.put(r2, r5.get(r1))\lr5.remove(r1)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0023|super.dispatchRestoreInstanceState(r5)\lrestorePendingState()\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0029}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected void androidx.viewpager2.widget.ViewPager2.dispatchRestoreInstanceState((r4v0 'this' androidx.viewpager2.widget.ViewPager2 A[IMMUTABLE_TYPE, THIS]), (r5v0 'container' android.util.SparseArray\<android.os.Parcelable\> A[D('container' android.util.SparseArray\<android.os.Parcelable\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:10:0x000c \-\> B:12:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/util\/SparseArray\<Landroid\/os\/Parcelable;\>;)V\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.dispatchRestoreInstanceState(android.util.SparseArray\<android.os.Parcelable\>):void\}]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

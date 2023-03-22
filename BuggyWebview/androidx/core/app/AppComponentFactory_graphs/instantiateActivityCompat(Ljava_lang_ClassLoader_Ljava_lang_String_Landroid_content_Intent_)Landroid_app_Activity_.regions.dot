@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.core.app.AppComponentFactory.instantiateActivityCompat(Ljava\/lang\/ClassLoader;Ljava\/lang\/String;Landroid\/content\/Intent;)Landroid\/app\/Activity;" {
+subgraph cluster_Region_1000221780 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1318820341 {
+label = "Try: R(1:4) catches: R(2:7|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1564853522 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|RETURN\l|return (android.app.Activity) java.lang.Class.forName(r5, false, r4).asSubclass(android.app.Activity.class).getDeclaredConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0])\l}"];
+}
+subgraph cluster_Region_1515043123 {
+label = "R(2:7|9) | ExcHandler: NoSuchMethodException \| InvocationTargetException \-\> 0x001a\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|ExcHandler: NoSuchMethodException \| InvocationTargetException \-\> 0x001a\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0024|throw new java.lang.RuntimeException(\"Couldn't call constructor\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1515043123 {
+label = "R(2:7|9) | ExcHandler: NoSuchMethodException \| InvocationTargetException \-\> 0x001a\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|ExcHandler: NoSuchMethodException \| InvocationTargetException \-\> 0x001a\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0024|throw new java.lang.RuntimeException(\"Couldn't call constructor\", r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0001|TRY_ENTER\lTRY_LEAVE\lTryCatch #2 \{NoSuchMethodException \| InvocationTargetException \-\> 0x001a, blocks: (B:3:0x0001), top: B:10:0x0001 \}\lCatch: NoSuchMethodException \| InvocationTargetException \-\> 0x001a, InvocationTargetException \-\> 0x001c\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001d}"];
+MethodNode[shape=record,label="{public android.app.Activity androidx.core.app.AppComponentFactory.instantiateActivityCompat((r3v0 'this' androidx.core.app.AppComponentFactory A[IMMUTABLE_TYPE, THIS]), (r4v0 'cl' java.lang.ClassLoader A[D('cl' java.lang.ClassLoader), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'className' java.lang.String A[D('className' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'intent' android.content.Intent A[D('intent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0024 \-\> B:1:?, CROSS_EDGE: B:10:0x0001 \-\> B:5:0x001a\lINLINE_NOT_NEEDED\lTryCatch #2 \{NoSuchMethodException \| InvocationTargetException \-\> 0x001a, blocks: (B:3:0x0001), top: B:10:0x0001 \}\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Ljava\/lang\/InstantiationException;, Ljava\/lang\/IllegalAccessException;, Ljava\/lang\/ClassNotFoundException;]\l}"];
+MethodNode -> Node_0;Node_4 -> Node_1;
+Node_5 -> Node_8;
+Node_9 -> Node_1;
+Node_5 -> Node_8;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_10;
+Node_10 -> Node_3;
+Node_10 -> Node_5;
+Node_3 -> Node_4;
+Node_3 -> Node_11;
+Node_11 -> Node_5;
+Node_8 -> Node_9;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.collections.AbstractMap.getValues()Ljava\/util\/Collection;" {
+subgraph cluster_Region_1837946230 {
+label = "R(3:(1:3)|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1744311747 {
+label = "IF [B:10:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|if (r1._values == null) goto L3\l}"];
+subgraph cluster_Region_638122542 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|r1._values = new kotlin.collections.AbstractMap$values$1(r1)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x000d|java.util.Collection\<? extends V\> java.util.Collection r0 = (java.util.Collection\<? extends V\>) r1._values\lkotlin.jvm.internal.Intrinsics.checkNotNull(r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0012|RETURN\l|return r0\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0000}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.util.Collection\<V\> kotlin.collections.AbstractMap.getValues((r1v0 'this' kotlin.collections.AbstractMap\<K, V\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0002 \-\> B:12:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r0v1. Raw type applied. Possible types: java.util.Collection\<? extends V\>, java.lang.Object, java.util.Collection\<V\>\}\lSIGNATURE: ()Ljava\/util\/Collection\<TV;\>;\l}"];
+MethodNode -> Node_7;Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+}
+

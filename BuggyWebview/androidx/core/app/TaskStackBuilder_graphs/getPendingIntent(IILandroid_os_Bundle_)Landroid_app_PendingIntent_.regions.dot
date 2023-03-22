@@ -1,0 +1,65 @@
+digraph "CFG forandroidx.core.app.TaskStackBuilder.getPendingIntent(IILandroid\/os\/Bundle;)Landroid\/app\/PendingIntent;" {
+subgraph cluster_Region_447445249 {
+label = "R(1:(2:(1:11)|(2:3|(2:(1:6)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1918278478 {
+label = "R(2:(1:11)|(2:3|(2:(1:6)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1544530402 {
+label = "IF [B:15:0x0006] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r4.mIntents.isEmpty() != false) goto L10\l}"];
+subgraph cluster_Region_396891356 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x003e|throw new java.lang.IllegalStateException(\"No intents added to TaskStackBuilder; cannot getPendingIntent\")\l}"];
+}
+}
+subgraph cluster_Region_254630656 {
+label = "R(2:3|(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|android.content.Intent[] android.content.Intent[] r0 = (android.content.Intent[]) r4.mIntents.toArray(new android.content.Intent[0])\lr0[0] = new android.content.Intent(r0[0]).addFlags(268484608)\l}"];
+subgraph cluster_Region_1443497049 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_281049405 {
+label = "IF [B:17:0x0027] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0027|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L5\l}"];
+subgraph cluster_Region_1148762130 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002f|RETURN\l|return androidx.core.app.TaskStackBuilder.Api16Impl.getActivities(r4.mSourceContext, r5, r0, r6, r7)\l}"];
+}
+}
+subgraph cluster_Region_760253690 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0036|RETURN\l|return android.app.PendingIntent.getActivities(r4.mSourceContext, r5, r0, r6)\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0029}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0030}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0037}"];
+MethodNode[shape=record,label="{public android.app.PendingIntent androidx.core.app.TaskStackBuilder.getPendingIntent((r4v0 'this' androidx.core.app.TaskStackBuilder A[IMMUTABLE_TYPE, THIS]), (r5v0 'requestCode' int A[D('requestCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'flags' int A[D('flags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'options' android.os.Bundle A[D('options' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0036 \-\> B:13:?, CROSS_EDGE: B:23:0x003e \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_22;
+Node_23 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_19 -> Node_13;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+}
+

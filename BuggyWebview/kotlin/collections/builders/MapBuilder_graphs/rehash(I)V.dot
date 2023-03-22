@@ -1,0 +1,47 @@
+digraph "CFG forkotlin.collections.builders.MapBuilder.rehash(I)V" {
+Node_20 [shape=record,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0000}"];
+Node_23 [shape=record,label="{23\:\ 0x0006|if (r3.length \<= size()) goto L4\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0008|compact()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000b}"];
+Node_26 [shape=record,label="{26\:\ 0x000f|if (r4 == getHashSize()) goto L19\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0011|r3.hashArray = new int[r4]\lr3.hashShift = kotlin.collections.builders.MapBuilder.Companion.computeShift(r4)\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0028|r0 = 0\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0029|LOOP_START\lLOOP:0: B:30:0x0029\-\>B:34:0x0035\lPHI: r0 \l  PHI: (r0v4 'i' int) = (r0v3 'i' int), (r0v7 'i' int) binds: [B:29:0x0028, B:34:0x0035] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_31 [shape=record,label="{31\:\ 0x002b|if (r0 \>= r3.length) goto L17\l}"];
+Node_32 [shape=record,label="{32\:\ 0x002d|int r1 = r0 + 1\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0033|if (putRehash(r0) == false) goto L13\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0035|LOOP_END\lLOOP:0: B:30:0x0029\-\>B:34:0x0035\l|r0 = r1\l}"];
+Node_38 [shape=record,label="{38\:\ 0x0037|SYNTHETIC\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0037}"];
+Node_36 [shape=record,label="{36\:\ 0x003e|throw new java.lang.IllegalStateException(\"This cannot happen with fixed magic multiplier and grow\-only hash array. Have object hashCodes changed?\")\l}"];
+Node_21 [shape=record,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_39 [shape=record,label="{39\:\ 0x003f|SYNTHETIC\l}"];
+Node_37 [shape=record,label="{37\:\ 0x003f|RETURN\l|return\l}"];
+Node_28 [shape=record,label="{28\:\ 0x001e|kotlin.collections.ArraysKt.fill(r3.hashArray, 0, 0, getHashSize())\l}"];
+MethodNode[shape=record,label="{private final void kotlin.collections.builders.MapBuilder.rehash((r3v0 'this' kotlin.collections.builders.MapBuilder\<K, V\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'newHashSize' int A[D('newHashSize' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:34:0x0035 \-\> B:30:0x0029, CROSS_EDGE: B:37:0x003f \-\> B:21:?, CROSS_EDGE: B:28:0x001e \-\> B:29:0x0028, CROSS_EDGE: B:23:0x0006 \-\> B:25:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_20;Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_32[style=dashed];
+Node_31 -> Node_39;
+Node_32 -> Node_33;
+Node_33 -> Node_34[style=dashed];
+Node_33 -> Node_38;
+Node_34 -> Node_30;
+Node_38 -> Node_35;
+Node_35 -> Node_36;
+Node_36 -> Node_21;
+Node_39 -> Node_37;
+Node_37 -> Node_21;
+Node_28 -> Node_29;
+}
+

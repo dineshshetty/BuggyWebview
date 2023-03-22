@@ -1,0 +1,58 @@
+digraph "CFG forcom.google.android.material.chip.ChipGroup.getVisibleChipCount()I" {
+subgraph cluster_Region_844737452 {
+label = "R(3:1|(2:(1:8)|10)|14)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r0 = 0\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_513049674 {
+label = "LOOP:0: (2:(1:8)|10)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|if (r1 \< getChildCount()) goto L4\l}"];
+subgraph cluster_Region_907321762 {
+label = "R(2:(1:8)|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1232041991 {
+label = "IF [B:6:0x000e, B:8:0x0014] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|if ((getChildAt(r1) instanceof com.google.android.material.chip.Chip) != false) goto L6\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0014|ADDED_TO_REGION\l|if (isChildVisible(r1) != false) goto L8\l}"];
+subgraph cluster_Region_647738483 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0016|r0++\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0018|LOOP_END\lLOOP:0: B:3:0x0002\-\>B:10:0x0018\lPHI: r0 \l  PHI: (r0v2 'count' int) = (r0v1 'count' int), (r0v1 'count' int), (r0v3 'count' int) binds: [B:14:0x0018, B:15:0x0018, B:13:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|r1++\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x001b|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0002|LOOP_START\lLOOP:0: B:3:0x0002\-\>B:10:0x0018\lPHI: r0 r1 \l  PHI: (r0v1 'count' int) = (r0v0 'count' int), (r0v2 'count' int) binds: [B:2:0x0000, B:10:0x0018] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:2:0x0000, B:10:0x0018] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0010}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0018|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0018|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0018|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001b|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private int com.google.android.material.chip.ChipGroup.getVisibleChipCount((r3v0 'this' com.google.android.material.chip.ChipGroup A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:10:0x0018 \-\> B:3:0x0002, CROSS_EDGE: B:8:0x0014 \-\> B:10:0x0018, CROSS_EDGE: B:6:0x000e \-\> B:10:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_12[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_14[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_15[style=dashed];
+Node_9 -> Node_13;
+Node_10 -> Node_3;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_13 -> Node_10;
+Node_15 -> Node_10;
+Node_14 -> Node_10;
+Node_12 -> Node_11;
+}
+

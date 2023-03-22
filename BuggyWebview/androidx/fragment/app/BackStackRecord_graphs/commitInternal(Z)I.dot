@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.fragment.app.BackStackRecord.commitInternal(Z)I" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r3.mCommitted != false) goto L13\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0004}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(2) == false) goto L6\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000b|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"Commit: \")\lr0.append(r3)\landroid.util.Log.v(androidx.fragment.app.BackStackRecord.TAG, r0.toString())\landroidx.fragment.app.LogWriter r0 = new androidx.fragment.app.LogWriter(androidx.fragment.app.BackStackRecord.TAG)\ljava.io.PrintWriter r1 = new java.io.PrintWriter(r0)\ldump(\"  \", r1)\lr1.close()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0033|r3.mCommitted = true\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0038|if (r3.mAddToBackStack == false) goto L12\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003a|r3.mIndex = r3.mManager.allocBackStackIndex()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0046|r3.mManager.enqueueAction(r3, r4)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x004d|RETURN\l|return r3.mIndex\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0043|r3.mIndex = \-1\l}"];
+Node_13 [shape=record,label="{13\:\ 0x004e}"];
+Node_14 [shape=record,label="{14\:\ 0x0055|throw new java.lang.IllegalStateException(\"commit already called\")\l}"];
+MethodNode[shape=record,label="{int androidx.fragment.app.BackStackRecord.commitInternal((r3v0 'this' androidx.fragment.app.BackStackRecord A[IMMUTABLE_TYPE, THIS]), (r4v0 'allowStateLoss' boolean A[D('allowStateLoss' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0043 \-\> B:11:0x0046, CROSS_EDGE: B:5:0x0009 \-\> B:7:0x0033, CROSS_EDGE: B:14:0x0055 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+}
+

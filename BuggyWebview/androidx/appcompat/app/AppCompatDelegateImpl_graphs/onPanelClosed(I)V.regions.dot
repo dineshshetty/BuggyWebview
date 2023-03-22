@@ -1,0 +1,91 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.onPanelClosed(I)V" {
+subgraph cluster_Region_1136583689 {
+label = "R(1:(2:3|(1:(1:5)))(1:(2:10|(1:(1:12)))(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_180254819 {
+label = "IF [B:20:0x0003] THEN: R(2:3|(1:(1:5))) ELSE: R(1:(2:10|(1:(1:12)))(0))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0003|if (r4 == 108) goto L3\l}"];
+subgraph cluster_Region_1920319171 {
+label = "R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0005|androidx.appcompat.app.ActionBar androidx.appcompat.app.ActionBar r1 = getSupportActionBar()\l}"];
+subgraph cluster_Region_1560313772 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_185890593 {
+label = "IF [B:22:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0009|if (r1 != null) goto L5\l}"];
+subgraph cluster_Region_985893439 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000b|r1.dispatchMenuVisibilityChanged(false)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1968535910 {
+label = "R(1:(2:10|(1:(1:12)))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1098863977 {
+label = "IF [B:24:0x000f] THEN: R(2:10|(1:(1:12))) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000f|if (r4 == 0) goto L10\l}"];
+subgraph cluster_Region_1202178035 {
+label = "R(2:10|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0011|androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState androidx.appcompat.app.AppCompatDelegateImpl.PanelFeatureState r1 = getPanelState(r4, true)\l}"];
+subgraph cluster_Region_947601477 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_473283190 {
+label = "IF [B:26:0x0018] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0018|if (r1.isOpen != false) goto L12\l}"];
+subgraph cluster_Region_289451037 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001a|closePanel(r1, false)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1717085689 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_32 [shape=record,color=red,label="{32\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001f|ORIG_RETURN\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.app.AppCompatDelegateImpl.onPanelClosed((r3v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 'featureId' int A[D('featureId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0009 \-\> B:29:0x001f, CROSS_EDGE: B:27:0x001a \-\> B:29:0x001f, CROSS_EDGE: B:26:0x0018 \-\> B:29:0x001f, CROSS_EDGE: B:24:0x000f \-\> B:29:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_20 -> Node_21;
+Node_20 -> Node_24[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_31[style=dashed];
+Node_23 -> Node_32;
+Node_24 -> Node_25;
+Node_24 -> Node_33[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_29[style=dashed];
+Node_27 -> Node_30;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_32 -> Node_18;
+Node_31 -> Node_18;
+Node_30 -> Node_18;
+Node_29 -> Node_18;
+Node_33 -> Node_18;
+}
+

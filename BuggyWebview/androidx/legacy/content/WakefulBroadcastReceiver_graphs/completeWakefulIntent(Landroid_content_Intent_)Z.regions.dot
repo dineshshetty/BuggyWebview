@@ -1,0 +1,88 @@
+digraph "CFG forandroidx.legacy.content.WakefulBroadcastReceiver.completeWakefulIntent(Landroid\/content\/Intent;)Z" {
+subgraph cluster_Region_557742053 {
+label = "R(2:1|(2:(1:3)|(2:5|c)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r7.getIntExtra(androidx.legacy.content.WakefulBroadcastReceiver.EXTRA_WAKE_LOCK_ID, 0)\l}"];
+subgraph cluster_Region_1784725974 {
+label = "R(2:(1:3)|(2:5|c))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_102720649 {
+label = "IF [B:3:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (r0 == 0) goto L3\l}"];
+subgraph cluster_Region_511520575 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1776946814 {
+label = "R(2:5|c)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|android.util.SparseArray\<android.os.PowerManager$WakeLock\> android.util.SparseArray\<android.os.PowerManager.WakeLock\> r1 = androidx.legacy.content.WakefulBroadcastReceiver.sActiveWakeLocks\l}"];
+subgraph cluster_SynchronizedRegion_1882516841 {
+label = "Synchronized:R(2:6|(2:8|(2:(2:10|12)|(2:13|15))))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c}"];
+subgraph cluster_Region_1691328787 {
+label = "R(2:8|(2:(2:10|12)|(2:13|15)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|TRY_ENTER\lTryCatch #0 \{, blocks: (B:7:0x000d, B:9:0x0016, B:10:0x001c, B:12:0x001e, B:13:0x0034), top: B:18:0x000d \}\lCatch: all \-\> 0x0036\l|android.os.PowerManager$WakeLock android.os.PowerManager.WakeLock r2 = r1.get(r0)     \/\/ Catch: java.lang.Throwable \-\> L36\l}"];
+subgraph cluster_Region_1778598126 {
+label = "R(2:(2:10|12)|(2:13|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1209692225 {
+label = "IF [B:8:0x0014] THEN: R(2:10|12) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|if (r2 != null) goto L10\l}"];
+subgraph cluster_Region_1191169339 {
+label = "R(2:10|12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0016|TryCatch #0 \{, blocks: (B:7:0x000d, B:9:0x0016, B:10:0x001c, B:12:0x001e, B:13:0x0034), top: B:18:0x000d \}\lCatch: all \-\> 0x0036\l|r2.release()     \/\/ Catch: java.lang.Throwable \-\> L36\lr1.remove(r0)     \/\/ Catch: java.lang.Throwable \-\> L36\l}"];
+Node_11 [shape=record,label="{11\:\ 0x001d|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_338434910 {
+label = "R(2:13|15)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001e|TryCatch #0 \{, blocks: (B:7:0x000d, B:9:0x0016, B:10:0x001c, B:12:0x001e, B:13:0x0034), top: B:18:0x000d \}\lCatch: all \-\> 0x0036\l|android.util.Log.w(\"WakefulBroadcastReceiv.\", \"No active wake lock id #\" + r0)     \/\/ Catch: java.lang.Throwable \-\> L36\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0035|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000d|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001c|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:7:0x000d, B:9:0x0016, B:10:0x001c, B:12:0x001e, B:13:0x0034), top: B:18:0x000d \}\lCatch: all \-\> 0x0036\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L36\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0034|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:7:0x000d, B:9:0x0016, B:10:0x001c, B:12:0x001e, B:13:0x0034), top: B:18:0x000d \}\lCatch: all \-\> 0x0036\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L36\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0036|REMOVE\lExcHandler: all \-\> 0x0036\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0037|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x0036\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0038|REMOVE\l|throw r2\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.legacy.content.WakefulBroadcastReceiver.completeWakefulIntent((r7v0 'intent' android.content.Intent A[D('intent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x001d \-\> B:1:?, CROSS_EDGE: B:14:0x0035 \-\> B:1:?, CROSS_EDGE: B:17:0x0038 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_18;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_11 -> Node_1;
+Node_12 -> Node_13;
+Node_14 -> Node_1;
+Node_0 -> Node_2;
+Node_18 -> Node_7;
+Node_18 -> Node_15;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_1;
+}
+

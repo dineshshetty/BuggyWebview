@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.core.view.MenuKt.contains(Landroid\/view\/Menu;Landroid\/view\/MenuItem;)Z" {
+subgraph cluster_Region_1376244084 {
+label = "R(3:1|(1:(2:(1:7)|(1:5)))|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"item\")\lint r0 = 0\lint int r1 = r3.size()\l}"];
+subgraph cluster_LoopRegion_1648771419 {
+label = "LOOP:0: (1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|LOOP_START\lLOOP:0: B:3:0x000f\-\>B:8:0x001d\lPHI: r0 \l  PHI: (r0v3 'index' int) = (r0v2 'index' int), (r0v5 'index' int) binds: [B:2:0x0000, B:8:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< r1) goto L3\l}"];
+subgraph cluster_Region_1483109463 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2144655458 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_618563052 {
+label = "IF [B:5:0x0019] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0019|if (kotlin.jvm.internal.Intrinsics.areEqual(r3.getItem(r0), r4) != false) goto L6\l}"];
+subgraph cluster_Region_1603667647 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2018828287 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001d|LOOP_END\lLOOP:0: B:3:0x000f\-\>B:8:0x001d\l|r0++\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0020|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001b|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0020|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final boolean androidx.core.view.MenuKt.contains((r3v0 '$this$contains' android.view.Menu A[D('$this$contains' android.view.Menu), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'item' android.view.MenuItem A[D('item' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x001d \-\> B:3:0x000f, CROSS_EDGE: B:10:0x0021 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_8[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_1;
+Node_8 -> Node_3;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_11 -> Node_6;
+Node_12 -> Node_9;
+}
+

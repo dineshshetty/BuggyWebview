@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.transition.TransitionSet.getTransitionAt(I)Landroidx\/transition\/Transition;" {
+subgraph cluster_Region_1021227157 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_373449247 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1815830416 {
+label = "IF [B:13:0x0000, B:15:0x0008] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|if (r2 \< 0) goto L8\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0008|ADDED_TO_REGION\l|if (r2 \>= r1.mTransitions.size()) goto L7\l}"];
+subgraph cluster_Region_6150375 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1229888097 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|RETURN\l|return r1.mTransitions.get(r2)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0002}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0014|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public androidx.transition.Transition androidx.transition.TransitionSet.getTransitionAt((r1v0 'this' androidx.transition.TransitionSet A[IMMUTABLE_TYPE, THIS]), (r2v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0015 \-\> B:12:?, CROSS_EDGE: B:13:0x0000 \-\> B:19:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_19;
+Node_15 -> Node_17[style=dashed];
+Node_15 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+Node_19 -> Node_12;
+}
+

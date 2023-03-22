@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputLayout.openCutout()V" {
+subgraph cluster_Region_2057300556 {
+label = "R(1:(2:(1:3)|(2:5|(2:(1:11)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1325418635 {
+label = "R(2:(1:3)|(2:5|(2:(1:11)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_993843359 {
+label = "IF [B:17:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (cutoutEnabled() == false) goto L3\l}"];
+subgraph cluster_Region_1198899805 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1121275522 {
+label = "R(2:5|(2:(1:11)|(1:9)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0007|android.graphics.RectF android.graphics.RectF r0 = r5.tmpRectF\lr5.collapsingTextHelper.getCollapsedTextActualBounds(r0, r5.editText.getWidth(), r5.editText.getGravity())\l}"];
+subgraph cluster_Region_1119718773 {
+label = "R(2:(1:11)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_109932916 {
+label = "IF [B:20:0x0021, B:22:0x0029] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0021|if (r0.width() \<= 0.0f) goto L12\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0029|ADDED_TO_REGION\l|if (r0.height() \<= 0.0f) goto L11\l}"];
+subgraph cluster_Region_255119801 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_662491622 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002c|applyCutoutPadding(r0)\lr0.offset(\-getPaddingLeft(), ((\-getPaddingTop()) \- (r0.height() \/ 2.0f)) + r5.boxStrokeWidthPx)\l((com.google.android.material.textfield.CutoutDrawable) r5.boxBackground).setCutout(r0)\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0023}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0052}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0053|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.textfield.TextInputLayout.openCutout((r5v0 'this' com.google.android.material.textfield.TextInputLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0052 \-\> B:15:?, CROSS_EDGE: B:26:0x0053 \-\> B:15:?, CROSS_EDGE: B:20:0x0021 \-\> B:26:0x0053\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_26;
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_27;
+Node_27 -> Node_15;
+Node_24 -> Node_25;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+Node_25 -> Node_15;
+Node_26 -> Node_15;
+}
+

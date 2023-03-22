@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.android.material.bottomsheet.BottomSheetBehavior.createMaterialShapeDrawableIfNeeded(Landroid\/content\/Context;)V" {
+subgraph cluster_Region_754961052 {
+label = "R(1:(2:(1:3)|(2:5|(2:(2:7|8)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_499080882 {
+label = "R(2:(1:3)|(2:5|(2:(2:7|8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_739663244 {
+label = "IF [B:14:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r4.shapeAppearanceModelDefault == null) goto L3\l}"];
+subgraph cluster_Region_750988195 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1429869590 {
+label = "R(2:5|(2:(2:7|8)|(1:9)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|com.google.android.material.shape.MaterialShapeDrawable com.google.android.material.shape.MaterialShapeDrawable r0 = new com.google.android.material.shape.MaterialShapeDrawable(r4.shapeAppearanceModelDefault)\lr4.materialShapeDrawable = r0\lr0.initializeElevationOverlay(r5)\landroid.content.res.ColorStateList android.content.res.ColorStateList r0 = r4.backgroundTint\l}"];
+subgraph cluster_Region_2117775245 {
+label = "R(2:(2:7|8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_340313649 {
+label = "IF [B:17:0x0013] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|if (r0 != null) goto L7\l}"];
+subgraph cluster_Region_860216366 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|r4.materialShapeDrawable.setFillColor(r0)\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1554081128 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001b|android.util.TypedValue android.util.TypedValue r0 = new android.util.TypedValue()\lr5.getTheme().resolveAttribute(16842801, r0, true)\lr4.materialShapeDrawable.setTint(r0.data)\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0032|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.bottomsheet.BottomSheetBehavior.createMaterialShapeDrawableIfNeeded((r4v0 'this' com.google.android.material.bottomsheet.BottomSheetBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.bottomsheet.BottomSheetBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r5v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0032 \-\> B:12:?, CROSS_EDGE: B:19:0x001b \-\> B:20:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_20 -> Node_12;
+}
+

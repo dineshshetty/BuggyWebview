@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.fragment.app.FragmentStateManager.\<init\>(Landroidx\/fragment\/app\/FragmentLifecycleCallbacksDispatcher;Landroidx\/fragment\/app\/FragmentStore;Landroidx\/fragment\/app\/Fragment;Landroidx\/fragment\/app\/FragmentState;)V" {
+subgraph cluster_Region_954234087 {
+label = "R(3:1|4|(1:6)(1:9))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|r2.mDispatcher = r3\lr2.mFragmentStore = r4\lr2.mFragment = r5\lr5.mSavedViewState = null\lr5.mSavedViewRegistryState = null\lr5.mBackStackNesting = 0\lr5.mInLayout = false\lr5.mAdded = false\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0024|PHI: r0 \l  PHI: (r0v3 java.lang.String A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r5.mTargetWho = r5.mTarget != null ? r5.mTarget.mWho : null\lr5.mTarget = null\l}"];
+subgraph cluster_IfRegion_260944422 {
+label = "IF [B:19:0x002a] THEN: R(1:6) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002a|if (r6.mSavedFragmentState != null) goto L6\l}"];
+subgraph cluster_Region_355202338 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002c|r5.mSavedFragmentState = r6.mSavedFragmentState\l}"];
+}
+subgraph cluster_Region_854192841 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0031|r5.mSavedFragmentState = new android.os.Bundle()\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001c}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001e}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0038|ORIG_RETURN\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0023}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentStateManager.\<init\>((r2v0 'this' androidx.fragment.app.FragmentStateManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'dispatcher' androidx.fragment.app.FragmentLifecycleCallbacksDispatcher A[D('dispatcher' androidx.fragment.app.FragmentLifecycleCallbacksDispatcher), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'fragmentStore' androidx.fragment.app.FragmentStore A[D('fragmentStore' androidx.fragment.app.FragmentStore), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'retainedFragment' androidx.fragment.app.Fragment A[D('retainedFragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'fs' androidx.fragment.app.FragmentState A[D('fs' androidx.fragment.app.FragmentState), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0031 \-\> B:22:0x0038, CROSS_EDGE: B:17:0x0023 \-\> B:18:0x0024\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_23;
+Node_21 -> Node_22;
+Node_12 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_16 -> Node_18;
+Node_23 -> Node_13;
+Node_22 -> Node_13;
+Node_17 -> Node_18;
+}
+

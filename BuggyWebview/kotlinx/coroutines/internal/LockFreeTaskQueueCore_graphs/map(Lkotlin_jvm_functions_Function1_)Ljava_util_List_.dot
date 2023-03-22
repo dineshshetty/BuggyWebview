@@ -1,0 +1,40 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeTaskQueueCore.map(Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/List;" {
+Node_17 [shape=record,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0000|java.util.ArrayList r0 = new java.util.ArrayList(r14.capacity)\lkotlinx.coroutines.internal.LockFreeTaskQueueCore$Companion r1 = kotlinx.coroutines.internal.LockFreeTaskQueueCore.Companion\llong r2 = r14._state\lint r6 = (int) ((kotlinx.coroutines.internal.LockFreeTaskQueueCore.HEAD_MASK & r2) \>\> 0)\lint r5 = (int) ((kotlinx.coroutines.internal.LockFreeTaskQueueCore.TAIL_MASK & r2) \>\> 30)\lr10 = r6\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0021|LOOP_START\lLOOP:0: B:20:0x0021\-\>B:27:0x003d\lPHI: r10 \l  PHI: (r10v1 'index' int) = (r10v0 'index' int), (r10v2 'index' int) binds: [B:19:0x0000, B:27:0x003d] A[DONT_GENERATE, DONT_INLINE]\l|int r11 = r14.mask\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0027|if ((r10 & r11) == (r5 & r11)) goto L13\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0029|java.lang.Object r11 = (java.lang.Object) r14.array.get(r11 & r10)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0030|if (r11 == null) goto L12\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0032}"];
+Node_25 [shape=record,label="{25\:\ 0x0034|if ((r11 instanceof kotlinx.coroutines.internal.LockFreeTaskQueueCore.Placeholder) != false) goto L11\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0036|r0.add(r15.invoke(r11))\l}"];
+Node_31 [shape=record,label="{31\:\ 0x003d|SYNTHETIC\l}"];
+Node_27 [shape=record,label="{27\:\ 0x003d|LOOP_END\lLOOP:0: B:20:0x0021\-\>B:27:0x003d\l|int r10 = r10 + 1\l}"];
+Node_33 [shape=record,label="{33\:\ 0x003d|SYNTHETIC\l}"];
+Node_32 [shape=record,label="{32\:\ 0x003d|SYNTHETIC\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0040|SYNTHETIC\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0040}"];
+Node_29 [shape=record,label="{29\:\ 0x0044|RETURN\l|return r0\l}"];
+Node_18 [shape=record,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final java.util.List\<R\> kotlinx.coroutines.internal.LockFreeTaskQueueCore.map((r14v0 'this' kotlinx.coroutines.internal.LockFreeTaskQueueCore\<E\> A[IMMUTABLE_TYPE, THIS]), (r15v0 kotlin.jvm.functions.Function1\<? super E, ? extends R\> A[D('transform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:27:0x003d \-\> B:20:0x0021, CROSS_EDGE: B:25:0x0034 \-\> B:27:0x003d, CROSS_EDGE: B:23:0x0030 \-\> B:27:0x003d\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, E]\lSIGNATURE: \<R:Ljava\/lang\/Object;\>(Lkotlin\/jvm\/functions\/Function1\<\-TE;+TR;\>;)Ljava\/util\/List\<TR;\>;\l}"];
+MethodNode -> Node_17;Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_30;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_32;
+Node_24 -> Node_25;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_33;
+Node_26 -> Node_31;
+Node_31 -> Node_27;
+Node_27 -> Node_20;
+Node_33 -> Node_27;
+Node_32 -> Node_27;
+Node_30 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_18;
+}
+

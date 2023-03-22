@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.view.accessibility.AccessibilityNodeInfoCompat.wrapNonNullInstance(Ljava\/lang\/Object;)Landroidx\/core\/view\/accessibility\/AccessibilityNodeInfoCompat;" {
+subgraph cluster_Region_1478377580 {
+label = "R(1:(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1545329519 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1308119369 {
+label = "IF [B:9:0x0000] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r1 != null) goto L2\l}"];
+subgraph cluster_Region_1413254206 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0007|RETURN\l|return new androidx.core.view.accessibility.AccessibilityNodeInfoCompat(r1)\l}"];
+}
+}
+subgraph cluster_Region_2123082741 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|RETURN\l|return null\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0002}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.core.view.accessibility.AccessibilityNodeInfoCompat androidx.core.view.accessibility.AccessibilityNodeInfoCompat.wrapNonNullInstance((r1v0 'object' java.lang.Object A[D('object' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0009 \-\> B:8:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+Node_7 -> Node_9;
+Node_10 -> Node_11;
+}
+

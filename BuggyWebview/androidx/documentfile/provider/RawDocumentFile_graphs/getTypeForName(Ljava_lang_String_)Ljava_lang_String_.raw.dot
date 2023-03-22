@@ -1,0 +1,23 @@
+digraph "CFG forandroidx.documentfile.provider.RawDocumentFile.getTypeForName(Ljava\/lang\/String;)Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: CONST  (r0 I:??[int, float, short, byte, char]) = (46 ??[int, float, short, byte, char])  (LINE:156)\l0x0002: INVOKE  (r0 I:int) = (r3 I:java.lang.String A[D('name' java.lang.String)]), (r0 I:int) type: VIRTUAL call: java.lang.String.lastIndexOf(int):int A[MD:(int):int (c)]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: IF  (r0 I:??[int, byte, short, char] A[D('lastDot' int)]) \< (0 ??[int, byte, short, char])  \-\> B:7:0x001d  (LINE:157)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|0x0008: ARITH  (r1 I:int) = (r0 I:int A[D('lastDot' int)]) + (1 int)  (LINE:158)\l0x000a: INVOKE  (r1 I:java.lang.String) = (r3 I:java.lang.String A[D('name' java.lang.String)]), (r1 I:int) type: VIRTUAL call: java.lang.String.substring(int):java.lang.String A[MD:(int):java.lang.String (c)]\l0x000e: INVOKE  (r1 I:java.lang.String) = (r1 I:java.lang.String) type: VIRTUAL call: java.lang.String.toLowerCase():java.lang.String A[MD:():java.lang.String (c)]\l0x0012: INVOKE  (r2 I:android.webkit.MimeTypeMap) =  type: STATIC call: android.webkit.MimeTypeMap.getSingleton():android.webkit.MimeTypeMap A[MD:():android.webkit.MimeTypeMap (c)] (LINE:159)\l0x0016: INVOKE  (r2 I:java.lang.String) = (r2 I:android.webkit.MimeTypeMap), (r1 I:java.lang.String A[D('extension' java.lang.String)]) type: VIRTUAL call: android.webkit.MimeTypeMap.getMimeTypeFromExtension(java.lang.String):java.lang.String A[MD:(java.lang.String):java.lang.String (c)]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|0x001a: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('mime' java.lang.String)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:?  (LINE:160)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|0x001c: RETURN  (r2 I:java.lang.String A[D('mime' java.lang.String)])  (LINE:161)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|0x001d: CONST_STR  (r1 I:java.lang.String A[D('extension' java.lang.String)]) =  \"application\/octet\-stream\" A[SYNTHETIC] (LINE:165)\l0x001f: RETURN  (r1 I:java.lang.String) A[SYNTHETIC]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001d|RETURN\lORIG_RETURN\l|0x001d: CONST_STR  (r1 I:java.lang.String A[D('extension' java.lang.String)]) =  \"application\/octet\-stream\"  (LINE:165)\l0x001f: RETURN  (r1 I:java.lang.String) \l}"];
+MethodNode[shape=record,label="{private static java.lang.String androidx.documentfile.provider.RawDocumentFile.getTypeForName((r3 I:java.lang.String A[D('name' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x001f \-\> B:1:?, CROSS_EDGE: B:3:0x0006 \-\> B:7:0x001d\lDebug Info:\l  0x0012\-0x001d: r1 'extension' Ljava\/lang\/String;\l  0x001a\-0x001d: r2 'mime' Ljava\/lang\/String;\l  0x0006\-0x001f: r0 'lastDot' I\l  \-1 \-0x001f: r3 'name' Ljava\/lang\/String;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_1;
+Node_9 -> Node_1;
+Node_7 -> Node_1;
+}
+

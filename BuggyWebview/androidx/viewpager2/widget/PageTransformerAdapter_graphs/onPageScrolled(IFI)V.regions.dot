@@ -1,0 +1,82 @@
+digraph "CFG forandroidx.viewpager2.widget.PageTransformerAdapter.onPageScrolled(IFI)V" {
+subgraph cluster_Region_1774290759 {
+label = "R(1:(2:(1:3)|(2:5|(2:8|(2:(1:13)|(1:10))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_546210632 {
+label = "R(2:(1:3)|(2:5|(2:8|(2:(1:13)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_106199123 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r8.mPageTransformer == null) goto L3\l}"];
+subgraph cluster_Region_1253129147 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1397992458 {
+label = "R(2:5|(2:8|(2:(1:13)|(1:10))))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|float float r0 = \-r10\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_923703357 {
+label = "LOOP:0: (2:8|(2:(1:13)|(1:10)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|if (r1 \< r8.mLayoutManager.getChildCount()) goto L8\l}"];
+subgraph cluster_Region_1227640682 {
+label = "R(2:8|(2:(1:13)|(1:10)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|android.view.View android.view.View r2 = r8.mLayoutManager.getChildAt(r1)\l}"];
+subgraph cluster_Region_791639573 {
+label = "R(2:(1:13)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1419278852 {
+label = "IF [B:9:0x0015] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0015|if (r2 == null) goto L11\l}"];
+subgraph cluster_Region_122784185 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004d|throw new java.lang.IllegalStateException(java.lang.String.format(java.util.Locale.US, \"LayoutManager returned a null child at pos %d\/%d while transforming pages\", java.lang.Integer.valueOf(r1), java.lang.Integer.valueOf(r8.mLayoutManager.getChildCount())))\l}"];
+}
+}
+subgraph cluster_Region_1809258942 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0017|LOOP_END\lLOOP:0: B:6:0x0007\-\>B:10:0x0017\l|int int r3 = r8.mLayoutManager.getPosition(r2)\lfloat float r4 = (r3 \- r9) + r0\lr8.mPageTransformer.transformPage(r2, r4)\lr1++\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0007|LOOP_START\lLOOP:0: B:6:0x0007\-\>B:10:0x0017\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:5:0x0005, B:10:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0029|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0029}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x004e|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004e}"];
+MethodNode[shape=record,label="{public void androidx.viewpager2.widget.PageTransformerAdapter.onPageScrolled((r8v0 'this' androidx.viewpager2.widget.PageTransformerAdapter A[IMMUTABLE_TYPE, THIS]), (r9v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'positionOffset' float A[D('positionOffset' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'positionOffsetPixels' int A[D('positionOffsetPixels' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:10:0x0017 \-\> B:6:0x0007, CROSS_EDGE: B:12:0x004d \-\> B:1:?, CROSS_EDGE: B:13:0x004e \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback.onPageScrolled(int, float, int):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_15[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_14;
+Node_12 -> Node_1;
+Node_10 -> Node_6;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_14 -> Node_11;
+Node_11 -> Node_12;
+Node_15 -> Node_13;
+Node_13 -> Node_1;
+}
+

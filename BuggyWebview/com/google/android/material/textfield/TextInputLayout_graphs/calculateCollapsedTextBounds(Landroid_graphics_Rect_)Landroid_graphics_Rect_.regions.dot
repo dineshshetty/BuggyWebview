@@ -1,0 +1,73 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputLayout.calculateCollapsedTextBounds(Landroid\/graphics\/Rect;)Landroid\/graphics\/Rect;" {
+subgraph cluster_Region_1093652390 {
+label = "R(1:(2:(1:13)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_473607069 {
+label = "R(2:(1:13)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_816548046 {
+label = "IF [B:17:0x0002] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (r4.editText == null) goto L12\l}"];
+subgraph cluster_Region_730048855 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0067|throw new java.lang.IllegalStateException()\l}"];
+}
+}
+subgraph cluster_Region_1060546028 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|android.graphics.Rect android.graphics.Rect r0 = r4.tmpBoundsRect\lboolean boolean r1 = com.google.android.material.internal.ViewUtils.isLayoutRtl(r4)\lr0.bottom = r5.bottom\l}"];
+subgraph cluster_SwitchRegion_351146366 {
+label = "Switch: 3
+ case 1 -> R(2:10|11)
+ case 2 -> R(2:8|9)
+ case default -> R(2:5|6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0010|switch(r4.boxBackgroundMode) \{\l    case 1: goto L10;\l    case 2: goto L8;\l    default: goto L5;\l\}\l}"];
+subgraph cluster_Region_1899844543 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x004a|r0.left = getLabelLeftBoundAlightWithPrefix(r5.left, r1)\lr0.top = r5.top + r4.boxCollapsedPaddingTopPx\lr0.right = getLabelRightBoundAlignedWithSuffix(r5.right, r1)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0061|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_370075524 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002a|r0.left = r5.left + r4.editText.getPaddingLeft()\lr0.top = r5.top \- calculateLabelMarginTop()\lr0.right = r5.right \- r4.editText.getPaddingRight()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0049|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1095974871 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0013|r0.left = getLabelLeftBoundAlightWithPrefix(r5.left, r1)\lr0.top = getPaddingTop()\lr0.right = getLabelRightBoundAlignedWithSuffix(r5.right, r1)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0029|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0062}"];
+MethodNode[shape=record,label="{private android.graphics.Rect com.google.android.material.textfield.TextInputLayout.calculateCollapsedTextBounds((r4v0 'this' com.google.android.material.textfield.TextInputLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'rect' android.graphics.Rect A[D('rect' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0049 \-\> B:15:?, CROSS_EDGE: B:25:0x0061 \-\> B:15:?, CROSS_EDGE: B:27:0x0067 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_26;
+Node_27 -> Node_15;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22;
+Node_19 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_22 -> Node_23;
+Node_23 -> Node_15;
+Node_20 -> Node_21;
+Node_21 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_26 -> Node_27;
+}
+

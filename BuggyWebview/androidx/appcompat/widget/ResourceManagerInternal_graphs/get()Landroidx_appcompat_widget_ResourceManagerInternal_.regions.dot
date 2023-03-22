@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.appcompat.widget.ResourceManagerInternal.get()Landroidx\/appcompat\/widget\/ResourceManagerInternal;" {
+subgraph cluster_Region_575923840 {
+label = "R(2:2|9) | DECL_VAR: androidx.appcompat.widget.ResourceManagerInternal null\l";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_1123558528 {
+label = "Synchronized:R(2:2|(2:(1:6)|7))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002}"];
+subgraph cluster_Region_1442524894 {
+label = "R(2:(1:6)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2065034428 {
+label = "IF [B:20:0x0005] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0005|if (androidx.appcompat.widget.ResourceManagerInternal.INSTANCE == null) goto L6\l}"];
+subgraph cluster_Region_810336576 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|TryCatch #0 \{, blocks: (B:19:0x0003, B:21:0x0007, B:22:0x0011), top: B:28:0x0003 \}\lCatch: all \-\> 0x0015\l|androidx.appcompat.widget.ResourceManagerInternal androidx.appcompat.widget.ResourceManagerInternal r1 = new androidx.appcompat.widget.ResourceManagerInternal()     \/\/ Catch: java.lang.Throwable \-\> L15\landroidx.appcompat.widget.ResourceManagerInternal.INSTANCE = r1     \/\/ Catch: java.lang.Throwable \-\> L15\linstallDefaultInflateDelegates(r1)     \/\/ Catch: java.lang.Throwable \-\> L15\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0011|TRY_LEAVE\lTryCatch #0 \{, blocks: (B:19:0x0003, B:21:0x0007, B:22:0x0011), top: B:28:0x0003 \}\lCatch: all \-\> 0x0015\l|androidx.appcompat.widget.ResourceManagerInternal r1 = androidx.appcompat.widget.ResourceManagerInternal.INSTANCE     \/\/ Catch: java.lang.Throwable \-\> L15\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0014|RETURN\l|return r1\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:19:0x0003, B:21:0x0007, B:22:0x0011), top: B:28:0x0003 \}\lCatch: all \-\> 0x0015\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0013|DONT_GENERATE\l|monitor\-exit()\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0015|REMOVE\lExcHandler: all \-\> 0x0015\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0017|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public static synchronized androidx.appcompat.widget.ResourceManagerInternal androidx.appcompat.widget.ResourceManagerInternal.get()  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0017 \-\> B:16:?, CROSS_EDGE: B:20:0x0005 \-\> B:22:0x0011, CROSS_EDGE: B:28:0x0003 \-\> B:25:0x0015\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_15;Node_18 -> Node_28;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_29;
+Node_24 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_28 -> Node_19;
+Node_28 -> Node_25;
+Node_19 -> Node_20;
+Node_23 -> Node_24;
+Node_29 -> Node_25;
+Node_25 -> Node_27;
+Node_27 -> Node_16;
+}
+

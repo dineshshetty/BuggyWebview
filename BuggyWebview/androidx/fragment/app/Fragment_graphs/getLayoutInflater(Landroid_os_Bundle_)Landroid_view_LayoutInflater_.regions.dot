@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.fragment.app.Fragment.getLayoutInflater(Landroid\/os\/Bundle;)Landroid\/view\/LayoutInflater;" {
+subgraph cluster_Region_27467405 {
+label = "R(2:1|(2:(1:7)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|androidx.fragment.app.FragmentHostCallback\<?\> androidx.fragment.app.FragmentHostCallback\<?\> r0 = r2.mHost\l}"];
+subgraph cluster_Region_1481937961 {
+label = "R(2:(1:7)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1424529195 {
+label = "IF [B:11:0x0002] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_446523790 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0019|throw new java.lang.IllegalStateException(\"onGetLayoutInflater() cannot be executed until the Fragment is attached to the FragmentManager.\")\l}"];
+}
+}
+subgraph cluster_Region_1291867014 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|android.view.LayoutInflater android.view.LayoutInflater r0 = r0.onGetLayoutInflater()\landroidx.core.view.LayoutInflaterCompat.setFactory2(r0, r2.mChildFragmentManager.getLayoutInflaterFactory())\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0011|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0012}"];
+MethodNode[shape=record,label="{public android.view.LayoutInflater androidx.fragment.app.Fragment.getLayoutInflater((r2v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r3v0 'savedFragmentState' android.os.Bundle A[D('savedFragmentState' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:15:0x0019 \-\> B:9:?\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_14 -> Node_15;
+}
+

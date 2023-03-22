@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.core.app.NotificationManagerCompat.SideChannelManager.scheduleListenerRetry(Landroidx\/core\/app\/NotificationManagerCompat$SideChannelManager$ListenerRecord;)V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r5.mHandler.hasMessages(3, r6.componentName) == false) goto L5\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|RETURN\l|return\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|r6.retryCount = r6.retryCount + 1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0017|if (r6.retryCount \<= 6) goto L9\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"Giving up on delivering \")\lr0.append(r6.taskQueue.size())\lr0.append(\" tasks to \")\lr0.append(r6.componentName)\lr0.append(\" after \")\lr0.append(r6.retryCount)\lr0.append(\" retries\")\landroid.util.Log.w(androidx.core.app.NotificationManagerCompat.TAG, r0.toString())\lr6.taskQueue.clear()\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0051|RETURN\l|return\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0052|int r0 = (1 \<\< (r6.retryCount \- 1)) * 1000\l}"];
+Node_10 [shape=record,label="{10\:\ 0x005d|if (android.util.Log.isLoggable(androidx.core.app.NotificationManagerCompat.TAG, 3) == false) goto L12\l}"];
+Node_11 [shape=record,label="{11\:\ 0x005f|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Scheduling retry for \")\lr1.append(r0)\lr1.append(\" ms\")\landroid.util.Log.d(androidx.core.app.NotificationManagerCompat.TAG, r1.toString())\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0078|android.os.Message r1 = r5.mHandler.obtainMessage(3, r6.componentName)\lr5.mHandler.sendMessageDelayed(r1, (long) r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0086|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void androidx.core.app.NotificationManagerCompat.SideChannelManager.scheduleListenerRetry((r5v0 'this' androidx.core.app.NotificationManagerCompat$SideChannelManager A[IMMUTABLE_TYPE, THIS]), (r6v0 'record' androidx.core.app.NotificationManagerCompat$SideChannelManager$ListenerRecord A[D('record' androidx.core.app.NotificationManagerCompat$SideChannelManager$ListenerRecord), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0051 \-\> B:1:?, CROSS_EDGE: B:13:0x0086 \-\> B:1:?, CROSS_EDGE: B:10:0x005d \-\> B:12:0x0078\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+}
+

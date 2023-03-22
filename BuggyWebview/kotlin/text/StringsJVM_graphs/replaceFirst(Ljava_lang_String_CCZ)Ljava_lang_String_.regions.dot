@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.text.StringsKt__StringsJVMKt.replaceFirst(Ljava\/lang\/String;CCZ)Ljava\/lang\/String;" {
+subgraph cluster_Region_5284285 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lint int r0 = kotlin.text.StringsKt.indexOf$default(r7, r8, 0, r10, 2, (java.lang.Object) null)\l}"];
+subgraph cluster_Region_1553294359 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_548131787 {
+label = "IF [B:19:0x0011] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|if (r0 \< 0) goto L3\l}"];
+subgraph cluster_Region_717396821 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return r7\l}"];
+}
+}
+subgraph cluster_Region_2094862887 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015}"];
+Node_22 [shape=record,label="{22\:\ 0x0028|RETURN\lORIG_RETURN\l|return kotlin.text.StringsKt.replaceRange((java.lang.CharSequence) r7, r0, r0 + 1, (java.lang.CharSequence) java.lang.String.valueOf(r9)).toString()\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0013}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.text.StringsKt__StringsJVMKt.replaceFirst((r7v0 '$this$replaceFirst' java.lang.String A[D('$this$replaceFirst' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'oldChar' char A[D('oldChar' char), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'newChar' char A[D('newChar' char), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'ignoreCase' boolean A[D('ignoreCase' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0015 \-\> B:22:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_17;
+Node_21 -> Node_22;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_23;
+}
+

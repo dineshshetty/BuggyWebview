@@ -1,0 +1,43 @@
+digraph "CFG forcom.google.android.material.textfield.EndCompoundLayout.tintEndIconOnError(Z)V" {
+subgraph cluster_Region_1724518551 {
+label = "R(1:(2:(2:4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_382419708 {
+label = "R(2:(2:4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1259718116 {
+label = "IF [B:11:0x0000, B:13:0x0006] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|if (r5 != false) goto L2\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0006|ADDED_TO_REGION\l|if (getEndIconDrawable() != null) goto L4\l}"];
+subgraph cluster_Region_2113942841 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = androidx.core.graphics.drawable.DrawableCompat.wrap(getEndIconDrawable()).mutate()\landroidx.core.graphics.drawable.DrawableCompat.setTint(r0, r4.textInputLayout.getErrorCurrentTextColors())\lr4.endIconView.setImageDrawable(r0)\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_984458011 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0023|com.google.android.material.textfield.IconHelper.applyIconTint(r4.textInputLayout, r4.endIconView, r4.endIconTintList, r4.endIconTintMode)\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0002}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x002e|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.textfield.EndCompoundLayout.tintEndIconOnError((r4v0 'this' com.google.android.material.textfield.EndCompoundLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'tintEndIconOnError' boolean A[D('tintEndIconOnError' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0023 \-\> B:16:0x002e, CROSS_EDGE: B:11:0x0000 \-\> B:15:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_17;
+Node_17 -> Node_10;
+Node_15 -> Node_16;
+Node_9 -> Node_11;
+Node_12 -> Node_13;
+Node_16 -> Node_10;
+}
+

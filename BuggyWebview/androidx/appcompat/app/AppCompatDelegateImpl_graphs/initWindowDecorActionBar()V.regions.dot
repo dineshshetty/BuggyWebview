@@ -1,0 +1,98 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.initWindowDecorActionBar()V" {
+subgraph cluster_Region_1384425256 {
+label = "R(2:1|(2:(1:17)|(4:5|(1:7)(1:(1:16))|8|(1:(1:10)))))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|ensureSubDecor()\l}"];
+subgraph cluster_Region_34230435 {
+label = "R(2:(1:17)|(4:5|(1:7)(1:(1:16))|8|(1:(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1112863771 {
+label = "IF [B:23:0x0005, B:25:0x0009] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0005|if (r3.mHasActionBar == false) goto L18\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0009|ADDED_TO_REGION\l|if (r3.mActionBar != null) goto L17\l}"];
+subgraph cluster_Region_644406914 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1833480857 {
+label = "R(4:5|(1:7)(1:(1:16))|8|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000c|java.lang.Object java.lang.Object r0 = r3.mHost\l}"];
+subgraph cluster_IfRegion_730646333 {
+label = "IF [B:28:0x0010] THEN: R(1:7) ELSE: R(1:(1:16))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0010|if ((r0 instanceof android.app.Activity) != false) goto L7\l}"];
+subgraph cluster_Region_1361219712 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0012|r3.mActionBar = new androidx.appcompat.app.WindowDecorActionBar((android.app.Activity) r3.mHost, r3.mOverlayActionBar)\l}"];
+}
+subgraph cluster_Region_24993103 {
+label = "R(1:(1:16)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1618713117 {
+label = "IF [B:31:0x0022] THEN: R(1:16) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0022|if ((r0 instanceof android.app.Dialog) != false) goto L16\l}"];
+subgraph cluster_Region_1684837719 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0024|r3.mActionBar = new androidx.appcompat.app.WindowDecorActionBar((android.app.Dialog) r3.mHost)\l}"];
+}
+}
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x002f|androidx.appcompat.app.ActionBar androidx.appcompat.app.ActionBar r0 = r3.mActionBar\l}"];
+subgraph cluster_Region_68209558 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_709804974 {
+label = "IF [B:34:0x0031] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0031|if (r0 != null) goto L10\l}"];
+subgraph cluster_Region_37380100 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0033|r0.setDefaultDisplayHomeAsUpEnabled(r3.mEnableDefaultActionBarUp)\l}"];
+}
+}
+}
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0007}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0038|ORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ ?|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0020}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0039|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.app.AppCompatDelegateImpl.initWindowDecorActionBar((r3v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:34:0x0031 \-\> B:36:0x0038, CROSS_EDGE: B:32:0x0024 \-\> B:33:0x002f, CROSS_EDGE: B:31:0x0022 \-\> B:33:0x002f, CROSS_EDGE: B:37:0x0039 \-\> B:21:?, CROSS_EDGE: B:23:0x0005 \-\> B:37:0x0039\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_37;
+Node_25 -> Node_27[style=dashed];
+Node_25 -> Node_39;
+Node_39 -> Node_21;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_33;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_38[style=dashed];
+Node_35 -> Node_36;
+Node_20 -> Node_22;
+Node_24 -> Node_25;
+Node_36 -> Node_21;
+Node_38 -> Node_21;
+Node_30 -> Node_31;
+Node_37 -> Node_21;
+}
+

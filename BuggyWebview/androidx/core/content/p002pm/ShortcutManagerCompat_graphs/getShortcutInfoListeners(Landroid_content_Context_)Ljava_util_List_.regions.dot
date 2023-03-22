@@ -1,0 +1,138 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutManagerCompat.getShortcutInfoListeners(Landroid\/content\/Context;)Ljava\/util\/List;" {
+subgraph cluster_Region_1584055386 {
+label = "R(2:(3:3|(2:5|(2:8|(1:(1:17))))|(1:29))|31) | DECL_VAR: android.os.Bundle metaData, java.lang.String shortcutListenerImplName\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_786228452 {
+label = "IF [B:3:0x0002] THEN: R(3:3|(2:5|(2:8|(1:(1:17))))|(1:29)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (androidx.core.content.p002pm.ShortcutManagerCompat.sShortcutInfoChangeListeners == null) goto L3\l}"];
+subgraph cluster_Region_1494205880 {
+label = "R(3:3|(2:5|(2:8|(1:(1:17))))|(1:29))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|java.util.ArrayList java.util.List\<androidx.core.content.p002pm.ShortcutInfoChangeListener\> r0 = new java.util.ArrayList\<\>()\l}"];
+subgraph cluster_IfRegion_332806641 {
+label = "IF [B:5:0x000e] THEN: R(2:5|(2:8|(1:(1:17)))) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L5\l}"];
+subgraph cluster_Region_189469752 {
+label = "R(2:5|(2:8|(1:(1:17))))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|android.content.pm.PackageManager android.content.pm.PackageManager r2 = r16.getPackageManager()\landroid.content.Intent android.content.Intent r0 = new android.content.Intent(androidx.core.content.p002pm.ShortcutManagerCompat.SHORTCUT_LISTENER_INTENT_FILTER_ACTION)\lr0.setPackage(r16.getPackageName())\ljava.util.List java.util.List\<android.content.pm.ResolveInfo\> r4 = r2.queryIntentActivities(r0, 128)\ljava.util.Iterator r5 = r4.iterator()\l\l}"];
+subgraph cluster_LoopRegion_167662311 {
+label = "LOOP:0: (2:8|(1:(1:17)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|android.content.pm.ResolveInfo \lif (r5.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_743318252 {
+label = "R(2:8|(1:(1:17)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0033|android.content.pm.ResolveInfo r6 = r5.next()\landroid.content.pm.ActivityInfo android.content.pm.ActivityInfo r7 = r6.activityInfo\l}"];
+subgraph cluster_IfRegion_456669129 {
+label = "IF [B:10:0x003c, B:13:0x0041, B:16:0x004b] THEN: R(1:(1:17)) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003c|if (r7 != null) goto L10\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0041|ADDED_TO_REGION\l|if ((r8 = r7.metaData) != null) goto L13\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004b|ADDED_TO_REGION\l|if ((r9 = r8.getString(androidx.core.content.p002pm.ShortcutManagerCompat.SHORTCUT_LISTENER_META_DATA_KEY)) != null) goto L16\l}"];
+subgraph cluster_Region_29233046 {
+label = "R(1:(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1217147009 {
+label = "Try: R(1:17) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1653254509 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004e|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x0076, blocks: (B:18:0x004e), top: B:27:0x004e \}\lCatch: Exception \-\> 0x0076\l|java.lang.ClassLoader java.lang.ClassLoader r0 = androidx.core.content.p002pm.ShortcutManagerCompat.class.getClassLoader()     \/\/ Catch: java.lang.Exception \-\> L76\ljava.lang.Class java.lang.Class\<?\> r11 = java.lang.Class.forName(r9, false, r0)     \/\/ Catch: java.lang.Exception \-\> L76\ljava.lang.reflect.Method java.lang.reflect.Method r12 = r11.getMethod(\"getInstance\", android.content.Context.class)     \/\/ Catch: java.lang.Exception \-\> L76\lr0.add((androidx.core.content.p002pm.ShortcutInfoChangeListener) r12.invoke(null, r16))     \/\/ Catch: java.lang.Exception \-\> L76\l}"];
+}
+subgraph cluster_Region_1790411216 {
+label = "R(0) | ExcHandler: Exception \-\> 0x0076\l";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_287678219 {
+label = "IF [B:23:0x007a] THEN: R(1:29) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x007a|if (androidx.core.content.p002pm.ShortcutManagerCompat.sShortcutInfoChangeListeners == null) goto L29\l}"];
+subgraph cluster_Region_1315535258 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x007c|androidx.core.content.p002pm.ShortcutManagerCompat.sShortcutInfoChangeListeners = r0\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0080|RETURN\l|return androidx.core.content.p002pm.ShortcutManagerCompat.sShortcutInfoChangeListeners\l}"];
+}
+subgraph cluster_Region_1790411216 {
+label = "R(0) | ExcHandler: Exception \-\> 0x0076\l";
+node [shape=record,color=blue];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002d|LOOP_START\lLOOP:0: B:7:0x002d\-\>B:32:0x002d\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x003f|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x003f}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0044|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0044}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x004e|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x002d|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x002d|LOOP_END\lSYNTHETIC\lADDED_TO_REGION\lLOOP:0: B:7:0x002d\-\>B:32:0x002d\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0076|ExcHandler: Exception \-\> 0x0076\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x002d|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x002d|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x002d|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002d|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0078|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0078}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x007e}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<androidx.core.content.pm.ShortcutInfoChangeListener\> androidx.core.content.pm.ShortcutManagerCompat.getShortcutInfoListeners((r16v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:16:0x004b \-\> B:7:0x002d, BACK_EDGE: B:18:0x004e \-\> B:7:0x002d, BACK_EDGE: B:20:0x0076 \-\> B:7:0x002d, CROSS_EDGE: B:27:0x004e \-\> B:20:0x0076, BACK_EDGE: B:13:0x0041 \-\> B:7:0x002d, BACK_EDGE: B:10:0x003c \-\> B:7:0x002d, CROSS_EDGE: B:23:0x007a \-\> B:25:0x007e, CROSS_EDGE: B:5:0x000e \-\> B:22:0x0078, CROSS_EDGE: B:3:0x0002 \-\> B:25:0x007e\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x0076, blocks: (B:18:0x004e), top: B:27:0x004e \}\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/content\/Context;)Ljava\/util\/List\<Landroidx\/core\/content\/pm\/ShortcutInfoChangeListener;\>;\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_25[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_22[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_29[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_30;
+Node_10 -> Node_33[style=dashed];
+Node_13 -> Node_31;
+Node_13 -> Node_34[style=dashed];
+Node_16 -> Node_27;
+Node_16 -> Node_35[style=dashed];
+Node_18 -> Node_28;
+Node_18 -> Node_36;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_26 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_30 -> Node_12;
+Node_12 -> Node_13;
+Node_31 -> Node_15;
+Node_15 -> Node_16;
+Node_27 -> Node_18;
+Node_27 -> Node_20;
+Node_28 -> Node_20;
+Node_36 -> Node_32;
+Node_32 -> Node_7;
+Node_20 -> Node_37;
+Node_37 -> Node_32;
+Node_35 -> Node_32;
+Node_34 -> Node_32;
+Node_33 -> Node_32;
+Node_29 -> Node_22;
+Node_22 -> Node_23;
+Node_25 -> Node_26;
+}
+

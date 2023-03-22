@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.ViewTransitionController.animate()V" {
+subgraph cluster_Region_491567019 {
+label = "R(2:1|(2:(1:3)|(4:5|(1:8)|10|(1:(1:12)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.ArrayList\<androidx.constraintlayout.motion.widget.ViewTransition$Animate\> java.util.ArrayList\<androidx.constraintlayout.motion.widget.ViewTransition.Animate\> r0 = r2.animations\l}"];
+subgraph cluster_Region_2095230796 {
+label = "R(2:(1:3)|(4:5|(1:8)|10|(1:(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1127206344 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_837065795 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1802190364 {
+label = "R(4:5|(1:8)|10|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|java.util.Iterator java.util.Iterator\<androidx.constraintlayout.motion.widget.ViewTransition.Animate\> r0 = r0.iterator()\l}"];
+subgraph cluster_LoopRegion_1734587256 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|if (r0.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_535474640 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|LOOP_END\lLOOP:0: B:6:0x0009\-\>B:8:0x000f\l|androidx.constraintlayout.motion.widget.ViewTransition$Animate androidx.constraintlayout.motion.widget.ViewTransition.Animate r1 = r0.next()\lr1.mutate()\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0019|r2.animations.removeAll(r2.removeList)\lr2.removeList.clear()\l}"];
+subgraph cluster_Region_506516235 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_36813420 {
+label = "IF [B:10:0x002b] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002b|if (r2.animations.isEmpty() != false) goto L12\l}"];
+subgraph cluster_Region_1807805865 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002d|r2.animations = null\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0009|LOOP_START\lLOOP:0: B:6:0x0009\-\>B:8:0x000f\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0019|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0030|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.motion.widget.ViewTransitionController.animate((r2v0 'this' androidx.constraintlayout.motion.widget.ViewTransitionController A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x000f \-\> B:6:0x0009, CROSS_EDGE: B:12:0x0030 \-\> B:1:?, CROSS_EDGE: B:10:0x002b \-\> B:12:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_6;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_11 -> Node_12;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+Node_13 -> Node_9;
+Node_12 -> Node_1;
+Node_14 -> Node_1;
+}
+

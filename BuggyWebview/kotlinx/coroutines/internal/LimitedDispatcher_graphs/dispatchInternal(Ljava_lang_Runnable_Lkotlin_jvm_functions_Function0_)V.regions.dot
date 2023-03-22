@@ -1,0 +1,41 @@
+digraph "CFG forkotlinx.coroutines.internal.LimitedDispatcher.dispatchInternal(Ljava\/lang\/Runnable;Lkotlin\/jvm\/functions\/Function0;)V" {
+subgraph cluster_Region_646038661 {
+label = "R(1:(1:(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1493659327 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_520001388 {
+label = "IF [B:3:0x0005, B:6:0x000c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (addAndTryDispatching(r3) == true) goto L3\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000c|ADDED_TO_REGION\l|if (tryAllocateWorker() == true) goto L8\l}"];
+subgraph cluster_Region_1156541993 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|r4.invoke()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0012}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.internal.LimitedDispatcher.dispatchInternal((r2v0 'this' kotlinx.coroutines.internal.LimitedDispatcher A[IMMUTABLE_TYPE, THIS]), (r3v0 'block' java.lang.Runnable A[D('block' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 kotlin.jvm.functions.Function0\<kotlin.Unit\> A[D('dispatch' kotlin.jvm.functions.Function0), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x000e \-\> B:1:?, CROSS_EDGE: B:9:0x0012 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/Runnable;Lkotlin\/jvm\/functions\/Function0\<Lkotlin\/Unit;\>;)V\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_1;
+Node_9 -> Node_1;
+}
+

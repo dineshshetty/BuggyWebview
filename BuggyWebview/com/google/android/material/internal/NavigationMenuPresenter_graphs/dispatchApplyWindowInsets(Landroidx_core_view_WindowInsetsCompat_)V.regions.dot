@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.material.internal.NavigationMenuPresenter.dispatchApplyWindowInsets(Landroidx\/core\/view\/WindowInsetsCompat;)V" {
+subgraph cluster_Region_896284417 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = r6.getSystemWindowInsetTop()\l}"];
+subgraph cluster_IfRegion_548808096 {
+label = "IF [B:10:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0006|if (r5.paddingTopDefault != r0) goto L3\l}"];
+subgraph cluster_Region_861240397 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|r5.paddingTopDefault = r0\lupdateTopPadding()\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x000d|com.google.android.material.internal.NavigationMenuView com.google.android.material.internal.NavigationMenuView r1 = r5.menuView\lr1.setPadding(0, r1.getPaddingTop(), 0, r6.getSystemWindowInsetBottom())\landroidx.core.view.ViewCompat.dispatchApplyWindowInsets(r5.headerLayout, r6)\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0020}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.internal.NavigationMenuPresenter.dispatchApplyWindowInsets((r5v0 'this' com.google.android.material.internal.NavigationMenuPresenter A[IMMUTABLE_TYPE, THIS]), (r6v0 'insets' androidx.core.view.WindowInsetsCompat A[D('insets' androidx.core.view.WindowInsetsCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0006 \-\> B:12:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

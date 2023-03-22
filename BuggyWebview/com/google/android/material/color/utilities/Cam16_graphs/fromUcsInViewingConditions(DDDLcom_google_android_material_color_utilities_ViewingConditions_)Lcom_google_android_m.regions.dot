@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.material.color.utilities.Cam16.fromUcsInViewingConditions(DDDLcom\/google\/android\/material\/color\/utilities\/ViewingConditions;)Lcom\/google\/android\/material\/color\/utilities\/Cam16;" {
+subgraph cluster_Region_219329603 {
+label = "R(4:1|(1:7)(1:3)|4|5) | DECL_VAR: double h\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|double double r0 = java.lang.Math.hypot(r21, r23)\ldouble double r4 = java.lang.Math.expm1(r0 * 0.0228d) \/ 0.0228d\ldouble double r2 = r4 \/ r25.getFlRoot()\ldouble double r6 = java.lang.Math.atan2(r23, r21) * 57.29577951308232d\l}"];
+subgraph cluster_IfRegion_1377779066 {
+label = "IF [B:11:0x0029] THEN: R(1:7) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0029|if (r6 \>= 0.0d) goto L7\l}"];
+subgraph cluster_Region_7261122 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0033|r15 = r6\l}"];
+}
+subgraph cluster_Region_111100297 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002b|r15 = r6 + 360.0d\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0034|PHI: r15 \l  PHI: (r15v1 'h' double) = (r15v0 'h' double), (r15v2 'h' double) binds: [B:13:0x0033, B:12:0x002b] A[DONT_GENERATE, DONT_INLINE]\l|double double r17 = r19 \/ (1.0d \- ((r19 \- 100.0d) * 0.007d))\l}"];
+Node_15 [shape=record,label="{15\:\ 0x004e|RETURN\l|return fromJchInViewingConditions(r17, r2, r15, r25)\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static com.google.android.material.color.utilities.Cam16 com.google.android.material.color.utilities.Cam16.fromUcsInViewingConditions((r19v0 'jstar' double A[D('jstar' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 'astar' double A[D('astar' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 'bstar' double A[D('bstar' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r25v0 'viewingConditions' com.google.android.material.color.utilities.ViewingConditions A[D('viewingConditions' com.google.android.material.color.utilities.ViewingConditions), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0033 \-\> B:14:0x0034\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+}
+

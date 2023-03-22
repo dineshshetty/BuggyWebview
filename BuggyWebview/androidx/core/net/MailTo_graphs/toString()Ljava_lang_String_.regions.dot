@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.core.net.MailTo.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_2075624572 {
+label = "R(3:1|(1:4)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder(androidx.core.net.MailTo.MAILTO_SCHEME)\lr0.append('?')\ljava.util.Iterator r1 = r4.mHeaders.entrySet().iterator()\l\l}"];
+subgraph cluster_LoopRegion_770014788 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|java.util.Map$Entry \lif (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1637272074 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|LOOP_END\lLOOP:0: B:3:0x0016\-\>B:5:0x001c\l|java.util.Map$Entry r2 = r1.next()\lr0.append(android.net.Uri.encode(r2.getKey()))\lr0.append('=')\lr0.append(android.net.Uri.encode(r2.getValue()))\lr0.append(kotlin.text.Typography.amp)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x004b|RETURN\l|return r0.toString()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0016|LOOP_START\lLOOP:0: B:3:0x0016\-\>B:5:0x001c\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0047|SYNTHETIC\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0047}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.core.net.MailTo.toString((r4v0 'this' androidx.core.net.MailTo A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:5:0x001c \-\> B:3:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_3;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_8 -> Node_6;
+Node_6 -> Node_7;
+}
+

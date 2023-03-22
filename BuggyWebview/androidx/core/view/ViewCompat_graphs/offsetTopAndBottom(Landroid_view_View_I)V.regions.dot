@@ -1,0 +1,98 @@
+digraph "CFG forandroidx.core.view.ViewCompat.offsetTopAndBottom(Landroid\/view\/View;I)V" {
+subgraph cluster_Region_1643603851 {
+label = "R(1:(1:3)(1:(4:8|(1:10)|11|(1:(1:15)))(1:19)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1009564465 {
+label = "IF [B:25:0x0004] THEN: R(1:3) ELSE: R(1:(4:8|(1:10)|11|(1:(1:15)))(1:19))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L3\l}"];
+subgraph cluster_Region_1745778734 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0006|r8.offsetTopAndBottom(r9)\l}"];
+}
+subgraph cluster_Region_1904405137 {
+label = "R(1:(4:8|(1:10)|11|(1:(1:15)))(1:19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_731054101 {
+label = "IF [B:28:0x000e] THEN: R(4:8|(1:10)|11|(1:(1:15))) ELSE: R(1:19) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000e|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L8\l}"];
+subgraph cluster_Region_1498577317 {
+label = "R(4:8|(1:10)|11|(1:(1:15)))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0010|android.graphics.Rect android.graphics.Rect r0 = getEmptyTempRect()\lboolean r1 = false\landroid.view.ViewParent android.view.ViewParent r2 = r8.getParent()\l}"];
+subgraph cluster_IfRegion_2041063684 {
+label = "IF [B:30:0x001b] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x001b|if ((r2 instanceof android.view.View) != false) goto L10\l}"];
+subgraph cluster_Region_193179679 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001d|android.view.View android.view.View r3 = (android.view.View) r2\lr0.set(r3.getLeft(), r3.getTop(), r3.getRight(), r3.getBottom())\lr1 = !r0.intersects(r8.getLeft(), r8.getTop(), r8.getRight(), r8.getBottom())\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x004a|PHI: r1 \l  PHI: (r1v3 'needInvalidateWorkaround' boolean) = (r1v2 'needInvalidateWorkaround' boolean), (r1v4 'needInvalidateWorkaround' boolean) binds: [B:30:0x001b, B:31:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|compatOffsetTopAndBottom(r8, r9)\l}"];
+subgraph cluster_Region_1925170021 {
+label = "R(1:(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_809685081 {
+label = "IF [B:33:0x004d, B:35:0x0063] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x004d|if (r1 != false) goto L13\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0063|ADDED_TO_REGION\l|if (r0.intersect(r8.getLeft(), r8.getTop(), r8.getRight(), r8.getBottom()) != false) goto L15\l}"];
+subgraph cluster_Region_863891871 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0065|((android.view.View) r2).invalidate(r0)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1768626708 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x006c|compatOffsetTopAndBottom(r8, r9)\l}"];
+}
+}
+}
+}
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0000}"];
+Node_40 [shape=record,color=red,label="{40\:\ ?|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000a}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x004f}"];
+Node_41 [shape=record,color=red,label="{41\:\ ?|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ ?|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x006f|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.view.ViewCompat.offsetTopAndBottom((r8v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'offset' int A[D('offset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:36:0x0065 \-\> B:39:0x006f, CROSS_EDGE: B:35:0x0063 \-\> B:39:0x006f, CROSS_EDGE: B:33:0x004d \-\> B:39:0x006f, CROSS_EDGE: B:30:0x001b \-\> B:32:0x004a, CROSS_EDGE: B:38:0x006c \-\> B:39:0x006f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_22;Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_40;
+Node_28 -> Node_29;
+Node_28 -> Node_38[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_42[style=dashed];
+Node_35 -> Node_36;
+Node_35 -> Node_43[style=dashed];
+Node_36 -> Node_41;
+Node_38 -> Node_39;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_40 -> Node_23;
+Node_27 -> Node_28;
+Node_34 -> Node_35;
+Node_41 -> Node_23;
+Node_43 -> Node_23;
+Node_42 -> Node_23;
+Node_39 -> Node_23;
+}
+

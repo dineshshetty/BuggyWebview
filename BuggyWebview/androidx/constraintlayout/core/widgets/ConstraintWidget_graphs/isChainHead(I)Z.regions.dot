@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.ConstraintWidget.isChainHead(I)Z" {
+subgraph cluster_Region_686453170 {
+label = "R(3:1|(2:3|(1:(1:9)))|11)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|int int r0 = r5 * 2\l}"];
+subgraph cluster_IfRegion_1722282216 {
+label = "IF [B:17:0x0008] THEN: R(2:3|(1:(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (r4.mListAnchors[r0].mTarget != null) goto L3\l}"];
+subgraph cluster_Region_1388546252 {
+label = "R(2:3|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|androidx.constraintlayout.core.widgets.ConstraintAnchor androidx.constraintlayout.core.widgets.ConstraintAnchor r1 = r4.mListAnchors[r0].mTarget.mTarget\landroidx.constraintlayout.core.widgets.ConstraintAnchor[] androidx.constraintlayout.core.widgets.ConstraintAnchor[] r2 = r4.mListAnchors\l}"];
+subgraph cluster_Region_1975833265 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_600514655 {
+label = "IF [B:19:0x0016, B:21:0x001e, B:23:0x0030] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0016|if (r1 != r2[r0]) goto L5\l}"];
+Node_21 [shape=record,label="{21\:\ 0x001e|ADDED_TO_REGION\l|if (r2[r0 + 1].mTarget != null) goto L7\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0030|ADDED_TO_REGION\l|if (r4.mListAnchors[r0 + 1].mTarget.mTarget == r4.mListAnchors[r0 + 1]) goto L9\l}"];
+subgraph cluster_Region_1093103703 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0032|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0034|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0018}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0020}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private boolean androidx.constraintlayout.core.widgets.ConstraintWidget.isChainHead((r4v0 'this' androidx.constraintlayout.core.widgets.ConstraintWidget A[IMMUTABLE_TYPE, THIS]), (r5v0 'orientation' int A[D('orientation' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0034 \-\> B:26:0x0035, CROSS_EDGE: B:21:0x001e \-\> B:25:0x0034, CROSS_EDGE: B:19:0x0016 \-\> B:25:0x0034, CROSS_EDGE: B:17:0x0008 \-\> B:25:0x0034\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_25[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_15;
+Node_25 -> Node_15;
+Node_14 -> Node_16;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+}
+

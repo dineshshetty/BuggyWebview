@@ -1,0 +1,151 @@
+digraph "CFG forandroidx.core.app.NavUtils.getParentActivityName(Landroid\/content\/Context;Landroid\/content\/ComponentName;)Ljava\/lang\/String;" {
+subgraph cluster_Region_1770270274 {
+label = "R(5:1|(1:3)(1:27)|(1:6)(1:(1:26))|7|(2:(1:11)|(1:(2:(1:18)|(1:(2:(2:21|22)|(1:23))))))) | DECL_VAR: int flags, java.lang.String parentActivity, java.lang.String result\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0000|android.content.pm.PackageManager android.content.pm.PackageManager r0 = r6.getPackageManager()\l}"];
+subgraph cluster_IfRegion_778466073 {
+label = "IF [B:31:0x000a] THEN: R(1:3) ELSE: R(1:27)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x000a|if (android.os.Build.VERSION.SDK_INT \>= 24) goto L3\l}"];
+subgraph cluster_Region_1147562253 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x000c|r1 = 128 \| 512\l}"];
+}
+subgraph cluster_Region_1380402571 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x000f|r1 = 128 \| 512\l}"];
+}
+}
+subgraph cluster_IfRegion_784950492 {
+label = "IF [B:35:0x0015] THEN: R(1:6) ELSE: R(1:(1:26))";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0015|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L6\l}"];
+subgraph cluster_Region_207139066 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0017|r1 \|= 269221888\l}"];
+}
+subgraph cluster_Region_1863609166 {
+label = "R(1:(1:26)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1243322192 {
+label = "IF [B:38:0x001d] THEN: R(1:26) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x001d|if (android.os.Build.VERSION.SDK_INT \>= 24) goto L26\l}"];
+subgraph cluster_Region_257953987 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x001f|r1 \|= 786432\l}"];
+}
+}
+}
+}
+Node_40 [shape=record,label="{40\:\ 0x0022|PHI: r1 \l  PHI: (r1v4 'flags' int) = (r1v2 'flags' int), (r1v3 'flags' int), (r1v5 'flags' int) binds: [B:38:0x001d, B:39:0x001f, B:36:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|android.content.pm.ActivityInfo android.content.pm.ActivityInfo r2 = r0.getActivityInfo(r7, r1)\l}"];
+subgraph cluster_Region_1475926961 {
+label = "R(2:(1:11)|(1:(2:(1:18)|(1:(2:(2:21|22)|(1:23))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_753211159 {
+label = "IF [B:41:0x002a, B:43:0x002e] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x002a|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L9\l}"];
+Node_43 [shape=record,label="{43\:\ 0x002e|ADDED_TO_REGION\l|if ((r3 = r2.parentActivityName) != null) goto L11\l}"];
+subgraph cluster_Region_846379542 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0030|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_2121328909 {
+label = "R(1:(2:(1:18)|(1:(2:(2:21|22)|(1:23)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1749504132 {
+label = "R(2:(1:18)|(1:(2:(2:21|22)|(1:23))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_588049472 {
+label = "IF [B:46:0x0034, B:49:0x003f] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0034|if (r2.metaData == null) goto L15\l}"];
+Node_49 [shape=record,label="{49\:\ 0x003f|ADDED_TO_REGION\l|if ((r3 = r2.metaData.getString(androidx.core.app.NavUtils.PARENT_ACTIVITY)) == null) goto L18\l}"];
+subgraph cluster_Region_2045983598 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x0041|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1593220172 {
+label = "R(1:(2:(2:21|22)|(1:23)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_657931806 {
+label = "R(2:(2:21|22)|(1:23))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1965459724 {
+label = "IF [B:52:0x0049] THEN: R(2:21|22) ELSE: null";
+node [shape=record,color=blue];
+Node_52 [shape=record,label="{52\:\ 0x0049|if (r3.charAt(0) == '.') goto L21\l}"];
+subgraph cluster_Region_367981709 {
+label = "R(2:21|22)";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x004b}"];
+Node_54 [shape=record,label="{54\:\ 0x005e|RETURN\lORIG_RETURN\l|return r6.getPackageName() + r3\l}"];
+}
+}
+subgraph cluster_Region_2140151424 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_55 [shape=record,label="{55\:\ ?|SYNTHETIC\lRETURN\l|return r3\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_28 [shape=record,color=red,label="{28\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0011|PHI: r1 \l  PHI: (r1v2 'flags' int) = (r1v1 'flags' int), (r1v6 'flags' int) binds: [B:33:0x000f, B:32:0x000c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x002c}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0031}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x0036|RETURN\lADDED_TO_REGION\l|return null\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x0037}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x0042}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x001b}"];
+MethodNode[shape=record,label="{public static java.lang.String androidx.core.app.NavUtils.getParentActivityName((r6v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'componentName' android.content.ComponentName A[D('componentName' android.content.ComponentName), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:47:0x0036 \-\> B:29:?, CROSS_EDGE: B:50:0x0041 \-\> B:29:?, CROSS_EDGE: B:54:0x005e \-\> B:29:?, CROSS_EDGE: B:52:0x0049 \-\> B:54:0x005e, CROSS_EDGE: B:41:0x002a \-\> B:45:0x0031, CROSS_EDGE: B:39:0x001f \-\> B:40:0x0022, CROSS_EDGE: B:38:0x001d \-\> B:40:0x0022, CROSS_EDGE: B:33:0x000f \-\> B:34:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroid\/content\/pm\/PackageManager$NameNotFoundException;]\l}"];
+MethodNode -> Node_28;Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_34;
+Node_33 -> Node_34;
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_40;
+Node_38 -> Node_39;
+Node_38 -> Node_40[style=dashed];
+Node_39 -> Node_40;
+Node_40 -> Node_41;
+Node_41 -> Node_42;
+Node_41 -> Node_45[style=dashed];
+Node_43 -> Node_44;
+Node_43 -> Node_45[style=dashed];
+Node_44 -> Node_29;
+Node_46 -> Node_47;
+Node_46 -> Node_48[style=dashed];
+Node_49 -> Node_50;
+Node_49 -> Node_51[style=dashed];
+Node_50 -> Node_29;
+Node_52 -> Node_53;
+Node_52 -> Node_55[style=dashed];
+Node_53 -> Node_54;
+Node_54 -> Node_29;
+Node_55 -> Node_29;
+Node_28 -> Node_30;
+Node_34 -> Node_35;
+Node_42 -> Node_43;
+Node_45 -> Node_46;
+Node_47 -> Node_29;
+Node_48 -> Node_49;
+Node_51 -> Node_52;
+Node_37 -> Node_38;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(Ljava\/util\/concurrent\/atomic\/AtomicReferenceFieldUpdater;Ljava\/lang\/Object;Ljava\/lang\/Object;Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_558230029 {
+label = "R(2:(1:(1:6))|9)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1508775900 {
+label = "LOOP:0: (1:(1:6))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (r1.compareAndSet(r2, r3, r4) == false) goto L3\l}"];
+subgraph cluster_Region_1415297653 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1855256338 {
+label = "IF [B:19:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|LOOP_END\lLOOP:0: B:14:0x0000\-\>B:19:0x000c\l|if (r1.get(r2) != r3) goto L5\l}"];
+subgraph cluster_Region_1611623759 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0006|RETURN\l|return true\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000|LOOP_START\lLOOP:0: B:14:0x0000\-\>B:19:0x000c\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0008}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000e|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0006|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static \/* synthetic *\/ boolean androidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m((r1v0 java.util.concurrent.atomic.AtomicReferenceFieldUpdater A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lBACK_EDGE: B:19:0x000c \-\> B:14:0x0000, CROSS_EDGE: B:21:0x000f \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_18;
+Node_15 -> Node_22[style=dashed];
+Node_19 -> Node_14[style=dashed];
+Node_19 -> Node_23;
+Node_20 -> Node_13;
+Node_16 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_23 -> Node_20;
+Node_22 -> Node_16;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.reflect.KClasses.safeCast(Lkotlin\/reflect\/KClass;Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1595881789 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, \"\<this\>\")\l}"];
+subgraph cluster_Region_513035567 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_896985644 {
+label = "IF [B:3:0x0009] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r1.isInstance(r2) == true) goto L3\l}"];
+subgraph cluster_Region_1455127158 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|kotlin.jvm.internal.Intrinsics.checkNotNull(r2, \"null cannot be cast to non\-null type T of kotlin.reflect.KClasses.safeCast\")\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1892382541 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final T kotlin.reflect.KClasses.safeCast((r1v0 kotlin.reflect.KClass\<T\> A[D('$this$safeCast' kotlin.reflect.KClass), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'value' java.lang.Object A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0012 \-\> B:6:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r2v0, resolved type: java.lang.Object\}\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlin\/reflect\/KClass\<TT;\>;Ljava\/lang\/Object;)TT;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_7 -> Node_1;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+}
+

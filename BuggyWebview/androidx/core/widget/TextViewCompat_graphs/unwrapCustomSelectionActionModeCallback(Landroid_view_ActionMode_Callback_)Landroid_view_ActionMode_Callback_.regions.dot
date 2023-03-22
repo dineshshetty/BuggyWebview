@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.core.widget.TextViewCompat.unwrapCustomSelectionActionModeCallback(Landroid\/view\/ActionMode$Callback;)Landroid\/view\/ActionMode$Callback;" {
+subgraph cluster_Region_1422944671 {
+label = "R(1:(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_82584276 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1798752657 {
+label = "IF [B:12:0x0002, B:14:0x0008] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0002|if ((r2 instanceof androidx.core.widget.TextViewCompat.OreoCallback) != false) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0008|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \>= 26) goto L5\l}"];
+subgraph cluster_Region_408936560 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0011|RETURN\l|return ((androidx.core.widget.TextViewCompat.OreoCallback) r2).getWrappedCallback()\l}"];
+}
+}
+subgraph cluster_Region_1335160437 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0012|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0004}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000a}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static android.view.ActionMode$Callback androidx.core.widget.TextViewCompat.unwrapCustomSelectionActionModeCallback((r2v0 'callback' android.view.ActionMode$Callback A[D('callback' android.view.ActionMode$Callback), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0012 \-\> B:10:?, CROSS_EDGE: B:12:0x0002 \-\> B:17:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_12 -> Node_13;
+Node_12 -> Node_17[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_16 -> Node_10;
+Node_17 -> Node_10;
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

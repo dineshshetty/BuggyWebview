@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.material.slider.BaseSlider.calculateTrackCenter()I" {
+subgraph cluster_Region_457603536 {
+label = "R(3:1|(1:8)|6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = r4.widgetHeight \/ 2\lint r2 = 0\l}"];
+subgraph cluster_IfRegion_666620877 {
+label = "IF [B:14:0x0008, B:16:0x000e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|if (r4.labelBehavior == 1) goto L8\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000e|ADDED_TO_REGION\l|if (shouldAlwaysShowLabel() != false) goto L8\l}"];
+subgraph cluster_Region_1846417818 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|int r2 = r4.labels.get(0).getIntrinsicHeight()\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x001f|RETURN\l|return r0 + r2\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000a}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001e|PHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v0 int) binds: [B:19:0x0012, B:16:0x000e] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private int com.google.android.material.slider.BaseSlider.calculateTrackCenter((r4v0 'this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\> A[D('this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000e \-\> B:20:0x001e, CROSS_EDGE: B:14:0x0008 \-\> B:19:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_16 -> Node_19;
+Node_16 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+}
+

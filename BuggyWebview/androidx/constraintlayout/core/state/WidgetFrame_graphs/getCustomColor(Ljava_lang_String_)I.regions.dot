@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.constraintlayout.core.state.WidgetFrame.getCustomColor(Ljava\/lang\/String;)I" {
+subgraph cluster_Region_1306071647 {
+label = "R(1:(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_383807271 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_83670401 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r1.mCustom.containsKey(r2) != false) goto L3\l}"];
+subgraph cluster_Region_1282616795 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|RETURN\l|return r1.mCustom.get(r2).getColorValue()\l}"];
+}
+}
+subgraph cluster_Region_1237157344 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|RETURN\l|return \-21880\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.constraintlayout.core.state.WidgetFrame.getCustomColor((r1v0 'this' androidx.constraintlayout.core.state.WidgetFrame A[IMMUTABLE_TYPE, THIS]), (r2v0 'name' java.lang.String A[D('name' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0017 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

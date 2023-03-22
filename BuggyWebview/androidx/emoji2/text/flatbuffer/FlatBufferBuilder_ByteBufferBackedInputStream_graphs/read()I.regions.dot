@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlatBufferBuilder.ByteBufferBackedInputStream.read()I" {
+subgraph cluster_Region_1931350654 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_20475815 {
+label = "Try: R(1:4) catches: R(1:8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_227888691 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|RETURN\l|return r2.buf.get() & kotlin.UByte.MAX_VALUE\l}"];
+}
+subgraph cluster_Region_1528244456 {
+label = "R(1:8) | ExcHandler: BufferUnderflowException \-\> 0x0009\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|RETURN\l|return \-1\l}"];
+}
+}
+}
+subgraph cluster_Region_1528244456 {
+label = "R(1:8) | ExcHandler: BufferUnderflowException \-\> 0x0009\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|RETURN\l|return \-1\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{BufferUnderflowException \-\> 0x0009, blocks: (B:12:0x0000), top: B:18:0x0000 \}\lCatch: BufferUnderflowException \-\> 0x0009\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0006}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0009|ExcHandler: BufferUnderflowException \-\> 0x0009\l}"];
+MethodNode[shape=record,label="{public int androidx.emoji2.text.flatbuffer.FlatBufferBuilder.ByteBufferBackedInputStream.read((r2v0 'this' androidx.emoji2.text.flatbuffer.FlatBufferBuilder$ByteBufferBackedInputStream A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:17:0x000b \-\> B:11:?, CROSS_EDGE: B:18:0x0000 \-\> B:15:0x0009\lINLINE_NOT_NEEDED\lTryCatch #0 \{BufferUnderflowException \-\> 0x0009, blocks: (B:12:0x0000), top: B:18:0x0000 \}\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Ljava\/io\/IOException;]\lMETHOD_OVERRIDE: [ClspMth\{java.io.InputStream.read():int throws java.io.IOException\}]\l}"];
+MethodNode -> Node_10;Node_14 -> Node_11;
+Node_16 -> Node_11;
+Node_16 -> Node_11;
+Node_10 -> Node_18;
+Node_18 -> Node_12;
+Node_18 -> Node_15;
+Node_12 -> Node_13;
+Node_12 -> Node_19;
+Node_13 -> Node_14;
+Node_19 -> Node_15;
+Node_15 -> Node_16;
+}
+

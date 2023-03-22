@@ -1,0 +1,58 @@
+digraph "CFG forkotlinx.coroutines.flow.ChannelAsFlow.markConsumed()V" {
+subgraph cluster_Region_136762997 {
+label = "R(1:(1:(1:(1:(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_182832588 {
+label = "R(1:(1:(1:(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_834340456 {
+label = "IF [B:3:0x0002] THEN: R(1:(1:(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r2.consume != false) goto L3\l}"];
+subgraph cluster_Region_2142208909 {
+label = "R(1:(1:(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1099200371 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1697339682 {
+label = "IF [B:8:0x000f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|PHI: r1 \l  PHI: (r1v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if ((kotlinx.coroutines.flow.ChannelAsFlow.consumed$FU.getAndSet(r2, 1) == 0) != true) goto L7\l}"];
+subgraph cluster_Region_214604713 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001f|throw new java.lang.IllegalStateException(\"ReceiveChannel.consumeAsFlow can be collected just once\".toString())\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000e}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0012}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0020|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.flow.ChannelAsFlow.markConsumed((r2v0 'this' kotlinx.coroutines.flow.ChannelAsFlow\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0020 \-\> B:1:?, CROSS_EDGE: B:5:0x000b \-\> B:8:0x000f, CROSS_EDGE: B:3:0x0002 \-\> B:12:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_8 -> Node_10;
+Node_8 -> Node_13[style=dashed];
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_7;
+Node_5 -> Node_8;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_13 -> Node_1;
+Node_12 -> Node_1;
+}
+

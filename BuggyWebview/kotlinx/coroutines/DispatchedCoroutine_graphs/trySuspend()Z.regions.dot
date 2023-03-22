@@ -1,0 +1,66 @@
+digraph "CFG forkotlinx.coroutines.DispatchedCoroutine.trySuspend()Z" {
+subgraph cluster_Region_1483965669 {
+label = "R(2:(2:2|3)|7)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1246687127 {
+label = "LOOP:0: (2:2|3)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|LOOP_END\lLOOP:0: B:18:0x0002\-\>B:24:0x001e\l|if (kotlinx.coroutines.DispatchedCoroutine._decision$FU.compareAndSet(r7, 0, 1) == false) goto L2\l}"];
+subgraph cluster_Region_236245460 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|LOOP_START\lLOOP:0: B:18:0x0002\-\>B:24:0x001e\l|int int r2 = r7._decision\l}"];
+subgraph cluster_SwitchRegion_1738574387 {
+label = "Switch: 3
+ case 0 -> R(1:1)
+ case 1, default -> R(1:11)
+ case 2 -> R(1:13)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0007|switch(r2) \{\l    case 0: goto L4;\l    case 1: goto L9;\l    case 2: goto L12;\l    default: goto L9;\l\}\l}"];
+subgraph cluster_Region_1736395130 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_1488138134 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_480500937 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|throw new java.lang.IllegalStateException(\"Already suspended\".toString())\l}"];
+}
+subgraph cluster_Region_564968093 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0016|RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0020|RETURN\l|return true\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0017}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0020|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000a|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000a}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final boolean kotlinx.coroutines.DispatchedCoroutine.trySuspend((r7v0 'this' kotlinx.coroutines.DispatchedCoroutine\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0016 \-\> B:16:?, CROSS_EDGE: B:25:0x0020 \-\> B:16:?, BACK_EDGE: B:24:0x001e \-\> B:18:0x0002\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_15;Node_24 -> Node_18;
+Node_24 -> Node_29[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_23;
+Node_19 -> Node_27;
+Node_19 -> Node_28;
+Node_21 -> Node_16;
+Node_22 -> Node_16;
+Node_25 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_23 -> Node_24;
+Node_29 -> Node_25;
+Node_27 -> Node_20;
+Node_20 -> Node_21;
+Node_28 -> Node_22;
+}
+

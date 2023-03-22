@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.fragment.app.FragmentContainerView.setLayoutTransition(Landroid\/animation\/LayoutTransition;)V" {
+subgraph cluster_Region_2087016570 {
+label = "R(1:(2:(2:3|4)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1980732913 {
+label = "R(2:(2:3|4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1138038951 {
+label = "IF [B:11:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \< 18) goto L3\l}"];
+subgraph cluster_Region_352510761 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|super.setLayoutTransition(r3)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1131597691 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|throw new java.lang.UnsupportedOperationException(\"FragmentContainerView does not support Layout Transitions or animateLayoutChanges=\"true\".\")\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000a}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentContainerView.setLayoutTransition((r2v0 'this' androidx.fragment.app.FragmentContainerView A[IMMUTABLE_TYPE, THIS]), (r3v0 'transition' android.animation.LayoutTransition A[D('transition' android.animation.LayoutTransition), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x0011 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewGroup.setLayoutTransition(android.animation.LayoutTransition):void\}]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+}
+

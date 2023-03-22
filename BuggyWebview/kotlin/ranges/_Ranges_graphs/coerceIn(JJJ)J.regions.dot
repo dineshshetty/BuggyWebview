@@ -1,0 +1,52 @@
+digraph "CFG forkotlin.ranges.RangesKt___RangesKt.coerceIn(JJJ)J" {
+subgraph cluster_Region_1605476004 {
+label = "R(1:(2:(1:4)|(2:11|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1505726646 {
+label = "R(2:(1:4)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1271215336 {
+label = "IF [B:16:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if (r5 \<= r7) goto L3\l}"];
+subgraph cluster_Region_16684172 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|RETURN\l|return r3 \< r5 ? r5 : r3 \> r7 ? r7 : r3\l}"];
+}
+}
+subgraph cluster_Region_1399418505 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000f}"];
+Node_25 [shape=record,label="{25\:\ 0x0032|throw new java.lang.IllegalArgumentException(\"Cannot coerce value to an empty range: maximum \" + r7 + \" is less than minimum \" + r5 + '.')\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0004}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0008}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0009}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000b}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000d}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000e}"];
+MethodNode[shape=record,label="{public static final long kotlin.ranges.RangesKt___RangesKt.coerceIn((r3v0 '$this$coerceIn' long A[D('$this$coerceIn' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'minimumValue' long A[D('minimumValue' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'maximumValue' long A[D('maximumValue' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x000d \-\> B:14:?, CROSS_EDGE: B:23:0x000e \-\> B:14:?, CROSS_EDGE: B:25:0x0032 \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_19 -> Node_14;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23;
+Node_22 -> Node_14;
+Node_23 -> Node_14;
+}
+

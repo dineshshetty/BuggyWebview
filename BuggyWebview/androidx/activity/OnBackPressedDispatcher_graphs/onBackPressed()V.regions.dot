@@ -1,0 +1,70 @@
+digraph "CFG forandroidx.activity.OnBackPressedDispatcher.onBackPressed()V" {
+subgraph cluster_Region_1704789859 {
+label = "R(4:1|(2:4|(2:7|8))|11|(1:(1:13)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|java.util.Iterator java.util.Iterator\<androidx.activity.OnBackPressedCallback\> r0 = r3.mOnBackPressedCallbacks.descendingIterator()\l}"];
+subgraph cluster_LoopRegion_629757300 {
+label = "LOOP:0: (2:4|(2:7|8))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000a|if (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_503674915 {
+label = "R(2:4|(2:7|8))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|androidx.activity.OnBackPressedCallback androidx.activity.OnBackPressedCallback r1 = r0.next()\l}"];
+subgraph cluster_IfRegion_917771250 {
+label = "IF [B:23:0x0016] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0016|LOOP_END\lLOOP:0: B:20:0x0006\-\>B:23:0x0016\l|if (r1.isEnabled() != false) goto L6\l}"];
+subgraph cluster_Region_63287655 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|r1.handleOnBackPressed()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001b|RETURN\l|return\l}"];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x001d|java.lang.Runnable java.lang.Runnable r1 = r3.mFallbackOnBackPressed\l}"];
+subgraph cluster_Region_1401813414 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1414692026 {
+label = "IF [B:28:0x001f] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001f|if (r1 != null) goto L13\l}"];
+subgraph cluster_Region_1509543756 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0021|r1.run()\l}"];
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0006|LOOP_START\lLOOP:0: B:20:0x0006\-\>B:23:0x0016\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0018|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001d|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0024|ORIG_RETURN\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.activity.OnBackPressedDispatcher.onBackPressed((r3v0 'this' androidx.activity.OnBackPressedDispatcher A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x0016 \-\> B:20:0x0006, CROSS_EDGE: B:30:0x0024 \-\> B:18:?, CROSS_EDGE: B:28:0x001f \-\> B:30:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_32[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_20[style=dashed];
+Node_23 -> Node_31;
+Node_24 -> Node_25;
+Node_25 -> Node_18;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_33[style=dashed];
+Node_29 -> Node_30;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_31 -> Node_24;
+Node_32 -> Node_27;
+Node_30 -> Node_18;
+Node_33 -> Node_18;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.transition.TransitionSet.setSceneRoot(Landroid\/view\/ViewGroup;)Landroidx\/transition\/TransitionSet;" {
+subgraph cluster_Region_357886435 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|super.setSceneRoot(r4)\lint int r0 = r3.mTransitions.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1418966806 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000a|LOOP_START\lLOOP:0: B:10:0x000a\-\>B:11:0x000c\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:9:0x0000, B:11:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_1391145517 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000c|LOOP_END\lLOOP:0: B:10:0x000a\-\>B:11:0x000c\l|r3.mTransitions.get(r1).setSceneRoot(r4)\lr1++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x001a|RETURN\l|return r3\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001a|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.transition.TransitionSet androidx.transition.TransitionSet.setSceneRoot((r3v0 'this' androidx.transition.TransitionSet A[IMMUTABLE_TYPE, THIS]), (r4v0 'sceneRoot' android.view.ViewGroup A[D('sceneRoot' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x000c \-\> B:10:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: androidx.transition.TransitionSet.setSceneRoot(android.view.ViewGroup):androidx.transition.Transition\lMETHOD_OVERRIDE: [androidx.transition.Transition.setSceneRoot(android.view.ViewGroup):androidx.transition.Transition]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_10;
+Node_12 -> Node_8;
+Node_7 -> Node_9;
+Node_13 -> Node_12;
+}
+

@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.core.widget.NestedScrollView.scrollTo(II)V" {
+subgraph cluster_Region_319445562 {
+label = "R(1:(1:(2:3|(1:(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1196629962 {
+label = "R(1:(2:3|(1:(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_680438870 {
+label = "IF [B:15:0x0004] THEN: R(2:3|(1:(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (getChildCount() \> 0) goto L3\l}"];
+subgraph cluster_Region_940992536 {
+label = "R(2:3|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|android.view.View android.view.View r0 = getChildAt(0)\landroid.widget.FrameLayout$LayoutParams android.widget.FrameLayout.LayoutParams r1 = (android.widget.FrameLayout.LayoutParams) r0.getLayoutParams()\lint int r2 = (getWidth() \- getPaddingLeft()) \- getPaddingRight()\lint int r3 = r0.getWidth() + r1.leftMargin + r1.rightMargin\lint int r4 = (getHeight() \- getPaddingTop()) \- getPaddingBottom()\lint int r5 = r0.getHeight() + r1.topMargin + r1.bottomMargin\lint int r8 = clamp(r8, r2, r3)\lint int r9 = clamp(r9, r4, r5)\l}"];
+subgraph cluster_Region_1356820737 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1455767495 {
+label = "IF [B:17:0x004d, B:19:0x0053] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004d|if (r8 != getScrollX()) goto L9\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0053|ADDED_TO_REGION\l|if (r9 != getScrollY()) goto L9\l}"];
+subgraph cluster_Region_785287105 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0055|super.scrollTo(r8, r9)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x004f}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0058|ORIG_RETURN\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.core.widget.NestedScrollView.scrollTo((r7v0 'this' androidx.core.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]), (r8v0 'x' int A[D('x' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'y' int A[D('y' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0053 \-\> B:21:0x0058, CROSS_EDGE: B:17:0x004d \-\> B:20:0x0055, CROSS_EDGE: B:15:0x0004 \-\> B:21:0x0058\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.scrollTo(int, int):void\}]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_20 -> Node_21;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_23 -> Node_13;
+Node_21 -> Node_13;
+Node_22 -> Node_13;
+}
+

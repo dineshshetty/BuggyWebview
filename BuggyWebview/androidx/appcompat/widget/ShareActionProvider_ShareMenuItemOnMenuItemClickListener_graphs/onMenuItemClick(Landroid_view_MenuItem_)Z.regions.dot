@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.appcompat.widget.ShareActionProvider.ShareMenuItemOnMenuItemClickListener.onMenuItemClick(Landroid\/view\/MenuItem;)Z" {
+subgraph cluster_Region_2123651797 {
+label = "R(2:1|(2:(4:3|(1:10)|7|8)|(1:11)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.appcompat.widget.ActivityChooserModel androidx.appcompat.widget.ActivityChooserModel r0 = androidx.appcompat.widget.ActivityChooserModel.get(androidx.appcompat.widget.ShareActionProvider.this.mContext, androidx.appcompat.widget.ShareActionProvider.this.mShareHistoryFileName)\lint int r1 = r6.getItemId()\landroid.content.Intent android.content.Intent r2 = r0.chooseActivity(r1)\l}"];
+subgraph cluster_Region_574542154 {
+label = "R(2:(4:3|(1:10)|7|8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_458603811 {
+label = "IF [B:3:0x0014] THEN: R(4:3|(1:10)|7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (r2 != null) goto L3\l}"];
+subgraph cluster_Region_705514793 {
+label = "R(4:3|(1:10)|7|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|java.lang.String java.lang.String r3 = r2.getAction()\l}"];
+subgraph cluster_IfRegion_881679605 {
+label = "IF [B:5:0x0020, B:7:0x0028] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|if (\"android.intent.action.SEND\".equals(r3) != false) goto L10\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0028|ADDED_TO_REGION\l|if (\"android.intent.action.SEND_MULTIPLE\".equals(r3) != false) goto L10\l}"];
+subgraph cluster_Region_1754526144 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002a|androidx.appcompat.widget.ShareActionProvider.this.updateIntent(r2)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002f|androidx.appcompat.widget.ShareActionProvider.this.mContext.startActivity(r2)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0036|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1578589434 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0022}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.widget.ShareActionProvider.ShareMenuItemOnMenuItemClickListener.onMenuItemClick((r5v0 'this' androidx.appcompat.widget.ShareActionProvider$ShareMenuItemOnMenuItemClickListener A[IMMUTABLE_TYPE, THIS]), (r6v0 'item' android.view.MenuItem A[D('item' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:7:0x0028 \-\> B:9:0x002f, CROSS_EDGE: B:5:0x0020 \-\> B:8:0x002a, CROSS_EDGE: B:3:0x0014 \-\> B:10:0x0036\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.MenuItem.OnMenuItemClickListener.onMenuItemClick(android.view.MenuItem):boolean\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_12 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+}
+

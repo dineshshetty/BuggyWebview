@@ -1,0 +1,85 @@
+digraph "CFG forandroidx.core.provider.RequestExecutor.submit(Ljava\/util\/concurrent\/ExecutorService;Ljava\/util\/concurrent\/Callable;I)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1002080654 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|java.util.concurrent.Future java.util.concurrent.Future\<T\> r0 = r4.submit(r5)\l}"];
+subgraph cluster_TryCatchRegion_449538573 {
+label = "Try: R(1:4) catches: R(2:7|8), R(2:9|11), R(1:14)";
+node [shape=record,color=blue];
+subgraph cluster_Region_744021865 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|RETURN\l|return r0.get(r6, java.util.concurrent.TimeUnit.MILLISECONDS)\l}"];
+}
+subgraph cluster_Region_2014415169 {
+label = "R(2:7|8) | ExcHandler: InterruptedException \-\> 0x0015\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0015|ExcHandler: InterruptedException \-\> 0x0015\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0016|throw r1\l}"];
+}
+subgraph cluster_Region_362602107 {
+label = "R(2:9|11) | ExcHandler: ExecutionException \-\> 0x0017\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0017|ExcHandler: ExecutionException \-\> 0x0017\l}"];
+Node_27 [shape=record,label="{27\:\ 0x001d|throw new java.lang.RuntimeException(r1)\l}"];
+}
+subgraph cluster_Region_105203468 {
+label = "R(1:14) | ExcHandler: TimeoutException \-\> 0x000c\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0014|throw new java.lang.InterruptedException(\"timeout\")\l}"];
+}
+}
+}
+subgraph cluster_Region_362602107 {
+label = "R(2:9|11) | ExcHandler: ExecutionException \-\> 0x0017\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0017|ExcHandler: ExecutionException \-\> 0x0017\l}"];
+Node_27 [shape=record,label="{27\:\ 0x001d|throw new java.lang.RuntimeException(r1)\l}"];
+}
+subgraph cluster_Region_2014415169 {
+label = "R(2:7|8) | ExcHandler: InterruptedException \-\> 0x0015\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0015|ExcHandler: InterruptedException \-\> 0x0015\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0016|throw r1\l}"];
+}
+subgraph cluster_Region_105203468 {
+label = "R(1:14) | ExcHandler: TimeoutException \-\> 0x000c\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0014|throw new java.lang.InterruptedException(\"timeout\")\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0005|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0005|TRY_ENTER\lTRY_LEAVE\lTryCatch #2 \{InterruptedException \-\> 0x0015, ExecutionException \-\> 0x0017, TimeoutException \-\> 0x000c, blocks: (B:18:0x0005), top: B:28:0x0005 \}\lCatch: TimeoutException \-\> 0x000c, InterruptedException \-\> 0x0015, ExecutionException \-\> 0x0017\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0018}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c|ExcHandler: TimeoutException \-\> 0x000c\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000d}"];
+MethodNode[shape=record,label="{public static T androidx.core.provider.RequestExecutor.submit((r4v0 'executor' java.util.concurrent.ExecutorService A[D('executor' java.util.concurrent.ExecutorService), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'callable' java.util.concurrent.Callable\<T\> A[D('callable' java.util.concurrent.Callable\<T\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'timeoutMillis' int A[D('timeoutMillis' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0016 \-\> B:16:?, CROSS_EDGE: B:27:0x001d \-\> B:16:?, CROSS_EDGE: B:22:0x0014 \-\> B:16:?, CROSS_EDGE: B:28:0x0005 \-\> B:23:0x0015, CROSS_EDGE: B:28:0x0005 \-\> B:25:0x0017, CROSS_EDGE: B:28:0x0005 \-\> B:20:0x000c\lINLINE_NOT_NEEDED\lTryCatch #2 \{InterruptedException \-\> 0x0015, ExecutionException \-\> 0x0017, TimeoutException \-\> 0x000c, blocks: (B:18:0x0005), top: B:28:0x0005 \}\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/concurrent\/ExecutorService;Ljava\/util\/concurrent\/Callable\<TT;\>;I)TT;\lEXCEPTIONS:[Ljava\/lang\/InterruptedException;]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_28;
+Node_19 -> Node_16;
+Node_23 -> Node_24;
+Node_24 -> Node_16;
+Node_25 -> Node_26;
+Node_27 -> Node_16;
+Node_22 -> Node_16;
+Node_25 -> Node_26;
+Node_27 -> Node_16;
+Node_23 -> Node_24;
+Node_24 -> Node_16;
+Node_22 -> Node_16;
+Node_15 -> Node_17;
+Node_28 -> Node_18;
+Node_28 -> Node_23;
+Node_28 -> Node_25;
+Node_28 -> Node_20;
+Node_18 -> Node_19;
+Node_18 -> Node_29;
+Node_29 -> Node_23;
+Node_29 -> Node_25;
+Node_29 -> Node_20;
+Node_26 -> Node_27;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+}
+

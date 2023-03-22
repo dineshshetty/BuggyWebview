@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.collections.ArrayDeque.removeFirst()Ljava\/lang\/Object;" {
+subgraph cluster_Region_2040063121 {
+label = "R(1:(2:(1:7)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_512894093 {
+label = "R(2:(1:7)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_302656000 {
+label = "IF [B:11:0x0004] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (isEmpty() != false) goto L6\l}"];
+subgraph cluster_Region_912824733 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0025|throw new java.util.NoSuchElementException(\"ArrayDeque is empty.\")\l}"];
+}
+}
+subgraph cluster_Region_591438177 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|java.lang.Object[] java.lang.Object[] r0 = r4.elementData\lint int r1 = r4.head\lE r2 = (E) r0[r1]\lr0[r1] = null\lr4.head = incremented(r1)\lr4.size = size() \- 1\l}"];
+Node_13 [shape=record,label="{13\:\ 0x001d|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001e}"];
+MethodNode[shape=record,label="{public final E kotlin.collections.ArrayDeque.removeFirst((r4v0 'this' kotlin.collections.ArrayDeque\<E\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0025 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: ()TE;\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+}
+

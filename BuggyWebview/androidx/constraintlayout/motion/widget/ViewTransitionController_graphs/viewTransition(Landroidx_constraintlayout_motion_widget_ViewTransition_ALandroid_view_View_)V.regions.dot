@@ -1,0 +1,88 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.ViewTransitionController.viewTransition(Landroidx\/constraintlayout\/motion\/widget\/ViewTransition;[Landroid\/view\/View;)V" {
+subgraph cluster_Region_1639627281 {
+label = "R(2:1|(2:(1:(2:(2:5|6)|(2:8|(2:(1:10)|(2:11|12)))))|(1:13)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r8.mMotionLayout.getCurrentState()\l}"];
+subgraph cluster_Region_1367064062 {
+label = "R(2:(1:(2:(2:5|6)|(2:8|(2:(1:10)|(2:11|12)))))|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2135086723 {
+label = "IF [B:3:0x0009] THEN: R(1:(2:(2:5|6)|(2:8|(2:(1:10)|(2:11|12))))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r9.mViewTransitionMode != 2) goto L3\l}"];
+subgraph cluster_Region_503359061 {
+label = "R(1:(2:(2:5|6)|(2:8|(2:(1:10)|(2:11|12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_164982071 {
+label = "R(2:(2:5|6)|(2:8|(2:(1:10)|(2:11|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_636142503 {
+label = "IF [B:5:0x000c] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r0 == (\-1)) goto L5\l}"];
+subgraph cluster_Region_134733604 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|java.lang.String java.lang.String r1 = r8.TAG\landroid.util.Log.w(r1, \"No support for ViewTransition within transition yet. Currently: \" + r8.mMotionLayout.toString())\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1322818503 {
+label = "R(2:8|(2:(1:10)|(2:11|12)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002b|androidx.constraintlayout.widget.ConstraintSet androidx.constraintlayout.widget.ConstraintSet r7 = r8.mMotionLayout.getConstraintSet(r0)\l}"];
+subgraph cluster_Region_88978878 {
+label = "R(2:(1:10)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_42695185 {
+label = "IF [B:9:0x0031] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0031|if (r7 == null) goto L10\l}"];
+subgraph cluster_Region_1817349466 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0033|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1171339509 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0034|r9.applyTransition(r8, r8.mMotionLayout, r0, r7, r10)\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1896839276 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003f|r9.applyTransition(r8, r8.mMotionLayout, r0, null, r10)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0049|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.constraintlayout.motion.widget.ViewTransitionController.viewTransition((r8v0 'this' androidx.constraintlayout.motion.widget.ViewTransitionController A[IMMUTABLE_TYPE, THIS]), (r9v0 'vt' androidx.constraintlayout.motion.widget.ViewTransition A[D('vt' androidx.constraintlayout.motion.widget.ViewTransition), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'view' android.view.View[] A[D('view' android.view.View[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0033 \-\> B:1:?, CROSS_EDGE: B:13:0x0049 \-\> B:1:?, CROSS_EDGE: B:12:0x003f \-\> B:13:0x0049\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [vt, view]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_1;
+Node_11 -> Node_14;
+Node_14 -> Node_1;
+Node_12 -> Node_13;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_13 -> Node_1;
+}
+

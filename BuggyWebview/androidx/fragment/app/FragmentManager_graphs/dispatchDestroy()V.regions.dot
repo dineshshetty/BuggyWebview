@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.dispatchDestroy()V" {
+subgraph cluster_Region_1633958919 {
+label = "R(4:1|(1:3)|4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|r2.mDestroyed = true\lexecPendingActions(true)\lendAnimatingAwayFragments()\ldispatchStateChange(\-1)\lr2.mHost = null\lr2.mContainer = null\lr2.mParent = null\l}"];
+subgraph cluster_IfRegion_1221712035 {
+label = "IF [B:13:0x0016] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0016|if (r2.mOnBackPressedDispatcher != null) goto L3\l}"];
+subgraph cluster_Region_1583199183 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0018|r2.mOnBackPressedCallback.remove()\lr2.mOnBackPressedDispatcher = null\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x001f|androidx.activity.result.ActivityResultLauncher\<android.content.Intent\> androidx.activity.result.ActivityResultLauncher\<android.content.Intent\> r0 = r2.mStartActivityForResult\l}"];
+subgraph cluster_Region_14110220 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_708500940 {
+label = "IF [B:16:0x0021] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0021|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_236745899 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0023|r0.unregister()\lr2.mStartIntentSenderForResult.unregister()\lr2.mRequestPermissions.unregister()\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0030|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentManager.dispatchDestroy((r2v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0021 \-\> B:18:0x0030, CROSS_EDGE: B:13:0x0016 \-\> B:15:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

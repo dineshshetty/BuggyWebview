@@ -1,0 +1,47 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.random([FLkotlin\/random\/Random;)F" {
+subgraph cluster_Region_124875865 {
+label = "R(2:1|(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"random\")\l}"];
+subgraph cluster_Region_651794018 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_196962679 {
+label = "IF [B:17:0x0010] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r2.length == 0) != false) goto L8\l}"];
+subgraph cluster_Region_1216777223 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0021|throw new java.util.NoSuchElementException(\"Array is empty.\")\l}"];
+}
+}
+subgraph cluster_Region_1155132146 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0019|RETURN\l|return r2[r3.nextInt(r2.length)]\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000b}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000d}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0012}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001a}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000f}"];
+MethodNode[shape=record,label="{public static final float kotlin.collections.ArraysKt___ArraysKt.random((r2v0 '$this$random' float[] A[D('$this$random' float[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'random' kotlin.random.Random A[D('random' kotlin.random.Random), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0021 \-\> B:12:?, CROSS_EDGE: B:16:0x000f \-\> B:17:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_16 -> Node_17;
+}
+

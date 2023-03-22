@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.view.inputmethod.InputContentInfoCompat.wrap(Ljava\/lang\/Object;)Landroidx\/core\/view\/inputmethod\/InputContentInfoCompat;" {
+subgraph cluster_Region_420453979 {
+label = "R(1:(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_277977001 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1920701440 {
+label = "IF [B:13:0x0001, B:16:0x0008] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0001|if (r3 == null) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0008|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \< 25) goto L7\l}"];
+subgraph cluster_Region_2117973362 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_463802792 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|RETURN\l|return new androidx.core.view.inputmethod.InputContentInfoCompat(new androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatApi25Impl(r3))\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0003|RETURN\lADDED_TO_REGION\l|return null\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0004}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+MethodNode[shape=record,label="{public static androidx.core.view.inputmethod.InputContentInfoCompat androidx.core.view.inputmethod.InputContentInfoCompat.wrap((r3v0 'inputContentInfo' java.lang.Object A[D('inputContentInfo' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000a \-\> B:11:?, CROSS_EDGE: B:19:0x0015 \-\> B:11:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+}
+

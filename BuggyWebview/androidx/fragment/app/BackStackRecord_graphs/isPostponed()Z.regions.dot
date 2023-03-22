@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.fragment.app.BackStackRecord.isPostponed()Z" {
+subgraph cluster_Region_2141237685 {
+label = "R(3:1|(2:4|(2:(1:8)|(1:6)))|11)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_25662448 {
+label = "LOOP:0: (2:4|(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|if (r0 \< r3.mOps.size()) goto L4\l}"];
+subgraph cluster_Region_81237285 {
+label = "R(2:4|(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|androidx.fragment.app.FragmentTransaction$Op androidx.fragment.app.FragmentTransaction.C0352Op r1 = r3.mOps.get(r0)\l}"];
+subgraph cluster_Region_137100685 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2113974547 {
+label = "IF [B:6:0x0015] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (isFragmentPostponed(r1) != false) goto L7\l}"];
+subgraph cluster_Region_899032054 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_283457467 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0019|LOOP_END\lLOOP:0: B:3:0x0001\-\>B:9:0x0019\l|r0++\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001c|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0001|LOOP_START\lLOOP:0: B:3:0x0001\-\>B:9:0x0019\lPHI: r0 \l  PHI: (r0v1 'opNum' int) = (r0v0 'opNum' int), (r0v3 'opNum' int) binds: [B:2:0x0000, B:9:0x0019] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0017|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean androidx.fragment.app.BackStackRecord.isPostponed((r3v0 'this' androidx.fragment.app.BackStackRecord A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:9:0x0019 \-\> B:3:0x0001, CROSS_EDGE: B:11:0x001d \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_9[style=dashed];
+Node_6 -> Node_12;
+Node_7 -> Node_1;
+Node_9 -> Node_3;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_12 -> Node_7;
+Node_13 -> Node_10;
+}
+

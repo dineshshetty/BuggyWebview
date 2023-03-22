@@ -1,0 +1,52 @@
+digraph "CFG forandroidx.appcompat.widget.ResourceManagerInternal.getPorterDuffColorFilter(ILandroid\/graphics\/PorterDuff$Mode;)Landroid\/graphics\/PorterDuffColorFilter;" {
+subgraph cluster_Region_853642573 {
+label = "R(2:2|9) | DECL_VAR: android.graphics.PorterDuffColorFilter filter\l";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_1666760255 {
+label = "Synchronized:R(2:2|(2:4|(1:6)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002}"];
+subgraph cluster_Region_165845414 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:18:0x0003, B:20:0x000b), top: B:26:0x0003 \}\lCatch: all \-\> 0x0016\l|androidx.appcompat.widget.ResourceManagerInternal$ColorFilterLruCache androidx.appcompat.widget.ResourceManagerInternal.ColorFilterLruCache r1 = androidx.appcompat.widget.ResourceManagerInternal.COLOR_FILTER_CACHE     \/\/ Catch: java.lang.Throwable \-\> L16\landroid.graphics.PorterDuffColorFilter r2 = r1.get(r4, r5)     \/\/ Catch: java.lang.Throwable \-\> L16\l}"];
+subgraph cluster_IfRegion_2077692929 {
+label = "IF [B:19:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0009|if (r2 == null) goto L6\l}"];
+subgraph cluster_Region_381093085 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|TRY_LEAVE\lTryCatch #0 \{, blocks: (B:18:0x0003, B:20:0x000b), top: B:26:0x0003 \}\lCatch: all \-\> 0x0016\l|r2 = new android.graphics.PorterDuffColorFilter(r4, r5)     \/\/ Catch: java.lang.Throwable \-\> L16\lr1.put(r4, r5, r2)     \/\/ Catch: java.lang.Throwable \-\> L16\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0015|RETURN\l|return r2\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0014|DONT_GENERATE\lPHI: r2 \l  PHI: (r2v1 'filter' android.graphics.PorterDuffColorFilter) = (r2v0 'filter' android.graphics.PorterDuffColorFilter), (r2v2 'filter' android.graphics.PorterDuffColorFilter) binds: [B:19:0x0009, B:20:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit()\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0016|REMOVE\lExcHandler: all \-\> 0x0016\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0018|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{public static synchronized android.graphics.PorterDuffColorFilter androidx.appcompat.widget.ResourceManagerInternal.getPorterDuffColorFilter((r4v0 'color' int A[D('color' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'mode' android.graphics.PorterDuff$Mode A[D('mode' android.graphics.PorterDuff$Mode), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0018 \-\> B:15:?, CROSS_EDGE: B:19:0x0009 \-\> B:21:0x0014, CROSS_EDGE: B:26:0x0003 \-\> B:23:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_26;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_27;
+Node_22 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_26 -> Node_18;
+Node_26 -> Node_23;
+Node_27 -> Node_23;
+Node_21 -> Node_22;
+Node_23 -> Node_25;
+Node_25 -> Node_15;
+}
+

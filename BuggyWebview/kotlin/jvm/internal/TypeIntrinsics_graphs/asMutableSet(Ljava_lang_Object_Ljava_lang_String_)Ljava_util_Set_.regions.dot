@@ -1,0 +1,35 @@
+digraph "CFG forkotlin.jvm.internal.TypeIntrinsics.asMutableSet(Ljava\/lang\/Object;Ljava\/lang\/String;)Ljava\/util\/Set;" {
+subgraph cluster_Region_449688832 {
+label = "R(2:(1:5)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_156013657 {
+label = "IF [B:12:0x0002, B:14:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0002|if ((r1 instanceof kotlin.jvm.internal.markers.KMarkers) != false) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0006|ADDED_TO_REGION\l|if ((r1 instanceof kotlin.jvm.internal.markers.KMutableSet) == false) goto L5\l}"];
+subgraph cluster_Region_220518219 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|throwCce(r2)\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x000f|RETURN\l|return castToSet(r1)\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0004}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static java.util.Set kotlin.jvm.internal.TypeIntrinsics.asMutableSet((r1v0 'obj' java.lang.Object A[D('obj' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'message' java.lang.String A[D('message' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0006 \-\> B:16:0x000b, CROSS_EDGE: B:12:0x0002 \-\> B:16:0x000b\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_9;Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_10;
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+}
+

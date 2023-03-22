@@ -1,0 +1,65 @@
+digraph "CFG forcom.google.android.material.bottomappbar.BottomAppBar.setCutoutStateAndTranslateFab()V" {
+subgraph cluster_Region_1909260258 {
+label = "R(4:1|(1:7)(1:14)|8|(1:(1:10))) | DECL_VAR: float null\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|getTopEdgeTreatment().setHorizontalOffset(getFabTranslationX())\lcom.google.android.material.shape.MaterialShapeDrawable com.google.android.material.shape.MaterialShapeDrawable r0 = r3.materialShapeDrawable\l}"];
+subgraph cluster_IfRegion_1866322751 {
+label = "IF [B:18:0x000f, B:20:0x0015, B:22:0x001a] THEN: R(1:7) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000f|if (r3.fabAttached != false) goto L3\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0015|ADDED_TO_REGION\l|if (isFabVisibleOrWillBeShown() != false) goto L5\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001a|ADDED_TO_REGION\l|if (r3.fabAnchorMode == 1) goto L7\l}"];
+subgraph cluster_Region_612363195 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001c|r1 = 1.0f\l}"];
+}
+subgraph cluster_Region_755766245 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001f|r1 = 0.0f\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0020|PHI: r1 \l  PHI: (r1v3 float) = (r1v2 float), (r1v8 float) binds: [B:24:0x001f, B:23:0x001c] A[DONT_GENERATE, DONT_INLINE]\l|r0.setInterpolation(r1)\landroid.view.View android.view.View r0 = findDependentView()\l}"];
+subgraph cluster_Region_622461850 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1695902207 {
+label = "IF [B:26:0x0027] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0027|if (r0 != null) goto L10\l}"];
+subgraph cluster_Region_1932568912 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0029|r0.setTranslationY(getFabTranslationY())\lr0.setTranslationX(getFabTranslationX())\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0011}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0017}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0037|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.bottomappbar.BottomAppBar.setCutoutStateAndTranslateFab((r3v0 'this' com.google.android.material.bottomappbar.BottomAppBar A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0027 \-\> B:28:0x0037, CROSS_EDGE: B:24:0x001f \-\> B:25:0x0020, CROSS_EDGE: B:20:0x0015 \-\> B:24:0x001f, CROSS_EDGE: B:18:0x000f \-\> B:24:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_24[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_24[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_29[style=dashed];
+Node_27 -> Node_28;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_28 -> Node_16;
+Node_29 -> Node_16;
+}
+

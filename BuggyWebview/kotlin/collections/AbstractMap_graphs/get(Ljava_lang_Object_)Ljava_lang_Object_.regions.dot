@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.collections.AbstractMap.get(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_409948462 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.util.Map$Entry java.util.Map.Entry\<K, V\> r0 = implFindEntry(r2)\l}"];
+subgraph cluster_Region_1776034810 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1558050200 {
+label = "IF [B:11:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1416741932 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r0.getValue()\l}"];
+}
+}
+subgraph cluster_Region_715914726 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000b|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0006}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public V kotlin.collections.AbstractMap.get((r1v0 'this' kotlin.collections.AbstractMap\<K, V\> A[IMMUTABLE_TYPE, THIS]), (r2v0 'key' java.lang.Object A[D('key' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:13:0x000b \-\> B:14:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: (Ljava\/lang\/Object;)TV;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r2v0, resolved type: java.lang.Object\}\lMETHOD_OVERRIDE: [ClspMth\{java.util.Map.get(java.lang.Object):V\}]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_15 -> Node_9;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_15;
+}
+

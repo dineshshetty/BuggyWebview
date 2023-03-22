@@ -1,0 +1,35 @@
+digraph "CFG forkotlin.KotlinVersion.versionOf(III)I" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000|r1 = false\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000c|if (new kotlin.ranges.IntRange(0, 255).contains(r4) == false) goto L8\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000e}"];
+Node_19 [shape=record,label="{19\:\ 0x0017|if (new kotlin.ranges.IntRange(0, 255).contains(r5) == false) goto L8\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0019}"];
+Node_21 [shape=record,label="{21\:\ 0x0022|if (new kotlin.ranges.IntRange(0, 255).contains(r6) == false) goto L8\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0024|r1 = true\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0025|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v0 boolean), (r1v0 boolean), (r1v5 boolean) binds: [B:17:0x000c, B:19:0x0017, B:21:0x0022, B:22:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 == false) goto L12\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0027}"];
+Node_25 [shape=record,label="{25\:\ 0x002d|RETURN\l|return ((r4 \<\< 16) + (r5 \<\< 8)) + r6\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,label="{26\:\ 0x002e|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Version components are out of range: \")\lr1.append(r4)\lr1.append('.')\lr1.append(r5)\lr1.append('.')\lr1.append(r6)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0057|throw new java.lang.IllegalArgumentException(r1.toString().toString())\l}"];
+MethodNode[shape=record,label="{private final int kotlin.KotlinVersion.versionOf((r3v0 'this' kotlin.KotlinVersion A[IMMUTABLE_TYPE, THIS]), (r4v0 'major' int A[D('major' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'minor' int A[D('minor' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'patch' int A[D('patch' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0057 \-\> B:15:?, CROSS_EDGE: B:21:0x0022 \-\> B:23:0x0025, CROSS_EDGE: B:19:0x0017 \-\> B:23:0x0025, CROSS_EDGE: B:17:0x000c \-\> B:23:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_23;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_23;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_26;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_26 -> Node_27;
+Node_27 -> Node_15;
+}
+

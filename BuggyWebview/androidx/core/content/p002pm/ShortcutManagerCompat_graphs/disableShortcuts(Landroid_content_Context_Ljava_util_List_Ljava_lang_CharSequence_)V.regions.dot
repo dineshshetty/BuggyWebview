@@ -1,0 +1,47 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutManagerCompat.disableShortcuts(Landroid\/content\/Context;Ljava\/util\/List;Ljava\/lang\/CharSequence;)V" {
+subgraph cluster_Region_379957188 {
+label = "R(3:(1:3)|4|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_829757104 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 25) goto L3\l}"];
+subgraph cluster_Region_1975182643 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|((android.content.pm.ShortcutManager) r2.getSystemService(android.content.pm.ShortcutManager.class)).disableShortcuts(r3, r4)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0011|getShortcutInfoSaverInstance(r2).removeShortcuts(r3)\ljava.util.Iterator r0 = getShortcutInfoListeners(r2).iterator()\l\l}"];
+subgraph cluster_LoopRegion_1130380159 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0024|androidx.core.content.pm.ShortcutInfoChangeListener \lif (r0.hasNext() != false) goto L7\l}"];
+subgraph cluster_Region_2013296472 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0026|LOOP_END\lLOOP:0: B:6:0x0020\-\>B:8:0x0026\l|androidx.core.content.pm.ShortcutInfoChangeListener r1 = r0.next()\lr1.onShortcutRemoved(r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0020|LOOP_START\lLOOP:0: B:6:0x0020\-\>B:8:0x0026\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0030|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0030}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.content.pm.ShortcutManagerCompat.disableShortcuts((r2v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'shortcutIds' java.util.List\<java.lang.String\> A[D('shortcutIds' java.util.List\<java.lang.String\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'disabledMessage' java.lang.CharSequence A[D('disabledMessage' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x0026 \-\> B:6:0x0020, CROSS_EDGE: B:3:0x0004 \-\> B:5:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/content\/Context;Ljava\/util\/List\<Ljava\/lang\/String;\>;Ljava\/lang\/CharSequence;)V\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_6;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_10 -> Node_9;
+Node_9 -> Node_1;
+}
+

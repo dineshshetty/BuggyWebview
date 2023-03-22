@@ -1,0 +1,49 @@
+digraph "CFG forkotlinx.coroutines.channels.BroadcastKt.broadcast(Lkotlinx\/coroutines\/CoroutineScope;Lkotlin\/coroutines\/CoroutineContext;ILkotlinx\/coroutines\/CoroutineStart;Lkotlin\/jvm\/functions\/Function1;Lkotlin\/jvm\/functions\/Function2;)Lkotlinx\/coroutines\/channels\/BroadcastChannel;" {
+subgraph cluster_Region_758887321 {
+label = "R(5:1|(1:3)(1:9)|(1:5)|6|7) | DECL_VAR: kotlinx.coroutines.channels.LazyBroadcastCoroutine coroutine\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.coroutines.CoroutineContext kotlin.coroutines.CoroutineContext r0 = kotlinx.coroutines.CoroutineContext.newCoroutineContext(r4, r5)\lkotlinx.coroutines.channels.BroadcastChannel kotlinx.coroutines.channels.BroadcastChannel r1 = kotlinx.coroutines.channels.BroadcastChannelKt.BroadcastChannel(r6)\l}"];
+subgraph cluster_IfRegion_363376457 {
+label = "IF [B:3:0x000c] THEN: R(1:3) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r7.isLazy() != false) goto L3\l}"];
+subgraph cluster_Region_1730668234 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|kotlinx.coroutines.channels.BroadcastCoroutine r2 = new kotlinx.coroutines.channels.LazyBroadcastCoroutine(r0, r1, r9)\l}"];
+}
+subgraph cluster_Region_1384422495 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|kotlinx.coroutines.channels.BroadcastCoroutine r2 = new kotlinx.coroutines.channels.Broadcast(r0, r1, true)\l}"];
+}
+}
+subgraph cluster_IfRegion_1315951044 {
+label = "IF [B:7:0x001d] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|PHI: r2 \l  PHI: (r2v2 'coroutine' kotlinx.coroutines.channels.BroadcastCoroutine) = (r2v1 'coroutine' kotlinx.coroutines.channels.BroadcastCoroutine), (r2v4 'coroutine' kotlinx.coroutines.channels.LazyBroadcastCoroutine) binds: [B:5:0x0016, B:4:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|if (r8 != null) goto L5\l}"];
+subgraph cluster_Region_1242985858 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|r2.invokeOnCompletion(r8)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0022|r2.start(r7, r2, r9)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0028|RETURN\l|return r2\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final kotlinx.coroutines.channels.BroadcastChannel\<E\> kotlinx.coroutines.channels.BroadcastKt.broadcast((r4v0 '$this$broadcast' kotlinx.coroutines.CoroutineScope A[D('$this$broadcast' kotlinx.coroutines.CoroutineScope), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'context' kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'capacity' int A[D('capacity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'start' kotlinx.coroutines.CoroutineStart A[D('start' kotlinx.coroutines.CoroutineStart), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 kotlin.jvm.functions.Function1\<? super java.lang.Throwable, kotlin.Unit\> A[D('onCompletion' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 kotlin.jvm.functions.Function2\<? super kotlinx.coroutines.channels.ProducerScope\<? super E\>, ? super kotlin.coroutines.Continuation\<? super kotlin.Unit\>, ? extends java.lang.Object\> A[D('block' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x001d \-\> B:9:0x0022, CROSS_EDGE: B:5:0x0016 \-\> B:7:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: \<E:Ljava\/lang\/Object;\>(Lkotlinx\/coroutines\/CoroutineScope;Lkotlin\/coroutines\/CoroutineContext;ILkotlinx\/coroutines\/CoroutineStart;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Throwable;Lkotlin\/Unit;\>;Lkotlin\/jvm\/functions\/Function2\<\-Lkotlinx\/coroutines\/channels\/ProducerScope\<\-TE;\>;\-Lkotlin\/coroutines\/Continuation\<\-Lkotlin\/Unit;\>;+Ljava\/lang\/Object;\>;)Lkotlinx\/coroutines\/channels\/BroadcastChannel\<TE;\>;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+}
+

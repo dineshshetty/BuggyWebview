@@ -1,0 +1,75 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.getFragmentContainer(Landroidx\/fragment\/app\/Fragment;)Landroid\/view\/ViewGroup;" {
+subgraph cluster_Region_1697583766 {
+label = "R(1:(2:(1:4)|(2:(2:11|(1:14))|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1954278002 {
+label = "R(2:(1:4)|(2:(2:11|(1:14))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_196183101 {
+label = "IF [B:19:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|if (r4.mContainer != null) goto L3\l}"];
+subgraph cluster_Region_366165520 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0006|RETURN\l|return r4.mContainer\l}"];
+}
+}
+subgraph cluster_Region_141899166 {
+label = "R(2:(2:11|(1:14))|15)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_594966168 {
+label = "IF [B:23:0x000a, B:26:0x0013] THEN: R(2:11|(1:14)) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000a|if (r4.mContainerId \> 0) goto L9\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0013|ADDED_TO_REGION\l|if (r3.mContainer.onHasView() != false) goto L11\l}"];
+subgraph cluster_Region_1587881152 {
+label = "R(2:11|(1:14))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0015|android.view.View android.view.View r0 = r3.mContainer.onFindViewById(r4.mContainerId)\l}"];
+subgraph cluster_IfRegion_60167504 {
+label = "IF [B:28:0x001f] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001f|if ((r0 instanceof android.view.ViewGroup) != false) goto L13\l}"];
+subgraph cluster_Region_2075669471 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0024|RETURN\l|return (android.view.ViewGroup) r0\l}"];
+}
+}
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0025|RETURN\l|return null\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0004}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0007}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000c|RETURN\lADDED_TO_REGION\l|return null\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000d}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0021}"];
+MethodNode[shape=record,label="{private android.view.ViewGroup androidx.fragment.app.FragmentManager.getFragmentContainer((r3v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r4v0 'f' androidx.fragment.app.Fragment A[D('f' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x000c \-\> B:17:?, CROSS_EDGE: B:30:0x0024 \-\> B:17:?, CROSS_EDGE: B:31:0x0025 \-\> B:17:?, CROSS_EDGE: B:26:0x0013 \-\> B:31:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_17;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_31[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_31[style=dashed];
+Node_30 -> Node_17;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_24 -> Node_17;
+Node_25 -> Node_26;
+Node_29 -> Node_30;
+}
+

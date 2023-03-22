@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed$default(Lkotlinx\/coroutines\/flow\/SharingStarted$Companion;JJILjava\/lang\/Object;)Lkotlinx\/coroutines\/flow\/SharingStarted;" {
+subgraph cluster_Region_2118677911 {
+label = "R(3:(1:3)|(1:6)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_877457377 {
+label = "IF [B:13:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if ((r5 & 1) != 0) goto L3\l}"];
+subgraph cluster_Region_232680384 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|r1 = 0\l}"];
+}
+}
+subgraph cluster_IfRegion_699436565 {
+label = "IF [B:16:0x0008] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|if ((r5 & 2) != 0) goto L6\l}"];
+subgraph cluster_Region_350859897 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|r3 = Long.MAX_VALUE\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0013|RETURN\l|return r0.WhileSubscribed(r1, r3)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006|PHI: r1 \l  PHI: (r1v1 long) = (r1v0 long), (r1v2 long) binds: [B:13:0x0002, B:14:0x0004] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000f|PHI: r3 \l  PHI: (r3v1 long) = (r3v0 long), (r3v2 long) binds: [B:16:0x0008, B:17:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static \/* synthetic *\/ kotlinx.coroutines.flow.SharingStarted kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed$default((r0v0 kotlinx.coroutines.flow.SharingStarted$Companion A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:16:0x0008 \-\> B:18:0x000f, CROSS_EDGE: B:13:0x0002 \-\> B:15:0x0006\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+}
+

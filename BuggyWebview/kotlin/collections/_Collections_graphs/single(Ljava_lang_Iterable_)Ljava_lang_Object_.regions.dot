@@ -1,0 +1,88 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.single(Ljava\/lang\/Iterable;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_759331697 {
+label = "R(2:1|(2:(1:4)|(2:6|(2:(1:14)|(2:8|(2:(1:12)|(1:10)))))))";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\l}"];
+subgraph cluster_Region_789096977 {
+label = "R(2:(1:4)|(2:6|(2:(1:14)|(2:8|(2:(1:12)|(1:10))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_295892626 {
+label = "IF [B:33:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0008|if ((r4 instanceof java.util.List) == true) goto L3\l}"];
+subgraph cluster_Region_1997693657 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0011|RETURN\l|return (T) kotlin.collections.CollectionsKt.single((java.util.List\<? extends java.lang.Object\>) r4)\l}"];
+}
+}
+subgraph cluster_Region_643179507 {
+label = "R(2:6|(2:(1:14)|(2:8|(2:(1:12)|(1:10)))))";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0012|java.util.Iterator java.util.Iterator r0 = r4.iterator()\l}"];
+subgraph cluster_Region_1236600505 {
+label = "R(2:(1:14)|(2:8|(2:(1:12)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1383552607 {
+label = "IF [B:37:0x001a] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x001a|if (r0.hasNext() == false) goto L13\l}"];
+subgraph cluster_Region_587691452 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0036|throw new java.util.NoSuchElementException(\"Collection is empty.\")\l}"];
+}
+}
+subgraph cluster_Region_1379464724 {
+label = "R(2:8|(2:(1:12)|(1:10)))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x001c|java.lang.Object T r1 = r0.next()\l}"];
+subgraph cluster_Region_630657320 {
+label = "R(2:(1:12)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_191352915 {
+label = "IF [B:39:0x0024] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0024|if (r0.hasNext() != false) goto L11\l}"];
+subgraph cluster_Region_1098365929 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x002e|throw new java.lang.IllegalArgumentException(\"Collection has more than one element.\")\l}"];
+}
+}
+subgraph cluster_Region_481895287 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0026|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_30 [shape=record,color=red,label="{30\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x000a}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0027}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x002f}"];
+MethodNode[shape=record,label="{public static final T kotlin.collections.CollectionsKt___CollectionsKt.single((r4v0 java.lang.Iterable\<? extends T\> A[D('$this$single' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:40:0x0026 \-\> B:31:?, CROSS_EDGE: B:42:0x002e \-\> B:31:?, CROSS_EDGE: B:44:0x0036 \-\> B:31:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;)TT;\l}"];
+MethodNode -> Node_30;Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_36[style=dashed];
+Node_35 -> Node_31;
+Node_36 -> Node_37;
+Node_37 -> Node_38[style=dashed];
+Node_37 -> Node_43;
+Node_44 -> Node_31;
+Node_38 -> Node_39;
+Node_39 -> Node_40[style=dashed];
+Node_39 -> Node_41;
+Node_42 -> Node_31;
+Node_40 -> Node_31;
+Node_30 -> Node_32;
+Node_34 -> Node_35;
+Node_41 -> Node_42;
+Node_43 -> Node_44;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.flow.internal.SafeCollector_commonKt.checkContext(Lkotlinx\/coroutines\/flow\/internal\/SafeCollector;Lkotlin\/coroutines\/CoroutineContext;)V" {
+subgraph cluster_Region_1577752691 {
+label = "R(2:1|(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = ((java.lang.Number) r5.fold(0, new kotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1(r4))).intValue()\l}"];
+subgraph cluster_Region_858302323 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2116771007 {
+label = "IF [B:10:0x0018] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0018|if (r0 == r4.collectContextSize) goto L3\l}"];
+subgraph cluster_Region_1234081048 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1158328387 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001b}"];
+Node_13 [shape=record,label="{13\:\ 0x0047|throw new java.lang.IllegalStateException((\"Flow invariant is violated:nttFlow was collected in \" + r4.collectContext + \",nttbut emission happened in \" + r5 + \".nttPlease refer to 'flow' documentation or use 'flowOn' instead\").toString())\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlinx.coroutines.flow.internal.SafeCollector_commonKt.checkContext((r4v0 kotlinx.coroutines.flow.internal.SafeCollector\<?\> A[D('$this$checkContext' kotlinx.coroutines.flow.internal.SafeCollector), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'currentContext' kotlin.coroutines.CoroutineContext A[D('currentContext' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | CROSS_EDGE: B:13:0x0047 \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlinx\/coroutines\/flow\/internal\/SafeCollector\<*\>;Lkotlin\/coroutines\/CoroutineContext;)V\lJadxCommentsAttr\{\l DEBUG: \l \-\> Don't trust debug lines info. Repeating lines: [85=5]\}\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_8;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

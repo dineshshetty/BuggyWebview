@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.appcompat.app.WindowDecorActionBar.onKeyShortcut(ILandroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_668205333 {
+label = "R(2:1|(2:(1:15)|(3:9|12|13))) | DECL_VAR: android.view.Menu menu\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl androidx.appcompat.app.WindowDecorActionBar.ActionModeImpl r0 = r5.mActionMode\l}"];
+subgraph cluster_Region_621504442 {
+label = "R(2:(1:15)|(3:9|12|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1132208379 {
+label = "IF [B:3:0x0003, B:6:0x000a] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r0 == null) goto L3\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000a|ADDED_TO_REGION\l|if ((r0 = r0.getMenu()) == null) goto L15\l}"];
+subgraph cluster_Region_1413311738 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0029|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_767565847 {
+label = "R(3:9|12|13)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0014|PHI: r2 \l  PHI: (r2v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.view.KeyCharacterMap android.view.KeyCharacterMap r2 = android.view.KeyCharacterMap.load(r7 != null ? r7.getDeviceId() : \-1)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0021|PHI: r4 \l  PHI: (r4v1 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r0.setQwertyMode(r2.getKeyboardType() != 1)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0028|RETURN\l|return r0.performShortcut(r6, r7, 0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0005|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0006}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000c}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000e}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001d}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0020}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0013}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.app.WindowDecorActionBar.onKeyShortcut((r5v0 'this' androidx.appcompat.app.WindowDecorActionBar A[IMMUTABLE_TYPE, THIS]), (r6v0 'keyCode' int A[D('keyCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0028 \-\> B:1:?, CROSS_EDGE: B:11:0x001d \-\> B:14:0x0021, CROSS_EDGE: B:9:0x0013 \-\> B:10:0x0014, CROSS_EDGE: B:16:0x0029 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.app.ActionBar.onKeyShortcut(int, android.view.KeyEvent):boolean]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_16;
+Node_16 -> Node_1;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+Node_15 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_13;
+Node_11 -> Node_14;
+Node_13 -> Node_14;
+Node_9 -> Node_10;
+}
+

@@ -1,0 +1,63 @@
+digraph "CFG forkotlinx.coroutines.test.TestCoroutineContext.get(Lkotlin\/coroutines\/CoroutineContext$Key;)Lkotlin\/coroutines\/CoroutineContext$Element;" {
+subgraph cluster_Region_283880137 {
+label = "R(1:(2:(1:4)|(1:(2:(1:9)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1526491900 {
+label = "R(2:(1:4)|(1:(2:(1:9)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1193623608 {
+label = "IF [B:27:0x0003] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0003|if (r2 == kotlin.coroutines.ContinuationInterceptor.Key) goto L3\l}"];
+subgraph cluster_Region_2005229845 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ ?|SYNTHETIC\lRETURN\l|return r1.ctxDispatcher\l}"];
+}
+}
+subgraph cluster_Region_980758734 {
+label = "R(1:(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_65476342 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1856942642 {
+label = "IF [B:30:0x000c] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x000c|if (r2 == kotlinx.coroutines.CoroutineExceptionHandler.Key) goto L8\l}"];
+subgraph cluster_Region_847248187 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ ?|SYNTHETIC\lRETURN\l|return r1.ctxHandler\l}"];
+}
+}
+subgraph cluster_Region_555699962 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0013|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0001}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0005}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000a}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x000e}"];
+MethodNode[shape=record,label="{public E extends kotlin.coroutines.CoroutineContext$Element kotlinx.coroutines.test.TestCoroutineContext.get((r1v0 'this' kotlinx.coroutines.test.TestCoroutineContext A[IMMUTABLE_TYPE, THIS]), (r2v0 kotlin.coroutines.CoroutineContext$Key\<E extends kotlin.coroutines.CoroutineContext$Element\> A[D('key' kotlin.coroutines.CoroutineContext$Key), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x000e \-\> B:33:0x0014, CROSS_EDGE: B:32:0x0013 \-\> B:33:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: [E extends kotlin.coroutines.CoroutineContext$Element]\lSIGNATURE: \<E::Lkotlin\/coroutines\/CoroutineContext$Element;\>(Lkotlin\/coroutines\/CoroutineContext$Key\<TE;\>;)TE;\lMETHOD_OVERRIDE: [kotlin.coroutines.CoroutineContext.get(kotlin.coroutines.CoroutineContext$Key\<E extends kotlin.coroutines.CoroutineContext$Element\>):E extends kotlin.coroutines.CoroutineContext$Element]\l}"];
+MethodNode -> Node_24;Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_34 -> Node_25;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_35 -> Node_25;
+Node_32 -> Node_25;
+Node_24 -> Node_26;
+Node_26 -> Node_27;
+Node_28 -> Node_34;
+Node_29 -> Node_30;
+Node_31 -> Node_35;
+}
+

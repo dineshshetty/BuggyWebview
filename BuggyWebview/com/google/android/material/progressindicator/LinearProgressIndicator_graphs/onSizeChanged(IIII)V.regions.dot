@@ -1,0 +1,49 @@
+digraph "CFG forcom.google.android.material.progressindicator.LinearProgressIndicator.onSizeChanged(IIII)V" {
+subgraph cluster_Region_1943683568 {
+label = "R(4:1|(1:3)|4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|int int r0 = r5 \- (getPaddingLeft() + getPaddingRight())\lint int r1 = r6 \- (getPaddingTop() + getPaddingBottom())\lcom.google.android.material.progressindicator.IndeterminateDrawable android.graphics.drawable.Drawable r2 = getIndeterminateDrawable()\l}"];
+subgraph cluster_IfRegion_1154027903 {
+label = "IF [B:13:0x001b] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001b|if (r2 != null) goto L3\l}"];
+subgraph cluster_Region_788053228 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001d|r2.setBounds(0, 0, r0, r1)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0020|com.google.android.material.progressindicator.DeterminateDrawable android.graphics.drawable.Drawable r2 = getProgressDrawable()\l}"];
+subgraph cluster_Region_1950984085 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1698500055 {
+label = "IF [B:16:0x0024] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0024|if (r2 != null) goto L6\l}"];
+subgraph cluster_Region_1769824180 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0026|r2.setBounds(0, 0, r0, r1)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0029|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void com.google.android.material.progressindicator.LinearProgressIndicator.onSizeChanged((r4v0 'this' com.google.android.material.progressindicator.LinearProgressIndicator A[IMMUTABLE_TYPE, THIS]), (r5v0 'w' int A[D('w' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'h' int A[D('h' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'oldw' int A[D('oldw' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'oldh' int A[D('oldh' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:16:0x0024 \-\> B:18:0x0029, CROSS_EDGE: B:13:0x001b \-\> B:15:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onSizeChanged(int, int, int, int):void\}]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

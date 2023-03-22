@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.material.sidesheet.SideSheetBehavior.startSettling(Landroid\/view\/View;IZ)V" {
+subgraph cluster_Region_2041367507 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|boolean boolean r0 = r2.sheetDelegate.isSettling(r3, r4, r5)\l}"];
+subgraph cluster_Region_668286763 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1837410382 {
+label = "IF [B:11:0x0006] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0006|if (r0 != false) goto L3\l}"];
+subgraph cluster_Region_1040739458 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|setStateInternal(2)\lr2.stateSettlingTracker.continueSettlingToState(r4)\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_752335760 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0012|setStateInternal(r4)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0015|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.sidesheet.SideSheetBehavior.startSettling((r2v0 'this' com.google.android.material.sidesheet.SideSheetBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.sidesheet.SideSheetBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r3v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'state' int A[D('state' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'isReleasingView' boolean A[D('isReleasingView' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0012 \-\> B:14:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_14 -> Node_9;
+}
+

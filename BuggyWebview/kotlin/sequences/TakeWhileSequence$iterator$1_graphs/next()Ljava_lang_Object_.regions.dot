@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.sequences.TakeWhileSequence$iterator$1.next()Ljava\/lang\/Object;" {
+subgraph cluster_Region_180053204 {
+label = "R(2:(1:3)|(2:(1:10)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_847036678 {
+label = "IF [B:3:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r3.nextState == (\-1)) goto L3\l}"];
+subgraph cluster_Region_1676420769 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|calcNext()\l}"];
+}
+}
+subgraph cluster_Region_175393757 {
+label = "R(2:(1:10)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1538790275 {
+label = "IF [B:6:0x000a] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|if (r3.nextState == 0) goto L9\l}"];
+subgraph cluster_Region_253271299 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001a|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_836951508 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|T T r0 = r3.nextItem\lr3.nextItem = null\lr3.nextState = \-1\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0014|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0015}"];
+MethodNode[shape=record,label="{public T kotlin.sequences.TakeWhileSequence$iterator$1.next((r3v0 'this' kotlin.sequences.TakeWhileSequence$iterator$1 A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:10:0x001a \-\> B:1:?, CROSS_EDGE: B:3:0x0003 \-\> B:5:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ()TT;\lMETHOD_OVERRIDE: [ClspMth\{java.util.Iterator.next():E\}]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_10 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+}
+

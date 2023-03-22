@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.core.app.NotificationCompatBuilder.getPeople(Ljava\/util\/List;)Ljava\/util\/List;" {
+subgraph cluster_Region_2022363118 {
+label = "R(1:(2:(1:2)|(3:4|(1:7)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1186520869 {
+label = "R(2:(1:2)|(3:4|(1:7)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_779249558 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r4 == null) goto L2\l}"];
+subgraph cluster_Region_1707251537 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_105478794 {
+label = "R(3:4|(1:7)|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0004|java.util.ArrayList java.util.ArrayList\<java.lang.String\> r0 = new java.util.ArrayList\<\>(r4.size())\ljava.util.Iterator r1 = r4.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1259979192 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|androidx.core.app.Person \lif (r1.hasNext() != false) goto L7\l}"];
+subgraph cluster_Region_2128905754 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|LOOP_END\lLOOP:0: B:6:0x0011\-\>B:8:0x0017\l|androidx.core.app.Person r2 = r1.next()\lr0.add(r2.resolveToLegacyUri())\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0025|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011|LOOP_START\lLOOP:0: B:6:0x0011\-\>B:8:0x0017\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0025|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<java.lang.String\> androidx.core.app.NotificationCompatBuilder.getPeople((r4v0 'people' java.util.List\<androidx.core.app.Person\> A[D('people' java.util.List\<androidx.core.app.Person\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x0017 \-\> B:6:0x0011, CROSS_EDGE: B:9:0x0025 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/List\<Landroidx\/core\/app\/Person;\>;)Ljava\/util\/List\<Ljava\/lang\/String;\>;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_6;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+Node_10 -> Node_9;
+}
+

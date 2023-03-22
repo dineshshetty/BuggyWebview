@@ -1,0 +1,40 @@
+digraph "CFG forkotlinx.coroutines.sync.MutexImpl.TryLockDesc.prepare(Lkotlinx\/coroutines\/internal\/AtomicOp;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_812238907 {
+label = "R(2:1|(2:(2:3|4)|(1:7))) | DECL_VAR: kotlinx.coroutines.sync.Empty null, kotlinx.coroutines.internal.Symbol null\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlinx.coroutines.sync.MutexImpl$TryLockDesc$PrepareOp kotlinx.coroutines.sync.MutexImpl.TryLockDesc.PrepareOp r0 = new kotlinx.coroutines.sync.MutexImpl.TryLockDesc.PrepareOp(r5)\lkotlinx.coroutines.sync.MutexImpl kotlinx.coroutines.sync.MutexImpl r1 = r4.mutex\ljava.util.concurrent.atomic.AtomicReferenceFieldUpdater java.util.concurrent.atomic.AtomicReferenceFieldUpdater r2 = kotlinx.coroutines.sync.MutexImpl._state$FU\lkotlinx.coroutines.sync.Empty r3 = kotlinx.coroutines.sync.MutexKt.EMPTY_UNLOCKED\l}"];
+subgraph cluster_Region_2139896548 {
+label = "R(2:(2:3|4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1691105992 {
+label = "IF [B:11:0x0011] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0011|if (androidx.concurrent.futures.C0125xc40028dd.m112m(r2, r1, r3, r0) == false) goto L3\l}"];
+subgraph cluster_Region_356116223 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0013|kotlinx.coroutines.internal.Symbol r1 = kotlinx.coroutines.sync.MutexKt.LOCK_FAIL\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0017|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_210682879 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001e|RETURN\l|return r0.perform(r4.mutex)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0018}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.sync.MutexImpl.TryLockDesc.prepare((r4v0 'this' kotlinx.coroutines.sync.MutexImpl$TryLockDesc A[IMMUTABLE_TYPE, THIS]), (r5v0 kotlinx.coroutines.internal.AtomicOp\<?\> A[D('op' kotlinx.coroutines.internal.AtomicOp), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x001e \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlinx\/coroutines\/internal\/AtomicOp\<*\>;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.internal.AtomicDesc.prepare(kotlinx.coroutines.internal.AtomicOp\<?\>):java.lang.Object]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_14 -> Node_15;
+}
+

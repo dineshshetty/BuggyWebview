@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.material.resources.MaterialAttributes.resolveTypedValueOrThrow(Landroid\/content\/Context;ILjava\/lang\/String;)Landroid\/util\/TypedValue;" {
+subgraph cluster_Region_1985449902 {
+label = "R(2:1|(2:(1:6)|(1:3)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|android.util.TypedValue android.util.TypedValue r0 = resolve(r6, r7)\l}"];
+subgraph cluster_Region_889367817 {
+label = "R(2:(1:6)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1105099067 {
+label = "IF [B:10:0x0004] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0004|if (r0 == null) goto L5\l}"];
+subgraph cluster_Region_654765067 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0023|throw new java.lang.IllegalArgumentException(java.lang.String.format(\"%1$s requires a value for the %2$s attribute to be set in your app theme. You can either set the attribute in your theme or update your theme to inherit from Theme.MaterialComponents (or a descendant).\", r8, r6.getResources().getResourceName(r7)))\l}"];
+}
+}
+subgraph cluster_Region_1697805039 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0006|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0007}"];
+MethodNode[shape=record,label="{public static android.util.TypedValue com.google.android.material.resources.MaterialAttributes.resolveTypedValueOrThrow((r6v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'attributeResId' int A[D('attributeResId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'errorMessageComponent' java.lang.String A[D('errorMessageComponent' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0023 \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_13 -> Node_8;
+Node_11 -> Node_8;
+Node_7 -> Node_9;
+Node_12 -> Node_13;
+}
+

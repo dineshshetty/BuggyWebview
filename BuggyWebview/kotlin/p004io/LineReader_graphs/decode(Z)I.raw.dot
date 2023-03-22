@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.io.LineReader.decode(Z)I" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000|LOOP_START\lLOOP:0: B:15:0x0000\-\>B:24:0x002f\l|0x0001: SGET  (r0 I:java.nio.charset.CharsetDecoder) =  kotlin.io.LineReader.decoder java.nio.charset.CharsetDecoder  (LINE:241)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0003|0x0003: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:18:0x000b \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0005|0x0005: CONST_STR  (r0 I:java.lang.String) =  \"decoder\" \l0x0007: INVOKE  (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.throwUninitializedPropertyAccessException(java.lang.String):void A[MD:(java.lang.String):void (m)]\l0x000a: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_18 [shape=record,label="{18\:\ 0x000b|0x000b: SGET  (r1 I:java.nio.ByteBuffer) =  kotlin.io.LineReader.byteBuf java.nio.ByteBuffer \l0x000d: SGET  (r2 I:java.nio.CharBuffer) =  kotlin.io.LineReader.charBuf java.nio.CharBuffer \l0x000f: INVOKE  (r0 I:java.nio.charset.CoderResult) = \l  (r0 I:java.nio.charset.CharsetDecoder)\l  (r1 I:java.nio.ByteBuffer)\l  (r2 I:java.nio.CharBuffer)\l  (r8 I:boolean A[D('endOfInput' boolean)])\l type: VIRTUAL call: java.nio.charset.CharsetDecoder.decode(java.nio.ByteBuffer, java.nio.CharBuffer, boolean):java.nio.charset.CoderResult A[MD:(java.nio.ByteBuffer, java.nio.CharBuffer, boolean):java.nio.charset.CoderResult (c)]\l0x0013: CONST_STR  (r1 I:java.lang.String) =  \"decoder.decode(byteBuf, charBuf, endOfInput)\" \l0x0015: INVOKE  (r0 I:java.lang.Object), (r1 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x0018: INVOKE  (r1 I:boolean) = (r0 I:java.nio.charset.CoderResult A[D('coderResult' java.nio.charset.CoderResult)]) type: VIRTUAL call: java.nio.charset.CoderResult.isError():boolean A[MD:():boolean (c)] (LINE:242)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001c|0x001c: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:21:0x0024 \l}"];
+Node_20 [shape=record,label="{20\:\ 0x001e|0x001e: INVOKE  (r7 I:kotlin.io.LineReader) type: DIRECT call: kotlin.io.LineReader.resetAll():void A[MD:():void (m)] (LINE:243)\l0x0021: INVOKE  (r0 I:java.nio.charset.CoderResult A[D('coderResult' java.nio.charset.CoderResult)]) type: VIRTUAL call: java.nio.charset.CoderResult.throwException():void A[MD:():void throws java.nio.charset.CharacterCodingException (c)] (LINE:244)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0024|0x0024: INVOKE  (r1 I:int) = (r2 I:java.nio.CharBuffer) type: VIRTUAL call: java.nio.CharBuffer.position():int A[MD:():int (c)] (LINE:246)\l0x0028: INVOKE  (r3 I:boolean) = (r0 I:java.nio.charset.CoderResult A[D('coderResult' java.nio.charset.CoderResult)]) type: VIRTUAL call: java.nio.charset.CoderResult.isOverflow():boolean A[MD:():boolean (c)] (LINE:247)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x002c|0x002c: IF  (r3 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:24:0x002f \l}"];
+Node_24 [shape=record,label="{24\:\ 0x002f|LOOP_END\lLOOP:0: B:15:0x0000\-\>B:24:0x002f\l|0x002f: SGET  (r3 I:java.lang.StringBuilder) =  kotlin.io.LineReader.sb java.lang.StringBuilder  (LINE:249)\l0x0031: SGET  (r4 I:char[]) =  kotlin.io.LineReader.chars char[] \l0x0033: ARITH  (r5 I:int) = (r1 I:int A[D('nChars' int)]) + (\-1 int) \l0x0035: CONST  (r6 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x0036: INVOKE  (r3 I:java.lang.StringBuilder), (r4 I:char[]), (r6 I:int), (r5 I:int) type: VIRTUAL call: java.lang.StringBuilder.append(char[], int, int):java.lang.StringBuilder A[MD:(char[], int, int):java.lang.StringBuilder (c)]\l0x0039: INVOKE  (r2 I:java.nio.CharBuffer), (r6 I:int) type: VIRTUAL call: java.nio.CharBuffer.position(int):java.nio.Buffer A[MD:(int):java.nio.Buffer (c)] (LINE:250)\l0x003c: CONST  (r3 I:??[int, float, short, byte, char]) = (32 ??[int, float, short, byte, char])  (LINE:251)\l0x003e: INVOKE  (r2 I:java.nio.CharBuffer), (r3 I:int) type: VIRTUAL call: java.nio.CharBuffer.limit(int):java.nio.Buffer A[MD:(int):java.nio.Buffer (c)]\l0x0041: ARITH  (r3 I:int) = (r1 I:int A[D('nChars' int)]) + (\-1 int)  (LINE:252)\l0x0043: AGET  (r3 I:char A[IMMUTABLE_TYPE]) = (r4 I:char[] A[IMMUTABLE_TYPE]), (r3 I:??[int, short, byte, char]) \l0x0045: INVOKE  (r2 I:java.nio.CharBuffer), (r3 I:char) type: VIRTUAL call: java.nio.CharBuffer.put(char):java.nio.CharBuffer A[MD:(char):java.nio.CharBuffer (c)]\l}"];
+Node_25 [shape=record,label="{25\:\ 0x002e|SYNTHETIC\l}"];
+Node_23 [shape=record,label="{23\:\ 0x002e|RETURN\l|0x002e: RETURN  (r1 I:int A[D('nChars' int)]) \l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final int kotlin.io.LineReader.decode((r7 'this' I:kotlin.io.LineReader A[IMMUTABLE_TYPE, THIS]), (r8 I:boolean A[D('endOfInput' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:24:0x002f \-\> B:15:0x0000, CROSS_EDGE: B:19:0x001c \-\> B:21:0x0024, CROSS_EDGE: B:16:0x0003 \-\> B:18:0x000b\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0018\-0x0048: r0 'coderResult' Ljava\/nio\/charset\/CoderResult;\l  0x0028\-0x0048: r1 'nChars' I\l  \-1 \-0x0048: r8 'endOfInput' Z\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_24;
+Node_22 -> Node_25[style=dashed];
+Node_24 -> Node_15;
+Node_25 -> Node_23;
+Node_23 -> Node_14;
+}
+

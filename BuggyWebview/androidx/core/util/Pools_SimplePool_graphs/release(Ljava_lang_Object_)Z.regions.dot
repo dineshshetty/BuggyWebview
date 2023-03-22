@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.util.Pools.SimplePool.release(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_1453447185 {
+label = "R(1:(2:(1:10)|(2:3|(2:(2:5|6)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1337265885 {
+label = "R(2:(1:10)|(2:3|(2:(2:5|6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_638961343 {
+label = "IF [B:15:0x0004] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (isInPool(r4) != false) goto L9\l}"];
+subgraph cluster_Region_752781201 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001d|throw new java.lang.IllegalStateException(\"Already in the pool!\")\l}"];
+}
+}
+subgraph cluster_Region_1898997125 {
+label = "R(2:3|(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|int int r0 = r3.mPoolSize\ljava.lang.Object[] java.lang.Object[] r1 = r3.mPool\l}"];
+subgraph cluster_Region_1952953163 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1113313508 {
+label = "IF [B:17:0x000b] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|if (r0 \< r1.length) goto L5\l}"];
+subgraph cluster_Region_800423314 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|r1[r0] = r4\lr3.mPoolSize = r0 + 1\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0013|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_323193084 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0014|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0016}"];
+MethodNode[shape=record,label="{public boolean androidx.core.util.Pools.SimplePool.release((r3v0 'this' androidx.core.util.Pools$SimplePool\<T\> A[D('this' androidx.core.util.Pools$SimplePool\<T\>), IMMUTABLE_TYPE, THIS]), (r4v0 'instance' T A[D('instance' T), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0015 \-\> B:13:?, CROSS_EDGE: B:23:0x001d \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (TT;)Z\lMETHOD_OVERRIDE: [androidx.core.util.Pools.Pool.release(T):boolean]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_22;
+Node_23 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_13;
+Node_20 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_22 -> Node_23;
+}
+

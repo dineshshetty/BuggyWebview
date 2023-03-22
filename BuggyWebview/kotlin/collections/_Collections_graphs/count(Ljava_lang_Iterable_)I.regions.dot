@@ -1,0 +1,82 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.count(Ljava\/lang\/Iterable;)I" {
+subgraph cluster_Region_95493415 {
+label = "R(2:1|(2:(1:4)|(3:6|(2:9|(1:12)(0))|17)))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\l}"];
+subgraph cluster_Region_1112147902 {
+label = "R(2:(1:4)|(3:6|(2:9|(1:12)(0))|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1913210115 {
+label = "IF [B:39:0x0007] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0007|if ((r3 instanceof java.util.Collection) == true) goto L3\l}"];
+subgraph cluster_Region_1717660903 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0010|RETURN\l|return ((java.util.Collection) r3).size()\l}"];
+}
+}
+subgraph cluster_Region_168977823 {
+label = "R(3:6|(2:9|(1:12)(0))|17)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0011|int r0 = 0\ljava.util.Iterator java.util.Iterator\<? extends T\> r1 = r3.iterator()\l}"];
+subgraph cluster_LoopRegion_1786308535 {
+label = "LOOP:0: (2:9|(1:12)(0))";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x001a|if (r1.hasNext() != false) goto L9\l}"];
+subgraph cluster_Region_37065172 {
+label = "R(2:9|(1:12)(0))";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x001c|r1.next()\lr0++\l}"];
+subgraph cluster_IfRegion_1286214456 {
+label = "IF [B:46:0x0022] THEN: R(1:12) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0022|if (r0 \< 0) goto L11\l}"];
+subgraph cluster_Region_1806961961 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ 0x0024|kotlin.collections.CollectionsKt.throwCountOverflow()\l}"];
+}
+subgraph cluster_Region_2035384342 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_48 [shape=record,label="{48\:\ 0x0028|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_36 [shape=record,color=red,label="{36\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0009}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0016|LOOP_START\lLOOP:0: B:43:0x0016\-\>B:51:0x0016\lPHI: r0 \l  PHI: (r0v3 'count' int) = (r0v2 'count' int), (r0v4 'count' int) binds: [B:42:0x0011, B:51:0x0016] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x0024|SYNTHETIC\l}"];
+Node_53 [shape=record,color=red,label="{53\:\ 0x0016|SYNTHETIC\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x0016|LOOP_END\lSYNTHETIC\lLOOP:0: B:43:0x0016\-\>B:51:0x0016\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x0016|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x0028|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.collections.CollectionsKt___CollectionsKt.count((r3v0 java.lang.Iterable\<? extends T\> A[D('$this$count' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:46:0x0022 \-\> B:43:0x0016, BACK_EDGE: B:47:0x0024 \-\> B:43:0x0016, CROSS_EDGE: B:48:0x0028 \-\> B:37:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;)I\l}"];
+MethodNode -> Node_36;Node_38 -> Node_39;
+Node_39 -> Node_40;
+Node_39 -> Node_42[style=dashed];
+Node_41 -> Node_37;
+Node_42 -> Node_43;
+Node_44 -> Node_45;
+Node_44 -> Node_50[style=dashed];
+Node_45 -> Node_46;
+Node_46 -> Node_49;
+Node_46 -> Node_52[style=dashed];
+Node_47 -> Node_53;
+Node_48 -> Node_37;
+Node_36 -> Node_38;
+Node_40 -> Node_41;
+Node_43 -> Node_44;
+Node_49 -> Node_47;
+Node_53 -> Node_51;
+Node_51 -> Node_43;
+Node_52 -> Node_51;
+Node_50 -> Node_48;
+}
+

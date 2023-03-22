@@ -1,0 +1,39 @@
+digraph "CFG forandroidx.lifecycle.ComputableLiveData.3.run()V" {
+subgraph cluster_Region_1818194220 {
+label = "R(2:1|(1:(1:4)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|boolean boolean r0 = androidx.lifecycle.ComputableLiveData.this.mLiveData.hasActiveObservers()\l}"];
+subgraph cluster_Region_484900956 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1618987516 {
+label = "IF [B:3:0x0012, B:4:0x0014] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (androidx.lifecycle.ComputableLiveData.this.mInvalid.compareAndSet(false, true) != false) goto L3\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|ADDED_TO_REGION\l|if (r0 != false) goto L4\l}"];
+subgraph cluster_Region_733034476 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|androidx.lifecycle.ComputableLiveData.this.mExecutor.execute(androidx.lifecycle.ComputableLiveData.this.mRefreshRunnable)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0021|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.lifecycle.ComputableLiveData.3.run((r4v0 'this' androidx.lifecycle.ComputableLiveData$3 A[D('this' androidx.lifecycle.ComputableLiveData$3), IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:4:0x0014 \-\> B:6:0x0021, CROSS_EDGE: B:3:0x0012 \-\> B:6:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [ClspMth\{java.lang.Runnable.run():void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_6 -> Node_1;
+Node_8 -> Node_1;
+Node_7 -> Node_1;
+}
+

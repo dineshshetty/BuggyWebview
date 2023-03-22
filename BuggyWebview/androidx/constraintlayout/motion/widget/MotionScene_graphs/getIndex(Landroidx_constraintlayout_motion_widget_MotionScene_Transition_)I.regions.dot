@@ -1,0 +1,82 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.MotionScene.getIndex(Landroidx\/constraintlayout\/motion\/widget\/MotionScene$Transition;)I" {
+subgraph cluster_Region_1311741102 {
+label = "R(2:1|(2:(1:15)|(3:3|(1:(2:(1:10)|(1:8)))|13)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|int int r0 = r5.mId\l}"];
+subgraph cluster_Region_1876472831 {
+label = "R(2:(1:15)|(3:3|(1:(2:(1:10)|(1:8)))|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_247570317 {
+label = "IF [B:19:0x0005] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|if (r0 == (\-1)) goto L14\l}"];
+subgraph cluster_Region_1401837826 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002a|throw new java.lang.IllegalArgumentException(\"The transition must have an id\")\l}"];
+}
+}
+subgraph cluster_Region_228939445 {
+label = "R(3:3|(1:(2:(1:10)|(1:8)))|13)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0007|int r2 = 0\l}"];
+subgraph cluster_LoopRegion_1058879819 {
+label = "LOOP:0: (1:(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000e|if (r2 \< r4.mTransitionList.size()) goto L6\l}"];
+subgraph cluster_Region_347762111 {
+label = "R(1:(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_743862287 {
+label = "R(2:(1:10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1207536014 {
+label = "IF [B:24:0x001c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001c|if (r4.mTransitionList.get(r2).mId == r0) goto L9\l}"];
+subgraph cluster_Region_907853569 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001e|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1025701074 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001f|LOOP_END\lLOOP:0: B:21:0x0008\-\>B:26:0x001f\l|r2++\l}"];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0022|RETURN\l|return \-1\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0008|LOOP_START\lLOOP:0: B:21:0x0008\-\>B:26:0x001f\lPHI: r2 \l  PHI: (r2v2 'index' int) = (r2v1 'index' int), (r2v3 'index' int) binds: [B:20:0x0007, B:26:0x001f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0010}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001e|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0022|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0023}"];
+MethodNode[shape=record,label="{private int androidx.constraintlayout.motion.widget.MotionScene.getIndex((r4v0 'this' androidx.constraintlayout.motion.widget.MotionScene A[IMMUTABLE_TYPE, THIS]), (r5v0 'transition' androidx.constraintlayout.motion.widget.MotionScene$Transition A[D('transition' androidx.constraintlayout.motion.widget.MotionScene$Transition), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x001f \-\> B:21:0x0008, CROSS_EDGE: B:27:0x0022 \-\> B:17:?, CROSS_EDGE: B:29:0x002a \-\> B:17:?\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [transition]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_28;
+Node_29 -> Node_17;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_31[style=dashed];
+Node_24 -> Node_26[style=dashed];
+Node_24 -> Node_30;
+Node_25 -> Node_17;
+Node_26 -> Node_21;
+Node_27 -> Node_17;
+Node_16 -> Node_18;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_30 -> Node_25;
+Node_31 -> Node_27;
+Node_28 -> Node_29;
+}
+

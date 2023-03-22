@@ -1,0 +1,69 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.setContentScrim(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_1305141958 {
+label = "R(2:1|(1:(5:(1:5)|6|8|(1:10)|11)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = r3.contentScrim\l}"];
+subgraph cluster_Region_160996114 {
+label = "R(1:(5:(1:5)|6|8|(1:10)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2110207915 {
+label = "IF [B:3:0x0002] THEN: R(5:(1:5)|6|8|(1:10)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 != r4) goto L3\l}"];
+subgraph cluster_Region_595788274 {
+label = "R(5:(1:5)|6|8|(1:10)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1834410311 {
+label = "IF [B:5:0x0005] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|if (r0 != null) goto L5\l}"];
+subgraph cluster_Region_969218270 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0007|r0.setCallback(null)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x000a|android.graphics.drawable.Drawable r1 = r4 != null ? r4.mutate() : null\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0010|PHI: r1 \l  PHI: (r1v1 android.graphics.drawable.Drawable) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r3.contentScrim = r1\l}"];
+subgraph cluster_IfRegion_1740443718 {
+label = "IF [B:10:0x0012] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0012|if (r1 != null) goto L10\l}"];
+subgraph cluster_Region_1035704623 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0014|updateContentScrimBounds(r1, getWidth(), getHeight())\lr3.contentScrim.setCallback(r3)\lr3.contentScrim.setAlpha(r3.scrimAlpha)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x002b|androidx.core.view.ViewCompat.postInvalidateOnAnimation(r3)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002e|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.appbar.CollapsingToolbarLayout.setContentScrim((r3v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0012 \-\> B:12:0x002b, CROSS_EDGE: B:7:0x000a \-\> B:9:0x0010, CROSS_EDGE: B:5:0x0005 \-\> B:7:0x000a, CROSS_EDGE: B:3:0x0002 \-\> B:13:0x002e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_14[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_13 -> Node_1;
+Node_14 -> Node_1;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.appcompat.widget.SearchView.updateVoiceButton(Z)V" {
+subgraph cluster_Region_769065503 {
+label = "R(3:1|(1:6)|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|int r0 = 8\l}"];
+subgraph cluster_IfRegion_97310145 {
+label = "IF [B:13:0x0004, B:15:0x000a, B:16:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|if (r3.mVoiceButtonEnabled != false) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000a|ADDED_TO_REGION\l|if (isIconified() == false) goto L5\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000c|ADDED_TO_REGION\l|if (r4 != false) goto L6\l}"];
+subgraph cluster_Region_1415782126 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|r0 = 0\lr3.mGoButton.setVisibility(8)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0016|PHI: r0 \l  PHI: (r0v1 'visibility' int) = (r0v0 'visibility' int), (r0v0 'visibility' int), (r0v0 'visibility' int), (r0v2 'visibility' int) binds: [B:13:0x0004, B:15:0x000a, B:16:0x000c, B:17:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|r3.mVoiceButton.setVisibility(r0)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001b}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.widget.SearchView.updateVoiceButton((r3v0 'this' androidx.appcompat.widget.SearchView A[IMMUTABLE_TYPE, THIS]), (r4v0 'empty' boolean A[D('empty' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000c \-\> B:18:0x0016, CROSS_EDGE: B:15:0x000a \-\> B:18:0x0016, CROSS_EDGE: B:13:0x0004 \-\> B:18:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_19 -> Node_11;
+}
+

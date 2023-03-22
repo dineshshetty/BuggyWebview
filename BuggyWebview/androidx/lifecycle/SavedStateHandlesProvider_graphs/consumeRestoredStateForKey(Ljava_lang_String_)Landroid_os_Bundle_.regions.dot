@@ -1,0 +1,62 @@
+digraph "CFG forandroidx.lifecycle.SavedStateHandlesProvider.consumeRestoredStateForKey(Ljava\/lang\/String;)Landroid\/os\/Bundle;" {
+subgraph cluster_Region_448347272 {
+label = "R(7:1|2|4|(1:6)|7|(1:12)|13)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"key\")\lperformRestore()\landroid.os.Bundle android.os.Bundle r0 = r7.restoredState\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000b|android.os.Bundle r0 = r0 != null ? r0.getBundle(r8) : null\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0013|PHI: r0 \l  PHI: (r0v3 android.os.Bundle) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.os.Bundle android.os.Bundle r4 = r7.restoredState\l}"];
+subgraph cluster_IfRegion_1116930243 {
+label = "IF [B:26:0x0017] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0017|if (r4 != null) goto L6\l}"];
+subgraph cluster_Region_348631786 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0019|r4.remove(r8)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x001c|android.os.Bundle android.os.Bundle r4 = r7.restoredState\lboolean r5 = true\l}"];
+subgraph cluster_IfRegion_1730684064 {
+label = "IF [B:34:0x002a] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x002a|PHI: r5 \l  PHI: (r5v2 boolean A[REMOVE]) = (r5v0 boolean) binds: [B:31:0x0026] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (((r4 == null \|\| !r4.isEmpty()) ? false : false) != false) goto L12\l}"];
+subgraph cluster_Region_1030721894 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x002c|r7.restoredState = null\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x002f|RETURN\l|return r0\l}"];
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000d}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0020}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0022}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0026|REMOVE\lADDED_TO_REGION\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0029}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0012}"];
+MethodNode[shape=record,label="{public final android.os.Bundle androidx.lifecycle.SavedStateHandlesProvider.consumeRestoredStateForKey((r7v0 'this' androidx.lifecycle.SavedStateHandlesProvider A[IMMUTABLE_TYPE, THIS]), (r8v0 'key' java.lang.String A[D('key' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:34:0x002a \-\> B:37:0x002f, CROSS_EDGE: B:31:0x0026 \-\> B:34:0x002a, CROSS_EDGE: B:29:0x0020 \-\> B:33:0x0029, CROSS_EDGE: B:26:0x0017 \-\> B:28:0x001c, CROSS_EDGE: B:24:0x0012 \-\> B:25:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_34 -> Node_35;
+Node_34 -> Node_37[style=dashed];
+Node_35 -> Node_37;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_23 -> Node_25;
+Node_29 -> Node_30;
+Node_29 -> Node_33;
+Node_30 -> Node_31;
+Node_31 -> Node_33;
+Node_31 -> Node_34;
+Node_33 -> Node_34;
+Node_24 -> Node_25;
+}
+

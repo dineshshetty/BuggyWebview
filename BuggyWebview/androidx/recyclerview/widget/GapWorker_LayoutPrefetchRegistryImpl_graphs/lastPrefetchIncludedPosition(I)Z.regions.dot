@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.recyclerview.widget.GapWorker.LayoutPrefetchRegistryImpl.lastPrefetchIncludedPosition(I)Z" {
+subgraph cluster_Region_936947354 {
+label = "R(1:(2:(3:3|(1:(2:(1:9)|(1:7)))|12)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_455959573 {
+label = "R(2:(3:3|(1:(2:(1:9)|(1:7)))|12)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1276243024 {
+label = "IF [B:3:0x0002] THEN: R(3:3|(1:(2:(1:9)|(1:7)))|12) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r3.mPrefetchArray != null) goto L3\l}"];
+subgraph cluster_Region_806593089 {
+label = "R(3:3|(1:(2:(1:9)|(1:7)))|12)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|int int r0 = r3.mCount * 2\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1269897086 {
+label = "LOOP:0: (1:(2:(1:9)|(1:7)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|LOOP_START\lLOOP:0: B:5:0x0009\-\>B:10:0x0013\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:4:0x0004, B:10:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L5\l}"];
+subgraph cluster_Region_1562479470 {
+label = "R(1:(2:(1:9)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_805261870 {
+label = "R(2:(1:9)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_211394757 {
+label = "IF [B:7:0x000f] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|if (r3.mPrefetchArray[r1] == r4) goto L8\l}"];
+subgraph cluster_Region_1602393608 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0011|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1128915008 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0013|LOOP_END\lLOOP:0: B:5:0x0009\-\>B:10:0x0013\l|r1 += 2\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_481460932 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0016|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000b}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0011|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean androidx.recyclerview.widget.GapWorker.LayoutPrefetchRegistryImpl.lastPrefetchIncludedPosition((r3v0 'this' androidx.recyclerview.widget.GapWorker$LayoutPrefetchRegistryImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:10:0x0013 \-\> B:5:0x0009, CROSS_EDGE: B:12:0x0017 \-\> B:1:?, CROSS_EDGE: B:3:0x0002 \-\> B:11:0x0016\lINLINE_NOT_NEEDED\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_7 -> Node_10[style=dashed];
+Node_7 -> Node_14;
+Node_8 -> Node_1;
+Node_10 -> Node_5;
+Node_15 -> Node_1;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_14 -> Node_8;
+Node_13 -> Node_15;
+}
+

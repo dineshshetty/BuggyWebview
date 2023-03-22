@@ -1,0 +1,53 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.makeCompletingOnce$kotlinx_coroutines_core(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_2038133236 {
+label = "R(2:(2:2|(1:4)(2:10|11))|7) | DECL_VAR: java.lang.Object finalState, kotlinx.coroutines.internal.Symbol null, kotlinx.coroutines.internal.Symbol null\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1376680406 {
+label = "LOOP:0: (2:2|(1:4)(2:10|11))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0002\-\>B:19:0x0017\l|if (r4 == r5) goto L2\l}"];
+subgraph cluster_Region_1297292021 {
+label = "R(2:2|(1:4)(2:10|11))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|LOOP_START\lLOOP:0: B:16:0x0002\-\>B:19:0x0017\l|java.lang.Object java.lang.Object r2 = getState$kotlinx_coroutines_core()\ljava.lang.Object r4 = tryMakeCompleting(r2, r9)\lkotlinx.coroutines.internal.Symbol r5 = kotlinx.coroutines.JobSupportKt.COMPLETING_ALREADY\l}"];
+subgraph cluster_IfRegion_1417964819 {
+label = "IF [B:17:0x0011] THEN: R(1:4) ELSE: R(2:10|11)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0011|if (r4 != r5) goto L4\l}"];
+subgraph cluster_Region_749361308 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|kotlinx.coroutines.internal.Symbol r5 = kotlinx.coroutines.JobSupportKt.COMPLETING_RETRY\l}"];
+}
+subgraph cluster_Region_1856692466 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001b}"];
+Node_23 [shape=record,label="{23\:\ 0x003e|throw new java.lang.IllegalStateException(\"Job \" + r8 + \" is already complete or completing, but is being completed with \" + r9, getExceptionOrNull(r9))\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x001a|RETURN\l|return r4\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001a|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.JobSupport.makeCompletingOnce$kotlinx_coroutines_core((r8v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]), (r9v0 'proposedUpdate' java.lang.Object A[D('proposedUpdate' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0017 \-\> B:16:0x0002, CROSS_EDGE: B:23:0x003e \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_19 -> Node_16;
+Node_19 -> Node_25[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_18 -> Node_19;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_21 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_25 -> Node_21;
+Node_24 -> Node_22;
+}
+

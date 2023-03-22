@@ -1,0 +1,157 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.collectAdjacentPrefetchPositions(IILandroidx\/recyclerview\/widget\/RecyclerView$State;Landroidx\/recyclerview\/widget\/RecyclerView$LayoutManager$LayoutPrefetchRegistry;)V" {
+subgraph cluster_Region_1464282813 {
+label = "R(2:2|(2:(1:35)|(6:7|(1:34)|11|(3:(1:16)(1:22)|(1:18)(0)|20)|24|(1:28)))) | DECL_VAR: int distance\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|int r0 = r6.mOrientation == 0 ? r7 : r8\l}"];
+subgraph cluster_Region_180749585 {
+label = "R(2:(1:35)|(6:7|(1:34)|11|(3:(1:16)(1:22)|(1:18)(0)|20)|24|(1:28)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_205934925 {
+label = "IF [B:7:0x000b, B:8:0x000d] THEN: R(1:35) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000b|if (getChildCount() == 0) goto L36\l}"];
+Node_8 [shape=record,label="{8\:\ 0x000d|ADDED_TO_REGION\l|if (r0 == 0) goto L35\l}"];
+subgraph cluster_Region_1815685134 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_334983421 {
+label = "R(6:7|(1:34)|11|(3:(1:16)(1:22)|(1:18)(0)|20)|24|(1:28))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0011|prepareLayoutStateForDelta(r0, r9)\lint[] int[] r1 = r6.mPrefetchDistances\l}"];
+subgraph cluster_IfRegion_696403683 {
+label = "IF [B:11:0x0016, B:13:0x001b] THEN: R(1:34) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0016|if (r1 == null) goto L34\l}"];
+Node_13 [shape=record,label="{13\:\ 0x001b|ADDED_TO_REGION\l|if (r1.length \< r6.mSpanCount) goto L34\l}"];
+subgraph cluster_Region_2025655469 {
+label = "R(1:34)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001d|r6.mPrefetchDistances = new int[r6.mSpanCount]\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0023|int r1 = 0\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1374993783 {
+label = "LOOP:0: (3:(1:16)(1:22)|(1:18)(0)|20)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0027|if (r2 \< r6.mSpanCount) goto L14\l}"];
+subgraph cluster_Region_1786399988 {
+label = "R(3:(1:16)(1:22)|(1:18)(0)|20)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1378546219 {
+label = "IF [B:19:0x002e] THEN: R(1:16) ELSE: R(1:22)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002e|if (r6.mLayoutState.mItemDirection == (\-1)) goto L16\l}"];
+subgraph cluster_Region_1487619556 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0030|int r3 = r6.mLayoutState.mStartLine \- r6.mSpans[r2].getStartLine(r6.mLayoutState.mStartLine)\l}"];
+}
+subgraph cluster_Region_1129136420 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0042|int r3 = r6.mSpans[r2].getEndLine(r6.mLayoutState.mEndLine) \- r6.mLayoutState.mEndLine\l}"];
+}
+}
+subgraph cluster_IfRegion_1753123826 {
+label = "IF [B:23:0x0054] THEN: R(1:18) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0054|PHI: r3 \l  PHI: (r3v13 'distance' int) = (r3v12 'distance' int), (r3v16 'distance' int) binds: [B:21:0x0042, B:20:0x0030] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \>= 0) goto L18\l}"];
+subgraph cluster_Region_1197389736 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0056|r6.mPrefetchDistances[r1] = r3\lr1++\l}"];
+}
+subgraph cluster_Region_1302505387 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x005c|LOOP_END\lLOOP:0: B:16:0x0025\-\>B:25:0x005c\lPHI: r1 \l  PHI: (r1v6 'itemPrefetchCount' int) = (r1v5 'itemPrefetchCount' int), (r1v7 'itemPrefetchCount' int) binds: [B:35:0x005c, B:34:0x005c] A[DONT_GENERATE, DONT_INLINE]\l|r2++\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x005f|java.util.Arrays.sort(r6.mPrefetchDistances, 0, r1)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_2032949815 {
+label = "LOOP:1: (1:28)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0066|LOOP_START\lLOOP:1: B:27:0x0066\-\>B:30:0x0070\lPHI: r2 \l  PHI: (r2v4 'i' int) = (r2v3 'i' int), (r2v5 'i' int) binds: [B:26:0x005f, B:30:0x0070] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L26\l}"];
+Node_29 [shape=record,label="{29\:\ 0x006e|ADDED_TO_REGION\l|if (r6.mLayoutState.hasMore(r9) != false) goto L28\l}"];
+subgraph cluster_Region_925254463 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0070|LOOP_END\lLOOP:1: B:27:0x0066\-\>B:30:0x0070\l|r10.addPosition(r6.mLayoutState.mCurrentPosition, r6.mPrefetchDistances[r2])\lr6.mLayoutState.mCurrentPosition += r6.mLayoutState.mItemDirection\lr2++\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0007|PHI: r0 \l  PHI: (r0v2 'delta' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0018}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0025|LOOP_START\lLOOP:0: B:16:0x0025\-\>B:25:0x005c\lPHI: r1 r2 \l  PHI: (r1v5 'itemPrefetchCount' int) = (r1v4 'itemPrefetchCount' int), (r1v6 'itemPrefetchCount' int) binds: [B:15:0x0023, B:25:0x005c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v6 'i' int) binds: [B:15:0x0023, B:25:0x005c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0029}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x005c|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x005c|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x005f|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0068}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0089|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ ?|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0089|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0089|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x008a|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0006}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.StaggeredGridLayoutManager.collectAdjacentPrefetchPositions((r6v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r7v0 'dx' int A[D('dx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'dy' int A[D('dy' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'layoutPrefetchRegistry' androidx.recyclerview.widget.RecyclerView$LayoutManager$LayoutPrefetchRegistry A[D('layoutPrefetchRegistry' androidx.recyclerview.widget.RecyclerView$LayoutManager$LayoutPrefetchRegistry), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x005c \-\> B:16:0x0025, CROSS_EDGE: B:23:0x0054 \-\> B:25:0x005c, CROSS_EDGE: B:21:0x0042 \-\> B:23:0x0054, BACK_EDGE: B:30:0x0070 \-\> B:27:0x0066, CROSS_EDGE: B:27:0x0066 \-\> B:31:0x0089, CROSS_EDGE: B:13:0x001b \-\> B:15:0x0023, CROSS_EDGE: B:11:0x0016 \-\> B:14:0x001d, CROSS_EDGE: B:32:0x008a \-\> B:1:?, CROSS_EDGE: B:7:0x000b \-\> B:32:0x008a, CROSS_EDGE: B:5:0x0006 \-\> B:6:0x0007\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.RecyclerView.LayoutManager.collectAdjacentPrefetchPositions(int, int, androidx.recyclerview.widget.RecyclerView$State, androidx.recyclerview.widget.RecyclerView$LayoutManager$LayoutPrefetchRegistry):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_32;
+Node_8 -> Node_10[style=dashed];
+Node_8 -> Node_39;
+Node_39 -> Node_1;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_33[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_23;
+Node_21 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_35[style=dashed];
+Node_24 -> Node_34;
+Node_25 -> Node_16;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_36[style=dashed];
+Node_29 -> Node_30;
+Node_29 -> Node_37[style=dashed];
+Node_30 -> Node_27;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_6 -> Node_7;
+Node_12 -> Node_13;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_34 -> Node_25;
+Node_35 -> Node_25;
+Node_33 -> Node_26;
+Node_28 -> Node_29;
+Node_37 -> Node_38;
+Node_38 -> Node_1;
+Node_36 -> Node_31;
+Node_31 -> Node_1;
+Node_32 -> Node_1;
+Node_5 -> Node_6;
+}
+

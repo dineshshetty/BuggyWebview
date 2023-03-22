@@ -1,0 +1,69 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.trimStart(Ljava\/lang\/String;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/String;" {
+subgraph cluster_Region_1563511773 {
+label = "R(3:1|(1:(1:(1:5)(2:7|1))(2:12|1))|9) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"predicate\")\ljava.lang.CharSequence java.lang.String r1 = r6\lint r3 = 0\lint int r4 = r1.length()\l}"];
+subgraph cluster_LoopRegion_1310712428 {
+label = "LOOP:0: (1:(1:(1:5)(2:7|1))(2:12|1))";
+node [shape=record,color=blue];
+subgraph cluster_Region_46388140 {
+label = "R(1:(1:(1:5)(2:7|1))(2:12|1))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1985974177 {
+label = "IF [B:29:0x0014] THEN: R(1:(1:5)(2:7|1)) ELSE: R(2:12|1)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0014|LOOP_START\lLOOP:0: B:29:0x0014\-\>B:33:0x0033\lPHI: r3 \l  PHI: (r3v1 'index$iv' int) = (r3v0 'index$iv' int), (r3v3 'index$iv' int) binds: [B:28:0x0000, B:33:0x0033] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r4) goto L3\l}"];
+subgraph cluster_Region_1432163770 {
+label = "R(1:(1:5)(2:7|1))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_985751794 {
+label = "IF [B:31:0x0028] THEN: R(1:5) ELSE: R(2:7|1)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0028|if (r7.invoke(java.lang.Character.valueOf(r1.charAt(r3))).booleanValue() != false) goto L5\l}"];
+subgraph cluster_Region_568805347 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0033|LOOP_END\lLOOP:0: B:29:0x0014\-\>B:33:0x0033\l|r3++\l}"];
+}
+subgraph cluster_Region_1839090659 {
+label = "R(2:7|1)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x002a|EDGE_INSN: B:32:0x002a\-\>B:35:0x003b ?: BREAK  \l|java.lang.CharSequence r4 = r1.subSequence(r3, r1.length())\l}"];
+Node_InsnContainer_2099891895 [shape=record,label="{|break\l}"];
+}
+}
+}
+subgraph cluster_Region_1202235240 {
+label = "R(2:12|1)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0036|EDGE_INSN: B:34:0x0036\-\>B:35:0x003b ?: BREAK  \l|java.lang.CharSequence r4 = \"\"\l}"];
+Node_InsnContainer_1276399612 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x003f|RETURN\l|return r4.toString()\l}"];
+}
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0016}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x002a|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x003b|EDGE_INSN: B:34:0x0036\-\>B:35:0x003b ?: BREAK  , EDGE_INSN: B:32:0x002a\-\>B:35:0x003b ?: BREAK  \lPHI: r4 \l  PHI: (r4v3 java.lang.CharSequence) = (r4v2 java.lang.String), (r4v5 java.lang.CharSequence) binds: [B:34:0x0036, B:32:0x002a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0036|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.text.StringsKt__StringsKt.trimStart((r6v0 '$this$trimStart' java.lang.String A[D('$this$trimStart' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Character, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:33:0x0033 \-\> B:29:0x0014, CROSS_EDGE: B:34:0x0036 \-\> B:35:0x003b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/String;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;Ljava\/lang\/Boolean;\>;)Ljava\/lang\/String;\l}"];
+MethodNode -> Node_26;Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_37[style=dashed];
+Node_31 -> Node_33;
+Node_31 -> Node_38[style=dashed];
+Node_33 -> Node_29;
+Node_32 -> Node_35;
+Node_34 -> Node_35;
+Node_36 -> Node_27;
+Node_26 -> Node_28;
+Node_30 -> Node_31;
+Node_38 -> Node_32;
+Node_35 -> Node_36;
+Node_37 -> Node_34;
+}
+

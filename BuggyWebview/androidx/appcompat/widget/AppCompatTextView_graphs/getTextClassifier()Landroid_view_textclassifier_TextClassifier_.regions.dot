@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatTextView.getTextClassifier()Landroid\/view\/textclassifier\/TextClassifier;" {
+subgraph cluster_Region_1835186549 {
+label = "R(1:(2:(1:9)|(1:6))) | DECL_VAR: androidx.appcompat.widget.AppCompatTextClassifierHelper null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1902865005 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1933991310 {
+label = "IF [B:14:0x0004, B:16:0x0008] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L8\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0008|ADDED_TO_REGION\l|if ((r0 = r2.mTextClassifierHelper) == null) goto L8\l}"];
+subgraph cluster_Region_327332191 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0014|RETURN\l|return super.getTextClassifier()\l}"];
+}
+}
+subgraph cluster_Region_1808997195 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|RETURN\l|return r0.getTextClassifier()\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0010}"];
+MethodNode[shape=record,label="{public android.view.textclassifier.TextClassifier androidx.appcompat.widget.AppCompatTextView.getTextClassifier((r2v0 'this' androidx.appcompat.widget.AppCompatTextView A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:21:0x0014 \-\> B:12:?, CROSS_EDGE: B:14:0x0004 \-\> B:20:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.TextView.getTextClassifier():android.view.textclassifier.TextClassifier\}]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_20;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

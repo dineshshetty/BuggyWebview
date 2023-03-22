@@ -1,0 +1,37 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.setupAutoSizeUniformPresetSizesConfiguration()Z" {
+subgraph cluster_Region_1866226449 {
+label = "R(5:1|2|4|(1:6)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int[] int[] r0 = r5.mAutoSizeTextSizesInPx\lint int r1 = r0.length\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|boolean r4 = r1 \> 0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000a|PHI: r4 \l  PHI: (r4v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r5.mHasPresetAutoSizeValues = r4\l}"];
+subgraph cluster_IfRegion_1463997832 {
+label = "IF [B:7:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|if (r4 != false) goto L6\l}"];
+subgraph cluster_Region_1685833589 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000e|r5.mAutoSizeTextType = 1\lr5.mAutoSizeMinTextSizeInPx = r0[0]\lr5.mAutoSizeMaxTextSizeInPx = r0[r1 \- 1]\lr5.mAutoSizeStepGranularityInPx = androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.UNSET_AUTO_SIZE_UNIFORM_CONFIGURATION_VALUE\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0020|RETURN\l|return r4\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+MethodNode[shape=record,label="{private boolean androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.setupAutoSizeUniformPresetSizesConfiguration((r5v0 'this' androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x000c \-\> B:9:0x0020, CROSS_EDGE: B:5:0x0009 \-\> B:6:0x000a\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+}
+

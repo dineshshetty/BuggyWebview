@@ -1,0 +1,63 @@
+digraph "CFG forkotlinx.coroutines.selects.SelectBuilderImpl.onTimeout(JLkotlin\/jvm\/functions\/Function1;)V" {
+subgraph cluster_Region_1743666952 {
+label = "R(1:(2:(1:(2:(2:5|6)|(1:8)))|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_667103745 {
+label = "R(2:(1:(2:(2:5|6)|(1:8)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1653955089 {
+label = "IF [B:14:0x0004] THEN: R(1:(2:(2:5|6)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (r4 \<= 0) goto L3\l}"];
+subgraph cluster_Region_1606205140 {
+label = "R(1:(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1237109844 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2001845336 {
+label = "IF [B:16:0x000a] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (trySelect() != false) goto L5\l}"];
+subgraph cluster_Region_1071392113 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|kotlinx.coroutines.intrinsics.Undispatched.startCoroutineUnintercepted(r6, getCompletion())\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0013|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_95184448 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_2067173690 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0014|java.lang.Runnable java.lang.Runnable r1 = new kotlinx.coroutines.selects.SelectBuilderImpl$onTimeout$$inlined$Runnable$1()\ldisposeOnSelect(kotlinx.coroutines.DelayKt.getDelay(getContext()).invokeOnTimeout(r4, r1, getContext()))\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0030}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.selects.SelectBuilderImpl.onTimeout((r3v0 'this' kotlinx.coroutines.selects.SelectBuilderImpl\<R\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'timeMillis' long A[D('timeMillis' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 kotlin.jvm.functions.Function1\<? super kotlin.coroutines.Continuation\<? super R\>, ? extends java.lang.Object\> A[D('block' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000a \-\> B:18:0x0013, CROSS_EDGE: B:20:0x0030 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lSIGNATURE: (JLkotlin\/jvm\/functions\/Function1\<\-Lkotlin\/coroutines\/Continuation\<\-TR;\>;+Ljava\/lang\/Object;\>;)V\lMETHOD_OVERRIDE: [kotlinx.coroutines.selects.SelectBuilder.onTimeout(long, kotlin.jvm.functions.Function1\<? super kotlin.coroutines.Continuation\<? super R\>, ? extends java.lang.Object\>):void]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_12;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_20 -> Node_12;
+}
+

@@ -1,0 +1,39 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcelStream.FieldBuffer.flushField()V" {
+subgraph cluster_Region_731156305 {
+label = "R(4:1|4|(1:6)|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r4.mDataStream.flush()\lint int r0 = r4.mOutput.size()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0019|PHI: r3 \l  PHI: (r3v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int r1 = (r4.mFieldId \<\< 16) \| (r0 \>= 65535 ? androidx.core.internal.view.SupportMenu.USER_MASK : r0)\lr4.mTarget.writeInt(r1)\l}"];
+subgraph cluster_IfRegion_1078676343 {
+label = "IF [B:18:0x001f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001f|if (r0 \>= 65535) goto L6\l}"];
+subgraph cluster_Region_1517207216 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0021|r4.mTarget.writeInt(r0)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0026|r4.mOutput.writeTo(r4.mTarget)\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0012}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0014}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002d}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0018}"];
+MethodNode[shape=record,label="{void androidx.versionedparcelable.VersionedParcelStream.FieldBuffer.flushField((r4v0 'this' androidx.versionedparcelable.VersionedParcelStream$FieldBuffer A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x001f \-\> B:20:0x0026, CROSS_EDGE: B:16:0x0018 \-\> B:17:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Ljava\/io\/IOException;]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_21 -> Node_12;
+Node_16 -> Node_17;
+}
+

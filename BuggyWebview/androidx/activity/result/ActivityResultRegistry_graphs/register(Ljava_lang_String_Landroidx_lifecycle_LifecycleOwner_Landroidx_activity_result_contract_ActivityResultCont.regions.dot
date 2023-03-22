@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.activity.result.ActivityResultRegistry.register(Ljava\/lang\/String;Landroidx\/lifecycle\/LifecycleOwner;Landroidx\/activity\/result\/contract\/ActivityResultContract;Landroidx\/activity\/result\/ActivityResultCallback;)Landroidx\/activity\/result\/ActivityResultLauncher;" {
+subgraph cluster_Region_588450824 {
+label = "R(2:1|(2:(2:9|10)|(4:3|(1:5)|6|7)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|androidx.lifecycle.Lifecycle androidx.lifecycle.Lifecycle r0 = r6.getLifecycle()\l}"];
+subgraph cluster_Region_773484644 {
+label = "R(2:(2:9|10)|(4:3|(1:5)|6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_492310501 {
+label = "IF [B:14:0x000e] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|if (r0.getCurrentState().isAtLeast(androidx.lifecycle.Lifecycle.State.STARTED) != false) goto L9\l}"];
+subgraph cluster_Region_265493998 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0036}"];
+Node_21 [shape=record,label="{21\:\ 0x005d|throw new java.lang.IllegalStateException(\"LifecycleOwner \" + r6 + \" is attempting to register while current state is \" + r0.getCurrentState() + \". LifecycleOwners must call register before they are STARTED.\")\l}"];
+}
+}
+subgraph cluster_Region_2059994033 {
+label = "R(4:3|(1:5)|6|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|registerKey(r5)\landroidx.activity.result.ActivityResultRegistry$LifecycleContainer androidx.activity.result.ActivityResultRegistry.LifecycleContainer r1 = r4.mKeyToLifecycleContainers.get(r5)\l}"];
+subgraph cluster_IfRegion_666049578 {
+label = "IF [B:16:0x001b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001b|if (r1 == null) goto L5\l}"];
+subgraph cluster_Region_1090598101 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001d|r1 = new androidx.activity.result.ActivityResultRegistry.LifecycleContainer(r0)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0023|PHI: r1 \l  PHI: (r1v6 'lifecycleContainer' androidx.activity.result.ActivityResultRegistry$LifecycleContainer) = (r1v5 'lifecycleContainer' androidx.activity.result.ActivityResultRegistry$LifecycleContainer), (r1v7 'lifecycleContainer' androidx.activity.result.ActivityResultRegistry$LifecycleContainer) binds: [B:16:0x001b, B:17:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|androidx.activity.result.ActivityResultRegistry$1 androidx.lifecycle.LifecycleEventObserver r2 = new androidx.activity.result.ActivityResultRegistry.C00131()\lr1.addObserver(r2)\lr4.mKeyToLifecycleContainers.put(r5, r1)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0035|RETURN\l|return new androidx.activity.result.ActivityResultRegistry.C00142()\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final androidx.activity.result.ActivityResultLauncher\<I\> androidx.activity.result.ActivityResultRegistry.register((r4v0 'this' androidx.activity.result.ActivityResultRegistry A[IMMUTABLE_TYPE, THIS]), (r5v0 'key' java.lang.String A[D('key' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'lifecycleOwner' androidx.lifecycle.LifecycleOwner A[D('lifecycleOwner' androidx.lifecycle.LifecycleOwner), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'contract' androidx.activity.result.contract.ActivityResultContract\<I, O\> A[D('contract' androidx.activity.result.contract.ActivityResultContract\<I, O\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'callback' androidx.activity.result.ActivityResultCallback\<O\> A[D('callback' androidx.activity.result.ActivityResultCallback\<O\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x001b \-\> B:18:0x0023, CROSS_EDGE: B:21:0x005d \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [I, O]\lSIGNATURE: \<I:Ljava\/lang\/Object;O:Ljava\/lang\/Object;\>(Ljava\/lang\/String;Landroidx\/lifecycle\/LifecycleOwner;Landroidx\/activity\/result\/contract\/ActivityResultContract\<TI;TO;\>;Landroidx\/activity\/result\/ActivityResultCallback\<TO;\>;)Landroidx\/activity\/result\/ActivityResultLauncher\<TI;\>;\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+}
+

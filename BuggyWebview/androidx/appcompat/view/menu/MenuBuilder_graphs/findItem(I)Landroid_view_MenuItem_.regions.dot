@@ -1,0 +1,89 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuBuilder.findItem(I)Landroid\/view\/MenuItem;" {
+subgraph cluster_Region_640033197 {
+label = "R(3:1|(2:3|(2:(1:16)|(1:(2:(1:10)|(1:13)))))|18) | DECL_VAR: android.view.MenuItem possibleItem\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|int int r0 = size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1490804905 {
+label = "LOOP:0: (2:3|(2:(1:16)|(1:(2:(1:10)|(1:13)))))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0005|LOOP_START\lLOOP:0: B:23:0x0005\-\>B:32:0x0027\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:22:0x0000, B:32:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_968608385 {
+label = "R(2:3|(2:(1:16)|(1:(2:(1:10)|(1:13)))))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0007|androidx.appcompat.view.menu.MenuItemImpl androidx.appcompat.view.menu.MenuItemImpl r2 = r4.mItems.get(r1)\l}"];
+subgraph cluster_Region_586273576 {
+label = "R(2:(1:16)|(1:(2:(1:10)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_780648274 {
+label = "IF [B:25:0x0013] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0013|if (r2.getItemId() == r5) goto L15\l}"];
+subgraph cluster_Region_702471299 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0015|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1050260525 {
+label = "R(1:(2:(1:10)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_114679982 {
+label = "R(2:(1:10)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2059064887 {
+label = "IF [B:28:0x001a, B:30:0x0024] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001a|if (r2.hasSubMenu() != false) goto L7\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0024|ADDED_TO_REGION\l|if ((r3 = r2.getSubMenu().findItem(r5)) != null) goto L9\l}"];
+subgraph cluster_Region_937937125 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0026|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1194492087 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0027|LOOP_END\lLOOP:0: B:23:0x0005\-\>B:32:0x0027\l|r1++\l}"];
+}
+}
+}
+}
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x002a|RETURN\l|return null\l}"];
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0016}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001c}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0026|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0027|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0027|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0015|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x002a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public android.view.MenuItem androidx.appcompat.view.menu.MenuBuilder.findItem((r4v0 'this' androidx.appcompat.view.menu.MenuBuilder A[IMMUTABLE_TYPE, THIS]), (r5v0 'id' int A[D('id' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:31:0x0026 \-\> B:21:?, BACK_EDGE: B:32:0x0027 \-\> B:23:0x0005, CROSS_EDGE: B:28:0x001a \-\> B:32:0x0027, CROSS_EDGE: B:34:0x002b \-\> B:21:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.Menu.findItem(int):android.view.MenuItem\}]\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_37[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_27[style=dashed];
+Node_25 -> Node_35;
+Node_26 -> Node_21;
+Node_28 -> Node_29;
+Node_28 -> Node_38[style=dashed];
+Node_30 -> Node_36;
+Node_30 -> Node_39[style=dashed];
+Node_31 -> Node_21;
+Node_32 -> Node_23;
+Node_33 -> Node_21;
+Node_20 -> Node_22;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_36 -> Node_31;
+Node_39 -> Node_32;
+Node_38 -> Node_32;
+Node_35 -> Node_26;
+Node_37 -> Node_33;
+}
+

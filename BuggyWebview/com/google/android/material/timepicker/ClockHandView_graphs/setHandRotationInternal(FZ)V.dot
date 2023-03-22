@@ -1,0 +1,22 @@
+digraph "CFG forcom.google.android.material.timepicker.ClockHandView.setHandRotationInternal(FZ)V" {
+Node_9 [shape=record,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0000|float r12 = r12 % 360.0f\lr11.originalDeg = r12\lfloat r0 = r12 \- 90.0f\lr11.degRad = java.lang.Math.toRadians((double) r0)\lint r1 = getHeight() \/ 2\lint r2 = getWidth() \/ 2\lint r3 = getLeveledCircleRadius(r11.currentLevel)\lfloat r4 = ((float) r2) + (((float) r3) * ((float) java.lang.Math.cos(r11.degRad)))\lfloat r5 = ((float) r1) + (((float) r3) * ((float) java.lang.Math.sin(r11.degRad)))\landroid.graphics.RectF r6 = r11.selectorBox\lint r7 = r11.selectorRadius\lr6.set(r4 \- ((float) r7), r5 \- ((float) r7), ((float) r7) + r4, ((float) r7) + r5)\ljava.util.Iterator r6 = r11.listeners.iterator()\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0051|LOOP_START\lLOOP:0: B:12:0x0051\-\>B:14:0x0057\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0055|if (r6.hasNext() == false) goto L5\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0057|LOOP_END\lLOOP:0: B:12:0x0051\-\>B:14:0x0057\l|com.google.android.material.timepicker.ClockHandView$OnRotateListener r7 = r6.next()\lr7.onRotate(r12, r13)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0061|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0061|invalidate()\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0064|RETURN\l|return\l}"];
+Node_10 [shape=record,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.timepicker.ClockHandView.setHandRotationInternal((r11v0 'this' com.google.android.material.timepicker.ClockHandView A[IMMUTABLE_TYPE, THIS]), (r12v0 'degrees' float A[D('degrees' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'animate' boolean A[D('animate' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x0057 \-\> B:12:0x0051\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_17;
+Node_14 -> Node_12;
+Node_17 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_10;
+}
+

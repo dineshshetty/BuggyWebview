@@ -1,0 +1,48 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.single(Ljava\/lang\/CharSequence;)C" {
+subgraph cluster_Region_1823832824 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\l}"];
+subgraph cluster_SwitchRegion_1193603425 {
+label = "Switch: 3
+ case 0 -> R(1:9)
+ case 1 -> R(1:7)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0009|switch(r2.length()) \{\l    case 0: goto L8;\l    case 1: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_949425092 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0021|throw new java.util.NoSuchElementException(\"Char sequence is empty.\")\l}"];
+}
+subgraph cluster_Region_389810336 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0019|RETURN\l|return r2.charAt(0)\l}"];
+}
+subgraph cluster_Region_1352258053 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0013|throw new java.lang.IllegalArgumentException(\"Char sequence has more than one element.\")\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000c}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0014}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001a}"];
+MethodNode[shape=record,label="{public static final char kotlin.text.StringsKt___StringsKt.single((r2v0 '$this$single' java.lang.CharSequence A[D('$this$single' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0019 \-\> B:11:?, CROSS_EDGE: B:19:0x0021 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_16;
+Node_13 -> Node_18;
+Node_19 -> Node_11;
+Node_17 -> Node_11;
+Node_15 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

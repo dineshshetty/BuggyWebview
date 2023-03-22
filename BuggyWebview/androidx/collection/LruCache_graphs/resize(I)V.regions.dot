@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.collection.LruCache.resize(I)V" {
+subgraph cluster_Region_1411727548 {
+label = "R(1:(2:(1:14)|(2:2|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1343645665 {
+label = "R(2:(1:14)|(2:2|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_938469136 {
+label = "IF [B:17:0x0000] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|if (r3 \<= 0) goto L13\l}"];
+subgraph cluster_Region_1066682822 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0014|throw new java.lang.IllegalArgumentException(\"maxSize \<= 0\")\l}"];
+}
+}
+subgraph cluster_Region_1095425576 {
+label = "R(2:2|6)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_570462351 {
+label = "Synchronized:R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002}"];
+subgraph cluster_Region_1780425912 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:19:0x0003, B:20:0x0005), top: B:28:0x0003 \}\lCatch: all \-\> 0x000a\l|r2.maxSize = r3     \/\/ Catch: java.lang.Throwable \-\> La\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0006|trimToSize(r3)\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0005|TRY_LEAVE\lDONT_GENERATE\lTryCatch #0 \{, blocks: (B:19:0x0003, B:20:0x0005), top: B:28:0x0003 \}\lCatch: all \-\> 0x000a\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> La\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0009}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000a|REMOVE\lExcHandler: all \-\> 0x000a\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000b|TRY_ENTER\lTRY_LEAVE\lREMOVE\lCatch: all \-\> 0x000a\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000c|REMOVE\l|throw r0\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000d}"];
+MethodNode[shape=record,label="{public void androidx.collection.LruCache.resize((r2v0 'this' androidx.collection.LruCache\<K, V\> A[D('this' androidx.collection.LruCache\<K, V\>), IMMUTABLE_TYPE, THIS]), (r3v0 'maxSize' int A[D('maxSize' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x000c \-\> B:16:?, CROSS_EDGE: B:28:0x0003 \-\> B:23:0x000a, CROSS_EDGE: B:27:0x0014 \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_26;
+Node_27 -> Node_16;
+Node_18 -> Node_28;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_15 -> Node_17;
+Node_28 -> Node_19;
+Node_28 -> Node_23;
+Node_20 -> Node_21;
+Node_20 -> Node_29;
+Node_22 -> Node_16;
+Node_29 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_16;
+Node_26 -> Node_27;
+}
+

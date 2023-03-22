@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.onConfigurationChanged(Landroid\/content\/res\/Configuration;)V" {
+subgraph cluster_Region_1532500412 {
+label = "R(2:(1:7)|8) | DECL_VAR: androidx.appcompat.app.ActionBar ab\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_536837873 {
+label = "IF [B:14:0x0002, B:16:0x0006, B:18:0x000c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r2.mHasActionBar != false) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0006|ADDED_TO_REGION\l|if (r2.mSubDecorInstalled != false) goto L5\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000c|ADDED_TO_REGION\l|if ((r0 = getSupportActionBar()) != null) goto L7\l}"];
+subgraph cluster_Region_1072354758 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|r0.onConfigurationChanged(r3)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0011|androidx.appcompat.widget.AppCompatDrawableManager.get().onConfigurationChanged(r2.mContext)\lr2.mEffectiveConfiguration = new android.content.res.Configuration(r2.mContext.getResources().getConfiguration())\lapplyDayNight(false)\lr3.updateFrom(r2.mContext.getResources().getConfiguration())\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0004}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0008}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x003c}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.app.AppCompatDelegateImpl.onConfigurationChanged((r2v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 'newConfig' android.content.res.Configuration A[D('newConfig' android.content.res.Configuration), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x000c \-\> B:20:0x0011, CROSS_EDGE: B:16:0x0006 \-\> B:20:0x0011, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.app.AppCompatDelegate.onConfigurationChanged(android.content.res.Configuration):void]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_21 -> Node_12;
+}
+

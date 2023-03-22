@@ -1,0 +1,50 @@
+digraph "CFG forcom.google.android.material.transformation.ExpandableTransformationBehavior.onExpandedStateChange(Landroid\/view\/View;Landroid\/view\/View;ZZ)Z" {
+subgraph cluster_Region_1653291449 {
+label = "R(6:1|2|(1:5)|6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|android.animation.AnimatorSet android.animation.AnimatorSet r0 = r4.currentAnimation\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0003|boolean r2 = r0 != null\l}"];
+subgraph cluster_IfRegion_153888653 {
+label = "IF [B:18:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|PHI: r2 \l  PHI: (r2v1 'currentlyAnimating' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 != false) goto L5\l}"];
+subgraph cluster_Region_1921891676 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|r0.cancel()\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x000d|android.animation.AnimatorSet android.animation.AnimatorSet r0 = onCreateExpandedStateChangeAnimation(r5, r6, r7, r2)\lr4.currentAnimation = r0\lr0.addListener(new com.google.android.material.transformation.ExpandableTransformationBehavior.C08321())\lr4.currentAnimation.start()\l}"];
+subgraph cluster_IfRegion_951480926 {
+label = "IF [B:21:0x0021] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0021|if (r8 == false) goto L8\l}"];
+subgraph cluster_Region_1423536390 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0023|r4.currentAnimation.end()\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0028|RETURN\l|return true\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0005}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.transformation.ExpandableTransformationBehavior.onExpandedStateChange((r4v0 'this' com.google.android.material.transformation.ExpandableTransformationBehavior A[IMMUTABLE_TYPE, THIS]), (r5v0 'dependency' android.view.View A[D('dependency' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'expanded' boolean A[D('expanded' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'animated' boolean A[D('animated' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0021 \-\> B:23:0x0028, CROSS_EDGE: B:18:0x0008 \-\> B:20:0x000d, CROSS_EDGE: B:17:0x0007 \-\> B:18:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [com.google.android.material.transformation.ExpandableBehavior.onExpandedStateChange(android.view.View, android.view.View, boolean, boolean):boolean]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+}
+

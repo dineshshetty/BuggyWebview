@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.material.search.SearchBarAnimationHelper.startExpandAnimation(Lcom\/google\/android\/material\/search\/SearchBar;Landroid\/view\/View;Lcom\/google\/android\/material\/appbar\/AppBarLayout;Z)V" {
+subgraph cluster_Region_304822905 {
+label = "R(2:(1:5)|6) | DECL_VAR: android.animation.Animator null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2063954375 {
+label = "IF [B:21:0x0004, B:23:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0004|if (isCollapsing() != false) goto L3\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0008|ADDED_TO_REGION\l|if ((r0 = r7.runningExpandOrCollapseAnimator) != null) goto L5\l}"];
+subgraph cluster_Region_1487909107 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000a|r0.cancel()\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x000d|r7.expanding = true\lr9.setVisibility(4)\lr9.post(new com.google.android.material.search.SearchBarAnimationHelper$$ExternalSyntheticLambda4())\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0006}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0022}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.search.SearchBarAnimationHelper.startExpandAnimation((r7v0 'this' com.google.android.material.search.SearchBarAnimationHelper A[IMMUTABLE_TYPE, THIS]), (r8v0 'searchBar' com.google.android.material.search.SearchBar A[D('searchBar' com.google.android.material.search.SearchBar), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'expandedView' android.view.View A[D('expandedView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'appBarLayout' com.google.android.material.appbar.AppBarLayout A[D('appBarLayout' com.google.android.material.appbar.AppBarLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'skipAnimation' boolean A[D('skipAnimation' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0008 \-\> B:25:0x000d, CROSS_EDGE: B:21:0x0004 \-\> B:25:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_26 -> Node_19;
+}
+

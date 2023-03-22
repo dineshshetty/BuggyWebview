@@ -1,0 +1,91 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.OffsetUpdateListener.onOffsetChanged(Lcom\/google\/android\/material\/appbar\/AppBarLayout;I)V" {
+subgraph cluster_Region_1078234561 {
+label = "R(7:1|2|4|(3:6|7|10)|15|(1:18)|19)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|com.google.android.material.appbar.CollapsingToolbarLayout.this.currentOffset = r11\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|int r0 = com.google.android.material.appbar.CollapsingToolbarLayout.this.lastInsets != null ? com.google.android.material.appbar.CollapsingToolbarLayout.this.lastInsets.getSystemWindowInsetTop() : 0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|PHI: r0 \l  PHI: (r0v4 'insetTop' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int r2 = 0\lint int r3 = com.google.android.material.appbar.CollapsingToolbarLayout.this.getChildCount()\l}"];
+subgraph cluster_LoopRegion_828419868 {
+label = "LOOP:0: (3:6|7|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|LOOP_START\lLOOP:0: B:7:0x001c\-\>B:13:0x0051\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v6 'i' int) binds: [B:6:0x0015, B:13:0x0051] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r3) goto L6\l}"];
+subgraph cluster_Region_302866443 {
+label = "R(3:6|7|10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001e|android.view.View android.view.View r4 = com.google.android.material.appbar.CollapsingToolbarLayout.this.getChildAt(r2)\lcom.google.android.material.appbar.CollapsingToolbarLayout$LayoutParams com.google.android.material.appbar.CollapsingToolbarLayout.LayoutParams r5 = (com.google.android.material.appbar.CollapsingToolbarLayout.LayoutParams) r4.getLayoutParams()\lcom.google.android.material.appbar.ViewOffsetHelper com.google.android.material.appbar.ViewOffsetHelper r6 = com.google.android.material.appbar.CollapsingToolbarLayout.getViewOffsetHelper(r4)\l}"];
+subgraph cluster_SwitchRegion_1617090244 {
+label = "Switch: 2
+ case 1 -> R(2:11|1)
+ case 2 -> R(2:8|1)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0030|switch(r5.collapseMode) \{\l    case 1: goto L11;\l    case 2: goto L8;\l    default: goto L13;\l\}\l}"];
+subgraph cluster_Region_1984154894 {
+label = "R(2:11|1)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0042|r6.setTopAndBottomOffset(androidx.core.math.MathUtils.clamp(\-r11, 0, com.google.android.material.appbar.CollapsingToolbarLayout.this.getMaxOffsetForPinChild(r4)))\l}"];
+Node_InsnContainer_806522451 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1422826907 {
+label = "R(2:8|1)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0034|r6.setTopAndBottomOffset(java.lang.Math.round((\-r11) * r5.parallaxMult))\l}"];
+Node_InsnContainer_1774541124 [shape=record,label="{|break\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0051|LOOP_END\lLOOP:0: B:7:0x001c\-\>B:13:0x0051\l|r2++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0054|com.google.android.material.appbar.CollapsingToolbarLayout.this.updateScrimVisibility()\l}"];
+subgraph cluster_IfRegion_60990112 {
+label = "IF [B:15:0x005d, B:16:0x005f] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x005d|if (com.google.android.material.appbar.CollapsingToolbarLayout.this.statusBarScrim != null) goto L17\l}"];
+Node_16 [shape=record,label="{16\:\ 0x005f|ADDED_TO_REGION\l|if (r0 \> 0) goto L18\l}"];
+subgraph cluster_Region_641573078 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0061|androidx.core.view.ViewCompat.postInvalidateOnAnimation(com.google.android.material.appbar.CollapsingToolbarLayout.this)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0066|int int r1 = com.google.android.material.appbar.CollapsingToolbarLayout.this.getHeight()\lint int r2 = (r1 \- androidx.core.view.ViewCompat.getMinimumHeight(com.google.android.material.appbar.CollapsingToolbarLayout.this)) \- r0\lint int r3 = r1 \- com.google.android.material.appbar.CollapsingToolbarLayout.this.getScrimVisibleHeightTrigger()\lcom.google.android.material.appbar.CollapsingToolbarLayout.this.collapsingTextHelper.setFadeModeStartFraction(java.lang.Math.min(1.0f, r3 \/ r2))\lcom.google.android.material.appbar.CollapsingToolbarLayout.this.collapsingTextHelper.setCurrentOffsetY(com.google.android.material.appbar.CollapsingToolbarLayout.this.currentOffset + r2)\lcom.google.android.material.appbar.CollapsingToolbarLayout.this.collapsingTextHelper.setExpansionFraction(java.lang.Math.abs(r11) \/ r2)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0051|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0051|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0051|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0054|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x00a7}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0014}"];
+MethodNode[shape=record,label="{public void com.google.android.material.appbar.CollapsingToolbarLayout.OffsetUpdateListener.onOffsetChanged((r9v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout$OffsetUpdateListener A[IMMUTABLE_TYPE, THIS]), (r10v0 'layout' com.google.android.material.appbar.AppBarLayout A[D('layout' com.google.android.material.appbar.AppBarLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'verticalOffset' int A[D('verticalOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0051 \-\> B:7:0x001c, CROSS_EDGE: B:12:0x0042 \-\> B:13:0x0051, CROSS_EDGE: B:9:0x0030 \-\> B:13:0x0051, CROSS_EDGE: B:16:0x005f \-\> B:18:0x0066, CROSS_EDGE: B:15:0x005d \-\> B:18:0x0066, CROSS_EDGE: B:5:0x0014 \-\> B:6:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener.onOffsetChanged(T extends com.google.android.material.appbar.AppBarLayout, int):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_20[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_11;
+Node_9 -> Node_12;
+Node_9 -> Node_23;
+Node_12 -> Node_21;
+Node_11 -> Node_22;
+Node_13 -> Node_7;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_22 -> Node_13;
+Node_21 -> Node_13;
+Node_23 -> Node_13;
+Node_20 -> Node_14;
+Node_19 -> Node_1;
+Node_5 -> Node_6;
+}
+

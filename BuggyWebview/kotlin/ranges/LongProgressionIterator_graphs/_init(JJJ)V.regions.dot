@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.ranges.LongProgressionIterator.\<init\>(JJJ)V" {
+subgraph cluster_Region_1010901331 {
+label = "R(4:1|(1:4)|5|8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|r5.step = r10\lr5.finalElement = r8\lboolean r0 = true\lint int r2 = (r6 \> r8 ? 1 : (r6 == r8 ? 0 : \-1))\l}"];
+subgraph cluster_IfRegion_365746493 {
+label = "IF [B:18:0x000f, B:21:0x0014, B:19:0x0011] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000f|if (r10 \<= 0) goto L12\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0014|ADDED_TO_REGION\l|if (r2 \< 0) goto L4\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0011|ADDED_TO_REGION\l|if (r2 \> 0) goto L4\l}"];
+subgraph cluster_Region_390854947 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|r0 = false\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0018|PHI: r0 \l  PHI: (r0v1 boolean) = (r0v0 boolean), (r0v5 boolean), (r0v0 boolean) binds: [B:21:0x0014, B:23:0x0017, B:19:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|r5.hasNext = r0\l}"];
+Node_28 [shape=record,label="{28\:\ 0x001f|PHI: r0 \l  PHI: (r0v3 long A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r5.next = r0 ? r6 : r8\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001a}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001c}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0021}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001e}"];
+MethodNode[shape=record,label="{public void kotlin.ranges.LongProgressionIterator.\<init\>((r5v0 'this' kotlin.ranges.LongProgressionIterator A[IMMUTABLE_TYPE, THIS]), (r6v0 'first' long A[D('first' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'last' long A[D('last' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'step' long A[D('step' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x001e \-\> B:28:0x001f, CROSS_EDGE: B:19:0x0011 \-\> B:24:0x0018, CROSS_EDGE: B:21:0x0014 \-\> B:23:0x0017, CROSS_EDGE: B:21:0x0014 \-\> B:24:0x0018\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_21 -> Node_23;
+Node_21 -> Node_24[style=dashed];
+Node_19 -> Node_23;
+Node_19 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_28 -> Node_29;
+Node_15 -> Node_17;
+Node_25 -> Node_26;
+Node_25 -> Node_27;
+Node_26 -> Node_28;
+Node_29 -> Node_16;
+Node_27 -> Node_28;
+}
+

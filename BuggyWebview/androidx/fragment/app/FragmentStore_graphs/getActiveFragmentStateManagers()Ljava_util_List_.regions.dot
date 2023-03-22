@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.fragment.app.FragmentStore.getActiveFragmentStateManagers()Ljava\/util\/List;" {
+subgraph cluster_Region_1892757070 {
+label = "R(3:1|(2:4|(1:7)(0))|12)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.ArrayList java.util.ArrayList\<androidx.fragment.app.FragmentStateManager\> r0 = new java.util.ArrayList\<\>()\ljava.util.Iterator r1 = r3.mActive.values().iterator()\l\l}"];
+subgraph cluster_LoopRegion_1177612386 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|androidx.fragment.app.FragmentStateManager \lif (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_826752928 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|androidx.fragment.app.FragmentStateManager r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_1013259587 {
+label = "IF [B:6:0x001b] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|if (r2 != null) goto L6\l}"];
+subgraph cluster_Region_1906783200 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|r0.add(r2)\l}"];
+}
+subgraph cluster_Region_461895877 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0021|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000f|LOOP_START\lLOOP:0: B:3:0x000f\-\>B:12:0x000f\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001d|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000f|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000f|LOOP_END\lSYNTHETIC\lLOOP:0: B:3:0x000f\-\>B:12:0x000f\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000f|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0021|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.util.List\<androidx.fragment.app.FragmentStateManager\> androidx.fragment.app.FragmentStore.getActiveFragmentStateManagers((r3v0 'this' androidx.fragment.app.FragmentStore A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x001d \-\> B:3:0x000f, BACK_EDGE: B:6:0x001b \-\> B:3:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\lSIGNATURE: ()Ljava\/util\/List\<Landroidx\/fragment\/app\/FragmentStateManager;\>;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_11;
+Node_6 -> Node_13[style=dashed];
+Node_7 -> Node_14;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_11 -> Node_7;
+Node_14 -> Node_12;
+Node_12 -> Node_3;
+Node_13 -> Node_12;
+Node_10 -> Node_9;
+}
+

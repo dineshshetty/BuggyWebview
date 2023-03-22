@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.core.widget.NestedScrollView.smoothScrollBy(IIIZ)V" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000}"];
+Node_17 [shape=record,label="{17\:\ 0x0006|if (getChildCount() != 0) goto L5\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0008|RETURN\l|return\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0009|long r1 = android.view.animation.AnimationUtils.currentAnimationTimeMillis() \- r16.mLastScroll\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0014|if ((r1 \> 250 ? 1 : (r1 == 250 ? 0 : \-1)) \<= 0) goto L10\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0016|android.view.View r4 = getChildAt(0)\landroid.widget.FrameLayout$LayoutParams r5 = (android.widget.FrameLayout.LayoutParams) r4.getLayoutParams()\lint r6 = (r4.getHeight() + r5.topMargin) + r5.bottomMargin\lint r7 = (getHeight() \- getPaddingTop()) \- getPaddingBottom()\lint r14 = getScrollY()\lint r15 = java.lang.Math.max(0, r6 \- r7)\landroid.widget.OverScroller r8 = r16.mScroller\lint r9 = getScrollX()\lr8.startScroll(r9, r14, 0, java.lang.Math.max(0, java.lang.Math.min(r14 + r18, r15)) \- r14, r19)\lrunAnimatedScroll(r20)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0074|r16.mLastScroll = android.view.animation.AnimationUtils.currentAnimationTimeMillis()\l}"];
+Node_27 [shape=record,label="{27\:\ 0x007a|RETURN\l|return\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0062}"];
+Node_23 [shape=record,label="{23\:\ 0x006a|if (r16.mScroller.isFinished() != false) goto L13\l}"];
+Node_24 [shape=record,label="{24\:\ 0x006c|abortAnimatedScroll()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x006f|scrollBy(r17, r18)\l}"];
+MethodNode[shape=record,label="{private void androidx.core.widget.NestedScrollView.smoothScrollBy((r16v0 'this' androidx.core.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]), (r17v0 'dx' int A[D('dx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'dy' int A[D('dy' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'scrollDurationMs' int A[D('scrollDurationMs' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 'withNestedScrolling' boolean A[D('withNestedScrolling' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x007a \-\> B:15:?, CROSS_EDGE: B:25:0x006f \-\> B:26:0x0074, CROSS_EDGE: B:23:0x006a \-\> B:25:0x006f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+Node_18 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_21 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_15;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+}
+

@@ -1,0 +1,59 @@
+digraph "CFG forkotlinx.coroutines.selects.SelectBuilderImpl.trySelect()Z" {
+subgraph cluster_Region_974696531 {
+label = "R(2:1|(2:(1:3)|(1:(2:(1:6)|(1:8)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.lang.Object java.lang.Object r0 = trySelectOther(null)\l}"];
+subgraph cluster_Region_1017227729 {
+label = "R(2:(1:3)|(1:(2:(1:6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_186119353 {
+label = "IF [B:14:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|if (r0 == kotlinx.coroutines.CancellableContinuationImplKt.RESUME_TOKEN) goto L3\l}"];
+subgraph cluster_Region_1903776262 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000a|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1421695600 {
+label = "R(1:(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2138825448 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_699983467 {
+label = "IF [B:16:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000c|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_1319445495 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1587047845 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001f|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Unexpected trySelectIdempotent result \", r0).toString())\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0010}"];
+MethodNode[shape=record,label="{public boolean kotlinx.coroutines.selects.SelectBuilderImpl.trySelect((r3v0 'this' kotlinx.coroutines.selects.SelectBuilderImpl\<R\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000e \-\> B:18:0x000f, CROSS_EDGE: B:20:0x001f \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lMETHOD_OVERRIDE: [kotlinx.coroutines.selects.SelectInstance.trySelect():boolean]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_12;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_19 -> Node_20;
+}
+

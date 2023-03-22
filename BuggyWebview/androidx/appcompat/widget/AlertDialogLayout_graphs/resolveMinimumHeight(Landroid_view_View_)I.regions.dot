@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.appcompat.widget.AlertDialogLayout.resolveMinimumHeight(Landroid\/view\/View;)I" {
+subgraph cluster_Region_607603954 {
+label = "R(2:1|(2:(1:3)|(2:(2:7|(1:10))|11)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = androidx.core.view.ViewCompat.getMinimumHeight(r5)\l}"];
+subgraph cluster_Region_1756884774 {
+label = "R(2:(1:3)|(2:(2:7|(1:10))|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1701457548 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 \> 0) goto L3\l}"];
+subgraph cluster_Region_68110054 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_782667077 {
+label = "R(2:(2:7|(1:10))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_181251448 {
+label = "IF [B:6:0x000a] THEN: R(2:7|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|if ((r5 instanceof android.view.ViewGroup) != false) goto L7\l}"];
+subgraph cluster_Region_995495104 {
+label = "R(2:7|(1:10))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|android.view.ViewGroup android.view.ViewGroup r1 = (android.view.ViewGroup) r5\l}"];
+subgraph cluster_IfRegion_630757252 {
+label = "IF [B:8:0x0014] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|if (r1.getChildCount() == 1) goto L9\l}"];
+subgraph cluster_Region_296928245 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|RETURN\l|return resolveMinimumHeight(r1.getChildAt(0))\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x001f|RETURN\l|return 0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0016}"];
+MethodNode[shape=record,label="{private static int androidx.appcompat.widget.AlertDialogLayout.resolveMinimumHeight((r5v0 'v' android.view.View A[D('v' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x001e \-\> B:1:?, CROSS_EDGE: B:11:0x001f \-\> B:1:?, CROSS_EDGE: B:6:0x000a \-\> B:11:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_10 -> Node_1;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+}
+

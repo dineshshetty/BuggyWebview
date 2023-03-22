@@ -1,0 +1,89 @@
+digraph "CFG forandroidx.core.view.ViewParentCompat.onNestedPreFling(Landroid\/view\/ViewParent;Landroid\/view\/View;FF)Z" {
+subgraph cluster_Region_2105884448 {
+label = "R(1:(1:(1:11))(1:(1:6)(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2086339150 {
+label = "IF [B:20:0x0004] THEN: R(1:(1:11)) ELSE: R(1:(1:6)(1:8))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L9\l}"];
+subgraph cluster_Region_1142432706 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1193136643 {
+label = "Try: R(1:11) catches: R(3:13|14|15)";
+node [shape=record,color=blue];
+subgraph cluster_Region_322279935 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000a|RETURN\l|return androidx.core.view.ViewParentCompat.Api21Impl.onNestedPreFling(r3, r4, r5, r6)\l}"];
+}
+subgraph cluster_Region_928555173 {
+label = "R(3:13|14|15) | ExcHandler: AbstractMethodError \-\> 0x000b\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000b|ExcHandler: AbstractMethodError \-\> 0x000b\l}"];
+Node_24 [shape=record,label="{24\:\ 0x000c|android.util.Log.e(androidx.core.view.ViewParentCompat.TAG, \"ViewParent \" + r3 + \" does not implement interface method onNestedPreFling\", r0)\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0034|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_853251007 {
+label = "R(1:(1:6)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_469746221 {
+label = "IF [B:26:0x002a] THEN: R(1:6) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002a|if ((r3 instanceof androidx.core.view.NestedScrollingParent) != false) goto L5\l}"];
+subgraph cluster_Region_616192716 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0033|RETURN\l|return ((androidx.core.view.NestedScrollingParent) r3).onNestedPreFling(r4, r5, r6)\l}"];
+}
+subgraph cluster_Region_1444256630 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_928555173 {
+label = "R(3:13|14|15) | ExcHandler: AbstractMethodError \-\> 0x000b\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000b|ExcHandler: AbstractMethodError \-\> 0x000b\l}"];
+Node_24 [shape=record,label="{24\:\ 0x000c|android.util.Log.e(androidx.core.view.ViewParentCompat.TAG, \"ViewParent \" + r3 + \" does not implement interface method onNestedPreFling\", r0)\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0034|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0028}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002c}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0006|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0006|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{AbstractMethodError \-\> 0x000b, blocks: (B:21:0x0006), top: B:31:0x0006 \}\lCatch: AbstractMethodError \-\> 0x000b\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.view.ViewParentCompat.onNestedPreFling((r3v0 'parent' android.view.ViewParent A[D('parent' android.view.ViewParent), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'target' android.view.View A[D('target' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'velocityX' float A[D('velocityX' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'velocityY' float A[D('velocityY' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:30:0x0035 \-\> B:18:?, CROSS_EDGE: B:22:0x000a \-\> B:18:?, CROSS_EDGE: B:24:0x000c \-\> B:29:0x0034, CROSS_EDGE: B:31:0x0006 \-\> B:23:0x000b\lINLINE_NOT_NEEDED\lTryCatch #0 \{AbstractMethodError \-\> 0x000b, blocks: (B:21:0x0006), top: B:31:0x0006 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_20 -> Node_25[style=dashed];
+Node_20 -> Node_31;
+Node_22 -> Node_18;
+Node_23 -> Node_24;
+Node_24 -> Node_29;
+Node_29 -> Node_18;
+Node_26 -> Node_27;
+Node_26 -> Node_33[style=dashed];
+Node_28 -> Node_18;
+Node_33 -> Node_18;
+Node_23 -> Node_24;
+Node_24 -> Node_29;
+Node_29 -> Node_18;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_31 -> Node_21;
+Node_31 -> Node_23;
+Node_21 -> Node_22;
+Node_21 -> Node_32;
+Node_32 -> Node_23;
+}
+

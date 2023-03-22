@@ -1,0 +1,141 @@
+digraph "CFG forkotlinx.coroutines.channels.ArrayBroadcastChannel.Subscriber.pollSelectInternal(Lkotlinx\/coroutines\/selects\/SelectInstance;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_681748945 {
+label = "R(2:1|(8:3|(1:(1:24)(2:25|26))|6|7|(1:10)|(1:13)|(1:15)|16))";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0000|boolean r0 = false\ljava.util.concurrent.locks.ReentrantLock java.util.concurrent.locks.ReentrantLock r1 = r10.subLock\ljava.util.concurrent.locks.Lock java.util.concurrent.locks.ReentrantLock r3 = r1\lr3.lock()\l}"];
+subgraph cluster_TryCatchRegion_2028344676 {
+label = "Try: R(8:3|(1:(1:24)(2:25|26))|6|7|(1:10)|(1:13)|(1:15)|16) catches: R(3:27|28|29)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1819993782 {
+label = "R(8:3|(1:(1:24)(2:25|26))|6|7|(1:10)|(1:13)|(1:15)|16)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x000b|TRY_ENTER\lTryCatch #0 \{all \-\> 0x005a, blocks: (B:34:0x000b, B:37:0x0015, B:40:0x001a, B:42:0x0020, B:43:0x0026), top: B:61:0x000b \}\lCatch: all \-\> 0x005a\l|java.lang.Object java.lang.Object r5 = peekUnderLock()     \/\/ Catch: java.lang.Throwable \-\> L5a\l}"];
+subgraph cluster_IfRegion_718710120 {
+label = "IF [B:35:0x0012, B:38:0x0017] THEN: R(1:(1:24)(2:25|26)) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0012|if ((r5 instanceof kotlinx.coroutines.channels.Closed) == false) goto L19\l}"];
+Node_38 [shape=record,label="{38\:\ 0x0017|ADDED_TO_REGION\l|if (r5 != kotlinx.coroutines.channels.AbstractChannelKt.POLL_FAILED) goto L22\l}"];
+subgraph cluster_Region_693571057 {
+label = "R(1:(1:24)(2:25|26))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_551173857 {
+label = "IF [B:41:0x001e] THEN: R(1:24) ELSE: R(2:25|26)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x001e|if (r11.trySelect() == false) goto L24\l}"];
+subgraph cluster_Region_587114605 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0020|TryCatch #0 \{all \-\> 0x005a, blocks: (B:34:0x000b, B:37:0x0015, B:40:0x001a, B:42:0x0020, B:43:0x0026), top: B:61:0x000b \}\lCatch: all \-\> 0x005a\l|r5 = kotlinx.coroutines.selects.SelectKt.getALREADY_SELECTED()     \/\/ Catch: java.lang.Throwable \-\> L5a\l}"];
+}
+subgraph cluster_Region_152510670 {
+label = "R(2:25|26)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0026|TRY_LEAVE\lTryCatch #0 \{all \-\> 0x005a, blocks: (B:34:0x000b, B:37:0x0015, B:40:0x001a, B:42:0x0020, B:43:0x0026), top: B:61:0x000b \}\lCatch: all \-\> 0x005a\l|long long r6 = getSubHead()     \/\/ Catch: java.lang.Throwable \-\> L5a\lsetSubHead(1 + r6)     \/\/ Catch: java.lang.Throwable \-\> L5a\l}"];
+Node_44 [shape=record,label="{44\:\ 0x0030|r0 = true\l}"];
+}
+}
+}
+}
+Node_45 [shape=record,label="{45\:\ 0x0031|PHI: r0 r5 \l  PHI: (r0v2 'updated' boolean) = (r0v1 'updated' boolean), (r0v0 'updated' boolean), (r0v0 'updated' boolean), (r0v0 'updated' boolean) binds: [B:44:0x0030, B:42:0x0020, B:39:0x0019, B:36:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v2 'result' java.lang.Object) = (r5v0 'result' java.lang.Object), (r5v1 'result' java.lang.Object), (r5v0 'result' java.lang.Object), (r5v0 'result' java.lang.Object) binds: [B:44:0x0030, B:42:0x0020, B:39:0x0019, B:36:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|r3.unlock()\ljava.lang.Object r1 = r5\l}"];
+Node_46 [shape=record,label="{46\:\ 0x003a|kotlinx.coroutines.channels.Closed r2 = r1 instanceof kotlinx.coroutines.channels.Closed ? (kotlinx.coroutines.channels.Closed) r1 : null\l}"];
+subgraph cluster_IfRegion_295872978 {
+label = "IF [B:49:0x0041] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x0041|PHI: r2 \l  PHI: (r2v3 'it' kotlinx.coroutines.channels.Closed) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 != null) goto L10\l}"];
+subgraph cluster_Region_271431619 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_51 [shape=record,label="{51\:\ 0x0044|close(r2.closeCause)\l}"];
+}
+}
+subgraph cluster_IfRegion_219316942 {
+label = "IF [B:53:0x004e] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x004e|if (checkOffer() != false) goto L13\l}"];
+subgraph cluster_Region_76499603 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_54 [shape=record,label="{54\:\ 0x0050|r0 = true\l}"];
+}
+}
+subgraph cluster_IfRegion_1361781091 {
+label = "IF [B:55:0x0051] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_55 [shape=record,label="{55\:\ 0x0051|PHI: r0 \l  PHI: (r0v3 'updated' boolean) = (r0v2 'updated' boolean), (r0v4 'updated' boolean) binds: [B:53:0x004e, B:54:0x0050] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != false) goto L15\l}"];
+subgraph cluster_Region_1159195453 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_56 [shape=record,label="{56\:\ 0x0053|kotlinx.coroutines.channels.ArrayBroadcastChannel.updateHead$default(r10.broadcastChannel, null, null, 3, null)\l}"];
+}
+}
+Node_57 [shape=record,label="{57\:\ 0x0059|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_1549515431 {
+label = "R(3:27|28|29) | ExcHandler: all \-\> 0x005a\l";
+node [shape=record,color=blue];
+Node_58 [shape=record,label="{58\:\ 0x005a|ExcHandler: all \-\> 0x005a\l}"];
+Node_59 [shape=record,label="{59\:\ 0x005b|r3.unlock()\l}"];
+Node_60 [shape=record,label="{60\:\ 0x005e|throw r4\l}"];
+}
+}
+}
+subgraph cluster_Region_1549515431 {
+label = "R(3:27|28|29) | ExcHandler: all \-\> 0x005a\l";
+node [shape=record,color=blue];
+Node_58 [shape=record,label="{58\:\ 0x005a|ExcHandler: all \-\> 0x005a\l}"];
+Node_59 [shape=record,label="{59\:\ 0x005b|r3.unlock()\l}"];
+Node_60 [shape=record,label="{60\:\ 0x005e|throw r4\l}"];
+}
+Node_31 [shape=record,color=red,label="{31\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_61 [shape=record,color=red,label="{61\:\ 0x000b|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0014|ADDED_TO_REGION\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x003c}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x004a}"];
+Node_32 [shape=record,color=red,label="{32\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x0040}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0015|TryCatch #0 \{all \-\> 0x005a, blocks: (B:34:0x000b, B:37:0x0015, B:40:0x001a, B:42:0x0020, B:43:0x0026), top: B:61:0x000b \}\lCatch: all \-\> 0x005a\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0019|ADDED_TO_REGION\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x001a|TryCatch #0 \{all \-\> 0x005a, blocks: (B:34:0x000b, B:37:0x0015, B:40:0x001a, B:42:0x0020, B:43:0x0026), top: B:61:0x000b \}\lCatch: all \-\> 0x005a\l}"];
+MethodNode[shape=record,label="{protected java.lang.Object kotlinx.coroutines.channels.ArrayBroadcastChannel.Subscriber.pollSelectInternal((r10v0 'this' kotlinx.coroutines.channels.ArrayBroadcastChannel$Subscriber\<E\> A[IMMUTABLE_TYPE, THIS]), (r11v0 kotlinx.coroutines.selects.SelectInstance\<?\> A[D('select' kotlinx.coroutines.selects.SelectInstance), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:55:0x0051 \-\> B:57:0x0059, CROSS_EDGE: B:53:0x004e \-\> B:55:0x0051, CROSS_EDGE: B:49:0x0041 \-\> B:52:0x004a, CROSS_EDGE: B:48:0x0040 \-\> B:49:0x0041, CROSS_EDGE: B:39:0x0019 \-\> B:45:0x0031, CROSS_EDGE: B:42:0x0020 \-\> B:45:0x0031, CROSS_EDGE: B:44:0x0030 \-\> B:45:0x0031, CROSS_EDGE: B:60:0x005e \-\> B:32:?\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x005a, blocks: (B:34:0x000b, B:37:0x0015, B:40:0x001a, B:42:0x0020, B:43:0x0026), top: B:61:0x000b \}\lTYPE_VARS: [E]\lSIGNATURE: (Lkotlinx\/coroutines\/selects\/SelectInstance\<*\>;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.AbstractChannel.pollSelectInternal(kotlinx.coroutines.selects.SelectInstance\<?\>):java.lang.Object]\l}"];
+MethodNode -> Node_31;Node_33 -> Node_61;
+Node_34 -> Node_35;
+Node_35 -> Node_36[style=dashed];
+Node_35 -> Node_37;
+Node_38 -> Node_39[style=dashed];
+Node_38 -> Node_40;
+Node_41 -> Node_42;
+Node_41 -> Node_43[style=dashed];
+Node_42 -> Node_45;
+Node_43 -> Node_44;
+Node_44 -> Node_45;
+Node_45 -> Node_46;
+Node_46 -> Node_47;
+Node_46 -> Node_48;
+Node_49 -> Node_51;
+Node_49 -> Node_52[style=dashed];
+Node_51 -> Node_52;
+Node_53 -> Node_54;
+Node_53 -> Node_55[style=dashed];
+Node_54 -> Node_55;
+Node_55 -> Node_56;
+Node_55 -> Node_57[style=dashed];
+Node_56 -> Node_57;
+Node_57 -> Node_32;
+Node_58 -> Node_59;
+Node_59 -> Node_60;
+Node_60 -> Node_32;
+Node_58 -> Node_59;
+Node_59 -> Node_60;
+Node_60 -> Node_32;
+Node_31 -> Node_33;
+Node_61 -> Node_34;
+Node_61 -> Node_58;
+Node_36 -> Node_45;
+Node_47 -> Node_49;
+Node_52 -> Node_53;
+Node_48 -> Node_49;
+Node_37 -> Node_38;
+Node_39 -> Node_45;
+Node_40 -> Node_41;
+}
+

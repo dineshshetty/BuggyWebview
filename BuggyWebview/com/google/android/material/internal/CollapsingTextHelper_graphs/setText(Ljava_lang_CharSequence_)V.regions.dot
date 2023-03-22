@@ -1,0 +1,37 @@
+digraph "CFG forcom.google.android.material.internal.CollapsingTextHelper.setText(Ljava\/lang\/CharSequence;)V" {
+subgraph cluster_Region_720497661 {
+label = "R(1:(1:(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2081601644 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_45765334 {
+label = "IF [B:10:0x0000, B:12:0x0008] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|if (r2 == null) goto L6\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0008|ADDED_TO_REGION\l|if (android.text.TextUtils.equals(r1.text, r2) == false) goto L6\l}"];
+subgraph cluster_Region_1943559716 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|r1.text = r2\lr1.textToDraw = null\lclearTexture()\lrecalculate()\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0002}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0015|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.internal.CollapsingTextHelper.setText((r1v0 'this' com.google.android.material.internal.CollapsingTextHelper A[IMMUTABLE_TYPE, THIS]), (r2v0 'text' java.lang.CharSequence A[D('text' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0008 \-\> B:14:0x0015, CROSS_EDGE: B:10:0x0000 \-\> B:13:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_13;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_9;
+Node_14 -> Node_9;
+}
+

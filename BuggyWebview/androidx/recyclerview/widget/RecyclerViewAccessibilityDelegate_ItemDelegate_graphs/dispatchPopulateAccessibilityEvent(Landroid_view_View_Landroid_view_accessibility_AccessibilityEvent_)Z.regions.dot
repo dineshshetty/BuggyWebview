@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerViewAccessibilityDelegate.ItemDelegate.dispatchPopulateAccessibilityEvent(Landroid\/view\/View;Landroid\/view\/accessibility\/AccessibilityEvent;)Z" {
+subgraph cluster_Region_870173273 {
+label = "R(2:1|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|androidx.core.view.AccessibilityDelegateCompat androidx.core.view.AccessibilityDelegateCompat r0 = r2.mOriginalItemDelegates.get(r3)\l}"];
+subgraph cluster_Region_937145187 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_679816364 {
+label = "IF [B:11:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1438725615 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000e|RETURN\l|return r0.dispatchPopulateAccessibilityEvent(r3, r4)\l}"];
+}
+}
+subgraph cluster_Region_305081600 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0013|RETURN\l|return super.dispatchPopulateAccessibilityEvent(r3, r4)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000a}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000f}"];
+MethodNode[shape=record,label="{public boolean androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate.ItemDelegate.dispatchPopulateAccessibilityEvent((r2v0 'this' androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate$ItemDelegate A[IMMUTABLE_TYPE, THIS]), (r3v0 'host' android.view.View A[D('host' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'event' android.view.accessibility.AccessibilityEvent A[D('event' android.view.accessibility.AccessibilityEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0013 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.AccessibilityDelegateCompat.dispatchPopulateAccessibilityEvent(android.view.View, android.view.accessibility.AccessibilityEvent):boolean]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.recyclerview.widget.GridLayoutManager.assignSpans(Landroidx\/recyclerview\/widget\/RecyclerView$Recycler;Landroidx\/recyclerview\/widget\/RecyclerView$State;IZ)V" {
+subgraph cluster_Region_1284231945 {
+label = "R(3:(1:2)(1:9)|3|(1:5)) | DECL_VAR: int start, int end, int diff\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2095364695 {
+label = "IF [B:12:0x0000] THEN: R(1:2) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r12 != false) goto L2\l}"];
+subgraph cluster_Region_1523816273 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|r0 = 0\lr1 = r11\lr2 = 1\l}"];
+}
+subgraph cluster_Region_1737011236 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|int r0 = r11 \- 1\lr1 = \-1\lr2 = \-1\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x000a|PHI: r0 r1 r2 \l  PHI: (r0v1 'start' int) = (r0v0 'start' int), (r0v2 'start' int) binds: [B:14:0x0006, B:13:0x0002] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'end' int) = (r1v0 'end' int), (r1v2 'end' int) binds: [B:14:0x0006, B:13:0x0002] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'diff' int) = (r2v0 'diff' int), (r2v2 'diff' int) binds: [B:14:0x0006, B:13:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|int r3 = 0\lint r4 = r0\l}"];
+subgraph cluster_LoopRegion_228193985 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000c|LOOP_START\lLOOP:0: B:16:0x000c\-\>B:17:0x000e\lPHI: r3 r4 \l  PHI: (r3v1 'span' int) = (r3v0 'span' int), (r3v2 'span' int) binds: [B:15:0x000a, B:17:0x000e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'i' int) = (r4v0 'i' int), (r4v2 'i' int) binds: [B:15:0x000a, B:17:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 != r1) goto L5\l}"];
+subgraph cluster_Region_791833235 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|LOOP_END\lLOOP:0: B:16:0x000c\-\>B:17:0x000e\l|android.view.View r5 = r8.mSet[r4]\landroidx.recyclerview.widget.GridLayoutManager$LayoutParams androidx.recyclerview.widget.GridLayoutManager.LayoutParams r6 = (androidx.recyclerview.widget.GridLayoutManager.LayoutParams) r5.getLayoutParams()\lr6.mSpanSize = getSpanSize(r9, r10, getPosition(r5))\lr6.mSpanIndex = r3\lr3 += r6.mSpanSize\lr4 += r2\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0029|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0029}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.GridLayoutManager.assignSpans((r8v0 'this' androidx.recyclerview.widget.GridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r9v0 'recycler' androidx.recyclerview.widget.RecyclerView$Recycler A[D('recycler' androidx.recyclerview.widget.RecyclerView$Recycler), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'count' int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'layingOutInPrimaryDirection' boolean A[D('layingOutInPrimaryDirection' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x000e \-\> B:16:0x000c, CROSS_EDGE: B:14:0x0006 \-\> B:15:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_16;
+Node_10 -> Node_12;
+Node_19 -> Node_18;
+Node_18 -> Node_11;
+}
+

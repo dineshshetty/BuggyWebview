@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.writeCharArray([CI)V" {
+subgraph cluster_Region_1937277429 {
+label = "R(2:1|(2:(3:3|(1:5)|7)|(1:9)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|setOutputField(r5)\l}"];
+subgraph cluster_Region_1946416285 {
+label = "R(2:(3:3|(1:5)|7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_997209958 {
+label = "IF [B:15:0x0003] THEN: R(3:3|(1:5)|7) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0003|if (r4 != null) goto L3\l}"];
+subgraph cluster_Region_1893647566 {
+label = "R(3:3|(1:5)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|int int r0 = r4.length\lwriteInt(r0)\lint r1 = 0\l\l}"];
+subgraph cluster_LoopRegion_1414084316 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|LOOP_START\lLOOP:0: B:17:0x000a\-\>B:18:0x000c\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:16:0x0005, B:18:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|char \lif (r1 \< r0) goto L5\l}"];
+subgraph cluster_Region_1703050029 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|LOOP_END\lLOOP:0: B:17:0x000a\-\>B:18:0x000c\l|writeInt(r2)\lr1++\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1669948041 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0015|writeInt(\-1)\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0019|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0019|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.versionedparcelable.VersionedParcel.writeCharArray((r3v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]), (r4v0 'val' char[] A[D('val' char[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'fieldId' int A[D('fieldId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:18:0x000c \-\> B:17:0x000a, CROSS_EDGE: B:20:0x0015 \-\> B:21:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_20[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_22[style=dashed];
+Node_18 -> Node_17;
+Node_23 -> Node_13;
+Node_20 -> Node_21;
+Node_12 -> Node_14;
+Node_22 -> Node_23;
+Node_21 -> Node_13;
+}
+

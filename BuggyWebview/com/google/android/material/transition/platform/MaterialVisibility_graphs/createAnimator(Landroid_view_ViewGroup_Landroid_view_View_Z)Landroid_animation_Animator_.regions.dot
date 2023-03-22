@@ -1,0 +1,34 @@
+digraph "CFG forcom.google.android.material.transition.platform.MaterialVisibility.createAnimator(Landroid\/view\/ViewGroup;Landroid\/view\/View;Z)Landroid\/animation\/Animator;" {
+subgraph cluster_Region_316037941 {
+label = "R(4:1|(1:4)|6|7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|android.animation.AnimatorSet android.animation.AnimatorSet r0 = new android.animation.AnimatorSet()\ljava.util.ArrayList java.util.List\<android.animation.Animator\> r1 = new java.util.ArrayList\<\>()\laddAnimatorIfNeeded(r1, r4.primaryAnimatorProvider, r5, r6, r7)\laddAnimatorIfNeeded(r1, r4.secondaryAnimatorProvider, r5, r6, r7)\ljava.util.Iterator r2 = r4.additionalAnimatorProviders.iterator()\l\l}"];
+subgraph cluster_LoopRegion_62151044 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001e|com.google.android.material.transition.platform.VisibilityAnimatorProvider \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1566338145 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0020|LOOP_END\lLOOP:0: B:12:0x001a\-\>B:14:0x0020\l|com.google.android.material.transition.platform.VisibilityAnimatorProvider r3 = r2.next()\laddAnimatorIfNeeded(r1, r3, r5, r6, r7)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x002a|maybeApplyThemeValues(r5.getContext(), r7)\lcom.google.android.material.animation.AnimatorSetCompat.playTogether(r0, r1)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0034|RETURN\l|return r0\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001a|LOOP_START\lLOOP:0: B:12:0x001a\-\>B:14:0x0020\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x002a|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.animation.Animator com.google.android.material.transition.platform.MaterialVisibility.createAnimator((r4v0 'this' com.google.android.material.transition.platform.MaterialVisibility\<P extends com.google.android.material.transition.platform.VisibilityAnimatorProvider\> A[D('this' com.google.android.material.transition.platform.MaterialVisibility\<P extends com.google.android.material.transition.platform.VisibilityAnimatorProvider\>), IMMUTABLE_TYPE, THIS]), (r5v0 'sceneRoot' android.view.ViewGroup A[D('sceneRoot' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'appearing' boolean A[D('appearing' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x0020 \-\> B:12:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: [P extends com.google.android.material.transition.platform.VisibilityAnimatorProvider]\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_14 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_10;
+Node_9 -> Node_11;
+Node_12 -> Node_13;
+Node_17 -> Node_15;
+}
+

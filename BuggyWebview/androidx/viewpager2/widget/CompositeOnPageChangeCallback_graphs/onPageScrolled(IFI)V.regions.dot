@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.viewpager2.widget.CompositeOnPageChangeCallback.onPageScrolled(IFI)V" {
+subgraph cluster_Region_1489075659 {
+label = "R(1:(2:2|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_85857468 {
+label = "Try: R(2:2|(1:5)) catches: R(2:10|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1425757800 {
+label = "R(2:2|(1:5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|TRY_ENTER\lTryCatch #0 \{ConcurrentModificationException \-\> 0x0017, blocks: (B:2:0x0000, B:3:0x0006, B:5:0x000c), top: B:11:0x0000 \}\lCatch: ConcurrentModificationException \-\> 0x0017\l|java.util.Iterator r0 = r2.mCallbacks.iterator()     \/\/ Catch: java.util.ConcurrentModificationException \-\> L17\l\l}"];
+subgraph cluster_LoopRegion_970465523 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|androidx.viewpager2.widget.ViewPager2$OnPageChangeCallback \lif (r0.hasNext() != false) goto L5\l}"];
+subgraph cluster_Region_1789144358 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|TRY_LEAVE\lLOOP_END\lTryCatch #0 \{ConcurrentModificationException \-\> 0x0017, blocks: (B:2:0x0000, B:3:0x0006, B:5:0x000c), top: B:11:0x0000 \}\lLOOP:0: B:3:0x0006\-\>B:5:0x000c\lCatch: ConcurrentModificationException \-\> 0x0017\l|androidx.viewpager2.widget.ViewPager2$OnPageChangeCallback r1 = r0.next()     \/\/ Catch: java.util.ConcurrentModificationException \-\> L17\lr1.onPageScrolled(r3, r4, r5)     \/\/ Catch: java.util.ConcurrentModificationException \-\> L17\l}"];
+}
+}
+}
+subgraph cluster_Region_527068986 {
+label = "R(2:10|11) | ExcHandler: ConcurrentModificationException \-\> 0x0017\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|ExcHandler: ConcurrentModificationException \-\> 0x0017\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0018|throwCallbackListModifiedWhileInUse(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_527068986 {
+label = "R(2:10|11) | ExcHandler: ConcurrentModificationException \-\> 0x0017\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|ExcHandler: ConcurrentModificationException \-\> 0x0017\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0018|throwCallbackListModifiedWhileInUse(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006|LOOP_START\lTryCatch #0 \{ConcurrentModificationException \-\> 0x0017, blocks: (B:2:0x0000, B:3:0x0006, B:5:0x000c), top: B:11:0x0000 \}\lLOOP:0: B:3:0x0006\-\>B:5:0x000c\lCatch: ConcurrentModificationException \-\> 0x0017\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001b|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001b|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.viewpager2.widget.CompositeOnPageChangeCallback.onPageScrolled((r2v0 'this' androidx.viewpager2.widget.CompositeOnPageChangeCallback A[IMMUTABLE_TYPE, THIS]), (r3v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'positionOffset' float A[D('positionOffset' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'positionOffsetPixels' int A[D('positionOffsetPixels' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:5:0x000c \-\> B:3:0x0006, CROSS_EDGE: B:9:0x0018 \-\> B:10:0x001b, CROSS_EDGE: B:11:0x0000 \-\> B:8:0x0017\lINLINE_NOT_NEEDED\lTryCatch #0 \{ConcurrentModificationException \-\> 0x0017, blocks: (B:2:0x0000, B:3:0x0006, B:5:0x000c), top: B:11:0x0000 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback.onPageScrolled(int, float, int):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_5 -> Node_3;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_11;
+Node_11 -> Node_2;
+Node_11 -> Node_8;
+Node_3 -> Node_4;
+Node_3 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+Node_12 -> Node_8;
+Node_10 -> Node_1;
+}
+

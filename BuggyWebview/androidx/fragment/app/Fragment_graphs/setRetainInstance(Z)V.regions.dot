@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.fragment.app.Fragment.setRetainInstance(Z)V" {
+subgraph cluster_Region_1807627608 {
+label = "R(2:1|(2:(1:(2:4|5)(2:7|8))|(1:9)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r1.mRetainInstance = r2\landroidx.fragment.app.FragmentManager androidx.fragment.app.FragmentManager r0 = r1.mFragmentManager\l}"];
+subgraph cluster_Region_1202108326 {
+label = "R(2:(1:(2:4|5)(2:7|8))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_835007436 {
+label = "IF [B:14:0x0004] THEN: R(1:(2:4|5)(2:7|8)) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_193381873 {
+label = "R(1:(2:4|5)(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1096216448 {
+label = "IF [B:15:0x0006] THEN: R(2:4|5) ELSE: R(2:7|8)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r2 != false) goto L4\l}"];
+subgraph cluster_Region_430868070 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|r0.addRetainedFragment(r1)\l}"];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_1826931542 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|r0.removeRetainedFragment(r1)\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1000721158 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0010|r1.mRetainInstanceChangedWhileDetached = true\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0013|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.setRetainInstance((r1v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r2v0 'retain' boolean A[D('retain' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:17:0x000c \-\> B:19:0x0013, CROSS_EDGE: B:18:0x0010 \-\> B:19:0x0013\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_20;
+Node_20 -> Node_12;
+Node_17 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_19 -> Node_12;
+}
+

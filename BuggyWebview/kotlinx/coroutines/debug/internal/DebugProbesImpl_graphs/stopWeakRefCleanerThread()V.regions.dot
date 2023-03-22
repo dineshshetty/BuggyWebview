@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.debug.internal.DebugProbesImpl.stopWeakRefCleanerThread()V" {
+subgraph cluster_Region_1198913563 {
+label = "R(2:1|(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|java.lang.Thread java.lang.Thread r0 = kotlinx.coroutines.debug.internal.DebugProbesImpl.weakRefCleanerThread\l}"];
+subgraph cluster_Region_682699397 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1365986440 {
+label = "IF [B:10:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1452997373 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_53236780 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0005|kotlinx.coroutines.debug.internal.DebugProbesImpl.weakRefCleanerThread = null\lr0.interrupt()\lr0.join()\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000e}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.debug.internal.DebugProbesImpl.stopWeakRefCleanerThread((r2v0 'this' kotlinx.coroutines.debug.internal.DebugProbesImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000e \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_8;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

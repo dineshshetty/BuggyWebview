@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutManagerCompat.isRateLimitingActive(Landroid\/content\/Context;)Z" {
+subgraph cluster_Region_20329840 {
+label = "R(2:1|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.core.util.Preconditions.checkNotNull(r2)\l}"];
+subgraph cluster_Region_1301254636 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_269449424 {
+label = "IF [B:3:0x0007] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (android.os.Build.VERSION.SDK_INT \>= 25) goto L3\l}"];
+subgraph cluster_Region_521563973 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|RETURN\l|return ((android.content.pm.ShortcutManager) r2.getSystemService(android.content.pm.ShortcutManager.class)).isRateLimitingActive()\l}"];
+}
+}
+subgraph cluster_Region_800805986 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023|RETURN\l|return getShortcuts(r2, 3).size() == getMaxShortcutCountPerActivity(r2)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0025|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0027|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.content.pm.ShortcutManagerCompat.isRateLimitingActive((r2v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0028 \-\> B:1:?, CROSS_EDGE: B:9:0x0027 \-\> B:10:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_1;
+Node_9 -> Node_1;
+}
+

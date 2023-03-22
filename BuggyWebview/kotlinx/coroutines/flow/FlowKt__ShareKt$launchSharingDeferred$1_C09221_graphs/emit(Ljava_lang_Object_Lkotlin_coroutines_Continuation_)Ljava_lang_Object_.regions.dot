@@ -1,0 +1,49 @@
+digraph "CFG forkotlinx.coroutines.flow.FlowKt__ShareKt$launchSharingDeferred$1.1.emit(Ljava\/lang\/Object;Lkotlin\/coroutines\/Continuation;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_2093463359 {
+label = "R(4:1|(1:3)(1:9)|(1:5)|7) | DECL_VAR: kotlin.Unit null\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlinx.coroutines.flow.MutableStateFlow kotlinx.coroutines.flow.MutableStateFlow r0 = r10.$state.element\l}"];
+subgraph cluster_IfRegion_491558289 {
+label = "IF [B:13:0x0006] THEN: R(1:3) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_2003338133 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|r0 = null\l}"];
+}
+subgraph cluster_Region_1583294344 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000a|r0.setValue(r11)\lkotlin.Unit r0 = kotlin.Unit.INSTANCE\l}"];
+}
+}
+subgraph cluster_IfRegion_1828087319 {
+label = "IF [B:16:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0010|PHI: r0 \l  PHI: (r0v4 kotlin.Unit) = (r0v3 kotlin.Unit), (r0v7 kotlin.Unit) binds: [B:15:0x000a, B:14:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L5\l}"];
+subgraph cluster_Region_911715336 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0012|kotlinx.coroutines.CoroutineScope kotlinx.coroutines.CoroutineScope r0 = r10.$$this$launch\lkotlin.jvm.internal.Ref$ObjectRef\<kotlinx.coroutines.flow.MutableStateFlow\<T\>\> kotlin.jvm.internal.Ref.ObjectRef\<kotlinx.coroutines.flow.MutableStateFlow\<T\>\> r1 = r10.$state\lkotlinx.coroutines.CompletableDeferred\<kotlinx.coroutines.flow.StateFlow\<T\>\> kotlinx.coroutines.CompletableDeferred\<kotlinx.coroutines.flow.StateFlow\<T\>\> r2 = r10.$result\lkotlinx.coroutines.flow.MutableStateFlow T r4 = (T) kotlinx.coroutines.flow.StateFlowKt.MutableStateFlow(r11)\lr2.complete(new kotlinx.coroutines.flow.ReadonlyStateFlow((kotlinx.coroutines.flow.StateFlow) r4, kotlinx.coroutines.JobKt.getJob(r0.getCoroutineContext())))\lr1.element = r4\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0039|RETURN\l|return kotlin.Unit.INSTANCE\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0037}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharingDeferred$1.1.emit((r10v0 'this' kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharingDeferred$1$1\<T\> A[IMMUTABLE_TYPE, THIS]), (r11v0 T A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 kotlin.coroutines.Continuation\<? super kotlin.Unit\> A[D('$completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0010 \-\> B:18:0x0037, CROSS_EDGE: B:15:0x000a \-\> B:16:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (TT;Lkotlin\/coroutines\/Continuation\<\-Lkotlin\/Unit;\>;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.flow.FlowCollector.emit(T, kotlin.coroutines.Continuation\<? super kotlin.Unit\>):java.lang.Object]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_18 -> Node_19;
+}
+

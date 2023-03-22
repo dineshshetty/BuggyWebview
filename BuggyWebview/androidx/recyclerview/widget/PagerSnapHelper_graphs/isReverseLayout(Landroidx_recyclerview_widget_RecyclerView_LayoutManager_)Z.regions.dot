@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.recyclerview.widget.PagerSnapHelper.isReverseLayout(Landroidx\/recyclerview\/widget\/RecyclerView$LayoutManager;)Z" {
+subgraph cluster_Region_1871848920 {
+label = "R(3:1|(2:3|(1:6))|12)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|int int r0 = r7.getItemCount()\l}"];
+subgraph cluster_IfRegion_75207665 {
+label = "IF [B:17:0x0007] THEN: R(2:3|(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|if ((r7 instanceof androidx.recyclerview.widget.RecyclerView.SmoothScroller.ScrollVectorProvider) != false) goto L3\l}"];
+subgraph cluster_Region_2013746715 {
+label = "R(2:3|(1:6))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0009|androidx.recyclerview.widget.RecyclerView$SmoothScroller$ScrollVectorProvider androidx.recyclerview.widget.RecyclerView.SmoothScroller.ScrollVectorProvider r1 = (androidx.recyclerview.widget.RecyclerView.SmoothScroller.ScrollVectorProvider) r7\landroid.graphics.PointF android.graphics.PointF r3 = r1.computeScrollVectorForPosition(r0 \- 1)\l}"];
+subgraph cluster_IfRegion_126250976 {
+label = "IF [B:19:0x0012] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|if (r3 != null) goto L5\l}"];
+subgraph cluster_Region_1517290648 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0019|RETURN\l|return r3.x \< 0.0f \|\| r3.y \< 0.0f\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0023|RETURN\l|return false\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0014}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001b}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001f|REMOVE\lADDED_TO_REGION\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0021|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private boolean androidx.recyclerview.widget.PagerSnapHelper.isReverseLayout((r6v0 'this' androidx.recyclerview.widget.PagerSnapHelper A[IMMUTABLE_TYPE, THIS]), (r7v0 'layoutManager' androidx.recyclerview.widget.RecyclerView$LayoutManager A[D('layoutManager' androidx.recyclerview.widget.RecyclerView$LayoutManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001f \-\> B:25:0x0022, CROSS_EDGE: B:21:0x0019 \-\> B:24:0x0021, CROSS_EDGE: B:26:0x0023 \-\> B:15:?, CROSS_EDGE: B:17:0x0007 \-\> B:26:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_26[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_26[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_24;
+Node_26 -> Node_15;
+Node_14 -> Node_16;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_27;
+Node_27 -> Node_15;
+Node_24 -> Node_15;
+}
+

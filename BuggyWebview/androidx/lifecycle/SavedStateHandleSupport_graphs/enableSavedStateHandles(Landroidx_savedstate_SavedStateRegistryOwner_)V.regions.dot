@@ -1,0 +1,71 @@
+digraph "CFG forandroidx.lifecycle.SavedStateHandleSupport.enableSavedStateHandles(Landroidx\/savedstate\/SavedStateRegistryOwner;)V" {
+subgraph cluster_Region_917026530 {
+label = "R(2:1|(2:(1:14)|(1:(1:(1:9)))))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\landroidx.lifecycle.Lifecycle$State androidx.lifecycle.Lifecycle.State r0 = r5.getLifecycle().getCurrentState()\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"lifecycle.currentState\")\l}"];
+subgraph cluster_Region_483943878 {
+label = "R(2:(1:14)|(1:(1:(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_246015097 {
+label = "IF [B:26:0x001f] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001f|PHI: r1 \l  PHI: (r1v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r0 == androidx.lifecycle.Lifecycle.State.INITIALIZED \|\| r0 == androidx.lifecycle.Lifecycle.State.CREATED) == false) goto L13\l}"];
+subgraph cluster_Region_1991651990 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x005d|throw new java.lang.IllegalArgumentException(\"Failed requirement.\".toString())\l}"];
+}
+}
+subgraph cluster_Region_1862166264 {
+label = "R(1:(1:(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1490806411 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_133324291 {
+label = "IF [B:28:0x002b] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x002b|if (r5.getSavedStateRegistry().getSavedStateProvider(androidx.lifecycle.SavedStateHandleSupport.SAVED_STATE_KEY) == null) goto L9\l}"];
+subgraph cluster_Region_724578439 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002d|androidx.lifecycle.SavedStateHandlesProvider androidx.lifecycle.SavedStateHandlesProvider r1 = new androidx.lifecycle.SavedStateHandlesProvider(r5.getSavedStateRegistry(), r5)\lr5.getSavedStateRegistry().registerSavedStateProvider(androidx.lifecycle.SavedStateHandleSupport.SAVED_STATE_KEY, r1)\lr5.getLifecycle().addObserver(new androidx.lifecycle.SavedStateHandleAttacher(r1))\l}"];
+}
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0015}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0017}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0019|REMOVE\lADDED_TO_REGION\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001c}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0021}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0051|ORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0052}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001e}"];
+MethodNode[shape=record,label="{public static final void androidx.lifecycle.SavedStateHandleSupport.enableSavedStateHandles((r5v0 T extends androidx.savedstate.SavedStateRegistryOwner & androidx.lifecycle.ViewModelStoreOwner A[D('$this$enableSavedStateHandles' androidx.savedstate.SavedStateRegistryOwner), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x002b \-\> B:30:0x0051, CROSS_EDGE: B:32:0x005d \-\> B:18:?, CROSS_EDGE: B:25:0x001e \-\> B:26:0x001f, CROSS_EDGE: B:20:0x0015 \-\> B:25:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends androidx.savedstate.SavedStateRegistryOwner & androidx.lifecycle.ViewModelStoreOwner]\lSIGNATURE: \<T::Landroidx\/savedstate\/SavedStateRegistryOwner;:Landroidx\/lifecycle\/ViewModelStoreOwner;\>(TT;)V\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r5v0, resolved type: T extends androidx.savedstate.SavedStateRegistryOwner & androidx.lifecycle.ViewModelStoreOwner\}\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_31;
+Node_32 -> Node_18;
+Node_28 -> Node_29;
+Node_28 -> Node_33[style=dashed];
+Node_29 -> Node_30;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_25;
+Node_21 -> Node_22;
+Node_22 -> Node_24;
+Node_22 -> Node_25;
+Node_24 -> Node_26;
+Node_27 -> Node_28;
+Node_30 -> Node_18;
+Node_33 -> Node_18;
+Node_31 -> Node_32;
+Node_25 -> Node_26;
+}
+

@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.core.content.UnusedAppRestrictionsBackportServiceConnection.1.onIsPermissionRevocationEnabledForAppResult(ZZ)V" {
+subgraph cluster_Region_653442577 {
+label = "R(1:(2:(1:(2:3|4)(2:6|7))|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1163031560 {
+label = "R(2:(1:(2:3|4)(2:6|7))|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1375847133 {
+label = "IF [B:12:0x0000] THEN: R(1:(2:3|4)(2:6|7)) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r3 != false) goto L2\l}"];
+subgraph cluster_Region_1001527536 {
+label = "R(1:(2:3|4)(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_134429601 {
+label = "IF [B:13:0x0002] THEN: R(2:3|4) ELSE: R(2:6|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r4 != false) goto L3\l}"];
+subgraph cluster_Region_1579678877 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|androidx.core.content.UnusedAppRestrictionsBackportServiceConnection.this.mResultFuture.set(3)\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_49076910 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|androidx.core.content.UnusedAppRestrictionsBackportServiceConnection.this.mResultFuture.set(2)\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_699545499 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001e|androidx.core.content.UnusedAppRestrictionsBackportServiceConnection.this.mResultFuture.set(0)\landroid.util.Log.e(androidx.core.content.PackageManagerCompat.LOG_TAG, \"Unable to retrieve the permission revocation setting from the backport\")\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0031|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.core.content.UnusedAppRestrictionsBackportServiceConnection.1.onIsPermissionRevocationEnabledForAppResult((r2v0 'this' androidx.core.content.UnusedAppRestrictionsBackportServiceConnection$1 A[IMMUTABLE_TYPE, THIS]), (r3v0 'success' boolean A[D('success' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'isEnabled' boolean A[D('isEnabled' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0011 \-\> B:17:0x0031, CROSS_EDGE: B:16:0x001e \-\> B:17:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroid\/os\/RemoteException;]\lMETHOD_OVERRIDE: [androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportCallback.onIsPermissionRevocationEnabledForAppResult(boolean, boolean):void]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_18;
+Node_18 -> Node_11;
+Node_15 -> Node_19;
+Node_19 -> Node_11;
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_17 -> Node_11;
+}
+

@@ -1,0 +1,50 @@
+digraph "CFG forkotlinx.coroutines.EventLoopImplBase.scheduleResumeAfterDelay(JLkotlinx\/coroutines\/CancellableContinuation;)V" {
+subgraph cluster_Region_1671366410 {
+label = "R(2:1|(1:(4:3|4|6|8)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|long long r0 = kotlinx.coroutines.EventLoop_commonKt.delayToNanos(r8)\l}"];
+subgraph cluster_Region_566069320 {
+label = "R(1:(4:3|4|6|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_304496140 {
+label = "IF [B:17:0x000b] THEN: R(4:3|4|6|8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|if (r0 \< kotlin.time.DurationKt.MAX_MILLIS) goto L3\l}"];
+subgraph cluster_Region_1642237824 {
+label = "R(4:3|4|6|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|kotlinx.coroutines.AbstractTimeSource kotlinx.coroutines.AbstractTimeSource r2 = kotlinx.coroutines.AbstractTimeSourceKt.getTimeSource()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0011|java.lang.Long r2 = r2 == null ? null : java.lang.Long.valueOf(r2.nanoTime())\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001d|PHI: r2 \l  PHI: (r2v4 java.lang.Long) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|long r2 = r2 == null ? java.lang.System.nanoTime() : r2.longValue()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0028|PHI: r2 \l  PHI: (r2v6 'now' long) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|kotlinx.coroutines.EventLoopImplBase$DelayedResumeTask kotlinx.coroutines.EventLoopImplBase.DelayedResumeTask r4 = new kotlinx.coroutines.EventLoopImplBase.DelayedResumeTask(r2 + r0, r10)\lkotlinx.coroutines.CancellableContinuationKt.disposeOnCancellation(r10, r4)\lschedule(r2, r4)\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0013}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001f}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x003d|ORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0024}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0015}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.EventLoopImplBase.scheduleResumeAfterDelay((r7v0 'this' kotlinx.coroutines.EventLoopImplBase A[IMMUTABLE_TYPE, THIS]), (r8v0 'timeMillis' long A[D('timeMillis' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 kotlinx.coroutines.CancellableContinuation\<? super kotlin.Unit\> A[D('continuation' kotlinx.coroutines.CancellableContinuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0024 \-\> B:25:0x0028, CROSS_EDGE: B:21:0x0015 \-\> B:22:0x001d, CROSS_EDGE: B:17:0x000b \-\> B:26:0x003d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (JLkotlinx\/coroutines\/CancellableContinuation\<\-Lkotlin\/Unit;\>;)V\lMETHOD_OVERRIDE: [kotlinx.coroutines.Delay.scheduleResumeAfterDelay(long, kotlinx.coroutines.CancellableContinuation\<? super kotlin.Unit\>):void]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_27[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_24;
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_20 -> Node_22;
+Node_23 -> Node_25;
+Node_26 -> Node_15;
+Node_24 -> Node_25;
+Node_21 -> Node_22;
+Node_27 -> Node_15;
+}
+

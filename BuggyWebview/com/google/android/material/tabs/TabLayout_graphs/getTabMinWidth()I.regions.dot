@@ -1,0 +1,66 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.getTabMinWidth()I" {
+subgraph cluster_Region_491210964 {
+label = "R(2:1|(2:(1:3)|(2:5|(2:(1:11)|(1:9)))))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|int int r0 = r2.requestedTabMinWidth\l}"];
+subgraph cluster_Region_1501568799 {
+label = "R(2:(1:3)|(2:5|(2:(1:11)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1219996131 {
+label = "IF [B:17:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0003|if (r0 != (\-1)) goto L3\l}"];
+subgraph cluster_Region_715132158 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1900580431 {
+label = "R(2:5|(2:(1:11)|(1:9)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|int int r0 = r2.mode\l}"];
+subgraph cluster_Region_225431318 {
+label = "R(2:(1:11)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1450080602 {
+label = "IF [B:20:0x0008, B:22:0x000b] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|if (r0 == 0) goto L10\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000b|ADDED_TO_REGION\l|if (r0 == 2) goto L10\l}"];
+subgraph cluster_Region_208664050 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0012|RETURN\lORIG_RETURN\l|return r2.scrollableTabMinWidth\l}"];
+}
+}
+subgraph cluster_Region_1206854925 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000e|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0010}"];
+MethodNode[shape=record,label="{private int com.google.android.material.tabs.TabLayout.getTabMinWidth((r2v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0012 \-\> B:15:?, CROSS_EDGE: B:25:0x0010 \-\> B:26:0x0012, CROSS_EDGE: B:20:0x0008 \-\> B:25:0x0010\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_25;
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_25;
+Node_26 -> Node_15;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_21 -> Node_22;
+Node_25 -> Node_26;
+}
+

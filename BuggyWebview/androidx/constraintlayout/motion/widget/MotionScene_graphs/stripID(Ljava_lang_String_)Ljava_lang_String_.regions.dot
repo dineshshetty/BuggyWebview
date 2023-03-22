@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.MotionScene.stripID(Ljava\/lang\/String;)Ljava\/lang\/String;" {
+subgraph cluster_Region_857383940 {
+label = "R(1:(2:(1:2)|(2:4|(2:(1:6)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_849482977 {
+label = "R(2:(1:2)|(2:4|(2:(1:6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_447629548 {
+label = "IF [B:12:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r2 == null) goto L2\l}"];
+subgraph cluster_Region_134232413 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|RETURN\l|return \"\"\l}"];
+}
+}
+subgraph cluster_Region_580825966 {
+label = "R(2:4|(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|int int r0 = r2.indexOf(47)\l}"];
+subgraph cluster_Region_1851561693 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1950911507 {
+label = "IF [B:16:0x000b] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000b|if (r0 \< 0) goto L6\l}"];
+subgraph cluster_Region_1291555563 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000d|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_581429848 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0014|RETURN\l|return r2.substring(r0 + 1)\l}"];
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e}"];
+MethodNode[shape=record,label="{public static java.lang.String androidx.constraintlayout.motion.widget.MotionScene.stripID((r2v0 'id' java.lang.String A[D('id' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x000d \-\> B:11:?, CROSS_EDGE: B:19:0x0014 \-\> B:11:?\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [id]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_18 -> Node_19;
+}
+

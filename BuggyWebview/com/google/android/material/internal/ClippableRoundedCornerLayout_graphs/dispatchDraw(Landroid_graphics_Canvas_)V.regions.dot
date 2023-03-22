@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.material.internal.ClippableRoundedCornerLayout.dispatchDraw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_460951480 {
+label = "R(1:(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1933216456 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_489913875 {
+label = "IF [B:11:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r2.path == null) goto L3\l}"];
+subgraph cluster_Region_595107789 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|super.dispatchDraw(r3)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0007|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_359046754 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|int int r0 = r3.save()\lr3.clipPath(r2.path)\lsuper.dispatchDraw(r3)\lr3.restoreToCount(r0)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0017}"];
+MethodNode[shape=record,label="{protected void com.google.android.material.internal.ClippableRoundedCornerLayout.dispatchDraw((r2v0 'this' com.google.android.material.internal.ClippableRoundedCornerLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x0017 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.dispatchDraw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+}
+

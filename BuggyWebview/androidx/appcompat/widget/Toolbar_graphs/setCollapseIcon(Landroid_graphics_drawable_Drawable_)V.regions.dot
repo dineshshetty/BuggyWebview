@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.appcompat.widget.Toolbar.setCollapseIcon(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_911569302 {
+label = "R(1:(2:(2:2|3)|(2:5|(1:(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_962741063 {
+label = "R(2:(2:2|3)|(2:5|(1:(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_983310989 {
+label = "IF [B:12:0x0000] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r3 != null) goto L2\l}"];
+subgraph cluster_Region_1481173247 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|ensureCollapseButtonView()\lr2.mCollapseButtonView.setImageDrawable(r3)\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1187373975 {
+label = "R(2:5|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000b|android.widget.ImageButton android.widget.ImageButton r0 = r2.mCollapseButtonView\l}"];
+subgraph cluster_Region_1166867361 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_62287335 {
+label = "IF [B:15:0x000d] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|if (r0 != null) goto L7\l}"];
+subgraph cluster_Region_1619080417 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000f|r0.setImageDrawable(r2.mCollapseIcon)\l}"];
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0014|ORIG_RETURN\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.Toolbar.setCollapseIcon((r2v0 'this' androidx.appcompat.widget.Toolbar A[IMMUTABLE_TYPE, THIS]), (r3v0 'icon' android.graphics.drawable.Drawable A[D('icon' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000f \-\> B:17:0x0014, CROSS_EDGE: B:15:0x000d \-\> B:17:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_18;
+Node_18 -> Node_11;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+}
+

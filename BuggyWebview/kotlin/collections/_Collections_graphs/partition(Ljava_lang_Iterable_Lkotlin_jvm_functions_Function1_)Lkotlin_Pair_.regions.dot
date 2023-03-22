@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.partition(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)Lkotlin\/Pair;" {
+subgraph cluster_Region_1655036895 {
+label = "R(3:1|(2:4|(1:11)(1:7))|15)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"predicate\")\ljava.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList()\ljava.util.ArrayList java.util.ArrayList r2 = new java.util.ArrayList()\ljava.util.Iterator java.util.Iterator\<? extends T\> r3 = r6.iterator()\l}"];
+subgraph cluster_LoopRegion_1253851947 {
+label = "LOOP:0: (2:4|(1:11)(1:7))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x001d|if (r3.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_109773440 {
+label = "R(2:4|(1:11)(1:7))";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x001f|java.lang.Object java.lang.Object r4 = (T) r3.next()\l}"];
+subgraph cluster_IfRegion_1793053692 {
+label = "IF [B:40:0x002d] THEN: R(1:11) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x002d|if (r7.invoke(r4).booleanValue() != false) goto L10\l}"];
+subgraph cluster_Region_1517738452 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x002f|r1.add(r4)\l}"];
+}
+subgraph cluster_Region_178901930 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0033|r2.add(r4)\l}"];
+}
+}
+}
+}
+Node_44 [shape=record,label="{44\:\ 0x003c|RETURN\l|return new kotlin.Tuples\<\>(r1, r2)\l}"];
+}
+Node_34 [shape=record,color=red,label="{34\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0019|LOOP_START\lLOOP:0: B:37:0x0019\-\>B:48:0x0019\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0033|SYNTHETIC\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x0019|SYNTHETIC\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x0019|LOOP_END\lSYNTHETIC\lLOOP:0: B:37:0x0019\-\>B:48:0x0019\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x002f|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x0019|SYNTHETIC\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x0037|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0037}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final kotlin.Pair\<java.util.List\<T\>, java.util.List\<T\>\> kotlin.collections.CollectionsKt___CollectionsKt.partition((r6v0 java.lang.Iterable\<? extends T\> A[D('$this$partition' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'predicate' kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:41:0x002f \-\> B:37:0x0019, BACK_EDGE: B:42:0x0033 \-\> B:37:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Boolean;\>;)Lkotlin\/Pair\<Ljava\/util\/List\<TT;\>;Ljava\/util\/List\<TT;\>;\>;\l}"];
+MethodNode -> Node_34;Node_36 -> Node_37;
+Node_38 -> Node_39;
+Node_38 -> Node_46[style=dashed];
+Node_39 -> Node_40;
+Node_40 -> Node_45[style=dashed];
+Node_40 -> Node_47;
+Node_41 -> Node_50;
+Node_42 -> Node_49;
+Node_44 -> Node_35;
+Node_34 -> Node_36;
+Node_37 -> Node_38;
+Node_45 -> Node_42;
+Node_49 -> Node_48;
+Node_48 -> Node_37;
+Node_47 -> Node_41;
+Node_50 -> Node_48;
+Node_46 -> Node_43;
+Node_43 -> Node_44;
+}
+

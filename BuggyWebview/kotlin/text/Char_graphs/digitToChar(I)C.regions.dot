@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.text.CharsKt__CharKt.digitToChar(I)C" {
+subgraph cluster_Region_1833145889 {
+label = "R(1:(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2002637971 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_499865169 {
+label = "IF [B:11:0x000c] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000c|if (new kotlin.ranges.IntRange(0, 9).contains(r3) != false) goto L3\l}"];
+subgraph cluster_Region_454906977 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0011|RETURN\l|return (char) (r3 + 48)\l}"];
+}
+}
+subgraph cluster_Region_1780362173 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0012}"];
+Node_15 [shape=record,label="{15\:\ 0x002d|throw new java.lang.IllegalArgumentException(\"Int \" + r3 + \" is not a decimal digit\")\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000e}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final char kotlin.text.CharsKt__CharKt.digitToChar((r3v0 '$this$digitToChar' int A[D('$this$digitToChar' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x002d \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+}
+

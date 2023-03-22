@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.material.navigation.NavigationView.setCheckedItem(Landroid\/view\/MenuItem;)V" {
+subgraph cluster_Region_337166804 {
+label = "R(2:1|(2:(2:3|4)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.MenuItem android.view.MenuItem r0 = r3.menu.findItem(r4.getItemId())\l}"];
+subgraph cluster_Region_555338347 {
+label = "R(2:(2:3|4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1143835208 {
+label = "IF [B:3:0x000a] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_752471887 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|r3.presenter.setCheckedItem((androidx.appcompat.view.menu.MenuItemImpl) r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_982441018 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|throw new java.lang.IllegalArgumentException(\"Called setCheckedItem(MenuItem) with an item that is not in the current menu.\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015}"];
+MethodNode[shape=record,label="{public void com.google.android.material.navigation.NavigationView.setCheckedItem((r3v0 'this' com.google.android.material.navigation.NavigationView A[IMMUTABLE_TYPE, THIS]), (r4v0 'checkedItem' android.view.MenuItem A[D('checkedItem' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x001c \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+}
+

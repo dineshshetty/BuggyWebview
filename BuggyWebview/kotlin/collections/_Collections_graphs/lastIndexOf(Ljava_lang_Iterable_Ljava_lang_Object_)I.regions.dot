@@ -1,0 +1,95 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.lastIndexOf(Ljava\/lang\/Iterable;Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_1267708287 {
+label = "R(2:1|(2:(1:4)|(3:6|(4:9|(1:11)|(1:14)(0)|16)|19)))";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\l}"];
+subgraph cluster_Region_139800297 {
+label = "R(2:(1:4)|(3:6|(4:9|(1:11)|(1:14)(0)|16)|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1567264898 {
+label = "IF [B:43:0x0007] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0007|if ((r5 instanceof java.util.List) == true) goto L3\l}"];
+subgraph cluster_Region_1102928914 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0010|RETURN\l|return ((java.util.List) r5).lastIndexOf(r6)\l}"];
+}
+}
+subgraph cluster_Region_182561788 {
+label = "R(3:6|(4:9|(1:11)|(1:14)(0)|16)|19)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0011|int r0 = \-1\lint r1 = 0\ljava.util.Iterator r2 = r5.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1997478163 {
+label = "LOOP:0: (4:9|(1:11)|(1:14)(0)|16)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x001b|java.lang.Object \lif (r2.hasNext() != false) goto L9\l}"];
+subgraph cluster_Region_481684711 {
+label = "R(4:9|(1:11)|(1:14)(0)|16)";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x001d|java.lang.Object r3 = r2.next()\l}"];
+subgraph cluster_IfRegion_1423807525 {
+label = "IF [B:50:0x0021] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x0021|if (r1 \< 0) goto L11\l}"];
+subgraph cluster_Region_1443644285 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_51 [shape=record,label="{51\:\ 0x0023|kotlin.collections.CollectionsKt.throwIndexOverflow()\l}"];
+}
+}
+subgraph cluster_IfRegion_1609250750 {
+label = "IF [B:53:0x002a] THEN: R(1:14) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x002a|if (kotlin.jvm.internal.Intrinsics.areEqual(r6, r3) != false) goto L14\l}"];
+subgraph cluster_Region_739434612 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_54 [shape=record,label="{54\:\ 0x002c|r0 = r1\l}"];
+}
+subgraph cluster_Region_1948106141 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_55 [shape=record,label="{55\:\ 0x002d|LOOP_END\lLOOP:0: B:47:0x0017\-\>B:55:0x002d\lPHI: r0 \l  PHI: (r0v4 'lastIndex' int) = (r0v3 'lastIndex' int), (r0v5 'lastIndex' int) binds: [B:59:0x002d, B:58:0x002d] A[DONT_GENERATE, DONT_INLINE]\l|r1++\l}"];
+}
+}
+Node_56 [shape=record,label="{56\:\ 0x0031|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_40 [shape=record,color=red,label="{40\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x0009}"];
+Node_41 [shape=record,color=red,label="{41\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x0017|LOOP_START\lLOOP:0: B:47:0x0017\-\>B:55:0x002d\lPHI: r0 r1 \l  PHI: (r0v3 'lastIndex' int) = (r0v2 'lastIndex' int), (r0v4 'lastIndex' int) binds: [B:46:0x0011, B:55:0x002d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v2 'index' int) binds: [B:46:0x0011, B:55:0x002d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x0026}"];
+Node_58 [shape=record,color=red,label="{58\:\ 0x002d|SYNTHETIC\l}"];
+Node_59 [shape=record,color=red,label="{59\:\ 0x002d|SYNTHETIC\l}"];
+Node_57 [shape=record,color=red,label="{57\:\ 0x0031|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.collections.CollectionsKt___CollectionsKt.lastIndexOf((r5v0 java.lang.Iterable\<? extends T\> A[D('$this$lastIndexOf' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 T A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:55:0x002d \-\> B:47:0x0017, CROSS_EDGE: B:53:0x002a \-\> B:55:0x002d, CROSS_EDGE: B:50:0x0021 \-\> B:52:0x0026, CROSS_EDGE: B:56:0x0031 \-\> B:41:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;TT;)I\l}"];
+MethodNode -> Node_40;Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_43 -> Node_46[style=dashed];
+Node_45 -> Node_41;
+Node_46 -> Node_47;
+Node_48 -> Node_49;
+Node_48 -> Node_57[style=dashed];
+Node_49 -> Node_50;
+Node_50 -> Node_51;
+Node_50 -> Node_52[style=dashed];
+Node_51 -> Node_52;
+Node_53 -> Node_54;
+Node_53 -> Node_59[style=dashed];
+Node_54 -> Node_58;
+Node_55 -> Node_47;
+Node_56 -> Node_41;
+Node_40 -> Node_42;
+Node_44 -> Node_45;
+Node_47 -> Node_48;
+Node_52 -> Node_53;
+Node_58 -> Node_55;
+Node_59 -> Node_55;
+Node_57 -> Node_56;
+}
+

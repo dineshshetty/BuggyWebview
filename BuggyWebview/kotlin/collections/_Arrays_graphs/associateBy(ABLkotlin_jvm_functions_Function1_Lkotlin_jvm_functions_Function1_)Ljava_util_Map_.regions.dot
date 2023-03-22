@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.associateBy([BLkotlin\/jvm\/functions\/Function1;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_1203211430 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, \"keySelector\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r12, \"valueTransform\")\lint int r1 = kotlin.ranges.RangesKt.coerceAtLeast(kotlin.collections.MapsKt.mapCapacity(r10.length), 16)\ljava.util.Map java.util.Map r2 = new java.util.LinkedHashMap(r1)\lint r6 = 0\l\l}"];
+subgraph cluster_LoopRegion_1139321348 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0026|LOOP_START\lLOOP:0: B:11:0x0026\-\>B:12:0x0028\lPHI: r6 \l  PHI: (r6v1 int) = (r6v0 int), (r6v2 int) binds: [B:10:0x0000, B:12:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 \< r5) goto L3\l}"];
+subgraph cluster_Region_150004808 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0028|LOOP_END\lLOOP:0: B:11:0x0026\-\>B:12:0x0028\l|r7 = r10[r6]\lr2.put(r11.invoke(java.lang.Byte.valueOf(r7)), r12.invoke(java.lang.Byte.valueOf(r7)))\lr6++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0041|RETURN\l|return r2\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0041|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.Map\<K, V\> kotlin.collections.ArraysKt___ArraysKt.associateBy((r10v0 '$this$associateBy' byte[] A[D('$this$associateBy' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'keySelector' kotlin.jvm.functions.Function1\<? super java.lang.Byte, ? extends K\> A[D('keySelector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'valueTransform' kotlin.jvm.functions.Function1\<? super java.lang.Byte, ? extends V\> A[D('valueTransform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0028 \-\> B:11:0x0026\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;\>([BLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Byte;+TK;\>;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Byte;+TV;\>;)Ljava\/util\/Map\<TK;TV;\>;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_15 -> Node_14;
+}
+

@@ -1,0 +1,67 @@
+digraph "CFG forandroidx.appcompat.widget.Toolbar.getCurrentContentInsetEnd()I" {
+subgraph cluster_Region_196923753 {
+label = "R(3:1|(2:3|8)|(2:(1:12)|(1:15)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|boolean r0 = false\landroidx.appcompat.widget.ActionMenuView androidx.appcompat.widget.ActionMenuView r1 = r4.mMenuView\l}"];
+subgraph cluster_IfRegion_1563480454 {
+label = "IF [B:19:0x0004] THEN: R(2:3|8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (r1 != null) goto L3\l}"];
+subgraph cluster_Region_675213334 {
+label = "R(2:3|8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|androidx.appcompat.view.menu.MenuBuilder androidx.appcompat.view.menu.MenuBuilder r1 = r1.peekMenu()\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0015|PHI: r3 \l  PHI: (r3v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r0 = r1 != null && r1.hasVisibleItems()\l}"];
+}
+}
+subgraph cluster_Region_670347031 {
+label = "R(2:(1:12)|(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_489677475 {
+label = "IF [B:27:0x0016] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0016|PHI: r0 \l  PHI: (r0v1 'hasActions' boolean) = (r0v0 'hasActions' boolean), (r0v2 'hasActions' boolean) binds: [B:19:0x0004, B:26:0x0015] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != false) goto L11\l}"];
+subgraph cluster_Region_658694492 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|return java.lang.Math.max(getContentInsetEnd(), java.lang.Math.max(r4.mContentInsetEndWithActions, 0))\l}"];
+}
+}
+subgraph cluster_Region_1723240559 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002b|RETURN\lORIG_RETURN\l|return getContentInsetEnd()\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000c}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0010|REMOVE\lADDED_TO_REGION\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0012}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0014}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0018}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0027}"];
+MethodNode[shape=record,label="{public int androidx.appcompat.widget.Toolbar.getCurrentContentInsetEnd((r4v0 'this' androidx.appcompat.widget.Toolbar A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x0027 \-\> B:30:0x002b, CROSS_EDGE: B:25:0x0014 \-\> B:26:0x0015, CROSS_EDGE: B:21:0x000a \-\> B:25:0x0014, CROSS_EDGE: B:19:0x0004 \-\> B:27:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_27[style=dashed];
+Node_20 -> Node_21;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_31 -> Node_17;
+Node_30 -> Node_17;
+Node_16 -> Node_18;
+Node_21 -> Node_22;
+Node_21 -> Node_25;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25;
+Node_24 -> Node_26;
+Node_25 -> Node_26;
+Node_28 -> Node_31;
+Node_29 -> Node_30;
+}
+

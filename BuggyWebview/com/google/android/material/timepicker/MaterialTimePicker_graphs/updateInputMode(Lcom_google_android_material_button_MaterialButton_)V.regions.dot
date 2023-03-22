@@ -1,0 +1,65 @@
+digraph "CFG forcom.google.android.material.timepicker.MaterialTimePicker.updateInputMode(Lcom\/google\/android\/material\/button\/MaterialButton;)V" {
+subgraph cluster_Region_1859490916 {
+label = "R(1:(2:(1:12)|(3:6|(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_440983535 {
+label = "R(2:(1:12)|(3:6|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1956572221 {
+label = "IF [B:2:0x0000, B:4:0x0004, B:6:0x0008] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r4 == null) goto L14\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0004|ADDED_TO_REGION\l|if (r3.timePickerView == null) goto L13\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0008|ADDED_TO_REGION\l|if (r3.textInputStub == null) goto L12\l}"];
+subgraph cluster_Region_1076578974 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_603828654 {
+label = "R(3:6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000b|com.google.android.material.timepicker.TimePickerPresenter com.google.android.material.timepicker.TimePickerPresenter r0 = r3.activePresenter\l}"];
+subgraph cluster_IfRegion_261958995 {
+label = "IF [B:9:0x000d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x000d|if (r0 != null) goto L8\l}"];
+subgraph cluster_Region_1064350900 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000f|r0.hide()\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0012|com.google.android.material.timepicker.TimePickerPresenter com.google.android.material.timepicker.TimePickerPresenter r0 = initializeOrRetrieveActivePresenterForMode(r3.inputMode, r3.timePickerView, r3.textInputStub)\lr3.activePresenter = r0\lr0.show()\lr3.activePresenter.invalidate()\landroid.util.Pair android.util.Pair\<java.lang.Integer, java.lang.Integer\> r0 = dataForMode(r3.inputMode)\lr4.setIconResource(((java.lang.Integer) r0.first).intValue())\lr4.setContentDescription(getResources().getString(((java.lang.Integer) r0.second).intValue()))\lr4.sendAccessibilityEvent(4)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0002}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0006}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x004e}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004f|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.timepicker.MaterialTimePicker.updateInputMode((r3v0 'this' com.google.android.material.timepicker.MaterialTimePicker A[IMMUTABLE_TYPE, THIS]), (r4v0 'modeButton' com.google.android.material.button.MaterialButton A[D('modeButton' com.google.android.material.button.MaterialButton), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x000d \-\> B:11:0x0012, CROSS_EDGE: B:13:0x004f \-\> B:1:?, CROSS_EDGE: B:4:0x0004 \-\> B:13:0x004f, CROSS_EDGE: B:2:0x0000 \-\> B:13:0x004f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: private\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_13;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_14;
+Node_6 -> Node_8[style=dashed];
+Node_6 -> Node_15;
+Node_15 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_12 -> Node_1;
+Node_14 -> Node_1;
+Node_13 -> Node_1;
+}
+

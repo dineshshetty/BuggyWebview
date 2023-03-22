@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.addView(Landroid\/view\/View;ILandroid\/view\/ViewGroup$LayoutParams;)V" {
+subgraph cluster_Region_852939356 {
+label = "R(3:1|(1:12)(1:5)|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|super.addView(r3, r4, r5)\landroid.view.View android.view.View r0 = findOpenDrawer()\l}"];
+subgraph cluster_IfRegion_851906619 {
+label = "IF [B:17:0x0007, B:19:0x000d] THEN: R(1:12) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|if (r0 != null) goto L12\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000d|ADDED_TO_REGION\l|if (isDrawerView(r3) != false) goto L12\l}"];
+subgraph cluster_Region_2086626632 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|androidx.core.view.ViewCompat.setImportantForAccessibility(r3, 4)\l}"];
+}
+subgraph cluster_Region_398157282 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|androidx.core.view.ViewCompat.setImportantForAccessibility(r3, 1)\l}"];
+}
+}
+subgraph cluster_Region_335109228 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1126959380 {
+label = "IF [B:24:0x001b] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001b|if (androidx.drawerlayout.widget.DrawerLayout.CAN_HIDE_DESCENDANTS == false) goto L8\l}"];
+subgraph cluster_Region_1155416348 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001d|androidx.core.view.ViewCompat.setAccessibilityDelegate(r3, r2.mChildAccessibilityDelegate)\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0009}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0019}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0022|ORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.drawerlayout.widget.DrawerLayout.addView((r2v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'params' android.view.ViewGroup$LayoutParams A[D('params' android.view.ViewGroup$LayoutParams), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:24:0x001b \-\> B:26:0x0022, CROSS_EDGE: B:22:0x0015 \-\> B:23:0x0019, CROSS_EDGE: B:17:0x0007 \-\> B:22:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewGroup.addView(android.view.View, int, android.view.ViewGroup$LayoutParams):void\}]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_22;
+Node_19 -> Node_21[style=dashed];
+Node_19 -> Node_22;
+Node_22 -> Node_23;
+Node_21 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_23 -> Node_24;
+Node_26 -> Node_15;
+Node_27 -> Node_15;
+}
+

@@ -1,0 +1,29 @@
+digraph "CFG forkotlinx.coroutines.internal.ResizableAtomicArray.setSynchronized(ILjava\/lang\/Object;)V" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000|java.util.concurrent.atomic.AtomicReferenceArray\<T\> r0 = r6.array\lint r1 = r0.length()\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r7 \>= r1) goto L6\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0008|r0.set(r7, r8)\l}"];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000c|java.util.concurrent.atomic.AtomicReferenceArray r2 = new java.util.concurrent.atomic.AtomicReferenceArray(kotlin.ranges.RangesKt.coerceAtLeast(r7 + 1, r1 * 2))\lr3 = 0\l}"];
+Node_18 [shape=record,label="{18\:\ 0x001a|LOOP_START\lLOOP:0: B:18:0x001a\-\>B:19:0x001c\lPHI: r3 \l  PHI: (r3v3 int) = (r3v2 int), (r3v4 int) binds: [B:17:0x000c, B:19:0x001c] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \>= r1) goto L9\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001c|LOOP_END\lLOOP:0: B:18:0x001a\-\>B:19:0x001c\l|r4 = r3\lint r3 = r3 + 1\lr2.set(r4, r0.get(r4))\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0027|SYNTHETIC\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0027|r2.set(r7, r8)\lr6.array = r2\l}"];
+Node_21 [shape=record,label="{21\:\ 0x002c|RETURN\lORIG_RETURN\l|return\l}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.internal.ResizableAtomicArray.setSynchronized((r6v0 'this' kotlinx.coroutines.internal.ResizableAtomicArray\<T\> A[IMMUTABLE_TYPE, THIS]), (r7v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 T A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x001c \-\> B:18:0x001a, CROSS_EDGE: B:20:0x0027 \-\> B:21:0x002c\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (ITT;)V\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_16 -> Node_23;
+Node_23 -> Node_13;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_22;
+Node_19 -> Node_18;
+Node_22 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+}
+

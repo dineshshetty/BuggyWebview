@@ -1,0 +1,40 @@
+digraph "CFG forkotlinx.coroutines.internal.ConcurrentLinkedListNode.nextOrIfClosed(Lkotlin\/jvm\/functions\/Function0;)Lkotlinx\/coroutines\/internal\/ConcurrentLinkedListNode;" {
+subgraph cluster_Region_1490593690 {
+label = "R(2:1|(2:(2:6|7)|(1:4)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.lang.Object java.lang.Object r1 = getNextOrClosed()\l}"];
+subgraph cluster_Region_439546203 {
+label = "R(2:(2:6|7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_739115821 {
+label = "IF [B:11:0x000a] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000a|if (r1 == kotlinx.coroutines.internal.ConcurrentLinkedList.CLOSED) goto L6\l}"];
+subgraph cluster_Region_620709621 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0012|r5.invoke()\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001a|throw new kotlin.ExceptionsH()\l}"];
+}
+}
+subgraph cluster_Region_1275024807 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0011|RETURN\l|return (N) r1\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000c}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final N extends kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N\> kotlinx.coroutines.internal.ConcurrentLinkedListNode.nextOrIfClosed((r4v0 'this' kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N extends kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N\>\> A[IMMUTABLE_TYPE, THIS]), (r5v0 'onClosedAction' kotlin.jvm.functions.Function0 A[D('onClosedAction' kotlin.jvm.functions.Function0), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x001a \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [N extends kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N\>]\lSIGNATURE: (Lkotlin\/jvm\/functions\/Function0;)TN;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

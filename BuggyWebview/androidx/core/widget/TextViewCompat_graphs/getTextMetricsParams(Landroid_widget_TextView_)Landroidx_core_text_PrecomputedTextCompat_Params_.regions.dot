@@ -1,0 +1,70 @@
+digraph "CFG forandroidx.core.widget.TextViewCompat.getTextMetricsParams(Landroid\/widget\/TextView;)Landroidx\/core\/text\/PrecomputedTextCompat$Params;" {
+subgraph cluster_Region_1792801536 {
+label = "R(1:(2:(1:4)|(4:6|(1:8)|(1:11)|13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_366318252 {
+label = "R(2:(1:4)|(4:6|(1:8)|(1:11)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1800597041 {
+label = "IF [B:17:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L3\l}"];
+subgraph cluster_Region_2012587713 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|RETURN\l|return new androidx.core.text.PrecomputedTextCompat.Params(androidx.core.widget.TextViewCompat.Api28Impl.getTextMetricsParams(r3))\l}"];
+}
+}
+subgraph cluster_Region_279984659 {
+label = "R(4:6|(1:8)|(1:11)|13)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0010|androidx.core.text.PrecomputedTextCompat$Params$Builder androidx.core.text.PrecomputedTextCompat.Params.Builder r0 = new androidx.core.text.PrecomputedTextCompat.Params.Builder(new android.text.TextPaint(r3.getPaint()))\l}"];
+subgraph cluster_IfRegion_1120092356 {
+label = "IF [B:21:0x0022] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0022|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L8\l}"];
+subgraph cluster_Region_1829645939 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0024|r0.setBreakStrategy(androidx.core.widget.TextViewCompat.Api23Impl.getBreakStrategy(r3))\lr0.setHyphenationFrequency(androidx.core.widget.TextViewCompat.Api23Impl.getHyphenationFrequency(r3))\l}"];
+}
+}
+subgraph cluster_IfRegion_2075847362 {
+label = "IF [B:24:0x0036] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0036|if (android.os.Build.VERSION.SDK_INT \>= 18) goto L11\l}"];
+subgraph cluster_Region_1753948009 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0038|r0.setTextDirection(getTextDirectionHeuristic(r3))\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0043|RETURN\l|return r0.build()\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0032}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x003f}"];
+MethodNode[shape=record,label="{public static androidx.core.text.PrecomputedTextCompat$Params androidx.core.widget.TextViewCompat.getTextMetricsParams((r3v0 'textView' android.widget.TextView A[D('textView' android.widget.TextView), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0043 \-\> B:15:?, CROSS_EDGE: B:24:0x0036 \-\> B:26:0x003f, CROSS_EDGE: B:21:0x0022 \-\> B:23:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_19 -> Node_15;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_23 -> Node_24;
+Node_26 -> Node_27;
+}
+

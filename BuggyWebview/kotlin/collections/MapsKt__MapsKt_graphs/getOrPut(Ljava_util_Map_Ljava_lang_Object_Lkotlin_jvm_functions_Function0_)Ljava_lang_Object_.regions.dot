@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.collections.MapsKt__MapsKt.getOrPut(Ljava\/util\/Map;Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function0;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_310551264 {
+label = "R(2:1|(2:(2:3|4)|(1:7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"defaultValue\")\ljava.lang.Object V r1 = r3.get(r4)\l}"];
+subgraph cluster_Region_980305369 {
+label = "R(2:(2:3|4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_374127535 {
+label = "IF [B:11:0x000f] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000f|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_493343857 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0011|java.lang.Object V r2 = r5.invoke()\lr3.put(r4, r2)\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_60631703 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001b|RETURN\lORIG_RETURN\l|return r1\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001a}"];
+MethodNode[shape=record,label="{public static final V kotlin.collections.MapsKt__MapsKt.getOrPut((r3v0 java.util.Map\<K, V\> A[D('$this$getOrPut' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 K A[D('key' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'defaultValue' kotlin.jvm.functions.Function0\<? extends V\> A[D('defaultValue' kotlin.jvm.functions.Function0), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x001a \-\> B:14:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;\>(Ljava\/util\/Map\<TK;TV;\>;TK;Lkotlin\/jvm\/functions\/Function0\<+TV;\>;)TV;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_13 -> Node_14;
+}
+

@@ -1,0 +1,67 @@
+digraph "CFG forandroidx.core.graphics.BitmapCompat.Api27Impl.createBitmapWithSourceColorspace(IILandroid\/graphics\/Bitmap;Z)Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_258931294 {
+label = "R(3:1|(1:5)(1:(2:11|(1:13)))|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|android.graphics.Bitmap$Config android.graphics.Bitmap.Config r0 = r7.getConfig()\landroid.graphics.ColorSpace android.graphics.ColorSpace r1 = r7.getColorSpace()\landroid.graphics.ColorSpace android.graphics.ColorSpace r2 = android.graphics.ColorSpace.get(android.graphics.ColorSpace.Named.LINEAR_EXTENDED_SRGB)\l}"];
+subgraph cluster_IfRegion_371161636 {
+label = "IF [B:17:0x000e, B:19:0x0018] THEN: R(1:5) ELSE: R(1:(2:11|(1:13)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|if (r8 != false) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0018|ADDED_TO_REGION\l|if (r7.getColorSpace().equals(r2) == false) goto L5\l}"];
+subgraph cluster_Region_1851507131 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001a|android.graphics.Bitmap$Config r0 = android.graphics.Bitmap.Config.RGBA_F16\lr1 = r2\l}"];
+}
+subgraph cluster_Region_601097439 {
+label = "R(1:(2:11|(1:13))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1026306269 {
+label = "IF [B:22:0x0024] THEN: R(2:11|(1:13)) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0024|if (r7.getConfig() == android.graphics.Bitmap.Config.HARDWARE) goto L11\l}"];
+subgraph cluster_Region_462814725 {
+label = "R(2:11|(1:13))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0026|android.graphics.Bitmap$Config r0 = android.graphics.Bitmap.Config.ARGB_8888\l}"];
+subgraph cluster_IfRegion_2044346868 {
+label = "IF [B:24:0x002c] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002c|if (android.os.Build.VERSION.SDK_INT \>= 31) goto L13\l}"];
+subgraph cluster_Region_164538868 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002e|android.graphics.Bitmap$Config r0 = androidx.core.graphics.BitmapCompat.Api31Impl.getHardwareBitmapConfig(r7)\l}"];
+}
+}
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x003a|RETURN\l|return android.graphics.Bitmap.createBitmap(r5, r6, r0, r7.hasAlpha(), r1)\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0010}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0032|PHI: r0 r1 \l  PHI: (r0v3 'config' android.graphics.Bitmap$Config) = (r0v0 'config' android.graphics.Bitmap$Config), (r0v1 'config' android.graphics.Bitmap$Config), (r0v2 'config' android.graphics.Bitmap$Config), (r0v4 'config' android.graphics.Bitmap$Config) binds: [B:22:0x0024, B:24:0x002c, B:25:0x002e, B:20:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'colorSpace' android.graphics.ColorSpace) = (r1v0 'colorSpace' android.graphics.ColorSpace), (r1v0 'colorSpace' android.graphics.ColorSpace), (r1v0 'colorSpace' android.graphics.ColorSpace), (r1v2 'colorSpace' android.graphics.ColorSpace) binds: [B:22:0x0024, B:24:0x002c, B:25:0x002e, B:20:0x001a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001e}"];
+MethodNode[shape=record,label="{static android.graphics.Bitmap androidx.core.graphics.BitmapCompat.Api27Impl.createBitmapWithSourceColorspace((r5v0 'w' int A[D('w' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'h' int A[D('h' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'src' android.graphics.Bitmap A[D('src' android.graphics.Bitmap), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'linear' boolean A[D('linear' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x002e \-\> B:26:0x0032, CROSS_EDGE: B:24:0x002c \-\> B:26:0x0032, CROSS_EDGE: B:22:0x0024 \-\> B:26:0x0032, CROSS_EDGE: B:17:0x000e \-\> B:21:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_26;
+Node_22 -> Node_23;
+Node_22 -> Node_26[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_26 -> Node_27;
+Node_21 -> Node_22;
+}
+

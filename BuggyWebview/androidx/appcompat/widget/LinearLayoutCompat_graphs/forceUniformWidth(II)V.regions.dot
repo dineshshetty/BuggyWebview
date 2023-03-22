@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.appcompat.widget.LinearLayoutCompat.forceUniformWidth(II)V" {
+subgraph cluster_Region_1118185244 {
+label = "R(2:1|(3:3|(2:5|(1:7)(0))(0)|9))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|int int r0 = android.view.View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.EXACTLY)\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1046501419 {
+label = "LOOP:0: (3:3|(2:5|(1:7)(0))(0)|9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|LOOP_START\lLOOP:0: B:18:0x000b\-\>B:24:0x0038\lPHI: r1 \l  PHI: (r1v2 'i' int) = (r1v1 'i' int), (r1v3 'i' int) binds: [B:17:0x0000, B:24:0x0038] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r12) goto L3\l}"];
+subgraph cluster_Region_571034878 {
+label = "R(3:3|(2:5|(1:7)(0))(0)|9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000d|android.view.View android.view.View r8 = getVirtualChildAt(r1)\l}"];
+subgraph cluster_IfRegion_1373897060 {
+label = "IF [B:20:0x0017] THEN: R(2:5|(1:7)(0)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0017|if (r8.getVisibility() != 8) goto L5\l}"];
+subgraph cluster_Region_1236033899 {
+label = "R(2:5|(1:7)(0))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0019|androidx.appcompat.widget.LinearLayoutCompat$LayoutParams androidx.appcompat.widget.LinearLayoutCompat.LayoutParams r9 = (androidx.appcompat.widget.LinearLayoutCompat.LayoutParams) r8.getLayoutParams()\l}"];
+subgraph cluster_IfRegion_1966197109 {
+label = "IF [B:22:0x0023] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0023|if (r9.width == (\-1)) goto L7\l}"];
+subgraph cluster_Region_1002726041 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0025|int int r10 = r9.height\lr9.height = r8.getMeasuredHeight()\lmeasureChildWithMargins(r8, r0, 0, r13, 0)\lr9.height = r10\l}"];
+}
+subgraph cluster_Region_1569265102 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1011958736 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0038|LOOP_END\lLOOP:0: B:18:0x000b\-\>B:24:0x0038\l|r1++\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0038|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0038|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0038|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x003b|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x003b}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.widget.LinearLayoutCompat.forceUniformWidth((r11v0 'this' androidx.appcompat.widget.LinearLayoutCompat A[IMMUTABLE_TYPE, THIS]), (r12v0 'count' int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'heightMeasureSpec' int A[D('heightMeasureSpec' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:24:0x0038 \-\> B:18:0x000b, CROSS_EDGE: B:22:0x0023 \-\> B:24:0x0038, CROSS_EDGE: B:20:0x0017 \-\> B:24:0x0038\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_26[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_28[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_29[style=dashed];
+Node_23 -> Node_27;
+Node_24 -> Node_18;
+Node_15 -> Node_17;
+Node_27 -> Node_24;
+Node_29 -> Node_24;
+Node_28 -> Node_24;
+Node_26 -> Node_25;
+Node_25 -> Node_16;
+}
+

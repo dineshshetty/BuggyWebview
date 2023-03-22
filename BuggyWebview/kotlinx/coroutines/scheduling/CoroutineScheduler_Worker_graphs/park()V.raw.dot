@@ -1,0 +1,25 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.Worker.park()V" {
+Node_10 [shape=record,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0000|0x0000: IGET  (r0 I:long) = (r6 I:kotlinx.coroutines.scheduling.CoroutineScheduler$Worker) kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.terminationDeadline long  (LINE:792)\l0x0002: CONST  (r2 I:??[long, double]) = (0 ??[long, double]) \l0x0004: CMP_L  (r4 I:int) = (r0 I:long), (r2 I:long) \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0006|0x0006: IF  (r4 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:15:0x0013 \l}"];
+Node_14 [shape=record,label="{14\:\ 0x0008|0x0008: INVOKE  (r0 I:long) =  type: STATIC call: java.lang.System.nanoTime():long A[MD:():long (c)]\l0x000c: IGET  (r4 I:kotlinx.coroutines.scheduling.CoroutineScheduler) = (r6 I:kotlinx.coroutines.scheduling.CoroutineScheduler$Worker) kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.this$0 kotlinx.coroutines.scheduling.CoroutineScheduler \l0x000e: IGET  (r4 I:long) = (r4 I:kotlinx.coroutines.scheduling.CoroutineScheduler) kotlinx.coroutines.scheduling.CoroutineScheduler.idleWorkerKeepAliveNs long \l0x0010: ARITH  (r0 I:long) = (r0 I:long) + (r4 I:long) \l0x0011: IPUT  (r0 I:long), (r6 I:kotlinx.coroutines.scheduling.CoroutineScheduler$Worker) kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.terminationDeadline long \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0013|0x0013: IGET  (r0 I:kotlinx.coroutines.scheduling.CoroutineScheduler) = (r6 I:kotlinx.coroutines.scheduling.CoroutineScheduler$Worker) kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.this$0 kotlinx.coroutines.scheduling.CoroutineScheduler  (LINE:794)\l0x0015: IGET  (r0 I:long) = (r0 I:kotlinx.coroutines.scheduling.CoroutineScheduler) kotlinx.coroutines.scheduling.CoroutineScheduler.idleWorkerKeepAliveNs long \l0x0017: INVOKE  (r0 I:long) type: STATIC call: java.util.concurrent.locks.LockSupport.parkNanos(long):void A[MD:(long):void (c)]\l0x001a: INVOKE  (r0 I:long) =  type: STATIC call: java.lang.System.nanoTime():long A[MD:():long (c)] (LINE:797)\l0x001e: IGET  (r4 I:long) = (r6 I:kotlinx.coroutines.scheduling.CoroutineScheduler$Worker) kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.terminationDeadline long \l0x0020: ARITH  (r0 I:long) = (r0 I:long) \- (r4 I:long) \l0x0021: CMP_L  (r4 I:int) = (r0 I:long), (r2 I:long) \l}"];
+Node_16 [shape=record,label="{16\:\ 0x0023|0x0023: IF  (r4 I:??[int, byte, short, char]) \< (0 ??[int, byte, short, char])  \-\> B:19:? \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0025|0x0025: IPUT  (r2 I:long), (r6 I:kotlinx.coroutines.scheduling.CoroutineScheduler$Worker) kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.terminationDeadline long  (LINE:798)\l0x0027: INVOKE  (r6 I:kotlinx.coroutines.scheduling.CoroutineScheduler$Worker) type: DIRECT call: kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.tryTerminateWorker():void A[MD:():void (m)] (LINE:799)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x002a|RETURN\lORIG_RETURN\l|0x002a: RETURN    (LINE:801)\l}"];
+Node_11 [shape=record,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|0x002a: RETURN   A[SYNTHETIC] (LINE:801)\l}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.park((r6 'this' I:kotlinx.coroutines.scheduling.CoroutineScheduler$Worker A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0023 \-\> B:18:0x002a, CROSS_EDGE: B:13:0x0006 \-\> B:15:0x0013\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_19;
+Node_17 -> Node_18;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

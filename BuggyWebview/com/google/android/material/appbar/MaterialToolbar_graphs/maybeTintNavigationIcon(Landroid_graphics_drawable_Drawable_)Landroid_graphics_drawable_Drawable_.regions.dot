@@ -1,0 +1,41 @@
+digraph "CFG forcom.google.android.material.appbar.MaterialToolbar.maybeTintNavigationIcon(Landroid\/graphics\/drawable\/Drawable;)Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_458307752 {
+label = "R(1:(2:(2:4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2090257220 {
+label = "R(2:(2:4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1969818389 {
+label = "IF [B:10:0x0000, B:12:0x0004] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|if (r3 != null) goto L2\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0004|ADDED_TO_REGION\l|if (r2.navigationIconTint != null) goto L4\l}"];
+subgraph cluster_Region_1504750787 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = androidx.core.graphics.drawable.DrawableCompat.wrap(r3.mutate())\landroidx.core.graphics.drawable.DrawableCompat.setTint(r0, r2.navigationIconTint.intValue())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0017|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_17458479 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0018|RETURN\l|return r3\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0002}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.graphics.drawable.Drawable com.google.android.material.appbar.MaterialToolbar.maybeTintNavigationIcon((r2v0 'this' com.google.android.material.appbar.MaterialToolbar A[IMMUTABLE_TYPE, THIS]), (r3v0 'navigationIcon' android.graphics.drawable.Drawable A[D('navigationIcon' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0018 \-\> B:9:?, CROSS_EDGE: B:10:0x0000 \-\> B:15:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_10 -> Node_15[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+}
+

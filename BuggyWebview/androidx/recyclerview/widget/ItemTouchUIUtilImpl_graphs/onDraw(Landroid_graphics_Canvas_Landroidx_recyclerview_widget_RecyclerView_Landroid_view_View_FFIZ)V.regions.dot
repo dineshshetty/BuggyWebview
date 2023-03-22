@@ -1,0 +1,46 @@
+digraph "CFG forandroidx.recyclerview.widget.ItemTouchUIUtilImpl.onDraw(Landroid\/graphics\/Canvas;Landroidx\/recyclerview\/widget\/RecyclerView;Landroid\/view\/View;FFIZ)V" {
+subgraph cluster_Region_941824485 {
+label = "R(2:(2:4|(1:6))|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_822604425 {
+label = "IF [B:13:0x0004, B:14:0x0006] THEN: R(2:4|(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0006|ADDED_TO_REGION\l|if (r10 != false) goto L4\l}"];
+subgraph cluster_Region_1379347107 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|java.lang.Object java.lang.Object r0 = r6.getTag(androidx.recyclerview.C0417R.C0420id.item_touch_helper_previous_elevation)\l}"];
+subgraph cluster_IfRegion_537205150 {
+label = "IF [B:16:0x000e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000e|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_1104881133 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|java.lang.Float java.lang.Object r0 = java.lang.Float.valueOf(androidx.core.view.ViewCompat.getElevation(r6))\lfloat float r2 = findMaxElevation(r5, r6) + 1.0f\landroidx.core.view.ViewCompat.setElevation(r6, r2)\lr6.setTag(androidx.recyclerview.C0417R.C0420id.item_touch_helper_previous_elevation, r0)\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0027|r6.setTranslationX(r7)\lr6.setTranslationY(r8)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x002d}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.ItemTouchUIUtilImpl.onDraw((r3v0 'this' androidx.recyclerview.widget.ItemTouchUIUtilImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 'c' android.graphics.Canvas A[D('c' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'recyclerView' androidx.recyclerview.widget.RecyclerView A[D('recyclerView' androidx.recyclerview.widget.RecyclerView), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'dX' float A[D('dX' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'dY' float A[D('dY' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'actionState' int A[D('actionState' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'isCurrentlyActive' boolean A[D('isCurrentlyActive' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000e \-\> B:18:0x0027, CROSS_EDGE: B:14:0x0006 \-\> B:18:0x0027, CROSS_EDGE: B:13:0x0004 \-\> B:18:0x0027\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.ItemTouchUIUtil.onDraw(android.graphics.Canvas, androidx.recyclerview.widget.RecyclerView, android.view.View, float, float, int, boolean):void]\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_19 -> Node_11;
+}
+

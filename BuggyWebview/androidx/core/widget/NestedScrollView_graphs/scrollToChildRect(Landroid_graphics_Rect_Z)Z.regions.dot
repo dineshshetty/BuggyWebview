@@ -1,0 +1,52 @@
+digraph "CFG forandroidx.core.widget.NestedScrollView.scrollToChildRect(Landroid\/graphics\/Rect;Z)Z" {
+subgraph cluster_Region_1124315833 {
+label = "R(4:1|2|(1:(1:6)(1:7))|8)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = computeScrollDeltaToGetChildRectOnScreen(r4)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0005|boolean r2 = r0 != 0\l}"];
+subgraph cluster_IfRegion_1343473227 {
+label = "IF [B:17:0x000a] THEN: R(1:(1:6)(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|PHI: r2 \l  PHI: (r2v1 'scroll' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 != false) goto L5\l}"];
+subgraph cluster_Region_1264791400 {
+label = "R(1:(1:6)(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_713848311 {
+label = "IF [B:18:0x000c] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|if (r5 != false) goto L6\l}"];
+subgraph cluster_Region_1512644640 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|scrollBy(0, r0)\l}"];
+}
+subgraph cluster_Region_683068182 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0012|smoothScrollBy(0, r0)\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0015|RETURN\l|return r2\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0007}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0009}"];
+MethodNode[shape=record,label="{private boolean androidx.core.widget.NestedScrollView.scrollToChildRect((r3v0 'this' androidx.core.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]), (r4v0 'rect' android.graphics.Rect A[D('rect' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'immediate' boolean A[D('immediate' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0012 \-\> B:21:0x0015, CROSS_EDGE: B:17:0x000a \-\> B:21:0x0015, CROSS_EDGE: B:16:0x0009 \-\> B:17:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+}
+

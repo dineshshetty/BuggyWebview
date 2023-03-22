@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.internal.PlatformImplementationsKt.castToBaseType(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000}"];
+Node_24 [shape=record,label="{24\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0003|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{ClassCastException \-\> 0x000a, blocks: (B:16:0x0003), top: B:24:0x0003 \}\lCatch: ClassCastException \-\> 0x000a\l|kotlin.jvm.internal.Intrinsics.reifiedOperationMarker(1, \"T\")     \/\/ Catch: java.lang.ClassCastException \-\> La\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0009|RETURN\l|return (T) r6\l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000a|ExcHandler: ClassCastException \-\> 0x000a\l|java.lang.ClassCastException r1 = move\-exception\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000b|java.lang.ClassLoader r2 = r6.getClass().getClassLoader()\lkotlin.jvm.internal.Intrinsics.reifiedOperationMarker(4, \"T\")\ljava.lang.ClassLoader r0 = java.lang.Object.class.getClassLoader()\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0024|if (kotlin.jvm.internal.Intrinsics.areEqual(r2, r0) != false) goto L12\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0026|java.lang.StringBuilder r4 = new java.lang.StringBuilder()\lr4.append(\"Instance class was loaded from a different classloader: \")\lr4.append(r2)\lr4.append(\", base type classloader: \")\lr4.append(r0)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0047|throw new java.lang.ClassNotFoundException(r4.toString(), r1)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0048|throw r1\l}"];
+MethodNode[shape=record,label="{private static final \/* synthetic *\/ T kotlin.internal.PlatformImplementationsKt.castToBaseType((r6v0 'instance' java.lang.Object A[D('instance' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:22:0x0047 \-\> B:14:?, CROSS_EDGE: B:23:0x0048 \-\> B:14:?, CROSS_EDGE: B:24:0x0003 \-\> B:18:0x000a\lINLINE_NOT_NEEDED\lTryCatch #0 \{ClassCastException \-\> 0x000a, blocks: (B:16:0x0003), top: B:24:0x0003 \}\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Object;)TT;\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_24;
+Node_24 -> Node_16;
+Node_24 -> Node_18;
+Node_16 -> Node_17;
+Node_16 -> Node_25;
+Node_17 -> Node_14;
+Node_25 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_23;
+Node_21 -> Node_22;
+Node_22 -> Node_14;
+Node_23 -> Node_14;
+}
+

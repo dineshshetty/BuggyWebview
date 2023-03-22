@@ -1,0 +1,75 @@
+digraph "CFG forandroidx.activity.ComponentActivity.\<init\>()V" {
+subgraph cluster_Region_1875218200 {
+label = "R(2:1|(2:(1:15)|(4:(1:5)|6|(1:10)|11)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|r5.mContextAwareHelper = new androidx.activity.contextaware.ContextAwareHelper()\lr5.mMenuHostHelper = new androidx.core.view.MenuHostHelper(new androidx.activity.ComponentActivity$$ExternalSyntheticLambda2())\lr5.mLifecycleRegistry = new androidx.lifecycle.LifecycleRegistry(r5)\landroidx.savedstate.SavedStateRegistryController androidx.savedstate.SavedStateRegistryController r0 = androidx.savedstate.SavedStateRegistryController.create(r5)\lr5.mSavedStateRegistryController = r0\lr5.mOnBackPressedDispatcher = new androidx.activity.OnBackPressedDispatcher(new androidx.activity.ComponentActivity.RunnableC00011())\lr5.mNextLocalRequestCode = new java.util.concurrent.atomic.AtomicInteger()\lr5.mActivityResultRegistry = new androidx.activity.ComponentActivity.C00022()\lr5.mOnConfigurationChangedListeners = new java.util.concurrent.CopyOnWriteArrayList\<\>()\lr5.mOnTrimMemoryListeners = new java.util.concurrent.CopyOnWriteArrayList\<\>()\lr5.mOnNewIntentListeners = new java.util.concurrent.CopyOnWriteArrayList\<\>()\lr5.mOnMultiWindowModeChangedListeners = new java.util.concurrent.CopyOnWriteArrayList\<\>()\lr5.mOnPictureInPictureModeChangedListeners = new java.util.concurrent.CopyOnWriteArrayList\<\>()\landroidx.lifecycle.Lifecycle androidx.lifecycle.Lifecycle r1 = getLifecycle()\l}"];
+subgraph cluster_Region_269165022 {
+label = "R(2:(1:15)|(4:(1:5)|6|(1:10)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_202122018 {
+label = "IF [B:19:0x0065] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0065|if (r1 == null) goto L14\l}"];
+subgraph cluster_Region_1896578540 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x00cb|throw new java.lang.IllegalStateException(\"getLifecycle() returned null in ComponentActivity's constructor. Please make sure you are lazily constructing your Lifecycle in the first call to getLifecycle() rather than relying on field initialization.\")\l}"];
+}
+}
+subgraph cluster_Region_2079468717 {
+label = "R(4:(1:5)|6|(1:10)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_742310951 {
+label = "IF [B:21:0x006b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x006b|if (android.os.Build.VERSION.SDK_INT \>= 19) goto L5\l}"];
+subgraph cluster_Region_420691957 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x006d|getLifecycle().addObserver(new androidx.activity.ComponentActivity.C00053())\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0079|getLifecycle().addObserver(new androidx.activity.ComponentActivity.C00064())\lgetLifecycle().addObserver(new androidx.activity.ComponentActivity.C00075())\lr0.performAttach()\landroidx.lifecycle.SavedStateHandleSupport.enableSavedStateHandles(r5)\l}"];
+subgraph cluster_IfRegion_1356855512 {
+label = "IF [B:24:0x0099, B:26:0x009f] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0099|if (19 \<= android.os.Build.VERSION.SDK_INT) goto L8\l}"];
+Node_26 [shape=record,label="{26\:\ 0x009f|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \<= 23) goto L10\l}"];
+subgraph cluster_Region_2056325938 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00a1|getLifecycle().addObserver(new androidx.activity.ImmLeaksCleaner(r5))\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x00ad|getSavedStateRegistry().registerSavedStateProvider(androidx.activity.ComponentActivity.ACTIVITY_RESULT_TAG, new androidx.activity.ComponentActivity$$ExternalSyntheticLambda1())\laddOnContextAvailableListener(new androidx.activity.D8$$SyntheticClass())\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0067}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x009b}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x00c3}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x00c4}"];
+MethodNode[shape=record,label="{public void androidx.activity.ComponentActivity.\<init\>((r5v0 'this' androidx.activity.ComponentActivity A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x009f \-\> B:28:0x00ad, CROSS_EDGE: B:24:0x0099 \-\> B:28:0x00ad, CROSS_EDGE: B:21:0x006b \-\> B:23:0x0079, CROSS_EDGE: B:31:0x00cb \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_30;
+Node_31 -> Node_17;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_25 -> Node_26;
+Node_29 -> Node_17;
+Node_30 -> Node_31;
+}
+

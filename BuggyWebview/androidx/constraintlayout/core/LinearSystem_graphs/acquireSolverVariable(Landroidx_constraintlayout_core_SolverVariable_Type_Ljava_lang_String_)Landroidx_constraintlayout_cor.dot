@@ -1,0 +1,27 @@
+digraph "CFG forandroidx.constraintlayout.core.LinearSystem.acquireSolverVariable(Landroidx\/constraintlayout\/core\/SolverVariable$Type;Ljava\/lang\/String;)Landroidx\/constraintlayout\/core\/SolverVariable;" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|androidx.constraintlayout.core.SolverVariable r0 = r4.mCache.solverVariablePool.acquire()\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000a|if (r0 != null) goto L10\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000c|r0 = new androidx.constraintlayout.core.SolverVariable(r5, r6)\lr0.setType(r5, r6)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x001c|PHI: r0 \l  PHI: (r0v4 'variable' androidx.constraintlayout.core.SolverVariable) = (r0v3 'variable' androidx.constraintlayout.core.SolverVariable), (r0v5 'variable' androidx.constraintlayout.core.SolverVariable) binds: [B:16:0x0016, B:15:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|int r1 = r4.mPoolVariablesCount\lint r2 = androidx.constraintlayout.core.LinearSystem.POOL_SIZE\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0020|if (r1 \< r2) goto L7\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0022|int r2 = r2 * 2\landroidx.constraintlayout.core.LinearSystem.POOL_SIZE = r2\lr4.mPoolVariables = (androidx.constraintlayout.core.SolverVariable[]) java.util.Arrays.copyOf(r4.mPoolVariables, r2)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0030|androidx.constraintlayout.core.SolverVariable[] r1 = r4.mPoolVariables\lint r2 = r4.mPoolVariablesCount\lr4.mPoolVariablesCount = r2 + 1\lr1[r2] = r0\l}"];
+Node_21 [shape=record,label="{21\:\ 0x003a|RETURN\l|return r0\l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0016|r0.reset()\lr0.setType(r5, r6)\l}"];
+MethodNode[shape=record,label="{private androidx.constraintlayout.core.SolverVariable androidx.constraintlayout.core.LinearSystem.acquireSolverVariable((r4v0 'this' androidx.constraintlayout.core.LinearSystem A[IMMUTABLE_TYPE, THIS]), (r5v0 'type' androidx.constraintlayout.core.SolverVariable$Type A[D('type' androidx.constraintlayout.core.SolverVariable$Type), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'prefix' java.lang.String A[D('prefix' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0020 \-\> B:20:0x0030, CROSS_EDGE: B:16:0x0016 \-\> B:17:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_16 -> Node_17;
+}
+

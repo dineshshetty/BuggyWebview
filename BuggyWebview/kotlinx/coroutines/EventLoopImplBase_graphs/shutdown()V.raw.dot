@@ -1,0 +1,20 @@
+digraph "CFG forkotlinx.coroutines.EventLoopImplBase.shutdown()V" {
+Node_9 [shape=record,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0000|0x0000: SGET  (r0 I:kotlinx.coroutines.ThreadLocalEventLoop) =  kotlinx.coroutines.ThreadLocalEventLoop.INSTANCE kotlinx.coroutines.ThreadLocalEventLoop  (LINE:223)\l0x0002: INVOKE  (r0 I:kotlinx.coroutines.ThreadLocalEventLoop) type: VIRTUAL call: kotlinx.coroutines.ThreadLocalEventLoop.resetEventLoop$kotlinx_coroutines_core():void A[MD:():void (m)]\l0x0005: CONST  (r0 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char])  (LINE:226)\l0x0006: INVOKE  (r5 I:kotlinx.coroutines.EventLoopImplBase), (r0 I:boolean) type: DIRECT call: kotlinx.coroutines.EventLoopImplBase.setCompleted(boolean):void A[MD:(boolean):void (m)]\l0x0009: INVOKE  (r5 I:kotlinx.coroutines.EventLoopImplBase) type: DIRECT call: kotlinx.coroutines.EventLoopImplBase.closeQueue():void A[MD:():void (m)] (LINE:227)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000c|LOOP_START\lLOOP:0: B:12:0x000c\-\>B:13:0x0014\l|0x000c: INVOKE  (r0 I:long) = (r5 I:kotlinx.coroutines.EventLoopImplBase) type: VIRTUAL call: kotlinx.coroutines.EventLoopImplBase.processNextEvent():long A[MD:():long (m)] (LINE:229)\l0x0010: CONST  (r2 I:??[long, double]) = (0 ??[long, double]) \l0x0012: CMP_L  (r4 I:int) = (r0 I:long), (r2 I:long) \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0014|LOOP_END\lLOOP:0: B:12:0x000c\-\>B:13:0x0014\l|0x0014: IF  (r4 I:??[int, byte, short, char]) \> (0 ??[int, byte, short, char])  \-\> B:17:0x0017 \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0017|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0017|0x0017: INVOKE  (r5 I:kotlinx.coroutines.EventLoopImplBase) type: DIRECT call: kotlinx.coroutines.EventLoopImplBase.rescheduleAllDelayed():void A[MD:():void (m)] (LINE:231)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x001a|RETURN\l|0x001a: RETURN    (LINE:232)\l}"];
+Node_10 [shape=record,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.EventLoopImplBase.shutdown((r5 'this' I:kotlinx.coroutines.EventLoopImplBase A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0014 \-\> B:12:0x000c\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [kotlinx.coroutines.EventLoop.shutdown():void]\l}"];
+MethodNode -> Node_9;Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_12[style=dashed];
+Node_13 -> Node_17;
+Node_17 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_10;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.internal.DispatchedContinuation.release()V" {
+subgraph cluster_Region_43637598 {
+label = "R(2:1|(2:(1:6)|(1:3)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|awaitReusability()\lkotlinx.coroutines.CancellableContinuationImpl kotlinx.coroutines.CancellableContinuationImpl\<?\> r0 = getReusableCancellableContinuation()\l}"];
+subgraph cluster_Region_638584377 {
+label = "R(2:(1:6)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1913431561 {
+label = "IF [B:11:0x0007] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0007|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_1000928511 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1481787806 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|r0.detachChild$kotlinx_coroutines_core()\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000d|ORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.internal.DispatchedContinuation.release((r1v0 'this' kotlinx.coroutines.internal.DispatchedContinuation\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0007 \-\> B:14:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_13[style=dashed];
+Node_11 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_8 -> Node_10;
+Node_14 -> Node_9;
+}
+

@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.emoji2.text.MetadataListReader.read(Ljava\/io\/InputStream;)Landroidx\/emoji2\/text\/flatbuffer\/MetadataList;" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|androidx.emoji2.text.MetadataListReader$InputStreamOpenTypeReader r0 = new androidx.emoji2.text.MetadataListReader.InputStreamOpenTypeReader(r9)\landroidx.emoji2.text.MetadataListReader$OffsetInfo r1 = findOffsetInfo(r0)\lr0.skip((int) (r1.getStartOffset() \- r0.getPosition()))\ljava.nio.ByteBuffer r2 = java.nio.ByteBuffer.allocate((int) r1.getLength())\lint r3 = r9.read(r2.array())\l}"];
+Node_11 [shape=record,label="{11\:\ 0x002e|if ((((long) r3) \> r1.getLength() ? 1 : (((long) r3) == r1.getLength() ? 0 : \-1)) != 0) goto L6\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0030}"];
+Node_13 [shape=record,label="{13\:\ 0x0034|RETURN\l|return androidx.emoji2.text.flatbuffer.MetadataList.getRootAsMetadataList(r2)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0035|java.lang.StringBuilder r5 = new java.lang.StringBuilder()\lr5.append(\"Needed \")\lr5.append(r1.getLength())\lr5.append(\" bytes, got \")\lr5.append(r3)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0057|throw new java.io.IOException(r5.toString())\l}"];
+MethodNode[shape=record,label="{public static androidx.emoji2.text.flatbuffer.MetadataList androidx.emoji2.text.MetadataListReader.read((r9v0 'inputStream' java.io.InputStream A[D('inputStream' java.io.InputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0057 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Ljava\/io\/IOException;]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+}
+

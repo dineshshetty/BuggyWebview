@@ -1,0 +1,28 @@
+digraph "CFG forandroidx.appcompat.app.ToolbarActionBar.setCustomView(Landroid\/view\/View;Landroidx\/appcompat\/app\/ActionBar$LayoutParams;)V" {
+subgraph cluster_Region_1580804213 {
+label = "R(2:(1:2)|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1044800522 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r2 != null) goto L2\l}"];
+subgraph cluster_Region_320044074 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|r2.setLayoutParams(r3)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0005|r1.mDecorToolbar.setCustomView(r2)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.app.ToolbarActionBar.setCustomView((r1v0 'this' androidx.appcompat.app.ToolbarActionBar A[IMMUTABLE_TYPE, THIS]), (r2v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'layoutParams' androidx.appcompat.app.ActionBar$LayoutParams A[D('layoutParams' androidx.appcompat.app.ActionBar$LayoutParams), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:2:0x0000 \-\> B:4:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.app.ActionBar.setCustomView(android.view.View, androidx.appcompat.app.ActionBar$LayoutParams):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_2;
+Node_5 -> Node_1;
+}
+

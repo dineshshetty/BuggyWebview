@@ -1,0 +1,30 @@
+digraph "CFG forkotlinx.coroutines.DefaultExecutor.createThreadSync()Ljava\/lang\/Thread;" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000|monitor\-enter(r4)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0001|TRY_ENTER\lTryCatch #0 \{, blocks: (B:16:0x0001, B:18:0x0005), top: B:24:0x0001 \}\lCatch: all \-\> 0x001d\l|java.lang.Thread r0 = kotlinx.coroutines.DefaultExecutor._thread     \/\/ Catch: java.lang.Throwable \-\> L1d\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0003|if (r0 != null) goto L7\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0005|TRY_LEAVE\lTryCatch #0 \{, blocks: (B:16:0x0001, B:18:0x0005), top: B:24:0x0001 \}\lCatch: all \-\> 0x001d\l|java.lang.Thread r0 = new java.lang.Thread(r4, kotlinx.coroutines.DefaultExecutor.THREAD_NAME)     \/\/ Catch: java.lang.Throwable \-\> L1d\lkotlinx.coroutines.DefaultExecutor._thread = r0     \/\/ Catch: java.lang.Throwable \-\> L1d\lr0.setDaemon(true)     \/\/ Catch: java.lang.Throwable \-\> L1d\lr0.start()     \/\/ Catch: java.lang.Throwable \-\> L1d\l}"];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001b|PHI: r0 \l  PHI: (r0v2 '$this$createThreadSync_u24lambda_u2d0' java.lang.Thread) = (r0v1 '$this$createThreadSync_u24lambda_u2d0' java.lang.Thread), (r0v3 '$this$createThreadSync_u24lambda_u2d0' java.lang.Thread) binds: [B:17:0x0003, B:18:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit(r4)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x001c|RETURN\l|return r0\l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x001d|REMOVE\lExcHandler: all \-\> 0x001d\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001f|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{private final synchronized java.lang.Thread kotlinx.coroutines.DefaultExecutor.createThreadSync((r4v0 'this' kotlinx.coroutines.DefaultExecutor A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001f \-\> B:14:?, CROSS_EDGE: B:17:0x0003 \-\> B:19:0x001b, CROSS_EDGE: B:24:0x0001 \-\> B:21:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_24;
+Node_24 -> Node_16;
+Node_24 -> Node_21;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+Node_18 -> Node_19;
+Node_18 -> Node_25;
+Node_25 -> Node_21;
+Node_19 -> Node_20;
+Node_20 -> Node_14;
+Node_21 -> Node_23;
+Node_23 -> Node_14;
+}
+

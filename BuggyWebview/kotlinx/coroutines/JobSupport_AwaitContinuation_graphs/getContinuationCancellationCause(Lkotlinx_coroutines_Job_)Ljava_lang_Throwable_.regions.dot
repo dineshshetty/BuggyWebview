@@ -1,0 +1,54 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.AwaitContinuation.getContinuationCancellationCause(Lkotlinx\/coroutines\/Job;)Ljava\/lang\/Throwable;" {
+subgraph cluster_Region_2057148566 {
+label = "R(2:1|(2:(1:9)|(1:6))) | DECL_VAR: java.lang.Throwable it\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|java.lang.Object java.lang.Object r0 = r3.job.getState$kotlinx_coroutines_core()\l}"];
+subgraph cluster_Region_141057375 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_976408940 {
+label = "IF [B:18:0x0008, B:20:0x0011] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|if ((r0 instanceof kotlinx.coroutines.JobSupport.Finishing) == true) goto L3\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0011|ADDED_TO_REGION\l|if ((r1 = ((kotlinx.coroutines.JobSupport.Finishing) r0).getRootCause()) == null) goto L8\l}"];
+subgraph cluster_Region_1760155455 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0018|RETURN\l|return r0 instanceof kotlinx.coroutines.CompletedExceptionally ? ((kotlinx.coroutines.CompletedExceptionally) r0).cause : r4.getCancellationException()\l}"];
+}
+}
+subgraph cluster_Region_1826680676 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0015|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000a}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0014}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0016}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001a}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001f}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0020}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0026}"];
+MethodNode[shape=record,label="{public java.lang.Throwable kotlinx.coroutines.JobSupport.AwaitContinuation.getContinuationCancellationCause((r3v0 'this' kotlinx.coroutines.JobSupport$AwaitContinuation\<T\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'parent' kotlinx.coroutines.Job A[D('parent' kotlinx.coroutines.Job), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x001f \-\> B:16:?, CROSS_EDGE: B:29:0x0026 \-\> B:16:?, CROSS_EDGE: B:18:0x0008 \-\> B:24:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [kotlinx.coroutines.CancellableContinuationImpl.getContinuationCancellationCause(kotlinx.coroutines.Job):java.lang.Throwable]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_24[style=dashed];
+Node_20 -> Node_22[style=dashed];
+Node_20 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_28;
+Node_23 -> Node_16;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_27 -> Node_16;
+Node_28 -> Node_29;
+Node_29 -> Node_16;
+}
+

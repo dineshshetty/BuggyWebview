@@ -1,0 +1,31 @@
+digraph "CFG forkotlin.jvm.internal.Intrinsics.sanitizeStackTrace(Ljava\/lang\/Throwable;Ljava\/lang\/String;)Ljava\/lang\/Throwable;" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000|0x0000: INVOKE  (r0 I:java.lang.StackTraceElement[]) = (r5 I:java.lang.Throwable A[D('throwable' T extends java.lang.Throwable)]) type: VIRTUAL call: java.lang.Throwable.getStackTrace():java.lang.StackTraceElement[] A[MD:():java.lang.StackTraceElement[] (c)] (LINE:255)\l0x0004: ARRAY_LENGTH  (r1 I:int) = (r0 I:??[] A[D('stackTrace' java.lang.StackTraceElement[])])  (LINE:256)\l0x0005: CONST  (r2 I:??[int, float, short, byte, char]) = (\-1 ??[int, float, short, byte, char])  (LINE:258)\l0x0006: CONST  (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:259)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0007|LOOP_START\lLOOP:0: B:16:0x0007\-\>B:20:0x0016\l|0x0007: IF  (r3 I:??[int, byte, short, char] A[D('i' int)]) \>= (r1 I:??[int, byte, short, char] A[D('size' int)])  \-\> B:23:0x0019 \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0009|0x0009: AGET  (r4 I:??[OBJECT, ARRAY]) = \l  (r0 I:??[OBJECT, ARRAY][] A[D('stackTrace' java.lang.StackTraceElement[])])\l  (r3 I:??[int, short, byte, char] A[D('i' int)])\l  (LINE:260)\l0x000b: INVOKE  (r4 I:java.lang.String) = (r4 I:java.lang.StackTraceElement) type: VIRTUAL call: java.lang.StackTraceElement.getClassName():java.lang.String A[MD:():java.lang.String (c)]\l0x000f: INVOKE  (r4 I:boolean) = (r6 I:java.lang.String A[D('classNameToDrop' java.lang.String)]), (r4 I:java.lang.Object) type: VIRTUAL call: java.lang.String.equals(java.lang.Object):boolean A[MD:(java.lang.Object):boolean (c)]\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0013|0x0013: IF  (r4 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:25:0x0016 \l}"];
+Node_19 [shape=record,label="{19\:\ 0x0015|0x0015: MOVE  (r2 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('lastIntrinsic' int)]) = (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('i' int)])  (LINE:261)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0016|SYNTHETIC\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0016|LOOP_END\lLOOP:0: B:16:0x0007\-\>B:20:0x0016\l|0x0016: ARITH  (r3 I:int) = (r3 I:int A[D('i' int)]) + (1 int)  (LINE:259)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0016|SYNTHETIC\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0019|SYNTHETIC\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0019|0x0019: ARITH  (r3 I:int A[D('i' int)]) = (r2 I:int A[D('lastIntrinsic' int)]) + (1 int)  (LINE:265)\l0x001b: INVOKE  (r3 I:java.lang.Object[]) = (r0 I:java.lang.Object[] A[D('stackTrace' java.lang.StackTraceElement[])]), (r3 I:int), (r1 I:int A[D('size' int)]) type: STATIC call: java.util.Arrays.copyOfRange(java.lang.Object[], int, int):java.lang.Object[] A[MD:\<T\>:(T[], int, int):T[] (c)]\l0x001f: CHECK_CAST (r3 I:java.lang.StackTraceElement[]) = (java.lang.StackTraceElement[]) (r3 I:??[OBJECT, ARRAY]) \l0x0021: INVOKE  \l  (r5 I:java.lang.Throwable A[D('throwable' T extends java.lang.Throwable)])\l  (r3 I:java.lang.StackTraceElement[] A[D('newStackTrace' java.lang.StackTraceElement[])])\l type: VIRTUAL call: java.lang.Throwable.setStackTrace(java.lang.StackTraceElement[]):void A[MD:(java.lang.StackTraceElement[]):void (c)] (LINE:266)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0024|RETURN\l|0x0024: RETURN  (r5 I:T extends java.lang.Throwable A[D('throwable' T extends java.lang.Throwable)])  (LINE:267)\l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static T extends java.lang.Throwable kotlin.jvm.internal.Intrinsics.sanitizeStackTrace((r5 I:T extends java.lang.Throwable A[D('throwable' T extends java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:java.lang.String A[D('classNameToDrop' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0016 \-\> B:16:0x0007, CROSS_EDGE: B:18:0x0013 \-\> B:20:0x0016\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0007\-0x0019: r3 'i' I\l  0x0004\-0x0024: r0 'stackTrace' [Ljava\/lang\/StackTraceElement;\l  0x0005\-0x0024: r1 'size' I\l  0x0006\-0x0024: r2 'lastIntrinsic' I\l  0x0021\-0x0024: r3 'newStackTrace' [Ljava\/lang\/StackTraceElement;\l  0x0000\-0x0024: r5 'throwable' Ljava\/lang\/Throwable;, signature: TT;\l  \-1 \-0x0024: r6 'classNameToDrop' Ljava\/lang\/String;\lTYPE_VARS: [T extends java.lang.Throwable]\lSIGNATURE: \<T:Ljava\/lang\/Throwable;\>(TT;Ljava\/lang\/String;)TT;\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_23;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_25;
+Node_19 -> Node_24;
+Node_24 -> Node_20;
+Node_20 -> Node_16;
+Node_25 -> Node_20;
+Node_23 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_14;
+}
+

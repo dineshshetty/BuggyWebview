@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutInfoCompat.getLocusId(Landroid\/content\/pm\/ShortcutInfo;)Landroidx\/core\/content\/LocusIdCompat;" {
+subgraph cluster_Region_1762405120 {
+label = "R(1:(2:(1:(2:(1:5)|(1:8)))|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_19584027 {
+label = "R(2:(1:(2:(1:5)|(1:8)))|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1870878027 {
+label = "IF [B:15:0x0004] THEN: R(1:(2:(1:5)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L3\l}"];
+subgraph cluster_Region_768872060 {
+label = "R(1:(2:(1:5)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_629699821 {
+label = "R(2:(1:5)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1926624843 {
+label = "IF [B:17:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|if (r2.getLocusId() == null) goto L5\l}"];
+subgraph cluster_Region_126471255 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_178492724 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|RETURN\l|return androidx.core.content.LocusIdCompat.toLocusIdCompat(r2.getLocusId())\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1827317649 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001f|RETURN\l|return getLocusIdFromExtra(r2.getExtras())\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000e}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0017}"];
+MethodNode[shape=record,label="{static androidx.core.content.LocusIdCompat androidx.core.content.pm.ShortcutInfoCompat.getLocusId((r2v0 'shortcutInfo' android.content.pm.ShortcutInfo A[D('shortcutInfo' android.content.pm.ShortcutInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0016 \-\> B:13:?, CROSS_EDGE: B:23:0x001f \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_13;
+Node_21 -> Node_13;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+}
+

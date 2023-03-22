@@ -1,0 +1,85 @@
+digraph "CFG forandroidx.core.os.TraceCompat.setCounter(Ljava\/lang\/String;I)V" {
+subgraph cluster_Region_1934567179 {
+label = "R(1:(1:3)(1:(1:(1:9))(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_135888687 {
+label = "IF [B:20:0x0004] THEN: R(1:3) ELSE: R(1:(1:(1:9))(0))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L3\l}"];
+subgraph cluster_Region_650306680 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0006|androidx.core.p003os.TraceCompat.Api29Impl.setCounter(r6, r7)\l}"];
+}
+subgraph cluster_Region_1576829223 {
+label = "R(1:(1:(1:9))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1459716844 {
+label = "IF [B:23:0x000f] THEN: R(1:(1:9)) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000f|if (android.os.Build.VERSION.SDK_INT \>= 18) goto L8\l}"];
+subgraph cluster_Region_346193700 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_628271340 {
+label = "Try: R(1:9) catches: R(1:13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_473886940 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0011|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x002e, blocks: (B:24:0x0011), top: B:29:0x0011 \}\lCatch: Exception \-\> 0x002e\l|androidx.core.p003os.TraceCompat.sTraceCounterMethod.invoke(null, java.lang.Long.valueOf(androidx.core.p003os.TraceCompat.sTraceTagApp), r6, java.lang.Integer.valueOf(r7))     \/\/ Catch: java.lang.Exception \-\> L2e\l}"];
+}
+subgraph cluster_Region_1207109461 {
+label = "R(1:13) | ExcHandler: Exception \-\> 0x002e\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002f|android.util.Log.v(androidx.core.p003os.TraceCompat.TAG, \"Unable to invoke traceCounter() via reflection.\")\l}"];
+}
+}
+}
+subgraph cluster_Region_1076829136 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1207109461 {
+label = "R(1:13) | ExcHandler: Exception \-\> 0x002e\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002f|android.util.Log.v(androidx.core.p003os.TraceCompat.TAG, \"Unable to invoke traceCounter() via reflection.\")\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000b}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0011|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002e|ExcHandler: Exception \-\> 0x002e\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0036|ORIG_RETURN\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.os.TraceCompat.setCounter((r6v0 'counterName' java.lang.String A[D('counterName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'counterValue' int A[D('counterValue' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x000f \-\> B:28:0x0036, CROSS_EDGE: B:24:0x0011 \-\> B:28:0x0036, CROSS_EDGE: B:27:0x002f \-\> B:28:0x0036, CROSS_EDGE: B:29:0x0011 \-\> B:26:0x002e\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x002e, blocks: (B:24:0x0011), top: B:29:0x0011 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_31;
+Node_23 -> Node_29;
+Node_23 -> Node_32[style=dashed];
+Node_24 -> Node_30;
+Node_24 -> Node_33;
+Node_27 -> Node_28;
+Node_27 -> Node_28;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_31 -> Node_18;
+Node_22 -> Node_23;
+Node_29 -> Node_24;
+Node_29 -> Node_26;
+Node_30 -> Node_26;
+Node_33 -> Node_18;
+Node_26 -> Node_27;
+Node_28 -> Node_18;
+Node_32 -> Node_18;
+}
+

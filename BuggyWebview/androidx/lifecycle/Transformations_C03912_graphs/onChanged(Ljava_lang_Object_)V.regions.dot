@@ -1,0 +1,70 @@
+digraph "CFG forandroidx.lifecycle.Transformations.2.onChanged(Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_1698900991 {
+label = "R(2:1|(2:(1:3)|(3:(1:6)|7|(1:(1:9)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.lifecycle.LiveData androidx.lifecycle.LiveData\<Y\> r0 = (androidx.lifecycle.LiveData) androidx.arch.core.util.Function.this.apply(r4)\landroidx.lifecycle.LiveData\<Y\> java.lang.Object r1 = r3.mSource\l}"];
+subgraph cluster_Region_1243837650 {
+label = "R(2:(1:3)|(3:(1:6)|7|(1:(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_957056835 {
+label = "IF [B:3:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r1 == r0) goto L3\l}"];
+subgraph cluster_Region_1943191716 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2141345899 {
+label = "R(3:(1:6)|7|(1:(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_196237348 {
+label = "IF [B:5:0x000d] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|if (r1 != null) goto L6\l}"];
+subgraph cluster_Region_1723738169 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|r2.removeSource(r1)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0014|r3.mSource = r0\l}"];
+subgraph cluster_Region_562101592 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_302397016 {
+label = "IF [B:8:0x0016] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0016|if (r0 != 0) goto L9\l}"];
+subgraph cluster_Region_1852242740 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0018|r2.addSource(r0, new androidx.lifecycle.Transformations.C03912.C03921())\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0022|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.lifecycle.Transformations.2.onChanged((r3v0 'this' androidx.lifecycle.Transformations$2 A[IMMUTABLE_TYPE, THIS]), (r4v0 'x' X A[D('x' X), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0022 \-\> B:1:?, CROSS_EDGE: B:8:0x0016 \-\> B:10:0x0022, CROSS_EDGE: B:5:0x000d \-\> B:7:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (TX;)V\lMETHOD_OVERRIDE: [androidx.lifecycle.Observer.onChanged(T):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_10 -> Node_1;
+Node_11 -> Node_1;
+}
+

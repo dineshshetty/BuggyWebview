@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.appcompat.graphics.drawable.DrawableContainer.getIntrinsicHeight()I" {
+subgraph cluster_Region_510452198 {
+label = "R(1:(2:(1:4)|(2:6|(2:(1:9)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1692827995 {
+label = "R(2:(1:4)|(2:6|(2:(1:9)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_284932900 {
+label = "IF [B:15:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r1.mDrawableContainerState.isConstantSize() != false) goto L3\l}"];
+subgraph cluster_Region_961366485 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|RETURN\l|return r1.mDrawableContainerState.getConstantHeight()\l}"];
+}
+}
+subgraph cluster_Region_313709736 {
+label = "R(2:6|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000f|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = r1.mCurrDrawable\l}"];
+subgraph cluster_Region_1079508171 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1918915303 {
+label = "IF [B:19:0x0011] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|if (r0 != null) goto L8\l}"];
+subgraph cluster_Region_758480523 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return r0.getIntrinsicHeight()\l}"];
+}
+}
+subgraph cluster_Region_275464643 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0018|RETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0008}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0013}"];
+MethodNode[shape=record,label="{public int androidx.appcompat.graphics.drawable.DrawableContainer.getIntrinsicHeight((r1v0 'this' androidx.appcompat.graphics.drawable.DrawableContainer A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:22:0x0019 \-\> B:13:?, CROSS_EDGE: B:21:0x0018 \-\> B:22:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.getIntrinsicHeight():int\}]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_13;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_20 -> Node_23;
+}
+

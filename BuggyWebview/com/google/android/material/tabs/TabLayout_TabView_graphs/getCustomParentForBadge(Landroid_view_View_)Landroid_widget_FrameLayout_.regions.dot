@@ -1,0 +1,50 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.TabView.getCustomParentForBadge(Landroid\/view\/View;)Landroid\/widget\/FrameLayout;" {
+subgraph cluster_Region_644103980 {
+label = "R(1:(2:(1:10)|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_141603870 {
+label = "R(2:(1:10)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2141392854 {
+label = "IF [B:15:0x0003, B:17:0x0007, B:20:0x000c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0003|if (r3 == r2.iconView) goto L7\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0007|ADDED_TO_REGION\l|if (r3 == r2.textView) goto L7\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000c|ADDED_TO_REGION\l|if (com.google.android.material.badge.BadgeUtils.USE_COMPAT_PARENT == true) goto L9\l}"];
+subgraph cluster_Region_1479005523 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|RETURN\lORIG_RETURN\l|return (android.widget.FrameLayout) r3.getParent()\l}"];
+}
+}
+subgraph cluster_Region_1606229028 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0005}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0009|RETURN\lADDED_TO_REGION\l|return null\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000a}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000e}"];
+MethodNode[shape=record,label="{private android.widget.FrameLayout com.google.android.material.tabs.TabLayout.TabView.getCustomParentForBadge((r2v0 'this' com.google.android.material.tabs.TabLayout$TabView A[IMMUTABLE_TYPE, THIS]), (r3v0 'anchor' android.view.View A[D('anchor' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0015 \-\> B:13:?, CROSS_EDGE: B:20:0x000c \-\> B:22:0x0015, CROSS_EDGE: B:15:0x0003 \-\> B:19:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_19;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_22 -> Node_13;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_13;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+}
+

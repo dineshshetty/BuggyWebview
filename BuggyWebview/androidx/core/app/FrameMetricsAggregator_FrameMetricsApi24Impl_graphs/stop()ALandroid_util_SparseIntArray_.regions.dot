@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.core.app.FrameMetricsAggregator.FrameMetricsApi24Impl.stop()[Landroid\/util\/SparseIntArray;" {
+subgraph cluster_Region_1327050497 {
+label = "R(3:1|(3:3|(1:5)(0)|7)|11)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r6.mActivities.size()\lint int r1 = r0 \- 1\l}"];
+subgraph cluster_LoopRegion_1799348694 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_START\lLOOP:0: B:3:0x0008\-\>B:7:0x002c\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:2:0x0000, B:7:0x002c] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1030824506 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|java.lang.ref.WeakReference java.lang.ref.WeakReference\<android.app.Activity\> r2 = r6.mActivities.get(r1)\landroid.app.Activity android.app.Activity r3 = r2.get()\l}"];
+subgraph cluster_IfRegion_1371058600 {
+label = "IF [B:5:0x001c] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|if (r2.get() != null) goto L5\l}"];
+subgraph cluster_Region_1465908581 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|r3.getWindow().removeOnFrameMetricsAvailableListener(r6.mListener)\lr6.mActivities.remove(r1)\l}"];
+}
+subgraph cluster_Region_182987019 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x002c|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:7:0x002c\l|r1\-\-\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0031|RETURN\l|return r6.mMetrics\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002c|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002c|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002f|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002f}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.util.SparseIntArray[] androidx.core.app.FrameMetricsAggregator.FrameMetricsApi24Impl.stop((r6v0 'this' androidx.core.app.FrameMetricsAggregator$FrameMetricsApi24Impl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x002c \-\> B:3:0x0008, CROSS_EDGE: B:5:0x001c \-\> B:7:0x002c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.app.FrameMetricsAggregator.FrameMetricsBaseImpl.stop():android.util.SparseIntArray[]]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_11;
+Node_7 -> Node_3;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_11 -> Node_7;
+Node_12 -> Node_7;
+Node_10 -> Node_8;
+Node_8 -> Node_9;
+}
+

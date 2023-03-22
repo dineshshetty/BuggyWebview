@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.dispatchTabReselected(Lcom\/google\/android\/material\/tabs\/TabLayout$Tab;)V" {
+subgraph cluster_Region_1837079960 {
+label = "R(2:1|(1:3))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = r2.selectedListeners.size() \- 1\l}"];
+subgraph cluster_LoopRegion_276892356 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0008|LOOP_START\lLOOP:0: B:10:0x0008\-\>B:11:0x000a\lPHI: r0 \l  PHI: (r0v3 'i' int) = (r0v2 'i' int), (r0v4 'i' int) binds: [B:9:0x0000, B:11:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1768231294 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000a|LOOP_END\lLOOP:0: B:10:0x0008\-\>B:11:0x000a\l|r2.selectedListeners.get(r0).onTabReselected(r3)\lr0\-\-\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0018|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0018}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.tabs.TabLayout.dispatchTabReselected((r2v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 'tab' com.google.android.material.tabs.TabLayout$Tab A[D('tab' com.google.android.material.tabs.TabLayout$Tab), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x000a \-\> B:10:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_10;
+Node_7 -> Node_9;
+Node_13 -> Node_12;
+Node_12 -> Node_8;
+}
+

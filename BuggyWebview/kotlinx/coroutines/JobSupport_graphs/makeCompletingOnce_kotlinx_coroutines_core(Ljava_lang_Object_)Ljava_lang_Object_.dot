@@ -1,0 +1,29 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.makeCompletingOnce$kotlinx_coroutines_core(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000}"];
+Node_16 [shape=record,label="{16\:\ 0x0002|LOOP_START\lLOOP:0: B:16:0x0002\-\>B:19:0x0017\l|java.lang.Object r2 = getState$kotlinx_coroutines_core()\ljava.lang.Object r4 = tryMakeCompleting(r2, r9)\lkotlinx.coroutines.internal.Symbol r5 = kotlinx.coroutines.JobSupportKt.COMPLETING_ALREADY\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0011|if (r4 == r5) goto L9\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0013|kotlinx.coroutines.internal.Symbol r5 = kotlinx.coroutines.JobSupportKt.COMPLETING_RETRY\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0002\-\>B:19:0x0017\l|if (r4 != r5) goto L6\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001a|SYNTHETIC\l}"];
+Node_21 [shape=record,label="{21\:\ 0x001a|RETURN\l|return r4\l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,label="{24\:\ 0x001b|SYNTHETIC\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001b|java.lang.StringBuilder r6 = new java.lang.StringBuilder()\lr6.append(\"Job \")\lr6.append(r8)\lr6.append(\" is already complete or completing, but is being completed with \")\lr6.append(r9)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x003e|throw new java.lang.IllegalStateException(r6.toString(), getExceptionOrNull(r9))\l}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.JobSupport.makeCompletingOnce$kotlinx_coroutines_core((r8v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]), (r9v0 'proposedUpdate' java.lang.Object A[D('proposedUpdate' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0017 \-\> B:16:0x0002, CROSS_EDGE: B:23:0x003e \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_24;
+Node_18 -> Node_19;
+Node_19 -> Node_16[style=dashed];
+Node_19 -> Node_25;
+Node_25 -> Node_21;
+Node_21 -> Node_14;
+Node_24 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+}
+

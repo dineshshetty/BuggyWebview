@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.lifecycle.ProcessLifecycleInitializer.create(Landroid\/content\/Context;)Landroidx\/lifecycle\/LifecycleOwner;" {
+subgraph cluster_Region_484353754 {
+label = "R(2:1|(2:(1:7)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|androidx.startup.AppInitializer androidx.startup.AppInitializer r0 = androidx.startup.AppInitializer.getInstance(r4)\l}"];
+subgraph cluster_Region_440518162 {
+label = "R(2:(1:7)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1768888682 {
+label = "IF [B:11:0x000c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000c|if (r0.isEagerlyInitialized(getClass()) == false) goto L6\l}"];
+subgraph cluster_Region_192166009 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0020|throw new java.lang.IllegalStateException(\"ProcessLifecycleInitializer cannot be initialized lazily. nPlease ensure that you have: n\<meta\-datan    android:name='androidx.lifecycle.ProcessLifecycleInitializer' n    android:value='androidx.startup' \/\> nunder InitializationProvider in your AndroidManifest.xml\")\l}"];
+}
+}
+subgraph cluster_Region_2073684377 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000e|androidx.lifecycle.LifecycleDispatcher.init(r4)\landroidx.lifecycle.ProcessLifecycleOwner.init(r4)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0018|RETURN\l|return androidx.lifecycle.ProcessLifecycleOwner.get()\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0019}"];
+MethodNode[shape=record,label="{public androidx.lifecycle.LifecycleOwner androidx.lifecycle.ProcessLifecycleInitializer.create((r3v0 'this' androidx.lifecycle.ProcessLifecycleInitializer A[IMMUTABLE_TYPE, THIS]), (r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0020 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: androidx.lifecycle.ProcessLifecycleInitializer.create(android.content.Context):androidx.lifecycle.LifecycleOwner\lBRIDGED_BY: androidx.lifecycle.ProcessLifecycleInitializer.create(android.content.Context):androidx.lifecycle.LifecycleOwner\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r0v0, resolved type: androidx.startup.AppInitializer\}\lMETHOD_OVERRIDE: [androidx.startup.Initializer.create(android.content.Context):T]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,29 @@
+digraph "CFG forandroidx.core.provider.SelfDestructiveThread.onInvokeRunnable(Ljava\/lang\/Runnable;)V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: INVOKE  (r6 I:java.lang.Runnable A[D('runnable' java.lang.Runnable)]) type: INTERFACE call: java.lang.Runnable.run():void A[MD:():void (c)] (LINE:219)\l0x0003: IGET  (r0 I:java.lang.Object) = (r5 I:androidx.core.provider.SelfDestructiveThread) androidx.core.provider.SelfDestructiveThread.mLock java.lang.Object  (LINE:220)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|0x0005: MONITOR_ENTER  (r0 I:??[OBJECT, ARRAY]) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0006|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|TRY_ENTER\lTryCatch #0 \{all \-\> 0x001a, blocks: (B:4:0x0006, B:5:0x0018), top: B:10:0x0006 \}\lCatch: all \-\> 0x001a\l|0x0006: IGET  (r1 I:android.os.Handler) = (r5 I:androidx.core.provider.SelfDestructiveThread) androidx.core.provider.SelfDestructiveThread.mHandler android.os.Handler A[Catch: all \-\> 0x001a, TRY_ENTER] (LINE:221)\l0x0008: CONST  (r2 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x0009: INVOKE  (r1 I:android.os.Handler), (r2 I:int) type: VIRTUAL call: android.os.Handler.removeMessages(int):void A[Catch: all \-\> 0x001a, MD:(int):void (c)]\l0x000c: IGET  (r1 I:android.os.Handler) = (r5 I:androidx.core.provider.SelfDestructiveThread) androidx.core.provider.SelfDestructiveThread.mHandler android.os.Handler A[Catch: all \-\> 0x001a] (LINE:222)\l0x000e: INVOKE  (r2 I:android.os.Message) = (r1 I:android.os.Handler), (r2 I:int) type: VIRTUAL call: android.os.Handler.obtainMessage(int):android.os.Message A[Catch: all \-\> 0x001a, MD:(int):android.os.Message (c)]\l0x0012: IGET  (r3 I:int) = (r5 I:androidx.core.provider.SelfDestructiveThread) androidx.core.provider.SelfDestructiveThread.mDestructAfterMillisec int A[Catch: all \-\> 0x001a]\l0x0014: CAST (r3 I:long) = (long) (r3 I:int) A[Catch: all \-\> 0x001a]\l0x0015: INVOKE  (r1 I:android.os.Handler), (r2 I:android.os.Message), (r3 I:long) type: VIRTUAL call: android.os.Handler.sendMessageDelayed(android.os.Message, long):boolean A[Catch: all \-\> 0x001a, MD:(android.os.Message, long):boolean (c)]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0018|TryCatch #0 \{all \-\> 0x001a, blocks: (B:4:0x0006, B:5:0x0018), top: B:10:0x0006 \}\lCatch: all \-\> 0x001a\l|0x0018: MONITOR_EXIT  (r0 I:??[OBJECT, ARRAY]) A[Catch: all \-\> 0x001a] (LINE:224)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|RETURN\l|0x0019: RETURN    (LINE:225)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001a|ExcHandler: all \-\> 0x001a\l|0x001a: MOVE_EXCEPTION  (r1 I:java.lang.Throwable A[CUSTOM_DECLARE]) =  A[DONT_INLINE, ExcHandler: all \-\> 0x001a] (LINE:224)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001b|TRY_LEAVE\lCatch: all \-\> 0x001a\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001c|0x001c: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{void androidx.core.provider.SelfDestructiveThread.onInvokeRunnable((r5 'this' I:androidx.core.provider.SelfDestructiveThread A[IMMUTABLE_TYPE, THIS]), (r6 I:java.lang.Runnable A[D('runnable' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x001c \-\> B:1:?, CROSS_EDGE: B:10:0x0006 \-\> B:7:0x001a\lDebug Info:\l  \-1 \-0x001c: r6 'runnable' Ljava\/lang\/Runnable;\lTryCatch #0 \{all \-\> 0x001a, blocks: (B:4:0x0006, B:5:0x0018), top: B:10:0x0006 \}\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_10;
+Node_10 -> Node_4;
+Node_10 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11;
+Node_6 -> Node_1;
+Node_11 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+}
+

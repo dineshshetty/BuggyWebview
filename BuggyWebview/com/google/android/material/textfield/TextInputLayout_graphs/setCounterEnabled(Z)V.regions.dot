@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputLayout.setCounterEnabled(Z)V" {
+subgraph cluster_Region_589310310 {
+label = "R(1:(1:(2:(1:12)(3:5|(1:7)|8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_196943772 {
+label = "R(1:(2:(1:12)(3:5|(1:7)|8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1406276412 {
+label = "IF [B:17:0x0002] THEN: R(2:(1:12)(3:5|(1:7)|8)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (r3.counterEnabled != r4) goto L3\l}"];
+subgraph cluster_Region_908256937 {
+label = "R(2:(1:12)(3:5|(1:7)|8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_342589970 {
+label = "IF [B:19:0x0005] THEN: R(1:12) ELSE: R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|if (r4 == false) goto L12\l}"];
+subgraph cluster_Region_2009673468 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0049|r3.indicatorViewController.removeIndicator(r3.counterView, 2)\lr3.counterView = null\l}"];
+}
+subgraph cluster_Region_855953765 {
+label = "R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0007|androidx.appcompat.widget.AppCompatTextView androidx.appcompat.widget.AppCompatTextView r1 = new androidx.appcompat.widget.AppCompatTextView(getContext())\lr3.counterView = r1\lr1.setId(com.google.android.material.C0571R.C0574id.textinput_counter)\landroid.graphics.Typeface android.graphics.Typeface r1 = r3.typeface\l}"];
+subgraph cluster_IfRegion_1072148306 {
+label = "IF [B:21:0x0019] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0019|if (r1 != null) goto L7\l}"];
+subgraph cluster_Region_1287280351 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001b|r3.counterView.setTypeface(r1)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0020|r3.counterView.setMaxLines(1)\lr3.indicatorViewController.addIndicator(r3.counterView, 2)\landroidx.core.view.MarginLayoutParamsCompat.setMarginStart((android.view.ViewGroup.MarginLayoutParams) r3.counterView.getLayoutParams(), getResources().getDimensionPixelOffset(com.google.android.material.C0571R.dimen.mtrl_textinput_counter_margin_start))\lupdateCounterTextAppearanceAndColor()\lupdateCounter()\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0053|r3.counterEnabled = r4\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0004}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0055|ORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.textfield.TextInputLayout.setCounterEnabled((r3v0 'this' com.google.android.material.textfield.TextInputLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'enabled' boolean A[D('enabled' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0019 \-\> B:23:0x0020, CROSS_EDGE: B:24:0x0049 \-\> B:25:0x0053, CROSS_EDGE: B:17:0x0002 \-\> B:26:0x0055\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_27[style=dashed];
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_24;
+Node_24 -> Node_25;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_25;
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_26 -> Node_15;
+Node_27 -> Node_15;
+}
+

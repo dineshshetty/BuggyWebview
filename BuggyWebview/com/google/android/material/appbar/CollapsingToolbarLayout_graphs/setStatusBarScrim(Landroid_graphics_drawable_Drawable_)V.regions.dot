@@ -1,0 +1,93 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.setStatusBarScrim(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_1392746755 {
+label = "R(2:1|(1:(5:(1:5)|6|8|(3:(1:12)|13|16)|18)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = r3.statusBarScrim\l}"];
+subgraph cluster_Region_1653172107 {
+label = "R(1:(5:(1:5)|6|8|(3:(1:12)|13|16)|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_215116568 {
+label = "IF [B:3:0x0002] THEN: R(5:(1:5)|6|8|(3:(1:12)|13|16)|18) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 != r4) goto L3\l}"];
+subgraph cluster_Region_1227543063 {
+label = "R(5:(1:5)|6|8|(3:(1:12)|13|16)|18)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_585652447 {
+label = "IF [B:5:0x0005] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|if (r0 != null) goto L5\l}"];
+subgraph cluster_Region_124743744 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0007|r0.setCallback(null)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x000a|android.graphics.drawable.Drawable r1 = r4 != null ? r4.mutate() : null\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0010|PHI: r1 \l  PHI: (r1v1 android.graphics.drawable.Drawable) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r3.statusBarScrim = r1\l}"];
+subgraph cluster_IfRegion_1447029377 {
+label = "IF [B:10:0x0012] THEN: R(3:(1:12)|13|16) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0012|if (r1 != null) goto L10\l}"];
+subgraph cluster_Region_135082934 {
+label = "R(3:(1:12)|13|16)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_913403449 {
+label = "IF [B:12:0x0018] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0018|if (r1.isStateful() != false) goto L12\l}"];
+subgraph cluster_Region_835029814 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001a|r3.statusBarScrim.setState(getDrawableState())\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0023|androidx.core.graphics.drawable.DrawableCompat.setLayoutDirection(r3.statusBarScrim, androidx.core.view.ViewCompat.getLayoutDirection(r3))\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0038|PHI: r1 \l  PHI: (r1v5 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.statusBarScrim.setVisible(getVisibility() == 0, false)\lr3.statusBarScrim.setCallback(r3)\lr3.statusBarScrim.setAlpha(r3.scrimAlpha)\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0047|androidx.core.view.ViewCompat.postInvalidateOnAnimation(r3)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000c}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0014}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0033}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0035}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0037}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x004a|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.appbar.CollapsingToolbarLayout.setStatusBarScrim((r3v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'drawable' android.graphics.drawable.Drawable A[D('drawable' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0037 \-\> B:18:0x0038, CROSS_EDGE: B:12:0x0018 \-\> B:14:0x0023, CROSS_EDGE: B:10:0x0012 \-\> B:19:0x0047, CROSS_EDGE: B:7:0x000a \-\> B:9:0x0010, CROSS_EDGE: B:5:0x0005 \-\> B:7:0x000a, CROSS_EDGE: B:3:0x0002 \-\> B:20:0x004a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_21[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_19[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_20 -> Node_1;
+Node_21 -> Node_1;
+}
+

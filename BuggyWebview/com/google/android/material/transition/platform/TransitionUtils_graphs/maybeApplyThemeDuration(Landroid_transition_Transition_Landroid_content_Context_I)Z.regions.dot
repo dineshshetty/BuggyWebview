@@ -1,0 +1,50 @@
+digraph "CFG forcom.google.android.material.transition.platform.TransitionUtils.maybeApplyThemeDuration(Landroid\/transition\/Transition;Landroid\/content\/Context;I)Z" {
+subgraph cluster_Region_1920547403 {
+label = "R(1:(2:(2:6|7)|(1:9))) | DECL_VAR: int duration\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1914754010 {
+label = "R(2:(2:6|7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1418151229 {
+label = "IF [B:15:0x0000, B:17:0x000a, B:19:0x0011] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|if (r7 != 0) goto L2\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000a|ADDED_TO_REGION\l|if (r5.getDuration() == (\-1)) goto L4\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0011|ADDED_TO_REGION\l|if ((r1 = com.google.android.material.motion.MotionUtils.resolveThemeDuration(r6, r7, \-1)) != (\-1)) goto L6\l}"];
+subgraph cluster_Region_881780586 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0013|r5.setDuration(r1)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0018|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_262023378 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0002}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000c}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0019|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public static boolean com.google.android.material.transition.platform.TransitionUtils.maybeApplyThemeDuration((r5v0 'transition' android.transition.Transition A[D('transition' android.transition.Transition), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'attrResId' int A[D('attrResId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001a \-\> B:14:?, CROSS_EDGE: B:17:0x000a \-\> B:22:0x0019, CROSS_EDGE: B:15:0x0000 \-\> B:22:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_14;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_24 -> Node_14;
+Node_22 -> Node_14;
+}
+

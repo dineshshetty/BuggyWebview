@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.lifecycle.ViewModelProvider.get(Ljava\/lang\/Class;)Landroidx\/lifecycle\/ViewModel;" {
+subgraph cluster_Region_908318515 {
+label = "R(2:1|(2:(1:7)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"modelClass\")\ljava.lang.String java.lang.String r0 = r4.getCanonicalName()\l}"];
+subgraph cluster_Region_159732513 {
+label = "R(2:(1:7)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1565315365 {
+label = "IF [B:11:0x0009] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0009|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_1411184496 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0028|throw new java.lang.IllegalArgumentException(\"Local and anonymous classes can not be ViewModels\")\l}"];
+}
+}
+subgraph cluster_Region_1527778666 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000b}"];
+Node_13 [shape=record,label="{13\:\ 0x0020|RETURN\l|return (T) get(\"androidx.lifecycle.ViewModelProvider.DefaultKey:\" + r0, r4)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0021}"];
+MethodNode[shape=record,label="{public T extends androidx.lifecycle.ViewModel androidx.lifecycle.ViewModelProvider.get((r3v0 'this' androidx.lifecycle.ViewModelProvider A[IMMUTABLE_TYPE, THIS]), (r4v0 'modelClass' java.lang.Class\<T extends androidx.lifecycle.ViewModel\> A[D('modelClass' java.lang.Class), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0028 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends androidx.lifecycle.ViewModel]\lSIGNATURE: \<T:Landroidx\/lifecycle\/ViewModel;\>(Ljava\/lang\/Class\<TT;\>;)TT;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_14 -> Node_15;
+}
+

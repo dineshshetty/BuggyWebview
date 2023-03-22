@@ -1,0 +1,71 @@
+digraph "CFG forandroidx.emoji2.viewsintegration.EmojiInputFilter.InitCallbackImpl.onInitialized()V" {
+subgraph cluster_Region_943562097 {
+label = "R(2:1|(2:(1:9)|(2:10|(1:(1:12))))) | DECL_VAR: java.lang.CharSequence originalText, java.lang.CharSequence result\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|super.onInitialized()\landroid.widget.TextView android.widget.TextView r0 = r7.mViewRef.get()\landroid.text.InputFilter android.text.InputFilter r1 = r7.mEmojiInputFilterReference.get()\l}"];
+subgraph cluster_Region_546159590 {
+label = "R(2:(1:9)|(2:10|(1:(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1870768717 {
+label = "IF [B:19:0x0017, B:22:0x001e, B:24:0x002c] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|if (isInputFilterCurrentlyRegisteredOnTextView(r0, r1) == false) goto L3\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001e|ADDED_TO_REGION\l|if (r0.isAttachedToWindow() == false) goto L15\l}"];
+Node_24 [shape=record,label="{24\:\ 0x002c|ADDED_TO_REGION\l|if (r2 == (r3 = androidx.emoji2.text.EmojiCompat.get().process((r2 = r0.getText())))) goto L9\l}"];
+subgraph cluster_Region_1746554723 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002e|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1795970039 {
+label = "R(2:10|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002f|int int r4 = android.text.Selection.getSelectionStart(r3)\lint int r5 = android.text.Selection.getSelectionEnd(r3)\lr0.setText(r3)\l}"];
+subgraph cluster_Region_1331547990 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_710081372 {
+label = "IF [B:27:0x003c] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x003c|if ((r3 instanceof android.text.Spannable) != false) goto L12\l}"];
+subgraph cluster_Region_807397139 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x003e|androidx.emoji2.viewsintegration.EmojiInputFilter.updateSelection((android.text.Spannable) r3, r4, r5)\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0019|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001a}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0020}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0044|ORIG_RETURN\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.emoji2.viewsintegration.EmojiInputFilter.InitCallbackImpl.onInitialized((r7v0 'this' androidx.emoji2.viewsintegration.EmojiInputFilter$InitCallbackImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x002e \-\> B:17:?, CROSS_EDGE: B:29:0x0044 \-\> B:17:?, CROSS_EDGE: B:27:0x003c \-\> B:29:0x0044, CROSS_EDGE: B:22:0x001e \-\> B:29:0x0044\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.emoji2.text.EmojiCompat.InitCallback.onInitialized():void]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_30;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_17;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_31[style=dashed];
+Node_28 -> Node_29;
+Node_16 -> Node_18;
+Node_20 -> Node_17;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_29 -> Node_17;
+Node_31 -> Node_17;
+Node_30 -> Node_17;
+}
+

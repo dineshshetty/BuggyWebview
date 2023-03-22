@@ -1,0 +1,71 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeLinkedListNode.removeFirstOrNull()Lkotlinx\/coroutines\/internal\/LockFreeLinkedListNode;" {
+subgraph cluster_Region_1992460635 {
+label = "R(1:(2:1|(2:(1:10)|(1:(2:(1:7)|(1:5))))))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1374266560 {
+label = "LOOP:0: (2:1|(2:(1:10)|(1:(2:(1:7)|(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_728542010 {
+label = "R(2:1|(2:(1:10)|(1:(2:(1:7)|(1:5)))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|LOOP_START\lLOOP:0: B:14:0x0000\-\>B:21:0x0012\l|kotlinx.coroutines.internal.LockFreeLinkedListNode kotlinx.coroutines.internal.LockFreeLinkedListNode r0 = (kotlinx.coroutines.internal.LockFreeLinkedListNode) getNext()\l}"];
+subgraph cluster_Region_283808331 {
+label = "R(2:(1:10)|(1:(2:(1:7)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_969250967 {
+label = "IF [B:15:0x0007] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0007|if (r0 == r2) goto L9\l}"];
+subgraph cluster_Region_1827391159 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_234951200 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_307394692 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1718642784 {
+label = "IF [B:19:0x000f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|if (r0.remove() == true) goto L6\l}"];
+subgraph cluster_Region_357307010 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0011|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1538743914 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0012|LOOP_END\lLOOP:0: B:14:0x0000\-\>B:21:0x0012\l|r0.helpRemove()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0011|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0009|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final kotlinx.coroutines.internal.LockFreeLinkedListNode kotlinx.coroutines.internal.LockFreeLinkedListNode.removeFirstOrNull((r2v0 'this' kotlinx.coroutines.internal.LockFreeLinkedListNode A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0011 \-\> B:13:?, BACK_EDGE: B:21:0x0012 \-\> B:14:0x0000\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_18[style=dashed];
+Node_15 -> Node_22;
+Node_16 -> Node_13;
+Node_19 -> Node_21[style=dashed];
+Node_19 -> Node_23;
+Node_20 -> Node_13;
+Node_21 -> Node_14;
+Node_12 -> Node_14;
+Node_18 -> Node_19;
+Node_23 -> Node_20;
+Node_22 -> Node_16;
+}
+

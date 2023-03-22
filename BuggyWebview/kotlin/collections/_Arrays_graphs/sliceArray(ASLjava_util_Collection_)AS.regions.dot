@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.sliceArray([SLjava\/util\/Collection;)[S" {
+subgraph cluster_Region_579065545 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"indices\")\lshort[] short[] r0 = new short[r7.size()]\lint r1 = 0\ljava.util.Iterator r2 = r7.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1992871985 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0019|java.lang.Object \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_149859333 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001b|LOOP_END\lLOOP:0: B:11:0x0015\-\>B:13:0x001b\l|int int r3 = r3.intValue()\lr0[r1] = r6[r3]\lr1++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x002d|RETURN\l|return r0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0015|LOOP_START\lLOOP:0: B:11:0x0015\-\>B:13:0x001b\lPHI: r1 \l  PHI: (r1v1 'targetIndex' int) = (r1v0 'targetIndex' int), (r1v2 'targetIndex' int) binds: [B:10:0x0000, B:13:0x001b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002d|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final short[] kotlin.collections.ArraysKt___ArraysKt.sliceArray((r6v0 '$this$sliceArray' short[] A[D('$this$sliceArray' short[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'indices' java.util.Collection\<java.lang.Integer\> A[D('indices' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x001b \-\> B:11:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([SLjava\/util\/Collection\<Ljava\/lang\/Integer;\>;)[S\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

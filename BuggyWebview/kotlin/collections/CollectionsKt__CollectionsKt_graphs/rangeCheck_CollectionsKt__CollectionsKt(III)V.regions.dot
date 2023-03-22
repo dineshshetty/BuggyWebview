@@ -1,0 +1,72 @@
+digraph "CFG forkotlin.collections.CollectionsKt__CollectionsKt.rangeCheck$CollectionsKt__CollectionsKt(III)V" {
+subgraph cluster_Region_1682479807 {
+label = "R(1:(2:11|12)(1:(2:9|10)(1:(2:7|8)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_472645310 {
+label = "IF [B:16:0x0005] THEN: R(2:11|12) ELSE: R(1:(2:9|10)(1:(2:7|8)(0)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|if (r5 \> r6) goto L11\l}"];
+subgraph cluster_Region_89276524 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0048}"];
+Node_25 [shape=record,label="{25\:\ 0x0067|throw new java.lang.IllegalArgumentException(\"fromIndex (\" + r5 + \") is greater than toIndex (\" + r6 + \").\")\l}"];
+}
+subgraph cluster_Region_1280199486 {
+label = "R(1:(2:9|10)(1:(2:7|8)(0))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1819524458 {
+label = "IF [B:17:0x0007] THEN: R(2:9|10) ELSE: R(1:(2:7|8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|if (r5 \< 0) goto L9\l}"];
+subgraph cluster_Region_795766868 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002e}"];
+Node_23 [shape=record,label="{23\:\ 0x0047|throw new java.lang.IndexOutOfBoundsException(\"fromIndex (\" + r5 + \") is less than zero.\")\l}"];
+}
+subgraph cluster_Region_942146805 {
+label = "R(1:(2:7|8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_100773749 {
+label = "IF [B:18:0x0009] THEN: R(2:7|8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0009|if (r6 \> r4) goto L7\l}"];
+subgraph cluster_Region_2011748914 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000c}"];
+Node_21 [shape=record,label="{21\:\ 0x002d|throw new java.lang.IndexOutOfBoundsException(\"toIndex (\" + r6 + \") is greater than size (\" + r4 + \").\")\l}"];
+}
+subgraph cluster_Region_727246923 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0001}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000b}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final void kotlin.collections.CollectionsKt__CollectionsKt.rangeCheck$CollectionsKt__CollectionsKt((r4v0 'size' int A[D('size' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'fromIndex' int A[D('fromIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'toIndex' int A[D('toIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:21:0x002d \-\> B:14:?, CROSS_EDGE: B:23:0x0047 \-\> B:14:?, CROSS_EDGE: B:25:0x0067 \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_19 -> Node_14;
+}
+

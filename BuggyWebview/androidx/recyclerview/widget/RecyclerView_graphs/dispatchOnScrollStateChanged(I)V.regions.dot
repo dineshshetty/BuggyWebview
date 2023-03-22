@@ -1,0 +1,79 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.dispatchOnScrollStateChanged(I)V" {
+subgraph cluster_Region_1930478023 {
+label = "R(6:1|(1:3)|4|(1:6)|7|(1:(2:9|(1:11))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|androidx.recyclerview.widget.RecyclerView$LayoutManager androidx.recyclerview.widget.RecyclerView.LayoutManager r0 = r2.mLayout\l}"];
+subgraph cluster_IfRegion_527881737 {
+label = "IF [B:19:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1799475082 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0004|r0.onScrollStateChanged(r3)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0007|onScrollStateChanged(r3)\landroidx.recyclerview.widget.RecyclerView$OnScrollListener androidx.recyclerview.widget.RecyclerView.OnScrollListener r0 = r2.mScrollListener\l}"];
+subgraph cluster_IfRegion_221060709 {
+label = "IF [B:22:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_2017917182 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000e|r0.onScrollStateChanged(r2, r3)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0011|java.util.List\<androidx.recyclerview.widget.RecyclerView$OnScrollListener\> java.util.List\<androidx.recyclerview.widget.RecyclerView.OnScrollListener\> r0 = r2.mScrollListeners\l}"];
+subgraph cluster_Region_2074893293 {
+label = "R(1:(2:9|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1370074977 {
+label = "IF [B:25:0x0013] THEN: R(2:9|(1:11)) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0013|if (r0 != null) goto L9\l}"];
+subgraph cluster_Region_879822657 {
+label = "R(2:9|(1:11))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0015|int int r0 = r0.size() \- 1\l}"];
+subgraph cluster_LoopRegion_1372256668 {
+label = "LOOP:0: (1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001b|LOOP_START\lLOOP:0: B:27:0x001b\-\>B:28:0x001d\lPHI: r0 \l  PHI: (r0v5 'i' int) = (r0v4 'i' int), (r0v6 'i' int) binds: [B:26:0x0015, B:28:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L11\l}"];
+subgraph cluster_Region_503605843 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001d|LOOP_END\lLOOP:0: B:27:0x001b\-\>B:28:0x001d\l|r2.mScrollListeners.get(r0).onScrollStateChanged(r2, r3)\lr0\-\-\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002b|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x002b|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.dispatchOnScrollStateChanged((r2v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r3v0 'state' int A[D('state' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:28:0x001d \-\> B:27:0x001b, CROSS_EDGE: B:25:0x0013 \-\> B:29:0x002b, CROSS_EDGE: B:22:0x000c \-\> B:24:0x0011, CROSS_EDGE: B:19:0x0002 \-\> B:21:0x0007\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_30[style=dashed];
+Node_28 -> Node_27;
+Node_16 -> Node_18;
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+Node_29 -> Node_17;
+}
+

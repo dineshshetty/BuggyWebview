@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.documentfile.provider.TreeDocumentFile.renameTo(Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_467578959 {
+label = "R(1:(2:3|(2:(1:9)|(2:5|6))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1394784268 {
+label = "Try: R(2:3|(2:(1:9)|(2:5|6))) catches: R(1:11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_916013326 {
+label = "R(2:3|(2:(1:9)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0001|TRY_ENTER\lTryCatch #0 \{Exception \-\> 0x0014, blocks: (B:3:0x0001, B:5:0x000f), top: B:11:0x0001 \}\lCatch: Exception \-\> 0x0014\l|android.net.Uri android.net.Uri r1 = android.provider.DocumentsContract.renameDocument(r3.mContext.getContentResolver(), r3.mUri, r4)     \/\/ Catch: java.lang.Exception \-\> L14\l}"];
+subgraph cluster_Region_432467316 {
+label = "R(2:(1:9)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1618682618 {
+label = "IF [B:4:0x000d] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|if (r1 == null) goto L9\l}"];
+subgraph cluster_Region_842499783 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_688584512 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|TRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x0014, blocks: (B:3:0x0001, B:5:0x000f), top: B:11:0x0001 \}\lCatch: Exception \-\> 0x0014\l|r3.mUri = r1     \/\/ Catch: java.lang.Exception \-\> L14\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|RETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_1543836678 {
+label = "R(1:11) | ExcHandler: Exception \-\> 0x0014\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0015|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_1543836678 {
+label = "R(1:11) | ExcHandler: Exception \-\> 0x0014\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0015|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0014|ExcHandler: Exception \-\> 0x0014\l}"];
+MethodNode[shape=record,label="{public boolean androidx.documentfile.provider.TreeDocumentFile.renameTo((r3v0 'this' androidx.documentfile.provider.TreeDocumentFile A[IMMUTABLE_TYPE, THIS]), (r4v0 'displayName' java.lang.String A[D('displayName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0015 \-\> B:1:?, CROSS_EDGE: B:8:0x0013 \-\> B:1:?, CROSS_EDGE: B:11:0x0001 \-\> B:9:0x0014\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x0014, blocks: (B:3:0x0001, B:5:0x000f), top: B:11:0x0001 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.documentfile.provider.DocumentFile.renameTo(java.lang.String):boolean]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_8 -> Node_1;
+Node_5 -> Node_6;
+Node_5 -> Node_12;
+Node_6 -> Node_1;
+Node_10 -> Node_1;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_11;
+Node_11 -> Node_3;
+Node_11 -> Node_9;
+Node_12 -> Node_9;
+Node_9 -> Node_10;
+}
+

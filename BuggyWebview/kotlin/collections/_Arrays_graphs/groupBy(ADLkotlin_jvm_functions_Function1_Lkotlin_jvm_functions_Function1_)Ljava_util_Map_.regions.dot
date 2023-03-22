@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.groupBy([DLkotlin\/jvm\/functions\/Function1;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_918305840 {
+label = "R(3:1|(3:3|(1:5)(1:8)|7)|11) | DECL_VAR: java.util.ArrayList null\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r17, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r18, \"keySelector\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r19, \"valueTransform\")\ljava.util.Map java.util.Map r4 = (java.util.Map\<K, java.util.List\<V\>\>) new java.util.LinkedHashMap()\lint r8 = 0\l\l}"];
+subgraph cluster_LoopRegion_1573518542 {
+label = "LOOP:0: (3:3|(1:5)(1:8)|7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0022|LOOP_START\lLOOP:0: B:17:0x0022\-\>B:22:0x0046\lPHI: r8 \l  PHI: (r8v1 int) = (r8v0 int), (r8v2 int) binds: [B:16:0x0000, B:22:0x0046] A[DONT_GENERATE, DONT_INLINE]\l|if (r8 \< r7) goto L3\l}"];
+subgraph cluster_Region_235812135 {
+label = "R(3:3|(1:5)(1:8)|7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0024|r9 = r17[r8]\ljava.lang.Object K r11 = r18.invoke(java.lang.Double.valueOf(r9))\ljava.lang.Object java.util.List\<V\> r14 = r4.get(r11)\l}"];
+subgraph cluster_IfRegion_288302232 {
+label = "IF [B:19:0x0034] THEN: R(1:5) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0034|if (r14 == null) goto L5\l}"];
+subgraph cluster_Region_864811204 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0036|java.util.List r15 = new java.util.ArrayList()\lr4.put(r11, r15)\l}"];
+}
+subgraph cluster_Region_1176880945 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0045|r15 = r14\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0046|LOOP_END\lLOOP:0: B:17:0x0022\-\>B:22:0x0046\lPHI: r15 \l  PHI: (r15v1 java.util.List\<V\>) = (r15v0 java.util.List), (r15v4 java.util.ArrayList) binds: [B:26:0x0046, B:27:0x0046] A[DONT_GENERATE, DONT_INLINE]\l|java.util.List java.util.List r12 = r15\lr12.add(r19.invoke(java.lang.Double.valueOf(r9)))\lr8++\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0059|RETURN\l|return r4\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0046|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0046|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0059|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.Map\<K, java.util.List\<V\>\> kotlin.collections.ArraysKt___ArraysKt.groupBy((r17v0 '$this$groupBy' double[] A[D('$this$groupBy' double[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'keySelector' kotlin.jvm.functions.Function1\<? super java.lang.Double, ? extends K\> A[D('keySelector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'valueTransform' kotlin.jvm.functions.Function1\<? super java.lang.Double, ? extends V\> A[D('valueTransform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x0046 \-\> B:17:0x0022, CROSS_EDGE: B:21:0x0045 \-\> B:22:0x0046\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;\>([DLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Double;+TK;\>;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Double;+TV;\>;)Ljava\/util\/Map\<TK;Ljava\/util\/List\<TV;\>;\>;\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_25[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_27;
+Node_21 -> Node_26;
+Node_22 -> Node_17;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_27 -> Node_22;
+Node_26 -> Node_22;
+Node_25 -> Node_24;
+}
+

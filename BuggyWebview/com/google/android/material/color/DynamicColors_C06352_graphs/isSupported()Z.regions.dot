@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.android.material.color.DynamicColors.2.isSupported()Z" {
+subgraph cluster_Region_894164425 {
+label = "R(2:(1:(1:9))|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_479416202 {
+label = "IF [B:18:0x0004] THEN: R(1:(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (r7.version == null) goto L8\l}"];
+subgraph cluster_Region_579550547 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_513627745 {
+label = "Try: R(1:9) catches: R(1:12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2117159151 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x002f, blocks: (B:19:0x0006), top: B:27:0x0006 \}\lCatch: Exception \-\> 0x002f\l|java.lang.reflect.Method java.lang.reflect.Method r0 = android.os.Build.class.getDeclaredMethod(\"getLong\", java.lang.String.class)     \/\/ Catch: java.lang.Exception \-\> L2f\lr0.setAccessible(true)     \/\/ Catch: java.lang.Exception \-\> L2f\lr7.version = java.lang.Long.valueOf(((java.lang.Long) r0.invoke(null, \"ro.build.version.oneui\")).longValue())     \/\/ Catch: java.lang.Exception \-\> L2f\l}"];
+}
+subgraph cluster_Region_1968399854 {
+label = "R(1:12) | ExcHandler: Exception \-\> 0x002f\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0030|r7.version = \-1L\l}"];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0043|RETURN\l|return r7.version.longValue() \>= 40100\l}"];
+}
+subgraph cluster_Region_1968399854 {
+label = "R(1:12) | ExcHandler: Exception \-\> 0x002f\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0030|r7.version = \-1L\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0038}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0045|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0006|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002f|ExcHandler: Exception \-\> 0x002f\l}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.color.DynamicColors.2.isSupported((r7v0 'this' com.google.android.material.color.DynamicColors$2 A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0043 \-\> B:26:0x0046, CROSS_EDGE: B:19:0x0006 \-\> B:23:0x0038, CROSS_EDGE: B:22:0x0030 \-\> B:23:0x0038, CROSS_EDGE: B:27:0x0006 \-\> B:21:0x002f\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x002f, blocks: (B:19:0x0006), top: B:27:0x0006 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [com.google.android.material.color.DynamicColors.DeviceSupportCondition.isSupported():boolean]\l}"];
+MethodNode -> Node_15;Node_18 -> Node_23[style=dashed];
+Node_18 -> Node_27;
+Node_19 -> Node_23;
+Node_19 -> Node_28;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_29;
+Node_22 -> Node_23;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_23 -> Node_24;
+Node_25 -> Node_16;
+Node_29 -> Node_16;
+Node_27 -> Node_19;
+Node_27 -> Node_21;
+Node_28 -> Node_21;
+Node_21 -> Node_22;
+}
+

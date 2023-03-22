@@ -1,0 +1,47 @@
+digraph "CFG forkotlinx.coroutines.ThreadContextElementKt.ensurePresent$$forInline(Ljava\/lang\/ThreadLocal;Lkotlin\/coroutines\/Continuation;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1785143639 {
+label = "R(2:1|(2:(1:6)|(2:8|9)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.InlineMarker.mark(3)\lkotlin.coroutines.Continuation r4 = null\l}"];
+subgraph cluster_Region_2128729763 {
+label = "R(2:(1:6)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_569402645 {
+label = "IF [B:6:0x001c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|PHI: r5 \l  PHI: (r5v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4.getContext().get(new kotlinx.coroutines.internal.ThreadLocalKey(r7)) != null) == true) goto L5\l}"];
+subgraph cluster_Region_639728709 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|RETURN\l|return kotlin.Unit.INSTANCE\l}"];
+}
+}
+subgraph cluster_Region_11588921 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0021|java.lang.StringBuilder java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"ThreadLocal \")\lr2.append(r7)\lr2.append(\" is missing from context \")\lkotlin.jvm.internal.InlineMarker.mark(3)\lr2.append(r4.getContext())\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004b|throw new java.lang.IllegalStateException(r2.toString().toString())\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0017}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0019}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001e}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001b}"];
+MethodNode[shape=record,label="{private static final java.lang.Object kotlinx.coroutines.ThreadContextElementKt.ensurePresent$$forInline((r7v0 java.lang.ThreadLocal\<?\> A[D('$this$ensurePresent' java.lang.ThreadLocal), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 kotlin.coroutines.Continuation\<? super kotlin.Unit\> A[D('$completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:10:0x004b \-\> B:1:?, CROSS_EDGE: B:5:0x001b \-\> B:6:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/ThreadLocal\<*\>;Lkotlin\/coroutines\/Continuation\<\-Lkotlin\/Unit;\>;)Ljava\/lang\/Object;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_7 -> Node_8;
+Node_5 -> Node_6;
+}
+

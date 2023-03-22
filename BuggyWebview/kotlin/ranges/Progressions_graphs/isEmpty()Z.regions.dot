@@ -1,0 +1,60 @@
+digraph "CFG forkotlin.ranges.CharProgression.isEmpty()Z" {
+subgraph cluster_Region_1920705876 {
+label = "R(2:(1:(1:7))(1:(1:10))|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1857005412 {
+label = "IF [B:17:0x0004] THEN: R(1:(1:7)) ELSE: R(1:(1:10))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (r4.step \> 0) goto L3\l}"];
+subgraph cluster_Region_1053621987 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_578335391 {
+label = "IF [B:19:0x000e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|if (kotlin.jvm.internal.Intrinsics.compare((int) r4.first, (int) r4.last) \> 0) goto L7\l}"];
+subgraph cluster_Region_218555009 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_511832258 {
+label = "R(1:(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1206070807 {
+label = "IF [B:22:0x0019] THEN: R(1:10) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0019|if (kotlin.jvm.internal.Intrinsics.compare((int) r4.first, (int) r4.last) \< 0) goto L10\l}"];
+subgraph cluster_Region_552108094 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x001c|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0011}"];
+MethodNode[shape=record,label="{public boolean kotlin.ranges.CharProgression.isEmpty((r4v0 'this' kotlin.ranges.CharProgression A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x000e \-\> B:25:0x001d, CROSS_EDGE: B:22:0x0019 \-\> B:24:0x001c, CROSS_EDGE: B:22:0x0019 \-\> B:25:0x001d\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [kotlin.ranges.CharProgression.isEmpty():boolean, kotlin.ranges.ClosedRange.isEmpty():boolean]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_19 -> Node_24[style=dashed];
+Node_19 -> Node_27;
+Node_27 -> Node_15;
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_26;
+Node_26 -> Node_15;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+}
+

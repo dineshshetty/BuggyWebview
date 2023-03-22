@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.appbar.ViewOffsetBehavior.onLayoutChild(Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;Landroid\/view\/View;I)Z" {
+subgraph cluster_Region_1449042369 {
+label = "R(6:1|(1:3)|4|(1:6)|7|(2:(2:9|10)|(1:12)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|layoutChild(r4, r5, r6)\l}"];
+subgraph cluster_IfRegion_931498433 {
+label = "IF [B:17:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0005|if (r3.viewOffsetHelper == null) goto L3\l}"];
+subgraph cluster_Region_430459831 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0007|r3.viewOffsetHelper = new com.google.android.material.appbar.ViewOffsetHelper(r5)\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x000e|r3.viewOffsetHelper.onViewLayout()\lr3.viewOffsetHelper.applyOffsets()\lint int r0 = r3.tempTopBottomOffset\l}"];
+subgraph cluster_IfRegion_748854709 {
+label = "IF [B:20:0x001b] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001b|if (r0 != 0) goto L6\l}"];
+subgraph cluster_Region_1118987498 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001d|r3.viewOffsetHelper.setTopAndBottomOffset(r0)\lr3.tempTopBottomOffset = 0\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0024|int int r0 = r3.tempLeftRightOffset\l}"];
+subgraph cluster_Region_2104999837 {
+label = "R(2:(2:9|10)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1010001704 {
+label = "IF [B:23:0x0026] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0026|if (r0 != 0) goto L9\l}"];
+subgraph cluster_Region_532715974 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0028|r3.viewOffsetHelper.setLeftAndRightOffset(r0)\lr3.tempLeftRightOffset = 0\l}"];
+Node_25 [shape=record,label="{25\:\ 0x002f|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_402873618 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.appbar.ViewOffsetBehavior.onLayoutChild((r3v0 'this' com.google.android.material.appbar.ViewOffsetBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.appbar.ViewOffsetBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r4v0 'parent' androidx.coordinatorlayout.widget.CoordinatorLayout A[D('parent' androidx.coordinatorlayout.widget.CoordinatorLayout), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'child' V extends android.view.View A[D('child' V extends android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'layoutDirection' int A[D('layoutDirection' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0026 \-\> B:25:0x002f, CROSS_EDGE: B:20:0x001b \-\> B:22:0x0024, CROSS_EDGE: B:17:0x0005 \-\> B:19:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\lSIGNATURE: (Landroidx\/coordinatorlayout\/widget\/CoordinatorLayout;TV;I)Z\lMETHOD_OVERRIDE: [androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior.onLayoutChild(androidx.coordinatorlayout.widget.CoordinatorLayout, V extends android.view.View, int):boolean]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_27[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+}
+

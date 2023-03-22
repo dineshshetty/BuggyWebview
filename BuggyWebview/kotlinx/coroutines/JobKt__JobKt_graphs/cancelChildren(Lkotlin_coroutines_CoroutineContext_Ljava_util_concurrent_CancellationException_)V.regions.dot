@@ -1,0 +1,62 @@
+digraph "CFG forkotlinx.coroutines.JobKt__JobKt.cancelChildren(Lkotlin\/coroutines\/CoroutineContext;Ljava\/util\/concurrent\/CancellationException;)V" {
+subgraph cluster_Region_1345549511 {
+label = "R(2:1|(2:(1:12)|(2:5|(1:8)))) | DECL_VAR: kotlin.sequences.Sequence $this$forEach$iv\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|kotlinx.coroutines.Job kotlinx.coroutines.Job r0 = (kotlinx.coroutines.Job) r6.get(kotlinx.coroutines.Job.Key)\l}"];
+subgraph cluster_Region_1858184842 {
+label = "R(2:(1:12)|(2:5|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1885332877 {
+label = "IF [B:20:0x000a, B:23:0x0011] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000a|if (r0 == null) goto L13\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0011|ADDED_TO_REGION\l|if ((r0 = r0.getChildren()) == null) goto L12\l}"];
+subgraph cluster_Region_551492360 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_946390942 {
+label = "R(2:5|(1:8))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0014|java.util.Iterator r2 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1240964452 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001d|java.lang.Object \lif (r2.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_619378259 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001f|LOOP_END\lLOOP:0: B:26:0x0019\-\>B:28:0x001f\l|java.lang.Object r3 = r2.next()\lkotlinx.coroutines.Job kotlinx.coroutines.Job r4 = (kotlinx.coroutines.Job) r3\lr4.cancel(r7)\l}"];
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000d}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0019|LOOP_START\lLOOP:0: B:26:0x0019\-\>B:28:0x001f\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x002c|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002c|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public static final void kotlinx.coroutines.JobKt__JobKt.cancelChildren((r6v0 '$this$cancelChildren' kotlin.coroutines.CoroutineContext A[D('$this$cancelChildren' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'cause' java.util.concurrent.CancellationException A[D('cause' java.util.concurrent.CancellationException), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:28:0x001f \-\> B:26:0x0019, CROSS_EDGE: B:23:0x0011 \-\> B:30:0x002c, CROSS_EDGE: B:20:0x000a \-\> B:30:0x002c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_22[style=dashed];
+Node_20 -> Node_30;
+Node_23 -> Node_25[style=dashed];
+Node_23 -> Node_32;
+Node_32 -> Node_18;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_31[style=dashed];
+Node_28 -> Node_26;
+Node_17 -> Node_19;
+Node_22 -> Node_23;
+Node_26 -> Node_27;
+Node_31 -> Node_33;
+Node_33 -> Node_18;
+Node_30 -> Node_18;
+}
+

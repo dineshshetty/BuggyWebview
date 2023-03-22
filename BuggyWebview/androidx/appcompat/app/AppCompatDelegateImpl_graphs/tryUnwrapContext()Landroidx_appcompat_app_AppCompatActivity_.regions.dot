@@ -1,0 +1,84 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.tryUnwrapContext()Landroidx\/appcompat\/app\/AppCompatActivity;" {
+subgraph cluster_Region_931997254 {
+label = "R(3:1|(1:(2:(1:14)|(1:(2:(1:10)|(1:8)))))|16)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|android.content.Context android.content.Context r0 = r3.mContext\l}"];
+subgraph cluster_LoopRegion_862342868 {
+label = "LOOP:0: (1:(2:(1:14)|(1:(2:(1:10)|(1:8)))))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0003|if (r0 != null) goto L4\l}"];
+subgraph cluster_Region_1804183959 {
+label = "R(1:(2:(1:14)|(1:(2:(1:10)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_451611224 {
+label = "R(2:(1:14)|(1:(2:(1:10)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1185676035 {
+label = "IF [B:23:0x0007] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0007|if ((r0 instanceof androidx.appcompat.app.AppCompatActivity) != false) goto L12\l}"];
+subgraph cluster_Region_415914630 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000c|RETURN\l|return (androidx.appcompat.app.AppCompatActivity) r0\l}"];
+}
+}
+subgraph cluster_Region_302280960 {
+label = "R(1:(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1044661532 {
+label = "R(2:(1:10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_433829797 {
+label = "IF [B:27:0x000f] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000f|if ((r0 instanceof android.content.ContextWrapper) == false) goto L9\l}"];
+subgraph cluster_Region_413632082 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0019|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_634261637 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0011|LOOP_END\lLOOP:0: B:20:0x0002\-\>B:28:0x0011\l|android.content.Context r0 = ((android.content.ContextWrapper) r0).getBaseContext()\l}"];
+}
+}
+}
+}
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x001a|RETURN\l|return null\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0002|LOOP_START\lLOOP:0: B:20:0x0002\-\>B:28:0x0011\lPHI: r0 \l  PHI: (r0v1 'context' android.content.Context) = (r0v0 'context' android.content.Context), (r0v2 'context' android.content.Context) binds: [B:19:0x0000, B:28:0x0011] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0005}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000d}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0019|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0009|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0009}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private androidx.appcompat.app.AppCompatActivity androidx.appcompat.app.AppCompatDelegateImpl.tryUnwrapContext((r3v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:28:0x0011 \-\> B:20:0x0002, CROSS_EDGE: B:29:0x0019 \-\> B:18:?, CROSS_EDGE: B:30:0x001a \-\> B:18:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_31[style=dashed];
+Node_23 -> Node_26[style=dashed];
+Node_23 -> Node_32;
+Node_25 -> Node_18;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_33;
+Node_29 -> Node_18;
+Node_28 -> Node_20;
+Node_30 -> Node_18;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_26 -> Node_27;
+Node_33 -> Node_29;
+Node_32 -> Node_24;
+Node_24 -> Node_25;
+Node_31 -> Node_30;
+}
+

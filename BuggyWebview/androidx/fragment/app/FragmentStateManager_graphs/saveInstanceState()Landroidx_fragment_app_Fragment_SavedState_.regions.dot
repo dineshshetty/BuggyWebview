@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.fragment.app.FragmentStateManager.saveInstanceState()Landroidx\/fragment\/app\/Fragment$SavedState;" {
+subgraph cluster_Region_1355015442 {
+label = "R(1:(2:(1:8)|(1:6))) | DECL_VAR: android.os.Bundle result\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1248171948 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_690527600 {
+label = "IF [B:13:0x0006, B:15:0x000c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|if (r3.mFragment.mState \<= (\-1)) goto L9\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000c|ADDED_TO_REGION\l|if ((r0 = saveBasicState()) == null) goto L8\l}"];
+subgraph cluster_Region_1348865889 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_532847370 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|RETURN\lORIG_RETURN\l|return new androidx.fragment.app.Fragment.SavedState(r0)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0008}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000e}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0014|RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public androidx.fragment.app.Fragment$SavedState androidx.fragment.app.FragmentStateManager.saveInstanceState((r3v0 'this' androidx.fragment.app.FragmentStateManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000c \-\> B:17:0x0013, CROSS_EDGE: B:18:0x0014 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_18;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_19;
+Node_19 -> Node_11;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_11;
+}
+

@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.transition.Transition.ArrayListManager.add(Ljava\/util\/ArrayList;Ljava\/lang\/Object;)Ljava\/util\/ArrayList;" {
+subgraph cluster_Region_756739512 {
+label = "R(3:(1:2)|(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1562259203 {
+label = "IF [B:10:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|if (r1 == null) goto L2\l}"];
+subgraph cluster_Region_555977974 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|r1 = new java.util.ArrayList\<\>()\l}"];
+}
+}
+subgraph cluster_IfRegion_891221761 {
+label = "IF [B:13:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000c|if (r1.contains(r2) == false) goto L5\l}"];
+subgraph cluster_Region_1326693175 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|r1.add(r2)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0011|RETURN\l|return r1\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0008|PHI: r1 \l  PHI: (r1v1 'list' java.util.ArrayList\<T\>) = (r1v0 'list' java.util.ArrayList\<T\>), (r1v2 'list' java.util.ArrayList\<T\>) binds: [B:10:0x0000, B:11:0x0002] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static java.util.ArrayList\<T\> androidx.transition.Transition.ArrayListManager.add((r1v0 'list' java.util.ArrayList\<T\> A[D('list' java.util.ArrayList\<T\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'item' T A[D('item' T), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000c \-\> B:15:0x0011, CROSS_EDGE: B:10:0x0000 \-\> B:12:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/ArrayList\<TT;\>;TT;)Ljava\/util\/ArrayList\<TT;\>;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

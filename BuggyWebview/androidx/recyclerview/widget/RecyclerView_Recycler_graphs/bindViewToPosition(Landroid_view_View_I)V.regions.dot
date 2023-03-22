@@ -1,0 +1,117 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.Recycler.bindViewToPosition(Landroid\/view\/View;I)V" {
+subgraph cluster_Region_893442017 {
+label = "R(2:1|(2:(2:22|23)|(2:3|(2:(2:20|21)|(4:7|(1:9)(1:(1:18)(1:19))|10|13))))) | DECL_VAR: androidx.recyclerview.widget.RecyclerView$LayoutParams rvLayoutParams\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0000|androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.RecyclerView.ViewHolder r6 = androidx.recyclerview.widget.RecyclerView.getChildViewHolderInt(r9)\l}"];
+subgraph cluster_Region_1098490953 {
+label = "R(2:(2:22|23)|(2:3|(2:(2:20|21)|(4:7|(1:9)(1:(1:18)(1:19))|10|13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_722122674 {
+label = "IF [B:28:0x0004] THEN: R(2:22|23) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0004|if (r6 == null) goto L22\l}"];
+subgraph cluster_Region_2031225873 {
+label = "R(2:22|23)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x009f}"];
+Node_49 [shape=record,label="{49\:\ 0x00bb|throw new java.lang.IllegalArgumentException(\"The view does not have a ViewHolder. You cannot pass arbitrary views to this method, they should be created by the Adapter\" + androidx.recyclerview.widget.RecyclerView.this.exceptionLabel())\l}"];
+}
+}
+subgraph cluster_Region_1166299979 {
+label = "R(2:3|(2:(2:20|21)|(4:7|(1:9)(1:(1:18)(1:19))|10|13)))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0006|int int r7 = androidx.recyclerview.widget.RecyclerView.this.mAdapterHelper.findPositionOffset(r10)\l}"];
+subgraph cluster_Region_1618804845 {
+label = "R(2:(2:20|21)|(4:7|(1:9)(1:(1:18)(1:19))|10|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1732584297 {
+label = "IF [B:30:0x000e, B:32:0x0018] THEN: R(2:20|21) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x000e|if (r7 \< 0) goto L20\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0018|ADDED_TO_REGION\l|if (r7 \>= androidx.recyclerview.widget.RecyclerView.this.mAdapter.getItemCount()) goto L20\l}"];
+subgraph cluster_Region_1626320693 {
+label = "R(2:20|21)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0067}"];
+Node_47 [shape=record,label="{47\:\ 0x009e|throw new java.lang.IndexOutOfBoundsException(\"Inconsistency detected. Invalid item position \" + r10 + \"(offset:\" + r7 + \").state:\" + androidx.recyclerview.widget.RecyclerView.this.mState.getItemCount() + androidx.recyclerview.widget.RecyclerView.this.exceptionLabel())\l}"];
+}
+}
+subgraph cluster_Region_2088489737 {
+label = "R(4:7|(1:9)(1:(1:18)(1:19))|10|13)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x001a|tryBindViewHolderByDeadline(r6, r7, r10, Long.MAX_VALUE)\landroid.view.ViewGroup$LayoutParams android.view.ViewGroup.LayoutParams r0 = r6.itemView.getLayoutParams()\l}"];
+subgraph cluster_IfRegion_903002083 {
+label = "IF [B:34:0x002c] THEN: R(1:9) ELSE: R(1:(1:18)(1:19))";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x002c|if (r0 == null) goto L9\l}"];
+subgraph cluster_Region_142730649 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x002e|androidx.recyclerview.widget.RecyclerView$LayoutParams r1 = (androidx.recyclerview.widget.RecyclerView.LayoutParams) androidx.recyclerview.widget.RecyclerView.this.generateDefaultLayoutParams()\lr6.itemView.setLayoutParams(r1)\l}"];
+}
+subgraph cluster_Region_1299450095 {
+label = "R(1:(1:18)(1:19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1386980377 {
+label = "IF [B:37:0x0042] THEN: R(1:18) ELSE: R(1:19) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0042|if (androidx.recyclerview.widget.RecyclerView.this.checkLayoutParams(r0) == false) goto L18\l}"];
+subgraph cluster_Region_994952375 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0044|androidx.recyclerview.widget.RecyclerView$LayoutParams r1 = (androidx.recyclerview.widget.RecyclerView.LayoutParams) androidx.recyclerview.widget.RecyclerView.this.generateLayoutParams(r0)\lr6.itemView.setLayoutParams(r1)\l}"];
+}
+subgraph cluster_Region_482057038 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0052|androidx.recyclerview.widget.RecyclerView$LayoutParams r1 = (androidx.recyclerview.widget.RecyclerView.LayoutParams) r0\l}"];
+}
+}
+}
+}
+Node_40 [shape=record,label="{40\:\ 0x0055|PHI: r1 \l  PHI: (r1v12 'rvLayoutParams' androidx.recyclerview.widget.RecyclerView$LayoutParams) = (r1v8 'rvLayoutParams' androidx.recyclerview.widget.RecyclerView$LayoutParams), (r1v11 'rvLayoutParams' androidx.recyclerview.widget.RecyclerView$LayoutParams), (r1v15 'rvLayoutParams' androidx.recyclerview.widget.RecyclerView$LayoutParams) binds: [B:39:0x0052, B:38:0x0044, B:35:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|r1.mInsetsDirty = true\lr1.mViewHolder = r6\l}"];
+Node_44 [shape=record,label="{44\:\ 0x0064|PHI: r2 \l  PHI: (r2v14 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r1.mPendingInvalidate = r6.itemView.getParent() == null\l}"];
+}
+}
+}
+}
+}
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0010}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0060}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0063}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0066}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x003c}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.RecyclerView.Recycler.bindViewToPosition((r8v0 'this' androidx.recyclerview.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, THIS]), (r9v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:41:0x0060 \-\> B:44:0x0064, CROSS_EDGE: B:38:0x0044 \-\> B:40:0x0055, CROSS_EDGE: B:39:0x0052 \-\> B:40:0x0055, CROSS_EDGE: B:47:0x009e \-\> B:26:?, CROSS_EDGE: B:30:0x000e \-\> B:46:0x0067, CROSS_EDGE: B:49:0x00bb \-\> B:26:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_25;Node_27 -> Node_28;
+Node_28 -> Node_29[style=dashed];
+Node_28 -> Node_48;
+Node_48 -> Node_49;
+Node_49 -> Node_26;
+Node_29 -> Node_30;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_46;
+Node_32 -> Node_33[style=dashed];
+Node_32 -> Node_46;
+Node_46 -> Node_47;
+Node_47 -> Node_26;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_40;
+Node_37 -> Node_38;
+Node_37 -> Node_39[style=dashed];
+Node_38 -> Node_40;
+Node_39 -> Node_40;
+Node_40 -> Node_41;
+Node_44 -> Node_45;
+Node_25 -> Node_27;
+Node_31 -> Node_32;
+Node_41 -> Node_43;
+Node_41 -> Node_44;
+Node_43 -> Node_44;
+Node_45 -> Node_26;
+Node_36 -> Node_37;
+}
+

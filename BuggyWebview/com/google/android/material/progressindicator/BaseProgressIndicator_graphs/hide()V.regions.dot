@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.progressindicator.BaseProgressIndicator.hide()V" {
+subgraph cluster_Region_1596484984 {
+label = "R(1:(2:(2:3|4)|(3:6|7|(1:10)(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1654622702 {
+label = "R(2:(2:3|4)|(3:6|7|(1:10)(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_21962247 {
+label = "IF [B:3:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (getVisibility() != 0) goto L3\l}"];
+subgraph cluster_Region_333836694 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|removeCallbacks(r7.delayedShow)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000b|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1671618778 {
+label = "R(3:6|7|(1:10)(1:12))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|removeCallbacks(r7.delayedHide)\llong long r0 = android.os.SystemClock.uptimeMillis() \- r7.lastShowStartTime\lint int r2 = r7.minHideDelay\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001d|boolean r3 = r0 \>= ((long) r2)\l}"];
+subgraph cluster_IfRegion_1751866531 {
+label = "IF [B:10:0x0022] THEN: R(1:10) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0022|PHI: r3 \l  PHI: (r3v2 'enoughTimeElapsed' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 != false) goto L10\l}"];
+subgraph cluster_Region_255462719 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0024|r7.delayedHide.run()\l}"];
+}
+subgraph cluster_Region_1595712722 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002a|postDelayed(r7.delayedHide, r2 \- r0)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001f}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0029}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0031}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0021}"];
+MethodNode[shape=record,label="{public void com.google.android.material.progressindicator.BaseProgressIndicator.hide((r7v0 'this' com.google.android.material.progressindicator.BaseProgressIndicator\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\> A[D('this' com.google.android.material.progressindicator.BaseProgressIndicator\<S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0029 \-\> B:1:?, CROSS_EDGE: B:14:0x0031 \-\> B:1:?, CROSS_EDGE: B:9:0x0021 \-\> B:10:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.progressindicator.BaseProgressIndicatorSpec]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_8 -> Node_10;
+Node_12 -> Node_1;
+Node_14 -> Node_1;
+Node_9 -> Node_10;
+}
+

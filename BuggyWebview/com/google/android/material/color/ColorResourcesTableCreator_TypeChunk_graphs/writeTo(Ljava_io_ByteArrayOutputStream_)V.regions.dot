@@ -1,0 +1,47 @@
+digraph "CFG forcom.google.android.material.color.ColorResourcesTableCreator.TypeChunk.writeTo(Ljava\/io\/ByteArrayOutputStream;)V" {
+subgraph cluster_Region_1075335696 {
+label = "R(4:1|(1:3)|5|(1:7)) | DECL_VAR: int[] null, com.google.android.material.color.ColorResourcesTableCreator$ResEntry[] null\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r6.header.writeTo(r7)\lint r2 = 0\lr7.write(new byte[]\{com.google.android.material.color.ColorResourcesTableCreator.typeIdColor, 0, 0, 0\})\lr7.write(com.google.android.material.color.ColorResourcesTableCreator.intToByteArray(r6.entryCount))\lr7.write(com.google.android.material.color.ColorResourcesTableCreator.intToByteArray(getEntryStart()))\lr7.write(r6.config)\lint r3 = 0\l\l}"];
+subgraph cluster_LoopRegion_1055122832 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0038|LOOP_START\lLOOP:0: B:14:0x0038\-\>B:15:0x003a\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v3 int) binds: [B:13:0x0000, B:15:0x003a] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r1) goto L3\l}"];
+subgraph cluster_Region_1680506161 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x003a|LOOP_END\lLOOP:0: B:14:0x0038\-\>B:15:0x003a\l|r4 = r0[r3]\lr7.write(com.google.android.material.color.ColorResourcesTableCreator.intToByteArray(r4))\lr3++\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0046}"];
+subgraph cluster_LoopRegion_1894906317 {
+label = "LOOP:1: (1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0049|LOOP_START\lLOOP:1: B:17:0x0049\-\>B:18:0x004b\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:16:0x0046, B:18:0x004b] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L7\l}"];
+subgraph cluster_Region_789927421 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004b|LOOP_END\lLOOP:1: B:17:0x0049\-\>B:18:0x004b\l|r3 = r0[r2]\lr3.writeTo(r7)\lr2++\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0046|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0053|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0053}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void com.google.android.material.color.ColorResourcesTableCreator.TypeChunk.writeTo((r6v0 'this' com.google.android.material.color.ColorResourcesTableCreator$TypeChunk A[IMMUTABLE_TYPE, THIS]), (r7v0 'outputStream' java.io.ByteArrayOutputStream A[D('outputStream' java.io.ByteArrayOutputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:15:0x003a \-\> B:14:0x0038, BACK_EDGE: B:18:0x004b \-\> B:17:0x0049\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Ljava\/io\/IOException;]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_14;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_18 -> Node_17;
+Node_11 -> Node_13;
+Node_20 -> Node_16;
+Node_21 -> Node_19;
+Node_19 -> Node_12;
+}
+

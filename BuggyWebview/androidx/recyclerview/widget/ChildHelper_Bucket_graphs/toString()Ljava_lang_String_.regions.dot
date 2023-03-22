@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.recyclerview.widget.ChildHelper.Bucket.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1893547697 {
+label = "R(1:(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1442408797 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2010828200 {
+label = "IF [B:11:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r3.mNext == null) goto L3\l}"];
+subgraph cluster_Region_1479071418 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return java.lang.Long.toBinaryString(r3.mData)\l}"];
+}
+}
+subgraph cluster_Region_1092174776 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000b}"];
+Node_14 [shape=record,label="{14\:\ 0x002b|RETURN\lORIG_RETURN\l|return r3.mNext.toString() + \"xx\" + java.lang.Long.toBinaryString(r3.mData)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.recyclerview.widget.ChildHelper.Bucket.toString((r3v0 'this' androidx.recyclerview.widget.ChildHelper$Bucket A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000b \-\> B:14:0x002b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_15;
+}
+

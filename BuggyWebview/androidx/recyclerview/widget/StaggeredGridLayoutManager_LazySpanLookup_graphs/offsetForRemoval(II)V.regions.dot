@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.offsetForRemoval(II)V" {
+subgraph cluster_Region_101956733 {
+label = "R(2:1|(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int[] int[] r0 = r4.mData\l}"];
+subgraph cluster_Region_427316543 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1222336199 {
+label = "IF [B:3:0x0002, B:5:0x0005] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 == null) goto L9\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0005|ADDED_TO_REGION\l|if (r5 \>= r0.length) goto L8\l}"];
+subgraph cluster_Region_1075802296 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_82410338 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0008|ensureSize(r5 + r6)\lint[] int[] r0 = r4.mData\ljava.lang.System.arraycopy(r0, r5 + r6, r0, r5, (r0.length \- r5) \- r6)\lint[] int[] r0 = r4.mData\ljava.util.Arrays.fill(r0, r0.length \- r6, r0.length, \-1)\loffsetFullSpansForRemoval(r5, r6)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0023}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0024|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.offsetForRemoval((r4v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager$LazySpanLookup A[IMMUTABLE_TYPE, THIS]), (r5v0 'positionStart' int A[D('positionStart' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'itemCount' int A[D('itemCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0024 \-\> B:1:?, CROSS_EDGE: B:3:0x0002 \-\> B:9:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_10;
+Node_10 -> Node_1;
+Node_7 -> Node_8;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_1;
+Node_9 -> Node_1;
+}
+

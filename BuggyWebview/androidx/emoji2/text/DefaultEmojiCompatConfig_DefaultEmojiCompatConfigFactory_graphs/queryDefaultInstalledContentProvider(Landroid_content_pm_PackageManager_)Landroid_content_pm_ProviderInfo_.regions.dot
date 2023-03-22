@@ -1,0 +1,47 @@
+digraph "CFG forandroidx.emoji2.text.DefaultEmojiCompatConfig.DefaultEmojiCompatConfigFactory.queryDefaultInstalledContentProvider(Landroid\/content\/pm\/PackageManager;)Landroid\/content\/pm\/ProviderInfo;" {
+subgraph cluster_Region_1049366116 {
+label = "R(3:1|(2:4|(1:7))|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.util.List java.util.List\<android.content.pm.ResolveInfo\> r0 = r5.mHelper.queryIntentContentProviders(r6, new android.content.Intent(androidx.emoji2.text.DefaultEmojiCompatConfig.DefaultEmojiCompatConfigFactory.INTENT_LOAD_EMOJI_FONT), 0)\ljava.util.Iterator r1 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_455981471 {
+label = "LOOP:0: (2:4|(1:7))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0016|android.content.pm.ResolveInfo \lif (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_613920031 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0018|android.content.pm.ResolveInfo r2 = r1.next()\landroid.content.pm.ProviderInfo android.content.pm.ProviderInfo r3 = r5.mHelper.getProviderInfo(r2)\l}"];
+subgraph cluster_IfRegion_554014720 {
+label = "IF [B:19:0x0028] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0028|LOOP_END\lLOOP:0: B:16:0x0012\-\>B:19:0x0028\l|if (hasFlagSystem(r3) != false) goto L6\l}"];
+subgraph cluster_Region_1742471360 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002a|RETURN\l|return r3\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x002c|RETURN\l|return null\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0012|LOOP_START\lLOOP:0: B:16:0x0012\-\>B:19:0x0028\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002a|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private android.content.pm.ProviderInfo androidx.emoji2.text.DefaultEmojiCompatConfig.DefaultEmojiCompatConfigFactory.queryDefaultInstalledContentProvider((r5v0 'this' androidx.emoji2.text.DefaultEmojiCompatConfig$DefaultEmojiCompatConfigFactory A[IMMUTABLE_TYPE, THIS]), (r6v0 'packageManager' android.content.pm.PackageManager A[D('packageManager' android.content.pm.PackageManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0028 \-\> B:16:0x0012, CROSS_EDGE: B:23:0x002d \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_16[style=dashed];
+Node_19 -> Node_25;
+Node_20 -> Node_14;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_25 -> Node_20;
+Node_24 -> Node_22;
+}
+

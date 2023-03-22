@@ -1,0 +1,97 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.indexOf(Ljava\/lang\/Iterable;Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_1945231243 {
+label = "R(2:1|(2:(1:4)|(3:6|(3:9|(1:11)|(2:(1:16)|(1:14)))|18)))";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\l}"];
+subgraph cluster_Region_1487298338 {
+label = "R(2:(1:4)|(3:6|(3:9|(1:11)|(2:(1:16)|(1:14)))|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_183609600 {
+label = "IF [B:43:0x0007] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0007|if ((r4 instanceof java.util.List) == true) goto L3\l}"];
+subgraph cluster_Region_698657859 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0010|RETURN\l|return ((java.util.List) r4).indexOf(r5)\l}"];
+}
+}
+subgraph cluster_Region_640336887 {
+label = "R(3:6|(3:9|(1:11)|(2:(1:16)|(1:14)))|18)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0011|int r0 = 0\ljava.util.Iterator r1 = r4.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1414804347 {
+label = "LOOP:0: (3:9|(1:11)|(2:(1:16)|(1:14)))";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x001a|java.lang.Object \lif (r1.hasNext() != false) goto L9\l}"];
+subgraph cluster_Region_1054943644 {
+label = "R(3:9|(1:11)|(2:(1:16)|(1:14)))";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x001c|java.lang.Object r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_873785884 {
+label = "IF [B:50:0x0020] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x0020|if (r0 \< 0) goto L11\l}"];
+subgraph cluster_Region_962539241 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_51 [shape=record,label="{51\:\ 0x0022|kotlin.collections.CollectionsKt.throwIndexOverflow()\l}"];
+}
+}
+subgraph cluster_Region_890587957 {
+label = "R(2:(1:16)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1076848903 {
+label = "IF [B:53:0x0029] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x0029|if (kotlin.jvm.internal.Intrinsics.areEqual(r5, r2) == true) goto L15\l}"];
+subgraph cluster_Region_314859334 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_54 [shape=record,label="{54\:\ 0x002b|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_955311202 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_55 [shape=record,label="{55\:\ 0x002c|LOOP_END\lLOOP:0: B:47:0x0016\-\>B:55:0x002c\l|r0++\l}"];
+}
+}
+}
+}
+Node_56 [shape=record,label="{56\:\ 0x0030|RETURN\l|return \-1\l}"];
+}
+}
+}
+Node_40 [shape=record,color=red,label="{40\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x0009}"];
+Node_41 [shape=record,color=red,label="{41\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x0016|LOOP_START\lLOOP:0: B:47:0x0016\-\>B:55:0x002c\lPHI: r0 \l  PHI: (r0v3 'index' int) = (r0v2 'index' int), (r0v4 'index' int) binds: [B:46:0x0011, B:55:0x002c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x0025}"];
+Node_58 [shape=record,color=red,label="{58\:\ 0x002b|SYNTHETIC\l}"];
+Node_59 [shape=record,color=red,label="{59\:\ 0x0030|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.collections.CollectionsKt___CollectionsKt.indexOf((r4v0 java.lang.Iterable\<? extends T\> A[D('$this$indexOf' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 T A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:54:0x002b \-\> B:41:?, BACK_EDGE: B:55:0x002c \-\> B:47:0x0016, CROSS_EDGE: B:50:0x0020 \-\> B:52:0x0025, CROSS_EDGE: B:57:0x0031 \-\> B:41:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;TT;)I\l}"];
+MethodNode -> Node_40;Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_43 -> Node_46[style=dashed];
+Node_45 -> Node_41;
+Node_46 -> Node_47;
+Node_48 -> Node_49;
+Node_48 -> Node_59[style=dashed];
+Node_49 -> Node_50;
+Node_50 -> Node_51;
+Node_50 -> Node_52[style=dashed];
+Node_51 -> Node_52;
+Node_53 -> Node_55[style=dashed];
+Node_53 -> Node_58;
+Node_54 -> Node_41;
+Node_55 -> Node_47;
+Node_56 -> Node_41;
+Node_40 -> Node_42;
+Node_44 -> Node_45;
+Node_47 -> Node_48;
+Node_52 -> Node_53;
+Node_58 -> Node_54;
+Node_59 -> Node_56;
+}
+

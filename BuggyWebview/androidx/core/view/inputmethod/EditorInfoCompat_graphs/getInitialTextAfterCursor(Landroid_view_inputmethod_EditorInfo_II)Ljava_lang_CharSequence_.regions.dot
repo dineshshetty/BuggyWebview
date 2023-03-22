@@ -1,0 +1,95 @@
+digraph "CFG forandroidx.core.view.inputmethod.EditorInfoCompat.getInitialTextAfterCursor(Landroid\/view\/inputmethod\/EditorInfo;II)Ljava\/lang\/CharSequence;" {
+subgraph cluster_Region_962033940 {
+label = "R(1:(2:(1:4)|(1:(2:(1:11)|(2:12|(2:(1:15)|(1:17))))))) | DECL_VAR: java.lang.CharSequence surroundingText\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_300795739 {
+label = "R(2:(1:4)|(1:(2:(1:11)|(2:12|(2:(1:15)|(1:17))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_668409310 {
+label = "IF [B:21:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 30) goto L3\l}"];
+subgraph cluster_Region_391953041 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000a|RETURN\l|return androidx.core.view.inputmethod.EditorInfoCompat.Api30Impl.getInitialTextAfterCursor(r4, r5, r6)\l}"];
+}
+}
+subgraph cluster_Region_365031095 {
+label = "R(1:(2:(1:11)|(2:12|(2:(1:15)|(1:17)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1793668171 {
+label = "R(2:(1:11)|(2:12|(2:(1:15)|(1:17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1976560933 {
+label = "IF [B:25:0x000e, B:28:0x0019] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000e|if (r4.extras == null) goto L8\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0019|ADDED_TO_REGION\l|if ((r0 = r4.extras.getCharSequence(androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_SURROUNDING_TEXT_KEY)) == null) goto L11\l}"];
+subgraph cluster_Region_120936767 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001b|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1869408885 {
+label = "R(2:12|(2:(1:15)|(1:17)))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x001c|int int r1 = r4.extras.getInt(androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_SELECTION_END_KEY)\lint int r2 = java.lang.Math.min(r5, r0.length() \- r1)\l}"];
+subgraph cluster_Region_488356664 {
+label = "R(2:(1:15)|(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1047760828 {
+label = "IF [B:31:0x002f] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x002f|if ((r6 & 1) != 0) goto L14\l}"];
+subgraph cluster_Region_2108771293 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ ?|SYNTHETIC\lRETURN\l|return r0.subSequence(r1, r1 + r2)\l}"];
+}
+}
+subgraph cluster_Region_2138844493 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x003e|RETURN\lORIG_RETURN\l|return android.text.TextUtils.substring(r0, r1, r1 + r2)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0006}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000b}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0010|RETURN\lADDED_TO_REGION\l|return null\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0011}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0031}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0038}"];
+MethodNode[shape=record,label="{public static java.lang.CharSequence androidx.core.view.inputmethod.EditorInfoCompat.getInitialTextAfterCursor((r4v0 'editorInfo' android.view.inputmethod.EditorInfo A[D('editorInfo' android.view.inputmethod.EditorInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'length' int A[D('length' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'flags' int A[D('flags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0010 \-\> B:19:?, CROSS_EDGE: B:29:0x001b \-\> B:19:?, CROSS_EDGE: B:34:0x003e \-\> B:19:?, CROSS_EDGE: B:33:0x0038 \-\> B:34:0x003e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_23 -> Node_19;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_19;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_35 -> Node_19;
+Node_34 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_26 -> Node_19;
+Node_27 -> Node_28;
+Node_32 -> Node_35;
+Node_33 -> Node_34;
+}
+

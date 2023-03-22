@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatSpinner.getDropDownHorizontalOffset()I" {
+subgraph cluster_Region_790441417 {
+label = "R(2:1|(2:(1:4)|(1:(2:(1:9)|(1:10)))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|androidx.appcompat.widget.AppCompatSpinner$SpinnerPopup androidx.appcompat.widget.AppCompatSpinner.SpinnerPopup r0 = r2.mPopup\l}"];
+subgraph cluster_Region_565040179 {
+label = "R(2:(1:4)|(1:(2:(1:9)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1952788566 {
+label = "IF [B:15:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1513314628 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|RETURN\l|return r0.getHorizontalOffset()\l}"];
+}
+}
+subgraph cluster_Region_1097558732 {
+label = "R(1:(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_766894981 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_527046833 {
+label = "IF [B:19:0x000d] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000d|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L8\l}"];
+subgraph cluster_Region_1344883491 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0013|RETURN\l|return super.getDropDownHorizontalOffset()\l}"];
+}
+}
+subgraph cluster_Region_1250846432 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0014|RETURN\l|return 0\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0004}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0009}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000f}"];
+MethodNode[shape=record,label="{public int androidx.appcompat.widget.AppCompatSpinner.getDropDownHorizontalOffset((r2v0 'this' androidx.appcompat.widget.AppCompatSpinner A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:21:0x0013 \-\> B:13:?, CROSS_EDGE: B:23:0x0015 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.Spinner.getDropDownHorizontalOffset():int\}]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_13;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

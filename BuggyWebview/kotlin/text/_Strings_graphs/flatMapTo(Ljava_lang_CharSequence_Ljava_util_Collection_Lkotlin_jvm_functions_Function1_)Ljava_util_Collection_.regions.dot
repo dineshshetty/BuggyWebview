@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.flatMapTo(Ljava\/lang\/CharSequence;Ljava\/util\/Collection;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Collection;" {
+subgraph cluster_Region_879448056 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"destination\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"transform\")\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_991414370 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0015|if (r1 \< r4.length()) goto L4\l}"];
+subgraph cluster_Region_2088720815 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0017|LOOP_END\lLOOP:0: B:11:0x0011\-\>B:13:0x0017\l|char char r2 = r4.charAt(r1)\ljava.lang.Iterable java.lang.Iterable r3 = r6.invoke(java.lang.Character.valueOf(r2))\lkotlin.collections.CollectionsKt.addAll(r5, r3)\lr1++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x002b|RETURN\l|return r5\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0011|LOOP_START\lLOOP:0: B:11:0x0011\-\>B:13:0x0017\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:10:0x0000, B:13:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002b|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final C extends java.util.Collection\<? super R\> kotlin.text.StringsKt___StringsKt.flatMapTo((r4v0 '$this$flatMapTo' java.lang.CharSequence A[D('$this$flatMapTo' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'destination' C extends java.util.Collection\<? super R\> A[D('destination' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'transform' kotlin.jvm.functions.Function1\<? super java.lang.Character, ? extends java.lang.Iterable\<? extends R\>\> A[D('transform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0017 \-\> B:11:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, C extends java.util.Collection\<? super R\>]\lSIGNATURE: \<R:Ljava\/lang\/Object;C::Ljava\/util\/Collection\<\-TR;\>;\>(Ljava\/lang\/CharSequence;TC;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;+Ljava\/lang\/Iterable\<+TR;\>;\>;)TC;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

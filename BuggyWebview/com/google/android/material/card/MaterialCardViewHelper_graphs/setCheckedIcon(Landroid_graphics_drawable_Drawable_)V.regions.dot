@@ -1,0 +1,53 @@
+digraph "CFG forcom.google.android.material.card.MaterialCardViewHelper.setCheckedIcon(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_235557061 {
+label = "R(3:(1:2)(1:9)|3|(1:(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1476380330 {
+label = "IF [B:12:0x0000] THEN: R(1:2) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r4 != null) goto L2\l}"];
+subgraph cluster_Region_811304356 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = androidx.core.graphics.drawable.DrawableCompat.wrap(r4).mutate()\lr3.checkedIcon = r0\landroidx.core.graphics.drawable.DrawableCompat.setTintList(r0, r3.checkedIconTint)\lsetChecked(r3.materialCardView.isChecked())\l}"];
+}
+subgraph cluster_Region_1956809719 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001b|r3.checkedIcon = com.google.android.material.card.MaterialCardViewHelper.CHECKED_ICON_NONE\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x001f|android.graphics.drawable.LayerDrawable android.graphics.drawable.LayerDrawable r0 = r3.clickableForegroundDrawable\l}"];
+subgraph cluster_Region_410968451 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_847757726 {
+label = "IF [B:16:0x0021] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0021|if (r0 != null) goto L5\l}"];
+subgraph cluster_Region_203803072 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0023|r0.setDrawableByLayerId(com.google.android.material.C0571R.C0574id.mtrl_card_checked_layer_id, r3.checkedIcon)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x002a|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.card.MaterialCardViewHelper.setCheckedIcon((r3v0 'this' com.google.android.material.card.MaterialCardViewHelper A[IMMUTABLE_TYPE, THIS]), (r4v0 'checkedIcon' android.graphics.drawable.Drawable A[D('checkedIcon' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0021 \-\> B:18:0x002a, CROSS_EDGE: B:14:0x001b \-\> B:15:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

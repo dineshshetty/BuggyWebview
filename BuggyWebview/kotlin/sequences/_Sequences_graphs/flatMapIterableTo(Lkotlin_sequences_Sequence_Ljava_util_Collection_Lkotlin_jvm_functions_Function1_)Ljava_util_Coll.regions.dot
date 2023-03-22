@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.flatMapIterableTo(Lkotlin\/sequences\/Sequence;Ljava\/util\/Collection;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Collection;" {
+subgraph cluster_Region_1407856025 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"destination\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"transform\")\ljava.util.Iterator java.util.Iterator\<? extends T\> r1 = r4.iterator()\l}"];
+subgraph cluster_LoopRegion_1881786639 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0018|if (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1720068109 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001a|LOOP_END\lLOOP:0: B:11:0x0014\-\>B:13:0x001a\l|java.lang.Object java.lang.Object r2 = (T) r1.next()\ljava.lang.Iterable java.lang.Iterable r3 = r6.invoke(r2)\lkotlin.collections.CollectionsKt.addAll(r5, r3)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0028|RETURN\l|return r5\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0014|LOOP_START\lLOOP:0: B:11:0x0014\-\>B:13:0x001a\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0028|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final C extends java.util.Collection\<? super R\> kotlin.sequences.SequencesKt___SequencesKt.flatMapIterableTo((r4v0 kotlin.sequences.Sequence\<? extends T\> A[D('$this$flatMapTo' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'destination' C extends java.util.Collection\<? super R\> A[D('destination' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'transform' kotlin.jvm.functions.Function1\<? super T, ? extends java.lang.Iterable\<? extends R\>\> A[D('transform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x001a \-\> B:11:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, C extends java.util.Collection\<? super R\>, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;C::Ljava\/util\/Collection\<\-TR;\>;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;TC;Lkotlin\/jvm\/functions\/Function1\<\-TT;+Ljava\/lang\/Iterable\<+TR;\>;\>;)TC;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r2v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

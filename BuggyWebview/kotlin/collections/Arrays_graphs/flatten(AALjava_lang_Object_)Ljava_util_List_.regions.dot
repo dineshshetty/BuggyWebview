@@ -1,0 +1,49 @@
+digraph "CFG forkotlin.collections.ArraysKt__ArraysKt.flatten([[Ljava\/lang\/Object;)Ljava\/util\/List;" {
+subgraph cluster_Region_1602663348 {
+label = "R(5:1|(1:3)|5|(1:7)|10) | DECL_VAR: T[][] null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lint r2 = 0\lint r3 = 0\lint r4 = 0\l\l}"];
+subgraph cluster_LoopRegion_1798655349 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|LOOP_START\lLOOP:0: B:3:0x000c\-\>B:4:0x000e\lPHI: r3 r4 \l  PHI: (r3v1 int) = (r3v0 int), (r3v3 int) binds: [B:2:0x0000, B:4:0x000e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 int) = (r4v0 int), (r4v4 int) binds: [B:2:0x0000, B:4:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Object[] \lif (r3 \< r1) goto L3\l}"];
+subgraph cluster_Region_724016697 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|LOOP_END\lLOOP:0: B:3:0x000c\-\>B:4:0x000e\l|java.lang.Object[] r5 = r0[r3]\lr4 += r5.length\lr3++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0019|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList(r4)\l\l}"];
+subgraph cluster_LoopRegion_160881136 {
+label = "LOOP:1: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0022|LOOP_START\lLOOP:1: B:6:0x0022\-\>B:7:0x0024\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:5:0x0019, B:7:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L7\l}"];
+subgraph cluster_Region_415614522 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0024|LOOP_END\lLOOP:1: B:6:0x0022\-\>B:7:0x0024\l|kotlin.collections.CollectionsKt.addAll(r0, r3)\lr2++\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0032|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0019|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002f|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002f}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<T\> kotlin.collections.ArraysKt__ArraysKt.flatten((r7v0 T[][] A[D('$this$flatten' java.lang.Object[][]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x000e \-\> B:3:0x000c, BACK_EDGE: B:7:0x0024 \-\> B:6:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>([[TT;)Ljava\/util\/List\<TT;\>;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_7 -> Node_6;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_10 -> Node_5;
+Node_11 -> Node_8;
+Node_8 -> Node_9;
+}
+

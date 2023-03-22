@@ -1,0 +1,31 @@
+digraph "CFG forandroidx.fragment.app.LogWriter.write([CII)V" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000|0x0000: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:43)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0001|LOOP_START\lLOOP:0: B:16:0x0001\-\>B:21:0x0014\l|0x0001: IF  (r0 I:??[int, byte, short, char] A[D('i' int)]) \>= (r6 I:??[int, byte, short, char] A[D('count' int)])  \-\> B:23:0x0017 \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0003|0x0003: ARITH  (r1 I:int) = (r5 I:int A[D('offset' int)]) + (r0 I:int A[D('i' int)])  (LINE:44)\l0x0005: AGET  (r1 I:char A[IMMUTABLE_TYPE]) = (r4 I:char[] A[D('buf' char[]), IMMUTABLE_TYPE]), (r1 I:??[int, short, byte, char]) \l0x0007: CONST  (r2 I:??[int, float, short, byte, char]) = (10 ??[int, float, short, byte, char])  (LINE:45)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0009|0x0009: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('c' char)]) != (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:20:0x000f \l}"];
+Node_19 [shape=record,label="{19\:\ 0x000b|0x000b: INVOKE  (r3 I:androidx.fragment.app.LogWriter) type: DIRECT call: androidx.fragment.app.LogWriter.flushBuilder():void A[MD:():void (m)] (LINE:46)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0014|SYNTHETIC\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0014|LOOP_END\lLOOP:0: B:16:0x0001\-\>B:21:0x0014\l|0x0014: ARITH  (r0 I:int) = (r0 I:int A[D('i' int)]) + (1 int)  (LINE:43)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000f|0x000f: IGET  (r2 I:java.lang.StringBuilder) = (r3 I:androidx.fragment.app.LogWriter) androidx.fragment.app.LogWriter.mBuilder java.lang.StringBuilder  (LINE:49)\l0x0011: INVOKE  (r2 I:java.lang.StringBuilder), (r1 I:char A[D('c' char)]) type: VIRTUAL call: java.lang.StringBuilder.append(char):java.lang.StringBuilder A[MD:(char):java.lang.StringBuilder (c)]\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0014|SYNTHETIC\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0017|SYNTHETIC\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0017|RETURN\l|0x0017: RETURN    (LINE:52)\l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.LogWriter.write((r3 'this' I:androidx.fragment.app.LogWriter A[IMMUTABLE_TYPE, THIS]), (r4 I:char[] A[D('buf' char[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:int A[D('offset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:21:0x0014 \-\> B:16:0x0001, CROSS_EDGE: B:20:0x000f \-\> B:21:0x0014\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0007\-0x0014: r1 'c' C\l  0x0001\-0x0017: r0 'i' I\l  \-1 \-0x0017: r4 'buf' [C\l  \-1 \-0x0017: r5 'offset' I\l  \-1 \-0x0017: r6 'count' I\lMETHOD_OVERRIDE: [ClspMth\{java.io.Writer.write(char[], int, int):void throws java.io.IOException\}]\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_23;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_25;
+Node_25 -> Node_21;
+Node_21 -> Node_16;
+Node_20 -> Node_24;
+Node_24 -> Node_21;
+Node_23 -> Node_22;
+Node_22 -> Node_14;
+}
+

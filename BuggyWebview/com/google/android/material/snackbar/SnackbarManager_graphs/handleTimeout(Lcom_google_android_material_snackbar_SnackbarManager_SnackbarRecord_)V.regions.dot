@@ -1,0 +1,59 @@
+digraph "CFG forcom.google.android.material.snackbar.SnackbarManager.handleTimeout(Lcom\/google\/android\/material\/snackbar\/SnackbarManager$SnackbarRecord;)V" {
+subgraph cluster_Region_1070996199 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000}"];
+subgraph cluster_SynchronizedRegion_1965898067 {
+label = "Synchronized:R(2:2|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002}"];
+subgraph cluster_Region_382874763 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_83987447 {
+label = "IF [B:21:0x0005, B:23:0x0009] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0005|if (r2.currentSnackbar == r3) goto L12\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0009|ADDED_TO_REGION\l|if (r2.nextSnackbar == r3) goto L12\l}"];
+subgraph cluster_Region_168802450 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000b|TryCatch #0 \{, blocks: (B:20:0x0003, B:22:0x0007, B:25:0x000f, B:24:0x000b), top: B:30:0x0003 \}\lCatch: all \-\> 0x0011\l|cancelSnackbarLocked(r3, 2)     \/\/ Catch: java.lang.Throwable \-\> L11\l}"];
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:20:0x0003, B:22:0x0007, B:25:0x000f, B:24:0x000b), top: B:30:0x0003 \}\lCatch: all \-\> 0x0011\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0007|TryCatch #0 \{, blocks: (B:20:0x0003, B:22:0x0007, B:25:0x000f, B:24:0x000b), top: B:30:0x0003 \}\lCatch: all \-\> 0x0011\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000f|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:20:0x0003, B:22:0x0007, B:25:0x000f, B:24:0x000b), top: B:30:0x0003 \}\lCatch: all \-\> 0x0011\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L11\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0010}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0011|REMOVE\lExcHandler: all \-\> 0x0011\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0012|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x0011\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0013|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{void com.google.android.material.snackbar.SnackbarManager.handleTimeout((r2v0 'this' com.google.android.material.snackbar.SnackbarManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'record' com.google.android.material.snackbar.SnackbarManager$SnackbarRecord A[D('record' com.google.android.material.snackbar.SnackbarManager$SnackbarRecord), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x0013 \-\> B:17:?, CROSS_EDGE: B:23:0x0009 \-\> B:25:0x000f, CROSS_EDGE: B:21:0x0005 \-\> B:24:0x000b, CROSS_EDGE: B:30:0x0003 \-\> B:27:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_30;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_24;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_16 -> Node_18;
+Node_30 -> Node_20;
+Node_30 -> Node_27;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_25 -> Node_26;
+Node_25 -> Node_31;
+Node_26 -> Node_17;
+Node_31 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_17;
+}
+

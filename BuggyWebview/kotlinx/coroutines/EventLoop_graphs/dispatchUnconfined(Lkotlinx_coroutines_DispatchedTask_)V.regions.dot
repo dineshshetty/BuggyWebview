@@ -1,0 +1,30 @@
+digraph "CFG forkotlinx.coroutines.EventLoop.dispatchUnconfined(Lkotlinx\/coroutines\/DispatchedTask;)V" {
+subgraph cluster_Region_590158728 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlinx.coroutines.internal.ArrayQueue\<kotlinx.coroutines.DispatchedTask\<?\>\> kotlinx.coroutines.internal.ArrayQueue r0 = r3.unconfinedQueue\l}"];
+subgraph cluster_IfRegion_800731338 {
+label = "IF [B:10:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_62536401 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|kotlinx.coroutines.internal.ArrayQueue r0 = new kotlinx.coroutines.internal.ArrayQueue()\lr3.unconfinedQueue = r0\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x000d|PHI: r0 \l  PHI: (r0v1 'it' kotlinx.coroutines.internal.ArrayQueue) = (r0v0 'it' kotlinx.coroutines.internal.ArrayQueue), (r0v2 'it' kotlinx.coroutines.internal.ArrayQueue) binds: [B:10:0x0002, B:11:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|r0.addLast(r4)\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0011}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.EventLoop.dispatchUnconfined((r3v0 'this' kotlinx.coroutines.EventLoop A[IMMUTABLE_TYPE, THIS]), (r4v0 kotlinx.coroutines.DispatchedTask\<?\> A[D('task' kotlinx.coroutines.DispatchedTask), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0002 \-\> B:12:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlinx\/coroutines\/DispatchedTask\<*\>;)V\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

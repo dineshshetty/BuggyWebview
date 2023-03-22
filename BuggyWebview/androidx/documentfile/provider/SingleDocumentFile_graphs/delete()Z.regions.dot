@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.documentfile.provider.SingleDocumentFile.delete()Z" {
+subgraph cluster_Region_205657363 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_2048625620 {
+label = "Try: R(1:3) catches: R(1:7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1990230714 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|RETURN\l|return android.provider.DocumentsContract.deleteDocument(r2.mContext.getContentResolver(), r2.mUri)\l}"];
+}
+subgraph cluster_Region_731127878 {
+label = "R(1:7) | ExcHandler: Exception \-\> 0x000d\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_731127878 {
+label = "R(1:7) | ExcHandler: Exception \-\> 0x000d\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x000d, blocks: (B:2:0x0000), top: B:7:0x0000 \}\lCatch: Exception \-\> 0x000d\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d|ExcHandler: Exception \-\> 0x000d\l}"];
+MethodNode[shape=record,label="{public boolean androidx.documentfile.provider.SingleDocumentFile.delete((r2v0 'this' androidx.documentfile.provider.SingleDocumentFile A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x000f \-\> B:1:?, CROSS_EDGE: B:7:0x0000 \-\> B:4:0x000d\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x000d, blocks: (B:2:0x0000), top: B:7:0x0000 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.documentfile.provider.DocumentFile.delete():boolean]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_1;
+Node_5 -> Node_1;
+Node_5 -> Node_1;
+Node_0 -> Node_7;
+Node_7 -> Node_2;
+Node_7 -> Node_4;
+Node_2 -> Node_3;
+Node_2 -> Node_8;
+Node_8 -> Node_4;
+Node_4 -> Node_5;
+}
+

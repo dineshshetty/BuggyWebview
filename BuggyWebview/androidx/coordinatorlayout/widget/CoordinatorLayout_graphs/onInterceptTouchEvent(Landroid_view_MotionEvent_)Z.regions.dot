@@ -1,0 +1,48 @@
+digraph "CFG forandroidx.coordinatorlayout.widget.CoordinatorLayout.onInterceptTouchEvent(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_1381949179 {
+label = "R(5:1|(1:3)|4|(1:10)|8)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = r5.getActionMasked()\l}"];
+subgraph cluster_IfRegion_340581640 {
+label = "IF [B:14:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0005|if (r0 == 0) goto L3\l}"];
+subgraph cluster_Region_350621551 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0007|resetTouchBehaviors(true)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x000a|boolean boolean r2 = performIntercept(r5, 0)\l}"];
+subgraph cluster_IfRegion_331959096 {
+label = "IF [B:17:0x000f, B:19:0x0012] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|if (r0 == 1) goto L10\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0012|ADDED_TO_REGION\l|if (r0 == 3) goto L10\l}"];
+subgraph cluster_Region_575447868 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0014|resetTouchBehaviors(true)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0017|RETURN\l|return r2\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0011}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.coordinatorlayout.widget.CoordinatorLayout.onInterceptTouchEvent((r4v0 'this' androidx.coordinatorlayout.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'ev' android.view.MotionEvent A[D('ev' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0012 \-\> B:21:0x0017, CROSS_EDGE: B:17:0x000f \-\> B:20:0x0014, CROSS_EDGE: B:14:0x0005 \-\> B:16:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewGroup.onInterceptTouchEvent(android.view.MotionEvent):boolean\}]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_18 -> Node_19;
+}
+

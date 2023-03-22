@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.fragment.app.Fragment.performDestroyView()V" {
+subgraph cluster_Region_1056905895 {
+label = "R(4:1|(1:5)|6|(2:(2:11|12)|(1:8)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|r3.mChildFragmentManager.dispatchDestroyView()\l}"];
+subgraph cluster_IfRegion_1451627517 {
+label = "IF [B:16:0x0007, B:18:0x0019] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0007|if (r3.mView != null) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0019|ADDED_TO_REGION\l|if (r3.mViewLifecycleOwner.getLifecycle().getCurrentState().isAtLeast(androidx.lifecycle.Lifecycle.State.CREATED) != false) goto L5\l}"];
+subgraph cluster_Region_1461091149 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001b|r3.mViewLifecycleOwner.handleLifecycleEvent(androidx.lifecycle.Lifecycle.Event.ON_DESTROY)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0022|r3.mState = 1\lr3.mCalled = false\lonDestroyView()\l}"];
+subgraph cluster_Region_176517051 {
+label = "R(2:(2:11|12)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1281980014 {
+label = "IF [B:21:0x002d] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x002d|if (r3.mCalled == false) goto L11\l}"];
+subgraph cluster_Region_706125285 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0039}"];
+Node_25 [shape=record,label="{25\:\ 0x0054|throw new androidx.fragment.app.SuperNotCalledException(\"Fragment \" + r3 + \" did not call through to super.onDestroyView()\")\l}"];
+}
+}
+subgraph cluster_Region_1321093113 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002f|androidx.loader.app.LoaderManager.getInstance(r3).markForRedelivery()\lr3.mPerformedCreateView = false\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0009}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0038}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.performDestroyView((r3v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0054 \-\> B:14:?, CROSS_EDGE: B:18:0x0019 \-\> B:20:0x0022, CROSS_EDGE: B:16:0x0007 \-\> B:20:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_22 -> Node_23;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_23 -> Node_14;
+}
+

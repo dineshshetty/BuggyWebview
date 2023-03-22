@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.core.view.WindowInsetsControllerCompat.Impl20.show(I)V" {
+subgraph cluster_Region_2128896874 {
+label = "R(2:1|(2:(1:6)(0)|8))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0000|int r0 = 1\l}"];
+subgraph cluster_LoopRegion_1139888327 {
+label = "LOOP:0: (2:(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0003|if (r0 \<= 256) goto L4\l}"];
+subgraph cluster_Region_1121620633 {
+label = "R(2:(1:6)(0)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_233032647 {
+label = "IF [B:34:0x0007] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0007|if ((r3 & r0) != 0) goto L6\l}"];
+subgraph cluster_Region_1346438690 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x000a|showForType(r0)\l}"];
+}
+subgraph cluster_Region_225041157 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x000d|LOOP_END\lLOOP:0: B:31:0x0001\-\>B:37:0x000d\l|r0 \<\<= 1\l}"];
+}
+}
+}
+Node_28 [shape=record,color=red,label="{28\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0001|LOOP_START\lLOOP:0: B:31:0x0001\-\>B:37:0x000d\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v2 'i' int) binds: [B:30:0x0000, B:37:0x000d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0005}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x000d|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x000d|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0010|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0010}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.core.view.WindowInsetsControllerCompat.Impl20.show((r2v0 'this' androidx.core.view.WindowInsetsControllerCompat$Impl20 A[IMMUTABLE_TYPE, THIS]), (r3v0 'typeMask' int A[D('typeMask' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:37:0x000d \-\> B:31:0x0001, CROSS_EDGE: B:34:0x0007 \-\> B:37:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.WindowInsetsControllerCompat.Impl.show(int):void]\l}"];
+MethodNode -> Node_28;Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_32 -> Node_39[style=dashed];
+Node_34 -> Node_36;
+Node_34 -> Node_41[style=dashed];
+Node_36 -> Node_40;
+Node_37 -> Node_31;
+Node_28 -> Node_30;
+Node_31 -> Node_32;
+Node_33 -> Node_34;
+Node_40 -> Node_37;
+Node_41 -> Node_37;
+Node_39 -> Node_38;
+Node_38 -> Node_29;
+}
+

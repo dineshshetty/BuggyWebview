@@ -1,0 +1,34 @@
+digraph "CFG forkotlin.reflect.TypeVariableImpl.getBounds()[Ljava\/lang\/reflect\/Type;" {
+subgraph cluster_Region_49955598 {
+label = "R(4:1|(1:4)|6|7) | DECL_VAR: java.lang.reflect.Type null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.Iterable java.lang.Iterable r0 = r10.typeParameter.getUpperBounds()\ljava.util.Collection java.util.Collection r2 = new java.util.ArrayList(kotlin.collections.CollectionsKt.collectionSizeOrDefault(r0, 10))\ljava.util.Iterator r5 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_244806931 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0020|java.lang.Object \lif (r5.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1833001190 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|LOOP_END\lLOOP:0: B:3:0x001c\-\>B:5:0x0022\l|java.lang.Object r6 = r5.next()\lkotlin.reflect.KType kotlin.reflect.KType r7 = (kotlin.reflect.KType) r6\ljava.lang.reflect.Type r7 = kotlin.reflect.TypesJVMKt.computeJavaType(r7, true)\lr2.add(r7)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0033|java.util.Collection java.util.Collection r2 = (java.util.List) r2\ljava.lang.Object[] java.lang.Object[] r3 = r2.toArray(new java.lang.reflect.Type[0])\lkotlin.jvm.internal.Intrinsics.checkNotNull(r3, \"null cannot be cast to non\-null type kotlin.Array\<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray\>\")\l}"];
+Node_7 [shape=record,label="{7\:\ 0x004b|RETURN\l|return (java.lang.reflect.Type[]) r3\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001c|LOOP_START\lLOOP:0: B:3:0x001c\-\>B:5:0x0022\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0033|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.reflect.Type[] kotlin.reflect.TypeVariableImpl.getBounds((r10v0 'this' kotlin.reflect.TypeVariableImpl A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lBACK_EDGE: B:5:0x0022 \-\> B:3:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l DEBUG: \l \-\> Don't trust debug lines info. Repeating lines: [116=4]\}\lMETHOD_OVERRIDE: [ClspMth\{java.lang.reflect.TypeVariable.getBounds():java.lang.reflect.Type[]\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_3;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_8 -> Node_6;
+}
+

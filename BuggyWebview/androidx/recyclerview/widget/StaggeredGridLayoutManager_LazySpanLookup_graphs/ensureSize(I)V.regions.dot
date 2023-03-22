@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.ensureSize(I)V" {
+subgraph cluster_Region_691594892 {
+label = "R(2:1|(1:3)(1:(1:8)(0)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int[] int[] r0 = r5.mData\l}"];
+subgraph cluster_IfRegion_55735934 {
+label = "IF [B:3:0x0003] THEN: R(1:3) ELSE: R(1:(1:8)(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1920455778 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|int[] int[] r0 = new int[java.lang.Math.max(r6, 10) + 1]\lr5.mData = r0\ljava.util.Arrays.fill(r0, \-1)\l}"];
+}
+subgraph cluster_Region_1654249230 {
+label = "R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2064754896 {
+label = "IF [B:6:0x0016] THEN: R(1:8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|if (r6 \>= r0.length) goto L8\l}"];
+subgraph cluster_Region_471158250 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|int[] int[] r0 = r5.mData\lint[] int[] r2 = new int[sizeForPosition(r6)]\lr5.mData = r2\ljava.lang.System.arraycopy(r0, 0, r2, 0, r0.length)\lint[] int[] r2 = r5.mData\ljava.util.Arrays.fill(r2, r0.length, r2.length, \-1)\l}"];
+}
+subgraph cluster_Region_388378076 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0015}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002e|ORIG_RETURN\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.ensureSize((r5v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager$LazySpanLookup A[IMMUTABLE_TYPE, THIS]), (r6v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0018 \-\> B:8:0x002e, CROSS_EDGE: B:6:0x0016 \-\> B:8:0x002e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_2;
+Node_9 -> Node_1;
+Node_5 -> Node_6;
+Node_8 -> Node_1;
+Node_10 -> Node_1;
+}
+

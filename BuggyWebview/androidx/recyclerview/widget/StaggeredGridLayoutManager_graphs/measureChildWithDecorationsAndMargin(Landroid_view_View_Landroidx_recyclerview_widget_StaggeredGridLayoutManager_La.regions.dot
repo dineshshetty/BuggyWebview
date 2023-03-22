@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.measureChildWithDecorationsAndMargin(Landroid\/view\/View;Landroidx\/recyclerview\/widget\/StaggeredGridLayoutManager$LayoutParams;Z)V" {
+subgraph cluster_Region_527686852 {
+label = "R(1:(1:(1:5)(1:8))(1:(1:12)(1:14)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_580314745 {
+label = "IF [B:3:0x0003] THEN: R(1:(1:5)(1:8)) ELSE: R(1:(1:12)(1:14))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r8.mFullSpan != false) goto L3\l}"];
+subgraph cluster_Region_881557216 {
+label = "R(1:(1:5)(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1729812629 {
+label = "IF [B:5:0x0007] THEN: R(1:5) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|if (r6.mOrientation == 1) goto L5\l}"];
+subgraph cluster_Region_1720626510 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|measureChildWithDecorationsAndMargin(r7, r6.mFullSizeSpec, getChildMeasureSpec(getHeight(), getHeightMode(), getPaddingTop() + getPaddingBottom(), r8.height, true), r9)\l}"];
+}
+subgraph cluster_Region_1941846728 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|measureChildWithDecorationsAndMargin(r7, getChildMeasureSpec(getWidth(), getWidthMode(), getPaddingLeft() + getPaddingRight(), r8.width, true), r6.mFullSizeSpec, r9)\l}"];
+}
+}
+}
+subgraph cluster_Region_472725025 {
+label = "R(1:(1:12)(1:14)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_767724353 {
+label = "IF [B:9:0x0047] THEN: R(1:12) ELSE: R(1:14) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0047|if (r6.mOrientation == 1) goto L12\l}"];
+subgraph cluster_Region_1052092266 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0049|measureChildWithDecorationsAndMargin(r7, getChildMeasureSpec(r6.mSizePerSpan, getWidthMode(), 0, r8.width, false), getChildMeasureSpec(getHeight(), getHeightMode(), getPaddingTop() + getPaddingBottom(), r8.height, true), r9)\l}"];
+}
+subgraph cluster_Region_1012904462 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0070|measureChildWithDecorationsAndMargin(r7, getChildMeasureSpec(getWidth(), getWidthMode(), getPaddingLeft() + getPaddingRight(), r8.width, true), getChildMeasureSpec(r6.mSizePerSpan, getHeightMode(), 0, r8.height, false), r9)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0005}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0044}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0097|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.StaggeredGridLayoutManager.measureChildWithDecorationsAndMargin((r6v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r7v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'lp' androidx.recyclerview.widget.StaggeredGridLayoutManager$LayoutParams A[D('lp' androidx.recyclerview.widget.StaggeredGridLayoutManager$LayoutParams), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'alreadyMeasured' boolean A[D('alreadyMeasured' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0026 \-\> B:12:0x0097, CROSS_EDGE: B:10:0x0049 \-\> B:12:0x0097, CROSS_EDGE: B:11:0x0070 \-\> B:12:0x0097\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_13;
+Node_7 -> Node_14;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_15;
+Node_11 -> Node_12;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_13 -> Node_1;
+Node_14 -> Node_1;
+Node_8 -> Node_9;
+Node_15 -> Node_1;
+Node_12 -> Node_1;
+}
+

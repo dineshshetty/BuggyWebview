@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.AppCompatWindowCallback.onProvideKeyboardShortcuts(Ljava\/util\/List;Landroid\/view\/Menu;I)V" {
+subgraph cluster_Region_1713395873 {
+label = "R(2:1|(1:5)(1:8))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState androidx.appcompat.app.AppCompatDelegateImpl.PanelFeatureState r0 = androidx.appcompat.app.AppCompatDelegateImpl.this.getPanelState(0, true)\l}"];
+subgraph cluster_IfRegion_1783771715 {
+label = "IF [B:13:0x0008, B:15:0x000c] THEN: R(1:5) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|if (r0 != null) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000c|ADDED_TO_REGION\l|if (r0.menu != null) goto L5\l}"];
+subgraph cluster_Region_1338518148 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000e|super.onProvideKeyboardShortcuts(r4, r0.menu, r6)\l}"];
+}
+subgraph cluster_Region_770707581 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|super.onProvideKeyboardShortcuts(r4, r5, r6)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000a}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0017|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.app.AppCompatDelegateImpl.AppCompatWindowCallback.onProvideKeyboardShortcuts((r3v0 'this' androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback A[IMMUTABLE_TYPE, THIS]), (r4v0 'data' java.util.List\<android.view.KeyboardShortcutGroup\> A[D('data' java.util.List\<android.view.KeyboardShortcutGroup\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'menu' android.view.Menu A[D('menu' android.view.Menu), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'deviceId' int A[D('deviceId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:17:0x0014 \-\> B:18:0x0017, CROSS_EDGE: B:13:0x0008 \-\> B:17:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/List\<Landroid\/view\/KeyboardShortcutGroup;\>;Landroid\/view\/Menu;I)V\lMETHOD_OVERRIDE: [ClspMth\{android.view.Window.Callback.onProvideKeyboardShortcuts(java.util.List\<android.view.KeyboardShortcutGroup\>, android.view.Menu, int):void\}]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_19;
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_19 -> Node_11;
+Node_18 -> Node_11;
+}
+

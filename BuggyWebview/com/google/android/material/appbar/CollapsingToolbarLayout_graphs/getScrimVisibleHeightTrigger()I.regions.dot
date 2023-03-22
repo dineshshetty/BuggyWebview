@@ -1,0 +1,74 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.getScrimVisibleHeightTrigger()I" {
+subgraph cluster_Region_326134640 {
+label = "R(2:1|(2:(1:4)|(4:6|7|9|(2:(1:12)|(1:14)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r4.scrimVisibleHeightTrigger\l}"];
+subgraph cluster_Region_1645440676 {
+label = "R(2:(1:4)|(4:6|7|9|(2:(1:12)|(1:14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1835146294 {
+label = "IF [B:3:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_856279053 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|RETURN\l|return r0 + r4.topInsetApplied + r4.extraMultilineHeight\l}"];
+}
+}
+subgraph cluster_Region_1642089853 {
+label = "R(4:6|7|9|(2:(1:12)|(1:14)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|androidx.core.view.WindowInsetsCompat androidx.core.view.WindowInsetsCompat r0 = r4.lastInsets\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000d|int r0 = r0 != null ? r0.getSystemWindowInsetTop() : 0\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0015|PHI: r0 \l  PHI: (r0v3 'insetTop' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r1 = androidx.core.view.ViewCompat.getMinimumHeight(r4)\l}"];
+subgraph cluster_Region_1000063536 {
+label = "R(2:(1:12)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_212185195 {
+label = "IF [B:11:0x0019] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0019|if (r1 \> 0) goto L11\l}"];
+subgraph cluster_Region_1901826522 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0026|RETURN\l|return java.lang.Math.min((r1 * 2) + r0, getHeight())\l}"];
+}
+}
+subgraph cluster_Region_1177293730 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x002d|RETURN\l|return getHeight() \/ 3\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000f}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001b}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0027}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0014}"];
+MethodNode[shape=record,label="{public int com.google.android.material.appbar.CollapsingToolbarLayout.getScrimVisibleHeightTrigger((r4v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0026 \-\> B:1:?, CROSS_EDGE: B:15:0x002d \-\> B:1:?, CROSS_EDGE: B:9:0x0014 \-\> B:10:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_1;
+Node_15 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_9 -> Node_10;
+}
+

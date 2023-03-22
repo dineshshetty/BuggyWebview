@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.dynamicanimation.animation.AnimationHandler.isCallbackDue(Landroidx\/dynamicanimation\/animation\/AnimationHandler$AnimationFrameCallback;J)Z" {
+subgraph cluster_Region_841782668 {
+label = "R(2:1|(2:(1:3)|(1:(2:(2:7|8)|(1:9)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.lang.Long java.lang.Long r0 = r5.mDelayedCallbackStartTime.get(r6)\l}"];
+subgraph cluster_Region_85238081 {
+label = "R(2:(1:3)|(1:(2:(2:7|8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1909481837 {
+label = "IF [B:14:0x0009] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0009|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1182730800 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000b|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1580926693 {
+label = "R(1:(2:(2:7|8)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_527737838 {
+label = "R(2:(2:7|8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_811715683 {
+label = "IF [B:17:0x0012] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0012|if (r0.longValue() \< r7) goto L7\l}"];
+subgraph cluster_Region_1061816296 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0014|r5.mDelayedCallbackStartTime.remove(r6)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0019|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_31110331 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001a|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000c}"];
+MethodNode[shape=record,label="{private boolean androidx.dynamicanimation.animation.AnimationHandler.isCallbackDue((r5v0 'this' androidx.dynamicanimation.animation.AnimationHandler A[IMMUTABLE_TYPE, THIS]), (r6v0 'callback' androidx.dynamicanimation.animation.AnimationHandler$AnimationFrameCallback A[D('callback' androidx.dynamicanimation.animation.AnimationHandler$AnimationFrameCallback), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'currentTime' long A[D('currentTime' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0019 \-\> B:12:?, CROSS_EDGE: B:21:0x001b \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_16 -> Node_17;
+}
+

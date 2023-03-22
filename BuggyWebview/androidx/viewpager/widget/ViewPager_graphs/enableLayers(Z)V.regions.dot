@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.enableLayers(Z)V" {
+subgraph cluster_Region_1168108024 {
+label = "R(2:1|(2:3|6))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = getChildCount()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_586799461 {
+label = "LOOP:0: (2:3|6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|LOOP_START\lLOOP:0: B:15:0x0005\-\>B:19:0x000d\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:14:0x0000, B:19:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_2002314668 {
+label = "R(2:3|6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0007|int r2 = r6 ? r5.mPageTransformerLayerType : 0\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000d|LOOP_END\lLOOP:0: B:15:0x0005\-\>B:19:0x000d\lPHI: r2 \l  PHI: (r2v1 'layerType' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|getChildAt(r1).setLayerType(r2, null)\lr1++\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0009}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000d|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000c}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000d|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0018|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0018}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.viewpager.widget.ViewPager.enableLayers((r5v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]), (r6v0 'enable' boolean A[D('enable' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x000d \-\> B:15:0x0005, CROSS_EDGE: B:18:0x000c \-\> B:19:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_15;
+Node_12 -> Node_14;
+Node_17 -> Node_23;
+Node_23 -> Node_19;
+Node_18 -> Node_22;
+Node_22 -> Node_19;
+Node_21 -> Node_20;
+Node_20 -> Node_13;
+}
+

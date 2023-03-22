@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.checkLayoutParams(Landroid\/view\/ViewGroup$LayoutParams;)Z" {
+subgraph cluster_Region_1694456926 {
+label = "R(1:(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_834787992 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_106159643 {
+label = "IF [B:13:0x0002, B:15:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if ((r2 instanceof androidx.drawerlayout.widget.DrawerLayout.LayoutParams) == true) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0008|ADDED_TO_REGION\l|if (super.checkLayoutParams(r2) == true) goto L5\l}"];
+subgraph cluster_Region_1569995337 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|SYNTHETIC\lRETURN\l|return androidx.drawerlayout.widget.DrawerLayout.CHILDREN_DISALLOW_INTERCEPT\l}"];
+}
+}
+subgraph cluster_Region_1134006281 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0004}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected boolean androidx.drawerlayout.widget.DrawerLayout.checkLayoutParams((r1v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 'p' android.view.ViewGroup$LayoutParams A[D('p' android.view.ViewGroup$LayoutParams), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:17:0x000c \-\> B:18:0x000d, CROSS_EDGE: B:13:0x0002 \-\> B:17:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewGroup.checkLayoutParams(android.view.ViewGroup$LayoutParams):boolean\}]\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_11;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,56 @@
+digraph "CFG forkotlin.ranges.ULongProgression.isEmpty()Z" {
+subgraph cluster_Region_409728345 {
+label = "R(3:1|(1:(1:6))(1:(1:8))|4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r6 = (r7.step \> 0L ? 1 : (r7.step == 0L ? 0 : \-1))\lint int r0 = kotlin.UnsignedUtils.ulongCompare(r7.first, r7.last)\l}"];
+subgraph cluster_IfRegion_1410956952 {
+label = "IF [B:15:0x0010] THEN: R(1:(1:6)) ELSE: R(1:(1:8))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|if (r6 \> 0) goto L3\l}"];
+subgraph cluster_Region_856543503 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1568519294 {
+label = "IF [B:16:0x0012] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|if (r0 \> 0) goto L6\l}"];
+subgraph cluster_Region_2048234025 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_655881383 {
+label = "R(1:(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_303397593 {
+label = "IF [B:18:0x0015] THEN: R(1:8) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|if (r0 \< 0) goto L8\l}"];
+subgraph cluster_Region_1455640749 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0018|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean kotlin.ranges.ULongProgression.isEmpty((r7v0 'this' kotlin.ranges.ULongProgression A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0012 \-\> B:21:0x0019, CROSS_EDGE: B:18:0x0015 \-\> B:20:0x0018, CROSS_EDGE: B:18:0x0015 \-\> B:21:0x0019\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [kotlin.ranges.ULongProgression.isEmpty():boolean, kotlin.ranges.ClosedRange.isEmpty():boolean]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_20[style=dashed];
+Node_16 -> Node_23;
+Node_23 -> Node_13;
+Node_18 -> Node_20[style=dashed];
+Node_18 -> Node_22;
+Node_22 -> Node_13;
+Node_20 -> Node_13;
+Node_12 -> Node_14;
+}
+

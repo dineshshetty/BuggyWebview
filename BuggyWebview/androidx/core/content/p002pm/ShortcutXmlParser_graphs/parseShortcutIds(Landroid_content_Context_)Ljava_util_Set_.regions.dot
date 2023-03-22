@@ -1,0 +1,143 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutXmlParser.parseShortcutIds(Landroid\/content\/Context;)Ljava\/util\/Set;" {
+subgraph cluster_Region_978466966 {
+label = "R(2:1|(2:(1:31)|(2:(2:6|(2:9|(3:15|16|(1:19)(0))))|26)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.HashSet java.util.Set\<java.lang.String\> r0 = new java.util.HashSet\<\>()\landroid.content.Intent android.content.Intent r1 = new android.content.Intent(\"android.intent.action.MAIN\")\lr1.addCategory(\"android.intent.category.LAUNCHER\")\lr1.setPackage(r9.getPackageName())\ljava.util.List java.util.List\<android.content.pm.ResolveInfo\> r2 = r9.getPackageManager().queryIntentActivities(r1, 128)\l}"];
+subgraph cluster_Region_1551593774 {
+label = "R(2:(1:31)|(2:(2:6|(2:9|(3:15|16|(1:19)(0))))|26))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1551198008 {
+label = "IF [B:3:0x0022, B:5:0x0028] THEN: R(1:31) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0022|if (r2 == null) goto L31\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0028|ADDED_TO_REGION\l|if (r2.size() == 0) goto L31\l}"];
+subgraph cluster_Region_514429892 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0071|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_2009626591 {
+label = "R(2:(2:6|(2:9|(3:15|16|(1:19)(0))))|26)";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_300154060 {
+label = "Try: R(2:6|(2:9|(3:15|16|(1:19)(0)))) catches: R(2:29|30)";
+node [shape=record,color=blue];
+subgraph cluster_Region_235989185 {
+label = "R(2:6|(2:9|(3:15|16|(1:19)(0))))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|TRY_ENTER\lTryCatch #2 \{Exception \-\> 0x0068, blocks: (B:7:0x002b, B:8:0x002f, B:10:0x0035, B:12:0x0041, B:14:0x0049, B:17:0x0056, B:15:0x004d), top: B:32:0x002b \}\lCatch: Exception \-\> 0x0068\l|java.util.Iterator r3 = r2.iterator()     \/\/ Catch: java.lang.Exception \-\> L68\l\l}"];
+subgraph cluster_LoopRegion_1972908038 {
+label = "LOOP:0: (2:9|(3:15|16|(1:19)(0)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0033|android.content.pm.ResolveInfo \lif (r3.hasNext() != false) goto L9\l}"];
+subgraph cluster_Region_1643190001 {
+label = "R(2:9|(3:15|16|(1:19)(0)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0035|TryCatch #2 \{Exception \-\> 0x0068, blocks: (B:7:0x002b, B:8:0x002f, B:10:0x0035, B:12:0x0041, B:14:0x0049, B:17:0x0056, B:15:0x004d), top: B:32:0x002b \}\lCatch: Exception \-\> 0x0068\l|android.content.pm.ResolveInfo r4 = r3.next()     \/\/ Catch: java.lang.Exception \-\> L68\landroid.content.pm.ActivityInfo android.content.pm.ActivityInfo r5 = r4.activityInfo     \/\/ Catch: java.lang.Exception \-\> L68\landroid.os.Bundle android.os.Bundle r6 = r5.metaData     \/\/ Catch: java.lang.Exception \-\> L68\l}"];
+subgraph cluster_IfRegion_1437852575 {
+label = "IF [B:11:0x003f, B:13:0x0047] THEN: R(3:15|16|(1:19)(0)) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003f|if (r6 != null) goto L11\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0047|ADDED_TO_REGION\l|if (r6.containsKey(androidx.core.content.p002pm.ShortcutXmlParser.META_DATA_APP_SHORTCUTS) != false) goto L14\l}"];
+subgraph cluster_Region_2093115779 {
+label = "R(3:15|16|(1:19)(0))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0049|TRY_LEAVE\lTryCatch #2 \{Exception \-\> 0x0068, blocks: (B:7:0x002b, B:8:0x002f, B:10:0x0035, B:12:0x0041, B:14:0x0049, B:17:0x0056, B:15:0x004d), top: B:32:0x002b \}\lCatch: Exception \-\> 0x0068\l|android.content.res.XmlResourceParser android.content.res.XmlResourceParser r7 = getXmlResourceParser(r9, r5)     \/\/ Catch: java.lang.Exception \-\> L68\l}"];
+Node_15 [shape=record,label="{15\:\ 0x004d|TRY_ENTER\lTRY_LEAVE\lTryCatch #2 \{Exception \-\> 0x0068, blocks: (B:7:0x002b, B:8:0x002f, B:10:0x0035, B:12:0x0041, B:14:0x0049, B:17:0x0056, B:15:0x004d), top: B:32:0x002b \}\lCatch: all \-\> 0x005a\l|r0.addAll(parseShortcutIds(r7))     \/\/ Catch: java.lang.Throwable \-\> L5a\l}"];
+subgraph cluster_IfRegion_570950326 {
+label = "IF [B:16:0x0054] THEN: R(1:19) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0054|if (r7 != null) goto L18\l}"];
+subgraph cluster_Region_735551702 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0056|TRY_ENTER\lTRY_LEAVE\lTryCatch #2 \{Exception \-\> 0x0068, blocks: (B:7:0x002b, B:8:0x002f, B:10:0x0035, B:12:0x0041, B:14:0x0049, B:17:0x0056, B:15:0x004d), top: B:32:0x002b \}\lCatch: Exception \-\> 0x0068\l|r7.close()     \/\/ Catch: java.lang.Exception \-\> L68\l}"];
+}
+subgraph cluster_Region_550740542 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_656823563 {
+label = "R(2:29|30) | ExcHandler: Exception \-\> 0x0068\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0068|ExcHandler: Exception \-\> 0x0068\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0069|android.util.Log.e(androidx.core.content.p002pm.ShortcutXmlParser.TAG, \"Failed to parse the Xml resource: \", r3)\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x0070|RETURN\l|return r0\l}"];
+}
+}
+}
+subgraph cluster_Region_656823563 {
+label = "R(2:29|30) | ExcHandler: Exception \-\> 0x0068\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0068|ExcHandler: Exception \-\> 0x0068\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0069|android.util.Log.e(androidx.core.content.p002pm.ShortcutXmlParser.TAG, \"Failed to parse the Xml resource: \", r3)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0024}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x002b|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002f|LOOP_START\lTryCatch #2 \{Exception \-\> 0x0068, blocks: (B:7:0x002b, B:8:0x002f, B:10:0x0035, B:12:0x0041, B:14:0x0049, B:17:0x0056, B:15:0x004d), top: B:32:0x002b \}\lLOOP:0: B:8:0x002f\-\>B:38:0x002f\lCatch: Exception \-\> 0x0068\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0041|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0041|TryCatch #2 \{Exception \-\> 0x0068, blocks: (B:7:0x002b, B:8:0x002f, B:10:0x0035, B:12:0x0041, B:14:0x0049, B:17:0x0056, B:15:0x004d), top: B:32:0x002b \}\lCatch: Exception \-\> 0x0068\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0049|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0056|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x002f|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x002f|LOOP_END\lSYNTHETIC\lLOOP:0: B:8:0x002f\-\>B:38:0x002f\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x002f|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x002f|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x002f|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0070|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{private static java.util.Set\<java.lang.String\> androidx.core.content.pm.ShortcutXmlParser.parseShortcutIds((r9v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x0056 \-\> B:8:0x002f, BACK_EDGE: B:16:0x0054 \-\> B:8:0x002f, BACK_EDGE: B:13:0x0047 \-\> B:8:0x002f, BACK_EDGE: B:11:0x003f \-\> B:8:0x002f, CROSS_EDGE: B:30:0x0070 \-\> B:1:?, CROSS_EDGE: B:29:0x0069 \-\> B:30:0x0070, CROSS_EDGE: B:32:0x002b \-\> B:28:0x0068, CROSS_EDGE: B:3:0x0022 \-\> B:31:0x0071\lINLINE_NOT_NEEDED\lTryCatch #2 \{Exception \-\> 0x0068, blocks: (B:7:0x002b, B:8:0x002f, B:10:0x0035, B:12:0x0041, B:14:0x0049, B:17:0x0056, B:15:0x004d), top: B:32:0x002b \}\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/content\/Context;)Ljava\/util\/Set\<Ljava\/lang\/String;\>;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_31;
+Node_5 -> Node_31;
+Node_5 -> Node_32[style=dashed];
+Node_31 -> Node_1;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_34[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_35;
+Node_11 -> Node_39[style=dashed];
+Node_13 -> Node_36;
+Node_13 -> Node_40[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_37;
+Node_16 -> Node_41[style=dashed];
+Node_17 -> Node_42;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_1;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_32 -> Node_7;
+Node_32 -> Node_28;
+Node_8 -> Node_9;
+Node_8 -> Node_33;
+Node_35 -> Node_12;
+Node_12 -> Node_13;
+Node_36 -> Node_14;
+Node_37 -> Node_17;
+Node_42 -> Node_38;
+Node_38 -> Node_8;
+Node_41 -> Node_38;
+Node_40 -> Node_38;
+Node_39 -> Node_38;
+Node_34 -> Node_30;
+Node_33 -> Node_28;
+}
+

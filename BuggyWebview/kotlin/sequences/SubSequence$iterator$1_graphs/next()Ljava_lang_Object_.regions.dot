@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.sequences.SubSequence$iterator$1.next()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1233126572 {
+label = "R(2:1|(2:(1:7)|(2:3|4))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|drop()\lint int r0 = r2.position\lint r1 = ((kotlin.sequences.SubSequence) r2.this$0).endIndex\l}"];
+subgraph cluster_Region_1909637038 {
+label = "R(2:(1:7)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1047742121 {
+label = "IF [B:3:0x000b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r0 \>= r1) goto L6\l}"];
+subgraph cluster_Region_1580064359 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_1192925072 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|r2.position++\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|RETURN\l|return r2.iterator.next()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001a}"];
+MethodNode[shape=record,label="{public T kotlin.sequences.SubSequence$iterator$1.next((r2v0 'this' kotlin.sequences.SubSequence$iterator$1 A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:7:0x001f \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ()TT;\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r0v5, types: [T, java.lang.Object]\}\lMETHOD_OVERRIDE: [ClspMth\{java.util.Iterator.next():E\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_7 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+}
+

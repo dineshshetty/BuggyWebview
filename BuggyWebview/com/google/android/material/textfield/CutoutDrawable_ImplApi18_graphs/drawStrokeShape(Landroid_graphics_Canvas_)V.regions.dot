@@ -1,0 +1,61 @@
+digraph "CFG forcom.google.android.material.textfield.CutoutDrawable.ImplApi18.drawStrokeShape(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_4961866 {
+label = "R(1:(2:(2:3|4)|(3:6|(1:8)(1:11)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_480771578 {
+label = "R(2:(2:3|4)|(3:6|(1:8)(1:11)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_892608536 {
+label = "IF [B:15:0x0006] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r2.cutoutBounds.isEmpty() != false) goto L3\l}"];
+subgraph cluster_Region_410138559 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|super.drawStrokeShape(r3)\l}"];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1171663645 {
+label = "R(3:6|(1:8)(1:11)|9)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|r3.save()\l}"];
+subgraph cluster_IfRegion_1715291760 {
+label = "IF [B:18:0x0013] THEN: R(1:8) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|if (android.os.Build.VERSION.SDK_INT \>= 26) goto L8\l}"];
+subgraph cluster_Region_1922928207 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|r3.clipOutRect(r2.cutoutBounds)\l}"];
+}
+subgraph cluster_Region_2077982828 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001b|r3.clipRect(r2.cutoutBounds, android.graphics.Region.Op.DIFFERENCE)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0022|super.drawStrokeShape(r3)\lr3.restore()\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0028|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.textfield.CutoutDrawable.ImplApi18.drawStrokeShape((r2v0 'this' com.google.android.material.textfield.CutoutDrawable$ImplApi18 A[IMMUTABLE_TYPE, THIS]), (r3v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0022 \-\> B:22:0x0028, CROSS_EDGE: B:20:0x001b \-\> B:21:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [com.google.android.material.shape.MaterialShapeDrawable.drawStrokeShape(android.graphics.Canvas):void]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_23;
+Node_23 -> Node_13;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_22 -> Node_13;
+}
+

@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.appcompat.widget.TooltipCompatHandler.setPendingHandler(Landroidx\/appcompat\/widget\/TooltipCompatHandler;)V" {
+subgraph cluster_Region_937673359 {
+label = "R(4:1|(1:3)|4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|androidx.appcompat.widget.TooltipCompatHandler androidx.appcompat.widget.TooltipCompatHandler r0 = androidx.appcompat.widget.TooltipCompatHandler.sPendingHandler\l}"];
+subgraph cluster_IfRegion_72078938 {
+label = "IF [B:13:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_752738648 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|r0.cancelPendingShow()\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0007|androidx.appcompat.widget.TooltipCompatHandler.sPendingHandler = r1\l}"];
+subgraph cluster_Region_1703838132 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_184262095 {
+label = "IF [B:16:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|if (r1 != null) goto L6\l}"];
+subgraph cluster_Region_1787785309 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|r1.scheduleShow()\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void androidx.appcompat.widget.TooltipCompatHandler.setPendingHandler((r1v0 'handler' androidx.appcompat.widget.TooltipCompatHandler A[D('handler' androidx.appcompat.widget.TooltipCompatHandler), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0009 \-\> B:18:0x000e, CROSS_EDGE: B:13:0x0002 \-\> B:15:0x0007\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

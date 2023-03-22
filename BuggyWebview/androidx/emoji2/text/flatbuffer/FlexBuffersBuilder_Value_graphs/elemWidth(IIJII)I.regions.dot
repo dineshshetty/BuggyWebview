@@ -1,0 +1,82 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlexBuffersBuilder.Value.elemWidth(IIJII)I" {
+subgraph cluster_Region_882837954 {
+label = "R(1:(2:(1:3)|(3:5|(2:8|(2:(1:12)|(1:10)))|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1547555235 {
+label = "R(2:(1:3)|(3:5|(2:8|(2:(1:12)|(1:10)))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1245434496 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (androidx.emoji2.text.flatbuffer.FlexBuffers.isTypeInline(r10) != false) goto L3\l}"];
+subgraph cluster_Region_1784788781 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return r11\l}"];
+}
+}
+subgraph cluster_Region_1487837557 {
+label = "R(3:5|(2:8|(2:(1:12)|(1:10)))|15)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|int r0 = 1\l}"];
+subgraph cluster_LoopRegion_1666454303 {
+label = "LOOP:0: (2:8|(2:(1:12)|(1:10)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000a|if (r0 \<= 32) goto L8\l}"];
+subgraph cluster_Region_557139009 {
+label = "R(2:8|(2:(1:12)|(1:10)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000c|int int r1 = paddingBytes(r14, r0) + r14 + (r15 * r0)\llong long r2 = r1 \- r12\lint int r4 = androidx.emoji2.text.flatbuffer.FlexBuffersBuilder.widthUInBits((int) r2)\l}"];
+subgraph cluster_Region_654074554 {
+label = "R(2:(1:12)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_226235427 {
+label = "IF [B:9:0x0022] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0022|if ((1 \<\< r4) == r0) goto L11\l}"];
+subgraph cluster_Region_1324561016 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0024|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1726049171 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0025|LOOP_END\lLOOP:0: B:6:0x0008\-\>B:11:0x0025\l|r0 *= 2\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x002d|throw new java.lang.AssertionError()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0008|LOOP_START\lLOOP:0: B:6:0x0008\-\>B:11:0x0025\lPHI: r0 \l  PHI: (r0v2 'byteWidth' int) = (r0v1 'byteWidth' int), (r0v4 'byteWidth' int) binds: [B:5:0x0007, B:11:0x0025] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0024|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0028|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0028}"];
+MethodNode[shape=record,label="{public static int androidx.emoji2.text.flatbuffer.FlexBuffersBuilder.Value.elemWidth((r10v0 'type' int A[D('type' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'minBitWidth' int A[D('minBitWidth' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'iValue' long A[D('iValue' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'bufSize' int A[D('bufSize' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 'elemIndex' int A[D('elemIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0024 \-\> B:1:?, BACK_EDGE: B:11:0x0025 \-\> B:6:0x0008, CROSS_EDGE: B:13:0x002d \-\> B:1:?\lINLINE_NOT_NEEDED\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: private\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_15[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_11[style=dashed];
+Node_9 -> Node_14;
+Node_10 -> Node_1;
+Node_11 -> Node_6;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_14 -> Node_10;
+Node_15 -> Node_12;
+Node_12 -> Node_13;
+}
+

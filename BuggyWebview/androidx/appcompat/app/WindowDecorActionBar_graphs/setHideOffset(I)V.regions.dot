@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.appcompat.app.WindowDecorActionBar.setHideOffset(I)V" {
+subgraph cluster_Region_862454744 {
+label = "R(1:(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_796401825 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_134476111 {
+label = "IF [B:2:0x0000, B:4:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r3 != 0) goto L2\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|ADDED_TO_REGION\l|if (r2.mOverlayLayout.isInOverlayMode() == false) goto L4\l}"];
+subgraph cluster_Region_118064744 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|throw new java.lang.IllegalStateException(\"Action bar must be in overlay mode (Window.FEATURE_OVERLAY_ACTION_BAR) to set a non\-zero hide offset\")\l}"];
+}
+}
+subgraph cluster_Region_1955345298 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|r2.mOverlayLayout.setActionBarHideOffset(r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0002}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000b}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0018}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.app.WindowDecorActionBar.setHideOffset((r2v0 'this' androidx.appcompat.app.WindowDecorActionBar A[IMMUTABLE_TYPE, THIS]), (r3v0 'offset' int A[D('offset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0018 \-\> B:1:?, CROSS_EDGE: B:2:0x0000 \-\> B:8:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.app.ActionBar.setHideOffset(int):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_4 -> Node_6;
+Node_4 -> Node_8[style=dashed];
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_9 -> Node_1;
+}
+

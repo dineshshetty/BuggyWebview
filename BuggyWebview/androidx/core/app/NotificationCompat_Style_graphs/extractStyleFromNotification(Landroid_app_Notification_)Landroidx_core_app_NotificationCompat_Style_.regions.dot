@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.Style.extractStyleFromNotification(Landroid\/app\/Notification;)Landroidx\/core\/app\/NotificationCompat$Style;" {
+subgraph cluster_Region_207264454 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.os.Bundle android.os.Bundle r0 = androidx.core.app.NotificationCompat.getExtras(r2)\l}"];
+subgraph cluster_Region_1038273636 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1417807818 {
+label = "IF [B:11:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1041880868 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_935086918 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|RETURN\l|return constructStyleForExtras(r0)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0008}"];
+MethodNode[shape=record,label="{public static androidx.core.app.NotificationCompat$Style androidx.core.app.NotificationCompat.Style.extractStyleFromNotification((r2v0 'notification' android.app.Notification A[D('notification' android.app.Notification), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000c \-\> B:9:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_14 -> Node_15;
+}
+

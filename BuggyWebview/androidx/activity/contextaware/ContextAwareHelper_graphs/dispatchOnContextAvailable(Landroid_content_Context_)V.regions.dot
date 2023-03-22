@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.activity.contextaware.ContextAwareHelper.dispatchOnContextAvailable(Landroid\/content\/Context;)V" {
+subgraph cluster_Region_568329377 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|r2.mContext = r3\ljava.util.Iterator r0 = r2.mListeners.iterator()\l\l}"];
+subgraph cluster_LoopRegion_172262092 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000c|androidx.activity.contextaware.OnContextAvailableListener \lif (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1179001273 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000e|LOOP_END\lLOOP:0: B:11:0x0008\-\>B:13:0x000e\l|androidx.activity.contextaware.OnContextAvailableListener r1 = r0.next()\lr1.onContextAvailable(r3)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0008|LOOP_START\lLOOP:0: B:11:0x0008\-\>B:13:0x000e\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0018|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0018}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.activity.contextaware.ContextAwareHelper.dispatchOnContextAvailable((r2v0 'this' androidx.activity.contextaware.ContextAwareHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x000e \-\> B:11:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

@@ -1,0 +1,37 @@
+digraph "CFG forkotlinx.coroutines.internal.ConcurrentLinkedListNode.getLeftmostAliveNode()Lkotlinx\/coroutines\/internal\/ConcurrentLinkedListNode;" {
+subgraph cluster_Region_564341723 {
+label = "R(3:1|(1:5)|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlinx.coroutines.internal.ConcurrentLinkedListNode N r0 = getPrev()\l}"];
+subgraph cluster_LoopRegion_1534501842 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|LOOP_START\lLOOP:0: B:13:0x0004\-\>B:16:0x000c\lPHI: r0 \l  PHI: (r0v1 N extends kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N\>) = (r0v0 N extends kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N\>), (r0v3 N extends kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N\>) binds: [B:12:0x0000, B:16:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000a|ADDED_TO_REGION\l|if (r0.getRemoved() != false) goto L5\l}"];
+subgraph cluster_Region_1562104705 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000c|LOOP_END\lLOOP:0: B:13:0x0004\-\>B:16:0x000c\l|kotlinx.coroutines.internal.ConcurrentLinkedListNode r0 = (N) r0._prev\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0012|RETURN\l|return r0\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0012|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0012|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{private final N extends kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N\> kotlinx.coroutines.internal.ConcurrentLinkedListNode.getLeftmostAliveNode((r2v0 'this' kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N extends kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N\>\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:16:0x000c \-\> B:13:0x0004, CROSS_EDGE: B:13:0x0004 \-\> B:17:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: [N extends kotlinx.coroutines.internal.ConcurrentLinkedListNode\<N\>]\lSIGNATURE: ()TN;\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_13;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_19 -> Node_17;
+Node_18 -> Node_17;
+}
+

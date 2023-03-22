@@ -1,0 +1,37 @@
+digraph "CFG forcom.google.android.material.internal.ViewOverlayApi14.OverlayViewGroup.dispatchDraw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_2056204050 {
+label = "R(4:1|2|4|(1:6))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int[] int[] r1 = new int[2]\lint[] int[] r0 = new int[2]\lr6.hostView.getLocationOnScreen(r1)\lr6.requestingView.getLocationOnScreen(r0)\lr7.translate(r0[0] \- r1[0], r0[1] \- r1[1])\lr7.clipRect(new android.graphics.Rect(0, 0, r6.requestingView.getWidth(), r6.requestingView.getHeight()))\lsuper.dispatchDraw(r7)\ljava.util.ArrayList\<android.graphics.drawable.Drawable\> java.util.ArrayList\<android.graphics.drawable.Drawable\> r3 = r6.drawables\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0039|int r2 = r3 != null ? r3.size() : 0\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0040|PHI: r2 \l  PHI: (r2v3 'numDrawables' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|int r3 = 0\l}"];
+subgraph cluster_LoopRegion_936006149 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0041|LOOP_START\lLOOP:0: B:18:0x0041\-\>B:19:0x0043\lPHI: r3 \l  PHI: (r3v6 'i' int) = (r3v5 'i' int), (r3v7 'i' int) binds: [B:17:0x0040, B:19:0x0043] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L6\l}"];
+subgraph cluster_Region_41170511 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0043|LOOP_END\lLOOP:0: B:18:0x0041\-\>B:19:0x0043\l|r6.drawables.get(r3).draw(r7)\lr3++\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x003c}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0051|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0051}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected void com.google.android.material.internal.ViewOverlayApi14.OverlayViewGroup.dispatchDraw((r6v0 'this' com.google.android.material.internal.ViewOverlayApi14$OverlayViewGroup A[IMMUTABLE_TYPE, THIS]), (r7v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:19:0x0043 \-\> B:18:0x0041, CROSS_EDGE: B:14:0x0039 \-\> B:17:0x0040\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.dispatchDraw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_16;
+Node_14 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_18;
+Node_11 -> Node_13;
+Node_16 -> Node_17;
+Node_21 -> Node_20;
+Node_20 -> Node_12;
+}
+

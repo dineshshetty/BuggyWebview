@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.installViewFactory()V" {
+subgraph cluster_Region_1832091283 {
+label = "R(2:1|(1:3)(1:(1:8)(0)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|android.view.LayoutInflater android.view.LayoutInflater r0 = android.view.LayoutInflater.from(r3.mContext)\l}"];
+subgraph cluster_IfRegion_778490656 {
+label = "IF [B:14:0x000a] THEN: R(1:3) ELSE: R(1:(1:8)(0))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|if (r0.getFactory() == null) goto L3\l}"];
+subgraph cluster_Region_827477273 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|androidx.core.view.LayoutInflaterCompat.setFactory2(r0, r3)\l}"];
+}
+subgraph cluster_Region_1190224966 {
+label = "R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1315089066 {
+label = "IF [B:17:0x0016] THEN: R(1:8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0016|if ((r0.getFactory2() instanceof androidx.appcompat.app.AppCompatDelegateImpl) == false) goto L8\l}"];
+subgraph cluster_Region_989127488 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0018|android.util.Log.i(\"AppCompatDelegate\", \"The Activity's LayoutInflater already has a Factory installed so we can not install AppCompat's\")\l}"];
+}
+subgraph cluster_Region_202313331 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0010}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001f|ORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.app.AppCompatDelegateImpl.installViewFactory((r3v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0018 \-\> B:19:0x001f, CROSS_EDGE: B:17:0x0016 \-\> B:19:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.app.AppCompatDelegate.installViewFactory():void]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_20;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_20 -> Node_12;
+Node_16 -> Node_17;
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+}
+

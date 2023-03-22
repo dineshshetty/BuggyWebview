@@ -1,0 +1,32 @@
+digraph "CFG forkotlinx.coroutines.channels.ArrayBroadcastChannel.cancelInternal(Ljava\/lang\/Throwable;)Z" {
+subgraph cluster_Region_1255810729 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|boolean boolean r0 = close(r6)\ljava.util.Iterator r3 = r5.subscribers.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1255239511 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0010|kotlinx.coroutines.channels.ArrayBroadcastChannel$Subscriber \lif (r3.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_2085608095 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0012|LOOP_END\lLOOP:0: B:12:0x000c\-\>B:14:0x0012\l|kotlinx.coroutines.channels.ArrayBroadcastChannel$Subscriber r4 = r3.next()\lr4.cancel(r6)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x001e|RETURN\l|return r0\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000c|LOOP_START\lLOOP:0: B:12:0x000c\-\>B:14:0x0012\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001e|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.channels.ArrayBroadcastChannel.cancelInternal((r5v0 'this' kotlinx.coroutines.channels.ArrayBroadcastChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r6v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x0012 \-\> B:12:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lREPLACED_BY: kotlinx.coroutines.channels.ArrayBroadcastChannel.cancel(java.lang.Throwable):boolean\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.BroadcastChannel.cancel(java.lang.Throwable):boolean]\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_14 -> Node_12;
+Node_16 -> Node_10;
+Node_9 -> Node_11;
+Node_12 -> Node_13;
+Node_17 -> Node_16;
+}
+

@@ -1,0 +1,115 @@
+digraph "CFG forandroidx.core.util.AtomicFile.readFully()[B" {
+subgraph cluster_Region_1491867757 {
+label = "R(2:1|(2:3|(2:4|(2:(1:17)|(3:6|7|(2:10|11)(0))))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.io.FileInputStream java.io.FileInputStream r0 = openRead()\lint r1 = 0\l}"];
+subgraph cluster_TryCatchRegion_973023831 {
+label = "Try: R(2:3|(2:4|(2:(1:17)|(3:6|7|(2:10|11)(0))))) finally: R(3:20|21|22)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1511926572 {
+label = "R(2:3|(2:4|(2:(1:17)|(3:6|7|(2:10|11)(0)))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|TRY_ENTER\lTryCatch #0 \{all \-\> 0x002c, blocks: (B:3:0x0005, B:4:0x000b, B:9:0x0019, B:11:0x0022), top: B:17:0x0005 \}\lCatch: all \-\> 0x002c\l|byte[] byte[] r3 = new byte[r0.available()]     \/\/ Catch: java.lang.Throwable \-\> L2c\l}"];
+subgraph cluster_LoopRegion_1101955347 {
+label = "LOOP:0: (2:4|(2:(1:17)|(3:6|7|(2:10|11)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_92786721 {
+label = "R(2:4|(2:(1:17)|(3:6|7|(2:10|11)(0))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|TRY_LEAVE\lLOOP_START\lTryCatch #0 \{all \-\> 0x002c, blocks: (B:3:0x0005, B:4:0x000b, B:9:0x0019, B:11:0x0022), top: B:17:0x0005 \}\lLOOP:0: B:4:0x000b\-\>B:21:0x000b\lCatch: all \-\> 0x002c\lPHI: r1 r3 \l  PHI: (r1v2 'pos' int) = (r1v0 'pos' int), (r1v3 'pos' int) binds: [B:3:0x0005, B:21:0x000b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'data' byte[]) = (r3v0 'data' byte[]), (r3v2 'data' byte[]) binds: [B:3:0x0005, B:21:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|int int r4 = r0.read(r3, r1, r3.length \- r1)     \/\/ Catch: java.lang.Throwable \-\> L2c\l}"];
+subgraph cluster_Region_45458490 {
+label = "R(2:(1:17)|(3:6|7|(2:10|11)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_65948778 {
+label = "IF [B:5:0x0011] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|if (r4 \<= 0) goto L15\l}"];
+subgraph cluster_Region_1244448826 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_694965299 {
+label = "R(3:6|7|(2:10|11)(0))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|r1 += r4\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0019|TRY_ENTER\lTryCatch #0 \{all \-\> 0x002c, blocks: (B:3:0x0005, B:4:0x000b, B:9:0x0019, B:11:0x0022), top: B:17:0x0005 \}\lCatch: all \-\> 0x002c\l|int int r5 = r0.available()     \/\/ Catch: java.lang.Throwable \-\> L2c\l}"];
+subgraph cluster_IfRegion_982978651 {
+label = "IF [B:10:0x0020] THEN: R(2:10|11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0020|if (r5 \> (r3.length \- r1)) goto L9\l}"];
+subgraph cluster_Region_27974128 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0022|TRY_LEAVE\lTryCatch #0 \{all \-\> 0x002c, blocks: (B:3:0x0005, B:4:0x000b, B:9:0x0019, B:11:0x0022), top: B:17:0x0005 \}\lCatch: all \-\> 0x002c\l|byte[] byte[] r5 = new byte[r1 + r5]     \/\/ Catch: java.lang.Throwable \-\> L2c\ljava.lang.System.arraycopy(r3, 0, r5, 0, r1)     \/\/ Catch: java.lang.Throwable \-\> L2c\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002a|r3 = r5\l}"];
+}
+subgraph cluster_Region_802813343 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_301665795 {
+label = "R(3:20|21|22) | ExcHandler: all \-\> 0x002c\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002c|ExcHandler: all \-\> 0x002c\l}"];
+Node_15 [shape=record,label="{15\:\ 0x002d|FINALLY_INSNS\l|r0.close()\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0030|throw r1\l}"];
+}
+}
+}
+subgraph cluster_Region_301665795 {
+label = "R(3:20|21|22) | ExcHandler: all \-\> 0x002c\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002c|ExcHandler: all \-\> 0x002c\l}"];
+Node_15 [shape=record,label="{15\:\ 0x002d|FINALLY_INSNS\l|r0.close()\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0030|throw r1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0005|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0022|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000b|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000b|LOOP_END\lSYNTHETIC\lLOOP:0: B:4:0x000b\-\>B:21:0x000b\lPHI: r3 \l  PHI: (r3v2 'data' byte[]) = (r3v1 'data' byte[]), (r3v3 'data' byte[]) binds: [B:22:0x000b, B:23:0x000b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000b|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0014|SYNTHETIC\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014|DONT_GENERATE\l|r0.close()\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public byte[] androidx.core.util.AtomicFile.readFully((r7v0 'this' androidx.core.util.AtomicFile A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x002a \-\> B:4:0x000b, BACK_EDGE: B:10:0x0020 \-\> B:4:0x000b, CROSS_EDGE: B:16:0x0030 \-\> B:1:?, CROSS_EDGE: B:17:0x0005 \-\> B:14:0x002c\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x002c, blocks: (B:3:0x0005, B:4:0x000b, B:9:0x0019, B:11:0x0022), top: B:17:0x0005 \}\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Ljava\/io\/IOException;]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_17;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_18;
+Node_5 -> Node_8[style=dashed];
+Node_5 -> Node_20;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_19;
+Node_10 -> Node_22[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_23;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_1;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_1;
+Node_0 -> Node_2;
+Node_17 -> Node_3;
+Node_17 -> Node_14;
+Node_19 -> Node_11;
+Node_23 -> Node_21;
+Node_21 -> Node_4;
+Node_22 -> Node_21;
+Node_20 -> Node_6;
+Node_6 -> Node_7;
+Node_18 -> Node_14;
+}
+

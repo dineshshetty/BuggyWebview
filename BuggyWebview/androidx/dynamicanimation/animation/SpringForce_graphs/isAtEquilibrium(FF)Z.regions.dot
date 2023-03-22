@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.dynamicanimation.animation.SpringForce.isAtEquilibrium(FF)Z" {
+subgraph cluster_Region_1577871977 {
+label = "R(1:(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_460502208 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1273333829 {
+label = "IF [B:14:0x0009, B:16:0x001a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0009|if (java.lang.Math.abs(r7) \< r5.mVelocityThreshold) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x001a|ADDED_TO_REGION\l|if (java.lang.Math.abs(r6 \- getFinalPosition()) \< r5.mValueThreshold) goto L5\l}"];
+subgraph cluster_Region_1121148536 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001c|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2133928809 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001e|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean androidx.dynamicanimation.animation.SpringForce.isAtEquilibrium((r5v0 'this' androidx.dynamicanimation.animation.SpringForce A[IMMUTABLE_TYPE, THIS]), (r6v0 'value' float A[D('value' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'velocity' float A[D('velocity' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x001f \-\> B:12:?, CROSS_EDGE: B:14:0x0009 \-\> B:19:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.dynamicanimation.animation.Force.isAtEquilibrium(float, float):boolean]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_19 -> Node_12;
+}
+

@@ -1,0 +1,64 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.runningReduce([ILkotlin\/jvm\/functions\/Function2;)Ljava\/util\/List;" {
+subgraph cluster_Region_165762073 {
+label = "R(2:1|(2:(1:6)|(3:8|(1:10)|13)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"operation\")\l}"];
+subgraph cluster_Region_95403008 {
+label = "R(2:(1:6)|(3:8|(1:10)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_600170794 {
+label = "IF [B:21:0x0011] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0011|PHI: r0 \l  PHI: (r0v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r6.length == 0) == true) goto L5\l}"];
+subgraph cluster_Region_404701080 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|RETURN\l|return kotlin.collections.CollectionsKt.emptyList()\l}"];
+}
+}
+subgraph cluster_Region_324083951 {
+label = "R(3:8|(1:10)|13)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|int r0 = r6[0]\ljava.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList(r6.length)\lr1.add(java.lang.Integer.valueOf(r0))\lint r2 = 1\lint int r3 = r6.length\l}"];
+subgraph cluster_LoopRegion_929847666 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002c|LOOP_START\lLOOP:0: B:25:0x002c\-\>B:26:0x002e\lPHI: r0 r2 \l  PHI: (r0v7 'accumulator' int) = (r0v6 'accumulator' int), (r0v8 'accumulator' int) binds: [B:24:0x0018, B:26:0x002e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v3 'index' int) = (r2v2 'index' int), (r2v6 'index' int) binds: [B:24:0x0018, B:26:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r3) goto L10\l}"];
+subgraph cluster_Region_1738408366 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002e|LOOP_END\lLOOP:0: B:25:0x002c\-\>B:26:0x002e\l|int r0 = r7.invoke(java.lang.Integer.valueOf(r0), java.lang.Integer.valueOf(r6[r2])).intValue()\lr1.add(java.lang.Integer.valueOf(r0))\lr2++\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x004f|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000c}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000e}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0013}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x004c|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x004c}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0010}"];
+MethodNode[shape=record,label="{private static final java.util.List\<java.lang.Integer\> kotlin.collections.ArraysKt___ArraysKt.runningReduce((r6v0 '$this$runningReduce' int[] A[D('$this$runningReduce' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'operation' kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super java.lang.Integer, java.lang.Integer\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x002e \-\> B:25:0x002c, CROSS_EDGE: B:28:0x004f \-\> B:16:?, CROSS_EDGE: B:20:0x0010 \-\> B:21:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([ILkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Integer;\-Ljava\/lang\/Integer;Ljava\/lang\/Integer;\>;)Ljava\/util\/List\<Ljava\/lang\/Integer;\>;\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_23 -> Node_16;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_26 -> Node_25;
+Node_28 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_29 -> Node_27;
+Node_27 -> Node_28;
+Node_20 -> Node_21;
+}
+

@@ -1,0 +1,22 @@
+digraph "CFG forcom.google.android.material.color.ColorResourcesTableCreator.stringToByteArray(Ljava\/lang\/String;)[B" {
+Node_9 [shape=record,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0000|char[] r0 = r9.toCharArray()\lbyte[] r1 = new byte[(r0.length * 2) + 4]\lbyte[] r2 = shortToByteArray((short) r0.length)\lr1[0] = r2[0]\lr1[1] = r2[1]\lr5 = 0\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001c|LOOP_START\lLOOP:0: B:12:0x001c\-\>B:14:0x001f\lPHI: r5 \l  PHI: (r5v2 'i' int) = (r5v1 'i' int), (r5v7 'i' int) binds: [B:11:0x0000, B:14:0x001f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_13 [shape=record,label="{13\:\ 0x001d|if (r5 \>= r0.length) goto L5\l}"];
+Node_14 [shape=record,label="{14\:\ 0x001f|LOOP_END\lLOOP:0: B:12:0x001c\-\>B:14:0x001f\l|byte[] r6 = charToByteArray(r0[r5])\lr1[(r5 * 2) + 2] = r6[0]\lr1[(r5 * 2) + 3] = r6[1]\lint r5 = r5 + 1\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0038|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0038|int r5 = r1.length\lr1[r5 + (\-2)] = 0\lr1[r1.length \- 1] = 0\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0041|RETURN\l|return r1\l}"];
+Node_10 [shape=record,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static byte[] com.google.android.material.color.ColorResourcesTableCreator.stringToByteArray((r9v0 'value' java.lang.String A[D('value' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x001f \-\> B:12:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_17;
+Node_14 -> Node_12;
+Node_17 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_10;
+}
+

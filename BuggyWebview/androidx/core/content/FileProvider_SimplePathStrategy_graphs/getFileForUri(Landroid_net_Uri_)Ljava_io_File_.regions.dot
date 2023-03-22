@@ -1,0 +1,99 @@
+digraph "CFG forandroidx.core.content.FileProvider.SimplePathStrategy.getFileForUri(Landroid\/net\/Uri;)Ljava\/io\/File;" {
+subgraph cluster_Region_1282477639 {
+label = "R(2:1|(2:(2:16|17)|(2:3|(2:5|(2:(1:8)|(1:11))))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.String java.lang.String r0 = r10.getEncodedPath()\lint int r1 = r0.indexOf(47, 1)\ljava.lang.String java.lang.String r2 = android.net.Uri.decode(r0.substring(1, r1))\ljava.lang.String java.lang.String r0 = android.net.Uri.decode(r0.substring(r1 + 1))\ljava.io.File java.io.File r3 = r9.mRoots.get(r2)\l}"];
+subgraph cluster_Region_1959485553 {
+label = "R(2:(2:16|17)|(2:3|(2:5|(2:(1:8)|(1:11)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1420223796 {
+label = "IF [B:3:0x0025] THEN: R(2:16|17) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0025|if (r3 == null) goto L16\l}"];
+subgraph cluster_Region_1790130813 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0061}"];
+Node_15 [shape=record,label="{15\:\ 0x0077|throw new java.lang.IllegalArgumentException(\"Unable to find configured root for \" + r10)\l}"];
+}
+}
+subgraph cluster_Region_728594455 {
+label = "R(2:3|(2:5|(2:(1:8)|(1:11))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0027|java.io.File java.io.File r4 = new java.io.File(r3, r0)\l}"];
+subgraph cluster_TryCatchRegion_711715913 {
+label = "Try: R(2:5|(2:(1:8)|(1:11))) catches: R(2:14|15)";
+node [shape=record,color=blue];
+subgraph cluster_Region_323792291 {
+label = "R(2:5|(2:(1:8)|(1:11)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002c|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IOException \-\> 0x0049, blocks: (B:5:0x002c), top: B:16:0x002c \}\lCatch: IOException \-\> 0x0049\l|java.io.File java.io.File r5 = r4.getCanonicalFile()     \/\/ Catch: java.io.IOException \-\> L49\l}"];
+subgraph cluster_Region_623243659 {
+label = "R(2:(1:8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1468760611 {
+label = "IF [B:7:0x003e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003e|if (r5.getPath().startsWith(r3.getPath()) == true) goto L8\l}"];
+subgraph cluster_Region_810353176 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0040|RETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_172152246 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0048|throw new java.lang.SecurityException(\"Resolved path jumped beyond configured root\")\l}"];
+}
+}
+}
+subgraph cluster_Region_1403109917 {
+label = "R(2:14|15) | ExcHandler: IOException \-\> 0x0049\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004a}"];
+Node_13 [shape=record,label="{13\:\ 0x0060|throw new java.lang.IllegalArgumentException(\"Failed to resolve canonical path for \" + r4)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1403109917 {
+label = "R(2:14|15) | ExcHandler: IOException \-\> 0x0049\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004a}"];
+Node_13 [shape=record,label="{13\:\ 0x0060|throw new java.lang.IllegalArgumentException(\"Failed to resolve canonical path for \" + r4)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x002c|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0030}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0041}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0049|ExcHandler: IOException \-\> 0x0049\l}"];
+MethodNode[shape=record,label="{public java.io.File androidx.core.content.FileProvider.SimplePathStrategy.getFileForUri((r9v0 'this' androidx.core.content.FileProvider$SimplePathStrategy A[IMMUTABLE_TYPE, THIS]), (r10v0 'uri' android.net.Uri A[D('uri' android.net.Uri), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0048 \-\> B:1:?, CROSS_EDGE: B:13:0x0060 \-\> B:1:?, CROSS_EDGE: B:16:0x002c \-\> B:11:0x0049, CROSS_EDGE: B:15:0x0077 \-\> B:1:?\lINLINE_NOT_NEEDED\lTryCatch #0 \{IOException \-\> 0x0049, blocks: (B:5:0x002c), top: B:16:0x002c \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.content.FileProvider.PathStrategy.getFileForUri(android.net.Uri):java.io.File]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_1;
+Node_4 -> Node_16;
+Node_5 -> Node_6;
+Node_5 -> Node_17;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_1;
+Node_10 -> Node_1;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_16 -> Node_5;
+Node_16 -> Node_11;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_17 -> Node_11;
+Node_11 -> Node_12;
+}
+

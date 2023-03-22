@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.sortChildDrawingOrder()V" {
+subgraph cluster_Region_1994760375 {
+label = "R(1:(1:(5:3|(1:5)(1:13)|6|(1:8)|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1754169203 {
+label = "R(1:(5:3|(1:5)(1:13)|6|(1:8)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2039039417 {
+label = "IF [B:18:0x0002] THEN: R(5:3|(1:5)(1:13)|6|(1:8)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|if (r4.mDrawingOrder != 0) goto L3\l}"];
+subgraph cluster_Region_274978789 {
+label = "R(5:3|(1:5)(1:13)|6|(1:8)|10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|java.util.ArrayList\<android.view.View\> java.util.ArrayList\<android.view.View\> r0 = r4.mDrawingOrderedChildren\l}"];
+subgraph cluster_IfRegion_1758800422 {
+label = "IF [B:20:0x0006] THEN: R(1:5) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|if (r0 == null) goto L5\l}"];
+subgraph cluster_Region_362922119 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0008|r4.mDrawingOrderedChildren = new java.util.ArrayList\<\>()\l}"];
+}
+subgraph cluster_Region_2049976562 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|r0.clear()\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0013|int int r0 = getChildCount()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_649411548 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|LOOP_START\lLOOP:0: B:24:0x0018\-\>B:25:0x001a\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:23:0x0013, B:25:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L8\l}"];
+subgraph cluster_Region_686230544 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|LOOP_END\lLOOP:0: B:24:0x0018\-\>B:25:0x001a\l|android.view.View android.view.View r2 = getChildAt(r1)\lr4.mDrawingOrderedChildren.add(r2)\lr1++\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0026|java.util.Collections.sort(r4.mDrawingOrderedChildren, androidx.viewpager.widget.ViewPager.sPositionComparator)\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0026|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002d|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.viewpager.widget.ViewPager.sortChildDrawingOrder((r4v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x001a \-\> B:24:0x0018, CROSS_EDGE: B:22:0x0010 \-\> B:23:0x0013, CROSS_EDGE: B:18:0x0002 \-\> B:27:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_29[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_25 -> Node_24;
+Node_26 -> Node_27;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_28 -> Node_26;
+Node_27 -> Node_16;
+Node_29 -> Node_16;
+}
+

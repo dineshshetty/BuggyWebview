@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.fragment.app.Fragment.startIntentSenderForResult(Landroid\/content\/IntentSender;ILandroid\/content\/Intent;IIILandroid\/os\/Bundle;)V" {
+subgraph cluster_Region_290980897 {
+label = "R(1:(2:(2:10|11)|(2:(1:5)(0)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_62202102 {
+label = "R(2:(2:10|11)|(2:(1:5)(0)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_159591803 {
+label = "IF [B:15:0x0005] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|if (r14.mHost == null) goto L10\l}"];
+subgraph cluster_Region_857585055 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0067}"];
+Node_23 [shape=record,label="{23\:\ 0x0087|throw new java.lang.IllegalStateException(\"Fragment \" + r14 + \" not attached to Activity\")\l}"];
+}
+}
+subgraph cluster_Region_1647691473 {
+label = "R(2:(1:5)(0)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1210968305 {
+label = "IF [B:17:0x000c] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(2) != false) goto L5\l}"];
+subgraph cluster_Region_1490414714 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|android.util.Log.v(\"FragmentManager\", \"Fragment \" + r14 + \" received the following in startIntentSenderForResult() requestCode: \" + r16 + \" IntentSender: \" + r15 + \" fillInIntent: \" + r17 + \" options: \" + r21)\l}"];
+}
+subgraph cluster_Region_112855986 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0051|getParentFragmentManager().launchStartIntentSenderForResult(r14, r15, r16, r17, r18, r19, r20, r21)\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0007}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0066}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x004a}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.startIntentSenderForResult((r14v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r15v0 'intent' android.content.IntentSender A[D('intent' android.content.IntentSender), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 'requestCode' int A[D('requestCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 'fillInIntent' android.content.Intent A[D('fillInIntent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'flagsMask' int A[D('flagsMask' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'flagsValues' int A[D('flagsValues' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 'extraFlags' int A[D('extraFlags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 'options' android.os.Bundle A[D('options' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:19:0x004a \-\> B:20:0x0051, CROSS_EDGE: B:23:0x0087 \-\> B:13:?\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroid\/content\/IntentSender$SendIntentException;]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_21 -> Node_13;
+Node_19 -> Node_20;
+}
+

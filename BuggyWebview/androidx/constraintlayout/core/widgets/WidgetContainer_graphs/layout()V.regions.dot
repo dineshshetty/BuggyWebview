@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.WidgetContainer.layout()V" {
+subgraph cluster_Region_1438323152 {
+label = "R(2:1|(2:(1:3)|(2:5|(3:7|(1:9)(0)|11))))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|java.util.ArrayList\<androidx.constraintlayout.core.widgets.ConstraintWidget\> java.util.ArrayList\<androidx.constraintlayout.core.widgets.ConstraintWidget\> r0 = r4.mChildren\l}"];
+subgraph cluster_Region_840540227 {
+label = "R(2:(1:3)|(2:5|(3:7|(1:9)(0)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1655140655 {
+label = "IF [B:18:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_946415373 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1843023108 {
+label = "R(2:5|(3:7|(1:9)(0)|11))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0005|int int r0 = r0.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1089421339 {
+label = "LOOP:0: (3:7|(1:9)(0)|11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000a|LOOP_START\lLOOP:0: B:21:0x000a\-\>B:25:0x001e\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:20:0x0005, B:25:0x001e] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L7\l}"];
+subgraph cluster_Region_1305996359 {
+label = "R(3:7|(1:9)(0)|11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000c|androidx.constraintlayout.core.widgets.ConstraintWidget androidx.constraintlayout.core.widgets.ConstraintWidget r2 = r4.mChildren.get(r1)\l}"];
+subgraph cluster_IfRegion_337691355 {
+label = "IF [B:23:0x0016] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0016|if ((r2 instanceof androidx.constraintlayout.core.widgets.WidgetContainer) != false) goto L9\l}"];
+subgraph cluster_Region_724373302 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0018|((androidx.constraintlayout.core.widgets.WidgetContainer) r2).layout()\l}"];
+}
+subgraph cluster_Region_1987723749 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x001e|LOOP_END\lLOOP:0: B:21:0x000a\-\>B:25:0x001e\l|r1++\l}"];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x001e|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001e|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0021|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0021}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.widgets.WidgetContainer.layout((r4v0 'this' androidx.constraintlayout.core.widgets.WidgetContainer A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x001e \-\> B:21:0x000a, CROSS_EDGE: B:23:0x0016 \-\> B:25:0x001e, CROSS_EDGE: B:26:0x0021 \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.constraintlayout.core.widgets.WidgetContainer.layout():void]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_16;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_27[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_29[style=dashed];
+Node_24 -> Node_28;
+Node_25 -> Node_21;
+Node_15 -> Node_17;
+Node_28 -> Node_25;
+Node_29 -> Node_25;
+Node_27 -> Node_26;
+Node_26 -> Node_16;
+}
+

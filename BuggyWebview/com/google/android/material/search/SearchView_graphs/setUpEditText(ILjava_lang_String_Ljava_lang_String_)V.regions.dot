@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.material.search.SearchView.setUpEditText(ILjava\/lang\/String;Ljava\/lang\/String;)V" {
+subgraph cluster_Region_541301358 {
+label = "R(2:(1:3)|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_671259847 {
+label = "IF [B:17:0x0001] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0001|if (r2 != (\-1)) goto L3\l}"];
+subgraph cluster_Region_251243443 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0003|androidx.core.widget.TextViewCompat.setTextAppearance(r1.editText, r2)\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0008|r1.editText.setText(r3)\lr1.editText.setHint(r4)\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0012}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.search.SearchView.setUpEditText((r1v0 'this' com.google.android.material.search.SearchView A[IMMUTABLE_TYPE, THIS]), (r2v0 'textAppearanceResId' int A[D('textAppearanceResId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'text' java.lang.String A[D('text' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'hint' java.lang.String A[D('hint' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0001 \-\> B:19:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_20 -> Node_15;
+}
+

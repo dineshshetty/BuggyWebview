@@ -1,0 +1,54 @@
+digraph "CFG forkotlin.time.Duration.compareTo\-LRDsOJo(JJ)I" {
+subgraph cluster_Region_2132274147 {
+label = "R(2:1|(2:(1:13)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|long long r0 = r5 ^ r7\l}"];
+subgraph cluster_Region_1882138442 {
+label = "R(2:(1:13)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2109257877 {
+label = "IF [B:18:0x0006, B:20:0x000b] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|if (r0 \< 0) goto L12\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000b|ADDED_TO_REGION\l|if ((((int) r0) & 1) == 0) goto L12\l}"];
+subgraph cluster_Region_1395501762 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0025|RETURN\l|return kotlin.jvm.internal.Intrinsics.compare(r5, r7)\l}"];
+}
+}
+subgraph cluster_Region_633762580 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000e|int int r2 = (((int) r5) & 1) \- (((int) r7) & 1)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001b|RETURN\l|return m1492isNegativeimpl(r5) ? \-r2 : r2\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0008}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001d}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001f}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0020|ORIG_RETURN\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0021}"];
+MethodNode[shape=record,label="{public static int kotlin.time.Duration.compareTo\-LRDsOJo((r5v0 'arg0' long A[D('arg0' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'other' long A[D('other' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x001f \-\> B:26:0x0020, CROSS_EDGE: B:28:0x0025 \-\> B:16:?, CROSS_EDGE: B:18:0x0006 \-\> B:27:0x0021\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_27;
+Node_20 -> Node_22[style=dashed];
+Node_20 -> Node_27;
+Node_28 -> Node_16;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_24 -> Node_29;
+Node_29 -> Node_16;
+Node_25 -> Node_26;
+Node_26 -> Node_16;
+Node_27 -> Node_28;
+}
+

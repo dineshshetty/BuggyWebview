@@ -1,0 +1,62 @@
+digraph "CFG forandroidx.transition.Explode.calculateOut(Landroid\/view\/View;Landroid\/graphics\/Rect;[I)V" {
+subgraph cluster_Region_2042599353 {
+label = "R(5:1|(1:3)(1:13)|4|(1:8)(0)|9) | DECL_VAR: int focalX, int focalY\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|r21.getLocationOnScreen(r20.mTempLoc)\lint[] int[] r2 = r20.mTempLoc\lint r4 = r2[0]\lint r2 = r2[1]\landroid.graphics.Rect android.graphics.Rect r6 = getEpicenter()\l}"];
+subgraph cluster_IfRegion_17888752 {
+label = "IF [B:17:0x0015] THEN: R(1:3) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|if (r6 == null) goto L3\l}"];
+subgraph cluster_Region_1347987928 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0017|int r7 = (r21.getWidth() \/ 2) + r4 + java.lang.Math.round(r21.getTranslationX())\lint r8 = (r21.getHeight() \/ 2) + r2 + java.lang.Math.round(r21.getTranslationY())\l}"];
+}
+subgraph cluster_Region_2105866066 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0038|int r7 = r6.centerX()\lint r8 = r6.centerY()\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0040|PHI: r7 r8 \l  PHI: (r7v1 'focalX' int) = (r7v0 'focalX' int), (r7v5 'focalX' int) binds: [B:19:0x0038, B:18:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'focalY' int) = (r8v0 'focalY' int), (r8v7 'focalY' int) binds: [B:19:0x0038, B:18:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|int int r9 = r22.centerX()\lint int r10 = r22.centerY()\lfloat float r11 = r9 \- r7\lfloat float r12 = r10 \- r8\l}"];
+subgraph cluster_IfRegion_1837159845 {
+label = "IF [B:21:0x0051, B:23:0x0055] THEN: R(1:8) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0051|if (r11 == 0.0f) goto L6\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0055|ADDED_TO_REGION\l|if (r12 == 0.0f) goto L8\l}"];
+subgraph cluster_Region_2021893380 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0057|float r11 = ((float) (java.lang.Math.random() * 2.0d)) \- 1.0f\lfloat r12 = ((float) (java.lang.Math.random() * 2.0d)) \- 1.0f\l}"];
+}
+subgraph cluster_Region_1625424281 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0072|PHI: r11 r12 \l  PHI: (r11v2 'xVector' float) = (r11v1 'xVector' float), (r11v4 'xVector' float) binds: [B:25:0x0070, B:24:0x0057] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r12v2 'yVector' float) = (r12v1 'yVector' float), (r12v4 'yVector' float) binds: [B:25:0x0070, B:24:0x0057] A[DONT_GENERATE, DONT_INLINE]\l|float float r5 = calculateDistance(r11, r12)\lfloat float r6 = calculateMaxDistance(r21, r7 \- r4, r8 \- r2)\lr23[0] = java.lang.Math.round(r6 * (r11 \/ r5))\lr23[1] = java.lang.Math.round(r6 * (r12 \/ r5))\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0053}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0091}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0070}"];
+MethodNode[shape=record,label="{private void androidx.transition.Explode.calculateOut((r20v0 'this' androidx.transition.Explode A[IMMUTABLE_TYPE, THIS]), (r21v0 'sceneRoot' android.view.View A[D('sceneRoot' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'bounds' android.graphics.Rect A[D('bounds' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 'outVector' int[] A[D('outVector' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0070 \-\> B:26:0x0072, CROSS_EDGE: B:21:0x0051 \-\> B:25:0x0070, CROSS_EDGE: B:19:0x0038 \-\> B:20:0x0040\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_26;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_22 -> Node_23;
+Node_27 -> Node_15;
+Node_25 -> Node_26;
+}
+

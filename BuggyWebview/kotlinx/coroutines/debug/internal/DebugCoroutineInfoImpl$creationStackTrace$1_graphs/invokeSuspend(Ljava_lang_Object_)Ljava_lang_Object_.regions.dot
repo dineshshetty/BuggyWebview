@@ -1,0 +1,69 @@
+digraph "CFG forkotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl$creationStackTrace$1.invokeSuspend(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1534016492 {
+label = "R(3:1|2|8) | DECL_VAR: java.lang.Object null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.Object java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+subgraph cluster_SwitchRegion_715625311 {
+label = "Switch: 3
+ case 0 -> R(2:9|(1:1)(1:11))
+ case 1 -> R(2:6|1)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|switch(r7.label) \{\l    case 0: goto L9;\l    case 1: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_298330608 {
+label = "R(2:9|(1:1)(1:11))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|kotlin.ResultKt.throwOnFailure(r8)\lkotlin.sequences.SequenceScope kotlin.sequences.SequenceScope r2 = (kotlin.sequences.SequenceScope) r7.L$0\lr7.label = 1\ljava.lang.Object r2 = r7.this$0.yieldFrames(r2, r7.$bottom.getCallerFrame(), r7)\l}"];
+subgraph cluster_IfRegion_447643641 {
+label = "IF [B:8:0x0030] THEN: R(1:1) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0030|if (r2 != r0) goto L12\l}"];
+subgraph cluster_Region_1157131521 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_1136649053 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2124288685 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0032|RETURN\l|return r0\l}"];
+}
+}
+}
+subgraph cluster_Region_1183331976 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|kotlin.ResultKt.throwOnFailure(r8)\l}"];
+Node_InsnContainer_1344497773 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1471448845 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw new java.lang.IllegalStateException(\"call to 'resume' before 'invoke' with coroutine\")\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0036|RETURN\l|return kotlin.Unit.INSTANCE\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0034}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0033}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl$creationStackTrace$1.invokeSuspend((r7v0 'this' kotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl$creationStackTrace$1 A[IMMUTABLE_TYPE, THIS]), (r8v0 '$result' java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0036 \-\> B:1:?, CROSS_EDGE: B:9:0x0032 \-\> B:1:?, CROSS_EDGE: B:10:0x0033 \-\> B:11:0x0034\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlin.coroutines.jvm.internal.BaseContinuationImpl.invokeSuspend(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6;
+Node_3 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_1;
+Node_6 -> Node_11;
+Node_5 -> Node_1;
+Node_12 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_11 -> Node_12;
+Node_10 -> Node_11;
+}
+

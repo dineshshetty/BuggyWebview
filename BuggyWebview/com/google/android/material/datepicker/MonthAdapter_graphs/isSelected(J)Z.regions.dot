@@ -1,0 +1,47 @@
+digraph "CFG forcom.google.android.material.datepicker.MonthAdapter.isSelected(J)Z" {
+subgraph cluster_Region_1444878191 {
+label = "R(3:1|(2:4|(1:7))|10)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|java.util.Iterator r0 = r8.dateSelector.getSelectedDays().iterator()\l\l}"];
+subgraph cluster_LoopRegion_2118847596 {
+label = "LOOP:0: (2:4|(1:7))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|java.lang.Object \lif (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_69977900 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0010|long long r1 = r1.longValue()\l}"];
+subgraph cluster_IfRegion_1812980282 {
+label = "IF [B:20:0x0024] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0024|LOOP_END\lLOOP:0: B:17:0x000a\-\>B:20:0x0024\l|if (com.google.android.material.datepicker.UtcDates.canonicalYearMonthDay(r9) == com.google.android.material.datepicker.UtcDates.canonicalYearMonthDay(r1)) goto L6\l}"];
+subgraph cluster_Region_2025870595 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0026|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0029|RETURN\l|return false\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000a|LOOP_START\lLOOP:0: B:17:0x000a\-\>B:20:0x0024\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0026|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0029|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean com.google.android.material.datepicker.MonthAdapter.isSelected((r8v0 'this' com.google.android.material.datepicker.MonthAdapter A[IMMUTABLE_TYPE, THIS]), (r9v0 'date' long A[D('date' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0024 \-\> B:17:0x000a, CROSS_EDGE: B:25:0x002a \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_27[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_17[style=dashed];
+Node_20 -> Node_26;
+Node_21 -> Node_15;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_26 -> Node_21;
+Node_27 -> Node_24;
+}
+

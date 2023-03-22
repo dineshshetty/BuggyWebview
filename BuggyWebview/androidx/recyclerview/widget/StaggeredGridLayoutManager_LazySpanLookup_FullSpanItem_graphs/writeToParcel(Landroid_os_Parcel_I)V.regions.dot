@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.FullSpanItem.writeToParcel(Landroid\/os\/Parcel;I)V" {
+subgraph cluster_Region_1109750686 {
+label = "R(2:1|(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|r3.writeInt(r2.mPosition)\lr3.writeInt(r2.mGapDir)\lr3.writeInt(r2.mHasUnwantedGapAfter ? 1 : 0)\lint[] int[] r0 = r2.mGapPerSpan\l}"];
+subgraph cluster_Region_1634674992 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2093501446 {
+label = "IF [B:3:0x0011, B:5:0x0014] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|if (r0 != null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ADDED_TO_REGION\l|if (r0.length \> 0) goto L5\l}"];
+subgraph cluster_Region_775962729 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|r3.writeInt(r0.length)\lr3.writeIntArray(r2.mGapPerSpan)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2107517572 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|r3.writeInt(0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0013}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0024|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.FullSpanItem.writeToParcel((r2v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem A[IMMUTABLE_TYPE, THIS]), (r3v0 'dest' android.os.Parcel A[D('dest' android.os.Parcel), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'flags' int A[D('flags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:7:0x0020 \-\> B:8:0x0024, CROSS_EDGE: B:3:0x0011 \-\> B:7:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.os.Parcelable.writeToParcel(android.os.Parcel, int):void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_9 -> Node_1;
+Node_7 -> Node_8;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_1;
+}
+

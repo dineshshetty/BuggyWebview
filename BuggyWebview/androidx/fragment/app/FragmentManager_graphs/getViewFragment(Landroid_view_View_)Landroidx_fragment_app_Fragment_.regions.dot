@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.getViewFragment(Landroid\/view\/View;)Landroidx\/fragment\/app\/Fragment;" {
+subgraph cluster_Region_12367024 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.lang.Object java.lang.Object r0 = r2.getTag(androidx.fragment.C0296R.C0299id.fragment_container_view_tag)\l}"];
+subgraph cluster_Region_618765991 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_975198643 {
+label = "IF [B:11:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|if ((r0 instanceof androidx.fragment.app.Fragment) != false) goto L3\l}"];
+subgraph cluster_Region_1136485972 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000d|RETURN\l|return (androidx.fragment.app.Fragment) r0\l}"];
+}
+}
+subgraph cluster_Region_684595093 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|RETURN\l|return null\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000a}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.fragment.app.Fragment androidx.fragment.app.FragmentManager.getViewFragment((r2v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000f \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

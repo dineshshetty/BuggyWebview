@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.KotlinVersion.versionOf(III)I" {
+subgraph cluster_Region_578775394 {
+label = "R(3:1|(1:7)|(2:(2:12|13)|(1:10)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|boolean r1 = false\l}"];
+subgraph cluster_IfRegion_69099496 {
+label = "IF [B:17:0x000c, B:19:0x0017, B:21:0x0022] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|if (new kotlin.ranges.IntRange(0, 255).contains(r4) != false) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0017|ADDED_TO_REGION\l|if (new kotlin.ranges.IntRange(0, 255).contains(r5) != false) goto L5\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0022|ADDED_TO_REGION\l|if (new kotlin.ranges.IntRange(0, 255).contains(r6) != false) goto L7\l}"];
+subgraph cluster_Region_1486129603 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0024|r1 = true\l}"];
+}
+}
+subgraph cluster_Region_1484292065 {
+label = "R(2:(2:12|13)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2028234271 {
+label = "IF [B:23:0x0025] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0025|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v0 boolean), (r1v0 boolean), (r1v5 boolean) binds: [B:17:0x000c, B:19:0x0017, B:21:0x0022, B:22:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 == false) goto L12\l}"];
+subgraph cluster_Region_873010678 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002e}"];
+Node_27 [shape=record,label="{27\:\ 0x0057|throw new java.lang.IllegalArgumentException((\"Version components are out of range: \" + r4 + '.' + r5 + '.' + r6).toString())\l}"];
+}
+}
+subgraph cluster_Region_1674751990 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002d|RETURN\l|return (r4 \<\< 16) + (r5 \<\< 8) + r6\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0019}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0027}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final int kotlin.KotlinVersion.versionOf((r3v0 'this' kotlin.KotlinVersion A[IMMUTABLE_TYPE, THIS]), (r4v0 'major' int A[D('major' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'minor' int A[D('minor' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'patch' int A[D('patch' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0057 \-\> B:15:?, CROSS_EDGE: B:21:0x0022 \-\> B:23:0x0025, CROSS_EDGE: B:19:0x0017 \-\> B:23:0x0025, CROSS_EDGE: B:17:0x000c \-\> B:23:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_15;
+Node_25 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_24 -> Node_25;
+}
+

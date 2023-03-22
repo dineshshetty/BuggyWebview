@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.fold(Lkotlin\/sequences\/Sequence;Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function2;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_481296887 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"operation\")\ljava.lang.Object r1 = r5\ljava.util.Iterator java.util.Iterator\<? extends T\> r2 = r4.iterator()\l}"];
+subgraph cluster_LoopRegion_357047592 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0014|if (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1875224432 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0016|LOOP_END\lLOOP:0: B:11:0x0010\-\>B:13:0x0016\l|java.lang.Object java.lang.Object r3 = (T) r2.next()\ljava.lang.Object r1 = (R) r6.invoke(r1, r3)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x001f|RETURN\l|return (R) r1\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0010|LOOP_START\lLOOP:0: B:11:0x0010\-\>B:13:0x0016\lPHI: r1 \l  PHI: (r1v1 'accumulator' java.lang.Object) = (r1v0 'accumulator' java.lang.Object), (r1v2 'accumulator' java.lang.Object) binds: [B:10:0x0000, B:13:0x0016] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001f|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final R kotlin.sequences.SequencesKt___SequencesKt.fold((r4v0 kotlin.sequences.Sequence\<? extends T\> A[D('$this$fold' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 R A[D('initial' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'operation' kotlin.jvm.functions.Function2\<? super R, ? super T, ? extends R\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0016 \-\> B:11:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;TR;Lkotlin\/jvm\/functions\/Function2\<\-TR;\-TT;+TR;\>;)TR;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r3v1. Raw type applied. Possible types: T, ? super T\l \-\> Type inference failed for r1v5. Raw type applied. Possible types: R, ? super R\}\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

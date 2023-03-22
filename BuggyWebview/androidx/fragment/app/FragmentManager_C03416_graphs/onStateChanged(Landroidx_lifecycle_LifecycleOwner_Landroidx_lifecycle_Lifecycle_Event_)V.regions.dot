@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.6.onStateChanged(Landroidx\/lifecycle\/LifecycleOwner;Landroidx\/lifecycle\/Lifecycle$Event;)V" {
+subgraph cluster_Region_1260782172 {
+label = "R(2:(1:5)|(1:(1:8))) | DECL_VAR: android.os.Bundle storedResult\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1338959655 {
+label = "IF [B:15:0x0002, B:17:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r5 == androidx.lifecycle.Lifecycle.Event.ON_START) goto L3\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0012|ADDED_TO_REGION\l|if ((r0 = (android.os.Bundle) androidx.fragment.app.FragmentManager.this.mResults.get(r2)) != null) goto L5\l}"];
+subgraph cluster_Region_1124976947 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0014|r3.onFragmentResult(r2, r0)\landroidx.fragment.app.FragmentManager.this.clearFragmentResult(r2)\l}"];
+}
+}
+subgraph cluster_Region_1648650304 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_428585654 {
+label = "IF [B:20:0x0024] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0024|if (r5 == androidx.lifecycle.Lifecycle.Event.ON_DESTROY) goto L8\l}"];
+subgraph cluster_Region_558139775 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0026|r4.removeObserver(r3)\landroidx.fragment.app.FragmentManager.this.mResultListeners.remove(r2)\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0004}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0022}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0036|ORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentManager.6.onStateChanged((r3v0 'this' androidx.fragment.app.FragmentManager$6 A[IMMUTABLE_TYPE, THIS]), (r4v0 'source' androidx.lifecycle.LifecycleOwner A[D('source' androidx.lifecycle.LifecycleOwner), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'event' androidx.lifecycle.Lifecycle$Event A[D('event' androidx.lifecycle.Lifecycle$Event), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0024 \-\> B:22:0x0036, CROSS_EDGE: B:17:0x0012 \-\> B:19:0x0022, CROSS_EDGE: B:15:0x0002 \-\> B:19:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.lifecycle.LifecycleEventObserver.onStateChanged(androidx.lifecycle.LifecycleOwner, androidx.lifecycle.Lifecycle$Event):void]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+Node_22 -> Node_13;
+Node_23 -> Node_13;
+}
+

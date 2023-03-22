@@ -1,0 +1,99 @@
+digraph "CFG forandroidx.core.provider.FontProvider.getProvider(Landroid\/content\/pm\/PackageManager;Landroidx\/core\/provider\/FontRequest;Landroid\/content\/res\/Resources;)Landroid\/content\/pm\/ProviderInfo;" {
+subgraph cluster_Region_692156933 {
+label = "R(2:1|(2:18|19)(1:(2:16|17)(3:5|(2:8|(2:(1:12)|(1:10)))|15)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|java.lang.String java.lang.String r0 = r9.getProviderAuthority()\landroid.content.pm.ProviderInfo android.content.pm.ProviderInfo r1 = r8.resolveContentProvider(r0, 0)\l}"];
+subgraph cluster_IfRegion_1422518115 {
+label = "IF [B:24:0x0009] THEN: R(2:18|19) ELSE: R(1:(2:16|17)(3:5|(2:8|(2:(1:12)|(1:10)))|15))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0009|if (r1 == null) goto L18\l}"];
+subgraph cluster_Region_1798432268 {
+label = "R(2:18|19)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0074}"];
+Node_39 [shape=record,label="{39\:\ 0x008a|throw new android.content.pm.PackageManager.NameNotFoundException(\"No package found for authority: \" + r0)\l}"];
+}
+subgraph cluster_Region_1027567679 {
+label = "R(1:(2:16|17)(3:5|(2:8|(2:(1:12)|(1:10)))|15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1987722925 {
+label = "IF [B:26:0x0015] THEN: R(2:16|17) ELSE: R(3:5|(2:8|(2:(1:12)|(1:10)))|15) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0015|if (r1.packageName.equals(r9.getProviderPackage()) == false) goto L16\l}"];
+subgraph cluster_Region_184008145 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0051}"];
+Node_37 [shape=record,label="{37\:\ 0x0073|throw new android.content.pm.PackageManager.NameNotFoundException(\"Found content provider \" + r0 + \", but package was not \" + r9.getProviderPackage())\l}"];
+}
+subgraph cluster_Region_312453096 {
+label = "R(3:5|(2:8|(2:(1:12)|(1:10)))|15)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0017|android.content.pm.PackageInfo android.content.pm.PackageInfo r2 = r8.getPackageInfo(r1.packageName, 64)\ljava.util.List java.util.List\<byte[]\> r3 = convertToByteArrayList(r2.signatures)\ljava.util.Collections.sort(r3, androidx.core.provider.FontProvider.sByteArrayComparator)\ljava.util.List java.util.List\<java.util.List\<byte[]\>\> r4 = getCertificates(r9, r10)\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_435179093 {
+label = "LOOP:0: (2:8|(2:(1:12)|(1:10)))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0033|if (r5 \< r4.size()) goto L8\l}"];
+subgraph cluster_Region_1992231524 {
+label = "R(2:8|(2:(1:12)|(1:10)))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0035|java.util.ArrayList java.util.List\<byte[]\> r6 = new java.util.ArrayList\<\>(r4.get(r5))\ljava.util.Collections.sort(r6, androidx.core.provider.FontProvider.sByteArrayComparator)\l}"];
+subgraph cluster_Region_430871379 {
+label = "R(2:(1:12)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1045991525 {
+label = "IF [B:31:0x0049] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0049|if (equalsByteArrayList(r3, r6) != false) goto L11\l}"];
+subgraph cluster_Region_624003423 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x004b|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1609375389 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x004c|LOOP_END\lLOOP:0: B:28:0x002f\-\>B:33:0x004c\l|r5++\l}"];
+}
+}
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x004f|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000b}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x002f|LOOP_START\lLOOP:0: B:28:0x002f\-\>B:33:0x004c\lPHI: r5 \l  PHI: (r5v1 'i' int) = (r5v0 'i' int), (r5v3 'i' int) binds: [B:27:0x0017, B:33:0x004c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x004b|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x004f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static android.content.pm.ProviderInfo androidx.core.provider.FontProvider.getProvider((r8v0 'packageManager' android.content.pm.PackageManager A[D('packageManager' android.content.pm.PackageManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'request' androidx.core.provider.FontRequest A[D('request' androidx.core.provider.FontRequest), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'resources' android.content.res.Resources A[D('resources' android.content.res.Resources), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:33:0x004c \-\> B:28:0x002f, CROSS_EDGE: B:35:0x0050 \-\> B:22:?, CROSS_EDGE: B:37:0x0073 \-\> B:22:?, CROSS_EDGE: B:39:0x008a \-\> B:22:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroid\/content\/pm\/PackageManager$NameNotFoundException;]\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_38;
+Node_38 -> Node_39;
+Node_39 -> Node_22;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_36;
+Node_36 -> Node_37;
+Node_37 -> Node_22;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_29 -> Node_40[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_33[style=dashed];
+Node_31 -> Node_41;
+Node_32 -> Node_22;
+Node_33 -> Node_28;
+Node_34 -> Node_22;
+Node_21 -> Node_23;
+Node_25 -> Node_26;
+Node_28 -> Node_29;
+Node_41 -> Node_32;
+Node_40 -> Node_34;
+}
+

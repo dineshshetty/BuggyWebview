@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.fragment.app.FragmentFactory.loadClass(Ljava\/lang\/ClassLoader;Ljava\/lang\/String;)Ljava\/lang\/Class;" {
+subgraph cluster_Region_608702245 {
+label = "R(4:1|(1:3)|4|(2:(2:6|7)|(1:9)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|androidx.collection.SimpleArrayMap\<java.lang.ClassLoader, androidx.collection.SimpleArrayMap\<java.lang.String, java.lang.Class\<?\>\>\> androidx.collection.SimpleArrayMap\<java.lang.ClassLoader, androidx.collection.SimpleArrayMap\<java.lang.String, java.lang.Class\<?\>\>\> r0 = androidx.fragment.app.FragmentFactory.sClassCacheMap\landroidx.collection.SimpleArrayMap androidx.collection.SimpleArrayMap\<java.lang.String, java.lang.Class\<?\>\> r1 = r0.get(r3)\l}"];
+subgraph cluster_IfRegion_1862657155 {
+label = "IF [B:13:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_1392798614 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|r1 = new androidx.collection.SimpleArrayMap\<\>()\lr0.put(r3, r1)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0013|PHI: r1 \l  PHI: (r1v2 'classMap' androidx.collection.SimpleArrayMap\<java.lang.String, java.lang.Class\<?\>\>) = (r1v1 'classMap' androidx.collection.SimpleArrayMap\<java.lang.String, java.lang.Class\<?\>\>), (r1v3 'classMap' androidx.collection.SimpleArrayMap\<java.lang.String, java.lang.Class\<?\>\>) binds: [B:13:0x0008, B:14:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Class java.lang.Class\<?\> r0 = r1.get(r4)\l}"];
+subgraph cluster_Region_1970447502 {
+label = "R(2:(2:6|7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_704728514 {
+label = "IF [B:16:0x0019] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0019|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_1322537498 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001b|java.lang.Class java.lang.Class\<?\> r0 = java.lang.Class.forName(r4, false, r3)\lr1.put(r4, r0)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0023|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1512692687 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static java.lang.Class\<?\> androidx.fragment.app.FragmentFactory.loadClass((r3v0 'classLoader' java.lang.ClassLoader A[D('classLoader' java.lang.ClassLoader), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'className' java.lang.String A[D('className' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0019 \-\> B:18:0x0023, CROSS_EDGE: B:13:0x0008 \-\> B:15:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/ClassLoader;Ljava\/lang\/String;)Ljava\/lang\/Class\<*\>;\lEXCEPTIONS:[Ljava\/lang\/ClassNotFoundException;]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+}
+

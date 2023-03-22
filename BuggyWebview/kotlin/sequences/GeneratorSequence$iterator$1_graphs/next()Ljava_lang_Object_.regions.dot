@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.sequences.GeneratorSequence$iterator$1.next()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1134884662 {
+label = "R(2:(1:3)|(2:(1:10)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2036690280 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r2.nextState \< 0) goto L3\l}"];
+subgraph cluster_Region_1495808931 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|calcNext()\l}"];
+}
+}
+subgraph cluster_Region_1049396411 {
+label = "R(2:(1:10)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1526061339 {
+label = "IF [B:6:0x0009] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|if (r2.nextState == 0) goto L9\l}"];
+subgraph cluster_Region_145355008 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001b|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_1459793699 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000b|T T r0 = r2.nextItem\lkotlin.jvm.internal.Intrinsics.checkNotNull(r0, \"null cannot be cast to non\-null type T of kotlin.sequences.GeneratorSequence\")\lr2.nextState = \-1\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0015|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0016}"];
+MethodNode[shape=record,label="{public T kotlin.sequences.GeneratorSequence$iterator$1.next((r2v0 'this' kotlin.sequences.GeneratorSequence$iterator$1 A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:10:0x001b \-\> B:1:?, CROSS_EDGE: B:3:0x0002 \-\> B:5:0x0007\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ()TT;\lMETHOD_OVERRIDE: [ClspMth\{java.util.Iterator.next():E\}]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_10 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+}
+

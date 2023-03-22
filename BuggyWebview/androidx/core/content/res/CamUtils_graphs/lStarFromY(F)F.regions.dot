@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.core.content.res.CamUtils.lStarFromY(F)F" {
+subgraph cluster_Region_1061386857 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|float float r4 = r4 \/ 100.0f\l}"];
+subgraph cluster_Region_1112133986 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_756017389 {
+label = "IF [B:11:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000b|if (r4 \<= 0.008856452f) goto L3\l}"];
+subgraph cluster_Region_1280656667 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0012|RETURN\l|return 903.2963f * r4\l}"];
+}
+}
+subgraph cluster_Region_523290950 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0013|float float r1 = (float) java.lang.Math.cbrt(r4)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0020|RETURN\l|return (116.0f * r1) \- 16.0f\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000d}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static float androidx.core.content.res.CamUtils.lStarFromY((r4v0 'y' float A[D('y' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0020 \-\> B:9:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

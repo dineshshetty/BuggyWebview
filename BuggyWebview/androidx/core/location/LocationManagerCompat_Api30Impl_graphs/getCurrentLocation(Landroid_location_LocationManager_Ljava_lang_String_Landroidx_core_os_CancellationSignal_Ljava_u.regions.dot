@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.core.location.LocationManagerCompat.Api30Impl.getCurrentLocation(Landroid\/location\/LocationManager;Ljava\/lang\/String;Landroidx\/core\/os\/CancellationSignal;Ljava\/util\/concurrent\/Executor;Landroidx\/core\/util\/Consumer;)V" {
+subgraph cluster_Region_185370459 {
+label = "R(2:(1:2)(1:6)|3) | DECL_VAR: android.os.CancellationSignal null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_6537236 {
+label = "IF [B:9:0x0001] THEN: R(1:2) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0001|if (r4 != null) goto L2\l}"];
+subgraph cluster_Region_1621776483 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0004|android.os.CancellationSignal r0 = (android.os.CancellationSignal) r4.getCancellationSignalObject()\l}"];
+}
+subgraph cluster_Region_506114448 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000b|r0 = null\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x000c|PHI: r0 \l  PHI: (r0v1 android.os.CancellationSignal) = (r0v0 android.os.CancellationSignal), (r0v3 android.os.CancellationSignal) binds: [B:11:0x000b, B:10:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|java.util.Objects.requireNonNull(r6)\lr2.getCurrentLocation(r3, r0, r5, new androidx.core.location.LocationManagerCompat$Api30Impl$$ExternalSyntheticLambda0())\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0017}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static void androidx.core.location.LocationManagerCompat.Api30Impl.getCurrentLocation((r2v0 'locationManager' android.location.LocationManager A[D('locationManager' android.location.LocationManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'provider' java.lang.String A[D('provider' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'cancellationSignal' androidx.core.os.CancellationSignal A[D('cancellationSignal' androidx.core.os.CancellationSignal), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'executor' java.util.concurrent.Executor A[D('executor' java.util.concurrent.Executor), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'consumer' androidx.core.util.Consumer\<android.location.Location\> A[D('consumer' androidx.core.util.Consumer\<android.location.Location\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x000b \-\> B:12:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/location\/LocationManager;Ljava\/lang\/String;Landroidx\/core\/os\/CancellationSignal;Ljava\/util\/concurrent\/Executor;Landroidx\/core\/util\/Consumer\<Landroid\/location\/Location;\>;)V\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

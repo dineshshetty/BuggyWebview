@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.Table.compareStrings(I[BLjava\/nio\/ByteBuffer;)I" {
+subgraph cluster_Region_749616021 {
+label = "R(4:1|(1:(2:(1:8)|(1:5)))|11|12)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r7 = r7 + r9.getInt(r7)\lint int r0 = r9.getInt(r7)\lint int r1 = r8.length\lint int r2 = r7 + 4\lint int r3 = java.lang.Math.min(r0, r1)\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_171553314 {
+label = "LOOP:0: (1:(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0011|LOOP_START\lLOOP:0: B:16:0x0011\-\>B:21:0x0027\lPHI: r4 \l  PHI: (r4v1 'i' int) = (r4v0 'i' int), (r4v3 'i' int) binds: [B:15:0x0000, B:21:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \< r3) goto L3\l}"];
+subgraph cluster_Region_1035878014 {
+label = "R(1:(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_477594764 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2083523729 {
+label = "IF [B:18:0x001b] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001b|if (r9.get(r4 + r2) != r8[r4]) goto L6\l}"];
+subgraph cluster_Region_1906848513 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0026|RETURN\l|return r9.get(r4 + r2) \- r8[r4]\l}"];
+}
+}
+subgraph cluster_Region_1469465187 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0027|LOOP_END\lLOOP:0: B:16:0x0011\-\>B:21:0x0027\l|r4++\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x002a|int int r4 = r0 \- r1\l}"];
+Node_23 [shape=record,label="{23\:\ 0x002c|RETURN\l|return r4\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0013}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001d|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001d}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected static int androidx.emoji2.text.flatbuffer.Table.compareStrings((r7v0 'offset_1' int A[D('offset_1' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'key' byte[] A[D('key' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'bb' java.nio.ByteBuffer A[D('bb' java.nio.ByteBuffer), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0027 \-\> B:16:0x0011, CROSS_EDGE: B:23:0x002c \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_25;
+Node_20 -> Node_14;
+Node_21 -> Node_16;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_25 -> Node_19;
+Node_19 -> Node_20;
+Node_24 -> Node_22;
+}
+

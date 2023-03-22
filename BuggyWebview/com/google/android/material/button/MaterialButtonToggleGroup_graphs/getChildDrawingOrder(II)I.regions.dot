@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.material.button.MaterialButtonToggleGroup.getChildDrawingOrder(II)I" {
+subgraph cluster_Region_776943251 {
+label = "R(2:1|(2:(2:8|9)|(1:6)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.lang.Integer[] java.lang.Integer[] r0 = r2.childOrder\l}"];
+subgraph cluster_Region_1022389497 {
+label = "R(2:(2:8|9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1176798994 {
+label = "IF [B:14:0x0002, B:16:0x0005] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r0 == null) goto L8\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0005|ADDED_TO_REGION\l|if (r4 \>= r0.length) goto L8\l}"];
+subgraph cluster_Region_2076252185 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000f|android.util.Log.w(com.google.android.material.button.MaterialButtonToggleGroup.LOG_TAG, \"Child order wasn't updated\")\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0016|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_629026472 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|RETURN\l|return r0[r4].intValue()\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0004}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0008}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected int com.google.android.material.button.MaterialButtonToggleGroup.getChildDrawingOrder((r2v0 'this' com.google.android.material.button.MaterialButtonToggleGroup A[IMMUTABLE_TYPE, THIS]), (r3v0 'childCount' int A[D('childCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'i' int A[D('i' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:21:0x0016 \-\> B:12:?, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewGroup.getChildDrawingOrder(int, int):int\}]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+}
+

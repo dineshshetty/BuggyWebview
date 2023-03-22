@@ -1,0 +1,52 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.signalBlockingWork(Z)V" {
+subgraph cluster_Region_2123193772 {
+label = "R(2:1|(2:(1:10)|(1:11)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|long long r0 = kotlinx.coroutines.scheduling.CoroutineScheduler.controlState$FU.addAndGet(r5, kotlinx.coroutines.scheduling.CoroutineScheduler.PARKED_VERSION_INC)\l}"];
+subgraph cluster_Region_1487132494 {
+label = "R(2:(1:10)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1091276750 {
+label = "IF [B:16:0x000c, B:19:0x0013, B:22:0x001a] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000c|if (r6 == true) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0013|ADDED_TO_REGION\l|if (tryUnpark() == true) goto L7\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001a|ADDED_TO_REGION\l|if (tryCreateWorker(r0) == true) goto L10\l}"];
+subgraph cluster_Region_2136944191 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2123255215 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001d|tryUnpark()\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000e|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000f}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0015|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0016}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0020}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.scheduling.CoroutineScheduler.signalBlockingWork((r5v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler A[IMMUTABLE_TYPE, THIS]), (r6v0 'skipUnpark' boolean A[D('skipUnpark' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0015 \-\> B:14:?, CROSS_EDGE: B:23:0x001c \-\> B:14:?, CROSS_EDGE: B:25:0x0020 \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_14;
+Node_24 -> Node_25;
+Node_13 -> Node_15;
+Node_17 -> Node_14;
+Node_18 -> Node_19;
+Node_20 -> Node_14;
+Node_21 -> Node_22;
+Node_25 -> Node_14;
+}
+

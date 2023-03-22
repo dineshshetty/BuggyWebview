@@ -1,0 +1,25 @@
+digraph "CFG forkotlin.text.UStringsKt.toUByteOrNull(Ljava\/lang\/String;I)Lkotlin\/UByte;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"\<this\>\" \l0x0002: INVOKE  (r3 I:java.lang.Object A[D('$this$toUByteOrNull' java.lang.String)]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x0005: INVOKE  (r0 I:kotlin.UInt) = (r3 I:java.lang.String A[D('$this$toUByteOrNull' java.lang.String)]), (r4 I:int A[D('radix' int)]) type: STATIC call: kotlin.text.UStringsKt.toUIntOrNull(java.lang.String, int):kotlin.UInt A[MD:(java.lang.String, int):kotlin.UInt (m)] (LINE:141)\l0x0009: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|0x000a: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0027 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|0x000c: INVOKE  (r0 I:int) = (r0 I:kotlin.UInt) type: VIRTUAL call: kotlin.UInt.unbox\-impl():int A[MD:():int (m)]\l0x0010: CONST  (r2 I:??[int, float, short, byte, char]) = (255(0xff, float:3.57E\-43) ??[int, float, short, byte, char])  (LINE:142)\l0x0012: INVOKE  (r2 I:int) = (r2 I:int) type: STATIC call: kotlin.UInt.constructor\-impl(int):int A[MD:(int):int (m)]\l0x0016: INVOKE  (r2 I:int) = (r0 I:int A[D('int' int)]), (r2 I:int) type: STATIC call: kotlin.UnsignedKt.uintCompare(int, int):int A[MD:(int, int):int (m)]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|0x001a: IF  (r2 I:??[int, byte, short, char]) \<= (0 ??[int, byte, short, char])  \-\> B:7:0x001d \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|0x001c: RETURN  (r1 I:kotlin.UByte) \l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001d|0x001d: CAST (r1 I:byte) = (byte) (r0 I:int A[D('int' int)])  (LINE:143)\l0x001e: INVOKE  (r1 I:byte) = (r1 I:byte) type: STATIC call: kotlin.UByte.constructor\-impl(byte):byte A[MD:(byte):byte (m)]\l0x0022: INVOKE  (r1 I:kotlin.UByte) = (r1 I:byte) type: STATIC call: kotlin.UByte.box\-impl(byte):kotlin.UByte A[MD:(byte):kotlin.UByte (m)]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0026|RETURN\l|0x0026: RETURN  (r1 I:kotlin.UByte) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027|RETURN\l|0x0027: RETURN  (r1 I:kotlin.UByte)  (LINE:141)\l}"];
+MethodNode[shape=record,label="{public static final kotlin.UByte kotlin.text.UStringsKt.toUByteOrNull((r3 I:java.lang.String A[D('$this$toUByteOrNull' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:int A[D('radix' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0026 \-\> B:1:?, CROSS_EDGE: B:9:0x0027 \-\> B:1:?\lDebug Info:\l  0x0010\-0x0027: r0 'int' I\l  \-1 \-0x0027: r3 '$this$toUByteOrNull' Ljava\/lang\/String;\l  \-1 \-0x0027: r4 'radix' I\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_9 -> Node_1;
+}
+

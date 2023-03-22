@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputLayout.getBaseline()I" {
+subgraph cluster_Region_386169941 {
+label = "R(2:1|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.widget.EditText android.widget.EditText r0 = r2.editText\l}"];
+subgraph cluster_Region_472486524 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1297447503 {
+label = "IF [B:11:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1778036262 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0012|RETURN\l|return r0.getBaseline() + getPaddingTop() + calculateLabelMarginTop()\l}"];
+}
+}
+subgraph cluster_Region_2116296949 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0017|RETURN\l|return super.getBaseline()\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0013}"];
+MethodNode[shape=record,label="{public int com.google.android.material.textfield.TextInputLayout.getBaseline((r2v0 'this' com.google.android.material.textfield.TextInputLayout A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:15:0x0017 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.getBaseline():int\}]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

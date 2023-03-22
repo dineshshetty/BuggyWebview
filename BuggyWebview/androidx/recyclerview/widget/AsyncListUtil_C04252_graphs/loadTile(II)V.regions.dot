@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.recyclerview.widget.AsyncListUtil.2.loadTile(II)V" {
+subgraph cluster_Region_63359180 {
+label = "R(1:(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1194597241 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1001413705 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (isTileLoaded(r6) != false) goto L3\l}"];
+subgraph cluster_Region_46976800 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_744363989 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|androidx.recyclerview.widget.TileList$Tile androidx.recyclerview.widget.TileList.Tile\<T\> r0 = acquireTile()\lr0.mStartPosition = r6\lr0.mItemCount = java.lang.Math.min(androidx.recyclerview.widget.AsyncListUtil.this.mTileSize, r5.mItemCount \- r0.mStartPosition)\landroidx.recyclerview.widget.AsyncListUtil.this.mDataCallback.fillData(r0.mItems, r0.mStartPosition, r0.mItemCount)\lflushTileCache(r7)\laddTile(r0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002f}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.AsyncListUtil.2.loadTile((r5v0 'this' androidx.recyclerview.widget.AsyncListUtil$2 A[D('this' androidx.recyclerview.widget.AsyncListUtil$2), IMMUTABLE_TYPE, THIS]), (r6v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'scrollHint' int A[D('scrollHint' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x002f \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.ThreadUtil.BackgroundCallback.loadTile(int, int):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_1;
+}
+

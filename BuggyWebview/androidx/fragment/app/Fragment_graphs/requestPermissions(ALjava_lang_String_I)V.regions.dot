@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.fragment.app.Fragment.requestPermissions([Ljava\/lang\/String;I)V" {
+subgraph cluster_Region_1821404860 {
+label = "R(1:(2:(2:6|7)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_631309317 {
+label = "R(2:(2:6|7)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_562773219 {
+label = "IF [B:11:0x0002] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r3.mHost == null) goto L6\l}"];
+subgraph cluster_Region_1132149760 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000c}"];
+Node_15 [shape=record,label="{15\:\ 0x0027|throw new java.lang.IllegalStateException(\"Fragment \" + r3 + \" not attached to Activity\")\l}"];
+}
+}
+subgraph cluster_Region_745623389 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|getParentFragmentManager().launchRequestPermissions(r3, r4, r5)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000b}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final void androidx.fragment.app.Fragment.requestPermissions((r3v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r4v0 'permissions' java.lang.String[] A[D('permissions' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'requestCode' int A[D('requestCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:15:0x0027 \-\> B:9:?\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_12 -> Node_13;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_13 -> Node_9;
+}
+

@@ -1,0 +1,85 @@
+digraph "CFG forandroidx.recyclerview.widget.ItemTouchHelper.findChildView(Landroid\/view\/MotionEvent;)Landroid\/view\/View;" {
+subgraph cluster_Region_766399591 {
+label = "R(5:1|(2:3|(1:5))|7|(2:9|(2:(1:13)|(1:11)))|16)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|float float r0 = r8.getX()\lfloat float r1 = r8.getY()\landroidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.RecyclerView.ViewHolder r2 = r7.mSelected\l}"];
+subgraph cluster_IfRegion_104482516 {
+label = "IF [B:3:0x000a] THEN: R(2:3|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r2 != null) goto L3\l}"];
+subgraph cluster_Region_1508390680 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|android.view.View android.view.View r2 = r2.itemView\l}"];
+subgraph cluster_IfRegion_1065559779 {
+label = "IF [B:5:0x001c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|if (hitTest(r2, r0, r1, r7.mSelectedStartX + r7.mDx, r7.mSelectedStartY + r7.mDy) != false) goto L5\l}"];
+subgraph cluster_Region_1514599134 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|RETURN\l|return r2\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001f|int int r2 = r7.mRecoverAnimations.size() \- 1\l}"];
+subgraph cluster_LoopRegion_2138748664 {
+label = "LOOP:0: (2:9|(2:(1:13)|(1:11)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0027|LOOP_START\lLOOP:0: B:8:0x0027\-\>B:12:0x0040\lPHI: r2 \l  PHI: (r2v4 'i' int) = (r2v3 'i' int), (r2v7 'i' int) binds: [B:7:0x001f, B:12:0x0040] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= 0) goto L9\l}"];
+subgraph cluster_Region_1751772598 {
+label = "R(2:9|(2:(1:13)|(1:11)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0029|androidx.recyclerview.widget.ItemTouchHelper$RecoverAnimation androidx.recyclerview.widget.ItemTouchHelper.RecoverAnimation r3 = r7.mRecoverAnimations.get(r2)\landroid.view.View android.view.View r4 = r3.mViewHolder.itemView\l}"];
+subgraph cluster_Region_942776928 {
+label = "R(2:(1:13)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1871024548 {
+label = "IF [B:10:0x003d] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003d|if (hitTest(r4, r0, r1, r3.f95mX, r3.f96mY) != false) goto L12\l}"];
+subgraph cluster_Region_1881229140 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003f|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1009844226 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0040|LOOP_END\lLOOP:0: B:8:0x0027\-\>B:12:0x0040\l|r2\-\-\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0049|RETURN\l|return r7.mRecyclerView.findChildViewUnder(r0, r1)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x003f|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0043|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0043}"];
+MethodNode[shape=record,label="{android.view.View androidx.recyclerview.widget.ItemTouchHelper.findChildView((r7v0 'this' androidx.recyclerview.widget.ItemTouchHelper A[IMMUTABLE_TYPE, THIS]), (r8v0 'event' android.view.MotionEvent A[D('event' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x003f \-\> B:1:?, BACK_EDGE: B:12:0x0040 \-\> B:8:0x0027, CROSS_EDGE: B:14:0x0049 \-\> B:1:?, CROSS_EDGE: B:3:0x000a \-\> B:7:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_15[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_12[style=dashed];
+Node_10 -> Node_16;
+Node_11 -> Node_1;
+Node_12 -> Node_8;
+Node_14 -> Node_1;
+Node_0 -> Node_2;
+Node_16 -> Node_11;
+Node_15 -> Node_13;
+Node_13 -> Node_14;
+}
+

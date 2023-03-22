@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.fragment.app.Fragment.startActivity(Landroid\/content\/Intent;Landroid\/os\/Bundle;)V" {
+subgraph cluster_Region_29157540 {
+label = "R(2:1|(2:(2:6|7)|(1:3)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|androidx.fragment.app.FragmentHostCallback\<?\> androidx.fragment.app.FragmentHostCallback\<?\> r0 = r3.mHost\l}"];
+subgraph cluster_Region_612376578 {
+label = "R(2:(2:6|7)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2139177788 {
+label = "IF [B:11:0x0002] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_699000317 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0009}"];
+Node_15 [shape=record,label="{15\:\ 0x0024|throw new java.lang.IllegalStateException(\"Fragment \" + r3 + \" not attached to Activity\")\l}"];
+}
+}
+subgraph cluster_Region_1624736188 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|r0.onStartActivityFromFragment(r3, r4, \-1, r5)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0008}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.startActivity((r3v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r4v0 'intent' android.content.Intent A[D('intent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'options' android.os.Bundle A[D('options' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0024 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_12 -> Node_13;
+Node_8 -> Node_10;
+Node_13 -> Node_9;
+}
+

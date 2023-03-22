@@ -1,0 +1,46 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.Style.createColoredBitmap(Landroidx\/core\/graphics\/drawable\/IconCompat;II)Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_270600144 {
+label = "R(7:1|2|4|6|(1:8)|9|10)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = r8.loadDrawable(r7.mBuilder.mContext)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0008|int r1 = r10 == 0 ? r0.getIntrinsicWidth() : r10\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0010|PHI: r1 \l  PHI: (r1v1 'width' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int r2 = r10 == 0 ? r0.getIntrinsicHeight() : r10\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0018|PHI: r2 \l  PHI: (r2v1 'height' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.graphics.Bitmap android.graphics.Bitmap r3 = android.graphics.Bitmap.createBitmap(r1, r2, android.graphics.Bitmap.Config.ARGB_8888)\lr0.setBounds(0, 0, r1, r2)\l}"];
+subgraph cluster_IfRegion_1940729146 {
+label = "IF [B:24:0x0022] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0022|if (r9 != 0) goto L8\l}"];
+subgraph cluster_Region_1799986216 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0024|r0.mutate().setColorFilter(new android.graphics.PorterDuffColorFilter(r9, android.graphics.PorterDuff.Mode.SRC_IN))\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0032|android.graphics.Canvas android.graphics.Canvas r4 = new android.graphics.Canvas(r3)\lr0.draw(r4)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x003a|RETURN\l|return r3\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000a}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0012}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0017}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000f}"];
+MethodNode[shape=record,label="{private android.graphics.Bitmap androidx.core.app.NotificationCompat.Style.createColoredBitmap((r7v0 'this' androidx.core.app.NotificationCompat$Style A[IMMUTABLE_TYPE, THIS]), (r8v0 'icon' androidx.core.graphics.drawable.IconCompat A[D('icon' androidx.core.graphics.drawable.IconCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'color' int A[D('color' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'size' int A[D('size' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0022 \-\> B:26:0x0032, CROSS_EDGE: B:22:0x0017 \-\> B:23:0x0018, CROSS_EDGE: B:19:0x000f \-\> B:20:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_22;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_20;
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+Node_19 -> Node_20;
+}
+

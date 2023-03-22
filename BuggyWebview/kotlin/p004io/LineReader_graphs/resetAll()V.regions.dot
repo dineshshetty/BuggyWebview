@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.io.LineReader.resetAll()V" {
+subgraph cluster_Region_1994078129 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|java.nio.charset.CharsetDecoder java.nio.charset.CharsetDecoder r0 = kotlin.p004io.LineReader.decoder\l}"];
+subgraph cluster_IfRegion_1870522329 {
+label = "IF [B:10:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_796460539 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|kotlin.jvm.internal.Intrinsics.throwUninitializedPropertyAccessException(\"decoder\")\lr0 = null\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x000a|PHI: r0 \l  PHI: (r0v1 java.nio.charset.CharsetDecoder) = (r0v0 java.nio.charset.CharsetDecoder), (r0v5 java.nio.charset.CharsetDecoder) binds: [B:10:0x0002, B:11:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|r0.reset()\lkotlin.p004io.LineReader.byteBuf.position(0)\lkotlin.p004io.LineReader.f202sb.setLength(0)\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0018}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final void kotlin.io.LineReader.resetAll((r2v0 'this' kotlin.io.LineReader A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0002 \-\> B:12:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

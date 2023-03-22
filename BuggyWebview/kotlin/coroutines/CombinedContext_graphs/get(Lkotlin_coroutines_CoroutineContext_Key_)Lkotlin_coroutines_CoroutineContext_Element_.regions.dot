@@ -1,0 +1,73 @@
+digraph "CFG forkotlin.coroutines.CombinedContext.get(Lkotlin\/coroutines\/CoroutineContext$Key;)Lkotlin\/coroutines\/CoroutineContext$Element;" {
+subgraph cluster_Region_87295425 {
+label = "R(2:1|(2:2|(2:(1:13)|(2:4|(1:6)(1:9)))))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"key\")\lkotlin.coroutines.CombinedContext r0 = r3\l}"];
+subgraph cluster_LoopRegion_1830283232 {
+label = "LOOP:0: (2:2|(2:(1:13)|(2:4|(1:6)(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_129515497 {
+label = "R(2:2|(2:(1:13)|(2:4|(1:6)(1:9))))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|LOOP_START\lLOOP:0: B:17:0x0006\-\>B:23:0x0017\lPHI: r0 \l  PHI: (r0v2 'cur' kotlin.coroutines.CombinedContext) = (r0v1 'cur' kotlin.coroutines.CombinedContext), (r0v4 'cur' kotlin.coroutines.CombinedContext) binds: [B:16:0x0000, B:23:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|kotlin.coroutines.CoroutineContext$Element E r1 = (E) r0.element.get(r4)\l}"];
+subgraph cluster_Region_2120643707 {
+label = "R(2:(1:13)|(2:4|(1:6)(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_997866881 {
+label = "IF [B:18:0x000d] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|if (r1 != null) goto L11\l}"];
+subgraph cluster_Region_193550268 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0010|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_507849093 {
+label = "R(2:4|(1:6)(1:9))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0011|kotlin.coroutines.CoroutineContext kotlin.coroutines.CoroutineContext r1 = r0.left\l}"];
+subgraph cluster_IfRegion_1292396115 {
+label = "IF [B:22:0x0015] THEN: R(1:6) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|if ((r1 instanceof kotlin.coroutines.CombinedContext) != false) goto L6\l}"];
+subgraph cluster_Region_313806588 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|LOOP_END\lLOOP:0: B:17:0x0006\-\>B:23:0x0017\l|kotlin.coroutines.CombinedContext r0 = (kotlin.coroutines.CombinedContext) r1\l}"];
+}
+subgraph cluster_Region_2050389878 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001f|RETURN\l|return (E) r1.get(r4)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001b|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001b}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000f|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000f}"];
+MethodNode[shape=record,label="{public E extends kotlin.coroutines.CoroutineContext$Element kotlin.coroutines.CombinedContext.get((r3v0 'this' kotlin.coroutines.CombinedContext A[IMMUTABLE_TYPE, THIS]), (r4v0 'key' kotlin.coroutines.CoroutineContext$Key\<E extends kotlin.coroutines.CoroutineContext$Element\> A[D('key' kotlin.coroutines.CoroutineContext$Key), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x0017 \-\> B:17:0x0006, CROSS_EDGE: B:25:0x001f \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E extends kotlin.coroutines.CoroutineContext$Element]\lSIGNATURE: \<E::Lkotlin\/coroutines\/CoroutineContext$Element;\>(Lkotlin\/coroutines\/CoroutineContext$Key\<TE;\>;)TE;\lMETHOD_OVERRIDE: [kotlin.coroutines.CoroutineContext.get(kotlin.coroutines.CoroutineContext$Key\<E extends kotlin.coroutines.CoroutineContext$Element\>):E extends kotlin.coroutines.CoroutineContext$Element]\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_27;
+Node_20 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_26[style=dashed];
+Node_23 -> Node_17;
+Node_25 -> Node_15;
+Node_14 -> Node_16;
+Node_26 -> Node_24;
+Node_24 -> Node_25;
+Node_27 -> Node_19;
+Node_19 -> Node_20;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.concurrent.futures.AbstractResolvableFuture.clearListeners(Landroidx\/concurrent\/futures\/AbstractResolvableFuture$Listener;)Landroidx\/concurrent\/futures\/AbstractResolvableFuture$Listener;" {
+subgraph cluster_Region_153399222 {
+label = "R(4:(1:1)|4|(1:6)|8) | DECL_VAR: androidx.concurrent.futures.AbstractResolvableFuture$Listener head\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_201244265 {
+label = "LOOP:0: (1:1)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|LOOP_END\lLOOP:0: B:13:0x0000\-\>B:14:0x000a\l|if (androidx.concurrent.futures.AbstractResolvableFuture.ATOMIC_HELPER.casListeners(r3, r0, androidx.concurrent.futures.AbstractResolvableFuture.Listener.TOMBSTONE) == false) goto L1\l}"];
+subgraph cluster_Region_838308088 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|LOOP_START\lLOOP:0: B:13:0x0000\-\>B:14:0x000a\l|androidx.concurrent.futures.AbstractResolvableFuture$Listener r0 = r3.listeners\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x000c|androidx.concurrent.futures.AbstractResolvableFuture.Listener r1 = r4\l}"];
+subgraph cluster_LoopRegion_966242677 {
+label = "LOOP:1: (1:6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000d|LOOP_START\lLOOP:1: B:16:0x000d\-\>B:17:0x000f\lPHI: r0 r1 \l  PHI: (r0v1 'head' androidx.concurrent.futures.AbstractResolvableFuture$Listener) = (r0v0 'head' androidx.concurrent.futures.AbstractResolvableFuture$Listener), (r0v2 'head' androidx.concurrent.futures.AbstractResolvableFuture$Listener) binds: [B:15:0x000c, B:17:0x000f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v3 'reversedList' androidx.concurrent.futures.AbstractResolvableFuture$Listener) = (r1v2 'reversedList' androidx.concurrent.futures.AbstractResolvableFuture$Listener), (r1v4 'reversedList' androidx.concurrent.futures.AbstractResolvableFuture$Listener) binds: [B:15:0x000c, B:17:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_857246975 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|LOOP_END\lLOOP:1: B:16:0x000d\-\>B:17:0x000f\l|androidx.concurrent.futures.AbstractResolvableFuture.Listener r2 = r0\landroidx.concurrent.futures.AbstractResolvableFuture$Listener r0 = r0.next\lr2.next = r1\lr1 = r2\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0016|RETURN\l|return r1\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0016|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private androidx.concurrent.futures.AbstractResolvableFuture$Listener androidx.concurrent.futures.AbstractResolvableFuture.clearListeners((r3v0 'this' androidx.concurrent.futures.AbstractResolvableFuture\<V\> A[D('this' androidx.concurrent.futures.AbstractResolvableFuture\<V\>), IMMUTABLE_TYPE, THIS]), (r4v0 'onto' androidx.concurrent.futures.AbstractResolvableFuture$Listener A[D('onto' androidx.concurrent.futures.AbstractResolvableFuture$Listener), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x000f \-\> B:16:0x000d, BACK_EDGE: B:14:0x000a \-\> B:13:0x0000\lINLINE_NOT_NEEDED\lTYPE_VARS: [V]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_13;
+Node_14 -> Node_20[style=dashed];
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_16;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_20 -> Node_15;
+Node_21 -> Node_18;
+}
+

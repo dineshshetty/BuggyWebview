@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.core.provider.FontProvider.getFontFamilyResult(Landroid\/content\/Context;Landroidx\/core\/provider\/FontRequest;Landroid\/os\/CancellationSignal;)Landroidx\/core\/provider\/FontsContractCompat$FontFamilyResult;" {
+subgraph cluster_Region_616119700 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0001|android.content.pm.ProviderInfo android.content.pm.ProviderInfo r0 = getProvider(r3.getPackageManager(), r4, r3.getResources())\l}"];
+subgraph cluster_Region_51376440 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1628048699 {
+label = "IF [B:11:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000d|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1579941304 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0015|RETURN\l|return androidx.core.provider.FontsContractCompat.FontFamilyResult.create(1, null)\l}"];
+}
+}
+subgraph cluster_Region_2117863977 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0016|androidx.core.provider.FontsContractCompat$FontInfo[] androidx.core.provider.FontsContractCompat.FontInfo[] r1 = query(r3, r4, r0.authority, r5)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0021|RETURN\l|return androidx.core.provider.FontsContractCompat.FontFamilyResult.create(0, r1)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000f}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.core.provider.FontsContractCompat$FontFamilyResult androidx.core.provider.FontProvider.getFontFamilyResult((r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'request' androidx.core.provider.FontRequest A[D('request' androidx.core.provider.FontRequest), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'cancellationSignal' android.os.CancellationSignal A[D('cancellationSignal' android.os.CancellationSignal), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0021 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroid\/content\/pm\/PackageManager$NameNotFoundException;]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

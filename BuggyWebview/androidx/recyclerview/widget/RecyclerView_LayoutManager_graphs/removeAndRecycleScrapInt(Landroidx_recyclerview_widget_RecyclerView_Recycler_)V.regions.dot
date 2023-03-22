@@ -1,0 +1,104 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.LayoutManager.removeAndRecycleScrapInt(Landroidx\/recyclerview\/widget\/RecyclerView$Recycler;)V" {
+subgraph cluster_Region_1718918878 {
+label = "R(4:1|(3:3|(4:5|(1:7)|(1:10)|11)(0)|13)|16|(1:(1:18)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0000|int int r0 = r7.getScrapCount()\lint int r1 = r0 \- 1\l}"];
+subgraph cluster_LoopRegion_277660790 {
+label = "LOOP:0: (3:3|(4:5|(1:7)|(1:10)|11)(0)|13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0006|LOOP_START\lLOOP:0: B:26:0x0006\-\>B:37:0x003a\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:25:0x0000, B:37:0x003a] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1367443489 {
+label = "R(3:3|(4:5|(1:7)|(1:10)|11)(0)|13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0008|android.view.View android.view.View r2 = r7.getScrapViewAt(r1)\landroidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.RecyclerView.ViewHolder r3 = androidx.recyclerview.widget.RecyclerView.getChildViewHolderInt(r2)\l}"];
+subgraph cluster_IfRegion_1077073850 {
+label = "IF [B:28:0x0014] THEN: R(4:5|(1:7)|(1:10)|11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0014|if (r3.shouldIgnore() == false) goto L5\l}"];
+subgraph cluster_Region_1696114651 {
+label = "R(4:5|(1:7)|(1:10)|11)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0017|r3.setIsRecyclable(false)\l}"];
+subgraph cluster_IfRegion_498044701 {
+label = "IF [B:31:0x001f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001f|if (r3.isTmpDetached() != false) goto L7\l}"];
+subgraph cluster_Region_331443873 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0021|r6.mRecyclerView.removeDetachedView(r2, false)\l}"];
+}
+}
+subgraph cluster_IfRegion_692621243 {
+label = "IF [B:34:0x002a] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x002a|if (r6.mRecyclerView.mItemAnimator != null) goto L10\l}"];
+subgraph cluster_Region_92491375 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x002c|r6.mRecyclerView.mItemAnimator.endAnimation(r3)\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0033|r3.setIsRecyclable(true)\lr7.quickRecycleScrapView(r2)\l}"];
+}
+subgraph cluster_Region_1815883706 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x003a|LOOP_END\lLOOP:0: B:26:0x0006\-\>B:37:0x003a\l|r1\-\-\l}"];
+}
+}
+Node_38 [shape=record,label="{38\:\ 0x003d|r7.clearScrap()\l}"];
+subgraph cluster_Region_1092007567 {
+label = "R(1:(1:18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_911371169 {
+label = "IF [B:39:0x0040] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0040|if (r0 \> 0) goto L18\l}"];
+subgraph cluster_Region_1780076673 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0042|r6.mRecyclerView.invalidate()\l}"];
+}
+}
+}
+}
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0026}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x003a|SYNTHETIC\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x003a|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x003d|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0047|ORIG_RETURN\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.LayoutManager.removeAndRecycleScrapInt((r6v0 'this' androidx.recyclerview.widget.RecyclerView$LayoutManager A[IMMUTABLE_TYPE, THIS]), (r7v0 'recycler' androidx.recyclerview.widget.RecyclerView$Recycler A[D('recycler' androidx.recyclerview.widget.RecyclerView$Recycler), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:37:0x003a \-\> B:26:0x0006, CROSS_EDGE: B:34:0x002a \-\> B:36:0x0033, CROSS_EDGE: B:31:0x001f \-\> B:33:0x0026, CROSS_EDGE: B:28:0x0014 \-\> B:37:0x003a, CROSS_EDGE: B:39:0x0040 \-\> B:41:0x0047\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_23;Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_42[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_30;
+Node_28 -> Node_44[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_33;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_43;
+Node_37 -> Node_26;
+Node_38 -> Node_39;
+Node_39 -> Node_40;
+Node_39 -> Node_45[style=dashed];
+Node_40 -> Node_41;
+Node_23 -> Node_25;
+Node_33 -> Node_34;
+Node_43 -> Node_37;
+Node_44 -> Node_37;
+Node_42 -> Node_38;
+Node_41 -> Node_24;
+Node_45 -> Node_24;
+}
+

@@ -1,0 +1,28 @@
+digraph "CFG forandroidx.core.graphics.drawable.RoundedBitmapDrawableFactory.create(Landroid\/content\/res\/Resources;Ljava\/io\/InputStream;)Landroidx\/core\/graphics\/drawable\/RoundedBitmapDrawable;" {
+subgraph cluster_Region_2076583628 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.core.graphics.drawable.RoundedBitmapDrawable androidx.core.graphics.drawable.RoundedBitmapDrawable r0 = create(r3, android.graphics.BitmapFactory.decodeStream(r4))\l}"];
+subgraph cluster_IfRegion_2091592053 {
+label = "IF [B:3:0x000c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r0.getBitmap() == null) goto L3\l}"];
+subgraph cluster_Region_64591125 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|android.util.Log.w(androidx.core.graphics.drawable.RoundedBitmapDrawableFactory.TAG, \"RoundedBitmapDrawable cannot decode \" + r4)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0024|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.core.graphics.drawable.RoundedBitmapDrawable androidx.core.graphics.drawable.RoundedBitmapDrawableFactory.create((r3v0 'res' android.content.res.Resources A[D('res' android.content.res.Resources), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'is' java.io.InputStream A[D('is' java.io.InputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x000c \-\> B:5:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+}
+

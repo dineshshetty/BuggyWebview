@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.core.text.PrecomputedTextCompat.getParagraphStart(I)I" {
+subgraph cluster_Region_794733309 {
+label = "R(2:1|(2:(1:4)|(1:(2:(1:9)|(1:8)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|androidx.core.util.Preconditions.checkArgumentInRange(r4, 0, getParagraphCount(), \"paraIndex\")\l}"];
+subgraph cluster_Region_516018866 {
+label = "R(2:(1:4)|(1:(2:(1:9)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_892387146 {
+label = "IF [B:14:0x000e] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L3\l}"];
+subgraph cluster_Region_1683522853 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0016|RETURN\l|return r3.mWrapped.getParagraphStart(r4)\l}"];
+}
+}
+subgraph cluster_Region_1049350673 {
+label = "R(1:(2:(1:9)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_785367856 {
+label = "R(2:(1:9)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_506848076 {
+label = "IF [B:17:0x0017] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0017|if (r4 == 0) goto L9\l}"];
+subgraph cluster_Region_1046756354 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1579121285 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0020|RETURN\lORIG_RETURN\l|return r3.mParagraphEnds[r4 \- 1]\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0010}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001a}"];
+MethodNode[shape=record,label="{public int androidx.core.text.PrecomputedTextCompat.getParagraphStart((r3v0 'this' androidx.core.text.PrecomputedTextCompat A[IMMUTABLE_TYPE, THIS]), (r4v0 'paraIndex' int A[D('paraIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0020 \-\> B:12:?, CROSS_EDGE: B:17:0x0017 \-\> B:20:0x0020\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_16 -> Node_12;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_21;
+Node_21 -> Node_12;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_19 -> Node_20;
+}
+

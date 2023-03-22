@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.fragment.app.Fragment.performContextItemSelected(Landroid\/view\/MenuItem;)Z" {
+subgraph cluster_Region_1200323119 {
+label = "R(1:(2:(1:(2:(1:5)|(1:8)))|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1264848338 {
+label = "R(2:(1:(2:(1:5)|(1:8)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1298678346 {
+label = "IF [B:15:0x0002] THEN: R(1:(2:(1:5)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r1.mHidden == false) goto L3\l}"];
+subgraph cluster_Region_225856166 {
+label = "R(1:(2:(1:5)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_288359205 {
+label = "R(2:(1:5)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2052163148 {
+label = "IF [B:17:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (onContextItemSelected(r2) != false) goto L5\l}"];
+subgraph cluster_Region_1973743966 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1253615158 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0012|RETURN\l|return r1.mChildFragmentManager.dispatchContextItemSelected(r2)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1535159663 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0013|RETURN\l|return false\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0004}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c}"];
+MethodNode[shape=record,label="{public boolean androidx.fragment.app.Fragment.performContextItemSelected((r1v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r2v0 'item' android.view.MenuItem A[D('item' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0012 \-\> B:13:?, CROSS_EDGE: B:23:0x0014 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_13;
+Node_21 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_20 -> Node_21;
+}
+

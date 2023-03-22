@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.emoji2.text.EmojiCompatInitializer.create(Landroid\/content\/Context;)Ljava\/lang\/Boolean;" {
+subgraph cluster_Region_292133341 {
+label = "R(1:(2:(2:3|4)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_410617652 {
+label = "R(2:(2:3|4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1191430345 {
+label = "IF [B:3:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 19) goto L3\l}"];
+subgraph cluster_Region_11968005 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|androidx.emoji2.text.EmojiCompat.init(new androidx.emoji2.text.EmojiCompatInitializer.BackgroundDefaultConfig(r3))\ldelayUntilFirstResume(r3)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1573673151 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017}"];
+MethodNode[shape=record,label="{public java.lang.Boolean androidx.emoji2.text.EmojiCompatInitializer.create((r2v0 'this' androidx.emoji2.text.EmojiCompatInitializer A[IMMUTABLE_TYPE, THIS]), (r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x001c \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: androidx.emoji2.text.EmojiCompatInitializer.create(android.content.Context):java.lang.Boolean\lBRIDGED_BY: androidx.emoji2.text.EmojiCompatInitializer.create(android.content.Context):java.lang.Boolean\lJadxCommentsAttr\{\l WARN: \l \-\> Can't rename method to resolve collision\l DEBUG: \l \-\> Method merged with bridge method\}\lMETHOD_OVERRIDE: [androidx.startup.Initializer.create(android.content.Context):T]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

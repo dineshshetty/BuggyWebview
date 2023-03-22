@@ -1,0 +1,35 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.onDetachedFromWindow()V" {
+subgraph cluster_Region_1741140446 {
+label = "R(3:1|(1:5)|6)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|removeCallbacks(r1.mEndScrollRunnable)\landroid.widget.Scroller android.widget.Scroller r0 = r1.mScroller\l}"];
+subgraph cluster_IfRegion_1290330987 {
+label = "IF [B:12:0x0007, B:14:0x000d] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0007|if (r0 != null) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000d|ADDED_TO_REGION\l|if (r0.isFinished() == false) goto L5\l}"];
+subgraph cluster_Region_1020468688 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000f|r1.mScroller.abortAnimation()\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0014|super.onDetachedFromWindow()\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0009}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0017}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected void androidx.viewpager.widget.ViewPager.onDetachedFromWindow((r1v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:14:0x000d \-\> B:16:0x0014, CROSS_EDGE: B:12:0x0007 \-\> B:16:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onDetachedFromWindow():void\}]\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_9 -> Node_11;
+Node_13 -> Node_14;
+Node_17 -> Node_10;
+}
+

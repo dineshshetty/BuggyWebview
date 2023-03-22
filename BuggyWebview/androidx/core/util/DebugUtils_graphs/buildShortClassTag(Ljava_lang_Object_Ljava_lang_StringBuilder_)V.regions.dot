@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.util.DebugUtils.buildShortClassTag(Ljava\/lang\/Object;Ljava\/lang\/StringBuilder;)V" {
+subgraph cluster_Region_1639191876 {
+label = "R(1:(2:(2:2|3)|(3:5|(1:13)|9))) | DECL_VAR: int end\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_626213920 {
+label = "R(2:(2:2|3)|(3:5|(1:13)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1547829596 {
+label = "IF [B:16:0x0000] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|if (r3 == null) goto L2\l}"];
+subgraph cluster_Region_947112484 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|r4.append(\"null\")\l}"];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_911754434 {
+label = "R(3:5|(1:13)|9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|java.lang.String java.lang.String r0 = r3.getClass().getSimpleName()\l}"];
+subgraph cluster_IfRegion_1667453311 {
+label = "IF [B:19:0x0010, B:21:0x0016, B:23:0x0026] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0010|if (r0 == null) goto L11\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0016|ADDED_TO_REGION\l|if (r0.length() \<= 0) goto L11\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0026|ADDED_TO_REGION\l|if ((r1 = (r0 = r3.getClass().getName()).lastIndexOf(46)) \> 0) goto L13\l}"];
+subgraph cluster_Region_1884724908 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0028|java.lang.String r0 = r0.substring(r1 + 1)\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x002e|PHI: r0 \l  PHI: (r0v4 'simpleName' java.lang.String) = (r0v2 'simpleName' java.lang.String), (r0v3 'simpleName' java.lang.String), (r0v1 'simpleName' java.lang.String) binds: [B:23:0x0026, B:24:0x0028, B:21:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|r4.append(r0)\lr4.append('\{')\lr4.append(java.lang.Integer.toHexString(java.lang.System.identityHashCode(r3)))\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0012}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0041|ORIG_RETURN\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0018}"];
+MethodNode[shape=record,label="{public static void androidx.core.util.DebugUtils.buildShortClassTag((r3v0 'cls' java.lang.Object A[D('cls' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'out' java.lang.StringBuilder A[D('out' java.lang.StringBuilder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x002e \-\> B:26:0x0041, CROSS_EDGE: B:23:0x0026 \-\> B:25:0x002e, CROSS_EDGE: B:21:0x0016 \-\> B:25:0x002e, CROSS_EDGE: B:19:0x0010 \-\> B:22:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_27;
+Node_27 -> Node_15;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_22;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_20 -> Node_21;
+Node_26 -> Node_15;
+Node_22 -> Node_23;
+}
+

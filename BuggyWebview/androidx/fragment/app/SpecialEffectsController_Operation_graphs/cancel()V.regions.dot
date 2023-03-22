@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.fragment.app.SpecialEffectsController.Operation.cancel()V" {
+subgraph cluster_Region_2054777248 {
+label = "R(1:(2:(1:3)|(2:5|(2:(2:7|8)|(2:9|(1:12))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1677199748 {
+label = "R(2:(1:3)|(2:5|(2:(2:7|8)|(2:9|(1:12)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1266841672 {
+label = "IF [B:18:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (isCanceled() != false) goto L3\l}"];
+subgraph cluster_Region_1842024576 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1557020912 {
+label = "R(2:5|(2:(2:7|8)|(2:9|(1:12))))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0007|r3.mIsCanceled = true\l}"];
+subgraph cluster_Region_2144982724 {
+label = "R(2:(2:7|8)|(2:9|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_667005263 {
+label = "IF [B:21:0x0010] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|if (r3.mSpecialEffectsSignals.isEmpty() != false) goto L7\l}"];
+subgraph cluster_Region_314309159 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0012|complete()\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0031|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_954505937 {
+label = "R(2:9|(1:12))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0016|java.util.ArrayList java.util.ArrayList\<androidx.core.p003os.CancellationSignal\> r0 = new java.util.ArrayList\<\>(r3.mSpecialEffectsSignals)\ljava.util.Iterator java.util.Iterator\<androidx.core.p003os.CancellationSignal\> r1 = r0.iterator()\l}"];
+subgraph cluster_LoopRegion_167832517 {
+label = "LOOP:0: (1:12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0025|if (r1.hasNext() != false) goto L12\l}"];
+subgraph cluster_Region_173946148 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0027|LOOP_END\lLOOP:0: B:24:0x0021\-\>B:26:0x0027\l|androidx.core.os.CancellationSignal androidx.core.p003os.CancellationSignal r2 = r1.next()\lr2.cancel()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0021|LOOP_START\lLOOP:0: B:24:0x0021\-\>B:26:0x0027\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0031|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{final void androidx.fragment.app.SpecialEffectsController.Operation.cancel((r3v0 'this' androidx.fragment.app.SpecialEffectsController$Operation A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0031 \-\> B:16:?, BACK_EDGE: B:26:0x0027 \-\> B:24:0x0021, CROSS_EDGE: B:25:0x0025 \-\> B:27:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_16;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_27;
+Node_27 -> Node_16;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_28[style=dashed];
+Node_26 -> Node_24;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_24 -> Node_25;
+Node_28 -> Node_29;
+Node_29 -> Node_16;
+}
+

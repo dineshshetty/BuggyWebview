@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.material.internal.ParcelableSparseBooleanArray.1.createFromParcel(Landroid\/os\/Parcel;)Lcom\/google\/android\/material\/internal\/ParcelableSparseBooleanArray;" {
+subgraph cluster_Region_1509275202 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r8.readInt()\lcom.google.android.material.internal.ParcelableSparseBooleanArray com.google.android.material.internal.ParcelableSparseBooleanArray r1 = new com.google.android.material.internal.ParcelableSparseBooleanArray(r0)\lint[] int[] r2 = new int[r0]\lboolean[] boolean[] r3 = new boolean[r0]\lr8.readIntArray(r2)\lr8.readBooleanArray(r3)\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_1827010326 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|LOOP_START\lLOOP:0: B:3:0x0014\-\>B:4:0x0016\lPHI: r4 \l  PHI: (r4v1 'i' int) = (r4v0 'i' int), (r4v2 'i' int) binds: [B:2:0x0000, B:4:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \< r0) goto L3\l}"];
+subgraph cluster_Region_636837001 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|LOOP_END\lLOOP:0: B:3:0x0014\-\>B:4:0x0016\l|r1.put(r2[r4], r3[r4])\lr4++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0020|RETURN\l|return r1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0020|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public com.google.android.material.internal.ParcelableSparseBooleanArray com.google.android.material.internal.ParcelableSparseBooleanArray.1.createFromParcel((r7v0 'this' com.google.android.material.internal.ParcelableSparseBooleanArray$1 A[IMMUTABLE_TYPE, THIS]), (r8v0 'source' android.os.Parcel A[D('source' android.os.Parcel), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:4:0x0016 \-\> B:3:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: com.google.android.material.internal.ParcelableSparseBooleanArray.1.createFromParcel(android.os.Parcel):com.google.android.material.internal.ParcelableSparseBooleanArray\lBRIDGED_BY: com.google.android.material.internal.ParcelableSparseBooleanArray.1.createFromParcel(android.os.Parcel):com.google.android.material.internal.ParcelableSparseBooleanArray\lJadxCommentsAttr\{\l WARN: \l \-\> Can't rename method to resolve collision\l DEBUG: \l \-\> Method merged with bridge method\}\lMETHOD_OVERRIDE: [ClspMth\{android.os.Parcelable.Creator.createFromParcel(android.os.Parcel):T\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_5;
+}
+

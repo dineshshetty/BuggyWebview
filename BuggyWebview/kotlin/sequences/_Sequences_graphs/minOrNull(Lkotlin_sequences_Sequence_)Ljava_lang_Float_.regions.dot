@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.minOrNull(Lkotlin\/sequences\/Sequence;)Ljava\/lang\/Float;" {
+subgraph cluster_Region_495190540 {
+label = "R(2:1|(2:(3:5|(1:8)|11)|(1:3)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\ljava.util.Iterator java.util.Iterator r0 = r3.iterator()\l}"];
+subgraph cluster_Region_1011362332 {
+label = "R(2:(3:5|(1:8)|11)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1854223811 {
+label = "IF [B:16:0x000d] THEN: R(3:5|(1:8)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000d|if (r0.hasNext() == true) goto L5\l}"];
+subgraph cluster_Region_1403221544 {
+label = "R(3:5|(1:8)|11)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|float float r1 = r0.next().floatValue()\l}"];
+subgraph cluster_LoopRegion_242757691 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001f|if (r0.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_869390234 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0021|LOOP_END\lLOOP:0: B:20:0x001b\-\>B:22:0x0021\l|float float r2 = r0.next().floatValue()\lfloat r1 = java.lang.Math.min(r1, r2)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0034|RETURN\l|return java.lang.Float.valueOf(r1)\l}"];
+}
+}
+subgraph cluster_Region_1234287769 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|RETURN\l|return null\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001b|LOOP_START\lLOOP:0: B:20:0x001b\-\>B:22:0x0021\lPHI: r1 \l  PHI: (r1v4 'min' float) = (r1v3 'min' float), (r1v5 'min' float) binds: [B:19:0x0011, B:22:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0030|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0030}"];
+MethodNode[shape=record,label="{public static final java.lang.Float kotlin.sequences.SequencesKt___SequencesKt.minOrNull((r3v0 kotlin.sequences.Sequence\<java.lang.Float\> A[D('$this$minOrNull' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x0021 \-\> B:20:0x001b, CROSS_EDGE: B:24:0x0034 \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlin\/sequences\/Sequence\<Ljava\/lang\/Float;\>;)Ljava\/lang\/Float;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_19;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_20;
+Node_24 -> Node_14;
+Node_17 -> Node_14;
+Node_13 -> Node_15;
+Node_20 -> Node_21;
+Node_25 -> Node_23;
+Node_23 -> Node_24;
+}
+

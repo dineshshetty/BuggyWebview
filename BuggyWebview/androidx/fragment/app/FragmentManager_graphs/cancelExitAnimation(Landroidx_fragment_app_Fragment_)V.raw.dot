@@ -1,0 +1,29 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.cancelExitAnimation(Landroidx\/fragment\/app\/Fragment;)V" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000|0x0000: IGET  (r0 I:java.util.Map\<androidx.fragment.app.Fragment, java.util.HashSet\<androidx.core.os.CancellationSignal\>\>) = (r3 I:androidx.fragment.app.FragmentManager) androidx.fragment.app.FragmentManager.mExitAnimationCancellationSignals java.util.Map  (LINE:1485)\l0x0002: INVOKE  (r0 I:java.lang.Object) = (r0 I:java.util.Map), (r4 I:java.lang.Object A[D('f' androidx.fragment.app.Fragment)]) type: INTERFACE call: java.util.Map.get(java.lang.Object):java.lang.Object A[MD:(java.lang.Object):V (c)]\l0x0006: CHECK_CAST (r0 I:java.util.HashSet) = (java.util.HashSet) (r0 I:??[OBJECT, ARRAY]) \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0008|0x0008: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('signals' java.util.HashSet\<androidx.core.os.CancellationSignal\>)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:23:?  (LINE:1486)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000a|0x000a: INVOKE  (r1 I:java.util.Iterator) = (r0 I:java.util.HashSet A[D('signals' java.util.HashSet\<androidx.core.os.CancellationSignal\>)]) type: VIRTUAL call: java.util.HashSet.iterator():java.util.Iterator A[MD:():java.util.Iterator\<E\> (c)] (LINE:1487)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000e|LOOP_START\lLOOP:0: B:17:0x000e\-\>B:19:0x0014\l|0x000e: INVOKE  (r2 I:boolean) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0012|0x0012: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:22:0x001e \l}"];
+Node_19 [shape=record,label="{19\:\ 0x0014|LOOP_END\lLOOP:0: B:17:0x000e\-\>B:19:0x0014\l|0x0014: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x0018: CHECK_CAST (r2 I:androidx.core.os.CancellationSignal) = (androidx.core.os.CancellationSignal) (r2 I:??[OBJECT, ARRAY]) \l0x001a: INVOKE  (r2 I:androidx.core.os.CancellationSignal A[D('signal' androidx.core.os.CancellationSignal)]) type: VIRTUAL call: androidx.core.os.CancellationSignal.cancel():void A[MD:():void (m)] (LINE:1488)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001e|SYNTHETIC\l}"];
+Node_20 [shape=record,label="{20\:\ 0x001e|0x001e: INVOKE  (r0 I:java.util.HashSet A[D('signals' java.util.HashSet\<androidx.core.os.CancellationSignal\>)]) type: VIRTUAL call: java.util.HashSet.clear():void A[MD:():void (c)] (LINE:1490)\l0x0021: INVOKE  \l  (r3 I:androidx.fragment.app.FragmentManager)\l  (r4 I:androidx.fragment.app.Fragment A[D('f' androidx.fragment.app.Fragment)])\l type: DIRECT call: androidx.fragment.app.FragmentManager.destroyFragmentView(androidx.fragment.app.Fragment):void A[MD:(androidx.fragment.app.Fragment):void (m)] (LINE:1491)\l0x0024: IGET  (r1 I:java.util.Map\<androidx.fragment.app.Fragment, java.util.HashSet\<androidx.core.os.CancellationSignal\>\>) = (r3 I:androidx.fragment.app.FragmentManager) androidx.fragment.app.FragmentManager.mExitAnimationCancellationSignals java.util.Map  (LINE:1492)\l0x0026: INVOKE  (r1 I:java.util.Map), (r4 I:java.lang.Object A[D('f' androidx.fragment.app.Fragment)]) type: INTERFACE call: java.util.Map.remove(java.lang.Object):java.lang.Object A[MD:(java.lang.Object):V (c)]\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0029|RETURN\lORIG_RETURN\l|0x0029: RETURN    (LINE:1494)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|0x0029: RETURN   A[SYNTHETIC] (LINE:1494)\l}"];
+MethodNode[shape=record,label="{private void androidx.fragment.app.FragmentManager.cancelExitAnimation((r3 'this' I:androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r4 I:androidx.fragment.app.Fragment A[D('f' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0014 \-\> B:17:0x000e, CROSS_EDGE: B:15:0x0008 \-\> B:21:0x0029\lINLINE_NOT_NEEDED\lDebug Info:\l  0x001a\-0x001d: r2 'signal' Landroidx\/core\/os\/CancellationSignal;\l  0x0008\-0x0029: r0 'signals' Ljava\/util\/HashSet;, signature: Ljava\/util\/HashSet\<Landroidx\/core\/os\/CancellationSignal;\>;\l  \-1 \-0x0029: r4 'f' Landroidx\/fragment\/app\/Fragment;\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_23;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_22;
+Node_19 -> Node_17;
+Node_22 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_23 -> Node_13;
+}
+

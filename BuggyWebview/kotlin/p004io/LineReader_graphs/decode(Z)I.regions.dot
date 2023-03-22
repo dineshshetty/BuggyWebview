@@ -1,0 +1,76 @@
+digraph "CFG forkotlin.io.LineReader.decode(Z)I" {
+subgraph cluster_Region_1585192437 {
+label = "R(1:(6:1|(1:3)|4|(1:6)|7|(2:(1:11)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1715236952 {
+label = "LOOP:0: (6:1|(1:3)|4|(1:6)|7|(2:(1:11)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_702536137 {
+label = "R(6:1|(1:3)|4|(1:6)|7|(2:(1:11)|(1:9)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|LOOP_START\lLOOP:0: B:15:0x0000\-\>B:24:0x002f\l|java.nio.charset.CharsetDecoder java.nio.charset.CharsetDecoder r0 = kotlin.p004io.LineReader.decoder\l}"];
+subgraph cluster_IfRegion_303659185 {
+label = "IF [B:16:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0003|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_842575787 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0005|kotlin.jvm.internal.Intrinsics.throwUninitializedPropertyAccessException(\"decoder\")\lr0 = null\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x000b|PHI: r0 \l  PHI: (r0v1 java.nio.charset.CharsetDecoder) = (r0v0 java.nio.charset.CharsetDecoder), (r0v4 java.nio.charset.CharsetDecoder) binds: [B:16:0x0003, B:17:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|java.nio.ByteBuffer java.nio.ByteBuffer r1 = kotlin.p004io.LineReader.byteBuf\ljava.nio.CharBuffer java.nio.CharBuffer r2 = kotlin.p004io.LineReader.charBuf\ljava.nio.charset.CoderResult java.nio.charset.CoderResult r0 = r0.decode(r1, r2, r8)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"decoder.decode(byteBuf, charBuf, endOfInput)\")\l}"];
+subgraph cluster_IfRegion_1793466769 {
+label = "IF [B:19:0x001c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|if (r0.isError() != false) goto L6\l}"];
+subgraph cluster_Region_500469393 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001e|resetAll()\lr0.throwException()\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0024|int int r1 = r2.position()\l}"];
+subgraph cluster_Region_1831436186 {
+label = "R(2:(1:11)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1154593130 {
+label = "IF [B:22:0x002c] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002c|if (r0.isOverflow() != true) goto L10\l}"];
+subgraph cluster_Region_2096784467 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002e|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1025549933 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002f|LOOP_END\lLOOP:0: B:15:0x0000\-\>B:24:0x002f\l|java.lang.StringBuilder java.lang.StringBuilder r3 = kotlin.p004io.LineReader.f202sb\lchar[] char[] r4 = kotlin.p004io.LineReader.chars\lr3.append(r4, 0, r1 \- 1)\lr2.position(0)\lr2.limit(32)\lr2.put(r4[r1 \- 1])\l}"];
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002e|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final int kotlin.io.LineReader.decode((r7v0 'this' kotlin.io.LineReader A[IMMUTABLE_TYPE, THIS]), (r8v0 'endOfInput' boolean A[D('endOfInput' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:24:0x002f \-\> B:15:0x0000, CROSS_EDGE: B:19:0x001c \-\> B:21:0x0024, CROSS_EDGE: B:16:0x0003 \-\> B:18:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_25;
+Node_23 -> Node_14;
+Node_24 -> Node_15;
+Node_13 -> Node_15;
+Node_25 -> Node_23;
+}
+

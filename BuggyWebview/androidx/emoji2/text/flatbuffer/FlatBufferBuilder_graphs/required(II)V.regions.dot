@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlatBufferBuilder.required(II)V" {
+subgraph cluster_Region_172617950 {
+label = "R(3:1|2|(1:(2:7|8)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|int int r0 = r6.f83bb.capacity() \- r7\lint int r1 = r0 \- r6.f83bb.getInt(r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0017|boolean r2 = r6.f83bb.getShort(r1 + r8) != 0\l}"];
+subgraph cluster_Region_962797830 {
+label = "R(1:(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1626433996 {
+label = "IF [B:16:0x001c] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001c|PHI: r2 \l  PHI: (r2v3 'ok' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 == false) goto L7\l}"];
+subgraph cluster_Region_136140951 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001f}"];
+Node_19 [shape=record,label="{19\:\ 0x003a|throw new java.lang.AssertionError(\"FlatBuffers: field \" + r8 + \" must be set\")\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0019}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001e}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001b}"];
+MethodNode[shape=record,label="{public void androidx.emoji2.text.flatbuffer.FlatBufferBuilder.required((r6v0 'this' androidx.emoji2.text.flatbuffer.FlatBufferBuilder A[IMMUTABLE_TYPE, THIS]), (r7v0 'table' int A[D('table' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'field' int A[D('field' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x003a \-\> B:11:?, CROSS_EDGE: B:15:0x001b \-\> B:16:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_16;
+Node_17 -> Node_11;
+Node_15 -> Node_16;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.internal.Segment.onSlotCleaned()V" {
+subgraph cluster_Region_1845105367 {
+label = "R(1:(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_636055851 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_505651364 {
+label = "IF [B:13:0x000a, B:15:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|if (kotlinx.coroutines.internal.Segment.cleanedAndPointers$FU.incrementAndGet(r2) != getMaxSlots()) goto L9\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0010|ADDED_TO_REGION\l|if (isTail() != false) goto L8\l}"];
+subgraph cluster_Region_523044100 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_578601116 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|remove()\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000c}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0015|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.internal.Segment.onSlotCleaned((r2v0 'this' kotlinx.coroutines.internal.Segment\<S extends kotlinx.coroutines.internal.Segment\<S\>\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0010 \-\> B:17:0x0015, CROSS_EDGE: B:13:0x000a \-\> B:17:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends kotlinx.coroutines.internal.Segment\<S\>]\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_18;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_19;
+Node_19 -> Node_11;
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_17 -> Node_11;
+Node_18 -> Node_11;
+}
+

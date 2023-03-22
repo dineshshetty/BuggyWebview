@@ -1,0 +1,56 @@
+digraph "CFG forcom.google.android.material.sidesheet.SideSheetBehavior.calculateCurrentOffset(ILandroid\/view\/View;)I" {
+subgraph cluster_Region_1255072681 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_407687099 {
+label = "Switch: 4
+ case 1, 2 -> R(2:9|10)
+ case 3 -> R(1:8)
+ case 4, default -> R(2:3|4)
+ case 5 -> R(2:6|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|switch(r3.state) \{\l    case 1: goto L9;\l    case 2: goto L9;\l    case 3: goto L8;\l    case 4: goto L3;\l    case 5: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_921572307 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0027|int int r0 = r4 \- r3.sheetDelegate.getOutwardEdge(r5)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0030|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_2122457 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0025|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+subgraph cluster_Region_1704254810 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005}"];
+Node_17 [shape=record,label="{17\:\ 0x001d|throw new java.lang.IllegalStateException(\"Unexpected value: \" + r3.state)\l}"];
+}
+subgraph cluster_Region_421474796 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001e|int int r0 = r3.sheetDelegate.getHiddenOffset()\l}"];
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private int com.google.android.material.sidesheet.SideSheetBehavior.calculateCurrentOffset((r3v0 'this' com.google.android.material.sidesheet.SideSheetBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.sidesheet.SideSheetBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r4v0 'savedOutwardEdge' int A[D('savedOutwardEdge' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'child' V extends android.view.View A[D('child' V extends android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0030 \-\> B:13:?, CROSS_EDGE: B:19:0x0025 \-\> B:21:0x0030, CROSS_EDGE: B:20:0x0027 \-\> B:21:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\lSIGNATURE: (ITV;)I\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18;
+Node_15 -> Node_19;
+Node_15 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_19 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_13;
+Node_18 -> Node_22;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.customview.widget.ExploreByTouchHelper.clearAccessibilityFocus(I)Z" {
+subgraph cluster_Region_1355226971 {
+label = "R(1:(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1871139974 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_792909263 {
+label = "IF [B:11:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r1.mAccessibilityFocusedVirtualViewId == r2) goto L3\l}"];
+subgraph cluster_Region_1292913940 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|r1.mAccessibilityFocusedVirtualViewId = Integer.MIN_VALUE\lr1.mHost.invalidate()\lsendEventForVirtualView(r2, 65536)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0013|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_633712170 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0014|RETURN\l|return false\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private boolean androidx.customview.widget.ExploreByTouchHelper.clearAccessibilityFocus((r1v0 'this' androidx.customview.widget.ExploreByTouchHelper A[IMMUTABLE_TYPE, THIS]), (r2v0 'virtualViewId' int A[D('virtualViewId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0015 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+}
+

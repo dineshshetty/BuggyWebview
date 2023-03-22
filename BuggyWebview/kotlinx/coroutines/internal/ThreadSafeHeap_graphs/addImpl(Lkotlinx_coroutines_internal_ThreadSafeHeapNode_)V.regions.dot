@@ -1,0 +1,52 @@
+digraph "CFG forkotlinx.coroutines.internal.ThreadSafeHeap.addImpl(Lkotlinx\/coroutines\/internal\/ThreadSafeHeapNode;)V" {
+subgraph cluster_Region_1057706537 {
+label = "R(2:(1:(1:8))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1490292427 {
+label = "IF [B:17:0x0004] THEN: R(1:(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (kotlinx.coroutines.Debug.getASSERTIONS_ENABLED() != false) goto L3\l}"];
+subgraph cluster_Region_1207391569 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1777941064 {
+label = "IF [B:22:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|PHI: r1 \l  PHI: (r1v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4.getHeap() == null) == false) goto L7\l}"];
+subgraph cluster_Region_348121336 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0018|throw new java.lang.AssertionError()\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0019|r4.setHeap(r3)\lkotlinx.coroutines.internal.ThreadSafeHeapNode[] kotlinx.coroutines.internal.ThreadSafeHeapNode[] r0 = realloc()\lint int r1 = getSize()\lsetSize(r1 + 1)\lr0[r1] = r4\lr4.setIndex(r1)\lsiftUpFrom(r1)\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000b}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000d}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0013}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000f}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0031}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.internal.ThreadSafeHeap.addImpl((r3v0 'this' kotlinx.coroutines.internal.ThreadSafeHeap\<T extends kotlinx.coroutines.internal.ThreadSafeHeapNode & java.lang.Comparable\<? super T\>\> A[IMMUTABLE_TYPE, THIS]), (r4v0 T extends kotlinx.coroutines.internal.ThreadSafeHeapNode & java.lang.Comparable\<? super T\> A[D('node' kotlinx.coroutines.internal.ThreadSafeHeapNode), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0031 \-\> B:15:?, CROSS_EDGE: B:21:0x000f \-\> B:22:0x0010, CROSS_EDGE: B:17:0x0004 \-\> B:26:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends kotlinx.coroutines.internal.ThreadSafeHeapNode & java.lang.Comparable\<? super T\>]\lSIGNATURE: (TT;)V\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_26[style=dashed];
+Node_22 -> Node_24;
+Node_22 -> Node_26[style=dashed];
+Node_25 -> Node_15;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_20 -> Node_22;
+Node_24 -> Node_25;
+Node_21 -> Node_22;
+Node_27 -> Node_15;
+}
+

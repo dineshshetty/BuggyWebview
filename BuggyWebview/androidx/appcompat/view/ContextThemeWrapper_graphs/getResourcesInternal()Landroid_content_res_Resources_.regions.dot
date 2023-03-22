@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.appcompat.view.ContextThemeWrapper.getResourcesInternal()Landroid\/content\/res\/Resources;" {
+subgraph cluster_Region_1572546318 {
+label = "R(2:(1:(1:13)(1:(1:11)(1:12)))|15)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1190107053 {
+label = "IF [B:21:0x0002] THEN: R(1:(1:13)(1:(1:11)(1:12))) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0002|if (r5.mResources == null) goto L3\l}"];
+subgraph cluster_Region_1832969188 {
+label = "R(1:(1:13)(1:(1:11)(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1001296907 {
+label = "IF [B:23:0x0006, B:25:0x000c, B:27:0x0014] THEN: R(1:13) ELSE: R(1:(1:11)(1:12))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0006|if (r5.mOverrideConfiguration == null) goto L13\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000c|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \>= 26) goto L7\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0014|ADDED_TO_REGION\l|if (isEmptyConfiguration(r5.mOverrideConfiguration) != false) goto L13\l}"];
+subgraph cluster_Region_1068058407 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x004c|r5.mResources = super.getResources()\l}"];
+}
+subgraph cluster_Region_96599424 {
+label = "R(1:(1:11)(1:12)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1878290719 {
+label = "IF [B:30:0x001b] THEN: R(1:11) ELSE: R(1:12) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x001b|if (android.os.Build.VERSION.SDK_INT \>= 17) goto L11\l}"];
+subgraph cluster_Region_534538216 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001d|android.content.Context android.content.Context r0 = androidx.appcompat.view.ContextThemeWrapper.Api17Impl.createConfigurationContext(r5, r5.mOverrideConfiguration)\lr5.mResources = r0.getResources()\l}"];
+}
+subgraph cluster_Region_1666412662 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x002a|android.content.res.Resources android.content.res.Resources r0 = super.getResources()\landroid.content.res.Configuration android.content.res.Configuration r1 = new android.content.res.Configuration(r0.getConfiguration())\lr1.updateFrom(r5.mOverrideConfiguration)\lr5.mResources = new android.content.res.Resources(r0.getAssets(), r0.getDisplayMetrics(), r1)\l}"];
+}
+}
+}
+}
+}
+}
+Node_35 [shape=record,label="{35\:\ 0x0054|RETURN\l|return r5.mResources\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0004}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0008}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000e}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0017}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0052}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.content.res.Resources androidx.appcompat.view.ContextThemeWrapper.getResourcesInternal((r5v0 'this' androidx.appcompat.view.ContextThemeWrapper A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x002a \-\> B:34:0x0052, CROSS_EDGE: B:33:0x004c \-\> B:34:0x0052, CROSS_EDGE: B:25:0x000c \-\> B:29:0x0017, CROSS_EDGE: B:23:0x0006 \-\> B:33:0x004c, CROSS_EDGE: B:21:0x0002 \-\> B:34:0x0052\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_34[style=dashed];
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_33;
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_27 -> Node_29[style=dashed];
+Node_27 -> Node_33;
+Node_33 -> Node_34;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_34;
+Node_32 -> Node_34;
+Node_35 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_29 -> Node_30;
+Node_34 -> Node_35;
+}
+

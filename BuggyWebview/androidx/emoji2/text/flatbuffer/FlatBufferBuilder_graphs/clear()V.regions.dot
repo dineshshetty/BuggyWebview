@@ -1,0 +1,50 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlatBufferBuilder.clear()V" {
+subgraph cluster_Region_1612102640 {
+label = "R(2:1|(2:2|(2:(2:6|7)|(1:4))))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|r3.space = r3.f83bb.capacity()\lr3.f83bb.clear()\lr3.minalign = 1\l}"];
+subgraph cluster_LoopRegion_838163207 {
+label = "LOOP:0: (2:2|(2:(2:6|7)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_114465046 {
+label = "R(2:2|(2:(2:6|7)|(1:4)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0010|LOOP_START\lLOOP:0: B:12:0x0010\-\>B:14:0x0015\l|int int r0 = r3.vtable_in_use\l}"];
+subgraph cluster_Region_1695347695 {
+label = "R(2:(2:6|7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_197918018 {
+label = "IF [B:13:0x0013] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0013|if (r0 \<= 0) goto L5\l}"];
+subgraph cluster_Region_318130625 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001e|r3.vtable_in_use = 0\lr3.nested = false\lr3.finished = false\lr3.object_start = 0\lr3.num_vtables = 0\lr3.vector_num_elems = 0\l}"];
+Node_16 [shape=record,label="{16\:\ 0x002a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1050631625 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0015|LOOP_END\lLOOP:0: B:12:0x0010\-\>B:14:0x0015\l|int[] int[] r2 = r3.vtable\lint int r0 = r0 \- 1\lr3.vtable_in_use = r0\lr2[r0] = 0\l}"];
+}
+}
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001e|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.emoji2.text.flatbuffer.FlatBufferBuilder.clear((r3v0 'this' androidx.emoji2.text.flatbuffer.FlatBufferBuilder A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x0015 \-\> B:12:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_17;
+Node_15 -> Node_16;
+Node_16 -> Node_10;
+Node_14 -> Node_12;
+Node_9 -> Node_11;
+Node_17 -> Node_15;
+}
+

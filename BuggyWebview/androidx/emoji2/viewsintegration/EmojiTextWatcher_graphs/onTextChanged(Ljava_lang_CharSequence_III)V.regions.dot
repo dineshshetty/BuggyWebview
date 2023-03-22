@@ -1,0 +1,84 @@
+digraph "CFG forandroidx.emoji2.viewsintegration.EmojiTextWatcher.onTextChanged(Ljava\/lang\/CharSequence;III)V" {
+subgraph cluster_Region_1134633951 {
+label = "R(1:(1:(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_310534428 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1284675778 {
+label = "IF [B:3:0x0006, B:5:0x000c, B:7:0x000f, B:9:0x0013] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r7.mEditText.isInEditMode() == false) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|ADDED_TO_REGION\l|if (shouldSkipForDisabledOrNotConfigured() == false) goto L5\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000f|ADDED_TO_REGION\l|if (r10 \<= r11) goto L6\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0013|ADDED_TO_REGION\l|if ((r8 instanceof android.text.Spannable) != false) goto L8\l}"];
+subgraph cluster_Region_1714774257 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_742393907 {
+label = "Switch: 3
+ case 0, 3 -> R(2:13|14)
+ case 1 -> R(2:10|11)
+ case 2, default -> R(1:15)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001d|switch(androidx.emoji2.text.EmojiCompat.get().getLoadState()) \{\l    case 0: goto L13;\l    case 1: goto L10;\l    case 2: goto L15;\l    case 3: goto L13;\l    default: goto L15;\l\}\l}"];
+subgraph cluster_Region_759895590 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0034|androidx.emoji2.text.EmojiCompat.get().registerInitCallback(getInitCallback())\l}"];
+Node_15 [shape=record,label="{15\:\ 0x003f|RETURN\lORIG_RETURN\l|return\l}"];
+}
+subgraph cluster_Region_613511295 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0021|android.text.Spannable android.text.Spannable r0 = (android.text.Spannable) r8\landroidx.emoji2.text.EmojiCompat.get().process(r0, r9, r9 + r11, r7.mMaxEmojiCount, r7.mEmojiReplaceStrategy)\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_1976029125 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0011}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0015}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0040|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.emoji2.viewsintegration.EmojiTextWatcher.onTextChanged((r7v0 'this' androidx.emoji2.viewsintegration.EmojiTextWatcher A[IMMUTABLE_TYPE, THIS]), (r8v0 'charSequence' java.lang.CharSequence A[D('charSequence' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'start' int A[D('start' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'before' int A[D('before' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'after' int A[D('after' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:14:0x0034 \-\> B:15:0x003f, CROSS_EDGE: B:11:0x001d \-\> B:15:0x003f, CROSS_EDGE: B:9:0x0013 \-\> B:15:0x003f, CROSS_EDGE: B:7:0x000f \-\> B:15:0x003f, CROSS_EDGE: B:16:0x0040 \-\> B:1:?, CROSS_EDGE: B:3:0x0006 \-\> B:16:0x0040\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.text.TextWatcher.onTextChanged(java.lang.CharSequence, int, int, int):void\}]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_16[style=dashed];
+Node_5 -> Node_7;
+Node_5 -> Node_21[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_17[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_18[style=dashed];
+Node_11 -> Node_13;
+Node_11 -> Node_14;
+Node_11 -> Node_20;
+Node_14 -> Node_15;
+Node_15 -> Node_1;
+Node_13 -> Node_19;
+Node_19 -> Node_1;
+Node_20 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_18 -> Node_1;
+Node_17 -> Node_1;
+Node_21 -> Node_1;
+Node_16 -> Node_1;
+}
+

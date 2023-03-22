@@ -1,0 +1,31 @@
+digraph "CFG forkotlin.jvm.internal.TypeIntrinsics.beforeCheckcastToFunctionOfArity(Ljava\/lang\/Object;ILjava\/lang\/String;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_699457445 {
+label = "R(2:(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_336230218 {
+label = "IF [B:9:0x0000, B:11:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r1 != null) goto L2\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0006|ADDED_TO_REGION\l|if (isFunctionOfArity(r1, r2) == false) goto L4\l}"];
+subgraph cluster_Region_1222552782 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|throwCce(r3)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x000b|RETURN\l|return r1\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0002}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static java.lang.Object kotlin.jvm.internal.TypeIntrinsics.beforeCheckcastToFunctionOfArity((r1v0 'obj' java.lang.Object A[D('obj' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'arity' int A[D('arity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'message' java.lang.String A[D('message' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0006 \-\> B:13:0x000b, CROSS_EDGE: B:9:0x0000 \-\> B:13:0x000b\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.Tab.setText(Ljava\/lang\/CharSequence;)Lcom\/google\/android\/material\/tabs\/TabLayout$Tab;" {
+subgraph cluster_Region_906563484 {
+label = "R(3:(1:5)|6|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1246860894 {
+label = "IF [B:12:0x0006, B:14:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|if (android.text.TextUtils.isEmpty(r1.contentDesc) != false) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000c|ADDED_TO_REGION\l|if (android.text.TextUtils.isEmpty(r2) == false) goto L5\l}"];
+subgraph cluster_Region_171505658 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000e|r1.view.setContentDescription(r2)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0013|r1.text = r2\lupdateView()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0018|RETURN\l|return r1\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0008}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public com.google.android.material.tabs.TabLayout$Tab com.google.android.material.tabs.TabLayout.Tab.setText((r1v0 'this' com.google.android.material.tabs.TabLayout$Tab A[IMMUTABLE_TYPE, THIS]), (r2v0 'text' java.lang.CharSequence A[D('text' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x000c \-\> B:16:0x0013, CROSS_EDGE: B:12:0x0006 \-\> B:16:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_9;Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_10;
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+}
+

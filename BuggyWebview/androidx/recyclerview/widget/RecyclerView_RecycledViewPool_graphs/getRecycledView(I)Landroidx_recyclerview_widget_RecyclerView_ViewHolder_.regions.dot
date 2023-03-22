@@ -1,0 +1,87 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.RecycledViewPool.getRecycledView(I)Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;" {
+subgraph cluster_Region_801704539 {
+label = "R(2:1|(2:(3:5|(1:(2:(1:12)|(1:9)))|15)|(1:16)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|androidx.recyclerview.widget.RecyclerView$RecycledViewPool$ScrapData androidx.recyclerview.widget.RecyclerView.RecycledViewPool.ScrapData r0 = r4.mScrap.get(r5)\l}"];
+subgraph cluster_Region_655351457 {
+label = "R(2:(3:5|(1:(2:(1:12)|(1:9)))|15)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1758007060 {
+label = "IF [B:22:0x0008, B:24:0x0010] THEN: R(3:5|(1:(2:(1:12)|(1:9)))|15) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0008|if (r0 != null) goto L3\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0010|ADDED_TO_REGION\l|if (r0.mScrapHeap.isEmpty() == false) goto L5\l}"];
+subgraph cluster_Region_1717032753 {
+label = "R(3:5|(1:(2:(1:12)|(1:9)))|15)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0012|java.util.ArrayList\<androidx.recyclerview.widget.RecyclerView$ViewHolder\> java.util.ArrayList\<androidx.recyclerview.widget.RecyclerView.ViewHolder\> r1 = r0.mScrapHeap\lint int r2 = r1.size() \- 1\l}"];
+subgraph cluster_LoopRegion_376428647 {
+label = "LOOP:0: (1:(2:(1:12)|(1:9)))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001a|LOOP_START\lLOOP:0: B:26:0x001a\-\>B:31:0x002f\lPHI: r2 \l  PHI: (r2v2 'i' int) = (r2v1 'i' int), (r2v3 'i' int) binds: [B:25:0x0012, B:31:0x002f] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= 0) goto L7\l}"];
+subgraph cluster_Region_1138103224 {
+label = "R(1:(2:(1:12)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_850202340 {
+label = "R(2:(1:12)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1897108259 {
+label = "IF [B:28:0x0026] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0026|if (r1.get(r2).isAttachedToTransitionOverlay() == false) goto L10\l}"];
+subgraph cluster_Region_1359123386 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002e|RETURN\l|return r1.remove(r2)\l}"];
+}
+}
+subgraph cluster_Region_154413300 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x002f|LOOP_END\lLOOP:0: B:26:0x001a\-\>B:31:0x002f\l|r2\-\-\l}"];
+}
+}
+}
+}
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1940382514 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000a}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001c}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0028|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0028}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0032|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0032|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.RecyclerView.RecycledViewPool.getRecycledView((r4v0 'this' androidx.recyclerview.widget.RecyclerView$RecycledViewPool A[IMMUTABLE_TYPE, THIS]), (r5v0 'viewType' int A[D('viewType' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:31:0x002f \-\> B:26:0x001a, CROSS_EDGE: B:33:0x0033 \-\> B:20:?, CROSS_EDGE: B:24:0x0010 \-\> B:32:0x0032, CROSS_EDGE: B:22:0x0008 \-\> B:32:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_32[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_36[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_35[style=dashed];
+Node_28 -> Node_31[style=dashed];
+Node_28 -> Node_34;
+Node_30 -> Node_20;
+Node_31 -> Node_26;
+Node_37 -> Node_20;
+Node_36 -> Node_20;
+Node_19 -> Node_21;
+Node_23 -> Node_24;
+Node_27 -> Node_28;
+Node_34 -> Node_29;
+Node_29 -> Node_30;
+Node_35 -> Node_37;
+Node_32 -> Node_20;
+}
+

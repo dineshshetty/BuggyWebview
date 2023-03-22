@@ -1,0 +1,75 @@
+digraph "CFG forcom.google.android.material.slider.BaseSlider.maybeCalculateTicksCoordinates()V" {
+subgraph cluster_Region_1743307993 {
+label = "R(1:(2:(1:3)|(4:5|(1:15)|9|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2086307555 {
+label = "R(2:(1:3)|(4:5|(1:15)|9|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_379365498 {
+label = "IF [B:19:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|if (r7.stepSize \<= 0.0f) goto L3\l}"];
+subgraph cluster_Region_990983832 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0007|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1132597740 {
+label = "R(4:5|(1:15)|9|(1:12))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0008|validateConfigurationIfDirty()\lint int r0 = java.lang.Math.min((int) (((r7.valueTo \- r7.valueFrom) \/ r7.stepSize) + 1.0f), (r7.trackWidth \/ (r7.trackHeight * 2)) + 1)\lfloat[] float[] r1 = r7.ticksCoordinates\l}"];
+subgraph cluster_IfRegion_1199989010 {
+label = "IF [B:22:0x0026, B:24:0x002b] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0026|if (r1 == null) goto L15\l}"];
+Node_24 [shape=record,label="{24\:\ 0x002b|ADDED_TO_REGION\l|if (r1.length != (r0 * 2)) goto L15\l}"];
+subgraph cluster_Region_752556946 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002d|r7.ticksCoordinates = new float[r0 * 2]\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0033|float float r1 = r7.trackWidth \/ (r0 \- 1)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_681582496 {
+label = "LOOP:0: (1:12)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x003d|if (r2 \< (r0 * 2)) goto L12\l}"];
+subgraph cluster_Region_2080269865 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003f|LOOP_END\lLOOP:0: B:27:0x003b\-\>B:29:0x003f\l|float[] float[] r3 = r7.ticksCoordinates\lr3[r2] = r7.trackSidePadding + ((r2 \/ 2.0f) * r1)\lr3[r2 + 1] = calculateTrackCenter()\lr2 += 2\l}"];
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0028}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x003b|LOOP_START\lLOOP:0: B:27:0x003b\-\>B:29:0x003f\lPHI: r2 \l  PHI: (r2v5 'i' int) = (r2v4 'i' int), (r2v6 'i' int) binds: [B:26:0x0033, B:29:0x003f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0059|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0059}"];
+MethodNode[shape=record,label="{private void com.google.android.material.slider.BaseSlider.maybeCalculateTicksCoordinates((r7v0 'this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\> A[D('this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:29:0x003f \-\> B:27:0x003b, CROSS_EDGE: B:30:0x0059 \-\> B:17:?, CROSS_EDGE: B:24:0x002b \-\> B:26:0x0033, CROSS_EDGE: B:22:0x0026 \-\> B:25:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>]\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_17;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_25;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_28 -> Node_31[style=dashed];
+Node_29 -> Node_27;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_23 -> Node_24;
+Node_27 -> Node_28;
+Node_31 -> Node_30;
+Node_30 -> Node_17;
+}
+

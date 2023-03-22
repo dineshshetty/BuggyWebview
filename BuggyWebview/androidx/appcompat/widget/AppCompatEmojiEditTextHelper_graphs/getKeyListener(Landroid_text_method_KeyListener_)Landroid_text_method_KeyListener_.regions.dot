@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatEmojiEditTextHelper.getKeyListener(Landroid\/text\/method\/KeyListener;)Landroid\/text\/method\/KeyListener;" {
+subgraph cluster_Region_2040576270 {
+label = "R(1:(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1939647917 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1541617601 {
+label = "IF [B:10:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0004|if (isEmojiCapableKeyListener(r2) != false) goto L3\l}"];
+subgraph cluster_Region_737256830 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000c|RETURN\l|return r1.mEmojiEditTextHelper.getKeyListener(r2)\l}"];
+}
+}
+subgraph cluster_Region_1474625991 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000d|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0006}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.text.method.KeyListener androidx.appcompat.widget.AppCompatEmojiEditTextHelper.getKeyListener((r1v0 'this' androidx.appcompat.widget.AppCompatEmojiEditTextHelper A[IMMUTABLE_TYPE, THIS]), (r2v0 'keyListener' android.text.method.KeyListener A[D('keyListener' android.text.method.KeyListener), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000d \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

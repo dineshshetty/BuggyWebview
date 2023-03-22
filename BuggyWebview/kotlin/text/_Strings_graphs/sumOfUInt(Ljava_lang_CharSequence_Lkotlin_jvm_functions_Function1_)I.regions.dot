@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.sumOfUInt(Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function1;)I" {
+subgraph cluster_Region_1404263131 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"selector\")\lint r0 = 0\lint int r1 = kotlin.UInt.m238constructorimpl(0)\l}"];
+subgraph cluster_LoopRegion_3518848 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0014|if (r0 \< r4.length()) goto L4\l}"];
+subgraph cluster_Region_1853680427 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0016|LOOP_END\lLOOP:0: B:11:0x0010\-\>B:13:0x0016\l|char char r2 = r4.charAt(r0)\lint r1 = kotlin.UInt.m238constructorimpl(r5.invoke(java.lang.Character.valueOf(r2)).m289unboximpl() + r1)\lr0++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0030|RETURN\l|return r1\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0010|LOOP_START\lLOOP:0: B:11:0x0010\-\>B:13:0x0016\lPHI: r0 r1 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:10:0x0000, B:13:0x0016] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'sum' int) = (r1v0 'sum' int), (r1v2 'sum' int) binds: [B:10:0x0000, B:13:0x0016] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0030|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final int kotlin.text.StringsKt___StringsKt.sumOfUInt((r4v0 '$this$sumOf' java.lang.CharSequence A[D('$this$sumOf' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'selector' kotlin.jvm.functions.Function1\<? super java.lang.Character, kotlin.UInt\> A[D('selector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0016 \-\> B:11:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;Lkotlin\/UInt;\>;)I\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

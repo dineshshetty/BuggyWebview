@@ -1,0 +1,52 @@
+digraph "CFG forandroidx.fragment.app.FragmentContainerView.dispatchDraw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_975641951 {
+label = "R(2:(2:5|(1:8))|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_957865704 {
+label = "IF [B:16:0x0002, B:18:0x0006] THEN: R(2:5|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0002|if (r4.mDrawDisappearingViewsFirst != false) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0006|ADDED_TO_REGION\l|if (r4.mDisappearingFragmentChildren != null) goto L5\l}"];
+subgraph cluster_Region_582226348 {
+label = "R(2:5|(1:8))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0008|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_1918011910 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|if (r0 \< r4.mDisappearingFragmentChildren.size()) goto L8\l}"];
+subgraph cluster_Region_461730513 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|LOOP_END\lLOOP:0: B:20:0x0009\-\>B:22:0x0011\l|super.drawChild(r5, r4.mDisappearingFragmentChildren.get(r0), getDrawingTime())\lr0++\l}"];
+}
+}
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0023|super.dispatchDraw(r5)\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0004}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0009|LOOP_START\lLOOP:0: B:20:0x0009\-\>B:22:0x0011\lPHI: r0 \l  PHI: (r0v3 'i' int) = (r0v2 'i' int), (r0v4 'i' int) binds: [B:19:0x0008, B:22:0x0011] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0023|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0026}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected void androidx.fragment.app.FragmentContainerView.dispatchDraw((r4v0 'this' androidx.fragment.app.FragmentContainerView A[IMMUTABLE_TYPE, THIS]), (r5v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:22:0x0011 \-\> B:20:0x0009, CROSS_EDGE: B:18:0x0006 \-\> B:23:0x0023, CROSS_EDGE: B:16:0x0002 \-\> B:23:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.dispatchDraw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_20;
+Node_23 -> Node_24;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+Node_25 -> Node_23;
+Node_24 -> Node_14;
+}
+

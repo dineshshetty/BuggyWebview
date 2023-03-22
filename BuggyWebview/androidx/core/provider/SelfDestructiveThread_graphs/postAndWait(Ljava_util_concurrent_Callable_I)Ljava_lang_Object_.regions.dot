@@ -1,0 +1,145 @@
+digraph "CFG forandroidx.core.provider.SelfDestructiveThread.postAndWait(Ljava\/util\/concurrent\/Callable;I)Ljava\/lang\/Object;" {
+subgraph cluster_Region_302900589 {
+label = "R(2:1|(1:(2:(1:7)|(3:9|(2:(1:12)|(1:(1:23)))|19))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.concurrent.locks.ReentrantLock final java.util.concurrent.locks.ReentrantLock r4 = new java.util.concurrent.locks.ReentrantLock()\ljava.util.concurrent.locks.Condition final java.util.concurrent.locks.Condition r7 = r4.newCondition()\ljava.util.concurrent.atomic.AtomicReference final java.util.concurrent.atomic.AtomicReference\<T\> r2 = new java.util.concurrent.atomic.AtomicReference\<\>()\ljava.util.concurrent.atomic.AtomicBoolean final java.util.concurrent.atomic.AtomicBoolean r5 = new java.util.concurrent.atomic.AtomicBoolean(true)\lpost(new androidx.core.provider.SelfDestructiveThread.RunnableC02253())\lr4.lock()\l}"];
+subgraph cluster_TryCatchRegion_1556864378 {
+label = "Try: R(1:(2:(1:7)|(3:9|(2:(1:12)|(1:(1:23)))|19))) finally: R(3:26|27|28)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1103705171 {
+label = "R(1:(2:(1:7)|(3:9|(2:(1:12)|(1:(1:23)))|19)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1779697734 {
+label = "R(2:(1:7)|(3:9|(2:(1:12)|(1:(1:23)))|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_992348324 {
+label = "IF [B:4:0x0027] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0027|if (r5.get() == false) goto L5\l}"];
+subgraph cluster_Region_39983965 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0030|RETURN\l|return r2.get()\l}"];
+}
+}
+subgraph cluster_Region_855395788 {
+label = "R(3:9|(2:(1:12)|(1:(1:23)))|19)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|TRY_ENTER\lTRY_LEAVE\lTryCatch #1 \{all \-\> 0x005c, blocks: (B:3:0x0023, B:5:0x0029, B:8:0x0031, B:9:0x0038, B:12:0x003f, B:14:0x0045, B:20:0x0054, B:21:0x005b), top: B:27:0x0023 \}\lCatch: all \-\> 0x005c\l|long long r0 = java.util.concurrent.TimeUnit.MILLISECONDS.toNanos(r12)     \/\/ Catch: java.lang.Throwable \-\> L5c\l}"];
+subgraph cluster_LoopRegion_15752522 {
+label = "LOOP:0: (2:(1:12)|(1:(1:23)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0051|LOOP_END\lLOOP:0: B:25:0x0038\-\>B:18:0x0051\l|if (r0 \> 0) goto L10\l}"];
+subgraph cluster_Region_74712572 {
+label = "R(2:(1:12)|(1:(1:23)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_114702341 {
+label = "Try: R(1:12) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1398347358 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003c|r0 = r7.awaitNanos(r0)     \/\/ Catch: java.lang.InterruptedException \-\> L3e java.lang.Throwable \-\> L5c\l}"];
+}
+subgraph cluster_Region_246808352 {
+label = "R(0) | ExcHandler: InterruptedException \-\> 0x003e\l";
+node [shape=record,color=blue];
+}
+}
+subgraph cluster_Region_1143574664 {
+label = "R(1:(1:23))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_550900344 {
+label = "IF [B:13:0x0043] THEN: R(1:23) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0043|if (r5.get() == false) goto L20\l}"];
+subgraph cluster_Region_2134483185 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x004c|RETURN\l|return r2.get()\l}"];
+}
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x005b|TRY_LEAVE\lTryCatch #1 \{all \-\> 0x005c, blocks: (B:3:0x0023, B:5:0x0029, B:8:0x0031, B:9:0x0038, B:12:0x003f, B:14:0x0045, B:20:0x0054, B:21:0x005b), top: B:27:0x0023 \}\lCatch: all \-\> 0x005c\l|throw new java.lang.InterruptedException(\"timeout\")     \/\/ Catch: java.lang.Throwable \-\> L5c\l}"];
+}
+}
+}
+subgraph cluster_Region_213458014 {
+label = "R(3:26|27|28) | ExcHandler: all \-\> 0x005c\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x005c|ExcHandler: all \-\> 0x005c\l}"];
+Node_23 [shape=record,label="{23\:\ 0x005d|FINALLY_INSNS\l|r4.unlock()\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0060|throw r0\l}"];
+}
+}
+}
+subgraph cluster_Region_213458014 {
+label = "R(3:26|27|28) | ExcHandler: all \-\> 0x005c\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x005c|ExcHandler: all \-\> 0x005c\l}"];
+Node_23 [shape=record,label="{23\:\ 0x005d|FINALLY_INSNS\l|r4.unlock()\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0060|throw r0\l}"];
+}
+subgraph cluster_Region_246808352 {
+label = "R(0) | ExcHandler: InterruptedException \-\> 0x003e\l";
+node [shape=record,color=blue];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0023|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0023|TRY_ENTER\lTryCatch #1 \{all \-\> 0x005c, blocks: (B:3:0x0023, B:5:0x0029, B:8:0x0031, B:9:0x0038, B:12:0x003f, B:14:0x0045, B:20:0x0054, B:21:0x005b), top: B:27:0x0023 \}\lCatch: all \-\> 0x005c\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0029|TRY_LEAVE\lTryCatch #1 \{all \-\> 0x005c, blocks: (B:3:0x0023, B:5:0x0029, B:8:0x0031, B:9:0x0038, B:12:0x003f, B:14:0x0045, B:20:0x0054, B:21:0x005b), top: B:27:0x0023 \}\lCatch: all \-\> 0x005c\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002d|DONT_GENERATE\l|r4.unlock()\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0038|LOOP_START\lSYNTHETIC\lEXC_TOP_SPLITTER\lLOOP:0: B:25:0x0038\-\>B:18:0x0051\lPHI: r0 \l  PHI: (r0v6 'remaining' long) = (r0v5 'remaining' long), (r0v7 'remaining' long) binds: [B:8:0x0031, B:18:0x0051] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0038|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{InterruptedException \-\> 0x003e, blocks: (B:9:0x0038), top: B:25:0x0038 \}\lCatch: InterruptedException \-\> 0x003e, all \-\> 0x005c\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x003f|TRY_ENTER\lTryCatch #1 \{all \-\> 0x005c, blocks: (B:3:0x0023, B:5:0x0029, B:8:0x0031, B:9:0x0038, B:12:0x003f, B:14:0x0045, B:20:0x0054, B:21:0x005b), top: B:27:0x0023 \}\lCatch: all \-\> 0x005c\lPHI: r0 \l  PHI: (r0v7 'remaining' long) = (r0v6 'remaining' long), (r0v8 'remaining' long) binds: [B:11:0x003e, B:10:0x003c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x004d}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0054|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0054|TRY_ENTER\lTryCatch #1 \{all \-\> 0x005c, blocks: (B:3:0x0023, B:5:0x0029, B:8:0x0031, B:9:0x0038, B:12:0x003f, B:14:0x0045, B:20:0x0054, B:21:0x005b), top: B:27:0x0023 \}\lCatch: all \-\> 0x005c\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0045|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0045|TRY_LEAVE\lTryCatch #1 \{all \-\> 0x005c, blocks: (B:3:0x0023, B:5:0x0029, B:8:0x0031, B:9:0x0038, B:12:0x003f, B:14:0x0045, B:20:0x0054, B:21:0x005b), top: B:27:0x0023 \}\lCatch: all \-\> 0x005c\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0049|DONT_GENERATE\l|r4.unlock()\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003e|ExcHandler: InterruptedException \-\> 0x003e\l}"];
+MethodNode[shape=record,label="{public T androidx.core.provider.SelfDestructiveThread.postAndWait((r10v0 'this' androidx.core.provider.SelfDestructiveThread A[IMMUTABLE_TYPE, THIS]), (r11v0 'callable' java.util.concurrent.Callable\<T\> A[D('callable' java.util.concurrent.Callable\<T\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'timeoutMillis' int A[D('timeoutMillis' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x004c \-\> B:1:?, CROSS_EDGE: B:21:0x005b \-\> B:1:?, BACK_EDGE: B:18:0x0051 \-\> B:25:0x0038, CROSS_EDGE: B:11:0x003e \-\> B:12:0x003f, CROSS_EDGE: B:25:0x0038 \-\> B:11:0x003e, CROSS_EDGE: B:24:0x0060 \-\> B:1:?\lINLINE_NOT_NEEDED\lTryCatch #0 \{InterruptedException \-\> 0x003e, blocks: (B:9:0x0038), top: B:25:0x0038 \}, TryCatch #1 \{all \-\> 0x005c, blocks: (B:3:0x0023, B:5:0x0029, B:8:0x0031, B:9:0x0038, B:12:0x003f, B:14:0x0045, B:20:0x0054, B:21:0x005b), top: B:27:0x0023 \}\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/concurrent\/Callable\<TT;\>;I)TT;\lEXCEPTIONS:[Ljava\/lang\/InterruptedException;]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_27;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_7 -> Node_1;
+Node_8 -> Node_25;
+Node_18 -> Node_25;
+Node_18 -> Node_28[style=dashed];
+Node_10 -> Node_12;
+Node_13 -> Node_17[style=dashed];
+Node_13 -> Node_29;
+Node_16 -> Node_1;
+Node_21 -> Node_1;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_1;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_1;
+Node_0 -> Node_2;
+Node_27 -> Node_3;
+Node_27 -> Node_22;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_25 -> Node_9;
+Node_25 -> Node_11;
+Node_9 -> Node_10;
+Node_9 -> Node_26;
+Node_12 -> Node_13;
+Node_17 -> Node_18;
+Node_28 -> Node_20;
+Node_20 -> Node_21;
+Node_29 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_26 -> Node_11;
+Node_11 -> Node_12;
+}
+

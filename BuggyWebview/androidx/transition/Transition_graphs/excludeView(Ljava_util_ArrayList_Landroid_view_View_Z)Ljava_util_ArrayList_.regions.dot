@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.transition.Transition.excludeView(Ljava\/util\/ArrayList;Landroid\/view\/View;Z)Ljava\/util\/ArrayList;" {
+subgraph cluster_Region_423861804 {
+label = "R(1:(2:(1:(2:(1:4)|(1:7)))|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1461334549 {
+label = "R(2:(1:(2:(1:4)|(1:7)))|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1219575770 {
+label = "IF [B:11:0x0000] THEN: R(1:(2:(1:4)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|if (r2 != null) goto L2\l}"];
+subgraph cluster_Region_914889113 {
+label = "R(1:(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_868172698 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_892556642 {
+label = "IF [B:12:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0002|if (r3 != false) goto L3\l}"];
+subgraph cluster_Region_1958605809 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return androidx.transition.Transition.ArrayListManager.add(r1, r2)\l}"];
+}
+}
+subgraph cluster_Region_34568238 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|RETURN\lORIG_RETURN\l|return androidx.transition.Transition.ArrayListManager.remove(r1, r2)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1264928870 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0004}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0009}"];
+MethodNode[shape=record,label="{private java.util.ArrayList\<android.view.View\> androidx.transition.Transition.excludeView((r0v0 'this' androidx.transition.Transition A[IMMUTABLE_TYPE, THIS]), (r1v0 'list' java.util.ArrayList\<android.view.View\> A[D('list' java.util.ArrayList\<android.view.View\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'target' android.view.View A[D('target' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'exclude' boolean A[D('exclude' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0009 \-\> B:15:0x000d, CROSS_EDGE: B:11:0x0000 \-\> B:15:0x000d\lINLINE_NOT_NEEDED\lSIGNATURE: (Ljava\/util\/ArrayList\<Landroid\/view\/View;\>;Landroid\/view\/View;Z)Ljava\/util\/ArrayList\<Landroid\/view\/View;\>;\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_11 -> Node_16[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_17 -> Node_10;
+Node_15 -> Node_10;
+Node_16 -> Node_10;
+Node_9 -> Node_11;
+Node_13 -> Node_17;
+Node_14 -> Node_15;
+}
+

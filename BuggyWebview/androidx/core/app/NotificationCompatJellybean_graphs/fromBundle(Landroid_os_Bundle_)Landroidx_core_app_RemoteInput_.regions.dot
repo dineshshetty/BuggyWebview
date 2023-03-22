@@ -1,0 +1,47 @@
+digraph "CFG forandroidx.core.app.NotificationCompatJellybean.fromBundle(Landroid\/os\/Bundle;)Landroidx\/core\/app\/RemoteInput;" {
+subgraph cluster_Region_588365975 {
+label = "R(3:1|(2:3|(1:6))|9)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.util.ArrayList java.util.ArrayList\<java.lang.String\> r0 = r11.getStringArrayList(androidx.core.app.NotificationCompatJellybean.KEY_ALLOWED_DATA_TYPES)\ljava.util.HashSet java.util.Set\<java.lang.String\> r1 = new java.util.HashSet\<\>()\l}"];
+subgraph cluster_IfRegion_1840470540 {
+label = "IF [B:14:0x000b] THEN: R(2:3|(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000b|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_202126194 {
+label = "R(2:3|(1:6))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|java.util.Iterator java.util.Iterator\<java.lang.String\> r2 = r0.iterator()\l}"];
+subgraph cluster_LoopRegion_155622914 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0015|if (r2.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_612300642 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0011\-\>B:18:0x0017\l|java.lang.String java.lang.String r3 = r2.next()\lr1.add(r3)\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0047|RETURN\l|return new androidx.core.app.RemoteInput(r11.getString(androidx.core.app.NotificationCompatJellybean.KEY_RESULT_KEY), r11.getCharSequence(androidx.core.app.NotificationCompatJellybean.KEY_LABEL), r11.getCharSequenceArray(androidx.core.app.NotificationCompatJellybean.KEY_CHOICES), r11.getBoolean(androidx.core.app.NotificationCompatJellybean.KEY_ALLOW_FREE_FORM_INPUT), 0, r11.getBundle(androidx.core.app.NotificationCompatJellybean.KEY_EXTRAS), r1)\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0011|LOOP_START\lLOOP:0: B:16:0x0011\-\>B:18:0x0017\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0021|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0021}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static androidx.core.app.RemoteInput androidx.core.app.NotificationCompatJellybean.fromBundle((r11v0 'data' android.os.Bundle A[D('data' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:18:0x0017 \-\> B:16:0x0011, CROSS_EDGE: B:14:0x000b \-\> B:19:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_19[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_18 -> Node_16;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_16 -> Node_17;
+Node_21 -> Node_19;
+Node_19 -> Node_20;
+}
+

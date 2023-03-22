@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.fragment.app.BackStackRecord.setOnStartPostponedListener(Landroidx\/fragment\/app\/Fragment$OnStartEnterTransitionListener;)V" {
+subgraph cluster_Region_1979427722 {
+label = "R(2:1|(3:4|(1:6)(0)|8))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_108818301 {
+label = "LOOP:0: (3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|if (r0 \< r3.mOps.size()) goto L4\l}"];
+subgraph cluster_Region_168797641 {
+label = "R(3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|androidx.fragment.app.FragmentTransaction$Op androidx.fragment.app.FragmentTransaction.C0352Op r1 = r3.mOps.get(r0)\l}"];
+subgraph cluster_IfRegion_1314430274 {
+label = "IF [B:6:0x0015] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (isFragmentPostponed(r1) != false) goto L6\l}"];
+subgraph cluster_Region_1717033208 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|r1.mFragment.setOnStartEnterTransitionListener(r4)\l}"];
+}
+subgraph cluster_Region_1900116931 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x001c|LOOP_END\lLOOP:0: B:3:0x0001\-\>B:8:0x001c\l|r0++\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0001|LOOP_START\lLOOP:0: B:3:0x0001\-\>B:8:0x001c\lPHI: r0 \l  PHI: (r0v1 'opNum' int) = (r0v0 'opNum' int), (r0v2 'opNum' int) binds: [B:2:0x0000, B:8:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001c|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001c|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001f|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001f}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.BackStackRecord.setOnStartPostponedListener((r3v0 'this' androidx.fragment.app.BackStackRecord A[IMMUTABLE_TYPE, THIS]), (r4v0 'listener' androidx.fragment.app.Fragment$OnStartEnterTransitionListener A[D('listener' androidx.fragment.app.Fragment$OnStartEnterTransitionListener), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x001c \-\> B:3:0x0001, CROSS_EDGE: B:6:0x0015 \-\> B:8:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_7 -> Node_11;
+Node_8 -> Node_3;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+Node_10 -> Node_9;
+Node_9 -> Node_1;
+}
+

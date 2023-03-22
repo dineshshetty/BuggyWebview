@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.collection.CircularIntArray.popLast()I" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: IGET  (r0 I:int) = (r2 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mHead int  (LINE:122)\l0x0002: IGET  (r1 I:int) = (r2 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mTail int \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0004|0x0004: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0012 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|0x0006: ARITH  (r1 I:int) = (r1 I:int) + (\-1 int)  (LINE:123)\l0x0008: IGET  (r0 I:int) = (r2 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mCapacityBitmask int \l0x000a: ARITH  (r0 I:??[int, boolean]) = (r0 I:??[int, boolean, short, byte, char]) & (r1 I:??[int, boolean, short, byte, char]) \l0x000b: IGET  (r1 I:int[]) = (r2 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mElements int[]  (LINE:124)\l0x000d: AGET  (r1 I:??[int, float, short, byte, char]) = (r1 I:??[int, float][]), (r0 I:??[int, short, byte, char] A[D('t' int)]) \l0x000f: IPUT  (r0 I:int A[D('t' int)]), (r2 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mTail int  (LINE:125)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|RETURN\l|0x0011: RETURN  (r1 I:int A[D('result' int)])  (LINE:126)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|0x0012: NEW_INSTANCE  (r0 I:java.lang.ArrayIndexOutOfBoundsException A[D('t' int)]) =  java.lang.ArrayIndexOutOfBoundsException  (LINE:122)\l0x0014: INVOKE  (r0 I:java.lang.ArrayIndexOutOfBoundsException) type: DIRECT call: java.lang.ArrayIndexOutOfBoundsException.\<init\>():void A[MD:():void (c)]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|0x0017: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public int androidx.collection.CircularIntArray.popLast((r2 'this' I:androidx.collection.CircularIntArray A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0017 \-\> B:1:?\lDebug Info:\l  0x000b\-0x0012: r0 't' I\l  0x000f\-0x0012: r1 'result' I\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+}
+

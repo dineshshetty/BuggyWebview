@@ -1,0 +1,85 @@
+digraph "CFG forandroidx.appcompat.widget.ListPopupWindow.getMaxAvailableHeight(Landroid\/view\/View;IZ)I" {
+subgraph cluster_Region_1877761915 {
+label = "R(1:(2:(3:3|(1:(1:10))|6)|(1:15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2053565923 {
+label = "R(2:(3:3|(1:(1:10))|6)|(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_92819307 {
+label = "IF [B:19:0x0004] THEN: R(3:3|(1:(1:10))|6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \<= 23) goto L3\l}"];
+subgraph cluster_Region_1302922322 {
+label = "R(3:3|(1:(1:10))|6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|java.lang.reflect.Method java.lang.reflect.Method r0 = androidx.appcompat.widget.ListPopupWindow.sGetMaxAvailableHeightMethod\l}"];
+subgraph cluster_IfRegion_285745403 {
+label = "IF [B:21:0x0008] THEN: R(1:(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0008|if (r0 != null) goto L8\l}"];
+subgraph cluster_Region_422084402 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_338885867 {
+label = "Try: R(1:10) catches: R(1:13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_819410961 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002a|RETURN\l|return ((java.lang.Integer) r0.invoke(r5.mPopup, r6, java.lang.Integer.valueOf(r7), java.lang.Boolean.valueOf(r8))).intValue()\l}"];
+}
+subgraph cluster_Region_1509298811 {
+label = "R(1:13) | ExcHandler: Exception \-\> 0x002b\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002c|android.util.Log.i(androidx.appcompat.widget.ListPopupWindow.TAG, \"Could not call getMaxAvailableHeightMethod(View, int, boolean) on PopupWindow. Using the public version.\")\l}"];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0039|RETURN\l|return r5.mPopup.getMaxAvailableHeight(r6, r7)\l}"];
+}
+}
+subgraph cluster_Region_507706681 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0040|RETURN\l|return androidx.appcompat.widget.ListPopupWindow.Api24Impl.getMaxAvailableHeight(r5.mPopup, r6, r7, r8)\l}"];
+}
+}
+}
+subgraph cluster_Region_1509298811 {
+label = "R(1:13) | ExcHandler: Exception \-\> 0x002b\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002c|android.util.Log.i(androidx.appcompat.widget.ListPopupWindow.TAG, \"Could not call getMaxAvailableHeightMethod(View, int, boolean) on PopupWindow. Using the public version.\")\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0033}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x000a|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000a|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x002b, blocks: (B:22:0x000a), top: B:30:0x000a \}\lCatch: Exception \-\> 0x002b\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002b|ExcHandler: Exception \-\> 0x002b\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x003a}"];
+MethodNode[shape=record,label="{private int androidx.appcompat.widget.ListPopupWindow.getMaxAvailableHeight((r5v0 'this' androidx.appcompat.widget.ListPopupWindow A[IMMUTABLE_TYPE, THIS]), (r6v0 'anchor' android.view.View A[D('anchor' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'yOffset' int A[D('yOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'ignoreBottomDecorations' boolean A[D('ignoreBottomDecorations' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x002a \-\> B:17:?, CROSS_EDGE: B:25:0x002c \-\> B:26:0x0033, CROSS_EDGE: B:30:0x000a \-\> B:24:0x002b, CROSS_EDGE: B:29:0x0040 \-\> B:17:?\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x002b, blocks: (B:22:0x000a), top: B:30:0x000a \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_28[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_26[style=dashed];
+Node_21 -> Node_30;
+Node_23 -> Node_17;
+Node_25 -> Node_26;
+Node_27 -> Node_17;
+Node_29 -> Node_17;
+Node_25 -> Node_26;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_26 -> Node_27;
+Node_30 -> Node_22;
+Node_30 -> Node_24;
+Node_22 -> Node_23;
+Node_22 -> Node_31;
+Node_31 -> Node_24;
+Node_24 -> Node_25;
+Node_28 -> Node_29;
+}
+

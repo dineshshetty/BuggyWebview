@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.dispatchOnDrawerOpened(Landroid\/view\/View;)V" {
+subgraph cluster_Region_938473296 {
+label = "R(2:1|(1:(4:3|(2:5|(1:7))|9|(1:(1:11)))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|androidx.drawerlayout.widget.DrawerLayout$LayoutParams androidx.drawerlayout.widget.DrawerLayout.LayoutParams r0 = (androidx.drawerlayout.widget.DrawerLayout.LayoutParams) r6.getLayoutParams()\l}"];
+subgraph cluster_Region_935924004 {
+label = "R(1:(4:3|(2:5|(1:7))|9|(1:(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1142709105 {
+label = "IF [B:19:0x000a] THEN: R(4:3|(2:5|(1:7))|9|(1:(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|if ((r0.openState & 1) == 0) goto L3\l}"];
+subgraph cluster_Region_872146347 {
+label = "R(4:3|(2:5|(1:7))|9|(1:(1:11)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000c|r0.openState = 1\ljava.util.List\<androidx.drawerlayout.widget.DrawerLayout$DrawerListener\> java.util.List\<androidx.drawerlayout.widget.DrawerLayout.DrawerListener\> r1 = r5.mListeners\l}"];
+subgraph cluster_IfRegion_1446718180 {
+label = "IF [B:21:0x0010] THEN: R(2:5|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|if (r1 != null) goto L5\l}"];
+subgraph cluster_Region_514195972 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0012|int int r1 = r1.size()\lint int r3 = r1 \- 1\l}"];
+subgraph cluster_LoopRegion_952567154 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0018|LOOP_START\lLOOP:0: B:23:0x0018\-\>B:24:0x001a\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:22:0x0012, B:24:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \>= 0) goto L7\l}"];
+subgraph cluster_Region_1425893756 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001a|LOOP_END\lLOOP:0: B:23:0x0018\-\>B:24:0x001a\l|r5.mListeners.get(r3).onDrawerOpened(r6)\lr3\-\-\l}"];
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0028|updateChildrenImportantForAccessibility(r6, androidx.drawerlayout.widget.DrawerLayout.CHILDREN_DISALLOW_INTERCEPT)\lupdateChildAccessibilityAction(r6)\l}"];
+subgraph cluster_Region_1211618060 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1489213924 {
+label = "IF [B:26:0x0032] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0032|if (hasWindowFocus() != false) goto L11\l}"];
+subgraph cluster_Region_378950899 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0034|sendAccessibilityEvent(32)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0028|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0039|ORIG_RETURN\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.drawerlayout.widget.DrawerLayout.dispatchOnDrawerOpened((r5v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r6v0 'drawerView' android.view.View A[D('drawerView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:24:0x001a \-\> B:23:0x0018, CROSS_EDGE: B:26:0x0032 \-\> B:28:0x0039, CROSS_EDGE: B:21:0x0010 \-\> B:25:0x0028, CROSS_EDGE: B:19:0x000a \-\> B:28:0x0039\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_30[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_29[style=dashed];
+Node_24 -> Node_23;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_31[style=dashed];
+Node_27 -> Node_28;
+Node_16 -> Node_18;
+Node_29 -> Node_25;
+Node_28 -> Node_17;
+Node_31 -> Node_17;
+Node_30 -> Node_17;
+}
+

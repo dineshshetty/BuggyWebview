@@ -1,0 +1,53 @@
+digraph "CFG forcom.google.android.material.internal.ThemeEnforcement.checkCompatibleTheme(Landroid\/content\/Context;Landroid\/util\/AttributeSet;II)V" {
+subgraph cluster_Region_400527412 {
+label = "R(3:1|(2:3|(1:9))|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|android.content.res.TypedArray android.content.res.TypedArray r0 = r6.obtainStyledAttributes(r7, com.google.android.material.C0571R.styleable.ThemeEnforcement, r8, r9)\lboolean boolean r1 = r0.getBoolean(com.google.android.material.C0571R.styleable.ThemeEnforcement_enforceMaterialTheme, false)\lr0.recycle()\l}"];
+subgraph cluster_IfRegion_80979546 {
+label = "IF [B:16:0x0010] THEN: R(2:3|(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0010|if (r1 != false) goto L3\l}"];
+subgraph cluster_Region_319170457 {
+label = "R(2:3|(1:9))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0012|android.util.TypedValue android.util.TypedValue r2 = new android.util.TypedValue()\lboolean boolean r3 = r6.getTheme().resolveAttribute(com.google.android.material.C0571R.attr.isMaterialTheme, r2, true)\l}"];
+subgraph cluster_IfRegion_1142960495 {
+label = "IF [B:18:0x0023, B:20:0x0029, B:22:0x002d] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0023|if (r3 == false) goto L9\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0029|ADDED_TO_REGION\l|if (r2.type == 18) goto L7\l}"];
+Node_22 [shape=record,label="{22\:\ 0x002d|ADDED_TO_REGION\l|if (r2.data == 0) goto L9\l}"];
+subgraph cluster_Region_1683906974 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002f|checkMaterialTheme(r6)\l}"];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0032|checkAppCompatTheme(r6)\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0025}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002b}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0035}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static void com.google.android.material.internal.ThemeEnforcement.checkCompatibleTheme((r6v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'set' android.util.AttributeSet A[D('set' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'defStyleAttr' int A[D('defStyleAttr' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'defStyleRes' int A[D('defStyleRes' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x002d \-\> B:24:0x0032, CROSS_EDGE: B:20:0x0029 \-\> B:24:0x0032, CROSS_EDGE: B:18:0x0023 \-\> B:23:0x002f, CROSS_EDGE: B:16:0x0010 \-\> B:24:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_23;
+Node_20 -> Node_21;
+Node_20 -> Node_24[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_13 -> Node_15;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_25 -> Node_14;
+}
+

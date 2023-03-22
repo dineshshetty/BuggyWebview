@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.appcompat.graphics.drawable.StateListDrawable.onStateChange([I)Z" {
+subgraph cluster_Region_543059813 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|boolean boolean r0 = super.onStateChange(r5)\lint int r1 = r4.mStateListState.indexOfStateSet(r5)\l}"];
+subgraph cluster_IfRegion_746711380 {
+label = "IF [B:16:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (r1 \< 0) goto L3\l}"];
+subgraph cluster_Region_1018020592 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|int r1 = r4.mStateListState.indexOfStateSet(android.util.StateSet.WILD_CARD)\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0018|RETURN\l|return selectDrawable(r1) \|\| r0\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0014|PHI: r1 \l  PHI: (r1v2 'idx' int) = (r1v1 'idx' int), (r1v3 'idx' int) binds: [B:16:0x000a, B:17:0x000c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001a|REMOVE\lADDED_TO_REGION\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001d|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001f|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.graphics.drawable.StateListDrawable.onStateChange((r4v0 'this' androidx.appcompat.graphics.drawable.StateListDrawable A[IMMUTABLE_TYPE, THIS]), (r5v0 'stateSet' int[] A[D('stateSet' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:23:0x001f \-\> B:24:0x0020, CROSS_EDGE: B:19:0x0018 \-\> B:23:0x001f, CROSS_EDGE: B:16:0x000a \-\> B:18:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.onStateChange(int[]):boolean\}]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_23;
+Node_13 -> Node_15;
+Node_18 -> Node_19;
+Node_20 -> Node_22;
+Node_20 -> Node_23;
+Node_22 -> Node_14;
+Node_23 -> Node_14;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.cardview.widget.RoundRectDrawableWithShadow.draw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_1450904237 {
+label = "R(2:(1:3)|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_732026346 {
+label = "IF [B:10:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|if (r4.mDirty != false) goto L3\l}"];
+subgraph cluster_Region_1821500887 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|buildComponents(getBounds())\lr4.mDirty = false\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x000e|r5.translate(0.0f, r4.mRawShadowSize \/ 2.0f)\ldrawShadow(r5)\lr5.translate(0.0f, (\-r4.mRawShadowSize) \/ 2.0f)\landroidx.cardview.widget.RoundRectDrawableWithShadow.sRoundRectHelper.drawRoundRect(r5, r4.mCardBounds, r4.mCornerRadius, r4.mPaint)\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002c}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.cardview.widget.RoundRectDrawableWithShadow.draw((r4v0 'this' androidx.cardview.widget.RoundRectDrawableWithShadow A[IMMUTABLE_TYPE, THIS]), (r5v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:10:0x0002 \-\> B:12:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.draw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_7;Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_13 -> Node_8;
+}
+

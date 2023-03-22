@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.appcompat.widget.SearchView.updateFocusedState()V" {
+subgraph cluster_Region_507530693 {
+label = "R(7:1|2|4|(1:6)|7|(1:9)|10)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|boolean boolean r0 = r4.mSearchSrcTextView.hasFocus()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0006|int[] r1 = r0 ? androidx.appcompat.widget.SearchView.FOCUSED_STATE_SET : androidx.appcompat.widget.SearchView.EMPTY_STATE_SET\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000d|PHI: r1 \l  PHI: (r1v1 'stateSet' int[]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = r4.mSearchPlate.getBackground()\l}"];
+subgraph cluster_IfRegion_1137502905 {
+label = "IF [B:21:0x0013] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0013|if (r2 != null) goto L6\l}"];
+subgraph cluster_Region_1945167588 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|r2.setState(r1)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0018|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r3 = r4.mSubmitArea.getBackground()\l}"];
+subgraph cluster_IfRegion_1602140512 {
+label = "IF [B:24:0x001e] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|if (r3 != null) goto L9\l}"];
+subgraph cluster_Region_602259254 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0020|r3.setState(r1)\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0023|invalidate()\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0008}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0026}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000b}"];
+MethodNode[shape=record,label="{void androidx.appcompat.widget.SearchView.updateFocusedState((r4v0 'this' androidx.appcompat.widget.SearchView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x001e \-\> B:26:0x0023, CROSS_EDGE: B:21:0x0013 \-\> B:23:0x0018, CROSS_EDGE: B:19:0x000b \-\> B:20:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_18 -> Node_20;
+Node_27 -> Node_15;
+Node_19 -> Node_20;
+}
+

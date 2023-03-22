@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.UIntArrayKt.UIntArray(ILkotlin\/jvm\/functions\/Function1;)[I" {
+subgraph cluster_Region_1296091386 {
+label = "R(3:1|(1:3)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"init\")\lint[] int[] r0 = new int[r3]\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_45113042 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_START\lLOOP:0: B:3:0x0008\-\>B:4:0x000a\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:2:0x0000, B:4:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r3) goto L3\l}"];
+subgraph cluster_Region_1295236103 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:4:0x000a\l|r0[r1] = r4.invoke(java.lang.Integer.valueOf(r1)).m289unboximpl()\lr1++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0021|RETURN\l|return kotlin.UIntArray.m292constructorimpl(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001d|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final int[] kotlin.UIntArrayKt.UIntArray((r3v0 'size' int A[D('size' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'init' kotlin.jvm.functions.Function1\<? super java.lang.Integer, kotlin.UInt\> A[D('init' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x000a \-\> B:3:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (ILkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Integer;Lkotlin\/UInt;\>;)[I\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_3;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_7 -> Node_5;
+Node_5 -> Node_6;
+}
+

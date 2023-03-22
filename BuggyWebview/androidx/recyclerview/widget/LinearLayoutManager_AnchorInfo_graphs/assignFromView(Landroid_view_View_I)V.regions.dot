@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.AnchorInfo.assignFromView(Landroid\/view\/View;I)V" {
+subgraph cluster_Region_1075341996 {
+label = "R(2:(1:3)(1:7)|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1144746613 {
+label = "IF [B:11:0x0002] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r2.mLayoutFromEnd != false) goto L3\l}"];
+subgraph cluster_Region_486831480 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|r2.mCoordinate = r2.mOrientationHelper.getDecoratedEnd(r3) + r2.mOrientationHelper.getTotalSpaceChange()\l}"];
+}
+subgraph cluster_Region_510406270 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0014|r2.mCoordinate = r2.mOrientationHelper.getDecoratedStart(r3)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x001c|r2.mPosition = r4\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001e}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.LinearLayoutManager.AnchorInfo.assignFromView((r2v0 'this' androidx.recyclerview.widget.LinearLayoutManager$AnchorInfo A[IMMUTABLE_TYPE, THIS]), (r3v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0014 \-\> B:14:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+}
+

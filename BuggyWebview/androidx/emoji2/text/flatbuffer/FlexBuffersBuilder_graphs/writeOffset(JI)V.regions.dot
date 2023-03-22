@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlexBuffersBuilder.writeOffset(JI)V" {
+subgraph cluster_Region_2138103557 {
+label = "R(2:1|(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r1 = (int) (r6.f86bb.writePosition() \- r7)\l}"];
+subgraph cluster_Region_1640680600 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1286838292 {
+label = "IF [B:3:0x000b, B:5:0x0015] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r9 != 8) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ADDED_TO_REGION\l|if (r1 \>= (1 \<\< (r9 * 8))) goto L5\l}"];
+subgraph cluster_Region_1664176563 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001d|throw new java.lang.AssertionError()\l}"];
+}
+}
+subgraph cluster_Region_143591971 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001e|writeInt(r1, r9)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0018}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0022}"];
+MethodNode[shape=record,label="{private void androidx.emoji2.text.flatbuffer.FlexBuffersBuilder.writeOffset((r6v0 'this' androidx.emoji2.text.flatbuffer.FlexBuffersBuilder A[IMMUTABLE_TYPE, THIS]), (r7v0 'val' long A[D('val' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'byteWidth' int A[D('byteWidth' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0022 \-\> B:1:?, CROSS_EDGE: B:3:0x000b \-\> B:9:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_7;
+Node_5 -> Node_9[style=dashed];
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_10 -> Node_1;
+}
+

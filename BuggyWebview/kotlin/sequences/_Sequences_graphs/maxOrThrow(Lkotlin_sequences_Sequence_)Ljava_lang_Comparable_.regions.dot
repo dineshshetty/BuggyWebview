@@ -1,0 +1,82 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.maxOrThrow(Lkotlin\/sequences\/Sequence;)Ljava\/lang\/Comparable;" {
+subgraph cluster_Region_2104630159 {
+label = "R(2:1|(2:(1:17)|(3:3|(2:6|(1:9)(0))|14)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\ljava.util.Iterator java.util.Iterator r0 = r4.iterator()\l}"];
+subgraph cluster_Region_439396195 {
+label = "R(2:(1:17)|(3:3|(2:6|(1:9)(0))|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1292996121 {
+label = "IF [B:21:0x000d] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000d|if (r0.hasNext() == false) goto L16\l}"];
+subgraph cluster_Region_1857620046 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002f|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_1535824053 {
+label = "R(3:3|(2:6|(1:9)(0))|14)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000f|java.lang.Comparable T r1 = r0.next()\l}"];
+subgraph cluster_LoopRegion_1258013544 {
+label = "LOOP:0: (2:6|(1:9)(0))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|if (r0.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_666376155 {
+label = "R(2:6|(1:9)(0))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001b|java.lang.Comparable T r2 = r0.next()\l}"];
+subgraph cluster_IfRegion_1805274989 {
+label = "IF [B:26:0x0025] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0025|if (r1.compareTo(r2) \< 0) goto L8\l}"];
+subgraph cluster_Region_1721250931 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0027|r1 = r2\l}"];
+}
+subgraph cluster_Region_256020988 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0029|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0015|LOOP_START\lLOOP:0: B:23:0x0015\-\>B:33:0x0015\lPHI: r1 \l  PHI: (r1v4 T extends java.lang.Comparable\<? super T\>) = (r1v3 T extends java.lang.Comparable\<? super T\>), (r1v5 T extends java.lang.Comparable\<? super T\>) binds: [B:22:0x000f, B:33:0x0015] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0027|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0015|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0015|LOOP_END\lSYNTHETIC\lLOOP:0: B:23:0x0015\-\>B:33:0x0015\lPHI: r1 \l  PHI: (r1v5 T extends java.lang.Comparable\<? super T\>) = (r1v4 T extends java.lang.Comparable\<? super T\>), (r1v6 T extends java.lang.Comparable\<? super T\>) binds: [B:34:0x0015, B:35:0x0015] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0015|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0029|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x002a}"];
+MethodNode[shape=record,label="{public static final T extends java.lang.Comparable\<? super T\> kotlin.sequences.SequencesKt___SequencesKt.maxOrThrow((r4v0 kotlin.sequences.Sequence\<? extends T extends java.lang.Comparable\<? super T\>\> A[D('$this$max' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x0025 \-\> B:23:0x0015, BACK_EDGE: B:27:0x0027 \-\> B:23:0x0015, CROSS_EDGE: B:30:0x002f \-\> B:19:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends java.lang.Comparable\<? super T\>]\lSIGNATURE: \<T::Ljava\/lang\/Comparable\<\-TT;\>;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;)TT;\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_29;
+Node_30 -> Node_19;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_32[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_31;
+Node_26 -> Node_34[style=dashed];
+Node_27 -> Node_35;
+Node_28 -> Node_19;
+Node_18 -> Node_20;
+Node_23 -> Node_24;
+Node_31 -> Node_27;
+Node_35 -> Node_33;
+Node_33 -> Node_23;
+Node_34 -> Node_33;
+Node_32 -> Node_28;
+Node_29 -> Node_30;
+}
+

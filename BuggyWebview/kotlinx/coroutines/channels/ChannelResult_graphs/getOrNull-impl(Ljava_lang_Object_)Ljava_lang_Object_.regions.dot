@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.channels.ChannelResult.getOrNull\-impl(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1320442228 {
+label = "R(1:(2:(1:6)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_877992952 {
+label = "R(2:(1:6)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_115303107 {
+label = "IF [B:11:0x0002] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if ((r1 instanceof kotlinx.coroutines.channels.ChannelResult.Failed) == true) goto L6\l}"];
+subgraph cluster_Region_9903587 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1820625788 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final T kotlinx.coroutines.channels.ChannelResult.getOrNull\-impl((r1v0 'arg0' java.lang.Object A[D('arg0' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0006 \-\> B:14:0x0007\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (Ljava\/lang\/Object;)TT;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r1v0, resolved type: java.lang.Object\}\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_15;
+}
+

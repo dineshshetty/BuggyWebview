@@ -1,0 +1,74 @@
+digraph "CFG forcom.google.android.material.resources.TextAppearance.updateTextPaintMeasureState(Landroid\/content\/Context;Landroid\/text\/TextPaint;Landroid\/graphics\/Typeface;)V" {
+subgraph cluster_Region_127812824 {
+label = "R(6:1|(1:3)|4|7|10|(1:(1:14)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|android.graphics.Typeface android.graphics.Typeface r0 = com.google.android.material.resources.TypefaceUtils.maybeCopyWithFontWeightAdjustment(r5, r7)\l}"];
+subgraph cluster_IfRegion_1370411727 {
+label = "IF [B:24:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_84730092 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0006|r7 = r0\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0007|PHI: r7 \l  PHI: (r7v1 'typeface' android.graphics.Typeface) = (r7v0 'typeface' android.graphics.Typeface), (r7v2 'typeface' android.graphics.Typeface) binds: [B:24:0x0004, B:25:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|r6.setTypeface(r7)\lint r1 = r4.textStyle & (~r7.getStyle())\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0019|PHI: r2 \l  PHI: (r2v4 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r6.setFakeBoldText((r1 & 1) != 0)\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0024|PHI: r2 \l  PHI: (r2v7 float A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r6.setTextSkewX((r1 & 2) != 0 ? \-0.25f : 0.0f)\lr6.setTextSize(r4.textSize)\l}"];
+subgraph cluster_Region_766303861 {
+label = "R(1:(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_131691042 {
+label = "IF [B:35:0x0030, B:37:0x0034] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0030|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L12\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0034|ADDED_TO_REGION\l|if (r4.hasLetterSpacing != false) goto L14\l}"];
+subgraph cluster_Region_1977034867 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0036|r6.setLetterSpacing(r4.letterSpacing)\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0014}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0016}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001e}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0020}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0032}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x003b|ORIG_RETURN\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ ?|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0023}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0018}"];
+MethodNode[shape=record,label="{public void com.google.android.material.resources.TextAppearance.updateTextPaintMeasureState((r4v0 'this' com.google.android.material.resources.TextAppearance A[IMMUTABLE_TYPE, THIS]), (r5v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'textPaint' android.text.TextPaint A[D('textPaint' android.text.TextPaint), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'typeface' android.graphics.Typeface A[D('typeface' android.graphics.Typeface), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:37:0x0034 \-\> B:39:0x003b, CROSS_EDGE: B:35:0x0030 \-\> B:39:0x003b, CROSS_EDGE: B:33:0x0023 \-\> B:34:0x0024, CROSS_EDGE: B:29:0x0018 \-\> B:30:0x0019, CROSS_EDGE: B:24:0x0004 \-\> B:26:0x0007\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_30 -> Node_31;
+Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_35 -> Node_40[style=dashed];
+Node_37 -> Node_38;
+Node_37 -> Node_41[style=dashed];
+Node_38 -> Node_39;
+Node_21 -> Node_23;
+Node_27 -> Node_28;
+Node_27 -> Node_29;
+Node_28 -> Node_30;
+Node_31 -> Node_32;
+Node_31 -> Node_33;
+Node_32 -> Node_34;
+Node_36 -> Node_37;
+Node_39 -> Node_22;
+Node_41 -> Node_22;
+Node_40 -> Node_22;
+Node_33 -> Node_34;
+Node_29 -> Node_30;
+}
+

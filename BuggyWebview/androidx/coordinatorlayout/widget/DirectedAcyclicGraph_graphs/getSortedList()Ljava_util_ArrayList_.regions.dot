@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.coordinatorlayout.widget.DirectedAcyclicGraph.getSortedList()Ljava\/util\/ArrayList;" {
+subgraph cluster_Region_606801097 {
+label = "R(3:1|(1:3)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|r5.mSortResult.clear()\lr5.mSortTmpMarked.clear()\lint r0 = 0\lint int r1 = r5.mGraph.size()\l}"];
+subgraph cluster_LoopRegion_1601495046 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0011|LOOP_START\lLOOP:0: B:11:0x0011\-\>B:12:0x0013\lPHI: r0 \l  PHI: (r0v3 'i' int) = (r0v2 'i' int), (r0v5 'i' int) binds: [B:10:0x0000, B:12:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< r1) goto L3\l}"];
+subgraph cluster_Region_89599752 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0013|LOOP_END\lLOOP:0: B:11:0x0011\-\>B:12:0x0013\l|dfs(r5.mGraph.keyAt(r0), r5.mSortResult, r5.mSortTmpMarked)\lr0++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0025|RETURN\l|return r5.mSortResult\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0023|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0023}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.util.ArrayList\<T\> androidx.coordinatorlayout.widget.DirectedAcyclicGraph.getSortedList((r5v0 'this' androidx.coordinatorlayout.widget.DirectedAcyclicGraph\<T\> A[D('this' androidx.coordinatorlayout.widget.DirectedAcyclicGraph\<T\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0013 \-\> B:11:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: ()Ljava\/util\/ArrayList\<TT;\>;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_15 -> Node_13;
+Node_13 -> Node_14;
+}
+

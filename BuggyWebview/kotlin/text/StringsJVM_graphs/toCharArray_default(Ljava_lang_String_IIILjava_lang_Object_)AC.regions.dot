@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.text.StringsKt__StringsJVMKt.toCharArray$default(Ljava\/lang\/String;IIILjava\/lang\/Object;)[C" {
+subgraph cluster_Region_632221545 {
+label = "R(3:(1:3)|(1:6)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_267158078 {
+label = "IF [B:23:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0002|if ((r3 & 1) != 0) goto L3\l}"];
+subgraph cluster_Region_1096912281 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0004|r1 = 0\l}"];
+}
+}
+subgraph cluster_IfRegion_1296705166 {
+label = "IF [B:26:0x0007] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0007|if ((r3 & 2) != 0) goto L6\l}"];
+subgraph cluster_Region_533548521 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0009|int r2 = r0.length()\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0011|RETURN\l|return kotlin.text.StringsKt.toCharArray(r0, r1, r2)\l}"];
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0005|PHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:23:0x0002, B:24:0x0004] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x000d|PHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:26:0x0007, B:27:0x0009] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static \/* synthetic *\/ char[] kotlin.text.StringsKt__StringsJVMKt.toCharArray$default((r0v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:26:0x0007 \-\> B:28:0x000d, CROSS_EDGE: B:23:0x0002 \-\> B:25:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_29 -> Node_21;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_25 -> Node_26;
+Node_28 -> Node_29;
+}
+

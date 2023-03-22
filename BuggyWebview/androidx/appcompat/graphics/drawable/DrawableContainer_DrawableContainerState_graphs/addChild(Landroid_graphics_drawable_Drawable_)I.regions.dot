@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.appcompat.graphics.drawable.DrawableContainer.DrawableContainerState.addChild(Landroid\/graphics\/drawable\/Drawable;)I" {
+subgraph cluster_Region_811489343 {
+label = "R(4:1|(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|int int r0 = r4.mNumChildren\l}"];
+subgraph cluster_IfRegion_933410975 {
+label = "IF [B:10:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0005|if (r0 \>= r4.mDrawables.length) goto L3\l}"];
+subgraph cluster_Region_1008737726 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0007|growArray(r0, r0 + 10)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x000c|r5.mutate()\lr5.setVisible(false, androidx.appcompat.graphics.drawable.DrawableContainer.DEFAULT_DITHER)\lr5.setCallback(r4.mOwner)\lr4.mDrawables[r0] = r5\lr4.mNumChildren++\lr4.mChildrenChangingConfigurations \|= r5.getChangingConfigurations()\linvalidateCache()\lr4.mConstantPadding = null\lr4.mCheckedPadding = false\lr4.mCheckedConstantSize = false\lr4.mCheckedConstantState = false\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0037|RETURN\l|return r0\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final int androidx.appcompat.graphics.drawable.DrawableContainer.DrawableContainerState.addChild((r4v0 'this' androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState A[IMMUTABLE_TYPE, THIS]), (r5v0 'dr' android.graphics.drawable.Drawable A[D('dr' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0005 \-\> B:12:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

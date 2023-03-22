@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.shouldDeferAccessibilityEvent(Landroid\/view\/accessibility\/AccessibilityEvent;)Z" {
+subgraph cluster_Region_2088861117 {
+label = "R(1:(2:(5:3|(1:5)|(1:7)|8|9)|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_703168103 {
+label = "R(2:(5:3|(1:5)|(1:7)|8|9)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1481902375 {
+label = "IF [B:16:0x0004] THEN: R(5:3|(1:5)|(1:7)|8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|if (isComputingLayout() != false) goto L3\l}"];
+subgraph cluster_Region_1446207611 {
+label = "R(5:3|(1:5)|(1:7)|8|9)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|int r0 = 0\l}"];
+subgraph cluster_IfRegion_1646515049 {
+label = "IF [B:18:0x0007] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0007|if (r3 != null) goto L5\l}"];
+subgraph cluster_Region_2086257516 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0009|int r0 = androidx.core.view.accessibility.AccessibilityEventCompat.getContentChangeTypes(r3)\l}"];
+}
+}
+subgraph cluster_IfRegion_431513120 {
+label = "IF [B:20:0x000d] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|PHI: r0 \l  PHI: (r0v3 'type' int) = (r0v2 'type' int), (r0v6 'type' int) binds: [B:18:0x0007, B:19:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == 0) goto L7\l}"];
+subgraph cluster_Region_1049523474 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|r0 = 0\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0010|PHI: r0 \l  PHI: (r0v4 'type' int) = (r0v3 'type' int), (r0v5 'type' int) binds: [B:20:0x000d, B:21:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|r2.mEatenAccessibilityChangeFlags \|= r0\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0016|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_364393989 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0017|RETURN\l|return false\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{boolean androidx.recyclerview.widget.RecyclerView.shouldDeferAccessibilityEvent((r2v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r3v0 'event' android.view.accessibility.AccessibilityEvent A[D('event' android.view.accessibility.AccessibilityEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x000d \-\> B:22:0x0010, CROSS_EDGE: B:18:0x0007 \-\> B:20:0x000d, CROSS_EDGE: B:25:0x0018 \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_24 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+}
+

@@ -1,0 +1,161 @@
+digraph "CFG forkotlinx.coroutines.internal.LimitedDispatcher.run()V" {
+subgraph cluster_Region_2138165971 {
+label = "R(2:1|(2:2|(3:(1:5)|6|(2:12|13))(2:22|3a)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_1988298737 {
+label = "LOOP:0: (2:2|(3:(1:5)|6|(2:12|13))(2:22|3a))";
+node [shape=record,color=blue];
+subgraph cluster_Region_582034191 {
+label = "R(2:2|(3:(1:5)|6|(2:12|13))(2:22|3a))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0001|LOOP_START\lLOOP:0: B:3:0x0001\-\>B:37:0x0001\lPHI: r0 \l  PHI: (r0v1 'fairnessCounter' int) = (r0v0 'fairnessCounter' int), (r0v3 'fairnessCounter' int) binds: [B:2:0x0000, B:37:0x0001] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Runnable java.lang.Runnable r1 = r6.queue.removeFirstOrNull()\l}"];
+subgraph cluster_IfRegion_1390589427 {
+label = "IF [B:4:0x000a] THEN: R(3:(1:5)|6|(2:12|13)) ELSE: R(2:22|3a)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|if (r1 != null) goto L4\l}"];
+subgraph cluster_Region_1931412144 {
+label = "R(3:(1:5)|6|(2:12|13))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_142415172 {
+label = "Try: R(1:5) catches: R(2:19|20)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1499674525 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0011, blocks: (B:5:0x000d), top: B:29:0x000d \}\lCatch: all \-\> 0x0011\l|r1.run()     \/\/ Catch: java.lang.Throwable \-\> L11\l}"];
+}
+subgraph cluster_Region_1258712341 {
+label = "R(2:19|20) | ExcHandler: all \-\> 0x0011\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|ExcHandler: all \-\> 0x0011\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0012|kotlinx.coroutines.CoroutineExceptionHandlerKt.handleCoroutineException(kotlin.coroutines.EmptyCoroutineContext.INSTANCE, r2)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0019|r0++\l}"];
+subgraph cluster_IfRegion_1395098866 {
+label = "IF [B:10:0x001d, B:12:0x0028] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001d|if (r0 \>= 16) goto L8\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0028|ADDED_TO_REGION\l|if (r6.dispatcher.isDispatchNeeded(r6) != false) goto L11\l}"];
+subgraph cluster_Region_474518558 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002a|r6.dispatcher.dispatch(r6, r6)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0035|RETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_906770519 {
+label = "R(2:22|3a)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0037|java.lang.Object java.lang.Object r2 = r6.workerAllocationLock\l}"];
+subgraph cluster_SynchronizedRegion_487513282 {
+label = "Synchronized:R(2:23|(2:26|(2:(1:33)|(1:28))))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x003a}"];
+subgraph cluster_Region_1914352873 {
+label = "R(2:26|(2:(1:33)|(1:28)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x003c|TRY_ENTER\lTRY_LEAVE\lTryCatch #1 \{, blocks: (B:19:0x003c, B:23:0x004c), top: B:31:0x003c \}\lCatch: all \-\> 0x0059\l|r6.runningWorkers\-\-\l}"];
+subgraph cluster_Region_313350363 {
+label = "R(2:(1:33)|(1:28))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1790701918 {
+label = "IF [B:20:0x0048] THEN: R(1:33) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0048|if (r6.queue.getSize() == 0) goto L31\l}"];
+subgraph cluster_Region_847999091 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x004b|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_728459547 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x004c|TRY_ENTER\lTRY_LEAVE\lTryCatch #1 \{, blocks: (B:19:0x003c, B:23:0x004c), top: B:31:0x003c \}\lCatch: all \-\> 0x0059\l|r6.runningWorkers++\lr0 = 0\lkotlin.Unit kotlin.Unit r4 = kotlin.Unit.INSTANCE     \/\/ Catch: java.lang.Throwable \-\> L59\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1258712341 {
+label = "R(2:19|20) | ExcHandler: all \-\> 0x0011\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|ExcHandler: all \-\> 0x0011\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0012|kotlinx.coroutines.CoroutineExceptionHandlerKt.handleCoroutineException(kotlin.coroutines.EmptyCoroutineContext.INSTANCE, r2)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000d|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x001f|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001f}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x002a|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0001|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0001|LOOP_END\lSYNTHETIC\lLOOP:0: B:3:0x0001\-\>B:37:0x0001\lPHI: r0 \l  PHI: (r0v3 'fairnessCounter' int) = (r0v2 'fairnessCounter' int), (r0v4 'fairnessCounter' int), (r0v4 'fairnessCounter' int) binds: [B:40:0x0001, B:38:0x0001, B:39:0x0001] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0001|SYNTHETIC\lADDED_TO_REGION\l|continue\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0037|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x003b}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x003c|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0056|DONT_GENERATE\l|monitor\-exit()\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0001|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x004a|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x004a|DONT_GENERATE\l|monitor\-exit()\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0059|REMOVE\lExcHandler: all \-\> 0x0059\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x005b|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.internal.LimitedDispatcher.run((r6v0 'this' kotlinx.coroutines.internal.LimitedDispatcher A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:24:0x0056 \-\> B:3:0x0001, CROSS_EDGE: B:28:0x005b \-\> B:1:?, CROSS_EDGE: B:31:0x003c \-\> B:26:0x0059, CROSS_EDGE: B:14:0x0035 \-\> B:1:?, BACK_EDGE: B:12:0x0028 \-\> B:3:0x0001, BACK_EDGE: B:10:0x001d \-\> B:3:0x0001, CROSS_EDGE: B:8:0x0012 \-\> B:9:0x0019, CROSS_EDGE: B:29:0x000d \-\> B:7:0x0011\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0011, blocks: (B:5:0x000d), top: B:29:0x000d \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{java.lang.Runnable.run():void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_29;
+Node_4 -> Node_34[style=dashed];
+Node_5 -> Node_9;
+Node_5 -> Node_30;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_35;
+Node_10 -> Node_38[style=dashed];
+Node_12 -> Node_36;
+Node_12 -> Node_39[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_32;
+Node_20 -> Node_23[style=dashed];
+Node_20 -> Node_33;
+Node_22 -> Node_1;
+Node_23 -> Node_24;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_29 -> Node_5;
+Node_29 -> Node_7;
+Node_35 -> Node_11;
+Node_11 -> Node_12;
+Node_36 -> Node_13;
+Node_39 -> Node_37;
+Node_37 -> Node_3;
+Node_38 -> Node_37;
+Node_30 -> Node_7;
+Node_34 -> Node_16;
+Node_18 -> Node_31;
+Node_31 -> Node_19;
+Node_31 -> Node_26;
+Node_24 -> Node_40;
+Node_40 -> Node_37;
+Node_33 -> Node_21;
+Node_21 -> Node_22;
+Node_32 -> Node_26;
+Node_26 -> Node_28;
+Node_28 -> Node_1;
+}
+

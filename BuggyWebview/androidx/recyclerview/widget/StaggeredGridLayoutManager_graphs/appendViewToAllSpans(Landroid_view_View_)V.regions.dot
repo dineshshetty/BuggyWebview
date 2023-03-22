@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.appendViewToAllSpans(Landroid\/view\/View;)V" {
+subgraph cluster_Region_93459109 {
+label = "R(2:1|(1:3))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r2.mSpanCount \- 1\l}"];
+subgraph cluster_LoopRegion_1011526147 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|LOOP_START\lLOOP:0: B:3:0x0004\-\>B:4:0x0006\lPHI: r0 \l  PHI: (r0v2 'i' int) = (r0v1 'i' int), (r0v3 'i' int) binds: [B:2:0x0000, B:4:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_808801966 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|LOOP_END\lLOOP:0: B:3:0x0004\-\>B:4:0x0006\l|r2.mSpans[r0].appendToSpan(r3)\lr0\-\-\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.StaggeredGridLayoutManager.appendViewToAllSpans((r2v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x0006 \-\> B:3:0x0004\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_3;
+Node_0 -> Node_2;
+Node_6 -> Node_5;
+Node_5 -> Node_1;
+}
+

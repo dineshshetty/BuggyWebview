@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatReceiveContentHelper.tryGetActivity(Landroid\/view\/View;)Landroid\/app\/Activity;" {
+subgraph cluster_Region_312055465 {
+label = "R(3:1|(1:(2:(1:9)|(1:6)))|12)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|android.content.Context android.content.Context r0 = r2.getContext()\l}"];
+subgraph cluster_LoopRegion_772694055 {
+label = "LOOP:0: (1:(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|if ((r0 instanceof android.content.ContextWrapper) != false) goto L4\l}"];
+subgraph cluster_Region_1312772833 {
+label = "R(1:(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2035661927 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_775680588 {
+label = "IF [B:20:0x000a] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000a|if ((r0 instanceof android.app.Activity) != false) goto L7\l}"];
+subgraph cluster_Region_1892226556 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000f|RETURN\l|return (android.app.Activity) r0\l}"];
+}
+}
+subgraph cluster_Region_388772304 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0010|LOOP_END\lLOOP:0: B:17:0x0004\-\>B:23:0x0010\l|android.content.Context r0 = ((android.content.ContextWrapper) r0).getBaseContext()\l}"];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0018|RETURN\l|return null\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0004|LOOP_START\lLOOP:0: B:17:0x0004\-\>B:23:0x0010\lPHI: r0 \l  PHI: (r0v1 'context' android.content.Context) = (r0v0 'context' android.content.Context), (r0v2 'context' android.content.Context) binds: [B:16:0x0000, B:23:0x0010] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0008}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000c|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000c}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0018|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static android.app.Activity androidx.appcompat.widget.AppCompatReceiveContentHelper.tryGetActivity((r2v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x0010 \-\> B:17:0x0004, CROSS_EDGE: B:25:0x0019 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_26[style=dashed];
+Node_20 -> Node_23[style=dashed];
+Node_20 -> Node_27;
+Node_22 -> Node_15;
+Node_23 -> Node_17;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_27 -> Node_21;
+Node_21 -> Node_22;
+Node_26 -> Node_24;
+}
+

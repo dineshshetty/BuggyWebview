@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.constraintlayout.core.SolverVariableValues.divideByAmount(F)V" {
+subgraph cluster_Region_424576078 {
+label = "R(2:1|(2:3|(2:(1:7)|(1:5))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = r5.mCount\lint int r1 = r5.head\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_2088625530 {
+label = "LOOP:0: (2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|LOOP_START\lLOOP:0: B:15:0x0005\-\>B:19:0x0016\lPHI: r1 r2 \l  PHI: (r1v1 'j' int) = (r1v0 'j' int), (r1v2 'j' int) binds: [B:14:0x0000, B:19:0x0016] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:14:0x0000, B:19:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r0) goto L3\l}"];
+subgraph cluster_Region_1372455434 {
+label = "R(2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0007|float[] float[] r3 = r5.values\lr3[r1] = r3[r1] \/ r6\lr1 = r5.next[r1]\l}"];
+subgraph cluster_Region_1362051402 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_363892453 {
+label = "IF [B:17:0x0013] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|if (r1 == (\-1)) goto L6\l}"];
+subgraph cluster_Region_328804894 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0019|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2016482537 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0016|LOOP_END\lLOOP:0: B:15:0x0005\-\>B:19:0x0016\l|r2++\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0019|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0019|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.SolverVariableValues.divideByAmount((r5v0 'this' androidx.constraintlayout.core.SolverVariableValues A[IMMUTABLE_TYPE, THIS]), (r6v0 'amount' float A[D('amount' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0016 \-\> B:15:0x0005, CROSS_EDGE: B:15:0x0005 \-\> B:20:0x0019\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [androidx.constraintlayout.core.ArrayRow.ArrayRowVariables.divideByAmount(float):void]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_21;
+Node_20 -> Node_13;
+Node_19 -> Node_15;
+Node_12 -> Node_14;
+Node_21 -> Node_20;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+}
+

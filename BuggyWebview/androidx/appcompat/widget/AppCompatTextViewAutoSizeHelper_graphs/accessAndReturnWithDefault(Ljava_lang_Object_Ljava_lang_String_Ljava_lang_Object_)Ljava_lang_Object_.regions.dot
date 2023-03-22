@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.accessAndReturnWithDefault(Ljava\/lang\/Object;Ljava\/lang\/String;Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1241354140 {
+label = "R(1:(2:2|(2:(1:4)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_538385292 {
+label = "Try: R(2:2|(2:(1:4)|(1:7))) catches: R(3:9|10|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_667394899 {
+label = "R(2:2|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|TRY_ENTER\lTryCatch #0 \{IllegalAccessException \-\> 0x000c, blocks: (B:2:0x0000, B:5:0x0007), top: B:10:0x0000 \}\lCatch: IllegalAccessException \-\> 0x000c\l|java.lang.reflect.Field java.lang.reflect.Field r0 = getTextViewField(r4)     \/\/ Catch: java.lang.IllegalAccessException \-\> Lc\l}"];
+subgraph cluster_Region_1191754930 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_906510974 {
+label = "IF [B:3:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 == null) goto L4\l}"];
+subgraph cluster_Region_1078420146 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_1298423408 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|RETURN\l|return (T) r0.get(r3)\l}"];
+}
+}
+}
+subgraph cluster_Region_1701024841 {
+label = "R(3:9|10|11) | ExcHandler: IllegalAccessException \-\> 0x000c\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|ExcHandler: IllegalAccessException \-\> 0x000c\l}"];
+Node_8 [shape=record,label="{8\:\ 0x000d|android.util.Log.w(androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.TAG, \"Failed to access TextView#\" + r4 + \" member\", r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0028|RETURN\l|return r5\l}"];
+}
+}
+}
+subgraph cluster_Region_1701024841 {
+label = "R(3:9|10|11) | ExcHandler: IllegalAccessException \-\> 0x000c\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|ExcHandler: IllegalAccessException \-\> 0x000c\l}"];
+Node_8 [shape=record,label="{8\:\ 0x000d|android.util.Log.w(androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.TAG, \"Failed to access TextView#\" + r4 + \" member\", r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0028|RETURN\l|return r5\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007|TRY_LEAVE\lTryCatch #0 \{IllegalAccessException \-\> 0x000c, blocks: (B:2:0x0000, B:5:0x0007), top: B:10:0x0000 \}\lCatch: IllegalAccessException \-\> 0x000c\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{private static T androidx.appcompat.widget.AppCompatTextViewAutoSizeHelper.accessAndReturnWithDefault((r3v0 'object' java.lang.Object A[D('object' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'fieldName' java.lang.String A[D('fieldName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'defaultValue' T A[D('defaultValue' T), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x000b \-\> B:1:?, CROSS_EDGE: B:9:0x0028 \-\> B:1:?, CROSS_EDGE: B:10:0x0000 \-\> B:7:0x000c\lINLINE_NOT_NEEDED\lTryCatch #0 \{IllegalAccessException \-\> 0x000c, blocks: (B:2:0x0000, B:5:0x0007), top: B:10:0x0000 \}\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Object;Ljava\/lang\/String;TT;)TT;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_10;
+Node_10 -> Node_2;
+Node_10 -> Node_7;
+Node_5 -> Node_6;
+Node_5 -> Node_11;
+Node_11 -> Node_7;
+}
+

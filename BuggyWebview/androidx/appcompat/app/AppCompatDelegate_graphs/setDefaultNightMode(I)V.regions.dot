@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(I)V" {
+subgraph cluster_Region_1302686255 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_910942996 {
+label = "Switch: 2
+ case -1, 0, 1, 2, 3 -> R(1:(2:(2:7|8)|(1:9)))
+ case default -> R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|switch(r2) \{\l    case \-1: goto L5;\l    case 0: goto L5;\l    case 1: goto L5;\l    case 2: goto L5;\l    case 3: goto L5;\l    default: goto L2;\l\}\l}"];
+subgraph cluster_Region_1771862772 {
+label = "R(1:(2:(2:7|8)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_358825550 {
+label = "R(2:(2:7|8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1945230047 {
+label = "IF [B:5:0x000d] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|if (androidx.appcompat.app.AppCompatDelegate.sDefaultNightMode != r2) goto L7\l}"];
+subgraph cluster_Region_441173238 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|androidx.appcompat.app.AppCompatDelegate.sDefaultNightMode = r2\lapplyDayNightToActiveDelegates()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0014|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_277497489 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_471309184 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|android.util.Log.d(androidx.appcompat.app.AppCompatDelegate.TAG, \"setDefaultNightMode() called with an unknown mode\")\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+MethodNode[shape=record,label="{public static void androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode((r2v0 'mode' int A[D('mode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x000f \-\> B:7:0x0014, CROSS_EDGE: B:5:0x000d \-\> B:7:0x0014\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_9 -> Node_1;
+Node_3 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,47 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.drop(Ljava\/lang\/String;I)Ljava\/lang\/String;" {
+subgraph cluster_Region_645437811 {
+label = "R(2:1|(2:(2:8|9)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\l}"];
+subgraph cluster_Region_1063349520 {
+label = "R(2:(2:8|9)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_797279635 {
+label = "IF [B:17:0x000a] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000a|PHI: r0 \l  PHI: (r0v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4 \>= 0) == false) goto L8\l}"];
+subgraph cluster_Region_1677335491 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001e}"];
+Node_21 [shape=record,label="{21\:\ 0x003e|throw new java.lang.IllegalArgumentException((\"Requested character count \" + r4 + \" is less than zero.\").toString())\l}"];
+}
+}
+subgraph cluster_Region_841531431 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|java.lang.String java.lang.String r0 = r3.substring(kotlin.ranges.RangesKt.coerceAtMost(r4, r3.length()))\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"this as java.lang.String).substring(startIndex)\")\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001d|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0005}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0007}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0009}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.text.StringsKt___StringsKt.drop((r3v0 '$this$drop' java.lang.String A[D('$this$drop' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'n' int A[D('n' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x003e \-\> B:12:?, CROSS_EDGE: B:16:0x0009 \-\> B:17:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+}
+

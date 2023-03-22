@@ -1,0 +1,64 @@
+digraph "CFG forcom.google.android.material.timepicker.MaxInputValidator.filter(Ljava\/lang\/CharSequence;IILandroid\/text\/Spanned;II)Ljava\/lang\/CharSequence;" {
+subgraph cluster_Region_1231243263 {
+label = "R(1:(2:2|(2:(1:4)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_273837399 {
+label = "Try: R(2:2|(2:(1:4)|(1:6))) catches: R(1:9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1883701866 {
+label = "R(2:2|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{NumberFormatException \-\> 0x001f, blocks: (B:15:0x0000), top: B:23:0x0000 \}\lCatch: NumberFormatException \-\> 0x001f\l|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder(r8)     \/\/ Catch: java.lang.NumberFormatException \-\> L1f\lr0.replace(r9, r10, r5.subSequence(r6, r7).toString())     \/\/ Catch: java.lang.NumberFormatException \-\> L1f\ljava.lang.String java.lang.String r1 = r0.toString()     \/\/ Catch: java.lang.NumberFormatException \-\> L1f\lint int r2 = java.lang.Integer.parseInt(r1)     \/\/ Catch: java.lang.NumberFormatException \-\> L1f\l}"];
+subgraph cluster_Region_1092812985 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1223828319 {
+label = "IF [B:16:0x001a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001a|if (r2 \<= r4.max) goto L4\l}"];
+subgraph cluster_Region_984148324 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001c|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1764167025 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return \"\"\l}"];
+}
+}
+}
+subgraph cluster_Region_1788673495 {
+label = "R(1:9) | ExcHandler: NumberFormatException \-\> 0x001f\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0020|RETURN\lORIG_RETURN\l|return \"\"\l}"];
+}
+}
+}
+subgraph cluster_Region_1788673495 {
+label = "R(1:9) | ExcHandler: NumberFormatException \-\> 0x001f\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0020|RETURN\lORIG_RETURN\l|return \"\"\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001f|ExcHandler: NumberFormatException \-\> 0x001f\l}"];
+MethodNode[shape=record,label="{public java.lang.CharSequence com.google.android.material.timepicker.MaxInputValidator.filter((r4v0 'this' com.google.android.material.timepicker.MaxInputValidator A[IMMUTABLE_TYPE, THIS]), (r5v0 'source' java.lang.CharSequence A[D('source' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'start' int A[D('start' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'end' int A[D('end' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'dest' android.text.Spanned A[D('dest' android.text.Spanned), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'dstart' int A[D('dstart' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'dend' int A[D('dend' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:22:0x0022 \-\> B:14:?, CROSS_EDGE: B:20:0x001f \-\> B:21:0x0020, CROSS_EDGE: B:23:0x0000 \-\> B:20:0x001f\lINLINE_NOT_NEEDED\lTryCatch #0 \{NumberFormatException \-\> 0x001f, blocks: (B:15:0x0000), top: B:23:0x0000 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.text.InputFilter.filter(java.lang.CharSequence, int, int, android.text.Spanned, int, int):java.lang.CharSequence\}]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_15 -> Node_24;
+Node_16 -> Node_17;
+Node_16 -> Node_25[style=dashed];
+Node_17 -> Node_14;
+Node_25 -> Node_14;
+Node_21 -> Node_14;
+Node_21 -> Node_14;
+Node_13 -> Node_23;
+Node_23 -> Node_15;
+Node_23 -> Node_20;
+Node_24 -> Node_20;
+Node_20 -> Node_21;
+}
+

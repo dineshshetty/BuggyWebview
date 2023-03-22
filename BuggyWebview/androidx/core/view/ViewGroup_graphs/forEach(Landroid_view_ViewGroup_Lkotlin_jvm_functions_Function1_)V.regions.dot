@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.core.view.ViewGroupKt.forEach(Landroid\/view\/ViewGroup;Lkotlin\/jvm\/functions\/Function1;)V" {
+subgraph cluster_Region_1672357698 {
+label = "R(2:1|(1:3))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"action\")\lint r1 = 0\lint int r2 = r5.getChildCount()\l}"];
+subgraph cluster_LoopRegion_1924888672 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0010|LOOP_START\lLOOP:0: B:10:0x0010\-\>B:11:0x0012\lPHI: r1 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v2 'index' int) binds: [B:9:0x0000, B:11:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r2) goto L3\l}"];
+subgraph cluster_Region_1691182860 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0012|LOOP_END\lLOOP:0: B:10:0x0010\-\>B:11:0x0012\l|android.view.View android.view.View r3 = r5.getChildAt(r1)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, \"getChildAt(index)\")\lr6.invoke(r3)\lr1++\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0021|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0021}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void androidx.core.view.ViewGroupKt.forEach((r5v0 '$this$forEach' android.view.ViewGroup A[D('$this$forEach' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'action' kotlin.jvm.functions.Function1\<? super android.view.View, kotlin.Unit\> A[D('action' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0012 \-\> B:10:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/view\/ViewGroup;Lkotlin\/jvm\/functions\/Function1\<\-Landroid\/view\/View;Lkotlin\/Unit;\>;)V\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_10;
+Node_7 -> Node_9;
+Node_13 -> Node_12;
+Node_12 -> Node_8;
+}
+

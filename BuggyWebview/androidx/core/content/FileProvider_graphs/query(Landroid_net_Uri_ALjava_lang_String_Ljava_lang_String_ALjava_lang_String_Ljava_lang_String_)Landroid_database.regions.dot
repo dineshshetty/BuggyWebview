@@ -1,0 +1,106 @@
+digraph "CFG forandroidx.core.content.FileProvider.query(Landroid\/net\/Uri;[Ljava\/lang\/String;Ljava\/lang\/String;[Ljava\/lang\/String;Ljava\/lang\/String;)Landroid\/database\/Cursor;" {
+subgraph cluster_Region_121633483 {
+label = "R(6:1|(1:24)(1:3)|4|(3:6|(2:8|11)(1:(1:17)(0))|13)|21|22) | DECL_VAR: java.lang.String[] projection\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.io.File java.io.File r2 = r14.mStrategy.getFileForUri(r15)\ljava.lang.String java.lang.String r3 = r15.getQueryParameter(androidx.core.content.FileProvider.DISPLAYNAME_FIELD)\l}"];
+subgraph cluster_IfRegion_619970256 {
+label = "IF [B:3:0x000e] THEN: R(1:24) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r16 != null) goto L24\l}"];
+subgraph cluster_Region_1261047400 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|r4 = r16\l}"];
+}
+subgraph cluster_Region_859528292 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|java.lang.String[] r4 = androidx.core.content.FileProvider.COLUMNS\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0015|PHI: r4 \l  PHI: (r4v1 'projection' java.lang.String[]) = (r4v0 'projection' java.lang.String[]), (r4v2 'projection' java.lang.String[]) binds: [B:5:0x0013, B:4:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.String[] java.lang.String[] r5 = new java.lang.String[r4.length]\ljava.lang.Object[] java.lang.Object[] r6 = new java.lang.Object[r4.length]\lint r7 = 0\lint r9 = 0\l\l}"];
+subgraph cluster_LoopRegion_97780407 {
+label = "LOOP:0: (3:6|(2:8|11)(1:(1:17)(0))|13)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|LOOP_START\lLOOP:0: B:7:0x001e\-\>B:18:0x0051\lPHI: r7 r9 \l  PHI: (r7v1 'i' int) = (r7v0 'i' int), (r7v3 'i' int) binds: [B:6:0x0015, B:18:0x0051] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r9v1 int) = (r9v0 int), (r9v3 int) binds: [B:6:0x0015, B:18:0x0051] A[DONT_GENERATE, DONT_INLINE]\l|if (r9 \< r8) goto L6\l}"];
+subgraph cluster_Region_1599716599 {
+label = "R(3:6|(2:8|11)(1:(1:17)(0))|13)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|r10 = r4[r9]\l}"];
+subgraph cluster_IfRegion_646760290 {
+label = "IF [B:9:0x0028] THEN: R(2:8|11) ELSE: R(1:(1:17)(0))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0028|if (\"_display_name\".equals(r10) != false) goto L8\l}"];
+subgraph cluster_Region_952797340 {
+label = "R(2:8|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002a|r5[r7] = \"_display_name\"\lint int r11 = r7 + 1\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0036|PHI: r12 \l  PHI: (r12v5 java.lang.String A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r6[r7] = r3 == null ? r2.getName() : r3\lr7 = r11\l}"];
+}
+subgraph cluster_Region_1417878440 {
+label = "R(1:(1:17)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1866300054 {
+label = "IF [B:16:0x0040] THEN: R(1:17) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0040|if (\"_size\".equals(r10) != false) goto L17\l}"];
+subgraph cluster_Region_1450929163 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0042|r5[r7] = \"_size\"\lr6[r7] = java.lang.Long.valueOf(r2.length())\lr7++\l}"];
+}
+subgraph cluster_Region_1255738492 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0051|LOOP_END\lLOOP:0: B:7:0x001e\-\>B:18:0x0051\lPHI: r7 \l  PHI: (r7v3 'i' int) = (r7v1 'i' int), (r7v2 'i' int), (r7v4 'i' int) binds: [B:24:0x0051, B:22:0x0051, B:23:0x0051] A[DONT_GENERATE, DONT_INLINE]\l|r9++\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0054|java.lang.String[] java.lang.String[] r5 = copyOf(r5, r7)\ljava.lang.Object[] java.lang.Object[] r6 = copyOf(r6, r7)\landroid.database.MatrixCursor android.database.MatrixCursor r8 = new android.database.MatrixCursor(r5, 1)\lr8.addRow(r6)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0065|RETURN\l|return r8\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002e}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0030}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0051|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0035}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003a}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0051|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0051|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0054|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.database.Cursor androidx.core.content.FileProvider.query((r14v0 'this' androidx.core.content.FileProvider A[IMMUTABLE_TYPE, THIS]), (r15v0 'uri' android.net.Uri A[D('uri' android.net.Uri), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 'projection' java.lang.String[] A[D('projection' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 'selection' java.lang.String A[D('selection' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'selectionArgs' java.lang.String[] A[D('selectionArgs' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'sortOrder' java.lang.String A[D('sortOrder' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:18:0x0051 \-\> B:7:0x001e, CROSS_EDGE: B:13:0x0035 \-\> B:14:0x0036, CROSS_EDGE: B:17:0x0042 \-\> B:18:0x0051, CROSS_EDGE: B:16:0x0040 \-\> B:18:0x0051, CROSS_EDGE: B:5:0x0013 \-\> B:6:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.content.ContentProvider.query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String):android.database.Cursor\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_4 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_21[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_10 -> Node_11;
+Node_14 -> Node_23;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_22;
+Node_18 -> Node_7;
+Node_19 -> Node_20;
+Node_20 -> Node_1;
+Node_0 -> Node_2;
+Node_11 -> Node_12;
+Node_11 -> Node_13;
+Node_12 -> Node_14;
+Node_23 -> Node_18;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_22 -> Node_18;
+Node_24 -> Node_18;
+Node_21 -> Node_19;
+}
+

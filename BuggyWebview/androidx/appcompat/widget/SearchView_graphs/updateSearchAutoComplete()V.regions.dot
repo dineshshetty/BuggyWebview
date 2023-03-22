@@ -1,0 +1,84 @@
+digraph "CFG forandroidx.appcompat.widget.SearchView.updateSearchAutoComplete()V" {
+subgraph cluster_Region_766581881 {
+label = "R(5:1|(2:3|(1:5))|6|(1:8)|(1:(2:11|14)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|r6.mSearchSrcTextView.setThreshold(r6.mSearchable.getSuggestThreshold())\lr6.mSearchSrcTextView.setImeOptions(r6.mSearchable.getImeOptions())\lint int r0 = r6.mSearchable.getInputType()\l}"];
+subgraph cluster_IfRegion_1655702820 {
+label = "IF [B:22:0x001f] THEN: R(2:3|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001f|if ((r0 & 15) == 1) goto L3\l}"];
+subgraph cluster_Region_1114769535 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0021|r0 &= \-65537\l}"];
+subgraph cluster_IfRegion_431603702 {
+label = "IF [B:24:0x002b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002b|if (r6.mSearchable.getSuggestAuthority() != null) goto L5\l}"];
+subgraph cluster_Region_647876897 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002d|r0 = r0 \| 65536 \| 524288\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0033|PHI: r0 \l  PHI: (r0v4 'inputType' int) = (r0v3 'inputType' int), (r0v5 'inputType' int), (r0v7 'inputType' int) binds: [B:22:0x001f, B:24:0x002b, B:25:0x002d] A[DONT_GENERATE, DONT_INLINE]\l|r6.mSearchSrcTextView.setInputType(r0)\landroidx.cursoradapter.widget.CursorAdapter androidx.cursoradapter.widget.CursorAdapter r1 = r6.mSuggestionsAdapter\l}"];
+subgraph cluster_IfRegion_1204264927 {
+label = "IF [B:27:0x003a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x003a|if (r1 != null) goto L8\l}"];
+subgraph cluster_Region_354698920 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x003c|r1.changeCursor(null)\l}"];
+}
+}
+subgraph cluster_Region_1434878904 {
+label = "R(1:(2:11|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_653514576 {
+label = "IF [B:30:0x0046] THEN: R(2:11|14) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0046|if (r6.mSearchable.getSuggestAuthority() != null) goto L11\l}"];
+subgraph cluster_Region_1568180724 {
+label = "R(2:11|14)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0048|androidx.appcompat.widget.SuggestionsAdapter androidx.appcompat.widget.SuggestionsAdapter r1 = new androidx.appcompat.widget.SuggestionsAdapter(getContext(), r6, r6.mSearchable, r6.mOutsideDrawablesCache)\lr6.mSuggestionsAdapter = r1\lr6.mSearchSrcTextView.setAdapter(r1)\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0067|PHI: r2 \l  PHI: (r2v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|((androidx.appcompat.widget.SuggestionsAdapter) r6.mSuggestionsAdapter).setQueryRefinement(r6.mQueryRefinement ? 2 : 1)\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0040}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0062}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0064}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x006a|ORIG_RETURN\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.widget.SearchView.updateSearchAutoComplete((r6v0 'this' androidx.appcompat.widget.SearchView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x0062 \-\> B:35:0x0067, CROSS_EDGE: B:30:0x0046 \-\> B:36:0x006a, CROSS_EDGE: B:27:0x003a \-\> B:29:0x0040, CROSS_EDGE: B:24:0x002b \-\> B:26:0x0033, CROSS_EDGE: B:22:0x001f \-\> B:26:0x0033\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_26[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_37[style=dashed];
+Node_31 -> Node_32;
+Node_35 -> Node_36;
+Node_19 -> Node_21;
+Node_29 -> Node_30;
+Node_32 -> Node_33;
+Node_32 -> Node_35;
+Node_33 -> Node_35;
+Node_36 -> Node_20;
+Node_37 -> Node_20;
+}
+

@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.material.dialog.InsetDialogOnTouchListener.onTouch(Landroid\/view\/View;Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_1408945635 {
+label = "R(2:1|(2:(1:3)|(5:5|(1:7)|(1:10)|11|12)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|android.view.View android.view.View r0 = r12.findViewById(16908290)\lint int r1 = r11.leftInset + r0.getLeft()\lint int r2 = r0.getWidth() + r1\lint int r3 = r11.topInset + r0.getTop()\lint int r4 = r0.getHeight() + r3\landroid.graphics.RectF android.graphics.RectF r5 = new android.graphics.RectF(r1, r3, r2, r4)\l}"];
+subgraph cluster_Region_1007013483 {
+label = "R(2:(1:3)|(5:5|(1:7)|(1:10)|11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_230877911 {
+label = "IF [B:16:0x0035] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0035|if (r5.contains(r13.getX(), r13.getY()) == true) goto L3\l}"];
+subgraph cluster_Region_2084469705 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0037|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_215874230 {
+label = "R(5:5|(1:7)|(1:10)|11|12)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0038|android.view.MotionEvent android.view.MotionEvent r6 = android.view.MotionEvent.obtain(r13)\l}"];
+subgraph cluster_IfRegion_995299292 {
+label = "IF [B:19:0x0041] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0041|if (r13.getAction() == 1) goto L7\l}"];
+subgraph cluster_Region_1081086315 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0043|r6.setAction(4)\l}"];
+}
+}
+subgraph cluster_IfRegion_271387291 {
+label = "IF [B:22:0x004b] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x004b|if (android.os.Build.VERSION.SDK_INT \< 28) goto L10\l}"];
+subgraph cluster_Region_1163942227 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x004d|r6.setAction(0)\lint int r7 = r11.prePieSlop\lr6.setLocation((\-r7) \- 1, (\-r7) \- 1)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x005b|r12.performClick()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0064|RETURN\l|return r11.dialog.onTouchEvent(r6)\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0047}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.dialog.InsetDialogOnTouchListener.onTouch((r11v0 'this' com.google.android.material.dialog.InsetDialogOnTouchListener A[IMMUTABLE_TYPE, THIS]), (r12v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'event' android.view.MotionEvent A[D('event' android.view.MotionEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:25:0x0064 \-\> B:14:?, CROSS_EDGE: B:22:0x004b \-\> B:24:0x005b, CROSS_EDGE: B:19:0x0041 \-\> B:21:0x0047\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.OnTouchListener.onTouch(android.view.View, android.view.MotionEvent):boolean\}]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_14;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_21 -> Node_22;
+}
+

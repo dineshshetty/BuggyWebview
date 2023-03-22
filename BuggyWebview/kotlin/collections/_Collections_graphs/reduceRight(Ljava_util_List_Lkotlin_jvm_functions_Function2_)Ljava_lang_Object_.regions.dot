@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.reduceRight(Ljava\/util\/List;Lkotlin\/jvm\/functions\/Function2;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_493785053 {
+label = "R(2:1|(2:(1:11)|(3:3|(1:6)|8)))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"operation\")\ljava.util.ListIterator java.util.ListIterator r1 = r4.listIterator(r4.size())\l}"];
+subgraph cluster_Region_1727404258 {
+label = "R(2:(1:11)|(3:3|(1:6)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2049103510 {
+label = "IF [B:27:0x0017] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0017|if (r1.hasPrevious() == false) goto L10\l}"];
+subgraph cluster_Region_804379122 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0034|throw new java.lang.UnsupportedOperationException(\"Empty list can't be reduced.\")\l}"];
+}
+}
+subgraph cluster_Region_1668226919 {
+label = "R(3:3|(1:6)|8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0019|java.lang.Object T r2 = r1.previous()\l}"];
+subgraph cluster_LoopRegion_1197023619 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0021|if (r1.hasPrevious() != false) goto L6\l}"];
+subgraph cluster_Region_773873362 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0023|LOOP_END\lLOOP:0: B:29:0x001d\-\>B:31:0x0023\l|java.lang.Object r2 = (S) r5.invoke((T) r1.previous(), r2)\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x002c|RETURN\l|return (S) r2\l}"];
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001d|LOOP_START\lLOOP:0: B:29:0x001d\-\>B:31:0x0023\lPHI: r2 \l  PHI: (r2v3 'accumulator' java.lang.Object) = (r2v2 'accumulator' T extends S), (r2v4 'accumulator' java.lang.Object) binds: [B:28:0x0019, B:31:0x0023] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x002c|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002d}"];
+MethodNode[shape=record,label="{public static final S kotlin.collections.CollectionsKt___CollectionsKt.reduceRight((r4v0 java.util.List\<? extends T extends S\> A[D('$this$reduceRight' java.util.List), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'operation' kotlin.jvm.functions.Function2\<? super T extends S, ? super S, ? extends S\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:31:0x0023 \-\> B:29:0x001d, CROSS_EDGE: B:34:0x0034 \-\> B:25:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [S, T extends S]\lSIGNATURE: \<S:Ljava\/lang\/Object;T::TS;\>(Ljava\/util\/List\<+TT;\>;Lkotlin\/jvm\/functions\/Function2\<\-TT;\-TS;+TS;\>;)TS;\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r3v2. Raw type applied. Possible types: T extends S, ? super T extends S\}\l}"];
+MethodNode -> Node_24;Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_33;
+Node_34 -> Node_25;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_35[style=dashed];
+Node_31 -> Node_29;
+Node_32 -> Node_25;
+Node_24 -> Node_26;
+Node_29 -> Node_30;
+Node_35 -> Node_32;
+Node_33 -> Node_34;
+}
+

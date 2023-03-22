@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.comparisons.ComparisonsKt___ComparisonsJvmKt.maxOf(F[F)F" {
+subgraph cluster_Region_498334073 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"other\")\lfloat r0 = r4\lint r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_919741473 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_START\lLOOP:0: B:3:0x0008\-\>B:4:0x000a\lPHI: r0 r2 \l  PHI: (r0v2 'max' float) = (r0v1 'max' float), (r0v3 'max' float) binds: [B:2:0x0000, B:4:0x000a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:2:0x0000, B:4:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_1999067432 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:4:0x000a\l|r3 = r5[r2]\lfloat r0 = java.lang.Math.max(r0, r3)\lr2++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0013|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final float kotlin.comparisons.ComparisonsKt___ComparisonsJvmKt.maxOf((r4v0 'a' float A[D('a' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'other' float[] A[D('other' float[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x000a \-\> B:3:0x0008\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_5;
+}
+

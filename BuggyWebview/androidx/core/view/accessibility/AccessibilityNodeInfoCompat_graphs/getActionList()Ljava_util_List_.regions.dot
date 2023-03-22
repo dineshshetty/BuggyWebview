@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.core.view.accessibility.AccessibilityNodeInfoCompat.getActionList()Ljava\/util\/List;" {
+subgraph cluster_Region_787504858 {
+label = "R(3:1|(1:3)|(2:(3:5|(1:7)|9)|(1:12)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.util.List\<java.lang.Object\> r0 = null\l}"];
+subgraph cluster_IfRegion_2031288597 {
+label = "IF [B:16:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L3\l}"];
+subgraph cluster_Region_2137174790 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|java.util.List r0 = r6.mInfo.getActionList()\l}"];
+}
+}
+subgraph cluster_Region_1304172940 {
+label = "R(2:(3:5|(1:7)|9)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_521645975 {
+label = "IF [B:18:0x000d] THEN: R(3:5|(1:7)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|PHI: r0 \l  PHI: (r0v1 'actions' java.util.List\<java.lang.Object\>) = (r0v0 'actions' java.util.List\<java.lang.Object\>), (r0v2 'actions' java.util.List\<java.lang.Object\>) binds: [B:16:0x0005, B:17:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L5\l}"];
+subgraph cluster_Region_563017739 {
+label = "R(3:5|(1:7)|9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|java.util.ArrayList java.util.List\<androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat\> r1 = new java.util.ArrayList\<\>()\lint int r2 = r0.size()\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1731464287 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0019|LOOP_START\lLOOP:0: B:20:0x0019\-\>B:21:0x001b\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:19:0x000f, B:21:0x001b] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L7\l}"];
+subgraph cluster_Region_228877422 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001b|LOOP_END\lLOOP:0: B:20:0x0019\-\>B:21:0x001b\l|java.lang.Object java.lang.Object r4 = r0.get(r3)\lr1.add(new androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat(r4))\lr3++\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x002a|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_128979038 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002f|RETURN\l|return java.util.Collections.emptyList()\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002a|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x002b}"];
+MethodNode[shape=record,label="{public java.util.List\<androidx.core.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityActionCompat\> androidx.core.view.accessibility.AccessibilityNodeInfoCompat.getActionList((r6v0 'this' androidx.core.view.accessibility.AccessibilityNodeInfoCompat A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x001b \-\> B:20:0x0019, CROSS_EDGE: B:24:0x002f \-\> B:14:?, CROSS_EDGE: B:16:0x0005 \-\> B:18:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ()Ljava\/util\/List\<Landroidx\/core\/view\/accessibility\/AccessibilityNodeInfoCompat$AccessibilityActionCompat;\>;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_25[style=dashed];
+Node_21 -> Node_20;
+Node_22 -> Node_14;
+Node_24 -> Node_14;
+Node_13 -> Node_15;
+Node_25 -> Node_22;
+Node_23 -> Node_24;
+}
+

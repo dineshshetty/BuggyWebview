@@ -1,0 +1,90 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatViewInflater.backportAccessibilityAttributes(Landroid\/content\/Context;Landroid\/view\/View;Landroid\/util\/AttributeSet;)V" {
+subgraph cluster_Region_301873026 {
+label = "R(1:(2:(1:17)|(7:5|(1:7)|8|(1:10)|11|(1:13)|14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_530974545 {
+label = "R(2:(1:17)|(7:5|(1:7)|8|(1:10)|11|(1:13)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1270837287 {
+label = "IF [B:23:0x0004, B:25:0x000a] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \< 19) goto L18\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000a|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \> 28) goto L17\l}"];
+subgraph cluster_Region_367660205 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1266452174 {
+label = "R(7:5|(1:7)|8|(1:10)|11|(1:13)|14)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000d|android.content.res.TypedArray android.content.res.TypedArray r0 = r4.obtainStyledAttributes(r6, androidx.appcompat.app.AppCompatViewInflater.sAccessibilityHeading)\l}"];
+subgraph cluster_IfRegion_119740819 {
+label = "IF [B:28:0x0018] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0018|if (r0.hasValue(0) != false) goto L7\l}"];
+subgraph cluster_Region_482118256 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001a|androidx.core.view.ViewCompat.setAccessibilityHeading(r5, r0.getBoolean(0, false))\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x0021|r0.recycle()\landroid.content.res.TypedArray android.content.res.TypedArray r0 = r4.obtainStyledAttributes(r6, androidx.appcompat.app.AppCompatViewInflater.sAccessibilityPaneTitle)\l}"];
+subgraph cluster_IfRegion_890076956 {
+label = "IF [B:31:0x002e] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x002e|if (r0.hasValue(0) != false) goto L10\l}"];
+subgraph cluster_Region_451466629 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0030|androidx.core.view.ViewCompat.setAccessibilityPaneTitle(r5, r0.getString(0))\l}"];
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x0037|r0.recycle()\landroid.content.res.TypedArray android.content.res.TypedArray r0 = r4.obtainStyledAttributes(r6, androidx.appcompat.app.AppCompatViewInflater.sScreenReaderFocusable)\l}"];
+subgraph cluster_IfRegion_85506250 {
+label = "IF [B:34:0x0044] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0044|if (r0.hasValue(0) != false) goto L13\l}"];
+subgraph cluster_Region_2106547475 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0046|androidx.core.view.ViewCompat.setScreenReaderFocusable(r5, r0.getBoolean(0, false))\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x004d|r0.recycle()\l}"];
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0000}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0006}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0050}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0051|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.app.AppCompatViewInflater.backportAccessibilityAttributes((r3v0 'this' androidx.appcompat.app.AppCompatViewInflater A[IMMUTABLE_TYPE, THIS]), (r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'attrs' android.util.AttributeSet A[D('attrs' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:34:0x0044 \-\> B:36:0x004d, CROSS_EDGE: B:31:0x002e \-\> B:33:0x0037, CROSS_EDGE: B:28:0x0018 \-\> B:30:0x0021, CROSS_EDGE: B:38:0x0051 \-\> B:21:?, CROSS_EDGE: B:23:0x0004 \-\> B:38:0x0051\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_20;Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_38;
+Node_25 -> Node_27[style=dashed];
+Node_25 -> Node_39;
+Node_39 -> Node_21;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_37 -> Node_21;
+Node_38 -> Node_21;
+}
+

@@ -1,0 +1,39 @@
+digraph "CFG forcom.google.android.material.shape.MaterialShapeDrawable.maybeDrawCompatShadow(Landroid\/graphics\/Canvas;)V" {
+Node_16 [shape=record,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0000}"];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (hasCompatShadow() != false) goto L5\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0006|RETURN\l|return\l}"];
+Node_17 [shape=record,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0007|r9.save()\lprepareCanvasForShadow(r9)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000f|if (r8.shadowBitmapDrawingEnable != false) goto L9\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0011|drawCompatShadow(r9)\lr9.restore()\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0017|RETURN\l|return\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0018|int r0 = (int) (r8.pathBounds.width() \- ((float) getBounds().width()))\lint r1 = (int) (r8.pathBounds.height() \- ((float) getBounds().height()))\l}"];
+Node_26 [shape=record,label="{26\:\ 0x003a|if (r0 \< 0) goto L14\l}"];
+Node_27 [shape=record,label="{27\:\ 0x003c|if (r1 \< 0) goto L14\l}"];
+Node_28 [shape=record,label="{28\:\ 0x003e|android.graphics.Bitmap r2 = android.graphics.Bitmap.createBitmap((((int) r8.pathBounds.width()) + (r8.drawableState.shadowCompatRadius * 2)) + r0, (((int) r8.pathBounds.height()) + (r8.drawableState.shadowCompatRadius * 2)) + r1, android.graphics.Bitmap.Config.ARGB_8888)\landroid.graphics.Canvas r3 = new android.graphics.Canvas(r2)\lfloat r4 = (float) ((getBounds().left \- r8.drawableState.shadowCompatRadius) \- r0)\lfloat r5 = (float) ((getBounds().top \- r8.drawableState.shadowCompatRadius) \- r1)\lr3.translate(\-r4, \-r5)\ldrawCompatShadow(r3)\lr9.drawBitmap(r2, r4, r5, null)\lr2.recycle()\lr9.restore()\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0093|RETURN\l|return\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0094}"];
+Node_31 [shape=record,label="{31\:\ 0x009b|throw new java.lang.IllegalStateException(\"Invalid shadow bounds. Check that the treatments result in a valid path.\")\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.shape.MaterialShapeDrawable.maybeDrawCompatShadow((r8v0 'this' com.google.android.material.shape.MaterialShapeDrawable A[IMMUTABLE_TYPE, THIS]), (r9v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0017 \-\> B:17:?, CROSS_EDGE: B:29:0x0093 \-\> B:17:?, CROSS_EDGE: B:31:0x009b \-\> B:17:?, CROSS_EDGE: B:26:0x003a \-\> B:30:0x0094\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_17;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_25;
+Node_23 -> Node_24;
+Node_24 -> Node_17;
+Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_30;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_30;
+Node_28 -> Node_29;
+Node_29 -> Node_17;
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+}
+

@@ -1,0 +1,35 @@
+digraph "CFG forkotlinx.coroutines.test.TestCoroutineContext.processNextEvent()J" {
+subgraph cluster_Region_1180242313 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0000|kotlinx.coroutines.test.TimedRunnableObsolete kotlinx.coroutines.test.TimedRunnableObsolete r0 = r3.queue.peek()\l}"];
+subgraph cluster_IfRegion_1912674621 {
+label = "IF [B:25:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0008|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_468931399 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000a|triggerActions(r0.time)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0015|RETURN\l|return r3.queue.isEmpty() ? Long.MAX_VALUE : 0L\l}"];
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000f}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0017|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001d|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public final long kotlinx.coroutines.test.TestCoroutineContext.processNextEvent((r3v0 'this' kotlinx.coroutines.test.TestCoroutineContext A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:30:0x001d \-\> B:31:0x001f, CROSS_EDGE: B:25:0x0008 \-\> B:27:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_22;Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_28 -> Node_30;
+Node_22 -> Node_24;
+Node_27 -> Node_28;
+Node_29 -> Node_23;
+Node_30 -> Node_23;
+}
+

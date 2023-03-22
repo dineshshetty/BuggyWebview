@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.print.PrintHelper.PrintUriAdapter.onLayout(Landroid\/print\/PrintAttributes;Landroid\/print\/PrintAttributes;Landroid\/os\/CancellationSignal;Landroid\/print\/PrintDocumentAdapter$LayoutResultCallback;Landroid\/os\/Bundle;)V" {
+subgraph cluster_Region_1777467110 {
+label = "R(2:0|(1:7)(1:(1:12)(1:14)))";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_433354153 {
+label = "Synchronized:R(2:1|(1:3))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000}"];
+subgraph cluster_Region_317414772 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0001|TRY_ENTER\lTryCatch #0 \{, blocks: (B:3:0x0001, B:4:0x0003), top: B:18:0x0001 \}\lCatch: all \-\> 0x0044\l|r8.mAttributes = r10     \/\/ Catch: java.lang.Throwable \-\> L44\l}"];
+}
+}
+subgraph cluster_IfRegion_144838758 {
+label = "IF [B:6:0x0008] THEN: R(1:7) ELSE: R(1:(1:12)(1:14))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0008|if (r11.isCanceled() != false) goto L7\l}"];
+subgraph cluster_Region_1858263386 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000a|r12.onLayoutCancelled()\l}"];
+}
+subgraph cluster_Region_1417777174 {
+label = "R(1:(1:12)(1:14)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_482961167 {
+label = "IF [B:10:0x0010] THEN: R(1:12) ELSE: R(1:14) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0010|if (r8.mBitmap != null) goto L12\l}"];
+subgraph cluster_Region_729706665 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0012|android.print.PrintDocumentInfo android.print.PrintDocumentInfo r0 = new android.print.PrintDocumentInfo.Builder(r8.mJobName).setContentType(1).setPageCount(1).build()\lboolean r1 = true ^ r10.equals(r9)\lr12.onLayoutFinished(r0, r1)\l}"];
+}
+subgraph cluster_Region_82863568 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002f|r8.mLoadBitmap = new androidx.print.PrintHelper.PrintUriAdapter.AsyncTaskC04141().execute(new android.net.Uri[0])\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0001|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0003|TRY_LEAVE\lDONT_GENERATE\lTryCatch #0 \{, blocks: (B:3:0x0001, B:4:0x0003), top: B:18:0x0001 \}\lCatch: all \-\> 0x0044\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L44\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0004}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000d}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x000e}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002e}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0043}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0044|REMOVE\lExcHandler: all \-\> 0x0044\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0045|TRY_ENTER\lTRY_LEAVE\lREMOVE\lCatch: all \-\> 0x0044\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0046|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public void androidx.print.PrintHelper.PrintUriAdapter.onLayout((r8v0 'this' androidx.print.PrintHelper$PrintUriAdapter A[IMMUTABLE_TYPE, THIS]), (r9v0 'oldPrintAttributes' android.print.PrintAttributes A[D('oldPrintAttributes' android.print.PrintAttributes), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'newPrintAttributes' android.print.PrintAttributes A[D('newPrintAttributes' android.print.PrintAttributes), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'cancellationSignal' android.os.CancellationSignal A[D('cancellationSignal' android.os.CancellationSignal), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'layoutResultCallback' android.print.PrintDocumentAdapter$LayoutResultCallback A[D('layoutResultCallback' android.print.PrintDocumentAdapter$LayoutResultCallback), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'bundle' android.os.Bundle A[D('bundle' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:12:0x002e \-\> B:1:?, CROSS_EDGE: B:14:0x0043 \-\> B:1:?, CROSS_EDGE: B:17:0x0046 \-\> B:1:?, CROSS_EDGE: B:18:0x0001 \-\> B:15:0x0044\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r0v3, types: [androidx.print.PrintHelper$PrintUriAdapter$1]\}\lMETHOD_OVERRIDE: [ClspMth\{android.print.PrintDocumentAdapter.onLayout(android.print.PrintAttributes, android.print.PrintAttributes, android.os.CancellationSignal, android.print.PrintDocumentAdapter$LayoutResultCallback, android.os.Bundle):void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_18;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_0 -> Node_2;
+Node_18 -> Node_3;
+Node_18 -> Node_15;
+Node_4 -> Node_5;
+Node_4 -> Node_19;
+Node_5 -> Node_6;
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_12 -> Node_1;
+Node_14 -> Node_1;
+Node_19 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_1;
+}
+

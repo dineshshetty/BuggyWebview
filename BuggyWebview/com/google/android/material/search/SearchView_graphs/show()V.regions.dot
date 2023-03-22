@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.material.search.SearchView.show()V" {
+subgraph cluster_Region_1734622467 {
+label = "R(1:(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1425962574 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1427051949 {
+label = "IF [B:25:0x0008, B:27:0x0012] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0008|if (r2.currentTransitionState.equals(com.google.android.material.search.SearchView.TransitionState.SHOWN) != false) goto L9\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0012|ADDED_TO_REGION\l|if (r2.currentTransitionState.equals(com.google.android.material.search.SearchView.TransitionState.SHOWING) != false) goto L8\l}"];
+subgraph cluster_Region_332235954 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1434927085 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0015|r2.searchViewAnimationHelper.show()\lsetModalForAccessibility(true)\l}"];
+}
+}
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0000}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000a}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001e}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001f|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.search.SearchView.show((r2v0 'this' com.google.android.material.search.SearchView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x001f \-\> B:23:?, CROSS_EDGE: B:25:0x0008 \-\> B:31:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_22;Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_31;
+Node_27 -> Node_29[style=dashed];
+Node_27 -> Node_32;
+Node_32 -> Node_23;
+Node_29 -> Node_30;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_30 -> Node_23;
+Node_31 -> Node_23;
+}
+

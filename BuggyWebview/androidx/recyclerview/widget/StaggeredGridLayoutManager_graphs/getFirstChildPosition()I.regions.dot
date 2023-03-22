@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.getFirstChildPosition()I" {
+subgraph cluster_Region_2111540977 {
+label = "R(2:1|(2:(1:6)|(1:4)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = getChildCount()\l}"];
+subgraph cluster_Region_989267066 {
+label = "R(2:(1:6)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_251569727 {
+label = "IF [B:3:0x0005] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r0 == 0) goto L6\l}"];
+subgraph cluster_Region_1209156057 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_991307073 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|RETURN\lORIG_RETURN\l|return getPosition(getChildAt(0))\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{int androidx.recyclerview.widget.StaggeredGridLayoutManager.getFirstChildPosition((r2v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0005 \-\> B:6:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_7;
+Node_7 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+}
+

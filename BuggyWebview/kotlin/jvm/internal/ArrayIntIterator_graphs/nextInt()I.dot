@@ -1,0 +1,23 @@
+digraph "CFG forkotlin.jvm.internal.ArrayIntIterator.nextInt()I" {
+Node_9 [shape=record,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0000|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{ArrayIndexOutOfBoundsException \-\> 0x000b, blocks: (B:11:0x0000), top: B:16:0x0000 \}\lCatch: ArrayIndexOutOfBoundsException \-\> 0x000b\l|int[] r0 = r3.array     \/\/ Catch: java.lang.ArrayIndexOutOfBoundsException \-\> Lb\lint r1 = r3.index     \/\/ Catch: java.lang.ArrayIndexOutOfBoundsException \-\> Lb\lr3.index = r1 + 1     \/\/ Catch: java.lang.ArrayIndexOutOfBoundsException \-\> Lb\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000a|RETURN\l|return r0[r1]\l}"];
+Node_10 [shape=record,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000b|ExcHandler: ArrayIndexOutOfBoundsException \-\> 0x000b\l|java.lang.ArrayIndexOutOfBoundsException r0 = move\-exception\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000c|r3.index = r3.index + (\-1)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001b|throw new java.util.NoSuchElementException(r0.getMessage())\l}"];
+MethodNode[shape=record,label="{public int kotlin.jvm.internal.ArrayIntIterator.nextInt((r3v0 'this' kotlin.jvm.internal.ArrayIntIterator A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x001b \-\> B:10:?, CROSS_EDGE: B:16:0x0000 \-\> B:13:0x000b\lINLINE_NOT_NEEDED\lTryCatch #0 \{ArrayIndexOutOfBoundsException \-\> 0x000b, blocks: (B:11:0x0000), top: B:16:0x0000 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlin.collections.IntIterator.nextInt():int]\l}"];
+MethodNode -> Node_9;Node_9 -> Node_16;
+Node_16 -> Node_11;
+Node_16 -> Node_13;
+Node_11 -> Node_12;
+Node_11 -> Node_17;
+Node_12 -> Node_10;
+Node_17 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_10;
+}
+

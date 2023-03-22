@@ -1,0 +1,69 @@
+digraph "CFG forcom.google.android.material.textfield.IndicatorViewController.addIndicator(Landroid\/widget\/TextView;I)V" {
+subgraph cluster_Region_1806400949 {
+label = "R(3:(2:5|(1:7))|(1:10)(1:14)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1342660400 {
+label = "IF [B:3:0x0004, B:5:0x0008] THEN: R(2:5|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r5.indicatorArea == null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0008|ADDED_TO_REGION\l|if (r5.captionArea == null) goto L5\l}"];
+subgraph cluster_Region_1484534317 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|android.widget.LinearLayout android.widget.LinearLayout r0 = new android.widget.LinearLayout(r5.context)\lr5.indicatorArea = r0\lr0.setOrientation(0)\lr5.textInputView.addView(r5.indicatorArea, \-1, \-2)\lr5.captionArea = new android.widget.FrameLayout(r5.context)\landroid.widget.LinearLayout$LayoutParams android.widget.LinearLayout.LayoutParams r0 = new android.widget.LinearLayout.LayoutParams(0, \-2, 1.0f)\lr5.indicatorArea.addView(r5.captionArea, r0)\l}"];
+subgraph cluster_IfRegion_1829705854 {
+label = "IF [B:7:0x003b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003b|if (r5.textInputView.getEditText() != null) goto L7\l}"];
+subgraph cluster_Region_1668912910 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003d|adjustIndicatorPadding()\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1393494017 {
+label = "IF [B:10:0x0044] THEN: R(1:10) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0044|if (isCaptionView(r7) != false) goto L10\l}"];
+subgraph cluster_Region_966468495 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0046|r5.captionArea.setVisibility(0)\lr5.captionArea.addView(r6)\l}"];
+}
+subgraph cluster_Region_729548556 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0051|android.widget.LinearLayout$LayoutParams android.widget.LinearLayout.LayoutParams r0 = new android.widget.LinearLayout.LayoutParams(\-2, \-2)\lr5.indicatorArea.addView(r6, r0)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x005b|r5.indicatorArea.setVisibility(0)\lr5.indicatorsAdded++\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0040}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0066}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.textfield.IndicatorViewController.addIndicator((r5v0 'this' com.google.android.material.textfield.IndicatorViewController A[IMMUTABLE_TYPE, THIS]), (r6v0 'indicator' android.widget.TextView A[D('indicator' android.widget.TextView), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0051 \-\> B:13:0x005b, CROSS_EDGE: B:7:0x003b \-\> B:9:0x0040, CROSS_EDGE: B:5:0x0008 \-\> B:9:0x0040, CROSS_EDGE: B:3:0x0004 \-\> B:9:0x0040\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_14 -> Node_1;
+}
+

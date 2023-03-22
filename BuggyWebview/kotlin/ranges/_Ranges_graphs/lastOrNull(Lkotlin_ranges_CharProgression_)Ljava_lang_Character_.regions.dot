@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.ranges.RangesKt___RangesKt.lastOrNull(Lkotlin\/ranges\/CharProgression;)Ljava\/lang\/Character;" {
+subgraph cluster_Region_53601313 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, \"\<this\>\")\l}"];
+subgraph cluster_Region_31185121 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1070890940 {
+label = "IF [B:11:0x0009] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0009|if (r1.isEmpty() == true) goto L3\l}"];
+subgraph cluster_Region_309060730 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000b|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_519506682 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0015|RETURN\lORIG_RETURN\l|return java.lang.Character.valueOf(r1.getLast())\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000d}"];
+MethodNode[shape=record,label="{public static final java.lang.Character kotlin.ranges.RangesKt___RangesKt.lastOrNull((r1v0 '$this$lastOrNull' kotlin.ranges.CharProgression A[D('$this$lastOrNull' kotlin.ranges.CharProgression), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000d \-\> B:14:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_13 -> Node_14;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.map([BLkotlin\/jvm\/functions\/Function1;)Ljava\/util\/List;" {
+subgraph cluster_Region_608248612 {
+label = "R(3:1|(1:3)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"transform\")\ljava.util.Collection java.util.Collection r1 = new java.util.ArrayList(r8.length)\lint r5 = 0\l\l}"];
+subgraph cluster_LoopRegion_2031631363 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0017|LOOP_START\lLOOP:0: B:11:0x0017\-\>B:12:0x0019\lPHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:10:0x0000, B:12:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r4) goto L3\l}"];
+subgraph cluster_Region_2140939903 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0019|LOOP_END\lLOOP:0: B:11:0x0017\-\>B:12:0x0019\l|r6 = r8[r5]\lr1.add(r9.invoke(java.lang.Byte.valueOf(r6)))\lr5++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x002c|RETURN\l|return (java.util.List) r1\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0029|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0029}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<R\> kotlin.collections.ArraysKt___ArraysKt.map((r8v0 '$this$map' byte[] A[D('$this$map' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'transform' kotlin.jvm.functions.Function1\<? super java.lang.Byte, ? extends R\> A[D('transform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0019 \-\> B:11:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lSIGNATURE: \<R:Ljava\/lang\/Object;\>([BLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Byte;+TR;\>;)Ljava\/util\/List\<TR;\>;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_15 -> Node_13;
+Node_13 -> Node_14;
+}
+

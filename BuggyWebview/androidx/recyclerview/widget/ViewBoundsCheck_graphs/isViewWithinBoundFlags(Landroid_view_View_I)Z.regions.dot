@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.recyclerview.widget.ViewBoundsCheck.isViewWithinBoundFlags(Landroid\/view\/View;I)Z" {
+subgraph cluster_Region_645032950 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|r5.mBoundFlags.setBounds(r5.mCallback.getParentStart(), r5.mCallback.getParentEnd(), r5.mCallback.getChildStart(r6), r5.mCallback.getChildEnd(r6))\l}"];
+subgraph cluster_Region_1369118174 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1117834899 {
+label = "IF [B:11:0x001d] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001d|if (r7 != 0) goto L3\l}"];
+subgraph cluster_Region_1507480439 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001f|r5.mBoundFlags.resetFlags()\lr5.mBoundFlags.addFlags(r7)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x002f|RETURN\l|return r5.mBoundFlags.boundsMatch()\l}"];
+}
+}
+subgraph cluster_Region_1824697953 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0030|RETURN\l|return false\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.recyclerview.widget.ViewBoundsCheck.isViewWithinBoundFlags((r5v0 'this' androidx.recyclerview.widget.ViewBoundsCheck A[IMMUTABLE_TYPE, THIS]), (r6v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'boundsFlags' int A[D('boundsFlags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0031 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+}
+

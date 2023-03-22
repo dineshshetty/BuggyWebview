@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.core.app.NotificationChannelCompat.\<init\>(Landroid\/app\/NotificationChannel;)V" {
+subgraph cluster_Region_131838759 {
+label = "R(5:1|(1:3)|4|(1:6)|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|this(r4.getId(), r4.getImportance())\lr3.mName = r4.getName()\lr3.mDescription = r4.getDescription()\lr3.mGroupId = r4.getGroup()\lr3.mShowBadge = r4.canShowBadge()\lr3.mSound = r4.getSound()\lr3.mAudioAttributes = r4.getAudioAttributes()\lr3.mLights = r4.shouldShowLights()\lr3.mLightColor = r4.getLightColor()\lr3.mVibrationEnabled = r4.shouldVibrate()\lr3.mVibrationPattern = r4.getVibrationPattern()\l}"];
+subgraph cluster_IfRegion_1461944444 {
+label = "IF [B:16:0x004b] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x004b|if (android.os.Build.VERSION.SDK_INT \>= 30) goto L3\l}"];
+subgraph cluster_Region_618996013 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004d|r3.mParentId = r4.getParentChannelId()\lr3.mConversationId = r4.getConversationId()\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0059|r3.mBypassDnd = r4.canBypassDnd()\lr3.mLockscreenVisibility = r4.getLockscreenVisibility()\l}"];
+subgraph cluster_IfRegion_1713981855 {
+label = "IF [B:19:0x0069] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0069|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L6\l}"];
+subgraph cluster_Region_1018273014 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x006b|r3.mCanBubble = r4.canBubble()\l}"];
+}
+}
+subgraph cluster_Region_2010831740 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2050715875 {
+label = "IF [B:22:0x0073] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0073|if (android.os.Build.VERSION.SDK_INT \>= 30) goto L9\l}"];
+subgraph cluster_Region_1458744202 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0075|r3.mImportantConversation = r4.isImportantConversation()\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0071}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x007b|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.core.app.NotificationChannelCompat.\<init\>((r3v0 'this' androidx.core.app.NotificationChannelCompat A[IMMUTABLE_TYPE, THIS]), (r4v0 'channel' android.app.NotificationChannel A[D('channel' android.app.NotificationChannel), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0073 \-\> B:24:0x007b, CROSS_EDGE: B:19:0x0069 \-\> B:21:0x0071, CROSS_EDGE: B:16:0x004b \-\> B:18:0x0059\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_13 -> Node_15;
+Node_21 -> Node_22;
+Node_24 -> Node_14;
+Node_25 -> Node_14;
+}
+

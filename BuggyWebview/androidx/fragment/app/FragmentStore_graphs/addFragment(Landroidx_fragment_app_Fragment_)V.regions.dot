@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.fragment.app.FragmentStore.addFragment(Landroidx\/fragment\/app\/Fragment;)V" {
+subgraph cluster_Region_2131850418 {
+label = "R(1:(2:(2:15|16)|(3:3|a|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1628270761 {
+label = "R(2:(2:15|16)|(3:3|a|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1392162582 {
+label = "IF [B:3:0x0006] THEN: R(2:15|16) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r3.mAdded.contains(r4) != false) goto L15\l}"];
+subgraph cluster_Region_80519901 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0018}"];
+Node_14 [shape=record,label="{14\:\ 0x002e|throw new java.lang.IllegalStateException(\"Fragment already added: \" + r4)\l}"];
+}
+}
+subgraph cluster_Region_1888285202 {
+label = "R(3:3|a|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008}"];
+subgraph cluster_SynchronizedRegion_2056150162 {
+label = "Synchronized:R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a}"];
+subgraph cluster_Region_2102073042 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|TRY_ENTER\lTryCatch #0 \{, blocks: (B:6:0x000b, B:7:0x0010), top: B:15:0x000b \}\lCatch: all \-\> 0x0015\l|r3.mAdded.add(r4)     \/\/ Catch: java.lang.Throwable \-\> L15\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0011|r4.mAdded = true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000b|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0010|TRY_LEAVE\lDONT_GENERATE\lTryCatch #0 \{, blocks: (B:6:0x000b, B:7:0x0010), top: B:15:0x000b \}\lCatch: all \-\> 0x0015\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L15\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0014}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0015|REMOVE\lExcHandler: all \-\> 0x0015\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0016|TRY_ENTER\lTRY_LEAVE\lREMOVE\lCatch: all \-\> 0x0015\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0017|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentStore.addFragment((r3v0 'this' androidx.fragment.app.FragmentStore A[IMMUTABLE_TYPE, THIS]), (r4v0 'fragment' androidx.fragment.app.Fragment A[D('fragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0017 \-\> B:1:?, CROSS_EDGE: B:15:0x000b \-\> B:10:0x0015, CROSS_EDGE: B:14:0x002e \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_15;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_15 -> Node_6;
+Node_15 -> Node_10;
+Node_7 -> Node_8;
+Node_7 -> Node_16;
+Node_9 -> Node_1;
+Node_16 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+}
+

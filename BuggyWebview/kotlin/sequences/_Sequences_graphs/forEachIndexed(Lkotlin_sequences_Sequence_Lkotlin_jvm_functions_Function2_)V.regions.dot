@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.forEachIndexed(Lkotlin\/sequences\/Sequence;Lkotlin\/jvm\/functions\/Function2;)V" {
+subgraph cluster_Region_1021687639 {
+label = "R(2:1|(3:4|(1:6)(0)|8))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"action\")\lint r1 = 0\ljava.util.Iterator java.util.Iterator\<? extends T\> r2 = r5.iterator()\l}"];
+subgraph cluster_LoopRegion_1422290648 {
+label = "LOOP:0: (3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0014|if (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_146073697 {
+label = "R(3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0016|java.lang.Object java.lang.Object r3 = (T) r2.next()\lint int r4 = r1 + 1\l}"];
+subgraph cluster_IfRegion_1732582227 {
+label = "IF [B:19:0x001c] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|if (r1 \< 0) goto L6\l}"];
+subgraph cluster_Region_312382150 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001e|kotlin.collections.CollectionsKt.throwIndexOverflow()\l}"];
+}
+subgraph cluster_Region_552340753 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0021|LOOP_END\lLOOP:0: B:16:0x0010\-\>B:21:0x0021\l|r6.invoke(java.lang.Integer.valueOf(r1), r3)\lr1 = r4\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0010|LOOP_START\lLOOP:0: B:16:0x0010\-\>B:21:0x0021\lPHI: r1 \l  PHI: (r1v1 'index' int) = (r1v0 'index' int), (r1v3 'index' int) binds: [B:15:0x0000, B:21:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0021|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0021|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x002a|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x002a}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.sequences.SequencesKt___SequencesKt.forEachIndexed((r5v0 kotlin.sequences.Sequence\<? extends T\> A[D('$this$forEachIndexed' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'action' kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super T, kotlin.Unit\> A[D('action' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0021 \-\> B:16:0x0010, CROSS_EDGE: B:19:0x001c \-\> B:21:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;Lkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Integer;\-TT;Lkotlin\/Unit;\>;)V\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r3v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_24;
+Node_21 -> Node_16;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_24 -> Node_21;
+Node_25 -> Node_21;
+Node_23 -> Node_22;
+Node_22 -> Node_14;
+}
+

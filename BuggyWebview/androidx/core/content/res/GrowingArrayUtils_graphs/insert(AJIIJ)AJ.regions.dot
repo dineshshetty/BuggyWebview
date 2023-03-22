@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.core.content.res.GrowingArrayUtils.insert([JIIJ)[J" {
+subgraph cluster_Region_1135591478 {
+label = "R(1:(2:(2:3|4)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_70142821 {
+label = "R(2:(2:3|4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1100119487 {
+label = "IF [B:11:0x0003] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0003|if ((r4 + 1) \<= r3.length) goto L3\l}"];
+subgraph cluster_Region_1639617316 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0005|java.lang.System.arraycopy(r3, r5, r3, r5 + 1, r4 \- r5)\lr3[r5] = r6\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000e|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_464494532 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000f|long[] long[] r0 = new long[growSize(r4)]\ljava.lang.System.arraycopy(r3, 0, r0, 0, r5)\lr0[r5] = r6\ljava.lang.System.arraycopy(r3, r5, r0, r5 + 1, r3.length \- r5)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0022|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static long[] androidx.core.content.res.GrowingArrayUtils.insert((r3v0 'array' long[] A[D('array' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'currentSize' int A[D('currentSize' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'element' long A[D('element' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0022 \-\> B:9:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+}
+

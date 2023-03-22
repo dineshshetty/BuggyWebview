@@ -1,0 +1,98 @@
+digraph "CFG forkotlin.UIntArray.containsAll\-impl([ILjava\/util\/Collection;)Z" {
+subgraph cluster_Region_704770581 {
+label = "R(2:1|(2:(1:3)|(3:5|(3:8|(2:12|13)(2:17|18)|(1:16))|20))) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"elements\")\ljava.lang.Iterable java.util.Collection\<kotlin.UInt\> r0 = r10\l}"];
+subgraph cluster_Region_1624127734 {
+label = "R(2:(1:3)|(3:5|(3:8|(2:12|13)(2:17|18)|(1:16))|20))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_192703702 {
+label = "IF [B:27:0x0012] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0012|if (r0.isEmpty() == true) goto L3\l}"];
+subgraph cluster_Region_672249639 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0014|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1430383528 {
+label = "R(3:5|(3:8|(2:12|13)(2:17|18)|(1:16))|20)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0016|java.util.Iterator r2 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_288354966 {
+label = "LOOP:0: (3:8|(2:12|13)(2:17|18)|(1:16))";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001e|java.lang.Object \lif (r2.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_542478705 {
+label = "R(3:8|(2:12|13)(2:17|18)|(1:16))";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0020|java.lang.Object r5 = r2.next()\l}"];
+subgraph cluster_IfRegion_835523589 {
+label = "IF [B:33:0x0028, B:35:0x0035] THEN: R(2:12|13) ELSE: R(2:17|18)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0028|if ((r5 instanceof kotlin.UInt) == true) goto L10\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0035|ADDED_TO_REGION\l|if (kotlin.collections.ArraysKt.contains(r9, ((kotlin.UInt) r5).m289unboximpl()) == true) goto L12\l}"];
+subgraph cluster_Region_1821661968 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0037|r6 = true\l}"];
+Node_45 [shape=record,label="{45\:\ 0x003a|SYNTHETIC\l|continue\l}"];
+}
+subgraph cluster_Region_1226869115 {
+label = "R(2:17|18)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0039|r6 = false\l}"];
+Node_44 [shape=record,label="{44\:\ 0x003a|SYNTHETIC\l|continue\l}"];
+}
+}
+subgraph cluster_IfRegion_348136852 {
+label = "IF [B:38:0x003a] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x003a|LOOP_END\lLOOP:0: B:30:0x001a\-\>B:38:0x003a\lPHI: r6 \l  PHI: (r6v2 boolean) = (r6v1 boolean), (r6v3 boolean) binds: [B:44:0x003a, B:45:0x003a] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 == false) goto L15\l}"];
+subgraph cluster_Region_2056642264 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_40 [shape=record,label="{40\:\ 0x003d|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001a|LOOP_START\lLOOP:0: B:30:0x001a\-\>B:38:0x003a\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x002a}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x003e|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x003d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static boolean kotlin.UIntArray.containsAll\-impl((r9v0 'arg0' int[] A[D('arg0' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'elements' java.util.Collection\<kotlin.UInt\> A[D('elements' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:38:0x003a \-\> B:30:0x001a, CROSS_EDGE: B:38:0x003a \-\> B:41:0x003e, CROSS_EDGE: B:37:0x0039 \-\> B:38:0x003a, CROSS_EDGE: B:33:0x0028 \-\> B:37:0x0039, CROSS_EDGE: B:40:0x003d \-\> B:41:0x003e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([ILjava\/util\/Collection\<Lkotlin\/UInt;\>;)Z\l}"];
+MethodNode -> Node_24;Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_25;
+Node_29 -> Node_30;
+Node_31 -> Node_32;
+Node_31 -> Node_43[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_37[style=dashed];
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_45;
+Node_45 -> Node_38;
+Node_37 -> Node_44;
+Node_44 -> Node_38;
+Node_38 -> Node_30[style=dashed];
+Node_38 -> Node_42;
+Node_47 -> Node_25;
+Node_40 -> Node_25;
+Node_24 -> Node_26;
+Node_30 -> Node_31;
+Node_34 -> Node_35;
+Node_42 -> Node_47;
+Node_43 -> Node_40;
+}
+

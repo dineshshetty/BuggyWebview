@@ -1,0 +1,65 @@
+digraph "CFG forandroidx.startup.InitializationProvider.onCreate()Z" {
+subgraph cluster_Region_1045540036 {
+label = "R(2:1|(2:(2:3|(2:(2:5|6)|(2:8|9)))|(1:11)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.content.Context android.content.Context r0 = getContext()\l}"];
+subgraph cluster_Region_323873498 {
+label = "R(2:(2:3|(2:(2:5|6)|(2:8|9)))|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1442564695 {
+label = "IF [B:3:0x0004] THEN: R(2:3|(2:(2:5|6)|(2:8|9))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_948636212 {
+label = "R(2:3|(2:(2:5|6)|(2:8|9)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|android.content.Context android.content.Context r1 = r0.getApplicationContext()\l}"];
+subgraph cluster_Region_1461450327 {
+label = "R(2:(2:5|6)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1616077754 {
+label = "IF [B:5:0x000a] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|if (r1 != null) goto L5\l}"];
+subgraph cluster_Region_1406653064 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|androidx.startup.AppInitializer.getInstance(r0).discoverAndInitialize()\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_549837860 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|androidx.startup.StartupLogger.m73w(\"Deferring initialization because `applicationContext` is null.\")\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0019|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1649724151 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0023|throw new androidx.startup.StartupException(\"Context cannot be null\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001c}"];
+MethodNode[shape=record,label="{public final boolean androidx.startup.InitializationProvider.onCreate((r3v0 'this' androidx.startup.InitializationProvider A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:7:0x0014 \-\> B:8:0x0019, CROSS_EDGE: B:11:0x0023 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.content.ContentProvider.onCreate():boolean\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_12;
+Node_12 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_10 -> Node_11;
+}
+

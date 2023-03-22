@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.text.StringsKt__StringsJVMKt.compareTo(Ljava\/lang\/String;Ljava\/lang\/String;Z)I" {
+subgraph cluster_Region_1819899958 {
+label = "R(2:1|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"other\")\l}"];
+subgraph cluster_Region_420565063 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1312930583 {
+label = "IF [B:19:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|if (r3 != false) goto L3\l}"];
+subgraph cluster_Region_555309540 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|RETURN\l|return r1.compareToIgnoreCase(r2)\l}"];
+}
+}
+subgraph cluster_Region_109456697 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0015|RETURN\l|return r1.compareTo(r2)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0011}"];
+MethodNode[shape=record,label="{public static final int kotlin.text.StringsKt__StringsJVMKt.compareTo((r1v0 '$this$compareTo' java.lang.String A[D('$this$compareTo' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'other' java.lang.String A[D('other' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'ignoreCase' boolean A[D('ignoreCase' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0015 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_17;
+Node_23 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+}
+

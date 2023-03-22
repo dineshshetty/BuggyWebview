@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.core.graphics.drawable.WrappedDrawableApi14.isStateful()Z" {
+subgraph cluster_Region_2037870819 {
+label = "R(2:(1:5)(1:14)|6) | DECL_VAR: android.content.res.ColorStateList tintList, androidx.core.graphics.drawable.WrappedDrawableState null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_834112101 {
+label = "IF [B:21:0x0004, B:23:0x0008] THEN: R(1:5) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0004|if (isCompatTintEnabled() != false) goto L3\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0008|ADDED_TO_REGION\l|if ((r0 = r2.mState) != null) goto L5\l}"];
+subgraph cluster_Region_13976196 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000a|android.content.res.ColorStateList r0 = r0.mTint\l}"];
+}
+subgraph cluster_Region_1966624771 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000d|r0 = null\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x000f|RETURN\lPHI: r0 \l  PHI: (r0v2 'tintList' android.content.res.ColorStateList) = (r0v1 'tintList' android.content.res.ColorStateList), (r0v4 'tintList' android.content.res.ColorStateList) binds: [B:25:0x000d, B:24:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|return (r0 != null && r0.isStateful()) \|\| r2.mDrawable.isStateful()\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0006}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0011}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0015|REMOVE\lADDED_TO_REGION\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001f|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0017}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001d|REMOVE\lADDED_TO_REGION\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0021|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public boolean androidx.core.graphics.drawable.WrappedDrawableApi14.isStateful((r2v0 'this' androidx.core.graphics.drawable.WrappedDrawableApi14 A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:33:0x0021 \-\> B:34:0x0022, CROSS_EDGE: B:29:0x0015 \-\> B:32:0x001f, CROSS_EDGE: B:27:0x000f \-\> B:30:0x0017, CROSS_EDGE: B:25:0x000d \-\> B:27:0x000f, CROSS_EDGE: B:21:0x0004 \-\> B:25:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.isStateful():boolean\}]\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_27;
+Node_25 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_30;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_32;
+Node_32 -> Node_19;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33;
+Node_33 -> Node_19;
+}
+

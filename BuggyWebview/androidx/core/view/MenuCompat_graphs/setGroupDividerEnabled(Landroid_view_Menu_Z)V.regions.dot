@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.core.view.MenuCompat.setGroupDividerEnabled(Landroid\/view\/Menu;Z)V" {
+subgraph cluster_Region_315439786 {
+label = "R(1:(1:3)(1:(1:8)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_490772213 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: R(1:(1:8)(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if ((r2 instanceof androidx.core.internal.view.SupportMenu) != false) goto L3\l}"];
+subgraph cluster_Region_894732998 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|((androidx.core.internal.view.SupportMenu) r2).setGroupDividerEnabled(r3)\l}"];
+}
+subgraph cluster_Region_1732613276 {
+label = "R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_472316596 {
+label = "IF [B:6:0x000f] THEN: R(1:8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L8\l}"];
+subgraph cluster_Region_88613115 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|androidx.core.view.MenuCompat.Api28Impl.setGroupDividerEnabled(r2, r3)\l}"];
+}
+subgraph cluster_Region_349935662 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0014|ORIG_RETURN\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.view.MenuCompat.setGroupDividerEnabled((r2v0 'menu' android.view.Menu A[D('menu' android.view.Menu), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'enabled' boolean A[D('enabled' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0011 \-\> B:8:0x0014, CROSS_EDGE: B:6:0x000f \-\> B:8:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_9 -> Node_1;
+Node_5 -> Node_6;
+Node_8 -> Node_1;
+Node_10 -> Node_1;
+}
+

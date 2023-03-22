@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDelegateImpl.attachToWindow(Landroid\/view\/Window;)V" {
+subgraph cluster_Region_908886979 {
+label = "R(1:(2:(1:14)|(2:3|(2:(1:12)|(3:5|(1:7)|8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2107724780 {
+label = "R(2:(1:14)|(2:3|(2:(1:12)|(3:5|(1:7)|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_840755897 {
+label = "IF [B:18:0x0004] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (r4.mWindow != null) goto L13\l}"];
+subgraph cluster_Region_1240566875 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003c|throw new java.lang.IllegalStateException(\"AppCompat has already installed itself into the Window\")\l}"];
+}
+}
+subgraph cluster_Region_353076304 {
+label = "R(2:3|(2:(1:12)|(3:5|(1:7)|8)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|android.view.Window$Callback android.view.Window.Callback r0 = r5.getCallback()\l}"];
+subgraph cluster_Region_462498877 {
+label = "R(2:(1:12)|(3:5|(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1410703776 {
+label = "IF [B:20:0x000c] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000c|if ((r0 instanceof androidx.appcompat.app.AppCompatDelegateImpl.AppCompatWindowCallback) != false) goto L11\l}"];
+subgraph cluster_Region_1826103952 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0036|throw new java.lang.IllegalStateException(\"AppCompat has already installed itself into the Window\")\l}"];
+}
+}
+subgraph cluster_Region_1476866068 {
+label = "R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback androidx.appcompat.app.AppCompatDelegateImpl.AppCompatWindowCallback r1 = new androidx.appcompat.app.AppCompatDelegateImpl.AppCompatWindowCallback(r0)\lr4.mAppCompatWindowCallback = r1\lr5.setCallback(r1)\landroidx.appcompat.widget.TintTypedArray androidx.appcompat.widget.TintTypedArray r1 = androidx.appcompat.widget.TintTypedArray.obtainStyledAttributes(r4.mContext, (android.util.AttributeSet) null, androidx.appcompat.app.AppCompatDelegateImpl.sWindowBackgroundStyleable)\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = r1.getDrawableIfKnown(0)\l}"];
+subgraph cluster_IfRegion_1591541405 {
+label = "IF [B:22:0x0026] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0026|if (r2 != null) goto L7\l}"];
+subgraph cluster_Region_398247954 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0028|r5.setBackgroundDrawable(r2)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x002b|r1.recycle()\lr4.mWindow = r5\l}"];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0030}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0031}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0037}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.app.AppCompatDelegateImpl.attachToWindow((r4v0 'this' androidx.appcompat.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 'window' android.view.Window A[D('window' android.view.Window), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0026 \-\> B:24:0x002b, CROSS_EDGE: B:27:0x0036 \-\> B:16:?, CROSS_EDGE: B:29:0x003c \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_28;
+Node_29 -> Node_16;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_26;
+Node_27 -> Node_16;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_25 -> Node_16;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+}
+

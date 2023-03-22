@@ -1,0 +1,50 @@
+digraph "CFG forcom.google.android.material.transformation.FabTransformationBehavior.calculateTranslationY(Landroid\/view\/View;Landroid\/view\/View;Lcom\/google\/android\/material\/animation\/Positioning;)F" {
+subgraph cluster_Region_716591727 {
+label = "R(3:1|2|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|android.graphics.RectF android.graphics.RectF r0 = r5.tmpRectF1\landroid.graphics.RectF android.graphics.RectF r1 = r5.tmpRectF2\lcalculateDependencyWindowBounds(r6, r0)\lcalculateWindowBounds(r7, r1)\lfloat r2 = 0.0f\l}"];
+subgraph cluster_SwitchRegion_898127469 {
+label = "Switch: 3
+ case 16 -> R(2:5|1)
+ case 48 -> R(2:4|1)
+ case 80 -> R(2:3|1)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|switch((r8.gravity & 112)) \{\l    case 16: goto L5;\l    case 48: goto L4;\l    case 80: goto L3;\l    default: goto L6;\l\}\l}"];
+subgraph cluster_Region_750627353 {
+label = "R(2:5|1)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0021|float r2 = r1.centerY() \- r0.centerY()\l}"];
+Node_InsnContainer_386976588 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1431430620 {
+label = "R(2:4|1)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001a|float r2 = r1.top \- r0.top\l}"];
+Node_InsnContainer_1056154523 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_865099512 {
+label = "R(2:3|1)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0013|float r2 = r1.bottom \- r0.bottom\l}"];
+Node_InsnContainer_1867614291 [shape=record,label="{|break\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x002f|RETURN\l|return r2 + r8.yAdjustment\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x002c|PHI: r2 \l  PHI: (r2v1 'translationY' float) = (r2v0 'translationY' float), (r2v3 'translationY' float), (r2v4 'translationY' float), (r2v5 'translationY' float) binds: [B:13:0x000f, B:17:0x0021, B:16:0x001a, B:15:0x0013] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private float com.google.android.material.transformation.FabTransformationBehavior.calculateTranslationY((r5v0 'this' com.google.android.material.transformation.FabTransformationBehavior A[IMMUTABLE_TYPE, THIS]), (r6v0 'dependency' android.view.View A[D('dependency' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'positioning' com.google.android.material.animation.Positioning A[D('positioning' com.google.android.material.animation.Positioning), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x001a \-\> B:18:0x002c, CROSS_EDGE: B:17:0x0021 \-\> B:18:0x002c, CROSS_EDGE: B:13:0x000f \-\> B:18:0x002c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_15;
+Node_13 -> Node_16;
+Node_13 -> Node_17;
+Node_13 -> Node_18;
+Node_17 -> Node_18;
+Node_16 -> Node_18;
+Node_15 -> Node_18;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_18 -> Node_19;
+}
+

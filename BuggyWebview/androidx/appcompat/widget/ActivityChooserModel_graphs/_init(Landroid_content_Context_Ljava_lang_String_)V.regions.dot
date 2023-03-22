@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.appcompat.widget.ActivityChooserModel.\<init\>(Landroid\/content\/Context;Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1157030348 {
+label = "R(2:1|(2:(2:5|6)|(1:8)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|r2.mContext = r3.getApplicationContext()\l}"];
+subgraph cluster_Region_192240550 {
+label = "R(2:(2:5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_198825988 {
+label = "IF [B:13:0x0037, B:15:0x003f] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0037|if (android.text.TextUtils.isEmpty(r4) == false) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x003f|ADDED_TO_REGION\l|if (r4.endsWith(androidx.appcompat.widget.ActivityChooserModel.HISTORY_FILE_EXTENSION) == false) goto L5\l}"];
+subgraph cluster_Region_1384433800 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0041|r2.mHistoryFileName = r4 + androidx.appcompat.widget.ActivityChooserModel.HISTORY_FILE_EXTENSION\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_563067797 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0053|r2.mHistoryFileName = r4\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0039}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0055|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.widget.ActivityChooserModel.\<init\>((r2v0 'this' androidx.appcompat.widget.ActivityChooserModel A[IMMUTABLE_TYPE, THIS]), (r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'historyFileName' java.lang.String A[D('historyFileName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0053 \-\> B:18:0x0055, CROSS_EDGE: B:13:0x0037 \-\> B:17:0x0053\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_19;
+Node_19 -> Node_11;
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_18 -> Node_11;
+}
+

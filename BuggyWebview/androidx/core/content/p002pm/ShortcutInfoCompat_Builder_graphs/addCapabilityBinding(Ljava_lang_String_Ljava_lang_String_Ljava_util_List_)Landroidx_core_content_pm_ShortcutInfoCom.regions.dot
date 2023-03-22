@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.core.content.pm.ShortcutInfoCompat.Builder.addCapabilityBinding(Ljava\/lang\/String;Ljava\/lang\/String;Ljava\/util\/List;)Landroidx\/core\/content\/pm\/ShortcutInfoCompat$Builder;" {
+subgraph cluster_Region_801413293 {
+label = "R(3:1|(3:(1:5)|(1:8)|9)|10)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|addCapabilityBinding(r3)\l}"];
+subgraph cluster_IfRegion_532904237 {
+label = "IF [B:15:0x0007] THEN: R(3:(1:5)|(1:8)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0007|if (r5.isEmpty() == false) goto L3\l}"];
+subgraph cluster_Region_1891723241 {
+label = "R(3:(1:5)|(1:8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2110096489 {
+label = "IF [B:17:0x000b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|if (r2.mCapabilityBindingParams == null) goto L5\l}"];
+subgraph cluster_Region_1993308812 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|r2.mCapabilityBindingParams = new java.util.HashMap()\l}"];
+}
+}
+subgraph cluster_IfRegion_1925279593 {
+label = "IF [B:20:0x001a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001a|if (r2.mCapabilityBindingParams.get(r3) == null) goto L8\l}"];
+subgraph cluster_Region_163885303 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001c|r2.mCapabilityBindingParams.put(r3, new java.util.HashMap())\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0026|r2.mCapabilityBindingParams.get(r3).put(r4, r5)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0031|RETURN\l|return r2\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0009}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0014}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.core.content.pm.ShortcutInfoCompat$Builder androidx.core.content.pm.ShortcutInfoCompat.Builder.addCapabilityBinding((r2v0 'this' androidx.core.content.pm.ShortcutInfoCompat$Builder A[IMMUTABLE_TYPE, THIS]), (r3v0 'capability' java.lang.String A[D('capability' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'parameter' java.lang.String A[D('parameter' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'parameterValues' java.util.List\<java.lang.String\> A[D('parameterValues' java.util.List\<java.lang.String\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x001a \-\> B:22:0x0026, CROSS_EDGE: B:17:0x000b \-\> B:19:0x0014, CROSS_EDGE: B:15:0x0007 \-\> B:23:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/String;Ljava\/lang\/String;Ljava\/util\/List\<Ljava\/lang\/String;\>;)Landroidx\/core\/content\/pm\/ShortcutInfoCompat$Builder;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_23[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+}
+

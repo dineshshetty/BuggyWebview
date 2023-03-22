@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.recyclerview.widget.ItemTouchHelper.endRecoverAnimation(Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;Z)V" {
+subgraph cluster_Region_825830290 {
+label = "R(2:1|(2:3|(2:(4:7|(1:9)|10|11)|(1:5))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r4.mRecoverAnimations.size()\lint int r1 = r0 \- 1\l}"];
+subgraph cluster_LoopRegion_1679407817 {
+label = "LOOP:0: (2:3|(2:(4:7|(1:9)|10|11)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_START\lLOOP:0: B:3:0x0008\-\>B:11:0x0028\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:2:0x0000, B:11:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1130431140 {
+label = "R(2:3|(2:(4:7|(1:9)|10|11)|(1:5)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|androidx.recyclerview.widget.ItemTouchHelper$RecoverAnimation androidx.recyclerview.widget.ItemTouchHelper.RecoverAnimation r2 = r4.mRecoverAnimations.get(r1)\l}"];
+subgraph cluster_Region_1076061832 {
+label = "R(2:(4:7|(1:9)|10|11)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_303754933 {
+label = "IF [B:5:0x0014] THEN: R(4:7|(1:9)|10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (r2.mViewHolder == r5) goto L6\l}"];
+subgraph cluster_Region_998036705 {
+label = "R(4:7|(1:9)|10|11)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|r2.mOverridden \|= r6\l}"];
+subgraph cluster_IfRegion_1356870269 {
+label = "IF [B:7:0x001d] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r2.mEnded == false) goto L9\l}"];
+subgraph cluster_Region_467631847 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|r2.cancel()\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0022|r4.mRecoverAnimations.remove(r1)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0027|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1045405437 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0028|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:11:0x0028\l|r1\-\-\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0016|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002b|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002b}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.ItemTouchHelper.endRecoverAnimation((r4v0 'this' androidx.recyclerview.widget.ItemTouchHelper A[IMMUTABLE_TYPE, THIS]), (r5v0 'viewHolder' androidx.recyclerview.widget.RecyclerView$ViewHolder A[D('viewHolder' androidx.recyclerview.widget.RecyclerView$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'override' boolean A[D('override' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x001d \-\> B:9:0x0022, BACK_EDGE: B:11:0x0028 \-\> B:3:0x0008, CROSS_EDGE: B:12:0x002b \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_14[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_11[style=dashed];
+Node_5 -> Node_13;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_11 -> Node_3;
+Node_0 -> Node_2;
+Node_13 -> Node_6;
+Node_14 -> Node_12;
+Node_12 -> Node_1;
+}
+

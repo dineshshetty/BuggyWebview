@@ -1,0 +1,40 @@
+digraph "CFG forkotlinx.coroutines.CoroutineScopeKt.cancel(Lkotlinx\/coroutines\/CoroutineScope;Ljava\/util\/concurrent\/CancellationException;)V" {
+subgraph cluster_Region_389527986 {
+label = "R(2:1|(2:(1:7)|(1:3)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlinx.coroutines.Job kotlinx.coroutines.Job r0 = (kotlinx.coroutines.Job) r2.getCoroutineContext().get(kotlinx.coroutines.Job.Key)\l}"];
+subgraph cluster_Region_165495932 {
+label = "R(2:(1:7)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_633276352 {
+label = "IF [B:11:0x000e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000e|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_125465495 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0023|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Scope cannot be cancelled because it does not have a job: \", r2).toString())\l}"];
+}
+}
+subgraph cluster_Region_2135585451 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0010|r0.cancel(r3)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0013}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0014}"];
+MethodNode[shape=record,label="{public static final void kotlinx.coroutines.CoroutineScopeKt.cancel((r2v0 '$this$cancel' kotlinx.coroutines.CoroutineScope A[D('$this$cancel' kotlinx.coroutines.CoroutineScope), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'cause' java.util.concurrent.CancellationException A[D('cause' java.util.concurrent.CancellationException), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0023 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_12 -> Node_13;
+Node_8 -> Node_10;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+}
+

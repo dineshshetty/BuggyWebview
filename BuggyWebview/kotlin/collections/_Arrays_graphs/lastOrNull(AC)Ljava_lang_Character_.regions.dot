@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.lastOrNull([C)Ljava\/lang\/Character;" {
+subgraph cluster_Region_172206360 {
+label = "R(2:1|(2:(1:5)|(1:8)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\l}"];
+subgraph cluster_Region_1217488445 {
+label = "R(2:(1:5)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1511695720 {
+label = "IF [B:17:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|PHI: r0 \l  PHI: (r0v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r2.length == 0) == true) goto L5\l}"];
+subgraph cluster_Region_1108158991 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1435586623 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0018|RETURN\lORIG_RETURN\l|return java.lang.Character.valueOf(r2[r2.length \- 1])\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0007}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0009}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0010}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b}"];
+MethodNode[shape=record,label="{public static final java.lang.Character kotlin.collections.ArraysKt___ArraysKt.lastOrNull((r2v0 '$this$lastOrNull' char[] A[D('$this$lastOrNull' char[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0010 \-\> B:20:0x0018, CROSS_EDGE: B:16:0x000b \-\> B:17:0x000c\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_12;
+Node_20 -> Node_12;
+Node_11 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_16 -> Node_17;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.material.navigation.NavigationBarItemView.createItemBackgroundCompat(Landroid\/content\/res\/ColorStateList;)Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_997269525 {
+label = "R(2:1|(2:(2:3|4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.content.res.ColorStateList android.content.res.ColorStateList r0 = com.google.android.material.ripple.RippleUtils.convertToRippleDrawableColor(r4)\l}"];
+subgraph cluster_Region_244682036 {
+label = "R(2:(2:3|4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1379738600 {
+label = "IF [B:11:0x0008] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L3\l}"];
+subgraph cluster_Region_2109347212 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000a|android.graphics.drawable.RippleDrawable android.graphics.drawable.Drawable r1 = new android.graphics.drawable.RippleDrawable(r0, null, null)\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1372079473 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0011|android.graphics.drawable.GradientDrawable android.graphics.drawable.GradientDrawable r1 = new android.graphics.drawable.GradientDrawable()\lr1.setCornerRadius(1.0E\-5f)\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = androidx.core.graphics.drawable.DrawableCompat.wrap(r1)\landroidx.core.graphics.drawable.DrawableCompat.setTintList(r2, r0)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0025|RETURN\lORIG_RETURN\l|return r2\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static android.graphics.drawable.Drawable com.google.android.material.navigation.NavigationBarItemView.createItemBackgroundCompat((r4v0 'rippleColor' android.content.res.ColorStateList A[D('rippleColor' android.content.res.ColorStateList), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0011 \-\> B:14:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+}
+

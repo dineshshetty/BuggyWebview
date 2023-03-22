@@ -1,0 +1,75 @@
+digraph "CFG forkotlin.text.StringsKt__StringsJVMKt.encodeToByteArray(Ljava\/lang\/String;IIZ)[B" {
+subgraph cluster_Region_1384918586 {
+label = "R(2:1|(2:(2:3|4)|(4:6|(2:10|(2:12|13))|14|15)))";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.collections.AbstractList.Companion.checkBoundsIndexes$kotlin_stdlib(r6, r7, r5.length())\l}"];
+subgraph cluster_Region_1334144437 {
+label = "R(2:(2:3|4)|(4:6|(2:10|(2:12|13))|14|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_628880073 {
+label = "IF [B:35:0x000e] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x000e|if (r8 == false) goto L3\l}"];
+subgraph cluster_Region_1502115125 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0010|java.lang.String java.lang.String r0 = r5.substring(r6, r7)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"this as java.lang.String…ing(startIndex, endIndex)\")\ljava.nio.charset.Charset java.nio.charset.Charset r1 = kotlin.text.Charsets.UTF_8\lkotlin.jvm.internal.Intrinsics.checkNotNull(r0, \"null cannot be cast to non\-null type java.lang.String\")\lbyte[] byte[] r0 = r0.getBytes(r1)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"this as java.lang.String).getBytes(charset)\")\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0029|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1614935668 {
+label = "R(4:6|(2:10|(2:12|13))|14|15)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x002a|java.nio.charset.CharsetEncoder java.nio.charset.CharsetEncoder r0 = kotlin.text.Charsets.UTF_8.newEncoder().onMalformedInput(java.nio.charset.CodingErrorAction.REPORT).onUnmappableCharacter(java.nio.charset.CodingErrorAction.REPORT)\ljava.nio.ByteBuffer java.nio.ByteBuffer r1 = r0.encode(java.nio.CharBuffer.wrap(r5, r6, r7))\l}"];
+subgraph cluster_IfRegion_833795988 {
+label = "IF [B:39:0x004c, B:41:0x0052] THEN: R(2:10|(2:12|13)) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x004c|if (r1.hasArray() != false) goto L8\l}"];
+Node_41 [shape=record,label="{41\:\ 0x0052|ADDED_TO_REGION\l|if (r1.arrayOffset() == 0) goto L10\l}"];
+subgraph cluster_Region_1995352250 {
+label = "R(2:10|(2:12|13))";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0054|int int r2 = r1.remaining()\lbyte[] byte[] r3 = r1.array()\lkotlin.jvm.internal.Intrinsics.checkNotNull(r3)\l}"];
+subgraph cluster_IfRegion_2107794178 {
+label = "IF [B:43:0x0060] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0060|if (r2 == r3.length) goto L12\l}"];
+subgraph cluster_Region_306169191 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0062|byte[] byte[] r2 = r1.array()\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r2, \"\{n        byteBuffer.array()n    \}\")\l}"];
+Node_47 [shape=record,label="{47\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+}
+}
+Node_45 [shape=record,label="{45\:\ 0x006c|byte[] byte[] r2 = new byte[r1.remaining()]\lr1.get(r2)\l}"];
+Node_46 [shape=record,label="{46\:\ 0x0077|RETURN\lORIG_RETURN\l|return r2\l}"];
+}
+}
+}
+Node_32 [shape=record,color=red,label="{32\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x004e}"];
+MethodNode[shape=record,label="{public static final byte[] kotlin.text.StringsKt__StringsJVMKt.encodeToByteArray((r5v0 '$this$encodeToByteArray' java.lang.String A[D('$this$encodeToByteArray' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'startIndex' int A[D('startIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'endIndex' int A[D('endIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'throwOnInvalidSequence' boolean A[D('throwOnInvalidSequence' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:46:0x0077 \-\> B:33:?, CROSS_EDGE: B:45:0x006c \-\> B:46:0x0077, CROSS_EDGE: B:41:0x0052 \-\> B:45:0x006c, CROSS_EDGE: B:39:0x004c \-\> B:45:0x006c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_32;Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_35 -> Node_38[style=dashed];
+Node_36 -> Node_37;
+Node_37 -> Node_33;
+Node_38 -> Node_39;
+Node_39 -> Node_40;
+Node_39 -> Node_45[style=dashed];
+Node_41 -> Node_42;
+Node_41 -> Node_45[style=dashed];
+Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_43 -> Node_45[style=dashed];
+Node_44 -> Node_47;
+Node_47 -> Node_33;
+Node_45 -> Node_46;
+Node_46 -> Node_33;
+Node_32 -> Node_34;
+Node_40 -> Node_41;
+}
+

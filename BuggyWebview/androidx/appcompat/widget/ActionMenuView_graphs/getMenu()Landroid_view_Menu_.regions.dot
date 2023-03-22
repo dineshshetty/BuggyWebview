@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.appcompat.widget.ActionMenuView.getMenu()Landroid\/view\/Menu;" {
+subgraph cluster_Region_1703367092 {
+label = "R(2:(3:3|(1:5)|6)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1242399121 {
+label = "IF [B:14:0x0002] THEN: R(3:3|(1:5)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r4.mMenu == null) goto L3\l}"];
+subgraph cluster_Region_1249662428 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|android.content.Context android.content.Context r0 = getContext()\landroidx.appcompat.view.menu.MenuBuilder androidx.appcompat.view.menu.MenuBuilder r1 = new androidx.appcompat.view.menu.MenuBuilder(r0)\lr4.mMenu = r1\lr1.setCallback(new androidx.appcompat.widget.ActionMenuView.MenuBuilderCallback())\landroidx.appcompat.widget.ActionMenuPresenter androidx.appcompat.widget.ActionMenuPresenter r1 = new androidx.appcompat.widget.ActionMenuPresenter(r0)\lr4.mPresenter = r1\lr1.setReserveOverflow(true)\landroidx.appcompat.widget.ActionMenuPresenter androidx.appcompat.widget.ActionMenuPresenter r1 = r4.mPresenter\landroidx.appcompat.view.menu.MenuPresenter$Callback androidx.appcompat.view.menu.MenuPresenter.Callback r2 = r4.mActionMenuPresenterCallback\l}"];
+subgraph cluster_IfRegion_2086008093 {
+label = "IF [B:16:0x0026] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0026|if (r2 == null) goto L5\l}"];
+subgraph cluster_Region_688787355 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0029|androidx.appcompat.widget.ActionMenuView$ActionMenuPresenterCallback r2 = new androidx.appcompat.widget.ActionMenuView.ActionMenuPresenterCallback()\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x002e|PHI: r2 \l  PHI: (r2v3 androidx.appcompat.view.menu.MenuPresenter$Callback) = (r2v2 androidx.appcompat.view.menu.MenuPresenter$Callback), (r2v5 androidx.appcompat.view.menu.MenuPresenter$Callback) binds: [B:16:0x0026, B:18:0x0029] A[DONT_GENERATE, DONT_INLINE]\l|r1.setCallback(r2)\lr4.mMenu.addMenuPresenter(r4.mPresenter, r4.mPopupContext)\lr4.mPresenter.setMenuView(r4)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0041|RETURN\l|return r4.mMenu\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x003f}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.view.Menu androidx.appcompat.widget.ActionMenuView.getMenu((r4v0 'this' androidx.appcompat.widget.ActionMenuView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0026 \-\> B:19:0x002e, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x003f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_18;
+Node_16 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_20 -> Node_21;
+}
+

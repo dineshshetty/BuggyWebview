@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.filterIndexed([ILkotlin\/jvm\/functions\/Function2;)Ljava\/util\/List;" {
+subgraph cluster_Region_474539208 {
+label = "R(3:1|(3:3|(1:5)(0)|7)|11)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r17, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r18, \"predicate\")\lboolean r1 = false\ljava.util.Collection java.util.Collection r3 = new java.util.ArrayList()\lint r8 = 0\lint int r9 = r17.length\lint r10 = 0\l}"];
+subgraph cluster_LoopRegion_190963632 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001e|LOOP_START\lLOOP:0: B:16:0x001e\-\>B:20:0x0043\lPHI: r1 r8 r10 \l  PHI: (r1v3 boolean) = (r1v2 boolean), (r1v10 boolean) binds: [B:15:0x0000, B:20:0x0043] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'index$iv$iv' int) = (r8v0 'index$iv$iv' int), (r8v2 'index$iv$iv' int) binds: [B:15:0x0000, B:20:0x0043] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r10v1 int) = (r10v0 int), (r10v2 int) binds: [B:15:0x0000, B:20:0x0043] A[DONT_GENERATE, DONT_INLINE]\l|if (r10 \< r9) goto L3\l}"];
+subgraph cluster_Region_819883546 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0020|int r11 = r17[r10]\lint int r12 = r8 + 1\lboolean r16 = r1\l}"];
+subgraph cluster_IfRegion_1356079046 {
+label = "IF [B:18:0x003a] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x003a|if (r18.invoke(java.lang.Integer.valueOf(r8), java.lang.Integer.valueOf(r11)).booleanValue() != false) goto L5\l}"];
+subgraph cluster_Region_1776546210 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x003c|r3.add(java.lang.Integer.valueOf(r11))\l}"];
+}
+subgraph cluster_Region_1274637368 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0043|LOOP_END\lLOOP:0: B:16:0x001e\-\>B:20:0x0043\l|r10++\lr8 = r12\lr1 = r16\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0050|RETURN\l|return (java.util.List) r3\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0043|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0043|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x004a|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x004a}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<java.lang.Integer\> kotlin.collections.ArraysKt___ArraysKt.filterIndexed((r17v0 '$this$filterIndexed' int[] A[D('$this$filterIndexed' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'predicate' kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super java.lang.Integer, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0043 \-\> B:16:0x001e, CROSS_EDGE: B:18:0x003a \-\> B:20:0x0043\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([ILkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Integer;\-Ljava\/lang\/Integer;Ljava\/lang\/Boolean;\>;)Ljava\/util\/List\<Ljava\/lang\/Integer;\>;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_24;
+Node_20 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_20;
+Node_25 -> Node_20;
+Node_23 -> Node_21;
+Node_21 -> Node_22;
+}
+

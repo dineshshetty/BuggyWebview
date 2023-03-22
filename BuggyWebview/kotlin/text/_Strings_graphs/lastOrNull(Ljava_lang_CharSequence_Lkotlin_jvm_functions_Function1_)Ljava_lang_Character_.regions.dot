@@ -1,0 +1,68 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.lastOrNull(Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Character;" {
+subgraph cluster_Region_625687686 {
+label = "R(2:1|(2:(2:(2:3|(1:11))|7)|(1:12)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"predicate\")\lint int r1 = r5.length() \- 1\l}"];
+subgraph cluster_Region_1130128631 {
+label = "R(2:(2:(2:3|(1:11))|7)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_734133935 {
+label = "IF [B:17:0x0011] THEN: R(2:(2:3|(1:11))|7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0011|if (r1 \>= 0) goto L3\l}"];
+subgraph cluster_Region_74731618 {
+label = "R(2:(2:3|(1:11))|7)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1487689142 {
+label = "LOOP:0: (2:3|(1:11))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002f|LOOP_END\lLOOP:0: B:18:0x0013\-\>B:22:0x002f\l|if (r1 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1441009127 {
+label = "R(2:3|(1:11))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|LOOP_START\lLOOP:0: B:18:0x0013\-\>B:22:0x002f\lPHI: r1 \l  PHI: (r1v3 int) = (r1v1 int), (r1v4 int) binds: [B:17:0x0011, B:22:0x002f] A[DONT_GENERATE, DONT_INLINE]\l|int r2 = r1\lr1\-\-\lchar char r3 = r5.charAt(r2)\l}"];
+subgraph cluster_IfRegion_620756265 {
+label = "IF [B:19:0x0028] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0028|if (r6.invoke(java.lang.Character.valueOf(r3)).booleanValue() != false) goto L9\l}"];
+subgraph cluster_Region_1359042404 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x002e|RETURN\l|return java.lang.Character.valueOf(r3)\l}"];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1175472741 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0031|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0031|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002a|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x002a}"];
+MethodNode[shape=record,label="{public static final java.lang.Character kotlin.text.StringsKt___StringsKt.lastOrNull((r5v0 '$this$lastOrNull' java.lang.CharSequence A[D('$this$lastOrNull' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Character, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x002f \-\> B:18:0x0013, CROSS_EDGE: B:24:0x0032 \-\> B:15:?, CROSS_EDGE: B:17:0x0011 \-\> B:23:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;Ljava\/lang\/Boolean;\>;)Ljava\/lang\/Character;\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_22 -> Node_18;
+Node_22 -> Node_26[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_22[style=dashed];
+Node_19 -> Node_25;
+Node_21 -> Node_15;
+Node_27 -> Node_15;
+Node_23 -> Node_15;
+Node_14 -> Node_16;
+Node_26 -> Node_27;
+Node_25 -> Node_20;
+Node_20 -> Node_21;
+}
+

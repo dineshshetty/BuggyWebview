@@ -1,0 +1,23 @@
+digraph "CFG forandroidx.core.content.FileProvider.getType(Landroid\/net\/Uri;)Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: IGET  (r0 I:androidx.core.content.FileProvider$PathStrategy) = (r4 I:androidx.core.content.FileProvider) androidx.core.content.FileProvider.mStrategy androidx.core.content.FileProvider$PathStrategy  (LINE:558)\l0x0002: INVOKE  (r0 I:java.io.File) = (r0 I:androidx.core.content.FileProvider$PathStrategy), (r5 I:android.net.Uri A[D('uri' android.net.Uri)]) type: INTERFACE call: androidx.core.content.FileProvider.PathStrategy.getFileForUri(android.net.Uri):java.io.File A[MD:(android.net.Uri):java.io.File (m)]\l0x0006: INVOKE  (r1 I:java.lang.String) = (r0 I:java.io.File A[D('file' java.io.File)]) type: VIRTUAL call: java.io.File.getName():java.lang.String A[MD:():java.lang.String (c)] (LINE:560)\l0x000a: CONST  (r2 I:??[int, float, short, byte, char]) = (46 ??[int, float, short, byte, char]) \l0x000c: INVOKE  (r1 I:int) = (r1 I:java.lang.String), (r2 I:int) type: VIRTUAL call: java.lang.String.lastIndexOf(int):int A[MD:(int):int (c)]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|0x0010: IF  (r1 I:??[int, byte, short, char] A[D('lastDot' int)]) \< (0 ??[int, byte, short, char])  \-\> B:7:0x0027  (LINE:561)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|0x0012: INVOKE  (r2 I:java.lang.String) = (r0 I:java.io.File A[D('file' java.io.File)]) type: VIRTUAL call: java.io.File.getName():java.lang.String A[MD:():java.lang.String (c)] (LINE:562)\l0x0016: ARITH  (r3 I:int) = (r1 I:int A[D('lastDot' int)]) + (1 int) \l0x0018: INVOKE  (r2 I:java.lang.String) = (r2 I:java.lang.String), (r3 I:int) type: VIRTUAL call: java.lang.String.substring(int):java.lang.String A[MD:(int):java.lang.String (c)]\l0x001c: INVOKE  (r3 I:android.webkit.MimeTypeMap) =  type: STATIC call: android.webkit.MimeTypeMap.getSingleton():android.webkit.MimeTypeMap A[MD:():android.webkit.MimeTypeMap (c)] (LINE:563)\l0x0020: INVOKE  (r3 I:java.lang.String) = (r3 I:android.webkit.MimeTypeMap), (r2 I:java.lang.String A[D('extension' java.lang.String)]) type: VIRTUAL call: android.webkit.MimeTypeMap.getMimeTypeFromExtension(java.lang.String):java.lang.String A[MD:(java.lang.String):java.lang.String (c)]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0024|0x0024: IF  (r3 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('mime' java.lang.String)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:?  (LINE:564)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0026|RETURN\l|0x0026: RETURN  (r3 I:java.lang.String A[D('mime' java.lang.String)])  (LINE:565)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|0x0027: CONST_STR  (r2 I:java.lang.String A[D('extension' java.lang.String)]) =  \"application\/octet\-stream\" A[SYNTHETIC] (LINE:569)\l0x0029: RETURN  (r2 I:java.lang.String) A[SYNTHETIC]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0027|RETURN\lORIG_RETURN\l|0x0027: CONST_STR  (r2 I:java.lang.String A[D('extension' java.lang.String)]) =  \"application\/octet\-stream\"  (LINE:569)\l0x0029: RETURN  (r2 I:java.lang.String) \l}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.core.content.FileProvider.getType((r4 'this' I:androidx.core.content.FileProvider A[IMMUTABLE_TYPE, THIS]), (r5 I:android.net.Uri A[D('uri' android.net.Uri), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:8:0x0029 \-\> B:1:?, CROSS_EDGE: B:3:0x0010 \-\> B:7:0x0027\lDebug Info:\l  0x001c\-0x0027: r2 'extension' Ljava\/lang\/String;\l  0x0024\-0x0027: r3 'mime' Ljava\/lang\/String;\l  0x0006\-0x0029: r0 'file' Ljava\/io\/File;\l  0x0010\-0x0029: r1 'lastDot' I\l  \-1 \-0x0029: r5 'uri' Landroid\/net\/Uri;\lMETHOD_OVERRIDE: [ClspMth\{android.content.ContentProvider.getType(android.net.Uri):java.lang.String\}]\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_1;
+Node_9 -> Node_1;
+Node_7 -> Node_1;
+}
+

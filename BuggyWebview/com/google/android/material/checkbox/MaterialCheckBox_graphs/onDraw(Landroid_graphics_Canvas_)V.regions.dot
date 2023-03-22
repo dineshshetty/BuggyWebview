@@ -1,0 +1,82 @@
+digraph "CFG forcom.google.android.material.checkbox.MaterialCheckBox.onDraw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_2117588599 {
+label = "R(1:(2:(3:8|10|(2:(2:12|13)|(1:15)))|(1:17))) | DECL_VAR: android.graphics.drawable.Drawable drawable\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_2096570748 {
+label = "R(2:(3:8|10|(2:(2:12|13)|(1:15)))|(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1738295265 {
+label = "IF [B:22:0x0002, B:24:0x000c, B:26:0x0012] THEN: R(3:8|10|(2:(2:12|13)|(1:15))) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0002|if (r10.centerIfNoTextEnabled != false) goto L3\l}"];
+Node_24 [shape=record,label="{24\:\ 0x000c|ADDED_TO_REGION\l|if (android.text.TextUtils.isEmpty(getText()) != false) goto L5\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0012|ADDED_TO_REGION\l|if ((r0 = androidx.core.widget.CompoundButtonCompat.getButtonDrawable(r10)) != null) goto L7\l}"];
+subgraph cluster_Region_1269141887 {
+label = "R(3:8|10|(2:(2:12|13)|(1:15)))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0018|int r1 = com.google.android.material.internal.ViewUtils.isLayoutRtl(r10) ? \-1 : 1\l}"];
+Node_31 [shape=record,label="{31\:\ 0x001d|PHI: r1 \l  PHI: (r1v2 'direction' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r2 = ((getWidth() \- r0.getIntrinsicWidth()) \/ 2) * r1\lint int r3 = r11.save()\lr11.translate(r2, 0.0f)\lsuper.onDraw(r11)\lr11.restoreToCount(r3)\l}"];
+subgraph cluster_Region_777174898 {
+label = "R(2:(2:12|13)|(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1855340705 {
+label = "IF [B:32:0x003d] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x003d|if (getBackground() != null) goto L12\l}"];
+subgraph cluster_Region_1388981629 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x003f|android.graphics.Rect android.graphics.Rect r4 = r0.getBounds()\landroidx.core.graphics.drawable.DrawableCompat.setHotspotBounds(getBackground(), r4.left + r2, r4.top, r4.right + r2, r4.bottom)\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0055|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_724525262 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_772380933 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0056|super.onDraw(r11)\l}"];
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0004}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000e}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0014}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001a}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001c}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0059}"];
+MethodNode[shape=record,label="{protected void com.google.android.material.checkbox.MaterialCheckBox.onDraw((r10v0 'this' com.google.android.material.checkbox.MaterialCheckBox A[IMMUTABLE_TYPE, THIS]), (r11v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:32:0x003d \-\> B:34:0x0055, CROSS_EDGE: B:30:0x001c \-\> B:31:0x001d, CROSS_EDGE: B:36:0x0059 \-\> B:20:?, CROSS_EDGE: B:24:0x000c \-\> B:35:0x0056, CROSS_EDGE: B:22:0x0002 \-\> B:35:0x0056\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onDraw(android.graphics.Canvas):void\}]\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_35[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_35[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_35[style=dashed];
+Node_28 -> Node_29;
+Node_28 -> Node_30;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_37[style=dashed];
+Node_33 -> Node_34;
+Node_34 -> Node_20;
+Node_37 -> Node_20;
+Node_35 -> Node_36;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_29 -> Node_31;
+Node_30 -> Node_31;
+Node_36 -> Node_20;
+}
+

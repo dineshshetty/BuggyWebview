@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearSmoothScroller.onSeekTargetStep(IILandroidx\/recyclerview\/widget\/RecyclerView$State;Landroidx\/recyclerview\/widget\/RecyclerView$SmoothScroller$Action;)V" {
+subgraph cluster_Region_1866715889 {
+label = "R(1:(2:(2:3|4)|(2:6|(1:(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1720347355 {
+label = "R(2:(2:3|4)|(2:6|(1:(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_605722474 {
+label = "IF [B:16:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|if (getChildCount() == 0) goto L3\l}"];
+subgraph cluster_Region_1904091694 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|stop()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1445667822 {
+label = "R(2:6|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|r2.mInterimTargetDx = clampApplyScroll(r2.mInterimTargetDx, r3)\lint int r0 = clampApplyScroll(r2.mInterimTargetDy, r4)\lr2.mInterimTargetDy = r0\l}"];
+subgraph cluster_Region_6005418 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_778472472 {
+label = "IF [B:20:0x001c, B:21:0x001e] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001c|if (r2.mInterimTargetDx == 0) goto L8\l}"];
+Node_21 [shape=record,label="{21\:\ 0x001e|ADDED_TO_REGION\l|if (r0 == 0) goto L9\l}"];
+subgraph cluster_Region_900914376 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0020|updateActionForInterimTarget(r6)\l}"];
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0023|ORIG_RETURN\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{protected void androidx.recyclerview.widget.LinearSmoothScroller.onSeekTargetStep((r2v0 'this' androidx.recyclerview.widget.LinearSmoothScroller A[IMMUTABLE_TYPE, THIS]), (r3v0 'dx' int A[D('dx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'dy' int A[D('dy' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'action' androidx.recyclerview.widget.RecyclerView$SmoothScroller$Action A[D('action' androidx.recyclerview.widget.RecyclerView$SmoothScroller$Action), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0023 \-\> B:14:?, CROSS_EDGE: B:21:0x001e \-\> B:23:0x0023, CROSS_EDGE: B:20:0x001c \-\> B:23:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.RecyclerView.SmoothScroller.onSeekTargetStep(int, int, androidx.recyclerview.widget.RecyclerView$State, androidx.recyclerview.widget.RecyclerView$SmoothScroller$Action):void]\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_14;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_24[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_23;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_23 -> Node_14;
+Node_25 -> Node_14;
+Node_24 -> Node_14;
+}
+

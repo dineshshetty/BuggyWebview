@@ -1,0 +1,50 @@
+digraph "CFG forandroidx.appcompat.app.ActionBarDrawerToggle.onOptionsItemSelected(Landroid\/view\/MenuItem;)Z" {
+subgraph cluster_Region_732244441 {
+label = "R(1:(2:(2:6|7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_583740366 {
+label = "R(2:(2:6|7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_907467653 {
+label = "IF [B:15:0x0000, B:17:0x0009, B:19:0x000d] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|if (r3 != null) goto L2\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0009|ADDED_TO_REGION\l|if (r3.getItemId() == 16908332) goto L4\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000d|ADDED_TO_REGION\l|if (r2.mDrawerIndicatorEnabled != false) goto L6\l}"];
+subgraph cluster_Region_529182188 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000f|toggle()\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0013|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_493069349 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0002}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0014|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.app.ActionBarDrawerToggle.onOptionsItemSelected((r2v0 'this' androidx.appcompat.app.ActionBarDrawerToggle A[IMMUTABLE_TYPE, THIS]), (r3v0 'item' android.view.MenuItem A[D('item' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0015 \-\> B:14:?, CROSS_EDGE: B:17:0x0009 \-\> B:22:0x0014, CROSS_EDGE: B:15:0x0000 \-\> B:22:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_14;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_24 -> Node_14;
+Node_22 -> Node_14;
+}
+

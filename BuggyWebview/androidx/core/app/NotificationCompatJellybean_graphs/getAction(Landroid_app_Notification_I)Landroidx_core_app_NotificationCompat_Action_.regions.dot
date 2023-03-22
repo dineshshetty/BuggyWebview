@@ -1,0 +1,136 @@
+digraph "CFG forandroidx.core.app.NotificationCompatJellybean.getAction(Landroid\/app\/Notification;I)Landroidx\/core\/app\/NotificationCompat$Action;" {
+subgraph cluster_Region_479904925 {
+label = "R(1:2) | DECL_VAR: java.lang.Object[] actionObjects, android.util.SparseArray\<android.os.Bundle\> actionExtrasMap\l";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_31234299 {
+label = "Synchronized:R(2:2|(1:(2:(1:4)|(2:(3:6|(1:10)|13)|(1:18)))))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0002}"];
+subgraph cluster_Region_495282471 {
+label = "R(1:(2:(1:4)|(2:(3:6|(1:10)|13)|(1:18))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1117865843 {
+label = "Try: R(2:(1:4)|(2:(3:6|(1:10)|13)|(1:18))) finally: R(2:21|24)";
+node [shape=record,color=blue];
+subgraph cluster_Region_148233622 {
+label = "R(2:(1:4)|(2:(3:6|(1:10)|13)|(1:18)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1831573303 {
+label = "Try: R(1:4) catches: R(2:19|20)";
+node [shape=record,color=blue];
+subgraph cluster_Region_294934374 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{IllegalAccessException \-\> 0x0040, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021), top: B:50:0x0003, outer: #1 \}\lCatch: all \-\> 0x003e, IllegalAccessException \-\> 0x0040\l|java.lang.Object[] r1 = getActionObjectsLocked(r8)     \/\/ Catch: java.lang.Throwable \-\> L3e java.lang.IllegalAccessException \-\> L40\l}"];
+}
+subgraph cluster_Region_1540425700 {
+label = "R(2:19|20) | ExcHandler: IllegalAccessException \-\> 0x0040\l";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0040|ExcHandler: IllegalAccessException \-\> 0x0040\l}"];
+Node_44 [shape=record,label="{44\:\ 0x0041|TryCatch #1 \{all \-\> 0x003e, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021, B:38:0x003b, B:45:0x004b, B:44:0x0041), top: B:50:0x0003, inners: #0 \}\lCatch: all \-\> 0x003e\l|android.util.Log.e(androidx.core.app.NotificationCompatJellybean.TAG, \"Unable to access notification actions\", r1)     \/\/ Catch: java.lang.Throwable \-\> L3e\landroidx.core.app.NotificationCompatJellybean.sActionsAccessFailed = true     \/\/ Catch: java.lang.Throwable \-\> L3e\l}"];
+}
+}
+subgraph cluster_Region_318982450 {
+label = "R(2:(3:6|(1:10)|13)|(1:18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_650208702 {
+label = "IF [B:31:0x0007] THEN: R(3:6|(1:10)|13) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0007|if (r1 != null) goto L6\l}"];
+subgraph cluster_Region_1683742487 {
+label = "R(3:6|(1:10)|13)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0009|TryCatch #0 \{IllegalAccessException \-\> 0x0040, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021), top: B:50:0x0003, outer: #1 \}\lCatch: all \-\> 0x003e, IllegalAccessException \-\> 0x0040\l|java.lang.Object r2 = r1[r9]     \/\/ Catch: java.lang.Throwable \-\> L3e java.lang.IllegalAccessException \-\> L40\landroid.os.Bundle r3 = null\landroid.os.Bundle android.os.Bundle r4 = getExtras(r8)     \/\/ Catch: java.lang.Throwable \-\> L3e java.lang.IllegalAccessException \-\> L40\l}"];
+subgraph cluster_IfRegion_1706743263 {
+label = "IF [B:33:0x0010, B:35:0x0018] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0010|if (r4 != null) goto L8\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0018|ADDED_TO_REGION\l|if ((r5 = r4.getSparseParcelableArray(androidx.core.app.NotificationCompatExtras.EXTRA_ACTION_EXTRAS)) != null) goto L10\l}"];
+subgraph cluster_Region_1445365530 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x001a|TryCatch #0 \{IllegalAccessException \-\> 0x0040, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021), top: B:50:0x0003, outer: #1 \}\lCatch: all \-\> 0x003e, IllegalAccessException \-\> 0x0040\l|r3 = r5.get(r9)     \/\/ Catch: java.lang.Throwable \-\> L3e java.lang.IllegalAccessException \-\> L40\l}"];
+}
+}
+Node_39 [shape=record,label="{39\:\ 0x003c|RETURN\l|return readAction(androidx.core.app.NotificationCompatJellybean.sActionIconField.getInt(r2), (java.lang.CharSequence) androidx.core.app.NotificationCompatJellybean.sActionTitleField.get(r2), (android.app.PendingIntent) androidx.core.app.NotificationCompatJellybean.sActionIntentField.get(r2), r3)\l}"];
+}
+}
+subgraph cluster_Region_891035561 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x004c|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_79668242 {
+label = "R(2:21|24) | ExcHandler: all \-\> 0x003e\l";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x003e|ExcHandler: all \-\> 0x003e\l}"];
+Node_49 [shape=record,label="{49\:\ 0x004f|throw r1\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1540425700 {
+label = "R(2:19|20) | ExcHandler: IllegalAccessException \-\> 0x0040\l";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0040|ExcHandler: IllegalAccessException \-\> 0x0040\l}"];
+Node_44 [shape=record,label="{44\:\ 0x0041|TryCatch #1 \{all \-\> 0x003e, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021, B:38:0x003b, B:45:0x004b, B:44:0x0041), top: B:50:0x0003, inners: #0 \}\lCatch: all \-\> 0x003e\l|android.util.Log.e(androidx.core.app.NotificationCompatJellybean.TAG, \"Unable to access notification actions\", r1)     \/\/ Catch: java.lang.Throwable \-\> L3e\landroidx.core.app.NotificationCompatJellybean.sActionsAccessFailed = true     \/\/ Catch: java.lang.Throwable \-\> L3e\l}"];
+}
+subgraph cluster_Region_79668242 {
+label = "R(2:21|24) | ExcHandler: all \-\> 0x003e\l";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x003e|ExcHandler: all \-\> 0x003e\l}"];
+Node_49 [shape=record,label="{49\:\ 0x004f|throw r1\l}"];
+}
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0000}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0012|TryCatch #0 \{IllegalAccessException \-\> 0x0040, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021), top: B:50:0x0003, outer: #1 \}\lCatch: all \-\> 0x003e, IllegalAccessException \-\> 0x0040\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0021|TRY_LEAVE\lTryCatch #0 \{IllegalAccessException \-\> 0x0040, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021), top: B:50:0x0003, outer: #1 \}\lCatch: all \-\> 0x003e, IllegalAccessException \-\> 0x0040\lPHI: r3 \l  PHI: (r3v2 'actionExtras' android.os.Bundle) = (r3v1 'actionExtras' android.os.Bundle), (r3v1 'actionExtras' android.os.Bundle), (r3v3 'actionExtras' android.os.Bundle) binds: [B:33:0x0010, B:35:0x0018, B:36:0x001a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x003b|TRY_ENTER\lDONT_GENERATE\lTryCatch #1 \{all \-\> 0x003e, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021, B:38:0x003b, B:45:0x004b, B:44:0x0041), top: B:50:0x0003, inners: #0 \}\lCatch: all \-\> 0x003e\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L3e\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x003d|DONT_GENERATE\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x004b|DONT_GENERATE\lTryCatch #1 \{all \-\> 0x003e, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021, B:38:0x003b, B:45:0x004b, B:44:0x0041), top: B:50:0x0003, inners: #0 \}\lCatch: all \-\> 0x003e\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L3e\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x003f|FINALLY_INSNS\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x004e|TRY_LEAVE\lCatch: all \-\> 0x003e\l}"];
+MethodNode[shape=record,label="{public static androidx.core.app.NotificationCompat$Action androidx.core.app.NotificationCompatJellybean.getAction((r8v0 'notif' android.app.Notification A[D('notif' android.app.Notification), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'actionIndex' int A[D('actionIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:47:0x004d \-\> B:27:?, CROSS_EDGE: B:49:0x004f \-\> B:27:?, CROSS_EDGE: B:35:0x0018 \-\> B:37:0x0021, CROSS_EDGE: B:33:0x0010 \-\> B:37:0x0021, CROSS_EDGE: B:40:0x003d \-\> B:45:0x004b, CROSS_EDGE: B:50:0x0003 \-\> B:43:0x0040, CROSS_EDGE: B:50:0x0003 \-\> B:41:0x003e\lINLINE_NOT_NEEDED\lTryCatch #0 \{IllegalAccessException \-\> 0x0040, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021), top: B:50:0x0003, outer: #1 \}, TryCatch #1 \{all \-\> 0x003e, blocks: (B:30:0x0003, B:32:0x0009, B:34:0x0012, B:36:0x001a, B:37:0x0021, B:38:0x003b, B:45:0x004b, B:44:0x0041), top: B:50:0x0003, inners: #0 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_26;Node_29 -> Node_50;
+Node_30 -> Node_31;
+Node_43 -> Node_44;
+Node_44 -> Node_45;
+Node_31 -> Node_32;
+Node_31 -> Node_40[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_37[style=dashed];
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_37;
+Node_39 -> Node_27;
+Node_46 -> Node_27;
+Node_41 -> Node_42;
+Node_49 -> Node_27;
+Node_43 -> Node_44;
+Node_44 -> Node_45;
+Node_41 -> Node_42;
+Node_49 -> Node_27;
+Node_26 -> Node_28;
+Node_28 -> Node_29;
+Node_50 -> Node_30;
+Node_50 -> Node_43;
+Node_50 -> Node_41;
+Node_34 -> Node_35;
+Node_37 -> Node_38;
+Node_37 -> Node_51;
+Node_38 -> Node_39;
+Node_51 -> Node_43;
+Node_51 -> Node_41;
+Node_40 -> Node_45;
+Node_45 -> Node_46;
+Node_42 -> Node_48;
+Node_48 -> Node_49;
+}
+

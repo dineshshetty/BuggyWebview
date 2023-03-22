@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.appcompat.widget.SwitchCompat.drawableStateChanged()V" {
+subgraph cluster_Region_1724583125 {
+label = "R(5:1|(1:5)|6|(1:10)|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|super.drawableStateChanged()\lint[] int[] r0 = getDrawableState()\lboolean r1 = false\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = r5.mThumbDrawable\l}"];
+subgraph cluster_IfRegion_909475730 {
+label = "IF [B:19:0x000a, B:21:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|if (r2 != null) goto L3\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0010|ADDED_TO_REGION\l|if (r2.isStateful() != false) goto L5\l}"];
+subgraph cluster_Region_115400590 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0012|r1 = false \| r2.setState(r0)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0017|PHI: r1 \l  PHI: (r1v1 'changed' boolean) = (r1v0 'changed' boolean), (r1v0 'changed' boolean), (r1v4 'changed' boolean) binds: [B:19:0x000a, B:21:0x0010, B:22:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r3 = r5.mTrackDrawable\l}"];
+subgraph cluster_IfRegion_917101173 {
+label = "IF [B:24:0x0019, B:26:0x001f] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|if (r3 != null) goto L8\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001f|ADDED_TO_REGION\l|if (r3.isStateful() != false) goto L10\l}"];
+subgraph cluster_Region_196814886 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0021|r1 \|= r3.setState(r0)\l}"];
+}
+}
+subgraph cluster_Region_1764633510 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_136738791 {
+label = "IF [B:28:0x0026] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0026|PHI: r1 \l  PHI: (r1v2 'changed' boolean) = (r1v1 'changed' boolean), (r1v1 'changed' boolean), (r1v3 'changed' boolean) binds: [B:24:0x0019, B:26:0x001f, B:27:0x0021] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != false) goto L12\l}"];
+subgraph cluster_Region_1105507734 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0028|invalidate()\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001b}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002b|ORIG_RETURN\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void androidx.appcompat.widget.SwitchCompat.drawableStateChanged((r5v0 'this' androidx.appcompat.widget.SwitchCompat A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:28:0x0026 \-\> B:30:0x002b, CROSS_EDGE: B:26:0x001f \-\> B:28:0x0026, CROSS_EDGE: B:24:0x0019 \-\> B:28:0x0026, CROSS_EDGE: B:21:0x0010 \-\> B:23:0x0017, CROSS_EDGE: B:19:0x000a \-\> B:23:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.drawableStateChanged():void\}]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_31[style=dashed];
+Node_29 -> Node_30;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_25 -> Node_26;
+Node_30 -> Node_17;
+Node_31 -> Node_17;
+}
+

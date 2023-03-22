@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.viewpager2.widget.AnimateLayoutChangeDetector.hasRunningChangingLayoutTransition()Z" {
+subgraph cluster_Region_1587993736 {
+label = "R(3:1|(1:(2:(1:7)|(1:5)))|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = r3.mLayoutManager.getChildCount()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_860252370 {
+label = "LOOP:0: (1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0007|LOOP_START\lLOOP:0: B:16:0x0007\-\>B:21:0x0017\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v3 'i' int) binds: [B:15:0x0000, B:21:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_1378776155 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1420120637 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_251963382 {
+label = "IF [B:18:0x0013] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|if (hasRunningChangingLayoutTransition(r3.mLayoutManager.getChildAt(r1)) != false) goto L6\l}"];
+subgraph cluster_Region_1386987728 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1546047656 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0007\-\>B:21:0x0017\l|r1++\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001a|RETURN\l|return false\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0009}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0015|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean androidx.viewpager2.widget.AnimateLayoutChangeDetector.hasRunningChangingLayoutTransition((r3v0 'this' androidx.viewpager2.widget.AnimateLayoutChangeDetector A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0017 \-\> B:16:0x0007, CROSS_EDGE: B:23:0x001b \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_25[style=dashed];
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_24;
+Node_19 -> Node_14;
+Node_21 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_24 -> Node_19;
+Node_25 -> Node_22;
+}
+

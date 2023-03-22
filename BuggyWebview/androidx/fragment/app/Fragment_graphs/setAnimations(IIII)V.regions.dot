@@ -1,0 +1,50 @@
+digraph "CFG forandroidx.fragment.app.Fragment.setAnimations(IIII)V" {
+subgraph cluster_Region_1660877362 {
+label = "R(1:(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1944983684 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1602398088 {
+label = "IF [B:14:0x0002, B:15:0x0004, B:16:0x0006, B:17:0x0008, B:18:0x000a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r1.mAnimationInfo == null) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0004|ADDED_TO_REGION\l|if (r2 == 0) goto L4\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0006|ADDED_TO_REGION\l|if (r3 == 0) goto L5\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0008|ADDED_TO_REGION\l|if (r4 == 0) goto L6\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000a|ADDED_TO_REGION\l|if (r5 == 0) goto L7\l}"];
+subgraph cluster_Region_503020543 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_138489112 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|ensureAnimationInfo().mEnterAnim = r2\lensureAnimationInfo().mExitAnim = r3\lensureAnimationInfo().mPopEnterAnim = r4\lensureAnimationInfo().mPopExitAnim = r5\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0025}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.setAnimations((r1v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r2v0 'enter' int A[D('enter' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'exit' int A[D('exit' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'popEnter' int A[D('popEnter' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'popExit' int A[D('popExit' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0025 \-\> B:12:?, CROSS_EDGE: B:17:0x0008 \-\> B:20:0x000d, CROSS_EDGE: B:16:0x0006 \-\> B:20:0x000d, CROSS_EDGE: B:15:0x0004 \-\> B:20:0x000d, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_20[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_21 -> Node_12;
+}
+

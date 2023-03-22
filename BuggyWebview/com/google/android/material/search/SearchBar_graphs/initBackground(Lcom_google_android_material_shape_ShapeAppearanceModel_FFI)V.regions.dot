@@ -1,0 +1,51 @@
+digraph "CFG forcom.google.android.material.search.SearchBar.initBackground(Lcom\/google\/android\/material\/shape\/ShapeAppearanceModel;FFI)V" {
+subgraph cluster_Region_76904746 {
+label = "R(5:1|(1:3)|4|(1:6)(1:10)|7) | DECL_VAR: android.graphics.drawable.Drawable background\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|com.google.android.material.shape.MaterialShapeDrawable com.google.android.material.shape.MaterialShapeDrawable r0 = new com.google.android.material.shape.MaterialShapeDrawable(r6)\lr5.backgroundShape = r0\lr0.initializeElevationOverlay(getContext())\lr5.backgroundShape.setElevation(r7)\l}"];
+subgraph cluster_IfRegion_437411847 {
+label = "IF [B:14:0x0016] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0016|if (r8 \>= 0.0f) goto L3\l}"];
+subgraph cluster_Region_27499631 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0018|r5.backgroundShape.setStroke(r8, r9)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x001d|int int r0 = com.google.android.material.color.MaterialColors.getColor(r5, com.google.android.material.C0571R.attr.colorSurface)\lint int r1 = com.google.android.material.color.MaterialColors.getColor(r5, com.google.android.material.C0571R.attr.colorControlHighlight)\l}"];
+subgraph cluster_IfRegion_1990067442 {
+label = "IF [B:17:0x002d] THEN: R(1:6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x002d|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L6\l}"];
+subgraph cluster_Region_117303499 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002f|r5.backgroundShape.setFillColor(android.content.res.ColorStateList.valueOf(r0))\landroid.content.res.ColorStateList android.content.res.ColorStateList r3 = android.content.res.ColorStateList.valueOf(r1)\lcom.google.android.material.shape.MaterialShapeDrawable com.google.android.material.shape.MaterialShapeDrawable r4 = r5.backgroundShape\landroid.graphics.drawable.RippleDrawable r2 = new android.graphics.drawable.RippleDrawable(r3, r4, r4)\l}"];
+}
+subgraph cluster_Region_729094312 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0044|r5.backgroundShape.setFillColor(getCompatBackgroundColorStateList(r0, r1))\lcom.google.android.material.shape.MaterialShapeDrawable r2 = r5.backgroundShape\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x004f|PHI: r2 \l  PHI: (r2v3 'background' android.graphics.drawable.Drawable) = (r2v2 'background' android.graphics.drawable.Drawable), (r2v5 'background' android.graphics.drawable.Drawable) binds: [B:19:0x0044, B:18:0x002f] A[DONT_GENERATE, DONT_INLINE]\l|androidx.core.view.ViewCompat.setBackground(r5, r2)\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0052}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.search.SearchBar.initBackground((r5v0 'this' com.google.android.material.search.SearchBar A[IMMUTABLE_TYPE, THIS]), (r6v0 'shapeAppearance' com.google.android.material.shape.ShapeAppearanceModel A[D('shapeAppearance' com.google.android.material.shape.ShapeAppearanceModel), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'elevation' float A[D('elevation' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'strokeWidth' float A[D('strokeWidth' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'strokeColor' int A[D('strokeColor' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0044 \-\> B:20:0x004f, CROSS_EDGE: B:14:0x0016 \-\> B:16:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_21 -> Node_12;
+}
+

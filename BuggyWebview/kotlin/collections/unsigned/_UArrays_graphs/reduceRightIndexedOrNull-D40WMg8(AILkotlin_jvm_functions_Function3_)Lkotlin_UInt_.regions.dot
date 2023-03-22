@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.unsigned.UArraysKt___UArraysKt.reduceRightIndexedOrNull\-D40WMg8([ILkotlin\/jvm\/functions\/Function3;)Lkotlin\/UInt;" {
+subgraph cluster_Region_661761928 {
+label = "R(2:1|(2:(1:3)|(3:5|(1:7)|10)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"$this$reduceRightIndexedOrNull\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"operation\")\lint int r0 = kotlin.collections.ArraysKt.getLastIndex(r5)\l}"];
+subgraph cluster_Region_671594685 {
+label = "R(2:(1:3)|(3:5|(1:7)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_870973562 {
+label = "IF [B:15:0x0011] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|if (r0 \< 0) goto L3\l}"];
+subgraph cluster_Region_1988530660 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0013|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_245656584 {
+label = "R(3:5|(1:7)|10)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|int int r1 = r0 \- 1\lint int r0 = kotlin.UIntArray.m297getpVg5ArA(r5, r0)\l}"];
+subgraph cluster_LoopRegion_688842722 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001b|LOOP_START\lLOOP:0: B:19:0x001b\-\>B:20:0x001d\lPHI: r0 r1 \l  PHI: (r0v5 'accumulator' int) = (r0v4 'accumulator' int), (r0v6 'accumulator' int) binds: [B:18:0x0015, B:20:0x001d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v2 'index' int) = (r1v1 'index' int), (r1v3 'index' int) binds: [B:18:0x0015, B:20:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \>= 0) goto L7\l}"];
+subgraph cluster_Region_53022884 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001d|LOOP_END\lLOOP:0: B:19:0x001b\-\>B:20:0x001d\l|int r0 = r6.invoke(java.lang.Integer.valueOf(r1), kotlin.UInt.m232boximpl(kotlin.UIntArray.m297getpVg5ArA(r5, r1)), kotlin.UInt.m232boximpl(r0)).m289unboximpl()\lr1\-\-\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x003e|RETURN\l|return kotlin.UInt.m232boximpl(r0)\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x003a|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x003a}"];
+MethodNode[shape=record,label="{private static final kotlin.UInt kotlin.collections.unsigned.UArraysKt___UArraysKt.reduceRightIndexedOrNull\-D40WMg8((r5v0 'reduceRightIndexedOrNull' int[] A[D('$this$reduceRightIndexedOrNull_u2dD40WMg8' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'operation' kotlin.jvm.functions.Function3\<? super java.lang.Integer, ? super kotlin.UInt, ? super kotlin.UInt, kotlin.UInt\> A[D('operation' kotlin.jvm.functions.Function3), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x001d \-\> B:19:0x001b, CROSS_EDGE: B:22:0x003e \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([ILkotlin\/jvm\/functions\/Function3\<\-Ljava\/lang\/Integer;\-Lkotlin\/UInt;\-Lkotlin\/UInt;Lkotlin\/UInt;\>;)Lkotlin\/UInt;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_20 -> Node_19;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_23 -> Node_21;
+Node_21 -> Node_22;
+}
+

@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.appcompat.widget.ThemeUtils.checkAppCompatTheme(Landroid\/view\/View;Landroid\/content\/Context;)V" {
+subgraph cluster_Region_1486823267 {
+label = "R(2:1|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|android.content.res.TypedArray android.content.res.TypedArray r0 = r5.obtainStyledAttributes(androidx.appcompat.C0019R.styleable.AppCompatTheme)\l}"];
+subgraph cluster_TryCatchRegion_2060140359 {
+label = "Try: R(1:(1:5)) finally: R(3:10|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1605554962 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1578210232 {
+label = "IF [B:17:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|if (r0.hasValue(androidx.appcompat.C0019R.styleable.AppCompatTheme_windowActionBar) == false) goto L5\l}"];
+subgraph cluster_Region_887517365 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|TRY_LEAVE\lTryCatch #0 \{all \-\> 0x0032, blocks: (B:16:0x0006, B:18:0x000e), top: B:24:0x0006 \}\lCatch: all \-\> 0x0032\l|android.util.Log.e(androidx.appcompat.widget.ThemeUtils.TAG, \"View \" + r4.getClass() + \" is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).\")     \/\/ Catch: java.lang.Throwable \-\> L32\l}"];
+}
+}
+}
+subgraph cluster_Region_957622172 {
+label = "R(3:10|11|12) | ExcHandler: all \-\> 0x0032\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0032|ExcHandler: all \-\> 0x0032\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0033|FINALLY_INSNS\l|r0.recycle()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0036|throw r1\l}"];
+}
+}
+}
+subgraph cluster_Region_957622172 {
+label = "R(3:10|11|12) | ExcHandler: all \-\> 0x0032\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0032|ExcHandler: all \-\> 0x0032\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0033|FINALLY_INSNS\l|r0.recycle()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0036|throw r1\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0006|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0006|TRY_ENTER\lTryCatch #0 \{all \-\> 0x0032, blocks: (B:16:0x0006, B:18:0x000e), top: B:24:0x0006 \}\lCatch: all \-\> 0x0032\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x002d|DONT_GENERATE\l|r0.recycle()\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0031}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static void androidx.appcompat.widget.ThemeUtils.checkAppCompatTheme((r4v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0036 \-\> B:14:?, CROSS_EDGE: B:17:0x000c \-\> B:19:0x002d, CROSS_EDGE: B:24:0x0006 \-\> B:21:0x0032\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0032, blocks: (B:16:0x0006, B:18:0x000e), top: B:24:0x0006 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_24;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_25;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_16;
+Node_24 -> Node_21;
+Node_16 -> Node_17;
+Node_25 -> Node_21;
+Node_19 -> Node_20;
+Node_20 -> Node_14;
+}
+

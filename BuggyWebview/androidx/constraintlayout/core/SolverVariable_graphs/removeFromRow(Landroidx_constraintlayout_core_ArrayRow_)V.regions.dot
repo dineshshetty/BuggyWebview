@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.constraintlayout.core.SolverVariable.removeFromRow(Landroidx\/constraintlayout\/core\/ArrayRow;)V" {
+subgraph cluster_Region_2641995 {
+label = "R(2:1|(1:(2:(4:7|(1:10)|12|13)|(1:5))))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|int int r0 = r5.mClientEquationsCount\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1232301062 {
+label = "LOOP:0: (1:(2:(4:7|(1:10)|12|13)|(1:5)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0003|LOOP_START\lLOOP:0: B:20:0x0003\-\>B:29:0x0022\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:19:0x0000, B:29:0x0022] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_961903062 {
+label = "R(1:(2:(4:7|(1:10)|12|13)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_52025259 {
+label = "R(2:(4:7|(1:10)|12|13)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_572505159 {
+label = "IF [B:22:0x0009] THEN: R(4:7|(1:10)|12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0009|if (r5.mClientEquations[r1] == r6) goto L6\l}"];
+subgraph cluster_Region_1893660510 {
+label = "R(4:7|(1:10)|12|13)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000b|int r2 = r1\l}"];
+subgraph cluster_LoopRegion_77132247 {
+label = "LOOP:1: (1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000e|if (r2 \< (r0 \- 1)) goto L10\l}"];
+subgraph cluster_Region_856405723 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0010|LOOP_END\lLOOP:1: B:24:0x000c\-\>B:26:0x0010\l|androidx.constraintlayout.core.ArrayRow[] androidx.constraintlayout.core.ArrayRow[] r3 = r5.mClientEquations\lr3[r2] = r3[r2 + 1]\lr2++\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x001b|int int r2 = r5.mClientEquationsCount\lr5.mClientEquationsCount = r2 \- 1\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0021|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1626804762 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0022|LOOP_END\lLOOP:0: B:20:0x0003\-\>B:29:0x0022\l|r1++\l}"];
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0005}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x000b|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000c|LOOP_START\lLOOP:1: B:24:0x000c\-\>B:26:0x0010\lPHI: r2 \l  PHI: (r2v3 'j' int) = (r2v2 'j' int), (r2v6 'j' int) binds: [B:23:0x000b, B:26:0x0010] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001b|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0025|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0025}"];
+MethodNode[shape=record,label="{public final void androidx.constraintlayout.core.SolverVariable.removeFromRow((r5v0 'this' androidx.constraintlayout.core.SolverVariable A[IMMUTABLE_TYPE, THIS]), (r6v0 'row' androidx.constraintlayout.core.ArrayRow A[D('row' androidx.constraintlayout.core.ArrayRow), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x0010 \-\> B:24:0x000c, BACK_EDGE: B:29:0x0022 \-\> B:20:0x0003, CROSS_EDGE: B:30:0x0025 \-\> B:18:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_31[style=dashed];
+Node_22 -> Node_29[style=dashed];
+Node_22 -> Node_32;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_33[style=dashed];
+Node_26 -> Node_24;
+Node_27 -> Node_28;
+Node_28 -> Node_18;
+Node_29 -> Node_20;
+Node_17 -> Node_19;
+Node_21 -> Node_22;
+Node_32 -> Node_23;
+Node_24 -> Node_25;
+Node_33 -> Node_27;
+Node_31 -> Node_30;
+Node_30 -> Node_18;
+}
+

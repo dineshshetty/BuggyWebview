@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.associateByTo(Ljava\/lang\/CharSequence;Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_690899574 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"destination\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"keySelector\")\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_888045743 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0015|if (r1 \< r5.length()) goto L4\l}"];
+subgraph cluster_Region_53525237 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0017|LOOP_END\lLOOP:0: B:11:0x0011\-\>B:13:0x0017\l|char char r2 = r5.charAt(r1)\lr6.put(r7.invoke(java.lang.Character.valueOf(r2)), java.lang.Character.valueOf(r2))\lr1++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x002d|RETURN\l|return r6\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0011|LOOP_START\lLOOP:0: B:11:0x0011\-\>B:13:0x0017\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:10:0x0000, B:13:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002d|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final M extends java.util.Map\<? super K, ? super java.lang.Character\> kotlin.text.StringsKt___StringsKt.associateByTo((r5v0 '$this$associateByTo' java.lang.CharSequence A[D('$this$associateByTo' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'destination' M extends java.util.Map\<? super K, ? super java.lang.Character\> A[D('destination' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'keySelector' kotlin.jvm.functions.Function1\<? super java.lang.Character, ? extends K\> A[D('keySelector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0017 \-\> B:11:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: [K, M extends java.util.Map\<? super K, ? super java.lang.Character\>]\lSIGNATURE: \<K:Ljava\/lang\/Object;M::Ljava\/util\/Map\<\-TK;\-Ljava\/lang\/Character;\>;\>(Ljava\/lang\/CharSequence;TM;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Character;+TK;\>;)TM;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.fragment.app.FragmentStore.saveActiveFragments()Ljava\/util\/ArrayList;" {
+subgraph cluster_Region_480280720 {
+label = "R(3:1|(2:4|(2:7|(1:10)(0))(0))|16)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.ArrayList java.util.ArrayList\<androidx.fragment.app.FragmentState\> r0 = new java.util.ArrayList\<\>(r7.mActive.size())\ljava.util.Iterator r1 = r7.mActive.values().iterator()\l\l}"];
+subgraph cluster_LoopRegion_278946481 {
+label = "LOOP:0: (2:4|(2:7|(1:10)(0))(0))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|androidx.fragment.app.FragmentStateManager \lif (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1693990922 {
+label = "R(2:4|(2:7|(1:10)(0))(0))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001b|androidx.fragment.app.FragmentStateManager r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_1232353765 {
+label = "IF [B:6:0x0021] THEN: R(2:7|(1:10)(0)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0021|if (r2 != null) goto L6\l}"];
+subgraph cluster_Region_741588578 {
+label = "R(2:7|(1:10)(0))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023|androidx.fragment.app.Fragment androidx.fragment.app.Fragment r3 = r2.getFragment()\landroidx.fragment.app.FragmentState androidx.fragment.app.FragmentState r4 = r2.saveState()\lr0.add(r4)\l}"];
+subgraph cluster_IfRegion_679989471 {
+label = "IF [B:8:0x0033] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0033|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(2) != false) goto L9\l}"];
+subgraph cluster_Region_474699422 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0035|android.util.Log.v(androidx.fragment.app.FragmentStore.TAG, \"Saved state of \" + r3 + \": \" + r4.mSavedFragmentState)\l}"];
+}
+subgraph cluster_Region_992058004 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_494888426 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0056|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0015|LOOP_START\lLOOP:0: B:3:0x0015\-\>B:15:0x0015\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0023|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0035|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0015|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0015|LOOP_END\lSYNTHETIC\lLOOP:0: B:3:0x0015\-\>B:15:0x0015\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0015|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0015|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0056|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.util.ArrayList\<androidx.fragment.app.FragmentState\> androidx.fragment.app.FragmentStore.saveActiveFragments((r7v0 'this' androidx.fragment.app.FragmentStore A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:9:0x0035 \-\> B:3:0x0015, BACK_EDGE: B:8:0x0033 \-\> B:3:0x0015, BACK_EDGE: B:6:0x0021 \-\> B:3:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\lSIGNATURE: ()Ljava\/util\/ArrayList\<Landroidx\/fragment\/app\/FragmentState;\>;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_12;
+Node_6 -> Node_16[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_14;
+Node_8 -> Node_17[style=dashed];
+Node_9 -> Node_18;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_12 -> Node_7;
+Node_14 -> Node_9;
+Node_18 -> Node_15;
+Node_15 -> Node_3;
+Node_17 -> Node_15;
+Node_16 -> Node_15;
+Node_13 -> Node_11;
+}
+

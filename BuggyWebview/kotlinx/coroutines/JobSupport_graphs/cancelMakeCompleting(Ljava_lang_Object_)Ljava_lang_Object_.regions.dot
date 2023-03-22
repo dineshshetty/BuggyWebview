@@ -1,0 +1,69 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.cancelMakeCompleting(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1797579992 {
+label = "R(2:(2:2|(2:(2:9|10)|(1:12)))|15) | DECL_VAR: kotlinx.coroutines.internal.Symbol null, java.lang.Object finalState, kotlinx.coroutines.internal.Symbol null\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_898353098 {
+label = "LOOP:0: (2:2|(2:(2:9|10)|(1:12)))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002e|LOOP_END\lLOOP:0: B:22:0x0002\-\>B:30:0x002e\l|if (r5 == r6) goto L2\l}"];
+subgraph cluster_Region_356241255 {
+label = "R(2:2|(2:(2:9|10)|(1:12)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0002|LOOP_START\lLOOP:0: B:22:0x0002\-\>B:30:0x002e\l|java.lang.Object java.lang.Object r2 = getState$kotlinx_coroutines_core()\l}"];
+subgraph cluster_Region_1398425446 {
+label = "R(2:(2:9|10)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1763110135 {
+label = "IF [B:23:0x000a, B:25:0x000e, B:27:0x0017] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000a|if ((r2 instanceof kotlinx.coroutines.Incomplete) == false) goto L16\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000e|ADDED_TO_REGION\l|if ((r2 instanceof kotlinx.coroutines.JobSupport.Finishing) != false) goto L6\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0017|ADDED_TO_REGION\l|if (((kotlinx.coroutines.JobSupport.Finishing) r2).isCompleting() != false) goto L8\l}"];
+subgraph cluster_Region_2122350474 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0033|kotlinx.coroutines.internal.Symbol r4 = kotlinx.coroutines.JobSupportKt.COMPLETING_ALREADY\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0037|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1471727547 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001a|kotlinx.coroutines.CompletedExceptionally kotlinx.coroutines.CompletedExceptionally r4 = new kotlinx.coroutines.CompletedExceptionally(createCauseException(r10), false, 2, null)\ljava.lang.Object r5 = tryMakeCompleting(r2, r4)\lkotlinx.coroutines.internal.Symbol r6 = kotlinx.coroutines.JobSupportKt.COMPLETING_RETRY\l}"];
+}
+}
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0030|RETURN\l|return r5\l}"];
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000c}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0010}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0033|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0030|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0033|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{private final java.lang.Object kotlinx.coroutines.JobSupport.cancelMakeCompleting((r9v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]), (r10v0 'cause' java.lang.Object A[D('cause' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:30:0x002e \-\> B:22:0x0002, CROSS_EDGE: B:34:0x0037 \-\> B:20:?, CROSS_EDGE: B:25:0x000e \-\> B:29:0x001a, CROSS_EDGE: B:23:0x000a \-\> B:33:0x0033\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_30 -> Node_22;
+Node_30 -> Node_37[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_36;
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_27 -> Node_29[style=dashed];
+Node_27 -> Node_35;
+Node_33 -> Node_34;
+Node_34 -> Node_20;
+Node_29 -> Node_30;
+Node_31 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_35 -> Node_33;
+Node_37 -> Node_31;
+Node_36 -> Node_33;
+}
+

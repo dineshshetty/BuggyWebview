@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.setVisibility(I)V" {
+subgraph cluster_Region_44223431 {
+label = "R(6:1|2|4|(1:8)|9|(1:(1:13)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|super.setVisibility(r4)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0004|boolean r1 = r4 == 0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0009|PHI: r1 \l  PHI: (r1v1 'visible' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = r3.statusBarScrim\l}"];
+subgraph cluster_IfRegion_167813826 {
+label = "IF [B:7:0x000b, B:9:0x0011] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000b|if (r2 != null) goto L6\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0011|ADDED_TO_REGION\l|if (r2.isVisible() != r1) goto L8\l}"];
+subgraph cluster_Region_952242947 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0013|r3.statusBarScrim.setVisible(r1, false)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0018|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = r3.contentScrim\l}"];
+subgraph cluster_Region_2098109845 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_3698292 {
+label = "IF [B:12:0x001a, B:14:0x0020] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001a|if (r2 != null) goto L11\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0020|ADDED_TO_REGION\l|if (r2.isVisible() != r1) goto L13\l}"];
+subgraph cluster_Region_349200711 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0022|r3.contentScrim.setVisible(r1, false)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000d}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001c}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0027|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+MethodNode[shape=record,label="{public void com.google.android.material.appbar.CollapsingToolbarLayout.setVisibility((r3v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'visibility' int A[D('visibility' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:14:0x0020 \-\> B:16:0x0027, CROSS_EDGE: B:12:0x001a \-\> B:16:0x0027, CROSS_EDGE: B:9:0x0011 \-\> B:11:0x0018, CROSS_EDGE: B:7:0x000b \-\> B:11:0x0018, CROSS_EDGE: B:5:0x0008 \-\> B:6:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.setVisibility(int):void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_17[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_8 -> Node_9;
+Node_13 -> Node_14;
+Node_16 -> Node_1;
+Node_18 -> Node_1;
+Node_17 -> Node_1;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.collections.builders.SetBuilder.writeReplace()Ljava\/lang\/Object;" {
+subgraph cluster_Region_814775244 {
+label = "R(1:(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_750005441 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1766464701 {
+label = "IF [B:11:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0006|if (r3.backing.isReadOnly$kotlin_stdlib() == true) goto L3\l}"];
+subgraph cluster_Region_1862699082 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0011|RETURN\l|return new kotlin.collections.builders.SerializedCollection(r3, 1)\l}"];
+}
+}
+subgraph cluster_Region_1551614077 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0019|throw new java.io.NotSerializableException(\"The set cannot be serialized while it is being built.\")\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0008}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0012}"];
+MethodNode[shape=record,label="{private final java.lang.Object kotlin.collections.builders.SetBuilder.writeReplace((r3v0 'this' kotlin.collections.builders.SetBuilder\<E\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0019 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

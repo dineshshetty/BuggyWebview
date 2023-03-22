@@ -1,0 +1,60 @@
+digraph "CFG forcom.google.android.material.chip.Chip.updatePaddingInternal()V" {
+subgraph cluster_Region_1298333986 {
+label = "R(1:(2:(1:11)|(3:5|(1:7)|8))) | DECL_VAR: com.google.android.material.chip.ChipDrawable null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_400124705 {
+label = "R(2:(1:11)|(3:5|(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_808486558 {
+label = "IF [B:17:0x0008, B:19:0x000c] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (android.text.TextUtils.isEmpty(getText()) != false) goto L12\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000c|ADDED_TO_REGION\l|if ((r0 = r4.chipDrawable) == null) goto L11\l}"];
+subgraph cluster_Region_962609710 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2080698112 {
+label = "R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|int int r0 = (int) (r0.getChipEndPadding() + r4.chipDrawable.getTextEndPadding() + r4.chipDrawable.calculateCloseIconWidth())\lint int r1 = (int) (r4.chipDrawable.getChipStartPadding() + r4.chipDrawable.getTextStartPadding() + r4.chipDrawable.calculateChipIconWidth())\l}"];
+subgraph cluster_IfRegion_1826569777 {
+label = "IF [B:22:0x003a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x003a|if (r4.insetBackgroundDrawable != null) goto L7\l}"];
+subgraph cluster_Region_725373155 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x003c|android.graphics.Rect android.graphics.Rect r2 = new android.graphics.Rect()\lr4.insetBackgroundDrawable.getPadding(r2)\lr1 += r2.left\lr0 += r2.right\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x004c|PHI: r0 r1 \l  PHI: (r0v7 'paddingEnd' int) = (r0v6 'paddingEnd' int), (r0v8 'paddingEnd' int) binds: [B:22:0x003a, B:23:0x003c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v9 'paddingStart' int) = (r1v8 'paddingStart' int), (r1v10 'paddingStart' int) binds: [B:22:0x003a, B:23:0x003c] A[DONT_GENERATE, DONT_INLINE]\l|androidx.core.view.ViewCompat.setPaddingRelative(r4, r1, getPaddingTop(), r0, getPaddingBottom())\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000a}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0058}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0059|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.chip.Chip.updatePaddingInternal((r4v0 'this' com.google.android.material.chip.Chip A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x003a \-\> B:24:0x004c, CROSS_EDGE: B:26:0x0059 \-\> B:15:?, CROSS_EDGE: B:17:0x0008 \-\> B:26:0x0059\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_26;
+Node_19 -> Node_21[style=dashed];
+Node_19 -> Node_27;
+Node_27 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_25 -> Node_15;
+Node_26 -> Node_15;
+}
+

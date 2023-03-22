@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.core.app.NotificationCompatSideChannelService.checkPermission(ILjava\/lang\/String;)V" {
+subgraph cluster_Region_77312588 {
+label = "R(4:1|(2:3|(2:(1:7)|(1:5)))|10|11) | DECL_VAR: java.lang.String[] null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_2035343808 {
+label = "LOOP:0: (2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|LOOP_START\lLOOP:0: B:3:0x000a\-\>B:7:0x0015\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v4 int) binds: [B:2:0x0000, B:7:0x0015] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_471326072 {
+label = "R(2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|r3 = r0[r2]\l}"];
+subgraph cluster_Region_1620407099 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_521695808 {
+label = "IF [B:5:0x0012] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|if (r3.equals(r7) != false) goto L6\l}"];
+subgraph cluster_Region_296264660 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_817558818 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|LOOP_END\lLOOP:0: B:3:0x000a\-\>B:7:0x0015\l|r2++\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0018}"];
+Node_9 [shape=record,label="{9\:\ 0x0036|throw new java.lang.SecurityException(\"NotificationSideChannelService: Uid \" + r6 + \" is not authorized for package \" + r7)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0014|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0018|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.core.app.NotificationCompatSideChannelService.checkPermission((r5v0 'this' androidx.core.app.NotificationCompatSideChannelService A[IMMUTABLE_TYPE, THIS]), (r6v0 'callingUid' int A[D('callingUid' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'packageName' java.lang.String A[D('packageName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x0015 \-\> B:3:0x000a, CROSS_EDGE: B:9:0x0036 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_7[style=dashed];
+Node_5 -> Node_10;
+Node_6 -> Node_1;
+Node_7 -> Node_3;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_10 -> Node_6;
+Node_11 -> Node_8;
+}
+

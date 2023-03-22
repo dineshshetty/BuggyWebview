@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.transition.VisibilityPropagation.captureValues(Landroidx\/transition\/TransitionValues;)V" {
+subgraph cluster_Region_1920938198 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|android.view.View android.view.View r0 = r8.view\ljava.lang.Integer java.lang.Integer r1 = (java.lang.Integer) r8.values.get(\"android:visibility:visibility\")\l}"];
+subgraph cluster_IfRegion_1853421472 {
+label = "IF [B:10:0x000c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000c|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_708942194 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000e|java.lang.Integer r1 = java.lang.Integer.valueOf(r0.getVisibility())\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0016|PHI: r1 \l  PHI: (r1v3 'visibility' java.lang.Integer) = (r1v2 'visibility' java.lang.Integer), (r1v4 'visibility' java.lang.Integer) binds: [B:10:0x000c, B:11:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|r8.values.put(androidx.transition.VisibilityPropagation.PROPNAME_VISIBILITY, r1)\lr0.getLocationOnScreen(r3)\lint[] int[] r3 = \{r3[0] + java.lang.Math.round(r0.getTranslationX())\}\lr3[0] = r3[0] + (r0.getWidth() \/ 2)\lr3[1] = r3[1] + java.lang.Math.round(r0.getTranslationY())\lr3[1] = r3[1] + (r0.getHeight() \/ 2)\lr8.values.put(androidx.transition.VisibilityPropagation.PROPNAME_VIEW_CENTER, r3)\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x005a}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.transition.VisibilityPropagation.captureValues((r7v0 'this' androidx.transition.VisibilityPropagation A[IMMUTABLE_TYPE, THIS]), (r8v0 'values' androidx.transition.TransitionValues A[D('values' androidx.transition.TransitionValues), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x000c \-\> B:12:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.transition.TransitionPropagation.captureValues(androidx.transition.TransitionValues):void]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_13 -> Node_8;
+}
+

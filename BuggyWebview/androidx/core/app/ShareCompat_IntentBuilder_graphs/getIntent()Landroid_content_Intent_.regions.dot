@@ -1,0 +1,156 @@
+digraph "CFG forandroidx.core.app.ShareCompat.IntentBuilder.getIntent()Landroid\/content\/Intent;" {
+subgraph cluster_Region_1656643368 {
+label = "R(10:1|(1:3)|4|(1:6)|7|(1:9)|10|14|(2:16|(2:20|(1:22))(2:26|(1:28)))(2:29|(1:31))|24)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.ArrayList\<java.lang.String\> java.util.ArrayList\<java.lang.String\> r0 = r6.mToAddresses\l}"];
+subgraph cluster_IfRegion_391217923 {
+label = "IF [B:3:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_698241661 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|combineArrayExtra(\"android.intent.extra.EMAIL\", r0)\lr6.mToAddresses = null\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x000c|java.util.ArrayList\<java.lang.String\> java.util.ArrayList\<java.lang.String\> r0 = r6.mCcAddresses\l}"];
+subgraph cluster_IfRegion_1464851292 {
+label = "IF [B:6:0x000e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|if (r0 != null) goto L6\l}"];
+subgraph cluster_Region_1201183106 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|combineArrayExtra(\"android.intent.extra.CC\", r0)\lr6.mCcAddresses = null\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0017|java.util.ArrayList\<java.lang.String\> java.util.ArrayList\<java.lang.String\> r0 = r6.mBccAddresses\l}"];
+subgraph cluster_IfRegion_1556759529 {
+label = "IF [B:9:0x0019] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0019|if (r0 != null) goto L9\l}"];
+subgraph cluster_Region_119340983 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001b|combineArrayExtra(\"android.intent.extra.BCC\", r0)\lr6.mBccAddresses = null\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0022|java.util.ArrayList\<android.net.Uri\> java.util.ArrayList\<android.net.Uri\> r0 = r6.mStreams\lboolean r1 = true\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0030|PHI: r1 \l  PHI: (r1v3 boolean A[REMOVE]) = (r1v1 boolean) binds: [B:14:0x002c] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|boolean r0 = (r0 == null \|\| r0.size() \<= 1) ? false : false\l}"];
+subgraph cluster_IfRegion_773865779 {
+label = "IF [B:18:0x0035] THEN: R(2:16|(2:20|(1:22))(2:26|(1:28))) ELSE: R(2:29|(1:31))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0035|if (r0 == false) goto L16\l}"];
+subgraph cluster_Region_771201532 {
+label = "R(2:16|(2:20|(1:22))(2:26|(1:28)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0037|r6.mIntent.setAction(\"android.intent.action.SEND\")\ljava.util.ArrayList\<android.net.Uri\> java.util.ArrayList\<android.net.Uri\> r4 = r6.mStreams\l}"];
+subgraph cluster_IfRegion_590107296 {
+label = "IF [B:20:0x0040, B:22:0x0046] THEN: R(2:20|(1:22)) ELSE: R(2:26|(1:28))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0040|if (r4 != null) goto L18\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0046|ADDED_TO_REGION\l|if (r4.isEmpty() == false) goto L20\l}"];
+subgraph cluster_Region_708947731 {
+label = "R(2:20|(1:22))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0048|r6.mIntent.putExtra(\"android.intent.extra.STREAM\", r6.mStreams.get(0))\l}"];
+subgraph cluster_IfRegion_441257283 {
+label = "IF [B:24:0x0057] THEN: R(1:22) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0057|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L22\l}"];
+subgraph cluster_Region_1320358522 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0059|androidx.core.app.ShareCompat.Api16Impl.migrateExtraStreamToClipData(r6.mIntent, r6.mStreams)\l}"];
+}
+}
+}
+subgraph cluster_Region_541130475 {
+label = "R(2:26|(1:28))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0061|r6.mIntent.removeExtra(\"android.intent.extra.STREAM\")\l}"];
+subgraph cluster_IfRegion_132048071 {
+label = "IF [B:27:0x0068] THEN: R(1:28) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0068|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L28\l}"];
+subgraph cluster_Region_1972098666 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x006a|androidx.core.app.ShareCompat.Api16Impl.removeClipData(r6.mIntent)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_595409507 {
+label = "R(2:29|(1:31))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0070|r6.mIntent.setAction(\"android.intent.action.SEND_MULTIPLE\")\lr6.mIntent.putParcelableArrayListExtra(\"android.intent.extra.STREAM\", r6.mStreams)\l}"];
+subgraph cluster_IfRegion_74268481 {
+label = "IF [B:30:0x0080] THEN: R(1:31) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0080|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L31\l}"];
+subgraph cluster_Region_1952783319 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0082|androidx.core.app.ShareCompat.Api16Impl.migrateExtraStreamToClipData(r6.mIntent, r6.mStreams)\l}"];
+}
+}
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x008b|RETURN\l|return r6.mIntent\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0026}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0028}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002c|REMOVE\lADDED_TO_REGION\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0042}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0089}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x002f}"];
+MethodNode[shape=record,label="{public android.content.Intent androidx.core.app.ShareCompat.IntentBuilder.getIntent((r6v0 'this' androidx.core.app.ShareCompat$IntentBuilder A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0057 \-\> B:32:0x0089, CROSS_EDGE: B:28:0x006a \-\> B:32:0x0089, CROSS_EDGE: B:27:0x0068 \-\> B:32:0x0089, CROSS_EDGE: B:20:0x0040 \-\> B:26:0x0061, CROSS_EDGE: B:31:0x0082 \-\> B:32:0x0089, CROSS_EDGE: B:30:0x0080 \-\> B:32:0x0089, CROSS_EDGE: B:14:0x002c \-\> B:17:0x0030, CROSS_EDGE: B:12:0x0026 \-\> B:16:0x002f, CROSS_EDGE: B:9:0x0019 \-\> B:11:0x0022, CROSS_EDGE: B:6:0x000e \-\> B:8:0x0017, CROSS_EDGE: B:3:0x0003 \-\> B:5:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_29[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_26[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_26[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_32[style=dashed];
+Node_25 -> Node_32;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_32[style=dashed];
+Node_28 -> Node_32;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_33 -> Node_1;
+Node_0 -> Node_2;
+Node_12 -> Node_13;
+Node_12 -> Node_16;
+Node_13 -> Node_14;
+Node_14 -> Node_16;
+Node_14 -> Node_17;
+Node_21 -> Node_22;
+Node_32 -> Node_33;
+Node_16 -> Node_17;
+}
+

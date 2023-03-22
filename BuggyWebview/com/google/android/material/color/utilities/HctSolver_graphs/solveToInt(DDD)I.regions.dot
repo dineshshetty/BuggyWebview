@@ -1,0 +1,73 @@
+digraph "CFG forcom.google.android.material.color.utilities.HctSolver.solveToInt(DDD)I" {
+subgraph cluster_Region_1497898852 {
+label = "R(1:(2:(1:14)|(2:7|(2:(1:9)|(2:11|12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1613694744 {
+label = "R(2:(1:14)|(2:7|(2:(1:9)|(2:11|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2067174189 {
+label = "IF [B:3:0x0007, B:5:0x000b, B:7:0x0014] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (r12 \< 1.0E\-4d) goto L13\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000b|ADDED_TO_REGION\l|if (r14 \< 1.0E\-4d) goto L13\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0014|ADDED_TO_REGION\l|if (r14 \> 99.9999d) goto L13\l}"];
+subgraph cluster_Region_1306340341 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0044|RETURN\l|return com.google.android.material.color.utilities.ColorUtils.argbFromLstar(r14)\l}"];
+}
+}
+subgraph cluster_Region_16436832 {
+label = "R(2:7|(2:(1:9)|(2:11|12)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0017|double double r0 = (com.google.android.material.color.utilities.MathUtils.sanitizeDegreesDouble(r10) \/ 180.0d) * 3.141592653589793d\ldouble double r2 = com.google.android.material.color.utilities.ColorUtils.yFromLstar(r14)\lint int r4 = findResultByJ(r0, r12, r2)\l}"];
+subgraph cluster_Region_1425522197 {
+label = "R(2:(1:9)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_926636506 {
+label = "IF [B:10:0x0034] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0034|if (r4 != 0) goto L9\l}"];
+subgraph cluster_Region_1293144406 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0036|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_486572752 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0037|double[] double[] r5 = bisectToLimit(r2, r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003f|RETURN\l|return com.google.android.material.color.utilities.ColorUtils.argbFromLinrgb(r5)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000d}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0040}"];
+MethodNode[shape=record,label="{public static int com.google.android.material.color.utilities.HctSolver.solveToInt((r10v0 'hueDegrees' double A[D('hueDegrees' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'chroma' double A[D('chroma' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'lstar' double A[D('lstar' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x003f \-\> B:1:?, CROSS_EDGE: B:15:0x0044 \-\> B:1:?, CROSS_EDGE: B:5:0x000b \-\> B:14:0x0040, CROSS_EDGE: B:3:0x0007 \-\> B:14:0x0040\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_14;
+Node_7 -> Node_9[style=dashed];
+Node_7 -> Node_14;
+Node_15 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_1;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.coordinatorlayout.widget.CoordinatorLayout.getKeyline(I)I" {
+subgraph cluster_Region_440897607 {
+label = "R(2:1|(2:3|4)(1:(2:11|12)(1:10)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|int[] int[] r0 = r4.mKeylines\l}"];
+subgraph cluster_IfRegion_2070827386 {
+label = "IF [B:17:0x0005] THEN: R(2:3|4) ELSE: R(1:(2:11|12)(1:10))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0005|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1213783663 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0007|android.util.Log.e(androidx.coordinatorlayout.widget.CoordinatorLayout.TAG, \"No keylines defined for \" + r4 + \" \- attempted index lookup \" + r5)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0023|RETURN\l|return 0\l}"];
+}
+subgraph cluster_Region_1854574357 {
+label = "R(1:(2:11|12)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1118520357 {
+label = "IF [B:20:0x0024, B:22:0x0027] THEN: R(2:11|12) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0024|if (r5 \< 0) goto L11\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0027|ADDED_TO_REGION\l|if (r5 \>= r0.length) goto L11\l}"];
+subgraph cluster_Region_37305263 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002d|android.util.Log.e(androidx.coordinatorlayout.widget.CoordinatorLayout.TAG, \"Keyline index \" + r5 + \" out of range for \" + r4)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0049|RETURN\l|return 0\l}"];
+}
+subgraph cluster_Region_398352053 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002c|RETURN\l|return r0[r5]\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0026}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002a}"];
+MethodNode[shape=record,label="{private int androidx.coordinatorlayout.widget.CoordinatorLayout.getKeyline((r4v0 'this' androidx.coordinatorlayout.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x002c \-\> B:15:?, CROSS_EDGE: B:27:0x0049 \-\> B:15:?, CROSS_EDGE: B:20:0x0024 \-\> B:26:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_15;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_26;
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_15;
+Node_25 -> Node_15;
+Node_14 -> Node_16;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+}
+

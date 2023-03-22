@@ -1,0 +1,88 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.animateToTab(I)V" {
+subgraph cluster_Region_180858272 {
+label = "R(1:(2:(1:3)|(1:(2:(2:16|17)|(3:11|(1:13)|14)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_626087970 {
+label = "R(2:(1:3)|(1:(2:(2:16|17)|(3:11|(1:13)|14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_757785730 {
+label = "IF [B:22:0x0001] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0001|if (r7 == (\-1)) goto L3\l}"];
+subgraph cluster_Region_1543996616 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0003|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1805293637 {
+label = "R(1:(2:(2:16|17)|(3:11|(1:13)|14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1143299420 {
+label = "R(2:(2:16|17)|(3:11|(1:13)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1045544878 {
+label = "IF [B:25:0x000a, B:27:0x0010, B:29:0x0018] THEN: R(2:16|17) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000a|if (getWindowToken() == null) goto L16\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0010|ADDED_TO_REGION\l|if (androidx.core.view.ViewCompat.isLaidOut(r6) == false) goto L16\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0018|ADDED_TO_REGION\l|if (r6.slidingTabIndicator.childrenNeedLayout() != false) goto L16\l}"];
+subgraph cluster_Region_1586515304 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0042|setScrollPosition(r7, 0.0f, true)\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0045|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_592436083 {
+label = "R(3:11|(1:13)|14)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001b|int int r0 = getScrollX()\lint int r2 = calculateScrollXForTab(r7, 0.0f)\l}"];
+subgraph cluster_IfRegion_530791307 {
+label = "IF [B:32:0x0023] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0023|if (r0 != r2) goto L13\l}"];
+subgraph cluster_Region_998028218 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0025|ensureScrollAnimator()\lr6.scrollAnimator.setIntValues(r0, r2)\lr6.scrollAnimator.start()\l}"];
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x003a|r6.slidingTabIndicator.animateIndicatorToPosition(r7, r6.tabIndicatorAnimationDuration)\l}"];
+}
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0004}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000c}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0012}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0041}"];
+MethodNode[shape=record,label="{private void com.google.android.material.tabs.TabLayout.animateToTab((r6v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]), (r7v0 'newPosition' int A[D('newPosition' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x0041 \-\> B:20:?, CROSS_EDGE: B:32:0x0023 \-\> B:34:0x003a, CROSS_EDGE: B:37:0x0045 \-\> B:20:?, CROSS_EDGE: B:27:0x0010 \-\> B:36:0x0042, CROSS_EDGE: B:25:0x000a \-\> B:36:0x0042\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_20;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_36;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_36;
+Node_29 -> Node_31[style=dashed];
+Node_29 -> Node_36;
+Node_36 -> Node_37;
+Node_37 -> Node_20;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_34[style=dashed];
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_35 -> Node_20;
+}
+

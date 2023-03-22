@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.material.tooltip.TooltipDrawable.calculatePointerOffset()F" {
+subgraph cluster_Region_80664259 {
+label = "R(1:(2:3|4)(1:(1:10)(2:8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1351787847 {
+label = "IF [B:3:0x0012] THEN: R(2:3|4) ELSE: R(1:(1:10)(2:8|9))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if ((((r3.displayFrame.right \- getBounds().right) \- r3.locationOnScreenX) \- r3.layoutMargin) \< 0) goto L3\l}"];
+subgraph cluster_Region_892510054 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|float float r0 = ((r3.displayFrame.right \- getBounds().right) \- r3.locationOnScreenX) \- r3.layoutMargin\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1252192770 {
+label = "R(1:(1:10)(2:8|9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_461921764 {
+label = "IF [B:6:0x0038] THEN: R(1:10) ELSE: R(2:8|9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0038|if ((((r3.displayFrame.left \- getBounds().left) \- r3.locationOnScreenX) + r3.layoutMargin) \<= 0) goto L10\l}"];
+subgraph cluster_Region_1761802392 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return 0.0f\l}"];
+}
+subgraph cluster_Region_422581269 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003a|float float r0 = ((r3.displayFrame.left \- getBounds().left) \- r3.locationOnScreenX) + r3.layoutMargin\l}"];
+Node_8 [shape=record,label="{8\:\ 0x004c|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0027}"];
+MethodNode[shape=record,label="{private float com.google.android.material.tooltip.TooltipDrawable.calculatePointerOffset((r3v0 'this' com.google.android.material.tooltip.TooltipDrawable A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x003a \-\> B:8:0x004c, CROSS_EDGE: B:6:0x0038 \-\> B:8:0x004c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_9 -> Node_1;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_10 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

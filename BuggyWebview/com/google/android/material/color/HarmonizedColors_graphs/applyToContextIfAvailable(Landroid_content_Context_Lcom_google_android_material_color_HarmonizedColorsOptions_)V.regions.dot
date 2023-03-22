@@ -1,0 +1,62 @@
+digraph "CFG forcom.google.android.material.color.HarmonizedColors.applyToContextIfAvailable(Landroid\/content\/Context;Lcom\/google\/android\/material\/color\/HarmonizedColorsOptions;)V" {
+subgraph cluster_Region_1104822200 {
+label = "R(1:(2:(1:3)|(2:5|(1:(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_486062601 {
+label = "R(2:(1:3)|(2:5|(1:(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_758885501 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (isHarmonizedColorAvailable() == false) goto L3\l}"];
+subgraph cluster_Region_2077793784 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1622937862 {
+label = "R(2:5|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|java.util.Map java.util.Map\<java.lang.Integer, java.lang.Integer\> r0 = createHarmonizedColorReplacementMap(r3, r4)\lint int r1 = r4.getThemeOverlayResourceId(0)\l}"];
+subgraph cluster_Region_1810848452 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1989062129 {
+label = "IF [B:6:0x0015, B:7:0x0017] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (com.google.android.material.color.ResourcesLoaderUtils.addResourcesLoaderToContext(r3, r0) != false) goto L7\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|ADDED_TO_REGION\l|if (r1 != 0) goto L8\l}"];
+subgraph cluster_Region_1319171344 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|com.google.android.material.color.ThemeUtils.applyThemeOverlay(r3, r1)\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001c|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public static void com.google.android.material.color.HarmonizedColors.applyToContextIfAvailable((r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'options' com.google.android.material.color.HarmonizedColorsOptions A[D('options' com.google.android.material.color.HarmonizedColorsOptions), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x001c \-\> B:1:?, CROSS_EDGE: B:7:0x0017 \-\> B:9:0x001c, CROSS_EDGE: B:6:0x0015 \-\> B:9:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_9 -> Node_1;
+Node_11 -> Node_1;
+Node_10 -> Node_1;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forcom.google.android.material.animation.MotionSpec.clonePropertyValuesHolder([Landroid\/animation\/PropertyValuesHolder;)[Landroid\/animation\/PropertyValuesHolder;" {
+subgraph cluster_Region_864269373 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.animation.PropertyValuesHolder[] android.animation.PropertyValuesHolder[] r0 = new android.animation.PropertyValuesHolder[r4.length]\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_79079596 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0005|if (r1 \< r4.length) goto L4\l}"];
+subgraph cluster_Region_1631224502 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0007|LOOP_END\lLOOP:0: B:11:0x0004\-\>B:13:0x0007\l|r0[r1] = r4[r1].clone()\lr1++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0012|RETURN\l|return r0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0004|LOOP_START\lLOOP:0: B:11:0x0004\-\>B:13:0x0007\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:10:0x0000, B:13:0x0007] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0012|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.animation.PropertyValuesHolder[] com.google.android.material.animation.MotionSpec.clonePropertyValuesHolder((r3v0 'this' com.google.android.material.animation.MotionSpec A[IMMUTABLE_TYPE, THIS]), (r4v0 'values' android.animation.PropertyValuesHolder[] A[D('values' android.animation.PropertyValuesHolder[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:13:0x0007 \-\> B:11:0x0004\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+}
+

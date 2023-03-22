@@ -1,0 +1,73 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.ViewFlinger.smoothScrollBy(IIILandroid\/view\/animation\/Interpolator;)V" {
+subgraph cluster_Region_20781195 {
+label = "R(6:(1:3)|(1:5)|(1:8)|9|(1:11)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1086536416 {
+label = "IF [B:18:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0003|if (r10 == Integer.MIN_VALUE) goto L3\l}"];
+subgraph cluster_Region_1737232718 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|int r10 = computeScrollDuration(r8, r9, 0, 0)\l}"];
+}
+}
+subgraph cluster_IfRegion_1972235806 {
+label = "IF [B:20:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0009|PHI: r10 \l  PHI: (r10v1 'duration' int) = (r10v0 'duration' int), (r10v2 'duration' int) binds: [B:18:0x0003, B:19:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|if (r11 == null) goto L5\l}"];
+subgraph cluster_Region_480074084 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000b|android.view.animation.Interpolator r11 = androidx.recyclerview.widget.RecyclerView.sQuinticInterpolator\l}"];
+}
+}
+subgraph cluster_IfRegion_1162896429 {
+label = "IF [B:23:0x000f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000f|if (r7.mInterpolator != r11) goto L8\l}"];
+subgraph cluster_Region_1120996264 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0011|r7.mInterpolator = r11\lr7.mOverScroller = new android.widget.OverScroller(androidx.recyclerview.widget.RecyclerView.this.getContext(), r11)\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0020|r7.mLastFlingY = 0\lr7.mLastFlingX = 0\landroidx.recyclerview.widget.RecyclerView.this.setScrollState(2)\lr7.mOverScroller.startScroll(0, 0, r8, r9, r10)\l}"];
+subgraph cluster_IfRegion_1479995634 {
+label = "IF [B:26:0x0038] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0038|if (android.os.Build.VERSION.SDK_INT \< 23) goto L11\l}"];
+subgraph cluster_Region_773244137 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x003a|r7.mOverScroller.computeScrollOffset()\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x003f|postOnAnimation()\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000d|PHI: r11 \l  PHI: (r11v1 'interpolator' android.view.animation.Interpolator) = (r11v0 'interpolator' android.view.animation.Interpolator), (r11v2 'interpolator' android.view.animation.Interpolator) binds: [B:20:0x0009, B:21:0x000b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0042}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.RecyclerView.ViewFlinger.smoothScrollBy((r7v0 'this' androidx.recyclerview.widget.RecyclerView$ViewFlinger A[IMMUTABLE_TYPE, THIS]), (r8v0 'dx' int A[D('dx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'dy' int A[D('dy' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'duration' int A[D('duration' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'interpolator' android.view.animation.Interpolator A[D('interpolator' android.view.animation.Interpolator), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0038 \-\> B:28:0x003f, CROSS_EDGE: B:23:0x000f \-\> B:25:0x0020, CROSS_EDGE: B:20:0x0009 \-\> B:22:0x000d, CROSS_EDGE: B:18:0x0003 \-\> B:20:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_22 -> Node_23;
+Node_29 -> Node_16;
+}
+

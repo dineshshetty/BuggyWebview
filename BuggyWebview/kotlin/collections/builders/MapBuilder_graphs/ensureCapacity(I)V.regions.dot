@@ -1,0 +1,121 @@
+digraph "CFG forkotlin.collections.builders.MapBuilder.ensureCapacity(I)V" {
+subgraph cluster_Region_27402810 {
+label = "R(1:(2:(1:23)|(1:(5:4|(1:6)|7|10|(1:(1:12)))(1:(1:19)(0)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1575388483 {
+label = "R(2:(1:23)|(1:(5:4|(1:6)|7|10|(1:(1:12)))(1:(1:19)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1110004031 {
+label = "IF [B:26:0x0000] THEN: R(1:23) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0000|if (r4 \< 0) goto L22\l}"];
+subgraph cluster_Region_551485147 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x005f|throw new java.lang.OutOfMemoryError()\l}"];
+}
+}
+subgraph cluster_Region_813542152 {
+label = "R(1:(5:4|(1:6)|7|10|(1:(1:12)))(1:(1:19)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1499000025 {
+label = "IF [B:28:0x0006] THEN: R(5:4|(1:6)|7|10|(1:(1:12))) ELSE: R(1:(1:19)(0))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0006|if (r4 \> getCapacity()) goto L4\l}"];
+subgraph cluster_Region_1122251422 {
+label = "R(5:4|(1:6)|7|10|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0008|int int r0 = (getCapacity() * 3) \/ 2\l}"];
+subgraph cluster_IfRegion_1129755657 {
+label = "IF [B:30:0x0010] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0010|if (r4 \> r0) goto L6\l}"];
+subgraph cluster_Region_2100811542 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0012|r0 = r4\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0013|PHI: r0 \l  PHI: (r0v9 'newSize' int) = (r0v8 'newSize' int), (r0v10 'newSize' int) binds: [B:30:0x0010, B:31:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|r3.keysArray = (K[]) kotlin.collections.builders.ListBuilderKt.copyOfUninitializedElements(r3.keysArray, r0)\lV[] V[] r1 = r3.valuesArray\l}"];
+Node_36 [shape=record,label="{36\:\ 0x0025|PHI: r1 \l  PHI: (r1v6 V[] A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.valuesArray = r1 != null ? (V[]) kotlin.collections.builders.ListBuilderKt.copyOfUninitializedElements(r1, r0) : null\lint[] int[] r1 = java.util.Arrays.copyOf(r3.presenceArray, r0)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, \"copyOf(this, newSize)\")\lr3.presenceArray = r1\lint int r1 = kotlin.collections.builders.MapBuilder.Companion.computeHashSize(r0)\l}"];
+subgraph cluster_Region_1366355556 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1797608795 {
+label = "IF [B:37:0x003e] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x003e|if (r1 \> getHashSize()) goto L12\l}"];
+subgraph cluster_Region_137816675 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0040|rehash(r1)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_101710519 {
+label = "R(1:(1:19)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1534534805 {
+label = "IF [B:40:0x0050] THEN: R(1:19) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0050|if (((r3.length + r4) \- size()) \> getCapacity()) goto L19\l}"];
+subgraph cluster_Region_1171727622 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0052|rehash(getHashSize())\l}"];
+}
+subgraph cluster_Region_327344150 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0002}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001d}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x001f}"];
+Node_46 [shape=record,color=red,label="{46\:\ ?|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ ?|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0024}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0044}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x0059|ORIG_RETURN\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ ?|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x005a}"];
+MethodNode[shape=record,label="{private final void kotlin.collections.builders.MapBuilder.ensureCapacity((r3v0 'this' kotlin.collections.builders.MapBuilder\<K, V\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'capacity' int A[D('capacity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:37:0x003e \-\> B:42:0x0059, CROSS_EDGE: B:35:0x0024 \-\> B:36:0x0025, CROSS_EDGE: B:30:0x0010 \-\> B:32:0x0013, CROSS_EDGE: B:41:0x0052 \-\> B:42:0x0059, CROSS_EDGE: B:40:0x0050 \-\> B:42:0x0059, CROSS_EDGE: B:44:0x005f \-\> B:25:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_24;Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_43;
+Node_44 -> Node_25;
+Node_28 -> Node_29;
+Node_28 -> Node_39[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_36 -> Node_37;
+Node_37 -> Node_38;
+Node_37 -> Node_45[style=dashed];
+Node_38 -> Node_46;
+Node_40 -> Node_41;
+Node_40 -> Node_47[style=dashed];
+Node_41 -> Node_42;
+Node_24 -> Node_26;
+Node_27 -> Node_28;
+Node_33 -> Node_34;
+Node_33 -> Node_35;
+Node_34 -> Node_36;
+Node_46 -> Node_25;
+Node_45 -> Node_25;
+Node_35 -> Node_36;
+Node_39 -> Node_40;
+Node_42 -> Node_25;
+Node_47 -> Node_25;
+Node_43 -> Node_44;
+}
+

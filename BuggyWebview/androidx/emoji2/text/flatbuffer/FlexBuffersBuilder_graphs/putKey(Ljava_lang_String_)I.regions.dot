@@ -1,0 +1,86 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlexBuffersBuilder.putKey(Ljava\/lang\/String;)I" {
+subgraph cluster_Region_1266643518 {
+label = "R(1:(2:(1:2)|(2:4|(2:(2:6|(2:(2:8|9)|(1:11)))|(2:12|13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_621679725 {
+label = "R(2:(1:2)|(2:4|(2:(2:6|(2:(2:8|9)|(1:11)))|(2:12|13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1067792456 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r7 == null) goto L2\l}"];
+subgraph cluster_Region_1396754367 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1520070231 {
+label = "R(2:4|(2:(2:6|(2:(2:8|9)|(1:11)))|(2:12|13)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0004|int int r0 = r6.f86bb.writePosition()\l}"];
+subgraph cluster_Region_1662955883 {
+label = "R(2:(2:6|(2:(2:8|9)|(1:11)))|(2:12|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_921070617 {
+label = "IF [B:6:0x000f] THEN: R(2:6|(2:(2:8|9)|(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|if ((r6.flags & 1) != 0) goto L6\l}"];
+subgraph cluster_Region_248175764 {
+label = "R(2:6|(2:(2:8|9)|(1:11)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|java.lang.Integer java.lang.Integer r1 = r6.keyPool.get(r7)\l}"];
+subgraph cluster_Region_538408437 {
+label = "R(2:(2:8|9)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_128709580 {
+label = "IF [B:8:0x0019] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|if (r1 == null) goto L8\l}"];
+subgraph cluster_Region_547751683 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|byte[] byte[] r3 = r7.getBytes(java.nio.charset.StandardCharsets.UTF_8)\lr6.f86bb.put(r3, 0, r3.length)\lr6.f86bb.put((byte) 0)\lr6.keyPool.put(r7, java.lang.Integer.valueOf(r0))\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_388330021 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return r1.intValue()\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_132991287 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003b|byte[] byte[] r1 = r7.getBytes(java.nio.charset.StandardCharsets.UTF_8)\lr6.f86bb.put(r1, 0, r1.length)\lr6.f86bb.put((byte) 0)\lr6.keyPool.put(r7, java.lang.Integer.valueOf(r0))\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0055|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0036}"];
+MethodNode[shape=record,label="{private int androidx.emoji2.text.flatbuffer.FlexBuffersBuilder.putKey((r6v0 'this' androidx.emoji2.text.flatbuffer.FlexBuffersBuilder A[IMMUTABLE_TYPE, THIS]), (r7v0 'key' java.lang.String A[D('key' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0055 \-\> B:1:?, CROSS_EDGE: B:10:0x0036 \-\> B:13:0x0055, CROSS_EDGE: B:12:0x003b \-\> B:13:0x0055\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_15;
+Node_15 -> Node_1;
+Node_14 -> Node_1;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_10 -> Node_14;
+}
+

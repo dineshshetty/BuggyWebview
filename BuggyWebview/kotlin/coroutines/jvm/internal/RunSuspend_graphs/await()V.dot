@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.coroutines.jvm.internal.RunSuspend.await()V" {
+Node_17 [shape=record,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0000|monitor\-enter(r3)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0001}"];
+Node_21 [shape=record,label="{21\:\ 0x0002|LOOP_START\lLOOP:0: B:21:0x0002\-\>B:24:0x0007\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:22:0x0003, B:24:0x0007, B:25:0x0013), top: B:31:0x0003 \}\lCatch: all \-\> 0x001d\l|kotlin.Result\<kotlin.Unit\> r1 = r3.result     \/\/ Catch: java.lang.Throwable \-\> L1d\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0005|if (r1 != null) goto L8\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0007|LOOP_END\lTryCatch #0 \{, blocks: (B:22:0x0003, B:24:0x0007, B:25:0x0013), top: B:31:0x0003 \}\lLOOP:0: B:21:0x0002\-\>B:24:0x0007\lCatch: all \-\> 0x001d\l|kotlin.jvm.internal.Intrinsics.checkNotNull(r3, \"null cannot be cast to non\-null type java.lang.Object\")     \/\/ Catch: java.lang.Throwable \-\> L1d\lwait()     \/\/ Catch: java.lang.Throwable \-\> L1d\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0013|SYNTHETIC\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0013|TRY_LEAVE\lTryCatch #0 \{, blocks: (B:22:0x0003, B:24:0x0007, B:25:0x0013), top: B:31:0x0003 \}\lCatch: all \-\> 0x001d\l|kotlin.ResultKt.throwOnFailure(r1.m153unboximpl())     \/\/ Catch: java.lang.Throwable \-\> L1d\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001b|monitor\-exit(r3)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x001c|RETURN\l|return\l}"];
+Node_18 [shape=record,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,label="{32\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_28 [shape=record,label="{28\:\ 0x001d|REMOVE\lExcHandler: all \-\> 0x001d\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_30 [shape=record,label="{30\:\ 0x001f|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public final void kotlin.coroutines.jvm.internal.RunSuspend.await((r3v0 'this' kotlin.coroutines.jvm.internal.RunSuspend A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:24:0x0007 \-\> B:21:0x0002, CROSS_EDGE: B:30:0x001f \-\> B:18:?, CROSS_EDGE: B:31:0x0003 \-\> B:28:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_31;
+Node_31 -> Node_22;
+Node_31 -> Node_28;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_33;
+Node_24 -> Node_21;
+Node_33 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_32;
+Node_26 -> Node_27;
+Node_27 -> Node_18;
+Node_32 -> Node_28;
+Node_28 -> Node_30;
+Node_30 -> Node_18;
+}
+

@@ -1,0 +1,54 @@
+digraph "CFG forcom.google.android.material.bottomsheet.BottomSheetBehavior.setHideable(Z)V" {
+subgraph cluster_Region_1457698034 {
+label = "R(1:(1:(3:3|(1:7)|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2111244685 {
+label = "R(1:(3:3|(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1378696531 {
+label = "IF [B:15:0x0002] THEN: R(3:3|(1:7)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r2.hideable != r3) goto L3\l}"];
+subgraph cluster_Region_2083532837 {
+label = "R(3:3|(1:7)|8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|r2.hideable = r3\l}"];
+subgraph cluster_IfRegion_1068916341 {
+label = "IF [B:17:0x0006, B:19:0x000b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|if (r3 == false) goto L5\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000b|ADDED_TO_REGION\l|if (r2.state == 5) goto L7\l}"];
+subgraph cluster_Region_2062070639 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|setState(4)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0011|updateAccessibilityActions()\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0008}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0014|ORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.bottomsheet.BottomSheetBehavior.setHideable((r2v0 'this' com.google.android.material.bottomsheet.BottomSheetBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.bottomsheet.BottomSheetBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r3v0 'hideable' boolean A[D('hideable' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x000b \-\> B:21:0x0011, CROSS_EDGE: B:17:0x0006 \-\> B:21:0x0011, CROSS_EDGE: B:15:0x0002 \-\> B:22:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_23[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_22 -> Node_13;
+Node_23 -> Node_13;
+}
+

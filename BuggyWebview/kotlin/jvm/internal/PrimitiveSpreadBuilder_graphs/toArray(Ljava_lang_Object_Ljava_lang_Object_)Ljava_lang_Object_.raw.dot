@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.jvm.internal.PrimitiveSpreadBuilder.toArray(Ljava\/lang\/Object;Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+Node_19 [shape=record,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0000|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"values\" \l0x0002: INVOKE  (r8 I:java.lang.Object A[D('values' java.lang.Object)]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x0005: CONST_STR  (r0 I:java.lang.String) =  \"result\" \l0x0007: INVOKE  (r9 I:java.lang.Object A[D('result' java.lang.Object)]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x000a: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:29)\l0x000b: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:30)\l0x000c: NEW_INSTANCE  (r2 I:kotlin.ranges.IntRange) =  kotlin.ranges.IntRange  (LINE:31)\l0x000e: IGET  (r3 I:int) = (r7 I:kotlin.jvm.internal.PrimitiveSpreadBuilder) kotlin.jvm.internal.PrimitiveSpreadBuilder.size int \l0x0010: ARITH  (r3 I:int) = (r3 I:int) + (\-1 int) \l0x0012: CONST  (r4 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x0013: INVOKE  (r2 I:kotlin.ranges.IntRange), (r4 I:int), (r3 I:int) type: DIRECT call: kotlin.ranges.IntRange.\<init\>(int, int):void A[MD:(int, int):void (m)]\l0x0016: INVOKE  (r2 I:kotlin.collections.IntIterator) = (r2 I:kotlin.ranges.IntRange) type: VIRTUAL call: kotlin.ranges.IntRange.iterator():kotlin.collections.IntIterator A[MD:():java.util.Iterator\<java.lang.Integer\> (m)]\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001a|LOOP_START\lLOOP:0: B:22:0x001a\-\>B:35:0x001a\l|0x001a: INVOKE  (r3 I:boolean) = (r2 I:kotlin.collections.IntIterator) type: VIRTUAL call: kotlin.collections.IntIterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001e|0x001e: IF  (r3 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:34:0x003f \l}"];
+Node_24 [shape=record,label="{24\:\ 0x0020|0x0020: INVOKE  (r3 I:int) = (r2 I:kotlin.collections.IntIterator) type: VIRTUAL call: kotlin.collections.IntIterator.nextInt():int A[MD:():int (m)]\l0x0024: IGET  (r5 I:T[]) = (r7 I:kotlin.jvm.internal.PrimitiveSpreadBuilder) kotlin.jvm.internal.PrimitiveSpreadBuilder.spreads java.lang.Object[]  (LINE:32)\l0x0026: AGET  (r5 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY][]), (r3 I:??[int, short, byte, char] A[D('i' int)]) \l}"];
+Node_25 [shape=record,label="{25\:\ 0x0028|0x0028: IF  (r5 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('spreadArgument' java.lang.Object)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:36:0x001a  (LINE:33)\l}"];
+Node_33 [shape=record,label="{33\:\ 0x002a|SYNTHETIC\l}"];
+Node_26 [shape=record,label="{26\:\ 0x002a|0x002a: IF  (r1 I:??[int, byte, short, char] A[D('copyValuesFrom' int)]) \>= (r3 I:??[int, byte, short, char] A[D('i' int)])  \-\> B:28:0x0034  (LINE:34)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002c|0x002c: ARITH  (r6 I:int) = (r3 I:int A[D('i' int)]) \- (r1 I:int A[D('copyValuesFrom' int)])  (LINE:35)\l0x002e: INVOKE  \l  (r8 I:java.lang.Object A[D('values' java.lang.Object)])\l  (r1 I:int A[D('copyValuesFrom' int)])\l  (r9 I:java.lang.Object A[D('result' java.lang.Object)])\l  (r0 I:int A[D('dstIndex' int)])\l  (r6 I:int)\l type: STATIC call: java.lang.System.arraycopy(java.lang.Object, int, java.lang.Object, int, int):void A[MD:(java.lang.Object, int, java.lang.Object, int, int):void (c)]\l0x0031: ARITH  (r6 I:int) = (r3 I:int A[D('i' int)]) \- (r1 I:int A[D('copyValuesFrom' int)])  (LINE:36)\l0x0033: ARITH  (r0 I:int) = (r0 I:int A[D('dstIndex' int)]) + (r6 I:int) \l}"];
+Node_28 [shape=record,label="{28\:\ 0x0034|0x0034: INVOKE  (r6 I:int) = (r7 I:kotlin.jvm.internal.PrimitiveSpreadBuilder), (r5 I:java.lang.Object A[D('spreadArgument' java.lang.Object)]) type: VIRTUAL call: kotlin.jvm.internal.PrimitiveSpreadBuilder.getSize(java.lang.Object):int A[MD:(T):int (m)] (LINE:38)\l0x0038: INVOKE  \l  (r5 I:java.lang.Object A[D('spreadArgument' java.lang.Object)])\l  (r4 I:int)\l  (r9 I:java.lang.Object A[D('result' java.lang.Object)])\l  (r0 I:int A[D('dstIndex' int)])\l  (r6 I:int A[D('spreadSize' int)])\l type: STATIC call: java.lang.System.arraycopy(java.lang.Object, int, java.lang.Object, int, int):void A[MD:(java.lang.Object, int, java.lang.Object, int, int):void (c)] (LINE:39)\l0x003b: ARITH  (r0 I:int) = (r0 I:int A[D('dstIndex' int)]) + (r6 I:int A[D('spreadSize' int)])  (LINE:40)\l0x003c: ARITH  (r1 I:int A[D('copyValuesFrom' int)]) = (r3 I:int A[D('i' int)]) + (1 int)  (LINE:41)\l}"];
+Node_37 [shape=record,label="{37\:\ 0x001a|SYNTHETIC\l}"];
+Node_35 [shape=record,label="{35\:\ 0x001a|LOOP_END\lSYNTHETIC\lLOOP:0: B:22:0x001a\-\>B:35:0x001a\l}"];
+Node_36 [shape=record,label="{36\:\ 0x001a|SYNTHETIC\l}"];
+Node_34 [shape=record,label="{34\:\ 0x003f|SYNTHETIC\l}"];
+Node_29 [shape=record,label="{29\:\ 0x003f|0x003f: IGET  (r2 I:int) = (r7 I:kotlin.jvm.internal.PrimitiveSpreadBuilder) kotlin.jvm.internal.PrimitiveSpreadBuilder.size int  (LINE:44)\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0041|0x0041: IF  (r1 I:??[int, byte, short, char] A[D('copyValuesFrom' int)]) \>= (r2 I:??[int, byte, short, char])  \-\> B:32:0x0047 \l}"];
+Node_31 [shape=record,label="{31\:\ 0x0043|0x0043: ARITH  (r2 I:int) = (r2 I:int) \- (r1 I:int A[D('copyValuesFrom' int)])  (LINE:45)\l0x0044: INVOKE  \l  (r8 I:java.lang.Object A[D('values' java.lang.Object)])\l  (r1 I:int A[D('copyValuesFrom' int)])\l  (r9 I:java.lang.Object A[D('result' java.lang.Object)])\l  (r0 I:int A[D('dstIndex' int)])\l  (r2 I:int)\l type: STATIC call: java.lang.System.arraycopy(java.lang.Object, int, java.lang.Object, int, int):void A[MD:(java.lang.Object, int, java.lang.Object, int, int):void (c)]\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0047|RETURN\l|0x0047: RETURN  (r9 I:T A[D('result' java.lang.Object)])  (LINE:48)\l}"];
+Node_20 [shape=record,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final T kotlin.jvm.internal.PrimitiveSpreadBuilder.toArray((r7 'this' I:kotlin.jvm.internal.PrimitiveSpreadBuilder\<T\> A[IMMUTABLE_TYPE, THIS]), (r8 I:T A[D('values' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9 I:T A[D('result' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x0028 \-\> B:22:0x001a, BACK_EDGE: B:28:0x0034 \-\> B:22:0x001a, CROSS_EDGE: B:26:0x002a \-\> B:28:0x0034, CROSS_EDGE: B:30:0x0041 \-\> B:32:0x0047\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0024\-0x003e: r3 'i' I\l  0x0028\-0x003e: r5 'spreadArgument' Ljava\/lang\/Object;\l  0x0038\-0x003e: r6 'spreadSize' I\l  0x000b\-0x0047: r0 'dstIndex' I\l  0x000c\-0x0047: r1 'copyValuesFrom' I\l  \-1 \-0x0047: r8 'values' Ljava\/lang\/Object;\l  \-1 \-0x0047: r9 'result' Ljava\/lang\/Object;\lTYPE_VARS: [T]\lSIGNATURE: (TT;TT;)TT;\l}"];
+MethodNode -> Node_19;Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_34;
+Node_24 -> Node_25;
+Node_25 -> Node_33[style=dashed];
+Node_25 -> Node_36;
+Node_33 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_28;
+Node_28 -> Node_37;
+Node_37 -> Node_35;
+Node_35 -> Node_22;
+Node_36 -> Node_35;
+Node_34 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_32;
+Node_31 -> Node_32;
+Node_32 -> Node_20;
+}
+

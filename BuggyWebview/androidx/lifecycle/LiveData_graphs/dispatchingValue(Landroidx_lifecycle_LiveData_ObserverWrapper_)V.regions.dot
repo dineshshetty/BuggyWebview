@@ -1,0 +1,108 @@
+digraph "CFG forandroidx.lifecycle.LiveData.dispatchingValue(Landroidx\/lifecycle\/LiveData$ObserverWrapper;)V" {
+subgraph cluster_Region_1480542762 {
+label = "R(1:(2:(2:3|4)|(3:6|(2:7|(1:9)(2:15|(2:18|(1:20))))|13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1986316408 {
+label = "R(2:(2:3|4)|(3:6|(2:7|(1:9)(2:15|(2:18|(1:20))))|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2118324610 {
+label = "IF [B:26:0x0003] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0003|if (r3.mDispatchingValue != false) goto L3\l}"];
+subgraph cluster_Region_166078654 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0005|r3.mDispatchInvalidated = true\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0007|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_732581298 {
+label = "R(3:6|(2:7|(1:9)(2:15|(2:18|(1:20))))|13)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0008|r3.mDispatchingValue = true\l}"];
+subgraph cluster_LoopRegion_2069723063 {
+label = "LOOP:0: (2:7|(1:9)(2:15|(2:18|(1:20))))";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0035|LOOP_END\lLOOP:0: B:30:0x000a\-\>B:39:0x0035\l|if (r3.mDispatchInvalidated != false) goto L7\l}"];
+subgraph cluster_Region_502576735 {
+label = "R(2:7|(1:9)(2:15|(2:18|(1:20))))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x000a|LOOP_START\lLOOP:0: B:30:0x000a\-\>B:39:0x0035\lPHI: r4 \l  PHI: (r4v1 'initiator' androidx.lifecycle.LiveData\<T\>$ObserverWrapper) = (r4v0 'initiator' androidx.lifecycle.LiveData\<T\>$ObserverWrapper), (r4v2 'initiator' androidx.lifecycle.LiveData\<T\>$ObserverWrapper) binds: [B:29:0x0008, B:39:0x0035] A[DONT_GENERATE, DONT_INLINE]\l|r3.mDispatchInvalidated = false\l}"];
+subgraph cluster_IfRegion_636472967 {
+label = "IF [B:31:0x000d] THEN: R(1:9) ELSE: R(2:15|(2:18|(1:20)))";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x000d|if (r4 != null) goto L9\l}"];
+subgraph cluster_Region_1557250133 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x000f|considerNotify(r4)\lr4 = null\l}"];
+}
+subgraph cluster_Region_982852502 {
+label = "R(2:15|(2:18|(1:20)))";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0014|androidx.arch.core.internal.SafeIterableMap$IteratorWithAdditions java.util.Iterator\<java.util.Map.Entry\<androidx.lifecycle.Observer\<? super T\>, androidx.lifecycle.LiveData\<T\>.ObserverWrapper\>\> r1 = r3.mObservers.iteratorWithAdditions()\l}"];
+subgraph cluster_LoopRegion_1569415165 {
+label = "LOOP:1: (2:18|(1:20))";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x001e|if (r1.hasNext() != false) goto L18\l}"];
+subgraph cluster_Region_980230714 {
+label = "R(2:18|(1:20))";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0020|considerNotify(r1.next().getValue())\l}"];
+subgraph cluster_IfRegion_1285678263 {
+label = "IF [B:37:0x0031] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0031|LOOP_END\lLOOP:1: B:34:0x001a\-\>B:37:0x0031\l|if (r3.mDispatchInvalidated != false) goto L20\l}"];
+subgraph cluster_Region_1952445746 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0033|SYNTHETIC\lEDGE_INSN: B:44:0x0033\-\>B:38:0x0033 ?: BREAK  \l|break\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_40 [shape=record,label="{40\:\ 0x0037|r3.mDispatchingValue = false\l}"];
+}
+}
+}
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0000}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0033|EDGE_INSN: B:44:0x0033\-\>B:38:0x0033 ?: BREAK  \lPHI: r4 \l  PHI: (r4v2 'initiator' androidx.lifecycle.LiveData\<T\>$ObserverWrapper) = (r4v1 'initiator' androidx.lifecycle.LiveData\<T\>$ObserverWrapper), (r4v1 'initiator' androidx.lifecycle.LiveData\<T\>$ObserverWrapper), (r4v3 'initiator' androidx.lifecycle.LiveData\<T\>$ObserverWrapper) binds: [B:45:0x0033, B:44:0x0033, B:32:0x000f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0037|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0039}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x001a|LOOP_START\lLOOP:1: B:34:0x001a\-\>B:37:0x0031\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0033|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void androidx.lifecycle.LiveData.dispatchingValue((r3v0 'this' androidx.lifecycle.LiveData\<T\> A[D('this' androidx.lifecycle.LiveData\<T\>), IMMUTABLE_TYPE, THIS]), (r4v0 'initiator' androidx.lifecycle.LiveData\<T\>$ObserverWrapper A[D('initiator' androidx.lifecycle.LiveData\<T\>$ObserverWrapper), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:41:0x0039 \-\> B:24:?, BACK_EDGE: B:39:0x0035 \-\> B:30:0x000a, BACK_EDGE: B:37:0x0031 \-\> B:34:0x001a, CROSS_EDGE: B:37:0x0031 \-\> B:38:0x0033, CROSS_EDGE: B:35:0x001e \-\> B:38:0x0033\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (Landroidx\/lifecycle\/LiveData\<TT;\>.ObserverWrapper;)V\l}"];
+MethodNode -> Node_23;Node_26 -> Node_27;
+Node_26 -> Node_29[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_24;
+Node_29 -> Node_30;
+Node_39 -> Node_30;
+Node_39 -> Node_43[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_38;
+Node_33 -> Node_34;
+Node_35 -> Node_36;
+Node_35 -> Node_45[style=dashed];
+Node_36 -> Node_37;
+Node_37 -> Node_34[style=dashed];
+Node_37 -> Node_44;
+Node_44 -> Node_38;
+Node_40 -> Node_41;
+Node_23 -> Node_25;
+Node_25 -> Node_26;
+Node_38 -> Node_39;
+Node_43 -> Node_40;
+Node_41 -> Node_24;
+Node_34 -> Node_35;
+Node_45 -> Node_38;
+}
+

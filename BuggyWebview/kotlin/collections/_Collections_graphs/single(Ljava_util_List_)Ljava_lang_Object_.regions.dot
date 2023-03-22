@@ -1,0 +1,48 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.single(Ljava\/util\/List;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1689832365 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\l}"];
+subgraph cluster_SwitchRegion_1813345562 {
+label = "Switch: 3
+ case 0 -> R(1:9)
+ case 1 -> R(1:7)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0009|switch(r2.size()) \{\l    case 0: goto L8;\l    case 1: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_1354570427 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0021|throw new java.util.NoSuchElementException(\"List is empty.\")\l}"];
+}
+subgraph cluster_Region_188986379 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0019|RETURN\l|return r2.get(0)\l}"];
+}
+subgraph cluster_Region_688186221 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0013|throw new java.lang.IllegalArgumentException(\"List has more than one element.\")\l}"];
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000c}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0014}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x001a}"];
+MethodNode[shape=record,label="{public static final T kotlin.collections.CollectionsKt___CollectionsKt.single((r2v0 java.util.List\<? extends T\> A[D('$this$single' java.util.List), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0019 \-\> B:21:?, CROSS_EDGE: B:29:0x0021 \-\> B:21:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/List\<+TT;\>;)TT;\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_26;
+Node_23 -> Node_28;
+Node_29 -> Node_21;
+Node_27 -> Node_21;
+Node_25 -> Node_21;
+Node_20 -> Node_22;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+}
+

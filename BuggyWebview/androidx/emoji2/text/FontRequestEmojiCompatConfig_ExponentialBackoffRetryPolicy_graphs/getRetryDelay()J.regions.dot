@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.emoji2.text.FontRequestEmojiCompatConfig.ExponentialBackoffRetryPolicy.getRetryDelay()J" {
+subgraph cluster_Region_658947843 {
+label = "R(1:(2:(2:3|4)|(2:6|(2:(1:8)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2130241713 {
+label = "R(2:(2:3|4)|(2:6|(2:(1:8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_205144538 {
+label = "IF [B:15:0x0006] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r6.mRetryOrigin == 0) goto L3\l}"];
+subgraph cluster_Region_1621259021 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|r6.mRetryOrigin = android.os.SystemClock.uptimeMillis()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000e|RETURN\l|return 0L\l}"];
+}
+}
+subgraph cluster_Region_1615208602 {
+label = "R(2:6|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000f|long long r0 = android.os.SystemClock.uptimeMillis() \- r6.mRetryOrigin\l}"];
+subgraph cluster_Region_1913546429 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_413581967 {
+label = "IF [B:19:0x001a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001a|if (r0 \> r6.mTotalMs) goto L8\l}"];
+subgraph cluster_Region_1258992941 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001c|RETURN\l|return \-1L\l}"];
+}
+}
+subgraph cluster_Region_1194071944 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002c|RETURN\l|return java.lang.Math.min(java.lang.Math.max(r0, 1000L), r6.mTotalMs \- r0)\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001f}"];
+MethodNode[shape=record,label="{public long androidx.emoji2.text.FontRequestEmojiCompatConfig.ExponentialBackoffRetryPolicy.getRetryDelay((r6v0 'this' androidx.emoji2.text.FontRequestEmojiCompatConfig$ExponentialBackoffRetryPolicy A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001e \-\> B:13:?, CROSS_EDGE: B:23:0x002c \-\> B:13:?\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [androidx.emoji2.text.FontRequestEmojiCompatConfig.RetryPolicy.getRetryDelay():long]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_13;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_22 -> Node_23;
+}
+

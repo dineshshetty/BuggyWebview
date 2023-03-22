@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.core.os.LocaleListCompatWrapper.hashCode()I" {
+subgraph cluster_Region_889105407 {
+label = "R(3:1|(1:3)|5) | DECL_VAR: java.util.Locale[] null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r0 = 1\lint r3 = 0\l\l}"];
+subgraph cluster_LoopRegion_765945446 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|LOOP_START\lLOOP:0: B:3:0x0005\-\>B:4:0x0007\lPHI: r0 r3 \l  PHI: (r0v1 'result' int) = (r0v0 'result' int), (r0v2 'result' int) binds: [B:2:0x0000, B:4:0x0007] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:2:0x0000, B:4:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L3\l}"];
+subgraph cluster_Region_995720708 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|LOOP_END\lLOOP:0: B:3:0x0005\-\>B:4:0x0007\l|r4 = r1[r3]\lint r0 = (r0 * 31) + r4.hashCode()\lr3++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0014|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.core.os.LocaleListCompatWrapper.hashCode((r7v0 'this' androidx.core.os.LocaleListCompatWrapper A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x0007 \-\> B:3:0x0005\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_5;
+}
+

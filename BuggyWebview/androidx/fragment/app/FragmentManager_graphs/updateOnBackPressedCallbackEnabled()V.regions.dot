@@ -1,0 +1,73 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.updateOnBackPressedCallbackEnabled()V" {
+subgraph cluster_Region_1026932294 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_999660438 {
+label = "Synchronized:R(2:2|(2:4|(1:6)(1:15)))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0002}"];
+subgraph cluster_Region_1970422963 {
+label = "R(2:4|(1:6)(1:15))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:26:0x0003, B:28:0x000c, B:29:0x0011, B:31:0x0013), top: B:43:0x0003 \}\lCatch: all \-\> 0x002a\l|boolean r2 = true\l}"];
+subgraph cluster_IfRegion_1540994783 {
+label = "IF [B:27:0x000a] THEN: R(1:6) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000a|if (r3.mPendingActions.isEmpty() == false) goto L6\l}"];
+subgraph cluster_Region_88975679 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000c|TryCatch #0 \{, blocks: (B:26:0x0003, B:28:0x000c, B:29:0x0011, B:31:0x0013), top: B:43:0x0003 \}\lCatch: all \-\> 0x002a\l|r3.mOnBackPressedCallback.setEnabled(true)     \/\/ Catch: java.lang.Throwable \-\> L2a\l}"];
+}
+subgraph cluster_Region_354082910 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0026|PHI: r2 \l  PHI: (r2v2 boolean A[REMOVE]) = (r2v0 boolean) binds: [B:35:0x0022] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r3.mOnBackPressedCallback.setEnabled((getBackStackEntryCount() \<= 0 \|\| !isPrimaryNavigation(r3.mParent)) ? false : false)\l}"];
+}
+}
+}
+}
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0000}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0011|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:26:0x0003, B:28:0x000c, B:29:0x0011, B:31:0x0013), top: B:43:0x0003 \}\lCatch: all \-\> 0x002a\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L2a\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0012}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0013|TRY_LEAVE\lDONT_GENERATE\lTryCatch #0 \{, blocks: (B:26:0x0003, B:28:0x000c, B:29:0x0011, B:31:0x0013), top: B:43:0x0003 \}\lCatch: all \-\> 0x002a\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L2a\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0014}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001a}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x001c}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0022|REMOVE\lADDED_TO_REGION\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0029}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0025}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x002a|REMOVE\lExcHandler: all \-\> 0x002a\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x002b|TRY_ENTER\lTRY_LEAVE\lREMOVE\lCatch: all \-\> 0x002a\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x002c|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{private void androidx.fragment.app.FragmentManager.updateOnBackPressedCallbackEnabled((r3v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:39:0x0029 \-\> B:23:?, CROSS_EDGE: B:35:0x0022 \-\> B:38:0x0026, CROSS_EDGE: B:33:0x001a \-\> B:37:0x0025, CROSS_EDGE: B:42:0x002c \-\> B:23:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_22;Node_25 -> Node_43;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_31[style=dashed];
+Node_28 -> Node_29;
+Node_38 -> Node_39;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_43 -> Node_26;
+Node_43 -> Node_40;
+Node_29 -> Node_30;
+Node_30 -> Node_23;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_37;
+Node_34 -> Node_35;
+Node_35 -> Node_37;
+Node_35 -> Node_38;
+Node_39 -> Node_23;
+Node_37 -> Node_38;
+Node_40 -> Node_41;
+Node_41 -> Node_42;
+Node_42 -> Node_23;
+}
+

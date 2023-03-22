@@ -1,0 +1,53 @@
+digraph "CFG forkotlinx.coroutines.channels.ConflatedBroadcastChannel.addSubscriber([Lkotlinx\/coroutines\/channels\/ConflatedBroadcastChannel$Subscriber;Lkotlinx\/coroutines\/channels\/ConflatedBroadcastChannel$Subscriber;)[Lkotlinx\/coroutines\/channels\/ConflatedBroadcastChannel$Subscriber;" {
+subgraph cluster_Region_1781415782 {
+label = "R(1:(2:(3:2|(1:4)|6)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1320321227 {
+label = "R(2:(3:2|(1:4)|6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_307946449 {
+label = "IF [B:22:0x0000] THEN: R(3:2|(1:4)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|if (r4 == null) goto L2\l}"];
+subgraph cluster_Region_728875650 {
+label = "R(3:2|(1:4)|6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0002|int r0 = 0\lkotlinx.coroutines.channels.ConflatedBroadcastChannel$Subscriber[] kotlinx.coroutines.channels.ConflatedBroadcastChannel.Subscriber\<E\>[] r2 = new kotlinx.coroutines.channels.ConflatedBroadcastChannel.Subscriber[1]\l}"];
+subgraph cluster_LoopRegion_1524914701 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0006|LOOP_START\lLOOP:0: B:24:0x0006\-\>B:25:0x0008\lPHI: r0 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:23:0x0002, B:25:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< 1) goto L4\l}"];
+subgraph cluster_Region_1491565620 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0008|LOOP_END\lLOOP:0: B:24:0x0006\-\>B:25:0x0008\l|r2[r0] = r5\lr0++\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x000d|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1850121819 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0014|RETURN\l|return (kotlinx.coroutines.channels.ConflatedBroadcastChannel.Subscriber[]) kotlin.collections.ArraysKt.plus(r4, r5)\l}"];
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000d|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000e}"];
+MethodNode[shape=record,label="{private final kotlinx.coroutines.channels.ConflatedBroadcastChannel$Subscriber\<E\>[] kotlinx.coroutines.channels.ConflatedBroadcastChannel.addSubscriber((r3v0 'this' kotlinx.coroutines.channels.ConflatedBroadcastChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r4v0 kotlinx.coroutines.channels.ConflatedBroadcastChannel$Subscriber\<E\>[] A[D('list' kotlinx.coroutines.channels.ConflatedBroadcastChannel$Subscriber[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 kotlinx.coroutines.channels.ConflatedBroadcastChannel$Subscriber\<E\> A[D('subscriber' kotlinx.coroutines.channels.ConflatedBroadcastChannel$Subscriber), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x0008 \-\> B:24:0x0006, CROSS_EDGE: B:28:0x0014 \-\> B:21:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: ([Lkotlinx\/coroutines\/channels\/ConflatedBroadcastChannel$Subscriber\<TE;\>;Lkotlinx\/coroutines\/channels\/ConflatedBroadcastChannel$Subscriber\<TE;\>;)[Lkotlinx\/coroutines\/channels\/ConflatedBroadcastChannel$Subscriber\<TE;\>;\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_22 -> Node_27[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_29[style=dashed];
+Node_25 -> Node_24;
+Node_26 -> Node_21;
+Node_28 -> Node_21;
+Node_20 -> Node_22;
+Node_29 -> Node_26;
+Node_27 -> Node_28;
+}
+

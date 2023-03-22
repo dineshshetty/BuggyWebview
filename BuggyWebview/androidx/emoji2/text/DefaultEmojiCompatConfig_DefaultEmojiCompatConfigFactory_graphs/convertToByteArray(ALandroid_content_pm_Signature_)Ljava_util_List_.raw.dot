@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.emoji2.text.DefaultEmojiCompatConfig.DefaultEmojiCompatConfigFactory.convertToByteArray([Landroid\/content\/pm\/Signature;)Ljava\/util\/List;" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList  (LINE:234)\l0x0002: INVOKE  (r0 I:java.util.ArrayList) type: DIRECT call: java.util.ArrayList.\<init\>():void A[MD:():void (c)]\l0x0005: ARRAY_LENGTH  (r1 I:int) = (r6 I:??[] A[D('signatures' android.content.pm.Signature[])])  (LINE:235)\l0x0006: CONST  (r2 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0007|LOOP_START\lLOOP:0: B:11:0x0007\-\>B:12:0x0009\l|0x0007: IF  (r2 I:??[int, byte, short, char]) \>= (r1 I:??[int, byte, short, char])  \-\> B:15:0x0015 \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0009|LOOP_END\lLOOP:0: B:11:0x0007\-\>B:12:0x0009\l|0x0009: AGET  (r3 I:??[OBJECT, ARRAY]) = (r6 I:??[OBJECT, ARRAY][] A[D('signatures' android.content.pm.Signature[])]), (r2 I:??[int, short, byte, char]) \l0x000b: INVOKE  (r4 I:byte[]) = (r3 I:android.content.pm.Signature A[D('signature' android.content.pm.Signature)]) type: VIRTUAL call: android.content.pm.Signature.toByteArray():byte[] A[MD:():byte[] (c)] (LINE:236)\l0x000f: INVOKE  (r0 I:java.util.List A[D('shaList' java.util.List\<byte[]\>)]), (r4 I:java.lang.Object) type: INTERFACE call: java.util.List.add(java.lang.Object):boolean A[MD:(E):boolean (c)]\l0x0012: ARITH  (r2 I:int) = (r2 I:int) + (1 int)  (LINE:235)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0015|SYNTHETIC\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0015|0x0015: INVOKE  (r1 I:java.util.List) = (r0 I:java.lang.Object A[D('shaList' java.util.List\<byte[]\>)]) type: STATIC call: java.util.Collections.singletonList(java.lang.Object):java.util.List A[MD:\<T\>:(T):java.util.List\<T\> (c)] (LINE:238)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0019|RETURN\l|0x0019: RETURN  (r1 I:java.util.List\<java.util.List\<byte[]\>\>) \l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private java.util.List\<java.util.List\<byte[]\>\> androidx.emoji2.text.DefaultEmojiCompatConfig.DefaultEmojiCompatConfigFactory.convertToByteArray((r5 'this' I:androidx.emoji2.text.DefaultEmojiCompatConfig$DefaultEmojiCompatConfigFactory A[IMMUTABLE_TYPE, THIS]), (r6 I:android.content.pm.Signature[] A[D('signatures' android.content.pm.Signature[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0009 \-\> B:11:0x0007\lINLINE_NOT_NEEDED\lDebug Info:\l  0x000b\-0x0012: r3 'signature' Landroid\/content\/pm\/Signature;\l  0x0005\-0x0019: r0 'shaList' Ljava\/util\/List;, signature: Ljava\/util\/List\<[B\>;\l  \-1 \-0x0019: r6 'signatures' [Landroid\/content\/pm\/Signature;\lSIGNATURE: ([Landroid\/content\/pm\/Signature;)Ljava\/util\/List\<Ljava\/util\/List\<[B\>;\>;\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_15;
+Node_12 -> Node_11;
+Node_15 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+}
+

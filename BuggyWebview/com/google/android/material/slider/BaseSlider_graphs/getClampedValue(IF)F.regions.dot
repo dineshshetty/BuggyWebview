@@ -1,0 +1,57 @@
+digraph "CFG forcom.google.android.material.slider.BaseSlider.getClampedValue(IF)F" {
+subgraph cluster_Region_703601756 {
+label = "R(6:1|4|(1:6)|8|11|14)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|float float r0 = getMinSeparation()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000e|PHI: r1 \l  PHI: (r1v2 float A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float r0 = r4.separationUnit == 0 ? dimenToValue(r0) : r0\l}"];
+subgraph cluster_IfRegion_1775974047 {
+label = "IF [B:26:0x0013] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0013|if (isRtl() != false) goto L6\l}"];
+subgraph cluster_Region_1821025959 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0015|float r0 = \-r0\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x001e|float r1 = r5 + 1 \>= r4.values.size() ? r4.valueTo : r4.values.get(r5 + 1).floatValue() \- r0\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0034|float r2 = r5 + (\-1) \< 0 ? r4.valueFrom : r4.values.get(r5 \- 1).floatValue() + r0\l}"];
+Node_37 [shape=record,label="{37\:\ 0x004c|RETURN\l|return androidx.core.math.MathUtils.clamp(r6, r2, r1)\l}"];
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0006}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0008}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0016|PHI: r0 \l  PHI: (r0v2 'minSeparation' float) = (r0v1 'minSeparation' float), (r0v3 'minSeparation' float) binds: [B:26:0x0013, B:27:0x0015] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0020}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0032|PHI: r1 \l  PHI: (r1v10 'upperBound' float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0036}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0048|PHI: r2 \l  PHI: (r2v9 'lowerBound' float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0039}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0023}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000d}"];
+MethodNode[shape=record,label="{private float com.google.android.material.slider.BaseSlider.getClampedValue((r4v0 'this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\> A[D('this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\>), IMMUTABLE_TYPE, THIS]), (r5v0 'idx' int A[D('idx' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'value' float A[D('value' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x0039 \-\> B:36:0x0048, CROSS_EDGE: B:31:0x0023 \-\> B:32:0x0032, CROSS_EDGE: B:26:0x0013 \-\> B:28:0x0016, CROSS_EDGE: B:24:0x000d \-\> B:25:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>]\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_29 -> Node_31;
+Node_33 -> Node_34;
+Node_33 -> Node_35;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_24;
+Node_23 -> Node_25;
+Node_28 -> Node_29;
+Node_30 -> Node_32;
+Node_32 -> Node_33;
+Node_34 -> Node_36;
+Node_36 -> Node_37;
+Node_35 -> Node_36;
+Node_31 -> Node_32;
+Node_24 -> Node_25;
+}
+

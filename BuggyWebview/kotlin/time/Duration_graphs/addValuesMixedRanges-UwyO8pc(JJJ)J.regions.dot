@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.time.Duration.addValuesMixedRanges\-UwyO8pc(JJJ)J" {
+subgraph cluster_Region_2049763082 {
+label = "R(2:1|(2:(2:3|4)|(2:6|7))) | DECL_VAR: long otherMillis, long null, long null, long null, long otherNanoRemainder\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|long r0 = kotlin.time.DurationKt.nanosToMillis(r14)\llong long r8 = r12 + r0\l}"];
+subgraph cluster_Region_242421118 {
+label = "R(2:(2:3|4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_384485951 {
+label = "IF [B:11:0x0019] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0019|if (new kotlin.ranges.LongRange(\-4611686018426L, 4611686018426L).contains(r8) != false) goto L3\l}"];
+subgraph cluster_Region_320892945 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001b|long r2 = kotlin.time.DurationKt.millisToNanos(r0)\llong long r2 = r14 \- r2\llong r4 = kotlin.time.DurationKt.millisToNanos(r8)\llong r2 = kotlin.time.DurationKt.durationOfNanos(r4 + r2)\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_987798029 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002b|long r2 = kotlin.time.DurationKt.durationOfMillis(kotlin.ranges.RangesKt.coerceIn(r8, \-4611686018427387903L, (long) kotlin.time.DurationKt.MAX_MILLIS))\l}"];
+Node_14 [shape=record,label="{14\:\ 0x003e|RETURN\lORIG_RETURN\l|return r2\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final long kotlin.time.Duration.addValuesMixedRanges\-UwyO8pc((r10v0 'arg0' long A[D('arg0' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'thisMillis' long A[D('thisMillis' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'otherNanos' long A[D('otherNanos' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x002b \-\> B:14:0x003e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+}
+

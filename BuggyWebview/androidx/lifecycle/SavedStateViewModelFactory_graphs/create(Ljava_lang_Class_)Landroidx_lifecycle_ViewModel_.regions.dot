@@ -1,0 +1,40 @@
+digraph "CFG forandroidx.lifecycle.SavedStateViewModelFactory.create(Ljava\/lang\/Class;)Landroidx\/lifecycle\/ViewModel;" {
+subgraph cluster_Region_1979088152 {
+label = "R(2:1|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"modelClass\")\ljava.lang.String java.lang.String r0 = r3.getCanonicalName()\l}"];
+subgraph cluster_Region_445967229 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_452556035 {
+label = "IF [B:11:0x0009] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0009|if (r0 == null) goto L6\l}"];
+subgraph cluster_Region_1731626298 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0017|throw new java.lang.IllegalArgumentException(\"Local and anonymous classes can not be ViewModels\")\l}"];
+}
+}
+subgraph cluster_Region_815578574 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|RETURN\l|return (T) create(r0, r3)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000b}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0010}"];
+MethodNode[shape=record,label="{public T extends androidx.lifecycle.ViewModel androidx.lifecycle.SavedStateViewModelFactory.create((r2v0 'this' androidx.lifecycle.SavedStateViewModelFactory A[IMMUTABLE_TYPE, THIS]), (r3v0 'modelClass' java.lang.Class\<T extends androidx.lifecycle.ViewModel\> A[D('modelClass' java.lang.Class), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0017 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends androidx.lifecycle.ViewModel]\lSIGNATURE: \<T:Landroidx\/lifecycle\/ViewModel;\>(Ljava\/lang\/Class\<TT;\>;)TT;\lMETHOD_OVERRIDE: [androidx.lifecycle.ViewModelProvider.Factory.create(java.lang.Class\<T extends androidx.lifecycle.ViewModel\>):T extends androidx.lifecycle.ViewModel]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_15 -> Node_9;
+Node_13 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

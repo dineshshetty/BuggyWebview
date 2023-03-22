@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.prepareLayoutStateForDelta(ILandroidx\/recyclerview\/widget\/RecyclerView$State;)V" {
+subgraph cluster_Region_425935226 {
+label = "R(2:(1:2)(1:6)|3) | DECL_VAR: int layoutDir, int referenceChildPosition\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_468669146 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r5 \> 0) goto L2\l}"];
+subgraph cluster_Region_39142756 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|r0 = 1\lint r1 = getLastChildPosition()\l}"];
+}
+subgraph cluster_Region_1937448021 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|r0 = \-1\lint r1 = getFirstChildPosition()\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x000d|PHI: r0 r1 \l  PHI: (r0v1 'layoutDir' int) = (r0v0 'layoutDir' int), (r0v2 'layoutDir' int) binds: [B:4:0x0008, B:3:0x0002] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'referenceChildPosition' int) = (r1v0 'referenceChildPosition' int), (r1v2 'referenceChildPosition' int) binds: [B:4:0x0008, B:3:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|r4.mLayoutState.mRecycle = true\lupdateLayoutState(r1, r6)\lsetLayoutStateDirection(r0)\landroidx.recyclerview.widget.LayoutState androidx.recyclerview.widget.LayoutState r2 = r4.mLayoutState\lr2.mCurrentPosition = r2.mItemDirection + r1\lr4.mLayoutState.mAvailable = java.lang.Math.abs(r5)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0027}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.StaggeredGridLayoutManager.prepareLayoutStateForDelta((r4v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r5v0 'delta' int A[D('delta' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:4:0x0008 \-\> B:5:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_6 -> Node_1;
+}
+

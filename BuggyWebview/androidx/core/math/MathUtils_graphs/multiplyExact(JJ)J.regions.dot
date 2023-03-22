@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.core.math.MathUtils.multiplyExact(JJ)J" {
+subgraph cluster_Region_359148981 {
+label = "R(2:1|(2:(1:8)|(1:14)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|long long r0 = r11 * r13\llong long r2 = java.lang.Math.abs(r11)\llong long r4 = java.lang.Math.abs(r13)\l}"];
+subgraph cluster_Region_1618124501 {
+label = "R(2:(1:8)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1087428849 {
+label = "IF [B:19:0x0013, B:21:0x0017, B:23:0x001d, B:25:0x0023, B:27:0x0029] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0013|if (((r2 \| r4) \>\>\> 31) != 0) goto L3\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0017|ADDED_TO_REGION\l|if (r13 != 0) goto L5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001d|ADDED_TO_REGION\l|if ((r0 \/ r13) != r11) goto L7\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0023|ADDED_TO_REGION\l|if (r11 == Long.MIN_VALUE) goto L12\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0029|ADDED_TO_REGION\l|if (r13 == (\-1)) goto L7\l}"];
+subgraph cluster_Region_95114624 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0033|throw new java.lang.ArithmeticException(\"long overflow\")\l}"];
+}
+}
+subgraph cluster_Region_1140467197 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0034|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0015}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0019}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x002c}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001f}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0025}"];
+MethodNode[shape=record,label="{public static long androidx.core.math.MathUtils.multiplyExact((r11v0 'x' long A[D('x' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'y' long A[D('y' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0034 \-\> B:17:?, CROSS_EDGE: B:25:0x0023 \-\> B:31:0x0034, CROSS_EDGE: B:23:0x001d \-\> B:29:0x002c, CROSS_EDGE: B:21:0x0017 \-\> B:24:0x001f, CROSS_EDGE: B:19:0x0013 \-\> B:31:0x0034\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_31[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_29;
+Node_25 -> Node_26;
+Node_25 -> Node_31[style=dashed];
+Node_27 -> Node_29;
+Node_27 -> Node_31[style=dashed];
+Node_30 -> Node_17;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_29 -> Node_30;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+}
+

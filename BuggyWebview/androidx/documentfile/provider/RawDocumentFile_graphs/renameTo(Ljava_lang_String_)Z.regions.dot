@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.documentfile.provider.RawDocumentFile.renameTo(Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_481680279 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.io.File java.io.File r0 = new java.io.File(r2.mFile.getParentFile(), r3)\l}"];
+subgraph cluster_Region_1614540229 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1333926310 {
+label = "IF [B:3:0x0011] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|if (r2.mFile.renameTo(r0) != false) goto L3\l}"];
+subgraph cluster_Region_223623956 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|r2.mFile = r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2133305660 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.documentfile.provider.RawDocumentFile.renameTo((r2v0 'this' androidx.documentfile.provider.RawDocumentFile A[IMMUTABLE_TYPE, THIS]), (r3v0 'displayName' java.lang.String A[D('displayName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0018 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.documentfile.provider.DocumentFile.renameTo(java.lang.String):boolean]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+}
+

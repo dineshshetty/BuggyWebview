@@ -1,0 +1,74 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputLayout.setError(Ljava\/lang\/CharSequence;)V" {
+subgraph cluster_Region_359666566 {
+label = "R(2:(1:(2:(1:5)|(1:7)))|(1:10)(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_400838957 {
+label = "IF [B:17:0x0006] THEN: R(1:(2:(1:5)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|if (r1.indicatorViewController.isErrorEnabled() == false) goto L3\l}"];
+subgraph cluster_Region_274029246 {
+label = "R(1:(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2094819584 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1772468542 {
+label = "IF [B:19:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|if (android.text.TextUtils.isEmpty(r2) != false) goto L5\l}"];
+subgraph cluster_Region_1551753246 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1715982725 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|setErrorEnabled(true)\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_2043420708 {
+label = "IF [B:23:0x0017] THEN: R(1:10) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|if (android.text.TextUtils.isEmpty(r2) == false) goto L10\l}"];
+subgraph cluster_Region_1038355050 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|r1.indicatorViewController.showError(r2)\l}"];
+}
+subgraph cluster_Region_246046936 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001f|r1.indicatorViewController.hideError()\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0008}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0013}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0024|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.textfield.TextInputLayout.setError((r1v0 'this' com.google.android.material.textfield.TextInputLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 'errorText' java.lang.CharSequence A[D('errorText' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0024 \-\> B:15:?, CROSS_EDGE: B:25:0x001f \-\> B:26:0x0024, CROSS_EDGE: B:17:0x0006 \-\> B:22:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_22[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_15;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_27;
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_22 -> Node_23;
+Node_27 -> Node_15;
+Node_26 -> Node_15;
+}
+

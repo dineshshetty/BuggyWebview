@@ -1,0 +1,66 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputLayout.setPlaceholderText(Ljava\/lang\/CharSequence;)V" {
+subgraph cluster_Region_311498140 {
+label = "R(3:(1:3)|(1:6)(2:(1:12)|13)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1122152679 {
+label = "IF [B:17:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (r3.placeholderTextView == null) goto L3\l}"];
+subgraph cluster_Region_305690579 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|androidx.appcompat.widget.AppCompatTextView androidx.appcompat.widget.AppCompatTextView r0 = new androidx.appcompat.widget.AppCompatTextView(getContext())\lr3.placeholderTextView = r0\lr0.setId(com.google.android.material.C0571R.C0574id.textinput_placeholder)\landroidx.core.view.ViewCompat.setImportantForAccessibility(r3.placeholderTextView, 2)\landroidx.transition.Fade androidx.transition.Fade r0 = createPlaceholderFadeTransition()\lr3.placeholderFadeIn = r0\lr0.setStartDelay(67L)\lr3.placeholderFadeOut = createPlaceholderFadeTransition()\lsetPlaceholderTextAppearance(r3.placeholderTextAppearance)\lsetPlaceholderTextColor(r3.placeholderTextColor)\l}"];
+}
+}
+subgraph cluster_IfRegion_1780715472 {
+label = "IF [B:20:0x0039] THEN: R(1:6) ELSE: R(2:(1:12)|13)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0039|if (android.text.TextUtils.isEmpty(r4) != false) goto L6\l}"];
+subgraph cluster_Region_185717583 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x003b|setPlaceholderTextEnabled(false)\l}"];
+}
+subgraph cluster_Region_297146948 {
+label = "R(2:(1:12)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1174725917 {
+label = "IF [B:23:0x0042] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0042|if (r3.placeholderEnabled == false) goto L12\l}"];
+subgraph cluster_Region_816824066 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0044|setPlaceholderTextEnabled(true)\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0048|r3.placeholderText = r4\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x004a|updatePlaceholderText()\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0035}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x004d}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0040}"];
+MethodNode[shape=record,label="{public void com.google.android.material.textfield.TextInputLayout.setPlaceholderText((r3v0 'this' com.google.android.material.textfield.TextInputLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'placeholderText' java.lang.CharSequence A[D('placeholderText' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0048 \-\> B:26:0x004a, CROSS_EDGE: B:23:0x0042 \-\> B:25:0x0048, CROSS_EDGE: B:17:0x0002 \-\> B:19:0x0035\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_26;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+Node_27 -> Node_15;
+Node_22 -> Node_23;
+}
+

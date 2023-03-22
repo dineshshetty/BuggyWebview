@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.text.CharDirectionality.Companion.valueOf(I)Lkotlin\/text\/CharDirectionality;" {
+subgraph cluster_Region_1523763307 {
+label = "R(2:1|(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.text.CharDirectionality kotlin.text.CharDirectionality r0 = getDirectionalityMap().get(java.lang.Integer.valueOf(r4))\l}"];
+subgraph cluster_Region_755250675 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1116622013 {
+label = "IF [B:3:0x000e] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_533555362 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1120437003 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011}"];
+Node_6 [shape=record,label="{6\:\ 0x002c|throw new java.lang.IllegalArgumentException(\"Directionality #\" + r4 + \" is not defined.\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final kotlin.text.CharDirectionality kotlin.text.CharDirectionality.Companion.valueOf((r3v0 'this' kotlin.text.CharDirectionality$Companion A[IMMUTABLE_TYPE, THIS]), (r4v0 'directionality' int A[D('directionality' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x002c \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+}
+

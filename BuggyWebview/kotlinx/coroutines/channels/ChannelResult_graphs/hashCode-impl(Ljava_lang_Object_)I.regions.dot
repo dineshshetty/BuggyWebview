@@ -1,0 +1,36 @@
+digraph "CFG forkotlinx.coroutines.channels.ChannelResult.hashCode\-impl(Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_869083547 {
+label = "R(1:(2:(1:2)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_13750663 {
+label = "R(2:(1:2)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1868218632 {
+label = "IF [B:9:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r1 == null) goto L2\l}"];
+subgraph cluster_Region_1011693534 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1721122877 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|RETURN\lORIG_RETURN\l|return r1.hashCode()\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0004}"];
+MethodNode[shape=record,label="{public static int kotlinx.coroutines.channels.ChannelResult.hashCode\-impl((r1v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | CROSS_EDGE: B:11:0x0004 \-\> B:12:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_8;
+Node_12 -> Node_8;
+Node_7 -> Node_9;
+Node_11 -> Node_12;
+}
+

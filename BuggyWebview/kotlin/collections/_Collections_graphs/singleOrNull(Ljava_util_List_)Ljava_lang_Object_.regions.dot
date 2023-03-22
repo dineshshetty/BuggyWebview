@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.singleOrNull(Ljava\/util\/List;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_733336020 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\l}"];
+subgraph cluster_Region_1867626282 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_794384654 {
+label = "IF [B:19:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|if (r2.size() == 1) goto L3\l}"];
+subgraph cluster_Region_2110496139 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return r2.get(0)\l}"];
+}
+}
+subgraph cluster_Region_2029373591 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0012|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final T kotlin.collections.CollectionsKt___CollectionsKt.singleOrNull((r2v0 java.util.List\<? extends T\> A[D('$this$singleOrNull' java.util.List), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0012 \-\> B:22:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/List\<+TT;\>;)TT;\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_17;
+Node_21 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_23;
+}
+

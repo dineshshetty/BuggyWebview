@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.appcompat.widget.ShareActionProvider.onCreateActionView()Landroid\/view\/View;" {
+subgraph cluster_Region_1916420522 {
+label = "R(4:1|(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.appcompat.widget.ActivityChooserView androidx.appcompat.widget.ActivityChooserView r0 = new androidx.appcompat.widget.ActivityChooserView(r5.mContext)\l}"];
+subgraph cluster_IfRegion_1234744960 {
+label = "IF [B:3:0x000b] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r0.isInEditMode() == false) goto L3\l}"];
+subgraph cluster_Region_1243055294 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|androidx.appcompat.widget.ActivityChooserModel androidx.appcompat.widget.ActivityChooserModel r1 = androidx.appcompat.widget.ActivityChooserModel.get(r5.mContext, r5.mShareHistoryFileName)\lr0.setActivityChooserModel(r1)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0018|android.util.TypedValue android.util.TypedValue r1 = new android.util.TypedValue()\lr5.mContext.getTheme().resolveAttribute(androidx.appcompat.C0019R.attr.actionModeShareDrawable, r1, true)\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = androidx.appcompat.content.res.AppCompatResources.getDrawable(r5.mContext, r1.resourceId)\lr0.setExpandActivityOverflowButtonDrawable(r2)\lr0.setProvider(r5)\lr0.setDefaultActionButtonContentDescription(androidx.appcompat.C0019R.string.abc_shareactionprovider_share_with_application)\lr0.setExpandActivityOverflowButtonContentDescription(androidx.appcompat.C0019R.string.abc_shareactionprovider_share_with)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0041|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.view.View androidx.appcompat.widget.ShareActionProvider.onCreateActionView((r5v0 'this' androidx.appcompat.widget.ShareActionProvider A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x000b \-\> B:5:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.ActionProvider.onCreateActionView():android.view.View]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+}
+

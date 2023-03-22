@@ -1,0 +1,98 @@
+digraph "CFG forandroidx.core.location.LocationManagerCompat.getCurrentLocation(Landroid\/location\/LocationManager;Ljava\/lang\/String;Landroidx\/core\/os\/CancellationSignal;Ljava\/util\/concurrent\/Executor;Landroidx\/core\/util\/Consumer;)V" {
+subgraph cluster_Region_1500108373 {
+label = "R(1:(2:(2:3|4)|(6:(1:7)|8|(2:10|(2:12|13))|14|(1:16)|17)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2100387894 {
+label = "R(2:(2:3|4)|(6:(1:7)|8|(2:10|(2:12|13))|14|(1:16)|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_941338898 {
+label = "IF [B:22:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 30) goto L3\l}"];
+subgraph cluster_Region_794727690 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0006|androidx.core.location.LocationManagerCompat.Api30Impl.getCurrentLocation(r9, r10, r11, r12, r13)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1010556775 {
+label = "R(6:(1:7)|8|(2:10|(2:12|13))|14|(1:16)|17)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_949102026 {
+label = "IF [B:25:0x000a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000a|if (r11 != null) goto L7\l}"];
+subgraph cluster_Region_1322570302 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000c|r11.throwIfCanceled()\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x000f|android.location.Location final android.location.Location r0 = r9.getLastKnownLocation(r10)\l}"];
+subgraph cluster_IfRegion_333720850 {
+label = "IF [B:28:0x0013] THEN: R(2:10|(2:12|13)) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0013|if (r0 != null) goto L10\l}"];
+subgraph cluster_Region_322748582 {
+label = "R(2:10|(2:12|13))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0015|long long r1 = android.os.SystemClock.elapsedRealtime() \- androidx.core.location.LocationCompat.getElapsedRealtimeMillis(r0)\l}"];
+subgraph cluster_IfRegion_1781977854 {
+label = "IF [B:30:0x0022] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0022|if (r1 \< androidx.core.location.LocationManagerCompat.MAX_CURRENT_LOCATION_AGE_MS) goto L12\l}"];
+subgraph cluster_Region_984275093 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0024|r12.execute(new androidx.core.location.LocationManagerCompat$$ExternalSyntheticLambda1())\l}"];
+Node_32 [shape=record,label="{32\:\ 0x002c|RETURN\l|return\l}"];
+}
+}
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x002d|androidx.core.location.LocationManagerCompat$CancellableLocationListener final androidx.core.location.LocationManagerCompat.CancellableLocationListener r1 = new androidx.core.location.LocationManagerCompat.CancellableLocationListener(r9, r12, r13)\lr9.requestLocationUpdates(r10, 0L, 0.0f, r1, android.os.Looper.getMainLooper())\l}"];
+subgraph cluster_IfRegion_732068311 {
+label = "IF [B:34:0x003f] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x003f|if (r11 != null) goto L16\l}"];
+subgraph cluster_Region_1485371456 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0041|java.util.Objects.requireNonNull(r1)\lr11.setOnCancelListener(new androidx.core.location.LocationManagerCompat$$ExternalSyntheticLambda0())\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x004c|r1.startTimeout(androidx.core.location.LocationManagerCompat.GET_CURRENT_LOCATION_TIMEOUT_MS)\l}"];
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0051}"];
+MethodNode[shape=record,label="{public static void androidx.core.location.LocationManagerCompat.getCurrentLocation((r9v0 'locationManager' android.location.LocationManager A[D('locationManager' android.location.LocationManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'provider' java.lang.String A[D('provider' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'cancellationSignal' androidx.core.os.CancellationSignal A[D('cancellationSignal' androidx.core.os.CancellationSignal), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'executor' java.util.concurrent.Executor A[D('executor' java.util.concurrent.Executor), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'consumer' androidx.core.util.Consumer\<android.location.Location\> A[D('consumer' androidx.core.util.Consumer\<android.location.Location\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x002c \-\> B:20:?, CROSS_EDGE: B:37:0x0051 \-\> B:20:?, CROSS_EDGE: B:34:0x003f \-\> B:36:0x004c, CROSS_EDGE: B:28:0x0013 \-\> B:33:0x002d, CROSS_EDGE: B:25:0x000a \-\> B:27:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/location\/LocationManager;Ljava\/lang\/String;Landroidx\/core\/os\/CancellationSignal;Ljava\/util\/concurrent\/Executor;Landroidx\/core\/util\/Consumer\<Landroid\/location\/Location;\>;)V\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_20;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_33[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_33[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_20;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_37 -> Node_20;
+}
+

@@ -1,0 +1,43 @@
+digraph "CFG forkotlinx.coroutines.channels.ProducerCoroutine.onCancelled(Ljava\/lang\/Throwable;Z)V" {
+subgraph cluster_Region_1624214183 {
+label = "R(2:1|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|boolean boolean r0 = get_channel().close(r3)\l}"];
+subgraph cluster_Region_2089634082 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2067995458 {
+label = "IF [B:3:0x0008, B:4:0x000a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r0 != false) goto L8\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|ADDED_TO_REGION\l|if (r4 != false) goto L7\l}"];
+subgraph cluster_Region_335011615 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1262318685 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|kotlinx.coroutines.CoroutineExceptionHandlerKt.handleCoroutineException(getContext(), r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{protected void kotlinx.coroutines.channels.ProducerCoroutine.onCancelled((r2v0 'this' kotlinx.coroutines.channels.ProducerCoroutine\<E\> A[IMMUTABLE_TYPE, THIS]), (r3v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'handled' boolean A[D('handled' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:4:0x000a \-\> B:6:0x0013, CROSS_EDGE: B:3:0x0008 \-\> B:6:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lMETHOD_OVERRIDE: [kotlinx.coroutines.AbstractCoroutine.onCancelled(java.lang.Throwable, boolean):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_8 -> Node_1;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_6 -> Node_1;
+Node_7 -> Node_1;
+}
+

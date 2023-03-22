@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.computeScroll()V" {
+subgraph cluster_Region_2110697192 {
+label = "R(2:1|(2:(4:5|(2:11|(1:13))|8|9)|(1:14)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|r5.mIsScrollStarted = true\l}"];
+subgraph cluster_Region_1115372567 {
+label = "R(2:(4:5|(2:11|(1:13))|8|9)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_697671433 {
+label = "IF [B:19:0x0009, B:21:0x0011] THEN: R(4:5|(2:11|(1:13))|8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0009|if (r5.mScroller.isFinished() == false) goto L3\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0011|ADDED_TO_REGION\l|if (r5.mScroller.computeScrollOffset() != false) goto L5\l}"];
+subgraph cluster_Region_1698412781 {
+label = "R(4:5|(2:11|(1:13))|8|9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0013|int int r0 = getScrollX()\lint int r1 = getScrollY()\lint int r2 = r5.mScroller.getCurrX()\lint int r3 = r5.mScroller.getCurrY()\l}"];
+subgraph cluster_IfRegion_1325390295 {
+label = "IF [B:23:0x0027, B:24:0x0029] THEN: R(2:11|(1:13)) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0027|if (r0 != r2) goto L11\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0029|ADDED_TO_REGION\l|if (r1 != r3) goto L11\l}"];
+subgraph cluster_Region_1635639264 {
+label = "R(2:11|(1:13))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002b|scrollTo(r2, r3)\l}"];
+subgraph cluster_IfRegion_519709120 {
+label = "IF [B:26:0x0032] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0032|if (pageScrolled(r2) == false) goto L13\l}"];
+subgraph cluster_Region_649993762 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0034|r5.mScroller.abortAnimation()\lscrollTo(0, r3)\l}"];
+}
+}
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x003d|androidx.core.view.ViewCompat.postInvalidateOnAnimation(r5)\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0040|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1469891123 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0041|completeScroll(true)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000b}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0044}"];
+MethodNode[shape=record,label="{public void androidx.viewpager.widget.ViewPager.computeScroll((r5v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:26:0x0032 \-\> B:28:0x003d, CROSS_EDGE: B:24:0x0029 \-\> B:28:0x003d, CROSS_EDGE: B:23:0x0027 \-\> B:25:0x002b, CROSS_EDGE: B:31:0x0044 \-\> B:17:?, CROSS_EDGE: B:19:0x0009 \-\> B:30:0x0041\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.computeScroll():void\}]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_30[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_30[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_17;
+Node_30 -> Node_31;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_31 -> Node_17;
+}
+

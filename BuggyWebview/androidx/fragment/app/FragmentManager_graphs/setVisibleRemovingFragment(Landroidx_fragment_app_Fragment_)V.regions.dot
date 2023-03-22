@@ -1,0 +1,56 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.setVisibleRemovingFragment(Landroidx\/fragment\/app\/Fragment;)V" {
+subgraph cluster_Region_1444563428 {
+label = "R(2:1|(1:(2:(1:7)|8)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|android.view.ViewGroup android.view.ViewGroup r0 = getFragmentContainer(r4)\l}"];
+subgraph cluster_Region_899805858 {
+label = "R(1:(2:(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1631360065 {
+label = "IF [B:16:0x0004, B:18:0x0019] THEN: R(2:(1:7)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|if (r0 != null) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0019|ADDED_TO_REGION\l|if ((r4.getEnterAnim() + r4.getExitAnim() + r4.getPopEnterAnim() + r4.getPopExitAnim()) \> 0) goto L5\l}"];
+subgraph cluster_Region_1731445526 {
+label = "R(2:(1:7)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_946147591 {
+label = "IF [B:20:0x0021] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0021|if (r0.getTag(androidx.fragment.C0296R.C0299id.visible_removing_fragment_view_tag) == null) goto L7\l}"];
+subgraph cluster_Region_1667425271 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0023|r0.setTag(androidx.fragment.C0296R.C0299id.visible_removing_fragment_view_tag, r4)\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0028|((androidx.fragment.app.Fragment) r0.getTag(androidx.fragment.C0296R.C0299id.visible_removing_fragment_view_tag)).setPopDirection(r4.getPopDirection())\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0006}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001b}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0037|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private void androidx.fragment.app.FragmentManager.setVisibleRemovingFragment((r3v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r4v0 'f' androidx.fragment.app.Fragment A[D('f' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0021 \-\> B:22:0x0028, CROSS_EDGE: B:18:0x0019 \-\> B:23:0x0037, CROSS_EDGE: B:16:0x0004 \-\> B:23:0x0037\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_23 -> Node_14;
+Node_25 -> Node_14;
+Node_24 -> Node_14;
+}
+

@@ -1,0 +1,65 @@
+digraph "CFG forandroidx.coordinatorlayout.widget.CoordinatorLayout.onAttachedToWindow()V" {
+subgraph cluster_Region_1027298137 {
+label = "R(4:1|(2:(1:5)|6)|(1:11)|12)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|super.onAttachedToWindow()\lresetTouchBehaviors(false)\l}"];
+subgraph cluster_IfRegion_1493933456 {
+label = "IF [B:18:0x0009] THEN: R(2:(1:5)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0009|if (r2.mNeedsPreDrawListener != false) goto L3\l}"];
+subgraph cluster_Region_1485469687 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_514318680 {
+label = "IF [B:20:0x000d] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|if (r2.mOnPreDrawListener == null) goto L5\l}"];
+subgraph cluster_Region_706842108 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000f|r2.mOnPreDrawListener = new androidx.coordinatorlayout.widget.CoordinatorLayout.OnPreDrawListener()\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0016|android.view.ViewTreeObserver android.view.ViewTreeObserver r0 = getViewTreeObserver()\lr0.addOnPreDrawListener(r2.mOnPreDrawListener)\l}"];
+}
+}
+subgraph cluster_IfRegion_1307030138 {
+label = "IF [B:24:0x0021, B:26:0x0027] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0021|if (r2.mLastInsets == null) goto L9\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0027|ADDED_TO_REGION\l|if (androidx.core.view.ViewCompat.getFitsSystemWindows(r2) != false) goto L11\l}"];
+subgraph cluster_Region_1208303947 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0029|androidx.core.view.ViewCompat.requestApplyInsets(r2)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x002c|r2.mIsAttachedToWindow = true\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000b}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001f}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0023}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x002f}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.coordinatorlayout.widget.CoordinatorLayout.onAttachedToWindow((r2v0 'this' androidx.coordinatorlayout.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:26:0x0027 \-\> B:28:0x002c, CROSS_EDGE: B:24:0x0021 \-\> B:28:0x002c, CROSS_EDGE: B:20:0x000d \-\> B:22:0x0016, CROSS_EDGE: B:18:0x0009 \-\> B:23:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onAttachedToWindow():void\}]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_29 -> Node_16;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.internal.Symbol.unbox(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1531946703 {
+label = "R(1:(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_758611046 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1096342810 {
+label = "IF [B:11:0x0001] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0001|if (r3 == r2) goto L3\l}"];
+subgraph cluster_Region_2137588337 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0003|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1505147533 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|RETURN\lORIG_RETURN\l|return r3\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0005}"];
+MethodNode[shape=record,label="{public final T kotlinx.coroutines.internal.Symbol.unbox((r2v0 'this' kotlinx.coroutines.internal.Symbol A[IMMUTABLE_TYPE, THIS]), (r3v0 'value' java.lang.Object A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0005 \-\> B:14:0x0006\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Object;)TT;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r3v0, resolved type: java.lang.Object\}\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+}
+

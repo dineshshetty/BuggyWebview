@@ -1,0 +1,74 @@
+digraph "CFG forkotlin.ResultKt.recoverCatching(Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1068629900 {
+label = "R(2:1|(2:(1:4)|(1:(2:7|9))))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"transform\")\ljava.lang.Throwable java.lang.Throwable r0 = kotlin.Result.m147exceptionOrNullimpl(r4)\l}"];
+subgraph cluster_Region_1936982464 {
+label = "R(2:(1:4)|(1:(2:7|9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1216244686 {
+label = "IF [B:17:0x0009] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0009|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_366144559 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ ?|SYNTHETIC\lRETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_2002994805 {
+label = "R(1:(2:7|9))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_164194639 {
+label = "Try: R(2:7|9) catches: R(3:10|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_196931102 {
+label = "R(2:7|9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000d|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x001a, blocks: (B:19:0x000d), top: B:24:0x000d \}\lCatch: all \-\> 0x001a\l|kotlin.Result$Companion kotlin.Result.Companion r1 = kotlin.Result.Companion     \/\/ Catch: java.lang.Throwable \-\> L1a\ljava.lang.Object java.lang.Object r1 = kotlin.Result.m144constructorimpl(r5.invoke(r0))     \/\/ Catch: java.lang.Throwable \-\> L1a\l}"];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_959337953 {
+label = "R(3:10|11|12) | ExcHandler: all \-\> 0x001a\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001a|ExcHandler: all \-\> 0x001a\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001b|kotlin.Result$Companion kotlin.Result.Companion r2 = kotlin.Result.Companion\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0025|RETURN\lORIG_RETURN\l|return kotlin.Result.m144constructorimpl(createFailure(r1))\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_959337953 {
+label = "R(3:10|11|12) | ExcHandler: all \-\> 0x001a\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001a|ExcHandler: all \-\> 0x001a\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001b|kotlin.Result$Companion kotlin.Result.Companion r2 = kotlin.Result.Companion\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0025|RETURN\lORIG_RETURN\l|return kotlin.Result.m144constructorimpl(createFailure(r1))\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000d|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{private static final java.lang.Object kotlin.ResultKt.recoverCatching((r4v0 '$this$recoverCatching' java.lang.Object A[D('$this$recoverCatching' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'transform' kotlin.jvm.functions.Function1\<? super java.lang.Throwable, ? extends R\> A[D('transform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x000d \-\> B:23:0x0025, CROSS_EDGE: B:22:0x001b \-\> B:23:0x0025, CROSS_EDGE: B:24:0x000d \-\> B:21:0x001a\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x001a, blocks: (B:19:0x000d), top: B:24:0x000d \}\lTYPE_VARS: [R, T extends R]\lSIGNATURE: \<R:Ljava\/lang\/Object;T::TR;\>(Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Throwable;+TR;\>;)Ljava\/lang\/Object;\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_26 -> Node_15;
+Node_19 -> Node_25;
+Node_19 -> Node_27;
+Node_27 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_26;
+Node_24 -> Node_19;
+Node_24 -> Node_21;
+Node_25 -> Node_21;
+}
+

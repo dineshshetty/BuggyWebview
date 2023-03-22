@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.constraintlayout.core.state.Dimension.equalsFixedValue(I)Z" {
+subgraph cluster_Region_1454031629 {
+label = "R(1:(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_136262579 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1541930077 {
+label = "IF [B:3:0x0002, B:5:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r1.mInitialValue == null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0006|ADDED_TO_REGION\l|if (r1.mValue == r2) goto L5\l}"];
+subgraph cluster_Region_1648892875 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0008|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1660554788 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000a|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean androidx.constraintlayout.core.state.Dimension.equalsFixedValue((r1v0 'this' androidx.constraintlayout.core.state.Dimension A[IMMUTABLE_TYPE, THIS]), (r2v0 'value' int A[D('value' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x000b \-\> B:1:?, CROSS_EDGE: B:3:0x0002 \-\> B:8:0x000a\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_1;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_1;
+}
+

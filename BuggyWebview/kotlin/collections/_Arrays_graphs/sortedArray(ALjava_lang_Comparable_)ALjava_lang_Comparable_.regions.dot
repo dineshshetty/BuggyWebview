@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.sortedArray([Ljava\/lang\/Comparable;)[Ljava\/lang\/Comparable;" {
+subgraph cluster_Region_953349439 {
+label = "R(2:1|(2:(1:5)|(2:7|8)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\l}"];
+subgraph cluster_Region_842953954 {
+label = "R(2:(1:5)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_435840354 {
+label = "IF [B:16:0x000b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000b|PHI: r0 \l  PHI: (r0v3 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4.length == 0) == true) goto L5\l}"];
+subgraph cluster_Region_1351413921 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000d|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1668758144 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|java.lang.Object[] java.lang.Object[] r0 = java.util.Arrays.copyOf(r4, r4.length)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, \"copyOf(this, size)\")\ljava.lang.Comparable[] java.lang.Comparable[] r1 = (java.lang.Comparable[]) r0\lkotlin.jvm.internal.Intrinsics.checkNotNull(r1, \"null cannot be cast to non\-null type kotlin.Array\<kotlin.Any?\>\")\lkotlin.collections.ArraysKt.sort((java.lang.Object[]) r1)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0029|RETURN\l|return (T[]) ((java.lang.Comparable[]) r0)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0006}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0008}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000a}"];
+MethodNode[shape=record,label="{public static final T extends java.lang.Comparable\<? super T\>[] kotlin.collections.ArraysKt___ArraysKt.sortedArray((r4v0 T extends java.lang.Comparable\<? super T\>[] A[D('$this$sortedArray' java.lang.Comparable[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0029 \-\> B:11:?, CROSS_EDGE: B:15:0x000a \-\> B:16:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends java.lang.Comparable\<? super T\>]\lSIGNATURE: \<T::Ljava\/lang\/Comparable\<\-TT;\>;\>([TT;)[TT;\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+}
+

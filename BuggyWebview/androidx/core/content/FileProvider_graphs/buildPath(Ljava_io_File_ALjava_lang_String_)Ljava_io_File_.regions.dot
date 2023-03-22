@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.core.content.FileProvider.buildPath(Ljava\/io\/File;[Ljava\/lang\/String;)Ljava\/io\/File;" {
+subgraph cluster_Region_390743845 {
+label = "R(3:1|(3:3|(1:5)(0)|7)|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.io.File r0 = r5\lint r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_80260336 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|LOOP_START\lLOOP:0: B:3:0x0003\-\>B:7:0x000f\lPHI: r0 r2 \l  PHI: (r0v1 'cur' java.io.File) = (r0v0 'cur' java.io.File), (r0v2 'cur' java.io.File) binds: [B:2:0x0000, B:7:0x000f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:2:0x0000, B:7:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_1845112025 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|r3 = r6[r2]\l}"];
+subgraph cluster_IfRegion_938571524 {
+label = "IF [B:5:0x0007] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|if (r3 != null) goto L5\l}"];
+subgraph cluster_Region_1729433289 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|r0 = new java.io.File(r0, r3)\l}"];
+}
+subgraph cluster_Region_1258930096 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x000f|LOOP_END\lLOOP:0: B:3:0x0003\-\>B:7:0x000f\lPHI: r0 \l  PHI: (r0v2 'cur' java.io.File) = (r0v1 'cur' java.io.File), (r0v3 'cur' java.io.File) binds: [B:11:0x000f, B:10:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|r2++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0012|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x000f|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000f|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0012|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static java.io.File androidx.core.content.FileProvider.buildPath((r5v0 'base' java.io.File A[D('base' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'segments' java.lang.String[] A[D('segments' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x000f \-\> B:3:0x0003, CROSS_EDGE: B:5:0x0007 \-\> B:7:0x000f\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_10;
+Node_7 -> Node_3;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_10 -> Node_7;
+Node_11 -> Node_7;
+Node_9 -> Node_8;
+}
+

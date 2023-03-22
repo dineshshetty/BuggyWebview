@@ -1,0 +1,73 @@
+digraph "CFG forcom.google.android.material.snackbar.SnackbarManager.dismiss(Lcom\/google\/android\/material\/snackbar\/SnackbarManager$Callback;I)V" {
+subgraph cluster_Region_1048942399 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000}"];
+subgraph cluster_SynchronizedRegion_204071050 {
+label = "Synchronized:R(2:2|(1:(1:6)(1:(1:13))))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0002}"];
+subgraph cluster_Region_447623093 {
+label = "R(1:(1:6)(1:(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1696535012 {
+label = "IF [B:22:0x0007] THEN: R(1:6) ELSE: R(1:(1:13))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0007|if (isCurrentSnackbarLocked(r3) != false) goto L6\l}"];
+subgraph cluster_Region_1999724055 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0009|TryCatch #0 \{, blocks: (B:21:0x0003, B:23:0x0009, B:27:0x001a, B:24:0x000f, B:26:0x0015), top: B:32:0x0003 \}\lCatch: all \-\> 0x001c\l|cancelSnackbarLocked(r2.currentSnackbar, r4)     \/\/ Catch: java.lang.Throwable \-\> L1c\l}"];
+}
+subgraph cluster_Region_878697931 {
+label = "R(1:(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1609015154 {
+label = "IF [B:25:0x0013] THEN: R(1:13) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0013|if (isNextSnackbarLocked(r3) != false) goto L13\l}"];
+subgraph cluster_Region_1114252635 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0015|TryCatch #0 \{, blocks: (B:21:0x0003, B:23:0x0009, B:27:0x001a, B:24:0x000f, B:26:0x0015), top: B:32:0x0003 \}\lCatch: all \-\> 0x001c\l|cancelSnackbarLocked(r2.nextSnackbar, r4)     \/\/ Catch: java.lang.Throwable \-\> L1c\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:21:0x0003, B:23:0x0009, B:27:0x001a, B:24:0x000f, B:26:0x0015), top: B:32:0x0003 \}\lCatch: all \-\> 0x001c\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001a|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:21:0x0003, B:23:0x0009, B:27:0x001a, B:24:0x000f, B:26:0x0015), top: B:32:0x0003 \}\lCatch: all \-\> 0x001c\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L1c\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x001b}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000f|TryCatch #0 \{, blocks: (B:21:0x0003, B:23:0x0009, B:27:0x001a, B:24:0x000f, B:26:0x0015), top: B:32:0x0003 \}\lCatch: all \-\> 0x001c\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001c|REMOVE\lExcHandler: all \-\> 0x001c\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001d|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x001c\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001e|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.snackbar.SnackbarManager.dismiss((r2v0 'this' com.google.android.material.snackbar.SnackbarManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'callback' com.google.android.material.snackbar.SnackbarManager$Callback A[D('callback' com.google.android.material.snackbar.SnackbarManager$Callback), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'event' int A[D('event' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x001e \-\> B:18:?, CROSS_EDGE: B:26:0x0015 \-\> B:27:0x001a, CROSS_EDGE: B:25:0x0013 \-\> B:27:0x001a, CROSS_EDGE: B:32:0x0003 \-\> B:29:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_32;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_27;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_17 -> Node_19;
+Node_32 -> Node_21;
+Node_32 -> Node_29;
+Node_21 -> Node_22;
+Node_27 -> Node_28;
+Node_27 -> Node_33;
+Node_28 -> Node_18;
+Node_33 -> Node_29;
+Node_24 -> Node_25;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_18;
+}
+

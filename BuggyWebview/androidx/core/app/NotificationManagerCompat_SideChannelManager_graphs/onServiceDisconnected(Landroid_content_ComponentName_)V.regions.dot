@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.core.app.NotificationManagerCompat.SideChannelManager.onServiceDisconnected(Landroid\/content\/ComponentName;)V" {
+subgraph cluster_Region_1524501333 {
+label = "R(2:(1:3)|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1313184937 {
+label = "IF [B:3:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (android.util.Log.isLoggable(androidx.core.app.NotificationManagerCompat.TAG, 3) != false) goto L3\l}"];
+subgraph cluster_Region_925754624 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|android.util.Log.d(androidx.core.app.NotificationManagerCompat.TAG, \"Disconnected from service \" + r4)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001d|r3.mHandler.obtainMessage(2, r4).sendToTarget()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0027}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.core.app.NotificationManagerCompat.SideChannelManager.onServiceDisconnected((r3v0 'this' androidx.core.app.NotificationManagerCompat$SideChannelManager A[IMMUTABLE_TYPE, THIS]), (r4v0 'componentName' android.content.ComponentName A[D('componentName' android.content.ComponentName), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:3:0x0007 \-\> B:5:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.content.ServiceConnection.onServiceDisconnected(android.content.ComponentName):void\}]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_1;
+}
+

@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayoutMediator.detach()V" {
+subgraph cluster_Region_855690129 {
+label = "R(2:(1:5)|6) | DECL_VAR: androidx.recyclerview.widget.RecyclerView$Adapter\<?\> null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1608789989 {
+label = "IF [B:3:0x0003, B:5:0x0007] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r3.autoRefresh != false) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0007|ADDED_TO_REGION\l|if ((r0 = r3.adapter) != null) goto L5\l}"];
+subgraph cluster_Region_1409595076 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|r0.unregisterAdapterDataObserver(r3.pagerAdapterObserver)\lr3.pagerAdapterObserver = null\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0010|r3.tabLayout.removeOnTabSelectedListener(r3.onTabSelectedListener)\lr3.viewPager.unregisterOnPageChangeCallback(r3.onPageChangeCallback)\lr3.onTabSelectedListener = null\lr3.onPageChangeCallback = null\lr3.adapter = null\lr3.attached = false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0005}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0027}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.tabs.TabLayoutMediator.detach((r3v0 'this' com.google.android.material.tabs.TabLayoutMediator A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0007 \-\> B:7:0x0010, CROSS_EDGE: B:3:0x0003 \-\> B:7:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_1;
+}
+

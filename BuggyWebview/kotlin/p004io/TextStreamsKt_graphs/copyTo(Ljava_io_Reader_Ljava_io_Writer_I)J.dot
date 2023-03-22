@@ -1,0 +1,18 @@
+digraph "CFG forkotlin.io.TextStreamsKt.copyTo(Ljava\/io\/Reader;Ljava\/io\/Writer;I)J" {
+Node_7 [shape=record,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"out\")\lr0 = 0\lchar[] r2 = new char[r8]\lint r3 = r6.read(r2)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0012|LOOP_START\lLOOP:0: B:10:0x0012\-\>B:11:0x0014\lPHI: r0 r3 \l  PHI: (r0v3 'charsCopied' long) = (r0v2 'charsCopied' long), (r0v4 'charsCopied' long) binds: [B:9:0x0000, B:11:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'chars' int) = (r3v0 'chars' int), (r3v2 'chars' int) binds: [B:9:0x0000, B:11:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< 0) goto L4\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0014|LOOP_END\lLOOP:0: B:10:0x0012\-\>B:11:0x0014\l|r7.write(r2, 0, r3)\llong r0 = r0 + ((long) r3)\lint r3 = r6.read(r2)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x001f|SYNTHETIC\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001f|RETURN\l|return r0\l}"];
+Node_8 [shape=record,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final long kotlin.io.TextStreamsKt.copyTo((r6v0 '$this$copyTo' java.io.Reader A[D('$this$copyTo' java.io.Reader), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'out' java.io.Writer A[D('out' java.io.Writer), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'bufferSize' int A[D('bufferSize' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0014 \-\> B:10:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_13;
+Node_11 -> Node_10;
+Node_13 -> Node_12;
+Node_12 -> Node_8;
+}
+

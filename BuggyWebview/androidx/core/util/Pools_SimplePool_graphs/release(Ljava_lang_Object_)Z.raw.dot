@@ -1,0 +1,27 @@
+digraph "CFG forandroidx.core.util.Pools.SimplePool.release(Ljava\/lang\/Object;)Z" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000|0x0000: INVOKE  (r0 I:boolean) = \l  (r3 I:androidx.core.util.Pools$SimplePool A[D('this' androidx.core.util.Pools$SimplePool\<T\>)])\l  (r4 I:java.lang.Object A[D('instance' T)])\l type: DIRECT call: androidx.core.util.Pools.SimplePool.isInPool(java.lang.Object):boolean A[MD:(T):boolean (m)] (LINE:116)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0004|0x0004: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:22:0x0016 \l}"];
+Node_16 [shape=record,label="{16\:\ 0x0006|0x0006: IGET  (r0 I:int) = (r3 I:androidx.core.util.Pools$SimplePool A[D('this' androidx.core.util.Pools$SimplePool\<T\>)]) androidx.core.util.Pools.SimplePool.mPoolSize int  (LINE:119)\l0x0008: IGET  (r1 I:java.lang.Object[]) = (r3 I:androidx.core.util.Pools$SimplePool A[D('this' androidx.core.util.Pools$SimplePool\<T\>)]) androidx.core.util.Pools.SimplePool.mPool java.lang.Object[] \l0x000a: ARRAY_LENGTH  (r2 I:int) = (r1 I:??[]) \l}"];
+Node_17 [shape=record,label="{17\:\ 0x000b|0x000b: IF  (r0 I:??[int, byte, short, char]) \>= (r2 I:??[int, byte, short, char])  \-\> B:20:0x0014 \l}"];
+Node_18 [shape=record,label="{18\:\ 0x000d|0x000d: APUT  (r1 I:??[OBJECT, ARRAY][]), (r0 I:??[int, short, byte, char]), (r4 I:??[OBJECT, ARRAY] A[D('instance' T)])  (LINE:120)\l0x000f: CONST  (r1 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char])  (LINE:121)\l0x0010: ARITH  (r0 I:int) = (r0 I:int) + (r1 I:int) \l0x0011: IPUT  (r0 I:int), (r3 I:androidx.core.util.Pools$SimplePool A[D('this' androidx.core.util.Pools$SimplePool\<T\>)]) androidx.core.util.Pools.SimplePool.mPoolSize int \l}"];
+Node_19 [shape=record,label="{19\:\ 0x0013|RETURN\l|0x0013: RETURN  (r1 I:boolean)  (LINE:122)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0014|RETURN\l|0x0014: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:124)\l0x0015: RETURN  (r0 I:boolean) \l}"];
+Node_22 [shape=record,label="{22\:\ 0x0016|0x0016: NEW_INSTANCE  (r0 I:java.lang.IllegalStateException) =  java.lang.IllegalStateException  (LINE:117)\l0x0018: CONST_STR  (r1 I:java.lang.String) =  \"Already in the pool!\" \l0x001a: INVOKE  (r0 I:java.lang.IllegalStateException), (r1 I:java.lang.String) type: DIRECT call: java.lang.IllegalStateException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001d|0x001d: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public boolean androidx.core.util.Pools.SimplePool.release((r3 'this' I:androidx.core.util.Pools$SimplePool\<T\> A[D('this' androidx.core.util.Pools$SimplePool\<T\>), IMMUTABLE_TYPE, THIS]), (r4 I:T A[D('instance' T), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0015 \-\> B:13:?, CROSS_EDGE: B:23:0x001d \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (TT;)Z\lDebug Info:\l  0x0000\-0x001d: r3 'this' Landroidx\/core\/util\/Pools$SimplePool;, signature: Landroidx\/core\/util\/Pools$SimplePool\<TT;\>;\l  0x0000\-0x001d: r4 'instance' Ljava\/lang\/Object;, signature: TT;\lMETHOD_OVERRIDE: [androidx.core.util.Pools.Pool.release(T):boolean]\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_22;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_18 -> Node_19;
+Node_19 -> Node_13;
+Node_20 -> Node_13;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+}
+

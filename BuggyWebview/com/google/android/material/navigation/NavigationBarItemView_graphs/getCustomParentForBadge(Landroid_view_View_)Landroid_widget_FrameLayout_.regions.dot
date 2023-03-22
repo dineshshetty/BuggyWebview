@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.material.navigation.NavigationBarItemView.getCustomParentForBadge(Landroid\/view\/View;)Landroid\/widget\/FrameLayout;" {
+subgraph cluster_Region_1498162198 {
+label = "R(1:(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2046482513 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1537480311 {
+label = "IF [B:13:0x0003, B:15:0x0007] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0003|if (r3 == r2.icon) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0007|ADDED_TO_REGION\l|if (com.google.android.material.badge.BadgeUtils.USE_COMPAT_PARENT == true) goto L5\l}"];
+subgraph cluster_Region_1623022728 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0012|RETURN\lORIG_RETURN\l|return (android.widget.FrameLayout) r2.icon.getParent()\l}"];
+}
+}
+subgraph cluster_Region_1491707933 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0005}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0009}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0013|RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{private android.widget.FrameLayout com.google.android.material.navigation.NavigationBarItemView.getCustomParentForBadge((r2v0 'this' com.google.android.material.navigation.NavigationBarItemView A[IMMUTABLE_TYPE, THIS]), (r3v0 'anchorView' android.view.View A[D('anchorView' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0007 \-\> B:17:0x0012, CROSS_EDGE: B:18:0x0013 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_11;
+}
+

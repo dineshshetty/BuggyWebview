@@ -1,0 +1,36 @@
+digraph "CFG forkotlinx.coroutines.BuildersKt__Builders_commonKt.async(Lkotlinx\/coroutines\/CoroutineScope;Lkotlin\/coroutines\/CoroutineContext;Lkotlinx\/coroutines\/CoroutineStart;Lkotlin\/jvm\/functions\/Function2;)Lkotlinx\/coroutines\/Deferred;" {
+subgraph cluster_Region_1277024164 {
+label = "R(4:1|(1:3)(1:7)|4|5) | DECL_VAR: kotlinx.coroutines.LazyDeferredCoroutine coroutine\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.coroutines.CoroutineContext kotlin.coroutines.CoroutineContext r0 = kotlinx.coroutines.CoroutineContext.newCoroutineContext(r3, r4)\l}"];
+subgraph cluster_IfRegion_1428202951 {
+label = "IF [B:11:0x0008] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|if (r5.isLazy() != false) goto L3\l}"];
+subgraph cluster_Region_2105323685 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000a|kotlinx.coroutines.DeferredCoroutine r1 = new kotlinx.coroutines.LazyDeferredCoroutine(r0, r6)\l}"];
+}
+subgraph cluster_Region_781721649 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0012|kotlinx.coroutines.DeferredCoroutine r1 = new kotlinx.coroutines.DeferredCoroutine(r0, true)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0018|PHI: r1 \l  PHI: (r1v2 'coroutine' kotlinx.coroutines.DeferredCoroutine) = (r1v1 'coroutine' kotlinx.coroutines.DeferredCoroutine), (r1v4 'coroutine' kotlinx.coroutines.LazyDeferredCoroutine) binds: [B:13:0x0012, B:12:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|r1.start(r5, r1, r6)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001f|RETURN\l|return r1\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final kotlinx.coroutines.Deferred\<T\> kotlinx.coroutines.BuildersKt__Builders_commonKt.async((r3v0 '$this$async' kotlinx.coroutines.CoroutineScope A[D('$this$async' kotlinx.coroutines.CoroutineScope), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'context' kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'start' kotlinx.coroutines.CoroutineStart A[D('start' kotlinx.coroutines.CoroutineStart), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 kotlin.jvm.functions.Function2\<? super kotlinx.coroutines.CoroutineScope, ? super kotlin.coroutines.Continuation\<? super T\>, ? extends java.lang.Object\> A[D('block' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0012 \-\> B:14:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlinx\/coroutines\/CoroutineScope;Lkotlin\/coroutines\/CoroutineContext;Lkotlinx\/coroutines\/CoroutineStart;Lkotlin\/jvm\/functions\/Function2\<\-Lkotlinx\/coroutines\/CoroutineScope;\-Lkotlin\/coroutines\/Continuation\<\-TT;\>;+Ljava\/lang\/Object;\>;)Lkotlinx\/coroutines\/Deferred\<TT;\>;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+}
+

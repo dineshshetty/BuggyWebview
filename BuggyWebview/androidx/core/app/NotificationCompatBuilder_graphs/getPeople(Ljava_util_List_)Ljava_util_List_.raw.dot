@@ -1,0 +1,25 @@
+digraph "CFG forandroidx.core.app.NotificationCompatBuilder.getPeople(Ljava\/util\/List;)Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: IF  (r4 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('people' java.util.List\<androidx.core.app.Person\>)]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0004  (LINE:295)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|0x0002: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:296)\l0x0003: RETURN  (r0 I:java.util.List\<java.lang.String\>) \l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0004|0x0004: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList  (LINE:298)\l0x0006: INVOKE  (r1 I:int) = (r4 I:java.util.List A[D('people' java.util.List\<androidx.core.app.Person\>)]) type: INTERFACE call: java.util.List.size():int A[MD:():int (c)]\l0x000a: INVOKE  (r0 I:java.util.ArrayList), (r1 I:int) type: DIRECT call: java.util.ArrayList.\<init\>(int):void A[MD:(int):void (c)]\l0x000d: INVOKE  (r1 I:java.util.Iterator) = (r4 I:java.util.List A[D('people' java.util.List\<androidx.core.app.Person\>)]) type: INTERFACE call: java.util.List.iterator():java.util.Iterator A[MD:():java.util.Iterator\<E\> (c)] (LINE:299)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|LOOP_START\lLOOP:0: B:6:0x0011\-\>B:8:0x0017\l|0x0011: INVOKE  (r2 I:boolean) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0015|0x0015: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x0025 \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0017|LOOP_END\lLOOP:0: B:6:0x0011\-\>B:8:0x0017\l|0x0017: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x001b: CHECK_CAST (r2 I:androidx.core.app.Person) = (androidx.core.app.Person) (r2 I:??[OBJECT, ARRAY]) \l0x001d: INVOKE  (r3 I:java.lang.String) = (r2 I:androidx.core.app.Person A[D('person' androidx.core.app.Person)]) type: VIRTUAL call: androidx.core.app.Person.resolveToLegacyUri():java.lang.String A[MD:():java.lang.String (m)] (LINE:300)\l0x0021: INVOKE  (r0 I:java.util.ArrayList A[D('result' java.util.ArrayList\<java.lang.String\>)]), (r3 I:java.lang.Object) type: VIRTUAL call: java.util.ArrayList.add(java.lang.Object):boolean A[MD:(E):boolean (c)]\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0025|SYNTHETIC\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0025|RETURN\l|0x0025: RETURN  (r0 I:java.util.List\<java.lang.String\> A[D('result' java.util.ArrayList\<java.lang.String\>)])  (LINE:302)\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<java.lang.String\> androidx.core.app.NotificationCompatBuilder.getPeople((r4 I:java.util.List\<androidx.core.app.Person\> A[D('people' java.util.List\<androidx.core.app.Person\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x0017 \-\> B:6:0x0011, CROSS_EDGE: B:9:0x0025 \-\> B:1:?\lDebug Info:\l  0x001d\-0x0024: r2 'person' Landroidx\/core\/app\/Person;\l  0x000d\-0x0025: r0 'result' Ljava\/util\/ArrayList;, signature: Ljava\/util\/ArrayList\<Ljava\/lang\/String;\>;\l  0x0000\-0x0025: r4 'people' Ljava\/util\/List;, signature: Ljava\/util\/List\<Landroidx\/core\/app\/Person;\>;\lSIGNATURE: (Ljava\/util\/List\<Landroidx\/core\/app\/Person;\>;)Ljava\/util\/List\<Ljava\/lang\/String;\>;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_8 -> Node_6;
+Node_10 -> Node_9;
+Node_9 -> Node_1;
+}
+

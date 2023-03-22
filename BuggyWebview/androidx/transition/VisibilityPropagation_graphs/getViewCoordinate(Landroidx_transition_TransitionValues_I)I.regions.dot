@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.transition.VisibilityPropagation.getViewCoordinate(Landroidx\/transition\/TransitionValues;I)I" {
+subgraph cluster_Region_1708854302 {
+label = "R(1:(2:(1:7)|(1:9))) | DECL_VAR: int[] coordinates\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_364764386 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_297717182 {
+label = "IF [B:13:0x0001, B:16:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0001|if (r3 == null) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0010|ADDED_TO_REGION\l|if ((r1 = (int[]) r3.values.get(androidx.transition.VisibilityPropagation.PROPNAME_VIEW_CENTER)) == null) goto L7\l}"];
+subgraph cluster_Region_1972350191 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0012|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1208612284 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|RETURN\l|return r1[r4]\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0003|RETURN\lADDED_TO_REGION\l|return \-1\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0004}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0013}"];
+MethodNode[shape=record,label="{private static int androidx.transition.VisibilityPropagation.getViewCoordinate((r3v0 'values' androidx.transition.TransitionValues A[D('values' androidx.transition.TransitionValues), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'coordinateIndex' int A[D('coordinateIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0012 \-\> B:11:?, CROSS_EDGE: B:19:0x0015 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+}
+

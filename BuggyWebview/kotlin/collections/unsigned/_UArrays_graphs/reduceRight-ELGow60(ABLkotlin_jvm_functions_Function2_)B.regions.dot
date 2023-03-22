@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.unsigned.UArraysKt___UArraysKt.reduceRight\-ELGow60([BLkotlin\/jvm\/functions\/Function2;)B" {
+subgraph cluster_Region_1897661855 {
+label = "R(2:1|(2:(1:10)|(3:3|(1:5)|7)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"$this$reduceRight\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"operation\")\lint int r0 = kotlin.collections.ArraysKt.getLastIndex(r4)\l}"];
+subgraph cluster_Region_450193172 {
+label = "R(2:(1:10)|(3:3|(1:5)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1541990195 {
+label = "IF [B:14:0x0011] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0011|if (r0 \< 0) goto L9\l}"];
+subgraph cluster_Region_1946576146 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x003d|throw new java.lang.UnsupportedOperationException(\"Empty array can't be reduced.\")\l}"];
+}
+}
+subgraph cluster_Region_1767964631 {
+label = "R(3:3|(1:5)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0013|int int r1 = r0 \- 1\lbyte byte r0 = kotlin.UByteArray.m219getw2LRezQ(r4, r0)\l}"];
+subgraph cluster_LoopRegion_510921993 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0019|LOOP_START\lLOOP:0: B:16:0x0019\-\>B:17:0x001b\lPHI: r0 r1 \l  PHI: (r0v5 'accumulator' byte) = (r0v4 'accumulator' byte), (r0v6 'accumulator' byte) binds: [B:15:0x0013, B:17:0x001b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v3 'index' int) = (r1v2 'index' int), (r1v8 'index' int) binds: [B:15:0x0013, B:17:0x001b] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \>= 0) goto L5\l}"];
+subgraph cluster_Region_265667493 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001b|LOOP_END\lLOOP:0: B:16:0x0019\-\>B:17:0x001b\l|byte r0 = r5.invoke(kotlin.UByte.m156boximpl(kotlin.UByteArray.m219getw2LRezQ(r4, r1)), kotlin.UByte.m156boximpl(r0)).m211unboximpl()\lr1\-\-\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0035|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0035|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0036}"];
+MethodNode[shape=record,label="{private static final byte kotlin.collections.unsigned.UArraysKt___UArraysKt.reduceRight\-ELGow60((r4v0 'reduceRight' byte[] A[D('$this$reduceRight_u2dELGow60' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'operation' kotlin.jvm.functions.Function2\<? super kotlin.UByte, ? super kotlin.UByte, kotlin.UByte\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x001b \-\> B:16:0x0019, CROSS_EDGE: B:20:0x003d \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([BLkotlin\/jvm\/functions\/Function2\<\-Lkotlin\/UByte;\-Lkotlin\/UByte;Lkotlin\/UByte;\>;)B\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_20 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_16;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_21 -> Node_18;
+Node_19 -> Node_20;
+}
+

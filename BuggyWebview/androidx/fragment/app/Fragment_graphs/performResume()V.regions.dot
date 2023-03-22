@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.fragment.app.Fragment.performResume()V" {
+subgraph cluster_Region_1139834476 {
+label = "R(2:1|(2:(2:9|10)|(3:3|(1:5)|6)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r3.mChildFragmentManager.noteStateNotSaved()\lr3.mChildFragmentManager.execPendingActions(true)\lr3.mState = 7\lr3.mCalled = false\lonResume()\l}"];
+subgraph cluster_Region_175256736 {
+label = "R(2:(2:9|10)|(3:3|(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1651252964 {
+label = "IF [B:14:0x0016] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0016|if (r3.mCalled == false) goto L9\l}"];
+subgraph cluster_Region_1473164747 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0030}"];
+Node_21 [shape=record,label="{21\:\ 0x004b|throw new androidx.fragment.app.SuperNotCalledException(\"Fragment \" + r3 + \" did not call through to super.onResume()\")\l}"];
+}
+}
+subgraph cluster_Region_386773568 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0018|r3.mLifecycleRegistry.handleLifecycleEvent(androidx.lifecycle.Lifecycle.Event.ON_RESUME)\l}"];
+subgraph cluster_IfRegion_213996341 {
+label = "IF [B:16:0x0021] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0021|if (r3.mView != null) goto L5\l}"];
+subgraph cluster_Region_240711543 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0023|r3.mViewLifecycleOwner.handleLifecycleEvent(androidx.lifecycle.Lifecycle.Event.ON_RESUME)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x002a|r3.mChildFragmentManager.dispatchResume()\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x002f}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.performResume((r3v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0021 \-\> B:18:0x002a, CROSS_EDGE: B:21:0x004b \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_19 -> Node_12;
+}
+

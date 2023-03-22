@@ -1,0 +1,110 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.launchStartIntentSenderForResult(Landroidx\/fragment\/app\/Fragment;Landroid\/content\/IntentSender;ILandroid\/content\/Intent;IIILandroid\/os\/Bundle;)V" {
+subgraph cluster_Region_1168979177 {
+label = "R(1:(2:(2:19|20)|(4:(1:18)(3:(1:17)(1:6)|(1:9)|10)|11|(1:13)|14))) | DECL_VAR: android.content.Intent fillInIntent\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1911737762 {
+label = "R(2:(2:19|20)|(4:(1:18)(3:(1:17)(1:6)|(1:9)|10)|11|(1:13)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1771373899 {
+label = "IF [B:24:0x0008] THEN: R(2:19|20) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0008|if (r16.mStartIntentSenderForResult == null) goto L19\l}"];
+subgraph cluster_Region_596166014 {
+label = "R(2:19|20)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x009b|r16.mHost.onStartIntentSenderFromFragment(r17, r18, r19, r20, r21, r22, r23, r24)\l}"];
+Node_40 [shape=record,label="{40\:\ 0x00ba|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2065957029 {
+label = "R(4:(1:18)(3:(1:17)(1:6)|(1:9)|10)|11|(1:13)|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_263104410 {
+label = "IF [B:26:0x000d] THEN: R(1:18) ELSE: R(3:(1:17)(1:6)|(1:9)|10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000d|if (r24 == null) goto L18\l}"];
+subgraph cluster_Region_450850103 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x004f|r3 = r20\l}"];
+}
+subgraph cluster_Region_1750529040 {
+label = "R(3:(1:17)(1:6)|(1:9)|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_698878732 {
+label = "IF [B:27:0x000f] THEN: R(1:17) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000f|if (r20 != null) goto L17\l}"];
+subgraph cluster_Region_175519119 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001d|r3 = r20\l}"];
+}
+subgraph cluster_Region_1833193771 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0011|android.content.Intent r3 = new android.content.Intent()\lr3.putExtra(androidx.fragment.app.FragmentManager.EXTRA_CREATED_FILLIN_INTENT, true)\l}"];
+}
+}
+subgraph cluster_IfRegion_1290700914 {
+label = "IF [B:31:0x0023] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0023|if (isLoggingEnabled(2) != false) goto L9\l}"];
+subgraph cluster_Region_914777090 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0025|android.util.Log.v(androidx.fragment.app.FragmentManager.TAG, \"ActivityOptions \" + r24 + \" were added to fillInIntent \" + r3 + \" for fragment \" + r17)\l}"];
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x0049|r3.putExtra(androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult.EXTRA_ACTIVITY_OPTIONS_BUNDLE, r24)\l}"];
+}
+}
+Node_35 [shape=record,label="{35\:\ 0x0051|PHI: r3 \l  PHI: (r3v3 'fillInIntent' android.content.Intent) = (r3v2 'fillInIntent' android.content.Intent), (r3v5 'fillInIntent' android.content.Intent) binds: [B:34:0x004f, B:33:0x0049] A[DONT_GENERATE, DONT_INLINE]\l|androidx.activity.result.IntentSenderRequest androidx.activity.result.IntentSenderRequest r4 = new androidx.activity.result.IntentSenderRequest.Builder(r18).setFillInIntent(r3).setFlags(r22, r21).build()\landroidx.fragment.app.FragmentManager$LaunchedFragmentInfo androidx.fragment.app.FragmentManager.LaunchedFragmentInfo r5 = new androidx.fragment.app.FragmentManager.LaunchedFragmentInfo(r17.mWho, r19)\lr16.mLaunchedFragments.addLast(r5)\l}"];
+subgraph cluster_IfRegion_1764749494 {
+label = "IF [B:36:0x007a] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x007a|if (isLoggingEnabled(2) != false) goto L13\l}"];
+subgraph cluster_Region_3569396 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x007c|android.util.Log.v(androidx.fragment.app.FragmentManager.TAG, \"Fragment \" + r17 + \"is launching an IntentSender for result \")\l}"];
+}
+}
+Node_38 [shape=record,label="{38\:\ 0x0095|r16.mStartIntentSenderForResult.launch(r4)\l}"];
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000a}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001f|PHI: r3 \l  PHI: (r3v5 'fillInIntent' android.content.Intent) = (r3v4 'fillInIntent' android.content.Intent), (r3v6 'fillInIntent' android.content.Intent) binds: [B:29:0x001d, B:28:0x0011] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ ?|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentManager.launchStartIntentSenderForResult((r16v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r17v0 'f' androidx.fragment.app.Fragment A[D('f' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'intent' android.content.IntentSender A[D('intent' android.content.IntentSender), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'requestCode' int A[D('requestCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 'fillInIntent' android.content.Intent A[D('fillInIntent' android.content.Intent), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 'flagsMask' int A[D('flagsMask' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'flagsValues' int A[D('flagsValues' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 'extraFlags' int A[D('extraFlags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r24v0 'options' android.os.Bundle A[D('options' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:36:0x007a \-\> B:38:0x0095, CROSS_EDGE: B:31:0x0023 \-\> B:33:0x0049, CROSS_EDGE: B:29:0x001d \-\> B:30:0x001f, CROSS_EDGE: B:34:0x004f \-\> B:35:0x0051, CROSS_EDGE: B:39:0x009b \-\> B:40:0x00ba\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroid\/content\/IntentSender$SendIntentException;]\l}"];
+MethodNode -> Node_21;Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_39;
+Node_39 -> Node_40;
+Node_40 -> Node_22;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_34;
+Node_34 -> Node_35;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_29;
+Node_29 -> Node_30;
+Node_28 -> Node_30;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_35;
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_36 -> Node_38[style=dashed];
+Node_37 -> Node_38;
+Node_38 -> Node_41;
+Node_21 -> Node_23;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_30 -> Node_31;
+Node_41 -> Node_22;
+}
+

@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.loader.app.LoaderManagerImpl.getLoader(I)Landroidx\/loader\/content\/Loader;" {
+subgraph cluster_Region_1578016874 {
+label = "R(1:(2:(1:10)|(2:3|(2:(1:6)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_585758226 {
+label = "R(2:(1:10)|(2:3|(2:(1:6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_934964309 {
+label = "IF [B:15:0x0006] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r2.mLoaderViewModel.isCreatingLoader() != false) goto L9\l}"];
+subgraph cluster_Region_1126507044 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001e|throw new java.lang.IllegalStateException(\"Called while creating a loader\")\l}"];
+}
+}
+subgraph cluster_Region_425049121 {
+label = "R(2:3|(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0008|androidx.loader.app.LoaderManagerImpl$LoaderInfo androidx.loader.app.LoaderManagerImpl.LoaderInfo\<D\> r0 = r2.mLoaderViewModel.getLoader(r3)\l}"];
+subgraph cluster_Region_1753470938 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_370531955 {
+label = "IF [B:17:0x000e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|if (r0 != null) goto L5\l}"];
+subgraph cluster_Region_268630318 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return r0.getLoader()\l}"];
+}
+}
+subgraph cluster_Region_87553470 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0010}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0017}"];
+MethodNode[shape=record,label="{public androidx.loader.content.Loader\<D\> androidx.loader.app.LoaderManagerImpl.getLoader((r2v0 'this' androidx.loader.app.LoaderManagerImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 'id' int A[D('id' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0015 \-\> B:20:0x0016, CROSS_EDGE: B:22:0x001e \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [D]\lSIGNATURE: \<D:Ljava\/lang\/Object;\>(I)Landroidx\/loader\/content\/Loader\<TD;\>;\lMETHOD_OVERRIDE: [androidx.loader.app.LoaderManager.getLoader(int):androidx.loader.content.Loader\<D\>]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_21;
+Node_22 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_23 -> Node_13;
+Node_19 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_18 -> Node_23;
+Node_21 -> Node_22;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.coroutines.jvm.internal.BaseContinuationImpl.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_259934627 {
+label = "R(4:1|(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"Continuation at \")\ljava.lang.StackTraceElement java.io.Serializable r1 = getStackTraceElement()\l}"];
+subgraph cluster_IfRegion_1216798715 {
+label = "IF [B:11:0x000e] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000e|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_588776164 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0011|java.lang.String r1 = getClass().getName()\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0019|PHI: r1 \l  PHI: (r1v2 java.io.Serializable) = (r1v1 java.io.Serializable), (r1v5 java.io.Serializable) binds: [B:11:0x000e, B:13:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|r0.append(r1)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0022|RETURN\l|return r0.toString()\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String kotlin.coroutines.jvm.internal.BaseContinuationImpl.toString((r2v0 'this' kotlin.coroutines.jvm.internal.BaseContinuationImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x000e \-\> B:14:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlin.coroutines.jvm.internal.BaseContinuationImpl.toString():java.lang.String]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_13;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+}
+

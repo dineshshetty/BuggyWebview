@@ -1,0 +1,44 @@
+digraph "CFG forcom.google.android.material.color.HarmonizedColors.createHarmonizedColorReplacementMap(Landroid\/content\/Context;Lcom\/google\/android\/material\/color\/HarmonizedColorsOptions;)Ljava\/util\/Map;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.HashMap r0 = new java.util.HashMap\<\>()\lint r1 = com.google.android.material.color.MaterialColors.getColor(r9, r10.getColorAttributeToHarmonizeWith(), com.google.android.material.color.HarmonizedColors.TAG)\lint[] r2 = r10.getColorResourceIds()\lint r3 = r2.length\lr4 = 0\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|LOOP_START\lLOOP:0: B:3:0x0016\-\>B:4:0x0018\lPHI: r4 \l  PHI: (r4v1 int) = (r4v0 int), (r4v4 int) binds: [B:2:0x0000, B:4:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \>= r3) goto L4\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|LOOP_END\lLOOP:0: B:3:0x0016\-\>B:4:0x0018\l|r5 = r2[r4]\lint r6 = com.google.android.material.color.MaterialColors.harmonize(androidx.core.content.ContextCompat.getColor(r9, r5), r1)\lr0.put(java.lang.Integer.valueOf(r5), java.lang.Integer.valueOf(r6))\lint r4 = r4 + 1\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0031|SYNTHETIC\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0031|com.google.android.material.color.HarmonizedColorAttributes r2 = r10.getColorAttributes()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0035|if (r2 == null) goto L16\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0037|int[] r3 = r2.getAttributes()\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003c|if (r3.length \<= 0) goto L16\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003e|int r4 = r2.getThemeOverlay()\landroid.content.res.TypedArray r5 = r9.obtainStyledAttributes(r3)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0046|if (r4 == 0) goto L15\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0048|android.content.res.TypedArray r6 = new android.view.ContextThemeWrapper(r9, r4).obtainStyledAttributes(r3)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0053|PHI: r6 \l  PHI: (r6v1 'themeOverlayAttributesTypedArray' android.content.res.TypedArray) = (r6v0 'themeOverlayAttributesTypedArray' android.content.res.TypedArray), (r6v3 'themeOverlayAttributesTypedArray' android.content.res.TypedArray) binds: [B:12:0x0052, B:11:0x0048] A[DONT_GENERATE, DONT_INLINE]\l|addHarmonizedColorAttributesToReplacementMap(r0, r5, r6, r1)\lr5.recycle()\l}"];
+Node_14 [shape=record,label="{14\:\ 0x005a|if (r6 == null) goto L16\l}"];
+Node_15 [shape=record,label="{15\:\ 0x005c|r6.recycle()\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0052|r6 = null\l}"];
+Node_16 [shape=record,label="{16\:\ 0x005f|RETURN\l|return r0\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static java.util.Map\<java.lang.Integer, java.lang.Integer\> com.google.android.material.color.HarmonizedColors.createHarmonizedColorReplacementMap((r9v0 'originalContext' android.content.Context A[D('originalContext' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'options' com.google.android.material.color.HarmonizedColorsOptions A[D('options' com.google.android.material.color.HarmonizedColorsOptions), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x0018 \-\> B:3:0x0016, CROSS_EDGE: B:14:0x005a \-\> B:16:0x005f, CROSS_EDGE: B:12:0x0052 \-\> B:13:0x0053, CROSS_EDGE: B:8:0x003c \-\> B:16:0x005f, CROSS_EDGE: B:6:0x0035 \-\> B:16:0x005f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/content\/Context;Lcom\/google\/android\/material\/color\/HarmonizedColorsOptions;)Ljava\/util\/Map\<Ljava\/lang\/Integer;Ljava\/lang\/Integer;\>;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_17;
+Node_4 -> Node_3;
+Node_17 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_16;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_16;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_12 -> Node_13;
+Node_16 -> Node_1;
+}
+

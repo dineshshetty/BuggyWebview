@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.comparisons.ComparisonsKt___ComparisonsJvmKt.minOf(J[J)J" {
+subgraph cluster_Region_235010324 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"other\")\llong r0 = r6\lint r3 = 0\l\l}"];
+subgraph cluster_LoopRegion_1069904399 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_START\lLOOP:0: B:3:0x0008\-\>B:4:0x000a\lPHI: r0 r3 \l  PHI: (r0v2 'min' long) = (r0v1 'min' long), (r0v3 'min' long) binds: [B:2:0x0000, B:4:0x000a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:2:0x0000, B:4:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L3\l}"];
+subgraph cluster_Region_1906307605 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:4:0x000a\l|r4 = r8[r3]\llong r0 = java.lang.Math.min(r0, r4)\lr3++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0013|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final long kotlin.comparisons.ComparisonsKt___ComparisonsJvmKt.minOf((r6v0 'a' long A[D('a' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'other' long[] A[D('other' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x000a \-\> B:3:0x0008\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_5;
+}
+

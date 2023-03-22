@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.ranges.ComparableRange.hashCode()I" {
+subgraph cluster_Region_657303253 {
+label = "R(1:(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1669065840 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_369291428 {
+label = "IF [B:11:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (isEmpty() == true) goto L3\l}"];
+subgraph cluster_Region_1409114956 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_422341864 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001b|RETURN\lORIG_RETURN\l|return (getStart().hashCode() * 31) + getEndInclusive().hashCode()\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0008}"];
+MethodNode[shape=record,label="{public int kotlin.ranges.ComparableRange.hashCode((r2v0 'this' kotlin.ranges.ComparableRange\<T extends java.lang.Comparable\<? super T\>\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0008 \-\> B:14:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends java.lang.Comparable\<? super T\>]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+}
+

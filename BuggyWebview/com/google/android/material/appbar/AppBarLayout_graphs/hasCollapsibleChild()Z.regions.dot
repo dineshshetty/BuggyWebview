@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.material.appbar.AppBarLayout.hasCollapsibleChild()Z" {
+subgraph cluster_Region_561022751 {
+label = "R(3:1|(1:(2:(1:7)|(1:5)))|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int r0 = 0\lint int r1 = getChildCount()\l}"];
+subgraph cluster_LoopRegion_1436885367 {
+label = "LOOP:0: (1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|LOOP_START\lLOOP:0: B:16:0x0005\-\>B:21:0x0019\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v3 'i' int) binds: [B:15:0x0000, B:21:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< r1) goto L3\l}"];
+subgraph cluster_Region_476366258 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1514255938 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_695981259 {
+label = "IF [B:18:0x0015] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0015|if (((com.google.android.material.appbar.AppBarLayout.LayoutParams) getChildAt(r0).getLayoutParams()).isCollapsible() != false) goto L6\l}"];
+subgraph cluster_Region_1891498176 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2031797047 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0019|LOOP_END\lLOOP:0: B:16:0x0005\-\>B:21:0x0019\l|r0++\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001c|RETURN\l|return false\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0017|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean com.google.android.material.appbar.AppBarLayout.hasCollapsibleChild((r3v0 'this' com.google.android.material.appbar.AppBarLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0019 \-\> B:16:0x0005, CROSS_EDGE: B:23:0x001d \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_18 -> Node_21[style=dashed];
+Node_18 -> Node_25;
+Node_19 -> Node_14;
+Node_21 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_25 -> Node_19;
+Node_24 -> Node_22;
+}
+

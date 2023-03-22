@@ -1,0 +1,33 @@
+digraph "CFG forandroidx.core.view.ActionProvider.setVisibilityListener(Landroidx\/core\/view\/ActionProvider$VisibilityListener;)V" {
+subgraph cluster_Region_1243413623 {
+label = "R(2:(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1207325028 {
+label = "IF [B:11:0x0002, B:12:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r2.mVisibilityListener != null) goto L3\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0004|ADDED_TO_REGION\l|if (r3 != null) goto L4\l}"];
+subgraph cluster_Region_823988564 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|android.util.Log.w(androidx.core.view.ActionProvider.TAG, \"setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this \" + getClass().getSimpleName() + \" instance while it is still in use somewhere else?\")\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0029|r2.mVisibilityListener = r3\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002b}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.core.view.ActionProvider.setVisibilityListener((r2v0 'this' androidx.core.view.ActionProvider A[IMMUTABLE_TYPE, THIS]), (r3v0 'listener' androidx.core.view.ActionProvider$VisibilityListener A[D('listener' androidx.core.view.ActionProvider$VisibilityListener), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0004 \-\> B:14:0x0029, CROSS_EDGE: B:11:0x0002 \-\> B:14:0x0029\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.ActionProvider.setVisibilityListener(androidx.core.view.ActionProvider$VisibilityListener):void]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+}
+

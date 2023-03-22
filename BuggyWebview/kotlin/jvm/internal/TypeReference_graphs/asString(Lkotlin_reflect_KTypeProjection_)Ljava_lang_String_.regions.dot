@@ -1,0 +1,108 @@
+digraph "CFG forkotlin.jvm.internal.TypeReference.asString(Lkotlin\/reflect\/KTypeProjection;)Ljava\/lang\/String;" {
+subgraph cluster_Region_2046124869 {
+label = "R(1:(2:(1:3)|(4:5|6|(1:21)|12))) | DECL_VAR: java.lang.String typeString\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_970776505 {
+label = "R(2:(1:3)|(4:5|6|(1:21)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_558395232 {
+label = "IF [B:27:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0004|if (r4.getVariance() == null) goto L3\l}"];
+subgraph cluster_Region_86511106 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0006|RETURN\l|return \"*\"\l}"];
+}
+}
+subgraph cluster_Region_1625097118 {
+label = "R(4:5|6|(1:21)|12)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0009|kotlin.reflect.KType kotlin.reflect.KType r0 = r4.getType()\l}"];
+Node_31 [shape=record,label="{31\:\ 0x000f|kotlin.jvm.internal.TypeReference r0 = r0 instanceof kotlin.jvm.internal.TypeReference ? (kotlin.jvm.internal.TypeReference) r0 : null\l}"];
+subgraph cluster_IfRegion_1352349037 {
+label = "IF [B:34:0x0015, B:36:0x001c] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0015|PHI: r0 \l  PHI: (r0v3 kotlin.jvm.internal.TypeReference) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L21\l}"];
+Node_36 [shape=record,label="{36\:\ 0x001c|ADDED_TO_REGION\l|if ((r0 = r0.asString(true)) == null) goto L21\l}"];
+subgraph cluster_Region_102082248 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x001e|java.lang.String r0 = java.lang.String.valueOf(r4.getType())\l}"];
+}
+}
+subgraph cluster_SwitchRegion_1461041833 {
+label = "Switch: 4
+ case 1 -> R(1:20)
+ case 2 -> R(2:17|18)
+ case 3 -> R(2:15|16)
+ case default -> R(1:14)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0032|switch(kotlin.jvm.internal.TypeReference.WhenMappings.$EnumSwitchMapping$0[r4.getVariance().ordinal()]) \{\l    case 1: goto L19;\l    case 2: goto L17;\l    case 3: goto L15;\l    default: goto L13;\l\}\l}"];
+subgraph cluster_Region_1834763741 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0060|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1695906331 {
+label = "R(2:17|18)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x004d}"];
+Node_47 [shape=record,label="{47\:\ ?|SYNTHETIC\lRETURN\l|return \"in \" + r0\l}"];
+}
+subgraph cluster_Region_1823214473 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x003b}"];
+Node_46 [shape=record,label="{46\:\ ?|SYNTHETIC\lRETURN\l|return \"out \" + r0\l}"];
+}
+subgraph cluster_Region_149653221 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x003a|throw new kotlin.NoWhenBranchMatchedException()\l}"];
+}
+}
+}
+}
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0000}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0011}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0017}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0026|PHI: r0 \l  PHI: (r0v6 'typeString' java.lang.String) = (r0v5 'typeString' java.lang.String), (r0v7 'typeString' java.lang.String) binds: [B:37:0x001e, B:36:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0035}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x005f}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0014}"];
+MethodNode[shape=record,label="{public final java.lang.String kotlin.jvm.internal.TypeReference.asString((r3v0 'this' kotlin.jvm.internal.TypeReference A[IMMUTABLE_TYPE, THIS]), (r4v0 '$this$asString' kotlin.reflect.KTypeProjection A[D('$this$asString' kotlin.reflect.KTypeProjection), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:41:0x003a \-\> B:25:?, CROSS_EDGE: B:45:0x0060 \-\> B:25:?, CROSS_EDGE: B:43:0x004d \-\> B:45:0x0060, CROSS_EDGE: B:44:0x005f \-\> B:45:0x0060, CROSS_EDGE: B:36:0x001c \-\> B:38:0x0026, CROSS_EDGE: B:34:0x0015 \-\> B:37:0x001e, CROSS_EDGE: B:33:0x0014 \-\> B:34:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_24;Node_27 -> Node_28;
+Node_27 -> Node_30[style=dashed];
+Node_28 -> Node_25;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33;
+Node_34 -> Node_35[style=dashed];
+Node_34 -> Node_37;
+Node_36 -> Node_37;
+Node_36 -> Node_38[style=dashed];
+Node_37 -> Node_38;
+Node_39 -> Node_40;
+Node_39 -> Node_42;
+Node_39 -> Node_43;
+Node_39 -> Node_44;
+Node_45 -> Node_25;
+Node_43 -> Node_47;
+Node_47 -> Node_25;
+Node_42 -> Node_46;
+Node_46 -> Node_25;
+Node_41 -> Node_25;
+Node_24 -> Node_26;
+Node_26 -> Node_27;
+Node_32 -> Node_34;
+Node_35 -> Node_36;
+Node_38 -> Node_39;
+Node_40 -> Node_41;
+Node_44 -> Node_45;
+Node_33 -> Node_34;
+}
+

@@ -1,0 +1,27 @@
+digraph "CFG forandroidx.fragment.app.Fragment.performResume()V" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|r3.mChildFragmentManager.noteStateNotSaved()\lr3.mChildFragmentManager.execPendingActions(true)\lr3.mState = 7\lr3.mCalled = false\lonResume()\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0016|if (r3.mCalled == false) goto L9\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0018|r3.mLifecycleRegistry.handleLifecycleEvent(androidx.lifecycle.Lifecycle.Event.ON_RESUME)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0021|if (r3.mView == null) goto L6\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0023|r3.mViewLifecycleOwner.handleLifecycleEvent(androidx.lifecycle.Lifecycle.Event.ON_RESUME)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x002a|r3.mChildFragmentManager.dispatchResume()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x002f|RETURN\l|return\l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0030|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Fragment \")\lr1.append(r3)\lr1.append(\" did not call through to super.onResume()\")\l}"];
+Node_21 [shape=record,label="{21\:\ 0x004b|throw new androidx.fragment.app.SuperNotCalledException(r1.toString())\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.performResume((r3v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0021 \-\> B:18:0x002a, CROSS_EDGE: B:21:0x004b \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+}
+

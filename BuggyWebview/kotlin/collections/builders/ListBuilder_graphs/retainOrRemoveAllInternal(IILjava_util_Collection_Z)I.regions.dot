@@ -1,0 +1,86 @@
+digraph "CFG forkotlin.collections.builders.ListBuilder.retainOrRemoveAllInternal(IILjava\/util\/Collection;Z)I" {
+subgraph cluster_Region_890833339 {
+label = "R(2:1|(2:(2:3|4)|(4:6|(1:(1:15)(1:11))|18|19)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.collections.builders.ListBuilder\<E\> kotlin.collections.builders.ListBuilder\<E\> r0 = r7.backing\l}"];
+subgraph cluster_Region_1604545025 {
+label = "R(2:(2:3|4)|(4:6|(1:(1:15)(1:11))|18|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_737115576 {
+label = "IF [B:3:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_47780732 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|int int r0 = r0.retainOrRemoveAllInternal(r8, r9, r10, r11)\lr7.length \-= r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1563510324 {
+label = "R(4:6|(1:(1:15)(1:11))|18|19)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|int r0 = 0\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_977460328 {
+label = "LOOP:0: (1:(1:15)(1:11))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|LOOP_START\lLOOP:0: B:7:0x0010\-\>B:17:0x0010\lPHI: r0 r1 \l  PHI: (r0v2 'i' int) = (r0v1 'i' int), (r0v6 'i' int) binds: [B:6:0x000e, B:17:0x0010] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'j' int) = (r1v0 'j' int), (r1v4 'j' int) binds: [B:6:0x000e, B:17:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< r9) goto L8\l}"];
+subgraph cluster_Region_1649502247 {
+label = "R(1:(1:15)(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1838497266 {
+label = "IF [B:9:0x001c] THEN: R(1:15) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001c|if (r10.contains(r7.array[r8 + r0]) == r11) goto L14\l}"];
+subgraph cluster_Region_538495224 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|E[] E[] r2 = r7.array\lr2[r1 + r8] = r2[r0 + r8]\lr1++\lr0++\l}"];
+}
+subgraph cluster_Region_1892316158 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002d|r0++\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0030|int int r2 = r9 \- r1\lE[] E[] r3 = r7.array\lkotlin.collections.ArraysKt.copyInto(r3, r3, r8 + r1, r8 + r9, r7.length)\lE[] E[] r3 = r7.array\lint int r4 = r7.length\lkotlin.collections.builders.ListBuilderKt.resetRange(r3, r4 \- r2, r4)\lr7.length \-= r2\l}"];
+Node_13 [shape=record,label="{13\:\ 0x004b|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0012}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002d|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0010|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0010|LOOP_END\lSYNTHETIC\lLOOP:0: B:7:0x0010\-\>B:17:0x0010\lPHI: r0 r1 \l  PHI: (r0v6 'i' int) = (r0v5 'i' int), (r0v7 'i' int) binds: [B:19:0x0010, B:18:0x0010] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v4 'j' int) = (r1v3 'j' int), (r1v1 'j' int) binds: [B:19:0x0010, B:18:0x0010] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001e|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0010|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0030|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final int kotlin.collections.builders.ListBuilder.retainOrRemoveAllInternal((r7v0 'this' kotlin.collections.builders.ListBuilder\<E\> A[IMMUTABLE_TYPE, THIS]), (r8v0 'rangeOffset' int A[D('rangeOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'rangeLength' int A[D('rangeLength' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 java.util.Collection\<? extends E\> A[D('elements' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'retain' boolean A[D('retain' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:10:0x001e \-\> B:7:0x0010, BACK_EDGE: B:11:0x002d \-\> B:7:0x0010, CROSS_EDGE: B:13:0x004b \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (IILjava\/util\/Collection\<+TE;\>;Z)I\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_9 -> Node_15[style=dashed];
+Node_9 -> Node_16;
+Node_10 -> Node_19;
+Node_11 -> Node_18;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_8 -> Node_9;
+Node_15 -> Node_11;
+Node_18 -> Node_17;
+Node_17 -> Node_7;
+Node_16 -> Node_10;
+Node_19 -> Node_17;
+Node_14 -> Node_12;
+}
+

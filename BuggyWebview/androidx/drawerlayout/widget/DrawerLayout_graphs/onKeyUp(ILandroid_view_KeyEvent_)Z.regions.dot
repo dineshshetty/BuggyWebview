@@ -1,0 +1,79 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.onKeyUp(ILandroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_1812725522 {
+label = "R(1:(2:(3:3|(1:7)|(2:(1:9)|(1:11)))|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1875871688 {
+label = "R(2:(3:3|(1:7)|(2:(1:9)|(1:11)))|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1553829824 {
+label = "IF [B:19:0x0001] THEN: R(3:3|(1:7)|(2:(1:9)|(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0001|if (r3 == 4) goto L3\l}"];
+subgraph cluster_Region_2026930389 {
+label = "R(3:3|(1:7)|(2:(1:9)|(1:11)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0003|android.view.View android.view.View r0 = findVisibleDrawer()\l}"];
+subgraph cluster_IfRegion_940900361 {
+label = "IF [B:21:0x0007, B:23:0x000d] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|if (r0 != null) goto L5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000d|ADDED_TO_REGION\l|if (getDrawerLockMode(r0) == 0) goto L7\l}"];
+subgraph cluster_Region_2015526676 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000f|closeDrawers()\l}"];
+}
+}
+subgraph cluster_Region_1264778349 {
+label = "R(2:(1:9)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_84746928 {
+label = "IF [B:25:0x0012] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0012|if (r0 != null) goto L9\l}"];
+subgraph cluster_Region_1484833550 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0014|SYNTHETIC\lRETURN\l|return androidx.drawerlayout.widget.DrawerLayout.CHILDREN_DISALLOW_INTERCEPT\l}"];
+}
+}
+subgraph cluster_Region_1758700625 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0016|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_65191040 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x001c|RETURN\l|return super.onKeyUp(r3, r4)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0009}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0018}"];
+MethodNode[shape=record,label="{public boolean androidx.drawerlayout.widget.DrawerLayout.onKeyUp((r2v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 'keyCode' int A[D('keyCode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'event' android.view.KeyEvent A[D('event' android.view.KeyEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:27:0x0016 \-\> B:28:0x0017, CROSS_EDGE: B:23:0x000d \-\> B:25:0x0012, CROSS_EDGE: B:21:0x0007 \-\> B:25:0x0012, CROSS_EDGE: B:30:0x001c \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onKeyUp(int, android.view.KeyEvent):boolean\}, ClspMth\{android.view.KeyEvent.Callback.onKeyUp(int, android.view.KeyEvent):boolean\}]\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_29[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_17;
+Node_27 -> Node_17;
+Node_30 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_22 -> Node_23;
+Node_29 -> Node_30;
+}
+

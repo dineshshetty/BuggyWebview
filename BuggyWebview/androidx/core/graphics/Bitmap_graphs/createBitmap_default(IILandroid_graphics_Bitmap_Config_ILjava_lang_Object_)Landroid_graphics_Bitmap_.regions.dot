@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.core.graphics.BitmapKt.createBitmap$default(IILandroid\/graphics\/Bitmap$Config;ILjava\/lang\/Object;)Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_432197808 {
+label = "R(3:(1:3)|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_951970304 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if ((r4 & 4) != 0) goto L3\l}"];
+subgraph cluster_Region_1132160629 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|android.graphics.Bitmap$Config r3 = android.graphics.Bitmap.Config.ARGB_8888\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0006|PHI: r3 \l  PHI: (r3v1 'config' android.graphics.Bitmap$Config) = (r3v0 'config' android.graphics.Bitmap$Config), (r3v2 'config' android.graphics.Bitmap$Config) binds: [B:3:0x0002, B:4:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"config\")\landroid.graphics.Bitmap android.graphics.Bitmap r5 = android.graphics.Bitmap.createBitmap(r1, r2, r3)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, \"createBitmap(width, height, config)\")\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|RETURN\l|return r5\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static \/* synthetic *\/ android.graphics.Bitmap androidx.core.graphics.BitmapKt.createBitmap$default((r1v0 'width' int A[D('width' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'height' int A[D('height' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'config' android.graphics.Bitmap$Config A[D('config' android.graphics.Bitmap$Config), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:3:0x0002 \-\> B:5:0x0006\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,66 @@
+digraph "CFG forcom.google.android.material.theme.overlay.MaterialThemeOverlay.wrap(Landroid\/content\/Context;Landroid\/util\/AttributeSet;II)Landroid\/content\/Context;" {
+subgraph cluster_Region_1358204708 {
+label = "R(3:1|2|(2:(1:13)|(3:8|(1:10)|11)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0001|int int r0 = obtainMaterialThemeOverlayId(r6, r7, r8, r9)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0008|boolean r1 = (r6 instanceof androidx.appcompat.view.ContextThemeWrapper) && ((androidx.appcompat.view.ContextThemeWrapper) r6).getThemeResId() == r0\l}"];
+subgraph cluster_Region_2000203256 {
+label = "R(2:(1:13)|(3:8|(1:10)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_824523256 {
+label = "IF [B:24:0x0016, B:25:0x0018] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0016|PHI: r1 \l  PHI: (r1v2 'contextHasOverlay' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == 0) goto L13\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0018|ADDED_TO_REGION\l|if (r1 != false) goto L13\l}"];
+subgraph cluster_Region_1602958360 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x002e|RETURN\l|return r6\l}"];
+}
+}
+subgraph cluster_Region_812064630 {
+label = "R(3:8|(1:10)|11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001b|androidx.appcompat.view.ContextThemeWrapper android.content.Context r3 = new androidx.appcompat.view.ContextThemeWrapper(r6, r0)\lint int r4 = obtainAndroidThemeOverlayId(r6, r7)\l}"];
+subgraph cluster_IfRegion_1916490763 {
+label = "IF [B:28:0x0024] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0024|if (r4 != 0) goto L10\l}"];
+subgraph cluster_Region_105018952 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0026|r3.getTheme().applyStyle(r4, true)\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x002d|RETURN\l|return r3\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000a}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0011|REMOVE\lADDED_TO_REGION\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0013}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0015}"];
+MethodNode[shape=record,label="{public static android.content.Context com.google.android.material.theme.overlay.MaterialThemeOverlay.wrap((r6v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'attrs' android.util.AttributeSet A[D('attrs' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'defStyleAttr' int A[D('defStyleAttr' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'defStyleRes' int A[D('defStyleRes' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x0024 \-\> B:30:0x002d, CROSS_EDGE: B:31:0x002e \-\> B:17:?, CROSS_EDGE: B:24:0x0016 \-\> B:31:0x002e, CROSS_EDGE: B:23:0x0015 \-\> B:24:0x0016, CROSS_EDGE: B:19:0x0008 \-\> B:23:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_23;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_31;
+Node_25 -> Node_27[style=dashed];
+Node_25 -> Node_31;
+Node_31 -> Node_17;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23;
+Node_22 -> Node_24;
+Node_23 -> Node_24;
+}
+

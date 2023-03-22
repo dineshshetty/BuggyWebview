@@ -1,0 +1,77 @@
+digraph "CFG forkotlinx.coroutines.flow.SharedFlowImpl.cleanupTailLocked()V" {
+subgraph cluster_Region_355503678 {
+label = "R(1:(1:(2:7|(2:10|(1:12)(1:14))))) | DECL_VAR: java.lang.Object null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_76578545 {
+label = "R(1:(2:7|(2:10|(1:12)(1:14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1739444059 {
+label = "IF [B:20:0x0002, B:22:0x0007] THEN: R(2:7|(2:10|(1:12)(1:14))) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0002|if (r5.bufferCapacity != 0) goto L7\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0007|ADDED_TO_REGION\l|if (r5.queueSize \> 1) goto L7\l}"];
+subgraph cluster_Region_1077429862 {
+label = "R(2:7|(2:10|(1:12)(1:14)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000a|java.lang.Object[] java.lang.Object[] r0 = r5.buffer\lkotlin.jvm.internal.Intrinsics.checkNotNull(r0)\l}"];
+subgraph cluster_LoopRegion_990304240 {
+label = "LOOP:0: (2:10|(1:12)(1:14))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0011|if (r5.queueSize \> 0) goto L10\l}"];
+subgraph cluster_Region_1206387978 {
+label = "R(2:10|(1:12)(1:14))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0013|java.lang.Object r1 = kotlinx.coroutines.flow.SharedFlowKt.getBufferAt(r0, (getHead() + getTotalSize()) \- 1)\l}"];
+subgraph cluster_IfRegion_672144846 {
+label = "IF [B:28:0x0026] THEN: R(1:12) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0026|if (r1 == kotlinx.coroutines.flow.SharedFlowKt.NO_VALUE) goto L12\l}"];
+subgraph cluster_Region_1819528650 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0028|LOOP_END\lLOOP:0: B:25:0x000f\-\>B:29:0x0028\l|r5.queueSize\-\-\lkotlinx.coroutines.flow.SharedFlowKt.setBufferAt(r0, getHead() + getTotalSize(), null)\l}"];
+}
+subgraph cluster_Region_710344656 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0004}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0009}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000f|LOOP_START\lLOOP:0: B:25:0x000f\-\>B:29:0x0028\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x003d|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x003d|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x003d|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.flow.SharedFlowImpl.cleanupTailLocked((r5v0 'this' kotlinx.coroutines.flow.SharedFlowImpl\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:29:0x0028 \-\> B:25:0x000f, CROSS_EDGE: B:30:0x003d \-\> B:18:?, CROSS_EDGE: B:26:0x0011 \-\> B:30:0x003d, CROSS_EDGE: B:20:0x0002 \-\> B:24:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_17;Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_24;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_31[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_32[style=dashed];
+Node_29 -> Node_25;
+Node_33 -> Node_18;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_23 -> Node_18;
+Node_25 -> Node_26;
+Node_32 -> Node_33;
+Node_31 -> Node_30;
+Node_30 -> Node_18;
+}
+

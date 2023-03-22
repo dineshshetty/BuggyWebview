@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.graphics.ColorUtils.Api26Impl.compositeColors(Landroid\/graphics\/Color;Landroid\/graphics\/Color;)Landroid\/graphics\/Color;" {
+Node_19 [shape=record,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0000}"];
+Node_22 [shape=record,label="{22\:\ 0x000c|if (java.util.Objects.equals(r9.getModel(), r10.getModel()) == false) goto L17\l}"];
+Node_23 [shape=record,label="{23\:\ 0x000e}"];
+Node_24 [shape=record,label="{24\:\ 0x001a|if (java.util.Objects.equals(r10.getColorSpace(), r9.getColorSpace()) == false) goto L16\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001c|r0 = r9\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0026|PHI: r0 \l  PHI: (r0v7 's' android.graphics.Color) = (r0v6 's' android.graphics.Color), (r0v8 's' android.graphics.Color) binds: [B:26:0x001e, B:25:0x001c] A[DONT_GENERATE, DONT_INLINE]\l|float[] r1 = r0.getComponents()\lfloat[] r2 = r10.getComponents()\lfloat r3 = r0.alpha()\lfloat r4 = r10.alpha() * (1.0f \- r3)\lint r5 = r10.getComponentCount() + (\-1)\lr2[r5] = r3 + r4\l}"];
+Node_28 [shape=record,label="{28\:\ 0x004b|if ((r2[r5] \> 0.0f ? 1 : (r2[r5] == 0.0f ? 0 : \-1)) \<= 0) goto L9\l}"];
+Node_29 [shape=record,label="{29\:\ 0x004d|float r3 = r3 \/ r2[r5]\lfloat r4 = r4 \/ r2[r5]\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0053|PHI: r3 r4 \l  PHI: (r3v1 'sa' float) = (r3v0 'sa' float), (r3v2 'sa' float) binds: [B:28:0x004b, B:29:0x004d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v2 'da' float) = (r4v1 'da' float), (r4v3 'da' float) binds: [B:28:0x004b, B:29:0x004d] A[DONT_GENERATE, DONT_INLINE]\l|r6 = 0\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0054|LOOP_START\lLOOP:0: B:31:0x0054\-\>B:32:0x0056\lPHI: r6 \l  PHI: (r6v4 'i' int) = (r6v3 'i' int), (r6v7 'i' int) binds: [B:30:0x0053, B:32:0x0056] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 \>= r5) goto L12\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0056|LOOP_END\lLOOP:0: B:31:0x0054\-\>B:32:0x0056\l|r2[r6] = (r1[r6] * r3) + (r2[r6] * r4)\lint r6 = r6 + 1\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0064|SYNTHETIC\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0064}"];
+Node_34 [shape=record,label="{34\:\ 0x006c|RETURN\l|return android.graphics.Color.valueOf(r2, r10.getColorSpace())\l}"];
+Node_20 [shape=record,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001e|android.graphics.Color r0 = r9.convert(r10.getColorSpace())\l}"];
+Node_35 [shape=record,label="{35\:\ 0x006d|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Color models must match (\")\lr1.append(r9.getModel())\lr1.append(\" vs. \")\lr1.append(r10.getModel())\lr1.append(\")\")\l}"];
+Node_36 [shape=record,label="{36\:\ 0x0098|throw new java.lang.IllegalArgumentException(r1.toString())\l}"];
+MethodNode[shape=record,label="{static android.graphics.Color androidx.core.graphics.ColorUtils.Api26Impl.compositeColors((r9v0 'foreground' android.graphics.Color A[D('foreground' android.graphics.Color), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'background' android.graphics.Color A[D('background' android.graphics.Color), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:32:0x0056 \-\> B:31:0x0054, CROSS_EDGE: B:28:0x004b \-\> B:30:0x0053, CROSS_EDGE: B:26:0x001e \-\> B:27:0x0026, CROSS_EDGE: B:36:0x0098 \-\> B:20:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_35;
+Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_26;
+Node_25 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_29[style=dashed];
+Node_28 -> Node_30;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_32[style=dashed];
+Node_31 -> Node_37;
+Node_32 -> Node_31;
+Node_37 -> Node_33;
+Node_33 -> Node_34;
+Node_34 -> Node_20;
+Node_26 -> Node_27;
+Node_35 -> Node_36;
+Node_36 -> Node_20;
+}
+

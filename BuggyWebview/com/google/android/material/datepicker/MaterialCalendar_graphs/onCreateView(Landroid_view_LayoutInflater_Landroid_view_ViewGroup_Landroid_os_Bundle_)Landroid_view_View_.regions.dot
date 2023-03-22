@@ -1,0 +1,90 @@
+digraph "CFG forcom.google.android.material.datepicker.MaterialCalendar.onCreateView(Landroid\/view\/LayoutInflater;Landroid\/view\/ViewGroup;Landroid\/os\/Bundle;)Landroid\/view\/View;" {
+subgraph cluster_Region_770478576 {
+label = "R(9:1|(1:3)(1:20)|4|7|(1:9)|(1:12)|(1:15)|16|17) | DECL_VAR: int layout, int orientation\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|android.view.ContextThemeWrapper android.view.ContextThemeWrapper r0 = new android.view.ContextThemeWrapper(getContext(), r20.themeResId)\lcom.google.android.material.datepicker.CalendarStyle ?? r0 = new com.google.android.material.datepicker.CalendarStyle(r0)\lr20.calendarStyle = r0\landroid.view.LayoutInflater android.view.LayoutInflater r15 = r21.cloneInContext(r0)\lcom.google.android.material.datepicker.CalendarConstraints ?? r0 = r20.calendarConstraints\lcom.google.android.material.datepicker.Month com.google.android.material.datepicker.Month r12 = r0.getStart()\l}"];
+subgraph cluster_IfRegion_1188012180 {
+label = "IF [B:24:0x0025] THEN: R(1:3) ELSE: R(1:20)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0025|if (com.google.android.material.datepicker.MaterialDatePicker.isFullscreen(r0) != false) goto L3\l}"];
+subgraph cluster_Region_1277261329 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0027|int int r0 = com.google.android.material.C0571R.layout.mtrl_calendar_vertical\lr11 = r0\lr16 = 1\l}"];
+}
+subgraph cluster_Region_1108923881 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002e|int int r0 = com.google.android.material.C0571R.layout.mtrl_calendar_horizontal\lr11 = r0\lr16 = 0\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0034|PHI: r11 r16 \l  PHI: (r11v1 'layout' int) = (r11v0 'layout' int), (r11v2 'layout' int) binds: [B:26:0x002e, B:25:0x0027] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r16v1 'orientation' int) = (r16v0 'orientation' int), (r16v2 'orientation' int) binds: [B:26:0x002e, B:25:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|android.view.View android.view.View r8 = r15.inflate(r11, r22, false)\lr8.setMinimumHeight(getDialogPickerHeight(requireContext()))\landroid.widget.GridView android.widget.GridView r7 = (android.widget.GridView) r8.findViewById(com.google.android.material.C0571R.C0574id.mtrl_calendar_days_of_week)\landroidx.core.view.ViewCompat.setAccessibilityDelegate(r7, new com.google.android.material.datepicker.MaterialCalendar.C06471())\lint int r5 = r20.calendarConstraints.getFirstDayOfWeek()\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0069|PHI: r0 \l  PHI: (r0v13 com.google.android.material.datepicker.DaysOfWeekAdapter A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r7.setAdapter((android.widget.ListAdapter) (r5 \> 0 ? new com.google.android.material.datepicker.DaysOfWeekAdapter(r5) : new com.google.android.material.datepicker.DaysOfWeekAdapter()))\lr7.setNumColumns(r12.daysInWeek)\lr7.setEnabled(false)\landroidx.recyclerview.widget.RecyclerView ?? r0 = (androidx.recyclerview.widget.RecyclerView) r8.findViewById(com.google.android.material.C0571R.C0574id.mtrl_calendar_months)\lr20.recyclerView = r0\lfinal int r5 = r16\lcom.google.android.material.datepicker.MaterialCalendar$2 com.google.android.material.datepicker.SmoothCalendarLayoutManager r17 = new com.google.android.material.datepicker.MaterialCalendar.C06502(getContext(), r16, false)\lr20.recyclerView.setLayoutManager(r17)\lr20.recyclerView.setTag(com.google.android.material.datepicker.MaterialCalendar.MONTHS_VIEW_GROUP_TAG)\lcom.google.android.material.datepicker.DateSelector\<S\> com.google.android.material.datepicker.DateSelector\<S\> r2 = r20.dateSelector\lcom.google.android.material.datepicker.CalendarConstraints com.google.android.material.datepicker.CalendarConstraints r3 = r20.calendarConstraints\lcom.google.android.material.datepicker.MonthsPagerAdapter com.google.android.material.datepicker.MonthsPagerAdapter r1 = new com.google.android.material.datepicker.MonthsPagerAdapter(r0, null, r11, r20.dayViewDecorator, new com.google.android.material.datepicker.MaterialCalendar.C06513())\lr20.recyclerView.setAdapter(r1)\lint int r5 = r0.getResources().getInteger(com.google.android.material.C0571R.integer.mtrl_calendar_year_selector_span)\landroidx.recyclerview.widget.RecyclerView androidx.recyclerview.widget.RecyclerView r7 = (androidx.recyclerview.widget.RecyclerView) r8.findViewById(com.google.android.material.C0571R.C0574id.mtrl_calendar_year_selector_frame)\lr20.yearSelector = r7\l?? r8 = r8\l}"];
+subgraph cluster_IfRegion_2099155804 {
+label = "IF [B:32:0x00d6] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x00d6|if (r7 != null) goto L9\l}"];
+subgraph cluster_Region_84614516 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x00d8|r8 = 1\lr7.setHasFixedSize(true)\lr20.yearSelector.setLayoutManager(new androidx.recyclerview.widget.GridLayoutManager((android.content.Context) r0, r5, 1, false))\lr20.yearSelector.setAdapter(new com.google.android.material.datepicker.YearGridAdapter(r20))\lr20.yearSelector.addItemDecoration(createItemDecoration())\l}"];
+}
+}
+subgraph cluster_IfRegion_539214134 {
+label = "IF [B:35:0x00ff] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x00ff|if (r8.findViewById(com.google.android.material.C0571R.C0574id.month_navigation_fragment_toggle) != null) goto L12\l}"];
+subgraph cluster_Region_977857530 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0101|addActionsToMonthNavigation(r8, r1)\l}"];
+}
+}
+subgraph cluster_IfRegion_1048299073 {
+label = "IF [B:38:0x0108] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0108|if (com.google.android.material.datepicker.MaterialDatePicker.isFullscreen(r0) == false) goto L15\l}"];
+subgraph cluster_Region_1731827647 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x010a|new androidx.recyclerview.widget.PagerSnapHelper().attachToRecyclerView(r20.recyclerView)\l}"];
+}
+}
+Node_40 [shape=record,label="{40\:\ 0x0114|r20.recyclerView.scrollToPosition(r1.getPosition(r20.current))\lsetUpForAccessibility()\l}"];
+Node_41 [shape=record,label="{41\:\ 0x0122|RETURN\l|return r8\l}"];
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0060}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0062}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x00f9|PHI: r8 \l  PHI: (r8v1 ??) = (r8v3 ??), (r8v2 ??) binds: [B:32:0x00d6, B:33:0x00d8] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0104}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0066}"];
+MethodNode[shape=record,label="{public android.view.View com.google.android.material.datepicker.MaterialCalendar.onCreateView((r20v0 'this' com.google.android.material.datepicker.MaterialCalendar\<S\> A[D('this' com.google.android.material.datepicker.MaterialCalendar\<S\>), IMMUTABLE_TYPE, THIS]), (r21v0 ?? I:android.view.LayoutInflater A[D('layoutInflater' android.view.LayoutInflater), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'viewGroup' android.view.ViewGroup A[D('viewGroup' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 'bundle' android.os.Bundle A[D('bundle' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:38:0x0108 \-\> B:40:0x0114, CROSS_EDGE: B:35:0x00ff \-\> B:37:0x0104, CROSS_EDGE: B:32:0x00d6 \-\> B:34:0x00f9, CROSS_EDGE: B:30:0x0066 \-\> B:31:0x0069, CROSS_EDGE: B:26:0x002e \-\> B:27:0x0034\lINLINE_NOT_NEEDED\lTYPE_VARS: [S]\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l \-\> Type inference failed for: r21v0, types: [android.view.LayoutInflater]\l \-\> Type inference failed for: r0v1, types: [android.content.Context, com.google.android.material.datepicker.CalendarStyle]\l \-\> Type inference failed for: r0v2, types: [android.content.Context, com.google.android.material.datepicker.CalendarConstraints]\l \-\> Type inference failed for: r0v17, types: [android.content.Context, android.view.ContextThemeWrapper, androidx.recyclerview.widget.RecyclerView]\l \-\> Type inference failed for: r3v2, types: [com.google.android.material.datepicker.CalendarConstraints]\l \-\> Type inference failed for: r8v1, types: [android.view.View]\l \-\> Type inference failed for: r8v2\l \-\> Type inference failed for: r8v3\}\lMETHOD_OVERRIDE: [androidx.fragment.app.Fragment.onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle):android.view.View]\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_27;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_34[style=dashed];
+Node_33 -> Node_34;
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_37;
+Node_38 -> Node_39;
+Node_38 -> Node_40[style=dashed];
+Node_39 -> Node_40;
+Node_40 -> Node_41;
+Node_41 -> Node_22;
+Node_21 -> Node_23;
+Node_28 -> Node_29;
+Node_28 -> Node_30;
+Node_29 -> Node_31;
+Node_34 -> Node_35;
+Node_37 -> Node_38;
+Node_30 -> Node_31;
+}
+

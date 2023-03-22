@@ -1,0 +1,49 @@
+digraph "CFG forkotlin.sequences.DropWhileSequence$iterator$1.drop()V" {
+subgraph cluster_Region_1624427351 {
+label = "R(2:(2:3|(2:6|7))|10) | DECL_VAR: kotlin.jvm.functions.Function1 null\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1616276878 {
+label = "LOOP:0: (2:3|(2:6|7))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r2.iterator.hasNext() != false) goto L3\l}"];
+subgraph cluster_Region_1371690708 {
+label = "R(2:3|(2:6|7))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|java.lang.Object ?? r0 = r2.iterator.next()\lkotlin.jvm.functions.Function1 r1 = ((kotlin.sequences.DropWhileSequence) r2.this$0).predicate\l}"];
+subgraph cluster_IfRegion_1182334700 {
+label = "IF [B:5:0x001e] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|LOOP_END\lLOOP:0: B:2:0x0000\-\>B:5:0x001e\l|if (((java.lang.Boolean) r1.invoke(r0)).booleanValue() == false) goto L5\l}"];
+subgraph cluster_Region_1682703463 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0020|r2.nextItem = r0\lr2.dropState = 1\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0025|RETURN\l|return\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0026|r2.dropState = 0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000|LOOP_START\lLOOP:0: B:2:0x0000\-\>B:5:0x001e\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0020|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0026|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0029}"];
+MethodNode[shape=record,label="{private final void kotlin.sequences.DropWhileSequence$iterator$1.drop((r2v0 'this' kotlin.sequences.DropWhileSequence$iterator$1 A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:5:0x001e \-\> B:2:0x0000, CROSS_EDGE: B:9:0x0029 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r0v4, types: [T, java.lang.Object]\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_2[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_11 -> Node_6;
+Node_10 -> Node_8;
+Node_9 -> Node_1;
+}
+

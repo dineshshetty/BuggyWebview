@@ -1,0 +1,82 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.generateOpsForPendingActions(Ljava\/util\/ArrayList;Ljava\/util\/ArrayList;)Z" {
+subgraph cluster_Region_1143033517 {
+label = "R(2:1|3)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|boolean r0 = false\l}"];
+subgraph cluster_SynchronizedRegion_522026843 {
+label = "Synchronized:R(2:2|(1:(2:(1:8)|(4:10|(1:12)|14|16))))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0003}"];
+subgraph cluster_Region_778354252 {
+label = "R(1:(2:(1:8)|(4:10|(1:12)|14|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_577478485 {
+label = "R(2:(1:8)|(4:10|(1:12)|14|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1682878832 {
+label = "IF [B:25:0x000a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000a|if (r5.mPendingActions.isEmpty() != false) goto L6\l}"];
+subgraph cluster_Region_282979589 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000e|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1047338293 {
+label = "R(4:10|(1:12)|14|16)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x000f|TryCatch #0 \{, blocks: (B:24:0x0004, B:27:0x000d, B:29:0x000f, B:31:0x0018, B:32:0x0028, B:33:0x0038), top: B:38:0x0004 \}\lCatch: all \-\> 0x003a\l|int int r2 = r5.mPendingActions.size()     \/\/ Catch: java.lang.Throwable \-\> L3a\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1095777841 {
+label = "LOOP:0: (1:12)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0016|LOOP_START\lLOOP:0: B:30:0x0016\-\>B:31:0x0018\lPHI: r0 r3 \l  PHI: (r0v1 'didSomething' boolean) = (r0v0 'didSomething' boolean), (r0v2 'didSomething' boolean) binds: [B:29:0x000f, B:31:0x0018] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v5 'i' int) binds: [B:29:0x000f, B:31:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L12\l}"];
+subgraph cluster_Region_288015922 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0018|LOOP_END\lTryCatch #0 \{, blocks: (B:24:0x0004, B:27:0x000d, B:29:0x000f, B:31:0x0018, B:32:0x0028, B:33:0x0038), top: B:38:0x0004 \}\lLOOP:0: B:30:0x0016\-\>B:31:0x0018\lCatch: all \-\> 0x003a\l|r0 \|= r5.mPendingActions.get(r3).generateOps(r6, r7)     \/\/ Catch: java.lang.Throwable \-\> L3a\lr3++     \/\/ Catch: java.lang.Throwable \-\> L3a\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0028|TryCatch #0 \{, blocks: (B:24:0x0004, B:27:0x000d, B:29:0x000f, B:31:0x0018, B:32:0x0028, B:33:0x0038), top: B:38:0x0004 \}\lCatch: all \-\> 0x003a\l|r5.mPendingActions.clear()     \/\/ Catch: java.lang.Throwable \-\> L3a\lr5.mHost.getHandler().removeCallbacks(r5.mExecCommit)     \/\/ Catch: java.lang.Throwable \-\> L3a\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0039|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0004|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0004|TRY_ENTER\lTryCatch #0 \{, blocks: (B:24:0x0004, B:27:0x000d, B:29:0x000f, B:31:0x0018, B:32:0x0028, B:33:0x0038), top: B:38:0x0004 \}\lCatch: all \-\> 0x003a\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000c}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000d|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:24:0x0004, B:27:0x000d, B:29:0x000f, B:31:0x0018, B:32:0x0028, B:33:0x0038), top: B:38:0x0004 \}\lCatch: all \-\> 0x003a\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L3a\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0028|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0038|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:24:0x0004, B:27:0x000d, B:29:0x000f, B:31:0x0018, B:32:0x0028, B:33:0x0038), top: B:38:0x0004 \}\lCatch: all \-\> 0x003a\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L3a\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x003a|REMOVE\lExcHandler: all \-\> 0x003a\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x003b|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x003a\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x003c|REMOVE\l|throw r2\l}"];
+MethodNode[shape=record,label="{private boolean androidx.fragment.app.FragmentManager.generateOpsForPendingActions((r5v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r6v0 'records' java.util.ArrayList\<androidx.fragment.app.BackStackRecord\> A[D('records' java.util.ArrayList\<androidx.fragment.app.BackStackRecord\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'isPop' java.util.ArrayList\<java.lang.Boolean\> A[D('isPop' java.util.ArrayList\<java.lang.Boolean\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:31:0x0018 \-\> B:30:0x0016, CROSS_EDGE: B:34:0x0039 \-\> B:21:?, CROSS_EDGE: B:37:0x003c \-\> B:21:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/ArrayList\<Landroidx\/fragment\/app\/BackStackRecord;\>;Ljava\/util\/ArrayList\<Ljava\/lang\/Boolean;\>;)Z\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_38;
+Node_25 -> Node_26;
+Node_25 -> Node_29[style=dashed];
+Node_28 -> Node_21;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_39[style=dashed];
+Node_31 -> Node_30;
+Node_32 -> Node_33;
+Node_34 -> Node_21;
+Node_20 -> Node_22;
+Node_38 -> Node_24;
+Node_38 -> Node_35;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_39 -> Node_32;
+Node_33 -> Node_34;
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_37 -> Node_21;
+}
+

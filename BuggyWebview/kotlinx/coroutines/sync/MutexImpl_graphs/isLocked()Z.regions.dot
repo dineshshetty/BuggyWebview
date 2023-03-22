@@ -1,0 +1,99 @@
+digraph "CFG forkotlinx.coroutines.sync.MutexImpl.isLocked()Z" {
+subgraph cluster_Region_2024142754 {
+label = "R(1:(2:2|(2:16|17)(1:(1:14)(1:(2:(1:11)|(1:8)))))) | DECL_VAR: kotlinx.coroutines.internal.Symbol null\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_334283467 {
+label = "LOOP:0: (2:2|(2:16|17)(1:(1:14)(1:(2:(1:11)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1053114777 {
+label = "R(2:2|(2:16|17)(1:(1:14)(1:(2:(1:11)|(1:8)))))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0002|LOOP_START\lLOOP:0: B:25:0x0002\-\>B:37:0x0023\l|java.lang.Object java.lang.Object r2 = r7._state\l}"];
+subgraph cluster_IfRegion_593302384 {
+label = "IF [B:26:0x000a] THEN: R(2:16|17) ELSE: R(1:(1:14)(1:(2:(1:11)|(1:8))))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000a|if ((r2 instanceof kotlinx.coroutines.sync.Empty) != false) goto L15\l}"];
+subgraph cluster_Region_787187104 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000c|java.lang.Object java.lang.Object r4 = ((kotlinx.coroutines.sync.Empty) r2).locked\lkotlinx.coroutines.internal.Symbol r6 = kotlinx.coroutines.sync.MutexKt.UNLOCKED\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0015|RETURN\l|return r4 != r6\l}"];
+}
+subgraph cluster_Region_879701045 {
+label = "R(1:(1:14)(1:(2:(1:11)|(1:8)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_925645342 {
+label = "IF [B:33:0x001c] THEN: R(1:14) ELSE: R(1:(2:(1:11)|(1:8))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x001c|if ((r2 instanceof kotlinx.coroutines.sync.MutexImpl.LockedQueue) == true) goto L13\l}"];
+subgraph cluster_Region_756944538 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x001e|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_2052191356 {
+label = "R(1:(2:(1:11)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_266247015 {
+label = "R(2:(1:11)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_603024619 {
+label = "IF [B:36:0x0021] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0021|if ((r2 instanceof kotlinx.coroutines.internal.OpDescriptor) != true) goto L9\l}"];
+subgraph cluster_Region_1752968566 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x003a|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Illegal state \", r2).toString())\l}"];
+}
+}
+subgraph cluster_Region_440955740 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0023|LOOP_END\lLOOP:0: B:25:0x0002\-\>B:37:0x0023\l|((kotlinx.coroutines.internal.OpDescriptor) r2).perform(r7)\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0000}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001a}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x001f}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x002b|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x002b}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x001e|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x000c|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0018|ORIG_RETURN\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean kotlinx.coroutines.sync.MutexImpl.isLocked((r7v0 'this' kotlinx.coroutines.sync.MutexImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:28:0x0015 \-\> B:31:0x0019, CROSS_EDGE: B:34:0x001e \-\> B:23:?, BACK_EDGE: B:37:0x0023 \-\> B:25:0x0002, CROSS_EDGE: B:39:0x003a \-\> B:23:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.sync.Mutex.isLocked():boolean]\l}"];
+MethodNode -> Node_22;Node_25 -> Node_26;
+Node_26 -> Node_32[style=dashed];
+Node_26 -> Node_41;
+Node_27 -> Node_28;
+Node_28 -> Node_30;
+Node_28 -> Node_43;
+Node_33 -> Node_35[style=dashed];
+Node_33 -> Node_42;
+Node_34 -> Node_23;
+Node_36 -> Node_37[style=dashed];
+Node_36 -> Node_40;
+Node_39 -> Node_23;
+Node_37 -> Node_25;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_32 -> Node_33;
+Node_35 -> Node_36;
+Node_40 -> Node_38;
+Node_38 -> Node_39;
+Node_42 -> Node_34;
+Node_41 -> Node_27;
+Node_30 -> Node_23;
+Node_43 -> Node_23;
+}
+

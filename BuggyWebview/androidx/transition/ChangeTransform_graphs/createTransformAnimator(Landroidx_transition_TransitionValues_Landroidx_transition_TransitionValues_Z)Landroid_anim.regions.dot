@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.transition.ChangeTransform.createTransformAnimator(Landroidx\/transition\/TransitionValues;Landroidx\/transition\/TransitionValues;Z)Landroid\/animation\/ObjectAnimator;" {
+subgraph cluster_Region_15084878 {
+label = "R(4:1|(1:3)|(1:5)|(2:(1:8)|(2:10|11)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|android.graphics.Matrix android.graphics.Matrix r2 = (android.graphics.Matrix) r21.values.get(androidx.transition.ChangeTransform.PROPNAME_MATRIX)\landroid.graphics.Matrix android.graphics.Matrix r3 = (android.graphics.Matrix) r22.values.get(androidx.transition.ChangeTransform.PROPNAME_MATRIX)\l}"];
+subgraph cluster_IfRegion_1095585696 {
+label = "IF [B:16:0x0016] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0016|if (r2 == null) goto L3\l}"];
+subgraph cluster_Region_620091524 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|android.graphics.Matrix r2 = androidx.transition.MatrixUtils.IDENTITY_MATRIX\l}"];
+}
+}
+subgraph cluster_IfRegion_1932114823 {
+label = "IF [B:18:0x001a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001a|PHI: r2 \l  PHI: (r2v3 'startMatrix' android.graphics.Matrix) = (r2v2 'startMatrix' android.graphics.Matrix), (r2v4 'startMatrix' android.graphics.Matrix) binds: [B:16:0x0016, B:17:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 == null) goto L5\l}"];
+subgraph cluster_Region_1479724910 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001c|android.graphics.Matrix r3 = androidx.transition.MatrixUtils.IDENTITY_MATRIX\l}"];
+}
+}
+subgraph cluster_Region_1397368958 {
+label = "R(2:(1:8)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1672790310 {
+label = "IF [B:21:0x0022] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0022|if (r2.equals(r3) != false) goto L8\l}"];
+subgraph cluster_Region_954995484 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0024|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1384717379 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0026|androidx.transition.ChangeTransform$Transforms final androidx.transition.ChangeTransform.Transforms r11 = (androidx.transition.ChangeTransform.Transforms) r22.values.get(androidx.transition.ChangeTransform.PROPNAME_TRANSFORMS)\landroid.view.View final android.view.View r12 = r22.view\lsetIdentityTransforms(r12)\lfloat[] float[] r13 = new float[9]\lr2.getValues(r13)\lfloat[] float[] r14 = new float[9]\lr3.getValues(r14)\landroidx.transition.ChangeTransform$PathAnimatorMatrix final androidx.transition.ChangeTransform.PathAnimatorMatrix r5 = new androidx.transition.ChangeTransform.PathAnimatorMatrix(r12, r13)\landroid.animation.PropertyValuesHolder android.animation.PropertyValuesHolder r16 = android.animation.PropertyValuesHolder.ofObject(androidx.transition.ChangeTransform.NON_TRANSLATIONS_PROPERTY, new androidx.transition.FloatArrayEvaluator(new float[9]), r13, r14)\landroid.graphics.Path android.graphics.Path r10 = getPathMotion().getPath(r13[2], r13[5], r14[2], r14[5])\landroid.animation.PropertyValuesHolder android.animation.PropertyValuesHolder r18 = androidx.transition.PropertyValuesHolderUtils.ofPointF(androidx.transition.ChangeTransform.TRANSLATIONS_PROPERTY, r10)\landroid.animation.ObjectAnimator android.animation.ObjectAnimator r9 = android.animation.ObjectAnimator.ofPropertyValuesHolder(r5, r16, r18)\lfinal android.graphics.Matrix r7 = r3\landroidx.transition.ChangeTransform$3 android.animation.AnimatorListenerAdapter r17 = new androidx.transition.ChangeTransform.C04913()\lr9.addListener(r17)\landroidx.transition.AnimatorUtils.addPauseListener(r9, r17)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0098|RETURN\l|return r9\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001e|PHI: r3 \l  PHI: (r3v3 'endMatrix' android.graphics.Matrix) = (r3v2 'endMatrix' android.graphics.Matrix), (r3v4 'endMatrix' android.graphics.Matrix) binds: [B:18:0x001a, B:19:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.animation.ObjectAnimator androidx.transition.ChangeTransform.createTransformAnimator((r20v0 'this' androidx.transition.ChangeTransform A[IMMUTABLE_TYPE, THIS]), (r21v0 'startValues' androidx.transition.TransitionValues A[D('startValues' androidx.transition.TransitionValues), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'endValues' androidx.transition.TransitionValues A[D('endValues' androidx.transition.TransitionValues), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 'handleParentChange' boolean A[D('handleParentChange' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0098 \-\> B:14:?, CROSS_EDGE: B:18:0x001a \-\> B:20:0x001e, CROSS_EDGE: B:16:0x0016 \-\> B:18:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_22 -> Node_14;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_20 -> Node_21;
+}
+

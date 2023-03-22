@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.time.DurationJvmKt.formatToExactDecimals(DI)Ljava\/lang\/String;" {
+subgraph cluster_Region_124325482 {
+label = "R(4:1|(3:3|(1:5)(1:10)|6)(1:11)|7|8) | DECL_VAR: java.text.DecimalFormat null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.ThreadLocal\<java.text.DecimalFormat\>[] java.lang.ThreadLocal\<java.text.DecimalFormat\>[] r0 = kotlin.time.DurationJvm.precisionFormats\l}"];
+subgraph cluster_IfRegion_162795552 {
+label = "IF [B:3:0x0003] THEN: R(3:3|(1:5)(1:10)|6) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r5 \< r0.length) goto L3\l}"];
+subgraph cluster_Region_951415375 {
+label = "R(3:3|(1:5)(1:10)|6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|java.lang.ThreadLocal\<java.text.DecimalFormat\> r0 = r0[r5]\ljava.lang.Object java.text.DecimalFormat r1 = r0.get()\l}"];
+subgraph cluster_IfRegion_1870191937 {
+label = "IF [B:5:0x000b] THEN: R(1:5) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|if (r1 == null) goto L5\l}"];
+subgraph cluster_Region_1189408941 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|java.text.DecimalFormat r1 = createFormatForDecimals(r5)\lr0.set(r1)\l}"];
+}
+subgraph cluster_Region_2093805035 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, \"get() ?: default().also(this::set)\")\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x001b|PHI: r1 \l  PHI: (r1v5 java.text.DecimalFormat) = (r1v4 java.text.DecimalFormat), (r1v8 java.text.DecimalFormat) binds: [B:7:0x0016, B:6:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|java.text.DecimalFormat r1 = r1\l}"];
+}
+subgraph cluster_Region_154248639 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001e|java.text.DecimalFormat r1 = createFormatForDecimals(r5)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0022|PHI: r1 \l  PHI: (r1v2 java.text.DecimalFormat) = (r1v1 java.text.DecimalFormat), (r1v6 java.text.DecimalFormat) binds: [B:9:0x001e, B:8:0x001b] A[DONT_GENERATE, DONT_INLINE]\l|java.text.DecimalFormat r0 = r1\ljava.lang.String java.lang.String r1 = r0.format(r3)\lkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, \"format.format(value)\")\l}"];
+Node_11 [shape=record,label="{11\:\ 0x002c|RETURN\l|return r1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.time.DurationJvmKt.formatToExactDecimals((r3v0 'value' double A[D('value' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'decimals' int A[D('decimals' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0016 \-\> B:8:0x001b, CROSS_EDGE: B:9:0x001e \-\> B:10:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_1;
+Node_0 -> Node_2;
+}
+

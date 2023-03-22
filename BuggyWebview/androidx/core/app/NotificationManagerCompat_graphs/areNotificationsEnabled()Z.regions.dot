@@ -1,0 +1,98 @@
+digraph "CFG forandroidx.core.app.NotificationManagerCompat.areNotificationsEnabled()Z" {
+subgraph cluster_Region_686019368 {
+label = "R(1:(2:(1:4)|(1:(2:(2:8|(2:10|11))|(1:17)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1727025288 {
+label = "R(2:(1:4)|(1:(2:(2:8|(2:10|11))|(1:17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_961997884 {
+label = "IF [B:3:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 24) goto L3\l}"];
+subgraph cluster_Region_1068981015 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|RETURN\l|return r13.mNotificationManager.areNotificationsEnabled()\l}"];
+}
+}
+subgraph cluster_Region_159102298 {
+label = "R(1:(2:(2:8|(2:10|11))|(1:17)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1844166893 {
+label = "R(2:(2:8|(2:10|11))|(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1674770016 {
+label = "IF [B:7:0x0012] THEN: R(2:8|(2:10|11)) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|if (android.os.Build.VERSION.SDK_INT \>= 19) goto L8\l}"];
+subgraph cluster_Region_4251038 {
+label = "R(2:8|(2:10|11))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|android.app.AppOpsManager android.app.AppOpsManager r0 = (android.app.AppOpsManager) r13.mContext.getSystemService(\"appops\")\landroid.content.pm.ApplicationInfo android.content.pm.ApplicationInfo r1 = r13.mContext.getApplicationInfo()\ljava.lang.String java.lang.String r3 = r13.mContext.getApplicationContext().getPackageName()\lint int r4 = r1.uid\l}"];
+subgraph cluster_TryCatchRegion_1714976494 {
+label = "Try: R(2:10|11) catches: R(1:16)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1014533371 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0030|TRY_ENTER\lTRY_LEAVE\lTryCatch #2 \{ClassNotFoundException \| IllegalAccessException \| NoSuchFieldException \| NoSuchMethodException \| RuntimeException \| InvocationTargetException \-\> 0x0082, blocks: (B:9:0x0030), top: B:27:0x0030 \}\lCatch: ClassNotFoundException \| IllegalAccessException \| NoSuchFieldException \| NoSuchMethodException \| RuntimeException \| InvocationTargetException \-\> 0x0082, IllegalAccessException \-\> 0x0084, InvocationTargetException \-\> 0x0086, NoSuchFieldException \-\> 0x0088, NoSuchMethodException \-\> 0x008a, ClassNotFoundException \-\> 0x008c\l|java.lang.Class java.lang.Class\<?\> r5 = java.lang.Class.forName(android.app.AppOpsManager.class.getName())     \/\/ Catch: java.lang.Throwable \-\> L82 java.lang.IllegalAccessException \-\> L84 java.lang.reflect.InvocationTargetException \-\> L86 java.lang.NoSuchFieldException \-\> L88 java.lang.NoSuchMethodException \-\> L8a java.lang.ClassNotFoundException \-\> L8c\ljava.lang.reflect.Method java.lang.reflect.Method r6 = r5.getMethod(androidx.core.app.NotificationManagerCompat.CHECK_OP_NO_THROW, java.lang.Integer.TYPE, java.lang.Integer.TYPE, java.lang.String.class)     \/\/ Catch: java.lang.Throwable \-\> L82 java.lang.IllegalAccessException \-\> L84 java.lang.reflect.InvocationTargetException \-\> L86 java.lang.NoSuchFieldException \-\> L88 java.lang.NoSuchMethodException \-\> L8a java.lang.ClassNotFoundException \-\> L8c\ljava.lang.reflect.Field java.lang.reflect.Field r8 = r5.getDeclaredField(androidx.core.app.NotificationManagerCompat.OP_POST_NOTIFICATION)     \/\/ Catch: java.lang.Throwable \-\> L82 java.lang.IllegalAccessException \-\> L84 java.lang.reflect.InvocationTargetException \-\> L86 java.lang.NoSuchFieldException \-\> L88 java.lang.NoSuchMethodException \-\> L8a java.lang.ClassNotFoundException \-\> L8c\lint int r9 = ((java.lang.Integer) r8.get(java.lang.Integer.class)).intValue()     \/\/ Catch: java.lang.Throwable \-\> L82 java.lang.IllegalAccessException \-\> L84 java.lang.reflect.InvocationTargetException \-\> L86 java.lang.NoSuchFieldException \-\> L88 java.lang.NoSuchMethodException \-\> L8a java.lang.ClassNotFoundException \-\> L8c\l}"];
+Node_10 [shape=record,label="{10\:\ 0x007d|RETURN\l|return ((java.lang.Integer) r6.invoke(r0, java.lang.Integer.valueOf(r9), java.lang.Integer.valueOf(r4), r3)).intValue() == 0\l}"];
+}
+subgraph cluster_Region_851303958 {
+label = "R(1:16) | ExcHandler: ClassNotFoundException \| IllegalAccessException \| NoSuchFieldException \| NoSuchMethodException \| RuntimeException \| InvocationTargetException \-\> 0x0082\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x008d|RETURN\l|return true\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_23235588 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x008e|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_851303958 {
+label = "R(1:16) | ExcHandler: ClassNotFoundException \| IllegalAccessException \| NoSuchFieldException \| NoSuchMethodException \| RuntimeException \| InvocationTargetException \-\> 0x0082\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x008d|RETURN\l|return true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000d}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0030|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0080|ORIG_RETURN\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0082|ExcHandler: ClassNotFoundException \| IllegalAccessException \| NoSuchFieldException \| NoSuchMethodException \| RuntimeException \| InvocationTargetException \-\> 0x0082\l}"];
+MethodNode[shape=record,label="{public boolean androidx.core.app.NotificationManagerCompat.areNotificationsEnabled((r13v0 'this' androidx.core.app.NotificationManagerCompat A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0081 \-\> B:1:?, CROSS_EDGE: B:10:0x007d \-\> B:13:0x0081, CROSS_EDGE: B:25:0x008d \-\> B:1:?, CROSS_EDGE: B:27:0x0030 \-\> B:14:0x0082, CROSS_EDGE: B:26:0x008e \-\> B:1:?\lINLINE_NOT_NEEDED\lTryCatch #2 \{ClassNotFoundException \| IllegalAccessException \| NoSuchFieldException \| NoSuchMethodException \| RuntimeException \| InvocationTargetException \-\> 0x0082, blocks: (B:9:0x0030), top: B:27:0x0030 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_7 -> Node_8;
+Node_7 -> Node_26[style=dashed];
+Node_8 -> Node_27;
+Node_9 -> Node_10;
+Node_9 -> Node_28;
+Node_10 -> Node_12;
+Node_10 -> Node_29;
+Node_25 -> Node_1;
+Node_26 -> Node_1;
+Node_25 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_27 -> Node_9;
+Node_27 -> Node_14;
+Node_12 -> Node_1;
+Node_29 -> Node_1;
+Node_28 -> Node_14;
+Node_14 -> Node_25;
+}
+

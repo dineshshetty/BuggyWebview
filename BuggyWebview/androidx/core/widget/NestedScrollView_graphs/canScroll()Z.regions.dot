@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.core.widget.NestedScrollView.canScroll()Z" {
+subgraph cluster_Region_356032274 {
+label = "R(1:(2:(2:3|4)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1871748446 {
+label = "R(2:(2:3|4)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1682986238 {
+label = "IF [B:13:0x0005] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0005|if (getChildCount() \> 0) goto L3\l}"];
+subgraph cluster_Region_2120444070 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0007|android.view.View android.view.View r0 = getChildAt(0)\landroid.widget.FrameLayout$LayoutParams android.widget.FrameLayout.LayoutParams r2 = (android.widget.FrameLayout.LayoutParams) r0.getLayoutParams()\lint int r3 = r0.getHeight() + r2.topMargin + r2.bottomMargin\lint int r4 = (getHeight() \- getPaddingTop()) \- getPaddingBottom()\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0029|RETURN\l|return r3 \> r4\l}"];
+}
+}
+subgraph cluster_Region_1093524437 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002d|RETURN\l|return false\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x002b|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean androidx.core.widget.NestedScrollView.canScroll((r6v0 'this' androidx.core.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0029 \-\> B:17:0x002c, CROSS_EDGE: B:18:0x002d \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19;
+Node_18 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_16 -> Node_11;
+Node_19 -> Node_11;
+}
+

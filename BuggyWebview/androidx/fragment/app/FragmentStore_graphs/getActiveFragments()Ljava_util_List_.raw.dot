@@ -1,0 +1,37 @@
+digraph "CFG forandroidx.fragment.app.FragmentStore.getActiveFragments()Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList  (LINE:229)\l0x0002: INVOKE  (r0 I:java.util.ArrayList) type: DIRECT call: java.util.ArrayList.\<init\>():void A[MD:():void (c)]\l0x0005: IGET  (r1 I:java.util.HashMap\<java.lang.String, androidx.fragment.app.FragmentStateManager\>) = (r4 I:androidx.fragment.app.FragmentStore) androidx.fragment.app.FragmentStore.mActive java.util.HashMap  (LINE:230)\l0x0007: INVOKE  (r1 I:java.util.Collection) = (r1 I:java.util.HashMap) type: VIRTUAL call: java.util.HashMap.values():java.util.Collection A[MD:():java.util.Collection\<V\> (c)]\l0x000b: INVOKE  (r1 I:java.util.Iterator) = (r1 I:java.util.Collection) type: INTERFACE call: java.util.Collection.iterator():java.util.Iterator A[MD:():java.util.Iterator\<E\> (c)]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|LOOP_START\lLOOP:0: B:3:0x000f\-\>B:14:0x000f\l|0x000f: INVOKE  (r2 I:boolean) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|0x0013: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x002a \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|0x0015: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x0019: CHECK_CAST (r2 I:androidx.fragment.app.FragmentStateManager) = (androidx.fragment.app.FragmentStateManager) (r2 I:??[OBJECT, ARRAY]) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001b|0x001b: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('fragmentStateManager' androidx.fragment.app.FragmentStateManager)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:12:0x0025  (LINE:231)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0025|SYNTHETIC\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|0x0025: CONST  (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:234)\l0x0026: INVOKE  \l  (r0 I:java.util.ArrayList A[D('activeFragments' java.util.ArrayList\<androidx.fragment.app.Fragment\>)])\l  (r3 I:java.lang.Object)\l type: VIRTUAL call: java.util.ArrayList.add(java.lang.Object):boolean A[MD:(E):boolean (c)]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000f|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000f|LOOP_END\lSYNTHETIC\lLOOP:0: B:3:0x000f\-\>B:14:0x000f\l}"];
+Node_13 [shape=record,label="{13\:\ 0x001d|SYNTHETIC\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001d|0x001d: INVOKE  (r3 I:androidx.fragment.app.Fragment) = \l  (r2 I:androidx.fragment.app.FragmentStateManager A[D('fragmentStateManager' androidx.fragment.app.FragmentStateManager)])\l type: VIRTUAL call: androidx.fragment.app.FragmentStateManager.getFragment():androidx.fragment.app.Fragment A[MD:():androidx.fragment.app.Fragment (m)] (LINE:232)\l0x0021: INVOKE  \l  (r0 I:java.util.ArrayList A[D('activeFragments' java.util.ArrayList\<androidx.fragment.app.Fragment\>)])\l  (r3 I:java.lang.Object)\l type: VIRTUAL call: java.util.ArrayList.add(java.lang.Object):boolean A[MD:(E):boolean (c)]\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000f|SYNTHETIC\l}"];
+Node_11 [shape=record,label="{11\:\ 0x002a|SYNTHETIC\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002a|RETURN\l|0x002a: RETURN  \l  (r0 I:java.util.List\<androidx.fragment.app.Fragment\> A[D('activeFragments' java.util.ArrayList\<androidx.fragment.app.Fragment\>)])\l  (LINE:237)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{java.util.List\<androidx.fragment.app.Fragment\> androidx.fragment.app.FragmentStore.getActiveFragments((r4 'this' I:androidx.fragment.app.FragmentStore A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:7:0x001d \-\> B:3:0x000f, BACK_EDGE: B:8:0x0025 \-\> B:3:0x000f\lINLINE_NOT_NEEDED\lDebug Info:\l  0x001b\-0x0029: r2 'fragmentStateManager' Landroidx\/fragment\/app\/FragmentStateManager;\l  0x0005\-0x002a: r0 'activeFragments' Ljava\/util\/ArrayList;, signature: Ljava\/util\/ArrayList\<Landroidx\/fragment\/app\/Fragment;\>;\lSIGNATURE: ()Ljava\/util\/List\<Landroidx\/fragment\/app\/Fragment;\>;\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_5 -> Node_6;
+Node_6 -> Node_12;
+Node_6 -> Node_13[style=dashed];
+Node_12 -> Node_8;
+Node_8 -> Node_15;
+Node_15 -> Node_14;
+Node_14 -> Node_3;
+Node_13 -> Node_7;
+Node_7 -> Node_16;
+Node_16 -> Node_14;
+Node_11 -> Node_10;
+Node_10 -> Node_1;
+}
+

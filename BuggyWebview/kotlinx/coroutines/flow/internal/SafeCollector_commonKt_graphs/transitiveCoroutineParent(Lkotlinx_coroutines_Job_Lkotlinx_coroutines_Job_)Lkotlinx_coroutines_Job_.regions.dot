@@ -1,0 +1,62 @@
+digraph "CFG forkotlinx.coroutines.flow.internal.SafeCollector_commonKt.transitiveCoroutineParent(Lkotlinx\/coroutines\/Job;Lkotlinx\/coroutines\/Job;)Lkotlinx\/coroutines\/Job;" {
+subgraph cluster_Region_1467036504 {
+label = "R(3:1|(1:(2:(1:8)|(1:6)))|13)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlinx.coroutines.Job r0 = r2\l}"];
+subgraph cluster_LoopRegion_227552435 {
+label = "LOOP:0: (1:(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0001|LOOP_START\lLOOP:0: B:18:0x0001\-\>B:26:0x000d\lPHI: r0 \l  PHI: (r0v1 kotlinx.coroutines.Job) = (r0v0 kotlinx.coroutines.Job), (r0v4 kotlinx.coroutines.Job) binds: [B:17:0x0000, B:26:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1978098813 {
+label = "R(1:(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_58869389 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_605804774 {
+label = "IF [B:21:0x0005, B:24:0x000a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0005|if (r0 == r3) goto L10\l}"];
+Node_24 [shape=record,label="{24\:\ 0x000a|ADDED_TO_REGION\l|if ((r0 instanceof kotlinx.coroutines.internal.ScopeCoroutine) != true) goto L7\l}"];
+subgraph cluster_Region_2049889486 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000c|RETURN\lADDED_TO_REGION\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_813611141 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000d|LOOP_END\lLOOP:0: B:18:0x0001\-\>B:26:0x000d\l|kotlinx.coroutines.Job r0 = ((kotlinx.coroutines.internal.ScopeCoroutine) r0).getParent$kotlinx_coroutines_core()\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0003|RETURN\l|return null\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0008}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000c|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0007|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0007|RETURN\lADDED_TO_REGION\l|return r0\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0003|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final kotlinx.coroutines.Job kotlinx.coroutines.flow.internal.SafeCollector_commonKt.transitiveCoroutineParent((r2v0 '$this$transitiveCoroutineParent' kotlinx.coroutines.Job A[D('$this$transitiveCoroutineParent' kotlinx.coroutines.Job), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'collectJob' kotlinx.coroutines.Job A[D('collectJob' kotlinx.coroutines.Job), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0007 \-\> B:16:?, CROSS_EDGE: B:25:0x000c \-\> B:16:?, BACK_EDGE: B:26:0x000d \-\> B:18:0x0001\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_21;
+Node_18 -> Node_27[style=dashed];
+Node_21 -> Node_23[style=dashed];
+Node_21 -> Node_28;
+Node_24 -> Node_26[style=dashed];
+Node_24 -> Node_29;
+Node_25 -> Node_16;
+Node_26 -> Node_18;
+Node_19 -> Node_16;
+Node_15 -> Node_17;
+Node_23 -> Node_24;
+Node_29 -> Node_25;
+Node_28 -> Node_22;
+Node_22 -> Node_16;
+Node_27 -> Node_19;
+}
+

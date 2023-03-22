@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.app.NotificationCompatJellybean.getBundleForAction(Landroidx\/core\/app\/NotificationCompat$Action;)Landroid\/os\/Bundle;" {
+subgraph cluster_Region_545997938 {
+label = "R(5:1|4|(1:6)(1:10)|7|8) | DECL_VAR: android.os.Bundle actionExtras\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|android.os.Bundle android.os.Bundle r0 = new android.os.Bundle()\landroidx.core.graphics.drawable.IconCompat androidx.core.graphics.drawable.IconCompat r1 = r5.getIconCompat()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0011|PHI: r2 \l  PHI: (r2v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r0.putInt(androidx.core.app.NotificationCompatJellybean.KEY_ICON, r1 != null ? r1.getResId() : 0)\lr0.putCharSequence(androidx.core.app.NotificationCompatJellybean.KEY_TITLE, r5.getTitle())\lr0.putParcelable(androidx.core.app.NotificationCompatJellybean.KEY_ACTION_INTENT, r5.getActionIntent())\l}"];
+subgraph cluster_IfRegion_1961451224 {
+label = "IF [B:19:0x002c] THEN: R(1:6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002c|if (r5.getExtras() != null) goto L6\l}"];
+subgraph cluster_Region_1907236821 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002e|android.os.Bundle r2 = new android.os.Bundle(r5.getExtras())\l}"];
+}
+subgraph cluster_Region_1237242612 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0038|android.os.Bundle r2 = new android.os.Bundle()\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x003d|PHI: r2 \l  PHI: (r2v6 'actionExtras' android.os.Bundle) = (r2v5 'actionExtras' android.os.Bundle), (r2v7 'actionExtras' android.os.Bundle) binds: [B:21:0x0038, B:20:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|r2.putBoolean(androidx.core.app.NotificationCompatJellybean.EXTRA_ALLOW_GENERATED_REPLIES, r5.getAllowGeneratedReplies())\lr0.putBundle(androidx.core.app.NotificationCompatJellybean.KEY_EXTRAS, r2)\lr0.putParcelableArray(androidx.core.app.NotificationCompatJellybean.KEY_REMOTE_INPUTS, toBundleArray(r5.getRemoteInputs()))\lr0.putBoolean(androidx.core.app.NotificationCompatJellybean.KEY_SHOWS_USER_INTERFACE, r5.getShowsUserInterface())\lr0.putInt(androidx.core.app.NotificationCompatJellybean.KEY_SEMANTIC_ACTION, r5.getSemanticAction())\l}"];
+Node_23 [shape=record,label="{23\:\ 0x006b|RETURN\l|return r0\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0009}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0010}"];
+MethodNode[shape=record,label="{public static android.os.Bundle androidx.core.app.NotificationCompatJellybean.getBundleForAction((r5v0 'action' androidx.core.app.NotificationCompat$Action A[D('action' androidx.core.app.NotificationCompat$Action), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0038 \-\> B:22:0x003d, CROSS_EDGE: B:17:0x0010 \-\> B:18:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+}
+

@@ -1,0 +1,69 @@
+digraph "CFG forandroid.support.v4.os.IResultReceiver.Stub.onTransact(ILandroid\/os\/Parcel;Landroid\/os\/Parcel;I)Z" {
+subgraph cluster_Region_1319713200 {
+label = "R(1:2) | DECL_VAR: android.os.Bundle _arg1\l";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1110899812 {
+label = "Switch: 3
+ case 1 -> R(4:8|(1:10)(1:13)|11|12)
+ case 1598968902 -> R(2:6|7)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0003|switch(r5) \{\l    case 1: goto L8;\l    case 1598968902: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_2069296387 {
+label = "R(4:8|(1:10)(1:13)|11|12)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000f|r6.enforceInterface(android.support.p000v4.p001os.IResultReceiver.Stub.DESCRIPTOR)\lint int r2 = r6.readInt()\l}"];
+subgraph cluster_IfRegion_2102205838 {
+label = "IF [B:23:0x001a] THEN: R(1:10) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001a|if (r6.readInt() != 0) goto L10\l}"];
+subgraph cluster_Region_1873114559 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001c|android.os.Bundle r3 = (android.os.Bundle) android.os.Bundle.CREATOR.createFromParcel(r6)\l}"];
+}
+subgraph cluster_Region_679985303 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0025|r3 = null\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0026|PHI: r3 \l  PHI: (r3v2 '_arg1' android.os.Bundle) = (r3v1 '_arg1' android.os.Bundle), (r3v5 '_arg1' android.os.Bundle) binds: [B:25:0x0025, B:24:0x001c] A[DONT_GENERATE, DONT_INLINE]\l|send(r2, r3)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0029|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1587807260 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000b|r7.writeString(android.support.p000v4.p001os.IResultReceiver.Stub.DESCRIPTOR)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000e|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1506267841 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|RETURN\l|return super.onTransact(r5, r6, r7, r8)\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean android.support.v4.os.IResultReceiver.Stub.onTransact((r4v0 'this' android.support.v4.os.IResultReceiver$Stub A[IMMUTABLE_TYPE, THIS]), (r5v0 'code' int A[D('code' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'data' android.os.Parcel A[D('data' android.os.Parcel), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'reply' android.os.Parcel A[D('reply' android.os.Parcel), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'flags' int A[D('flags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:21:0x000e \-\> B:15:?, CROSS_EDGE: B:27:0x0029 \-\> B:15:?, CROSS_EDGE: B:25:0x0025 \-\> B:26:0x0026\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroid\/os\/RemoteException;]\lMETHOD_OVERRIDE: [ClspMth\{android.os.Binder.onTransact(int, android.os.Parcel, android.os.Parcel, int):boolean throws android.os.RemoteException\}]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_20;
+Node_17 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_26;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_15;
+Node_20 -> Node_21;
+Node_21 -> Node_15;
+Node_19 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

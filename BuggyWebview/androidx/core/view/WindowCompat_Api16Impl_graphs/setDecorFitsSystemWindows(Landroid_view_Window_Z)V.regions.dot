@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.view.WindowCompat.Api16Impl.setDecorFitsSystemWindows(Landroid\/view\/Window;Z)V" {
+subgraph cluster_Region_1129282308 {
+label = "R(3:1|(1:3)(1:7)|4) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.view.View android.view.View r1 = r4.getDecorView()\lint int r2 = r1.getSystemUiVisibility()\l}"];
+subgraph cluster_IfRegion_990361174 {
+label = "IF [B:11:0x000a] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000a|if (r5 != false) goto L3\l}"];
+subgraph cluster_Region_992459286 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000c|r3 = r2 & (\-1793)\l}"];
+}
+subgraph cluster_Region_1180579544 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|r3 = r2 \| 1792\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0011|PHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:13:0x000f, B:12:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|r1.setSystemUiVisibility(r3)\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0014}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static void androidx.core.view.WindowCompat.Api16Impl.setDecorFitsSystemWindows((r4v0 'window' android.view.Window A[D('window' android.view.Window), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'decorFitsSystemWindows' boolean A[D('decorFitsSystemWindows' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000f \-\> B:14:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_15 -> Node_9;
+}
+

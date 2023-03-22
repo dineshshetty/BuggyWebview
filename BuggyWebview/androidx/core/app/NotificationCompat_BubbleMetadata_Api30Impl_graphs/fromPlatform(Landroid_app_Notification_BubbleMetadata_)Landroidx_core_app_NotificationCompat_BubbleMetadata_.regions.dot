@@ -1,0 +1,87 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.BubbleMetadata.Api30Impl.fromPlatform(Landroid\/app\/Notification$BubbleMetadata;)Landroidx\/core\/app\/NotificationCompat$BubbleMetadata;" {
+subgraph cluster_Region_388497530 {
+label = "R(1:(2:(1:2)|(5:(1:6)(1:15)|7|(1:9)|(1:12)|14))) | DECL_VAR: androidx.core.app.NotificationCompat$BubbleMetadata$Builder compatBuilder\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_2038463078 {
+label = "R(2:(1:2)|(5:(1:6)(1:15)|7|(1:9)|(1:12)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_14053802 {
+label = "IF [B:19:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|if (r4 == null) goto L2\l}"];
+subgraph cluster_Region_1608514673 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0002|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_144907296 {
+label = "R(5:(1:6)(1:15)|7|(1:9)|(1:12)|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1913263128 {
+label = "IF [B:23:0x0009] THEN: R(1:6) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0009|if (r4.getShortcutId() != null) goto L6\l}"];
+subgraph cluster_Region_1462249895 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000b|r0 = new androidx.core.app.NotificationCompat.BubbleMetadata.Builder(r4.getShortcutId())\l}"];
+}
+subgraph cluster_Region_1685189156 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0016|r0 = new androidx.core.app.NotificationCompat.BubbleMetadata.Builder(r4.getIntent(), androidx.core.graphics.drawable.IconCompat.createFromIcon(r4.getIcon()))\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0028|PHI: r0 \l  PHI: (r0v2 'compatBuilder' androidx.core.app.NotificationCompat$BubbleMetadata$Builder) = (r0v1 'compatBuilder' androidx.core.app.NotificationCompat$BubbleMetadata$Builder), (r0v3 'compatBuilder' androidx.core.app.NotificationCompat$BubbleMetadata$Builder) binds: [B:25:0x0016, B:24:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|r0.setAutoExpandBubble(r4.getAutoExpandBubble()).setDeleteIntent(r4.getDeleteIntent()).setSuppressNotification(r4.isNotificationSuppressed())\l}"];
+subgraph cluster_IfRegion_1096966354 {
+label = "IF [B:27:0x0044] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0044|if (r4.getDesiredHeight() != 0) goto L9\l}"];
+subgraph cluster_Region_1635655931 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0046|r0.setDesiredHeight(r4.getDesiredHeight())\l}"];
+}
+}
+subgraph cluster_IfRegion_1907127016 {
+label = "IF [B:30:0x0051] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0051|if (r4.getDesiredHeightResId() != 0) goto L12\l}"];
+subgraph cluster_Region_1394872849 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0053|r0.setDesiredHeightResId(r4.getDesiredHeightResId())\l}"];
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x005e|RETURN\l|return r0.build()\l}"];
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0004}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x004d}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x005a}"];
+MethodNode[shape=record,label="{static androidx.core.app.NotificationCompat$BubbleMetadata androidx.core.app.NotificationCompat.BubbleMetadata.Api30Impl.fromPlatform((r4v0 'platformMetadata' android.app.Notification$BubbleMetadata A[D('platformMetadata' android.app.Notification$BubbleMetadata), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:33:0x005e \-\> B:18:?, CROSS_EDGE: B:30:0x0051 \-\> B:32:0x005a, CROSS_EDGE: B:27:0x0044 \-\> B:29:0x004d, CROSS_EDGE: B:25:0x0016 \-\> B:26:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_18;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_26;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_33 -> Node_18;
+Node_17 -> Node_19;
+Node_22 -> Node_23;
+Node_29 -> Node_30;
+Node_32 -> Node_33;
+}
+

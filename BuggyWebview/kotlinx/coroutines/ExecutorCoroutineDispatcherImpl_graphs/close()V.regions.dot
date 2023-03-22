@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.ExecutorCoroutineDispatcherImpl.close()V" {
+subgraph cluster_Region_1966713351 {
+label = "R(3:1|2|(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.concurrent.Executor java.util.concurrent.Executor r0 = getExecutor()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|java.util.concurrent.ExecutorService r0 = r0 instanceof java.util.concurrent.ExecutorService ? (java.util.concurrent.ExecutorService) r0 : null\l}"];
+subgraph cluster_Region_1167817377 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1920188294 {
+label = "IF [B:6:0x000c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|PHI: r0 \l  PHI: (r0v2 java.util.concurrent.ExecutorService) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L8\l}"];
+subgraph cluster_Region_1878911542 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_116229546 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|r0.shutdown()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0012|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.ExecutorCoroutineDispatcherImpl.close((r2v0 'this' kotlinx.coroutines.ExecutorCoroutineDispatcherImpl A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:6:0x000c \-\> B:9:0x0012, CROSS_EDGE: B:5:0x000b \-\> B:6:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{java.lang.AutoCloseable.close():void throws java.lang.Exception\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_8[style=dashed];
+Node_6 -> Node_10;
+Node_10 -> Node_1;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_9 -> Node_1;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,48 @@
+digraph "CFG forkotlin.collections.CollectionsKt__CollectionsKt.optimizeReadOnlyList(Ljava\/util\/List;)Ljava\/util\/List;" {
+subgraph cluster_Region_187935545 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, \"\<this\>\")\l}"];
+subgraph cluster_SwitchRegion_557851916 {
+label = "Switch: 3
+ case 0 -> R(1:9)
+ case 1 -> R(1:7)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0009|switch(r1.size()) \{\l    case 0: goto L8;\l    case 1: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_990185418 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001c|RETURN\lORIG_RETURN\l|return kotlin.collections.CollectionsKt.emptyList()\l}"];
+}
+subgraph cluster_Region_1329081174 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return kotlin.collections.CollectionsKt.listOf(r1.get(0))\l}"];
+}
+subgraph cluster_Region_1506032619 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000c}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000e}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0018}"];
+MethodNode[shape=record,label="{public static final java.util.List\<T\> kotlin.collections.CollectionsKt__CollectionsKt.optimizeReadOnlyList((r1v0 java.util.List\<? extends T\> A[D('$this$optimizeReadOnlyList' java.util.List), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000e \-\> B:17:0x001c, CROSS_EDGE: B:16:0x0018 \-\> B:17:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/List\<+TT;\>;)Ljava\/util\/List\<TT;\>;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r1v0, resolved type: java.util.List\<? extends T\>\}\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_13 -> Node_16;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_18 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_18;
+Node_15 -> Node_19;
+Node_16 -> Node_17;
+}
+

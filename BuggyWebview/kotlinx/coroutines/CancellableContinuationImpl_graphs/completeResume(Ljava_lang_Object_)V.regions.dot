@@ -1,0 +1,52 @@
+digraph "CFG forkotlinx.coroutines.CancellableContinuationImpl.completeResume(Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_351044039 {
+label = "R(2:(1:(1:8))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_412069679 {
+label = "IF [B:17:0x0004] THEN: R(1:(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (kotlinx.coroutines.Debug.getASSERTIONS_ENABLED() != false) goto L3\l}"];
+subgraph cluster_Region_1717016911 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_317249340 {
+label = "IF [B:22:0x000e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000e|PHI: r1 \l  PHI: (r1v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r3 == kotlinx.coroutines.CancellableContinuationImplKt.RESUME_TOKEN) == false) goto L7\l}"];
+subgraph cluster_Region_1660587551 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0016|throw new java.lang.AssertionError()\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0017|dispatchResume(r2.resumeMode)\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0009}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000b}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0011}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000d}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001c}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.CancellableContinuationImpl.completeResume((r2v0 'this' kotlinx.coroutines.CancellableContinuationImpl\<T\> A[IMMUTABLE_TYPE, THIS]), (r3v0 'token' java.lang.Object A[D('token' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x001c \-\> B:15:?, CROSS_EDGE: B:21:0x000d \-\> B:22:0x000e, CROSS_EDGE: B:17:0x0004 \-\> B:26:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lMETHOD_OVERRIDE: [kotlinx.coroutines.CancellableContinuation.completeResume(java.lang.Object):void]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_26[style=dashed];
+Node_22 -> Node_24;
+Node_22 -> Node_26[style=dashed];
+Node_25 -> Node_15;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_20 -> Node_22;
+Node_24 -> Node_25;
+Node_21 -> Node_22;
+Node_27 -> Node_15;
+}
+

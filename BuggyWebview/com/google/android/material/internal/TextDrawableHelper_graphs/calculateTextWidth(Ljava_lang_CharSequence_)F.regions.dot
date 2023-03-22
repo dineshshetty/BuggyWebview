@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.material.internal.TextDrawableHelper.calculateTextWidth(Ljava\/lang\/CharSequence;)F" {
+subgraph cluster_Region_1540742132 {
+label = "R(1:(2:(1:2)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1096191226 {
+label = "R(2:(1:2)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_373268860 {
+label = "IF [B:9:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r4 == null) goto L2\l}"];
+subgraph cluster_Region_809394575 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|RETURN\l|return 0.0f\l}"];
+}
+}
+subgraph cluster_Region_1161893383 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|RETURN\l|return r3.textPaint.measureText(r4, 0, r4.length())\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+MethodNode[shape=record,label="{private float com.google.android.material.internal.TextDrawableHelper.calculateTextWidth((r3v0 'this' com.google.android.material.internal.TextDrawableHelper A[IMMUTABLE_TYPE, THIS]), (r4v0 'charSequence' java.lang.CharSequence A[D('charSequence' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000f \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_12 -> Node_13;
+}
+

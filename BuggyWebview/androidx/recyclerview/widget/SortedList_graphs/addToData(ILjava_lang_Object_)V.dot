@@ -1,0 +1,29 @@
+digraph "CFG forandroidx.recyclerview.widget.SortedList.addToData(ILjava\/lang\/Object;)V" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000|int r0 = r4.mSize\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r5 \> r0) goto L10\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0004|T[] r1 = r4.mData\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0007|if (r0 != r1.length) goto L9\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0009|java.lang.Object[] r0 = (T[]) ((java.lang.Object[]) java.lang.reflect.Array.newInstance(r4.mTClass, r1.length + 10))\ljava.lang.System.arraycopy(r4.mData, 0, r0, 0, r5)\lr0[r5] = r6\ljava.lang.System.arraycopy(r4.mData, r5, r0, r5 + 1, r4.mSize \- r5)\lr4.mData = r0\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0035|r4.mSize = r4.mSize + 1\l}"];
+Node_21 [shape=record,label="{21\:\ 0x003b|RETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x002b|java.lang.System.arraycopy(r1, r5, r1, r5 + 1, r0 \- r5)\lr4.mData[r5] = r6\l}"];
+Node_22 [shape=record,label="{22\:\ 0x003c|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"cannot add item to \")\lr1.append(r5)\lr1.append(\" because size is \")\lr1.append(r4.mSize)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x005c|throw new java.lang.IndexOutOfBoundsException(r1.toString())\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.SortedList.addToData((r4v0 'this' androidx.recyclerview.widget.SortedList\<T\> A[D('this' androidx.recyclerview.widget.SortedList\<T\>), IMMUTABLE_TYPE, THIS]), (r5v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'item' T A[D('item' T), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x002b \-\> B:20:0x0035, CROSS_EDGE: B:23:0x005c \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (ITT;)V\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_22;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_19 -> Node_20;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+}
+

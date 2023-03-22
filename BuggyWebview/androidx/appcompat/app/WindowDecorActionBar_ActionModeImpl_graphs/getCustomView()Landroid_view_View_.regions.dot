@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.appcompat.app.WindowDecorActionBar.ActionModeImpl.getCustomView()Landroid\/view\/View;" {
+subgraph cluster_Region_1956829526 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.ref.WeakReference\<android.view.View\> java.lang.ref.WeakReference\<android.view.View\> r0 = r1.mCustomView\l}"];
+subgraph cluster_Region_1101664728 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1104509480 {
+label = "IF [B:3:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_41565763 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return r0.get()\l}"];
+}
+}
+subgraph cluster_Region_720240912 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.view.View androidx.appcompat.app.WindowDecorActionBar.ActionModeImpl.getCustomView((r1v0 'this' androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x000b \-\> B:6:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.view.ActionMode.getCustomView():android.view.View]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_7 -> Node_1;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_7;
+}
+

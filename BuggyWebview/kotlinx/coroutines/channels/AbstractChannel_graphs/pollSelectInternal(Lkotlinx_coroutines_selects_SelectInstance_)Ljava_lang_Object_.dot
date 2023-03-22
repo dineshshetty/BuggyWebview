@@ -1,0 +1,18 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractChannel.pollSelectInternal(Lkotlinx\/coroutines\/selects\/SelectInstance;)Ljava\/lang\/Object;" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlinx.coroutines.channels.AbstractChannel$TryPollDesc r0 = describeTryPoll()\ljava.lang.Object r1 = r5.performAtomicTrySelect(r0)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000b|if (r1 == null) goto L5\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000d|RETURN\l|return r1\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000e|kotlinx.coroutines.channels.Send r2 = r0.getResult()\lr2.completeResumeSend()\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0021|RETURN\l|return r0.getResult().getPollResult()\l}"];
+MethodNode[shape=record,label="{protected java.lang.Object kotlinx.coroutines.channels.AbstractChannel.pollSelectInternal((r4v0 'this' kotlinx.coroutines.channels.AbstractChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r5v0 kotlinx.coroutines.selects.SelectInstance\<?\> A[D('select' kotlinx.coroutines.selects.SelectInstance), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0021 \-\> B:15:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (Lkotlinx\/coroutines\/selects\/SelectInstance\<*\>;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.AbstractChannel.pollSelectInternal(kotlinx.coroutines.selects.SelectInstance\<?\>):java.lang.Object]\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+Node_18 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_15;
+}
+

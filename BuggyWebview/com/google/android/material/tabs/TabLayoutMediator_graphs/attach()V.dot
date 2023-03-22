@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayoutMediator.attach()V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r4.attached != false) goto L13\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0004|androidx.recyclerview.widget.RecyclerView$Adapter r0 = r4.viewPager.getAdapter()\lr4.adapter = r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r0 == null) goto L11\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|r4.attached = true\lcom.google.android.material.tabs.TabLayoutMediator$TabLayoutOnPageChangeCallback r1 = new com.google.android.material.tabs.TabLayoutMediator.TabLayoutOnPageChangeCallback(r4.tabLayout)\lr4.onPageChangeCallback = r1\lr4.viewPager.registerOnPageChangeCallback(r1)\lcom.google.android.material.tabs.TabLayoutMediator$ViewPagerOnTabSelectedListener r1 = new com.google.android.material.tabs.TabLayoutMediator.ViewPagerOnTabSelectedListener(r4.viewPager, r4.smoothScroll)\lr4.onTabSelectedListener = r1\lr4.tabLayout.addOnTabSelectedListener(r1)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0031|if (r4.autoRefresh == false) goto L8\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0033|com.google.android.material.tabs.TabLayoutMediator$PagerAdapterObserver r1 = new com.google.android.material.tabs.TabLayoutMediator.PagerAdapterObserver(r4)\lr4.pagerAdapterObserver = r1\lr4.adapter.registerAdapterDataObserver(r1)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003f|populateTabsFromPagerAdapter()\lr4.tabLayout.setScrollPosition(r4.viewPager.getCurrentItem(), 0.0f, true)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004e|RETURN\l|return\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,label="{11\:\ 0x004f}"];
+Node_12 [shape=record,label="{12\:\ 0x0056|throw new java.lang.IllegalStateException(\"TabLayoutMediator attached before ViewPager2 has an adapter\")\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0057}"];
+Node_14 [shape=record,label="{14\:\ 0x005e|throw new java.lang.IllegalStateException(\"TabLayoutMediator is already attached\")\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.tabs.TabLayoutMediator.attach((r4v0 'this' com.google.android.material.tabs.TabLayoutMediator A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0031 \-\> B:9:0x003f, CROSS_EDGE: B:12:0x0056 \-\> B:1:?, CROSS_EDGE: B:14:0x005e \-\> B:1:?\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+}
+

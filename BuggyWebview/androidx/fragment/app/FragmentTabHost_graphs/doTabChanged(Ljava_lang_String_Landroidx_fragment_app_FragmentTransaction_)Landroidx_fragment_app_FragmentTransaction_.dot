@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.fragment.app.FragmentTabHost.doTabChanged(Ljava\/lang\/String;Landroidx\/fragment\/app\/FragmentTransaction;)Landroidx\/fragment\/app\/FragmentTransaction;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.fragment.app.FragmentTabHost$TabInfo r0 = getTabInfoForTag(r5)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r4.mLastTab == r0) goto L16\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|if (r6 != null) goto L5\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|androidx.fragment.app.FragmentTransaction r6 = r4.mFragmentManager.beginTransaction()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0010|PHI: r6 \l  PHI: (r6v2 'ft' androidx.fragment.app.FragmentTransaction) = (r6v0 'ft' androidx.fragment.app.FragmentTransaction), (r6v3 'ft' androidx.fragment.app.FragmentTransaction) binds: [B:4:0x0008, B:5:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|androidx.fragment.app.FragmentTabHost$TabInfo r1 = r4.mLastTab\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0012|if (r1 == null) goto L10\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0014}"];
+Node_9 [shape=record,label="{9\:\ 0x0016|if (r1.fragment == null) goto L10\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0018|r6.detach(r4.mLastTab.fragment)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x001f|if (r0 == null) goto L15\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0021}"];
+Node_13 [shape=record,label="{13\:\ 0x0023|if (r0.fragment != null) goto L14\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0025|r0.fragment = r4.mFragmentManager.getFragmentFactory().instantiate(r4.mContext.getClassLoader(), r0.clss.getName())\lr0.fragment.setArguments(r0.args)\lr6.add(r4.mContainerId, r0.fragment, r0.tag)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x004e|r6.attach(r0.fragment)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0053|r4.mLastTab = r0\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0055|RETURN\lPHI: r6 \l  PHI: (r6v1 'ft' androidx.fragment.app.FragmentTransaction) = (r6v0 'ft' androidx.fragment.app.FragmentTransaction), (r6v2 'ft' androidx.fragment.app.FragmentTransaction) binds: [B:3:0x0006, B:16:0x0053] A[DONT_GENERATE, DONT_INLINE]\l|return r6\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private androidx.fragment.app.FragmentTransaction androidx.fragment.app.FragmentTabHost.doTabChanged((r4v0 'this' androidx.fragment.app.FragmentTabHost A[IMMUTABLE_TYPE, THIS]), (r5v0 'tag' java.lang.String A[D('tag' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'ft' androidx.fragment.app.FragmentTransaction A[D('ft' androidx.fragment.app.FragmentTransaction), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x004e \-\> B:16:0x0053, CROSS_EDGE: B:11:0x001f \-\> B:16:0x0053, CROSS_EDGE: B:9:0x0016 \-\> B:11:0x001f, CROSS_EDGE: B:7:0x0012 \-\> B:11:0x001f, CROSS_EDGE: B:4:0x0008 \-\> B:6:0x0010, CROSS_EDGE: B:3:0x0006 \-\> B:17:0x0055\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_17;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_11;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_16;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_1;
+}
+

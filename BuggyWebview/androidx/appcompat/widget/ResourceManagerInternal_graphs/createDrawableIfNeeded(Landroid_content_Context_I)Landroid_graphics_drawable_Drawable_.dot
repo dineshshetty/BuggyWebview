@@ -1,0 +1,39 @@
+digraph "CFG forandroidx.appcompat.widget.ResourceManagerInternal.createDrawableIfNeeded(Landroid\/content\/Context;I)Landroid\/graphics\/drawable\/Drawable;" {
+Node_16 [shape=record,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0000}"];
+Node_19 [shape=record,label="{19\:\ 0x0002|if (r5.mTypedValue != null) goto L4\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0004|r5.mTypedValue = new android.util.TypedValue()\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000b|android.util.TypedValue r0 = r5.mTypedValue\lr6.getResources().getValue(r7, r0, true)\llong r1 = createCacheKey(r0)\landroid.graphics.drawable.Drawable r3 = getCachedDrawable(r6, r1)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001d|if (r3 == null) goto L8\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001f|RETURN\l|return r3\l}"];
+Node_17 [shape=record,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0020|androidx.appcompat.widget.ResourceManagerInternal$ResourceManagerHooks r4 = r5.mHooks\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0022|if (r4 != null) goto L15\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0024|r4 = null\l}"];
+Node_28 [shape=record,label="{28\:\ 0x002a|PHI: r4 \l  PHI: (r4v2 android.graphics.drawable.Drawable) = (r4v1 android.graphics.drawable.Drawable), (r4v4 android.graphics.drawable.Drawable) binds: [B:27:0x0026, B:26:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|r3 = r4\l}"];
+Node_29 [shape=record,label="{29\:\ 0x002b|if (r3 == null) goto L14\l}"];
+Node_30 [shape=record,label="{30\:\ 0x002d|r3.setChangingConfigurations(r0.changingConfigurations)\laddDrawableToCache(r6, r1, r3)\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0035|RETURN\l|return r3\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0026|android.graphics.drawable.Drawable r4 = r4.createDrawableFor(r5, r6, r7)\l}"];
+MethodNode[shape=record,label="{private android.graphics.drawable.Drawable androidx.appcompat.widget.ResourceManagerInternal.createDrawableIfNeeded((r5v0 'this' androidx.appcompat.widget.ResourceManagerInternal A[IMMUTABLE_TYPE, THIS]), (r6v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'resId' int A[D('resId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0035 \-\> B:17:?, CROSS_EDGE: B:29:0x002b \-\> B:31:0x0035, CROSS_EDGE: B:27:0x0026 \-\> B:28:0x002a, CROSS_EDGE: B:19:0x0002 \-\> B:21:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_23 -> Node_17;
+Node_24 -> Node_25;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_27;
+Node_26 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_31;
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+Node_27 -> Node_28;
+}
+

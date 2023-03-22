@@ -1,0 +1,57 @@
+digraph "CFG forkotlinx.coroutines.selects.SelectBuilderImpl.initCancellability()V" {
+subgraph cluster_Region_622976725 {
+label = "R(2:1|(2:(1:3)|(2:5|(1:(1:7)))))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlinx.coroutines.Job kotlinx.coroutines.Job r1 = (kotlinx.coroutines.Job) getContext().get(kotlinx.coroutines.Job.Key)\l}"];
+subgraph cluster_Region_2104359087 {
+label = "R(2:(1:3)|(2:5|(1:(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_708712084 {
+label = "IF [B:13:0x000f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_2050910397 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0011|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1475881944 {
+label = "R(2:5|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0012|kotlinx.coroutines.CompletionHandlerBase kotlinx.coroutines.CompletionHandlerBase r0 = new kotlinx.coroutines.selects.SelectBuilderImpl.SelectOnCancelling()\lkotlinx.coroutines.DisposableHandle kotlinx.coroutines.DisposableHandle r0 = kotlinx.coroutines.Job.DefaultImpls.invokeOnCompletion$default(r1, true, false, r0, 2, null)\lsetParentHandle(r0)\l}"];
+subgraph cluster_Region_1724210739 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_932527591 {
+label = "IF [B:16:0x002d] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x002d|if (isSelected() != false) goto L7\l}"];
+subgraph cluster_Region_1978143734 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x002f|r0.dispose()\l}"];
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0032|ORIG_RETURN\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.selects.SelectBuilderImpl.initCancellability((r7v0 'this' kotlinx.coroutines.selects.SelectBuilderImpl\<R\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0032 \-\> B:11:?, CROSS_EDGE: B:16:0x002d \-\> B:18:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

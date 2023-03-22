@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.material.datepicker.MaterialCalendar.setSelector(Lcom\/google\/android\/material\/datepicker\/MaterialCalendar$CalendarSelector;)V" {
+subgraph cluster_Region_1041025797 {
+label = "R(2:1|(1:3)(1:(1:8)(0)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r5.calendarSelector = r6\l}"];
+subgraph cluster_IfRegion_354629396 {
+label = "IF [B:14:0x0007] THEN: R(1:3) ELSE: R(1:(1:8)(0))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0007|if (r6 == com.google.android.material.datepicker.MaterialCalendar.CalendarSelector.YEAR) goto L3\l}"];
+subgraph cluster_Region_1591488404 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0009|r5.yearSelector.getLayoutManager().scrollToPosition(((com.google.android.material.datepicker.YearGridAdapter) r5.yearSelector.getAdapter()).getPositionForYear(r5.current.year))\lr5.yearFrame.setVisibility(0)\lr5.dayFrame.setVisibility(8)\lr5.monthPrev.setVisibility(8)\lr5.monthNext.setVisibility(8)\l}"];
+}
+subgraph cluster_Region_51363590 {
+label = "R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1535314049 {
+label = "IF [B:17:0x0039] THEN: R(1:8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0039|if (r6 == com.google.android.material.datepicker.MaterialCalendar.CalendarSelector.DAY) goto L8\l}"];
+subgraph cluster_Region_1460936562 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x003b|r5.yearFrame.setVisibility(8)\lr5.dayFrame.setVisibility(0)\lr5.monthPrev.setVisibility(0)\lr5.monthNext.setVisibility(0)\lsetCurrentMonth(r5.current)\l}"];
+}
+subgraph cluster_Region_1745562251 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0037}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0054|ORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.datepicker.MaterialCalendar.setSelector((r5v0 'this' com.google.android.material.datepicker.MaterialCalendar\<S\> A[D('this' com.google.android.material.datepicker.MaterialCalendar\<S\>), IMMUTABLE_TYPE, THIS]), (r6v0 'selector' com.google.android.material.datepicker.MaterialCalendar$CalendarSelector A[D('selector' com.google.android.material.datepicker.MaterialCalendar$CalendarSelector), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x003b \-\> B:19:0x0054, CROSS_EDGE: B:17:0x0039 \-\> B:19:0x0054\lINLINE_NOT_NEEDED\lTYPE_VARS: [S]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_20;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_20 -> Node_12;
+Node_16 -> Node_17;
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+}
+

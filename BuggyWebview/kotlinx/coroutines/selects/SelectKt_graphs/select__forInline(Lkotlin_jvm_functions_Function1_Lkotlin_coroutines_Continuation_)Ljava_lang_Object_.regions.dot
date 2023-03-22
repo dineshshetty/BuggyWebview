@@ -1,0 +1,64 @@
+digraph "CFG forkotlinx.coroutines.selects.SelectKt.select$$forInline(Lkotlin\/jvm\/functions\/Function1;Lkotlin\/coroutines\/Continuation;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1652382819 {
+label = "R(6:1|(1:3)|4|(1:6)|7|8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.InlineMarker.mark(0)\lkotlinx.coroutines.selects.SelectBuilderImpl kotlinx.coroutines.selects.SelectBuilderImpl r3 = new kotlinx.coroutines.selects.SelectBuilderImpl(r6)\l}"];
+subgraph cluster_TryCatchRegion_19455353 {
+label = "Try: R(1:3) catches: R(2:11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_17210131 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0012, blocks: (B:17:0x000e), top: B:26:0x000e \}\lCatch: all \-\> 0x0012\l|r5.invoke(r3)     \/\/ Catch: java.lang.Throwable \-\> L12\l}"];
+}
+subgraph cluster_Region_1011166624 {
+label = "R(2:11|12) | ExcHandler: all \-\> 0x0012\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|ExcHandler: all \-\> 0x0012\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0013|r3.handleBuilderException(r4)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0016|java.lang.Object java.lang.Object r1 = r3.getResult()\l}"];
+subgraph cluster_IfRegion_1124426440 {
+label = "IF [B:22:0x001e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001e|if (r1 == kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L6\l}"];
+subgraph cluster_Region_161951674 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0020|kotlin.coroutines.jvm.internal.DebugProbes.probeCoroutineSuspended(r6)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0023|kotlin.jvm.internal.InlineMarker.mark(1)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0027|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_1011166624 {
+label = "R(2:11|12) | ExcHandler: all \-\> 0x0012\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|ExcHandler: all \-\> 0x0012\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0013|r3.handleBuilderException(r4)\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000e|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{private static final java.lang.Object kotlinx.coroutines.selects.SelectKt.select$$forInline((r5v0 kotlin.jvm.functions.Function1\<? super kotlinx.coroutines.selects.SelectBuilder\<? super R\>, kotlin.Unit\> A[D('builder' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 kotlin.coroutines.Continuation\<? super R\> A[D('$completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:22:0x001e \-\> B:24:0x0023, CROSS_EDGE: B:20:0x0013 \-\> B:21:0x0016, CROSS_EDGE: B:26:0x000e \-\> B:19:0x0012\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0012, blocks: (B:17:0x000e), top: B:26:0x000e \}\lTYPE_VARS: [R]\lSIGNATURE: \<R:Ljava\/lang\/Object;\>(Lkotlin\/jvm\/functions\/Function1\<\-Lkotlinx\/coroutines\/selects\/SelectBuilder\<\-TR;\>;Lkotlin\/Unit;\>;Lkotlin\/coroutines\/Continuation\<\-TR;\>;)Ljava\/lang\/Object;\l}"];
+MethodNode -> Node_14;Node_16 -> Node_26;
+Node_17 -> Node_21;
+Node_17 -> Node_27;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_14 -> Node_16;
+Node_26 -> Node_17;
+Node_26 -> Node_19;
+Node_27 -> Node_19;
+}
+

@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.recyclerview.widget.ChildHelper.unhide(Landroid\/view\/View;)V" {
+subgraph cluster_Region_412253918 {
+label = "R(2:1|(2:10|11)(1:(2:8|9)(1:5)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = r4.mCallback.indexOfChild(r5)\l}"];
+subgraph cluster_IfRegion_815204219 {
+label = "IF [B:15:0x0006] THEN: R(2:10|11) ELSE: R(1:(2:8|9)(1:5))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0006|if (r0 \< 0) goto L10\l}"];
+subgraph cluster_Region_274275351 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0030}"];
+Node_23 [shape=record,label="{23\:\ 0x0046|throw new java.lang.IllegalArgumentException(\"view is not a child, cannot hide \" + r5)\l}"];
+}
+subgraph cluster_Region_626937843 {
+label = "R(1:(2:8|9)(1:5)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_490715224 {
+label = "IF [B:17:0x000e] THEN: R(2:8|9) ELSE: R(1:5) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|if (r4.mBucket.get(r0) == false) goto L8\l}"];
+subgraph cluster_Region_1059571373 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0019}"];
+Node_21 [shape=record,label="{21\:\ 0x002f|throw new java.lang.RuntimeException(\"trying to unhide a view that was not hidden\" + r5)\l}"];
+}
+subgraph cluster_Region_749463778 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0010|r4.mBucket.clear(r0)\lunhideViewInternal(r5)\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0008}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0018}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.ChildHelper.unhide((r4v0 'this' androidx.recyclerview.widget.ChildHelper A[IMMUTABLE_TYPE, THIS]), (r5v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x002f \-\> B:13:?, CROSS_EDGE: B:23:0x0046 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_18 -> Node_19;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_19 -> Node_13;
+}
+

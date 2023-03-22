@@ -1,0 +1,62 @@
+digraph "CFG forkotlin.collections.AbstractMap.implFindEntry(Ljava\/lang\/Object;)Ljava\/util\/Map$Entry;" {
+subgraph cluster_Region_703868338 {
+label = "R(3:1|(1:(2:4|(1:6))(2:11|1))|8) | DECL_VAR: java.lang.Object element$iv\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.lang.Iterable java.lang.Iterable r0 = entrySet()\ljava.util.Iterator java.util.Iterator\<T\> r2 = r0.iterator()\l}"];
+subgraph cluster_LoopRegion_1329548642 {
+label = "LOOP:0: (1:(2:4|(1:6))(2:11|1))";
+node [shape=record,color=blue];
+subgraph cluster_Region_893121566 {
+label = "R(1:(2:4|(1:6))(2:11|1))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_625874735 {
+label = "IF [B:17:0x000f] THEN: R(2:4|(1:6)) ELSE: R(2:11|1)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|if (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_493386478 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0011|java.lang.Object r3 = r2.next()\ljava.util.Map$Entry java.util.Map.Entry r4 = (java.util.Map.Entry) r3\l}"];
+subgraph cluster_IfRegion_584062194 {
+label = "IF [B:19:0x0021] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0021|LOOP_END\lLOOP:0: B:16:0x000b\-\>B:19:0x0021\l|if (kotlin.jvm.internal.Intrinsics.areEqual(r4.getKey(), r8) != false) goto L6\l}"];
+subgraph cluster_Region_1735179310 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0025|SYNTHETIC\lEDGE_INSN: B:24:0x0025\-\>B:22:0x0025 ?: BREAK  \l|break\l}"];
+}
+}
+}
+subgraph cluster_Region_708912565 {
+label = "R(2:11|1)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|EDGE_INSN: B:21:0x0024\-\>B:22:0x0025 ?: BREAK  \l|r3 = null\l}"];
+Node_InsnContainer_797195511 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0027|RETURN\l|return (java.util.Map.Entry) r3\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b|LOOP_START\lLOOP:0: B:16:0x000b\-\>B:19:0x0021\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0025|EDGE_INSN: B:24:0x0025\-\>B:22:0x0025 ?: BREAK  , EDGE_INSN: B:21:0x0024\-\>B:22:0x0025 ?: BREAK  \lPHI: r3 \l  PHI: (r3v2 'element$iv' java.lang.Object) = (r3v1 'element$iv' java.lang.Object), (r3v4 'element$iv' java.lang.Object) binds: [B:21:0x0024, B:24:0x0025] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0024|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final java.util.Map$Entry\<K, V\> kotlin.collections.AbstractMap.implFindEntry((r7v0 'this' kotlin.collections.AbstractMap\<K, V\> A[IMMUTABLE_TYPE, THIS]), (r8v0 K A[D('key' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0021 \-\> B:16:0x000b, CROSS_EDGE: B:21:0x0024 \-\> B:22:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: (TK;)Ljava\/util\/Map$Entry\<TK;TV;\>;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_25[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_16[style=dashed];
+Node_19 -> Node_24;
+Node_24 -> Node_22;
+Node_21 -> Node_22;
+Node_23 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_22 -> Node_23;
+Node_25 -> Node_21;
+}
+

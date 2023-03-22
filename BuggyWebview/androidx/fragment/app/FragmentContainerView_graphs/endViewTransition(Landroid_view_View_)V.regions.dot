@@ -1,0 +1,48 @@
+digraph "CFG forandroidx.fragment.app.FragmentContainerView.endViewTransition(Landroid\/view\/View;)V" {
+subgraph cluster_Region_245623696 {
+label = "R(3:1|(2:3|(1:7))|8)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.util.ArrayList\<android.view.View\> java.util.ArrayList\<android.view.View\> r0 = r1.mTransitioningFragmentViews\l}"];
+subgraph cluster_IfRegion_1181375564 {
+label = "IF [B:14:0x0002] THEN: R(2:3|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_477260748 {
+label = "R(2:3|(1:7))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|r0.remove(r2)\ljava.util.ArrayList\<android.view.View\> java.util.ArrayList\<android.view.View\> r0 = r1.mDisappearingFragmentChildren\l}"];
+subgraph cluster_IfRegion_2053651907 {
+label = "IF [B:16:0x0009, B:18:0x000f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|if (r0 != null) goto L5\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000f|ADDED_TO_REGION\l|if (r0.remove(r2) != false) goto L7\l}"];
+subgraph cluster_Region_1414066954 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|r1.mDrawDisappearingViewsFirst = true\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0014|super.endViewTransition(r2)\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000b}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0017}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentContainerView.endViewTransition((r1v0 'this' androidx.fragment.app.FragmentContainerView A[IMMUTABLE_TYPE, THIS]), (r2v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:18:0x000f \-\> B:20:0x0014, CROSS_EDGE: B:16:0x0009 \-\> B:20:0x0014, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewGroup.endViewTransition(android.view.View):void\}]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_17 -> Node_18;
+Node_21 -> Node_12;
+}
+

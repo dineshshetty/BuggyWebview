@@ -1,0 +1,53 @@
+digraph "CFG forkotlin.io.FilesKt__UtilsKt.deleteRecursively(Ljava\/io\/File;)Z" {
+subgraph cluster_Region_598396573 {
+label = "R(3:1|(2:4|10)|15)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"\<this\>\")\lkotlin.sequences.Sequence kotlin.sequences.Sequence r0 = kotlin.p004io.FilesKt.walkBottomUp(r10)\lboolean r3 = true\ljava.util.Iterator r4 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_452321376 {
+label = "LOOP:0: (2:4|10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0016|java.lang.Object \lif (r4.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1803183608 {
+label = "R(2:4|10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0018|java.lang.Object r5 = r4.next()\ljava.io.File java.io.File r6 = (java.io.File) r5\lboolean r7 = r3\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0032|LOOP_END\lLOOP:0: B:21:0x0012\-\>B:30:0x0032\lPHI: r9 \l  PHI: (r9v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3 = (r6.delete() \|\| !r6.exists()) && r7\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0035|RETURN\l|return r3\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0012|LOOP_START\lLOOP:0: B:21:0x0012\-\>B:30:0x0032\lPHI: r3 \l  PHI: (r3v1 'accumulator$iv' boolean) = (r3v0 'accumulator$iv' boolean), (r3v2 'accumulator$iv' boolean) binds: [B:20:0x0000, B:30:0x0032] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0025}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0027}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002b|REMOVE\lADDED_TO_REGION\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0031}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0032|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002d|REMOVE\lADDED_TO_REGION\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x002f}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0032|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0035|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.io.FilesKt__UtilsKt.deleteRecursively((r10v0 '$this$deleteRecursively' java.io.File A[D('$this$deleteRecursively' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:30:0x0032 \-\> B:21:0x0012, CROSS_EDGE: B:29:0x0031 \-\> B:30:0x0032, CROSS_EDGE: B:26:0x002b \-\> B:29:0x0031, CROSS_EDGE: B:24:0x0025 \-\> B:27:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_33[style=dashed];
+Node_23 -> Node_24;
+Node_30 -> Node_21;
+Node_32 -> Node_19;
+Node_18 -> Node_20;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_24 -> Node_27;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_29;
+Node_29 -> Node_34;
+Node_34 -> Node_30;
+Node_27 -> Node_28;
+Node_27 -> Node_29;
+Node_28 -> Node_35;
+Node_35 -> Node_30;
+Node_33 -> Node_32;
+}
+

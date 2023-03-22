@@ -1,0 +1,38 @@
+digraph "CFG forkotlin.collections.builders.MapBuilder.removeValue$kotlin_stdlib(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_50881978 {
+label = "R(2:1|(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|checkIsMutable$kotlin_stdlib()\lint int r0 = findValue(r3)\l}"];
+subgraph cluster_Region_1660320923 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1287268767 {
+label = "IF [B:11:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0007|if (r0 \< 0) goto L3\l}"];
+subgraph cluster_Region_31253527 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0009|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_640974763 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000b|removeKeyAt(r0)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000f|RETURN\l|return true\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final boolean kotlin.collections.builders.MapBuilder.removeValue$kotlin_stdlib((r2v0 'this' kotlin.collections.builders.MapBuilder\<K, V\> A[IMMUTABLE_TYPE, THIS]), (r3v0 V A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000f \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: (TV;)Z\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+}
+

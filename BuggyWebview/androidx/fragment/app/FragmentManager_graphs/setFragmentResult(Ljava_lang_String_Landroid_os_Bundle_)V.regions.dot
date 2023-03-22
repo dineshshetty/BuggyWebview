@@ -1,0 +1,41 @@
+digraph "CFG forandroidx.fragment.app.FragmentManager.setFragmentResult(Ljava\/lang\/String;Landroid\/os\/Bundle;)V" {
+subgraph cluster_Region_2087228247 {
+label = "R(2:1|(1:5)(1:8))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|androidx.fragment.app.FragmentManager$LifecycleAwareResultListener androidx.fragment.app.FragmentManager.LifecycleAwareResultListener r0 = r2.mResultListeners.get(r3)\l}"];
+subgraph cluster_IfRegion_312477738 {
+label = "IF [B:13:0x0008, B:15:0x0010] THEN: R(1:5) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|if (r0 != null) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0010|ADDED_TO_REGION\l|if (r0.isAtLeast(androidx.lifecycle.Lifecycle.State.STARTED) != false) goto L5\l}"];
+subgraph cluster_Region_2062075344 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|r0.onFragmentResult(r3, r4)\l}"];
+}
+subgraph cluster_Region_344859788 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0016|r2.mResults.put(r3, r4)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000a}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001b|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public final void androidx.fragment.app.FragmentManager.setFragmentResult((r2v0 'this' androidx.fragment.app.FragmentManager A[IMMUTABLE_TYPE, THIS]), (r3v0 'requestKey' java.lang.String A[D('requestKey' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'result' android.os.Bundle A[D('result' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0016 \-\> B:18:0x001b, CROSS_EDGE: B:13:0x0008 \-\> B:17:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.fragment.app.FragmentResultOwner.setFragmentResult(java.lang.String, android.os.Bundle):void]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_19;
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_19 -> Node_11;
+Node_18 -> Node_11;
+}
+

@@ -1,0 +1,25 @@
+digraph "CFG forandroidx.transition.PatternPathMotion.setPatternPath(Landroid\/graphics\/Path;)V" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|android.graphics.PathMeasure r2 = new android.graphics.PathMeasure(r19, false)\lfloat r4 = r2.getLength()\lfloat[] r5 = new float[2]\lr2.getPosTan(r4, r5, null)\lr7 = r5[0]\lr9 = r5[1]\lr2.getPosTan(0.0f, r5, null)\lr3 = r5[0]\lr6 = r5[1]\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0024|if ((r3 \> r7 ? 1 : (r3 == r7 ? 0 : \-1)) != 0) goto L8\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0026}"];
+Node_16 [shape=record,label="{16\:\ 0x0028|if ((r6 \> r9 ? 1 : (r6 == r9 ? 0 : \-1)) == 0) goto L5\l}"];
+Node_18 [shape=record,label="{18\:\ 0x002b}"];
+Node_19 [shape=record,label="{19\:\ 0x0032|throw new java.lang.IllegalArgumentException(\"pattern must not end at the starting point\")\l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0033|r18.mTempMatrix.setTranslate(\-r3, \-r6)\lfloat r8 = r7 \- r3\lfloat r10 = r9 \- r6\lfloat r11 = distance(r8, r10)\lfloat r12 = 1.0f \/ r11\lr18.mTempMatrix.postScale(r12, r12)\ldouble r2 = java.lang.Math.atan2((double) r10, (double) r8)\lr18.mTempMatrix.postRotate((float) java.lang.Math.toDegrees(\-r2))\lr19.transform(r18.mTempMatrix, r18.mPatternPath)\lr18.mOriginalPatternPath = r19\l}"];
+Node_21 [shape=record,label="{21\:\ 0x006a|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.transition.PatternPathMotion.setPatternPath((r18v0 'this' androidx.transition.PatternPathMotion A[IMMUTABLE_TYPE, THIS]), (r19v0 'patternPath' android.graphics.Path A[D('patternPath' android.graphics.Path), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x006a \-\> B:12:?, CROSS_EDGE: B:14:0x0024 \-\> B:20:0x0033\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_15 -> Node_16;
+Node_16 -> Node_18;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+}
+

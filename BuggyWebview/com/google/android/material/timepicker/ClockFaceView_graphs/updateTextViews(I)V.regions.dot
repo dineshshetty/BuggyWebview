@@ -1,0 +1,108 @@
+digraph "CFG forcom.google.android.material.timepicker.ClockFaceView.updateTextViews(I)V" {
+subgraph cluster_Region_1591121781 {
+label = "R(3:1|(3:4|(1:6)(5:(1:11)|12|(1:14)|15|(1:17)(0))|8)|21)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|boolean r0 = false\landroid.view.LayoutInflater android.view.LayoutInflater r1 = android.view.LayoutInflater.from(getContext())\lint int r2 = r10.textViewPool.size()\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_2110792969 {
+label = "LOOP:0: (3:4|(1:6)(5:(1:11)|12|(1:14)|15|(1:17)(0))|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|if (r3 \< java.lang.Math.max(r10.values.length, r2)) goto L4\l}"];
+subgraph cluster_Region_399993081 {
+label = "R(3:4|(1:6)(5:(1:11)|12|(1:14)|15|(1:17)(0))|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0019|android.widget.TextView android.widget.TextView r4 = r10.textViewPool.get(r3)\l}"];
+subgraph cluster_IfRegion_720332934 {
+label = "IF [B:6:0x0024] THEN: R(1:6) ELSE: R(5:(1:11)|12|(1:14)|15|(1:17)(0))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|if (r3 \>= r10.values.length) goto L6\l}"];
+subgraph cluster_Region_252131064 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|removeView(r4)\lr10.textViewPool.remove(r3)\l}"];
+}
+subgraph cluster_Region_1938006652 {
+label = "R(5:(1:11)|12|(1:14)|15|(1:17)(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_247817324 {
+label = "IF [B:9:0x0030] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0030|if (r4 == null) goto L11\l}"];
+subgraph cluster_Region_1681407669 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0032|android.widget.TextView r4 = (android.widget.TextView) r1.inflate(com.google.android.material.C0571R.layout.material_clockface_textview, (android.view.ViewGroup) r10, false)\lr10.textViewPool.put(r3, r4)\laddView(r4)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0043|PHI: r4 \l  PHI: (r4v6 'textView' android.widget.TextView) = (r4v5 'textView' android.widget.TextView), (r4v8 'textView' android.widget.TextView) binds: [B:9:0x0030, B:10:0x0032] A[DONT_GENERATE, DONT_INLINE]\l|r4.setText(r10.values[r3])\lr4.setTag(com.google.android.material.C0571R.C0574id.material_value_index, java.lang.Integer.valueOf(r3))\lint int r6 = (r3 \/ 12) + 1\lr4.setTag(com.google.android.material.C0571R.C0574id.material_clock_level, java.lang.Integer.valueOf(r6))\l}"];
+subgraph cluster_IfRegion_943924154 {
+label = "IF [B:12:0x0060] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0060|if (r6 \> 1) goto L14\l}"];
+subgraph cluster_Region_1438451474 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0062|r0 = true\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0063|PHI: r0 \l  PHI: (r0v2 'isMultiLevel' boolean) = (r0v1 'isMultiLevel' boolean), (r0v3 'isMultiLevel' boolean) binds: [B:12:0x0060, B:13:0x0062] A[DONT_GENERATE, DONT_INLINE]\l|androidx.core.view.ViewCompat.setAccessibilityDelegate(r4, r10.valueAccessibilityDelegate)\lr4.setTextColor(r10.textColor)\l}"];
+subgraph cluster_IfRegion_366305847 {
+label = "IF [B:15:0x006d] THEN: R(1:17) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x006d|if (r11 != 0) goto L17\l}"];
+subgraph cluster_Region_1598004309 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x006f|android.content.res.Resources android.content.res.Resources r8 = getResources()\lr4.setContentDescription(r8.getString(r11, r10.values[r3]))\l}"];
+}
+subgraph cluster_Region_1567992525 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0082|LOOP_END\lLOOP:0: B:3:0x0010\-\>B:17:0x0082\lPHI: r0 \l  PHI: (r0v4 'isMultiLevel' boolean) = (r0v2 'isMultiLevel' boolean), (r0v2 'isMultiLevel' boolean), (r0v1 'isMultiLevel' boolean) binds: [B:23:0x0082, B:21:0x0082, B:22:0x0082] A[DONT_GENERATE, DONT_INLINE]\l|r3++\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0085|r10.clockHandView.setMultiLevel(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010|LOOP_START\lLOOP:0: B:3:0x0010\-\>B:17:0x0082\lPHI: r0 r3 \l  PHI: (r0v1 'isMultiLevel' boolean) = (r0v0 'isMultiLevel' boolean), (r0v4 'isMultiLevel' boolean) binds: [B:2:0x0000, B:17:0x0082] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v3 'i' int) binds: [B:2:0x0000, B:17:0x0082] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0082|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002f}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0082|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0082|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0085|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x008a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.timepicker.ClockFaceView.updateTextViews((r10v0 'this' com.google.android.material.timepicker.ClockFaceView A[IMMUTABLE_TYPE, THIS]), (r11v0 'contentDescription' int A[D('contentDescription' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x0082 \-\> B:3:0x0010, CROSS_EDGE: B:16:0x006f \-\> B:17:0x0082, CROSS_EDGE: B:15:0x006d \-\> B:17:0x0082, CROSS_EDGE: B:12:0x0060 \-\> B:14:0x0063, CROSS_EDGE: B:9:0x0030 \-\> B:11:0x0043\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_20[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_22;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_23[style=dashed];
+Node_16 -> Node_21;
+Node_17 -> Node_3;
+Node_18 -> Node_19;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_22 -> Node_17;
+Node_8 -> Node_9;
+Node_21 -> Node_17;
+Node_23 -> Node_17;
+Node_20 -> Node_18;
+Node_19 -> Node_1;
+}
+

@@ -1,0 +1,82 @@
+digraph "CFG forkotlin.collections.unsigned.UArraysKt___UArraysKt.maxOrNull\-rL5Bavg([S)Lkotlin\/UShort;" {
+subgraph cluster_Region_1924072376 {
+label = "R(2:1|(2:(1:3)|(3:5|(2:8|(1:11)(0))|17)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"$this$maxOrNull\")\l}"];
+subgraph cluster_Region_1103202466 {
+label = "R(2:(1:3)|(3:5|(2:8|(1:11)(0))|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1947998794 {
+label = "IF [B:22:0x0009] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0009|if (kotlin.UShortArray.m482isEmptyimpl(r6) == true) goto L3\l}"];
+subgraph cluster_Region_1761550231 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000b|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1730547961 {
+label = "R(3:5|(2:8|(1:11)(0))|17)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000d|short short r0 = kotlin.UShortArray.m479getMh2AYeg(r6, 0)\lkotlin.collections.IntIterator ?? r1 = new kotlin.ranges.IntRange(1, kotlin.collections.ArraysKt.getLastIndex(r6)).iterator()\l}"];
+subgraph cluster_LoopRegion_1760985239 {
+label = "LOOP:0: (2:8|(1:11)(0))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0026|if (r1.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_1065415848 {
+label = "R(2:8|(1:11)(0))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0028|int int r2 = r1.nextInt()\lshort short r3 = kotlin.UShortArray.m479getMh2AYeg(r6, r2)\l}"];
+subgraph cluster_IfRegion_148839034 {
+label = "IF [B:29:0x003a] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003a|if (kotlin.jvm.internal.Intrinsics.compare(r0 & kotlin.UShort.MAX_VALUE, 65535 & r3) \< 0) goto L10\l}"];
+subgraph cluster_Region_874349845 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x003c|r0 = r3\l}"];
+}
+subgraph cluster_Region_1657238515 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0042|RETURN\l|return kotlin.UShort.m416boximpl(r0)\l}"];
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0022|LOOP_START\lLOOP:0: B:26:0x0022\-\>B:35:0x0022\lPHI: r0 \l  PHI: (r0v4 'max' short) = (r0v3 'max' short), (r0v5 'max' short) binds: [B:25:0x000d, B:35:0x0022] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x003c|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0022|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0022|LOOP_END\lSYNTHETIC\lLOOP:0: B:26:0x0022\-\>B:35:0x0022\lPHI: r0 \l  PHI: (r0v5 'max' short) = (r0v4 'max' short), (r0v6 'max' short) binds: [B:36:0x0022, B:37:0x0022] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0022|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x003e|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x003e}"];
+MethodNode[shape=record,label="{public static final kotlin.UShort kotlin.collections.unsigned.UArraysKt___UArraysKt.maxOrNull\-rL5Bavg((r6v0 'maxOrNull' short[] A[D('$this$maxOrNull_u2drL5Bavg' short[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:29:0x003a \-\> B:26:0x0022, BACK_EDGE: B:30:0x003c \-\> B:26:0x0022, CROSS_EDGE: B:32:0x0042 \-\> B:20:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r1v1, types: [kotlin.collections.IntIterator]\}\l}"];
+MethodNode -> Node_19;Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_23 -> Node_20;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_33[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_34;
+Node_29 -> Node_36[style=dashed];
+Node_30 -> Node_37;
+Node_32 -> Node_20;
+Node_19 -> Node_21;
+Node_26 -> Node_27;
+Node_34 -> Node_30;
+Node_37 -> Node_35;
+Node_35 -> Node_26;
+Node_36 -> Node_35;
+Node_33 -> Node_31;
+Node_31 -> Node_32;
+}
+

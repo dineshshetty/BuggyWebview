@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.appcompat.view.menu.CascadingMenuPopup.dismiss()V" {
+subgraph cluster_Region_589785854 {
+label = "R(2:1|(1:(2:3|(3:5|(1:7)(0)|9))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r5.mShowingMenus.size()\l}"];
+subgraph cluster_Region_2098674874 {
+label = "R(1:(2:3|(3:5|(1:7)(0)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1490427347 {
+label = "IF [B:3:0x0006] THEN: R(2:3|(3:5|(1:7)(0)|9)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r0 \> 0) goto L3\l}"];
+subgraph cluster_Region_658294458 {
+label = "R(2:3|(3:5|(1:7)(0)|9))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|androidx.appcompat.view.menu.CascadingMenuPopup$CascadingMenuInfo[] androidx.appcompat.view.menu.CascadingMenuPopup.CascadingMenuInfo[] r1 = (androidx.appcompat.view.menu.CascadingMenuPopup.CascadingMenuInfo[]) r5.mShowingMenus.toArray(new androidx.appcompat.view.menu.CascadingMenuPopup.CascadingMenuInfo[r0])\lint int r2 = r0 \- 1\l}"];
+subgraph cluster_LoopRegion_692909854 {
+label = "LOOP:0: (3:5|(1:7)(0)|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|LOOP_START\lLOOP:0: B:5:0x0014\-\>B:9:0x0025\lPHI: r2 \l  PHI: (r2v2 'i' int) = (r2v1 'i' int), (r2v3 'i' int) binds: [B:4:0x0008, B:9:0x0025] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= 0) goto L5\l}"];
+subgraph cluster_Region_824445011 {
+label = "R(3:5|(1:7)(0)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|androidx.appcompat.view.menu.CascadingMenuPopup.CascadingMenuInfo r3 = r1[r2]\l}"];
+subgraph cluster_IfRegion_1500816161 {
+label = "IF [B:7:0x001e] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|if (r3.window.isShowing() != false) goto L7\l}"];
+subgraph cluster_Region_415016867 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|r3.window.dismiss()\l}"];
+}
+subgraph cluster_Region_1503298923 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0025|LOOP_END\lLOOP:0: B:5:0x0014\-\>B:9:0x0025\l|r2\-\-\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0025|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0025|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0028|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0028|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.view.menu.CascadingMenuPopup.dismiss((r5v0 'this' androidx.appcompat.view.menu.CascadingMenuPopup A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:9:0x0025 \-\> B:5:0x0014, CROSS_EDGE: B:7:0x001e \-\> B:9:0x0025, CROSS_EDGE: B:3:0x0006 \-\> B:10:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.view.menu.ShowableListMenu.dismiss():void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_12;
+Node_9 -> Node_5;
+Node_0 -> Node_2;
+Node_12 -> Node_9;
+Node_13 -> Node_9;
+Node_11 -> Node_14;
+Node_14 -> Node_1;
+Node_10 -> Node_1;
+}
+

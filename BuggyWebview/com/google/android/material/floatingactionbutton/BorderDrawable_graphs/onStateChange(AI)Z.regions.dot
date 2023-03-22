@@ -1,0 +1,50 @@
+digraph "CFG forcom.google.android.material.floatingactionbutton.BorderDrawable.onStateChange([I)Z" {
+subgraph cluster_Region_1638155870 {
+label = "R(4:1|(1:5)|(1:8)|10) | DECL_VAR: int newColor\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|android.content.res.ColorStateList android.content.res.ColorStateList r0 = r2.borderTint\l}"];
+subgraph cluster_IfRegion_70396115 {
+label = "IF [B:15:0x0002, B:17:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r0 != null) goto L3\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000c|ADDED_TO_REGION\l|if ((r0 = r0.getColorForState(r3, r2.currentBorderTintColor)) != r2.currentBorderTintColor) goto L5\l}"];
+subgraph cluster_Region_1175979864 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000e|r2.invalidateShader = true\lr2.currentBorderTintColor = r0\l}"];
+}
+}
+subgraph cluster_IfRegion_889065828 {
+label = "IF [B:20:0x0015] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0015|if (r2.invalidateShader != false) goto L8\l}"];
+subgraph cluster_Region_355955653 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|invalidateSelf()\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x001c|RETURN\l|return r2.invalidateShader\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0004}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0013}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001a}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.material.floatingactionbutton.BorderDrawable.onStateChange((r2v0 'this' com.google.android.material.floatingactionbutton.BorderDrawable A[IMMUTABLE_TYPE, THIS]), (r3v0 'state' int[] A[D('state' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:20:0x0015 \-\> B:22:0x001a, CROSS_EDGE: B:17:0x000c \-\> B:19:0x0013, CROSS_EDGE: B:15:0x0002 \-\> B:19:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.onStateChange(int[]):boolean\}]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+Node_22 -> Node_23;
+}
+

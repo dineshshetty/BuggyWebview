@@ -1,0 +1,58 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.findDirectChild(Landroid\/view\/View;)Landroid\/view\/View;" {
+subgraph cluster_Region_1810041942 {
+label = "R(3:1|(2:(1:6)(0)|8)|11)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.View r0 = r4\landroid.view.ViewParent android.view.ViewParent r1 = r4.getParent()\l}"];
+subgraph cluster_LoopRegion_992181291 {
+label = "LOOP:0: (2:(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|LOOP_START\lLOOP:0: B:3:0x0005\-\>B:8:0x0010\lPHI: r0 r1 \l  PHI: (r0v1 'directChild' android.view.View) = (r0v0 'directChild' android.view.View), (r0v2 'directChild' android.view.View) binds: [B:2:0x0000, B:8:0x0010] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'p' android.view.ViewParent) = (r1v0 'p' android.view.ViewParent), (r1v2 'p' android.view.ViewParent) binds: [B:2:0x0000, B:8:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != r3) goto L3\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0007|ADDED_TO_REGION\l|if (r1 != null) goto L4\l}"];
+subgraph cluster_Region_1032737070 {
+label = "R(2:(1:6)(0)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1316776821 {
+label = "IF [B:6:0x000b] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|if ((r1 instanceof android.view.View) != false) goto L6\l}"];
+subgraph cluster_Region_1416712735 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|android.view.View r0 = (android.view.View) r1\l}"];
+}
+subgraph cluster_Region_329134615 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0010|LOOP_END\lLOOP:0: B:3:0x0005\-\>B:8:0x0010\lPHI: r0 \l  PHI: (r0v2 'directChild' android.view.View) = (r0v1 'directChild' android.view.View), (r0v4 'directChild' android.view.View) binds: [B:13:0x0010, B:12:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|android.view.ViewParent r1 = r1.getParent()\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0015|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0010|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0010|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0015|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0015|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{private android.view.View com.google.android.material.appbar.CollapsingToolbarLayout.findDirectChild((r3v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'descendant' android.view.View A[D('descendant' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x0010 \-\> B:3:0x0005, CROSS_EDGE: B:6:0x000b \-\> B:8:0x0010, CROSS_EDGE: B:3:0x0005 \-\> B:9:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_13[style=dashed];
+Node_7 -> Node_12;
+Node_8 -> Node_3;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_11 -> Node_9;
+Node_10 -> Node_9;
+}
+

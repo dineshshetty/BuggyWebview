@@ -1,0 +1,27 @@
+digraph "CFG forandroidx.core.widget.AutoScrollHelper.computeTargetVelocity(IFFF)F" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|r0 = r8.mRelativeEdges[r9]\lr1 = r8.mMaximumEdges[r9]\lfloat r2 = getEdgeValue(r0, r11, r1, r10)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000f|if ((r2 \> 0.0f ? 1 : (r2 == 0.0f ? 0 : \-1)) != 0) goto L5\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0011|RETURN\l|return 0.0f\l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0012|r4 = r8.mRelativeVelocity[r9]\lr5 = r8.mMinimumVelocity[r9]\lr6 = r8.mMaximumVelocity[r9]\lfloat r7 = r4 * r12\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0022|if ((r2 \> 0.0f ? 1 : (r2 == 0.0f ? 0 : \-1)) \<= 0) goto L9\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0024}"];
+Node_19 [shape=record,label="{19\:\ 0x002a|RETURN\l|return constrain(r2 * r7, r5, r6)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x002b}"];
+Node_21 [shape=record,label="{21\:\ 0x0033|RETURN\l|return \-constrain((\-r2) * r7, r5, r6)\l}"];
+MethodNode[shape=record,label="{private float androidx.core.widget.AutoScrollHelper.computeTargetVelocity((r8v0 'this' androidx.core.widget.AutoScrollHelper A[IMMUTABLE_TYPE, THIS]), (r9v0 'direction' int A[D('direction' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'coordinate' float A[D('coordinate' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'srcSize' float A[D('srcSize' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'dstSize' float A[D('dstSize' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x002a \-\> B:12:?, CROSS_EDGE: B:21:0x0033 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+}
+

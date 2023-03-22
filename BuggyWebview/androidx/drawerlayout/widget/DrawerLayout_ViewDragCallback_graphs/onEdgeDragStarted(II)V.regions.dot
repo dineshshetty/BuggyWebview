@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.ViewDragCallback.onEdgeDragStarted(II)V" {
+subgraph cluster_Region_1044551122 {
+label = "R(2:(1:3)(1:12)|(1:(1:7))) | DECL_VAR: android.view.View toCapture\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1098283190 {
+label = "IF [B:16:0x0003] THEN: R(1:3) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0003|if ((r3 & 1) == 1) goto L3\l}"];
+subgraph cluster_Region_1119950008 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0005|android.view.View r0 = androidx.drawerlayout.widget.DrawerLayout.this.findDrawerWithGravity(3)\l}"];
+}
+subgraph cluster_Region_232050289 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|android.view.View r0 = androidx.drawerlayout.widget.DrawerLayout.this.findDrawerWithGravity(5)\l}"];
+}
+}
+subgraph cluster_Region_478887483 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1678004506 {
+label = "IF [B:19:0x0014, B:21:0x001c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0014|PHI: r0 \l  PHI: (r0v3 'toCapture' android.view.View) = (r0v2 'toCapture' android.view.View), (r0v5 'toCapture' android.view.View) binds: [B:18:0x000d, B:17:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L5\l}"];
+Node_21 [shape=record,label="{21\:\ 0x001c|ADDED_TO_REGION\l|if (androidx.drawerlayout.widget.DrawerLayout.this.getDrawerLockMode(r0) == 0) goto L7\l}"];
+subgraph cluster_Region_1312990285 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001e|r2.mDragger.captureChildView(r0, r4)\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0023|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.drawerlayout.widget.DrawerLayout.ViewDragCallback.onEdgeDragStarted((r2v0 'this' androidx.drawerlayout.widget.DrawerLayout$ViewDragCallback A[IMMUTABLE_TYPE, THIS]), (r3v0 'edgeFlags' int A[D('edgeFlags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'pointerId' int A[D('pointerId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001c \-\> B:23:0x0023, CROSS_EDGE: B:19:0x0014 \-\> B:23:0x0023, CROSS_EDGE: B:18:0x000d \-\> B:19:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.customview.widget.ViewDragHelper.Callback.onEdgeDragStarted(int, int):void]\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_24[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_23;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+Node_23 -> Node_14;
+Node_25 -> Node_14;
+Node_24 -> Node_14;
+}
+

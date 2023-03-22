@@ -1,0 +1,34 @@
+digraph "CFG forcom.google.android.material.datepicker.UtcDates.getUtcCalendarOf(Ljava\/util\/Calendar;)Ljava\/util\/Calendar;" {
+subgraph cluster_Region_1501860220 {
+label = "R(3:1|(1:3)(1:6)|4)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|java.util.Calendar java.util.Calendar r0 = java.util.Calendar.getInstance(getTimeZone())\l}"];
+subgraph cluster_IfRegion_356698631 {
+label = "IF [B:10:0x0008] THEN: R(1:3) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0008|if (r3 == null) goto L3\l}"];
+subgraph cluster_Region_639895570 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000a|r0.clear()\l}"];
+}
+subgraph cluster_Region_964058790 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000e|r0.setTimeInMillis(r3.getTimeInMillis())\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0015|RETURN\l|return r0\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static java.util.Calendar com.google.android.material.datepicker.UtcDates.getUtcCalendarOf((r3v0 'rawCalendar' java.util.Calendar A[D('rawCalendar' java.util.Calendar), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x000e \-\> B:13:0x0015\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

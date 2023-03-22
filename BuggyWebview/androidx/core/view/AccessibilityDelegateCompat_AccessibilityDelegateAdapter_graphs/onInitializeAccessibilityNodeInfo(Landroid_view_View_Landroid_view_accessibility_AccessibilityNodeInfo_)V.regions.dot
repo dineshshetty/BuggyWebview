@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.core.view.AccessibilityDelegateCompat.AccessibilityDelegateAdapter.onInitializeAccessibilityNodeInfo(Landroid\/view\/View;Landroid\/view\/accessibility\/AccessibilityNodeInfo;)V" {
+subgraph cluster_Region_1536001132 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|androidx.core.view.accessibility.AccessibilityNodeInfoCompat androidx.core.view.accessibility.AccessibilityNodeInfoCompat r0 = androidx.core.view.accessibility.AccessibilityNodeInfoCompat.wrap(r6)\lr0.setScreenReaderFocusable(androidx.core.view.ViewCompat.isScreenReaderFocusable(r5))\lr0.setHeading(androidx.core.view.ViewCompat.isAccessibilityHeading(r5))\lr0.setPaneTitle(androidx.core.view.ViewCompat.getAccessibilityPaneTitle(r5))\lr0.setStateDescription(androidx.core.view.ViewCompat.getStateDescription(r5))\lr4.mCompat.onInitializeAccessibilityNodeInfo(r5, r0)\lr0.addSpansToExtras(r6.getText(), r5)\ljava.util.List java.util.List\<androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat\> r1 = androidx.core.view.AccessibilityDelegateCompat.getActionList(r5)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_745860578 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0035|if (r2 \< r1.size()) goto L4\l}"];
+subgraph cluster_Region_276980229 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0037|LOOP_END\lLOOP:0: B:11:0x0031\-\>B:13:0x0037\l|r0.addAction(r1.get(r2))\lr2++\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0031|LOOP_START\lLOOP:0: B:11:0x0031\-\>B:13:0x0037\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:10:0x0000, B:13:0x0037] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0043|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0043}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.core.view.AccessibilityDelegateCompat.AccessibilityDelegateAdapter.onInitializeAccessibilityNodeInfo((r4v0 'this' androidx.core.view.AccessibilityDelegateCompat$AccessibilityDelegateAdapter A[IMMUTABLE_TYPE, THIS]), (r5v0 'host' android.view.View A[D('host' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'info' android.view.accessibility.AccessibilityNodeInfo A[D('info' android.view.accessibility.AccessibilityNodeInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:13:0x0037 \-\> B:11:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.AccessibilityDelegate.onInitializeAccessibilityNodeInfo(android.view.View, android.view.accessibility.AccessibilityNodeInfo):void\}]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_11;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

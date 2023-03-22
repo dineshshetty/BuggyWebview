@@ -1,0 +1,88 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.ConstraintAnchor.connect(Landroidx\/constraintlayout\/core\/widgets\/ConstraintAnchor;IIZ)Z" {
+subgraph cluster_Region_493037039 {
+label = "R(1:(2:3|4)(1:(1:9)(6:10|(1:12)|13|(1:15)|16|17)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_39955500 {
+label = "IF [B:22:0x0001] THEN: R(2:3|4) ELSE: R(1:(1:9)(6:10|(1:12)|13|(1:15)|16|17))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0001|if (r3 == null) goto L3\l}"];
+subgraph cluster_Region_1054080567 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0003|reset()\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0006|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1564174645 {
+label = "R(1:(1:9)(6:10|(1:12)|13|(1:15)|16|17)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1500734240 {
+label = "IF [B:25:0x0007, B:27:0x000d] THEN: R(1:9) ELSE: R(6:10|(1:12)|13|(1:15)|16|17) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0007|if (r6 == false) goto L7\l}"];
+Node_27 [shape=record,label="{27\:\ 0x000d|ADDED_TO_REGION\l|if (isValidConnection(r3) == false) goto L9\l}"];
+subgraph cluster_Region_1451013358 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000f|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_530914517 {
+label = "R(6:10|(1:12)|13|(1:15)|16|17)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0011|r2.mTarget = r3\l}"];
+subgraph cluster_IfRegion_2004863568 {
+label = "IF [B:31:0x0015] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0015|if (r3.mDependents == null) goto L12\l}"];
+subgraph cluster_Region_1896572747 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0017|r3.mDependents = new java.util.HashSet\<\>()\l}"];
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x001e|java.util.HashSet\<androidx.constraintlayout.core.widgets.ConstraintAnchor\> java.util.HashSet\<androidx.constraintlayout.core.widgets.ConstraintAnchor\> r1 = r2.mTarget.mDependents\l}"];
+subgraph cluster_IfRegion_1903245794 {
+label = "IF [B:34:0x0022] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0022|if (r1 != null) goto L15\l}"];
+subgraph cluster_Region_319572498 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0024|r1.add(r2)\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0027|r2.mMargin = r4\lr2.mGoneMargin = r5\l}"];
+Node_37 [shape=record,label="{37\:\ 0x002b|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0009}"];
+MethodNode[shape=record,label="{public boolean androidx.constraintlayout.core.widgets.ConstraintAnchor.connect((r2v0 'this' androidx.constraintlayout.core.widgets.ConstraintAnchor A[IMMUTABLE_TYPE, THIS]), (r3v0 'toAnchor' androidx.constraintlayout.core.widgets.ConstraintAnchor A[D('toAnchor' androidx.constraintlayout.core.widgets.ConstraintAnchor), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'margin' int A[D('margin' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'goneMargin' int A[D('goneMargin' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'forceConnection' boolean A[D('forceConnection' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x0010 \-\> B:20:?, CROSS_EDGE: B:37:0x002b \-\> B:20:?, CROSS_EDGE: B:34:0x0022 \-\> B:36:0x0027, CROSS_EDGE: B:31:0x0015 \-\> B:33:0x001e, CROSS_EDGE: B:25:0x0007 \-\> B:30:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_20;
+Node_25 -> Node_26;
+Node_25 -> Node_30[style=dashed];
+Node_27 -> Node_28;
+Node_27 -> Node_30[style=dashed];
+Node_28 -> Node_20;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_26 -> Node_27;
+}
+

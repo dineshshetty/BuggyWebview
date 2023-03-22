@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.fragment.app.FragmentAnim.EndViewTransitionAnimation.getTransformation(JLandroid\/view\/animation\/Transformation;)Z" {
+subgraph cluster_Region_1049667795 {
+label = "R(2:1|(2:(1:4)|(3:6|(1:8)|9)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|r3.mAnimating = true\l}"];
+subgraph cluster_Region_1247529208 {
+label = "R(2:(1:4)|(3:6|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_113132792 {
+label = "IF [B:13:0x0005] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0005|if (r3.mEnded != false) goto L3\l}"];
+subgraph cluster_Region_411066034 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000a|RETURN\l|return true ^ r3.mTransitionEnded\l}"];
+}
+}
+subgraph cluster_Region_218356856 {
+label = "R(3:6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000b|boolean boolean r1 = super.getTransformation(r4, r6)\l}"];
+subgraph cluster_IfRegion_518587469 {
+label = "IF [B:17:0x000f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|if (r1 == false) goto L8\l}"];
+subgraph cluster_Region_602778433 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0011|r3.mEnded = true\landroidx.core.view.OneShotPreDrawListener.add(r3.mParent, r3)\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0018|RETURN\l|return true\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0007}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.fragment.app.FragmentAnim.EndViewTransitionAnimation.getTransformation((r3v0 'this' androidx.fragment.app.FragmentAnim$EndViewTransitionAnimation A[IMMUTABLE_TYPE, THIS]), (r4v0 'currentTime' long A[D('currentTime' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 't' android.view.animation.Transformation A[D('t' android.view.animation.Transformation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x0018 \-\> B:11:?, CROSS_EDGE: B:17:0x000f \-\> B:19:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.animation.Animation.getTransformation(long, android.view.animation.Transformation):boolean\}]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_16[style=dashed];
+Node_15 -> Node_11;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+}
+

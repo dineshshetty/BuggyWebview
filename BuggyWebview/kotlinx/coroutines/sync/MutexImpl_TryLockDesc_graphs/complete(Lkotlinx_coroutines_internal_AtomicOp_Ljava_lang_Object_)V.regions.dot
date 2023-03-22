@@ -1,0 +1,41 @@
+digraph "CFG forkotlinx.coroutines.sync.MutexImpl.TryLockDesc.complete(Lkotlinx\/coroutines\/internal\/AtomicOp;Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_1564289256 {
+label = "R(2:(1:2)(2:6|7)|3) | DECL_VAR: kotlinx.coroutines.sync.Empty update\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1242382302 {
+label = "IF [B:12:0x0000] THEN: R(1:2) ELSE: R(2:6|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|if (r5 != null) goto L2\l}"];
+subgraph cluster_Region_1546113416 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|kotlinx.coroutines.sync.Empty r0 = kotlinx.coroutines.sync.MutexKt.EMPTY_UNLOCKED\l}"];
+}
+subgraph cluster_Region_1795837771 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0007|java.lang.Object java.lang.Object r0 = r3.owner\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0009|kotlinx.coroutines.sync.Empty r0 = r0 == null ? kotlinx.coroutines.sync.MutexKt.EMPTY_LOCKED : new kotlinx.coroutines.sync.Empty(r0)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0016|PHI: r0 \l  PHI: (r0v3 'update' kotlinx.coroutines.sync.Empty) = (r0v2 'update' kotlinx.coroutines.sync.Empty), (r0v4 'update' kotlinx.coroutines.sync.Empty) binds: [B:16:0x000b, B:13:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|androidx.concurrent.futures.C0125xc40028dd.m112m(kotlinx.coroutines.sync.MutexImpl._state$FU, r3.mutex, r4, r0)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001e}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0010}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.sync.MutexImpl.TryLockDesc.complete((r3v0 'this' kotlinx.coroutines.sync.MutexImpl$TryLockDesc A[IMMUTABLE_TYPE, THIS]), (r4v0 kotlinx.coroutines.internal.AtomicOp\<?\> A[D('op' kotlinx.coroutines.internal.AtomicOp), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'failure' java.lang.Object A[D('failure' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x000b \-\> B:18:0x0016, CROSS_EDGE: B:17:0x0010 \-\> B:18:0x0016\lINLINE_NOT_NEEDED\lSIGNATURE: (Lkotlinx\/coroutines\/internal\/AtomicOp\<*\>;Ljava\/lang\/Object;)V\lMETHOD_OVERRIDE: [kotlinx.coroutines.internal.AtomicDesc.complete(kotlinx.coroutines.internal.AtomicOp\<?\>, java.lang.Object):void]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_18;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_19 -> Node_11;
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+}
+

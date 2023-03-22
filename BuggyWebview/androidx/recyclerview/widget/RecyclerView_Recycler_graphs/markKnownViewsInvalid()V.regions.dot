@@ -1,0 +1,79 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.Recycler.markKnownViewsInvalid()V" {
+subgraph cluster_Region_1831772784 {
+label = "R(3:1|(3:3|(1:5)(0)|7)|(1:(1:16)))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|int int r0 = r4.mCachedViews.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1689739295 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|LOOP_START\lLOOP:0: B:21:0x0007\-\>B:25:0x001b\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v7 'i' int) binds: [B:20:0x0000, B:25:0x001b] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_1311558331 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0009|androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.RecyclerView.ViewHolder r2 = r4.mCachedViews.get(r1)\l}"];
+subgraph cluster_IfRegion_1057765575 {
+label = "IF [B:23:0x0011] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0011|if (r2 != null) goto L5\l}"];
+subgraph cluster_Region_665399412 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0013|r2.addFlags(6)\lr2.addChangePayload(null)\l}"];
+}
+subgraph cluster_Region_136569925 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x001b|LOOP_END\lLOOP:0: B:21:0x0007\-\>B:25:0x001b\l|r1++\l}"];
+}
+}
+subgraph cluster_Region_262643401 {
+label = "R(1:(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_514501585 {
+label = "IF [B:27:0x0022, B:29:0x002c] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0022|if (androidx.recyclerview.widget.RecyclerView.this.mAdapter == null) goto L16\l}"];
+Node_29 [shape=record,label="{29\:\ 0x002c|ADDED_TO_REGION\l|if (androidx.recyclerview.widget.RecyclerView.this.mAdapter.hasStableIds() == false) goto L16\l}"];
+subgraph cluster_Region_805133015 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002e|recycleAndClearCachedViews()\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x001b|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x001b|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001e|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001e}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0024}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0031|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.Recycler.markKnownViewsInvalid((r4v0 'this' androidx.recyclerview.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x001b \-\> B:21:0x0007, CROSS_EDGE: B:23:0x0011 \-\> B:25:0x001b, CROSS_EDGE: B:29:0x002c \-\> B:31:0x0031, CROSS_EDGE: B:27:0x0022 \-\> B:30:0x002e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_32[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_34[style=dashed];
+Node_24 -> Node_33;
+Node_25 -> Node_21;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_30;
+Node_29 -> Node_30;
+Node_29 -> Node_35[style=dashed];
+Node_30 -> Node_31;
+Node_18 -> Node_20;
+Node_33 -> Node_25;
+Node_34 -> Node_25;
+Node_32 -> Node_26;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_35 -> Node_19;
+Node_31 -> Node_19;
+}
+

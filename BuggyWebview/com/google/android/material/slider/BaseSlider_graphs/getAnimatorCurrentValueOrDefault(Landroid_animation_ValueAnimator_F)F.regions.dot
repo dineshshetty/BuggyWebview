@@ -1,0 +1,41 @@
+digraph "CFG forcom.google.android.material.slider.BaseSlider.getAnimatorCurrentValueOrDefault(Landroid\/animation\/ValueAnimator;F)F" {
+subgraph cluster_Region_940629368 {
+label = "R(1:(2:(2:4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1711654469 {
+label = "R(2:(2:4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1470422129 {
+label = "IF [B:10:0x0000, B:12:0x0006] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|if (r1 != null) goto L2\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0006|ADDED_TO_REGION\l|if (r1.isRunning() != false) goto L4\l}"];
+subgraph cluster_Region_1049197450 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0008|float float r0 = ((java.lang.Float) r1.getAnimatedValue()).floatValue()\lr1.cancel()\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0015|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1470024201 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0016|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0002}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static float com.google.android.material.slider.BaseSlider.getAnimatorCurrentValueOrDefault((r1v0 'animator' android.animation.ValueAnimator A[D('animator' android.animation.ValueAnimator), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'defaultValue' float A[D('defaultValue' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0016 \-\> B:9:?, CROSS_EDGE: B:10:0x0000 \-\> B:15:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>]\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_10 -> Node_15[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+}
+

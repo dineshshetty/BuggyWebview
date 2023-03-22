@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.versionedparcelable.ParcelUtils.putVersionedParcelableList(Landroid\/os\/Bundle;Ljava\/lang\/String;Ljava\/util\/List;)V" {
+subgraph cluster_Region_2078766214 {
+label = "R(3:1|(1:4)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.os.Bundle android.os.Bundle r0 = new android.os.Bundle()\ljava.util.ArrayList java.util.ArrayList\<android.os.Parcelable\> r1 = new java.util.ArrayList\<\>()\ljava.util.Iterator r2 = r7.iterator()\l\l}"];
+subgraph cluster_LoopRegion_12220908 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|androidx.versionedparcelable.VersionedParcelable \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_563389400 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|LOOP_END\lLOOP:0: B:3:0x000e\-\>B:5:0x0014\l|androidx.versionedparcelable.VersionedParcelable r3 = r2.next()\lr1.add(toParcelable(r3))\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0022|r0.putParcelableArrayList(androidx.versionedparcelable.ParcelUtils.INNER_BUNDLE_KEY, r1)\lr5.putParcelable(r6, r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e|LOOP_START\lLOOP:0: B:3:0x000e\-\>B:5:0x0014\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0022|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static void androidx.versionedparcelable.ParcelUtils.putVersionedParcelableList((r5v0 'b' android.os.Bundle A[D('b' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'key' java.lang.String A[D('key' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'list' java.util.List\<? extends androidx.versionedparcelable.VersionedParcelable\> A[D('list' java.util.List\<? extends androidx.versionedparcelable.VersionedParcelable\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:5:0x0014 \-\> B:3:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/os\/Bundle;Ljava\/lang\/String;Ljava\/util\/List\<+Landroidx\/versionedparcelable\/VersionedParcelable;\>;)V\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_3;
+Node_6 -> Node_7;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_8 -> Node_6;
+Node_7 -> Node_1;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.getMinStart(I)I" {
+subgraph cluster_Region_1286023028 {
+label = "R(3:1|(3:4|(1:6)(0)|8)|11)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r3.mSpans[0].getStartLine(r4)\lint r1 = 1\l}"];
+subgraph cluster_LoopRegion_1282298710 {
+label = "LOOP:0: (3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r1 \< r3.mSpanCount) goto L4\l}"];
+subgraph cluster_Region_965169448 {
+label = "R(3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|int int r2 = r3.mSpans[r1].getStartLine(r4)\l}"];
+subgraph cluster_IfRegion_254674678 {
+label = "IF [B:6:0x0016] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|if (r2 \< r0) goto L6\l}"];
+subgraph cluster_Region_402555940 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|r0 = r2\l}"];
+}
+subgraph cluster_Region_1162809631 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0019|LOOP_END\lLOOP:0: B:3:0x000a\-\>B:8:0x0019\lPHI: r0 \l  PHI: (r0v4 'minStart' int) = (r0v3 'minStart' int), (r0v5 'minStart' int) binds: [B:12:0x0019, B:11:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|r1++\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001c|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a|LOOP_START\lLOOP:0: B:3:0x000a\-\>B:8:0x0019\lPHI: r0 r1 \l  PHI: (r0v3 'minStart' int) = (r0v2 'minStart' int), (r0v4 'minStart' int) binds: [B:2:0x0000, B:8:0x0019] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v2 'i' int) = (r1v1 'i' int), (r1v3 'i' int) binds: [B:2:0x0000, B:8:0x0019] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0019|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0019|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001c|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private int androidx.recyclerview.widget.StaggeredGridLayoutManager.getMinStart((r3v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r4v0 'def' int A[D('def' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x0019 \-\> B:3:0x000a, CROSS_EDGE: B:6:0x0016 \-\> B:8:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_7 -> Node_11;
+Node_8 -> Node_3;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+Node_10 -> Node_9;
+}
+

@@ -1,0 +1,43 @@
+digraph "CFG forcom.google.android.material.shadow.ShadowRenderer.drawCornerShadow(Landroid\/graphics\/Canvas;Landroid\/graphics\/Matrix;Landroid\/graphics\/RectF;IFF)V" {
+Node_18 [shape=record,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0000}"];
+Node_21 [shape=record,label="{21\:\ 0x000f|if ((r30 \> 0.0f ? 1 : (r30 == 0.0f ? 0 : \-1)) \>= 0) goto L17\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0011|r4 = true\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0014|PHI: r4 \l  PHI: (r4v2 boolean) = (r4v1 boolean), (r4v6 boolean) binds: [B:23:0x0013, B:22:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|r11 = r4\landroid.graphics.Path r12 = r24.scratch\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0019|if (r11 == false) goto L16\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001b|int[] r6 = com.google.android.material.shadow.ShadowRenderer.cornerColors\lr6[0] = 0\lr6[1] = r24.shadowEndColor\lr6[2] = r24.shadowMiddleColor\lr6[3] = r24.shadowStartColor\l}"];
+Node_28 [shape=record,label="{28\:\ 0x005b|float r21 = r27.width() \/ 2.0f\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0065|if ((r21 \> 0.0f ? 1 : (r21 == 0.0f ? 0 : \-1)) \> 0) goto L11\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0067|RETURN\l|return\l}"];
+Node_19 [shape=record,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0068|float r22 = 1.0f \- (((float) r28) \/ r21)\lfloat r23 = r22 + ((1.0f \- r22) \/ 2.0f)\lfloat[] r19 = com.google.android.material.shadow.ShadowRenderer.cornerPositions\lr19[1] = r22\lr19[2] = r23\landroid.graphics.RadialGradient r1 = new android.graphics.RadialGradient(r27.centerX(), r27.centerY(), r21, com.google.android.material.shadow.ShadowRenderer.cornerColors, r19, android.graphics.Shader.TileMode.CLAMP)\lr24.cornerShadowPaint.setShader(r1)\lr25.save()\lr25.concat(r26)\lr25.scale(1.0f, r27.height() \/ r27.width())\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00a5|if (r11 != false) goto L14\l}"];
+Node_33 [shape=record,label="{33\:\ 0x00a7|r25.clipPath(r12, android.graphics.Region.Op.DIFFERENCE)\lr25.drawPath(r12, r24.transparentPaint)\l}"];
+Node_34 [shape=record,label="{34\:\ 0x00b1|r25.drawArc(r27, r29, r30, true, r24.cornerShadowPaint)\lr25.restore()\l}"];
+Node_35 [shape=record,label="{35\:\ 0x00c2|RETURN\l|return\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002e|r12.rewind()\lr12.moveTo(r27.centerX(), r27.centerY())\lr12.arcTo(r27, r29, r30)\lr12.close()\lr27.inset((float) (\-r28), (float) (\-r28))\lint[] r6 = com.google.android.material.shadow.ShadowRenderer.cornerColors\lr6[0] = 0\lr6[1] = r24.shadowStartColor\lr6[2] = r24.shadowMiddleColor\lr6[3] = r24.shadowEndColor\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0013|r4 = false\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.shadow.ShadowRenderer.drawCornerShadow((r24v0 'this' com.google.android.material.shadow.ShadowRenderer A[IMMUTABLE_TYPE, THIS]), (r25v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r26v0 'matrix' android.graphics.Matrix A[D('matrix' android.graphics.Matrix), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r27v0 'bounds' android.graphics.RectF A[D('bounds' android.graphics.RectF), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r28v0 'elevation' int A[D('elevation' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r29v0 'startAngle' float A[D('startAngle' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r30v0 'sweepAngle' float A[D('sweepAngle' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x00c2 \-\> B:19:?, CROSS_EDGE: B:32:0x00a5 \-\> B:34:0x00b1, CROSS_EDGE: B:27:0x002e \-\> B:28:0x005b, CROSS_EDGE: B:23:0x0013 \-\> B:24:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_18;Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_27;
+Node_26 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_31;
+Node_30 -> Node_19;
+Node_31 -> Node_32;
+Node_32 -> Node_33[style=dashed];
+Node_32 -> Node_34;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_35 -> Node_19;
+Node_27 -> Node_28;
+Node_23 -> Node_24;
+}
+

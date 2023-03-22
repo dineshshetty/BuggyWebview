@@ -1,0 +1,70 @@
+digraph "CFG forandroidx.core.widget.TextViewCompat.setTextMetricsParams(Landroid\/widget\/TextView;Landroidx\/core\/text\/PrecomputedTextCompat$Params;)V" {
+subgraph cluster_Region_1987773160 {
+label = "R(2:(1:3)|(2:(4:6|(1:8)|9|10)|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1431780021 {
+label = "IF [B:17:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 18) goto L3\l}"];
+subgraph cluster_Region_172902842 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|androidx.core.widget.TextViewCompat.Api17Impl.setTextDirection(r3, getTextDirection(r4.getTextDirection()))\l}"];
+}
+}
+subgraph cluster_Region_1846009196 {
+label = "R(2:(4:6|(1:8)|9|10)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1078324742 {
+label = "IF [B:20:0x0015] THEN: R(4:6|(1:8)|9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0015|if (android.os.Build.VERSION.SDK_INT \< 23) goto L6\l}"];
+subgraph cluster_Region_1002148982 {
+label = "R(4:6|(1:8)|9|10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|float float r0 = r4.getTextPaint().getTextScaleX()\lr3.getPaint().set(r4.getTextPaint())\l}"];
+subgraph cluster_IfRegion_419299013 {
+label = "IF [B:22:0x0030] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0030|if (r0 == r3.getTextScaleX()) goto L8\l}"];
+subgraph cluster_Region_2091275737 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0032|r3.setTextScaleX((r0 \/ 2.0f) + 1.0f)\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x003c|r3.setTextScaleX(r0)\l}"];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_749463081 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0040|r3.getPaint().set(r4.getTextPaint())\landroidx.core.widget.TextViewCompat.Api23Impl.setBreakStrategy(r3, r4.getBreakStrategy())\landroidx.core.widget.TextViewCompat.Api23Impl.setHyphenationFrequency(r3, r4.getHyphenationFrequency())\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0011}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0059|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.widget.TextViewCompat.setTextMetricsParams((r3v0 'textView' android.widget.TextView A[D('textView' android.widget.TextView), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'params' androidx.core.text.PrecomputedTextCompat$Params A[D('params' androidx.core.text.PrecomputedTextCompat$Params), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0030 \-\> B:24:0x003c, CROSS_EDGE: B:25:0x0040 \-\> B:26:0x0059, CROSS_EDGE: B:17:0x0004 \-\> B:19:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_25[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_27;
+Node_27 -> Node_15;
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+Node_26 -> Node_15;
+}
+

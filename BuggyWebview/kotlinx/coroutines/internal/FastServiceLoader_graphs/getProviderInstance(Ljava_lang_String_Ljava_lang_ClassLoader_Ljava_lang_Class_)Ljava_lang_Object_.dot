@@ -1,0 +1,20 @@
+digraph "CFG forkotlinx.coroutines.internal.FastServiceLoader.getProviderInstance(Ljava\/lang\/String;Ljava\/lang\/ClassLoader;Ljava\/lang\/Class;)Ljava\/lang\/Object;" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|java.lang.Class r1 = java.lang.Class.forName(r5, false, r6)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0009|if (r7.isAssignableFrom(r1) == false) goto L6\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000b}"];
+Node_13 [shape=record,label="{13\:\ 0x001b|RETURN\l|return r7.cast(r1.getDeclaredConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0]))\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x001c|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Expected service of class \")\lr2.append(r7)\lr2.append(\", but found \")\lr2.append(r1)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x003f|throw new java.lang.IllegalArgumentException(r2.toString().toString())\l}"];
+MethodNode[shape=record,label="{private final S kotlinx.coroutines.internal.FastServiceLoader.getProviderInstance((r4v0 'this' kotlinx.coroutines.internal.FastServiceLoader A[IMMUTABLE_TYPE, THIS]), (r5v0 'name' java.lang.String A[D('name' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'loader' java.lang.ClassLoader A[D('loader' java.lang.ClassLoader), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.lang.Class\<S\> A[D('service' java.lang.Class), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x003f \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [S]\lSIGNATURE: \<S:Ljava\/lang\/Object;\>(Ljava\/lang\/String;Ljava\/lang\/ClassLoader;Ljava\/lang\/Class\<TS;\>;)TS;\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+}
+

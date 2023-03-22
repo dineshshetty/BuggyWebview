@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.core.widget.TextViewCompat.setLastBaselineToBottomHeight(Landroid\/widget\/TextView;I)V" {
+subgraph cluster_Region_793589623 {
+label = "R(3:1|(1:12)(1:5)|(1:(1:8))) | DECL_VAR: int fontMetricsBottom\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|androidx.core.util.Preconditions.checkArgumentNonnegative(r7)\landroid.graphics.Paint$FontMetricsInt android.graphics.Paint.FontMetricsInt r0 = r6.getPaint().getFontMetricsInt()\l}"];
+subgraph cluster_IfRegion_1918082130 {
+label = "IF [B:17:0x000f, B:19:0x0015] THEN: R(1:12) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000f|if (android.os.Build.VERSION.SDK_INT \< 16) goto L12\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0015|ADDED_TO_REGION\l|if (androidx.core.widget.TextViewCompat.Api16Impl.getIncludeFontPadding(r6) != false) goto L12\l}"];
+subgraph cluster_Region_213521483 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001b|int r1 = r0.bottom\l}"];
+}
+subgraph cluster_Region_1021389160 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0018|int r1 = r0.descent\l}"];
+}
+}
+subgraph cluster_Region_366282158 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_605059237 {
+label = "IF [B:24:0x0021] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0021|if (r7 \> java.lang.Math.abs(r1)) goto L8\l}"];
+subgraph cluster_Region_1380253771 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0023|int int r2 = r7 \- r1\lr6.setPadding(r6.getPaddingLeft(), r6.getPaddingTop(), r6.getPaddingRight(), r2)\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0011}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001d|PHI: r1 \l  PHI: (r1v2 'fontMetricsBottom' int) = (r1v1 'fontMetricsBottom' int), (r1v4 'fontMetricsBottom' int) binds: [B:22:0x001b, B:21:0x0018] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0034|ORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.widget.TextViewCompat.setLastBaselineToBottomHeight((r6v0 'textView' android.widget.TextView A[D('textView' android.widget.TextView), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'lastBaselineToBottomHeight' int A[D('lastBaselineToBottomHeight' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0021 \-\> B:26:0x0034, CROSS_EDGE: B:22:0x001b \-\> B:23:0x001d, CROSS_EDGE: B:17:0x000f \-\> B:22:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_22;
+Node_19 -> Node_21[style=dashed];
+Node_19 -> Node_22;
+Node_22 -> Node_23;
+Node_21 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_25 -> Node_26;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+Node_23 -> Node_24;
+Node_26 -> Node_15;
+Node_27 -> Node_15;
+}
+

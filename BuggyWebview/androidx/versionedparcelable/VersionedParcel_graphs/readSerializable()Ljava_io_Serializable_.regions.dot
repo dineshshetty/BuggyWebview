@@ -1,0 +1,96 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.readSerializable()Ljava\/io\/Serializable;" {
+subgraph cluster_Region_1055805302 {
+label = "R(2:1|(2:(1:3)|(2:5|(2:7|8))))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|java.lang.String java.lang.String r1 = readString()\l}"];
+subgraph cluster_Region_1637930936 {
+label = "R(2:(1:3)|(2:5|(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_118501179 {
+label = "IF [B:20:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_700581821 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0008|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_698584015 {
+label = "R(2:5|(2:7|8))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000a|byte[] byte[] r2 = readByteArray()\ljava.io.ByteArrayInputStream java.io.ByteArrayInputStream r3 = new java.io.ByteArrayInputStream(r2)\l}"];
+subgraph cluster_TryCatchRegion_236783562 {
+label = "Try: R(2:7|8) catches: R(3:10|11|12), R(3:13|14|15)";
+node [shape=record,color=blue];
+subgraph cluster_Region_793514039 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0013|TRY_ENTER\lTRY_LEAVE\lTryCatch #2 \{IOException \-\> 0x003a, ClassNotFoundException \-\> 0x001f, blocks: (B:24:0x0013), top: B:32:0x0013 \}\lCatch: ClassNotFoundException \-\> 0x001f, IOException \-\> 0x003a\l|androidx.versionedparcelable.VersionedParcel$1 java.io.ObjectInputStream r4 = new androidx.versionedparcelable.VersionedParcel.C05321(r3)     \/\/ Catch: java.lang.ClassNotFoundException \-\> L1f java.io.IOException \-\> L3a\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001e|RETURN\l|return (java.io.Serializable) r4.readObject()\l}"];
+}
+subgraph cluster_Region_75295116 {
+label = "R(3:10|11|12) | ExcHandler: IOException \-\> 0x003a\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003a|ExcHandler: IOException \-\> 0x003a\l}"];
+Node_30 [shape=record,label="{30\:\ 0x003b}"];
+Node_31 [shape=record,label="{31\:\ 0x0054|throw new java.lang.RuntimeException(\"VersionedParcelable encountered IOException reading a Serializable object (name = \" + r1 + \")\", r4)\l}"];
+}
+subgraph cluster_Region_1702555113 {
+label = "R(3:13|14|15) | ExcHandler: ClassNotFoundException \-\> 0x001f\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001f|ExcHandler: ClassNotFoundException \-\> 0x001f\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0020}"];
+Node_28 [shape=record,label="{28\:\ 0x0039|throw new java.lang.RuntimeException(\"VersionedParcelable encountered ClassNotFoundException reading a Serializable object (name = \" + r1 + \")\", r4)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_75295116 {
+label = "R(3:10|11|12) | ExcHandler: IOException \-\> 0x003a\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003a|ExcHandler: IOException \-\> 0x003a\l}"];
+Node_30 [shape=record,label="{30\:\ 0x003b}"];
+Node_31 [shape=record,label="{31\:\ 0x0054|throw new java.lang.RuntimeException(\"VersionedParcelable encountered IOException reading a Serializable object (name = \" + r1 + \")\", r4)\l}"];
+}
+subgraph cluster_Region_1702555113 {
+label = "R(3:13|14|15) | ExcHandler: ClassNotFoundException \-\> 0x001f\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001f|ExcHandler: ClassNotFoundException \-\> 0x001f\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0020}"];
+Node_28 [shape=record,label="{28\:\ 0x0039|throw new java.lang.RuntimeException(\"VersionedParcelable encountered ClassNotFoundException reading a Serializable object (name = \" + r1 + \")\", r4)\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0013|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{protected java.io.Serializable androidx.versionedparcelable.VersionedParcel.readSerializable((r8v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x001e \-\> B:18:?, CROSS_EDGE: B:31:0x0054 \-\> B:18:?, CROSS_EDGE: B:28:0x0039 \-\> B:18:?, CROSS_EDGE: B:32:0x0013 \-\> B:29:0x003a, CROSS_EDGE: B:32:0x0013 \-\> B:26:0x001f\lINLINE_NOT_NEEDED\lTryCatch #2 \{IOException \-\> 0x003a, ClassNotFoundException \-\> 0x001f, blocks: (B:24:0x0013), top: B:32:0x0013 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_18;
+Node_23 -> Node_32;
+Node_24 -> Node_25;
+Node_24 -> Node_33;
+Node_25 -> Node_18;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_18;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_18;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_18;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_28 -> Node_18;
+Node_17 -> Node_19;
+Node_32 -> Node_24;
+Node_32 -> Node_29;
+Node_32 -> Node_26;
+Node_33 -> Node_29;
+Node_33 -> Node_26;
+}
+

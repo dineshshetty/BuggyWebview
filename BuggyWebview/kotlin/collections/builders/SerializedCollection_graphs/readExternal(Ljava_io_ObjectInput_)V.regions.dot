@@ -1,0 +1,134 @@
+digraph "CFG forkotlin.collections.builders.SerializedCollection.readExternal(Ljava\/io\/ObjectInput;)V" {
+subgraph cluster_Region_1203858269 {
+label = "R(2:1|(2:(2:24|25)|(2:3|(2:(2:22|23)|(3:5|6|15))))) | DECL_VAR: java.util.List null\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r12, \"input\")\lbyte int r0 = r12.readByte()\lint r1 = r0 & 1\lint r2 = r0 & (\-2)\l}"];
+subgraph cluster_Region_1519071393 {
+label = "R(2:(2:24|25)|(2:3|(2:(2:22|23)|(3:5|6|15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1707460737 {
+label = "IF [B:29:0x000f] THEN: R(2:24|25) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x000f|if (r2 != 0) goto L24\l}"];
+subgraph cluster_Region_1792220264 {
+label = "R(2:24|25)";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x008b}"];
+Node_49 [shape=record,label="{49\:\ 0x00a4|throw new java.io.InvalidObjectException(\"Unsupported flags value: \" + r0 + '.')\l}"];
+}
+}
+subgraph cluster_Region_386377741 {
+label = "R(2:3|(2:(2:22|23)|(3:5|6|15)))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0011|int int r4 = r12.readInt()\l}"];
+subgraph cluster_Region_1517443511 {
+label = "R(2:(2:22|23)|(3:5|6|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2139277405 {
+label = "IF [B:31:0x0015] THEN: R(2:22|23) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0015|if (r4 \< 0) goto L22\l}"];
+subgraph cluster_Region_1074053997 {
+label = "R(2:22|23)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0071}"];
+Node_47 [shape=record,label="{47\:\ 0x008a|throw new java.io.InvalidObjectException(\"Illegal size value: \" + r4 + '.')\l}"];
+}
+}
+subgraph cluster_Region_1360241934 {
+label = "R(3:5|6|15)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0017|int r5 = 0\l}"];
+subgraph cluster_SwitchRegion_1339352879 {
+label = "Switch: 3
+ case 0 -> R(4:17|(1:19)|21|1)
+ case 1 -> R(4:10|(1:12)|14|1)
+ case default -> R(2:7|8)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0018|switch(r1) \{\l    case 0: goto L17;\l    case 1: goto L10;\l    default: goto L7;\l\}\l}"];
+subgraph cluster_Region_198089260 {
+label = "R(4:17|(1:19)|21|1)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0052|java.util.List java.util.List r3 = kotlin.collections.CollectionsKt.createListBuilder(r4)\l}"];
+subgraph cluster_LoopRegion_555945112 {
+label = "LOOP:1: (1:19)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0059|LOOP_START\lLOOP:1: B:41:0x0059\-\>B:42:0x005b\lPHI: r5 \l  PHI: (r5v3 int) = (r5v2 int), (r5v4 int) binds: [B:40:0x0052, B:42:0x005b] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r4) goto L19\l}"];
+subgraph cluster_Region_1751987320 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x005b|LOOP_END\lLOOP:1: B:41:0x0059\-\>B:42:0x005b\l|r3.add(r12.readObject())\lr5++\l}"];
+}
+}
+Node_43 [shape=record,label="{43\:\ 0x0067|java.util.Collection r3 = kotlin.collections.CollectionsKt.build(r3)\l}"];
+Node_InsnContainer_66535899 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1208674497 {
+label = "R(4:10|(1:12)|14|1)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0035|java.util.Set java.util.Set r3 = kotlin.collections.SetsKt.createSetBuilder(r4)\l}"];
+subgraph cluster_LoopRegion_787694854 {
+label = "LOOP:0: (1:12)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x003c|LOOP_START\lLOOP:0: B:37:0x003c\-\>B:38:0x003e\lPHI: r5 \l  PHI: (r5v5 int) = (r5v2 int), (r5v6 int) binds: [B:36:0x0035, B:38:0x003e] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r4) goto L12\l}"];
+subgraph cluster_Region_2008974676 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x003e|LOOP_END\lLOOP:0: B:37:0x003c\-\>B:38:0x003e\l|r3.add(r12.readObject())\lr5++\l}"];
+}
+}
+Node_39 [shape=record,label="{39\:\ 0x004a|java.util.Collection r3 = kotlin.collections.SetsKt.build(r3)\l}"];
+Node_InsnContainer_1011050108 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_697484653 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x001b}"];
+Node_35 [shape=record,label="{35\:\ 0x0034|throw new java.io.InvalidObjectException(\"Unsupported collection type tag: \" + r1 + '.')\l}"];
+}
+}
+Node_44 [shape=record,label="{44\:\ 0x006e|PHI: r3 \l  PHI: (r3v6 java.util.Collection\<?\>) = (r3v5 java.util.List), (r3v9 java.util.Set) binds: [B:43:0x0067, B:39:0x004a] A[DONT_GENERATE, DONT_INLINE]\l|r11.collection = r3\l}"];
+}
+}
+}
+}
+}
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x004a|SYNTHETIC\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0070}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x0067|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void kotlin.collections.builders.SerializedCollection.readExternal((r11v0 'this' kotlin.collections.builders.SerializedCollection A[IMMUTABLE_TYPE, THIS]), (r12v0 'input' java.io.ObjectInput A[D('input' java.io.ObjectInput), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:38:0x003e \-\> B:37:0x003c, CROSS_EDGE: B:45:0x0070 \-\> B:27:?, BACK_EDGE: B:42:0x005b \-\> B:41:0x0059, CROSS_EDGE: B:43:0x0067 \-\> B:44:0x006e, CROSS_EDGE: B:47:0x008a \-\> B:27:?, CROSS_EDGE: B:49:0x00a4 \-\> B:27:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{java.io.Externalizable.readExternal(java.io.ObjectInput):void throws java.lang.ClassNotFoundException, java.io.IOException\}]\l}"];
+MethodNode -> Node_26;Node_28 -> Node_29;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_48;
+Node_48 -> Node_49;
+Node_49 -> Node_27;
+Node_30 -> Node_31;
+Node_31 -> Node_32[style=dashed];
+Node_31 -> Node_46;
+Node_46 -> Node_47;
+Node_47 -> Node_27;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_36;
+Node_33 -> Node_40;
+Node_40 -> Node_41;
+Node_41 -> Node_42;
+Node_41 -> Node_51[style=dashed];
+Node_42 -> Node_41;
+Node_43 -> Node_44;
+Node_36 -> Node_37;
+Node_37 -> Node_38;
+Node_37 -> Node_50[style=dashed];
+Node_38 -> Node_37;
+Node_39 -> Node_44;
+Node_34 -> Node_35;
+Node_35 -> Node_27;
+Node_44 -> Node_45;
+Node_26 -> Node_28;
+Node_50 -> Node_39;
+Node_45 -> Node_27;
+Node_51 -> Node_43;
+}
+

@@ -1,0 +1,27 @@
+digraph "CFG forkotlinx.coroutines.sync.SemaphoreImpl.tryAcquire()Z" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000|0x0000: MOVE  (r0 I:??[OBJECT, ARRAY]) = (r6 I:??[OBJECT, ARRAY])  (LINE:155)\l0x0001: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0002|LOOP_START\lLOOP:0: B:17:0x0002\-\>B:22:0x0012\l|0x0003: IGET  (r2 I:int) = (r0 I:kotlinx.coroutines.sync.SemaphoreImpl A[D('$this$loop$iv' kotlinx.coroutines.sync.SemaphoreImpl)]) kotlinx.coroutines.sync.SemaphoreImpl._availablePermits int  (LINE:307)\l0x0005: CONST  (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_18 [shape=record,label="{18\:\ 0x0006|0x0006: IF  (r2 I:??[int, byte, short, char] A[D('p' int)]) \> (0 ??[int, byte, short, char])  \-\> B:21:0x000a  (LINE:156)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000a|0x000a: SGET  (r4 I:java.util.concurrent.atomic.AtomicIntegerFieldUpdater) =  kotlinx.coroutines.sync.SemaphoreImpl._availablePermits$FU java.util.concurrent.atomic.AtomicIntegerFieldUpdater  (LINE:157)\l0x000c: ARITH  (r5 I:int) = (r2 I:int A[D('p' int)]) + (\-1 int) \l0x000e: INVOKE  (r4 I:boolean) = \l  (r4 I:java.util.concurrent.atomic.AtomicIntegerFieldUpdater)\l  (r6 I:java.lang.Object)\l  (r2 I:int A[D('p' int)])\l  (r5 I:int)\l type: VIRTUAL call: java.util.concurrent.atomic.AtomicIntegerFieldUpdater.compareAndSet(java.lang.Object, int, int):boolean A[MD:(T, int, int):boolean (c)]\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0012|LOOP_END\lLOOP:0: B:17:0x0002\-\>B:22:0x0012\l|0x0012: IF  (r4 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:17:0x0002 \l}"];
+Node_26 [shape=record,label="{26\:\ 0x0014|SYNTHETIC\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0014|RETURN\l|0x0014: CONST  (r4 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char]) \l0x0015: RETURN  (r4 I:boolean) \l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0008|SYNTHETIC\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0008|RETURN\l|0x0008: CONST  (r4 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x0009: RETURN  (r4 I:boolean) \l}"];
+MethodNode[shape=record,label="{public boolean kotlinx.coroutines.sync.SemaphoreImpl.tryAcquire((r6 'this' I:kotlinx.coroutines.sync.SemaphoreImpl A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0015 \-\> B:15:?, BACK_EDGE: B:22:0x0012 \-\> B:17:0x0002\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0005\-0x0017: r2 'p' I\l  0x0006\-0x0017: r3 '$i$a$\-loop\-SemaphoreImpl$tryAcquire$1' I\l  0x0001\-0x0017: r0 '$this$loop$iv' Lkotlinx\/coroutines\/sync\/SemaphoreImpl;\l  0x0002\-0x0017: r1 '$i$f$loop' I\lMETHOD_OVERRIDE: [kotlinx.coroutines.sync.Semaphore.tryAcquire():boolean]\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_21;
+Node_18 -> Node_27[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_17;
+Node_22 -> Node_26[style=dashed];
+Node_26 -> Node_23;
+Node_23 -> Node_15;
+Node_27 -> Node_19;
+Node_19 -> Node_15;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.LayoutManager.getChildRectangleOnScreenScrollAmount(Landroid\/view\/View;Landroid\/graphics\/Rect;)[I" {
+subgraph cluster_Region_859749482 {
+label = "R(5:1|(1:3)(1:12)|5|7|8) | DECL_VAR: int dx\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|int[] int[] r1 = new int[2]\lint int r2 = getPaddingLeft()\lint int r3 = getPaddingTop()\lint int r4 = getWidth() \- getPaddingRight()\lint int r5 = getHeight() \- getPaddingBottom()\lint int r6 = (r18.getLeft() + r19.left) \- r18.getScrollX()\lint int r7 = (r18.getTop() + r19.top) \- r18.getScrollY()\lint int r8 = r19.width() + r6\lint int r9 = r19.height() + r7\lint int r10 = java.lang.Math.min(0, r6 \- r2)\lint int r12 = java.lang.Math.min(0, r7 \- r3)\lint int r13 = java.lang.Math.max(0, r8 \- r4)\lint int r14 = java.lang.Math.max(0, r9 \- r5)\l}"];
+subgraph cluster_IfRegion_1195395092 {
+label = "IF [B:20:0x005f] THEN: R(1:3) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x005f|if (getLayoutDirection() == 1) goto L3\l}"];
+subgraph cluster_Region_1857524478 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0061|r15 = r13 != 0 ? r13 : java.lang.Math.max(r10, r8 \- r4)\l}"];
+}
+subgraph cluster_Region_1108189192 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x006d|r15 = r10 != 0 ? r10 : java.lang.Math.min(r6 \- r2, r13)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0078|PHI: r15 \l  PHI: (r15v4 'dx' int) = (r15v3 'dx' int), (r15v7 'dx' int) binds: [B:26:0x006f, B:22:0x0063] A[DONT_GENERATE, DONT_INLINE]\l|int r11 = r12 != 0 ? r12 : java.lang.Math.min(r7 \- r3, r14)\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0082|PHI: r11 \l  PHI: (r11v4 'dy' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r1[0] = r15\lr1[1] = r11\l}"];
+Node_33 [shape=record,label="{33\:\ 0x008b|RETURN\l|return r1\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0063}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x007a}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x007c}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0065}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x006f}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0071}"];
+MethodNode[shape=record,label="{private int[] androidx.recyclerview.widget.RecyclerView.LayoutManager.getChildRectangleOnScreenScrollAmount((r17v0 'this' androidx.recyclerview.widget.RecyclerView$LayoutManager A[IMMUTABLE_TYPE, THIS]), (r18v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'rect' android.graphics.Rect A[D('rect' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x007c \-\> B:32:0x0082, CROSS_EDGE: B:23:0x0065 \-\> B:29:0x0078, CROSS_EDGE: B:26:0x006f \-\> B:29:0x0078, CROSS_EDGE: B:27:0x0071 \-\> B:29:0x0078\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_25[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_23;
+Node_25 -> Node_26;
+Node_25 -> Node_27;
+Node_29 -> Node_30;
+Node_29 -> Node_31;
+Node_32 -> Node_33;
+Node_33 -> Node_18;
+Node_17 -> Node_19;
+Node_22 -> Node_29;
+Node_30 -> Node_32;
+Node_31 -> Node_32;
+Node_23 -> Node_29;
+Node_26 -> Node_29;
+Node_27 -> Node_29;
+}
+

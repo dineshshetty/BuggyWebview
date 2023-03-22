@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractSendChannel.offerSelectInternal(Ljava\/lang\/Object;Lkotlinx\/coroutines\/selects\/SelectInstance;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1118172714 {
+label = "R(2:1|(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlinx.coroutines.channels.AbstractSendChannel$TryOfferDesc kotlinx.coroutines.channels.AbstractSendChannel.TryOfferDesc r0 = describeTryOffer(r5)\ljava.lang.Object java.lang.Object r1 = r6.performAtomicTrySelect(r0)\l}"];
+subgraph cluster_Region_611680867 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1787098946 {
+label = "IF [B:10:0x000b] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000b|if (r1 != null) goto L3\l}"];
+subgraph cluster_Region_1694218108 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000d|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1142535736 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000e|kotlinx.coroutines.channels.ReceiveOrClosed kotlinx.coroutines.channels.ReceiveOrClosed r2 = r0.getResult()\lr2.completeResumeReceive(r5)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x001b|RETURN\l|return r2.getOfferResult()\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.channels.AbstractSendChannel.offerSelectInternal((r4v0 'this' kotlinx.coroutines.channels.AbstractSendChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r5v0 E A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 kotlinx.coroutines.selects.SelectInstance\<?\> A[D('select' kotlinx.coroutines.selects.SelectInstance), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x001b \-\> B:8:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (TE;Lkotlinx\/coroutines\/selects\/SelectInstance\<*\>;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.AbstractSendChannel.offerSelectInternal(E, kotlinx.coroutines.selects.SelectInstance\<?\>):java.lang.Object]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_8;
+Node_12 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

@@ -1,0 +1,18 @@
+digraph "CFG forkotlin.io.ByteStreamsKt.copyTo(Ljava\/io\/InputStream;Ljava\/io\/OutputStream;I)J" {
+Node_7 [shape=record,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0000|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"\<this\>\" \l0x0002: INVOKE  (r6 I:java.lang.Object A[D('$this$copyTo' java.io.InputStream)]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x0005: CONST_STR  (r0 I:java.lang.String) =  \"out\" \l0x0007: INVOKE  (r7 I:java.lang.Object A[D('out' java.io.OutputStream)]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x000a: CONST  (r0 I:??[long, double]) = (0 ??[long, double])  (LINE:104)\l0x000c: NEW_ARRAY  (r2 I:byte[]) = (r8 I:int A[D('bufferSize' int), IMMUTABLE_TYPE]) type: byte[]  (LINE:105)\l0x000e: INVOKE  (r3 I:int) = (r6 I:java.io.InputStream A[D('$this$copyTo' java.io.InputStream)]), (r2 I:byte[] A[D('buffer' byte[])]) type: VIRTUAL call: java.io.InputStream.read(byte[]):int A[MD:(byte[]):int throws java.io.IOException (c)] (LINE:106)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0012|LOOP_START\lLOOP:0: B:10:0x0012\-\>B:11:0x0014\l|0x0012: IF  (r3 I:??[int, byte, short, char] A[D('bytes' int)]) \< (0 ??[int, byte, short, char])  \-\> B:13:0x001f  (LINE:107)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0014|LOOP_END\lLOOP:0: B:10:0x0012\-\>B:11:0x0014\l|0x0014: CONST  (r4 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:108)\l0x0015: INVOKE  \l  (r7 I:java.io.OutputStream A[D('out' java.io.OutputStream)])\l  (r2 I:byte[] A[D('buffer' byte[])])\l  (r4 I:int)\l  (r3 I:int A[D('bytes' int)])\l type: VIRTUAL call: java.io.OutputStream.write(byte[], int, int):void A[MD:(byte[], int, int):void throws java.io.IOException (c)]\l0x0018: CAST (r4 I:long) = (long) (r3 I:int A[D('bytes' int)])  (LINE:109)\l0x0019: ARITH  (r0 I:long) = (r0 I:long A[D('bytesCopied' long)]) + (r4 I:long) \l0x001a: INVOKE  (r3 I:int A[D('bytes' int)]) = (r6 I:java.io.InputStream A[D('$this$copyTo' java.io.InputStream)]), (r2 I:byte[] A[D('buffer' byte[])]) type: VIRTUAL call: java.io.InputStream.read(byte[]):int A[MD:(byte[]):int throws java.io.IOException (c)] (LINE:110)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x001f|SYNTHETIC\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001f|RETURN\l|0x001f: RETURN  (r0 I:long A[D('bytesCopied' long)])  (LINE:112)\l}"];
+Node_8 [shape=record,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final long kotlin.io.ByteStreamsKt.copyTo((r6 I:java.io.InputStream A[D('$this$copyTo' java.io.InputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7 I:java.io.OutputStream A[D('out' java.io.OutputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8 I:int A[D('bufferSize' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0014 \-\> B:10:0x0012\lINLINE_NOT_NEEDED\lDebug Info:\l  0x000c\-0x001f: r0 'bytesCopied' J\l  0x000e\-0x001f: r2 'buffer' [B\l  0x0012\-0x001f: r3 'bytes' I\l  \-1 \-0x001f: r6 '$this$copyTo' Ljava\/io\/InputStream;\l  \-1 \-0x001f: r7 'out' Ljava\/io\/OutputStream;\l  \-1 \-0x001f: r8 'bufferSize' I\l}"];
+MethodNode -> Node_7;Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_13;
+Node_11 -> Node_10;
+Node_13 -> Node_12;
+Node_12 -> Node_8;
+}
+

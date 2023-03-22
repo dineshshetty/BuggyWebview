@@ -1,0 +1,43 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractSendChannel.close(Ljava\/lang\/Throwable;)Z" {
+Node_18 [shape=record,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0000|kotlinx.coroutines.channels.Closed r0 = new kotlinx.coroutines.channels.Closed(r8)\lkotlinx.coroutines.internal.LockFreeLinkedListNode r1 = r7.queue\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000a|LOOP_START\lLOOP:0: B:21:0x000a\-\>B:25:0x0021\l|kotlinx.coroutines.internal.LockFreeLinkedListNode r3 = r1.getPrevNode()\lr4 = true\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0016|if (((r3 instanceof kotlinx.coroutines.channels.Closed) ^ true) != false) goto L4\l}"];
+Node_24 [shape=record,label="{24\:\ 0x001a}"];
+Node_25 [shape=record,label="{25\:\ 0x0021|LOOP_END\lLOOP:0: B:21:0x000a\-\>B:25:0x0021\l|if (r3.addNext(r0, r1) == false) goto L2\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0023|SYNTHETIC\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0023|PHI: r4 \l  PHI: (r4v3 boolean) = (r4v2 boolean), (r4v1 boolean) binds: [B:23:0x0018, B:34:0x0023] A[DONT_GENERATE, DONT_INLINE]\l|r1 = r4\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0024|if (r1 == false) goto L15\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0026|r2 = r0\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0030|PHI: r2 \l  PHI: (r2v4 'actuallyClosed' kotlinx.coroutines.channels.Closed) = (r2v3 'actuallyClosed' kotlinx.coroutines.channels.Closed), (r2v5 'actuallyClosed' kotlinx.coroutines.channels.Closed) binds: [B:29:0x0028, B:28:0x0026] A[DONT_GENERATE, DONT_INLINE]\l|helpClose(r2)\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0033|if (r1 == false) goto L13\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0035|invokeOnCloseHandler(r8)\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0038|RETURN\l|return r1\l}"];
+Node_19 [shape=record,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0028|kotlinx.coroutines.channels.Closed r2 = (kotlinx.coroutines.channels.Closed) r7.queue.getPrevNode()\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0018|SYNTHETIC\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0018|r4 = false\l}"];
+MethodNode[shape=record,label="{public boolean kotlinx.coroutines.channels.AbstractSendChannel.close((r7v0 'this' kotlinx.coroutines.channels.AbstractSendChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r8v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0033 \-\> B:33:0x0038, CROSS_EDGE: B:29:0x0028 \-\> B:30:0x0030, BACK_EDGE: B:25:0x0021 \-\> B:21:0x000a, CROSS_EDGE: B:25:0x0021 \-\> B:26:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.SendChannel.close(java.lang.Throwable):boolean]\l}"];
+MethodNode -> Node_18;Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_24;
+Node_22 -> Node_35[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_21;
+Node_25 -> Node_34[style=dashed];
+Node_34 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_29;
+Node_28 -> Node_30;
+Node_30 -> Node_31;
+Node_31 -> Node_32[style=dashed];
+Node_31 -> Node_33;
+Node_32 -> Node_33;
+Node_33 -> Node_19;
+Node_29 -> Node_30;
+Node_35 -> Node_23;
+Node_23 -> Node_26;
+}
+

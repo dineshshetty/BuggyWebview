@@ -1,0 +1,82 @@
+digraph "CFG forkotlin.comparisons.ComparisonsKt__ComparisonsKt.reversed(Ljava\/util\/Comparator;)Ljava\/util\/Comparator;" {
+subgraph cluster_Region_1460627255 {
+label = "R(2:1|(2:(1:4)|(1:(2:8|9)(1:(2:12|13)(1:15)))))";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"\<this\>\")\l}"];
+subgraph cluster_Region_792410747 {
+label = "R(2:(1:4)|(1:(2:8|9)(1:(2:12|13)(1:15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_551211834 {
+label = "IF [B:35:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0008|if ((r2 instanceof kotlin.comparisons.ReversedComparator) == true) goto L3\l}"];
+subgraph cluster_Region_273212499 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ ?|SYNTHETIC\lRETURN\l|return ((kotlin.comparisons.ReversedComparator) r2).getComparator()\l}"];
+}
+}
+subgraph cluster_Region_1020403634 {
+label = "R(1:(2:8|9)(1:(2:12|13)(1:15)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1246499505 {
+label = "IF [B:38:0x001a] THEN: R(2:8|9) ELSE: R(1:(2:12|13)(1:15))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x001a|if (kotlin.jvm.internal.Intrinsics.areEqual(r2, kotlin.comparisons.NaturalOrderComparator.INSTANCE) == true) goto L8\l}"];
+subgraph cluster_Region_987545014 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x001c|kotlin.comparisons.ReverseOrderComparator kotlin.comparisons.ReverseOrderComparator r0 = kotlin.comparisons.ReverseOrderComparator.INSTANCE\lkotlin.jvm.internal.Intrinsics.checkNotNull(r0, \"null cannot be cast to non\-null type java.util.Comparator\<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.reversed\>\{ kotlin.TypeAliasesKt.Comparator\<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.reversed\> \}\")\l}"];
+Node_46 [shape=record,label="{46\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1014586305 {
+label = "R(1:(2:12|13)(1:15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1808026209 {
+label = "IF [B:41:0x002a] THEN: R(2:12|13) ELSE: R(1:15) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x002a|if (kotlin.jvm.internal.Intrinsics.areEqual(r2, kotlin.comparisons.ReverseOrderComparator.INSTANCE) == true) goto L12\l}"];
+subgraph cluster_Region_979945321 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x002c|kotlin.comparisons.NaturalOrderComparator kotlin.comparisons.NaturalOrderComparator r0 = kotlin.comparisons.NaturalOrderComparator.INSTANCE\lkotlin.jvm.internal.Intrinsics.checkNotNull(r0, \"null cannot be cast to non\-null type java.util.Comparator\<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.reversed\>\{ kotlin.TypeAliasesKt.Comparator\<T of kotlin.comparisons.ComparisonsKt__ComparisonsKt.reversed\> \}\")\l}"];
+Node_47 [shape=record,label="{47\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1195898660 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x003b|RETURN\lORIG_RETURN\l|return new kotlin.comparisons.ReversedComparator(r2)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_32 [shape=record,color=red,label="{32\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x000a}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0012}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0024}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0034}"];
+MethodNode[shape=record,label="{public static final java.util.Comparator\<T\> kotlin.comparisons.ComparisonsKt__ComparisonsKt.reversed((r2v0 java.util.Comparator\<T\> A[D('$this$reversed' java.util.Comparator), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:39:0x001c \-\> B:44:0x003b, CROSS_EDGE: B:42:0x002c \-\> B:44:0x003b, CROSS_EDGE: B:43:0x0034 \-\> B:44:0x003b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/Comparator\<TT;\>;)Ljava\/util\/Comparator\<TT;\>;\l}"];
+MethodNode -> Node_32;Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_45 -> Node_33;
+Node_38 -> Node_39;
+Node_38 -> Node_40[style=dashed];
+Node_39 -> Node_46;
+Node_46 -> Node_33;
+Node_41 -> Node_42;
+Node_41 -> Node_43[style=dashed];
+Node_42 -> Node_47;
+Node_47 -> Node_33;
+Node_44 -> Node_33;
+Node_32 -> Node_34;
+Node_36 -> Node_45;
+Node_37 -> Node_38;
+Node_40 -> Node_41;
+Node_43 -> Node_44;
+}
+

@@ -1,0 +1,42 @@
+digraph "CFG forkotlin.sequences.DropWhileSequence$iterator$1.hasNext()Z" {
+subgraph cluster_Region_469101383 {
+label = "R(2:(1:3)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1770588166 {
+label = "IF [B:3:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r2.dropState == (\-1)) goto L3\l}"];
+subgraph cluster_Region_1175322585 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|drop()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x000b|RETURN\l|return r2.dropState == 1 \|\| r2.iterator.hasNext()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0013|REMOVE\lADDED_TO_REGION\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0016|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return true\l}"];
+MethodNode[shape=record,label="{public boolean kotlin.sequences.DropWhileSequence$iterator$1.hasNext((r2v0 'this' kotlin.sequences.DropWhileSequence$iterator$1 A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:8:0x0013 \-\> B:11:0x0017, CROSS_EDGE: B:6:0x000b \-\> B:11:0x0017, CROSS_EDGE: B:3:0x0003 \-\> B:5:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{java.util.Iterator.hasNext():boolean\}]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_12;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_10;
+Node_8 -> Node_13;
+Node_10 -> Node_1;
+Node_13 -> Node_1;
+Node_12 -> Node_1;
+}
+

@@ -1,0 +1,58 @@
+digraph "CFG forcom.google.android.material.internal.EdgeToEdgeUtils.getStatusBarColor(Landroid\/content\/Context;Z)I" {
+subgraph cluster_Region_187017077 {
+label = "R(1:(2:5|6)(1:(1:9)(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_698761064 {
+label = "IF [B:16:0x0005, B:18:0x000b] THEN: R(2:5|6) ELSE: R(1:(1:9)(1:11))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|if (r5 != false) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000b|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \< 23) goto L5\l}"];
+subgraph cluster_Region_1727522215 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|int int r0 = com.google.android.material.color.MaterialColors.getColor(r4, 16843857, (int) androidx.core.view.ViewCompat.MEASURED_STATE_MASK)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0018|RETURN\l|return androidx.core.graphics.ColorUtils.setAlphaComponent(r0, 128)\l}"];
+}
+subgraph cluster_Region_1457445080 {
+label = "R(1:(1:9)(1:11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_357412924 {
+label = "IF [B:21:0x0019] THEN: R(1:9) ELSE: R(1:11) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0019|if (r5 != false) goto L9\l}"];
+subgraph cluster_Region_863351791 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001b|RETURN\l|return 0\l}"];
+}
+subgraph cluster_Region_724600726 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0021|RETURN\l|return com.google.android.material.color.MaterialColors.getColor(r4, 16843857, (int) androidx.core.view.ViewCompat.MEASURED_STATE_MASK)\l}"];
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001d}"];
+MethodNode[shape=record,label="{private static int com.google.android.material.internal.EdgeToEdgeUtils.getStatusBarColor((r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'isEdgeToEdgeEnabled' boolean A[D('isEdgeToEdgeEnabled' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001c \-\> B:14:?, CROSS_EDGE: B:25:0x0021 \-\> B:14:?, CROSS_EDGE: B:16:0x0005 \-\> B:21:0x0019\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_14;
+Node_21 -> Node_22;
+Node_21 -> Node_24[style=dashed];
+Node_22 -> Node_14;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_24 -> Node_25;
+}
+

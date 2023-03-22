@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.view.ViewPropertyAnimatorCompat.getDuration()J" {
+subgraph cluster_Region_90406591 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|android.view.View android.view.View r0 = r4.mView.get()\l}"];
+subgraph cluster_Region_751914401 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1301210717 {
+label = "IF [B:19:0x0009] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0009|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_2006325166 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0013|RETURN\l|return r0.animate().getDuration()\l}"];
+}
+}
+subgraph cluster_Region_248075510 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0014|RETURN\l|return 0L\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000b}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public long androidx.core.view.ViewPropertyAnimatorCompat.getDuration((r4v0 'this' androidx.core.view.ViewPropertyAnimatorCompat A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0016 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_17;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+}
+

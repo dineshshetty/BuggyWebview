@@ -1,0 +1,46 @@
+digraph "CFG forandroidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat.inferValueTypeOfKeyframe(Landroid\/content\/res\/Resources;Landroid\/content\/res\/Resources$Theme;Landroid\/util\/AttributeSet;Lorg\/xmlpull\/v1\/XmlPullParser;)I" {
+subgraph cluster_Region_1485306745 {
+label = "R(5:1|2|(1:7)(1:11)|8|9) | DECL_VAR: int valueType\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|android.content.res.TypedArray android.content.res.TypedArray r0 = androidx.core.content.res.TypedArrayUtils.obtainAttributes(r4, r5, r6, androidx.vectordrawable.graphics.drawable.AndroidResources.STYLEABLE_KEYFRAME)\landroid.util.TypedValue android.util.TypedValue r1 = androidx.core.content.res.TypedArrayUtils.peekNamedValue(r0, r7, \"value\", 0)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000d|boolean r2 = r1 != null\l}"];
+subgraph cluster_IfRegion_359591355 {
+label = "IF [B:17:0x0010, B:19:0x0018] THEN: R(1:7) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|PHI: r2 \l  PHI: (r2v1 'hasValue' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (r2 != false) goto L5\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0018|ADDED_TO_REGION\l|if (isColorType(r1.type) != false) goto L7\l}"];
+subgraph cluster_Region_1386580345 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001a|r3 = 3\l}"];
+}
+subgraph cluster_Region_1121405310 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001c|r3 = 0\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001d|PHI: r3 \l  PHI: (r3v1 'valueType' int) = (r3v0 'valueType' int), (r3v4 'valueType' int) binds: [B:21:0x001c, B:20:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|r0.recycle()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0020|RETURN\l|return r3\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000f}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0012}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static int androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat.inferValueTypeOfKeyframe((r4v0 'res' android.content.res.Resources A[D('res' android.content.res.Resources), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'theme' android.content.res.Resources$Theme A[D('theme' android.content.res.Resources$Theme), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'attrs' android.util.AttributeSet A[D('attrs' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'parser' org.xmlpull.v1.XmlPullParser A[D('parser' org.xmlpull.v1.XmlPullParser), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x001c \-\> B:22:0x001d, CROSS_EDGE: B:17:0x0010 \-\> B:21:0x001c, CROSS_EDGE: B:15:0x000d \-\> B:17:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

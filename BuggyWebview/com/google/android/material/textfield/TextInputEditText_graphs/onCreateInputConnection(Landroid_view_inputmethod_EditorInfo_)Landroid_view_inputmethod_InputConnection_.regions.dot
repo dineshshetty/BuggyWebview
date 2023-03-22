@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputEditText.onCreateInputConnection(Landroid\/view\/inputmethod\/EditorInfo;)Landroid\/view\/inputmethod\/InputConnection;" {
+subgraph cluster_Region_478570839 {
+label = "R(3:1|(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.inputmethod.InputConnection android.view.inputmethod.InputConnection r0 = super.onCreateInputConnection(r3)\l}"];
+subgraph cluster_IfRegion_2009151471 {
+label = "IF [B:3:0x0004, B:5:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 != null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0008|ADDED_TO_REGION\l|if (r3.hintText == null) goto L5\l}"];
+subgraph cluster_Region_1443441264 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|r3.hintText = getHintFromLayout()\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0010|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.view.inputmethod.InputConnection com.google.android.material.textfield.TextInputEditText.onCreateInputConnection((r2v0 'this' com.google.android.material.textfield.TextInputEditText A[IMMUTABLE_TYPE, THIS]), (r3v0 'outAttrs' android.view.inputmethod.EditorInfo A[D('outAttrs' android.view.inputmethod.EditorInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:5:0x0008 \-\> B:7:0x0010, CROSS_EDGE: B:3:0x0004 \-\> B:7:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onCreateInputConnection(android.view.inputmethod.EditorInfo):android.view.inputmethod.InputConnection\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+}
+

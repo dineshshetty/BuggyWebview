@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.recyclerview.widget.BatchingListUpdateCallback.onChanged(IILjava\/lang\/Object;)V" {
+subgraph cluster_Region_1465317249 {
+label = "R(2:(2:3|(2:9|10))|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1324542101 {
+label = "IF [B:17:0x0003] THEN: R(2:3|(2:9|10)) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0003|if (r4.mLastEventType == 3) goto L3\l}"];
+subgraph cluster_Region_494660598 {
+label = "R(2:3|(2:9|10))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|int int r0 = r4.mLastEventPosition\lint int r2 = r4.mLastEventCount\l}"];
+subgraph cluster_IfRegion_1674009039 {
+label = "IF [B:19:0x000b, B:21:0x000f, B:23:0x0013] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|if (r5 \<= (r0 + r2)) goto L5\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000f|ADDED_TO_REGION\l|if ((r5 + r6) \>= r0) goto L7\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0013|ADDED_TO_REGION\l|if (r4.mLastEventPayload == r7) goto L9\l}"];
+subgraph cluster_Region_686518462 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0015|int int r2 = r2 + r0\lr4.mLastEventPosition = java.lang.Math.min(r5, r0)\lr4.mLastEventCount = java.lang.Math.max(r2, r5 + r6) \- r4.mLastEventPosition\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0027|RETURN\l|return\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0028|dispatchLastEvent()\lr4.mLastEventPosition = r5\lr4.mLastEventCount = r6\lr4.mLastEventPayload = r7\lr4.mLastEventType = 3\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000d}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0011}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0033}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.BatchingListUpdateCallback.onChanged((r4v0 'this' androidx.recyclerview.widget.BatchingListUpdateCallback A[IMMUTABLE_TYPE, THIS]), (r5v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'count' int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'payload' java.lang.Object A[D('payload' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0033 \-\> B:15:?, CROSS_EDGE: B:21:0x000f \-\> B:26:0x0028, CROSS_EDGE: B:19:0x000b \-\> B:26:0x0028, CROSS_EDGE: B:17:0x0003 \-\> B:26:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.recyclerview.widget.ListUpdateCallback.onChanged(int, int, java.lang.Object):void]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_26[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_26[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_26[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_26[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_27 -> Node_15;
+}
+

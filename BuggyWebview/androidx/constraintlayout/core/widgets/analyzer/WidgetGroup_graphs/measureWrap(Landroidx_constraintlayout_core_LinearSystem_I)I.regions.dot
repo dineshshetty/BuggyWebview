@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.analyzer.WidgetGroup.measureWrap(Landroidx\/constraintlayout\/core\/LinearSystem;I)I" {
+subgraph cluster_Region_1662488170 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|int int r0 = r2.widgets.size()\l}"];
+subgraph cluster_Region_954109957 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1965105989 {
+label = "IF [B:11:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0006|if (r0 == 0) goto L3\l}"];
+subgraph cluster_Region_1493098902 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_2102003354 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0010|RETURN\l|return solverMeasure(r3, r2.widgets, r4)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000a}"];
+MethodNode[shape=record,label="{public int androidx.constraintlayout.core.widgets.analyzer.WidgetGroup.measureWrap((r2v0 'this' androidx.constraintlayout.core.widgets.analyzer.WidgetGroup A[IMMUTABLE_TYPE, THIS]), (r3v0 'system' androidx.constraintlayout.core.LinearSystem A[D('system' androidx.constraintlayout.core.LinearSystem), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'orientation' int A[D('orientation' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0010 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_14 -> Node_15;
+}
+

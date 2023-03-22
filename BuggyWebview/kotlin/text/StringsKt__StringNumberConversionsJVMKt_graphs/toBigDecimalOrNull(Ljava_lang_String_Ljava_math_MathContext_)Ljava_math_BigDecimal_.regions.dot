@@ -1,0 +1,70 @@
+digraph "CFG forkotlin.text.StringsKt__StringNumberConversionsJVMKt.toBigDecimalOrNull(Ljava\/lang\/String;Ljava\/math\/MathContext;)Ljava\/math\/BigDecimal;" {
+subgraph cluster_Region_1209419554 {
+label = "R(2:1|(1:(2:(1:7)|(1:10))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"mathContext\")\l}"];
+subgraph cluster_TryCatchRegion_362267588 {
+label = "Try: R(1:(2:(1:7)|(1:10))) catches: R(1:12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_558417130 {
+label = "R(1:(2:(1:7)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_922161221 {
+label = "R(2:(1:7)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1277329134 {
+label = "IF [B:20:0x0016] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0016|if (kotlin.text.StringNumberConversionsJVM.value.matches(r5) != false) goto L5\l}"];
+subgraph cluster_Region_1736449357 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ ?|SYNTHETIC\lRETURN\l|return new java.math.BigDecimal(r5, r6)\l}"];
+}
+}
+subgraph cluster_Region_8972995 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_250849199 {
+label = "R(1:12) | ExcHandler: NumberFormatException \-\> 0x0023\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0026|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_250849199 {
+label = "R(1:12) | ExcHandler: NumberFormatException \-\> 0x0023\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0026|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x000d|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000d|TRY_ENTER\lTryCatch #0 \{NumberFormatException \-\> 0x0023, blocks: (B:19:0x000d, B:21:0x0018), top: B:28:0x000d \}\lCatch: NumberFormatException \-\> 0x0023\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0018|TRY_LEAVE\lTryCatch #0 \{NumberFormatException \-\> 0x0023, blocks: (B:19:0x000d, B:21:0x0018), top: B:28:0x000d \}\lCatch: NumberFormatException \-\> 0x0023\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x001f}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0023|ExcHandler: NumberFormatException \-\> 0x0023\l}"];
+MethodNode[shape=record,label="{public static final java.math.BigDecimal kotlin.text.StringsKt__StringNumberConversionsJVMKt.toBigDecimalOrNull((r5v0 '$this$toBigDecimalOrNull' java.lang.String A[D('$this$toBigDecimalOrNull' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'mathContext' java.math.MathContext A[D('mathContext' java.math.MathContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0023 \-\> B:27:0x0026, CROSS_EDGE: B:20:0x0016 \-\> B:27:0x0026, CROSS_EDGE: B:28:0x000d \-\> B:25:0x0023\lINLINE_NOT_NEEDED\lTryCatch #0 \{NumberFormatException \-\> 0x0023, blocks: (B:19:0x000d, B:21:0x0018), top: B:28:0x000d \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_28;
+Node_20 -> Node_21;
+Node_20 -> Node_31[style=dashed];
+Node_30 -> Node_17;
+Node_31 -> Node_17;
+Node_27 -> Node_17;
+Node_27 -> Node_17;
+Node_16 -> Node_18;
+Node_28 -> Node_19;
+Node_28 -> Node_25;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_29;
+Node_22 -> Node_30;
+Node_29 -> Node_25;
+Node_25 -> Node_27;
+}
+

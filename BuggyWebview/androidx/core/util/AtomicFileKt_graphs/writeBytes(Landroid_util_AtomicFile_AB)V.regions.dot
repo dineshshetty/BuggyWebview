@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.core.util.AtomicFileKt.writeBytes(Landroid\/util\/AtomicFile;[B)V" {
+subgraph cluster_Region_331951907 {
+label = "R(2:1|(2:3|4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"array\")\ljava.io.FileOutputStream java.io.FileOutputStream r2 = r6.startWrite()\l}"];
+subgraph cluster_TryCatchRegion_798430509 {
+label = "Try: R(2:3|4) catches: R(3:8|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_382509984 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0025, blocks: (B:3:0x0012), top: B:9:0x0012 \}\lCatch: all \-\> 0x0025\l|kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r2, \"stream\")     \/\/ Catch: java.lang.Throwable \-\> L25\lr2.write(r7)     \/\/ Catch: java.lang.Throwable \-\> L25\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001d|r6.finishWrite(r2)\l}"];
+}
+subgraph cluster_Region_229809567 {
+label = "R(3:8|9|10) | ExcHandler: all \-\> 0x0025\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0025|ExcHandler: all \-\> 0x0025\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0027|r6.failWrite(r2)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002a|throw r4\l}"];
+}
+}
+}
+subgraph cluster_Region_229809567 {
+label = "R(3:8|9|10) | ExcHandler: all \-\> 0x0025\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0025|ExcHandler: all \-\> 0x0025\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0027|r6.failWrite(r2)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002a|throw r4\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0012|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0024}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public static final void androidx.core.util.AtomicFileKt.writeBytes((r6v0 '$this$writeBytes' android.util.AtomicFile A[D('$this$writeBytes' android.util.AtomicFile), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'array' byte[] A[D('array' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x002a \-\> B:1:?, CROSS_EDGE: B:9:0x0012 \-\> B:6:0x0025\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0025, blocks: (B:3:0x0012), top: B:9:0x0012 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_9;
+Node_3 -> Node_4;
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_9 -> Node_3;
+Node_9 -> Node_6;
+Node_5 -> Node_1;
+Node_10 -> Node_6;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.material.switchmaterial.SwitchMaterial.getMaterialThemeColorsThumbTintList()Landroid\/content\/res\/ColorStateList;" {
+subgraph cluster_Region_2034513256 {
+label = "R(2:(3:3|(1:5)|6)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1261396067 {
+label = "IF [B:3:0x0002] THEN: R(3:3|(1:5)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r8.materialThemeColorsThumbTintList == null) goto L3\l}"];
+subgraph cluster_Region_607490532 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|int int r0 = com.google.android.material.color.MaterialColors.getColor(r8, com.google.android.material.C0571R.attr.colorSurface)\lint int r1 = com.google.android.material.color.MaterialColors.getColor(r8, com.google.android.material.C0571R.attr.colorControlActivated)\lfloat float r2 = getResources().getDimension(com.google.android.material.C0571R.dimen.mtrl_switch_thumb_elevation)\l}"];
+subgraph cluster_IfRegion_49496480 {
+label = "IF [B:5:0x0020] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|if (r8.elevationOverlayProvider.isThemeElevationOverlayEnabled() != false) goto L5\l}"];
+subgraph cluster_Region_740705278 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0022|r2 += com.google.android.material.internal.ViewUtils.getParentAbsoluteElevation(r8)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0027|PHI: r2 \l  PHI: (r2v2 'thumbElevation' float) = (r2v1 'thumbElevation' float), (r2v3 'thumbElevation' float) binds: [B:5:0x0020, B:6:0x0022] A[DONT_GENERATE, DONT_INLINE]\l|int int r3 = r8.elevationOverlayProvider.compositeOverlayIfNeeded(r0, r2)\lint[][] int[][] r4 = com.google.android.material.switchmaterial.SwitchMaterial.ENABLED_CHECKED_STATES\lint[] int[] r5 = new int[r4.length]\lr5[0] = com.google.android.material.color.MaterialColors.layer(r0, r1, 1.0f)\lr5[1] = r3\lr5[2] = com.google.android.material.color.MaterialColors.layer(r0, r1, 0.38f)\lr5[3] = r3\lr8.materialThemeColorsThumbTintList = new android.content.res.ColorStateList(r4, r5)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0054|RETURN\l|return r8.materialThemeColorsThumbTintList\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0052}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.content.res.ColorStateList com.google.android.material.switchmaterial.SwitchMaterial.getMaterialThemeColorsThumbTintList((r8v0 'this' com.google.android.material.switchmaterial.SwitchMaterial A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x0020 \-\> B:7:0x0027, CROSS_EDGE: B:3:0x0002 \-\> B:8:0x0052\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_8 -> Node_9;
+}
+

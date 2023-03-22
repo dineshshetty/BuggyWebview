@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.CarExtender.\<init\>(Landroid\/app\/Notification;)V" {
+subgraph cluster_Region_1723054199 {
+label = "R(2:1|(2:(1:3)|(2:6|(1:(1:9)))))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|r3.mColor = 0\l}"];
+subgraph cluster_Region_548854078 {
+label = "R(2:(1:3)|(2:6|(1:(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_676643824 {
+label = "IF [B:16:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (android.os.Build.VERSION.SDK_INT \< 21) goto L3\l}"];
+subgraph cluster_Region_256987480 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2039125245 {
+label = "R(2:6|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|android.os.Bundle r1 = androidx.core.app.NotificationCompat.getExtras(r4) == null ? null : androidx.core.app.NotificationCompat.getExtras(r4).getBundle(androidx.core.app.NotificationCompat.CarExtender.EXTRA_CAR_EXTENDER)\l}"];
+subgraph cluster_Region_1952067781 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2077826317 {
+label = "IF [B:22:0x001f] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001f|PHI: r1 \l  PHI: (r1v4 'carBundle' android.os.Bundle) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != null) goto L9\l}"];
+subgraph cluster_Region_272303025 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0021|r3.mLargeIcon = (android.graphics.Bitmap) r1.getParcelable(androidx.core.app.NotificationCompat.CarExtender.EXTRA_LARGE_ICON)\lr3.mColor = r1.getInt(androidx.core.app.NotificationCompat.CarExtender.EXTRA_COLOR, 0)\landroid.os.Bundle android.os.Bundle r0 = r1.getBundle(androidx.core.app.NotificationCompat.CarExtender.EXTRA_CONVERSATION)\lr3.mUnreadConversation = getUnreadConversationFromBundle(r0)\l}"];
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000d}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0013}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x003f|ORIG_RETURN\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0015}"];
+MethodNode[shape=record,label="{public void androidx.core.app.NotificationCompat.CarExtender.\<init\>((r3v0 'this' androidx.core.app.NotificationCompat$CarExtender A[IMMUTABLE_TYPE, THIS]), (r4v0 'notification' android.app.Notification A[D('notification' android.app.Notification), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x003f \-\> B:14:?, CROSS_EDGE: B:22:0x001f \-\> B:24:0x003f, CROSS_EDGE: B:21:0x0015 \-\> B:22:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_14;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_13 -> Node_15;
+Node_18 -> Node_19;
+Node_20 -> Node_22;
+Node_24 -> Node_14;
+Node_25 -> Node_14;
+Node_21 -> Node_22;
+}
+

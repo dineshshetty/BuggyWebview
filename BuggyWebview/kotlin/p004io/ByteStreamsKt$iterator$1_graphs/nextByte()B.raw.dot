@@ -1,0 +1,20 @@
+digraph "CFG forkotlin.io.ByteStreamsKt$iterator$1.nextByte()B" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: INVOKE  (r2 I:kotlin.io.ByteStreamsKt$iterator$1) type: DIRECT call: kotlin.io.ByteStreamsKt$iterator$1.prepareNext():void A[MD:():void (m)] (LINE:38)\l0x0003: IGET  (r0 I:boolean) = (r2 I:kotlin.io.ByteStreamsKt$iterator$1) kotlin.io.ByteStreamsKt$iterator$1.finished boolean  (LINE:39)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|0x0005: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x000e \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0007|0x0007: IGET  (r0 I:int) = (r2 I:kotlin.io.ByteStreamsKt$iterator$1) kotlin.io.ByteStreamsKt$iterator$1.nextByte int  (LINE:41)\l0x0009: CAST (r0 I:byte) = (byte) (r0 I:int) \l0x000a: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:42)\l0x000b: IPUT  (r1 I:boolean), (r2 I:kotlin.io.ByteStreamsKt$iterator$1) kotlin.io.ByteStreamsKt$iterator$1.nextPrepared boolean \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|RETURN\l|0x000d: RETURN  (r0 I:byte A[D('res' byte)])  (LINE:43)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|0x000e: NEW_INSTANCE  (r0 I:java.util.NoSuchElementException A[D('res' byte)]) =  java.util.NoSuchElementException  (LINE:40)\l0x0010: CONST_STR  (r1 I:java.lang.String) =  \"Input stream is over.\" \l0x0012: INVOKE  (r0 I:java.util.NoSuchElementException), (r1 I:java.lang.String) type: DIRECT call: java.util.NoSuchElementException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0015|0x0015: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public byte kotlin.io.ByteStreamsKt$iterator$1.nextByte((r2 'this' I:kotlin.io.ByteStreamsKt$iterator$1 A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0015 \-\> B:1:?\lDebug Info:\l  0x000a\-0x000e: r0 'res' B\lMETHOD_OVERRIDE: [kotlin.collections.ByteIterator.nextByte():byte]\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+}
+

@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.loader.content.AsyncTaskLoader.dump(Ljava\/lang\/String;Ljava\/io\/FileDescriptor;Ljava\/io\/PrintWriter;[Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1557740588 {
+label = "R(4:1|(1:3)|(1:6)|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|super.dump(r6, r7, r8, r9)\l}"];
+subgraph cluster_IfRegion_2096749500 {
+label = "IF [B:16:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0007|if (r5.mTask != null) goto L3\l}"];
+subgraph cluster_Region_262551179 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0009|r8.print(r6)\lr8.print(\"mTask=\")\lr8.print(r5.mTask)\lr8.print(\" waiting=\")\lr8.println(r5.mTask.waiting)\l}"];
+}
+}
+subgraph cluster_IfRegion_1685277605 {
+label = "IF [B:19:0x0022] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0022|if (r5.mCancellingTask != null) goto L6\l}"];
+subgraph cluster_Region_1901994843 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0024|r8.print(r6)\lr8.print(\"mCancellingTask=\")\lr8.print(r5.mCancellingTask)\lr8.print(\" waiting=\")\lr8.println(r5.mCancellingTask.waiting)\l}"];
+}
+}
+subgraph cluster_Region_1137193719 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2112116331 {
+label = "IF [B:22:0x0041] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0041|if (r5.mUpdateThrottle != 0) goto L9\l}"];
+subgraph cluster_Region_53740561 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0043|r8.print(r6)\lr8.print(\"mUpdateThrottle=\")\landroidx.core.util.TimeUtils.formatDuration(r5.mUpdateThrottle, r8)\lr8.print(\" mLastLoadCompleteTime=\")\landroidx.core.util.TimeUtils.formatDuration(r5.mLastLoadCompleteTime, android.os.SystemClock.uptimeMillis(), r8)\lr8.println()\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0020}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x003b}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0061|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.loader.content.AsyncTaskLoader.dump((r5v0 'this' androidx.loader.content.AsyncTaskLoader\<D\> A[D('this' androidx.loader.content.AsyncTaskLoader\<D\>), IMMUTABLE_TYPE, THIS]), (r6v0 'prefix' java.lang.String A[D('prefix' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'fd' java.io.FileDescriptor A[D('fd' java.io.FileDescriptor), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'writer' java.io.PrintWriter A[D('writer' java.io.PrintWriter), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'args' java.lang.String[] A[D('args' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:22:0x0041 \-\> B:24:0x0061, CROSS_EDGE: B:19:0x0022 \-\> B:21:0x003b, CROSS_EDGE: B:16:0x0007 \-\> B:18:0x0020\lTYPE_VARS: [D]\lMETHOD_OVERRIDE: [androidx.loader.content.Loader.dump(java.lang.String, java.io.FileDescriptor, java.io.PrintWriter, java.lang.String[]):void]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_13 -> Node_15;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_24 -> Node_14;
+Node_25 -> Node_14;
+}
+

@@ -1,0 +1,120 @@
+digraph "CFG forkotlin.concurrent.LocksKt.write(Ljava\/util\/concurrent\/locks\/ReentrantReadWriteLock;Lkotlin\/jvm\/functions\/Function0;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1884577308 {
+label = "R(6:1|2|4|(1:6)|8|(1:16))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"action\")\ljava.util.concurrent.locks.ReentrantReadWriteLock$ReadLock java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock r0 = r8.readLock()\lint r2 = 0\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|int r1 = r8.getWriteHoldCount() == 0 ? r8.getReadHoldCount() : 0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|PHI: r1 \l  PHI: (r1v2 'readCount' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int r3 = 0\l}"];
+subgraph cluster_LoopRegion_2123393501 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|LOOP_START\lLOOP:0: B:7:0x001d\-\>B:8:0x001f\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v3 int) binds: [B:6:0x001c, B:8:0x001f] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r1) goto L6\l}"];
+subgraph cluster_Region_919816842 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|LOOP_END\lLOOP:0: B:7:0x001d\-\>B:8:0x001f\l|r0.unlock()\lr3++\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0027|java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock r3 = r8.writeLock()\lr3.lock()\lint r4 = 1\l}"];
+subgraph cluster_TryCatchRegion_1648947142 {
+label = "Try: R(1:16) finally: R(5:19|20|(1:22)|24|25)";
+node [shape=record,color=blue];
+subgraph cluster_Region_754037235 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0048|RETURN\l|return r9.invoke()\l}"];
+}
+subgraph cluster_Region_1388051359 {
+label = "R(5:19|20|(1:22)|24|25) | ExcHandler: all \-\> 0x0049\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0049|ExcHandler: all \-\> 0x0049\l}"];
+Node_17 [shape=record,label="{17\:\ 0x004a|FINALLY_INSNS\l|kotlin.jvm.internal.InlineMarker.finallyStart(1)\l}"];
+subgraph cluster_LoopRegion_744912627 {
+label = "LOOP:2: (1:22)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004d|LOOP_START\lFINALLY_INSNS\lLOOP:2: B:18:0x004d\-\>B:19:0x004f\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:17:0x004a, B:19:0x004f] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L22\l}"];
+subgraph cluster_Region_200753464 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x004f|LOOP_END\lFINALLY_INSNS\lLOOP:2: B:18:0x004d\-\>B:19:0x004f\l|int r6 = r2\lr0.lock()\lr2++\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0057|FINALLY_INSNS\l|r3.unlock()\lkotlin.jvm.internal.InlineMarker.finallyEnd(1)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x005d|throw r5\l}"];
+}
+}
+}
+subgraph cluster_Region_1388051359 {
+label = "R(5:19|20|(1:22)|24|25) | ExcHandler: all \-\> 0x0049\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0049|ExcHandler: all \-\> 0x0049\l}"];
+Node_17 [shape=record,label="{17\:\ 0x004a|FINALLY_INSNS\l|kotlin.jvm.internal.InlineMarker.finallyStart(1)\l}"];
+subgraph cluster_LoopRegion_744912627 {
+label = "LOOP:2: (1:22)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004d|LOOP_START\lFINALLY_INSNS\lLOOP:2: B:18:0x004d\-\>B:19:0x004f\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:17:0x004a, B:19:0x004f] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L22\l}"];
+subgraph cluster_Region_200753464 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x004f|LOOP_END\lFINALLY_INSNS\lLOOP:2: B:18:0x004d\-\>B:19:0x004f\l|int r6 = r2\lr0.lock()\lr2++\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0057|FINALLY_INSNS\l|r3.unlock()\lkotlin.jvm.internal.InlineMarker.finallyEnd(1)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x005d|throw r5\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0016}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0027|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0030|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0030|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0049, blocks: (B:10:0x0030), top: B:22:0x0030 \}\lCatch: all \-\> 0x0049\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0034|DONT_GENERATE\l|kotlin.jvm.internal.InlineMarker.finallyStart(r4)\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0038|LOOP_START\lDONT_GENERATE\lLOOP:1: B:12:0x0038\-\>B:13:0x003a\lPHI: r2 \l  PHI: (r2v3 int) = (r2v0 int), (r2v4 int) binds: [B:11:0x0034, B:13:0x003a] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L13\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003a|LOOP_END\lDONT_GENERATE\lLOOP:1: B:12:0x0038\-\>B:13:0x003a\l|r6 = r2\lr7 = false\lr0.lock()\lint r2 = r2 + 1\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0042|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0042|DONT_GENERATE\l|r3.unlock()\lkotlin.jvm.internal.InlineMarker.finallyEnd(r4)\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0057|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001b}"];
+MethodNode[shape=record,label="{private static final T kotlin.concurrent.LocksKt.write((r8v0 '$this$write' java.util.concurrent.locks.ReentrantReadWriteLock A[D('$this$write' java.util.concurrent.locks.ReentrantReadWriteLock), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'action' kotlin.jvm.functions.Function0\<? extends T\> A[D('action' kotlin.jvm.functions.Function0), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x001f \-\> B:7:0x001d, BACK_EDGE: B:13:0x003a \-\> B:12:0x0038, BACK_EDGE: B:19:0x004f \-\> B:18:0x004d, CROSS_EDGE: B:21:0x005d \-\> B:1:?, CROSS_EDGE: B:22:0x0030 \-\> B:16:0x0049, CROSS_EDGE: B:5:0x001b \-\> B:6:0x001c\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0049, blocks: (B:10:0x0030), top: B:22:0x0030 \}\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/concurrent\/locks\/ReentrantReadWriteLock;Lkotlin\/jvm\/functions\/Function0\<+TT;\>;)TT;\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_24[style=dashed];
+Node_8 -> Node_7;
+Node_9 -> Node_22;
+Node_15 -> Node_1;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_26[style=dashed];
+Node_19 -> Node_18;
+Node_20 -> Node_21;
+Node_21 -> Node_1;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_26[style=dashed];
+Node_19 -> Node_18;
+Node_20 -> Node_21;
+Node_21 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_6;
+Node_24 -> Node_9;
+Node_22 -> Node_10;
+Node_22 -> Node_16;
+Node_10 -> Node_11;
+Node_10 -> Node_23;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_25[style=dashed];
+Node_13 -> Node_12;
+Node_25 -> Node_14;
+Node_14 -> Node_15;
+Node_23 -> Node_16;
+Node_26 -> Node_20;
+Node_5 -> Node_6;
+}
+

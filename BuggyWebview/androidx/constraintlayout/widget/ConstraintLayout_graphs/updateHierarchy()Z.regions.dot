@@ -1,0 +1,81 @@
+digraph "CFG forandroidx.constraintlayout.widget.ConstraintLayout.updateHierarchy()Z" {
+subgraph cluster_Region_691701128 {
+label = "R(4:1|(1:(2:(1:12)|(2:3|(1:5)(2:7|1))))|(1:9)|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = getChildCount()\lboolean r1 = false\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_292551742 {
+label = "LOOP:0: (1:(2:(1:12)|(2:3|(1:5)(2:7|1))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_680675500 {
+label = "R(1:(2:(1:12)|(2:3|(1:5)(2:7|1))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1301053947 {
+label = "R(2:(1:12)|(2:3|(1:5)(2:7|1)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1261837557 {
+label = "IF [B:16:0x0006] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|LOOP_START\lLOOP:0: B:16:0x0006\-\>B:20:0x0014\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:15:0x0000, B:20:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \>= r0) goto L12\l}"];
+subgraph cluster_Region_1630998570 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0017|SYNTHETIC\lEDGE_INSN: B:25:0x0017\-\>B:21:0x0017 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_448657476 {
+label = "R(2:3|(1:5)(2:7|1))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|android.view.View android.view.View r3 = getChildAt(r2)\l}"];
+subgraph cluster_IfRegion_417142093 {
+label = "IF [B:18:0x0010] THEN: R(1:5) ELSE: R(2:7|1)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0010|if (r3.isLayoutRequested() == false) goto L5\l}"];
+subgraph cluster_Region_1628930343 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0014|LOOP_END\lLOOP:0: B:16:0x0006\-\>B:20:0x0014\l|r2++\l}"];
+}
+subgraph cluster_Region_637832386 {
+label = "R(2:7|1)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|EDGE_INSN: B:19:0x0012\-\>B:21:0x0017 ?: BREAK  \l|r1 = androidx.constraintlayout.widget.ConstraintLayout.USE_CONSTRAINTS_HELPER\l}"];
+Node_InsnContainer_257400382 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_486298101 {
+label = "IF [B:21:0x0017] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|EDGE_INSN: B:19:0x0012\-\>B:21:0x0017 ?: BREAK  , EDGE_INSN: B:25:0x0017\-\>B:21:0x0017 ?: BREAK  \lPHI: r1 \l  PHI: (r1v1 'recompute' boolean) = (r1v0 'recompute' boolean), (r1v2 'recompute' boolean) binds: [B:25:0x0017, B:19:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != false) goto L9\l}"];
+subgraph cluster_Region_901410896 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0019|setChildrenConstraints()\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x001c|RETURN\l|return r1\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0012|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private boolean androidx.constraintlayout.widget.ConstraintLayout.updateHierarchy((r5v0 'this' androidx.constraintlayout.widget.ConstraintLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0017 \-\> B:23:0x001c, BACK_EDGE: B:20:0x0014 \-\> B:16:0x0006, CROSS_EDGE: B:16:0x0006 \-\> B:21:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_25;
+Node_25 -> Node_21;
+Node_17 -> Node_18;
+Node_18 -> Node_20;
+Node_18 -> Node_24[style=dashed];
+Node_20 -> Node_16;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_19;
+}
+

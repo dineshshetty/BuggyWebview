@@ -1,0 +1,49 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.Worker.park()V" {
+subgraph cluster_Region_239045200 {
+label = "R(3:(1:3)|4|(1:(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_896553136 {
+label = "IF [B:13:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|if (r6.terminationDeadline == 0) goto L3\l}"];
+subgraph cluster_Region_1106456362 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0008|r6.terminationDeadline = java.lang.System.nanoTime() + kotlinx.coroutines.scheduling.CoroutineScheduler.this.idleWorkerKeepAliveNs\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0013|java.util.concurrent.locks.LockSupport.parkNanos(kotlinx.coroutines.scheduling.CoroutineScheduler.this.idleWorkerKeepAliveNs)\l}"];
+subgraph cluster_Region_1747775540 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_439585387 {
+label = "IF [B:16:0x0023] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0023|if ((java.lang.System.nanoTime() \- r6.terminationDeadline) \>= 0) goto L6\l}"];
+subgraph cluster_Region_762428493 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0025|r6.terminationDeadline = 0L\ltryTerminateWorker()\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x002a|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.scheduling.CoroutineScheduler.Worker.park((r6v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler$Worker A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0023 \-\> B:18:0x002a, CROSS_EDGE: B:13:0x0006 \-\> B:15:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+}
+

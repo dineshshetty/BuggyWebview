@@ -1,0 +1,39 @@
+digraph "CFG forandroidx.loader.content.CursorLoader.onCanceled(Landroid\/database\/Cursor;)V" {
+subgraph cluster_Region_1028131039 {
+label = "R(1:(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_18924025 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_8676621 {
+label = "IF [B:2:0x0000, B:4:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r2 != null) goto L2\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|ADDED_TO_REGION\l|if (r2.isClosed() == false) goto L4\l}"];
+subgraph cluster_Region_867710669 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0008|r2.close()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0002}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000b|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void androidx.loader.content.CursorLoader.onCanceled((r1v0 'this' androidx.loader.content.CursorLoader A[IMMUTABLE_TYPE, THIS]), (r2v0 'cursor' android.database.Cursor A[D('cursor' android.database.Cursor), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:4:0x0006 \-\> B:6:0x000b, CROSS_EDGE: B:2:0x0000 \-\> B:6:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lRENAME_REASON:avoid collision after fix types in other method\lREPLACED_BY: androidx.loader.content.CursorLoader.onCanceled(android.database.Cursor):void\lBRIDGED_BY: androidx.loader.content.CursorLoader.onCanceled(android.database.Cursor):void\lJadxCommentsAttr\{\l DEBUG: \l \-\> Method merged with bridge method\}\lMETHOD_OVERRIDE: [androidx.loader.content.AsyncTaskLoader.onCanceled(D):void]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_6 -> Node_1;
+Node_8 -> Node_1;
+Node_7 -> Node_1;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.activity.ComponentActivity.4.onStateChanged(Landroidx\/lifecycle\/LifecycleOwner;Landroidx\/lifecycle\/Lifecycle$Event;)V" {
+subgraph cluster_Region_2076094287 {
+label = "R(1:(1:(2:3|(1:(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_66057445 {
+label = "R(1:(2:3|(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1336488015 {
+label = "IF [B:13:0x0002] THEN: R(2:3|(1:(1:5))) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0002|if (r3 == androidx.lifecycle.Lifecycle.Event.ON_DESTROY) goto L3\l}"];
+subgraph cluster_Region_362832214 {
+label = "R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|androidx.activity.ComponentActivity.this.mContextAwareHelper.clearAvailableContext()\l}"];
+subgraph cluster_Region_459960442 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1742661422 {
+label = "IF [B:15:0x0011] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|if (androidx.activity.ComponentActivity.this.isChangingConfigurations() == false) goto L5\l}"];
+subgraph cluster_Region_1643354322 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0013|androidx.activity.ComponentActivity.this.getViewModelStore().clear()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001c|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.activity.ComponentActivity.4.onStateChanged((r1v0 'this' androidx.activity.ComponentActivity$4 A[IMMUTABLE_TYPE, THIS]), (r2v0 'source' androidx.lifecycle.LifecycleOwner A[D('source' androidx.lifecycle.LifecycleOwner), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'event' androidx.lifecycle.Lifecycle$Event A[D('event' androidx.lifecycle.Lifecycle$Event), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0011 \-\> B:17:0x001c, CROSS_EDGE: B:13:0x0002 \-\> B:17:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.lifecycle.LifecycleEventObserver.onStateChanged(androidx.lifecycle.LifecycleOwner, androidx.lifecycle.Lifecycle$Event):void]\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_18 -> Node_11;
+}
+

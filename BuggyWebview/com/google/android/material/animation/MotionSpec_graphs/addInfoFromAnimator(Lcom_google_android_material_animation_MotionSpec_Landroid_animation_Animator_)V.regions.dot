@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.material.animation.MotionSpec.addInfoFromAnimator(Lcom\/google\/android\/material\/animation\/MotionSpec;Landroid\/animation\/Animator;)V" {
+subgraph cluster_Region_1485163886 {
+label = "R(1:(2:(2:3|4)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1107037889 {
+label = "R(2:(2:3|4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_185361540 {
+label = "IF [B:11:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if ((r4 instanceof android.animation.ObjectAnimator) != false) goto L3\l}"];
+subgraph cluster_Region_2131505554 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|android.animation.ObjectAnimator android.animation.ObjectAnimator r0 = (android.animation.ObjectAnimator) r4\lr3.setPropertyValues(r0.getPropertyName(), r0.getValues())\lr3.setTiming(r0.getPropertyName(), com.google.android.material.animation.MotionTiming.createFromAnimator(r0))\l}"];
+Node_13 [shape=record,label="{13\:\ 0x001e|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1120740726 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001f}"];
+Node_15 [shape=record,label="{15\:\ 0x0035|throw new java.lang.IllegalArgumentException(\"Animator must be an ObjectAnimator: \" + r4)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static void com.google.android.material.animation.MotionSpec.addInfoFromAnimator((r3v0 'spec' com.google.android.material.animation.MotionSpec A[D('spec' com.google.android.material.animation.MotionSpec), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'animator' android.animation.Animator A[D('animator' android.animation.Animator), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0035 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+}
+

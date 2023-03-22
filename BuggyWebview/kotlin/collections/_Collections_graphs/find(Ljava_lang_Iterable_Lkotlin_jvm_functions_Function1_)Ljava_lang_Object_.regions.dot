@@ -1,0 +1,47 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.find(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_694063078 {
+label = "R(3:1|(2:4|(1:7))|10)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"predicate\")\ljava.util.Iterator r2 = r5.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1545475203 {
+label = "LOOP:0: (2:4|(1:7))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0014|java.lang.Object \lif (r2.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1564149015 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0016|java.lang.Object r3 = r2.next()\l}"];
+subgraph cluster_IfRegion_1855963212 {
+label = "IF [B:32:0x0024] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0024|LOOP_END\lLOOP:0: B:29:0x0010\-\>B:32:0x0024\l|if (r6.invoke(r3).booleanValue() != false) goto L6\l}"];
+subgraph cluster_Region_870532038 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ ?|SYNTHETIC\lRETURN\l|return r3\l}"];
+}
+}
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x0027|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0010|LOOP_START\lLOOP:0: B:29:0x0010\-\>B:32:0x0024\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0028|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0027|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static final T kotlin.collections.CollectionsKt___CollectionsKt.find((r5v0 java.lang.Iterable\<? extends T\> A[D('$this$find' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'predicate' kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:32:0x0024 \-\> B:29:0x0010, CROSS_EDGE: B:34:0x0027 \-\> B:35:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r3v2, types: [T, java.lang.Object]\}\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Boolean;\>;)TT;\l}"];
+MethodNode -> Node_26;Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_37[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_29[style=dashed];
+Node_32 -> Node_36;
+Node_38 -> Node_27;
+Node_34 -> Node_27;
+Node_26 -> Node_28;
+Node_29 -> Node_30;
+Node_36 -> Node_38;
+Node_37 -> Node_34;
+}
+

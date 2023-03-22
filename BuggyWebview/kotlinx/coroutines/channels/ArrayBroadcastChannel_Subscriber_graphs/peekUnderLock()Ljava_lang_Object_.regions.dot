@@ -1,0 +1,57 @@
+digraph "CFG forkotlinx.coroutines.channels.ArrayBroadcastChannel.Subscriber.peekUnderLock()Ljava\/lang\/Object;" {
+subgraph cluster_Region_149295696 {
+label = "R(2:1|(2:(2:11|12)|(2:3|5)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|long long r0 = getSubHead()\lkotlinx.coroutines.channels.Closed kotlinx.coroutines.channels.Closed r2 = r7.broadcastChannel.getClosedForReceive()\llong long r3 = r7.broadcastChannel.getTail()\l}"];
+subgraph cluster_Region_1333602205 {
+label = "R(2:(2:11|12)|(2:3|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1747493793 {
+label = "IF [B:18:0x0012] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0012|if (r0 \< r3) goto L11\l}"];
+subgraph cluster_Region_1505053414 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0021|java.lang.Object java.lang.Object r5 = r7.broadcastChannel.elementAt(r0)\lkotlinx.coroutines.channels.Closed kotlinx.coroutines.channels.Closed r6 = getClosedForReceive()\l}"];
+Node_26 [shape=record,label="{26\:\ 0x002b|RETURN\l|return r6 != null ? r6 : r5\l}"];
+}
+}
+subgraph cluster_Region_73175131 {
+label = "R(2:3|5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0014|kotlinx.coroutines.channels.Closed r5 = r2 == null ? getClosedForReceive() : r2\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001c|RETURN\lPHI: r5 \l  PHI: (r5v4 kotlinx.coroutines.channels.Closed) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|return r5 == null ? kotlinx.coroutines.channels.AbstractChannelKt.POLL_FAILED : r5\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001e}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0020|ORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001b}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002d}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x002e}"];
+MethodNode[shape=record,label="{private final java.lang.Object kotlinx.coroutines.channels.ArrayBroadcastChannel.Subscriber.peekUnderLock((r7v0 'this' kotlinx.coroutines.channels.ArrayBroadcastChannel$Subscriber\<E\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x001c \-\> B:24:0x0020, CROSS_EDGE: B:21:0x001b \-\> B:22:0x001c, CROSS_EDGE: B:27:0x002d \-\> B:16:?, CROSS_EDGE: B:28:0x002e \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+Node_19 -> Node_20;
+Node_19 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_29;
+Node_15 -> Node_17;
+Node_20 -> Node_22;
+Node_23 -> Node_24;
+Node_24 -> Node_16;
+Node_29 -> Node_16;
+Node_21 -> Node_22;
+Node_27 -> Node_16;
+Node_28 -> Node_16;
+}
+

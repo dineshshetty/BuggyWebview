@@ -1,0 +1,64 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.reduce(Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function2;)C" {
+subgraph cluster_Region_1654422139 {
+label = "R(2:1|(2:(1:13)|(3:5|(1:8)|10)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"operation\")\l}"];
+subgraph cluster_Region_595088076 {
+label = "R(2:(1:13)|(3:5|(1:8)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_885680875 {
+label = "IF [B:21:0x0016] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|PHI: r1 \l  PHI: (r1v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r6.length() == 0) != false) goto L12\l}"];
+subgraph cluster_Region_1967874468 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0052|throw new java.lang.UnsupportedOperationException(\"Empty char sequence can't be reduced.\")\l}"];
+}
+}
+subgraph cluster_Region_598283982 {
+label = "R(3:5|(1:8)|10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0018|char char r1 = r6.charAt(0)\lkotlin.collections.IntIterator ?? r2 = new kotlin.ranges.IntRange(1, kotlin.text.StringsKt.getLastIndex(r6)).iterator()\l}"];
+subgraph cluster_LoopRegion_831483418 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002d|if (r2.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_2104050462 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002f|LOOP_END\lLOOP:0: B:23:0x0029\-\>B:25:0x002f\l|int int r3 = r2.nextInt()\lchar r1 = r7.invoke(java.lang.Character.valueOf(r1), java.lang.Character.valueOf(r6.charAt(r3))).charValue()\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x004a|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0011}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0013}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0029|LOOP_START\lLOOP:0: B:23:0x0029\-\>B:25:0x002f\lPHI: r1 \l  PHI: (r1v5 'accumulator' char) = (r1v4 'accumulator' char), (r1v6 'accumulator' char) binds: [B:22:0x0018, B:25:0x002f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x004a|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x004b}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0015}"];
+MethodNode[shape=record,label="{public static final char kotlin.text.StringsKt___StringsKt.reduce((r6v0 '$this$reduce' java.lang.CharSequence A[D('$this$reduce' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'operation' kotlin.jvm.functions.Function2\<? super java.lang.Character, ? super java.lang.Character, java.lang.Character\> A[D('operation' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x002f \-\> B:23:0x0029, CROSS_EDGE: B:28:0x0052 \-\> B:16:?, CROSS_EDGE: B:20:0x0015 \-\> B:21:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r2v2, types: [kotlin.collections.IntIterator]\}\lSIGNATURE: (Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Character;\-Ljava\/lang\/Character;Ljava\/lang\/Character;\>;)C\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_27;
+Node_28 -> Node_16;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_29[style=dashed];
+Node_25 -> Node_23;
+Node_26 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_21;
+Node_23 -> Node_24;
+Node_29 -> Node_26;
+Node_27 -> Node_28;
+Node_20 -> Node_21;
+}
+

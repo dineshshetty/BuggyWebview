@@ -1,0 +1,36 @@
+digraph "CFG forkotlin.time.Duration.toString\-impl(JLkotlin\/time\/DurationUnit;I)Ljava\/lang\/String;" {
+Node_15 [shape=record,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"unit\")\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0005|if (r7 \< 0) goto L14\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0007|r0 = true\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000a|PHI: r0 \l  PHI: (r0v2 boolean) = (r0v1 boolean), (r0v7 boolean) binds: [B:20:0x0009, B:19:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == false) goto L12\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000c|double r0 = m1502toDoubleimpl(r4, r6)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0014|if (java.lang.Double.isInfinite(r0) == false) goto L10\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0016}"];
+Node_25 [shape=record,label="{25\:\ 0x001a|RETURN\l|return java.lang.String.valueOf(r0)\l}"];
+Node_16 [shape=record,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001b|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(kotlin.time.DurationJvm.formatToExactDecimals(r0, kotlin.ranges.RangesKt.coerceAtMost(r7, 12)))\lr2.append(kotlin.time.DurationUnitKt.shortName(r6))\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0038|RETURN\l|return r2.toString()\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0039|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"decimals must be not negative, but was \")\lr1.append(r7)\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0054|throw new java.lang.IllegalArgumentException(r1.toString().toString())\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0009|r0 = false\l}"];
+MethodNode[shape=record,label="{public static final java.lang.String kotlin.time.Duration.toString\-impl((r4v0 'arg0' long A[D('arg0' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'unit' kotlin.time.DurationUnit A[D('unit' kotlin.time.DurationUnit), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'decimals' int A[D('decimals' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0038 \-\> B:16:?, CROSS_EDGE: B:29:0x0054 \-\> B:16:?, CROSS_EDGE: B:20:0x0009 \-\> B:21:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_28;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_26;
+Node_24 -> Node_25;
+Node_25 -> Node_16;
+Node_26 -> Node_27;
+Node_27 -> Node_16;
+Node_28 -> Node_29;
+Node_29 -> Node_16;
+Node_20 -> Node_21;
+}
+

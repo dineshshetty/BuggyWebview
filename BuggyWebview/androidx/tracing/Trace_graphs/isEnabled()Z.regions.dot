@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.tracing.Trace.isEnabled()Z" {
+subgraph cluster_Region_988589951 {
+label = "R(2:(1:(1:5))|9)";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1139864751 {
+label = "Try: R(1:(1:5)) catches: R(0), R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_315029628 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2005340622 {
+label = "IF [B:17:0x0002] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (androidx.tracing.Trace.sIsTagEnabledMethod == null) goto L4\l}"];
+subgraph cluster_Region_676323094 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0008|RETURN\l|return android.os.Trace.isEnabled()\l}"];
+}
+}
+}
+subgraph cluster_Region_1826489148 {
+label = "R(0) | ExcHandler: NoClassDefFoundError \-\> 0x000a\l";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_1241383875 {
+label = "R(0) | ExcHandler: NoSuchMethodError \-\> 0x000c\l";
+node [shape=record,color=blue];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0011|RETURN\l|return isEnabledFallback()\l}"];
+}
+subgraph cluster_Region_1241383875 {
+label = "R(0) | ExcHandler: NoSuchMethodError \-\> 0x000c\l";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_1826489148 {
+label = "R(0) | ExcHandler: NoClassDefFoundError \-\> 0x000a\l";
+node [shape=record,color=blue];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000|TRY_ENTER\lTryCatch #2 \{NoClassDefFoundError \-\> 0x000a, NoSuchMethodError \-\> 0x000c, blocks: (B:16:0x0000, B:18:0x0004), top: B:26:0x0000 \}\lCatch: NoClassDefFoundError \-\> 0x000a, NoSuchMethodError \-\> 0x000c\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0004|TRY_LEAVE\lTryCatch #2 \{NoClassDefFoundError \-\> 0x000a, NoSuchMethodError \-\> 0x000c, blocks: (B:16:0x0000, B:18:0x0004), top: B:26:0x0000 \}\lCatch: NoClassDefFoundError \-\> 0x000a, NoSuchMethodError \-\> 0x000c\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000d}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a|ExcHandler: NoClassDefFoundError \-\> 0x000a\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000c|ExcHandler: NoSuchMethodError \-\> 0x000c\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.tracing.Trace.isEnabled()  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0011 \-\> B:15:?, CROSS_EDGE: B:23:0x000c \-\> B:24:0x000d, CROSS_EDGE: B:17:0x0002 \-\> B:24:0x000d, CROSS_EDGE: B:26:0x0000 \-\> B:21:0x000a, CROSS_EDGE: B:26:0x0000 \-\> B:23:0x000c\lINLINE_NOT_NEEDED\lTryCatch #2 \{NoClassDefFoundError \-\> 0x000a, NoSuchMethodError \-\> 0x000c, blocks: (B:16:0x0000, B:18:0x0004), top: B:26:0x0000 \}\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_19 -> Node_15;
+Node_25 -> Node_15;
+Node_14 -> Node_26;
+Node_26 -> Node_16;
+Node_26 -> Node_21;
+Node_26 -> Node_23;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_27;
+Node_27 -> Node_21;
+Node_27 -> Node_23;
+Node_24 -> Node_25;
+Node_21 -> Node_24;
+Node_23 -> Node_24;
+}
+

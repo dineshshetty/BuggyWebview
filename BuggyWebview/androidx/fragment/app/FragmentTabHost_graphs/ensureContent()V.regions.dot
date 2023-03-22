@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.fragment.app.FragmentTabHost.ensureContent()V" {
+subgraph cluster_Region_1758412373 {
+label = "R(1:(1:(2:3|(1:(2:5|6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_384625844 {
+label = "R(1:(2:3|(1:(2:5|6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1522864201 {
+label = "IF [B:3:0x0002] THEN: R(2:3|(1:(2:5|6))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r3.mRealTabContent == null) goto L3\l}"];
+subgraph cluster_Region_1526701667 {
+label = "R(2:3|(1:(2:5|6)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|android.widget.FrameLayout android.widget.FrameLayout r0 = (android.widget.FrameLayout) findViewById(r3.mContainerId)\lr3.mRealTabContent = r0\l}"];
+subgraph cluster_Region_787549555 {
+label = "R(1:(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_735654027 {
+label = "IF [B:5:0x000e] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|if (r0 == null) goto L5\l}"];
+subgraph cluster_Region_1071489902 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011}"];
+Node_8 [shape=record,label="{8\:\ 0x0029|throw new java.lang.IllegalStateException(\"No tab content FrameLayout found for id \" + r3.mContainerId)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002a|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.fragment.app.FragmentTabHost.ensureContent((r3v0 'this' androidx.fragment.app.FragmentTabHost A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x002a \-\> B:1:?, CROSS_EDGE: B:3:0x0002 \-\> B:9:0x002a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_7;
+Node_5 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_10 -> Node_1;
+Node_9 -> Node_1;
+}
+

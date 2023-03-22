@@ -1,0 +1,26 @@
+digraph "CFG forandroidx.recyclerview.widget.FastScroller.scrollTo(FF[IIII)I" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: CONST  (r0 I:??[boolean, int, float, short, byte, char]) = (1 ??[boolean, int, float, short, byte, char])  (LINE:479)\l0x0001: AGET  (r0 I:??[int, float, short, byte, char]) = (r9 I:??[int, float][] A[D('scrollbarRange' int[])]), (r0 I:??[int, short, byte, char]) \l0x0003: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x0004: AGET  (r2 I:??[int, float, short, byte, char]) = (r9 I:??[int, float][] A[D('scrollbarRange' int[])]), (r1 I:??[int, short, byte, char]) \l0x0006: ARITH  (r0 I:int) = (r0 I:int) \- (r2 I:int) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|0x0007: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('scrollbarLength' int)]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x000a  (LINE:480)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0009|RETURN\l|0x0009: RETURN  (r1 I:int)  (LINE:481)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|0x000a: ARITH  (r2 I:float) = (r8 I:float A[D('newDragPos' float)]) \- (r7 I:float A[D('oldDragPos' float)])  (LINE:483)\l0x000c: CAST (r3 I:float) = (float) (r0 I:int A[D('scrollbarLength' int)]) \l0x000d: ARITH  (r2 I:float) = (r2 I:float) \/ (r3 I:float) \l0x000e: ARITH  (r3 I:int) = (r10 I:int A[D('scrollRange' int)]) \- (r12 I:int A[D('viewLength' int)])  (LINE:484)\l0x0010: CAST (r4 I:float) = (float) (r3 I:int A[D('totalPossibleOffset' int)])  (LINE:485)\l0x0011: ARITH  (r4 I:float) = (r4 I:float) * (r2 I:float A[D('percentage' float)]) \l0x0013: CAST (r4 I:int) = (int) (r4 I:float) \l0x0014: ARITH  (r5 I:int) = (r11 I:int A[D('scrollOffset' int)]) + (r4 I:int A[D('scrollingBy' int)])  (LINE:486)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|0x0016: IF  (r5 I:??[int, byte, short, char] A[D('absoluteOffset' int)]) \>= (r3 I:??[int, byte, short, char] A[D('totalPossibleOffset' int)])  \-\> B:9:0x001b  (LINE:487)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0018|0x0018: IF  (r5 I:??[int, byte, short, char] A[D('absoluteOffset' int)]) \< (0 ??[int, byte, short, char])  \-\> B:9:0x001b \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001a|RETURN\l|0x001a: RETURN  (r4 I:int A[D('scrollingBy' int)])  (LINE:488)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001b|RETURN\l|0x001b: RETURN  (r1 I:int)  (LINE:490)\l}"];
+MethodNode[shape=record,label="{private int androidx.recyclerview.widget.FastScroller.scrollTo((r6 'this' I:androidx.recyclerview.widget.FastScroller A[IMMUTABLE_TYPE, THIS]), (r7 I:float A[D('oldDragPos' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8 I:float A[D('newDragPos' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9 I:int[] A[D('scrollbarRange' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10 I:int A[D('scrollRange' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11 I:int A[D('scrollOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12 I:int A[D('viewLength' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x001a \-\> B:1:?, CROSS_EDGE: B:9:0x001b \-\> B:1:?, CROSS_EDGE: B:6:0x0016 \-\> B:9:0x001b\lDebug Info:\l  0x0007\-0x001b: r0 'scrollbarLength' I\l  0x000e\-0x001b: r2 'percentage' F\l  0x0010\-0x001b: r3 'totalPossibleOffset' I\l  0x0014\-0x001b: r4 'scrollingBy' I\l  0x0016\-0x001b: r5 'absoluteOffset' I\l  \-1 \-0x001b: r7 'oldDragPos' F\l  \-1 \-0x001b: r8 'newDragPos' F\l  \-1 \-0x001b: r9 'scrollbarRange' [I\l  \-1 \-0x001b: r10 'scrollRange' I\l  \-1 \-0x001b: r11 'scrollOffset' I\l  \-1 \-0x001b: r12 'viewLength' I\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_1;
+Node_9 -> Node_1;
+}
+

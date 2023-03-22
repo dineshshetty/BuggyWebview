@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.MotionPaths.getCustomData(Ljava\/lang\/String;[DI)I" {
+subgraph cluster_Region_1772792216 {
+label = "R(2:1|(2:(1:3)|(1:(2:(2:7|8)|(3:9|(1:11)|13)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.constraintlayout.widget.ConstraintAttribute androidx.constraintlayout.widget.ConstraintAttribute r0 = r7.attributes.get(r8)\l}"];
+subgraph cluster_Region_1199208839 {
+label = "R(2:(1:3)|(1:(2:(2:7|8)|(3:9|(1:11)|13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1482970221 {
+label = "IF [B:3:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1733730572 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1474753950 {
+label = "R(1:(2:(2:7|8)|(3:9|(1:11)|13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1269354263 {
+label = "R(2:(2:7|8)|(3:9|(1:11)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_419382029 {
+label = "IF [B:7:0x0011] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|if (r0.numberOfInterpolatedValues() == 1) goto L7\l}"];
+subgraph cluster_Region_1988913819 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|r9[r10] = r0.getValueToInterpolate()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001a|RETURN\l|return 1\l}"];
+}
+}
+subgraph cluster_Region_1255599035 {
+label = "R(3:9|(1:11)|13)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001b|int int r1 = r0.numberOfInterpolatedValues()\lfloat[] float[] r2 = new float[r1]\lr0.getValuesToInterpolate(r2)\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_812321200 {
+label = "LOOP:0: (1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0025|LOOP_START\lLOOP:0: B:11:0x0025\-\>B:12:0x0027\lPHI: r3 r10 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:10:0x001b, B:12:0x0027] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r10v1 'offset' int) = (r10v0 'offset' int), (r10v2 'offset' int) binds: [B:10:0x001b, B:12:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r1) goto L11\l}"];
+subgraph cluster_Region_1382994843 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0027|LOOP_END\lLOOP:0: B:11:0x0025\-\>B:12:0x0027\l|r9[r10] = r2[r3]\lr3++\lr10++\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0032|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000c}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0032|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int androidx.constraintlayout.motion.widget.MotionPaths.getCustomData((r7v0 'this' androidx.constraintlayout.motion.widget.MotionPaths A[IMMUTABLE_TYPE, THIS]), (r8v0 'name' java.lang.String A[D('name' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'value' double[] A[D('value' double[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'offset' int A[D('offset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x001a \-\> B:1:?, BACK_EDGE: B:12:0x0027 \-\> B:11:0x0025, CROSS_EDGE: B:13:0x0032 \-\> B:1:?\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [name, value, offset]\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_1;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_11;
+Node_13 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+Node_14 -> Node_13;
+}
+

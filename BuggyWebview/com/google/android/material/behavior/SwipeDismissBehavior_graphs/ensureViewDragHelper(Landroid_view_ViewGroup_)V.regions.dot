@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.material.behavior.SwipeDismissBehavior.ensureViewDragHelper(Landroid\/view\/ViewGroup;)V" {
+subgraph cluster_Region_1179151945 {
+label = "R(1:(1:(2:(1:5)(1:9)|6))) | DECL_VAR: androidx.customview.widget.ViewDragHelper null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1211886135 {
+label = "R(1:(2:(1:5)(1:9)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_791523599 {
+label = "IF [B:3:0x0002] THEN: R(2:(1:5)(1:9)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r2.viewDragHelper == null) goto L3\l}"];
+subgraph cluster_Region_621937369 {
+label = "R(2:(1:5)(1:9)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_539822612 {
+label = "IF [B:5:0x0007] THEN: R(1:5) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|if (r2.sensitivitySet != false) goto L5\l}"];
+subgraph cluster_Region_14690693 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|androidx.customview.widget.ViewDragHelper r0 = androidx.customview.widget.ViewDragHelper.create(r3, r2.sensitivity, r2.dragCallback)\l}"];
+}
+subgraph cluster_Region_739212320 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|androidx.customview.widget.ViewDragHelper r0 = androidx.customview.widget.ViewDragHelper.create(r3, r2.dragCallback)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0018|PHI: r0 \l  PHI: (r0v4 androidx.customview.widget.ViewDragHelper) = (r0v3 androidx.customview.widget.ViewDragHelper), (r0v6 androidx.customview.widget.ViewDragHelper) binds: [B:7:0x0012, B:6:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|r2.viewDragHelper = r0\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0005}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001a|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.behavior.SwipeDismissBehavior.ensureViewDragHelper((r2v0 'this' com.google.android.material.behavior.SwipeDismissBehavior\<V extends android.view.View\> A[D('this' com.google.android.material.behavior.SwipeDismissBehavior\<V extends android.view.View\>), IMMUTABLE_TYPE, THIS]), (r3v0 'parent' android.view.ViewGroup A[D('parent' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0012 \-\> B:8:0x0018, CROSS_EDGE: B:3:0x0002 \-\> B:9:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: [V extends android.view.View]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_1;
+Node_10 -> Node_1;
+}
+

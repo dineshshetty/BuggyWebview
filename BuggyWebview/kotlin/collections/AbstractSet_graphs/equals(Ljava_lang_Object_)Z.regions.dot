@@ -1,0 +1,59 @@
+digraph "CFG forkotlin.collections.AbstractSet.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_90212999 {
+label = "R(1:(2:(1:2)|(1:(2:(1:8)|(1:6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_305684773 {
+label = "R(2:(1:2)|(1:(2:(1:8)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2068855091 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r4 == r3) goto L2\l}"];
+subgraph cluster_Region_1901901758 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1885945760 {
+label = "R(1:(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_554256833 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1533703538 {
+label = "IF [B:6:0x0006] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0006|if ((r4 instanceof java.util.Set) == true) goto L7\l}"];
+subgraph cluster_Region_1327483110 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0016|RETURN\l|return kotlin.collections.AbstractSet.Companion.setEquals$kotlin_stdlib(r3, (java.util.Set) r4)\l}"];
+}
+}
+subgraph cluster_Region_1991404186 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0008|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0004}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x000a}"];
+MethodNode[shape=record,label="{public boolean kotlin.collections.AbstractSet.equals((r3v0 'this' kotlin.collections.AbstractSet\<E\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'other' java.lang.Object A[D('other' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:8:0x0009 \-\> B:1:?, CROSS_EDGE: B:10:0x0016 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lMETHOD_OVERRIDE: [ClspMth\{java.util.Collection.equals(java.lang.Object):boolean\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_10 -> Node_1;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+}
+

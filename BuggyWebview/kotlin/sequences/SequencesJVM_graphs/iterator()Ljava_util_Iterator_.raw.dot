@@ -1,0 +1,20 @@
+digraph "CFG forkotlin.sequences.ConstrainedOnceSequence.iterator()Ljava\/util\/Iterator;" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: IGET  (r0 I:java.util.concurrent.atomic.AtomicReference\<kotlin.sequences.Sequence\<T\>\>) = (r2 I:kotlin.sequences.ConstrainedOnceSequence) kotlin.sequences.ConstrainedOnceSequence.sequenceRef java.util.concurrent.atomic.AtomicReference  (LINE:23)\l0x0002: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l0x0003: INVOKE  (r0 I:java.lang.Object) = (r0 I:java.util.concurrent.atomic.AtomicReference), (r1 I:java.lang.Object) type: VIRTUAL call: java.util.concurrent.atomic.AtomicReference.getAndSet(java.lang.Object):java.lang.Object A[MD:(V):V (c)]\l0x0007: CHECK_CAST (r0 I:kotlin.sequences.Sequence) = (kotlin.sequences.Sequence) (r0 I:??[OBJECT, ARRAY]) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0009|0x0009: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:14:0x0010 \l}"];
+Node_12 [shape=record,label="{12\:\ 0x000b|0x000b: INVOKE  (r1 I:java.util.Iterator) = (r0 I:kotlin.sequences.Sequence A[D('sequence' kotlin.sequences.Sequence)]) type: INTERFACE call: kotlin.sequences.Sequence.iterator():java.util.Iterator A[MD:():java.util.Iterator\<T\> (m)] (LINE:24)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000f|RETURN\l|0x000f: RETURN  (r1 I:java.util.Iterator\<T\>) \l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0010|0x0010: NEW_INSTANCE  (r0 I:java.lang.IllegalStateException A[D('sequence' kotlin.sequences.Sequence)]) =  java.lang.IllegalStateException  (LINE:23)\l0x0012: CONST_STR  (r1 I:java.lang.String) =  \"This sequence can be consumed only once.\" \l0x0014: INVOKE  (r0 I:java.lang.IllegalStateException), (r1 I:java.lang.String) type: DIRECT call: java.lang.IllegalStateException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0017|0x0017: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public java.util.Iterator\<T\> kotlin.sequences.ConstrainedOnceSequence.iterator((r2 'this' I:kotlin.sequences.ConstrainedOnceSequence\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0017 \-\> B:9:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: ()Ljava\/util\/Iterator\<TT;\>;\lDebug Info:\l  0x000b\-0x0010: r0 'sequence' Lkotlin\/sequences\/Sequence;\lMETHOD_OVERRIDE: [kotlin.sequences.Sequence.iterator():java.util.Iterator\<T\>]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+}
+

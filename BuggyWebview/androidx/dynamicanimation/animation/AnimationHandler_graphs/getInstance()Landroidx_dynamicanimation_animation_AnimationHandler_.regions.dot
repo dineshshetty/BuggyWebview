@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.dynamicanimation.animation.AnimationHandler.getInstance()Landroidx\/dynamicanimation\/animation\/AnimationHandler;" {
+subgraph cluster_Region_1592063064 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|java.lang.ThreadLocal\<androidx.dynamicanimation.animation.AnimationHandler\> java.lang.ThreadLocal\<androidx.dynamicanimation.animation.AnimationHandler\> r0 = androidx.dynamicanimation.animation.AnimationHandler.sAnimatorHandler\l}"];
+subgraph cluster_IfRegion_1309130766 {
+label = "IF [B:10:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0006|if (r0.get() == null) goto L3\l}"];
+subgraph cluster_Region_1448202036 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|r0.set(new androidx.dynamicanimation.animation.AnimationHandler())\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0016|RETURN\l|return r0.get()\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0010}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.dynamicanimation.animation.AnimationHandler androidx.dynamicanimation.animation.AnimationHandler.getInstance()  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0006 \-\> B:12:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_12 -> Node_13;
+}
+

@@ -1,0 +1,51 @@
+digraph "CFG forandroidx.constraintlayout.core.widgets.HelperWidget.addDependents(Ljava\/util\/ArrayList;ILandroidx\/constraintlayout\/core\/widgets\/analyzer\/WidgetGroup;)V" {
+subgraph cluster_Region_1707794933 {
+label = "R(4:1|(1:4)|6|(1:9))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_984659591 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0003|if (r0 \< r2.mWidgetsCount) goto L4\l}"];
+subgraph cluster_Region_1164613824 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|LOOP_END\lLOOP:0: B:16:0x0001\-\>B:18:0x0005\l|androidx.constraintlayout.core.widgets.ConstraintWidget r1 = r2.mWidgets[r0]\lr5.add(r1)\lr0++\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x000f|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_42401062 {
+label = "LOOP:1: (1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0012|if (r0 \< r2.mWidgetsCount) goto L9\l}"];
+subgraph cluster_Region_821125578 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0014|LOOP_END\lLOOP:1: B:20:0x0010\-\>B:22:0x0014\l|androidx.constraintlayout.core.widgets.ConstraintWidget r1 = r2.mWidgets[r0]\landroidx.constraintlayout.core.widgets.analyzer.Grouping.findDependents(r1, r4, r3, r5)\lr0++\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0001|LOOP_START\lLOOP:0: B:16:0x0001\-\>B:18:0x0005\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v5 'i' int) binds: [B:15:0x0000, B:18:0x0005] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x000f|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0010|LOOP_START\lLOOP:1: B:20:0x0010\-\>B:22:0x0014\lPHI: r0 \l  PHI: (r0v3 'i' int) = (r0v2 'i' int), (r0v4 'i' int) binds: [B:19:0x000f, B:22:0x0014] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001e|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001e}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.widgets.HelperWidget.addDependents((r2v0 'this' androidx.constraintlayout.core.widgets.HelperWidget A[IMMUTABLE_TYPE, THIS]), (r3v0 'dependencyLists' java.util.ArrayList\<androidx.constraintlayout.core.widgets.analyzer.WidgetGroup\> A[D('dependencyLists' java.util.ArrayList\<androidx.constraintlayout.core.widgets.analyzer.WidgetGroup\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'orientation' int A[D('orientation' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'group' androidx.constraintlayout.core.widgets.analyzer.WidgetGroup A[D('group' androidx.constraintlayout.core.widgets.analyzer.WidgetGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:18:0x0005 \-\> B:16:0x0001, BACK_EDGE: B:22:0x0014 \-\> B:20:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/ArrayList\<Landroidx\/constraintlayout\/core\/widgets\/analyzer\/WidgetGroup;\>;ILandroidx\/constraintlayout\/core\/widgets\/analyzer\/WidgetGroup;)V\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_18 -> Node_16;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_20;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_24 -> Node_19;
+Node_20 -> Node_21;
+Node_25 -> Node_23;
+Node_23 -> Node_14;
+}
+

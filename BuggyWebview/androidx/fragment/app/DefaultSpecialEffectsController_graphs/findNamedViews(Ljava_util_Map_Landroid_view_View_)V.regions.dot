@@ -1,0 +1,87 @@
+digraph "CFG forandroidx.fragment.app.DefaultSpecialEffectsController.findNamedViews(Ljava\/util\/Map;Landroid\/view\/View;)V" {
+subgraph cluster_Region_1453529697 {
+label = "R(3:1|(1:3)|(1:(2:6|(3:8|(1:10)(0)|12))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.lang.String java.lang.String r0 = androidx.core.view.ViewCompat.getTransitionName(r8)\l}"];
+subgraph cluster_IfRegion_1999214284 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1602407139 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|r7.put(r0, r8)\l}"];
+}
+}
+subgraph cluster_Region_2023155121 {
+label = "R(1:(2:6|(3:8|(1:10)(0)|12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1110281420 {
+label = "IF [B:6:0x000b] THEN: R(2:6|(3:8|(1:10)(0)|12)) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|if ((r8 instanceof android.view.ViewGroup) != false) goto L6\l}"];
+subgraph cluster_Region_1889679222 {
+label = "R(2:6|(3:8|(1:10)(0)|12))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|android.view.ViewGroup android.view.ViewGroup r1 = (android.view.ViewGroup) r8\lint int r2 = r1.getChildCount()\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_87565800 {
+label = "LOOP:0: (3:8|(1:10)(0)|12)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0015|LOOP_START\lLOOP:0: B:8:0x0015\-\>B:12:0x0024\lPHI: r3 \l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:7:0x000d, B:12:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L8\l}"];
+subgraph cluster_Region_1042041617 {
+label = "R(3:8|(1:10)(0)|12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0017|android.view.View android.view.View r4 = r1.getChildAt(r3)\l}"];
+subgraph cluster_IfRegion_1285829246 {
+label = "IF [B:10:0x001f] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001f|if (r4.getVisibility() == 0) goto L10\l}"];
+subgraph cluster_Region_761050395 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0021|findNamedViews(r7, r4)\l}"];
+}
+subgraph cluster_Region_712122682 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0024|LOOP_END\lLOOP:0: B:8:0x0015\-\>B:12:0x0024\l|r3++\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0024|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0024|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0027|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0027|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void androidx.fragment.app.DefaultSpecialEffectsController.findNamedViews((r6v0 'this' androidx.fragment.app.DefaultSpecialEffectsController A[IMMUTABLE_TYPE, THIS]), (r7v0 'namedViews' java.util.Map\<java.lang.String, android.view.View\> A[D('namedViews' java.util.Map\<java.lang.String, android.view.View\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x0024 \-\> B:8:0x0015, CROSS_EDGE: B:10:0x001f \-\> B:12:0x0024, CROSS_EDGE: B:6:0x000b \-\> B:13:0x0027, CROSS_EDGE: B:3:0x0004 \-\> B:5:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/util\/Map\<Ljava\/lang\/String;Landroid\/view\/View;\>;Landroid\/view\/View;)V\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_13[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_14[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_16[style=dashed];
+Node_11 -> Node_15;
+Node_12 -> Node_8;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+Node_15 -> Node_12;
+Node_16 -> Node_12;
+Node_14 -> Node_17;
+Node_17 -> Node_1;
+Node_13 -> Node_1;
+}
+

@@ -1,0 +1,66 @@
+digraph "CFG forkotlinx.coroutines.CancellableContinuationImpl.tryResume()Z" {
+subgraph cluster_Region_493893904 {
+label = "R(2:(2:2|3)|7)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_457674776 {
+label = "LOOP:0: (2:2|3)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001e|LOOP_END\lLOOP:0: B:19:0x0002\-\>B:25:0x001e\l|if (kotlinx.coroutines.CancellableContinuationImpl._decision$FU.compareAndSet(r7, 0, 2) == false) goto L2\l}"];
+subgraph cluster_Region_1539313713 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|LOOP_START\lLOOP:0: B:19:0x0002\-\>B:25:0x001e\l|int int r2 = r7._decision\l}"];
+subgraph cluster_SwitchRegion_1160287761 {
+label = "Switch: 3
+ case 0 -> R(1:1)
+ case 1 -> R(1:13)
+ case default -> R(1:11)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0007|switch(r2) \{\l    case 0: goto L4;\l    case 1: goto L12;\l    default: goto L9;\l\}\l}"];
+subgraph cluster_Region_331937742 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_439930599 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_110939145 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0016|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_561798034 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|throw new java.lang.IllegalStateException(\"Already resumed\".toString())\l}"];
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0020|RETURN\l|return true\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0017}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0020|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000a|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private final boolean kotlinx.coroutines.CancellableContinuationImpl.tryResume((r7v0 'this' kotlinx.coroutines.CancellableContinuationImpl\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0016 \-\> B:17:?, CROSS_EDGE: B:27:0x0021 \-\> B:17:?, BACK_EDGE: B:25:0x001e \-\> B:19:0x0002\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_16;Node_25 -> Node_19;
+Node_25 -> Node_31[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_24;
+Node_20 -> Node_29;
+Node_20 -> Node_30;
+Node_23 -> Node_17;
+Node_22 -> Node_17;
+Node_26 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_24 -> Node_25;
+Node_31 -> Node_26;
+Node_29 -> Node_21;
+Node_21 -> Node_22;
+Node_30 -> Node_23;
+}
+

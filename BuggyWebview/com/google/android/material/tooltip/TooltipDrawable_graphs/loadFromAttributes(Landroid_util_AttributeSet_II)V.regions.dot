@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.material.tooltip.TooltipDrawable.loadFromAttributes(Landroid\/util\/AttributeSet;II)V" {
+subgraph cluster_Region_1136156031 {
+label = "R(3:1|(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.content.res.TypedArray android.content.res.TypedArray r1 = com.google.android.material.internal.ThemeEnforcement.obtainStyledAttributes(r9.context, r10, com.google.android.material.C0571R.styleable.Tooltip, r11, r12, new int[0])\lr9.arrowSize = r9.context.getResources().getDimensionPixelSize(com.google.android.material.C0571R.dimen.mtrl_tooltip_arrowSize)\lsetShapeAppearanceModel(getShapeAppearanceModel().toBuilder().setBottomEdge(createMarkerEdge()).build())\lsetText(r1.getText(com.google.android.material.C0571R.styleable.Tooltip_android_text))\lcom.google.android.material.resources.TextAppearance com.google.android.material.resources.TextAppearance r2 = com.google.android.material.resources.MaterialResources.getTextAppearance(r9.context, r1, com.google.android.material.C0571R.styleable.Tooltip_android_textAppearance)\l}"];
+subgraph cluster_IfRegion_1942832150 {
+label = "IF [B:3:0x0047, B:5:0x004f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0047|if (r2 != null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x004f|ADDED_TO_REGION\l|if (r1.hasValue(com.google.android.material.C0571R.styleable.Tooltip_android_textColor) != false) goto L5\l}"];
+subgraph cluster_Region_1853017688 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0051|r2.setTextColor(com.google.android.material.resources.MaterialResources.getColorStateList(r9.context, r1, com.google.android.material.C0571R.styleable.Tooltip_android_textColor))\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x005c|setTextAppearance(r2)\lint int r3 = com.google.android.material.color.MaterialColors.getColor(r9.context, com.google.android.material.C0571R.attr.colorOnBackground, com.google.android.material.tooltip.TooltipDrawable.class.getCanonicalName())\lint int r4 = com.google.android.material.color.MaterialColors.getColor(r9.context, 16842801, com.google.android.material.tooltip.TooltipDrawable.class.getCanonicalName())\lint int r5 = com.google.android.material.color.MaterialColors.layer(androidx.core.graphics.ColorUtils.setAlphaComponent(r4, 229), androidx.core.graphics.ColorUtils.setAlphaComponent(r3, 153))\lsetFillColor(android.content.res.ColorStateList.valueOf(r1.getColor(com.google.android.material.C0571R.styleable.Tooltip_backgroundTint, r5)))\lsetStrokeColor(android.content.res.ColorStateList.valueOf(com.google.android.material.color.MaterialColors.getColor(r9.context, com.google.android.material.C0571R.attr.colorSurface, com.google.android.material.tooltip.TooltipDrawable.class.getCanonicalName())))\lr9.padding = r1.getDimensionPixelSize(com.google.android.material.C0571R.styleable.Tooltip_android_padding, 0)\lr9.minWidth = r1.getDimensionPixelSize(com.google.android.material.C0571R.styleable.Tooltip_android_minWidth, 0)\lr9.minHeight = r1.getDimensionPixelSize(com.google.android.material.C0571R.styleable.Tooltip_android_minHeight, 0)\lr9.layoutMargin = r1.getDimensionPixelSize(com.google.android.material.C0571R.styleable.Tooltip_android_layout_margin, 0)\lr1.recycle()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0049}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x00cb}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.tooltip.TooltipDrawable.loadFromAttributes((r9v0 'this' com.google.android.material.tooltip.TooltipDrawable A[IMMUTABLE_TYPE, THIS]), (r10v0 'attrs' android.util.AttributeSet A[D('attrs' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'defStyleAttr' int A[D('defStyleAttr' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'defStyleRes' int A[D('defStyleRes' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x004f \-\> B:7:0x005c, CROSS_EDGE: B:3:0x0047 \-\> B:7:0x005c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_1;
+}
+

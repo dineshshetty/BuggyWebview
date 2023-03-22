@@ -1,0 +1,27 @@
+digraph "CFG forkotlin.Pair.hashCode()I" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000|0x0000: IGET  (r0 I:A) = (r4 I:kotlin.Pair) kotlin.Pair.first java.lang.Object \l0x0002: CONST  (r1 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0003|0x0003: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:17:0x0007 \l}"];
+Node_16 [shape=record,label="{16\:\ 0x0005|0x0005: CONST  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_18 [shape=record,label="{18\:\ 0x000b|0x000b: ARITH  (r2 I:int) = (r0 I:int) * (31 int) \l0x000d: IGET  (r3 I:B) = (r4 I:kotlin.Pair) kotlin.Pair.second java.lang.Object \l}"];
+Node_19 [shape=record,label="{19\:\ 0x000f|0x000f: IF  (r3 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:21:0x0012 \l}"];
+Node_21 [shape=record,label="{21\:\ 0x0012|0x0012: INVOKE  (r1 I:int) = (r3 I:java.lang.Object) type: VIRTUAL call: java.lang.Object.hashCode():int A[MD:():int (c)]\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0016|0x0016: ARITH  (r2 I:int) = (r2 I:int) + (r1 I:int) \l}"];
+Node_23 [shape=record,label="{23\:\ 0x0017|RETURN\l|0x0017: RETURN  (r2 I:int) \l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0007|0x0007: INVOKE  (r0 I:int) = (r0 I:java.lang.Object) type: VIRTUAL call: java.lang.Object.hashCode():int A[MD:():int (c)]\l}"];
+MethodNode[shape=record,label="{public int kotlin.Pair.hashCode((r4 'this' I:kotlin.Pair\<A, B\> A[IMMUTABLE_TYPE, THIS]))  | CROSS_EDGE: B:19:0x000f \-\> B:22:0x0016, CROSS_EDGE: B:17:0x0007 \-\> B:18:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: [A, B]\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_21;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_17 -> Node_18;
+}
+

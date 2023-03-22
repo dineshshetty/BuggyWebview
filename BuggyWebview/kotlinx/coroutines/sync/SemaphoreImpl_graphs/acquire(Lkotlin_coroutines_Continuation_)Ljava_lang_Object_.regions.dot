@@ -1,0 +1,31 @@
+digraph "CFG forkotlinx.coroutines.sync.SemaphoreImpl.acquire(Lkotlin\/coroutines\/Continuation;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1259109919 {
+label = "R(2:1|2) | DECL_VAR: java.lang.Object null\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = kotlinx.coroutines.sync.SemaphoreImpl._availablePermits$FU.getAndDecrement(r3)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0006|RETURN\l|return (r0 \<= 0 && (r1 = acquireSlowPath(r4)) == kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) ? r1 : kotlin.Unit.INSTANCE\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0008|ADDED_TO_REGION\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000a|RETURN\lADDED_TO_REGION\l|return kotlin.Unit.INSTANCE\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000b}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0013|REMOVE\lADDED_TO_REGION\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0015}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0016|ADDED_TO_REGION\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0018|ADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{public java.lang.Object kotlinx.coroutines.sync.SemaphoreImpl.acquire((r3v0 'this' kotlinx.coroutines.sync.SemaphoreImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 kotlin.coroutines.Continuation\<? super kotlin.Unit\> A[D('$completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0015 \-\> B:12:?, CROSS_EDGE: B:21:0x0018 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlin\/coroutines\/Continuation\<\-Lkotlin\/Unit;\>;)Ljava\/lang\/Object;\lMETHOD_OVERRIDE: [kotlinx.coroutines.sync.Semaphore.acquire(kotlin.coroutines.Continuation\<? super kotlin.Unit\>):java.lang.Object]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_17;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_16 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+}
+

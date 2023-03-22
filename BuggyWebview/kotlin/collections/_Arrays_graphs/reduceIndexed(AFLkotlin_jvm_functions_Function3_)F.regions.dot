@@ -1,0 +1,64 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.reduceIndexed([FLkotlin\/jvm\/functions\/Function3;)F" {
+subgraph cluster_Region_268890281 {
+label = "R(2:1|(2:(1:13)|(3:5|(1:8)|10)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"operation\")\l}"];
+subgraph cluster_Region_1811243271 {
+label = "R(2:(1:13)|(3:5|(1:8)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_590407959 {
+label = "IF [B:21:0x0013] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0013|PHI: r1 \l  PHI: (r1v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r7.length == 0) != false) goto L12\l}"];
+subgraph cluster_Region_1101593646 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x004f|throw new java.lang.UnsupportedOperationException(\"Empty array can't be reduced.\")\l}"];
+}
+}
+subgraph cluster_Region_582692185 {
+label = "R(3:5|(1:8)|10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0015|float r1 = r7[0]\lkotlin.collections.IntIterator ?? r2 = new kotlin.ranges.IntRange(1, kotlin.collections.ArraysKt.getLastIndex(r7)).iterator()\l}"];
+subgraph cluster_LoopRegion_1301302334 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0028|if (r2.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_30073008 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002a|LOOP_END\lLOOP:0: B:23:0x0024\-\>B:25:0x002a\l|int int r3 = r2.nextInt()\lfloat r1 = r8.invoke(java.lang.Integer.valueOf(r3), java.lang.Float.valueOf(r1), java.lang.Float.valueOf(r7[r3])).floatValue()\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0047|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000e}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0010}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0024|LOOP_START\lLOOP:0: B:23:0x0024\-\>B:25:0x002a\lPHI: r1 \l  PHI: (r1v5 'accumulator' float) = (r1v4 'accumulator' float), (r1v6 'accumulator' float) binds: [B:22:0x0015, B:25:0x002a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0047|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0048}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0012}"];
+MethodNode[shape=record,label="{public static final float kotlin.collections.ArraysKt___ArraysKt.reduceIndexed((r7v0 '$this$reduceIndexed' float[] A[D('$this$reduceIndexed' float[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'operation' kotlin.jvm.functions.Function3\<? super java.lang.Integer, ? super java.lang.Float, ? super java.lang.Float, java.lang.Float\> A[D('operation' kotlin.jvm.functions.Function3), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x002a \-\> B:23:0x0024, CROSS_EDGE: B:28:0x004f \-\> B:16:?, CROSS_EDGE: B:20:0x0012 \-\> B:21:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r2v2, types: [kotlin.collections.IntIterator]\}\lSIGNATURE: ([FLkotlin\/jvm\/functions\/Function3\<\-Ljava\/lang\/Integer;\-Ljava\/lang\/Float;\-Ljava\/lang\/Float;Ljava\/lang\/Float;\>;)F\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_27;
+Node_28 -> Node_16;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_24 -> Node_29[style=dashed];
+Node_25 -> Node_23;
+Node_26 -> Node_16;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_21;
+Node_23 -> Node_24;
+Node_29 -> Node_26;
+Node_27 -> Node_28;
+Node_20 -> Node_21;
+}
+

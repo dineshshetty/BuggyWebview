@@ -1,0 +1,77 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatViewInflater.checkOnClickListener(Landroid\/view\/View;Landroid\/util\/AttributeSet;)V" {
+subgraph cluster_Region_556512327 {
+label = "R(2:1|(1:(1:(2:(1:7)|(3:9|(1:11)|12)))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|android.content.Context android.content.Context r0 = r5.getContext()\l}"];
+subgraph cluster_Region_1967684533 {
+label = "R(1:(1:(2:(1:7)|(3:9|(1:11)|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_189045222 {
+label = "IF [B:19:0x0006] THEN: R(1:(2:(1:7)|(3:9|(1:11)|12))) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|if ((r0 instanceof android.content.ContextWrapper) != false) goto L3\l}"];
+subgraph cluster_Region_1526425282 {
+label = "R(1:(2:(1:7)|(3:9|(1:11)|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1786059762 {
+label = "R(2:(1:7)|(3:9|(1:11)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_792718709 {
+label = "IF [B:21:0x000c, B:23:0x0012] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000c|if (android.os.Build.VERSION.SDK_INT \>= 15) goto L5\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0012|ADDED_TO_REGION\l|if (androidx.core.view.ViewCompat.hasOnClickListeners(r5) == false) goto L7\l}"];
+subgraph cluster_Region_429698804 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_593513885 {
+label = "R(3:9|(1:11)|12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0015|android.content.res.TypedArray android.content.res.TypedArray r1 = r0.obtainStyledAttributes(r6, androidx.appcompat.app.AppCompatViewInflater.sOnClickAttrs)\ljava.lang.String java.lang.String r2 = r1.getString(0)\l}"];
+subgraph cluster_IfRegion_864809457 {
+label = "IF [B:26:0x0020] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0020|if (r2 != null) goto L11\l}"];
+subgraph cluster_Region_1342108235 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0022|r5.setOnClickListener(new androidx.appcompat.app.AppCompatViewInflater.DeclaredOnClickListener(r5, r2))\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x002a|r1.recycle()\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0008}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000e}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x002d}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002e|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.app.AppCompatViewInflater.checkOnClickListener((r4v0 'this' androidx.appcompat.app.AppCompatViewInflater A[IMMUTABLE_TYPE, THIS]), (r5v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'attrs' android.util.AttributeSet A[D('attrs' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x0020 \-\> B:28:0x002a, CROSS_EDGE: B:30:0x002e \-\> B:17:?, CROSS_EDGE: B:21:0x000c \-\> B:25:0x0015, CROSS_EDGE: B:19:0x0006 \-\> B:30:0x002e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_30[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_23 -> Node_25[style=dashed];
+Node_23 -> Node_31;
+Node_31 -> Node_17;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_29 -> Node_17;
+Node_30 -> Node_17;
+}
+

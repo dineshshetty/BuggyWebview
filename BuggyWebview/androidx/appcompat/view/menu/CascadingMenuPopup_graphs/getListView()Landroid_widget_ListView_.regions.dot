@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.appcompat.view.menu.CascadingMenuPopup.getListView()Landroid\/widget\/ListView;" {
+subgraph cluster_Region_566286206 {
+label = "R(1:(2:(1:3)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1710673168 {
+label = "R(2:(1:3)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1749728536 {
+label = "IF [B:3:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r2.mShowingMenus.isEmpty() != false) goto L3\l}"];
+subgraph cluster_Region_260081471 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1198635966 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|java.util.List\<androidx.appcompat.view.menu.CascadingMenuPopup$CascadingMenuInfo\> java.util.List\<androidx.appcompat.view.menu.CascadingMenuPopup.CascadingMenuInfo\> r0 = r2.mShowingMenus\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\lORIG_RETURN\l|return r0.get(r0.size() \- 1).getListView()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.widget.ListView androidx.appcompat.view.menu.CascadingMenuPopup.getListView((r2v0 'this' androidx.appcompat.view.menu.CascadingMenuPopup A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x000a \-\> B:6:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.view.menu.ShowableListMenu.getListView():android.widget.ListView]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,68 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatEmojiTextHelper.loadFromAttributes(Landroid\/util\/AttributeSet;I)V" {
+subgraph cluster_Region_212597671 {
+label = "R(2:1|(2:(1:6)|8))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|android.content.Context android.content.Context r0 = r5.mView.getContext()\landroid.content.res.TypedArray android.content.res.TypedArray r1 = r0.obtainStyledAttributes(r6, androidx.appcompat.C0019R.styleable.AppCompatTextView, r7, 0)\lboolean r2 = true\l}"];
+subgraph cluster_TryCatchRegion_905942735 {
+label = "Try: R(2:(1:6)|8) catches: R(3:11|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_120619644 {
+label = "R(2:(1:6)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_237204801 {
+label = "IF [B:18:0x0014] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0014|if (r1.hasValue(androidx.appcompat.C0019R.styleable.AppCompatTextView_emojiCompatEnabled) != false) goto L5\l}"];
+subgraph cluster_Region_1893633908 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001d|r2 = r1.getBoolean(androidx.appcompat.C0019R.styleable.AppCompatTextView_emojiCompatEnabled, true)     \/\/ Catch: java.lang.Throwable \-\> L26\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x001e|PHI: r2 \l  PHI: (r2v2 'enabled' boolean) = (r2v1 'enabled' boolean), (r2v3 'enabled' boolean) binds: [B:18:0x0014, B:20:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|r1.recycle()\lsetEnabled(r2)\l}"];
+}
+subgraph cluster_Region_1419065342 {
+label = "R(3:11|12|13) | ExcHandler: all \-\> 0x0026\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0026|ExcHandler: all \-\> 0x0026\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0027|r1.recycle()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x002a|throw r3\l}"];
+}
+}
+}
+subgraph cluster_Region_1419065342 {
+label = "R(3:11|12|13) | ExcHandler: all \-\> 0x0026\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0026|ExcHandler: all \-\> 0x0026\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0027|r1.recycle()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x002a|throw r3\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000e|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000e|TRY_ENTER\lTryCatch #0 \{all \-\> 0x0026, blocks: (B:17:0x000e, B:19:0x0016), top: B:26:0x000e \}\lCatch: all \-\> 0x0026\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0016|TRY_LEAVE\lTryCatch #0 \{all \-\> 0x0026, blocks: (B:17:0x000e, B:19:0x0016), top: B:26:0x000e \}\lCatch: all \-\> 0x0026\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0025}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.AppCompatEmojiTextHelper.loadFromAttributes((r5v0 'this' androidx.appcompat.widget.AppCompatEmojiTextHelper A[IMMUTABLE_TYPE, THIS]), (r6v0 'attrs' android.util.AttributeSet A[D('attrs' android.util.AttributeSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'defStyleAttr' int A[D('defStyleAttr' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x002a \-\> B:15:?, CROSS_EDGE: B:18:0x0014 \-\> B:21:0x001e, CROSS_EDGE: B:26:0x000e \-\> B:23:0x0026\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0026, blocks: (B:17:0x000e, B:19:0x0016), top: B:26:0x000e \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_16 -> Node_26;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_15;
+Node_14 -> Node_16;
+Node_26 -> Node_17;
+Node_26 -> Node_23;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_27;
+Node_27 -> Node_23;
+Node_22 -> Node_15;
+}
+

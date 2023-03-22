@@ -1,0 +1,43 @@
+digraph "CFG forkotlinx.coroutines.selects.SelectBuilderImpl.disposeOnSelect(Lkotlinx\/coroutines\/DisposableHandle;)V" {
+subgraph cluster_Region_666239144 {
+label = "R(3:1|(2:3|(1:5))|7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|kotlinx.coroutines.selects.SelectBuilderImpl$DisposeNode kotlinx.coroutines.selects.SelectBuilderImpl.DisposeNode r0 = new kotlinx.coroutines.selects.SelectBuilderImpl.DisposeNode(r3)\l}"];
+subgraph cluster_IfRegion_752745650 {
+label = "IF [B:12:0x0009] THEN: R(2:3|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0009|if (isSelected() == false) goto L3\l}"];
+subgraph cluster_Region_1555995466 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000b|addLast(r0)\l}"];
+subgraph cluster_IfRegion_1613044700 {
+label = "IF [B:14:0x0015] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0015|if (isSelected() == false) goto L5\l}"];
+subgraph cluster_Region_2126604346 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0017|RETURN\l|return\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0018|r3.dispose()\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001b}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.selects.SelectBuilderImpl.disposeOnSelect((r2v0 'this' kotlinx.coroutines.selects.SelectBuilderImpl\<R\> A[IMMUTABLE_TYPE, THIS]), (r3v0 'handle' kotlinx.coroutines.DisposableHandle A[D('handle' kotlinx.coroutines.DisposableHandle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x001b \-\> B:10:?, CROSS_EDGE: B:12:0x0009 \-\> B:16:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: [R]\lMETHOD_OVERRIDE: [kotlinx.coroutines.selects.SelectInstance.disposeOnSelect(kotlinx.coroutines.DisposableHandle):void]\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_10;
+Node_16 -> Node_17;
+Node_9 -> Node_11;
+Node_17 -> Node_10;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.associateWithTo([DLjava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_1162231124 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"destination\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"valueSelector\")\lint r1 = 0\l\l}"];
+subgraph cluster_LoopRegion_91313938 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0011|LOOP_START\lLOOP:0: B:10:0x0011\-\>B:11:0x0013\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:9:0x0000, B:11:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L3\l}"];
+subgraph cluster_Region_1533644671 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0013|LOOP_END\lLOOP:0: B:10:0x0011\-\>B:11:0x0013\l|r2 = r6[r1]\lr7.put(java.lang.Double.valueOf(r2), r8.invoke(java.lang.Double.valueOf(r2)))\lr1++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0027|RETURN\l|return r7\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0027|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static final M extends java.util.Map\<? super java.lang.Double, ? super V\> kotlin.collections.ArraysKt___ArraysKt.associateWithTo((r6v0 '$this$associateWithTo' double[] A[D('$this$associateWithTo' double[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'destination' M extends java.util.Map\<? super java.lang.Double, ? super V\> A[D('destination' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'valueSelector' kotlin.jvm.functions.Function1\<? super java.lang.Double, ? extends V\> A[D('valueSelector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0013 \-\> B:10:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, M extends java.util.Map\<? super java.lang.Double, ? super V\>]\lSIGNATURE: \<V:Ljava\/lang\/Object;M::Ljava\/util\/Map\<\-Ljava\/lang\/Double;\-TV;\>;\>([DTM;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Double;+TV;\>;)TM;\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_10;
+Node_12 -> Node_8;
+Node_7 -> Node_9;
+Node_13 -> Node_12;
+}
+

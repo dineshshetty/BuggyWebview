@@ -1,0 +1,93 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.maxByOrThrow(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_50862258 {
+label = "R(2:1|(2:(1:16)|(2:3|(2:(3:7|(3:8|(1:10)|11)|14)|(1:5))))) | DECL_VAR: java.lang.Object maxElem\l";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"selector\")\ljava.util.Iterator java.util.Iterator r1 = r7.iterator()\l}"];
+subgraph cluster_Region_1800425440 {
+label = "R(2:(1:16)|(2:3|(2:(3:7|(3:8|(1:10)|11)|14)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_84450287 {
+label = "IF [B:37:0x0013] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0013|if (r1.hasNext() == false) goto L15\l}"];
+subgraph cluster_Region_1863571198 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x0044|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_1197027668 {
+label = "R(2:3|(2:(3:7|(3:8|(1:10)|11)|14)|(1:5)))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0015|java.lang.Object T r2 = r1.next()\l}"];
+subgraph cluster_Region_420061708 {
+label = "R(2:(3:7|(3:8|(1:10)|11)|14)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1466187893 {
+label = "IF [B:39:0x001d] THEN: R(3:7|(3:8|(1:10)|11)|14) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x001d|if (r1.hasNext() == true) goto L7\l}"];
+subgraph cluster_Region_1528918344 {
+label = "R(3:7|(3:8|(1:10)|11)|14)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0020|java.lang.Comparable java.lang.Comparable r3 = r8.invoke(r2)\ljava.lang.Object r2 = r2\l}"];
+subgraph cluster_LoopRegion_342499235 {
+label = "LOOP:0: (3:8|(1:10)|11)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x003c|LOOP_END\lLOOP:0: B:42:0x0026\-\>B:46:0x003c\l|if (r1.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_1434200354 {
+label = "R(3:8|(1:10)|11)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0026|LOOP_START\lLOOP:0: B:42:0x0026\-\>B:46:0x003c\lPHI: r2 r3 \l  PHI: (r2v3 'maxElem' java.lang.Object) = (r2v9 'maxElem' java.lang.Object), (r2v10 'maxElem' java.lang.Object) binds: [B:41:0x0020, B:46:0x003c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v3 'maxValue' java.lang.Comparable) = (r3v2 'maxValue' java.lang.Comparable), (r3v4 'maxValue' java.lang.Comparable) binds: [B:41:0x0020, B:46:0x003c] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Object T r4 = r1.next()\ljava.lang.Comparable R r5 = r8.invoke(r4)\lr2 = r2\l}"];
+subgraph cluster_IfRegion_1583440276 {
+label = "IF [B:43:0x0034] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0034|if (r3.compareTo(r5) \< 0) goto L10\l}"];
+subgraph cluster_Region_1784705219 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0036|java.lang.Object r2 = r4\lr3 = r5\lr2 = (T) r2\l}"];
+}
+}
+Node_45 [shape=record,label="{45\:\ 0x0038|PHI: r2 r3 \l  PHI: (r2v4 'maxElem' java.lang.Object) = (r2v11 'maxElem' java.lang.Object), (r2v12 'maxElem' java.lang.Object) binds: [B:43:0x0034, B:44:0x0036] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v4 'maxValue' java.lang.Comparable) = (r3v3 'maxValue' java.lang.Comparable), (r3v5 'maxValue' java.lang.Comparable) binds: [B:43:0x0034, B:44:0x0036] A[DONT_GENERATE, DONT_INLINE]\l|r2 = r2\l}"];
+}
+}
+Node_47 [shape=record,label="{47\:\ 0x003e|RETURN\l|return (T) r2\l}"];
+}
+}
+subgraph cluster_Region_783545777 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x001f|RETURN\l|return r2\l}"];
+}
+}
+}
+}
+}
+Node_34 [shape=record,color=red,label="{34\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x003e|SYNTHETIC\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x003f}"];
+MethodNode[shape=record,label="{public static final T kotlin.collections.CollectionsKt___CollectionsKt.maxByOrThrow((r7v0 java.lang.Iterable\<? extends T\> A[D('$this$maxBy' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'selector' kotlin.jvm.functions.Function1\<? super T, ? extends R extends java.lang.Comparable\<? super R\>\> A[D('selector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:46:0x003c \-\> B:42:0x0026, CROSS_EDGE: B:47:0x003e \-\> B:35:?, CROSS_EDGE: B:43:0x0034 \-\> B:45:0x0038, CROSS_EDGE: B:49:0x0044 \-\> B:35:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [R extends java.lang.Comparable\<? super R\>, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R::Ljava\/lang\/Comparable\<\-TR;\>;\>(Ljava\/lang\/Iterable\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;+TR;\>;)TT;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l \-\> Type inference failed for: r2v2, types: [T, java.lang.Object]\l DEBUG: \l \-\> Multi\-variable search result rejected for r4v0, resolved type: java.lang.Object\}\l}"];
+MethodNode -> Node_34;Node_36 -> Node_37;
+Node_37 -> Node_38[style=dashed];
+Node_37 -> Node_48;
+Node_49 -> Node_35;
+Node_38 -> Node_39;
+Node_39 -> Node_40[style=dashed];
+Node_39 -> Node_41;
+Node_41 -> Node_42;
+Node_46 -> Node_42;
+Node_46 -> Node_50[style=dashed];
+Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_43 -> Node_45[style=dashed];
+Node_44 -> Node_45;
+Node_45 -> Node_46;
+Node_47 -> Node_35;
+Node_40 -> Node_35;
+Node_34 -> Node_36;
+Node_50 -> Node_47;
+Node_48 -> Node_49;
+}
+

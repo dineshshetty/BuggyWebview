@@ -1,0 +1,75 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysJvmKt$asList$6.lastIndexOf(D)I" {
+subgraph cluster_Region_184126258 {
+label = "R(2:1|(2:(2:(2:3|(1:13))|9)|(1:15)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|double[] double[] r0 = r13.$this_asList\lint int r2 = r0.length \- 1\l}"];
+subgraph cluster_Region_845344509 {
+label = "R(2:(2:(2:3|(1:13))|9)|(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1165271715 {
+label = "IF [B:20:0x0006] THEN: R(2:(2:3|(1:13))|9) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|if (r2 \>= 0) goto L3\l}"];
+subgraph cluster_Region_700990330 {
+label = "R(2:(2:3|(1:13))|9)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1159511026 {
+label = "LOOP:0: (2:3|(1:13))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0020|LOOP_END\lLOOP:0: B:21:0x0008\-\>B:27:0x0020\l|if (r2 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1057167082 {
+label = "R(2:3|(1:13))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0008|LOOP_START\lLOOP:0: B:21:0x0008\-\>B:27:0x0020\lPHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v3 int) binds: [B:20:0x0006, B:27:0x0020] A[DONT_GENERATE, DONT_INLINE]\l|int r4 = r2\lr2\-\-\ldouble r5 = r0[r4]\l}"];
+subgraph cluster_IfRegion_610925227 {
+label = "IF [B:25:0x001c] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001c|PHI: r8 \l  PHI: (r8v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((java.lang.Double.doubleToLongBits(r5) == java.lang.Double.doubleToLongBits(r14)) != false) goto L11\l}"];
+subgraph cluster_Region_66717816 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0023|RETURN\lORIG_RETURN\l|return r4\l}"];
+}
+}
+}
+}
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_2049409968 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ ?|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0017}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0019}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0023|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001e|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001e}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001b}"];
+MethodNode[shape=record,label="{public int kotlin.collections.ArraysKt___ArraysJvmKt$asList$6.lastIndexOf((r13v0 'this' kotlin.collections.ArraysKt___ArraysJvmKt$asList$6 A[IMMUTABLE_TYPE, THIS]), (r14v0 'element' double A[D('element' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:27:0x0020 \-\> B:21:0x0008, CROSS_EDGE: B:27:0x0020 \-\> B:29:0x0023, CROSS_EDGE: B:24:0x001b \-\> B:25:0x001c, CROSS_EDGE: B:20:0x0006 \-\> B:29:0x0023\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_32[style=dashed];
+Node_27 -> Node_21;
+Node_27 -> Node_30[style=dashed];
+Node_21 -> Node_22;
+Node_25 -> Node_27[style=dashed];
+Node_25 -> Node_31;
+Node_29 -> Node_18;
+Node_33 -> Node_18;
+Node_32 -> Node_18;
+Node_17 -> Node_19;
+Node_22 -> Node_23;
+Node_22 -> Node_24;
+Node_23 -> Node_25;
+Node_30 -> Node_33;
+Node_31 -> Node_26;
+Node_26 -> Node_29;
+Node_24 -> Node_25;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.collection.SimpleArrayMap.binarySearchHashes([III)I" {
+subgraph cluster_Region_1406965218 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_832755948 {
+label = "Try: R(1:3) catches: R(1:8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1707356547 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|RETURN\l|return androidx.collection.ContainerHelpers.binarySearch(r2, r3, r4)\l}"];
+}
+subgraph cluster_Region_119931087 {
+label = "R(1:8) | ExcHandler: ArrayIndexOutOfBoundsException \-\> 0x0005\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000b|throw new java.util.ConcurrentModificationException()\l}"];
+}
+}
+}
+subgraph cluster_Region_119931087 {
+label = "R(1:8) | ExcHandler: ArrayIndexOutOfBoundsException \-\> 0x0005\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000b|throw new java.util.ConcurrentModificationException()\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0000|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{ArrayIndexOutOfBoundsException \-\> 0x0005, blocks: (B:11:0x0000), top: B:16:0x0000 \}\lCatch: ArrayIndexOutOfBoundsException \-\> 0x0005\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0005|ExcHandler: ArrayIndexOutOfBoundsException \-\> 0x0005\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006}"];
+MethodNode[shape=record,label="{private static int androidx.collection.SimpleArrayMap.binarySearchHashes((r2v0 'hashes' int[] A[D('hashes' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'N' int A[D('N' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'hash' int A[D('hash' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000b \-\> B:10:?, CROSS_EDGE: B:16:0x0000 \-\> B:13:0x0005\lINLINE_NOT_NEEDED\lTryCatch #0 \{ArrayIndexOutOfBoundsException \-\> 0x0005, blocks: (B:11:0x0000), top: B:16:0x0000 \}\l}"];
+MethodNode -> Node_9;Node_12 -> Node_10;
+Node_15 -> Node_10;
+Node_15 -> Node_10;
+Node_9 -> Node_16;
+Node_16 -> Node_11;
+Node_16 -> Node_13;
+Node_11 -> Node_12;
+Node_11 -> Node_17;
+Node_17 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

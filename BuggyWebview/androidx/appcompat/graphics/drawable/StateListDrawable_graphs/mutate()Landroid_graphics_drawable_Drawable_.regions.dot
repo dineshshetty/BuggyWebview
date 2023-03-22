@@ -1,0 +1,33 @@
+digraph "CFG forandroidx.appcompat.graphics.drawable.StateListDrawable.mutate()Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_39511550 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2048494551 {
+label = "IF [B:11:0x0002, B:13:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r1.mMutated == false) goto L3\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0008|ADDED_TO_REGION\l|if (super.mutate() == r1) goto L5\l}"];
+subgraph cluster_Region_829175985 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000a|r1.mStateListState.mutate()\lr1.mMutated = true\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0012|RETURN\l|return r1\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0004}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.graphics.drawable.Drawable androidx.appcompat.graphics.drawable.StateListDrawable.mutate((r1v0 'this' androidx.appcompat.graphics.drawable.StateListDrawable A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:13:0x0008 \-\> B:15:0x0012, CROSS_EDGE: B:11:0x0002 \-\> B:15:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.mutate():android.graphics.drawable.Drawable\}]\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+}
+

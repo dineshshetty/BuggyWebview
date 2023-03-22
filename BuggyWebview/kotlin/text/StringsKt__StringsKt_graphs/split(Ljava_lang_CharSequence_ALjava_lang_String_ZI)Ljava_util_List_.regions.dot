@@ -1,0 +1,69 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.split(Ljava\/lang\/CharSequence;[Ljava\/lang\/String;ZI)Ljava\/util\/List;" {
+subgraph cluster_Region_1178370939 {
+label = "R(5:1|(2:3|(1:8))|10|(1:13)|16)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, \"delimiters\")\l}"];
+subgraph cluster_IfRegion_633991051 {
+label = "IF [B:39:0x000c] THEN: R(2:3|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x000c|if (r11.length == 1) goto L3\l}"];
+subgraph cluster_Region_393671880 {
+label = "R(2:3|(1:8))";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x000e|java.lang.String r2 = r11[0]\l}"];
+subgraph cluster_IfRegion_1393648351 {
+label = "IF [B:44:0x001c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x001c|PHI: r1 \l  PHI: (r1v2 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if ((r2.length() == 0) == false) goto L7\l}"];
+subgraph cluster_Region_1897137309 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0022|RETURN\l|return split$StringsKt__StringsKt(r10, r2, r12, r13)\l}"];
+}
+}
+}
+}
+Node_47 [shape=record,label="{47\:\ 0x0023|java.lang.Iterable java.lang.Iterable r0 = kotlin.sequences.SequencesKt.asIterable(rangesDelimitedBy$StringsKt__StringsKt$default(r10, r11, 0, r12, r13, 2, (java.lang.Object) null))\ljava.util.Collection java.util.Collection r2 = new java.util.ArrayList(kotlin.collections.CollectionsKt.collectionSizeOrDefault(r0, 10))\ljava.util.Iterator r5 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_860943822 {
+label = "LOOP:0: (1:13)";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x004a|java.lang.Object \lif (r5.hasNext() != false) goto L13\l}"];
+subgraph cluster_Region_1618948289 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x004c|LOOP_END\lLOOP:0: B:48:0x0046\-\>B:50:0x004c\l|java.lang.Object r6 = r5.next()\lkotlin.ranges.IntRange kotlin.ranges.IntRange r7 = (kotlin.ranges.IntRange) r6\lr2.add(kotlin.text.StringsKt.substring(r10, r7))\l}"];
+}
+}
+Node_52 [shape=record,label="{52\:\ 0x0060|RETURN\l|return (java.util.List) r2\l}"];
+}
+Node_36 [shape=record,color=red,label="{36\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0018}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x001b}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x001e}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x0046|LOOP_START\lLOOP:0: B:48:0x0046\-\>B:50:0x004c\l}"];
+Node_53 [shape=record,color=red,label="{53\:\ 0x005c|SYNTHETIC\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x005c}"];
+MethodNode[shape=record,label="{public static final java.util.List\<java.lang.String\> kotlin.text.StringsKt__StringsKt.split((r10v0 '$this$split' java.lang.CharSequence A[D('$this$split' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'delimiters' java.lang.String[] A[D('delimiters' java.lang.String[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'ignoreCase' boolean A[D('ignoreCase' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'limit' int A[D('limit' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:50:0x004c \-\> B:48:0x0046, CROSS_EDGE: B:52:0x0060 \-\> B:37:?, CROSS_EDGE: B:41:0x0018 \-\> B:44:0x001c, CROSS_EDGE: B:39:0x000c \-\> B:47:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/CharSequence;[Ljava\/lang\/String;ZI)Ljava\/util\/List\<Ljava\/lang\/String;\>;\l}"];
+MethodNode -> Node_36;Node_38 -> Node_39;
+Node_39 -> Node_40;
+Node_39 -> Node_47[style=dashed];
+Node_40 -> Node_41;
+Node_44 -> Node_45;
+Node_44 -> Node_47[style=dashed];
+Node_46 -> Node_37;
+Node_47 -> Node_48;
+Node_49 -> Node_50;
+Node_49 -> Node_53[style=dashed];
+Node_50 -> Node_48;
+Node_52 -> Node_37;
+Node_36 -> Node_38;
+Node_41 -> Node_43;
+Node_41 -> Node_44;
+Node_43 -> Node_44;
+Node_45 -> Node_46;
+Node_48 -> Node_49;
+Node_53 -> Node_51;
+Node_51 -> Node_52;
+}
+

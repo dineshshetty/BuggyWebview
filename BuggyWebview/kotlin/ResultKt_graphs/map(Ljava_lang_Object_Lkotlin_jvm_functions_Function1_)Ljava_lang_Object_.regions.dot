@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.ResultKt.map(Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1106334279 {
+label = "R(2:1|(2:(2:3|4)|(1:7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r2, \"transform\")\l}"];
+subgraph cluster_Region_1440251286 {
+label = "R(2:(2:3|4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_525548983 {
+label = "IF [B:11:0x000b] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000b|if (kotlin.Result.m151isSuccessimpl(r1) == true) goto L3\l}"];
+subgraph cluster_Region_650020539 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000d|kotlin.Result$Companion kotlin.Result.Companion r0 = kotlin.Result.Companion\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return kotlin.Result.m144constructorimpl(r2.invoke(r1))\l}"];
+}
+}
+subgraph cluster_Region_703678528 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001c|RETURN\lORIG_RETURN\l|return kotlin.Result.m144constructorimpl(r1)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0018}"];
+MethodNode[shape=record,label="{private static final java.lang.Object kotlin.ResultKt.map((r1v0 '$this$map' java.lang.Object A[D('$this$map' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'transform' kotlin.jvm.functions.Function1\<? super T, ? extends R\> A[D('transform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0018 \-\> B:14:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, T]\lSIGNATURE: \<R:Ljava\/lang\/Object;T:Ljava\/lang\/Object;\>(Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function1\<\-TT;+TR;\>;)Ljava\/lang\/Object;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_13 -> Node_14;
+}
+

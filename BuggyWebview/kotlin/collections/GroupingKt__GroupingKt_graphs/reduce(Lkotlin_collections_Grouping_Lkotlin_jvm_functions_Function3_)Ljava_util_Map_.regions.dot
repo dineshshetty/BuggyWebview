@@ -1,0 +1,69 @@
+digraph "CFG forkotlin.collections.GroupingKt__GroupingKt.reduce(Lkotlin\/collections\/Grouping;Lkotlin\/jvm\/functions\/Function3;)Ljava\/util\/Map;" {
+subgraph cluster_Region_811634235 {
+label = "R(3:1|(5:4|5|9|(1:11)(0)|13)|17)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r18, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r19, \"operation\")\ljava.util.Map java.util.LinkedHashMap r5 = new java.util.LinkedHashMap()\ljava.util.Iterator java.util.Iterator\<T\> r8 = r18.sourceIterator()\l}"];
+subgraph cluster_LoopRegion_158922895 {
+label = "LOOP:0: (5:4|5|9|(1:11)(0)|13)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0023|if (r8.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_626018716 {
+label = "R(5:4|5|9|(1:11)(0)|13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0025|java.lang.Object T r9 = r8.next()\ljava.lang.Object java.lang.Object r10 = (K) r18.keyOf(r9)\ljava.lang.Object java.lang.Object r11 = (java.lang.Object) r5.get(r10)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0031|boolean r12 = r11 == null && !r5.containsKey(r10)\l}"];
+Node_32 [shape=record,label="{32\:\ 0x003c|PHI: r12 \l  PHI: (r12v1 'first' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Object r15 = r9\l}"];
+subgraph cluster_IfRegion_1708029565 {
+label = "IF [B:33:0x0041] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0041|if (r12 == false) goto L11\l}"];
+subgraph cluster_Region_1365977917 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0044|r15 = r19.invoke(r10, r11, r15)\l}"];
+}
+subgraph cluster_Region_743677280 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x004a|LOOP_END\lLOOP:0: B:24:0x001f\-\>B:36:0x004a\lPHI: r15 \l  PHI: (r15v1 'e' java.lang.Object) = (r15v0 'e' java.lang.Object), (r15v2 'e' java.lang.Object) binds: [B:41:0x004a, B:40:0x004a] A[DONT_GENERATE, DONT_INLINE]\l|r5.put(r10, r15)\l}"];
+}
+}
+Node_38 [shape=record,label="{38\:\ 0x0050|RETURN\l|return r5\l}"];
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001f|LOOP_START\lLOOP:0: B:24:0x001f\-\>B:36:0x004a\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0033}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0037|REMOVE\lADDED_TO_REGION\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0039}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x004a|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x004a|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x003b}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0050|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.Map\<K, S\> kotlin.collections.GroupingKt__GroupingKt.reduce((r18v0 kotlin.collections.Grouping\<T extends S, ? extends K\> A[D('$this$reduce' kotlin.collections.Grouping), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'operation' kotlin.jvm.functions.Function3\<? super K, ? super S, ? super T extends S, ? extends S\> A[D('operation' kotlin.jvm.functions.Function3), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:36:0x004a \-\> B:24:0x001f, CROSS_EDGE: B:33:0x0041 \-\> B:36:0x004a, CROSS_EDGE: B:31:0x003b \-\> B:32:0x003c, CROSS_EDGE: B:27:0x0031 \-\> B:31:0x003b\lINLINE_NOT_NEEDED\lTYPE_VARS: [S, T extends S, K]\lSIGNATURE: \<S:Ljava\/lang\/Object;T::TS;K:Ljava\/lang\/Object;\>(Lkotlin\/collections\/Grouping\<TT;+TK;\>;Lkotlin\/jvm\/functions\/Function3\<\-TK;\-TS;\-TT;+TS;\>;)Ljava\/util\/Map\<TK;TS;\>;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r5v1, resolved type: java.util.LinkedHashMap\}\l}"];
+MethodNode -> Node_21;Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_39[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_31;
+Node_32 -> Node_33;
+Node_33 -> Node_35;
+Node_33 -> Node_41[style=dashed];
+Node_35 -> Node_40;
+Node_36 -> Node_24;
+Node_38 -> Node_22;
+Node_21 -> Node_23;
+Node_24 -> Node_25;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31;
+Node_30 -> Node_32;
+Node_40 -> Node_36;
+Node_41 -> Node_36;
+Node_31 -> Node_32;
+Node_39 -> Node_38;
+}
+

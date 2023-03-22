@@ -1,0 +1,75 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.any(Ljava\/lang\/Iterable;Lkotlin\/jvm\/functions\/Function1;)Z" {
+subgraph cluster_Region_1900284722 {
+label = "R(2:1|(2:(1:5)|(3:7|(2:10|(1:13))|15)))";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"predicate\")\l}"];
+subgraph cluster_Region_786193638 {
+label = "R(2:(1:5)|(3:7|(2:10|(1:13))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1402774575 {
+label = "IF [B:37:0x000e, B:39:0x0017] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x000e|if ((r5 instanceof java.util.Collection) == true) goto L3\l}"];
+Node_39 [shape=record,label="{39\:\ 0x0017|ADDED_TO_REGION\l|if (((java.util.Collection) r5).isEmpty() == true) goto L5\l}"];
+subgraph cluster_Region_1186427124 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0019|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_21140606 {
+label = "R(3:7|(2:10|(1:13))|15)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x001a|java.util.Iterator java.util.Iterator\<? extends T\> r1 = r5.iterator()\l}"];
+subgraph cluster_LoopRegion_1121348259 {
+label = "LOOP:0: (2:10|(1:13))";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0022|if (r1.hasNext() != false) goto L10\l}"];
+subgraph cluster_Region_1008687013 {
+label = "R(2:10|(1:13))";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0024|java.lang.Object java.lang.Object r3 = (T) r1.next()\l}"];
+subgraph cluster_IfRegion_577905031 {
+label = "IF [B:45:0x0032] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0032|LOOP_END\lLOOP:0: B:42:0x001e\-\>B:45:0x0032\l|if (r6.invoke(r3).booleanValue() != false) goto L12\l}"];
+subgraph cluster_Region_393997963 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x0034|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_48 [shape=record,label="{48\:\ 0x0036|RETURN\l|return false\l}"];
+}
+}
+}
+Node_34 [shape=record,color=red,label="{34\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0010}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x001e|LOOP_START\lLOOP:0: B:42:0x001e\-\>B:45:0x0032\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x0034|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x0036|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.collections.CollectionsKt___CollectionsKt.any((r5v0 java.lang.Iterable\<? extends T\> A[D('$this$any' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'predicate' kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:45:0x0032 \-\> B:42:0x001e, CROSS_EDGE: B:47:0x0035 \-\> B:35:?, CROSS_EDGE: B:48:0x0036 \-\> B:35:?, CROSS_EDGE: B:37:0x000e \-\> B:41:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Boolean;\>;)Z\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r3v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_34;Node_36 -> Node_37;
+Node_37 -> Node_38;
+Node_37 -> Node_41[style=dashed];
+Node_39 -> Node_40;
+Node_39 -> Node_41[style=dashed];
+Node_40 -> Node_35;
+Node_41 -> Node_42;
+Node_43 -> Node_44;
+Node_43 -> Node_50[style=dashed];
+Node_44 -> Node_45;
+Node_45 -> Node_42[style=dashed];
+Node_45 -> Node_49;
+Node_46 -> Node_35;
+Node_48 -> Node_35;
+Node_34 -> Node_36;
+Node_38 -> Node_39;
+Node_42 -> Node_43;
+Node_49 -> Node_46;
+Node_50 -> Node_48;
+}
+

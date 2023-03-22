@@ -1,0 +1,53 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.filterNotTo([ILjava\/util\/Collection;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Collection;" {
+subgraph cluster_Region_2085008755 {
+label = "R(3:1|(3:3|(1:5)(0)|7)|10)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"destination\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"predicate\")\lint r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_491586078 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0012|LOOP_START\lLOOP:0: B:15:0x0012\-\>B:19:0x002d\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:14:0x0000, B:19:0x002d] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_913002254 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0014|r3 = r5[r2]\l}"];
+subgraph cluster_IfRegion_1971267952 {
+label = "IF [B:17:0x0024] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0024|if (r7.invoke(java.lang.Integer.valueOf(r3)).booleanValue() == false) goto L5\l}"];
+subgraph cluster_Region_1708543466 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0026|r6.add(java.lang.Integer.valueOf(r3))\l}"];
+}
+subgraph cluster_Region_492865970 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x002d|LOOP_END\lLOOP:0: B:15:0x0012\-\>B:19:0x002d\l|r2++\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0030|RETURN\l|return r6\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x002d|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x002d|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0030|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final C extends java.util.Collection\<? super java.lang.Integer\> kotlin.collections.ArraysKt___ArraysKt.filterNotTo((r5v0 '$this$filterNotTo' int[] A[D('$this$filterNotTo' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'destination' C extends java.util.Collection\<? super java.lang.Integer\> A[D('destination' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Integer, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x002d \-\> B:15:0x0012, CROSS_EDGE: B:17:0x0024 \-\> B:19:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: [C extends java.util.Collection\<? super java.lang.Integer\>]\lSIGNATURE: \<C::Ljava\/util\/Collection\<\-Ljava\/lang\/Integer;\>;\>([ITC;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Integer;Ljava\/lang\/Boolean;\>;)TC;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_22;
+Node_19 -> Node_15;
+Node_20 -> Node_13;
+Node_12 -> Node_14;
+Node_22 -> Node_19;
+Node_23 -> Node_19;
+Node_21 -> Node_20;
+}
+

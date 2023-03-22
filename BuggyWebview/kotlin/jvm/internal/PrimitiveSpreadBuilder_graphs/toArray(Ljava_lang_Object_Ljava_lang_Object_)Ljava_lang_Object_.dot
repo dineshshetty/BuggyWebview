@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.jvm.internal.PrimitiveSpreadBuilder.toArray(Ljava\/lang\/Object;Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+Node_19 [shape=record,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"values\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"result\")\lr0 = 0\lr1 = 0\lkotlin.collections.IntIterator r2 = new kotlin.ranges.IntRange(0, r7.size + (\-1)).iterator()\l}"];
+Node_22 [shape=record,label="{22\:\ 0x001a|LOOP_START\lLOOP:0: B:22:0x001a\-\>B:35:0x001a\lPHI: r0 r1 \l  PHI: (r0v3 'dstIndex' int) = (r0v2 'dstIndex' int), (r0v4 'dstIndex' int) binds: [B:21:0x0000, B:35:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'copyValuesFrom' int) = (r1v0 'copyValuesFrom' int), (r1v2 'copyValuesFrom' int) binds: [B:21:0x0000, B:35:0x001a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001e|if (r2.hasNext() == false) goto L13\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0020|int r3 = r2.nextInt()\lr5 = r7.spreads[r3]\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0028|if (r5 == null) goto L12\l}"];
+Node_33 [shape=record,label="{33\:\ 0x002a|SYNTHETIC\l}"];
+Node_26 [shape=record,label="{26\:\ 0x002a|if (r1 \>= r3) goto L9\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002c|java.lang.System.arraycopy(r8, r1, r9, r0, r3 \- r1)\lint r0 = r0 + (r3 \- r1)\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0034|PHI: r0 \l  PHI: (r0v5 'dstIndex' int) = (r0v3 'dstIndex' int), (r0v7 'dstIndex' int) binds: [B:26:0x002a, B:27:0x002c] A[DONT_GENERATE, DONT_INLINE]\l|int r6 = getSize(r5)\ljava.lang.System.arraycopy(r5, 0, r9, r0, r6)\lint r0 = r0 + r6\lint r1 = r3 + 1\l}"];
+Node_37 [shape=record,label="{37\:\ 0x001a|SYNTHETIC\l}"];
+Node_35 [shape=record,label="{35\:\ 0x001a|LOOP_END\lSYNTHETIC\lLOOP:0: B:22:0x001a\-\>B:35:0x001a\lPHI: r0 r1 \l  PHI: (r0v4 'dstIndex' int) = (r0v3 'dstIndex' int), (r0v6 'dstIndex' int) binds: [B:36:0x001a, B:37:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v2 'copyValuesFrom' int) = (r1v1 'copyValuesFrom' int), (r1v3 'copyValuesFrom' int) binds: [B:36:0x001a, B:37:0x001a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_36 [shape=record,label="{36\:\ 0x001a|SYNTHETIC\l}"];
+Node_34 [shape=record,label="{34\:\ 0x003f|SYNTHETIC\l}"];
+Node_29 [shape=record,label="{29\:\ 0x003f|int r2 = r7.size\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0041|if (r1 \>= r2) goto L17\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0043|java.lang.System.arraycopy(r8, r1, r9, r0, r2 \- r1)\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0047|RETURN\l|return r9\l}"];
+Node_20 [shape=record,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final T kotlin.jvm.internal.PrimitiveSpreadBuilder.toArray((r7v0 'this' kotlin.jvm.internal.PrimitiveSpreadBuilder\<T\> A[IMMUTABLE_TYPE, THIS]), (r8v0 'values' T A[D('values' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'result' T A[D('result' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:25:0x0028 \-\> B:22:0x001a, BACK_EDGE: B:28:0x0034 \-\> B:22:0x001a, CROSS_EDGE: B:26:0x002a \-\> B:28:0x0034, CROSS_EDGE: B:30:0x0041 \-\> B:32:0x0047\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lJadxCommentsAttr\{\l WARN: \l \-\> Type inference failed for: r2v1, types: [kotlin.collections.IntIterator]\}\lSIGNATURE: (TT;TT;)TT;\l}"];
+MethodNode -> Node_19;Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_34;
+Node_24 -> Node_25;
+Node_25 -> Node_33[style=dashed];
+Node_25 -> Node_36;
+Node_33 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_28;
+Node_28 -> Node_37;
+Node_37 -> Node_35;
+Node_35 -> Node_22;
+Node_36 -> Node_35;
+Node_34 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_32;
+Node_31 -> Node_32;
+Node_32 -> Node_20;
+}
+

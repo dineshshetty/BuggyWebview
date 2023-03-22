@@ -1,0 +1,41 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.zip(Ljava\/lang\/Iterable;Ljava\/lang\/Iterable;)Ljava\/util\/List;" {
+subgraph cluster_Region_1589355164 {
+label = "R(3:1|(1:6)|9)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"other\")\ljava.util.Iterator java.util.Iterator r2 = r8.iterator()\ljava.util.Iterator java.util.Iterator r3 = r9.iterator()\ljava.util.ArrayList java.util.ArrayList r4 = new java.util.ArrayList(java.lang.Math.min(kotlin.collections.CollectionsKt.collectionSizeOrDefault(r8, 10), kotlin.collections.CollectionsKt.collectionSizeOrDefault(r9, 10)))\l}"];
+subgraph cluster_LoopRegion_598998222 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x002b|if (r2.hasNext() != false) goto L4\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0031|ADDED_TO_REGION\l|if (r3.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_377065686 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0033|LOOP_END\lLOOP:0: B:27:0x0027\-\>B:31:0x0033\l|java.lang.Object java.lang.Object r5 = r2.next()\ljava.lang.Object java.lang.Object r6 = r3.next()\lr4.add(kotlin.TuplesKt.m15to(r5, r6))\l}"];
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x0047|RETURN\l|return r4\l}"];
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0027|LOOP_START\lLOOP:0: B:27:0x0027\-\>B:31:0x0033\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x002d}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0044|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0044}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0044|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<kotlin.Pair\<T, R\>\> kotlin.collections.CollectionsKt___CollectionsKt.zip((r8v0 java.lang.Iterable\<? extends T\> A[D('$this$zip' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'other' java.lang.Iterable\<? extends R\> A[D('other' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:31:0x0033 \-\> B:27:0x0027, CROSS_EDGE: B:28:0x002b \-\> B:32:0x0044\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;\>(Ljava\/lang\/Iterable\<+TT;\>;Ljava\/lang\/Iterable\<+TR;\>;)Ljava\/util\/List\<Lkotlin\/Pair\<TT;TR;\>;\>;\l}"];
+MethodNode -> Node_24;Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_28 -> Node_35[style=dashed];
+Node_30 -> Node_31;
+Node_30 -> Node_34[style=dashed];
+Node_31 -> Node_27;
+Node_33 -> Node_25;
+Node_24 -> Node_26;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_34 -> Node_32;
+Node_32 -> Node_33;
+Node_35 -> Node_32;
+}
+

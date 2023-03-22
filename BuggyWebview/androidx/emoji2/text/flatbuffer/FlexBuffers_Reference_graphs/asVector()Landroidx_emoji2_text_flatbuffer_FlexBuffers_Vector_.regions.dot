@@ -1,0 +1,82 @@
+digraph "CFG forandroidx.emoji2.text.flatbuffer.FlexBuffers.Reference.asVector()Landroidx\/emoji2\/text\/flatbuffer\/FlexBuffers$Vector;" {
+subgraph cluster_Region_1218403436 {
+label = "R(1:(2:(2:3|4)|(2:6|(2:8|9)(1:(2:12|13)(1:15)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1361877088 {
+label = "R(2:(2:3|4)|(2:6|(2:8|9)(1:(2:12|13)(1:15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_969686700 {
+label = "IF [B:19:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (isVector() != false) goto L3\l}"];
+subgraph cluster_Region_1038253028 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|androidx.emoji2.text.flatbuffer.ReadBuf androidx.emoji2.text.flatbuffer.ReadBuf r1 = r5.f85bb\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0017|RETURN\l|return new androidx.emoji2.text.flatbuffer.FlexBuffers.Vector(r1, androidx.emoji2.text.flatbuffer.FlexBuffers.indirect(r1, r5.end, r5.parentWidth), r5.byteWidth)\l}"];
+}
+}
+subgraph cluster_Region_2120742434 {
+label = "R(2:6|(2:8|9)(1:(2:12|13)(1:15)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0018|int int r0 = r5.type\l}"];
+subgraph cluster_IfRegion_651356558 {
+label = "IF [B:23:0x001c] THEN: R(2:8|9) ELSE: R(1:(2:12|13)(1:15))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001c|if (r0 == 15) goto L8\l}"];
+subgraph cluster_Region_206400890 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|androidx.emoji2.text.flatbuffer.ReadBuf androidx.emoji2.text.flatbuffer.ReadBuf r1 = r5.f85bb\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0030|RETURN\l|return new androidx.emoji2.text.flatbuffer.FlexBuffers.TypedVector(r1, androidx.emoji2.text.flatbuffer.FlexBuffers.indirect(r1, r5.end, r5.parentWidth), r5.byteWidth, 4)\l}"];
+}
+subgraph cluster_Region_1053274894 {
+label = "R(1:(2:12|13)(1:15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_743963342 {
+label = "IF [B:27:0x0035] THEN: R(2:12|13) ELSE: R(1:15) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0035|if (androidx.emoji2.text.flatbuffer.FlexBuffers.isTypedVector(r0) != false) goto L12\l}"];
+subgraph cluster_Region_1297765397 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0037|androidx.emoji2.text.flatbuffer.ReadBuf androidx.emoji2.text.flatbuffer.ReadBuf r1 = r5.f85bb\l}"];
+Node_29 [shape=record,label="{29\:\ 0x004e|RETURN\l|return new androidx.emoji2.text.flatbuffer.FlexBuffers.TypedVector(r1, androidx.emoji2.text.flatbuffer.FlexBuffers.indirect(r1, r5.end, r5.parentWidth), r5.byteWidth, androidx.emoji2.text.flatbuffer.FlexBuffers.toTypedVectorElementType(r5.type))\l}"];
+}
+subgraph cluster_Region_210363526 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0053|RETURN\l|return androidx.emoji2.text.flatbuffer.FlexBuffers.Vector.empty()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0031}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x004f}"];
+MethodNode[shape=record,label="{public androidx.emoji2.text.flatbuffer.FlexBuffers$Vector androidx.emoji2.text.flatbuffer.FlexBuffers.Reference.asVector((r5v0 'this' androidx.emoji2.text.flatbuffer.FlexBuffers$Reference A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0030 \-\> B:17:?, CROSS_EDGE: B:29:0x004e \-\> B:17:?, CROSS_EDGE: B:31:0x0053 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_17;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_26[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_17;
+Node_27 -> Node_28;
+Node_27 -> Node_30[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_17;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_26 -> Node_27;
+Node_30 -> Node_31;
+}
+

@@ -1,0 +1,25 @@
+digraph "CFG forandroidx.core.graphics.ColorUtils.circularInterpolate(FFF)F" {
+Node_10 [shape=record,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0000}"];
+Node_13 [shape=record,label="{13\:\ 0x000c|if ((java.lang.Math.abs(r4 \- r3) \> 180.0f ? 1 : (java.lang.Math.abs(r4 \- r3) == 180.0f ? 0 : \-1)) \<= 0) goto L7\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000e}"];
+Node_15 [shape=record,label="{15\:\ 0x0010|if ((r4 \> r3 ? 1 : (r4 == r3 ? 0 : \-1)) \<= 0) goto L6\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0012|float r3 = r3 + 360.0f\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0014|float r4 = r4 + 360.0f\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0015|PHI: r3 r4 \l  PHI: (r3v1 'a' float) = (r3v0 'a' float), (r3v0 'a' float), (r3v2 'a' float) binds: [B:13:0x000c, B:17:0x0014, B:16:0x0012] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'b' float) = (r4v0 'b' float), (r4v2 'b' float), (r4v0 'b' float) binds: [B:13:0x000c, B:17:0x0014, B:16:0x0012] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_19 [shape=record,label="{19\:\ 0x001b|RETURN\l|return (((r4 \- r3) * r5) + r3) % 360.0f\l}"];
+Node_11 [shape=record,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static float androidx.core.graphics.ColorUtils.circularInterpolate((r3v0 'a' float A[D('a' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'b' float A[D('b' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'f' float A[D('f' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0014 \-\> B:18:0x0015, CROSS_EDGE: B:13:0x000c \-\> B:18:0x0015\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_10;Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_18;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_11;
+}
+

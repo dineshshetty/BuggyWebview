@@ -1,0 +1,49 @@
+digraph "CFG forkotlin.collections.AbstractList.lastIndexOf(Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_1530759324 {
+label = "R(3:1|(2:4|(1:8))|11)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|java.util.List kotlin.collections.AbstractList\<E\> r0 = r5\ljava.util.ListIterator java.util.ListIterator r2 = r0.listIterator(r0.size())\l}"];
+subgraph cluster_LoopRegion_686646204 {
+label = "LOOP:0: (2:4|(1:8))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|if (r2.hasPrevious() != false) goto L4\l}"];
+subgraph cluster_Region_55858242 {
+label = "R(2:4|(1:8))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0012|java.lang.Object java.lang.Object r3 = r2.previous()\l}"];
+subgraph cluster_IfRegion_1816960304 {
+label = "IF [B:19:0x001b] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001b|LOOP_END\lLOOP:0: B:16:0x000c\-\>B:19:0x001b\l|if (kotlin.jvm.internal.Intrinsics.areEqual(r3, r6) != false) goto L6\l}"];
+subgraph cluster_Region_1526896548 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return r2.nextIndex()\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0022|RETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000c|LOOP_START\lLOOP:0: B:16:0x000c\-\>B:19:0x001b\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001d|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001d}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0022|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int kotlin.collections.AbstractList.lastIndexOf((r5v0 'this' kotlin.collections.AbstractList\<E\> A[IMMUTABLE_TYPE, THIS]), (r6v0 E A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:19:0x001b \-\> B:16:0x000c, CROSS_EDGE: B:21:0x0022 \-\> B:22:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (TE;)I\lMETHOD_OVERRIDE: [ClspMth\{java.util.List.lastIndexOf(java.lang.Object):int\}]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_16[style=dashed];
+Node_19 -> Node_24;
+Node_25 -> Node_14;
+Node_21 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_24 -> Node_20;
+Node_20 -> Node_25;
+Node_23 -> Node_21;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.customview.widget.ViewDragHelper.clearMotionHistory(I)V" {
+subgraph cluster_Region_692291480 {
+label = "R(1:(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1959643007 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_514197648 {
+label = "IF [B:14:0x0002, B:16:0x0008] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r2.mInitialMotionX == null) goto L9\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0008|ADDED_TO_REGION\l|if (isPointerDown(r3) == false) goto L8\l}"];
+subgraph cluster_Region_1974027975 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1080254637 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|r2.mInitialMotionX[r3] = 0.0f\lr2.mInitialMotionY[r3] = 0.0f\lr2.mLastMotionX[r3] = 0.0f\lr2.mLastMotionY[r3] = 0.0f\lr2.mInitialEdgesTouched[r3] = 0\lr2.mEdgeDragsInProgress[r3] = 0\lr2.mEdgeDragsLocked[r3] = 0\lr2.mPointersDown &= ~(1 \<\< r3)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0004}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0031}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0032|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private void androidx.customview.widget.ViewDragHelper.clearMotionHistory((r2v0 'this' androidx.customview.widget.ViewDragHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 'pointerId' int A[D('pointerId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0032 \-\> B:12:?, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_19 -> Node_12;
+Node_20 -> Node_12;
+}
+

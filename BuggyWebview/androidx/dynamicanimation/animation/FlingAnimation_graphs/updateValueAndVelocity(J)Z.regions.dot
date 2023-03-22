@@ -1,0 +1,62 @@
+digraph "CFG forandroidx.dynamicanimation.animation.FlingAnimation.updateValueAndVelocity(J)Z" {
+subgraph cluster_Region_1950757707 {
+label = "R(2:1|(2:3|4)(1:(1:11)(2:8|9)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.dynamicanimation.animation.DynamicAnimation$MassState androidx.dynamicanimation.animation.DynamicAnimation.MassState r0 = r4.mFlingForce.updateValueAndVelocity(r4.mValue, r4.mVelocity, r5)\lr4.mValue = r0.mValue\lr4.mVelocity = r0.mVelocity\l}"];
+subgraph cluster_IfRegion_1327215672 {
+label = "IF [B:3:0x0019] THEN: R(2:3|4) ELSE: R(1:(1:11)(2:8|9))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0019|if (r4.mValue \< r4.mMinValue) goto L3\l}"];
+subgraph cluster_Region_1804206326 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001b|r4.mValue = r4.mMinValue\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1467260349 {
+label = "R(1:(1:11)(2:8|9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_170017353 {
+label = "IF [B:7:0x0026] THEN: R(1:11) ELSE: R(2:8|9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|if (r4.mValue \<= r4.mMaxValue) goto L10\l}"];
+subgraph cluster_Region_411733313 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0035|RETURN\l|return isAtEquilibrium(r4.mValue, r4.mVelocity)\l}"];
+}
+subgraph cluster_Region_591180566 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0028|r4.mValue = r4.mMaxValue\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002c|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0020}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002d}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0037}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0038}"];
+MethodNode[shape=record,label="{boolean androidx.dynamicanimation.animation.FlingAnimation.updateValueAndVelocity((r4v0 'this' androidx.dynamicanimation.animation.FlingAnimation A[IMMUTABLE_TYPE, THIS]), (r5v0 'deltaT' long A[D('deltaT' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x002c \-\> B:1:?, CROSS_EDGE: B:12:0x0037 \-\> B:1:?, CROSS_EDGE: B:14:0x0039 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.dynamicanimation.animation.DynamicAnimation.updateValueAndVelocity(long):boolean]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_13;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_12 -> Node_1;
+Node_13 -> Node_1;
+}
+

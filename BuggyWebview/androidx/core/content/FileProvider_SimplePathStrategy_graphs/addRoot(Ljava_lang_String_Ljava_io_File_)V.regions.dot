@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.core.content.FileProvider.SimplePathStrategy.addRoot(Ljava\/lang\/String;Ljava\/io\/File;)V" {
+subgraph cluster_Region_1310589442 {
+label = "R(1:(2:(1:4)|(1:(2:7|8))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1455773375 {
+label = "R(2:(1:4)|(1:(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2099394335 {
+label = "IF [B:3:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.text.TextUtils.isEmpty(r5) != false) goto L3\l}"];
+subgraph cluster_Region_1678499824 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0031|throw new java.lang.IllegalArgumentException(\"Name must not be empty\")\l}"];
+}
+}
+subgraph cluster_Region_1513869153 {
+label = "R(1:(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_641145399 {
+label = "Try: R(2:7|8) catches: R(3:11|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1254181665 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IOException \-\> 0x0012, blocks: (B:4:0x0006), top: B:12:0x0006 \}\lCatch: IOException \-\> 0x0012\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|r4.mRoots.put(r5, r6.getCanonicalFile())\l}"];
+}
+subgraph cluster_Region_1880091094 {
+label = "R(3:11|12|13) | ExcHandler: IOException \-\> 0x0012\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|ExcHandler: IOException \-\> 0x0012\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0013}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|throw new java.lang.IllegalArgumentException(\"Failed to resolve canonical path for \" + r6, r0)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1880091094 {
+label = "R(3:11|12|13) | ExcHandler: IOException \-\> 0x0012\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|ExcHandler: IOException \-\> 0x0012\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0013}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|throw new java.lang.IllegalArgumentException(\"Failed to resolve canonical path for \" + r6, r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0006|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{void androidx.core.content.FileProvider.SimplePathStrategy.addRoot((r4v0 'this' androidx.core.content.FileProvider$SimplePathStrategy A[IMMUTABLE_TYPE, THIS]), (r5v0 'name' java.lang.String A[D('name' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'root' java.io.File A[D('root' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x0011 \-\> B:1:?, CROSS_EDGE: B:9:0x0029 \-\> B:1:?, CROSS_EDGE: B:12:0x0006 \-\> B:7:0x0012\lINLINE_NOT_NEEDED\lTryCatch #0 \{IOException \-\> 0x0012, blocks: (B:4:0x0006), top: B:12:0x0006 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_10;
+Node_3 -> Node_12[style=dashed];
+Node_11 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_13;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_10 -> Node_11;
+Node_12 -> Node_4;
+Node_12 -> Node_7;
+Node_6 -> Node_1;
+Node_13 -> Node_7;
+}
+

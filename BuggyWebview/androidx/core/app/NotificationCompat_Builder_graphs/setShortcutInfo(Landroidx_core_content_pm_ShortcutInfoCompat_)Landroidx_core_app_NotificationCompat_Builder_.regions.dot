@@ -1,0 +1,96 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.Builder.setShortcutInfo(Landroidx\/core\/content\/pm\/ShortcutInfoCompat;)Landroidx\/core\/app\/NotificationCompat$Builder;" {
+subgraph cluster_Region_531249324 {
+label = "R(1:(2:(1:2)|(4:4|(1:(1:8)(1:(1:11)))|(1:14)|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1740635085 {
+label = "R(2:(1:2)|(4:4|(1:(1:8)(1:(1:11)))|(1:14)|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_187847008 {
+label = "IF [B:18:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|if (r3 == null) goto L2\l}"];
+subgraph cluster_Region_93746244 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1261916930 {
+label = "R(4:4|(1:(1:8)(1:(1:11)))|(1:14)|15)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0003|r2.mShortcutId = r3.getId()\l}"];
+subgraph cluster_IfRegion_1406052410 {
+label = "IF [B:21:0x000b] THEN: R(1:(1:8)(1:(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000b|if (r2.mLocusId == null) goto L6\l}"];
+subgraph cluster_Region_1248746098 {
+label = "R(1:(1:8)(1:(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2087461679 {
+label = "IF [B:23:0x0011] THEN: R(1:8) ELSE: R(1:(1:11))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0011|if (r3.getLocusId() != null) goto L8\l}"];
+subgraph cluster_Region_221434083 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0013|r2.mLocusId = r3.getLocusId()\l}"];
+}
+subgraph cluster_Region_723199495 {
+label = "R(1:(1:11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_320750812 {
+label = "IF [B:26:0x001e] THEN: R(1:11) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001e|if (r3.getId() != null) goto L11\l}"];
+subgraph cluster_Region_251029707 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0020|r2.mLocusId = new androidx.core.content.LocusIdCompat(r3.getId())\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_366478398 {
+label = "IF [B:29:0x002d] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002d|if (r2.mContentTitle == null) goto L14\l}"];
+subgraph cluster_Region_1736520604 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x002f|setContentTitle(r3.getShortLabel())\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0036|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000d}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001a}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x002b}"];
+MethodNode[shape=record,label="{public androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat.Builder.setShortcutInfo((r2v0 'this' androidx.core.app.NotificationCompat$Builder A[IMMUTABLE_TYPE, THIS]), (r3v0 'shortcutInfo' androidx.core.content.pm.ShortcutInfoCompat A[D('shortcutInfo' androidx.core.content.pm.ShortcutInfoCompat), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0036 \-\> B:17:?, CROSS_EDGE: B:29:0x002d \-\> B:31:0x0036, CROSS_EDGE: B:27:0x0020 \-\> B:28:0x002b, CROSS_EDGE: B:26:0x001e \-\> B:28:0x002b, CROSS_EDGE: B:21:0x000b \-\> B:28:0x002b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_17;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_28[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_28;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+Node_16 -> Node_18;
+Node_22 -> Node_23;
+Node_25 -> Node_26;
+Node_28 -> Node_29;
+}
+

@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.material.bottomappbar.BottomAppBar.maybeAnimateMenuView(IZ)V" {
+subgraph cluster_Region_973402108 {
+label = "R(1:(2:(2:3|4)|(5:6|(1:8)|9|(1:11)|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_979535419 {
+label = "R(2:(2:3|4)|(5:6|(1:8)|9|(1:11)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_415801044 {
+label = "IF [B:17:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (androidx.core.view.ViewCompat.isLaidOut(r3) == false) goto L3\l}"];
+subgraph cluster_Region_107583857 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|r3.menuAnimatingWithFabAlignmentMode = false\lreplaceMenu(r3.pendingMenuResId)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000e|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_127986873 {
+label = "R(5:6|(1:8)|9|(1:11)|12)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000f|android.animation.Animator android.animation.Animator r0 = r3.menuAnimator\l}"];
+subgraph cluster_IfRegion_690041149 {
+label = "IF [B:21:0x0011] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0011|if (r0 != null) goto L8\l}"];
+subgraph cluster_Region_1076134569 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0013|r0.cancel()\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0016|java.util.ArrayList java.util.List\<android.animation.Animator\> r0 = new java.util.ArrayList\<\>()\l}"];
+subgraph cluster_IfRegion_454032719 {
+label = "IF [B:24:0x001f] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001f|if (isFabVisibleOrWillBeShown() == false) goto L11\l}"];
+subgraph cluster_Region_896721739 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0021|r4 = 0\lr5 = false\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0023|PHI: r4 r5 \l  PHI: (r4v1 'targetMode' int) = (r4v0 'targetMode' int), (r4v2 'targetMode' int) binds: [B:24:0x001f, B:25:0x0021] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 'newFabAttached' boolean) = (r5v0 'newFabAttached' boolean), (r5v2 'newFabAttached' boolean) binds: [B:24:0x001f, B:25:0x0021] A[DONT_GENERATE, DONT_INLINE]\l|createMenuViewTranslationAnimation(r4, r5, r0)\landroid.animation.AnimatorSet android.animation.AnimatorSet r1 = new android.animation.AnimatorSet()\lr1.playTogether(r0)\lr3.menuAnimator = r1\lr1.addListener(new com.google.android.material.bottomappbar.BottomAppBar.C05996())\lr3.menuAnimator.start()\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x003d}"];
+MethodNode[shape=record,label="{public void com.google.android.material.bottomappbar.BottomAppBar.maybeAnimateMenuView((r3v0 'this' com.google.android.material.bottomappbar.BottomAppBar A[IMMUTABLE_TYPE, THIS]), (r4v0 'targetMode' int A[D('targetMode' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'newFabAttached' boolean A[D('newFabAttached' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x003d \-\> B:15:?, CROSS_EDGE: B:24:0x001f \-\> B:26:0x0023, CROSS_EDGE: B:21:0x0011 \-\> B:23:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_15;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_27 -> Node_15;
+}
+

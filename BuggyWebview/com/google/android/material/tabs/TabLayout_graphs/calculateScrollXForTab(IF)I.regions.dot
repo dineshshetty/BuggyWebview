@@ -1,0 +1,101 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.calculateScrollXForTab(IF)I" {
+subgraph cluster_Region_1022459888 {
+label = "R(2:1|(2:(5:(1:11)(1:21)|12|13|15|(2:(1:18)|(1:20)))|(1:8))) | DECL_VAR: android.view.View selectedChild, android.view.View nextChild\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0000|int int r0 = r7.mode\l}"];
+subgraph cluster_Region_1274193206 {
+label = "R(2:(5:(1:11)(1:21)|12|13|15|(2:(1:18)|(1:20)))|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1079222303 {
+label = "IF [B:26:0x0004, B:27:0x0006, B:31:0x0010] THEN: R(5:(1:11)(1:21)|12|13|15|(2:(1:18)|(1:20))) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0004|if (r0 == 0) goto L6\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0006|ADDED_TO_REGION\l|if (r0 == 2) goto L6\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0010|ADDED_TO_REGION\l|if ((r0 = r7.slidingTabIndicator.getChildAt(r8)) != null) goto L9\l}"];
+subgraph cluster_Region_771220020 {
+label = "R(5:(1:11)(1:21)|12|13|15|(2:(1:18)|(1:20)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_745335960 {
+label = "IF [B:34:0x001b] THEN: R(1:11) ELSE: R(1:21)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x001b|if ((r8 + 1) \< r7.slidingTabIndicator.getChildCount()) goto L11\l}"];
+subgraph cluster_Region_449708130 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x001d|android.view.View r3 = r7.slidingTabIndicator.getChildAt(r8 + 1)\l}"];
+}
+subgraph cluster_Region_881994588 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0026|r3 = null\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x0027|PHI: r3 \l  PHI: (r3v2 'nextChild' android.view.View) = (r3v1 'nextChild' android.view.View), (r3v4 'nextChild' android.view.View) binds: [B:36:0x0026, B:35:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|int int r4 = r0.getWidth()\l}"];
+Node_38 [shape=record,label="{38\:\ 0x002c|int r1 = r3 != null ? r3.getWidth() : 0\l}"];
+Node_40 [shape=record,label="{40\:\ 0x0032|PHI: r1 \l  PHI: (r1v1 'nextWidth' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|int int r5 = (r0.getLeft() + (r4 \/ 2)) \- (getWidth() \/ 2)\lint int r2 = (int) ((r4 + r1) * 0.5f * r9)\l}"];
+subgraph cluster_Region_108687286 {
+label = "R(2:(1:18)|(1:20))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1415166314 {
+label = "IF [B:41:0x004d] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x004d|if (androidx.core.view.ViewCompat.getLayoutDirection(r7) == 0) goto L17\l}"];
+subgraph cluster_Region_1895431373 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ ?|SYNTHETIC\lRETURN\l|return r5 + r2\l}"];
+}
+}
+subgraph cluster_Region_1435820357 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0054|RETURN\lORIG_RETURN\l|return r5 \- r2\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_182218178 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0012|RETURN\l|return 0\l}"];
+}
+}
+}
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0009|RETURN\lADDED_TO_REGION\l|return 0\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x000a}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0013}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x002e}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x004f}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0052}"];
+MethodNode[shape=record,label="{private int com.google.android.material.tabs.TabLayout.calculateScrollXForTab((r7v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]), (r8v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'positionOffset' float A[D('positionOffset' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x0012 \-\> B:24:?, CROSS_EDGE: B:44:0x0054 \-\> B:24:?, CROSS_EDGE: B:43:0x0052 \-\> B:44:0x0054, CROSS_EDGE: B:38:0x002c \-\> B:40:0x0032, CROSS_EDGE: B:36:0x0026 \-\> B:37:0x0027, CROSS_EDGE: B:26:0x0004 \-\> B:30:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_23;Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_30;
+Node_27 -> Node_29[style=dashed];
+Node_27 -> Node_30;
+Node_31 -> Node_32[style=dashed];
+Node_31 -> Node_33;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_37;
+Node_36 -> Node_37;
+Node_37 -> Node_38;
+Node_38 -> Node_39;
+Node_38 -> Node_40;
+Node_40 -> Node_41;
+Node_41 -> Node_42;
+Node_41 -> Node_43[style=dashed];
+Node_45 -> Node_24;
+Node_44 -> Node_24;
+Node_32 -> Node_24;
+Node_23 -> Node_25;
+Node_29 -> Node_24;
+Node_30 -> Node_31;
+Node_33 -> Node_34;
+Node_39 -> Node_40;
+Node_42 -> Node_45;
+Node_43 -> Node_44;
+}
+

@@ -1,0 +1,71 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDialogFragment.setupDialog(Landroid\/app\/Dialog;I)V" {
+subgraph cluster_Region_2715095 {
+label = "R(1:(2:(4:3|4|6|7)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_259540940 {
+label = "R(2:(4:3|4|6|7)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_359336216 {
+label = "IF [B:17:0x0002] THEN: R(4:3|4|6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if ((r4 instanceof androidx.appcompat.app.AppCompatDialog) != false) goto L3\l}"];
+subgraph cluster_Region_1668835694 {
+label = "R(4:3|4|6|7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|androidx.appcompat.app.AppCompatDialog androidx.appcompat.app.AppCompatDialog r0 = (androidx.appcompat.app.AppCompatDialog) r4\l}"];
+subgraph cluster_SwitchRegion_1740556153 {
+label = "Switch: 3
+ case 1, 2 -> R(1:1)
+ case default -> R(1:9)
+ case 3 -> R(2:5|1)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0007|switch(r5) \{\l    case 1: goto L6;\l    case 2: goto L6;\l    case 3: goto L5;\l    default: goto L9;\l\}\l}"];
+subgraph cluster_Region_741497228 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_1639525857 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_752339719 {
+label = "R(1:9) | FALL_THROUGH\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_1036207339 {
+label = "R(2:5|1)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000b|FALL_THROUGH\l|r4.getWindow().addFlags(24)\l}"];
+Node_InsnContainer_50566374 [shape=record,label="{|break\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0014|r0.supportRequestWindowFeature(1)\l}"];
+Node_26 [shape=record,label="{26\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_729642818 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|super.setupDialog(r4, r5)\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001c|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.app.AppCompatDialogFragment.setupDialog((r3v0 'this' androidx.appcompat.app.AppCompatDialogFragment A[IMMUTABLE_TYPE, THIS]), (r4v0 'dialog' android.app.Dialog A[D('dialog' android.app.Dialog), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'style' int A[D('style' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0007 \-\> B:22:0x0014, CROSS_EDGE: B:19:0x0007 \-\> B:25:0x001c, CROSS_EDGE: B:24:0x0019 \-\> B:25:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.fragment.app.DialogFragment.setupDialog(android.app.Dialog, int):void]\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_21;
+Node_19 -> Node_22;
+Node_19 -> Node_27;
+Node_27 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_26;
+Node_26 -> Node_15;
+Node_24 -> Node_25;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_25 -> Node_15;
+}
+

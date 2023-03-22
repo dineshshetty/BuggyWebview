@@ -1,0 +1,44 @@
+digraph "CFG forcom.google.android.material.appbar.CollapsingToolbarLayout.updateContentScrimBounds(Landroid\/graphics\/drawable\/Drawable;Landroid\/view\/View;II)V" {
+subgraph cluster_Region_279973991 {
+label = "R(2:(1:6)(1:10)|7) | DECL_VAR: int bottom\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_115072415 {
+label = "IF [B:3:0x0004, B:4:0x0006, B:6:0x000a] THEN: R(1:6) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (isTitleCollapseFadeMode() != false) goto L3\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|ADDED_TO_REGION\l|if (r4 != null) goto L4\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000a|ADDED_TO_REGION\l|if (r2.collapsingTitleEnabled != false) goto L6\l}"];
+subgraph cluster_Region_1124817163 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|int r0 = r4.getBottom()\l}"];
+}
+subgraph cluster_Region_925992103 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0011|r0 = r6\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0012|PHI: r0 \l  PHI: (r0v2 'bottom' int) = (r0v1 'bottom' int), (r0v4 'bottom' int) binds: [B:8:0x0011, B:7:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|r3.setBounds(0, 0, r5, r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0017}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.appbar.CollapsingToolbarLayout.updateContentScrimBounds((r2v0 'this' com.google.android.material.appbar.CollapsingToolbarLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 'contentScrim' android.graphics.drawable.Drawable A[D('contentScrim' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'toolbar' android.view.View A[D('toolbar' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'width' int A[D('width' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'height' int A[D('height' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0011 \-\> B:9:0x0012, CROSS_EDGE: B:4:0x0006 \-\> B:8:0x0011, CROSS_EDGE: B:3:0x0004 \-\> B:8:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_10 -> Node_1;
+}
+

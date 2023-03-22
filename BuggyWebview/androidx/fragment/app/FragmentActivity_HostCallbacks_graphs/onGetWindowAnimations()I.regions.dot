@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.fragment.app.FragmentActivity.HostCallbacks.onGetWindowAnimations()I" {
+subgraph cluster_Region_1980337683 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.Window android.view.Window r0 = androidx.fragment.app.FragmentActivity.this.getWindow()\l}"];
+subgraph cluster_Region_2047867046 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_237593843 {
+label = "IF [B:3:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_603532444 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1084081305 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|RETURN\lORIG_RETURN\l|return r0.getAttributes().windowAnimations\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000a}"];
+MethodNode[shape=record,label="{public int androidx.fragment.app.FragmentActivity.HostCallbacks.onGetWindowAnimations((r2v0 'this' androidx.fragment.app.FragmentActivity$HostCallbacks A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lMETHOD_OVERRIDE: [androidx.fragment.app.FragmentHostCallback.onGetWindowAnimations():int]\lCROSS_EDGE: B:5:0x000a \-\> B:6:0x0010\lTYPE_VARS: EMPTY\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_5 -> Node_6;
+}
+

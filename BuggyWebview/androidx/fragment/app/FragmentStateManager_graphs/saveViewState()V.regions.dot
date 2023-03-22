@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.fragment.app.FragmentStateManager.saveViewState()V" {
+subgraph cluster_Region_1957658135 {
+label = "R(1:(2:(1:3)|(4:5|(1:7)|8|(1:(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2143199555 {
+label = "R(2:(1:3)|(4:5|(1:7)|8|(1:(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1675858146 {
+label = "IF [B:16:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|if (r3.mFragment.mView == null) goto L3\l}"];
+subgraph cluster_Region_1686198091 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_667345122 {
+label = "R(4:5|(1:7)|8|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0007|android.util.SparseArray android.util.SparseArray\<android.os.Parcelable\> r0 = new android.util.SparseArray\<\>()\lr3.mFragment.mView.saveHierarchyState(r0)\l}"];
+subgraph cluster_IfRegion_1848250971 {
+label = "IF [B:19:0x0017] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0017|if (r0.size() \> 0) goto L7\l}"];
+subgraph cluster_Region_834246044 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0019|r3.mFragment.mSavedViewState = r0\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x001d|android.os.Bundle android.os.Bundle r1 = new android.os.Bundle()\lr3.mFragment.mViewLifecycleOwner.performSave(r1)\l}"];
+subgraph cluster_Region_1808908810 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1303178188 {
+label = "IF [B:22:0x002d] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002d|if (r1.isEmpty() == false) goto L10\l}"];
+subgraph cluster_Region_1568523115 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002f|r3.mFragment.mSavedViewRegistryState = r1\l}"];
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0033|ORIG_RETURN\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentStateManager.saveViewState((r3v0 'this' androidx.fragment.app.FragmentStateManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:24:0x0033 \-\> B:14:?, CROSS_EDGE: B:22:0x002d \-\> B:24:0x0033, CROSS_EDGE: B:19:0x0017 \-\> B:21:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_14;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_23 -> Node_24;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_24 -> Node_14;
+Node_25 -> Node_14;
+}
+

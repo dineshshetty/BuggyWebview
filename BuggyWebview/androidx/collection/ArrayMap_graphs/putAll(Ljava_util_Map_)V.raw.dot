@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.collection.ArrayMap.putAll(Ljava\/util\/Map;)V" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: IGET  (r0 I:int) = (r4 I:androidx.collection.ArrayMap A[D('this' androidx.collection.ArrayMap\<K, V\>)]) androidx.collection.ArrayMap.mSize int  (LINE:142)\l0x0002: INVOKE  (r1 I:int) = (r5 I:java.util.Map A[D('map' java.util.Map\<? extends K, ? extends V\>)]) type: INTERFACE call: java.util.Map.size():int A[MD:():int (c)]\l0x0006: ARITH  (r0 I:int) = (r0 I:int) + (r1 I:int) \l0x0007: INVOKE  (r4 I:androidx.collection.ArrayMap A[D('this' androidx.collection.ArrayMap\<K, V\>)]), (r0 I:int) type: VIRTUAL call: androidx.collection.ArrayMap.ensureCapacity(int):void A[MD:(int):void (m)]\l0x000a: INVOKE  (r0 I:java.util.Set) = (r5 I:java.util.Map A[D('map' java.util.Map\<? extends K, ? extends V\>)]) type: INTERFACE call: java.util.Map.entrySet():java.util.Set A[MD:():java.util.Set\<java.util.Map$Entry\<K, V\>\> (c)] (LINE:143)\l0x000e: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.Set) type: INTERFACE call: java.util.Set.iterator():java.util.Iterator A[MD:():java.util.Iterator\<E\> (c)]\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0012|LOOP_START\lLOOP:0: B:11:0x0012\-\>B:13:0x0018\l|0x0012: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0016|0x0016: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:15:0x002a \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0018|LOOP_END\lLOOP:0: B:11:0x0012\-\>B:13:0x0018\l|0x0018: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x001c: CHECK_CAST (r1 I:java.util.Map$Entry) = (java.util.Map$Entry) (r1 I:??[OBJECT, ARRAY]) \l0x001e: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Map$Entry A[D('entry' java.util.Map$Entry\<? extends K, ? extends V\>)]) type: INTERFACE call: java.util.Map.Entry.getKey():java.lang.Object A[MD:():K (c)] (LINE:144)\l0x0022: INVOKE  (r3 I:java.lang.Object) = (r1 I:java.util.Map$Entry A[D('entry' java.util.Map$Entry\<? extends K, ? extends V\>)]) type: INTERFACE call: java.util.Map.Entry.getValue():java.lang.Object A[MD:():V (c)]\l0x0026: INVOKE  \l  (r4 I:androidx.collection.ArrayMap A[D('this' androidx.collection.ArrayMap\<K, V\>)])\l  (r2 I:java.lang.Object)\l  (r3 I:java.lang.Object)\l type: VIRTUAL call: androidx.collection.ArrayMap.put(java.lang.Object, java.lang.Object):java.lang.Object A[MD:(K, V):V (m)]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x002a|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x002a|RETURN\l|0x002a: RETURN    (LINE:146)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.collection.ArrayMap.putAll((r4 'this' I:androidx.collection.ArrayMap\<K, V\> A[D('this' androidx.collection.ArrayMap\<K, V\>), IMMUTABLE_TYPE, THIS]), (r5 I:java.util.Map\<? extends K, ? extends V\> A[D('map' java.util.Map\<? extends K, ? extends V\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:13:0x0018 \-\> B:11:0x0012\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: (Ljava\/util\/Map\<+TK;+TV;\>;)V\lDebug Info:\l  0x001e\-0x0029: r1 'entry' Ljava\/util\/Map$Entry;, signature: Ljava\/util\/Map$Entry\<+TK;+TV;\>;\l  0x0000\-0x002a: r4 'this' Landroidx\/collection\/ArrayMap;, signature: Landroidx\/collection\/ArrayMap\<TK;TV;\>;\l  0x0000\-0x002a: r5 'map' Ljava\/util\/Map;, signature: Ljava\/util\/Map\<+TK;+TV;\>;\lMETHOD_OVERRIDE: [ClspMth\{java.util.Map.putAll(java.util.Map\<? extends K, ? extends V\>):void\}]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_11;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

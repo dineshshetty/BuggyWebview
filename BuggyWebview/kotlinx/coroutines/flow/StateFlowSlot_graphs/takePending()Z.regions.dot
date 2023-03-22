@@ -1,0 +1,50 @@
+digraph "CFG forkotlinx.coroutines.flow.StateFlowSlot.takePending()Z" {
+subgraph cluster_Region_1412202338 {
+label = "R(2:1|(2:(1:6)|(2:8|9))) | DECL_VAR: kotlinx.coroutines.internal.Symbol null, kotlinx.coroutines.internal.Symbol null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.concurrent.atomic.AtomicReferenceFieldUpdater java.util.concurrent.atomic.AtomicReferenceFieldUpdater r0 = kotlinx.coroutines.flow.StateFlowSlot._state$FU\lkotlinx.coroutines.internal.Symbol r1 = kotlinx.coroutines.flow.StateFlowKt.NONE\ljava.lang.Object java.lang.Object r0 = r0.getAndSet(r5, r1)\lkotlin.jvm.internal.Intrinsics.checkNotNull(r0)\l}"];
+subgraph cluster_Region_683790609 {
+label = "R(2:(1:6)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_526706569 {
+label = "IF [B:3:0x0013, B:5:0x001a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|if (kotlinx.coroutines.Debug.getASSERTIONS_ENABLED() == true) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|ADDED_TO_REGION\l|if ((!(r0 instanceof kotlinx.coroutines.CancellableContinuationImpl)) == 0) goto L5\l}"];
+subgraph cluster_Region_1649864378 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|throw new java.lang.AssertionError()\l}"];
+}
+}
+subgraph cluster_Region_2066758333 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|kotlinx.coroutines.internal.Symbol r2 = kotlinx.coroutines.flow.StateFlowKt.PENDING\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0027|RETURN\l|return r0 == r2\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001d}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002a|ORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.flow.StateFlowSlot.takePending((r5v0 'this' kotlinx.coroutines.flow.StateFlowSlot A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x002b \-\> B:1:?, CROSS_EDGE: B:10:0x0027 \-\> B:13:0x002b, CROSS_EDGE: B:3:0x0013 \-\> B:9:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_7;
+Node_5 -> Node_9[style=dashed];
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_12;
+Node_10 -> Node_14;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_12 -> Node_1;
+Node_14 -> Node_1;
+}
+

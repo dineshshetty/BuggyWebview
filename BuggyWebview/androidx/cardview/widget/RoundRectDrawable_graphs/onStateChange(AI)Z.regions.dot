@@ -1,0 +1,65 @@
+digraph "CFG forandroidx.cardview.widget.RoundRectDrawable.onStateChange([I)Z" {
+subgraph cluster_Region_1123946690 {
+label = "R(5:1|2|(1:5)|6|(2:(2:10|11)|(1:13))) | DECL_VAR: android.graphics.PorterDuff$Mode null\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|android.content.res.ColorStateList android.content.res.ColorStateList r0 = r5.mBackground\lint int r0 = r0.getColorForState(r6, r0.getDefaultColor())\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0011|boolean r1 = r0 != r5.mPaint.getColor()\l}"];
+subgraph cluster_IfRegion_1270436413 {
+label = "IF [B:21:0x0016] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|PHI: r1 \l  PHI: (r1v4 'colorChanged' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != false) goto L5\l}"];
+subgraph cluster_Region_1185264685 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0018|r5.mPaint.setColor(r0)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x001d|android.content.res.ColorStateList android.content.res.ColorStateList r3 = r5.mTint\l}"];
+subgraph cluster_Region_1058297285 {
+label = "R(2:(2:10|11)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_132149615 {
+label = "IF [B:24:0x001f, B:26:0x0023] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001f|if (r3 != null) goto L8\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0023|ADDED_TO_REGION\l|if ((r4 = r5.mTintMode) != null) goto L10\l}"];
+subgraph cluster_Region_1821354338 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0025|r5.mTintFilter = createTintFilter(r3, r4)\l}"];
+Node_28 [shape=record,label="{28\:\ 0x002b|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_891952904 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002c|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0013}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0021}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0015}"];
+MethodNode[shape=record,label="{protected boolean androidx.cardview.widget.RoundRectDrawable.onStateChange((r5v0 'this' androidx.cardview.widget.RoundRectDrawable A[IMMUTABLE_TYPE, THIS]), (r6v0 'stateSet' int[] A[D('stateSet' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:29:0x002c \-\> B:16:?, CROSS_EDGE: B:24:0x001f \-\> B:29:0x002c, CROSS_EDGE: B:21:0x0016 \-\> B:23:0x001d, CROSS_EDGE: B:20:0x0015 \-\> B:21:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.graphics.drawable.Drawable.onStateChange(int[]):boolean\}]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_29[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_29[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_16;
+Node_29 -> Node_16;
+Node_15 -> Node_17;
+Node_19 -> Node_21;
+Node_25 -> Node_26;
+Node_20 -> Node_21;
+}
+

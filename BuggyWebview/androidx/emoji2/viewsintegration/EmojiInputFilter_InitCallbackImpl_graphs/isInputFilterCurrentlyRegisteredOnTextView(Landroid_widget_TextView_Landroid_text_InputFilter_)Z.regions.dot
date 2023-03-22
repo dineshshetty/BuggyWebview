@@ -1,0 +1,90 @@
+digraph "CFG forandroidx.emoji2.viewsintegration.EmojiInputFilter.InitCallbackImpl.isInputFilterCurrentlyRegisteredOnTextView(Landroid\/widget\/TextView;Landroid\/text\/InputFilter;)Z" {
+subgraph cluster_Region_2140312605 {
+label = "R(1:(2:(1:6)|(3:8|(1:(2:(1:15)|(1:13)))|17))) | DECL_VAR: android.text.InputFilter[] currentFilters\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1858576053 {
+label = "R(2:(1:6)|(3:8|(1:(2:(1:15)|(1:13)))|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_883493268 {
+label = "IF [B:24:0x0001, B:25:0x0003, B:28:0x000a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0001|if (r6 == null) goto L18\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0003|ADDED_TO_REGION\l|if (r5 == null) goto L18\l}"];
+Node_28 [shape=record,label="{28\:\ 0x000a|ADDED_TO_REGION\l|if ((r1 = r5.getFilters()) == null) goto L6\l}"];
+subgraph cluster_Region_977726704 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x000c|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1715964081 {
+label = "R(3:8|(1:(2:(1:15)|(1:13)))|17)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x000d|int r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_1369417177 {
+label = "LOOP:0: (1:(2:(1:15)|(1:13)))";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x000f|if (r2 \< r1.length) goto L11\l}"];
+subgraph cluster_Region_67091305 {
+label = "R(1:(2:(1:15)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2137450283 {
+label = "R(2:(1:15)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1917498715 {
+label = "IF [B:34:0x0013] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0013|if (r3 == r6) goto L14\l}"];
+subgraph cluster_Region_1591179174 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0015|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_236580415 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0017|LOOP_END\lLOOP:0: B:31:0x000e\-\>B:37:0x0017\l|r2++\l}"];
+}
+}
+}
+}
+Node_38 [shape=record,label="{38\:\ 0x001a|RETURN\l|return false\l}"];
+}
+}
+}
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0000}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0006}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x000e|LOOP_START\lLOOP:0: B:31:0x000e\-\>B:37:0x0017\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:30:0x000d, B:37:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0011}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0015|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x001a|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x001b|RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{private boolean androidx.emoji2.viewsintegration.EmojiInputFilter.InitCallbackImpl.isInputFilterCurrentlyRegisteredOnTextView((r4v0 'this' androidx.emoji2.viewsintegration.EmojiInputFilter$InitCallbackImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 'textView' android.widget.TextView A[D('textView' android.widget.TextView), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'myInputFilter' android.text.InputFilter A[D('myInputFilter' android.text.InputFilter), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:36:0x0016 \-\> B:22:?, BACK_EDGE: B:37:0x0017 \-\> B:31:0x000e, CROSS_EDGE: B:38:0x001a \-\> B:22:?, CROSS_EDGE: B:39:0x001b \-\> B:22:?, CROSS_EDGE: B:24:0x0001 \-\> B:39:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_21;Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_39;
+Node_25 -> Node_27[style=dashed];
+Node_25 -> Node_39;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_22;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_32 -> Node_41[style=dashed];
+Node_34 -> Node_37[style=dashed];
+Node_34 -> Node_40;
+Node_35 -> Node_22;
+Node_37 -> Node_31;
+Node_38 -> Node_22;
+Node_21 -> Node_23;
+Node_23 -> Node_24;
+Node_27 -> Node_28;
+Node_31 -> Node_32;
+Node_33 -> Node_34;
+Node_40 -> Node_35;
+Node_41 -> Node_38;
+Node_39 -> Node_22;
+}
+

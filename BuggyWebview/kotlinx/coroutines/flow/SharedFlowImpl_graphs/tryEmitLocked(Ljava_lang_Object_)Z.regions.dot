@@ -1,0 +1,110 @@
+digraph "CFG forkotlinx.coroutines.flow.SharedFlowImpl.tryEmitLocked(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_251940654 {
+label = "R(1:(2:(1:4)|(5:(2:10|11)|14|(1:16)|(1:19)|20)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1259227566 {
+label = "R(2:(1:4)|(5:(2:10|11)|14|(1:16)|(1:19)|20))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_974138531 {
+label = "IF [B:26:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0004|if (getNCollectors() == 0) goto L3\l}"];
+subgraph cluster_Region_1240529462 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000a|RETURN\l|return tryEmitNoCollectorsLocked(r15)\l}"];
+}
+}
+subgraph cluster_Region_1397098629 {
+label = "R(5:(2:10|11)|14|(1:16)|(1:19)|20)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1688248601 {
+label = "IF [B:30:0x0010, B:32:0x0018] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0010|if (r14.bufferSize \>= r14.bufferCapacity) goto L8\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0018|ADDED_TO_REGION\l|if (r14.minCollectorIndex \<= r14.replayIndex) goto L10\l}"];
+subgraph cluster_Region_1566230298 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x001a}"];
+subgraph cluster_SwitchRegion_1712622886 {
+label = "Switch: 2
+ case 1 -> R(1:13)
+ case 2 -> R(1:12)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0024|switch(kotlinx.coroutines.flow.SharedFlowImpl.WhenMappings.$EnumSwitchMapping$0[r14.onBufferOverflow.ordinal()]) \{\l    case 1: goto L13;\l    case 2: goto L12;\l    default: goto L14;\l\}\l}"];
+subgraph cluster_Region_679209624 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0029|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1228025575 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0028|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_39 [shape=record,label="{39\:\ 0x002b|enqueueLocked(r15)\lint int r0 = r14.bufferSize + 1\lr14.bufferSize = r0\l}"];
+subgraph cluster_IfRegion_583783759 {
+label = "IF [B:40:0x0035] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0035|if (r0 \> r14.bufferCapacity) goto L16\l}"];
+subgraph cluster_Region_1121665740 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x0037|dropOldestLocked()\l}"];
+}
+}
+subgraph cluster_IfRegion_6588940 {
+label = "IF [B:43:0x0040] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0040|if (getReplaySize() \> r14.replay) goto L19\l}"];
+subgraph cluster_Region_2008850354 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0042|updateBufferLocked(r14.replayIndex + 1, r14.minCollectorIndex, getBufferEndIndex(), getQueueEndIndex())\l}"];
+}
+}
+Node_45 [shape=record,label="{45\:\ 0x0056|RETURN\l|return true\l}"];
+}
+}
+}
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0000}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0006}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000b}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0012}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x003a}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.flow.SharedFlowImpl.tryEmitLocked((r14v0 'this' kotlinx.coroutines.flow.SharedFlowImpl\<T\> A[IMMUTABLE_TYPE, THIS]), (r15v0 T A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:36:0x0028 \-\> B:24:?, CROSS_EDGE: B:38:0x002a \-\> B:24:?, CROSS_EDGE: B:45:0x0056 \-\> B:24:?, CROSS_EDGE: B:43:0x0040 \-\> B:45:0x0056, CROSS_EDGE: B:40:0x0035 \-\> B:42:0x003a, CROSS_EDGE: B:32:0x0018 \-\> B:39:0x002b, CROSS_EDGE: B:30:0x0010 \-\> B:39:0x002b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: (TT;)Z\l}"];
+MethodNode -> Node_23;Node_26 -> Node_27;
+Node_26 -> Node_29[style=dashed];
+Node_28 -> Node_24;
+Node_30 -> Node_31;
+Node_30 -> Node_39[style=dashed];
+Node_32 -> Node_33;
+Node_32 -> Node_39[style=dashed];
+Node_33 -> Node_34;
+Node_34 -> Node_36;
+Node_34 -> Node_37;
+Node_34 -> Node_39;
+Node_37 -> Node_24;
+Node_36 -> Node_24;
+Node_39 -> Node_40;
+Node_40 -> Node_41;
+Node_40 -> Node_42[style=dashed];
+Node_41 -> Node_42;
+Node_43 -> Node_44;
+Node_43 -> Node_45[style=dashed];
+Node_44 -> Node_45;
+Node_45 -> Node_24;
+Node_23 -> Node_25;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_31 -> Node_32;
+Node_42 -> Node_43;
+}
+

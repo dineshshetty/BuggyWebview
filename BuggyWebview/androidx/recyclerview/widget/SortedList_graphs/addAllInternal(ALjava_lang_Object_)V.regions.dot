@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.recyclerview.widget.SortedList.addAllInternal([Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_1525507938 {
+label = "R(1:(2:(1:3)|(2:5|(2:(2:7|8)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2120137871 {
+label = "R(2:(1:3)|(2:5|(2:(2:7|8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_469503306 {
+label = "IF [B:14:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r4.length \< 1) goto L3\l}"];
+subgraph cluster_Region_209778808 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2125728575 {
+label = "R(2:5|(2:(2:7|8)|(1:9)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|int int r0 = sortAndDedup(r4)\l}"];
+subgraph cluster_Region_1030183165 {
+label = "R(2:(2:7|8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_920002842 {
+label = "IF [B:17:0x000b] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|if (r3.mSize == 0) goto L7\l}"];
+subgraph cluster_Region_484042755 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|r3.mData = r4\lr3.mSize = r0\lr3.mCallback.onInserted(0, r0)\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1020702679 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0018|merge(r4, r0)\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001b|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.SortedList.addAllInternal((r3v0 'this' androidx.recyclerview.widget.SortedList\<T\> A[D('this' androidx.recyclerview.widget.SortedList\<T\>), IMMUTABLE_TYPE, THIS]), (r4v0 'newItems' T[] A[D('newItems' T[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x001b \-\> B:12:?, CROSS_EDGE: B:19:0x0018 \-\> B:20:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: ([TT;)V\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_20 -> Node_12;
+}
+

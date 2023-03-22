@@ -1,0 +1,74 @@
+digraph "CFG forandroidx.lifecycle.ReportFragment.dispatch(Landroid\/app\/Activity;Landroidx\/lifecycle\/Lifecycle$Event;)V" {
+subgraph cluster_Region_1678958499 {
+label = "R(1:(1:3)(1:(2:8|(1:(1:10)))(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_488476639 {
+label = "IF [B:17:0x0002] THEN: R(1:3) ELSE: R(1:(2:8|(1:(1:10)))(0))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if ((r2 instanceof androidx.lifecycle.LifecycleRegistryOwner) != false) goto L3\l}"];
+subgraph cluster_Region_1345661316 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|((androidx.lifecycle.LifecycleRegistryOwner) r2).getLifecycle().handleLifecycleEvent(r3)\l}"];
+}
+subgraph cluster_Region_1056364622 {
+label = "R(1:(2:8|(1:(1:10)))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1282140148 {
+label = "IF [B:21:0x0011] THEN: R(2:8|(1:(1:10))) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0011|if ((r2 instanceof androidx.lifecycle.LifecycleOwner) != false) goto L8\l}"];
+subgraph cluster_Region_300110696 {
+label = "R(2:8|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0013|androidx.lifecycle.Lifecycle androidx.lifecycle.Lifecycle r0 = ((androidx.lifecycle.LifecycleOwner) r2).getLifecycle()\l}"];
+subgraph cluster_Region_1031400145 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1677488293 {
+label = "IF [B:23:0x001c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001c|if ((r0 instanceof androidx.lifecycle.LifecycleRegistry) != false) goto L10\l}"];
+subgraph cluster_Region_870029798 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|((androidx.lifecycle.LifecycleRegistry) r0).handleLifecycleEvent(r3)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1148816883 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000e}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000f}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0024|ORIG_RETURN\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static void androidx.lifecycle.ReportFragment.dispatch((r2v0 'activity' android.app.Activity A[D('activity' android.app.Activity), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'event' androidx.lifecycle.Lifecycle$Event A[D('event' androidx.lifecycle.Lifecycle$Event), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x0024 \-\> B:15:?, CROSS_EDGE: B:23:0x001c \-\> B:25:0x0024, CROSS_EDGE: B:21:0x0011 \-\> B:25:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_21 -> Node_26[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_27[style=dashed];
+Node_24 -> Node_25;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_19 -> Node_15;
+Node_20 -> Node_21;
+Node_25 -> Node_15;
+Node_27 -> Node_15;
+Node_26 -> Node_15;
+}
+

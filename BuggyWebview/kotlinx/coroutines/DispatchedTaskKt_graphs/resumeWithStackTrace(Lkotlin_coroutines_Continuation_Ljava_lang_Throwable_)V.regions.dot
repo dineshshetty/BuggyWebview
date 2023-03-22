@@ -1,0 +1,41 @@
+digraph "CFG forkotlinx.coroutines.DispatchedTaskKt.resumeWithStackTrace(Lkotlin\/coroutines\/Continuation;Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_1231665218 {
+label = "R(3:1|(1:5)(1:9)|6) | DECL_VAR: java.lang.Throwable null\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.Result$Companion kotlin.Result.Companion r1 = kotlin.Result.Companion\l}"];
+subgraph cluster_IfRegion_2011042132 {
+label = "IF [B:3:0x0008, B:5:0x000c] THEN: R(1:5) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (kotlinx.coroutines.Debug.getRECOVER_STACK_TRACES() != false) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|ADDED_TO_REGION\l|if ((r3 instanceof kotlin.coroutines.jvm.internal.CoroutineStackFrame) != false) goto L5\l}"];
+subgraph cluster_Region_1170969248 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|java.lang.Throwable r2 = kotlinx.coroutines.internal.StackTraceRecovery.recoverFromStackFrame(r4, (kotlin.coroutines.jvm.internal.CoroutineStackFrame) r3)\l}"];
+}
+subgraph cluster_Region_376700397 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|r2 = r4\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0018|PHI: r2 \l  PHI: (r2v2 java.lang.Throwable) = (r2v1 java.lang.Throwable), (r2v6 java.lang.Throwable) binds: [B:8:0x0017, B:7:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|r3.resumeWith(kotlin.Result.m144constructorimpl(kotlin.ResultKt.createFailure(r2)))\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0023}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final void kotlinx.coroutines.DispatchedTaskKt.resumeWithStackTrace((r3v0 kotlin.coroutines.Continuation\<?\> A[D('$this$resumeWithStackTrace' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'exception' java.lang.Throwable A[D('exception' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0017 \-\> B:9:0x0018, CROSS_EDGE: B:3:0x0008 \-\> B:8:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlin\/coroutines\/Continuation\<*\>;Ljava\/lang\/Throwable;)V\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_7;
+Node_5 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_10 -> Node_1;
+}
+

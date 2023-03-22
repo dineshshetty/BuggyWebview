@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.recyclerview.widget.DiffUtil.DiffResult.convertNewPositionToOld(I)I" {
+subgraph cluster_Region_2142637768 {
+label = "R(1:(2:(2:10|11)|(2:4|(2:(1:6)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1090225045 {
+label = "R(2:(2:10|11)|(2:4|(2:(1:6)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_279713596 {
+label = "IF [B:15:0x0000, B:17:0x0004] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|if (r4 \< 0) goto L10\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0004|ADDED_TO_REGION\l|if (r4 \>= r3.mNewListSize) goto L10\l}"];
+subgraph cluster_Region_1050591457 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0013}"];
+Node_25 [shape=record,label="{25\:\ 0x0033|throw new java.lang.IndexOutOfBoundsException(\"Index out of bounds \- passed position = \" + r4 + \", new list size = \" + r3.mNewListSize)\l}"];
+}
+}
+subgraph cluster_Region_261734008 {
+label = "R(2:4|(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|int r0 = r3.mNewItemStatuses[r4]\l}"];
+subgraph cluster_Region_1896962484 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1747368186 {
+label = "IF [B:19:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|if ((r0 & 31) == 0) goto L6\l}"];
+subgraph cluster_Region_1844087592 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1305202130 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0012|RETURN\l|return r0 \>\> 5\l}"];
+}
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0002}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0010}"];
+MethodNode[shape=record,label="{public int androidx.recyclerview.widget.DiffUtil.DiffResult.convertNewPositionToOld((r3v0 'this' androidx.recyclerview.widget.DiffUtil$DiffResult A[IMMUTABLE_TYPE, THIS]), (r4v0 'newListPosition' int A[D('newListPosition' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0012 \-\> B:14:?, CROSS_EDGE: B:25:0x0033 \-\> B:14:?, CROSS_EDGE: B:15:0x0000 \-\> B:24:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_24;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_14;
+Node_23 -> Node_14;
+Node_13 -> Node_15;
+Node_16 -> Node_17;
+Node_22 -> Node_23;
+}
+

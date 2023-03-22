@@ -1,0 +1,74 @@
+digraph "CFG forandroidx.core.view.ViewCompat.setViewImportanceForAccessibilityIfNeeded(Landroid\/view\/View;)V" {
+subgraph cluster_Region_1862773696 {
+label = "R(3:(1:3)|4|(1:(2:(2:11|12)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_181178138 {
+label = "IF [B:19:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (getImportantForAccessibility(r3) == 0) goto L3\l}"];
+subgraph cluster_Region_1604352038 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|setImportantForAccessibility(r3, 1)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x000a|android.view.ViewParent android.view.ViewParent r0 = r3.getParent()\l}"];
+subgraph cluster_LoopRegion_222074886 {
+label = "LOOP:0: (1:(2:(2:11|12)|(1:9)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0010|if ((r0 instanceof android.view.View) != false) goto L7\l}"];
+subgraph cluster_Region_531188765 {
+label = "R(1:(2:(2:11|12)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_802179934 {
+label = "R(2:(2:11|12)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_335514798 {
+label = "IF [B:25:0x001a] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|if (getImportantForAccessibility((android.view.View) r0) == 4) goto L10\l}"];
+subgraph cluster_Region_1091220961 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001c|setImportantForAccessibility(r3, 2)\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0026|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1445631254 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0021|LOOP_END\lLOOP:0: B:22:0x000e\-\>B:27:0x0021\l|android.view.ViewParent r0 = r0.getParent()\l}"];
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000e|LOOP_START\lLOOP:0: B:22:0x000e\-\>B:27:0x0021\lPHI: r0 \l  PHI: (r0v2 'parent' android.view.ViewParent) = (r0v1 'parent' android.view.ViewParent), (r0v3 'parent' android.view.ViewParent) binds: [B:21:0x000a, B:27:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0012}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001c|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0026|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void androidx.core.view.ViewCompat.setViewImportanceForAccessibilityIfNeeded((r3v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:27:0x0021 \-\> B:22:0x000e, CROSS_EDGE: B:23:0x0010 \-\> B:28:0x0026, CROSS_EDGE: B:19:0x0004 \-\> B:21:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_29[style=dashed];
+Node_25 -> Node_27[style=dashed];
+Node_25 -> Node_30;
+Node_26 -> Node_28;
+Node_28 -> Node_17;
+Node_27 -> Node_22;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_30 -> Node_26;
+Node_29 -> Node_31;
+Node_31 -> Node_17;
+}
+

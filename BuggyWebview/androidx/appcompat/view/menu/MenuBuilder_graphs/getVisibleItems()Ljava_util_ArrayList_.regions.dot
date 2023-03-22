@@ -1,0 +1,80 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuBuilder.getVisibleItems()Ljava\/util\/ArrayList;" {
+subgraph cluster_Region_818465381 {
+label = "R(1:(2:(4:6|(3:8|(1:10)(0)|12)|15|16)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_828098189 {
+label = "R(2:(4:6|(3:8|(1:10)(0)|12)|15|16)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_465818510 {
+label = "IF [B:20:0x0002] THEN: R(4:6|(3:8|(1:10)(0)|12)|15|16) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0002|if (r4.mIsVisibleItemsStale == true) goto L6\l}"];
+subgraph cluster_Region_87686145 {
+label = "R(4:6|(3:8|(1:10)(0)|12)|15|16)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0007|r4.mVisibleItems.clear()\lint int r0 = r4.mItems.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1716275721 {
+label = "LOOP:0: (3:8|(1:10)(0)|12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0013|LOOP_START\lLOOP:0: B:24:0x0013\-\>B:28:0x0028\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v5 'i' int) binds: [B:23:0x0007, B:28:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L8\l}"];
+subgraph cluster_Region_1648649258 {
+label = "R(3:8|(1:10)(0)|12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0015|androidx.appcompat.view.menu.MenuItemImpl androidx.appcompat.view.menu.MenuItemImpl r2 = r4.mItems.get(r1)\l}"];
+subgraph cluster_IfRegion_188592937 {
+label = "IF [B:26:0x0021] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0021|if (r2.isVisible() != false) goto L10\l}"];
+subgraph cluster_Region_1101963195 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0023|r4.mVisibleItems.add(r2)\l}"];
+}
+subgraph cluster_Region_1655364977 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0028|LOOP_END\lLOOP:0: B:24:0x0013\-\>B:28:0x0028\l|r1++\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x002b|r4.mIsVisibleItemsStale = false\lr4.mIsActionItemsStale = true\l}"];
+Node_30 [shape=record,label="{30\:\ 0x0033|RETURN\l|return r4.mVisibleItems\l}"];
+}
+}
+subgraph cluster_Region_348633251 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0006|RETURN\l|return r4.mVisibleItems\l}"];
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0004}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0028|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0028|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x002b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.ArrayList\<androidx.appcompat.view.menu.MenuItemImpl\> androidx.appcompat.view.menu.MenuBuilder.getVisibleItems((r4v0 'this' androidx.appcompat.view.menu.MenuBuilder A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:28:0x0028 \-\> B:24:0x0013, CROSS_EDGE: B:26:0x0021 \-\> B:28:0x0028, CROSS_EDGE: B:30:0x0033 \-\> B:18:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ()Ljava\/util\/ArrayList\<Landroidx\/appcompat\/view\/menu\/MenuItemImpl;\>;\l}"];
+MethodNode -> Node_17;Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_31[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_33[style=dashed];
+Node_27 -> Node_32;
+Node_28 -> Node_24;
+Node_29 -> Node_30;
+Node_30 -> Node_18;
+Node_22 -> Node_18;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_32 -> Node_28;
+Node_33 -> Node_28;
+Node_31 -> Node_29;
+}
+

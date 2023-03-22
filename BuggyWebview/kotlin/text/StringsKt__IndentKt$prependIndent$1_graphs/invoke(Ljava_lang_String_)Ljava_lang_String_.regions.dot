@@ -1,0 +1,49 @@
+digraph "CFG forkotlin.text.StringsKt__IndentKt$prependIndent$1.invoke(Ljava\/lang\/String;)Ljava\/lang\/String;" {
+subgraph cluster_Region_423863343 {
+label = "R(2:1|(2:(1:4)|(2:10|11)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"it\")\l}"];
+subgraph cluster_Region_593663355 {
+label = "R(2:(1:4)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1177593027 {
+label = "IF [B:15:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|if (kotlin.text.StringsKt.isBlank(r3) == true) goto L3\l}"];
+subgraph cluster_Region_340726013 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001a|RETURN\l|return r3.length() \< r2.$indent.length() ? r2.$indent : r3\l}"];
+}
+}
+subgraph cluster_Region_279559303 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0021}"];
+Node_21 [shape=record,label="{21\:\ 0x0032|RETURN\lORIG_RETURN\l|return r2.$indent + r3\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0010}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001c}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001f}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final java.lang.String kotlin.text.StringsKt__IndentKt$prependIndent$1.invoke((r2v0 'this' kotlin.text.StringsKt__IndentKt$prependIndent$1 A[IMMUTABLE_TYPE, THIS]), (r3v0 'it' java.lang.String A[D('it' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001f \-\> B:21:0x0032, CROSS_EDGE: B:20:0x0021 \-\> B:21:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lREPLACED_BY: kotlin.text.StringsKt__IndentKt$prependIndent$1.invoke(java.lang.String):java.lang.String\lBRIDGED_BY: kotlin.text.StringsKt__IndentKt$prependIndent$1.invoke(java.lang.String):java.lang.String\lMETHOD_OVERRIDE: [kotlin.jvm.functions.Function1.invoke(P1):R]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_20[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_18 -> Node_22;
+Node_22 -> Node_13;
+Node_19 -> Node_23;
+Node_23 -> Node_13;
+}
+

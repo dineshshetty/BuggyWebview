@@ -1,0 +1,74 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.setUnboundedRipple(Z)V" {
+subgraph cluster_Region_1635558170 {
+label = "R(1:(1:(2:3|(3:6|(1:8)(0)|10))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1424156861 {
+label = "R(1:(2:3|(3:6|(1:8)(0)|10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2002040512 {
+label = "IF [B:19:0x0002] THEN: R(2:3|(3:6|(1:8)(0)|10)) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0002|if (r4.unboundedRipple != r5) goto L3\l}"];
+subgraph cluster_Region_1797842386 {
+label = "R(2:3|(3:6|(1:8)(0)|10))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0004|r4.unboundedRipple = r5\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_1581561414 {
+label = "LOOP:0: (3:6|(1:8)(0)|10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000d|if (r0 \< r4.slidingTabIndicator.getChildCount()) goto L6\l}"];
+subgraph cluster_Region_717552054 {
+label = "R(3:6|(1:8)(0)|10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000f|android.view.View android.view.View r1 = r4.slidingTabIndicator.getChildAt(r0)\l}"];
+subgraph cluster_IfRegion_1211553267 {
+label = "IF [B:24:0x0017] THEN: R(1:8) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0017|if ((r1 instanceof com.google.android.material.tabs.TabLayout.TabView) != false) goto L8\l}"];
+subgraph cluster_Region_1687994194 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0019|((com.google.android.material.tabs.TabLayout.TabView) r1).updateBackgroundDrawable(getContext())\l}"];
+}
+subgraph cluster_Region_1257378722 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0023|LOOP_END\lLOOP:0: B:21:0x0007\-\>B:26:0x0023\l|r0++\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0007|LOOP_START\lLOOP:0: B:21:0x0007\-\>B:26:0x0023\lPHI: r0 \l  PHI: (r0v2 'i' int) = (r0v1 'i' int), (r0v3 'i' int) binds: [B:20:0x0004, B:26:0x0023] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0023|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0023|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0026|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0026|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.tabs.TabLayout.setUnboundedRipple((r4v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 'unboundedRipple' boolean A[D('unboundedRipple' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x0023 \-\> B:21:0x0007, CROSS_EDGE: B:24:0x0017 \-\> B:26:0x0023, CROSS_EDGE: B:19:0x0002 \-\> B:27:0x0026\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_27[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_30[style=dashed];
+Node_25 -> Node_29;
+Node_26 -> Node_21;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_29 -> Node_26;
+Node_30 -> Node_26;
+Node_28 -> Node_31;
+Node_31 -> Node_17;
+Node_27 -> Node_17;
+}
+

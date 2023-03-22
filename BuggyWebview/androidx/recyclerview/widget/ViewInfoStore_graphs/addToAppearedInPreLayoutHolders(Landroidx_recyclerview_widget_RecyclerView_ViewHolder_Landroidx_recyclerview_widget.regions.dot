@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.recyclerview.widget.ViewInfoStore.addToAppearedInPreLayoutHolders(Landroidx\/recyclerview\/widget\/RecyclerView$ViewHolder;Landroidx\/recyclerview\/widget\/RecyclerView$ItemAnimator$ItemHolderInfo;)V" {
+subgraph cluster_Region_1949798682 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.recyclerview.widget.ViewInfoStore$InfoRecord androidx.recyclerview.widget.ViewInfoStore.InfoRecord r0 = r2.mLayoutHolderMap.get(r3)\l}"];
+subgraph cluster_IfRegion_1082449953 {
+label = "IF [B:3:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_878815467 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|androidx.recyclerview.widget.ViewInfoStore$InfoRecord r0 = androidx.recyclerview.widget.ViewInfoStore.InfoRecord.obtain()\lr2.mLayoutHolderMap.put(r3, r0)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0013|PHI: r0 \l  PHI: (r0v3 'record' androidx.recyclerview.widget.ViewInfoStore$InfoRecord) = (r0v2 'record' androidx.recyclerview.widget.ViewInfoStore$InfoRecord), (r0v4 'record' androidx.recyclerview.widget.ViewInfoStore$InfoRecord) binds: [B:3:0x0008, B:4:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|r0.flags \|= 2\lr0.preInfo = r4\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001b}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.ViewInfoStore.addToAppearedInPreLayoutHolders((r2v0 'this' androidx.recyclerview.widget.ViewInfoStore A[IMMUTABLE_TYPE, THIS]), (r3v0 'holder' androidx.recyclerview.widget.RecyclerView$ViewHolder A[D('holder' androidx.recyclerview.widget.RecyclerView$ViewHolder), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'info' androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo A[D('info' androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0008 \-\> B:5:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_2;
+Node_6 -> Node_1;
+}
+

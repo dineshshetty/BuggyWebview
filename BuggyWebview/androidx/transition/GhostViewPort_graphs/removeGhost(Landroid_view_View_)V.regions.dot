@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.transition.GhostViewPort.removeGhost(Landroid\/view\/View;)V" {
+subgraph cluster_Region_56001301 {
+label = "R(2:1|(1:(2:3|(1:(1:5)))))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|androidx.transition.GhostViewPort androidx.transition.GhostViewPort r0 = getGhostView(r2)\l}"];
+subgraph cluster_Region_1004784562 {
+label = "R(1:(2:3|(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1342236060 {
+label = "IF [B:13:0x0004] THEN: R(2:3|(1:(1:5))) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1809001186 {
+label = "R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|int int r1 = r0.mReferences \- 1\lr0.mReferences = r1\l}"];
+subgraph cluster_Region_771876470 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_506359765 {
+label = "IF [B:15:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|if (r1 \<= 0) goto L5\l}"];
+subgraph cluster_Region_693575617 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000e|androidx.transition.GhostViewHolder androidx.transition.GhostViewHolder r1 = (androidx.transition.GhostViewHolder) r0.getParent()\lr1.removeView(r0)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0017|ORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void androidx.transition.GhostViewPort.removeGhost((r2v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000c \-\> B:17:0x0017, CROSS_EDGE: B:13:0x0004 \-\> B:17:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_18 -> Node_11;
+}
+

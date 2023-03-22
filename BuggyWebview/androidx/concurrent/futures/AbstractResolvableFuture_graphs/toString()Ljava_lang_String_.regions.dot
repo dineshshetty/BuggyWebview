@@ -1,0 +1,128 @@
+digraph "CFG forandroidx.concurrent.futures.AbstractResolvableFuture.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1973775325 {
+label = "R(4:1|(1:3)(1:(1:9)(2:(1:11)|(1:15)(1:(1:18)(1:19))))|4|5) | DECL_VAR: java.lang.String pendingDescription\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0000|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(super.toString())\ljava.lang.StringBuilder java.lang.StringBuilder r0 = r0.append(\"[status=\")\l}"];
+subgraph cluster_IfRegion_860909089 {
+label = "IF [B:27:0x0018] THEN: R(1:3) ELSE: R(1:(1:9)(2:(1:11)|(1:15)(1:(1:18)(1:19))))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0018|if (isCancelled() != false) goto L3\l}"];
+subgraph cluster_Region_580581727 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001a|r0.append(\"CANCELLED\")\l}"];
+}
+subgraph cluster_Region_98817915 {
+label = "R(1:(1:9)(2:(1:11)|(1:15)(1:(1:18)(1:19)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1900216139 {
+label = "IF [B:30:0x0024] THEN: R(1:9) ELSE: R(2:(1:11)|(1:15)(1:(1:18)(1:19))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0024|if (isDone() != false) goto L9\l}"];
+subgraph cluster_Region_293023952 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0026|addDoneString(r0)\l}"];
+}
+subgraph cluster_Region_1665530109 {
+label = "R(2:(1:11)|(1:15)(1:(1:18)(1:19)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1406444498 {
+label = "Try: R(1:11) catches: R(2:21|22)";
+node [shape=record,color=blue];
+subgraph cluster_Region_434172865 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x002a|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{RuntimeException \-\> 0x002f, blocks: (B:32:0x002a), top: B:46:0x002a \}\lCatch: RuntimeException \-\> 0x002f\l|java.lang.String r1 = pendingToString()     \/\/ Catch: java.lang.RuntimeException \-\> L2f\l}"];
+}
+subgraph cluster_Region_1451893432 {
+label = "R(2:21|22) | ExcHandler: RuntimeException \-\> 0x002f\l";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x002f|ExcHandler: RuntimeException \-\> 0x002f\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0030|r1 = \"Exception thrown from implementation: \" + r1.getClass()\l}"];
+}
+}
+subgraph cluster_IfRegion_1209532124 {
+label = "IF [B:36:0x0046, B:38:0x004c] THEN: R(1:15) ELSE: R(1:(1:18)(1:19))";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0046|PHI: r1 \l  PHI: (r1v6 'pendingDescription' java.lang.String) = (r1v5 'pendingDescription' java.lang.String), (r1v7 'pendingDescription' java.lang.String) binds: [B:35:0x0030, B:32:0x002a] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != null) goto L13\l}"];
+Node_38 [shape=record,label="{38\:\ 0x004c|ADDED_TO_REGION\l|if (r1.isEmpty() == false) goto L15\l}"];
+subgraph cluster_Region_1431527110 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x004e|r0.append(\"PENDING, info=[\")\lr0.append(r1)\lr0.append(\"]\")\l}"];
+}
+subgraph cluster_Region_784988210 {
+label = "R(1:(1:18)(1:19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1653047046 {
+label = "IF [B:41:0x005e] THEN: R(1:18) ELSE: R(1:19) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x005e|if (isDone() != false) goto L18\l}"];
+subgraph cluster_Region_200682546 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0060|addDoneString(r0)\l}"];
+}
+subgraph cluster_Region_2119400466 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0064|r0.append(\"PENDING\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_44 [shape=record,label="{44\:\ 0x0069|r0.append(\"]\")\l}"];
+Node_45 [shape=record,label="{45\:\ 0x0070|RETURN\l|return r0.toString()\l}"];
+}
+subgraph cluster_Region_1451893432 {
+label = "R(2:21|22) | ExcHandler: RuntimeException \-\> 0x002f\l";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x002f|ExcHandler: RuntimeException \-\> 0x002f\l}"];
+Node_35 [shape=record,label="{35\:\ 0x0030|r1 = \"Exception thrown from implementation: \" + r1.getClass()\l}"];
+}
+Node_24 [shape=record,color=red,label="{24\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0020}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x002a|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0048}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x005a}"];
+Node_47 [shape=record,color=red,label="{47\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{public java.lang.String androidx.concurrent.futures.AbstractResolvableFuture.toString((r5v0 'this' androidx.concurrent.futures.AbstractResolvableFuture\<V\> A[D('this' androidx.concurrent.futures.AbstractResolvableFuture\<V\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0026 \-\> B:44:0x0069, CROSS_EDGE: B:39:0x004e \-\> B:44:0x0069, CROSS_EDGE: B:42:0x0060 \-\> B:44:0x0069, CROSS_EDGE: B:43:0x0064 \-\> B:44:0x0069, CROSS_EDGE: B:36:0x0046 \-\> B:40:0x005a, CROSS_EDGE: B:35:0x0030 \-\> B:36:0x0046, CROSS_EDGE: B:46:0x002a \-\> B:34:0x002f\lINLINE_NOT_NEEDED\lTryCatch #0 \{RuntimeException \-\> 0x002f, blocks: (B:32:0x002a), top: B:46:0x002a \}\lTYPE_VARS: [V]\l}"];
+MethodNode -> Node_24;Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_44;
+Node_30 -> Node_31;
+Node_30 -> Node_46[style=dashed];
+Node_31 -> Node_44;
+Node_32 -> Node_36;
+Node_32 -> Node_47;
+Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_36 -> Node_40[style=dashed];
+Node_38 -> Node_39;
+Node_38 -> Node_40[style=dashed];
+Node_39 -> Node_44;
+Node_41 -> Node_42;
+Node_41 -> Node_43[style=dashed];
+Node_42 -> Node_44;
+Node_43 -> Node_44;
+Node_44 -> Node_45;
+Node_45 -> Node_25;
+Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_24 -> Node_26;
+Node_29 -> Node_30;
+Node_46 -> Node_32;
+Node_46 -> Node_34;
+Node_37 -> Node_38;
+Node_40 -> Node_41;
+Node_47 -> Node_34;
+}
+

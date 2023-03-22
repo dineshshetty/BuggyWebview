@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.JobKt__JobKt.cancel(Lkotlin\/coroutines\/CoroutineContext;Ljava\/lang\/Throwable;)Z" {
+subgraph cluster_Region_1970314106 {
+label = "R(3:1|2|(2:(1:5)|(2:7|8)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.coroutines.CoroutineContext$Element kotlin.coroutines.CoroutineContext.Element r0 = r2.get(kotlinx.coroutines.Job.Key)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x000a|kotlinx.coroutines.JobSupport r0 = r0 instanceof kotlinx.coroutines.JobSupport ? (kotlinx.coroutines.JobSupport) r0 : null\l}"];
+subgraph cluster_Region_1517899708 {
+label = "R(2:(1:5)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1244670157 {
+label = "IF [B:17:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|PHI: r0 \l  PHI: (r0v4 'job' kotlinx.coroutines.JobSupport) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L5\l}"];
+subgraph cluster_Region_686198015 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0012|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1660440077 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0014|r0.cancelInternal(orCancellation$JobKt__JobKt(r3, r0))\l}"];
+Node_21 [shape=record,label="{21\:\ 0x001f|RETURN\l|return true\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000c}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000f}"];
+MethodNode[shape=record,label="{public static final \/* synthetic *\/ boolean kotlinx.coroutines.JobKt__JobKt.cancel((r2v0 '$this$cancel' kotlin.coroutines.CoroutineContext A[D('$this$cancel' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\l\{Lkotlin\/Deprecated;=Annotation\{RUNTIME, type=Lkotlin\/Deprecated;, values=\{level=\{ENCODED_FIELD: Lkotlin\/DeprecationLevel;\-\>HIDDEN:Lkotlin\/DeprecationLevel;\}, message=Since 1.2.0, binary compatibility with versions \<= 1.1.x\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:21:0x001f \-\> B:12:?, CROSS_EDGE: B:16:0x000f \-\> B:17:0x0010\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_12;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+}
+

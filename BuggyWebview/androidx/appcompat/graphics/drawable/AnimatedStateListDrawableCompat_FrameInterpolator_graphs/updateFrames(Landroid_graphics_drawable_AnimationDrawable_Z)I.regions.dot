@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.FrameInterpolator.updateFrames(Landroid\/graphics\/drawable\/AnimationDrawable;Z)I" {
+subgraph cluster_Region_1971055790 {
+label = "R(6:1|(1:17)|5|(1:10)|14|15)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r6.getNumberOfFrames()\lr5.mFrames = r0\lint[] int[] r1 = r5.mFrameTimes\l}"];
+subgraph cluster_IfRegion_1446076657 {
+label = "IF [B:3:0x0008, B:5:0x000b] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r1 == null) goto L17\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000b|ADDED_TO_REGION\l|if (r1.length \< r0) goto L17\l}"];
+subgraph cluster_Region_672747971 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|r5.mFrameTimes = new int[r0]\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0011|int[] int[] r1 = r5.mFrameTimes\lint r2 = 0\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1374954991 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0015|LOOP_START\lLOOP:0: B:8:0x0015\-\>B:12:0x001f\lPHI: r2 r3 \l  PHI: (r2v1 'totalDuration' int) = (r2v0 'totalDuration' int), (r2v2 'totalDuration' int) binds: [B:7:0x0011, B:12:0x001f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:7:0x0011, B:12:0x001f] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r0) goto L7\l}"];
+subgraph cluster_Region_2067840483 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001f|LOOP_END\lLOOP:0: B:8:0x0015\-\>B:12:0x001f\lPHI: r4 \l  PHI: (r4v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r4 = r6.getDuration(r7 ? (r0 \- r3) \- 1 : r3)\lr1[r3] = r4\lr2 += r4\lr3++\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0029|r5.mTotalDuration = r2\l}"];
+Node_14 [shape=record,label="{14\:\ 0x002b|RETURN\l|return r2\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0017}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0019}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001f|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001e}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001f|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0029|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{int androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.FrameInterpolator.updateFrames((r5v0 'this' androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat$FrameInterpolator A[IMMUTABLE_TYPE, THIS]), (r6v0 'd' android.graphics.drawable.AnimationDrawable A[D('d' android.graphics.drawable.AnimationDrawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'reversed' boolean A[D('reversed' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x001f \-\> B:8:0x0015, CROSS_EDGE: B:11:0x001e \-\> B:12:0x001f, CROSS_EDGE: B:5:0x000b \-\> B:7:0x0011, CROSS_EDGE: B:3:0x0008 \-\> B:6:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_15[style=dashed];
+Node_12 -> Node_8;
+Node_13 -> Node_14;
+Node_14 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+Node_10 -> Node_17;
+Node_17 -> Node_12;
+Node_11 -> Node_16;
+Node_16 -> Node_12;
+Node_15 -> Node_13;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.endFakeDrag()V" {
+subgraph cluster_Region_951996568 {
+label = "R(1:(2:(1:10)|(2:(1:5)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1025953934 {
+label = "R(2:(1:10)|(2:(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1926542858 {
+label = "IF [B:14:0x0002] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r10.mFakeDragging == false) goto L9\l}"];
+subgraph cluster_Region_1330369282 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x004e|throw new java.lang.IllegalStateException(\"No fake drag in progress. Call beginFakeDrag first.\")\l}"];
+}
+}
+subgraph cluster_Region_87781603 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_236089962 {
+label = "IF [B:16:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|if (r10.mAdapter != null) goto L5\l}"];
+subgraph cluster_Region_2014024035 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|android.view.VelocityTracker android.view.VelocityTracker r0 = r10.mVelocityTracker\lr0.computeCurrentVelocity(1000, r10.mMaximumVelocity)\lint int r1 = (int) r0.getXVelocity(r10.mActivePointerId)\lr10.mPopulatePending = true\lint int r3 = getClientWidth()\lint int r4 = getScrollX()\landroidx.viewpager.widget.ViewPager$ItemInfo androidx.viewpager.widget.ViewPager.ItemInfo r5 = infoForCurrentScrollPosition()\lint int r6 = r5.position\lfloat float r7 = ((r4 \/ r3) \- r5.offset) \/ r5.widthFactor\lint int r8 = (int) (r10.mLastMotionX \- r10.mInitialMotionX)\lint int r9 = determineTargetPage(r6, r7, r1, r8)\lsetCurrentItemInternal(r9, true, true, r1)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0040|endDrag()\lr10.mFakeDragging = false\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0004}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0046}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0047}"];
+MethodNode[shape=record,label="{public void androidx.viewpager.widget.ViewPager.endFakeDrag((r10v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0006 \-\> B:18:0x0040, CROSS_EDGE: B:21:0x004e \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_21 -> Node_12;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+}
+

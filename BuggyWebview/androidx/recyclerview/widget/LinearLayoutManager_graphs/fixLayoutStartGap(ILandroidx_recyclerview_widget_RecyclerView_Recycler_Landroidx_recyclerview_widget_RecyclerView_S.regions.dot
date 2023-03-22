@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.fixLayoutStartGap(ILandroidx\/recyclerview\/widget\/RecyclerView$Recycler;Landroidx\/recyclerview\/widget\/RecyclerView$State;Z)I" {
+subgraph cluster_Region_536279491 {
+label = "R(2:1|(2:(2:3|(2:(2:7|8)|(1:10)))|(1:11))) | DECL_VAR: int gap\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = r5 \- r4.mOrientationHelper.getStartAfterPadding()\l}"];
+subgraph cluster_Region_185142592 {
+label = "R(2:(2:3|(2:(2:7|8)|(1:10)))|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1026168389 {
+label = "IF [B:16:0x0009] THEN: R(2:3|(2:(2:7|8)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|if (r0 \> 0) goto L3\l}"];
+subgraph cluster_Region_1038668363 {
+label = "R(2:3|(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|int int r1 = \-scrollBy(r0, r6, r7)\lint int r5 = r5 + r1\l}"];
+subgraph cluster_Region_728632465 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1734455946 {
+label = "IF [B:18:0x0011, B:20:0x001b] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0011|if (r8 != false) goto L5\l}"];
+Node_20 [shape=record,label="{20\:\ 0x001b|ADDED_TO_REGION\l|if ((r0 = r5 \- r4.mOrientationHelper.getStartAfterPadding()) \> 0) goto L7\l}"];
+subgraph cluster_Region_579127505 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001d|r4.mOrientationHelper.offsetChildren(\-r0)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0025|RETURN\l|return r1 \- r0\l}"];
+}
+}
+subgraph cluster_Region_177472931 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0026|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1512541126 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0027|RETURN\l|return 0\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0013}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private int androidx.recyclerview.widget.LinearLayoutManager.fixLayoutStartGap((r4v0 'this' androidx.recyclerview.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]), (r5v0 'startOffset' int A[D('startOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'recycler' androidx.recyclerview.widget.RecyclerView$Recycler A[D('recycler' androidx.recyclerview.widget.RecyclerView$Recycler), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'canOffsetChildren' boolean A[D('canOffsetChildren' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0026 \-\> B:14:?, CROSS_EDGE: B:18:0x0011 \-\> B:23:0x0026, CROSS_EDGE: B:25:0x0028 \-\> B:14:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_14;
+Node_23 -> Node_14;
+Node_24 -> Node_14;
+Node_13 -> Node_15;
+Node_19 -> Node_20;
+}
+

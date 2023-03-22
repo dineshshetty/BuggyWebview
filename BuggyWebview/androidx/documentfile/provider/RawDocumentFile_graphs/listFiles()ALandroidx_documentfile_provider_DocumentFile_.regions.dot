@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.documentfile.provider.RawDocumentFile.listFiles()[Landroidx\/documentfile\/provider\/DocumentFile;" {
+subgraph cluster_Region_568423819 {
+label = "R(3:1|(2:3|(1:5))|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.ArrayList java.util.ArrayList\<androidx.documentfile.provider.DocumentFile\> r0 = new java.util.ArrayList\<\>()\ljava.io.File[] java.io.File[] r1 = r6.mFile.listFiles()\l}"];
+subgraph cluster_IfRegion_1707400771 {
+label = "IF [B:3:0x000b] THEN: R(2:3|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r1 != null) goto L3\l}"];
+subgraph cluster_Region_306722178 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|int r3 = 0\l\l}"];
+subgraph cluster_LoopRegion_1640870359 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|LOOP_START\lLOOP:0: B:5:0x000f\-\>B:6:0x0011\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:4:0x000d, B:6:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r2) goto L5\l}"];
+subgraph cluster_Region_441428218 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|LOOP_END\lLOOP:0: B:5:0x000f\-\>B:6:0x0011\l|r4 = r1[r3]\lr0.add(new androidx.documentfile.provider.RawDocumentFile(r6, r4))\lr3++\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002a|RETURN\l|return (androidx.documentfile.provider.DocumentFile[]) r0.toArray(new androidx.documentfile.provider.DocumentFile[r0.size()])\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001e|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001e}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.documentfile.provider.DocumentFile[] androidx.documentfile.provider.RawDocumentFile.listFiles((r6v0 'this' androidx.documentfile.provider.RawDocumentFile A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:6:0x0011 \-\> B:5:0x000f, CROSS_EDGE: B:3:0x000b \-\> B:7:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.documentfile.provider.DocumentFile.listFiles():androidx.documentfile.provider.DocumentFile[]]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_5;
+Node_8 -> Node_1;
+Node_0 -> Node_2;
+Node_9 -> Node_7;
+Node_7 -> Node_8;
+}
+

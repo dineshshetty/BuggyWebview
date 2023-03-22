@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.appcompat.widget.AppCompatCompoundButtonHelper.getCompoundPaddingLeft(I)I" {
+subgraph cluster_Region_1322461927 {
+label = "R(1:(2:(1:6)|(1:8))) | DECL_VAR: android.graphics.drawable.Drawable buttonDrawable\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1084743643 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_662564841 {
+label = "IF [B:13:0x0004, B:15:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \< 17) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x000c|ADDED_TO_REGION\l|if ((r0 = androidx.core.widget.CompoundButtonCompat.getButtonDrawable(r2.mView)) != null) goto L5\l}"];
+subgraph cluster_Region_1530595017 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|RETURN\lORIG_RETURN\l|return r3 + r0.getIntrinsicWidth()\l}"];
+}
+}
+subgraph cluster_Region_216566619 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return r3\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000e}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r3\l}"];
+MethodNode[shape=record,label="{public int androidx.appcompat.widget.AppCompatCompoundButtonHelper.getCompoundPaddingLeft((r2v0 'this' androidx.appcompat.widget.AppCompatCompoundButtonHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 'superValue' int A[D('superValue' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000c \-\> B:17:0x0013, CROSS_EDGE: B:13:0x0004 \-\> B:17:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_11;
+}
+

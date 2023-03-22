@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.recyclerview.widget.GridLayoutManager.setSpanCount(I)V" {
+subgraph cluster_Region_994928528 {
+label = "R(1:(2:(1:3)|(2:5|(2:(2:9|10)|(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1469939977 {
+label = "R(2:(1:3)|(2:5|(2:(2:9|10)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1313838162 {
+label = "IF [B:14:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r4 == r3.mSpanCount) goto L3\l}"];
+subgraph cluster_Region_1426220210 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_86239333 {
+label = "R(2:5|(2:(2:9|10)|(1:7)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|r3.mPendingSpanCountChange = true\l}"];
+subgraph cluster_Region_1041081345 {
+label = "R(2:(2:9|10)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_206719638 {
+label = "IF [B:17:0x0008] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (r4 \< 1) goto L9\l}"];
+subgraph cluster_Region_1253279834 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0015}"];
+Node_21 [shape=record,label="{21\:\ 0x002b|throw new java.lang.IllegalArgumentException(\"Span count should be at least 1. Provided \" + r4)\l}"];
+}
+}
+subgraph cluster_Region_1346970025 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000a|r3.mSpanCount = r4\lr3.mSpanSizeLookup.invalidateSpanIndexCache()\lrequestLayout()\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0014}"];
+MethodNode[shape=record,label="{public void androidx.recyclerview.widget.GridLayoutManager.setSpanCount((r3v0 'this' androidx.recyclerview.widget.GridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r4v0 'spanCount' int A[D('spanCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0014 \-\> B:12:?, CROSS_EDGE: B:21:0x002b \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_19 -> Node_12;
+}
+

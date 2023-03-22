@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.appcompat.widget.SwitchCompat.getCompoundPaddingRight()I" {
+subgraph cluster_Region_1409206883 {
+label = "R(1:(2:(1:4)|(2:6|(2:(1:9)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_697420179 {
+label = "R(2:(1:4)|(2:6|(2:(1:9)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1905576307 {
+label = "IF [B:14:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (androidx.appcompat.widget.ViewUtils.isLayoutRtl(r2) != false) goto L3\l}"];
+subgraph cluster_Region_1955122505 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|RETURN\l|return super.getCompoundPaddingRight()\l}"];
+}
+}
+subgraph cluster_Region_388705655 {
+label = "R(2:6|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|int int r0 = super.getCompoundPaddingRight() + r2.mSwitchWidth\l}"];
+subgraph cluster_Region_1367387241 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1996106395 {
+label = "IF [B:18:0x001a] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001a|if (android.text.TextUtils.isEmpty(getText()) == false) goto L8\l}"];
+subgraph cluster_Region_1810440348 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001f|RETURN\lORIG_RETURN\l|return r0 + r2.mSwitchPadding\l}"];
+}
+}
+subgraph cluster_Region_2135128814 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001c}"];
+MethodNode[shape=record,label="{public int androidx.appcompat.widget.SwitchCompat.getCompoundPaddingRight((r2v0 'this' androidx.appcompat.widget.SwitchCompat A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:20:0x001f \-\> B:12:?, CROSS_EDGE: B:18:0x001a \-\> B:20:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.TextView.getCompoundPaddingRight():int\}]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_16 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_20 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_19 -> Node_20;
+}
+

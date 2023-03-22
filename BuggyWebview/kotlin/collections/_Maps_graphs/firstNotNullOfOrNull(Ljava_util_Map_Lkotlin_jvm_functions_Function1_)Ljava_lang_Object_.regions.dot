@@ -1,0 +1,47 @@
+digraph "CFG forkotlin.collections.MapsKt___MapsKt.firstNotNullOfOrNull(Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1461137235 {
+label = "R(3:1|(2:4|(1:7))|10)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"transform\")\ljava.util.Iterator r0 = r3.entrySet().iterator()\l\l}"];
+subgraph cluster_LoopRegion_1849027080 {
+label = "LOOP:0: (2:4|(1:7))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0016|java.util.Map$Entry \lif (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_321351777 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|java.util.Map$Entry r1 = r0.next()\ljava.lang.Object R r2 = r4.invoke(r1)\l}"];
+subgraph cluster_IfRegion_517418065 {
+label = "IF [B:18:0x0022] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0022|LOOP_END\lLOOP:0: B:15:0x0012\-\>B:18:0x0022\l|if (r2 != null) goto L6\l}"];
+subgraph cluster_Region_795540431 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0024|RETURN\l|return r2\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0025|RETURN\l|return null\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0012|LOOP_START\lLOOP:0: B:15:0x0012\-\>B:18:0x0022\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0024|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0025|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static final R kotlin.collections.MapsKt___MapsKt.firstNotNullOfOrNull((r3v0 java.util.Map\<? extends K, ? extends V\> A[D('$this$firstNotNullOfOrNull' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'transform' kotlin.jvm.functions.Function1\<? super java.util.Map$Entry\<? extends K, ? extends V\>, ? extends R\> A[D('transform' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:18:0x0022 \-\> B:15:0x0012, CROSS_EDGE: B:21:0x0026 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;R:Ljava\/lang\/Object;\>(Ljava\/util\/Map\<+TK;+TV;\>;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/util\/Map$Entry\<+TK;+TV;\>;+TR;\>;)TR;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_15[style=dashed];
+Node_18 -> Node_22;
+Node_19 -> Node_13;
+Node_20 -> Node_13;
+Node_12 -> Node_14;
+Node_15 -> Node_16;
+Node_22 -> Node_19;
+Node_23 -> Node_20;
+}
+

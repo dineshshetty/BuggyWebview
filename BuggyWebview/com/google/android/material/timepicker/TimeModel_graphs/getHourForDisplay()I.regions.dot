@@ -1,0 +1,86 @@
+digraph "CFG forcom.google.android.material.timepicker.TimeModel.getHourForDisplay()I" {
+subgraph cluster_Region_1535784143 {
+label = "R(1:(2:(1:4)|(2:6|(2:(1:8)|(1:(2:(1:12)|(1:13)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1366833770 {
+label = "R(2:(1:4)|(2:6|(2:(1:8)|(1:(2:(1:12)|(1:13))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2115464981 {
+label = "IF [B:17:0x0003] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0003|if (r4.format == 1) goto L3\l}"];
+subgraph cluster_Region_2040212559 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0009|RETURN\l|return r4.hour % 24\l}"];
+}
+}
+subgraph cluster_Region_876878487 {
+label = "R(2:6|(2:(1:8)|(1:(2:(1:12)|(1:13)))))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000a|int int r0 = r4.hour\l}"];
+subgraph cluster_Region_1933394943 {
+label = "R(2:(1:8)|(1:(2:(1:12)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_987753791 {
+label = "IF [B:21:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|if ((r0 % 12) == 0) goto L8\l}"];
+subgraph cluster_Region_1661377688 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0012|RETURN\l|return 12\l}"];
+}
+}
+subgraph cluster_Region_640432170 {
+label = "R(1:(2:(1:12)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_108368372 {
+label = "R(2:(1:12)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_525211774 {
+label = "IF [B:24:0x0015] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0015|if (r4.period == 1) goto L11\l}"];
+subgraph cluster_Region_268266224 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0018|RETURN\l|return r0 \- 12\l}"];
+}
+}
+subgraph cluster_Region_1918591815 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0019|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0005}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0013}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0017}"];
+MethodNode[shape=record,label="{public int com.google.android.material.timepicker.TimeModel.getHourForDisplay((r4v0 'this' com.google.android.material.timepicker.TimeModel A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0012 \-\> B:15:?, CROSS_EDGE: B:26:0x0018 \-\> B:15:?, CROSS_EDGE: B:27:0x0019 \-\> B:15:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_19 -> Node_15;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_15;
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_26 -> Node_15;
+Node_27 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+}
+

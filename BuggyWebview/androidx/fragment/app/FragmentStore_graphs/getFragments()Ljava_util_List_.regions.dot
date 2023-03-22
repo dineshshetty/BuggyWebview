@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.fragment.app.FragmentStore.getFragments()Ljava\/util\/List;" {
+subgraph cluster_Region_368740166 {
+label = "R(1:(2:(1:4)|(3:6|f|11))) | DECL_VAR: java.util.ArrayList null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_2128704265 {
+label = "R(2:(1:4)|(3:6|f|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1562992987 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r3.mAdded.isEmpty() != false) goto L3\l}"];
+subgraph cluster_Region_1984079191 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|RETURN\l|return java.util.Collections.emptyList()\l}"];
+}
+}
+subgraph cluster_Region_780443905 {
+label = "R(3:6|f|11)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d}"];
+subgraph cluster_SynchronizedRegion_935578734 {
+label = "Synchronized:R(2:7|(1:9))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f}"];
+subgraph cluster_Region_1891008355 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0010|TRY_ENTER\lTryCatch #0 \{, blocks: (B:8:0x0010, B:9:0x0017), top: B:14:0x0010 \}\lCatch: all \-\> 0x0019\l|java.util.ArrayList r1 = new java.util.ArrayList(r3.mAdded)     \/\/ Catch: java.lang.Throwable \-\> L19\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0018|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0010|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0017|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:8:0x0010, B:9:0x0017), top: B:14:0x0010 \}\lCatch: all \-\> 0x0019\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L19\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0019|REMOVE\lExcHandler: all \-\> 0x0019\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001a|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x0019\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001b|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public java.util.List\<androidx.fragment.app.Fragment\> androidx.fragment.app.FragmentStore.getFragments((r3v0 'this' androidx.fragment.app.FragmentStore A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0018 \-\> B:1:?, CROSS_EDGE: B:13:0x001b \-\> B:1:?, CROSS_EDGE: B:14:0x0010 \-\> B:11:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l INFO: \l \-\> Access modifiers changed from: package\-private\}\lSIGNATURE: ()Ljava\/util\/List\<Landroidx\/fragment\/app\/Fragment;\>;\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_14;
+Node_8 -> Node_9;
+Node_10 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_14 -> Node_8;
+Node_14 -> Node_11;
+Node_9 -> Node_10;
+Node_9 -> Node_15;
+Node_15 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_1;
+}
+

@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.lifecycle.LiveData.removeObservers(Landroidx\/lifecycle\/LifecycleOwner;)V" {
+subgraph cluster_Region_928996488 {
+label = "R(2:1|(2:4|(1:7)(0)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|assertMainThread(\"removeObservers\")\ljava.util.Iterator java.util.Iterator\<java.util.Map.Entry\<androidx.lifecycle.Observer\<? super T\>, androidx.lifecycle.LiveData\<T\>.ObserverWrapper\>\> r0 = r3.mObservers.iterator()\l}"];
+subgraph cluster_LoopRegion_2050777453 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|if (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_466115472 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0011|java.util.Map$Entry java.util.Map.Entry\<androidx.lifecycle.Observer\<? super T\>, androidx.lifecycle.LiveData\<T\>.ObserverWrapper\> r1 = r0.next()\l}"];
+subgraph cluster_IfRegion_853658600 {
+label = "IF [B:21:0x0021] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0021|if (r1.getValue().isAttachedTo(r4) != false) goto L6\l}"];
+subgraph cluster_Region_2140633632 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0023|removeObserver(r1.getKey())\l}"];
+}
+subgraph cluster_Region_477543060 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b|LOOP_START\lLOOP:0: B:18:0x000b\-\>B:27:0x000b\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0023|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x000b|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000b|LOOP_END\lSYNTHETIC\lLOOP:0: B:18:0x000b\-\>B:27:0x000b\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x000b|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002d|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002d}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.lifecycle.LiveData.removeObservers((r3v0 'this' androidx.lifecycle.LiveData\<T\> A[D('this' androidx.lifecycle.LiveData\<T\>), IMMUTABLE_TYPE, THIS]), (r4v0 'owner' androidx.lifecycle.LifecycleOwner A[D('owner' androidx.lifecycle.LifecycleOwner), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x0023 \-\> B:18:0x000b, BACK_EDGE: B:21:0x0021 \-\> B:18:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_26[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_25;
+Node_21 -> Node_28[style=dashed];
+Node_22 -> Node_29;
+Node_15 -> Node_17;
+Node_18 -> Node_19;
+Node_25 -> Node_22;
+Node_29 -> Node_27;
+Node_27 -> Node_18;
+Node_28 -> Node_27;
+Node_26 -> Node_24;
+Node_24 -> Node_16;
+}
+

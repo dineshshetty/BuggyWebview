@@ -1,0 +1,84 @@
+digraph "CFG forkotlinx.coroutines.sync.SemaphoreImpl.acquireSlowPath(Lkotlin\/coroutines\/Continuation;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_172236385 {
+label = "R(5:1|(1:(2:4|(2:7|1))(1:17))|8|(1:10)|12)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|kotlinx.coroutines.CancellableContinuationImpl kotlinx.coroutines.CancellableContinuationImpl r3 = kotlinx.coroutines.CancellableContinuationKt.getOrCreateCancellableContinuation(kotlin.coroutines.intrinsics.IntrinsicsKt.intercepted(r10))\lkotlinx.coroutines.CancellableContinuation kotlinx.coroutines.CancellableContinuationImpl r4 = r3\l}"];
+subgraph cluster_LoopRegion_482666217 {
+label = "LOOP:0: (1:(2:4|(2:7|1))(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1715201120 {
+label = "R(1:(2:4|(2:7|1))(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1396208273 {
+label = "IF [B:24:0x0014] THEN: R(2:4|(2:7|1)) ELSE: R(1:17)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0014|if (addAcquireToQueue(r4) != true) goto L4\l}"];
+subgraph cluster_Region_1375711112 {
+label = "R(2:4|(2:7|1))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0017|int int r6 = kotlinx.coroutines.sync.SemaphoreImpl._availablePermits$FU.getAndDecrement(r9)\l}"];
+subgraph cluster_IfRegion_1094972380 {
+label = "IF [B:27:0x001d] THEN: R(2:7|1) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x001d|LOOP_END\lLOOP:0: B:23:0x000f\-\>B:27:0x001d\l|if (r6 \> 0) goto L6\l}"];
+subgraph cluster_Region_1052309410 {
+label = "R(2:7|1)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001f|EDGE_INSN: B:28:0x001f\-\>B:29:0x0029 ?: BREAK  \l|r4.resume(kotlin.Unit.INSTANCE, r9.onCancellationRelease)\l}"];
+Node_InsnContainer_1739933221 [shape=record,label="{|break\l}"];
+}
+}
+}
+subgraph cluster_Region_1480914732 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0029|SYNTHETIC\lEDGE_INSN: B:38:0x0029\-\>B:29:0x0029 ?: BREAK  \l|break\l}"];
+}
+}
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0029|EDGE_INSN: B:38:0x0029\-\>B:29:0x0029 ?: BREAK  , EDGE_INSN: B:28:0x001f\-\>B:29:0x0029 ?: BREAK  \l|java.lang.Object java.lang.Object r1 = r3.getResult()\l}"];
+subgraph cluster_IfRegion_2078413187 {
+label = "IF [B:30:0x0031] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0031|if (r1 == kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()) goto L10\l}"];
+subgraph cluster_Region_1661772131 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0033|kotlin.coroutines.jvm.internal.DebugProbes.probeCoroutineSuspended(r10)\l}"];
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x003b|RETURN\l|return r1 == kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED() ? r1 : kotlin.Unit.INSTANCE\l}"];
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000f|LOOP_START\lLOOP:0: B:23:0x000f\-\>B:27:0x001d\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x001f|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0036}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x003d}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x003e}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0040}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.sync.SemaphoreImpl.acquireSlowPath((r9v0 'this' kotlinx.coroutines.sync.SemaphoreImpl A[IMMUTABLE_TYPE, THIS]), (r10v0 kotlin.coroutines.Continuation\<? super kotlin.Unit\> A[D('$completion' kotlin.coroutines.Continuation), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:36:0x0040 \-\> B:21:?, CROSS_EDGE: B:30:0x0031 \-\> B:32:0x0036, BACK_EDGE: B:27:0x001d \-\> B:23:0x000f, CROSS_EDGE: B:24:0x0014 \-\> B:29:0x0029\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlin\/coroutines\/Continuation\<\-Lkotlin\/Unit;\>;)Ljava\/lang\/Object;\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_24 -> Node_26;
+Node_24 -> Node_38[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_23[style=dashed];
+Node_27 -> Node_39;
+Node_28 -> Node_29;
+Node_38 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_33 -> Node_34;
+Node_33 -> Node_35;
+Node_20 -> Node_22;
+Node_23 -> Node_24;
+Node_39 -> Node_28;
+Node_32 -> Node_33;
+Node_34 -> Node_21;
+Node_35 -> Node_36;
+Node_36 -> Node_21;
+}
+

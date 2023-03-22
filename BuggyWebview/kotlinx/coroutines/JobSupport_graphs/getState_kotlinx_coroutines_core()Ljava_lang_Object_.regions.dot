@@ -1,0 +1,48 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.getState$kotlinx_coroutines_core()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1453755014 {
+label = "R(1:(2:2|(2:(1:6)|(1:4))))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1259844256 {
+label = "LOOP:0: (2:2|(2:(1:6)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1966708226 {
+label = "R(2:2|(2:(1:6)|(1:4)))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|LOOP_START\lLOOP:0: B:11:0x0002\-\>B:14:0x000b\l|java.lang.Object java.lang.Object r2 = r5._state\l}"];
+subgraph cluster_Region_34784918 {
+label = "R(2:(1:6)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_594514556 {
+label = "IF [B:12:0x0008] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0008|if ((r2 instanceof kotlinx.coroutines.internal.OpDescriptor) != true) goto L5\l}"];
+subgraph cluster_Region_1543436927 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000a|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_465298902 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000b|LOOP_END\lLOOP:0: B:11:0x0002\-\>B:14:0x000b\l|((kotlinx.coroutines.internal.OpDescriptor) r2).perform(r5)\l}"];
+}
+}
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000a|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.JobSupport.getState$kotlinx_coroutines_core((r5v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x000b \-\> B:11:0x0002\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_12 -> Node_14[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_9;
+Node_14 -> Node_11;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_13;
+}
+

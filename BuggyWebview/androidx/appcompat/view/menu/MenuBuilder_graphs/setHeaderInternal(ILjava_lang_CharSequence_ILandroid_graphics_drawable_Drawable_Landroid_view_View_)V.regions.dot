@@ -1,0 +1,96 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuBuilder.setHeaderInternal(ILjava\/lang\/CharSequence;ILandroid\/graphics\/drawable\/Drawable;Landroid\/view\/View;)V" {
+subgraph cluster_Region_360844255 {
+label = "R(3:1|(1:3)(3:(1:8)(1:(1:15))|(1:10)(1:(1:13))|11)|4)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|android.content.res.Resources android.content.res.Resources r0 = getResources()\l}"];
+subgraph cluster_IfRegion_139600853 {
+label = "IF [B:19:0x0005] THEN: R(1:3) ELSE: R(3:(1:8)(1:(1:15))|(1:10)(1:(1:13))|11)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0005|if (r8 != null) goto L3\l}"];
+subgraph cluster_Region_236398739 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0007|r3.mHeaderView = r8\lr3.mHeaderTitle = null\lr3.mHeaderIcon = null\l}"];
+}
+subgraph cluster_Region_1882563510 {
+label = "R(3:(1:8)(1:(1:15))|(1:10)(1:(1:13))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_3770012 {
+label = "IF [B:21:0x000e] THEN: R(1:8) ELSE: R(1:(1:15))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|if (r4 \> 0) goto L8\l}"];
+subgraph cluster_Region_444442662 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|r3.mHeaderTitle = r0.getText(r4)\l}"];
+}
+subgraph cluster_Region_434917829 {
+label = "R(1:(1:15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_780710363 {
+label = "IF [B:23:0x0017] THEN: R(1:15) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0017|if (r5 != null) goto L15\l}"];
+subgraph cluster_Region_1937608623 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0019|r3.mHeaderTitle = r5\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1060960826 {
+label = "IF [B:25:0x001b] THEN: R(1:10) ELSE: R(1:(1:13))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001b|if (r6 \> 0) goto L10\l}"];
+subgraph cluster_Region_1143338593 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001d|r3.mHeaderIcon = androidx.core.content.ContextCompat.getDrawable(getContext(), r6)\l}"];
+}
+subgraph cluster_Region_793280855 {
+label = "R(1:(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_811033574 {
+label = "IF [B:27:0x0028] THEN: R(1:13) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0028|if (r7 != null) goto L13\l}"];
+subgraph cluster_Region_1759687420 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x002a|r3.mHeaderIcon = r7\l}"];
+}
+}
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x002c|r3.mHeaderView = null\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x002e|onItemsChanged(false)\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0032}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.view.menu.MenuBuilder.setHeaderInternal((r3v0 'this' androidx.appcompat.view.menu.MenuBuilder A[IMMUTABLE_TYPE, THIS]), (r4v0 'titleRes' int A[D('titleRes' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'title' java.lang.CharSequence A[D('title' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'iconRes' int A[D('iconRes' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'icon' android.graphics.drawable.Drawable A[D('icon' android.graphics.drawable.Drawable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x002c \-\> B:30:0x002e, CROSS_EDGE: B:28:0x002a \-\> B:29:0x002c, CROSS_EDGE: B:27:0x0028 \-\> B:29:0x002c, CROSS_EDGE: B:24:0x0019 \-\> B:25:0x001b, CROSS_EDGE: B:23:0x0017 \-\> B:25:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_30;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_25;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_29;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_16 -> Node_18;
+Node_31 -> Node_17;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.collections.builders.ListBuilder.Itr.next()Ljava\/lang\/Object;" {
+subgraph cluster_Region_86657318 {
+label = "R(1:(2:(1:7)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2022599658 {
+label = "R(2:(1:7)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1339564336 {
+label = "IF [B:3:0x0008] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r3.index \>= ((kotlin.collections.builders.ListBuilder) r3.list).length) goto L6\l}"];
+subgraph cluster_Region_1881584788 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0029|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+subgraph cluster_Region_1004318258 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|int int r0 = r3.index\lr3.index = r0 + 1\lr3.lastIndex = r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|RETURN\l|return (E) ((kotlin.collections.builders.ListBuilder) r3.list).array[((kotlin.collections.builders.ListBuilder) r3.list).offset + r3.lastIndex]\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0024}"];
+MethodNode[shape=record,label="{public E kotlin.collections.builders.ListBuilder.Itr.next((r3v0 'this' kotlin.collections.builders.ListBuilder$Itr\<E\> A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:7:0x0029 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: ()TE;\lMETHOD_OVERRIDE: [ClspMth\{java.util.Iterator.next():E\}]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_7 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

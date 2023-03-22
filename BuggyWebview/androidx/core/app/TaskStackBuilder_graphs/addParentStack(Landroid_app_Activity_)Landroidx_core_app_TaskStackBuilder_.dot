@@ -1,0 +1,33 @@
+digraph "CFG forandroidx.core.app.TaskStackBuilder.addParentStack(Landroid\/app\/Activity;)Landroidx\/core\/app\/TaskStackBuilder;" {
+Node_13 [shape=record,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0000|r0 = null\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0003|if ((r4 instanceof androidx.core.app.TaskStackBuilder.SupportParentable) == false) goto L4\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0005|android.content.Intent r0 = ((androidx.core.app.TaskStackBuilder.SupportParentable) r4).getSupportParentActivityIntent()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000c|PHI: r0 \l  PHI: (r0v1 'parent' android.content.Intent) = (r0v0 'parent' android.content.Intent), (r0v4 'parent' android.content.Intent) binds: [B:16:0x0003, B:17:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L6\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000e|android.content.Intent r0 = androidx.core.app.NavUtils.getParentActivityIntent(r4)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0012|PHI: r0 \l  PHI: (r0v2 'parent' android.content.Intent) = (r0v1 'parent' android.content.Intent), (r0v3 'parent' android.content.Intent) binds: [B:18:0x000c, B:19:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L11\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0014|android.content.ComponentName r1 = r0.getComponent()\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0018|if (r1 != null) goto L10\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001a|android.content.ComponentName r1 = r0.resolveActivity(r3.mSourceContext.getPackageManager())\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0024|PHI: r1 \l  PHI: (r1v2 'target' android.content.ComponentName) = (r1v1 'target' android.content.ComponentName), (r1v3 'target' android.content.ComponentName) binds: [B:22:0x0018, B:23:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|addParentStack(r1)\laddNextIntent(r0)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x002a|RETURN\l|return r3\l}"];
+Node_14 [shape=record,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.core.app.TaskStackBuilder androidx.core.app.TaskStackBuilder.addParentStack((r3v0 'this' androidx.core.app.TaskStackBuilder A[IMMUTABLE_TYPE, THIS]), (r4v0 'sourceActivity' android.app.Activity A[D('sourceActivity' android.app.Activity), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0018 \-\> B:24:0x0024, CROSS_EDGE: B:20:0x0012 \-\> B:25:0x002a, CROSS_EDGE: B:18:0x000c \-\> B:20:0x0012, CROSS_EDGE: B:16:0x0003 \-\> B:18:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_25;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+}
+

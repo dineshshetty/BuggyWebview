@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.sizeForPosition(I)I" {
+subgraph cluster_Region_967519559 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = r1.mData.length\l}"];
+subgraph cluster_LoopRegion_1361127642 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|LOOP_START\lLOOP:0: B:3:0x0003\-\>B:4:0x0005\lPHI: r0 \l  PHI: (r0v2 'len' int) = (r0v1 'len' int), (r0v3 'len' int) binds: [B:2:0x0000, B:4:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \<= r2) goto L3\l}"];
+subgraph cluster_Region_467775894 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|LOOP_END\lLOOP:0: B:3:0x0003\-\>B:4:0x0005\l|r0 *= 2\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0008|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0008|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{int androidx.recyclerview.widget.StaggeredGridLayoutManager.LazySpanLookup.sizeForPosition((r1v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager$LazySpanLookup A[IMMUTABLE_TYPE, THIS]), (r2v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:4:0x0005 \-\> B:3:0x0003\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_0 -> Node_2;
+Node_6 -> Node_5;
+}
+

@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.assertNotInLayoutOrScroll(Ljava\/lang\/String;)V" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000}"];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (isComputingLayout() == false) goto L9\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0006|if (r4 != null) goto L7\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0008|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Cannot call this method while RecyclerView is computing a layout or scrolling\")\lr1.append(exceptionLabel())\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0022|throw new java.lang.IllegalStateException(r1.toString())\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0023}"];
+Node_22 [shape=record,label="{22\:\ 0x0028|throw new java.lang.IllegalStateException(r4)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0029}"];
+Node_24 [shape=record,label="{24\:\ 0x002b|if (r3.mDispatchScrollCounter \<= 0) goto L13\l}"];
+Node_25 [shape=record,label="{25\:\ 0x002d|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"\")\lr1.append(exceptionLabel())\landroid.util.Log.w(androidx.recyclerview.widget.RecyclerView.TAG, \"Cannot call this method in a scroll callback. Scroll callbacks mightbe run during a measure & layout pass where you cannot change theRecyclerView data. Any method call that might change the structureof the RecyclerView or the adapter contents should be postponed tothe next frame.\", new java.lang.IllegalStateException(r1.toString()))\l}"];
+Node_26 [shape=record,label="{26\:\ 0x004e|RETURN\lORIG_RETURN\l|return\l}"];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.assertNotInLayoutOrScroll((r3v0 'this' androidx.recyclerview.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r4v0 'message' java.lang.String A[D('message' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0028 \-\> B:15:?, CROSS_EDGE: B:26:0x004e \-\> B:15:?, CROSS_EDGE: B:24:0x002b \-\> B:26:0x004e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_23;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_19 -> Node_20;
+Node_20 -> Node_15;
+Node_21 -> Node_22;
+Node_22 -> Node_15;
+Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_27;
+Node_25 -> Node_26;
+Node_26 -> Node_15;
+Node_27 -> Node_15;
+}
+

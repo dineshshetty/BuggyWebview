@@ -1,0 +1,45 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.signalCpuWork()V" {
+subgraph cluster_Region_2144050090 {
+label = "R(1:(2:(1:7)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_522381259 {
+label = "R(2:(1:7)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1081364589 {
+label = "IF [B:13:0x0004, B:16:0x000f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|if (tryUnpark() == true) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000f|ADDED_TO_REGION\l|if (tryCreateWorker$default(r4, 0L, 1, null) == true) goto L7\l}"];
+subgraph cluster_Region_232275693 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0011|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_787341879 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0012|tryUnpark()\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0007}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0015}"];
+MethodNode[shape=record,label="{public final void kotlinx.coroutines.scheduling.CoroutineScheduler.signalCpuWork((r4v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0011 \-\> B:11:?, CROSS_EDGE: B:19:0x0015 \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_18 -> Node_19;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_19 -> Node_11;
+}
+

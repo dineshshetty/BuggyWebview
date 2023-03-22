@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.groupByTo(Ljava\/lang\/Iterable;Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_1325843464 {
+label = "R(3:1|(3:4|(1:6)(1:9)|8)|12) | DECL_VAR: java.util.ArrayList answer$iv\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"destination\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, \"keySelector\")\ljava.util.Iterator java.util.Iterator\<? extends T\> r1 = r9.iterator()\l}"];
+subgraph cluster_LoopRegion_2107132 {
+label = "LOOP:0: (3:4|(1:6)(1:9)|8)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0018|if (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_106193962 {
+label = "R(3:4|(1:6)(1:9)|8)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x001a|java.lang.Object java.lang.Object r2 = (T) r1.next()\ljava.lang.Object K r3 = r11.invoke(r2)\ljava.lang.Object java.lang.Object r6 = r10.get(r3)\l}"];
+subgraph cluster_IfRegion_1894980401 {
+label = "IF [B:34:0x0028] THEN: R(1:6) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0028|if (r6 == null) goto L6\l}"];
+subgraph cluster_Region_153925784 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x002a|java.util.List r7 = new java.util.ArrayList()\lr10.put(r3, r7)\l}"];
+}
+subgraph cluster_Region_1910887445 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0038|r7 = r6\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x0039|LOOP_END\lLOOP:0: B:31:0x0014\-\>B:37:0x0039\lPHI: r7 \l  PHI: (r7v1 'answer$iv' java.lang.Object) = (r7v0 'answer$iv' java.lang.Object), (r7v4 'answer$iv' java.util.ArrayList) binds: [B:40:0x0039, B:41:0x0039] A[DONT_GENERATE, DONT_INLINE]\l|java.util.List java.util.List r4 = (java.util.List) r7\lr4.add(r2)\l}"];
+}
+}
+Node_38 [shape=record,label="{38\:\ 0x0041|RETURN\l|return r10\l}"];
+}
+Node_28 [shape=record,color=red,label="{28\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0014|LOOP_START\lLOOP:0: B:31:0x0014\-\>B:37:0x0039\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0039|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0039|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0041|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final M extends java.util.Map\<? super K, java.util.List\<T\>\> kotlin.collections.CollectionsKt___CollectionsKt.groupByTo((r9v0 java.lang.Iterable\<? extends T\> A[D('$this$groupByTo' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'destination' M extends java.util.Map\<? super K, java.util.List\<T\>\> A[D('destination' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'keySelector' kotlin.jvm.functions.Function1\<? super T, ? extends K\> A[D('keySelector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:37:0x0039 \-\> B:31:0x0014, CROSS_EDGE: B:36:0x0038 \-\> B:37:0x0039\lINLINE_NOT_NEEDED\lTYPE_VARS: [T, K, M extends java.util.Map\<? super K, java.util.List\<T\>\>]\lSIGNATURE: \<T:Ljava\/lang\/Object;K:Ljava\/lang\/Object;M::Ljava\/util\/Map\<\-TK;Ljava\/util\/List\<TT;\>;\>;\>(Ljava\/lang\/Iterable\<+TT;\>;TM;Lkotlin\/jvm\/functions\/Function1\<\-TT;+TK;\>;)TM;\l}"];
+MethodNode -> Node_28;Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_32 -> Node_39[style=dashed];
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_41;
+Node_36 -> Node_40;
+Node_37 -> Node_31;
+Node_38 -> Node_29;
+Node_28 -> Node_30;
+Node_31 -> Node_32;
+Node_41 -> Node_37;
+Node_40 -> Node_37;
+Node_39 -> Node_38;
+}
+

@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.core.app.ShareCompat.IntentReader.getStream(I)Landroid\/net\/Uri;" {
+subgraph cluster_Region_1650941044 {
+label = "R(3:(1:5)|6|(2:(1:9)|(1:(2:(1:13)|(2:14|15)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_146305927 {
+label = "IF [B:3:0x0004, B:5:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r3.mStreams == null) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|ADDED_TO_REGION\l|if (isMultipleShare() != false) goto L5\l}"];
+subgraph cluster_Region_1412290751 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|r3.mStreams = r3.mIntent.getParcelableArrayListExtra(\"android.intent.extra.STREAM\")\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0014|java.util.ArrayList\<android.net.Uri\> java.util.ArrayList\<android.net.Uri\> r0 = r3.mStreams\l}"];
+subgraph cluster_Region_1292041023 {
+label = "R(2:(1:9)|(1:(2:(1:13)|(2:14|15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1924798865 {
+label = "IF [B:8:0x0016] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0016|if (r0 != null) goto L8\l}"];
+subgraph cluster_Region_670688950 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|RETURN\l|return r0.get(r4)\l}"];
+}
+}
+subgraph cluster_Region_1108525494 {
+label = "R(1:(2:(1:13)|(2:14|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_159229496 {
+label = "R(2:(1:13)|(2:14|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_858746760 {
+label = "IF [B:11:0x001f] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001f|if (r4 == 0) goto L12\l}"];
+subgraph cluster_Region_1773052369 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0029|RETURN\l|return (android.net.Uri) r3.mIntent.getParcelableExtra(\"android.intent.extra.STREAM\")\l}"];
+}
+}
+subgraph cluster_Region_1030083107 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002a}"];
+Node_15 [shape=record,label="{15\:\ 0x004c|throw new java.lang.IndexOutOfBoundsException(\"Stream items available: \" + getStreamCount() + \" index requested: \" + r4)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0018}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0021}"];
+MethodNode[shape=record,label="{public android.net.Uri androidx.core.app.ShareCompat.IntentReader.getStream((r3v0 'this' androidx.core.app.ShareCompat$IntentReader A[IMMUTABLE_TYPE, THIS]), (r4v0 'index' int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0029 \-\> B:1:?, CROSS_EDGE: B:15:0x004c \-\> B:1:?, CROSS_EDGE: B:5:0x000a \-\> B:7:0x0014, CROSS_EDGE: B:3:0x0004 \-\> B:7:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_10 -> Node_1;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_1;
+Node_14 -> Node_15;
+Node_15 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+}
+

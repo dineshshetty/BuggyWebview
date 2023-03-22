@@ -1,0 +1,48 @@
+digraph "CFG forkotlinx.coroutines.channels.ActorCoroutine.onCancelling(Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_26986165 {
+label = "R(3:1|(2:4|(1:7))|8)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlinx.coroutines.channels.Channel kotlinx.coroutines.channels.Channel\<E\> r0 = get_channel()\ljava.util.concurrent.CancellationException r1 = null\l}"];
+subgraph cluster_IfRegion_1220697287 {
+label = "IF [B:15:0x0005] THEN: R(2:4|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|if (r6 != null) goto L3\l}"];
+subgraph cluster_Region_989839377 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000c|r1 = r6 instanceof java.util.concurrent.CancellationException ? (java.util.concurrent.CancellationException) r6 : null\l}"];
+subgraph cluster_IfRegion_264102988 {
+label = "IF [B:20:0x0011] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0011|PHI: r1 \l  PHI: (r1v2 java.util.concurrent.CancellationException) = (r1v0 java.util.concurrent.CancellationException) binds: [B:18:0x000c] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|if (r1 == null) goto L7\l}"];
+subgraph cluster_Region_1612156870 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0013|java.util.concurrent.CancellationException r1 = kotlinx.coroutines.ExceptionsKt.CancellationException(kotlin.jvm.internal.Intrinsics.stringPlus(kotlinx.coroutines.DebugStrings.getClassSimpleName(r5), \" was cancelled\"), r6)\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0022|PHI: r1 \l  PHI: (r1v1 java.util.concurrent.CancellationException) = (r1v0 java.util.concurrent.CancellationException), (r1v2 java.util.concurrent.CancellationException), (r1v5 java.util.concurrent.CancellationException) binds: [B:15:0x0005, B:20:0x0011, B:21:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|r0.cancel(r1)\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0008}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000e}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0025}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected void kotlinx.coroutines.channels.ActorCoroutine.onCancelling((r5v0 'this' kotlinx.coroutines.channels.ActorCoroutine\<E\> A[IMMUTABLE_TYPE, THIS]), (r6v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0011 \-\> B:22:0x0022, CROSS_EDGE: B:18:0x000c \-\> B:20:0x0011, CROSS_EDGE: B:15:0x0005 \-\> B:22:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lMETHOD_OVERRIDE: [kotlinx.coroutines.JobSupport.onCancelling(java.lang.Throwable):void]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_17;
+Node_15 -> Node_22[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_12 -> Node_14;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_23 -> Node_13;
+}
+

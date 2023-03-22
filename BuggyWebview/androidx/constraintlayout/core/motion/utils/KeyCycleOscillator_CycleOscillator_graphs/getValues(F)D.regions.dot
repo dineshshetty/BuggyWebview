@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.constraintlayout.core.motion.utils.KeyCycleOscillator.CycleOscillator.getValues(F)D" {
+subgraph cluster_Region_1867928886 {
+label = "R(4:1|(1:3)(1:7)|4|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|androidx.constraintlayout.core.motion.utils.CurveFit androidx.constraintlayout.core.motion.utils.CurveFit r0 = r9.mCurveFit\l}"];
+subgraph cluster_IfRegion_2105069993 {
+label = "IF [B:11:0x0005] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0005|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_466401668 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0007|r0.getPos(r10, r9.mSplineValueCache)\l}"];
+}
+subgraph cluster_Region_1682333886 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000e|double[] double[] r0 = r9.mSplineValueCache\lr0[0] = r9.mOffset[0]\lr0[1] = r9.mPhase[0]\lr0[2] = r9.mValues[0]\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0025|double[] double[] r0 = r9.mSplineValueCache\ldouble r3 = r0[0]\ldouble r5 = r0[1]\ldouble double r7 = r9.mOscillator.getValue(r10, r5)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0039|RETURN\l|return (r9.mSplineValueCache[2] * r7) + r3\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public double androidx.constraintlayout.core.motion.utils.KeyCycleOscillator.CycleOscillator.getValues((r9v0 'this' androidx.constraintlayout.core.motion.utils.KeyCycleOscillator$CycleOscillator A[IMMUTABLE_TYPE, THIS]), (r10v0 'time' float A[D('time' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000e \-\> B:14:0x0025\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+}
+

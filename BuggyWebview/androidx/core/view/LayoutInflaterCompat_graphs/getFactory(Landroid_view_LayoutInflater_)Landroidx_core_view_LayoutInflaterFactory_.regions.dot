@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.view.LayoutInflaterCompat.getFactory(Landroid\/view\/LayoutInflater;)Landroidx\/core\/view\/LayoutInflaterFactory;" {
+subgraph cluster_Region_1876589800 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|android.view.LayoutInflater$Factory android.view.LayoutInflater.Factory r0 = r2.getFactory()\l}"];
+subgraph cluster_Region_1176044299 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1457944924 {
+label = "IF [B:11:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0006|if ((r0 instanceof androidx.core.view.LayoutInflaterCompat.Factory2Wrapper) != false) goto L3\l}"];
+subgraph cluster_Region_1903517120 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000d|RETURN\l|return ((androidx.core.view.LayoutInflaterCompat.Factory2Wrapper) r0).mDelegateFactory\l}"];
+}
+}
+subgraph cluster_Region_876521596 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|RETURN\l|return null\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0008}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.core.view.LayoutInflaterFactory androidx.core.view.LayoutInflaterCompat.getFactory((r2v0 'inflater' android.view.LayoutInflater A[D('inflater' android.view.LayoutInflater), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lINLINE_NOT_NEEDED\lCROSS_EDGE: B:15:0x000f \-\> B:9:?\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+}
+

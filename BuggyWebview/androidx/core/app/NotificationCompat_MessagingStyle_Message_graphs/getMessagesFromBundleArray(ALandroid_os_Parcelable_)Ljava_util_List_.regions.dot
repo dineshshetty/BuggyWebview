@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.MessagingStyle.Message.getMessagesFromBundleArray([Landroid\/os\/Parcelable;)Ljava\/util\/List;" {
+subgraph cluster_Region_263440023 {
+label = "R(3:1|(2:(1:8)|10)|14) | DECL_VAR: androidx.core.app.NotificationCompat$MessagingStyle$Message message\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|java.util.ArrayList java.util.List\<androidx.core.app.NotificationCompat.MessagingStyle.Message\> r0 = new java.util.ArrayList\<\>(r3.length)\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_2013245593 {
+label = "LOOP:0: (2:(1:8)|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|if (r1 \< r3.length) goto L4\l}"];
+subgraph cluster_Region_1496482394 {
+label = "R(2:(1:8)|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1210343573 {
+label = "IF [B:22:0x000e, B:24:0x0018] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000e|if ((r3[r1] instanceof android.os.Bundle) != false) goto L6\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0018|ADDED_TO_REGION\l|if ((r2 = getMessageFromBundle((android.os.Bundle) r3[r1])) != null) goto L8\l}"];
+subgraph cluster_Region_1878057074 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001a|r0.add(r2)\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x001d|LOOP_END\lLOOP:0: B:19:0x0007\-\>B:26:0x001d\l|r1++\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0020|RETURN\l|return r0\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0007|LOOP_START\lLOOP:0: B:19:0x0007\-\>B:26:0x001d\lPHI: r1 \l  PHI: (r1v2 'i' int) = (r1v1 'i' int), (r1v3 'i' int) binds: [B:18:0x0000, B:26:0x001d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0010}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x001d|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x001d|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001d|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0020|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static java.util.List\<androidx.core.app.NotificationCompat$MessagingStyle$Message\> androidx.core.app.NotificationCompat.MessagingStyle.Message.getMessagesFromBundleArray((r3v0 'bundles' android.os.Parcelable[] A[D('bundles' android.os.Parcelable[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:26:0x001d \-\> B:19:0x0007, CROSS_EDGE: B:24:0x0018 \-\> B:26:0x001d, CROSS_EDGE: B:22:0x000e \-\> B:26:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([Landroid\/os\/Parcelable;)Ljava\/util\/List\<Landroidx\/core\/app\/NotificationCompat$MessagingStyle$Message;\>;\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_28[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_30[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_31[style=dashed];
+Node_25 -> Node_29;
+Node_26 -> Node_19;
+Node_27 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_29 -> Node_26;
+Node_31 -> Node_26;
+Node_30 -> Node_26;
+Node_28 -> Node_27;
+}
+

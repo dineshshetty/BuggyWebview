@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.flow.StateFlowImpl.getValue()Ljava\/lang\/Object;" {
+subgraph cluster_Region_844580951 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|kotlinx.coroutines.internal.Symbol kotlinx.coroutines.internal.Symbol r0 = kotlinx.coroutines.flow.internal.NullSurrogate.NULL\ljava.lang.Object T r1 = (T) r4._state\l}"];
+subgraph cluster_Region_1652864798 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1401854607 {
+label = "IF [B:10:0x0005] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0005|if (r1 == r0) goto L3\l}"];
+subgraph cluster_Region_1380655378 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0009|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_879491712 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0007}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public T kotlinx.coroutines.flow.StateFlowImpl.getValue((r4v0 'this' kotlinx.coroutines.flow.StateFlowImpl\<T\> A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0005 \-\> B:12:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: ()TT;\lMETHOD_OVERRIDE: [kotlinx.coroutines.flow.StateFlow.getValue():T]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_11 -> Node_12;
+}
+

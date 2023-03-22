@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.material.internal.ViewUtils.getChildren(Landroid\/view\/View;)Ljava\/util\/List;" {
+subgraph cluster_Region_435435422 {
+label = "R(3:1|(2:3|(1:6))|8)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|java.util.ArrayList java.util.List\<android.view.View\> r0 = new java.util.ArrayList\<\>()\l}"];
+subgraph cluster_IfRegion_925645066 {
+label = "IF [B:13:0x0007] THEN: R(2:3|(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0007|if ((r4 instanceof android.view.ViewGroup) != false) goto L3\l}"];
+subgraph cluster_Region_1757890606 {
+label = "R(2:3|(1:6))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0009|android.view.ViewGroup android.view.ViewGroup r1 = (android.view.ViewGroup) r4\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1935666835 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0011|if (r2 \< r1.getChildCount()) goto L6\l}"];
+subgraph cluster_Region_1772135886 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|LOOP_END\lLOOP:0: B:15:0x000d\-\>B:17:0x0013\l|r0.add(r1.getChildAt(r2))\lr2++\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x001d|RETURN\l|return r0\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000d|LOOP_START\lLOOP:0: B:15:0x000d\-\>B:17:0x0013\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:14:0x0009, B:17:0x0013] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001d|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static java.util.List\<android.view.View\> com.google.android.material.internal.ViewUtils.getChildren((r4v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x0013 \-\> B:15:0x000d, CROSS_EDGE: B:13:0x0007 \-\> B:18:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/view\/View;)Ljava\/util\/List\<Landroid\/view\/View;\>;\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_15;
+Node_18 -> Node_11;
+Node_10 -> Node_12;
+Node_15 -> Node_16;
+Node_19 -> Node_18;
+}
+

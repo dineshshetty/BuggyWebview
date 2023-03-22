@@ -1,0 +1,69 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeTaskQueueCore.allocateNextCopy(J)Lkotlinx\/coroutines\/internal\/LockFreeTaskQueueCore;" {
+subgraph cluster_Region_1551462577 {
+label = "R(2:1|(2:2|(3:4|(1:6)(0)|8)(2:11|12)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlinx.coroutines.internal.LockFreeTaskQueueCore kotlinx.coroutines.internal.LockFreeTaskQueueCore r1 = new kotlinx.coroutines.internal.LockFreeTaskQueueCore(r18.capacity * 2, r18.singleConsumer)\lkotlinx.coroutines.internal.LockFreeTaskQueueCore$Companion kotlinx.coroutines.internal.LockFreeTaskQueueCore.Companion r2 = kotlinx.coroutines.internal.LockFreeTaskQueueCore.Companion\lint int r7 = (int) ((kotlinx.coroutines.internal.LockFreeTaskQueueCore.HEAD_MASK & r19) \>\> 0)\lint int r6 = (int) ((kotlinx.coroutines.internal.LockFreeTaskQueueCore.TAIL_MASK & r19) \>\> 30)\lint r11 = r7\l}"];
+subgraph cluster_LoopRegion_705833706 {
+label = "LOOP:0: (2:2|(3:4|(1:6)(0)|8)(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_Region_377549804 {
+label = "R(2:2|(3:4|(1:6)(0)|8)(2:11|12))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0027|LOOP_START\lLOOP:0: B:17:0x0027\-\>B:22:0x003d\lPHI: r11 \l  PHI: (r11v1 'index' int) = (r11v0 'index' int), (r11v2 'index' int) binds: [B:16:0x0000, B:22:0x003d] A[DONT_GENERATE, DONT_INLINE]\l|int int r12 = r18.mask\l}"];
+subgraph cluster_IfRegion_694989914 {
+label = "IF [B:18:0x002d] THEN: R(3:4|(1:6)(0)|8) ELSE: R(2:11|12)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002d|if ((r11 & r12) != (r6 & r12)) goto L4\l}"];
+subgraph cluster_Region_1826131692 {
+label = "R(3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002f|java.lang.Object java.lang.Object r12 = r18.array.get(r12 & r11)\l}"];
+subgraph cluster_IfRegion_270874135 {
+label = "IF [B:20:0x0036] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0036|if (r12 == null) goto L6\l}"];
+subgraph cluster_Region_1049077054 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0038|kotlinx.coroutines.internal.LockFreeTaskQueueCore$Placeholder r12 = new kotlinx.coroutines.internal.LockFreeTaskQueueCore.Placeholder(r11)\l}"];
+}
+subgraph cluster_Region_2004349104 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x003d|LOOP_END\lLOOP:0: B:17:0x0027\-\>B:22:0x003d\lPHI: r12 \l  PHI: (r12v5 'value' java.lang.Object) = (r12v4 'value' java.lang.Object), (r12v6 'value' java.lang.Object) binds: [B:27:0x003d, B:26:0x003d] A[DONT_GENERATE, DONT_INLINE]\l|r1.array.set(r1.mask & r11, r12)\lr11++\l}"];
+}
+subgraph cluster_Region_717593807 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0048|r1._state = kotlinx.coroutines.internal.LockFreeTaskQueueCore.Companion.m0wo(r19, kotlinx.coroutines.internal.LockFreeTaskQueueCore.FROZEN_MASK)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0058|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x003d|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x003d|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0048|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final kotlinx.coroutines.internal.LockFreeTaskQueueCore\<E\> kotlinx.coroutines.internal.LockFreeTaskQueueCore.allocateNextCopy((r18v0 'this' kotlinx.coroutines.internal.LockFreeTaskQueueCore\<E\> A[IMMUTABLE_TYPE, THIS]), (r19v0 'state' long A[D('state' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x003d \-\> B:17:0x0027, CROSS_EDGE: B:20:0x0036 \-\> B:22:0x003d\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (J)Lkotlinx\/coroutines\/internal\/LockFreeTaskQueueCore\<TE;\>;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r13v3, resolved type: java.util.concurrent.atomic.AtomicReferenceArray\}\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_27[style=dashed];
+Node_21 -> Node_26;
+Node_22 -> Node_17;
+Node_23 -> Node_24;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_26 -> Node_22;
+Node_27 -> Node_22;
+Node_25 -> Node_23;
+}
+

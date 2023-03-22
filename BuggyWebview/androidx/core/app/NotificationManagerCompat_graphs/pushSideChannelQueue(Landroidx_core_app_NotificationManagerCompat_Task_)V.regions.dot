@@ -1,0 +1,56 @@
+digraph "CFG forandroidx.core.app.NotificationManagerCompat.pushSideChannelQueue(Landroidx\/core\/app\/NotificationManagerCompat$Task;)V" {
+subgraph cluster_Region_1115573359 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000}"];
+subgraph cluster_SynchronizedRegion_917171747 {
+label = "Synchronized:R(2:2|(2:(1:6)|7))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002}"];
+subgraph cluster_Region_1497560055 {
+label = "R(2:(1:6)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2046087587 {
+label = "IF [B:5:0x0005] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0005|if (androidx.core.app.NotificationManagerCompat.sSideChannelManager == null) goto L6\l}"];
+subgraph cluster_Region_1239021510 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0007|TryCatch #0 \{, blocks: (B:4:0x0003, B:6:0x0007, B:7:0x0014, B:8:0x0019), top: B:13:0x0003 \}\lCatch: all \-\> 0x001b\l|androidx.core.app.NotificationManagerCompat.sSideChannelManager = new androidx.core.app.NotificationManagerCompat.SideChannelManager(r3.mContext.getApplicationContext())     \/\/ Catch: java.lang.Throwable \-\> L1b\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0014|TryCatch #0 \{, blocks: (B:4:0x0003, B:6:0x0007, B:7:0x0014, B:8:0x0019), top: B:13:0x0003 \}\lCatch: all \-\> 0x001b\l|androidx.core.app.NotificationManagerCompat.sSideChannelManager.queueTask(r4)     \/\/ Catch: java.lang.Throwable \-\> L1b\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0003|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0003|TRY_ENTER\lTryCatch #0 \{, blocks: (B:4:0x0003, B:6:0x0007, B:7:0x0014, B:8:0x0019), top: B:13:0x0003 \}\lCatch: all \-\> 0x001b\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0019|DONT_GENERATE\lTryCatch #0 \{, blocks: (B:4:0x0003, B:6:0x0007, B:7:0x0014, B:8:0x0019), top: B:13:0x0003 \}\lCatch: all \-\> 0x001b\l|monitor\-exit()     \/\/ Catch: java.lang.Throwable \-\> L1b\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001a}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001b|REMOVE\lExcHandler: all \-\> 0x001b\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001c|TRY_LEAVE\lREMOVE\lCatch: all \-\> 0x001b\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001d|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{private void androidx.core.app.NotificationManagerCompat.pushSideChannelQueue((r3v0 'this' androidx.core.app.NotificationManagerCompat A[IMMUTABLE_TYPE, THIS]), (r4v0 'task' androidx.core.app.NotificationManagerCompat$Task A[D('task' androidx.core.app.NotificationManagerCompat$Task), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x001d \-\> B:1:?, CROSS_EDGE: B:5:0x0005 \-\> B:7:0x0014, CROSS_EDGE: B:13:0x0003 \-\> B:10:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_13;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_0 -> Node_2;
+Node_13 -> Node_4;
+Node_13 -> Node_10;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_8 -> Node_14;
+Node_9 -> Node_1;
+Node_14 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+}
+

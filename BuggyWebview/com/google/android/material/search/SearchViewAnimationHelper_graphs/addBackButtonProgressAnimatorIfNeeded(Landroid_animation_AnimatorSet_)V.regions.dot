@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.android.material.search.SearchViewAnimationHelper.addBackButtonProgressAnimatorIfNeeded(Landroid\/animation\/AnimatorSet;)V" {
+subgraph cluster_Region_405785848 {
+label = "R(2:1|(2:(1:3)|(2:5|(2:(2:7|8)|(1:9)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|android.widget.ImageButton android.widget.ImageButton r0 = com.google.android.material.internal.ToolbarUtils.getNavigationIconButton(r3.toolbar)\l}"];
+subgraph cluster_Region_868258265 {
+label = "R(2:(1:3)|(2:5|(2:(2:7|8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_700809113 {
+label = "IF [B:14:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_42917839 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_404609903 {
+label = "R(2:5|(2:(2:7|8)|(1:9)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r1 = androidx.core.graphics.drawable.DrawableCompat.unwrap(r0.getDrawable())\l}"];
+subgraph cluster_Region_1073872718 {
+label = "R(2:(2:7|8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1960764580 {
+label = "IF [B:17:0x0017] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0017|if (r3.searchView.isAnimatedNavigationIcon() != false) goto L7\l}"];
+subgraph cluster_Region_1299224098 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0019|addDrawerArrowDrawableAnimatorIfNeeded(r4, r1)\laddFadeThroughDrawableAnimatorIfNeeded(r4, r1)\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_736025464 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0020|setFullDrawableProgressIfNeeded(r1)\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0023|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.search.SearchViewAnimationHelper.addBackButtonProgressAnimatorIfNeeded((r3v0 'this' com.google.android.material.search.SearchViewAnimationHelper A[IMMUTABLE_TYPE, THIS]), (r4v0 'animatorSet' android.animation.AnimatorSet A[D('animatorSet' android.animation.AnimatorSet), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0023 \-\> B:12:?, CROSS_EDGE: B:19:0x0020 \-\> B:20:0x0023\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_21 -> Node_12;
+Node_19 -> Node_20;
+Node_11 -> Node_13;
+Node_20 -> Node_12;
+}
+

@@ -1,0 +1,80 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.last(Lkotlin\/sequences\/Sequence;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_411490262 {
+label = "R(3:1|(2:4|(1:7)(0))|(2:(1:16)|(1:13)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"predicate\")\lT r1 = null\lboolean r2 = false\ljava.util.Iterator r3 = r6.iterator()\l\l}"];
+subgraph cluster_LoopRegion_960427067 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|java.lang.Object \lif (r3.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1054097981 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0017|java.lang.Object r4 = r3.next()\l}"];
+subgraph cluster_IfRegion_1715463857 {
+label = "IF [B:23:0x0025] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0025|if (r7.invoke(r4).booleanValue() != false) goto L6\l}"];
+subgraph cluster_Region_2051828554 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0027|r1 = r4\lr2 = true\l}"];
+}
+subgraph cluster_Region_1169617591 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+subgraph cluster_Region_191318294 {
+label = "R(2:(1:16)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1787172668 {
+label = "IF [B:25:0x002a] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002a|if (r2 == false) goto L15\l}"];
+subgraph cluster_Region_398338029 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0034|throw new java.util.NoSuchElementException(\"Sequence contains no element matching the predicate.\")\l}"];
+}
+}
+subgraph cluster_Region_58316976 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002c|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0011|LOOP_START\lLOOP:0: B:20:0x0011\-\>B:31:0x0011\lPHI: r1 r2 \l  PHI: (r1v1 T) = (r1v0 T), (r1v2 T) binds: [B:19:0x0000, B:31:0x0011] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'found' boolean) = (r2v0 'found' boolean), (r2v2 'found' boolean) binds: [B:19:0x0000, B:31:0x0011] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0027|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0011|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0011|LOOP_END\lSYNTHETIC\lLOOP:0: B:20:0x0011\-\>B:31:0x0011\lPHI: r1 r2 \l  PHI: (r1v2 T) = (r1v1 T), (r1v3 T) binds: [B:32:0x0011, B:33:0x0011] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 'found' boolean) = (r2v1 'found' boolean), (r2v3 'found' boolean) binds: [B:32:0x0011, B:33:0x0011] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0011|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002a|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002d}"];
+MethodNode[shape=record,label="{public static final T kotlin.sequences.SequencesKt___SequencesKt.last((r6v0 kotlin.sequences.Sequence\<? extends T\> A[D('$this$last' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'predicate' kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:23:0x0025 \-\> B:20:0x0011, BACK_EDGE: B:24:0x0027 \-\> B:20:0x0011, CROSS_EDGE: B:28:0x0034 \-\> B:18:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Lkotlin\/sequences\/Sequence\<+TT;\>;Lkotlin\/jvm\/functions\/Function1\<\-TT;Ljava\/lang\/Boolean;\>;)TT;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r4v2, resolved type: java.lang.Object\}\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_30[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_29;
+Node_23 -> Node_32[style=dashed];
+Node_24 -> Node_33;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_27;
+Node_28 -> Node_18;
+Node_26 -> Node_18;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_29 -> Node_24;
+Node_33 -> Node_31;
+Node_31 -> Node_20;
+Node_32 -> Node_31;
+Node_30 -> Node_25;
+Node_27 -> Node_28;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.collection.SimpleArrayMap.putIfAbsent(Ljava\/lang\/Object;Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_791244262 {
+label = "R(2:1|(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|java.lang.Object V r0 = get(r2)\l}"];
+subgraph cluster_Region_2113299668 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_343472227 {
+label = "IF [B:10:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0004|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1053629074 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000a|RETURN\lORIG_RETURN\l|return put(r2, r3)\l}"];
+}
+}
+subgraph cluster_Region_517907370 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0006}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public V androidx.collection.SimpleArrayMap.putIfAbsent((r1v0 'this' androidx.collection.SimpleArrayMap\<K, V\> A[D('this' androidx.collection.SimpleArrayMap\<K, V\>), IMMUTABLE_TYPE, THIS]), (r2v0 'key' K A[D('key' K), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'value' V A[D('value' V), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0004 \-\> B:12:0x000a\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: (TK;TV;)TV;\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_11 -> Node_12;
+}
+

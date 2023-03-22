@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.collection.CircularIntArray.popFirst()I" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|int r0 = r3.mHead\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 == r3.mTail) goto L6\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|r1 = r3.mElements[r0]\lr3.mHead = (r0 + 1) & r3.mCapacityBitmask\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|RETURN\l|return r1\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|throw new java.lang.ArrayIndexOutOfBoundsException()\l}"];
+MethodNode[shape=record,label="{public int androidx.collection.CircularIntArray.popFirst((r3v0 'this' androidx.collection.CircularIntArray A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0017 \-\> B:1:?\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+}
+

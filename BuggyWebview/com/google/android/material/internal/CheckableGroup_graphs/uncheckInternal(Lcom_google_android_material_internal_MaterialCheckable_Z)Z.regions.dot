@@ -1,0 +1,84 @@
+digraph "CFG forcom.google.android.material.internal.CheckableGroup.uncheckInternal(Lcom\/google\/android\/material\/internal\/MaterialCheckable;Z)Z" {
+subgraph cluster_Region_676262367 {
+label = "R(2:1|(2:(1:(2:(2:10|11)|(3:12|(1:14)|15)))|(1:3)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|int int r0 = r6.getId()\l}"];
+subgraph cluster_Region_107533809 {
+label = "R(2:(1:(2:(2:10|11)|(3:12|(1:14)|15)))|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_854858145 {
+label = "IF [B:19:0x000f] THEN: R(1:(2:(2:10|11)|(3:12|(1:14)|15))) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|if (r5.checkedIds.contains(java.lang.Integer.valueOf(r0)) == true) goto L5\l}"];
+subgraph cluster_Region_149020177 {
+label = "R(1:(2:(2:10|11)|(3:12|(1:14)|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1581124760 {
+label = "R(2:(2:10|11)|(3:12|(1:14)|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1133228986 {
+label = "IF [B:21:0x0012, B:23:0x001b, B:25:0x0027] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0012|if (r7 != false) goto L6\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001b|ADDED_TO_REGION\l|if (r5.checkedIds.size() == 1) goto L8\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0027|ADDED_TO_REGION\l|if (r5.checkedIds.contains(java.lang.Integer.valueOf(r0)) != false) goto L10\l}"];
+subgraph cluster_Region_1696671901 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0029|r6.setChecked(true)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002c|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_591464276 {
+label = "R(3:12|(1:14)|15)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x002d|boolean boolean r1 = r5.checkedIds.remove(java.lang.Integer.valueOf(r0))\l}"];
+subgraph cluster_IfRegion_631680661 {
+label = "IF [B:29:0x003b] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x003b|if (r6.isChecked() != false) goto L14\l}"];
+subgraph cluster_Region_590478694 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x003d|r6.setChecked(false)\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0040|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_222654292 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0011|RETURN\l|return false\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0014}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001d}"];
+MethodNode[shape=record,label="{public boolean com.google.android.material.internal.CheckableGroup.uncheckInternal((r5v0 'this' com.google.android.material.internal.CheckableGroup\<T extends com.google.android.material.internal.MaterialCheckable\<T\>\> A[D('this' com.google.android.material.internal.CheckableGroup\<T extends com.google.android.material.internal.MaterialCheckable\<T\>\>), IMMUTABLE_TYPE, THIS]), (r6v0 'checkable' com.google.android.material.internal.MaterialCheckable\<T extends com.google.android.material.internal.MaterialCheckable\<T\>\> A[D('checkable' com.google.android.material.internal.MaterialCheckable\<T extends com.google.android.material.internal.MaterialCheckable\<T\>\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'selectionRequired' boolean A[D('selectionRequired' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x002c \-\> B:17:?, CROSS_EDGE: B:31:0x0040 \-\> B:17:?, CROSS_EDGE: B:29:0x003b \-\> B:31:0x0040, CROSS_EDGE: B:23:0x001b \-\> B:28:0x002d, CROSS_EDGE: B:21:0x0012 \-\> B:28:0x002d\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends com.google.android.material.internal.MaterialCheckable\<T\>]\lSIGNATURE: (Lcom\/google\/android\/material\/internal\/MaterialCheckable\<TT;\>;Z)Z\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_28[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_28[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_17;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_17;
+Node_20 -> Node_17;
+Node_16 -> Node_18;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+}
+

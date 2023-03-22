@@ -1,0 +1,57 @@
+digraph "CFG forandroidx.core.view.DisplayCompat.getDisplaySize(Landroid\/content\/Context;Landroid\/view\/Display;)Landroid\/graphics\/Point;" {
+subgraph cluster_Region_1139869271 {
+label = "R(2:1|(2:(1:3)|(3:5|(1:7)(1:9)|8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.graphics.Point android.graphics.Point r0 = getCurrentDisplaySizeFromWorkarounds(r3, r4)\l}"];
+subgraph cluster_Region_20360784 {
+label = "R(2:(1:3)|(3:5|(1:7)(1:9)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1256733987 {
+label = "IF [B:3:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_519521713 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1933186899 {
+label = "R(3:5|(1:7)(1:9)|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|android.graphics.Point android.graphics.Point r1 = new android.graphics.Point()\l}"];
+subgraph cluster_IfRegion_107476015 {
+label = "IF [B:6:0x0011] THEN: R(1:7) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|if (android.os.Build.VERSION.SDK_INT \>= 17) goto L7\l}"];
+subgraph cluster_Region_942826717 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013|androidx.core.view.DisplayCompat.Api17Impl.getRealSize(r4, r1)\l}"];
+}
+subgraph cluster_Region_867719133 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|r4.getSize(r1)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001a|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static android.graphics.Point androidx.core.view.DisplayCompat.getDisplaySize((r3v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'display' android.view.Display A[D('display' android.view.Display), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x001a \-\> B:1:?, CROSS_EDGE: B:8:0x0017 \-\> B:9:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+}
+

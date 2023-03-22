@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.recyclerview.widget.LinearLayoutManager.updateAnchorInfoForLayout(Landroidx\/recyclerview\/widget\/RecyclerView$Recycler;Landroidx\/recyclerview\/widget\/RecyclerView$State;Landroidx\/recyclerview\/widget\/LinearLayoutManager$AnchorInfo;)V" {
+subgraph cluster_Region_766250081 {
+label = "R(1:(2:(1:7)|(2:8|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_282718542 {
+label = "R(2:(1:7)|(2:8|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_204840601 {
+label = "IF [B:17:0x0004, B:20:0x000b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0004|if (updateAnchorFromPendingData(r3, r4) != false) goto L3\l}"];
+Node_20 [shape=record,label="{20\:\ 0x000b|ADDED_TO_REGION\l|if (updateAnchorFromChildren(r2, r3, r4) != false) goto L7\l}"];
+subgraph cluster_Region_442298335 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000d|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1465792497 {
+label = "R(2:8|11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x000e|r4.assignCoordinateFromPadding()\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001d|PHI: r0 \l  PHI: (r0v4 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r4.mPosition = r1.mStackFromEnd ? r3.getItemCount() \- 1 : 0\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0006|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0007}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0013}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0015}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001f}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x001c}"];
+MethodNode[shape=record,label="{private void androidx.recyclerview.widget.LinearLayoutManager.updateAnchorInfoForLayout((r1v0 'this' androidx.recyclerview.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]), (r2v0 'recycler' androidx.recyclerview.widget.RecyclerView$Recycler A[D('recycler' androidx.recyclerview.widget.RecyclerView$Recycler), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'anchorInfo' androidx.recyclerview.widget.LinearLayoutManager$AnchorInfo A[D('anchorInfo' androidx.recyclerview.widget.LinearLayoutManager$AnchorInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x000d \-\> B:15:?, CROSS_EDGE: B:27:0x001f \-\> B:15:?, CROSS_EDGE: B:25:0x001c \-\> B:26:0x001d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_15;
+Node_22 -> Node_23;
+Node_26 -> Node_27;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_15;
+Node_19 -> Node_20;
+Node_23 -> Node_24;
+Node_23 -> Node_25;
+Node_24 -> Node_26;
+Node_27 -> Node_15;
+Node_25 -> Node_26;
+}
+

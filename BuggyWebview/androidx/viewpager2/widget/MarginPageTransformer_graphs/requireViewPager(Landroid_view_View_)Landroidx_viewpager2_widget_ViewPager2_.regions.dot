@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.viewpager2.widget.MarginPageTransformer.requireViewPager(Landroid\/view\/View;)Landroidx\/viewpager2\/widget\/ViewPager2;" {
+subgraph cluster_Region_2059012469 {
+label = "R(2:1|(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|android.view.ViewParent android.view.ViewParent r0 = r5.getParent()\landroid.view.ViewParent android.view.ViewParent r1 = r0.getParent()\l}"];
+subgraph cluster_Region_1963273520 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1565357715 {
+label = "IF [B:3:0x000a, B:5:0x000e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if ((r0 instanceof androidx.recyclerview.widget.RecyclerView) != false) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|ADDED_TO_REGION\l|if ((r1 instanceof androidx.viewpager2.widget.ViewPager2) != false) goto L5\l}"];
+subgraph cluster_Region_1499915800 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013|RETURN\l|return (androidx.viewpager2.widget.ViewPager2) r1\l}"];
+}
+}
+subgraph cluster_Region_1884607904 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|throw new java.lang.IllegalStateException(\"Expected the page view to be managed by a ViewPager2 instance.\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0014}"];
+MethodNode[shape=record,label="{private androidx.viewpager2.widget.ViewPager2 androidx.viewpager2.widget.MarginPageTransformer.requireViewPager((r4v0 'this' androidx.viewpager2.widget.MarginPageTransformer A[IMMUTABLE_TYPE, THIS]), (r5v0 'page' android.view.View A[D('page' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x001b \-\> B:1:?, CROSS_EDGE: B:3:0x000a \-\> B:8:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_7 -> Node_1;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

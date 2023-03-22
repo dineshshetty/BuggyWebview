@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.material.navigation.NavigationBarItemView.getSuggestedIconWidth()I" {
+subgraph cluster_Region_1160580963 {
+label = "R(4:1|(1:3)(1:7)|4|5) | DECL_VAR: int badgeWidth\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|com.google.android.material.badge.BadgeDrawable com.google.android.material.badge.BadgeDrawable r0 = r4.badgeDrawable\l}"];
+subgraph cluster_IfRegion_1045327970 {
+label = "IF [B:11:0x0002] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_834513098 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|r0 = 0\l}"];
+}
+subgraph cluster_Region_1745417512 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|int r0 = r0.getMinimumWidth() \- r4.badgeDrawable.getHorizontalOffset()\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0011|PHI: r0 \l  PHI: (r0v3 'badgeWidth' int) = (r0v2 'badgeWidth' int), (r0v4 'badgeWidth' int) binds: [B:13:0x0006, B:12:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|android.widget.FrameLayout$LayoutParams android.widget.FrameLayout.LayoutParams r1 = (android.widget.FrameLayout.LayoutParams) getIconOrContainer().getLayoutParams()\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0030|RETURN\l|return java.lang.Math.max(r0, r1.leftMargin) + r4.icon.getMeasuredWidth() + java.lang.Math.max(r0, r1.rightMargin)\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private int com.google.android.material.navigation.NavigationBarItemView.getSuggestedIconWidth((r4v0 'this' com.google.android.material.navigation.NavigationBarItemView A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0006 \-\> B:14:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+}
+

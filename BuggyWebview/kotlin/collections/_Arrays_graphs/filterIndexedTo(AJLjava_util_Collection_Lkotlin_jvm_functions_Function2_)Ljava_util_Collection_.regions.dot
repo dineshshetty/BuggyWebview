@@ -1,0 +1,53 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.filterIndexedTo([JLjava\/util\/Collection;Lkotlin\/jvm\/functions\/Function2;)Ljava\/util\/Collection;" {
+subgraph cluster_Region_497725518 {
+label = "R(3:1|(3:3|(1:5)(0)|7)|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r17, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r18, \"destination\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r19, \"predicate\")\lint r2 = 0\lint r6 = 0\lint int r7 = r17.length\lint r8 = 0\l}"];
+subgraph cluster_LoopRegion_1548276806 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001c|LOOP_START\lLOOP:0: B:16:0x001c\-\>B:20:0x0041\lPHI: r2 r6 r8 \l  PHI: (r2v4 '$i$f$filterIndexedTo' int) = (r2v3 '$i$f$filterIndexedTo' int), (r2v9 '$i$f$filterIndexedTo' int) binds: [B:15:0x0000, B:20:0x0041] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'index$iv' int) = (r6v0 'index$iv' int), (r6v2 'index$iv' int) binds: [B:15:0x0000, B:20:0x0041] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 int) = (r8v0 int), (r8v2 int) binds: [B:15:0x0000, B:20:0x0041] A[DONT_GENERATE, DONT_INLINE]\l|if (r8 \< r7) goto L3\l}"];
+subgraph cluster_Region_1688165661 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001e|long r9 = r17[r8]\lint int r11 = r6 + 1\lint r16 = r2\l}"];
+subgraph cluster_IfRegion_218600423 {
+label = "IF [B:18:0x0038] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0038|if (r19.invoke(java.lang.Integer.valueOf(r6), java.lang.Long.valueOf(r9)).booleanValue() != false) goto L5\l}"];
+subgraph cluster_Region_338179905 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x003a|r18.add(java.lang.Long.valueOf(r9))\l}"];
+}
+subgraph cluster_Region_2106875762 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0041|LOOP_END\lLOOP:0: B:16:0x001c\-\>B:20:0x0041\l|r8++\lr6 = r11\lr2 = r16\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0049|RETURN\l|return r18\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0041|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0041|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0049|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final C extends java.util.Collection\<? super java.lang.Long\> kotlin.collections.ArraysKt___ArraysKt.filterIndexedTo((r17v0 '$this$filterIndexedTo' long[] A[D('$this$filterIndexedTo' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'destination' C extends java.util.Collection\<? super java.lang.Long\> A[D('destination' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'predicate' kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super java.lang.Long, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0041 \-\> B:16:0x001c, CROSS_EDGE: B:18:0x0038 \-\> B:20:0x0041\lINLINE_NOT_NEEDED\lTYPE_VARS: [C extends java.util.Collection\<? super java.lang.Long\>]\lSIGNATURE: \<C::Ljava\/util\/Collection\<\-Ljava\/lang\/Long;\>;\>([JTC;Lkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Integer;\-Ljava\/lang\/Long;Ljava\/lang\/Boolean;\>;)TC;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_24;
+Node_20 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_20;
+Node_25 -> Node_20;
+Node_23 -> Node_22;
+}
+

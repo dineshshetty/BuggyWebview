@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(Ljava\/lang\/Object;Ljava\/lang\/String;)V" {
+subgraph cluster_Region_383244930 {
+label = "R(1:(1:(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1888730634 {
+label = "R(1:(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_291682638 {
+label = "IF [B:8:0x0000] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|if (r3 == null) goto L4\l}"];
+subgraph cluster_Region_916649958 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0003}"];
+Node_11 [shape=record,label="{11\:\ 0x001f|throw ((java.lang.NullPointerException) sanitizeStackTrace(new java.lang.NullPointerException(r4 + \" must not be null\")))\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0002}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static void kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue((r3v0 'value' java.lang.Object A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'expression' java.lang.String A[D('expression' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x001f \-\> B:7:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_7;
+Node_6 -> Node_8;
+Node_9 -> Node_7;
+}
+

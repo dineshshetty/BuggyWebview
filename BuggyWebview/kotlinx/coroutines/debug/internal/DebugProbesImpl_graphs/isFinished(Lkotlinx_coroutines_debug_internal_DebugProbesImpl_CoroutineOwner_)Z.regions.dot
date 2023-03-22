@@ -1,0 +1,54 @@
+digraph "CFG forkotlinx.coroutines.debug.internal.DebugProbesImpl.isFinished(Lkotlinx\/coroutines\/debug\/internal\/DebugProbesImpl$CoroutineOwner;)Z" {
+subgraph cluster_Region_1948520277 {
+label = "R(3:1|2|(2:(2:11|12)|(1:10)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.coroutines.CoroutineContext kotlin.coroutines.CoroutineContext r0 = r4.info.getContext()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0006|kotlinx.coroutines.Job r0 = r0 == null ? null : (kotlinx.coroutines.Job) r0.get(kotlinx.coroutines.Job.Key)\l}"];
+subgraph cluster_Region_847628882 {
+label = "R(2:(2:11|12)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1864638454 {
+label = "IF [B:21:0x0015, B:24:0x001c] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015|if (r0 != null) goto L8\l}"];
+Node_24 [shape=record,label="{24\:\ 0x001c|ADDED_TO_REGION\l|if (r0.isCompleted() == true) goto L11\l}"];
+subgraph cluster_Region_181587628 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001f|kotlinx.coroutines.debug.internal.DebugProbesImpl.capturedCoroutinesMap.remove(r4)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0025|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_581801114 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001e|RETURN\l|return false\l}"];
+}
+}
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0008}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0014|PHI: r0 \l  PHI: (r0v4 'job' kotlinx.coroutines.Job) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0017|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0018}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000a}"];
+MethodNode[shape=record,label="{public final boolean kotlinx.coroutines.debug.internal.DebugProbesImpl.isFinished((r3v0 'this' kotlinx.coroutines.debug.internal.DebugProbesImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 kotlinx.coroutines.debug.internal.DebugProbesImpl$CoroutineOwner\<?\> A[D('$this$isFinished' kotlinx.coroutines.debug.internal.DebugProbesImpl$CoroutineOwner), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x001e \-\> B:15:?, CROSS_EDGE: B:27:0x0025 \-\> B:15:?, CROSS_EDGE: B:19:0x000a \-\> B:20:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Lkotlinx\/coroutines\/debug\/internal\/DebugProbesImpl$CoroutineOwner\<*\>;)Z\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_15;
+Node_25 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_15;
+Node_23 -> Node_24;
+Node_19 -> Node_20;
+}
+

@@ -1,0 +1,28 @@
+digraph "CFG forandroidx.core.app.RemoteActionCompat.createFromRemoteAction(Landroid\/app\/RemoteAction;)Landroidx\/core\/app\/RemoteActionCompat;" {
+subgraph cluster_Region_2112827099 {
+label = "R(3:1|(1:3)|4)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|androidx.core.util.Preconditions.checkNotNull(r5)\landroidx.core.app.RemoteActionCompat androidx.core.app.RemoteActionCompat r0 = new androidx.core.app.RemoteActionCompat(androidx.core.graphics.drawable.IconCompat.createFromIcon(androidx.core.app.RemoteActionCompat.Api26Impl.getIcon(r5)), androidx.core.app.RemoteActionCompat.Api26Impl.getTitle(r5), androidx.core.app.RemoteActionCompat.Api26Impl.getContentDescription(r5), androidx.core.app.RemoteActionCompat.Api26Impl.getActionIntent(r5))\lr0.setEnabled(androidx.core.app.RemoteActionCompat.Api26Impl.isEnabled(r5))\l}"];
+subgraph cluster_IfRegion_403516912 {
+label = "IF [B:9:0x0027] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0027|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L3\l}"];
+subgraph cluster_Region_988106581 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0029|r0.setShouldShowIcon(androidx.core.app.RemoteActionCompat.Api28Impl.shouldShowIcon(r5))\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0030|RETURN\l|return r0\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static androidx.core.app.RemoteActionCompat androidx.core.app.RemoteActionCompat.createFromRemoteAction((r5v0 'remoteAction' android.app.RemoteAction A[D('remoteAction' android.app.RemoteAction), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:9:0x0027 \-\> B:11:0x0030\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_7;
+Node_6 -> Node_8;
+}
+

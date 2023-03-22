@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.core.content.res.ComplexColorCompat.onStateChanged([I)Z" {
+subgraph cluster_Region_1289590989 {
+label = "R(1:(2:(1:9)|(2:3|(2:(1:8)|(2:5|6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_749831220 {
+label = "R(2:(1:9)|(2:3|(2:(1:8)|(2:5|6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1959931790 {
+label = "IF [B:13:0x0005] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0005|if (isStateful() == false) goto L9\l}"];
+subgraph cluster_Region_548583807 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_614551144 {
+label = "R(2:3|(2:(1:8)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0007|android.content.res.ColorStateList android.content.res.ColorStateList r1 = r3.mColorStateList\lint int r1 = r1.getColorForState(r4, r1.getDefaultColor())\l}"];
+subgraph cluster_Region_611924 {
+label = "R(2:(1:8)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1368009701 {
+label = "IF [B:15:0x0013] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0013|if (r1 == r3.mColor) goto L8\l}"];
+subgraph cluster_Region_540668485 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_551580902 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0015|r3.mColor = r1\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0018|RETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.core.content.res.ComplexColorCompat.onStateChanged((r3v0 'this' androidx.core.content.res.ComplexColorCompat A[IMMUTABLE_TYPE, THIS]), (r4v0 'stateSet' int[] A[D('stateSet' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0013 \-\> B:17:0x0018, CROSS_EDGE: B:13:0x0005 \-\> B:17:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_18;
+Node_18 -> Node_11;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_19;
+Node_19 -> Node_11;
+Node_16 -> Node_17;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+}
+

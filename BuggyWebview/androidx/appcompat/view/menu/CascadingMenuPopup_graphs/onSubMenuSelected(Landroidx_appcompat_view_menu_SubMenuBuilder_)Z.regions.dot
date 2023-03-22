@@ -1,0 +1,87 @@
+digraph "CFG forandroidx.appcompat.view.menu.CascadingMenuPopup.onSubMenuSelected(Landroidx\/appcompat\/view\/menu\/SubMenuBuilder;)Z" {
+subgraph cluster_Region_144152669 {
+label = "R(3:1|(2:4|(2:7|8))|(2:(3:13|(1:15)|16)|(1:17)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|java.util.Iterator r0 = r4.mShowingMenus.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1277497680 {
+label = "LOOP:0: (2:4|(2:7|8))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|androidx.appcompat.view.menu.CascadingMenuPopup$CascadingMenuInfo \lif (r0.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1011462526 {
+label = "R(2:4|(2:7|8))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|androidx.appcompat.view.menu.CascadingMenuPopup$CascadingMenuInfo r1 = r0.next()\l}"];
+subgraph cluster_IfRegion_926066909 {
+label = "IF [B:6:0x0015] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|LOOP_END\lLOOP:0: B:3:0x0006\-\>B:6:0x0015\l|if (r5 == r1.menu) goto L6\l}"];
+subgraph cluster_Region_64195350 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|r1.getListView().requestFocus()\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e|RETURN\l|return true\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1738057133 {
+label = "R(2:(3:13|(1:15)|16)|(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_380316257 {
+label = "IF [B:11:0x0024] THEN: R(3:13|(1:15)|16) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0024|if (r5.hasVisibleItems() != false) goto L13\l}"];
+subgraph cluster_Region_1245823192 {
+label = "R(3:13|(1:15)|16)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0026|addMenu(r5)\landroidx.appcompat.view.menu.MenuPresenter$Callback androidx.appcompat.view.menu.MenuPresenter.Callback r0 = r4.mPresenterCallback\l}"];
+subgraph cluster_IfRegion_1676056990 {
+label = "IF [B:13:0x002b] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002b|if (r0 != null) goto L15\l}"];
+subgraph cluster_Region_457398189 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002d|r0.onOpenSubMenu(r5)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0030|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_880610345 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0031|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006|LOOP_START\lLOOP:0: B:3:0x0006\-\>B:6:0x0015\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0017|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0020|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0020}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.view.menu.CascadingMenuPopup.onSubMenuSelected((r4v0 'this' androidx.appcompat.view.menu.CascadingMenuPopup A[IMMUTABLE_TYPE, THIS]), (r5v0 'subMenu' androidx.appcompat.view.menu.SubMenuBuilder A[D('subMenu' androidx.appcompat.view.menu.SubMenuBuilder), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:6:0x0015 \-\> B:3:0x0006, CROSS_EDGE: B:15:0x0030 \-\> B:1:?, CROSS_EDGE: B:13:0x002b \-\> B:15:0x0030, CROSS_EDGE: B:17:0x0032 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.view.menu.MenuPresenter.onSubMenuSelected(androidx.appcompat.view.menu.SubMenuBuilder):boolean]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_19[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_3[style=dashed];
+Node_6 -> Node_18;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_11 -> Node_12;
+Node_11 -> Node_16[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_1;
+Node_16 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_18 -> Node_7;
+Node_19 -> Node_10;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.material.internal.CollapsingTextHelper.calculateFadeModeTextAlpha(F)F" {
+subgraph cluster_Region_1669011203 {
+label = "R(2:1|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|float float r0 = r4.fadeModeThresholdFraction\l}"];
+subgraph cluster_Region_1776061050 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_272761958 {
+label = "IF [B:11:0x0007] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0007|if (r5 \<= r0) goto L3\l}"];
+subgraph cluster_Region_820780948 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000f|RETURN\l|return com.google.android.material.animation.AnimationUtils.lerp(1.0f, 0.0f, r4.fadeModeStartFraction, r0, r5)\l}"];
+}
+}
+subgraph cluster_Region_360966077 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0014|RETURN\l|return com.google.android.material.animation.AnimationUtils.lerp(0.0f, 1.0f, r0, 1.0f, r5)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0009}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0010}"];
+MethodNode[shape=record,label="{private float com.google.android.material.internal.CollapsingTextHelper.calculateFadeModeTextAlpha((r4v0 'this' com.google.android.material.internal.CollapsingTextHelper A[IMMUTABLE_TYPE, THIS]), (r5v0 'fraction' float A[D('fraction' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x0014 \-\> B:9:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_13 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

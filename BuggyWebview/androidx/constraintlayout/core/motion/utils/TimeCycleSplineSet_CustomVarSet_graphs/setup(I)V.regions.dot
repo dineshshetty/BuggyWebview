@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.constraintlayout.core.motion.utils.TimeCycleSplineSet.CustomVarSet.setup(I)V" {
+subgraph cluster_Region_860244436 {
+label = "R(3:1|(3:3|(2:4|(1:6))|8)|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r1 = r16.mConstraintAttributeList.size()\lint int r2 = r16.mConstraintAttributeList.valueAt(0).numberOfInterpolatedValues()\ldouble[] double[] r4 = new double[r1]\lr16.mTempValues = new float[r2 + 2]\lr16.mCache = new float[r2]\ldouble[][] double[][] r5 = (double[][]) java.lang.reflect.Array.newInstance(double.class, r1, r2 + 2)\lint r6 = 0\l}"];
+subgraph cluster_LoopRegion_1672017167 {
+label = "LOOP:0: (3:3|(2:4|(1:6))|8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0032|LOOP_START\lLOOP:0: B:16:0x0032\-\>B:21:0x0065\lPHI: r6 \l  PHI: (r6v3 'i' int) = (r6v2 'i' int), (r6v5 'i' int) binds: [B:15:0x0000, B:21:0x0065] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 \< r1) goto L3\l}"];
+subgraph cluster_Region_1488018307 {
+label = "R(3:3|(2:4|(1:6))|8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0034|int int r8 = r16.mConstraintAttributeList.keyAt(r6)\landroidx.constraintlayout.core.motion.CustomVariable androidx.constraintlayout.core.motion.CustomVariable r9 = r16.mConstraintAttributeList.valueAt(r6)\lfloat[] float[] r10 = r16.mWaveProperties.valueAt(r6)\lr4[r6] = r8 * 0.01d\lr9.getValuesToInterpolate(r16.mTempValues)\lint r11 = 0\l}"];
+subgraph cluster_LoopRegion_151245269 {
+label = "LOOP:1: (2:4|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_Region_292715613 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0056|LOOP_START\lLOOP:1: B:18:0x0056\-\>B:20:0x005b\lPHI: r11 \l  PHI: (r11v4 'k' int) = (r11v3 'k' int), (r11v7 'k' int) binds: [B:17:0x0034, B:20:0x005b] A[DONT_GENERATE, DONT_INLINE]\l|float[] float[] r12 = r16.mTempValues\l}"];
+subgraph cluster_IfRegion_903280485 {
+label = "IF [B:19:0x0059] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0059|EDGE_INSN: B:19:0x0059\-\>B:25:0x0065 ?: BREAK  \l|if (r11 \< r12.length) goto L6\l}"];
+subgraph cluster_Region_878641363 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x005b|LOOP_END\lLOOP:1: B:18:0x0056\-\>B:20:0x005b\l|r5[r6][r11] = r12[r11]\lr11++\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0065|LOOP_END\lLOOP:0: B:16:0x0032\-\>B:21:0x0065\l|r5[r6][r2] = r10[0]\lr5[r6][r2 + 1] = r10[1]\lr6++\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0078|r16.mCurveFit = androidx.constraintlayout.core.motion.utils.CurveFit.get(r17, r4, r5)\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0065|SYNTHETIC\lEDGE_INSN: B:19:0x0059\-\>B:25:0x0065 ?: BREAK  \l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0078|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0080}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.motion.utils.TimeCycleSplineSet.CustomVarSet.setup((r16v0 'this' androidx.constraintlayout.core.motion.utils.TimeCycleSplineSet$CustomVarSet A[IMMUTABLE_TYPE, THIS]), (r17v0 'curveType' int A[D('curveType' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x005b \-\> B:18:0x0056, BACK_EDGE: B:21:0x0065 \-\> B:16:0x0032\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.constraintlayout.core.motion.utils.TimeCycleSplineSet.setup(int):void]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_18;
+Node_21 -> Node_16;
+Node_22 -> Node_23;
+Node_13 -> Node_15;
+Node_25 -> Node_21;
+Node_24 -> Node_22;
+Node_23 -> Node_14;
+}
+

@@ -1,0 +1,35 @@
+digraph "CFG forandroidx.core.util.AtomicFile.finishWrite(Ljava\/io\/FileOutputStream;)V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: IF  (r4 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('str' java.io.FileOutputStream)]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0003  (LINE:122)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|0x0002: RETURN    (LINE:123)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0003|0x0003: INVOKE  (r0 I:boolean) = (r4 I:java.io.FileOutputStream A[D('str' java.io.FileOutputStream)]) type: STATIC call: androidx.core.util.AtomicFile.sync(java.io.FileOutputStream):boolean A[MD:(java.io.FileOutputStream):boolean (m)] (LINE:125)\l0x0007: CONST_STR  (r1 I:java.lang.String) =  \"AtomicFile\" \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|0x0009: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:13:0x0010 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000b|0x000b: CONST_STR  (r0 I:java.lang.String) =  \"Failed to sync file output stream\"  (LINE:126)\l0x000d: INVOKE  (r1 I:java.lang.String), (r0 I:java.lang.String) type: STATIC call: android.util.Log.e(java.lang.String, java.lang.String):int A[MD:(java.lang.String, java.lang.String):int (c)]\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0010|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0010|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{IOException \-\> 0x0014, blocks: (B:7:0x0010), top: B:13:0x0010 \}\lCatch: IOException \-\> 0x0014\l|0x0010: INVOKE  (r4 I:java.io.FileOutputStream A[D('str' java.io.FileOutputStream)]) type: VIRTUAL call: java.io.FileOutputStream.close():void A[Catch: IOException \-\> 0x0014, MD:():void throws java.io.IOException (c), TRY_ENTER, TRY_LEAVE] (LINE:129)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x001a|0x001a: IGET  (r0 I:java.io.File A[D('e' java.io.IOException)]) = (r3 I:androidx.core.util.AtomicFile) androidx.core.util.AtomicFile.mNewName java.io.File  (LINE:133)\l0x001c: IGET  (r1 I:java.io.File) = (r3 I:androidx.core.util.AtomicFile) androidx.core.util.AtomicFile.mBaseName java.io.File \l0x001e: INVOKE  (r0 I:java.io.File), (r1 I:java.io.File) type: STATIC call: androidx.core.util.AtomicFile.rename(java.io.File, java.io.File):void A[MD:(java.io.File, java.io.File):void (m)]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0021|RETURN\l|0x0021: RETURN    (LINE:134)\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0014|ExcHandler: IOException \-\> 0x0014\l|0x0014: MOVE_EXCEPTION  (r0 I:java.io.IOException A[CUSTOM_DECLARE]) =  A[DONT_INLINE, ExcHandler: IOException \-\> 0x0014] (LINE:130)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0015|0x0015: CONST_STR  (r2 I:java.lang.String) =  \"Failed to close file output stream\"  (LINE:131)\l0x0017: INVOKE  (r1 I:java.lang.String), (r2 I:java.lang.String), (r0 I:java.lang.Throwable A[D('e' java.io.IOException)]) type: STATIC call: android.util.Log.e(java.lang.String, java.lang.String, java.lang.Throwable):int A[MD:(java.lang.String, java.lang.String, java.lang.Throwable):int (c)]\l}"];
+MethodNode[shape=record,label="{public void androidx.core.util.AtomicFile.finishWrite((r3 'this' I:androidx.core.util.AtomicFile A[IMMUTABLE_TYPE, THIS]), (r4 I:java.io.FileOutputStream A[D('str' java.io.FileOutputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0021 \-\> B:1:?, CROSS_EDGE: B:10:0x0015 \-\> B:11:0x001a, CROSS_EDGE: B:13:0x0010 \-\> B:9:0x0014, CROSS_EDGE: B:5:0x0009 \-\> B:13:0x0010\lDebug Info:\l  0x0015\-0x001a: r0 'e' Ljava\/io\/IOException;\l  \-1 \-0x0021: r4 'str' Ljava\/io\/FileOutputStream;\lTryCatch #0 \{IOException \-\> 0x0014, blocks: (B:7:0x0010), top: B:13:0x0010 \}\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_13;
+Node_6 -> Node_13;
+Node_13 -> Node_7;
+Node_13 -> Node_9;
+Node_7 -> Node_11;
+Node_7 -> Node_14;
+Node_11 -> Node_12;
+Node_12 -> Node_1;
+Node_14 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

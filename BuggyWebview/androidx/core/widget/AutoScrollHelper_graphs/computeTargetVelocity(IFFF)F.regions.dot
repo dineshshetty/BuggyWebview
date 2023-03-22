@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.widget.AutoScrollHelper.computeTargetVelocity(IFFF)F" {
+subgraph cluster_Region_2100224926 {
+label = "R(2:1|(2:(1:3)|(2:5|(2:(1:8)|(1:10)))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|float r0 = r8.mRelativeEdges[r9]\lfloat r1 = r8.mMaximumEdges[r9]\lfloat float r2 = getEdgeValue(r0, r11, r1, r10)\l}"];
+subgraph cluster_Region_1657940650 {
+label = "R(2:(1:3)|(2:5|(2:(1:8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_935809040 {
+label = "IF [B:14:0x000f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000f|if (r2 == 0.0f) goto L3\l}"];
+subgraph cluster_Region_1793343138 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0011|RETURN\l|return 0.0f\l}"];
+}
+}
+subgraph cluster_Region_1690916787 {
+label = "R(2:5|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0012|float r4 = r8.mRelativeVelocity[r9]\lfloat r5 = r8.mMinimumVelocity[r9]\lfloat r6 = r8.mMaximumVelocity[r9]\lfloat float r7 = r4 * r12\l}"];
+subgraph cluster_Region_1949130699 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1750903062 {
+label = "IF [B:17:0x0022] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0022|if (r2 \> 0.0f) goto L7\l}"];
+subgraph cluster_Region_1664872617 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002a|RETURN\l|return constrain(r2 * r7, r5, r6)\l}"];
+}
+}
+subgraph cluster_Region_1770249539 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0033|RETURN\l|return \-constrain((\-r2) * r7, r5, r6)\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0024}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x002b}"];
+MethodNode[shape=record,label="{private float androidx.core.widget.AutoScrollHelper.computeTargetVelocity((r8v0 'this' androidx.core.widget.AutoScrollHelper A[IMMUTABLE_TYPE, THIS]), (r9v0 'direction' int A[D('direction' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'coordinate' float A[D('coordinate' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'srcSize' float A[D('srcSize' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'dstSize' float A[D('dstSize' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x002a \-\> B:12:?, CROSS_EDGE: B:21:0x0033 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

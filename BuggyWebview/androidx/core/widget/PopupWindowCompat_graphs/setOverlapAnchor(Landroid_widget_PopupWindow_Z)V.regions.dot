@@ -1,0 +1,155 @@
+digraph "CFG forandroidx.core.widget.PopupWindowCompat.setOverlapAnchor(Landroid\/widget\/PopupWindow;Z)V" {
+subgraph cluster_Region_406655634 {
+label = "R(1:(1:3)(1:(3:(2:(1:12)|13)|17|(1:(1:(1:20))))(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_632936178 {
+label = "IF [B:33:0x0004] THEN: R(1:3) ELSE: R(1:(3:(2:(1:12)|13)|17|(1:(1:(1:20))))(0))";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L3\l}"];
+subgraph cluster_Region_1009040172 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0006|androidx.core.widget.PopupWindowCompat.Api23Impl.setOverlapAnchor(r4, r5)\l}"];
+}
+subgraph cluster_Region_1985159177 {
+label = "R(1:(3:(2:(1:12)|13)|17|(1:(1:(1:20))))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_101320147 {
+label = "IF [B:36:0x000e] THEN: R(3:(2:(1:12)|13)|17|(1:(1:(1:20)))) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x000e|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L8\l}"];
+subgraph cluster_Region_2069914466 {
+label = "R(3:(2:(1:12)|13)|17|(1:(1:(1:20))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1844403622 {
+label = "IF [B:38:0x0014] THEN: R(2:(1:12)|13) ELSE: null";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0014|if (androidx.core.widget.PopupWindowCompat.sOverlapAnchorFieldAttempted == false) goto L10\l}"];
+subgraph cluster_Region_1955297004 {
+label = "R(2:(1:12)|13)";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_456610588 {
+label = "Try: R(1:12) catches: R(2:15|16)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1341556799 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x0017|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{NoSuchFieldException \-\> 0x0025, blocks: (B:40:0x0017), top: B:52:0x0017 \}\lCatch: NoSuchFieldException \-\> 0x0025\l|java.lang.reflect.Field java.lang.reflect.Field r2 = android.widget.PopupWindow.class.getDeclaredField(\"mOverlapAnchor\")     \/\/ Catch: java.lang.NoSuchFieldException \-\> L25\landroidx.core.widget.PopupWindowCompat.sOverlapAnchorField = r2     \/\/ Catch: java.lang.NoSuchFieldException \-\> L25\lr2.setAccessible(true)     \/\/ Catch: java.lang.NoSuchFieldException \-\> L25\l}"];
+}
+subgraph cluster_Region_1304815924 {
+label = "R(2:15|16) | ExcHandler: NoSuchFieldException \-\> 0x0025\l";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0025|ExcHandler: NoSuchFieldException \-\> 0x0025\l}"];
+Node_43 [shape=record,label="{43\:\ 0x0026|android.util.Log.i(androidx.core.widget.PopupWindowCompat.TAG, \"Could not fetch mOverlapAnchor field from PopupWindow\", r2)\l}"];
+}
+}
+Node_44 [shape=record,label="{44\:\ 0x002b|androidx.core.widget.PopupWindowCompat.sOverlapAnchorFieldAttempted = true\l}"];
+}
+}
+Node_45 [shape=record,label="{45\:\ 0x002d|java.lang.reflect.Field java.lang.reflect.Field r0 = androidx.core.widget.PopupWindowCompat.sOverlapAnchorField\l}"];
+subgraph cluster_Region_1523621703 {
+label = "R(1:(1:(1:20)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1294465865 {
+label = "IF [B:46:0x002f] THEN: R(1:(1:20)) ELSE: null";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x002f|if (r0 != null) goto L19\l}"];
+subgraph cluster_Region_1967369959 {
+label = "R(1:(1:20))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1414380768 {
+label = "Try: R(1:20) catches: R(2:23|24)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1960481625 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ 0x0031|TRY_ENTER\lTRY_LEAVE\lTryCatch #1 \{IllegalAccessException \-\> 0x0039, blocks: (B:47:0x0031), top: B:54:0x0031 \}\lCatch: IllegalAccessException \-\> 0x0039\l|r0.set(r4, java.lang.Boolean.valueOf(r5))     \/\/ Catch: java.lang.IllegalAccessException \-\> L39\l}"];
+}
+subgraph cluster_Region_908288788 {
+label = "R(2:23|24) | ExcHandler: IllegalAccessException \-\> 0x0039\l";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x0039|ExcHandler: IllegalAccessException \-\> 0x0039\l}"];
+Node_50 [shape=record,label="{50\:\ 0x003a|android.util.Log.i(androidx.core.widget.PopupWindowCompat.TAG, \"Could not set overlap anchor field in PopupWindow\", r0)\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1750591536 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1304815924 {
+label = "R(2:15|16) | ExcHandler: NoSuchFieldException \-\> 0x0025\l";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0025|ExcHandler: NoSuchFieldException \-\> 0x0025\l}"];
+Node_43 [shape=record,label="{43\:\ 0x0026|android.util.Log.i(androidx.core.widget.PopupWindowCompat.TAG, \"Could not fetch mOverlapAnchor field from PopupWindow\", r2)\l}"];
+}
+subgraph cluster_Region_908288788 {
+label = "R(2:23|24) | ExcHandler: IllegalAccessException \-\> 0x0039\l";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x0039|ExcHandler: IllegalAccessException \-\> 0x0039\l}"];
+Node_50 [shape=record,label="{50\:\ 0x003a|android.util.Log.i(androidx.core.widget.PopupWindowCompat.TAG, \"Could not set overlap anchor field in PopupWindow\", r0)\l}"];
+}
+Node_30 [shape=record,color=red,label="{30\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0000}"];
+Node_56 [shape=record,color=red,label="{56\:\ ?|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x000a}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0010}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0016}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x0017|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_53 [shape=record,color=red,label="{53\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_54 [shape=record,color=red,label="{54\:\ 0x0031|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_55 [shape=record,color=red,label="{55\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_59 [shape=record,color=red,label="{59\:\ ?|SYNTHETIC\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x003f|ORIG_RETURN\l}"];
+Node_58 [shape=record,color=red,label="{58\:\ ?|SYNTHETIC\l}"];
+Node_57 [shape=record,color=red,label="{57\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.widget.PopupWindowCompat.setOverlapAnchor((r4v0 'popupWindow' android.widget.PopupWindow A[D('popupWindow' android.widget.PopupWindow), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'overlapAnchor' boolean A[D('overlapAnchor' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:46:0x002f \-\> B:51:0x003f, CROSS_EDGE: B:47:0x0031 \-\> B:51:0x003f, CROSS_EDGE: B:50:0x003a \-\> B:51:0x003f, CROSS_EDGE: B:54:0x0031 \-\> B:49:0x0039, CROSS_EDGE: B:43:0x0026 \-\> B:44:0x002b, CROSS_EDGE: B:52:0x0017 \-\> B:42:0x0025, CROSS_EDGE: B:38:0x0014 \-\> B:45:0x002d, CROSS_EDGE: B:36:0x000e \-\> B:51:0x003f\lINLINE_NOT_NEEDED\lTryCatch #0 \{NoSuchFieldException \-\> 0x0025, blocks: (B:40:0x0017), top: B:52:0x0017 \}, TryCatch #1 \{IllegalAccessException \-\> 0x0039, blocks: (B:47:0x0031), top: B:54:0x0031 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_30;Node_33 -> Node_34;
+Node_33 -> Node_35[style=dashed];
+Node_34 -> Node_56;
+Node_36 -> Node_37;
+Node_36 -> Node_57[style=dashed];
+Node_38 -> Node_39;
+Node_38 -> Node_45[style=dashed];
+Node_40 -> Node_44;
+Node_40 -> Node_53;
+Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_44 -> Node_45;
+Node_45 -> Node_46;
+Node_46 -> Node_54;
+Node_46 -> Node_58[style=dashed];
+Node_47 -> Node_55;
+Node_47 -> Node_59;
+Node_49 -> Node_50;
+Node_50 -> Node_51;
+Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_49 -> Node_50;
+Node_50 -> Node_51;
+Node_30 -> Node_32;
+Node_32 -> Node_33;
+Node_56 -> Node_31;
+Node_35 -> Node_36;
+Node_37 -> Node_38;
+Node_39 -> Node_52;
+Node_52 -> Node_40;
+Node_52 -> Node_42;
+Node_53 -> Node_42;
+Node_54 -> Node_47;
+Node_54 -> Node_49;
+Node_55 -> Node_49;
+Node_59 -> Node_31;
+Node_51 -> Node_31;
+Node_58 -> Node_31;
+Node_57 -> Node_31;
+}
+

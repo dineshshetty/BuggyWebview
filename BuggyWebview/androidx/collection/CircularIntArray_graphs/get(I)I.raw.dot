@@ -1,0 +1,23 @@
+digraph "CFG forandroidx.collection.CircularIntArray.get(I)I" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: IF  (r4 I:??[int, byte, short, char] A[D('n' int)]) \< (0 ??[int, byte, short, char])  \-\> B:7:0x0013  (LINE:197)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0002|0x0002: INVOKE  (r0 I:int) = (r3 I:androidx.collection.CircularIntArray) type: VIRTUAL call: androidx.collection.CircularIntArray.size():int A[MD:():int (m)]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|0x0006: IF  (r4 I:??[int, byte, short, char] A[D('n' int)]) \>= (r0 I:??[int, byte, short, char])  \-\> B:7:0x0013 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0008|0x0008: IGET  (r0 I:int[]) = (r3 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mElements int[]  (LINE:198)\l0x000a: IGET  (r1 I:int) = (r3 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mHead int \l0x000c: ARITH  (r1 I:int) = (r1 I:int) + (r4 I:int A[D('n' int)]) \l0x000d: IGET  (r2 I:int) = (r3 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mCapacityBitmask int \l0x000f: ARITH  (r1 I:??[int, boolean]) = (r1 I:??[int, boolean, short, byte, char]) & (r2 I:??[int, boolean, short, byte, char]) \l0x0010: AGET  (r0 I:??[int, float, short, byte, char]) = (r0 I:??[int, float][]), (r1 I:??[int, short, byte, char]) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|RETURN\l|0x0012: RETURN  (r0 I:int) \l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0013|0x0013: NEW_INSTANCE  (r0 I:java.lang.ArrayIndexOutOfBoundsException) =  java.lang.ArrayIndexOutOfBoundsException  (LINE:197)\l0x0015: INVOKE  (r0 I:java.lang.ArrayIndexOutOfBoundsException) type: DIRECT call: java.lang.ArrayIndexOutOfBoundsException.\<init\>():void A[MD:():void (c)]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|0x0018: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public int androidx.collection.CircularIntArray.get((r3 'this' I:androidx.collection.CircularIntArray A[IMMUTABLE_TYPE, THIS]), (r4 I:int A[D('n' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0018 \-\> B:1:?, CROSS_EDGE: B:2:0x0000 \-\> B:7:0x0013\lDebug Info:\l  \-1 \-0x0018: r4 'n' I\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+}
+

@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.collections.MapsKt___MapsKt.maxOf(Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;)D" {
+subgraph cluster_Region_1061739616 {
+label = "R(2:1|(2:(3:3|(1:6)|8)|(1:11)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"selector\")\ljava.util.Iterator java.util.Iterator\<T\> r0 = r5.entrySet().iterator()\l}"];
+subgraph cluster_Region_1965381530 {
+label = "R(2:(3:3|(1:6)|8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1943334120 {
+label = "IF [B:15:0x0018] THEN: R(3:3|(1:6)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0018|if (r0.hasNext() == true) goto L3\l}"];
+subgraph cluster_Region_999950749 {
+label = "R(3:3|(1:6)|8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001a|double double r1 = r6.invoke((java.lang.Object) r0.next()).doubleValue()\l}"];
+subgraph cluster_LoopRegion_2050026917 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002c|if (r0.hasNext() != false) goto L6\l}"];
+subgraph cluster_Region_65176927 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002e|LOOP_END\lLOOP:0: B:17:0x0028\-\>B:19:0x002e\l|double r1 = java.lang.Math.max(r1, r6.invoke((java.lang.Object) r0.next()).doubleValue())\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0041|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_718082784 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0047|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0028|LOOP_START\lLOOP:0: B:17:0x0028\-\>B:19:0x002e\lPHI: r1 \l  PHI: (r1v5 double) = (r1v4 double), (r1v6 double) binds: [B:16:0x001a, B:19:0x002e] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0041|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0042}"];
+MethodNode[shape=record,label="{private static final double kotlin.collections.MapsKt___MapsKt.maxOf((r5v0 java.util.Map\<? extends K, ? extends V\> A[D('$this$maxOf' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'selector' kotlin.jvm.functions.Function1\<? super java.util.Map$Entry\<? extends K, ? extends V\>, java.lang.Double\> A[D('selector' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x002e \-\> B:17:0x0028, CROSS_EDGE: B:22:0x0047 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;\>(Ljava\/util\/Map\<+TK;+TV;\>;Lkotlin\/jvm\/functions\/Function1\<\-Ljava\/util\/Map$Entry\<+TK;+TV;\>;Ljava\/lang\/Double;\>;)D\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_17;
+Node_20 -> Node_13;
+Node_22 -> Node_13;
+Node_12 -> Node_14;
+Node_17 -> Node_18;
+Node_23 -> Node_20;
+Node_21 -> Node_22;
+}
+

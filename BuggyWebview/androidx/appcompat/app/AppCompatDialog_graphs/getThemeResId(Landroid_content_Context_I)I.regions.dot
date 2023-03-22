@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.appcompat.app.AppCompatDialog.getThemeResId(Landroid\/content\/Context;I)I" {
+subgraph cluster_Region_1613818427 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_244159912 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_948105473 {
+label = "IF [B:8:0x0000] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0000|if (r5 == 0) goto L2\l}"];
+subgraph cluster_Region_956638000 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0002|android.util.TypedValue android.util.TypedValue r0 = new android.util.TypedValue()\lr4.getTheme().resolveAttribute(androidx.appcompat.C0019R.attr.dialogTheme, r0, true)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0013|RETURN\lORIG_RETURN\l|return r0.resourceId\l}"];
+}
+}
+subgraph cluster_Region_1969125254 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return r5\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static int androidx.appcompat.app.AppCompatDialog.getThemeResId((r4v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'themeId' int A[D('themeId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:8:0x0000 \-\> B:10:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_6;Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_7;
+Node_11 -> Node_7;
+Node_6 -> Node_8;
+}
+

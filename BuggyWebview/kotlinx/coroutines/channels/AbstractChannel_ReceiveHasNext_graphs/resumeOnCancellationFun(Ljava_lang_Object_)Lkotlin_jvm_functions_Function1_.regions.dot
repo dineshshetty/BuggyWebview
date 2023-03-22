@@ -1,0 +1,38 @@
+digraph "CFG forkotlinx.coroutines.channels.AbstractChannel.ReceiveHasNext.resumeOnCancellationFun(Ljava\/lang\/Object;)Lkotlin\/jvm\/functions\/Function1;" {
+subgraph cluster_Region_1110929138 {
+label = "R(2:1|(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.functions.Function1\<E, kotlin.Unit\> kotlin.jvm.functions.Function1\<E, kotlin.Unit\> r0 = r2.iterator.channel.onUndeliveredElement\l}"];
+subgraph cluster_Region_780205998 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_873749202 {
+label = "IF [B:19:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1681639177 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0008|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_560464951 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0014|RETURN\lORIG_RETURN\l|return kotlinx.coroutines.internal.OnUndeliveredElement.bindCancellationFun(r0, r3, r2.cont.getContext())\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000a}"];
+MethodNode[shape=record,label="{public kotlin.jvm.functions.Function1\<java.lang.Throwable, kotlin.Unit\> kotlinx.coroutines.channels.AbstractChannel.ReceiveHasNext.resumeOnCancellationFun((r2v0 'this' kotlinx.coroutines.channels.AbstractChannel$ReceiveHasNext\<E\> A[IMMUTABLE_TYPE, THIS]), (r3v0 E A[D('value' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x000a \-\> B:22:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (TE;)Lkotlin\/jvm\/functions\/Function1\<Ljava\/lang\/Throwable;Lkotlin\/Unit;\>;\lMETHOD_OVERRIDE: [kotlinx.coroutines.channels.Receive.resumeOnCancellationFun(E):kotlin.jvm.functions.Function1\<java.lang.Throwable, kotlin.Unit\>]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_17;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_21 -> Node_22;
+}
+

@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.viewpager.widget.ViewPager.beginFakeDrag()Z" {
+subgraph cluster_Region_1568452740 {
+label = "R(1:(2:(1:3)|(4:5|(1:7)(1:10)|8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_783228187 {
+label = "R(2:(1:3)|(4:5|(1:7)(1:10)|8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1981957154 {
+label = "IF [B:15:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r12.mIsBeingDragged != false) goto L3\l}"];
+subgraph cluster_Region_690472852 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1476283068 {
+label = "R(4:5|(1:7)(1:10)|8|9)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|r12.mFakeDragging = true\lsetScrollState(1)\lr12.mLastMotionX = 0.0f\lr12.mInitialMotionX = 0.0f\landroid.view.VelocityTracker android.view.VelocityTracker r1 = r12.mVelocityTracker\l}"];
+subgraph cluster_IfRegion_1888769391 {
+label = "IF [B:19:0x0013] THEN: R(1:7) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0013|if (r1 == null) goto L7\l}"];
+subgraph cluster_Region_300399268 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0015|r12.mVelocityTracker = android.view.VelocityTracker.obtain()\l}"];
+}
+subgraph cluster_Region_719366140 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001c|r1.clear()\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001f|long long r10 = android.os.SystemClock.uptimeMillis()\landroid.view.MotionEvent android.view.MotionEvent r1 = android.view.MotionEvent.obtain(r10, r10, 0, 0.0f, 0.0f, 0)\lr12.mVelocityTracker.addMovement(r1)\lr1.recycle()\lr12.mFakeDragBeginTime = r10\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0037|RETURN\l|return true\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.viewpager.widget.ViewPager.beginFakeDrag((r12v0 'this' androidx.viewpager.widget.ViewPager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0037 \-\> B:13:?, CROSS_EDGE: B:21:0x001c \-\> B:22:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+}
+

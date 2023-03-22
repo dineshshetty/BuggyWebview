@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.fragment.app.Fragment.performDetach()V" {
+subgraph cluster_Region_1877410082 {
+label = "R(2:1|(2:9|10)(1:(1:5)(0)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r3.mState = \-1\lr3.mCalled = false\lonDetach()\lr3.mLayoutInflater = null\l}"];
+subgraph cluster_IfRegion_1748680886 {
+label = "IF [B:14:0x000e] THEN: R(2:9|10) ELSE: R(1:(1:5)(0))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|if (r3.mCalled == false) goto L9\l}"];
+subgraph cluster_Region_1985843681 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0025}"];
+Node_20 [shape=record,label="{20\:\ 0x0040|throw new androidx.fragment.app.SuperNotCalledException(\"Fragment \" + r3 + \" did not call through to super.onDetach()\")\l}"];
+}
+subgraph cluster_Region_1247842652 {
+label = "R(1:(1:5)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_492402467 {
+label = "IF [B:16:0x0016] THEN: R(1:5) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0016|if (r3.mChildFragmentManager.isDestroyed() == false) goto L5\l}"];
+subgraph cluster_Region_592984910 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|r3.mChildFragmentManager.dispatchDestroy()\lr3.mChildFragmentManager = new androidx.fragment.app.FragmentManagerImpl()\l}"];
+}
+subgraph cluster_Region_957379677 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0010}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0024|ORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.Fragment.performDetach((r3v0 'this' androidx.fragment.app.Fragment A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0016 \-\> B:18:0x0024, CROSS_EDGE: B:20:0x0040 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_12;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_12;
+Node_21 -> Node_12;
+}
+

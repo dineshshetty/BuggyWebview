@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.collection.SimpleArrayMap.hashCode()I" {
+subgraph cluster_Region_270263467 {
+label = "R(3:1|(2:3|7)|11)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int[] int[] r0 = r9.mHashes\ljava.lang.Object[] java.lang.Object[] r1 = r9.mArray\lint r2 = 0\lint r3 = 0\lint r4 = 1\lint int r5 = r9.mSize\l}"];
+subgraph cluster_LoopRegion_93837135 {
+label = "LOOP:0: (2:3|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|LOOP_START\lLOOP:0: B:16:0x0009\-\>B:21:0x0017\lPHI: r2 r3 r4 \l  PHI: (r2v1 'result' int) = (r2v0 'result' int), (r2v2 'result' int) binds: [B:15:0x0000, B:21:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'i' int) = (r3v0 'i' int), (r3v2 'i' int) binds: [B:15:0x0000, B:21:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'v' int) = (r4v0 'v' int), (r4v2 'v' int) binds: [B:15:0x0000, B:21:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \< r5) goto L3\l}"];
+subgraph cluster_Region_274591695 {
+label = "R(2:3|7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000b|java.lang.Object r6 = r1[r4]\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0017|LOOP_END\lLOOP:0: B:16:0x0009\-\>B:21:0x0017\lPHI: r8 \l  PHI: (r8v1 int A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r2 += r0[r3] ^ (r6 == null ? 0 : r6.hashCode())\lr3++\lr4 += 2\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x001e|RETURN\l|return r2\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000f}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0011}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0017|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0013}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0017|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x001e|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.collection.SimpleArrayMap.hashCode((r9v0 'this' androidx.collection.SimpleArrayMap\<K, V\> A[D('this' androidx.collection.SimpleArrayMap\<K, V\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0017 \-\> B:16:0x0009, CROSS_EDGE: B:20:0x0013 \-\> B:21:0x0017\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_17 -> Node_18;
+Node_21 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_25;
+Node_25 -> Node_21;
+Node_20 -> Node_24;
+Node_24 -> Node_21;
+Node_23 -> Node_22;
+}
+

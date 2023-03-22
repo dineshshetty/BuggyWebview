@@ -1,0 +1,33 @@
+digraph "CFG forkotlinx.coroutines.internal.LockFreeTaskQueueCore.allocateNextCopy(J)Lkotlinx\/coroutines\/internal\/LockFreeTaskQueueCore;" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlinx.coroutines.internal.LockFreeTaskQueueCore r1 = new kotlinx.coroutines.internal.LockFreeTaskQueueCore(r18.capacity * 2, r18.singleConsumer)\lkotlinx.coroutines.internal.LockFreeTaskQueueCore$Companion r2 = kotlinx.coroutines.internal.LockFreeTaskQueueCore.Companion\lint r7 = (int) ((kotlinx.coroutines.internal.LockFreeTaskQueueCore.HEAD_MASK & r19) \>\> 0)\lint r6 = (int) ((kotlinx.coroutines.internal.LockFreeTaskQueueCore.TAIL_MASK & r19) \>\> 30)\lr11 = r7\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0027|LOOP_START\lLOOP:0: B:17:0x0027\-\>B:22:0x003d\lPHI: r11 \l  PHI: (r11v1 'index' int) = (r11v0 'index' int), (r11v2 'index' int) binds: [B:16:0x0000, B:22:0x003d] A[DONT_GENERATE, DONT_INLINE]\l|int r12 = r18.mask\l}"];
+Node_18 [shape=record,label="{18\:\ 0x002d|if ((r11 & r12) == (r6 & r12)) goto L10\l}"];
+Node_19 [shape=record,label="{19\:\ 0x002f|java.lang.Object r12 = r18.array.get(r12 & r11)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0036|if (r12 != null) goto L9\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0038|kotlinx.coroutines.internal.LockFreeTaskQueueCore$Placeholder r12 = new kotlinx.coroutines.internal.LockFreeTaskQueueCore.Placeholder(r11)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x003d|SYNTHETIC\l}"];
+Node_22 [shape=record,label="{22\:\ 0x003d|LOOP_END\lLOOP:0: B:17:0x0027\-\>B:22:0x003d\lPHI: r12 \l  PHI: (r12v5 'value' java.lang.Object) = (r12v4 'value' java.lang.Object), (r12v6 'value' java.lang.Object) binds: [B:27:0x003d, B:26:0x003d] A[DONT_GENERATE, DONT_INLINE]\l|r1.array.set(r1.mask & r11, r12)\lint r11 = r11 + 1\l}"];
+Node_27 [shape=record,label="{27\:\ 0x003d|SYNTHETIC\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0048|SYNTHETIC\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0048|r1._state = kotlinx.coroutines.internal.LockFreeTaskQueueCore.Companion.m0wo(r19, kotlinx.coroutines.internal.LockFreeTaskQueueCore.FROZEN_MASK)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0058|RETURN\l|return r1\l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final kotlinx.coroutines.internal.LockFreeTaskQueueCore\<E\> kotlinx.coroutines.internal.LockFreeTaskQueueCore.allocateNextCopy((r18v0 'this' kotlinx.coroutines.internal.LockFreeTaskQueueCore\<E\> A[IMMUTABLE_TYPE, THIS]), (r19v0 'state' long A[D('state' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x003d \-\> B:17:0x0027, CROSS_EDGE: B:20:0x0036 \-\> B:22:0x003d\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (J)Lkotlinx\/coroutines\/internal\/LockFreeTaskQueueCore\<TE;\>;\lJadxCommentsAttr\{\l WARN: \l \-\> Multi\-variable type inference failed\l DEBUG: \l \-\> Multi\-variable search result rejected for r13v3, resolved type: java.util.concurrent.atomic.AtomicReferenceArray\}\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_25;
+Node_19 -> Node_20;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_27;
+Node_21 -> Node_26;
+Node_26 -> Node_22;
+Node_22 -> Node_17;
+Node_27 -> Node_22;
+Node_25 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_15;
+}
+

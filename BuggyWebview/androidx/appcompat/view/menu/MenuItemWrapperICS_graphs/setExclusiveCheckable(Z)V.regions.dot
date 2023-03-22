@@ -1,0 +1,62 @@
+digraph "CFG forandroidx.appcompat.view.menu.MenuItemWrapperICS.setExclusiveCheckable(Z)V" {
+subgraph cluster_Region_112009237 {
+label = "R(1:(2:(1:4)|5))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1989293338 {
+label = "Try: R(2:(1:4)|5) catches: R(2:9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_714326335 {
+label = "R(2:(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1255154414 {
+label = "IF [B:16:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|if (r6.mSetExclusiveCheckableMethod == null) goto L4\l}"];
+subgraph cluster_Region_621944361 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0006|TryCatch #0 \{Exception \-\> 0x002a, blocks: (B:15:0x0000, B:17:0x0006, B:18:0x001a), top: B:23:0x0000 \}\lCatch: Exception \-\> 0x002a\l|r6.mSetExclusiveCheckableMethod = r6.mWrappedObject.getClass().getDeclaredMethod(\"setExclusiveCheckable\", java.lang.Boolean.TYPE)     \/\/ Catch: java.lang.Exception \-\> L2a\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x001a|TRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x002a, blocks: (B:15:0x0000, B:17:0x0006, B:18:0x001a), top: B:23:0x0000 \}\lCatch: Exception \-\> 0x002a\l|r6.mSetExclusiveCheckableMethod.invoke(r6.mWrappedObject, java.lang.Boolean.valueOf(r7))     \/\/ Catch: java.lang.Exception \-\> L2a\l}"];
+}
+subgraph cluster_Region_1112528244 {
+label = "R(2:9|10) | ExcHandler: Exception \-\> 0x002a\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002a|ExcHandler: Exception \-\> 0x002a\l}"];
+Node_21 [shape=record,label="{21\:\ 0x002b|android.util.Log.w(androidx.appcompat.view.menu.MenuItemWrapperICS.LOG_TAG, \"Error while calling setExclusiveCheckable\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1112528244 {
+label = "R(2:9|10) | ExcHandler: Exception \-\> 0x002a\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002a|ExcHandler: Exception \-\> 0x002a\l}"];
+Node_21 [shape=record,label="{21\:\ 0x002b|android.util.Log.w(androidx.appcompat.view.menu.MenuItemWrapperICS.LOG_TAG, \"Error while calling setExclusiveCheckable\", r0)\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000|TRY_ENTER\lTryCatch #0 \{Exception \-\> 0x002a, blocks: (B:15:0x0000, B:17:0x0006, B:18:0x001a), top: B:23:0x0000 \}\lCatch: Exception \-\> 0x002a\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0032|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.view.menu.MenuItemWrapperICS.setExclusiveCheckable((r6v0 'this' androidx.appcompat.view.menu.MenuItemWrapperICS A[IMMUTABLE_TYPE, THIS]), (r7v0 'checkable' boolean A[D('checkable' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x002b \-\> B:22:0x0032, CROSS_EDGE: B:16:0x0004 \-\> B:18:0x001a, CROSS_EDGE: B:23:0x0000 \-\> B:20:0x002a\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x002a, blocks: (B:15:0x0000, B:17:0x0006, B:18:0x001a), top: B:23:0x0000 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_24;
+Node_18 -> Node_25;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_13 -> Node_23;
+Node_23 -> Node_15;
+Node_23 -> Node_20;
+Node_15 -> Node_16;
+Node_24 -> Node_20;
+Node_25 -> Node_14;
+Node_22 -> Node_14;
+}
+

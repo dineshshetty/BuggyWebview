@@ -1,0 +1,118 @@
+digraph "CFG forkotlin.random.Random.nextInt(II)I" {
+subgraph cluster_Region_1854452697 {
+label = "R(2:1|(2:(2:(1:18)(2:(1:22)|25)|20)|(2:(2:5|(2:8|9))|12))) | DECL_VAR: int bits, int v, int bitCount, int rnd, boolean null\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0000|kotlin.random.RandomKt.checkRangeBounds(r7, r8)\lint int r0 = r8 \- r7\l}"];
+subgraph cluster_Region_1909747497 {
+label = "R(2:(2:(1:18)(2:(1:22)|25)|20)|(2:(2:5|(2:8|9))|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1633954462 {
+label = "IF [B:30:0x0006, B:32:0x000a] THEN: R(2:(1:18)(2:(1:22)|25)|20) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0006|if (r0 \> 0) goto L16\l}"];
+Node_32 [shape=record,label="{32\:\ 0x000a|ADDED_TO_REGION\l|if (r0 == Integer.MIN_VALUE) goto L16\l}"];
+subgraph cluster_Region_1836486148 {
+label = "R(2:(1:18)(2:(1:22)|25)|20)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1820562289 {
+label = "IF [B:41:0x001d] THEN: R(1:18) ELSE: R(2:(1:22)|25)";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x001d|if (((\-r0) & r0) == r0) goto L18\l}"];
+subgraph cluster_Region_1215112452 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x001f|int int r1 = kotlin.random.RandomKt.fastLog2(r0)\lint r1 = nextBits(r1)\l}"];
+}
+subgraph cluster_Region_1397268619 {
+label = "R(2:(1:22)|25)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1666204075 {
+label = "LOOP:1: (1:22)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x0035|LOOP_END\lLOOP:1: B:44:0x0029\-\>B:45:0x0035\l|if (((r3 \- r2) + (r0 \- 1)) \< 0) goto L22\l}"];
+subgraph cluster_Region_589342597 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0029|LOOP_START\lLOOP:1: B:44:0x0029\-\>B:45:0x0035\l|int r3 = nextInt() \>\>\> 1\lint r2 = r3 % r0\l}"];
+}
+}
+Node_46 [shape=record,label="{46\:\ 0x0037|r1 = r2\l}"];
+}
+}
+Node_48 [shape=record,label="{48\:\ 0x003b|RETURN\l|return r7 + r1\l}"];
+}
+}
+subgraph cluster_Region_900342124 {
+label = "R(2:(2:5|(2:8|9))|12)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_916332229 {
+label = "LOOP:0: (2:5|(2:8|9))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0018|LOOP_END\lLOOP:0: B:34:0x000d\-\>B:38:0x0018\lPHI: r3 \l  PHI: (r3v3 boolean) = (r3v2 boolean), (r3v2 boolean), (r3v4 boolean) binds: [B:51:0x0018, B:52:0x0018, B:50:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 == false) goto L5\l}"];
+subgraph cluster_Region_1915546339 {
+label = "R(2:5|(2:8|9))";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x000d|LOOP_START\lLOOP:0: B:34:0x000d\-\>B:38:0x0018\l|int r2 = nextInt()\lr3 = false\l}"];
+subgraph cluster_IfRegion_328245268 {
+label = "IF [B:35:0x0013, B:36:0x0015] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0013|if (r7 \<= r2) goto L7\l}"];
+Node_36 [shape=record,label="{36\:\ 0x0015|ADDED_TO_REGION\l|if (r2 \< r8) goto L8\l}"];
+subgraph cluster_Region_602964906 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0017|r3 = true\l}"];
+Node_50 [shape=record,label="{50\:\ 0x0018|SYNTHETIC\l|continue\l}"];
+}
+}
+}
+}
+Node_39 [shape=record,label="{39\:\ 0x001a|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0008}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x001a|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x0018|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x0018|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x001b}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x0038|PHI: r1 \l  PHI: (r1v2 'bitCount' int) = (r1v1 'bitCount' int), (r1v4 'bitCount' int) binds: [B:46:0x0037, B:42:0x001f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0028}"];
+Node_53 [shape=record,color=red,label="{53\:\ 0x0037|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int kotlin.random.Random.nextInt((r6v0 'this' kotlin.random.Random A[IMMUTABLE_TYPE, THIS]), (r7v0 'from' int A[D('from' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'until' int A[D('until' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:38:0x0018 \-\> B:34:0x000d, CROSS_EDGE: B:36:0x0015 \-\> B:38:0x0018, CROSS_EDGE: B:35:0x0013 \-\> B:38:0x0018, CROSS_EDGE: B:48:0x003b \-\> B:28:?, BACK_EDGE: B:45:0x0035 \-\> B:44:0x0029, CROSS_EDGE: B:46:0x0037 \-\> B:47:0x0038, CROSS_EDGE: B:30:0x0006 \-\> B:40:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlin.random.Random.nextInt(int, int):int]\l}"];
+MethodNode -> Node_27;Node_29 -> Node_30;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_40;
+Node_32 -> Node_34[style=dashed];
+Node_32 -> Node_40;
+Node_41 -> Node_42;
+Node_41 -> Node_43[style=dashed];
+Node_42 -> Node_47;
+Node_45 -> Node_44;
+Node_45 -> Node_53[style=dashed];
+Node_44 -> Node_45;
+Node_46 -> Node_47;
+Node_48 -> Node_28;
+Node_38 -> Node_34;
+Node_38 -> Node_49[style=dashed];
+Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_35 -> Node_51[style=dashed];
+Node_36 -> Node_37;
+Node_36 -> Node_52[style=dashed];
+Node_37 -> Node_50;
+Node_50 -> Node_38;
+Node_39 -> Node_28;
+Node_27 -> Node_29;
+Node_31 -> Node_32;
+Node_49 -> Node_39;
+Node_52 -> Node_38;
+Node_51 -> Node_38;
+Node_40 -> Node_41;
+Node_47 -> Node_48;
+Node_43 -> Node_44;
+Node_53 -> Node_46;
+}
+

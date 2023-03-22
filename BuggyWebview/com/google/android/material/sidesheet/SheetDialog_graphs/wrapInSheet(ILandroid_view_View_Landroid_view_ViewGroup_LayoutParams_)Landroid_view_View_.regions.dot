@@ -1,0 +1,54 @@
+digraph "CFG forcom.google.android.material.sidesheet.SheetDialog.wrapInSheet(ILandroid\/view\/View;Landroid\/view\/ViewGroup$LayoutParams;)Landroid\/view\/View;" {
+subgraph cluster_Region_1428143387 {
+label = "R(6:1|(1:4)|5|(1:7)(1:11)|8|9)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|ensureContainerAndBehavior()\landroidx.coordinatorlayout.widget.CoordinatorLayout androidx.coordinatorlayout.widget.CoordinatorLayout r0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) getContainer().findViewById(com.google.android.material.sidesheet.SheetDialog.COORDINATOR_LAYOUT_ID)\l}"];
+subgraph cluster_IfRegion_390946216 {
+label = "IF [B:15:0x000f, B:16:0x0011] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000f|if (r5 != 0) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0011|ADDED_TO_REGION\l|if (r6 == null) goto L4\l}"];
+subgraph cluster_Region_1205821070 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|android.view.View r6 = getLayoutInflater().inflate(r5, (android.view.ViewGroup) r0, false)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x001c|PHI: r6 \l  PHI: (r6v1 'view' android.view.View) = (r6v0 'view' android.view.View), (r6v0 'view' android.view.View), (r6v2 'view' android.view.View) binds: [B:15:0x000f, B:16:0x0011, B:17:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|android.widget.FrameLayout android.widget.FrameLayout r1 = getSheet()\lr1.removeAllViews()\l}"];
+subgraph cluster_IfRegion_197190352 {
+label = "IF [B:19:0x0023] THEN: R(1:7) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0023|if (r7 == null) goto L7\l}"];
+subgraph cluster_Region_573323605 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0025|r1.addView(r6)\l}"];
+}
+subgraph cluster_Region_332454670 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0029|r1.addView(r6, r7)\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x002c|r0.findViewById(com.google.android.material.sidesheet.SheetDialog.TOUCH_OUTSIDE_ID).setOnClickListener(new com.google.android.material.sidesheet.SheetDialog$$ExternalSyntheticLambda0())\landroidx.core.view.ViewCompat.setAccessibilityDelegate(getSheet(), new com.google.android.material.sidesheet.SheetDialog.C07661())\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0049|RETURN\l|return r4.container\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.view.View com.google.android.material.sidesheet.SheetDialog.wrapInSheet((r4v0 'this' com.google.android.material.sidesheet.SheetDialog\<C extends com.google.android.material.sidesheet.SheetCallback\> A[D('this' com.google.android.material.sidesheet.SheetDialog\<C extends com.google.android.material.sidesheet.SheetCallback\>), IMMUTABLE_TYPE, THIS]), (r5v0 'layoutResId' int A[D('layoutResId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'params' android.view.ViewGroup$LayoutParams A[D('params' android.view.ViewGroup$LayoutParams), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0029 \-\> B:22:0x002c, CROSS_EDGE: B:16:0x0011 \-\> B:18:0x001c, CROSS_EDGE: B:15:0x000f \-\> B:18:0x001c\lINLINE_NOT_NEEDED\lTYPE_VARS: [C extends com.google.android.material.sidesheet.SheetCallback]\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+}
+

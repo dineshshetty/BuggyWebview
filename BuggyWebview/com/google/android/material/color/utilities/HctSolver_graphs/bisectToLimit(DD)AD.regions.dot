@@ -1,0 +1,125 @@
+digraph "CFG forcom.google.android.material.color.utilities.HctSolver.bisectToLimit(DD)[D" {
+subgraph cluster_Region_571271793 {
+label = "R(3:1|(2:(3:(1:8)(1:24)|9|(3:14|(1:16)(1:19)|18))(0)|22)|28) | DECL_VAR: int lPlane, int rPlane\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|double[][] double[][] r0 = bisectToSegment(r22, r24)\ldouble[] r1 = r0[0]\ldouble double r2 = hueOf(r1)\ldouble[] r5 = r0[1]\lint r6 = 0\l}"];
+subgraph cluster_LoopRegion_1117205195 {
+label = "LOOP:0: (2:(3:(1:8)(1:24)|9|(3:14|(1:16)(1:19)|18))(0)|22)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r6 \< 3) goto L4\l}"];
+subgraph cluster_Region_632963721 {
+label = "R(2:(3:(1:8)(1:24)|9|(3:14|(1:16)(1:19)|18))(0)|22)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1106093744 {
+label = "IF [B:6:0x0018] THEN: R(3:(1:8)(1:24)|9|(3:14|(1:16)(1:19)|18)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|if (r1[r6] != r5[r6]) goto L6\l}"];
+subgraph cluster_Region_1021195182 {
+label = "R(3:(1:8)(1:24)|9|(3:14|(1:16)(1:19)|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_442166839 {
+label = "IF [B:8:0x0023] THEN: R(1:8) ELSE: R(1:24)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0023|if (r1[r6] \< r5[r6]) goto L8\l}"];
+subgraph cluster_Region_1598083183 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0025|int r7 = criticalPlaneBelow(trueDelinearized(r1[r6]))\lint r8 = criticalPlaneAbove(trueDelinearized(r5[r6]))\l}"];
+}
+subgraph cluster_Region_372203105 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003a|int r7 = criticalPlaneAbove(trueDelinearized(r1[r6]))\lint r8 = criticalPlaneBelow(trueDelinearized(r5[r6]))\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x004e|PHI: r7 r8 \l  PHI: (r7v4 'lPlane' int) = (r7v3 'lPlane' int), (r7v17 'lPlane' int) binds: [B:10:0x003a, B:9:0x0025] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v2 'rPlane' int) = (r8v1 'rPlane' int), (r8v3 'rPlane' int) binds: [B:10:0x003a, B:9:0x0025] A[DONT_GENERATE, DONT_INLINE]\l|int r13 = r7\lint r14 = r8\lint r15 = 0\l}"];
+subgraph cluster_LoopRegion_797149152 {
+label = "LOOP:1: (3:14|(1:16)(1:19)|18)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0054|if (r15 \< 8) goto L12\l}"];
+Node_15 [shape=record,label="{15\:\ 0x005c|ADDED_TO_REGION\l|if (java.lang.Math.abs(r14 \- r13) \> 1) goto L14\l}"];
+subgraph cluster_Region_987476530 {
+label = "R(3:14|(1:16)(1:19)|18)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x005f|int int r11 = (int) java.lang.Math.floor((r13 + r14) \/ 2.0d)\ldouble r9 = com.google.android.material.color.utilities.HctSolver.CRITICAL_PLANES[r11]\ldouble[] double[] r16 = setCoordinate(r1, r9, r5, r6)\ldouble double r17 = hueOf(r16)\l}"];
+subgraph cluster_IfRegion_2000541704 {
+label = "IF [B:18:0x0083] THEN: R(1:16) ELSE: R(1:19)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0083|if (areInCyclicOrder(r2, r24, r17) != false) goto L16\l}"];
+subgraph cluster_Region_782744872 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0085|r5 = r16\lr14 = r11\l}"];
+}
+subgraph cluster_Region_167250885 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x008b|r1 = r16\lr2 = r17\lr13 = r11\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0092|LOOP_END\lLOOP:1: B:12:0x0052\-\>B:21:0x0092\lPHI: r1 r2 r5 r13 r14 \l  PHI: (r1v6 'left' double[]) = (r1v5 'left' double[]), (r1v4 'left' double[]) binds: [B:29:0x0092, B:30:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v5 'leftHue' double) = (r2v4 'leftHue' double), (r2v3 'leftHue' double) binds: [B:29:0x0092, B:30:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v4 'right' double[]) = (r5v3 'right' double[]), (r5v5 'right' double[]) binds: [B:29:0x0092, B:30:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v4 'lPlane' int) = (r13v3 'lPlane' int), (r13v2 'lPlane' int) binds: [B:29:0x0092, B:30:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r14v2 'rPlane' int) = (r14v1 'rPlane' int), (r14v3 'rPlane' int) binds: [B:29:0x0092, B:30:0x0092] A[DONT_GENERATE, DONT_INLINE]\l|r15++\l}"];
+}
+}
+}
+subgraph cluster_Region_395458233 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0095|LOOP_END\lLOOP:0: B:3:0x000f\-\>B:22:0x0095\lPHI: r1 r2 r5 \l  PHI: (r1v3 'left' double[]) = (r1v2 'left' double[]), (r1v4 'left' double[]), (r1v4 'left' double[]) binds: [B:26:0x0095, B:27:0x0095, B:28:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 'leftHue' double) = (r2v1 'leftHue' double), (r2v3 'leftHue' double), (r2v3 'leftHue' double) binds: [B:26:0x0095, B:27:0x0095, B:28:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v2 'right' double[]) = (r5v1 'right' double[]), (r5v3 'right' double[]), (r5v3 'right' double[]) binds: [B:26:0x0095, B:27:0x0095, B:28:0x0095] A[DONT_GENERATE, DONT_INLINE]\l|r6++\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x009d|RETURN\l|return midpoint(r1, r5)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000f|LOOP_START\lLOOP:0: B:3:0x000f\-\>B:22:0x0095\lPHI: r1 r2 r5 r6 \l  PHI: (r1v2 'left' double[]) = (r1v1 'left' double[]), (r1v3 'left' double[]) binds: [B:2:0x0000, B:22:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'leftHue' double) = (r2v0 'leftHue' double), (r2v2 'leftHue' double) binds: [B:2:0x0000, B:22:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 'right' double[]) = (r5v0 'right' double[]), (r5v2 'right' double[]) binds: [B:2:0x0000, B:22:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'axis' int) = (r6v0 'axis' int), (r6v2 'axis' int) binds: [B:2:0x0000, B:22:0x0095] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001a}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0052|LOOP_START\lLOOP:1: B:12:0x0052\-\>B:21:0x0092\lPHI: r1 r2 r5 r13 r14 r15 \l  PHI: (r1v4 'left' double[]) = (r1v2 'left' double[]), (r1v6 'left' double[]) binds: [B:11:0x004e, B:21:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v3 'leftHue' double) = (r2v1 'leftHue' double), (r2v5 'leftHue' double) binds: [B:11:0x004e, B:21:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v3 'right' double[]) = (r5v1 'right' double[]), (r5v4 'right' double[]) binds: [B:11:0x004e, B:21:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v2 'lPlane' int) = (r13v1 'lPlane' int), (r13v4 'lPlane' int) binds: [B:11:0x004e, B:21:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r14v1 'rPlane' int) = (r14v0 'rPlane' int), (r14v2 'rPlane' int) binds: [B:11:0x004e, B:21:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r15v1 'i' int) = (r15v0 'i' int), (r15v2 'i' int) binds: [B:11:0x004e, B:21:0x0092] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0056}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0092|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0092|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0095|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0095|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0095|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0099|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0099}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{static double[] com.google.android.material.color.utilities.HctSolver.bisectToLimit((r22v0 'y' double A[D('y' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r24v0 'targetHue' double A[D('targetHue' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:21:0x0092 \-\> B:12:0x0052, CROSS_EDGE: B:20:0x008b \-\> B:21:0x0092, BACK_EDGE: B:22:0x0095 \-\> B:3:0x000f, CROSS_EDGE: B:13:0x0054 \-\> B:22:0x0095, CROSS_EDGE: B:10:0x003a \-\> B:11:0x004e, CROSS_EDGE: B:6:0x0018 \-\> B:22:0x0095\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_25[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_26[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_27[style=dashed];
+Node_15 -> Node_17;
+Node_15 -> Node_28[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_30;
+Node_20 -> Node_29;
+Node_21 -> Node_12;
+Node_22 -> Node_3;
+Node_24 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_30 -> Node_21;
+Node_29 -> Node_21;
+Node_28 -> Node_22;
+Node_27 -> Node_22;
+Node_26 -> Node_22;
+Node_25 -> Node_23;
+Node_23 -> Node_24;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.appcompat.widget.ActivityChooserModel.pruneExcessiveHistoricalRecordsIfNeeded()V" {
+subgraph cluster_Region_1411265477 {
+label = "R(2:1|(2:(1:3)|(2:5|(1:7))))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|int int r0 = r4.mHistoricalRecords.size() \- r4.mHistoryMaxSize\l}"];
+subgraph cluster_Region_258301206 {
+label = "R(2:(1:3)|(2:5|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_627019129 {
+label = "IF [B:13:0x0009] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0009|if (r0 \<= 0) goto L3\l}"];
+subgraph cluster_Region_1051255658 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000b|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2050609308 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000c|r4.mHistoricalRecordsChanged = true\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1861202299 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0010|LOOP_START\lLOOP:0: B:16:0x0010\-\>B:17:0x0012\lPHI: r1 \l  PHI: (r1v3 'i' int) = (r1v2 'i' int), (r1v4 'i' int) binds: [B:15:0x000c, B:17:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r0) goto L7\l}"];
+subgraph cluster_Region_1604080645 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0012|LOOP_END\lLOOP:0: B:16:0x0010\-\>B:17:0x0012\l|r4.mHistoricalRecords.remove(0)\lr1++\l}"];
+}
+}
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001e|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001e}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.widget.ActivityChooserModel.pruneExcessiveHistoricalRecordsIfNeeded((r4v0 'this' androidx.appcompat.widget.ActivityChooserModel A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x0012 \-\> B:16:0x0010, CROSS_EDGE: B:18:0x001e \-\> B:11:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19[style=dashed];
+Node_17 -> Node_16;
+Node_10 -> Node_12;
+Node_19 -> Node_18;
+Node_18 -> Node_11;
+}
+

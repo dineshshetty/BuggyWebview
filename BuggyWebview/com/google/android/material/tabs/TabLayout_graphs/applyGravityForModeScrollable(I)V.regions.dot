@@ -1,0 +1,54 @@
+digraph "CFG forcom.google.android.material.tabs.TabLayout.applyGravityForModeScrollable(I)V" {
+subgraph cluster_Region_1643621967 {
+label = "R(2:1|6)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_265736336 {
+label = "Switch: 4
+ case 0 -> R(2:5|1)
+ case 1 -> R(2:2|3)
+ case 2 -> R(1:1)
+ case default -> R(1:8)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|switch(r3) \{\l    case 0: goto L5;\l    case 1: goto L2;\l    case 2: goto L6;\l    default: goto L8;\l\}\l}"];
+subgraph cluster_Region_1011458571 {
+label = "R(2:5|1)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000b|android.util.Log.w(com.google.android.material.tabs.TabLayout.LOG_TAG, \"MODE_SCROLLABLE + GRAVITY_FILL is not supported, GRAVITY_START will be used instead\")\l}"];
+Node_InsnContainer_1617839079 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1010244723 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|r2.slidingTabIndicator.setGravity(1)\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_89917749 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_1962195567 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1721220717 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0012|r2.slidingTabIndicator.setGravity(androidx.core.view.GravityCompat.START)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001b|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void com.google.android.material.tabs.TabLayout.applyGravityForModeScrollable((r2v0 'this' com.google.android.material.tabs.TabLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 'tabGravity' int A[D('tabGravity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:16:0x0012 \-\> B:17:0x001b, CROSS_EDGE: B:12:0x0000 \-\> B:16:0x0012, CROSS_EDGE: B:12:0x0000 \-\> B:17:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Can't fix incorrect switch cases order, some code will duplicate\}\l}"];
+MethodNode -> Node_10;Node_12 -> Node_14;
+Node_12 -> Node_15;
+Node_12 -> Node_16;
+Node_12 -> Node_19;
+Node_15 -> Node_16;
+Node_14 -> Node_18;
+Node_18 -> Node_11;
+Node_19 -> Node_11;
+Node_16 -> Node_17;
+Node_10 -> Node_12;
+Node_17 -> Node_11;
+}
+

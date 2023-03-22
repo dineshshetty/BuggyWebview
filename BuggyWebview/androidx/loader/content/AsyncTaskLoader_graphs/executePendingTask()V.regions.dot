@@ -1,0 +1,86 @@
+digraph "CFG forandroidx.loader.content.AsyncTaskLoader.executePendingTask()V" {
+subgraph cluster_Region_66108375 {
+label = "R(1:(1:(3:(1:7)|(2:10|(2:12|13))|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_19758804 {
+label = "R(1:(3:(1:7)|(2:10|(2:12|13))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1587881876 {
+label = "IF [B:22:0x0002, B:24:0x0006] THEN: R(3:(1:7)|(2:10|(2:12|13))|15) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0002|if (r8.mCancellingTask == null) goto L3\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0006|ADDED_TO_REGION\l|if (r8.mTask != null) goto L5\l}"];
+subgraph cluster_Region_2098373853 {
+label = "R(3:(1:7)|(2:10|(2:12|13))|15)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2067433131 {
+label = "IF [B:26:0x000c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000c|if (r8.mTask.waiting != false) goto L7\l}"];
+subgraph cluster_Region_294358214 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000e|r8.mTask.waiting = false\lr8.mHandler.removeCallbacks(r8.mTask)\l}"];
+}
+}
+subgraph cluster_IfRegion_1726320868 {
+label = "IF [B:29:0x0020] THEN: R(2:10|(2:12|13)) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0020|if (r8.mUpdateThrottle \> 0) goto L10\l}"];
+subgraph cluster_Region_427983561 {
+label = "R(2:10|(2:12|13))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0022|long long r0 = android.os.SystemClock.uptimeMillis()\l}"];
+subgraph cluster_IfRegion_577415707 {
+label = "IF [B:31:0x002d] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x002d|if (r0 \< (r8.mLastLoadCompleteTime + r8.mUpdateThrottle)) goto L12\l}"];
+subgraph cluster_Region_238679209 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x002f|r8.mTask.waiting = true\lr8.mHandler.postAtTime(r8.mTask, r8.mLastLoadCompleteTime + r8.mUpdateThrottle)\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0040|RETURN\l|return\l}"];
+}
+}
+}
+}
+Node_34 [shape=record,label="{34\:\ 0x0041|r8.mTask.executeOnExecutor(r8.mExecutor, null)\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0004}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0008}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x001a}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x004c|ORIG_RETURN\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{void androidx.loader.content.AsyncTaskLoader.executePendingTask((r8v0 'this' androidx.loader.content.AsyncTaskLoader\<D\> A[D('this' androidx.loader.content.AsyncTaskLoader\<D\>), IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:35:0x004c \-\> B:20:?, CROSS_EDGE: B:29:0x0020 \-\> B:34:0x0041, CROSS_EDGE: B:26:0x000c \-\> B:28:0x001a, CROSS_EDGE: B:24:0x0006 \-\> B:35:0x004c, CROSS_EDGE: B:22:0x0002 \-\> B:35:0x004c\lINLINE_NOT_NEEDED\lTYPE_VARS: [D]\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_36[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_37[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_29 -> Node_34[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_34[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_20;
+Node_34 -> Node_35;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_28 -> Node_29;
+Node_35 -> Node_20;
+Node_37 -> Node_20;
+Node_36 -> Node_20;
+}
+

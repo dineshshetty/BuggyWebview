@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.recyclerview.widget.RecyclerView.SmoothScroller.start(Landroidx\/recyclerview\/widget\/RecyclerView;Landroidx\/recyclerview\/widget\/RecyclerView$LayoutManager;)V" {
+subgraph cluster_Region_1343861446 {
+label = "R(4:1|(1:3)|4|(2:(1:10)|(1:6)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|r3.mViewFlinger.stop()\l}"];
+subgraph cluster_IfRegion_957062853 {
+label = "IF [B:14:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0007|if (r2.mStarted != false) goto L3\l}"];
+subgraph cluster_Region_529681883 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0009|android.util.Log.w(androidx.recyclerview.widget.RecyclerView.TAG, \"An instance of \" + getClass().getSimpleName() + \" was started more than once. Each instance of\" + getClass().getSimpleName() + \" is intended to only be used once. You should create a new instance for each use.\")\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x003c|r2.mRecyclerView = r3\lr2.mLayoutManager = r4\l}"];
+subgraph cluster_Region_475573713 {
+label = "R(2:(1:10)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_21672734 {
+label = "IF [B:17:0x0043] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0043|if (r2.mTargetPosition == (\-1)) goto L9\l}"];
+subgraph cluster_Region_1691547716 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x006e|throw new java.lang.IllegalArgumentException(\"Invalid target position\")\l}"];
+}
+}
+subgraph cluster_Region_1763941776 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0045|r3.mState.mTargetPosition = r2.mTargetPosition\lr2.mRunning = true\lr2.mPendingInitialRun = true\lr2.mTargetView = findViewByPosition(getTargetPosition())\lonStart()\lr2.mRecyclerView.mViewFlinger.postOnAnimation()\lr2.mStarted = true\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0066}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0067}"];
+MethodNode[shape=record,label="{void androidx.recyclerview.widget.RecyclerView.SmoothScroller.start((r2v0 'this' androidx.recyclerview.widget.RecyclerView$SmoothScroller A[IMMUTABLE_TYPE, THIS]), (r3v0 'recyclerView' androidx.recyclerview.widget.RecyclerView A[D('recyclerView' androidx.recyclerview.widget.RecyclerView), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'layoutManager' androidx.recyclerview.widget.RecyclerView$LayoutManager A[D('layoutManager' androidx.recyclerview.widget.RecyclerView$LayoutManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x006e \-\> B:12:?, CROSS_EDGE: B:14:0x0007 \-\> B:16:0x003c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_21 -> Node_12;
+Node_18 -> Node_19;
+Node_11 -> Node_13;
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+}
+

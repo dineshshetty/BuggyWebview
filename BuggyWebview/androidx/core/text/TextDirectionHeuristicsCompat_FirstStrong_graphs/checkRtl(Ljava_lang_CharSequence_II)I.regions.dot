@@ -1,0 +1,37 @@
+digraph "CFG forandroidx.core.text.TextDirectionHeuristicsCompat.FirstStrong.checkRtl(Ljava\/lang\/CharSequence;II)I" {
+subgraph cluster_Region_297958405 {
+label = "R(3:1|(1:5)|7)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|int r0 = 2\lint r1 = r6\lint int r2 = r6 + r7\l}"];
+subgraph cluster_LoopRegion_208730882 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0004|LOOP_START\lLOOP:0: B:13:0x0004\-\>B:16:0x0009\lPHI: r0 r1 \l  PHI: (r0v1 'result' int) = (r0v0 'result' int), (r0v2 'result' int) binds: [B:12:0x0000, B:16:0x0009] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:12:0x0000, B:16:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \< r2) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0007|ADDED_TO_REGION\l|if (r0 == 2) goto L5\l}"];
+subgraph cluster_Region_684544106 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0009|LOOP_END\lLOOP:0: B:13:0x0004\-\>B:16:0x0009\l|int r0 = androidx.core.text.TextDirectionHeuristicsCompat.isRtlTextOrFormat(java.lang.Character.getDirectionality(r5.charAt(r1)))\lr1++\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0018|RETURN\l|return r0\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0006}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0018|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0018|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{public int androidx.core.text.TextDirectionHeuristicsCompat.FirstStrong.checkRtl((r4v0 'this' androidx.core.text.TextDirectionHeuristicsCompat$FirstStrong A[IMMUTABLE_TYPE, THIS]), (r5v0 'cs' java.lang.CharSequence A[D('cs' java.lang.CharSequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'start' int A[D('start' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'count' int A[D('count' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:16:0x0009 \-\> B:13:0x0004, CROSS_EDGE: B:13:0x0004 \-\> B:17:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.text.TextDirectionHeuristicsCompat.TextDirectionAlgorithm.checkRtl(java.lang.CharSequence, int, int):int]\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_13;
+Node_17 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_19 -> Node_17;
+Node_18 -> Node_17;
+}
+

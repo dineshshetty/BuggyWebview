@@ -1,0 +1,77 @@
+digraph "CFG forkotlinx.coroutines.channels.ArrayChannel.enqueueElement(ILjava\/lang\/Object;)V" {
+subgraph cluster_Region_297547142 {
+label = "R(1:(2:(2:3|4)|(2:(1:(1:13))|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1568935922 {
+label = "R(2:(2:3|4)|(2:(1:(1:13))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_436655 {
+label = "IF [B:21:0x0002] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0002|if (r6 \< r5.capacity) goto L3\l}"];
+subgraph cluster_Region_1278037249 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0004|ensureCapacity(r6)\ljava.lang.Object[] java.lang.Object[] r0 = r5.buffer\lr0[(r5.head + r6) % r0.length] = r7\l}"];
+Node_35 [shape=record,label="{35\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1687524753 {
+label = "R(2:(1:(1:13))|15)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_580325879 {
+label = "IF [B:24:0x0016] THEN: R(1:(1:13)) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0016|if (kotlinx.coroutines.Debug.getASSERTIONS_ENABLED() != false) goto L8\l}"];
+subgraph cluster_Region_1391923238 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_804351509 {
+label = "IF [B:29:0x0022] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0022|PHI: r2 \l  PHI: (r2v5 boolean A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r5.onBufferOverflow == kotlinx.coroutines.channels.BufferOverflow.DROP_OLDEST) == false) goto L12\l}"];
+subgraph cluster_Region_437252501 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x002a|throw new java.lang.AssertionError()\l}"];
+}
+}
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x002b|java.lang.Object[] java.lang.Object[] r0 = r5.buffer\lint int r2 = r5.head\lr0[r2 % r0.length] = null\lr0[(r2 + r6) % r0.length] = r7\lr5.head = (r2 + 1) % r0.length\l}"];
+}
+}
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0011}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0018}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001d}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x001f}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0025}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0021}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0040|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private final void kotlinx.coroutines.channels.ArrayChannel.enqueueElement((r5v0 'this' kotlinx.coroutines.channels.ArrayChannel\<E\> A[IMMUTABLE_TYPE, THIS]), (r6v0 'currentSize' int A[D('currentSize' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 E A[D('element' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:32:0x002a \-\> B:19:?, CROSS_EDGE: B:33:0x002b \-\> B:34:0x0040, CROSS_EDGE: B:28:0x0021 \-\> B:29:0x0022, CROSS_EDGE: B:24:0x0016 \-\> B:33:0x002b\lINLINE_NOT_NEEDED\lTYPE_VARS: [E]\lSIGNATURE: (ITE;)V\l}"];
+MethodNode -> Node_18;Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_35;
+Node_35 -> Node_19;
+Node_24 -> Node_25;
+Node_24 -> Node_33[style=dashed];
+Node_29 -> Node_31;
+Node_29 -> Node_33[style=dashed];
+Node_32 -> Node_19;
+Node_33 -> Node_34;
+Node_18 -> Node_20;
+Node_20 -> Node_21;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+Node_27 -> Node_29;
+Node_31 -> Node_32;
+Node_28 -> Node_29;
+Node_34 -> Node_19;
+}
+

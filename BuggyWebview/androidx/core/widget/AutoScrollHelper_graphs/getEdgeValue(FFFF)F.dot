@@ -1,0 +1,27 @@
+digraph "CFG forandroidx.core.widget.AutoScrollHelper.getEdgeValue(FFFF)F" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|float r0 = constrain(r8 * r9, 0.0f, r10)\lfloat r2 = constrainEdgeValue(r11, r0)\lfloat r3 = constrainEdgeValue(r9 \- r11, r0)\lfloat r4 = r3 \- r2\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0015|if ((r4 \> 0.0f ? 1 : (r4 == 0.0f ? 0 : \-1)) \>= 0) goto L7\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0017|float r1 = \-r7.mEdgeInterpolator.getInterpolation(\-r4)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x002a|PHI: r1 \l  PHI: (r1v3 'interpolated' float) = (r1v2 'interpolated' float), (r1v6 'interpolated' float) binds: [B:18:0x0024, B:15:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0032|RETURN\l|return constrain(r1, \-1.0f, 1.0f)\l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0020}"];
+Node_17 [shape=record,label="{17\:\ 0x0022|if ((r4 \> 0.0f ? 1 : (r4 == 0.0f ? 0 : \-1)) \<= 0) goto L10\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0024|float r1 = r7.mEdgeInterpolator.getInterpolation(r4)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0033|RETURN\l|return 0.0f\l}"];
+MethodNode[shape=record,label="{private float androidx.core.widget.AutoScrollHelper.getEdgeValue((r7v0 'this' androidx.core.widget.AutoScrollHelper A[IMMUTABLE_TYPE, THIS]), (r8v0 'relativeValue' float A[D('relativeValue' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'size' float A[D('size' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'maxValue' float A[D('maxValue' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'current' float A[D('current' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0024 \-\> B:19:0x002a, CROSS_EDGE: B:21:0x0033 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_12;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_18 -> Node_19;
+Node_21 -> Node_12;
+}
+

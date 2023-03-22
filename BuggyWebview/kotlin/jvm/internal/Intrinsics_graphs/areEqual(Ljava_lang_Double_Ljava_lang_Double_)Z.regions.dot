@@ -1,0 +1,65 @@
+digraph "CFG forkotlin.jvm.internal.Intrinsics.areEqual(Ljava\/lang\/Double;Ljava\/lang\/Double;)Z" {
+subgraph cluster_Region_1937489274 {
+label = "R(2:(1:(1:6))(1:(1:10)(0))|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_363740492 {
+label = "IF [B:17:0x0002] THEN: R(1:(1:6)) ELSE: R(1:(1:10)(0))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0002|if (r7 == null) goto L3\l}"];
+subgraph cluster_Region_1842543895 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1590224759 {
+label = "IF [B:18:0x0004] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (r8 == null) goto L6\l}"];
+subgraph cluster_Region_1886781881 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_349570726 {
+label = "R(1:(1:10)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1846967150 {
+label = "IF [B:20:0x0007, B:22:0x0013] THEN: R(1:10) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0007|if (r8 != null) goto L8\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0013|ADDED_TO_REGION\l|if (r7.doubleValue() == r8.doubleValue()) goto L10\l}"];
+subgraph cluster_Region_2004667012 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+subgraph cluster_Region_927430171 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0016|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0009}"];
+MethodNode[shape=record,label="{public static boolean kotlin.jvm.internal.Intrinsics.areEqual((r7v0 'first' java.lang.Double A[D('first' java.lang.Double), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'second' java.lang.Double A[D('second' java.lang.Double), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x0004 \-\> B:25:0x0017, CROSS_EDGE: B:22:0x0013 \-\> B:24:0x0016, CROSS_EDGE: B:22:0x0013 \-\> B:25:0x0017, CROSS_EDGE: B:20:0x0007 \-\> B:24:0x0016\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_14;Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_24[style=dashed];
+Node_18 -> Node_26;
+Node_26 -> Node_15;
+Node_20 -> Node_21;
+Node_20 -> Node_24[style=dashed];
+Node_22 -> Node_24[style=dashed];
+Node_22 -> Node_27;
+Node_27 -> Node_15;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+}
+

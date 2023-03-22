@@ -1,0 +1,78 @@
+digraph "CFG forandroidx.core.content.pm.PackageInfoCompat.getSignatures(Landroid\/content\/pm\/PackageManager;Ljava\/lang\/String;)Ljava\/util\/List;" {
+subgraph cluster_Region_2062475548 {
+label = "R(2:(2:3|(1:5)(1:12))(1:13)|(2:(1:8)|(1:11))) | DECL_VAR: android.content.pm.Signature[] array\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1940331448 {
+label = "IF [B:3:0x0004] THEN: R(2:3|(1:5)(1:12)) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L3\l}"];
+subgraph cluster_Region_933089848 {
+label = "R(2:3|(1:5)(1:12))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|android.content.pm.PackageInfo android.content.pm.PackageInfo r0 = r3.getPackageInfo(r4, 134217728)\landroid.content.pm.SigningInfo android.content.pm.SigningInfo r1 = r0.signingInfo\l}"];
+subgraph cluster_IfRegion_106848132 {
+label = "IF [B:5:0x0012] THEN: R(1:5) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|if (androidx.core.content.p002pm.PackageInfoCompat.Api28Impl.hasMultipleSigners(r1) != false) goto L5\l}"];
+subgraph cluster_Region_634264283 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|android.content.pm.Signature[] r2 = androidx.core.content.p002pm.PackageInfoCompat.Api28Impl.getApkContentsSigners(r1)\l}"];
+}
+subgraph cluster_Region_868657683 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019|android.content.pm.Signature[] r2 = androidx.core.content.p002pm.PackageInfoCompat.Api28Impl.getSigningCertificateHistory(r1)\l}"];
+}
+}
+}
+subgraph cluster_Region_1337973158 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001e|android.content.pm.PackageInfo android.content.pm.PackageInfo r0 = r3.getPackageInfo(r4, 64)\landroid.content.pm.Signature[] r2 = r0.signatures\l}"];
+}
+}
+subgraph cluster_Region_1337954048 {
+label = "R(2:(1:8)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_181790040 {
+label = "IF [B:10:0x0026] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0026|PHI: r2 \l  PHI: (r2v1 'array' android.content.pm.Signature[]) = (r2v0 'array' android.content.pm.Signature[]), (r2v3 'array' android.content.pm.Signature[]), (r2v4 'array' android.content.pm.Signature[]) binds: [B:9:0x001e, B:7:0x0019, B:6:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 == null) goto L7\l}"];
+subgraph cluster_Region_129893151 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002c|RETURN\l|return java.util.Collections.emptyList()\l}"];
+}
+}
+subgraph cluster_Region_1284485771 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0031|RETURN\l|return java.util.Arrays.asList(r2)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0028}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002d}"];
+MethodNode[shape=record,label="{public static java.util.List\<android.content.pm.Signature\> androidx.core.content.pm.PackageInfoCompat.getSignatures((r3v0 'packageManager' android.content.pm.PackageManager A[D('packageManager' android.content.pm.PackageManager), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'packageName' java.lang.String A[D('packageName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0031 \-\> B:1:?, CROSS_EDGE: B:7:0x0019 \-\> B:10:0x0026, CROSS_EDGE: B:9:0x001e \-\> B:10:0x0026\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroid\/content\/pm\/PackageManager$NameNotFoundException;]\lSIGNATURE: (Landroid\/content\/pm\/PackageManager;Ljava\/lang\/String;)Ljava\/util\/List\<Landroid\/content\/pm\/Signature;\>;\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_7 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_12 -> Node_1;
+Node_14 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+}
+

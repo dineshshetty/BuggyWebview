@@ -1,0 +1,171 @@
+digraph "CFG forandroidx.viewpager2.adapter.FragmentStateAdapter.restoreState(Landroid\/os\/Parcelable;)V" {
+subgraph cluster_Region_1136766072 {
+label = "R(1:(2:(1:37)|(5:5|(1:7)|8|(2:11|(1:28)(1:(2:16|(1:19)(0))(2:24|25)))|(1:(1:33)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2129547469 {
+label = "R(2:(1:37)|(5:5|(1:7)|8|(2:11|(1:28)(1:(2:16|(1:19)(0))(2:24|25)))|(1:(1:33))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1951643400 {
+label = "IF [B:3:0x0006, B:5:0x000e] THEN: R(1:37) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r7.mSavedStates.isEmpty() == false) goto L36\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|ADDED_TO_REGION\l|if (r7.mFragments.isEmpty() == false) goto L36\l}"];
+subgraph cluster_Region_1542872081 {
+label = "R(1:37)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00a0|throw new java.lang.IllegalStateException(\"Expected the adapter to be 'fresh' while restoring state.\")\l}"];
+}
+}
+subgraph cluster_Region_425262779 {
+label = "R(5:5|(1:7)|8|(2:11|(1:28)(1:(2:16|(1:19)(0))(2:24|25)))|(1:(1:33)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|android.os.Bundle android.os.Bundle r0 = (android.os.Bundle) r8\l}"];
+subgraph cluster_IfRegion_299747344 {
+label = "IF [B:7:0x0017] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|if (r0.getClassLoader() == null) goto L7\l}"];
+subgraph cluster_Region_356131705 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|r0.setClassLoader(getClass().getClassLoader())\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0024|java.util.Iterator r1 = r0.keySet().iterator()\l\l}"];
+subgraph cluster_LoopRegion_362453371 {
+label = "LOOP:0: (2:11|(1:28)(1:(2:16|(1:19)(0))(2:24|25)))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0030|java.lang.String \lif (r1.hasNext() != false) goto L11\l}"];
+subgraph cluster_Region_427744061 {
+label = "R(2:11|(1:28)(1:(2:16|(1:19)(0))(2:24|25)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0032|java.lang.String r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_1887225069 {
+label = "IF [B:13:0x003e] THEN: R(1:28) ELSE: R(1:(2:16|(1:19)(0))(2:24|25))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003e|if (isValidKey(r2, androidx.viewpager2.adapter.FragmentStateAdapter.KEY_PREFIX_FRAGMENT) != false) goto L27\l}"];
+subgraph cluster_Region_1601767238 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0040|long long r3 = parseIdFromKey(r2, androidx.viewpager2.adapter.FragmentStateAdapter.KEY_PREFIX_FRAGMENT)\landroidx.fragment.app.Fragment androidx.fragment.app.Fragment r5 = r7.mFragmentManager.getFragment(r0, r2)\lr7.mFragments.put(r3, r5)\l}"];
+}
+subgraph cluster_Region_428021799 {
+label = "R(1:(2:16|(1:19)(0))(2:24|25)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1486031661 {
+label = "IF [B:16:0x0056] THEN: R(2:16|(1:19)(0)) ELSE: R(2:24|25) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0056|if (isValidKey(r2, androidx.viewpager2.adapter.FragmentStateAdapter.KEY_PREFIX_STATE) != false) goto L16\l}"];
+subgraph cluster_Region_17471284 {
+label = "R(2:16|(1:19)(0))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0058|long long r3 = parseIdFromKey(r2, androidx.viewpager2.adapter.FragmentStateAdapter.KEY_PREFIX_STATE)\landroidx.fragment.app.Fragment$SavedState androidx.fragment.app.Fragment.SavedState r5 = (androidx.fragment.app.Fragment.SavedState) r0.getParcelable(r2)\l}"];
+subgraph cluster_IfRegion_2129150541 {
+label = "IF [B:18:0x0066] THEN: R(1:19) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0066|if (containsItem(r3) != false) goto L18\l}"];
+subgraph cluster_Region_973965058 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0068|r7.mSavedStates.put(r3, r5)\l}"];
+}
+subgraph cluster_Region_937137201 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_563508619 {
+label = "R(2:24|25)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x006e}"];
+Node_21 [shape=record,label="{21\:\ 0x0084|throw new java.lang.IllegalArgumentException(\"Unexpected key in savedState: \" + r2)\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_550831038 {
+label = "R(1:(1:33))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1625276138 {
+label = "IF [B:23:0x008b] THEN: R(1:33) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x008b|if (r7.mFragments.isEmpty() == false) goto L33\l}"];
+subgraph cluster_Region_198104284 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x008d|r7.mHasStaleFragments = true\lr7.mIsInGracePeriod = true\lgcFragments()\lscheduleGracePeriodEnd()\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002c|LOOP_START\lLOOP:0: B:10:0x002c\-\>B:33:0x002c\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0050|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0050}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0068|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x002c|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002c|LOOP_END\lSYNTHETIC\lLOOP:0: B:10:0x002c\-\>B:33:0x002c\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x002c|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x006e|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0040|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x002c|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0085|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0085}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0098|ORIG_RETURN\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0099}"];
+MethodNode[shape=record,label="{public final void androidx.viewpager2.adapter.FragmentStateAdapter.restoreState((r7v0 'this' androidx.viewpager2.adapter.FragmentStateAdapter A[IMMUTABLE_TYPE, THIS]), (r8v0 'savedState' android.os.Parcelable A[D('savedState' android.os.Parcelable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:14:0x0040 \-\> B:10:0x002c, BACK_EDGE: B:18:0x0066 \-\> B:10:0x002c, BACK_EDGE: B:19:0x0068 \-\> B:10:0x002c, CROSS_EDGE: B:25:0x0098 \-\> B:1:?, CROSS_EDGE: B:23:0x008b \-\> B:25:0x0098, CROSS_EDGE: B:7:0x0017 \-\> B:9:0x0024, CROSS_EDGE: B:27:0x00a0 \-\> B:1:?, CROSS_EDGE: B:3:0x0006 \-\> B:26:0x0099\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.viewpager2.adapter.StatefulAdapter.restoreState(android.os.Parcelable):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_26;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_26;
+Node_27 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_28[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_29[style=dashed];
+Node_13 -> Node_32;
+Node_14 -> Node_36;
+Node_16 -> Node_17;
+Node_16 -> Node_31[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_30;
+Node_18 -> Node_34[style=dashed];
+Node_19 -> Node_35;
+Node_20 -> Node_21;
+Node_21 -> Node_1;
+Node_23 -> Node_24;
+Node_23 -> Node_37[style=dashed];
+Node_24 -> Node_25;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_10 -> Node_11;
+Node_29 -> Node_15;
+Node_15 -> Node_16;
+Node_30 -> Node_19;
+Node_35 -> Node_33;
+Node_33 -> Node_10;
+Node_34 -> Node_33;
+Node_31 -> Node_20;
+Node_32 -> Node_14;
+Node_36 -> Node_33;
+Node_28 -> Node_22;
+Node_22 -> Node_23;
+Node_25 -> Node_1;
+Node_37 -> Node_1;
+Node_26 -> Node_27;
+}
+

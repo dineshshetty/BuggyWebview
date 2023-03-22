@@ -1,0 +1,30 @@
+digraph "CFG forkotlin.coroutines.CombinedContext.Serialized.readResolve()Ljava\/lang\/Object;" {
+subgraph cluster_Region_895401393 {
+label = "R(3:1|(1:3)|5)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.coroutines.CoroutineContext[] kotlin.coroutines.CoroutineContext[] r0 = r10.elements\ljava.lang.Object r3 = kotlin.coroutines.EmptyCoroutineContext.INSTANCE\lint r5 = 0\l\l}"];
+subgraph cluster_LoopRegion_958111486 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0008|LOOP_START\lLOOP:0: B:11:0x0008\-\>B:12:0x000a\lPHI: r3 r5 \l  PHI: (r3v1 'accumulator$iv' java.lang.Object) = (r3v0 'accumulator$iv' java.lang.Object), (r3v2 'accumulator$iv' java.lang.Object) binds: [B:10:0x0000, B:12:0x000a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:10:0x0000, B:12:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r4) goto L3\l}"];
+subgraph cluster_Region_1916376520 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x000a|LOOP_END\lLOOP:0: B:11:0x0008\-\>B:12:0x000a\l|kotlin.coroutines.CoroutineContext kotlin.coroutines.CoroutineContext r7 = (kotlin.coroutines.CoroutineContext) r3\lkotlin.coroutines.CoroutineContext r3 = r7.plus(r6)\lr5++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0019|RETURN\l|return r3\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0019|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final java.lang.Object kotlin.coroutines.CombinedContext.Serialized.readResolve((r10v0 'this' kotlin.coroutines.CombinedContext$Serialized A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:12:0x000a \-\> B:11:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_11;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_15 -> Node_14;
+}
+

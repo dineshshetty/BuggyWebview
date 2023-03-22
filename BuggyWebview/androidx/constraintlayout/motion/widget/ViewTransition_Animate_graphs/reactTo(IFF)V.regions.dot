@@ -1,0 +1,99 @@
+digraph "CFG forandroidx.constraintlayout.motion.widget.ViewTransition.Animate.reactTo(IFF)V" {
+subgraph cluster_Region_1047697882 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1404079443 {
+label = "Switch: 3
+ case 1 -> R(1:(2:(2:14|15)|(1:16)))
+ case 2 -> R(2:3|(2:(2:7|8)|(1:10)))
+ case default -> R(1:17)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0001|switch(r6) \{\l    case 1: goto L12;\l    case 2: goto L3;\l    default: goto L17;\l\}\l}"];
+subgraph cluster_Region_1824582687 {
+label = "R(1:(2:(2:14|15)|(1:16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1545615308 {
+label = "R(2:(2:14|15)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1983302107 {
+label = "IF [B:30:0x0024] THEN: R(2:14|15) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0024|if (r5.reverse == false) goto L14\l}"];
+subgraph cluster_Region_557520987 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0026|reverse(true)\l}"];
+Node_32 [shape=record,label="{32\:\ 0x0029|RETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1257285751 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_1624367365 {
+label = "R(2:3|(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0005|android.view.View android.view.View r1 = r5.mMC.getView()\lr1.getHitRect(r5.mTempRec)\l}"];
+subgraph cluster_Region_389245106 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1460339614 {
+label = "IF [B:25:0x0018, B:27:0x001c] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0018|if (r5.mTempRec.contains((int) r7, (int) r8) == false) goto L5\l}"];
+Node_27 [shape=record,label="{27\:\ 0x001c|ADDED_TO_REGION\l|if (r5.reverse == false) goto L7\l}"];
+subgraph cluster_Region_772485348 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001e|reverse(true)\l}"];
+Node_36 [shape=record,label="{36\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1635223106 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_1837958182 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001a}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002a|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0022}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.motion.widget.ViewTransition.Animate.reactTo((r5v0 'this' androidx.constraintlayout.motion.widget.ViewTransition$Animate A[IMMUTABLE_TYPE, THIS]), (r6v0 'action' int A[D('action' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'x' float A[D('x' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'y' float A[D('y' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x001c \-\> B:33:0x002a, CROSS_EDGE: B:25:0x0018 \-\> B:33:0x002a, CROSS_EDGE: B:32:0x0029 \-\> B:20:?, CROSS_EDGE: B:30:0x0024 \-\> B:32:0x0029, CROSS_EDGE: B:22:0x0001 \-\> B:33:0x002a\lINLINE_NOT_NEEDED\lMETHOD_PARAMETERS: [action, x, y]\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_19;Node_22 -> Node_24;
+Node_22 -> Node_29;
+Node_22 -> Node_37;
+Node_30 -> Node_31;
+Node_30 -> Node_34[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_20;
+Node_34 -> Node_20;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_33[style=dashed];
+Node_27 -> Node_28;
+Node_27 -> Node_35[style=dashed];
+Node_28 -> Node_36;
+Node_36 -> Node_20;
+Node_35 -> Node_20;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_26 -> Node_27;
+Node_33 -> Node_20;
+Node_29 -> Node_30;
+}
+

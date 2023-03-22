@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.content.MimeTypeFilter.matches(Ljava\/lang\/String;Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_1343408325 {
+label = "R(1:(2:(1:2)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2075173339 {
+label = "R(2:(1:2)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_270960342 {
+label = "IF [B:2:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|if (r3 == null) goto L2\l}"];
+subgraph cluster_Region_404370950 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_2042704322 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0004|java.lang.String[] java.lang.String[] r1 = r3.split(\"\/\")\ljava.lang.String[] java.lang.String[] r0 = r4.split(\"\/\")\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|RETURN\l|return mimeTypeAgainstFilter(r1, r0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.content.MimeTypeFilter.matches((r3v0 'mimeType' java.lang.String A[D('mimeType' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'filter' java.lang.String A[D('filter' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:6:0x0012 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+}
+

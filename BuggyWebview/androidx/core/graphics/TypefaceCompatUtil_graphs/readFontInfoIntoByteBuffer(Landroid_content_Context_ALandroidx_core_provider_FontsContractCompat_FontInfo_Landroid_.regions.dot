@@ -1,0 +1,74 @@
+digraph "CFG forandroidx.core.graphics.TypefaceCompatUtil.readFontInfoIntoByteBuffer(Landroid\/content\/Context;[Landroidx\/core\/provider\/FontsContractCompat$FontInfo;Landroid\/os\/CancellationSignal;)Ljava\/util\/Map;" {
+subgraph cluster_Region_1578638199 {
+label = "R(3:1|(3:3|(2:5|(1:7)(0))(0)|9)|14)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0000|java.util.HashMap java.util.HashMap\<android.net.Uri, java.nio.ByteBuffer\> r0 = new java.util.HashMap\<\>()\lint r2 = 0\l\l}"];
+subgraph cluster_LoopRegion_53416068 {
+label = "LOOP:0: (3:3|(2:5|(1:7)(0))(0)|9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0007|LOOP_START\lLOOP:0: B:21:0x0007\-\>B:29:0x0024\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:20:0x0000, B:29:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_1867583113 {
+label = "R(3:3|(2:5|(1:7)(0))(0)|9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0009|r3 = r7[r2]\l}"];
+subgraph cluster_IfRegion_48740600 {
+label = "IF [B:23:0x000f] THEN: R(2:5|(1:7)(0)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x000f|if (r3.getResultCode() == 0) goto L5\l}"];
+subgraph cluster_Region_1896637367 {
+label = "R(2:5|(1:7)(0))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0012|android.net.Uri android.net.Uri r4 = r3.getUri()\l}"];
+subgraph cluster_IfRegion_693104855 {
+label = "IF [B:26:0x001a] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x001a|if (r0.containsKey(r4) == false) goto L7\l}"];
+subgraph cluster_Region_746034313 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x001d|java.nio.ByteBuffer java.nio.ByteBuffer r5 = mmap(r6, r8, r4)\lr0.put(r4, r5)\l}"];
+}
+subgraph cluster_Region_1839404778 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_225288385 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0024|LOOP_END\lLOOP:0: B:21:0x0007\-\>B:29:0x0024\l|r2++\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x002b|RETURN\l|return java.util.Collections.unmodifiableMap(r0)\l}"];
+}
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0024|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0024|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0024|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0027|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0027}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static java.util.Map\<android.net.Uri, java.nio.ByteBuffer\> androidx.core.graphics.TypefaceCompatUtil.readFontInfoIntoByteBuffer((r6v0 'context' android.content.Context A[D('context' android.content.Context), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'fonts' androidx.core.provider.FontsContractCompat$FontInfo[] A[D('fonts' androidx.core.provider.FontsContractCompat$FontInfo[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'cancellationSignal' android.os.CancellationSignal A[D('cancellationSignal' android.os.CancellationSignal), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:29:0x0024 \-\> B:21:0x0007, CROSS_EDGE: B:26:0x001a \-\> B:29:0x0024, CROSS_EDGE: B:23:0x000f \-\> B:29:0x0024\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Landroid\/content\/Context;[Landroidx\/core\/provider\/FontsContractCompat$FontInfo;Landroid\/os\/CancellationSignal;)Ljava\/util\/Map\<Landroid\/net\/Uri;Ljava\/nio\/ByteBuffer;\>;\l}"];
+MethodNode -> Node_18;Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_32[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_25;
+Node_23 -> Node_34[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_28;
+Node_26 -> Node_35[style=dashed];
+Node_28 -> Node_33;
+Node_29 -> Node_21;
+Node_31 -> Node_19;
+Node_18 -> Node_20;
+Node_33 -> Node_29;
+Node_35 -> Node_29;
+Node_34 -> Node_29;
+Node_32 -> Node_30;
+Node_30 -> Node_31;
+}
+

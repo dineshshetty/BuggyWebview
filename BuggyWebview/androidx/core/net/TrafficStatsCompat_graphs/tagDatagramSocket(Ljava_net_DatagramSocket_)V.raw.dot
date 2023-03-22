@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.core.net.TrafficStatsCompat.tagDatagramSocket(Ljava\/net\/DatagramSocket;)V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: SGET  (r0 I:int) =  android.os.Build.VERSION.SDK_INT int  (LINE:140)\l0x0002: CONST  (r1 I:??[int, float, short, byte, char]) = (24 ??[int, float, short, byte, char]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0004|0x0004: IF  (r0 I:??[int, byte, short, char]) \< (r1 I:??[int, byte, short, char])  \-\> B:5:0x000a \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|0x0006: INVOKE  (r3 I:java.net.DatagramSocket A[D('socket' java.net.DatagramSocket)]) type: STATIC call: androidx.core.net.TrafficStatsCompat.Api24Impl.tagDatagramSocket(java.net.DatagramSocket):void A[MD:(java.net.DatagramSocket):void throws java.net.SocketException (m)] (LINE:141)\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|0x001d: RETURN   A[SYNTHETIC] (LINE:151)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|0x000a: INVOKE  (r0 I:android.os.ParcelFileDescriptor) = (r3 I:java.net.DatagramSocket A[D('socket' java.net.DatagramSocket)]) type: STATIC call: android.os.ParcelFileDescriptor.fromDatagramSocket(java.net.DatagramSocket):android.os.ParcelFileDescriptor A[MD:(java.net.DatagramSocket):android.os.ParcelFileDescriptor (c)] (LINE:143)\l0x000e: NEW_INSTANCE  (r1 I:androidx.core.net.DatagramSocketWrapper) =  androidx.core.net.DatagramSocketWrapper  (LINE:144)\l0x0010: INVOKE  (r2 I:java.io.FileDescriptor) = (r0 I:android.os.ParcelFileDescriptor A[D('pfd' android.os.ParcelFileDescriptor)]) type: VIRTUAL call: android.os.ParcelFileDescriptor.getFileDescriptor():java.io.FileDescriptor A[MD:():java.io.FileDescriptor (c)]\l0x0014: INVOKE  \l  (r1 I:androidx.core.net.DatagramSocketWrapper)\l  (r3 I:java.net.DatagramSocket A[D('socket' java.net.DatagramSocket)])\l  (r2 I:java.io.FileDescriptor)\l type: DIRECT call: androidx.core.net.DatagramSocketWrapper.\<init\>(java.net.DatagramSocket, java.io.FileDescriptor):void A[MD:(java.net.DatagramSocket, java.io.FileDescriptor):void throws java.net.SocketException (m)]\l0x0017: INVOKE  (r1 I:java.net.Socket) type: STATIC call: android.net.TrafficStats.tagSocket(java.net.Socket):void A[MD:(java.net.Socket):void throws java.net.SocketException (c)]\l0x001a: INVOKE  (r0 I:android.os.ParcelFileDescriptor A[D('pfd' android.os.ParcelFileDescriptor)]) type: VIRTUAL call: android.os.ParcelFileDescriptor.detachFd():int A[MD:():int (c)] (LINE:149)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001d|RETURN\lORIG_RETURN\l|0x001d: RETURN    (LINE:151)\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.net.TrafficStatsCompat.tagDatagramSocket((r3 I:java.net.DatagramSocket A[D('socket' java.net.DatagramSocket), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:5:0x000a \-\> B:6:0x001d\lDebug Info:\l  0x000e\-0x001d: r0 'pfd' Landroid\/os\/ParcelFileDescriptor;\l  \-1 \-0x001d: r3 'socket' Ljava\/net\/DatagramSocket;\lEXCEPTIONS:[Ljava\/net\/SocketException;]\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_7;
+Node_7 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+}
+

@@ -1,0 +1,20 @@
+digraph "CFG forkotlin.collections.builders.SerializedCollection.writeExternal(Ljava\/io\/ObjectOutput;)V" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"output\" \l0x0002: INVOKE  (r3 I:java.lang.Object A[D('output' java.io.ObjectOutput)]), (r0 I:java.lang.String) type: STATIC call: kotlin.jvm.internal.Intrinsics.checkNotNullParameter(java.lang.Object, java.lang.String):void A[MD:(java.lang.Object, java.lang.String):void (m)]\l0x0005: IGET  (r0 I:int) = (r2 I:kotlin.collections.builders.SerializedCollection) kotlin.collections.builders.SerializedCollection.tag int  (LINE:394)\l0x0007: INVOKE  (r3 I:java.io.ObjectOutput A[D('output' java.io.ObjectOutput)]), (r0 I:int) type: INTERFACE call: java.io.ObjectOutput.writeByte(int):void A[MD:(int):void throws java.io.IOException (c)]\l0x000a: IGET  (r0 I:java.util.Collection\<?\>) = (r2 I:kotlin.collections.builders.SerializedCollection) kotlin.collections.builders.SerializedCollection.collection java.util.Collection  (LINE:395)\l0x000c: INVOKE  (r0 I:int) = (r0 I:java.util.Collection) type: INTERFACE call: java.util.Collection.size():int A[MD:():int (c)]\l0x0010: INVOKE  (r3 I:java.io.ObjectOutput A[D('output' java.io.ObjectOutput)]), (r0 I:int) type: INTERFACE call: java.io.ObjectOutput.writeInt(int):void A[MD:(int):void throws java.io.IOException (c)]\l0x0013: IGET  (r0 I:java.util.Collection\<?\>) = (r2 I:kotlin.collections.builders.SerializedCollection) kotlin.collections.builders.SerializedCollection.collection java.util.Collection  (LINE:396)\l0x0015: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.Collection) type: INTERFACE call: java.util.Collection.iterator():java.util.Iterator A[MD:():java.util.Iterator\<E\> (c)]\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0019|LOOP_START\lLOOP:0: B:11:0x0019\-\>B:13:0x001f\l|0x0019: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001d|0x001d: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:15:0x0027 \l}"];
+Node_13 [shape=record,label="{13\:\ 0x001f|LOOP_END\lLOOP:0: B:11:0x0019\-\>B:13:0x001f\l|0x001f: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x0023: INVOKE  \l  (r3 I:java.io.ObjectOutput A[D('output' java.io.ObjectOutput)])\l  (r1 I:java.lang.Object A[D('element' java.lang.Object)])\l type: INTERFACE call: java.io.ObjectOutput.writeObject(java.lang.Object):void A[MD:(java.lang.Object):void throws java.io.IOException (c)] (LINE:397)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0027|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0027|RETURN\l|0x0027: RETURN    (LINE:399)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void kotlin.collections.builders.SerializedCollection.writeExternal((r2 'this' I:kotlin.collections.builders.SerializedCollection A[IMMUTABLE_TYPE, THIS]), (r3 I:java.io.ObjectOutput A[D('output' java.io.ObjectOutput), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:13:0x001f \-\> B:11:0x0019\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0023\-0x0026: r1 'element' Ljava\/lang\/Object;\l  \-1 \-0x0027: r3 'output' Ljava\/io\/ObjectOutput;\lMETHOD_OVERRIDE: [ClspMth\{java.io.Externalizable.writeExternal(java.io.ObjectOutput):void throws java.io.IOException\}]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_11;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

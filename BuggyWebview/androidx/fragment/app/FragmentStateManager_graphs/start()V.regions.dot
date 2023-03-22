@@ -1,0 +1,30 @@
+digraph "CFG forandroidx.fragment.app.FragmentStateManager.start()V" {
+subgraph cluster_Region_510933717 {
+label = "R(2:(1:3)|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1881214303 {
+label = "IF [B:10:0x0005] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0005|if (androidx.fragment.app.FragmentManager.isLoggingEnabled(3) != false) goto L3\l}"];
+subgraph cluster_Region_352669891 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0007|android.util.Log.d(androidx.fragment.app.FragmentStateManager.TAG, \"moveto STARTED: \" + r3.mFragment)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x001f|r3.mFragment.performStart()\lr3.mDispatcher.dispatchOnFragmentStarted(r3.mFragment, false)\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002c}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentStateManager.start((r3v0 'this' androidx.fragment.app.FragmentStateManager A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x0005 \-\> B:12:0x001f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_7;Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_13 -> Node_8;
+}
+

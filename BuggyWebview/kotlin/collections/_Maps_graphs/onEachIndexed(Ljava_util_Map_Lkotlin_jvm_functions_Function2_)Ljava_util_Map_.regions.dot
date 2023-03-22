@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.MapsKt___MapsKt.onEachIndexed(Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function2;)Ljava\/util\/Map;" {
+subgraph cluster_Region_1858016411 {
+label = "R(3:1|(3:4|(1:6)(0)|8)|11)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"action\")\ljava.lang.Iterable java.lang.Iterable\<java.lang.Object\> r3 = r9.entrySet()\lint r5 = 0\ljava.util.Iterator r6 = r3.iterator()\l\l}"];
+subgraph cluster_LoopRegion_904938390 {
+label = "LOOP:0: (3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001d|java.lang.Object \lif (r6.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1998307554 {
+label = "R(3:4|(1:6)(0)|8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001f|java.lang.Object r7 = (java.lang.Object) r6.next()\lint int r8 = r5 + 1\l}"];
+subgraph cluster_IfRegion_1380721678 {
+label = "IF [B:20:0x0025] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0025|if (r5 \< 0) goto L6\l}"];
+subgraph cluster_Region_1200489535 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0027|kotlin.collections.CollectionsKt.throwIndexOverflow()\l}"];
+}
+subgraph cluster_Region_2037503239 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x002a|LOOP_END\lLOOP:0: B:17:0x0019\-\>B:22:0x002a\l|r10.invoke(java.lang.Integer.valueOf(r5), r7)\lr5 = r8\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0035|RETURN\l|return r9\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0019|LOOP_START\lLOOP:0: B:17:0x0019\-\>B:22:0x002a\lPHI: r5 \l  PHI: (r5v1 'index$iv' int) = (r5v0 'index$iv' int), (r5v3 'index$iv' int) binds: [B:16:0x0000, B:22:0x002a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002a|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002a|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0035|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final M extends java.util.Map\<? extends K, ? extends V\> kotlin.collections.MapsKt___MapsKt.onEachIndexed((r9v0 M extends java.util.Map\<? extends K, ? extends V\> A[D('$this$onEachIndexed' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'action' kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super java.util.Map$Entry\<? extends K, ? extends V\>, kotlin.Unit\> A[D('action' kotlin.jvm.functions.Function2), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:22:0x002a \-\> B:17:0x0019, CROSS_EDGE: B:20:0x0025 \-\> B:22:0x002a\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K, M extends java.util.Map\<? extends K, ? extends V\>]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;M::Ljava\/util\/Map\<+TK;+TV;\>;\>(TM;Lkotlin\/jvm\/functions\/Function2\<\-Ljava\/lang\/Integer;\-Ljava\/util\/Map$Entry\<+TK;+TV;\>;Lkotlin\/Unit;\>;)TM;\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_27[style=dashed];
+Node_21 -> Node_26;
+Node_22 -> Node_17;
+Node_24 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_26 -> Node_22;
+Node_27 -> Node_22;
+Node_25 -> Node_24;
+}
+

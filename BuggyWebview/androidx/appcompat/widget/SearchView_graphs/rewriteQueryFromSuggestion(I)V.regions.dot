@@ -1,0 +1,84 @@
+digraph "CFG forandroidx.appcompat.widget.SearchView.rewriteQueryFromSuggestion(I)V" {
+subgraph cluster_Region_1678327000 {
+label = "R(2:1|(2:(1:3)|(1:(2:(2:7|(2:9|10)(2:11|12))|(1:13)))))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|android.text.Editable java.lang.CharSequence r0 = r3.mSearchSrcTextView.getText()\landroid.database.Cursor android.database.Cursor r1 = r3.mSuggestionsAdapter.getCursor()\l}"];
+subgraph cluster_Region_459553222 {
+label = "R(2:(1:3)|(1:(2:(2:7|(2:9|10)(2:11|12))|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_120018539 {
+label = "IF [B:19:0x000c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|if (r1 == null) goto L3\l}"];
+subgraph cluster_Region_1607046757 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000e|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_188226748 {
+label = "R(1:(2:(2:7|(2:9|10)(2:11|12))|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2069296293 {
+label = "R(2:(2:7|(2:9|10)(2:11|12))|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_719672747 {
+label = "IF [B:22:0x0013] THEN: R(2:7|(2:9|10)(2:11|12)) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0013|if (r1.moveToPosition(r4) != false) goto L7\l}"];
+subgraph cluster_Region_43738149 {
+label = "R(2:7|(2:9|10)(2:11|12))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0015|java.lang.CharSequence java.lang.CharSequence r2 = r3.mSuggestionsAdapter.convertToString(r1)\l}"];
+subgraph cluster_IfRegion_1746400343 {
+label = "IF [B:24:0x001b] THEN: R(2:9|10) ELSE: R(2:11|12)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001b|if (r2 != null) goto L9\l}"];
+subgraph cluster_Region_1430151984 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x001d|setQuery(r2)\l}"];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_868446880 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0021|setQuery(r0)\l}"];
+Node_30 [shape=record,label="{30\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1821433543 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0025|setQuery(r0)\l}"];
+}
+}
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000f}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0028|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void androidx.appcompat.widget.SearchView.rewriteQueryFromSuggestion((r3v0 'this' androidx.appcompat.widget.SearchView A[IMMUTABLE_TYPE, THIS]), (r4v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:29:0x0028 \-\> B:17:?, CROSS_EDGE: B:26:0x0021 \-\> B:29:0x0028, CROSS_EDGE: B:28:0x0025 \-\> B:29:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_17;
+Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_31;
+Node_31 -> Node_17;
+Node_26 -> Node_30;
+Node_30 -> Node_17;
+Node_28 -> Node_29;
+Node_16 -> Node_18;
+Node_21 -> Node_22;
+Node_29 -> Node_17;
+}
+

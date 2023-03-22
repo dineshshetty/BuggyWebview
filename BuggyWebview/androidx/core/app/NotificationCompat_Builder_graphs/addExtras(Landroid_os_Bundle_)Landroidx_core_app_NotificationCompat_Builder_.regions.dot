@@ -1,0 +1,45 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.Builder.addExtras(Landroid\/os\/Bundle;)Landroidx\/core\/app\/NotificationCompat$Builder;" {
+subgraph cluster_Region_1375463590 {
+label = "R(2:(2:2|(1:4)(1:5))|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_657625335 {
+label = "IF [B:10:0x0000] THEN: R(2:2|(1:4)(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|if (r2 != null) goto L2\l}"];
+subgraph cluster_Region_359180460 {
+label = "R(2:2|(1:4)(1:5))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|android.os.Bundle android.os.Bundle r0 = r1.mExtras\l}"];
+subgraph cluster_IfRegion_507340254 {
+label = "IF [B:12:0x0004] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|if (r0 == null) goto L4\l}"];
+subgraph cluster_Region_1131324983 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|r1.mExtras = new android.os.Bundle(r2)\l}"];
+}
+subgraph cluster_Region_1939961851 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000e|r0.putAll(r2)\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0011|RETURN\l|return r1\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat.Builder.addExtras((r1v0 'this' androidx.core.app.NotificationCompat$Builder A[IMMUTABLE_TYPE, THIS]), (r2v0 'extras' android.os.Bundle A[D('extras' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x000e \-\> B:15:0x0011, CROSS_EDGE: B:10:0x0000 \-\> B:15:0x0011\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_10 -> Node_15[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+}
+

@@ -1,0 +1,69 @@
+digraph "CFG forcom.google.android.material.bottomsheet.BottomSheetDialog.wrapInBottomSheet(ILandroid\/view\/View;Landroid\/view\/ViewGroup$LayoutParams;)Landroid\/view\/View;" {
+subgraph cluster_Region_1474929569 {
+label = "R(7:1|(1:4)|(1:7)|8|(1:10)(1:14)|11|12)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|ensureContainerAndBehavior()\landroidx.coordinatorlayout.widget.CoordinatorLayout androidx.coordinatorlayout.widget.CoordinatorLayout r0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) r3.container.findViewById(com.google.android.material.C0571R.C0574id.coordinator)\l}"];
+subgraph cluster_IfRegion_908068247 {
+label = "IF [B:18:0x000d, B:19:0x000f] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|if (r4 != 0) goto L3\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000f|ADDED_TO_REGION\l|if (r5 == null) goto L4\l}"];
+subgraph cluster_Region_337096540 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0011|android.view.View r5 = getLayoutInflater().inflate(r4, (android.view.ViewGroup) r0, false)\l}"];
+}
+}
+subgraph cluster_IfRegion_1455603151 {
+label = "IF [B:22:0x001c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001c|if (r3.edgeToEdgeEnabled != false) goto L7\l}"];
+subgraph cluster_Region_1463934128 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001e|androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(r3.bottomSheet, new com.google.android.material.bottomsheet.BottomSheetDialog.C06131())\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0028|r3.bottomSheet.removeAllViews()\l}"];
+subgraph cluster_IfRegion_1756538252 {
+label = "IF [B:25:0x002d] THEN: R(1:10) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002d|if (r6 == null) goto L10\l}"];
+subgraph cluster_Region_1585973680 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002f|r3.bottomSheet.addView(r5)\l}"];
+}
+subgraph cluster_Region_493353835 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0035|r3.bottomSheet.addView(r5, r6)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x003a|r0.findViewById(com.google.android.material.C0571R.C0574id.touch_outside).setOnClickListener(new com.google.android.material.bottomsheet.BottomSheetDialog.View$OnClickListenerC06142())\landroidx.core.view.ViewCompat.setAccessibilityDelegate(r3.bottomSheet, new com.google.android.material.bottomsheet.BottomSheetDialog.C06153())\lr3.bottomSheet.setOnTouchListener(new com.google.android.material.bottomsheet.BottomSheetDialog.View$OnTouchListenerC06164())\l}"];
+Node_29 [shape=record,label="{29\:\ 0x005e|RETURN\l|return r3.container\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x001a|PHI: r5 \l  PHI: (r5v1 'view' android.view.View) = (r5v0 'view' android.view.View), (r5v0 'view' android.view.View), (r5v2 'view' android.view.View) binds: [B:18:0x000d, B:19:0x000f, B:20:0x0011] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.view.View com.google.android.material.bottomsheet.BottomSheetDialog.wrapInBottomSheet((r3v0 'this' com.google.android.material.bottomsheet.BottomSheetDialog A[IMMUTABLE_TYPE, THIS]), (r4v0 'layoutResId' int A[D('layoutResId' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'view' android.view.View A[D('view' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'params' android.view.ViewGroup$LayoutParams A[D('params' android.view.ViewGroup$LayoutParams), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0035 \-\> B:28:0x003a, CROSS_EDGE: B:22:0x001c \-\> B:24:0x0028, CROSS_EDGE: B:19:0x000f \-\> B:21:0x001a, CROSS_EDGE: B:18:0x000d \-\> B:21:0x001a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_16;
+Node_15 -> Node_17;
+Node_21 -> Node_22;
+}
+

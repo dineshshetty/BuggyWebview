@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.material.timepicker.ClockHandView.setMultiLevel(Z)V" {
+subgraph cluster_Region_235086369 {
+label = "R(2:(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_68306403 {
+label = "IF [B:11:0x0002, B:12:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if (r1.isMultiLevel != false) goto L3\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0004|ADDED_TO_REGION\l|if (r2 == false) goto L4\l}"];
+subgraph cluster_Region_189790428 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0006|r1.currentLevel = 1\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0009|r1.isMultiLevel = r2\linvalidate()\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000e}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.timepicker.ClockHandView.setMultiLevel((r1v0 'this' com.google.android.material.timepicker.ClockHandView A[IMMUTABLE_TYPE, THIS]), (r2v0 'isMultiLevel' boolean A[D('isMultiLevel' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:12:0x0004 \-\> B:14:0x0009, CROSS_EDGE: B:11:0x0002 \-\> B:14:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_15 -> Node_9;
+}
+

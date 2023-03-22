@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.filterNot([BLkotlin\/jvm\/functions\/Function1;)Ljava\/util\/List;" {
+subgraph cluster_Region_569460962 {
+label = "R(3:1|(3:3|(1:5)(0)|7)|11)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r9, \"predicate\")\ljava.util.Collection java.util.Collection r1 = new java.util.ArrayList()\lint r5 = 0\l\l}"];
+subgraph cluster_LoopRegion_606624386 {
+label = "LOOP:0: (3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0016|LOOP_START\lLOOP:0: B:16:0x0016\-\>B:20:0x0031\lPHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:15:0x0000, B:20:0x0031] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r4) goto L3\l}"];
+subgraph cluster_Region_1757916843 {
+label = "R(3:3|(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0018|r6 = r8[r5]\l}"];
+subgraph cluster_IfRegion_1542294209 {
+label = "IF [B:18:0x0028] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0028|if (r9.invoke(java.lang.Byte.valueOf(r6)).booleanValue() == false) goto L5\l}"];
+subgraph cluster_Region_895765160 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002a|r1.add(java.lang.Byte.valueOf(r6))\l}"];
+}
+subgraph cluster_Region_2045310047 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0031|LOOP_END\lLOOP:0: B:16:0x0016\-\>B:20:0x0031\l|r5++\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0037|RETURN\l|return (java.util.List) r1\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0031|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0031|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0034|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0034}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<java.lang.Byte\> kotlin.collections.ArraysKt___ArraysKt.filterNot((r8v0 '$this$filterNot' byte[] A[D('$this$filterNot' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Byte, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0031 \-\> B:16:0x0016, CROSS_EDGE: B:18:0x0028 \-\> B:20:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([BLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Byte;Ljava\/lang\/Boolean;\>;)Ljava\/util\/List\<Ljava\/lang\/Byte;\>;\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_24;
+Node_20 -> Node_16;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_20;
+Node_25 -> Node_20;
+Node_23 -> Node_21;
+Node_21 -> Node_22;
+}
+

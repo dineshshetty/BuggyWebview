@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.recyclerview.widget.GridLayoutManager.getSpanSize(Landroidx\/recyclerview\/widget\/RecyclerView$Recycler;Landroidx\/recyclerview\/widget\/RecyclerView$State;I)I" {
+Node_15 [shape=record,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0000}"];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (r6.isPreLayout() != false) goto L6\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0006}"];
+Node_20 [shape=record,label="{20\:\ 0x000c|RETURN\l|return r4.mSpanSizeLookup.getSpanSize(r7)\l}"];
+Node_16 [shape=record,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ 0x000d|int r0 = r4.mPreLayoutSpanSizeCache.get(r7, \-1)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0014|if (r0 == (\-1)) goto L9\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0016|RETURN\l|return r0\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0017|int r2 = r5.convertPreLayoutPositionToPostLayout(r7)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x001b|if (r2 != (\-1)) goto L13\l}"];
+Node_26 [shape=record,label="{26\:\ 0x001d|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Cannot find span size for pre layout position. It is not cached, not in the adapter. Pos:\")\lr1.append(r7)\landroid.util.Log.w(androidx.recyclerview.widget.GridLayoutManager.TAG, r1.toString())\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0034|RETURN\l|return 1\l}"];
+Node_28 [shape=record,label="{28\:\ 0x0035}"];
+Node_29 [shape=record,label="{29\:\ 0x003b|RETURN\l|return r4.mSpanSizeLookup.getSpanSize(r2)\l}"];
+MethodNode[shape=record,label="{private int androidx.recyclerview.widget.GridLayoutManager.getSpanSize((r4v0 'this' androidx.recyclerview.widget.GridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r5v0 'recycler' androidx.recyclerview.widget.RecyclerView$Recycler A[D('recycler' androidx.recyclerview.widget.RecyclerView$Recycler), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'state' androidx.recyclerview.widget.RecyclerView$State A[D('state' androidx.recyclerview.widget.RecyclerView$State), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'pos' int A[D('pos' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0016 \-\> B:16:?, CROSS_EDGE: B:27:0x0034 \-\> B:16:?, CROSS_EDGE: B:29:0x003b \-\> B:16:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_19 -> Node_20;
+Node_20 -> Node_16;
+Node_21 -> Node_22;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_23 -> Node_16;
+Node_24 -> Node_25;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_28;
+Node_26 -> Node_27;
+Node_27 -> Node_16;
+Node_28 -> Node_29;
+Node_29 -> Node_16;
+}
+

@@ -1,0 +1,92 @@
+digraph "CFG forkotlinx.coroutines.flow.FlowKt__MigrationKt$onErrorReturn$2.invokeSuspend(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1969857283 {
+label = "R(3:1|2|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|java.lang.Object java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()\l}"];
+subgraph cluster_SwitchRegion_1209371805 {
+label = "Switch: 3
+ case 0 -> R(2:9|(2:(1:15)|(2:11|(1:1)(1:13))))
+ case 1 -> R(2:6|1)
+ case default -> R(1:4)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0006|switch(r6.label) \{\l    case 0: goto L9;\l    case 1: goto L6;\l    default: goto L3;\l\}\l}"];
+subgraph cluster_Region_1519782452 {
+label = "R(2:9|(2:(1:15)|(2:11|(1:1)(1:13))))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0016|kotlin.ResultKt.throwOnFailure(r7)\lkotlinx.coroutines.flow.FlowCollector kotlinx.coroutines.flow.FlowCollector r2 = (kotlinx.coroutines.flow.FlowCollector) r6.L$0\ljava.lang.Throwable java.lang.Throwable r3 = (java.lang.Throwable) r6.L$1\l}"];
+subgraph cluster_Region_1060547506 {
+label = "R(2:(1:15)|(2:11|(1:1)(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1650445278 {
+label = "IF [B:24:0x002e] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002e|if (r6.$predicate.invoke(r3).booleanValue() == false) goto L15\l}"];
+subgraph cluster_Region_826988012 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0046|throw r3\l}"];
+}
+}
+subgraph cluster_Region_1030739966 {
+label = "R(2:11|(1:1)(1:13))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0030|r6.L$0 = null\lr6.label = 1\l}"];
+subgraph cluster_IfRegion_1252207805 {
+label = "IF [B:26:0x003f] THEN: R(1:1) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x003f|if (r2.emit(r6.$fallback, r6) != r0) goto L14\l}"];
+subgraph cluster_Region_1243261392 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_772777322 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1775173159 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0041|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_611246114 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|kotlin.ResultKt.throwOnFailure(r7)\l}"];
+Node_InsnContainer_1744634742 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2025218672 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0010|throw new java.lang.IllegalStateException(\"call to 'resume' before 'invoke' with coroutine\")\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x0045|RETURN\l|return kotlin.Unit.INSTANCE\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0009}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0043}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0042}"];
+MethodNode[shape=record,label="{public final java.lang.Object kotlinx.coroutines.flow.FlowKt__MigrationKt$onErrorReturn$2.invokeSuspend((r6v0 'this' kotlinx.coroutines.flow.FlowKt__MigrationKt$onErrorReturn$2 A[IMMUTABLE_TYPE, THIS]), (r7v0 '$result' java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:30:0x0045 \-\> B:17:?, CROSS_EDGE: B:27:0x0041 \-\> B:17:?, CROSS_EDGE: B:28:0x0042 \-\> B:29:0x0043, CROSS_EDGE: B:31:0x0046 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlin.coroutines.jvm.internal.BaseContinuationImpl.invokeSuspend(java.lang.Object):java.lang.Object]\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22;
+Node_19 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_31;
+Node_31 -> Node_17;
+Node_25 -> Node_26;
+Node_26 -> Node_27[style=dashed];
+Node_26 -> Node_28;
+Node_27 -> Node_17;
+Node_22 -> Node_29;
+Node_21 -> Node_17;
+Node_30 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_21;
+Node_29 -> Node_30;
+Node_28 -> Node_29;
+}
+

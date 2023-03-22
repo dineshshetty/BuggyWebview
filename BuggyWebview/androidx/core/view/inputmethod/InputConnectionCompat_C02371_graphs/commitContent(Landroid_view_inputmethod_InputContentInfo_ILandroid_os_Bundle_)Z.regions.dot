@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.view.inputmethod.InputConnectionCompat.1.commitContent(Landroid\/view\/inputmethod\/InputContentInfo;ILandroid\/os\/Bundle;)Z" {
+subgraph cluster_Region_368999902 {
+label = "R(1:(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1186611449 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2137887915 {
+label = "IF [B:19:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|if (r3.onCommitContent(androidx.core.view.inputmethod.InputContentInfoCompat.wrap(r3), r4, r5) != false) goto L3\l}"];
+subgraph cluster_Region_866117816 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000c|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1441358744 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0012|RETURN\l|return super.commitContent(r3, r4, r5)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000e}"];
+MethodNode[shape=record,label="{public boolean androidx.core.view.inputmethod.InputConnectionCompat.1.commitContent((r2v0 'this' androidx.core.view.inputmethod.InputConnectionCompat$1 A[IMMUTABLE_TYPE, THIS]), (r3v0 'inputContentInfo' android.view.inputmethod.InputContentInfo A[D('inputContentInfo' android.view.inputmethod.InputContentInfo), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'flags' int A[D('flags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'opts' android.os.Bundle A[D('opts' android.os.Bundle), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:23:0x0012 \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.inputmethod.InputConnection.commitContent(android.view.inputmethod.InputContentInfo, int, android.os.Bundle):boolean\}]\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_17;
+Node_23 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_22 -> Node_23;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.coordinatorlayout.widget.CoordinatorLayout.resolveAnchoredChildGravity(I)I" {
+subgraph cluster_Region_1739465472 {
+label = "R(1:(2:(1:2)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1196842813 {
+label = "R(2:(1:2)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_372401035 {
+label = "IF [B:9:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|if (r1 == 0) goto L2\l}"];
+subgraph cluster_Region_1275193954 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|SYNTHETIC\lRETURN\l|return 17\l}"];
+}
+}
+subgraph cluster_Region_1512142529 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|RETURN\lORIG_RETURN\l|return r1\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0005}"];
+MethodNode[shape=record,label="{private static int androidx.coordinatorlayout.widget.CoordinatorLayout.resolveAnchoredChildGravity((r1v0 'gravity' int A[D('gravity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:11:0x0005 \-\> B:12:0x0006\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_8;
+Node_12 -> Node_8;
+Node_7 -> Node_9;
+Node_11 -> Node_12;
+}
+

@@ -1,0 +1,25 @@
+digraph "CFG forandroidx.lifecycle.LifecycleRegistry.enforceMainThreadIfNeeded(Ljava\/lang\/String;)V" {
+Node_11 [shape=record,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0000|0x0000: IGET  (r0 I:boolean) = (r3 I:androidx.lifecycle.LifecycleRegistry) androidx.lifecycle.LifecycleRegistry.mEnforceMainThread boolean  (LINE:321)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0002|0x0002: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:20:0x002b \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0004|0x0004: INVOKE  (r0 I:androidx.arch.core.executor.ArchTaskExecutor) =  type: STATIC call: androidx.arch.core.executor.ArchTaskExecutor.getInstance():androidx.arch.core.executor.ArchTaskExecutor A[MD:():androidx.arch.core.executor.ArchTaskExecutor (m)] (LINE:322)\l0x0008: INVOKE  (r0 I:boolean) = (r0 I:androidx.arch.core.executor.ArchTaskExecutor) type: VIRTUAL call: androidx.arch.core.executor.ArchTaskExecutor.isMainThread():boolean A[MD:():boolean (m)]\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000c|0x000c: IF  (r0 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:18:0x000f \l}"];
+Node_18 [shape=record,label="{18\:\ 0x000f|0x000f: NEW_INSTANCE  (r0 I:java.lang.IllegalStateException) =  java.lang.IllegalStateException  (LINE:323)\l0x0011: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0013: INVOKE  (r1 I:java.lang.StringBuilder) type: DIRECT call: java.lang.StringBuilder.\<init\>():void A[MD:():void (c)]\l0x0016: CONST_STR  (r2 I:java.lang.String) =  \"Method \" \l0x0018: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) type: VIRTUAL call: java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder A[MD:(java.lang.String):java.lang.StringBuilder (c)]\l0x001b: INVOKE  (r1 I:java.lang.StringBuilder), (r4 I:java.lang.String A[D('methodName' java.lang.String)]) type: VIRTUAL call: java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder A[MD:(java.lang.String):java.lang.StringBuilder (c)]\l0x001e: CONST_STR  (r2 I:java.lang.String) =  \" must be called on the main thread\" \l0x0020: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) type: VIRTUAL call: java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder A[MD:(java.lang.String):java.lang.StringBuilder (c)]\l0x0023: INVOKE  (r1 I:java.lang.String) = (r1 I:java.lang.StringBuilder) type: VIRTUAL call: java.lang.StringBuilder.toString():java.lang.String A[MD:():java.lang.String (c)]\l0x0027: INVOKE  (r0 I:java.lang.IllegalStateException), (r1 I:java.lang.String) type: DIRECT call: java.lang.IllegalStateException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_19 [shape=record,label="{19\:\ 0x002a|0x002a: THROW  (r0 I:java.lang.Throwable) \l}"];
+Node_12 [shape=record,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|0x002b: RETURN   A[SYNTHETIC] (LINE:327)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x002b|RETURN\lORIG_RETURN\l|0x002b: RETURN    (LINE:327)\l}"];
+MethodNode[shape=record,label="{private void androidx.lifecycle.LifecycleRegistry.enforceMainThreadIfNeeded((r3 'this' I:androidx.lifecycle.LifecycleRegistry A[IMMUTABLE_TYPE, THIS]), (r4 I:java.lang.String A[D('methodName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x002b \-\> B:12:?, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x002b\lINLINE_NOT_NEEDED\lDebug Info:\l  \-1 \-0x002b: r4 'methodName' Ljava\/lang\/String;\l}"];
+MethodNode -> Node_11;Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_15 -> Node_16;
+Node_16 -> Node_18;
+Node_16 -> Node_21[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_21 -> Node_12;
+Node_20 -> Node_12;
+}
+

@@ -1,0 +1,20 @@
+digraph "CFG forandroidx.collection.CircularIntArray.doubleCapacity()V" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: IGET  (r0 I:int[]) = (r7 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mElements int[]  (LINE:31)\l0x0002: ARRAY_LENGTH  (r1 I:int) = (r0 I:??[]) \l0x0003: IGET  (r2 I:int) = (r7 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mHead int  (LINE:32)\l0x0005: ARITH  (r3 I:int) = (r1 I:int A[D('n' int)]) \- (r2 I:int) \l0x0007: ARITH  (r4 I:int) = (r1 I:int A[D('n' int)]) \<\< (1 int)  (LINE:33)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|0x0009: IF  (r4 I:??[int, byte, short, char] A[D('newCapacity' int)]) \< (0 ??[int, byte, short, char])  \-\> B:6:0x0023  (LINE:34)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|0x000b: NEW_ARRAY  (r5 I:int[]) = (r4 I:int A[D('newCapacity' int), IMMUTABLE_TYPE]) type: int[]  (LINE:37)\l0x000d: CONST  (r6 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY])  (LINE:38)\l0x000e: INVOKE  (r0 I:java.lang.Object), (r2 I:int), (r5 I:java.lang.Object A[D('a' int[])]), (r6 I:int), (r3 I:int A[D('r' int)]) type: STATIC call: java.lang.System.arraycopy(java.lang.Object, int, java.lang.Object, int, int):void A[MD:(java.lang.Object, int, java.lang.Object, int, int):void (c)]\l0x0011: IGET  (r0 I:int[]) = (r7 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mElements int[]  (LINE:39)\l0x0013: IGET  (r2 I:int) = (r7 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mHead int \l0x0015: INVOKE  (r0 I:java.lang.Object), (r6 I:int), (r5 I:java.lang.Object A[D('a' int[])]), (r3 I:int A[D('r' int)]), (r2 I:int) type: STATIC call: java.lang.System.arraycopy(java.lang.Object, int, java.lang.Object, int, int):void A[MD:(java.lang.Object, int, java.lang.Object, int, int):void (c)]\l0x0018: IPUT  (r5 I:int[] A[D('a' int[])]), (r7 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mElements int[]  (LINE:40)\l0x001a: IPUT  (r6 I:int), (r7 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mHead int  (LINE:41)\l0x001c: IPUT  (r1 I:int A[D('n' int)]), (r7 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mTail int  (LINE:42)\l0x001e: ARITH  (r0 I:int) = (r4 I:int A[D('newCapacity' int)]) + (\-1 int)  (LINE:43)\l0x0020: IPUT  (r0 I:int), (r7 I:androidx.collection.CircularIntArray) androidx.collection.CircularIntArray.mCapacityBitmask int \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|RETURN\l|0x0022: RETURN    (LINE:44)\l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|0x0023: NEW_INSTANCE  (r0 I:java.lang.RuntimeException) =  java.lang.RuntimeException  (LINE:35)\l0x0025: CONST_STR  (r2 I:java.lang.String) =  \"Max array capacity exceeded\" \l0x0027: INVOKE  (r0 I:java.lang.RuntimeException), (r2 I:java.lang.String) type: DIRECT call: java.lang.RuntimeException.\<init\>(java.lang.String):void A[MD:(java.lang.String):void (c)]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002a|0x002a: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private void androidx.collection.CircularIntArray.doubleCapacity((r7 'this' I:androidx.collection.CircularIntArray A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x002a \-\> B:1:?\lDebug Info:\l  0x000d\-0x0023: r5 'a' [I\l  0x0003\-0x002a: r1 'n' I\l  0x0007\-0x002a: r3 'r' I\l  0x0009\-0x002a: r4 'newCapacity' I\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+}
+

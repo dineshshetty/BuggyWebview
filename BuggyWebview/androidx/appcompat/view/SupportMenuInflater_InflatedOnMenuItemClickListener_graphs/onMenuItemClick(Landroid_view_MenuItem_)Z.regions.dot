@@ -1,0 +1,69 @@
+digraph "CFG forandroidx.appcompat.view.SupportMenuInflater.InflatedOnMenuItemClickListener.onMenuItemClick(Landroid\/view\/MenuItem;)Z" {
+subgraph cluster_Region_337558669 {
+label = "R(1:(1:(2:(1:5)|(2:7|8))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_735540464 {
+label = "Try: R(1:(2:(1:5)|(2:7|8))) catches: R(2:9|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_686461527 {
+label = "R(1:(2:(1:5)|(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2041946701 {
+label = "R(2:(1:5)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_414090018 {
+label = "IF [B:15:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000a|if (r5.mMethod.getReturnType() == java.lang.Boolean.TYPE) goto L4\l}"];
+subgraph cluster_Region_139334707 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001e|RETURN\l|return ((java.lang.Boolean) r5.mMethod.invoke(r5.mRealOwner, r6)).booleanValue()\l}"];
+}
+}
+subgraph cluster_Region_1951024967 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x001f|TRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x002b, blocks: (B:14:0x0000, B:16:0x000c, B:18:0x001f), top: B:23:0x0000 \}\lCatch: Exception \-\> 0x002b\l|r5.mMethod.invoke(r5.mRealOwner, r6)     \/\/ Catch: java.lang.Exception \-\> L2b\l}"];
+Node_19 [shape=record,label="{19\:\ 0x002a|RETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_540615753 {
+label = "R(2:9|11) | ExcHandler: Exception \-\> 0x002b\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002b|ExcHandler: Exception \-\> 0x002b\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0031|throw new java.lang.RuntimeException(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_540615753 {
+label = "R(2:9|11) | ExcHandler: Exception \-\> 0x002b\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x002b|ExcHandler: Exception \-\> 0x002b\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0031|throw new java.lang.RuntimeException(r0)\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000|TRY_ENTER\lTryCatch #0 \{Exception \-\> 0x002b, blocks: (B:14:0x0000, B:16:0x000c, B:18:0x001f), top: B:23:0x0000 \}\lCatch: Exception \-\> 0x002b\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000c|TryCatch #0 \{Exception \-\> 0x002b, blocks: (B:14:0x0000, B:16:0x000c, B:18:0x001f), top: B:23:0x0000 \}\lCatch: Exception \-\> 0x002b\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002c}"];
+MethodNode[shape=record,label="{public boolean androidx.appcompat.view.SupportMenuInflater.InflatedOnMenuItemClickListener.onMenuItemClick((r5v0 'this' androidx.appcompat.view.SupportMenuInflater$InflatedOnMenuItemClickListener A[IMMUTABLE_TYPE, THIS]), (r6v0 'item' android.view.MenuItem A[D('item' android.view.MenuItem), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:19:0x002a \-\> B:13:?, CROSS_EDGE: B:22:0x0031 \-\> B:13:?\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x002b, blocks: (B:14:0x0000, B:16:0x000c, B:18:0x001f), top: B:23:0x0000 \}\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.MenuItem.OnMenuItemClickListener.onMenuItemClick(android.view.MenuItem):boolean\}]\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_13;
+Node_20 -> Node_21;
+Node_22 -> Node_13;
+Node_20 -> Node_21;
+Node_22 -> Node_13;
+Node_12 -> Node_23;
+Node_23 -> Node_14;
+Node_23 -> Node_20;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+}
+

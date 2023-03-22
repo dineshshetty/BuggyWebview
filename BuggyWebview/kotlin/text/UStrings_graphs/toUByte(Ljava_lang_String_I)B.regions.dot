@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.text.UStringsKt.toUByte(Ljava\/lang\/String;I)B" {
+subgraph cluster_Region_1902504815 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, \"\<this\>\")\lkotlin.UByte kotlin.UByte r0 = toUByteOrNull(r1, r2)\l}"];
+subgraph cluster_Region_311241195 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1503925786 {
+label = "IF [B:3:0x0009] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r0 != null) goto L3\l}"];
+subgraph cluster_Region_1324792394 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|RETURN\l|return r0.m211unboximpl()\l}"];
+}
+}
+subgraph cluster_Region_1330232569 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|kotlin.text.StringsKt.numberFormatError(r1)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0018|throw new kotlin.ExceptionsH()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final byte kotlin.text.UStringsKt.toUByte((r1v0 '$this$toUByte' java.lang.String A[D('$this$toUByte' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 'radix' int A[D('radix' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x0018 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_0 -> Node_2;
+Node_4 -> Node_5;
+}
+

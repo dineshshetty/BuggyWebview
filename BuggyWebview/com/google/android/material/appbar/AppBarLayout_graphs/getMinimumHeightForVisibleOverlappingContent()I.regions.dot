@@ -1,0 +1,72 @@
+digraph "CFG forcom.google.android.material.appbar.AppBarLayout.getMinimumHeightForVisibleOverlappingContent()I" {
+subgraph cluster_Region_371451121 {
+label = "R(2:1|(2:(1:4)|(3:6|7|(2:(1:11)|(1:13)))))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0000|int int r0 = getTopInset()\lint int r1 = androidx.core.view.ViewCompat.getMinimumHeight(r5)\l}"];
+subgraph cluster_Region_153582504 {
+label = "R(2:(1:4)|(3:6|7|(2:(1:11)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1872892262 {
+label = "IF [B:18:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0008|if (r1 != 0) goto L3\l}"];
+subgraph cluster_Region_2113168861 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000d|RETURN\l|return (r1 * 2) + r0\l}"];
+}
+}
+subgraph cluster_Region_1714381839 {
+label = "R(3:6|7|(2:(1:11)|(1:13)))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000e|int int r2 = getChildCount()\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0013|int r3 = r2 \>= 1 ? androidx.core.view.ViewCompat.getMinimumHeight(getChildAt(r2 \- 1)) : 0\l}"];
+subgraph cluster_Region_1964563373 {
+label = "R(2:(1:11)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_950747034 {
+label = "IF [B:25:0x0021] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0021|PHI: r3 \l  PHI: (r3v2 'lastChildMinHeight' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 != 0) goto L10\l}"];
+subgraph cluster_Region_2111787463 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0026|RETURN\l|return (r3 * 2) + r0\l}"];
+}
+}
+subgraph cluster_Region_1503828186 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x002d|RETURN\l|return getHeight() \/ 3\l}"];
+}
+}
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000a}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0015}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0023}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0027}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0020}"];
+MethodNode[shape=record,label="{public final int com.google.android.material.appbar.AppBarLayout.getMinimumHeightForVisibleOverlappingContent((r5v0 'this' com.google.android.material.appbar.AppBarLayout A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0026 \-\> B:16:?, CROSS_EDGE: B:29:0x002d \-\> B:16:?, CROSS_EDGE: B:24:0x0020 \-\> B:25:0x0021\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_20 -> Node_16;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_28[style=dashed];
+Node_27 -> Node_16;
+Node_29 -> Node_16;
+Node_15 -> Node_17;
+Node_19 -> Node_20;
+Node_23 -> Node_25;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_24 -> Node_25;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forandroidx.emoji2.text.EmojiCompat.onMetadataLoadSuccess()V" {
+subgraph cluster_Region_1090872934 {
+label = "R(2:1|(2:3|4))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|java.util.ArrayList java.util.Collection\<androidx.emoji2.text.EmojiCompat.InitCallback\> r0 = new java.util.ArrayList\<\>()\lr4.mInitLock.writeLock().lock()\l}"];
+subgraph cluster_TryCatchRegion_548561605 {
+label = "Try: R(2:3|4) catches: R(3:8|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_977888947 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000f|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x0032, blocks: (B:14:0x000f), top: B:20:0x000f \}\lCatch: all \-\> 0x0032\l|r4.mLoadState = 1     \/\/ Catch: java.lang.Throwable \-\> L32\lr0.addAll(r4.mInitCallbacks)     \/\/ Catch: java.lang.Throwable \-\> L32\lr4.mInitCallbacks.clear()     \/\/ Catch: java.lang.Throwable \-\> L32\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001b|r4.mInitLock.writeLock().unlock()\lr4.mMainHandler.post(new androidx.emoji2.text.EmojiCompat.ListenerDispatcher(r0, r4.mLoadState))\l}"];
+}
+subgraph cluster_Region_891857871 {
+label = "R(3:8|9|10) | ExcHandler: all \-\> 0x0032\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0032|ExcHandler: all \-\> 0x0032\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0033|r4.mInitLock.writeLock().unlock()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x003c|throw r1\l}"];
+}
+}
+}
+subgraph cluster_Region_891857871 {
+label = "R(3:8|9|10) | ExcHandler: all \-\> 0x0032\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0032|ExcHandler: all \-\> 0x0032\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0033|r4.mInitLock.writeLock().unlock()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x003c|throw r1\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000f|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0031}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+MethodNode[shape=record,label="{void androidx.emoji2.text.EmojiCompat.onMetadataLoadSuccess((r4v0 'this' androidx.emoji2.text.EmojiCompat A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x003c \-\> B:12:?, CROSS_EDGE: B:20:0x000f \-\> B:17:0x0032\lINLINE_NOT_NEEDED\lTryCatch #0 \{all \-\> 0x0032, blocks: (B:14:0x000f), top: B:20:0x000f \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_20;
+Node_14 -> Node_15;
+Node_14 -> Node_21;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_11 -> Node_13;
+Node_20 -> Node_14;
+Node_20 -> Node_17;
+Node_16 -> Node_12;
+Node_21 -> Node_17;
+}
+

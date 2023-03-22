@@ -1,0 +1,76 @@
+digraph "CFG forandroidx.constraintlayout.core.state.WidgetFrame.parseCustom(Landroidx\/constraintlayout\/core\/parser\/CLElement;)V" {
+subgraph cluster_Region_912174134 {
+label = "R(2:1|(3:3|(1:5)(1:(1:10)(1:12))|7))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|androidx.constraintlayout.core.parser.CLObject androidx.constraintlayout.core.parser.CLObject r0 = (androidx.constraintlayout.core.parser.CLObject) r12\lint int r1 = r0.size()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1225025840 {
+label = "LOOP:0: (3:3|(1:5)(1:(1:10)(1:12))|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_START\lLOOP:0: B:3:0x0008\-\>B:11:0x0055\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:2:0x0000, B:11:0x0055] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r1) goto L3\l}"];
+subgraph cluster_Region_532475520 {
+label = "R(3:3|(1:5)(1:(1:10)(1:12))|7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|androidx.constraintlayout.core.parser.CLElement androidx.constraintlayout.core.parser.CLElement r3 = r0.get(r2)\landroidx.constraintlayout.core.parser.CLKey androidx.constraintlayout.core.parser.CLKey r4 = (androidx.constraintlayout.core.parser.CLKey) r3\lr4.content()\landroidx.constraintlayout.core.parser.CLElement androidx.constraintlayout.core.parser.CLElement r6 = r4.getValue()\ljava.lang.String java.lang.String r7 = r6.content()\l}"];
+subgraph cluster_IfRegion_587750227 {
+label = "IF [B:5:0x0023] THEN: R(1:5) ELSE: R(1:(1:10)(1:12))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0023|if (r7.matches(\"#[0\-9a\-fA\-F]+\") == true) goto L5\l}"];
+subgraph cluster_Region_2017348917 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0025|int int r8 = java.lang.Integer.parseInt(r7.substring(1), 16)\lsetCustomAttribute(r4.content(), androidx.constraintlayout.core.motion.utils.TypedValues.Custom.TYPE_COLOR, r8)\l}"];
+}
+subgraph cluster_Region_498742303 {
+label = "R(1:(1:10)(1:12)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_701885625 {
+label = "IF [B:8:0x003c] THEN: R(1:10) ELSE: R(1:12) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003c|if ((r6 instanceof androidx.constraintlayout.core.parser.CLNumber) != false) goto L10\l}"];
+subgraph cluster_Region_1002594584 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003e|setCustomAttribute(r4.content(), androidx.constraintlayout.core.motion.utils.TypedValues.Custom.TYPE_FLOAT, r6.getFloat())\l}"];
+}
+subgraph cluster_Region_1131565070 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004c|setCustomAttribute(r4.content(), androidx.constraintlayout.core.motion.utils.TypedValues.Custom.TYPE_STRING, r7)\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0055|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:11:0x0055\l|r2++\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0055|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x003a}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0055|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0055|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0058|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0058}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.constraintlayout.core.state.WidgetFrame.parseCustom((r11v0 'this' androidx.constraintlayout.core.state.WidgetFrame A[IMMUTABLE_TYPE, THIS]), (r12v0 'custom' androidx.constraintlayout.core.parser.CLElement A[D('custom' androidx.constraintlayout.core.parser.CLElement), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:11:0x0055 \-\> B:3:0x0008, CROSS_EDGE: B:9:0x003e \-\> B:11:0x0055, CROSS_EDGE: B:10:0x004c \-\> B:11:0x0055\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Landroidx\/constraintlayout\/core\/parser\/CLParsingException;]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_13[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_15;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_16;
+Node_10 -> Node_14;
+Node_11 -> Node_3;
+Node_0 -> Node_2;
+Node_15 -> Node_11;
+Node_7 -> Node_8;
+Node_16 -> Node_11;
+Node_14 -> Node_11;
+Node_13 -> Node_12;
+Node_12 -> Node_1;
+}
+

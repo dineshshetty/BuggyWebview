@@ -1,0 +1,88 @@
+digraph "CFG forkotlinx.coroutines.JobSupport.getChildJobCancellationCause()Ljava\/util\/concurrent\/CancellationException;" {
+subgraph cluster_Region_739178117 {
+label = "R(4:1|(1:3)(1:(1:14)(1:(1:19)(1:17)))|5|7) | DECL_VAR: java.lang.Throwable rootCause\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0000|java.lang.Object java.lang.Object r0 = getState$kotlinx_coroutines_core()\l}"];
+subgraph cluster_IfRegion_391591681 {
+label = "IF [B:23:0x0008] THEN: R(1:3) ELSE: R(1:(1:14)(1:(1:19)(1:17)))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0008|if ((r0 instanceof kotlinx.coroutines.JobSupport.Finishing) == true) goto L3\l}"];
+subgraph cluster_Region_1095317932 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000a|java.lang.Throwable r1 = ((kotlinx.coroutines.JobSupport.Finishing) r0).getRootCause()\l}"];
+}
+subgraph cluster_Region_55773858 {
+label = "R(1:(1:14)(1:(1:19)(1:17))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1762822475 {
+label = "IF [B:26:0x0014] THEN: R(1:14) ELSE: R(1:(1:19)(1:17)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0014|if ((r0 instanceof kotlinx.coroutines.CompletedExceptionally) == true) goto L14\l}"];
+subgraph cluster_Region_846454834 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0016|java.lang.Throwable r1 = ((kotlinx.coroutines.CompletedExceptionally) r0).cause\l}"];
+}
+subgraph cluster_Region_1626700113 {
+label = "R(1:(1:19)(1:17)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_481437250 {
+label = "IF [B:29:0x001e] THEN: R(1:19) ELSE: R(1:17) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001e|if ((r0 instanceof kotlinx.coroutines.Incomplete) != false) goto L18\l}"];
+subgraph cluster_Region_348055585 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x004f|throw new java.lang.IllegalStateException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Cannot be cancelling child in this state: \", r0).toString())\l}"];
+}
+subgraph cluster_Region_1763402540 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0020|r1 = null\l}"];
+}
+}
+}
+}
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x0024|java.util.concurrent.CancellationException r2 = r1 instanceof java.util.concurrent.CancellationException ? r1 : null\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0029|RETURN\lPHI: r2 \l  PHI: (r2v4 java.util.concurrent.CancellationException) =  binds: [] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|return r2 == null ? new kotlinx.coroutines.JobCancellationException(kotlin.jvm.internal.Intrinsics.stringPlus(\"Parent job is \", stateString(r0)), r1, r5) : r2\l}"];
+}
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0021|PHI: r1 \l  PHI: (r1v8 'rootCause' java.lang.Throwable) = (r1v4 'rootCause' java.lang.Throwable), (r1v7 'rootCause' java.lang.Throwable), (r1v11 'rootCause' java.lang.Throwable) binds: [B:30:0x0020, B:27:0x0016, B:24:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0026}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x002b}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x003f|ORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ ?|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0012}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x001c}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0040}"];
+MethodNode[shape=record,label="{public java.util.concurrent.CancellationException kotlinx.coroutines.JobSupport.getChildJobCancellationCause((r5v0 'this' kotlinx.coroutines.JobSupport A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:34:0x0029 \-\> B:36:0x003f, CROSS_EDGE: B:32:0x0024 \-\> B:34:0x0029, CROSS_EDGE: B:27:0x0016 \-\> B:31:0x0021, CROSS_EDGE: B:30:0x0020 \-\> B:31:0x0021, CROSS_EDGE: B:38:0x004f \-\> B:21:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.ParentJob.getChildJobCancellationCause():java.util.concurrent.CancellationException]\l}"];
+MethodNode -> Node_20;Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_31;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_31;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_37;
+Node_38 -> Node_21;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_32 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_39;
+Node_20 -> Node_22;
+Node_31 -> Node_32;
+Node_33 -> Node_34;
+Node_35 -> Node_36;
+Node_36 -> Node_21;
+Node_39 -> Node_21;
+Node_25 -> Node_26;
+Node_28 -> Node_29;
+Node_37 -> Node_38;
+}
+

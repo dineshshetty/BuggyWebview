@@ -1,0 +1,56 @@
+digraph "CFG forkotlin.ranges.RangesKt___RangesKt.toIntExactOrNull(D)Ljava\/lang\/Integer;" {
+subgraph cluster_Region_1322054618 {
+label = "R(3:1|(1:5)|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|boolean r0 = false\l}"];
+subgraph cluster_IfRegion_1823174979 {
+label = "IF [B:15:0x0008, B:17:0x000e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|if (r4 \<= 2.147483647E9d) goto L3\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000e|ADDED_TO_REGION\l|if ((\-2.147483648E9d) \<= r4) goto L5\l}"];
+subgraph cluster_Region_1161963316 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0010|r0 = true\l}"];
+}
+}
+subgraph cluster_Region_1747040022 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1105751887 {
+label = "IF [B:19:0x0011] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0011|PHI: r0 \l  PHI: (r0v1 boolean) = (r0v0 boolean), (r0v0 boolean), (r0v5 boolean) binds: [B:15:0x0008, B:17:0x000e, B:18:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == true) goto L7\l}"];
+subgraph cluster_Region_1790814439 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return java.lang.Integer.valueOf((int) r4)\l}"];
+}
+}
+subgraph cluster_Region_1626627484 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0019|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000a}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0013}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.Integer kotlin.ranges.RangesKt___RangesKt.toIntExactOrNull((r4v0 '$this$toIntExactOrNull' double A[D('$this$toIntExactOrNull' double), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0019 \-\> B:22:0x001a, CROSS_EDGE: B:17:0x000e \-\> B:19:0x0011, CROSS_EDGE: B:15:0x0008 \-\> B:19:0x0011\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_13;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_20 -> Node_23;
+}
+

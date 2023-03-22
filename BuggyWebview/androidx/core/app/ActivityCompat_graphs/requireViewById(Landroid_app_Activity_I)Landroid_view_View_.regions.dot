@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.app.ActivityCompat.requireViewById(Landroid\/app\/Activity;I)Landroid\/view\/View;" {
+subgraph cluster_Region_1563500874 {
+label = "R(1:(2:(1:4)|(2:6|(2:(1:10)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_751893806 {
+label = "R(2:(1:4)|(2:6|(2:(1:10)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_538750238 {
+label = "IF [B:25:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L3\l}"];
+subgraph cluster_Region_330735712 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000c|RETURN\l|return (T) androidx.core.app.ActivityCompat.Api28Impl.requireViewById(r3, r4)\l}"];
+}
+}
+subgraph cluster_Region_1026317025 {
+label = "R(2:6|(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000d|android.view.View T r0 = (T) r3.findViewById(r4)\l}"];
+subgraph cluster_Region_1197078573 {
+label = "R(2:(1:10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1070855629 {
+label = "IF [B:29:0x0011] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0011|if (r0 == null) goto L9\l}"];
+subgraph cluster_Region_1825260645 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x001b|throw new java.lang.IllegalArgumentException(\"ID does not reference a View inside this Activity\")\l}"];
+}
+}
+subgraph cluster_Region_1050054912 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0013|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0000}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0006}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0014}"];
+MethodNode[shape=record,label="{public static T extends android.view.View androidx.core.app.ActivityCompat.requireViewById((r3v0 'activity' android.app.Activity A[D('activity' android.app.Activity), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'id' int A[D('id' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:30:0x0013 \-\> B:23:?, CROSS_EDGE: B:32:0x001b \-\> B:23:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends android.view.View]\lSIGNATURE: \<T:Landroid\/view\/View;\>(Landroid\/app\/Activity;I)TT;\l}"];
+MethodNode -> Node_22;Node_25 -> Node_26;
+Node_25 -> Node_28[style=dashed];
+Node_27 -> Node_23;
+Node_28 -> Node_29;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_31;
+Node_32 -> Node_23;
+Node_30 -> Node_23;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_31 -> Node_32;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.takeWhile([ZLkotlin\/jvm\/functions\/Function1;)Ljava\/util\/List;" {
+subgraph cluster_Region_629234959 {
+label = "R(3:1|(2:3|(2:(1:6)|(1:5)))|8)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"predicate\")\ljava.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList()\lint r3 = 0\l\l}"];
+subgraph cluster_LoopRegion_1668725666 {
+label = "LOOP:0: (2:3|(2:(1:6)|(1:5)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0012|LOOP_START\lLOOP:0: B:15:0x0012\-\>B:19:0x0027\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:14:0x0000, B:19:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|boolean \lif (r3 \< r2) goto L3\l}"];
+subgraph cluster_Region_707929884 {
+label = "R(2:3|(2:(1:6)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0014|boolean r4 = r6[r3]\l}"];
+subgraph cluster_Region_1793275782 {
+label = "R(2:(1:6)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_690929756 {
+label = "IF [B:17:0x0024] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0024|if (r7.invoke(java.lang.Boolean.valueOf(r4)).booleanValue() != true) goto L6\l}"];
+subgraph cluster_Region_1986828974 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0031|SYNTHETIC\lEDGE_INSN: B:23:0x0031\-\>B:20:0x0031 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1261291182 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0027|LOOP_END\lLOOP:0: B:15:0x0012\-\>B:19:0x0027\l|r1.add(java.lang.Boolean.valueOf(r4))\lr3++\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0034|RETURN\l|return r1\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0031|EDGE_INSN: B:23:0x0031\-\>B:20:0x0031 ?: BREAK  \l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0031|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<java.lang.Boolean\> kotlin.collections.ArraysKt___ArraysKt.takeWhile((r6v0 '$this$takeWhile' boolean[] A[D('$this$takeWhile' boolean[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'predicate' kotlin.jvm.functions.Function1\<? super java.lang.Boolean, java.lang.Boolean\> A[D('predicate' kotlin.jvm.functions.Function1), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x0027 \-\> B:15:0x0012, CROSS_EDGE: B:15:0x0012 \-\> B:20:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([ZLkotlin\/jvm\/functions\/Function1\<\-Ljava\/lang\/Boolean;Ljava\/lang\/Boolean;\>;)Ljava\/util\/List\<Ljava\/lang\/Boolean;\>;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_23;
+Node_23 -> Node_20;
+Node_19 -> Node_15;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_20 -> Node_21;
+Node_22 -> Node_20;
+}
+

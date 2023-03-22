@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.appcompat.graphics.drawable.DrawableContainer.DrawableContainerState.mutate()V" {
+subgraph cluster_Region_461791848 {
+label = "R(3:1|(2:(1:5)(0)|7)|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = r4.mNumChildren\landroid.graphics.drawable.Drawable[] android.graphics.drawable.Drawable[] r1 = r4.mDrawables\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_547537473 {
+label = "LOOP:0: (2:(1:5)(0)|7)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|LOOP_START\lLOOP:0: B:16:0x0005\-\>B:20:0x0010\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v3 'i' int) binds: [B:15:0x0000, B:20:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r0) goto L3\l}"];
+subgraph cluster_Region_287472128 {
+label = "R(2:(1:5)(0)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1704656737 {
+label = "IF [B:18:0x0009] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0009|if (r1[r2] != null) goto L5\l}"];
+subgraph cluster_Region_958388841 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000b|r1[r2].mutate()\l}"];
+}
+subgraph cluster_Region_798733878 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0010|LOOP_END\lLOOP:0: B:16:0x0005\-\>B:20:0x0010\l|r2++\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0013|r4.mMutated = androidx.appcompat.graphics.drawable.DrawableContainer.DEFAULT_DITHER\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0010|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0010|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0013|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0016}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{void androidx.appcompat.graphics.drawable.DrawableContainer.DrawableContainerState.mutate((r4v0 'this' androidx.appcompat.graphics.drawable.DrawableContainer$DrawableContainerState A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x0010 \-\> B:16:0x0005, CROSS_EDGE: B:18:0x0009 \-\> B:20:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.appcompat.graphics.drawable.DrawableContainer.DrawableContainerState.mutate():void]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_24;
+Node_20 -> Node_16;
+Node_21 -> Node_22;
+Node_13 -> Node_15;
+Node_17 -> Node_18;
+Node_24 -> Node_20;
+Node_25 -> Node_20;
+Node_23 -> Node_21;
+Node_22 -> Node_14;
+}
+

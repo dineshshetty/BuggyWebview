@@ -1,0 +1,62 @@
+digraph "CFG forandroidx.recyclerview.widget.StaggeredGridLayoutManager.findLastReferenceChildPosition(I)I" {
+subgraph cluster_Region_388891994 {
+label = "R(3:1|(2:3|(2:(1:7)|(1:10)))|13)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|int int r0 = getChildCount() \- 1\l}"];
+subgraph cluster_LoopRegion_277953297 {
+label = "LOOP:0: (2:3|(2:(1:7)|(1:10)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|LOOP_START\lLOOP:0: B:3:0x0006\-\>B:8:0x0015\lPHI: r0 \l  PHI: (r0v2 'i' int) = (r0v1 'i' int), (r0v4 'i' int) binds: [B:2:0x0000, B:8:0x0015] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L3\l}"];
+subgraph cluster_Region_1562517110 {
+label = "R(2:3|(2:(1:7)|(1:10)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|android.view.View android.view.View r1 = getChildAt(r0)\lint int r2 = getPosition(r1)\l}"];
+subgraph cluster_Region_1342782712 {
+label = "R(2:(1:7)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_985777245 {
+label = "IF [B:5:0x0010, B:6:0x0012] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|if (r2 \>= 0) goto L5\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|ADDED_TO_REGION\l|if (r2 \< r4) goto L6\l}"];
+subgraph cluster_Region_588327335 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1119046033 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0015|LOOP_END\lLOOP:0: B:3:0x0006\-\>B:8:0x0015\l|r0\-\-\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0018|RETURN\l|return 0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0014|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0015|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0015|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0018|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private int androidx.recyclerview.widget.StaggeredGridLayoutManager.findLastReferenceChildPosition((r3v0 'this' androidx.recyclerview.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r4v0 'itemCount' int A[D('itemCount' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:8:0x0015 \-\> B:3:0x0006, CROSS_EDGE: B:5:0x0010 \-\> B:8:0x0015, CROSS_EDGE: B:10:0x0019 \-\> B:1:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_6 -> Node_11;
+Node_6 -> Node_14[style=dashed];
+Node_7 -> Node_1;
+Node_8 -> Node_3;
+Node_9 -> Node_1;
+Node_0 -> Node_2;
+Node_11 -> Node_7;
+Node_14 -> Node_8;
+Node_13 -> Node_8;
+Node_12 -> Node_9;
+}
+

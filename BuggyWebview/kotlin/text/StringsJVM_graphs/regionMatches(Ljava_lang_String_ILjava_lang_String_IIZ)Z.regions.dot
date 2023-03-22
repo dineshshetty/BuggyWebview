@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.text.StringsKt__StringsJVMKt.regionMatches(Ljava\/lang\/String;ILjava\/lang\/String;IIZ)Z" {
+subgraph cluster_Region_245693671 {
+label = "R(2:1|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, \"other\")\l}"];
+subgraph cluster_Region_833369785 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1949542580 {
+label = "IF [B:19:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000a|if (r11 == false) goto L3\l}"];
+subgraph cluster_Region_1975317075 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return r6.regionMatches(r7, r8, r9, r10)\l}"];
+}
+}
+subgraph cluster_Region_1557556167 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x001b|RETURN\lORIG_RETURN\l|return r6.regionMatches(r11, r7, r8, r9, r10)\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000c}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0011}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.text.StringsKt__StringsJVMKt.regionMatches((r6v0 '$this$regionMatches' java.lang.String A[D('$this$regionMatches' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'thisOffset' int A[D('thisOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'other' java.lang.String A[D('other' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'otherOffset' int A[D('otherOffset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'length' int A[D('length' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'ignoreCase' boolean A[D('ignoreCase' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0011 \-\> B:22:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_17;
+Node_22 -> Node_17;
+Node_16 -> Node_18;
+Node_20 -> Node_23;
+Node_21 -> Node_22;
+}
+

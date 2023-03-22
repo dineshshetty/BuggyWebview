@@ -1,0 +1,48 @@
+digraph "CFG forcom.google.android.material.progressindicator.LinearProgressIndicator.setProgressCompat(IZ)V" {
+subgraph cluster_Region_1810386401 {
+label = "R(1:(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1125893645 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1885322783 {
+label = "IF [B:14:0x0002, B:16:0x000a, B:18:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (r1.spec != 0) goto L3\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000a|ADDED_TO_REGION\l|if (((com.google.android.material.progressindicator.LinearProgressIndicatorSpec) r1.spec).indeterminateAnimationType == 0) goto L5\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0010|ADDED_TO_REGION\l|if (isIndeterminate() != false) goto L7\l}"];
+subgraph cluster_Region_777684441 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_133452470 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0013|super.setProgressCompat(r2, r3)\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0004}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000c}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0016}"];
+MethodNode[shape=record,label="{public void com.google.android.material.progressindicator.LinearProgressIndicator.setProgressCompat((r1v0 'this' com.google.android.material.progressindicator.LinearProgressIndicator A[IMMUTABLE_TYPE, THIS]), (r2v0 'progress' int A[D('progress' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'animated' boolean A[D('animated' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0016 \-\> B:12:?, CROSS_EDGE: B:16:0x000a \-\> B:20:0x0013, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [com.google.android.material.progressindicator.BaseProgressIndicator.setProgressCompat(int, boolean):void]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_20[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_12;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_21 -> Node_12;
+}
+

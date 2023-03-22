@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.zip([Ljava\/lang\/Object;Ljava\/lang\/Iterable;)Ljava\/util\/List;" {
+subgraph cluster_Region_123966993 {
+label = "R(3:1|(2:4|(2:(1:7)|(1:6)))|9)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r10, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, \"other\")\lint int r2 = r10.length\ljava.util.ArrayList java.util.ArrayList r3 = new java.util.ArrayList(java.lang.Math.min(kotlin.collections.CollectionsKt.collectionSizeOrDefault(r11, 10), r2))\lint r4 = 0\ljava.util.Iterator r5 = r11.iterator()\l\l}"];
+subgraph cluster_LoopRegion_198354278 {
+label = "LOOP:0: (2:4|(2:(1:7)|(1:6)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0025|java.lang.Object \lif (r5.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_2102233996 {
+label = "R(2:4|(2:(1:7)|(1:6)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0027|java.lang.Object r6 = r5.next()\l}"];
+subgraph cluster_Region_1759411795 {
+label = "R(2:(1:7)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1318276472 {
+label = "IF [B:18:0x002b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002b|if (r4 \>= r2) goto L7\l}"];
+subgraph cluster_Region_1815362156 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x003c|SYNTHETIC\lEDGE_INSN: B:23:0x003c\-\>B:20:0x003c ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_828228998 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x002d|LOOP_END\lLOOP:0: B:15:0x0021\-\>B:19:0x002d\l|r3.add(kotlin.TuplesKt.m15to(r10[r4], r6))\lr4++\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x003f|RETURN\l|return r3\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0021|LOOP_START\lLOOP:0: B:15:0x0021\-\>B:19:0x002d\lPHI: r4 \l  PHI: (r4v4 'i$iv' int) = (r4v3 'i$iv' int), (r4v7 'i$iv' int) binds: [B:14:0x0000, B:19:0x002d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x003c|EDGE_INSN: B:23:0x003c\-\>B:20:0x003c ?: BREAK  \l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x003c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<kotlin.Pair\<T, R\>\> kotlin.collections.ArraysKt___ArraysKt.zip((r10v0 T[] A[D('$this$zip' java.lang.Object[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'other' java.lang.Iterable\<? extends R\> A[D('other' java.lang.Iterable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:19:0x002d \-\> B:15:0x0021, CROSS_EDGE: B:16:0x0025 \-\> B:20:0x003c\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, T]\lSIGNATURE: \<T:Ljava\/lang\/Object;R:Ljava\/lang\/Object;\>([TT;Ljava\/lang\/Iterable\<+TR;\>;)Ljava\/util\/List\<Lkotlin\/Pair\<TT;TR;\>;\>;\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_23;
+Node_23 -> Node_20;
+Node_19 -> Node_15;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+Node_22 -> Node_20;
+}
+

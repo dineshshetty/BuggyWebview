@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.io.FilesKt__UtilsKt.startsWith(Ljava\/io\/File;Ljava\/io\/File;)Z" {
+subgraph cluster_Region_572692458 {
+label = "R(2:1|(2:(1:8)|(1:9)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"other\")\lkotlin.io.FilePathComponents kotlin.p004io.FilePathComponents r0 = kotlin.p004io.FilesKt.toComponents(r5)\lkotlin.io.FilePathComponents kotlin.p004io.FilePathComponents r1 = kotlin.p004io.FilesKt.toComponents(r6)\l}"];
+subgraph cluster_Region_664870848 {
+label = "R(2:(1:8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_23410561 {
+label = "IF [B:14:0x001f, B:17:0x002a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001f|if (kotlin.jvm.internal.Intrinsics.areEqual(r0.getRoot(), r1.getRoot()) == true) goto L5\l}"];
+Node_17 [shape=record,label="{17\:\ 0x002a|ADDED_TO_REGION\l|if (r0.getSize() \>= r1.getSize()) goto L7\l}"];
+subgraph cluster_Region_674075287 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0041|RETURN\lORIG_RETURN\l|return r0.getSegments().subList(0, r1.getSize()).equals(r1.getSegments())\l}"];
+}
+}
+subgraph cluster_Region_290091995 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0021|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0022}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x002d}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.io.FilesKt__UtilsKt.startsWith((r5v0 '$this$startsWith' java.io.File A[D('$this$startsWith' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'other' java.io.File A[D('other' java.io.File), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0041 \-\> B:12:?, CROSS_EDGE: B:17:0x002a \-\> B:20:0x0041\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_17 -> Node_19;
+Node_17 -> Node_21[style=dashed];
+Node_20 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_15 -> Node_12;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+}
+

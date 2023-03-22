@@ -1,0 +1,40 @@
+digraph "CFG forkotlin.collections.MapsKt__MapsKt.plus(Ljava\/util\/Map;Lkotlin\/Pair;)Ljava\/util\/Map;" {
+subgraph cluster_Region_245404129 {
+label = "R(2:1|(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"pair\")\l}"];
+subgraph cluster_Region_1090301363 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1881963200 {
+label = "IF [B:11:0x000e] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000e|if (r5.isEmpty() == true) goto L3\l}"];
+subgraph cluster_Region_1498157278 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return kotlin.collections.MapsKt.mapOf(r6)\l}"];
+}
+}
+subgraph cluster_Region_402358054 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0015|java.util.LinkedHashMap java.util.LinkedHashMap r0 = new java.util.LinkedHashMap(r5)\lr0.put(r6.getFirst(), r6.getSecond())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0029|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0010}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.util.Map\<K, V\> kotlin.collections.MapsKt__MapsKt.plus((r5v0 java.util.Map\<? extends K, ? extends V\> A[D('$this$plus' java.util.Map), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'pair' kotlin.Pair\<? extends K, ? extends V\> A[D('pair' kotlin.Pair), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x0015 \-\> B:14:0x0029\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: \<K:Ljava\/lang\/Object;V:Ljava\/lang\/Object;\>(Ljava\/util\/Map\<+TK;+TV;\>;Lkotlin\/Pair\<+TK;+TV;\>;)Ljava\/util\/Map\<TK;TV;\>;\l}"];
+MethodNode -> Node_8;Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_15 -> Node_9;
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_8 -> Node_10;
+Node_12 -> Node_15;
+}
+

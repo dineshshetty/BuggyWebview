@@ -1,0 +1,56 @@
+digraph "CFG forkotlin.ranges.RangesKt___RangesKt.toByteExactOrNull(F)Ljava\/lang\/Byte;" {
+subgraph cluster_Region_1777734226 {
+label = "R(3:1|(1:5)|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|boolean r0 = false\l}"];
+subgraph cluster_IfRegion_1968083840 {
+label = "IF [B:15:0x0005, B:17:0x000b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0005|if (r2 \<= 127.0f) goto L3\l}"];
+Node_17 [shape=record,label="{17\:\ 0x000b|ADDED_TO_REGION\l|if ((\-128.0f) \<= r2) goto L5\l}"];
+subgraph cluster_Region_572619324 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d|r0 = true\l}"];
+}
+}
+subgraph cluster_Region_1172784994 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_730447452 {
+label = "IF [B:19:0x000e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000e|PHI: r0 \l  PHI: (r0v1 boolean) = (r0v0 boolean), (r0v0 boolean), (r0v6 boolean) binds: [B:15:0x0005, B:17:0x000b, B:18:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == true) goto L7\l}"];
+subgraph cluster_Region_118005939 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return java.lang.Byte.valueOf((byte) r2)\l}"];
+}
+}
+subgraph cluster_Region_2101299699 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|RETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0007}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0010}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final java.lang.Byte kotlin.ranges.RangesKt___RangesKt.toByteExactOrNull((r2v0 '$this$toByteExactOrNull' float A[D('$this$toByteExactOrNull' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0017 \-\> B:22:0x0018, CROSS_EDGE: B:17:0x000b \-\> B:19:0x000e, CROSS_EDGE: B:15:0x0005 \-\> B:19:0x000e\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_23 -> Node_13;
+Node_21 -> Node_13;
+Node_12 -> Node_14;
+Node_16 -> Node_17;
+Node_20 -> Node_23;
+}
+

@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.core.os.TraceCompat.isEnabled()Z" {
+subgraph cluster_Region_1692445800 {
+label = "R(1:(2:(1:4)|(2:(1:(1:11))|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_550880215 {
+label = "R(2:(1:4)|(2:(1:(1:11))|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1643652605 {
+label = "IF [B:18:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 29) goto L3\l}"];
+subgraph cluster_Region_1445121178 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000a|RETURN\l|return androidx.core.p003os.TraceCompat.Api29Impl.isEnabled()\l}"];
+}
+}
+subgraph cluster_Region_926988762 {
+label = "R(2:(1:(1:11))|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_956632990 {
+label = "IF [B:22:0x0010] THEN: R(1:(1:11)) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0010|if (android.os.Build.VERSION.SDK_INT \>= 18) goto L9\l}"];
+subgraph cluster_Region_426902158 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1509186342 {
+label = "Try: R(1:11) catches: R(1:14)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1799923627 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x002a|RETURN\l|return ((java.lang.Boolean) androidx.core.p003os.TraceCompat.sIsTagEnabledMethod.invoke(null, java.lang.Long.valueOf(androidx.core.p003os.TraceCompat.sTraceTagApp))).booleanValue()\l}"];
+}
+subgraph cluster_Region_2057321635 {
+label = "R(1:14) | ExcHandler: Exception \-\> 0x002b\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002c|android.util.Log.v(androidx.core.p003os.TraceCompat.TAG, \"Unable to invoke isTagEnabled() via reflection.\")\l}"];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0033|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_2057321635 {
+label = "R(1:14) | ExcHandler: Exception \-\> 0x002b\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002c|android.util.Log.v(androidx.core.p003os.TraceCompat.TAG, \"Unable to invoke isTagEnabled() via reflection.\")\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0006}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x000b}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0012|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0012|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{Exception \-\> 0x002b, blocks: (B:23:0x0012), top: B:28:0x0012 \}\lCatch: Exception \-\> 0x002b\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002b|ExcHandler: Exception \-\> 0x002b\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.core.os.TraceCompat.isEnabled()  | USE_LINES_HINTS\lCROSS_EDGE: B:27:0x0033 \-\> B:16:?, CROSS_EDGE: B:24:0x002a \-\> B:16:?, CROSS_EDGE: B:26:0x002c \-\> B:27:0x0033, CROSS_EDGE: B:28:0x0012 \-\> B:25:0x002b\lINLINE_NOT_NEEDED\lTryCatch #0 \{Exception \-\> 0x002b, blocks: (B:23:0x0012), top: B:28:0x0012 \}\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_20 -> Node_16;
+Node_22 -> Node_27[style=dashed];
+Node_22 -> Node_28;
+Node_24 -> Node_16;
+Node_26 -> Node_27;
+Node_27 -> Node_16;
+Node_26 -> Node_27;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_28 -> Node_23;
+Node_28 -> Node_25;
+Node_23 -> Node_24;
+Node_23 -> Node_29;
+Node_29 -> Node_25;
+Node_25 -> Node_26;
+}
+

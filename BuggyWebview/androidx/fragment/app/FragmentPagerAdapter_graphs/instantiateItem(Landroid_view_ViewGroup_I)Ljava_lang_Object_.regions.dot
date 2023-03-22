@@ -1,0 +1,83 @@
+digraph "CFG forandroidx.fragment.app.FragmentPagerAdapter.instantiateItem(Landroid\/view\/ViewGroup;I)Ljava\/lang\/Object;" {
+subgraph cluster_Region_487231982 {
+label = "R(5:(1:3)|4|(1:6)(1:15)|(2:9|(1:11)(1:12))|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_922067960 {
+label = "IF [B:3:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r7.mCurTransaction == null) goto L3\l}"];
+subgraph cluster_Region_591772619 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0004|r7.mCurTransaction = r7.mFragmentManager.beginTransaction()\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x000c|long long r0 = getItemId(r9)\ljava.lang.String java.lang.String r2 = makeFragmentName(r8.getId(), r0)\landroidx.fragment.app.Fragment androidx.fragment.app.Fragment r3 = r7.mFragmentManager.findFragmentByTag(r2)\l}"];
+subgraph cluster_IfRegion_1743944131 {
+label = "IF [B:6:0x001e] THEN: R(1:6) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|if (r3 != null) goto L6\l}"];
+subgraph cluster_Region_1268323787 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|r7.mCurTransaction.attach(r3)\l}"];
+}
+subgraph cluster_Region_2020995597 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0026|androidx.fragment.app.Fragment r3 = getItem(r9)\lr7.mCurTransaction.add(r8.getId(), r3, makeFragmentName(r8.getId(), r0))\l}"];
+}
+}
+subgraph cluster_IfRegion_47540407 {
+label = "IF [B:10:0x003d] THEN: R(2:9|(1:11)(1:12)) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003d|if (r3 != r7.mCurrentPrimaryItem) goto L9\l}"];
+subgraph cluster_Region_1432819578 {
+label = "R(2:9|(1:11)(1:12))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003f|r3.setMenuVisibility(false)\l}"];
+subgraph cluster_IfRegion_477988638 {
+label = "IF [B:12:0x0046] THEN: R(1:11) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0046|if (r7.mBehavior == 1) goto L11\l}"];
+subgraph cluster_Region_556744820 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0048|r7.mCurTransaction.setMaxLifecycle(r3, androidx.lifecycle.Lifecycle.State.STARTED)\l}"];
+}
+subgraph cluster_Region_572210903 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0050|r3.setUserVisibleHint(false)\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0053|RETURN\l|return r3\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003b|PHI: r3 \l  PHI: (r3v3 'fragment' androidx.fragment.app.Fragment) = (r3v2 'fragment' androidx.fragment.app.Fragment), (r3v1 'fragment' androidx.fragment.app.Fragment) binds: [B:8:0x0026, B:7:0x0020] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.Object androidx.fragment.app.FragmentPagerAdapter.instantiateItem((r7v0 'this' androidx.fragment.app.FragmentPagerAdapter A[IMMUTABLE_TYPE, THIS]), (r8v0 'container' android.view.ViewGroup A[D('container' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'position' int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0050 \-\> B:15:0x0053, CROSS_EDGE: B:10:0x003d \-\> B:15:0x0053, CROSS_EDGE: B:8:0x0026 \-\> B:9:0x003b, CROSS_EDGE: B:3:0x0002 \-\> B:5:0x000c\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.viewpager.widget.PagerAdapter.instantiateItem(android.view.ViewGroup, int):java.lang.Object]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_15[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_15 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_9 -> Node_10;
+}
+

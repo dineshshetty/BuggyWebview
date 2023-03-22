@@ -1,0 +1,73 @@
+digraph "CFG forcom.google.android.material.progressindicator.CircularDrawingDelegate.fillIndicator(Landroid\/graphics\/Canvas;Landroid\/graphics\/Paint;FFI)V" {
+subgraph cluster_Region_1552479335 {
+label = "R(1:(2:(1:3)|(3:5|8|(1:(1:12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1256742655 {
+label = "R(2:(1:3)|(3:5|8|(1:(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_8543815 {
+label = "IF [B:20:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|if (r20 == r21) goto L3\l}"];
+subgraph cluster_Region_650751416 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0008|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1398978734 {
+label = "R(3:5|8|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0009|r19.setStyle(android.graphics.Paint.Style.STROKE)\lr19.setStrokeCap(android.graphics.Paint.Cap.BUTT)\lr19.setAntiAlias(true)\lr19.setColor(r22)\lr19.setStrokeWidth(r17.displayedTrackThickness)\lint int r2 = r17.arcDirectionFactor\lfloat float r15 = r20 * 360.0f * r2\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0041|PHI: r1 \l  PHI: (r1v7 float A[REMOVE]) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float r16 = r21 \>= r20 ? (r21 \- r20) * 360.0f * r2 : ((r21 + 1.0f) \- r20) * 360.0f * r2\lfloat float r1 = r17.adjustedRadius\landroid.graphics.RectF android.graphics.RectF r8 = new android.graphics.RectF(\-r1, \-r1, r1, r1)\lr18.drawArc(r8, r15, r16, false, r19)\l}"];
+subgraph cluster_Region_1031364298 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_292839961 {
+label = "IF [B:27:0x005c, B:29:0x0064] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x005c|if (r17.displayedCornerRadius \> 0.0f) goto L10\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0064|ADDED_TO_REGION\l|if (java.lang.Math.abs(r16) \< 360.0f) goto L12\l}"];
+subgraph cluster_Region_336554591 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0066|r19.setStyle(android.graphics.Paint.Style.FILL)\ldrawRoundedEnd(r18, r19, r17.displayedTrackThickness, r17.displayedCornerRadius, r15)\ldrawRoundedEnd(r18, r19, r17.displayedTrackThickness, r17.displayedCornerRadius, r15 + r16)\l}"];
+}
+}
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0000}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x002c}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002e}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x005e}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0082|ORIG_RETURN\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0036}"];
+MethodNode[shape=record,label="{public void com.google.android.material.progressindicator.CircularDrawingDelegate.fillIndicator((r17v0 'this' com.google.android.material.progressindicator.CircularDrawingDelegate A[IMMUTABLE_TYPE, THIS]), (r18v0 'canvas' android.graphics.Canvas A[D('canvas' android.graphics.Canvas), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'paint' android.graphics.Paint A[D('paint' android.graphics.Paint), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 'startFraction' float A[D('startFraction' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 'endFraction' float A[D('endFraction' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'color' int A[D('color' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:31:0x0082 \-\> B:18:?, CROSS_EDGE: B:29:0x0064 \-\> B:31:0x0082, CROSS_EDGE: B:27:0x005c \-\> B:31:0x0082, CROSS_EDGE: B:25:0x0036 \-\> B:26:0x0041\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [com.google.android.material.progressindicator.DrawingDelegate.fillIndicator(android.graphics.Canvas, android.graphics.Paint, float, float, int):void]\l}"];
+MethodNode -> Node_17;Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_18;
+Node_22 -> Node_23;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_32[style=dashed];
+Node_29 -> Node_30;
+Node_29 -> Node_33[style=dashed];
+Node_30 -> Node_31;
+Node_17 -> Node_19;
+Node_19 -> Node_20;
+Node_23 -> Node_24;
+Node_23 -> Node_25;
+Node_24 -> Node_26;
+Node_28 -> Node_29;
+Node_31 -> Node_18;
+Node_33 -> Node_18;
+Node_32 -> Node_18;
+Node_25 -> Node_26;
+}
+

@@ -1,0 +1,73 @@
+digraph "CFG forandroidx.appcompat.widget.ActionBarContainer.setVisibility(I)V" {
+subgraph cluster_Region_568307993 {
+label = "R(8:1|2|4|(1:6)|7|(1:9)|10|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|super.setVisibility(r4)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0004|boolean r1 = r4 == 0\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0009|PHI: r1 \l  PHI: (r1v1 'isVisible' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = r3.mBackground\l}"];
+subgraph cluster_IfRegion_61661605 {
+label = "IF [B:24:0x000b] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x000b|if (r2 != null) goto L6\l}"];
+subgraph cluster_Region_583428919 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000d|r2.setVisible(r1, false)\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0010|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = r3.mStackedBackground\l}"];
+subgraph cluster_IfRegion_304262452 {
+label = "IF [B:27:0x0012] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0012|if (r2 != null) goto L9\l}"];
+subgraph cluster_Region_143110376 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0014|r2.setVisible(r1, false)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0017|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = r3.mSplitBackground\l}"];
+subgraph cluster_Region_1902342693 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_655843176 {
+label = "IF [B:30:0x0019] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0019|if (r2 != null) goto L12\l}"];
+subgraph cluster_Region_1604830257 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x001b|r2.setVisible(r1, false)\l}"];
+}
+}
+}
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0006}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x001e|ORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0008}"];
+MethodNode[shape=record,label="{public void androidx.appcompat.widget.ActionBarContainer.setVisibility((r3v0 'this' androidx.appcompat.widget.ActionBarContainer A[IMMUTABLE_TYPE, THIS]), (r4v0 'visibility' int A[D('visibility' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:30:0x0019 \-\> B:32:0x001e, CROSS_EDGE: B:27:0x0012 \-\> B:29:0x0017, CROSS_EDGE: B:24:0x000b \-\> B:26:0x0010, CROSS_EDGE: B:22:0x0008 \-\> B:23:0x0009\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.setVisibility(int):void\}]\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_33[style=dashed];
+Node_31 -> Node_32;
+Node_17 -> Node_19;
+Node_21 -> Node_23;
+Node_32 -> Node_18;
+Node_33 -> Node_18;
+Node_22 -> Node_23;
+}
+

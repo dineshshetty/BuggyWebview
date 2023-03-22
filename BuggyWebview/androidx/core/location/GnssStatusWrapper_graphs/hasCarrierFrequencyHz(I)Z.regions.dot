@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.location.GnssStatusWrapper.hasCarrierFrequencyHz(I)Z" {
+subgraph cluster_Region_1254606516 {
+label = "R(1:(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_171922754 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1178848556 {
+label = "IF [B:3:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 26) goto L3\l}"];
+subgraph cluster_Region_1952230678 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|RETURN\l|return androidx.core.location.GnssStatusWrapper.Api26Impl.hasCarrierFrequencyHz(r2.mWrapped, r3)\l}"];
+}
+}
+subgraph cluster_Region_5908303 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.core.location.GnssStatusWrapper.hasCarrierFrequencyHz((r2v0 'this' androidx.core.location.GnssStatusWrapper A[IMMUTABLE_TYPE, THIS]), (r3v0 'satelliteIndex' int A[D('satelliteIndex' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:7:0x000e \-\> B:1:?\lINLINE_NOT_NEEDED\lMETHOD_OVERRIDE: [androidx.core.location.GnssStatusCompat.hasCarrierFrequencyHz(int):boolean]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

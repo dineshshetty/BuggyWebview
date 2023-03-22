@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.AccessibilityDelegate.onRequestSendAccessibilityEvent(Landroid\/view\/ViewGroup;Landroid\/view\/View;Landroid\/view\/accessibility\/AccessibilityEvent;)Z" {
+subgraph cluster_Region_722766689 {
+label = "R(1:(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_921938874 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1931757566 {
+label = "IF [B:14:0x0002, B:16:0x0008] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0002|if (androidx.drawerlayout.widget.DrawerLayout.CAN_HIDE_DESCENDANTS != false) goto L7\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0008|ADDED_TO_REGION\l|if (androidx.drawerlayout.widget.DrawerLayout.includeChildForAccessibility(r3) != false) goto L7\l}"];
+subgraph cluster_Region_933346886 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0011|RETURN\l|return super.onRequestSendAccessibilityEvent(r2, r3, r4)\l}"];
+}
+}
+subgraph cluster_Region_954295376 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000b|RETURN\l|return false\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0004}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000d}"];
+MethodNode[shape=record,label="{public boolean androidx.drawerlayout.widget.DrawerLayout.AccessibilityDelegate.onRequestSendAccessibilityEvent((r1v0 'this' androidx.drawerlayout.widget.DrawerLayout$AccessibilityDelegate A[IMMUTABLE_TYPE, THIS]), (r2v0 'host' android.view.ViewGroup A[D('host' android.view.ViewGroup), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'child' android.view.View A[D('child' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'event' android.view.accessibility.AccessibilityEvent A[D('event' android.view.accessibility.AccessibilityEvent), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0011 \-\> B:12:?, CROSS_EDGE: B:14:0x0002 \-\> B:20:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.core.view.AccessibilityDelegateCompat.onRequestSendAccessibilityEvent(android.view.ViewGroup, android.view.View, android.view.accessibility.AccessibilityEvent):boolean]\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_20;
+Node_21 -> Node_12;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+}
+

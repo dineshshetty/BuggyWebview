@@ -1,0 +1,78 @@
+digraph "CFG forkotlin.comparisons.ComparisonsKt__ComparisonsKt.compareValues(Ljava\/lang\/Comparable;Ljava\/lang\/Comparable;)I" {
+subgraph cluster_Region_1462737276 {
+label = "R(1:(2:(1:2)|(1:(2:(1:5)|(1:(2:(1:7)|(1:9)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1428723784 {
+label = "R(2:(1:2)|(1:(2:(1:5)|(1:(2:(1:7)|(1:9))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1156058619 {
+label = "IF [B:28:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0000|if (r1 == r2) goto L2\l}"];
+subgraph cluster_Region_620658085 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0002|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_254927935 {
+label = "R(1:(2:(1:5)|(1:(2:(1:7)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_516609865 {
+label = "R(2:(1:5)|(1:(2:(1:7)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_449414846 {
+label = "IF [B:31:0x0004] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0004|if (r1 == null) goto L5\l}"];
+subgraph cluster_Region_1292751639 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0006|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1302189717 {
+label = "R(1:(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_94707952 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1401928332 {
+label = "IF [B:34:0x0008] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0008|if (r2 == null) goto L7\l}"];
+subgraph cluster_Region_1882803841 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x000a|RETURN\l|return 1\l}"];
+}
+}
+subgraph cluster_Region_1395857261 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0010|RETURN\l|return r1.compareTo(r2)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_26 [shape=record,color=red,label="{26\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x000c}"];
+MethodNode[shape=record,label="{public static final int kotlin.comparisons.ComparisonsKt__ComparisonsKt.compareValues((r1v0 T extends java.lang.Comparable\<?\> A[D('a' java.lang.Comparable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 T extends java.lang.Comparable\<?\> A[D('b' java.lang.Comparable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:33:0x0007 \-\> B:27:?, CROSS_EDGE: B:36:0x000b \-\> B:27:?, CROSS_EDGE: B:38:0x0010 \-\> B:27:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [T extends java.lang.Comparable\<?\>]\lSIGNATURE: \<T::Ljava\/lang\/Comparable\<*\>;\>(TT;TT;)I\l}"];
+MethodNode -> Node_26;Node_28 -> Node_29;
+Node_28 -> Node_31[style=dashed];
+Node_29 -> Node_27;
+Node_31 -> Node_32;
+Node_31 -> Node_34[style=dashed];
+Node_32 -> Node_27;
+Node_34 -> Node_35;
+Node_34 -> Node_37[style=dashed];
+Node_35 -> Node_27;
+Node_38 -> Node_27;
+Node_26 -> Node_28;
+Node_37 -> Node_38;
+}
+

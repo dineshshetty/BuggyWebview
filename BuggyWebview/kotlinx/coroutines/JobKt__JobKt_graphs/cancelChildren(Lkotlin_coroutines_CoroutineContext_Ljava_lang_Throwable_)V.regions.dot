@@ -1,0 +1,87 @@
+digraph "CFG forkotlinx.coroutines.JobKt__JobKt.cancelChildren(Lkotlin\/coroutines\/CoroutineContext;Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_69803820 {
+label = "R(2:1|(2:(1:3)|(2:5|(3:8|9|(1:13)(0)))))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0000|kotlinx.coroutines.Job kotlinx.coroutines.Job r0 = (kotlinx.coroutines.Job) r9.get(kotlinx.coroutines.Job.Key)\l}"];
+subgraph cluster_Region_314686949 {
+label = "R(2:(1:3)|(2:5|(3:8|9|(1:13)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1983188504 {
+label = "IF [B:25:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x000a|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_1742024890 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x000c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2061170913 {
+label = "R(2:5|(3:8|9|(1:13)(0)))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000d|kotlin.sequences.Sequence kotlin.sequences.Sequence r1 = r0.getChildren()\ljava.util.Iterator r3 = r1.iterator()\l\l}"];
+subgraph cluster_LoopRegion_496019450 {
+label = "LOOP:0: (3:8|9|(1:13)(0))";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x001a|java.lang.Object \lif (r3.hasNext() != false) goto L8\l}"];
+subgraph cluster_Region_1957694373 {
+label = "R(3:8|9|(1:13)(0))";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x001c|java.lang.Object r4 = r3.next()\lkotlinx.coroutines.Job kotlinx.coroutines.Job r5 = (kotlinx.coroutines.Job) r4\l}"];
+Node_31 [shape=record,label="{31\:\ 0x0026|kotlinx.coroutines.JobSupport r7 = r5 instanceof kotlinx.coroutines.JobSupport ? (kotlinx.coroutines.JobSupport) r5 : null\l}"];
+subgraph cluster_IfRegion_707497701 {
+label = "IF [B:34:0x002d] THEN: R(1:13) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x002d|PHI: r7 \l  PHI: (r7v2 kotlinx.coroutines.JobSupport) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r7 != null) goto L12\l}"];
+subgraph cluster_Region_950842339 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0030|r7.cancelInternal(orCancellation$JobKt__JobKt(r10, r0))\l}"];
+}
+subgraph cluster_Region_1911559108 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_22 [shape=record,color=red,label="{22\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0016|LOOP_START\lLOOP:0: B:28:0x0016\-\>B:41:0x0016\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0028}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0030|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x0016|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0016|LOOP_END\lSYNTHETIC\lLOOP:0: B:28:0x0016\-\>B:41:0x0016\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x0016|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x002c}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0039|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0039}"];
+MethodNode[shape=record,label="{public static final \/* synthetic *\/ void kotlinx.coroutines.JobKt__JobKt.cancelChildren((r9v0 '$this$cancelChildren' kotlin.coroutines.CoroutineContext A[D('$this$cancelChildren' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\l\{Lkotlin\/Deprecated;=Annotation\{RUNTIME, type=Lkotlin\/Deprecated;, values=\{level=\{ENCODED_FIELD: Lkotlin\/DeprecationLevel;\-\>HIDDEN:Lkotlin\/DeprecationLevel;\}, message=Since 1.2.0, binary compatibility with versions \<= 1.1.x\}\}\}\lINLINE_NOT_NEEDED\lBACK_EDGE: B:36:0x0030 \-\> B:28:0x0016, BACK_EDGE: B:34:0x002d \-\> B:28:0x0016, CROSS_EDGE: B:33:0x002c \-\> B:34:0x002d, CROSS_EDGE: B:38:0x0039 \-\> B:23:?\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_22;Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_23;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_29 -> Node_39[style=dashed];
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_33;
+Node_34 -> Node_40;
+Node_34 -> Node_42[style=dashed];
+Node_36 -> Node_43;
+Node_22 -> Node_24;
+Node_28 -> Node_29;
+Node_32 -> Node_34;
+Node_40 -> Node_36;
+Node_43 -> Node_41;
+Node_41 -> Node_28;
+Node_42 -> Node_41;
+Node_33 -> Node_34;
+Node_39 -> Node_38;
+Node_38 -> Node_23;
+}
+

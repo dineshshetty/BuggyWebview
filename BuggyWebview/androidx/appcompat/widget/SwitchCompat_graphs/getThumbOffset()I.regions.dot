@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.appcompat.widget.SwitchCompat.getThumbOffset()I" {
+subgraph cluster_Region_1446842966 {
+label = "R(2:(1:3)(1:7)|5) | DECL_VAR: float thumbPosition\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2133692323 {
+label = "IF [B:11:0x0004] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|if (androidx.appcompat.widget.ViewUtils.isLayoutRtl(r3) != false) goto L3\l}"];
+subgraph cluster_Region_1112418975 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0006|float r0 = 1.0f \- r3.mThumbPosition\l}"];
+}
+subgraph cluster_Region_2134142813 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x000c|float r0 = r3.mThumbPosition\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0019|RETURN\l|return (int) ((getThumbScrollRange() * r0) + 0.5f)\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000e|PHI: r0 \l  PHI: (r0v2 'thumbPosition' float) = (r0v1 'thumbPosition' float), (r0v4 'thumbPosition' float) binds: [B:13:0x000c, B:12:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private int androidx.appcompat.widget.SwitchCompat.getThumbOffset((r3v0 'this' androidx.appcompat.widget.SwitchCompat A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:13:0x000c \-\> B:14:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+}
+

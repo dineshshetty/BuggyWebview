@@ -1,0 +1,63 @@
+digraph "CFG forandroidx.core.view.accessibility.AccessibilityNodeInfoCompat.extrasIntList(Ljava\/lang\/String;)Ljava\/util\/List;" {
+subgraph cluster_Region_120364810 {
+label = "R(1:(2:(1:4)|(2:6|(2:(2:8|9)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1899313617 {
+label = "R(2:(1:4)|(2:6|(2:(2:8|9)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_113591640 {
+label = "IF [B:14:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \< 19) goto L3\l}"];
+subgraph cluster_Region_2105132439 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000b|RETURN\l|return new java.util.ArrayList()\l}"];
+}
+}
+subgraph cluster_Region_1899501535 {
+label = "R(2:6|(2:(2:8|9)|(1:10)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|java.util.ArrayList java.util.ArrayList\<java.lang.Integer\> r0 = r2.mInfo.getExtras().getIntegerArrayList(r3)\l}"];
+subgraph cluster_Region_516866557 {
+label = "R(2:(2:8|9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1062367369 {
+label = "IF [B:18:0x0016] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0016|if (r0 == null) goto L8\l}"];
+subgraph cluster_Region_1173683627 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0018|java.util.ArrayList java.util.ArrayList\<java.lang.Integer\> r1 = new java.util.ArrayList\<\>()\lr2.mInfo.getExtras().putIntegerArrayList(r3, r1)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0027|RETURN\lORIG_RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_35652126 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private java.util.List\<java.lang.Integer\> androidx.core.view.accessibility.AccessibilityNodeInfoCompat.extrasIntList((r2v0 'this' androidx.core.view.accessibility.AccessibilityNodeInfoCompat A[IMMUTABLE_TYPE, THIS]), (r3v0 'key' java.lang.String A[D('key' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x0027 \-\> B:12:?, CROSS_EDGE: B:18:0x0016 \-\> B:20:0x0027\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/String;)Ljava\/util\/List\<Ljava\/lang\/Integer;\>;\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_16 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_12;
+Node_21 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

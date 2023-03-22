@@ -1,0 +1,111 @@
+digraph "CFG forandroidx.fragment.app.FragmentTabHost.onAttachedToWindow()V" {
+subgraph cluster_Region_279819007 {
+label = "R(4:1|(3:3|(1:(1:9)(2:(1:13)|14))|11)|19|(1:(1:21)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0000|super.onAttachedToWindow()\ljava.lang.String java.lang.String r0 = getCurrentTabTag()\landroidx.fragment.app.FragmentTransaction r1 = null\lint r2 = 0\lint int r3 = r7.mTabs.size()\l}"];
+subgraph cluster_LoopRegion_341265110 {
+label = "LOOP:0: (3:3|(1:(1:9)(2:(1:13)|14))|11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|LOOP_START\lLOOP:0: B:3:0x000f\-\>B:14:0x0047\lPHI: r1 r2 \l  PHI: (r1v1 'ft' androidx.fragment.app.FragmentTransaction) = (r1v0 'ft' androidx.fragment.app.FragmentTransaction), (r1v3 'ft' androidx.fragment.app.FragmentTransaction) binds: [B:2:0x0000, B:14:0x0047] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v4 'i' int) binds: [B:2:0x0000, B:14:0x0047] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \< r3) goto L3\l}"];
+subgraph cluster_Region_1495513645 {
+label = "R(3:3|(1:(1:9)(2:(1:13)|14))|11)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|androidx.fragment.app.FragmentTabHost$TabInfo androidx.fragment.app.FragmentTabHost.TabInfo r4 = r7.mTabs.get(r2)\lr4.fragment = r7.mFragmentManager.findFragmentByTag(r4.tag)\l}"];
+subgraph cluster_IfRegion_835069306 {
+label = "IF [B:5:0x0025, B:7:0x002d] THEN: R(1:(1:9)(2:(1:13)|14)) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0025|if (r4.fragment != null) goto L5\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002d|ADDED_TO_REGION\l|if (r4.fragment.isDetached() == false) goto L7\l}"];
+subgraph cluster_Region_316786918 {
+label = "R(1:(1:9)(2:(1:13)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_348547395 {
+label = "IF [B:9:0x0035] THEN: R(1:9) ELSE: R(2:(1:13)|14)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0035|if (r4.tag.equals(r0) != false) goto L9\l}"];
+subgraph cluster_Region_1970275261 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0037|r7.mLastTab = r4\l}"];
+}
+subgraph cluster_Region_872198555 {
+label = "R(2:(1:13)|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1312545001 {
+label = "IF [B:11:0x003a] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003a|if (r1 == null) goto L13\l}"];
+subgraph cluster_Region_1843665850 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003c|androidx.fragment.app.FragmentTransaction r1 = r7.mFragmentManager.beginTransaction()\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0042|PHI: r1 \l  PHI: (r1v4 'ft' androidx.fragment.app.FragmentTransaction) = (r1v1 'ft' androidx.fragment.app.FragmentTransaction), (r1v5 'ft' androidx.fragment.app.FragmentTransaction) binds: [B:11:0x003a, B:12:0x003c] A[DONT_GENERATE, DONT_INLINE]\l|r1.detach(r4.fragment)\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0047|LOOP_END\lLOOP:0: B:3:0x000f\-\>B:14:0x0047\lPHI: r1 \l  PHI: (r1v3 'ft' androidx.fragment.app.FragmentTransaction) = (r1v1 'ft' androidx.fragment.app.FragmentTransaction), (r1v1 'ft' androidx.fragment.app.FragmentTransaction), (r1v4 'ft' androidx.fragment.app.FragmentTransaction), (r1v1 'ft' androidx.fragment.app.FragmentTransaction) binds: [B:21:0x0047, B:22:0x0047, B:20:0x0047, B:23:0x0047] A[DONT_GENERATE, DONT_INLINE]\l|r2++\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x004a|r7.mAttached = true\landroidx.fragment.app.FragmentTransaction androidx.fragment.app.FragmentTransaction r1 = doTabChanged(r0, r1)\l}"];
+subgraph cluster_Region_1800013689 {
+label = "R(1:(1:21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1238359408 {
+label = "IF [B:16:0x0051] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0051|if (r1 != null) goto L21\l}"];
+subgraph cluster_Region_527027643 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0053|r1.commit()\lr7.mFragmentManager.executePendingTransactions()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0027}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002f}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0047|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0047|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0047|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0047|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x004a|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x005b|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void androidx.fragment.app.FragmentTabHost.onAttachedToWindow((r7v0 'this' androidx.fragment.app.FragmentTabHost A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lBACK_EDGE: B:14:0x0047 \-\> B:3:0x000f, CROSS_EDGE: B:13:0x0042 \-\> B:14:0x0047, CROSS_EDGE: B:11:0x003a \-\> B:13:0x0042, CROSS_EDGE: B:7:0x002d \-\> B:14:0x0047, CROSS_EDGE: B:5:0x0025 \-\> B:14:0x0047, CROSS_EDGE: B:16:0x0051 \-\> B:18:0x005b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onAttachedToWindow():void\}]\l}"];
+MethodNode -> Node_0;Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_19[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_21[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_22[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_23;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_20;
+Node_14 -> Node_3;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_0 -> Node_2;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_23 -> Node_14;
+Node_20 -> Node_14;
+Node_22 -> Node_14;
+Node_21 -> Node_14;
+Node_19 -> Node_15;
+Node_18 -> Node_1;
+Node_24 -> Node_1;
+}
+

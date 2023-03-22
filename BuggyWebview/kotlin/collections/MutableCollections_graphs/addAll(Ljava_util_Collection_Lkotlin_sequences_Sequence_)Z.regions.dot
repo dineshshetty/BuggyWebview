@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.collections.CollectionsKt__MutableCollectionsKt.addAll(Ljava\/util\/Collection;Lkotlin\/sequences\/Sequence;)Z" {
+subgraph cluster_Region_95283577 {
+label = "R(3:1|(2:4|(1:7)(0))|12)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, \"\<this\>\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, \"elements\")\lboolean r0 = false\ljava.util.Iterator java.util.Iterator\<? extends T\> r1 = r5.iterator()\l}"];
+subgraph cluster_LoopRegion_1317620719 {
+label = "LOOP:0: (2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0013|if (r1.hasNext() != false) goto L4\l}"];
+subgraph cluster_Region_1711116881 {
+label = "R(2:4|(1:7)(0))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0015|java.lang.Object java.lang.Object r2 = (T) r1.next()\l}"];
+subgraph cluster_IfRegion_267471286 {
+label = "IF [B:20:0x001d] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x001d|if (r4.add(r2) != false) goto L6\l}"];
+subgraph cluster_Region_1636406850 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x001f|r0 = true\l}"];
+}
+subgraph cluster_Region_878560360 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0021|RETURN\l|return r0\l}"];
+}
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000f|LOOP_START\lLOOP:0: B:17:0x000f\-\>B:25:0x000f\lPHI: r0 \l  PHI: (r0v3 'result' boolean) = (r0v2 'result' boolean), (r0v4 'result' boolean) binds: [B:16:0x0000, B:25:0x000f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x001f|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000f|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000f|LOOP_END\lSYNTHETIC\lLOOP:0: B:17:0x000f\-\>B:25:0x000f\lPHI: r0 \l  PHI: (r0v4 'result' boolean) = (r0v3 'result' boolean), (r0v5 'result' boolean) binds: [B:26:0x000f, B:27:0x000f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000f|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0021|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.collections.CollectionsKt__MutableCollectionsKt.addAll((r4v0 java.util.Collection\<? super T\> A[D('$this$addAll' java.util.Collection), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'elements' kotlin.sequences.Sequence\<? extends T\> A[D('elements' kotlin.sequences.Sequence), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x001d \-\> B:17:0x000f, BACK_EDGE: B:21:0x001f \-\> B:17:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: [T]\lSIGNATURE: \<T:Ljava\/lang\/Object;\>(Ljava\/util\/Collection\<\-TT;\>;Lkotlin\/sequences\/Sequence\<+TT;\>;)Z\lJadxCommentsAttr\{\l DEBUG: \l \-\> Type inference failed for r2v1. Raw type applied. Possible types: T, ? super T\}\l}"];
+MethodNode -> Node_14;Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_24;
+Node_20 -> Node_26[style=dashed];
+Node_21 -> Node_27;
+Node_22 -> Node_15;
+Node_14 -> Node_16;
+Node_17 -> Node_18;
+Node_24 -> Node_21;
+Node_27 -> Node_25;
+Node_25 -> Node_17;
+Node_26 -> Node_25;
+Node_23 -> Node_22;
+}
+

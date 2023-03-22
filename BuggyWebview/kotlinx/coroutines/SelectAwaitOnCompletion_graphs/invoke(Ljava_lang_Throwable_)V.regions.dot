@@ -1,0 +1,34 @@
+digraph "CFG forkotlinx.coroutines.SelectAwaitOnCompletion.invoke(Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_379891358 {
+label = "R(1:(1:(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_523886277 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_28517124 {
+label = "IF [B:3:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r3.select.trySelect() != false) goto L3\l}"];
+subgraph cluster_Region_917305141 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|getJob().selectAwaitCompletion$kotlinx_coroutines_core(r3.select, r3.block)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.SelectAwaitOnCompletion.invoke((r3v0 'this' kotlinx.coroutines.SelectAwaitOnCompletion\<T, R\> A[IMMUTABLE_TYPE, THIS]), (r4v0 'cause' java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:3:0x0006 \-\> B:5:0x0013\lINLINE_NOT_NEEDED\lTYPE_VARS: [R, T]\lRENAME_REASON:avoid collision after fix types in other method\lBRIDGED_BY: kotlinx.coroutines.SelectAwaitOnCompletion.invoke(java.lang.Throwable):kotlin.Unit\lMETHOD_OVERRIDE: [kotlinx.coroutines.CompletionHandlerBase.invoke(java.lang.Throwable):void]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_5 -> Node_1;
+Node_6 -> Node_1;
+}
+

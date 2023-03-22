@@ -1,0 +1,55 @@
+digraph "CFG forandroidx.core.util.Preconditions.checkArgumentFinite(FLjava\/lang\/String;)F" {
+subgraph cluster_Region_1037905426 {
+label = "R(1:(2:9|10)(1:(2:7|8)(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_950612757 {
+label = "IF [B:14:0x0004] THEN: R(2:9|10) ELSE: R(1:(2:7|8)(1:5))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0004|if (java.lang.Float.isNaN(r3) != false) goto L9\l}"];
+subgraph cluster_Region_869290774 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0024}"];
+Node_21 [shape=record,label="{21\:\ 0x003a|throw new java.lang.IllegalArgumentException(r4 + \" must not be NaN\")\l}"];
+}
+subgraph cluster_Region_1504482134 {
+label = "R(1:(2:7|8)(1:5)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_223714255 {
+label = "IF [B:16:0x000a] THEN: R(2:7|8) ELSE: R(1:5) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000a|if (java.lang.Float.isInfinite(r3) != false) goto L7\l}"];
+subgraph cluster_Region_2081759467 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x000d}"];
+Node_19 [shape=record,label="{19\:\ 0x0023|throw new java.lang.IllegalArgumentException(r4 + \" must not be infinite\")\l}"];
+}
+subgraph cluster_Region_1298961564 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000c|RETURN\l|return r3\l}"];
+}
+}
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0000}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0006}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static float androidx.core.util.Preconditions.checkArgumentFinite((r3v0 'value' float A[D('value' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'valueName' java.lang.String A[D('valueName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x0023 \-\> B:12:?, CROSS_EDGE: B:21:0x003a \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_11;Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_12;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_12;
+Node_17 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

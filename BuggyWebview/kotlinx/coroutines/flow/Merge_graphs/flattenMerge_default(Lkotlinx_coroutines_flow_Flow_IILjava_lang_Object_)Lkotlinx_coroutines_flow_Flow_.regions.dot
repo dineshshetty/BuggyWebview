@@ -1,0 +1,30 @@
+digraph "CFG forkotlinx.coroutines.flow.FlowKt__MergeKt.flattenMerge$default(Lkotlinx\/coroutines\/flow\/Flow;IILjava\/lang\/Object;)Lkotlinx\/coroutines\/flow\/Flow;" {
+subgraph cluster_Region_43639732 {
+label = "R(2:(1:3)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_457267095 {
+label = "IF [B:10:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0002|if ((r2 & 1) != 0) goto L3\l}"];
+subgraph cluster_Region_1986148898 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0004|int r1 = kotlinx.coroutines.flow.Merge.DEFAULT_CONCURRENCY\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x000a|RETURN\l|return kotlinx.coroutines.flow.FlowKt.flattenMerge(r0, r1)\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0000}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0006|PHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:10:0x0002, B:11:0x0004] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static \/* synthetic *\/ kotlinx.coroutines.flow.Flow kotlinx.coroutines.flow.FlowKt__MergeKt.flattenMerge$default((r0v0 kotlinx.coroutines.flow.Flow A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | METHOD_CANDIDATE_FOR_INLINE\lUSE_LINES_HINTS\lCROSS_EDGE: B:10:0x0002 \-\> B:12:0x0006\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_7;Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+}
+

@@ -1,0 +1,20 @@
+digraph "CFG forkotlinx.coroutines.debug.internal.ConcurrentWeakMap.clear()V" {
+Node_8 [shape=record,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0000|0x0000: INVOKE  (r0 I:java.util.Set) = (r2 I:kotlinx.coroutines.debug.internal.ConcurrentWeakMap) type: VIRTUAL call: kotlinx.coroutines.debug.internal.ConcurrentWeakMap.keySet():java.util.Set A[MD:():java.util.Set\<K\> (m)] (LINE:67)\l0x0004: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.Set) type: INTERFACE call: java.util.Set.iterator():java.util.Iterator A[MD:():java.util.Iterator\<E\> (c)]\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0008|LOOP_START\lLOOP:0: B:11:0x0008\-\>B:13:0x000e\l|0x0008: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.hasNext():boolean A[MD:():boolean (c)]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000c|0x000c: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:15:0x0016 \l}"];
+Node_13 [shape=record,label="{13\:\ 0x000e|LOOP_END\lLOOP:0: B:11:0x0008\-\>B:13:0x000e\l|0x000e: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) type: INTERFACE call: java.util.Iterator.next():java.lang.Object A[MD:():E (c)]\l0x0012: INVOKE  (r2 I:kotlinx.coroutines.debug.internal.ConcurrentWeakMap), (r1 I:java.lang.Object A[D('k' java.lang.Object)]) type: VIRTUAL call: kotlinx.coroutines.debug.internal.ConcurrentWeakMap.remove(java.lang.Object):java.lang.Object A[MD:(java.lang.Object):V (m)]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0016|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0016|RETURN\l|0x0016: RETURN    (LINE:68)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void kotlinx.coroutines.debug.internal.ConcurrentWeakMap.clear((r2 'this' I:kotlinx.coroutines.debug.internal.ConcurrentWeakMap\<K, V\> A[IMMUTABLE_TYPE, THIS]))  | DONT_RENAME\lUSE_LINES_HINTS\lBACK_EDGE: B:13:0x000e \-\> B:11:0x0008\lINLINE_NOT_NEEDED\lDebug Info:\l  0x0012\-0x0016: r1 'k' Ljava\/lang\/Object;\lTYPE_VARS: [V, K]\lMETHOD_OVERRIDE: [ClspMth\{java.util.Map.clear():void\}]\l}"];
+MethodNode -> Node_8;Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_11;
+Node_15 -> Node_14;
+Node_14 -> Node_9;
+}
+

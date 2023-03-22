@@ -1,0 +1,40 @@
+digraph "CFG forkotlinx.coroutines.android.HandlerContext.invokeOnTimeout(JLjava\/lang\/Runnable;Lkotlin\/coroutines\/CoroutineContext;)Lkotlinx\/coroutines\/DisposableHandle;" {
+subgraph cluster_Region_826344265 {
+label = "R(1:(2:(1:4)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_297094194 {
+label = "R(2:(1:4)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2053298817 {
+label = "IF [B:19:0x000f] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000f|if (r3.handler.postDelayed(r6, kotlin.ranges.RangesKt.coerceAtMost(r4, (long) kotlin.time.DurationKt.MAX_MILLIS)) != false) goto L3\l}"];
+subgraph cluster_Region_1546091685 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0016|RETURN\l|return new kotlinx.coroutines.android.HandlerContext$$ExternalSyntheticLambda0()\l}"];
+}
+}
+subgraph cluster_Region_1699051299 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0017|cancelOnRejection(r7, r6)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001e|RETURN\l|return kotlinx.coroutines.NonDisposableHandle.INSTANCE\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0011}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public kotlinx.coroutines.DisposableHandle kotlinx.coroutines.android.HandlerContext.invokeOnTimeout((r3v0 'this' kotlinx.coroutines.android.HandlerContext A[IMMUTABLE_TYPE, THIS]), (r4v0 'timeMillis' long A[D('timeMillis' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'block' java.lang.Runnable A[D('block' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'context' kotlin.coroutines.CoroutineContext A[D('context' kotlin.coroutines.CoroutineContext), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x001e \-\> B:17:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [kotlinx.coroutines.android.HandlerDispatcher.invokeOnTimeout(long, java.lang.Runnable, kotlin.coroutines.CoroutineContext):kotlinx.coroutines.DisposableHandle, kotlinx.coroutines.Delay.invokeOnTimeout(long, java.lang.Runnable, kotlin.coroutines.CoroutineContext):kotlinx.coroutines.DisposableHandle, kotlinx.coroutines.EventLoopImplBase.invokeOnTimeout(long, java.lang.Runnable, kotlin.coroutines.CoroutineContext):kotlinx.coroutines.DisposableHandle]\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_21 -> Node_17;
+Node_22 -> Node_23;
+Node_23 -> Node_17;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

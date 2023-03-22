@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.material.math.MathUtils.floorMod(II)I" {
+subgraph cluster_Region_1451420213 {
+label = "R(3:1|(1:5)|7)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|int int r0 = r2 \/ r3\l}"];
+subgraph cluster_IfRegion_1050666799 {
+label = "IF [B:12:0x0004, B:14:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|if ((r2 ^ r3) \< 0) goto L3\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0008|ADDED_TO_REGION\l|if ((r0 * r3) != r2) goto L5\l}"];
+subgraph cluster_Region_223800371 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000a|r0\-\-\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0010|RETURN\l|return r2 \- (r0 * r3)\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0006}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000c|PHI: r0 \l  PHI: (r0v1 'r' int) = (r0v0 'r' int), (r0v0 'r' int), (r0v2 'r' int) binds: [B:12:0x0004, B:14:0x0008, B:15:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public static int com.google.android.material.math.MathUtils.floorMod((r2v0 'x' int A[D('x' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'y' int A[D('y' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:14:0x0008 \-\> B:16:0x000c, CROSS_EDGE: B:12:0x0004 \-\> B:16:0x000c\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_10;
+Node_9 -> Node_11;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+}
+

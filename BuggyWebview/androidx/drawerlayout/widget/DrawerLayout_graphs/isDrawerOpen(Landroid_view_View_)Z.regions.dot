@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.drawerlayout.widget.DrawerLayout.isDrawerOpen(Landroid\/view\/View;)Z" {
+subgraph cluster_Region_1683702651 {
+label = "R(1:(2:(2:8|9)|(2:3|(2:(1:7)|(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1258521672 {
+label = "R(2:(2:8|9)|(2:3|(2:(1:7)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1346616256 {
+label = "IF [B:15:0x0004] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0004|if (isDrawerView(r4) == false) goto L8\l}"];
+subgraph cluster_Region_1364616177 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0015}"];
+Node_22 [shape=record,label="{22\:\ 0x0030|throw new java.lang.IllegalArgumentException(\"View \" + r4 + \" is not a drawer\")\l}"];
+}
+}
+subgraph cluster_Region_444490990 {
+label = "R(2:3|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0006|androidx.drawerlayout.widget.DrawerLayout$LayoutParams androidx.drawerlayout.widget.DrawerLayout.LayoutParams r0 = (androidx.drawerlayout.widget.DrawerLayout.LayoutParams) r4.getLayoutParams()\l}"];
+subgraph cluster_Region_1873326651 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_324201458 {
+label = "IF [B:17:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0010|if ((r0.openState & 1) == 1) goto L7\l}"];
+subgraph cluster_Region_954092098 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return androidx.drawerlayout.widget.DrawerLayout.CHILDREN_DISALLOW_INTERCEPT\l}"];
+}
+}
+subgraph cluster_Region_1972271906 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0013|RETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean androidx.drawerlayout.widget.DrawerLayout.isDrawerOpen((r3v0 'this' androidx.drawerlayout.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 'drawer' android.view.View A[D('drawer' android.view.View), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:17:0x0010 \-\> B:20:0x0014, CROSS_EDGE: B:22:0x0030 \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_19[style=dashed];
+Node_17 -> Node_23;
+Node_23 -> Node_13;
+Node_19 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+}
+

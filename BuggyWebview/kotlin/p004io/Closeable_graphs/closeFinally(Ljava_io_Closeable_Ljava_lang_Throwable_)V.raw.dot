@@ -1,0 +1,35 @@
+digraph "CFG forkotlin.io.CloseableKt.closeFinally(Ljava\/io\/Closeable;Ljava\/lang\/Throwable;)V" {
+Node_16 [shape=record,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0001|0x0001: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('$this$closeFinally' java.io.Closeable)]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:29:?  (LINE:56)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0003|0x0003: IF  (r2 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('cause' java.lang.Throwable)]) != (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:27:0x000a  (LINE:57)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0005|0x0005: INVOKE  (r1 I:java.io.Closeable A[D('$this$closeFinally' java.io.Closeable)]) type: INTERFACE call: java.io.Closeable.close():void A[MD:():void throws java.io.IOException (c)]\l}"];
+Node_30 [shape=record,label="{30\:\ ?|SYNTHETIC\lRETURN\l|0x0012: RETURN   A[SYNTHETIC] (LINE:64)\l}"];
+Node_17 [shape=record,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_27 [shape=record,label="{27\:\ 0x000a|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_22 [shape=record,label="{22\:\ 0x000a|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{all \-\> 0x000e, blocks: (B:22:0x000a), top: B:27:0x000a \}\lCatch: all \-\> 0x000e\l|0x000a: INVOKE  (r1 I:java.io.Closeable A[D('$this$closeFinally' java.io.Closeable)]) type: INTERFACE call: java.io.Closeable.close():void A[Catch: all \-\> 0x000e, MD:():void throws java.io.IOException (c), TRY_ENTER, TRY_LEAVE] (LINE:60)\l}"];
+Node_28 [shape=record,label="{28\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\l|0x0012: RETURN   A[SYNTHETIC] (LINE:64)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x000e|ExcHandler: all \-\> 0x000e\l|0x000e: MOVE_EXCEPTION  (r0 I:java.lang.Throwable A[CUSTOM_DECLARE]) =  A[DONT_INLINE, ExcHandler: all \-\> 0x000e] (LINE:61)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x000f|0x000f: INVOKE  \l  (r2 I:java.lang.Throwable A[D('cause' java.lang.Throwable)])\l  (r0 I:java.lang.Throwable A[D('closeException' java.lang.Throwable)])\l type: STATIC call: kotlin.ExceptionsKt.addSuppressed(java.lang.Throwable, java.lang.Throwable):void A[MD:(java.lang.Throwable, java.lang.Throwable):void (m)] (LINE:62)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0012|RETURN\lORIG_RETURN\l|0x0012: RETURN    (LINE:64)\l}"];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|0x0012: RETURN   A[SYNTHETIC] (LINE:64)\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.io.CloseableKt.closeFinally((r1 I:java.io.Closeable A[D('$this$closeFinally' java.io.Closeable), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2 I:java.lang.Throwable A[D('cause' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x000a \-\> B:26:0x0012, CROSS_EDGE: B:25:0x000f \-\> B:26:0x0012, CROSS_EDGE: B:27:0x000a \-\> B:24:0x000e, CROSS_EDGE: B:18:0x0001 \-\> B:26:0x0012\lINLINE_NOT_NEEDED\lDebug Info:\l  0x000f\-0x0012: r0 'closeException' Ljava\/lang\/Throwable;\l  \-1 \-0x0012: r1 '$this$closeFinally' Ljava\/io\/Closeable;\l  \-1 \-0x0012: r2 'cause' Ljava\/lang\/Throwable;\lTryCatch #0 \{all \-\> 0x000e, blocks: (B:22:0x000a), top: B:27:0x000a \}\l}"];
+MethodNode -> Node_16;Node_16 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_29;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_27;
+Node_20 -> Node_30;
+Node_30 -> Node_17;
+Node_27 -> Node_22;
+Node_27 -> Node_24;
+Node_22 -> Node_28;
+Node_22 -> Node_31;
+Node_28 -> Node_24;
+Node_31 -> Node_17;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_17;
+Node_29 -> Node_17;
+}
+

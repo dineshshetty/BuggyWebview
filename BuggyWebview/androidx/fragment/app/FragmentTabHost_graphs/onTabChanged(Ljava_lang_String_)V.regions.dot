@@ -1,0 +1,54 @@
+digraph "CFG forandroidx.fragment.app.FragmentTabHost.onTabChanged(Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1277646833 {
+label = "R(3:(1:5)|6|(1:(1:8))) | DECL_VAR: androidx.fragment.app.FragmentTransaction ft\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_911414816 {
+label = "IF [B:3:0x0002, B:5:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0002|if (r1.mAttached != false) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|ADDED_TO_REGION\l|if ((r0 = doTabChanged(r2, null)) != null) goto L5\l}"];
+subgraph cluster_Region_1605335474 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|r0.commit()\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x000e|android.widget.TabHost$OnTabChangeListener android.widget.TabHost.OnTabChangeListener r0 = r1.mOnTabChangeListener\l}"];
+subgraph cluster_Region_1489602592 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1300683550 {
+label = "IF [B:8:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0010|if (r0 != null) goto L8\l}"];
+subgraph cluster_Region_645517741 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0012|r0.onTabChanged(r2)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0004}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0015|ORIG_RETURN\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.fragment.app.FragmentTabHost.onTabChanged((r1v0 'this' androidx.fragment.app.FragmentTabHost A[IMMUTABLE_TYPE, THIS]), (r2v0 'tabId' java.lang.String A[D('tabId' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\l\{Ljava\/lang\/Deprecated;=Annotation\{RUNTIME, type=Ljava\/lang\/Deprecated;, values=\{\}\}\}\lCROSS_EDGE: B:8:0x0010 \-\> B:10:0x0015, CROSS_EDGE: B:5:0x0009 \-\> B:7:0x000e, CROSS_EDGE: B:3:0x0002 \-\> B:7:0x000e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.widget.TabHost.OnTabChangeListener.onTabChanged(java.lang.String):void\}]\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_10 -> Node_1;
+Node_11 -> Node_1;
+}
+

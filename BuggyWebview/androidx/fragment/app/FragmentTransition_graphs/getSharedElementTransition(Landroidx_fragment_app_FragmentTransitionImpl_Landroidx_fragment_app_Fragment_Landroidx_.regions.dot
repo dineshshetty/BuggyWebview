@@ -1,0 +1,60 @@
+digraph "CFG forandroidx.fragment.app.FragmentTransition.getSharedElementTransition(Landroidx\/fragment\/app\/FragmentTransitionImpl;Landroidx\/fragment\/app\/Fragment;Landroidx\/fragment\/app\/Fragment;Z)Ljava\/lang\/Object;" {
+subgraph cluster_Region_583259643 {
+label = "R(1:(2:(1:9)|(3:(1:4)(1:8)|5|6))) | DECL_VAR: java.lang.Object null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1046123706 {
+label = "R(2:(1:9)|(3:(1:4)(1:8)|5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_761729689 {
+label = "IF [B:15:0x0000, B:16:0x0002] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|if (r3 == null) goto L10\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0002|ADDED_TO_REGION\l|if (r4 == null) goto L9\l}"];
+subgraph cluster_Region_1075587799 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_948649407 {
+label = "R(3:(1:4)(1:8)|5|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2085372706 {
+label = "IF [B:18:0x0005] THEN: R(1:4) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0005|if (r5 != false) goto L4\l}"];
+subgraph cluster_Region_1412619688 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0007|java.lang.Object r0 = r4.getSharedElementReturnTransition()\l}"];
+}
+subgraph cluster_Region_852818607 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x000c|java.lang.Object r0 = r3.getSharedElementEnterTransition()\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0010|PHI: r0 \l  PHI: (r0v3 java.lang.Object) = (r0v2 java.lang.Object), (r0v5 java.lang.Object) binds: [B:20:0x000c, B:19:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Object java.lang.Object r0 = r2.cloneTransition(r0)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0018|RETURN\l|return r2.wrapTransitionInSet(r0)\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0019|RETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{private static java.lang.Object androidx.fragment.app.FragmentTransition.getSharedElementTransition((r2v0 'impl' androidx.fragment.app.FragmentTransitionImpl A[D('impl' androidx.fragment.app.FragmentTransitionImpl), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'inFragment' androidx.fragment.app.Fragment A[D('inFragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'outFragment' androidx.fragment.app.Fragment A[D('outFragment' androidx.fragment.app.Fragment), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'isPop' boolean A[D('isPop' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:20:0x000c \-\> B:21:0x0010, CROSS_EDGE: B:24:0x001a \-\> B:14:?, CROSS_EDGE: B:15:0x0000 \-\> B:23:0x0019\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_23;
+Node_16 -> Node_18[style=dashed];
+Node_16 -> Node_25;
+Node_25 -> Node_14;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_14;
+Node_13 -> Node_15;
+Node_23 -> Node_14;
+}
+

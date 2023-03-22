@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.collections.unsigned.UArraysKt___UArraysKt.reduceRightIndexed\-z1zDJgo([JLkotlin\/jvm\/functions\/Function3;)J" {
+subgraph cluster_Region_1678425477 {
+label = "R(2:1|(2:(1:10)|(3:3|(1:5)|7)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r6, \"$this$reduceRightIndexed\")\lkotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, \"operation\")\lint int r0 = kotlin.collections.ArraysKt.getLastIndex(r6)\l}"];
+subgraph cluster_Region_246831644 {
+label = "R(2:(1:10)|(3:3|(1:5)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_555707457 {
+label = "IF [B:14:0x0011] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0011|if (r0 \< 0) goto L9\l}"];
+subgraph cluster_Region_707779176 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0040|throw new java.lang.UnsupportedOperationException(\"Empty array can't be reduced.\")\l}"];
+}
+}
+subgraph cluster_Region_1821494497 {
+label = "R(3:3|(1:5)|7)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0013|int int r1 = r0 \- 1\llong long r2 = kotlin.ULongArray.m375getsVKNKU(r6, r0)\l}"];
+subgraph cluster_LoopRegion_1744685171 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0019|LOOP_START\lLOOP:0: B:16:0x0019\-\>B:17:0x001b\lPHI: r1 r2 \l  PHI: (r1v3 'index' int) = (r1v2 'index' int), (r1v4 'index' int) binds: [B:15:0x0013, B:17:0x001b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 'accumulator' long) = (r2v1 'accumulator' long), (r2v3 'accumulator' long) binds: [B:15:0x0013, B:17:0x001b] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \>= 0) goto L5\l}"];
+subgraph cluster_Region_1454028700 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001b|LOOP_END\lLOOP:0: B:16:0x0019\-\>B:17:0x001b\l|long r2 = r7.invoke(java.lang.Integer.valueOf(r1), kotlin.ULong.m310boximpl(kotlin.ULongArray.m375getsVKNKU(r6, r1)), kotlin.ULong.m310boximpl(r2)).m367unboximpl()\lr1\-\-\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0038|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0038|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0039}"];
+MethodNode[shape=record,label="{private static final long kotlin.collections.unsigned.UArraysKt___UArraysKt.reduceRightIndexed\-z1zDJgo((r6v0 'reduceRightIndexed' long[] A[D('$this$reduceRightIndexed_u2dz1zDJgo' long[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'operation' kotlin.jvm.functions.Function3\<? super java.lang.Integer, ? super kotlin.ULong, ? super kotlin.ULong, kotlin.ULong\> A[D('operation' kotlin.jvm.functions.Function3), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:17:0x001b \-\> B:16:0x0019, CROSS_EDGE: B:20:0x0040 \-\> B:12:?\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ([JLkotlin\/jvm\/functions\/Function3\<\-Ljava\/lang\/Integer;\-Lkotlin\/ULong;\-Lkotlin\/ULong;Lkotlin\/ULong;\>;)J\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_20 -> Node_12;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_16;
+Node_18 -> Node_12;
+Node_11 -> Node_13;
+Node_21 -> Node_18;
+Node_19 -> Node_20;
+}
+

@@ -1,0 +1,43 @@
+digraph "CFG forandroidx.fragment.app.FragmentFactory.isFragmentClass(Ljava\/lang\/ClassLoader;Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_412177767 {
+label = "R(1:(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1813651608 {
+label = "Try: R(2:2|3) catches: R(1:7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1966746927 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0000|TRY_ENTER\lTRY_LEAVE\lTryCatch #0 \{ClassNotFoundException \-\> 0x000b, blocks: (B:11:0x0000), top: B:16:0x0000 \}\lCatch: ClassNotFoundException \-\> 0x000b\l|java.lang.Class java.lang.Class\<?\> r0 = loadClass(r2, r3)     \/\/ Catch: java.lang.ClassNotFoundException \-\> Lb\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000a|RETURN\l|return androidx.fragment.app.Fragment.class.isAssignableFrom(r0)\l}"];
+}
+subgraph cluster_Region_1739827862 {
+label = "R(1:7) | ExcHandler: ClassNotFoundException \-\> 0x000b\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000c|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_1739827862 {
+label = "R(1:7) | ExcHandler: ClassNotFoundException \-\> 0x000b\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x000c|RETURN\l|return false\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0000|SYNTHETIC\lEXC_TOP_SPLITTER\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lEXC_BOTTOM_SPLITTER\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000b|ExcHandler: ClassNotFoundException \-\> 0x000b\l}"];
+MethodNode[shape=record,label="{public static boolean androidx.fragment.app.FragmentFactory.isFragmentClass((r2v0 'classLoader' java.lang.ClassLoader A[D('classLoader' java.lang.ClassLoader), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 'className' java.lang.String A[D('className' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000d \-\> B:10:?, CROSS_EDGE: B:16:0x0000 \-\> B:13:0x000b\lINLINE_NOT_NEEDED\lTryCatch #0 \{ClassNotFoundException \-\> 0x000b, blocks: (B:11:0x0000), top: B:16:0x0000 \}\l}"];
+MethodNode -> Node_9;Node_11 -> Node_12;
+Node_11 -> Node_17;
+Node_12 -> Node_10;
+Node_14 -> Node_10;
+Node_14 -> Node_10;
+Node_9 -> Node_16;
+Node_16 -> Node_11;
+Node_16 -> Node_13;
+Node_17 -> Node_13;
+Node_13 -> Node_14;
+}
+

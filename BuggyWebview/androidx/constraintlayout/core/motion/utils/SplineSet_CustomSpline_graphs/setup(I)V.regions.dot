@@ -1,0 +1,59 @@
+digraph "CFG forandroidx.constraintlayout.core.motion.utils.SplineSet.CustomSpline.setup(I)V" {
+subgraph cluster_Region_459914345 {
+label = "R(3:1|(3:3|(2:4|(1:6))|8)|10)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = r12.mConstraintAttributeList.size()\lint int r1 = r12.mConstraintAttributeList.valueAt(0).numberOfInterpolatedValues()\ldouble[] double[] r3 = new double[r0]\lr12.mTempValues = new float[r1]\ldouble[][] double[][] r2 = (double[][]) java.lang.reflect.Array.newInstance(double.class, r0, r1)\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_1447582357 {
+label = "LOOP:0: (3:3|(2:4|(1:6))|8)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0028|LOOP_START\lLOOP:0: B:16:0x0028\-\>B:21:0x0055\lPHI: r4 \l  PHI: (r4v4 'i' int) = (r4v3 'i' int), (r4v6 'i' int) binds: [B:15:0x0000, B:21:0x0055] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 \< r0) goto L3\l}"];
+subgraph cluster_Region_1595104665 {
+label = "R(3:3|(2:4|(1:6))|8)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x002a|int int r5 = r12.mConstraintAttributeList.keyAt(r4)\landroidx.constraintlayout.core.motion.CustomVariable androidx.constraintlayout.core.motion.CustomVariable r6 = r12.mConstraintAttributeList.valueAt(r4)\lr3[r4] = r5 * 0.01d\lr6.getValuesToInterpolate(r12.mTempValues)\lint r7 = 0\l}"];
+subgraph cluster_LoopRegion_1830124194 {
+label = "LOOP:1: (2:4|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1772057795 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0046|LOOP_START\lLOOP:1: B:18:0x0046\-\>B:20:0x004b\lPHI: r7 \l  PHI: (r7v4 'k' int) = (r7v3 'k' int), (r7v5 'k' int) binds: [B:17:0x002a, B:20:0x004b] A[DONT_GENERATE, DONT_INLINE]\l|float[] float[] r8 = r12.mTempValues\l}"];
+subgraph cluster_IfRegion_2107049238 {
+label = "IF [B:19:0x0049] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0049|EDGE_INSN: B:19:0x0049\-\>B:25:0x0055 ?: BREAK  \l|if (r7 \< r8.length) goto L6\l}"];
+subgraph cluster_Region_734756594 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x004b|LOOP_END\lLOOP:1: B:18:0x0046\-\>B:20:0x004b\l|r2[r4][r7] = r8[r7]\lr7++\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0055|LOOP_END\lLOOP:0: B:16:0x0028\-\>B:21:0x0055\l|r4++\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0058|r12.mCurveFit = androidx.constraintlayout.core.motion.utils.CurveFit.get(r13, r3, r2)\l}"];
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0055|SYNTHETIC\lEDGE_INSN: B:19:0x0049\-\>B:25:0x0055 ?: BREAK  \l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0058|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x005e}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.constraintlayout.core.motion.utils.SplineSet.CustomSpline.setup((r12v0 'this' androidx.constraintlayout.core.motion.utils.SplineSet$CustomSpline A[IMMUTABLE_TYPE, THIS]), (r13v0 'curveType' int A[D('curveType' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:20:0x004b \-\> B:18:0x0046, BACK_EDGE: B:21:0x0055 \-\> B:16:0x0028\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [androidx.constraintlayout.core.motion.utils.SplineSet.setup(int):void]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_25[style=dashed];
+Node_20 -> Node_18;
+Node_21 -> Node_16;
+Node_22 -> Node_23;
+Node_13 -> Node_15;
+Node_25 -> Node_21;
+Node_24 -> Node_22;
+Node_23 -> Node_14;
+}
+

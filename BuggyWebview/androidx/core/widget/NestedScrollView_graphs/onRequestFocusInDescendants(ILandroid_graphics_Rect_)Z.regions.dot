@@ -1,0 +1,98 @@
+digraph "CFG forandroidx.core.widget.NestedScrollView.onRequestFocusInDescendants(ILandroid\/graphics\/Rect;)Z" {
+subgraph cluster_Region_181740537 {
+label = "R(3:(1:3)(1:(1:18))|(1:5)(1:15)|(2:(1:12)|(1:14))) | DECL_VAR: android.view.View nextFocus\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_70900279 {
+label = "IF [B:22:0x0001] THEN: R(1:3) ELSE: R(1:(1:18))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0001|if (r4 == 2) goto L3\l}"];
+subgraph cluster_Region_502883458 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0003|r4 = 130\l}"];
+}
+subgraph cluster_Region_1074379357 {
+label = "R(1:(1:18)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1667273550 {
+label = "IF [B:25:0x0007] THEN: R(1:18) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0007|if (r4 == 1) goto L18\l}"];
+subgraph cluster_Region_700581239 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0009|r4 = 33\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_2143926713 {
+label = "IF [B:27:0x000b] THEN: R(1:5) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x000b|PHI: r4 \l  PHI: (r4v2 'direction' int) = (r4v0 'direction' int), (r4v1 'direction' int), (r4v3 'direction' int) binds: [B:25:0x0007, B:26:0x0009, B:23:0x0003] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 == null) goto L5\l}"];
+subgraph cluster_Region_1026730460 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x000d|android.view.View r0 = android.view.FocusFinder.getInstance().findNextFocus(r3, null, r4)\l}"];
+}
+subgraph cluster_Region_1850075364 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0017|android.view.View r0 = android.view.FocusFinder.getInstance().findNextFocusFromRect(r3, r5, r4)\l}"];
+}
+}
+subgraph cluster_Region_1914650447 {
+label = "R(2:(1:12)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_352463009 {
+label = "IF [B:31:0x0021, B:34:0x0028] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0021|if (r0 == null) goto L8\l}"];
+Node_34 [shape=record,label="{34\:\ 0x0028|ADDED_TO_REGION\l|if (isOffScreen(r0) != false) goto L12\l}"];
+subgraph cluster_Region_743599819 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x002a|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_509877897 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x002f|RETURN\l|return r0.requestFocus(r4, r5)\l}"];
+}
+}
+}
+Node_19 [shape=record,color=red,label="{19\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0000}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x001f|PHI: r0 \l  PHI: (r0v4 'nextFocus' android.view.View) = (r0v3 'nextFocus' android.view.View), (r0v6 'nextFocus' android.view.View) binds: [B:29:0x0017, B:28:0x000d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0023|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0024}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x002b}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0006}"];
+MethodNode[shape=record,label="{protected boolean androidx.core.widget.NestedScrollView.onRequestFocusInDescendants((r3v0 'this' androidx.core.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]), (r4v0 'direction' int A[D('direction' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'previouslyFocusedRect' android.graphics.Rect A[D('previouslyFocusedRect' android.graphics.Rect), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:35:0x002a \-\> B:20:?, CROSS_EDGE: B:37:0x002f \-\> B:20:?, CROSS_EDGE: B:29:0x0017 \-\> B:30:0x001f, CROSS_EDGE: B:26:0x0009 \-\> B:27:0x000b, CROSS_EDGE: B:25:0x0007 \-\> B:27:0x000b\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lMETHOD_OVERRIDE: [ClspMth\{android.view.ViewGroup.onRequestFocusInDescendants(int, android.graphics.Rect):boolean\}]\l}"];
+MethodNode -> Node_19;Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_27;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_30;
+Node_29 -> Node_30;
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_20;
+Node_37 -> Node_20;
+Node_19 -> Node_21;
+Node_21 -> Node_22;
+Node_30 -> Node_31;
+Node_32 -> Node_20;
+Node_33 -> Node_34;
+Node_36 -> Node_37;
+Node_24 -> Node_25;
+}
+

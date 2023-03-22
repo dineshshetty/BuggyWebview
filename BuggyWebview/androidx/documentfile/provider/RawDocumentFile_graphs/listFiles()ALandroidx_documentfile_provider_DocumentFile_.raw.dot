@@ -1,0 +1,25 @@
+digraph "CFG forandroidx.documentfile.provider.RawDocumentFile.listFiles()[Landroidx\/documentfile\/provider\/DocumentFile;" {
+Node_0 [shape=record,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0000|0x0000: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList  (LINE:134)\l0x0002: INVOKE  (r0 I:java.util.ArrayList) type: DIRECT call: java.util.ArrayList.\<init\>():void A[MD:():void (c)]\l0x0005: IGET  (r1 I:java.io.File) = (r6 I:androidx.documentfile.provider.RawDocumentFile) androidx.documentfile.provider.RawDocumentFile.mFile java.io.File  (LINE:135)\l0x0007: INVOKE  (r1 I:java.io.File[]) = (r1 I:java.io.File) type: VIRTUAL call: java.io.File.listFiles():java.io.File[] A[MD:():java.io.File[] (c)]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|0x000b: IF  (r1 I:??[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('files' java.io.File[])]) == (0 ??[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x001e  (LINE:136)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: ARRAY_LENGTH  (r2 I:int) = (r1 I:??[] A[D('files' java.io.File[])])  (LINE:137)\l0x000e: CONST  (r3 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (0 ??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|LOOP_START\lLOOP:0: B:5:0x000f\-\>B:6:0x0011\l|0x000f: IF  (r3 I:??[int, byte, short, char]) \>= (r2 I:??[int, byte, short, char])  \-\> B:9:0x001e \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|LOOP_END\lLOOP:0: B:5:0x000f\-\>B:6:0x0011\l|0x0011: AGET  (r4 I:??[OBJECT, ARRAY]) = (r1 I:??[OBJECT, ARRAY][] A[D('files' java.io.File[])]), (r3 I:??[int, short, byte, char]) \l0x0013: NEW_INSTANCE  (r5 I:androidx.documentfile.provider.RawDocumentFile) =  androidx.documentfile.provider.RawDocumentFile  (LINE:138)\l0x0015: INVOKE  \l  (r5 I:androidx.documentfile.provider.RawDocumentFile)\l  (r6 I:androidx.documentfile.provider.DocumentFile)\l  (r4 I:java.io.File A[D('file' java.io.File)])\l type: DIRECT call: androidx.documentfile.provider.RawDocumentFile.\<init\>(androidx.documentfile.provider.DocumentFile, java.io.File):void A[MD:(androidx.documentfile.provider.DocumentFile, java.io.File):void (m)]\l0x0018: INVOKE  \l  (r0 I:java.util.ArrayList A[D('results' java.util.ArrayList\<androidx.documentfile.provider.DocumentFile\>)])\l  (r5 I:java.lang.Object)\l type: VIRTUAL call: java.util.ArrayList.add(java.lang.Object):boolean A[MD:(E):boolean (c)]\l0x001b: ARITH  (r3 I:int) = (r3 I:int) + (1 int)  (LINE:137)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001e|SYNTHETIC\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001e|0x001e: INVOKE  (r2 I:int) = (r0 I:java.util.ArrayList A[D('results' java.util.ArrayList\<androidx.documentfile.provider.DocumentFile\>)]) type: VIRTUAL call: java.util.ArrayList.size():int A[MD:():int (c)] (LINE:141)\l0x0022: NEW_ARRAY  (r2 I:androidx.documentfile.provider.DocumentFile[]) = (r2 I:int A[IMMUTABLE_TYPE]) type: androidx.documentfile.provider.DocumentFile[] \l0x0024: INVOKE  (r2 I:java.lang.Object[]) = \l  (r0 I:java.util.ArrayList A[D('results' java.util.ArrayList\<androidx.documentfile.provider.DocumentFile\>)])\l  (r2 I:java.lang.Object[])\l type: VIRTUAL call: java.util.ArrayList.toArray(java.lang.Object[]):java.lang.Object[] A[MD:\<T\>:(T[]):T[] (c)]\l0x0028: CHECK_CAST (r2 I:androidx.documentfile.provider.DocumentFile[]) = (androidx.documentfile.provider.DocumentFile[]) (r2 I:??[OBJECT, ARRAY]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x002a|RETURN\l|0x002a: RETURN  (r2 I:androidx.documentfile.provider.DocumentFile[]) \l}"];
+Node_1 [shape=record,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public androidx.documentfile.provider.DocumentFile[] androidx.documentfile.provider.RawDocumentFile.listFiles((r6 'this' I:androidx.documentfile.provider.RawDocumentFile A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:6:0x0011 \-\> B:5:0x000f, CROSS_EDGE: B:3:0x000b \-\> B:7:0x001e\lDebug Info:\l  0x0013\-0x001b: r4 'file' Ljava\/io\/File;\l  0x0005\-0x002a: r0 'results' Ljava\/util\/ArrayList;, signature: Ljava\/util\/ArrayList\<Landroidx\/documentfile\/provider\/DocumentFile;\>;\l  0x000b\-0x002a: r1 'files' [Ljava\/io\/File;\lMETHOD_OVERRIDE: [androidx.documentfile.provider.DocumentFile.listFiles():androidx.documentfile.provider.DocumentFile[]]\l}"];
+MethodNode -> Node_0;Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_5;
+Node_9 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+}
+

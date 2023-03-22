@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.core.view.ContentInfoCompat.flagsToString(I)Ljava\/lang\/String;" {
+subgraph cluster_Region_228383421 {
+label = "R(1:(2:(1:3)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1074377695 {
+label = "R(2:(1:3)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1848592218 {
+label = "IF [B:11:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0002|if ((r1 & 1) != 0) goto L3\l}"];
+subgraph cluster_Region_153713338 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0004|RETURN\l|return \"FLAG_CONVERT_TO_PLAIN_TEXT\"\l}"];
+}
+}
+subgraph cluster_Region_1644892176 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000b|RETURN\l|return java.lang.String.valueOf(r1)\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0000}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0007}"];
+MethodNode[shape=record,label="{static java.lang.String androidx.core.view.ContentInfoCompat.flagsToString((r1v0 'flags' int A[D('flags' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:15:0x000b \-\> B:9:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_8;Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_9;
+Node_15 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+}
+

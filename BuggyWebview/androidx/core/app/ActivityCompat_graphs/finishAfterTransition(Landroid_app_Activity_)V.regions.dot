@@ -1,0 +1,36 @@
+digraph "CFG forandroidx.core.app.ActivityCompat.finishAfterTransition(Landroid\/app\/Activity;)V" {
+subgraph cluster_Region_493519987 {
+label = "R(1:(1:3)(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1489881157 {
+label = "IF [B:19:0x0004] THEN: R(1:3) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L3\l}"];
+subgraph cluster_Region_1102372758 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0006|androidx.core.app.ActivityCompat.Api21Impl.finishAfterTransition(r2)\l}"];
+}
+subgraph cluster_Region_1923408588 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x000a|r2.finish()\l}"];
+}
+}
+}
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0000}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000d|ORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static void androidx.core.app.ActivityCompat.finishAfterTransition((r2v0 'activity' android.app.Activity A[D('activity' android.app.Activity), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x000a \-\> B:22:0x000d\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_16;Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_23;
+Node_21 -> Node_22;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_23 -> Node_17;
+Node_22 -> Node_17;
+}
+

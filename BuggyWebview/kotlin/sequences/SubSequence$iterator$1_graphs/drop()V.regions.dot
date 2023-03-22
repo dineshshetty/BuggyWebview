@@ -1,0 +1,39 @@
+digraph "CFG forkotlin.sequences.SubSequence$iterator$1.drop()V" {
+subgraph cluster_Region_272763932 {
+label = "R(1:(1:5)) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_990188360 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|int int r0 = r2.position\lint r1 = ((kotlin.sequences.SubSequence) r2.this$0).startIndex\lif (r0 \< r1) goto L3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if (r2.iterator.hasNext() != false) goto L5\l}"];
+subgraph cluster_Region_1496240092 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|LOOP_END\lLOOP:0: B:2:0x0000\-\>B:6:0x0012\l|r2.iterator.next()\lr2.position++\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000|LOOP_START\lLOOP:0: B:2:0x0000\-\>B:6:0x0012\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001e|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001e|ORIG_RETURN\lADDED_TO_REGION\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001e|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private final void kotlin.sequences.SubSequence$iterator$1.drop((r2v0 'this' kotlin.sequences.SubSequence$iterator$1 A[IMMUTABLE_TYPE, THIS]))  | INCONSISTENT_CODE\lUSE_LINES_HINTS\lBACK_EDGE: B:6:0x0012 \-\> B:2:0x0000, CROSS_EDGE: B:3:0x0008 \-\> B:7:0x001e\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lJadxCommentsAttr\{\l WARN: \l \-\> Incorrect condition in loop: B:3:0x0008\}\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_2;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_7;
+Node_7 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_1;
+}
+

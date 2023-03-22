@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.core.location.LocationCompat.getElapsedRealtimeMillis(Landroid\/location\/Location;)J" {
+Node_14 [shape=record,label="{14\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0000|0x0000: SGET  (r0 I:int) =  android.os.Build.VERSION.SDK_INT int  (LINE:103)\l0x0002: CONST  (r1 I:??[int, float, short, byte, char]) = (17 ??[int, float, short, byte, char]) \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0004|0x0004: IF  (r0 I:??[int, byte, short, char]) \< (r1 I:??[int, byte, short, char])  \-\> B:20:0x0011 \l}"];
+Node_18 [shape=record,label="{18\:\ 0x0006|0x0006: SGET  (r0 I:java.util.concurrent.TimeUnit) =  java.util.concurrent.TimeUnit.NANOSECONDS java.util.concurrent.TimeUnit  (LINE:104)\l0x0008: INVOKE  (r1 I:long) = (r7 I:android.location.Location A[D('location' android.location.Location)]) type: STATIC call: androidx.core.location.LocationCompat.Api17Impl.getElapsedRealtimeNanos(android.location.Location):long A[MD:(android.location.Location):long (m)]\l0x000c: INVOKE  (r0 I:long) = (r0 I:java.util.concurrent.TimeUnit), (r1 I:long) type: VIRTUAL call: java.util.concurrent.TimeUnit.toMillis(long):long A[MD:(long):long (c)]\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0010|RETURN\l|0x0010: RETURN  (r0 I:long) \l}"];
+Node_15 [shape=record,label="{15\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0011|0x0011: INVOKE  (r0 I:long) =  type: STATIC call: java.lang.System.currentTimeMillis():long A[MD:():long (c)] (LINE:106)\l0x0015: INVOKE  (r2 I:long) = (r7 I:android.location.Location A[D('location' android.location.Location)]) type: VIRTUAL call: android.location.Location.getTime():long A[MD:():long (c)]\l0x0019: ARITH  (r0 I:long) = (r0 I:long) \- (r2 I:long) \l0x001a: INVOKE  (r2 I:long) =  type: STATIC call: android.os.SystemClock.elapsedRealtime():long A[MD:():long (c)] (LINE:107)\l0x001e: CONST  (r4 I:??[long, double]) = (0 ??[long, double])  (LINE:108)\l0x0020: CMP_L  (r6 I:int) = (r0 I:long A[D('timeDeltaMs' long)]), (r4 I:long) \l}"];
+Node_21 [shape=record,label="{21\:\ 0x0022|0x0022: IF  (r6 I:??[int, byte, short, char]) \>= (0 ??[int, byte, short, char])  \-\> B:23:0x0025 \l}"];
+Node_22 [shape=record,label="{22\:\ 0x0024|RETURN\l|0x0024: RETURN  (r2 I:long A[D('elapsedRealtimeMs' long)])  (LINE:110)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0025|0x0025: CMP_L  (r6 I:int) = (r0 I:long A[D('timeDeltaMs' long)]), (r2 I:long A[D('elapsedRealtimeMs' long)])  (LINE:111)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0027|0x0027: IF  (r6 I:??[int, byte, short, char]) \<= (0 ??[int, byte, short, char])  \-\> B:26:0x002a \l}"];
+Node_25 [shape=record,label="{25\:\ 0x0029|RETURN\l|0x0029: RETURN  (r4 I:long)  (LINE:113)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x002a|0x002a: ARITH  (r4 I:long) = (r2 I:long A[D('elapsedRealtimeMs' long)]) \- (r0 I:long A[D('timeDeltaMs' long)])  (LINE:115)\l}"];
+Node_27 [shape=record,label="{27\:\ 0x002c|RETURN\l|0x002c: RETURN  (r4 I:long) \l}"];
+MethodNode[shape=record,label="{public static long androidx.core.location.LocationCompat.getElapsedRealtimeMillis((r7 I:android.location.Location A[D('location' android.location.Location), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:22:0x0024 \-\> B:15:?, CROSS_EDGE: B:25:0x0029 \-\> B:15:?, CROSS_EDGE: B:27:0x002c \-\> B:15:?\lINLINE_NOT_NEEDED\lDebug Info:\l  0x001a\-0x002c: r0 'timeDeltaMs' J\l  0x001e\-0x002c: r2 'elapsedRealtimeMs' J\l  \-1 \-0x002c: r7 'location' Landroid\/location\/Location;\l}"];
+MethodNode -> Node_14;Node_14 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_18 -> Node_19;
+Node_19 -> Node_15;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_15;
+Node_23 -> Node_24;
+Node_24 -> Node_25[style=dashed];
+Node_24 -> Node_26;
+Node_25 -> Node_15;
+Node_26 -> Node_27;
+Node_27 -> Node_15;
+}
+

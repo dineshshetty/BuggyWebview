@@ -1,0 +1,38 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.findParcelClass(Ljava\/lang\/Class;)Ljava\/lang\/Class;" {
+subgraph cluster_Region_1203076913 {
+label = "R(2:1|(2:(2:3|4)|(1:6)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0000|java.lang.Class java.lang.Class r0 = r6.mParcelizerCache.get(r7.getName())\l}"];
+subgraph cluster_Region_1325910348 {
+label = "R(2:(2:3|4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1282537313 {
+label = "IF [B:10:0x000c] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x000c|if (r0 == null) goto L3\l}"];
+subgraph cluster_Region_570873009 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x000e|java.lang.String java.lang.String r1 = r7.getPackage().getName()\ljava.lang.String java.lang.String r2 = java.lang.String.format(\"%s.%sParcelizer\", r1, r7.getSimpleName())\ljava.lang.Class java.lang.Class r0 = java.lang.Class.forName(r2, false, r7.getClassLoader())\lr6.mParcelizerCache.put(r7.getName(), r0)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x003a|RETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_844251241 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private java.lang.Class androidx.versionedparcelable.VersionedParcel.findParcelClass((r6v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]), (r7v0 'cls' java.lang.Class\<? extends androidx.versionedparcelable.VersionedParcelable\> A[D('cls' java.lang.Class\<? extends androidx.versionedparcelable.VersionedParcelable\>), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:10:0x000c \-\> B:12:0x003a\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: (Ljava\/lang\/Class\<+Landroidx\/versionedparcelable\/VersionedParcelable;\>;)Ljava\/lang\/Class;\lEXCEPTIONS:[Ljava\/lang\/ClassNotFoundException;]\l}"];
+MethodNode -> Node_7;Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_7 -> Node_9;
+}
+

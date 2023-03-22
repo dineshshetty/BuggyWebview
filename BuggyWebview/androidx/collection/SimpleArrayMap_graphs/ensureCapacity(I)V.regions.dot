@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.collection.SimpleArrayMap.ensureCapacity(I)V" {
+subgraph cluster_Region_1627407013 {
+label = "R(3:1|(3:3|(1:5)|6)|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0000|int int r0 = r6.mSize\l}"];
+subgraph cluster_IfRegion_1576386782 {
+label = "IF [B:16:0x0005] THEN: R(3:3|(1:5)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|if (r6.mHashes.length \< r7) goto L3\l}"];
+subgraph cluster_Region_798852221 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0007|int[] int[] r1 = r6.mHashes\ljava.lang.Object[] java.lang.Object[] r2 = r6.mArray\lallocArrays(r7)\l}"];
+subgraph cluster_IfRegion_1756359395 {
+label = "IF [B:18:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0010|if (r6.mSize \> 0) goto L5\l}"];
+subgraph cluster_Region_1031302704 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0012|java.lang.System.arraycopy(r1, 0, r6.mHashes, 0, r0)\ljava.lang.System.arraycopy(r2, 0, r6.mArray, 0, r0 \<\< 1)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x001f|freeArrays(r1, r2, r0)\l}"];
+}
+}
+subgraph cluster_Region_1639085691 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1182101399 {
+label = "IF [B:22:0x0024] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0024|if (r6.mSize != r0) goto L11\l}"];
+subgraph cluster_Region_1363777243 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x002c|throw new java.util.ConcurrentModificationException()\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0022}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0026}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0027}"];
+MethodNode[shape=record,label="{public void androidx.collection.SimpleArrayMap.ensureCapacity((r6v0 'this' androidx.collection.SimpleArrayMap\<K, V\> A[D('this' androidx.collection.SimpleArrayMap\<K, V\>), IMMUTABLE_TYPE, THIS]), (r7v0 'minimumCapacity' int A[D('minimumCapacity' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:25:0x002c \-\> B:14:?, CROSS_EDGE: B:18:0x0010 \-\> B:20:0x001f, CROSS_EDGE: B:16:0x0005 \-\> B:21:0x0022\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\l}"];
+MethodNode -> Node_13;Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23[style=dashed];
+Node_22 -> Node_24;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_21 -> Node_22;
+Node_23 -> Node_14;
+Node_24 -> Node_25;
+}
+

@@ -1,0 +1,58 @@
+digraph "CFG forcom.google.android.material.textfield.TextInputLayout.setPlaceholderTextColor(Landroid\/content\/res\/ColorStateList;)V" {
+subgraph cluster_Region_350540089 {
+label = "R(1:(1:(2:3|(1:(1:6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1974071989 {
+label = "R(1:(2:3|(1:(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_942867629 {
+label = "IF [B:15:0x0002] THEN: R(2:3|(1:(1:6))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r1.placeholderTextColor != r2) goto L3\l}"];
+subgraph cluster_Region_554036108 {
+label = "R(2:3|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|r1.placeholderTextColor = r2\landroid.widget.TextView android.widget.TextView r0 = r1.placeholderTextView\l}"];
+subgraph cluster_Region_31779913 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_982101161 {
+label = "IF [B:17:0x0008, B:18:0x000a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0008|if (r0 != null) goto L5\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000a|ADDED_TO_REGION\l|if (r2 != null) goto L6\l}"];
+subgraph cluster_Region_623987093 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x000c|r0.setTextColor(r2)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000f|ORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.material.textfield.TextInputLayout.setPlaceholderTextColor((r1v0 'this' com.google.android.material.textfield.TextInputLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 'placeholderTextColor' android.content.res.ColorStateList A[D('placeholderTextColor' android.content.res.ColorStateList), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:18:0x000a \-\> B:20:0x000f, CROSS_EDGE: B:17:0x0008 \-\> B:20:0x000f, CROSS_EDGE: B:15:0x0002 \-\> B:20:0x000f\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_22[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_20;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_20 -> Node_13;
+Node_23 -> Node_13;
+Node_22 -> Node_13;
+Node_21 -> Node_13;
+}
+

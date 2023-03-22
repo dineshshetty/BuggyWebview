@@ -1,0 +1,65 @@
+digraph "CFG forkotlin.ranges.ULongProgression.\<init\>(JJJ)V" {
+subgraph cluster_Region_1843454352 {
+label = "R(1:(2:(1:11)|(1:(2:(1:9)|(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_346857375 {
+label = "R(2:(1:11)|(1:(2:(1:9)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_333864578 {
+label = "IF [B:15:0x0008] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0008|if (r8 == 0) goto L10\l}"];
+subgraph cluster_Region_151265211 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x002b|throw new java.lang.IllegalArgumentException(\"Step must be non\-zero.\")\l}"];
+}
+}
+subgraph cluster_Region_1661109098 {
+label = "R(1:(2:(1:9)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_321042674 {
+label = "R(2:(1:9)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_848422490 {
+label = "IF [B:17:0x000e] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x000e|if (r8 == Long.MIN_VALUE) goto L8\l}"];
+subgraph cluster_Region_465686132 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0023|throw new java.lang.IllegalArgumentException(\"Step must be greater than Long.MIN_VALUE to avoid overflow on negation.\")\l}"];
+}
+}
+subgraph cluster_Region_1823410101 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0011|r3.first = r4\lr3.last = kotlin.internal.UProgressionUtil.m1358getProgressionLastElement7ftBX0g(r4, r6, r8)\lr3.step = r8\l}"];
+}
+}
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000a}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001b}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001c}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0024}"];
+MethodNode[shape=record,label="{private void kotlin.ranges.ULongProgression.\<init\>((r3v0 'this' kotlin.ranges.ULongProgression A[IMMUTABLE_TYPE, THIS]), (r4v0 'start' long A[D('start' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'endInclusive' long A[D('endInclusive' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'step' long A[D('step' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x0023 \-\> B:13:?, CROSS_EDGE: B:23:0x002b \-\> B:13:?\lINLINE_NOT_NEEDED\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_22;
+Node_23 -> Node_13;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_21 -> Node_13;
+Node_18 -> Node_19;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_19 -> Node_13;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+}
+

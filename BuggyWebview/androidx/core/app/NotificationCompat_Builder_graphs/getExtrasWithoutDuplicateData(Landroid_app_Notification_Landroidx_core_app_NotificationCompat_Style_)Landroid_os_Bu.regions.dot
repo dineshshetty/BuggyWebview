@@ -1,0 +1,64 @@
+digraph "CFG forandroidx.core.app.NotificationCompat.Builder.getExtrasWithoutDuplicateData(Landroid\/app\/Notification;Landroidx\/core\/app\/NotificationCompat$Style;)Landroid\/os\/Bundle;" {
+subgraph cluster_Region_81525994 {
+label = "R(1:(2:(1:3)|(4:5|(1:7)|(1:9)|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1722646951 {
+label = "R(2:(1:3)|(4:5|(1:7)|(1:9)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1505943793 {
+label = "IF [B:15:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0002|if (r4.extras == null) goto L3\l}"];
+subgraph cluster_Region_856522921 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0004|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_512081928 {
+label = "R(4:5|(1:7)|(1:9)|10)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0006|android.os.Bundle android.os.Bundle r0 = new android.os.Bundle(r4.extras)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_TITLE)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_TEXT)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_INFO_TEXT)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_SUB_TEXT)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_CHANNEL_ID)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_CHANNEL_GROUP_ID)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_SHOW_WHEN)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_PROGRESS)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_PROGRESS_MAX)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_PROGRESS_INDETERMINATE)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_CHRONOMETER_COUNT_DOWN)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_COLORIZED)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_PEOPLE_LIST)\lr0.remove(androidx.core.app.NotificationCompat.EXTRA_PEOPLE)\lr0.remove(androidx.core.app.NotificationCompatExtras.EXTRA_SORT_KEY)\lr0.remove(androidx.core.app.NotificationCompatExtras.EXTRA_GROUP_KEY)\lr0.remove(androidx.core.app.NotificationCompatExtras.EXTRA_GROUP_SUMMARY)\lr0.remove(androidx.core.app.NotificationCompatExtras.EXTRA_LOCAL_ONLY)\lr0.remove(androidx.core.app.NotificationCompatExtras.EXTRA_ACTION_EXTRAS)\landroid.os.Bundle android.os.Bundle r2 = r0.getBundle(\"android.car.EXTENSIONS\")\l}"];
+subgraph cluster_IfRegion_191358641 {
+label = "IF [B:19:0x0072] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0072|if (r2 != null) goto L7\l}"];
+subgraph cluster_Region_242447559 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0074|android.os.Bundle android.os.Bundle r3 = new android.os.Bundle(r2)\lr3.remove(\"invisible_actions\")\lr0.putBundle(\"android.car.EXTENSIONS\", r3)\l}"];
+}
+}
+subgraph cluster_IfRegion_1760171662 {
+label = "IF [B:21:0x0082] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0082|if (r5 != null) goto L9\l}"];
+subgraph cluster_Region_1161774560 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0084|r5.clearCompatExtraKeys(r0)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0087|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0000}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private static android.os.Bundle androidx.core.app.NotificationCompat.Builder.getExtrasWithoutDuplicateData((r4v0 'notification' android.app.Notification A[D('notification' android.app.Notification), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'style' androidx.core.app.NotificationCompat$Style A[D('style' androidx.core.app.NotificationCompat$Style), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0087 \-\> B:13:?, CROSS_EDGE: B:21:0x0082 \-\> B:23:0x0087, CROSS_EDGE: B:19:0x0072 \-\> B:21:0x0082\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_13;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_13;
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+}
+

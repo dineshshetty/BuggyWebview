@@ -1,0 +1,69 @@
+digraph "CFG forandroidx.transition.Scene.enter()V" {
+subgraph cluster_Region_1969807190 {
+label = "R(4:(2:11|(1:13)(1:14))|5|(1:7)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_300290757 {
+label = "IF [B:18:0x0002, B:20:0x0006] THEN: R(2:11|(1:13)(1:14)) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0002|if (r3.mLayoutId \> 0) goto L11\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0006|ADDED_TO_REGION\l|if (r3.mLayout != null) goto L11\l}"];
+subgraph cluster_Region_717473405 {
+label = "R(2:11|(1:13)(1:14))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0008|getSceneRoot().removeAllViews()\l}"];
+subgraph cluster_IfRegion_192504900 {
+label = "IF [B:22:0x0011] THEN: R(1:13) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0011|if (r3.mLayoutId \> 0) goto L13\l}"];
+subgraph cluster_Region_431155222 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0013|android.view.LayoutInflater.from(r3.mContext).inflate(r3.mLayoutId, r3.mSceneRoot)\l}"];
+}
+subgraph cluster_Region_946057695 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0021|r3.mSceneRoot.addView(r3.mLayout)\l}"];
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0028|java.lang.Runnable java.lang.Runnable r0 = r3.mEnterAction\l}"];
+subgraph cluster_IfRegion_999824953 {
+label = "IF [B:26:0x002a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x002a|if (r0 != null) goto L7\l}"];
+subgraph cluster_Region_180517742 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002c|r0.run()\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x002f|setCurrentScene(r3.mSceneRoot, r3)\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0000}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0004}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0034}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public void androidx.transition.Scene.enter((r3v0 'this' androidx.transition.Scene A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lCROSS_EDGE: B:26:0x002a \-\> B:28:0x002f, CROSS_EDGE: B:24:0x0021 \-\> B:25:0x0028, CROSS_EDGE: B:20:0x0006 \-\> B:25:0x0028, CROSS_EDGE: B:18:0x0002 \-\> B:21:0x0008\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_15;Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_20 -> Node_21;
+Node_20 -> Node_25[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_15 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_29 -> Node_16;
+}
+

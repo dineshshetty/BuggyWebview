@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.material.slider.BaseSlider.onMeasure(II)V" {
+subgraph cluster_Region_1835617732 {
+label = "R(3:1|(1:8)|5)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0000|int int r0 = r4.widgetHeight\lint r2 = 0\l}"];
+subgraph cluster_IfRegion_470705850 {
+label = "IF [B:14:0x0006, B:16:0x000c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0006|if (r4.labelBehavior == 1) goto L8\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000c|ADDED_TO_REGION\l|if (shouldAlwaysShowLabel() != false) goto L8\l}"];
+subgraph cluster_Region_915037374 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0010|int r2 = r4.labels.get(0).getIntrinsicHeight()\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x001c|PHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v0 int) binds: [B:19:0x0010, B:16:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|super.onMeasure(r5, android.view.View.MeasureSpec.makeMeasureSpec(r0 + r2, androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.EXACTLY))\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0008}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0026}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{protected void com.google.android.material.slider.BaseSlider.onMeasure((r4v0 'this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\> A[D('this' com.google.android.material.slider.BaseSlider\<S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>\>), IMMUTABLE_TYPE, THIS]), (r5v0 'widthMeasureSpec' int A[D('widthMeasureSpec' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'heightMeasureSpec' int A[D('heightMeasureSpec' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:16:0x000c \-\> B:20:0x001c, CROSS_EDGE: B:14:0x0006 \-\> B:19:0x0010\lINLINE_NOT_NEEDED\lTYPE_VARS: [S extends com.google.android.material.slider.BaseSlider\<S, L, T\>, T extends com.google.android.material.slider.BaseOnSliderTouchListener\<S\>, L extends com.google.android.material.slider.BaseOnChangeListener\<S\>]\lMETHOD_OVERRIDE: [ClspMth\{android.view.View.onMeasure(int, int):void\}]\l}"];
+MethodNode -> Node_11;Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_19;
+Node_16 -> Node_19;
+Node_16 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_13;
+Node_15 -> Node_16;
+Node_21 -> Node_12;
+}
+

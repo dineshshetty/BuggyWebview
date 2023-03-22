@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.reflect.TypesJVMKt.getJavaType(Lkotlin\/reflect\/KType;)Ljava\/lang\/reflect\/Type;" {
+subgraph cluster_Region_761726963 {
+label = "R(2:1|(2:(1:6)|(1:9))) | DECL_VAR: java.lang.reflect.Type it\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0000|kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, \"\<this\>\")\l}"];
+subgraph cluster_Region_1470256403 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_917008824 {
+label = "IF [B:13:0x0007, B:15:0x0010] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0007|if ((r3 instanceof kotlin.jvm.internal.KTypeBase) != false) goto L3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0010|ADDED_TO_REGION\l|if ((r0 = ((kotlin.jvm.internal.KTypeBase) r3).getJavaType()) != null) goto L5\l}"];
+subgraph cluster_Region_1233439725 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0013|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1548289457 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x001b|RETURN\l|return computeJavaType$default(r3, false, 1, null)\l}"];
+}
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0009}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0012}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0014}"];
+MethodNode[shape=record,label="{public static final java.lang.reflect.Type kotlin.reflect.TypesJVMKt.getJavaType((r3v0 '$this$javaType' kotlin.reflect.KType A[D('$this$javaType' kotlin.reflect.KType), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:19:0x001b \-\> B:11:?, CROSS_EDGE: B:13:0x0007 \-\> B:18:0x0014\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_10;Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_17 -> Node_11;
+Node_19 -> Node_11;
+Node_10 -> Node_12;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

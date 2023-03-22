@@ -1,0 +1,31 @@
+digraph "CFG forkotlinx.coroutines.scheduling.CoroutineScheduler.tryCreateWorker(J)Z" {
+Node_12 [shape=record,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0000|int r0 = (int) (2097151 & r8)\lint r1 = (int) ((kotlinx.coroutines.scheduling.CoroutineScheduler.BLOCKING_MASK & r8) \>\> 21)\lint r2 = kotlin.ranges.RangesKt.coerceAtLeast(r0 \- r1, 0)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001e|if (r2 \>= r7.corePoolSize) goto L11\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0020|int r4 = createNewWorker()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0025|if (r4 != 1) goto L8\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0027}"];
+Node_19 [shape=record,label="{19\:\ 0x0029|if (r7.corePoolSize \<= 1) goto L8\l}"];
+Node_20 [shape=record,label="{20\:\ 0x002b|createNewWorker()\l}"];
+Node_21 [shape=record,label="{21\:\ 0x002e|if (r4 \<= 0) goto L11\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0030|RETURN\l|return true\l}"];
+Node_13 [shape=record,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0031|RETURN\l|return false\l}"];
+MethodNode[shape=record,label="{private final boolean kotlinx.coroutines.scheduling.CoroutineScheduler.tryCreateWorker((r7v0 'this' kotlinx.coroutines.scheduling.CoroutineScheduler A[IMMUTABLE_TYPE, THIS]), (r8v0 'state' long A[D('state' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:23:0x0031 \-\> B:13:?, CROSS_EDGE: B:19:0x0029 \-\> B:21:0x002e, CROSS_EDGE: B:17:0x0025 \-\> B:21:0x002e, CROSS_EDGE: B:15:0x001e \-\> B:23:0x0031\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\l}"];
+MethodNode -> Node_12;Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_23;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_18 -> Node_19;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_21;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_13;
+Node_23 -> Node_13;
+}
+

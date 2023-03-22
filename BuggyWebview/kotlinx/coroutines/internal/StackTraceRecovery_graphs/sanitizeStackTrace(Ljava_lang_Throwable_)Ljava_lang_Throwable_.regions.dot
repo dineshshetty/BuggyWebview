@@ -1,0 +1,64 @@
+digraph "CFG forkotlinx.coroutines.internal.StackTraceRecoveryKt.sanitizeStackTrace(Ljava\/lang\/Throwable;)Ljava\/lang\/Throwable;" {
+subgraph cluster_Region_155415778 {
+label = "R(6:1|2|4|(2:(1:7)(1:10)|9)|13|14) | DECL_VAR: java.lang.StackTraceElement null\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0000|java.lang.StackTraceElement[] java.lang.StackTraceElement[] r0 = r10.getStackTrace()\lint int r1 = r0.length\lint int r2 = frameIndex(r0, kotlinx.coroutines.internal.StackTraceRecovery.stackTraceRecoveryClassName)\lint int r3 = r2 + 1\lint int r4 = frameIndex(r0, kotlinx.coroutines.internal.StackTraceRecovery.baseContinuationImplClassName)\lint r5 = 0\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0015|int r6 = r4 == \-1 ? 0 : r1 \- r4\l}"];
+Node_23 [shape=record,label="{23\:\ 0x001b|PHI: r6 \l  PHI: (r6v2 'adjustment' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r7 = (r1 \- r2) \- r6\ljava.lang.StackTraceElement[] java.lang.StackTraceElement[] r8 = new java.lang.StackTraceElement[r7]\l}"];
+subgraph cluster_LoopRegion_820101828 {
+label = "LOOP:0: (2:(1:7)(1:10)|9)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0020|LOOP_START\lLOOP:0: B:24:0x0020\-\>B:28:0x0031\lPHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v3 int) binds: [B:23:0x001b, B:28:0x0031] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \< r7) goto L6\l}"];
+subgraph cluster_Region_1002550495 {
+label = "R(2:(1:7)(1:10)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_691483425 {
+label = "IF [B:25:0x0022] THEN: R(1:7) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0022|if (r5 == 0) goto L7\l}"];
+subgraph cluster_Region_654840925 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0024|java.lang.StackTraceElement r9 = artificialFrame(\"Coroutine boundary\")\l}"];
+}
+subgraph cluster_Region_1886378953 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x002b|r9 = r0[(r3 + r5) \- 1]\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0031|LOOP_END\lLOOP:0: B:24:0x0020\-\>B:28:0x0031\lPHI: r9 \l  PHI: (r9v3 java.lang.StackTraceElement) = (r9v2 java.lang.StackTraceElement), (r9v5 java.lang.StackTraceElement) binds: [B:32:0x0031, B:33:0x0031] A[DONT_GENERATE, DONT_INLINE]\l|r8[r5] = r9\lr5++\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0036|r10.setStackTrace(r8)\l}"];
+Node_30 [shape=record,label="{30\:\ 0x003a|RETURN\l|return r10\l}"];
+}
+Node_17 [shape=record,color=red,label="{17\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0017}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0031|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0031|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0036|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0019}"];
+MethodNode[shape=record,label="{private static final E extends java.lang.Throwable kotlinx.coroutines.internal.StackTraceRecoveryKt.sanitizeStackTrace((r10v0 E extends java.lang.Throwable A[D('$this$sanitizeStackTrace' java.lang.Throwable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lBACK_EDGE: B:28:0x0031 \-\> B:24:0x0020, CROSS_EDGE: B:27:0x002b \-\> B:28:0x0031, CROSS_EDGE: B:22:0x0019 \-\> B:23:0x001b\lINLINE_NOT_NEEDED\lTYPE_VARS: [E extends java.lang.Throwable]\lSIGNATURE: \<E:Ljava\/lang\/Throwable;\>(TE;)TE;\l}"];
+MethodNode -> Node_17;Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_31[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_33;
+Node_27 -> Node_32;
+Node_28 -> Node_24;
+Node_29 -> Node_30;
+Node_30 -> Node_18;
+Node_17 -> Node_19;
+Node_21 -> Node_23;
+Node_33 -> Node_28;
+Node_32 -> Node_28;
+Node_31 -> Node_29;
+Node_22 -> Node_23;
+}
+

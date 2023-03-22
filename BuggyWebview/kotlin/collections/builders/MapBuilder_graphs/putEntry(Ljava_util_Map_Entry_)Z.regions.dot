@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.collections.builders.MapBuilder.putEntry(Ljava\/util\/Map$Entry;)Z" {
+subgraph cluster_Region_1737236285 {
+label = "R(2:1|(2:(2:6|(2:(2:8|9)|(1:10)))|(2:3|4)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0000|int int r0 = addKey$kotlin_stdlib(r7.getKey())\ljava.lang.Object[] java.lang.Object[] r1 = allocateValuesArray()\l}"];
+subgraph cluster_Region_1426256273 {
+label = "R(2:(2:6|(2:(2:8|9)|(1:10)))|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_474432483 {
+label = "IF [B:15:0x000d] THEN: R(2:6|(2:(2:8|9)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x000d|if (r0 \< 0) goto L6\l}"];
+subgraph cluster_Region_943339237 {
+label = "R(2:6|(2:(2:8|9)|(1:10)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0016|java.lang.Object r3 = r1[(\-r0) \- 1]\l}"];
+subgraph cluster_Region_1688208456 {
+label = "R(2:(2:8|9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_425893324 {
+label = "IF [B:19:0x0022] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0022|if (kotlin.jvm.internal.Intrinsics.areEqual(r7.getValue(), r3) == false) goto L8\l}"];
+subgraph cluster_Region_946736192 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0024|r1[(\-r0) \- 1] = r7.getValue()\l}"];
+Node_21 [shape=record,label="{21\:\ 0x002c|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_630293503 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x002d|RETURN\l|return false\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1067227527 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x000f|r1[r0] = r7.getValue()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0015|RETURN\l|return true\l}"];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{private final boolean kotlin.collections.builders.MapBuilder.putEntry((r6v0 'this' kotlin.collections.builders.MapBuilder\<K, V\> A[IMMUTABLE_TYPE, THIS]), (r7v0 java.util.Map$Entry\<? extends K, ? extends V\> A[D('entry' java.util.Map$Entry), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | USE_LINES_HINTS\lCROSS_EDGE: B:21:0x002c \-\> B:13:?, CROSS_EDGE: B:23:0x002e \-\> B:13:?\lINLINE_NOT_NEEDED\lTYPE_VARS: [V, K]\lSIGNATURE: (Ljava\/util\/Map$Entry\<+TK;+TV;\>;)Z\l}"];
+MethodNode -> Node_12;Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_13;
+Node_22 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_13;
+Node_12 -> Node_14;
+}
+

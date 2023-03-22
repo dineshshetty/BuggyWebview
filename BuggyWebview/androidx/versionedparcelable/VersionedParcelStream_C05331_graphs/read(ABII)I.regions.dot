@@ -1,0 +1,58 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcelStream.1.read([BII)I" {
+subgraph cluster_Region_1850827795 {
+label = "R(1:(2:(1:6)|(3:8|(1:10)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_100865286 {
+label = "R(2:(1:6)|(3:8|(1:10)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_939901773 {
+label = "IF [B:16:0x0005, B:18:0x000f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0005|if (androidx.versionedparcelable.VersionedParcelStream.this.mFieldSize != (\-1)) goto L3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x000f|ADDED_TO_REGION\l|if (androidx.versionedparcelable.VersionedParcelStream.this.mCount \>= androidx.versionedparcelable.VersionedParcelStream.this.mFieldSize) goto L5\l}"];
+subgraph cluster_Region_396818743 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0017|throw new java.io.IOException()\l}"];
+}
+}
+subgraph cluster_Region_4651793 {
+label = "R(3:8|(1:10)|11)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0018|int int r0 = super.read(r4, r5, r6)\l}"];
+subgraph cluster_IfRegion_555524228 {
+label = "IF [B:23:0x001c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x001c|if (r0 \> 0) goto L10\l}"];
+subgraph cluster_Region_1885872935 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x001e|androidx.versionedparcelable.VersionedParcelStream.this.mCount += r0\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0025|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0000}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0007}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0012}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|MTH_EXIT_BLOCK\l}"];
+MethodNode[shape=record,label="{public int androidx.versionedparcelable.VersionedParcelStream.1.read((r3v0 'this' androidx.versionedparcelable.VersionedParcelStream$1 A[IMMUTABLE_TYPE, THIS]), (r4v0 'b' byte[] A[D('b' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'off' int A[D('off' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'len' int A[D('len' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | DONT_RENAME\lUSE_LINES_HINTS\lCROSS_EDGE: B:25:0x0025 \-\> B:14:?, CROSS_EDGE: B:23:0x001c \-\> B:25:0x0025, CROSS_EDGE: B:16:0x0005 \-\> B:22:0x0018\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lEXCEPTIONS:[Ljava\/io\/IOException;]\lMETHOD_OVERRIDE: [ClspMth\{java.io.InputStream.read(byte[], int, int):int throws java.io.IOException\}]\l}"];
+MethodNode -> Node_13;Node_16 -> Node_17;
+Node_16 -> Node_22[style=dashed];
+Node_18 -> Node_20;
+Node_18 -> Node_22[style=dashed];
+Node_21 -> Node_14;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_14;
+Node_13 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+}
+

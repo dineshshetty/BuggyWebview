@@ -1,0 +1,112 @@
+digraph "CFG forandroidx.core.app.NotificationManagerCompat.getNotificationChannelGroupsCompat()Ljava\/util\/List;" {
+subgraph cluster_Region_1112477740 {
+label = "R(2:(2:3|(4:(1:7)(1:23)|8|(2:11|(1:18)(1:14))|21))|25) | DECL_VAR: java.util.List\<android.app.NotificationChannel\> allChannels\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_533548230 {
+label = "IF [B:3:0x0004] THEN: R(2:3|(4:(1:7)(1:23)|8|(2:11|(1:18)(1:14))|21)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 26) goto L3\l}"];
+subgraph cluster_Region_2002318325 {
+label = "R(2:3|(4:(1:7)(1:23)|8|(2:11|(1:18)(1:14))|21))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|java.util.List java.util.List\<android.app.NotificationChannelGroup\> r0 = getNotificationChannelGroups()\l}"];
+subgraph cluster_IfRegion_1460785665 {
+label = "IF [B:5:0x000e] THEN: R(4:(1:7)(1:23)|8|(2:11|(1:18)(1:14))|21) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|if (r0.isEmpty() == false) goto L5\l}"];
+subgraph cluster_Region_830355834 {
+label = "R(4:(1:7)(1:23)|8|(2:11|(1:18)(1:14))|21)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_883140148 {
+label = "IF [B:7:0x0014] THEN: R(1:7) ELSE: R(1:23)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L7\l}"];
+subgraph cluster_Region_1145942009 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0016|java.util.List r1 = java.util.Collections.emptyList()\l}"];
+}
+subgraph cluster_Region_1958362560 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|java.util.List r1 = getNotificationChannels()\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001f|PHI: r1 \l  PHI: (r1v4 'allChannels' java.util.List\<android.app.NotificationChannel\>) = (r1v3 'allChannels' java.util.List\<android.app.NotificationChannel\>), (r1v5 'allChannels' java.util.List\<android.app.NotificationChannel\>) binds: [B:9:0x001b, B:8:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|java.util.ArrayList java.util.List\<androidx.core.app.NotificationChannelGroupCompat\> r3 = new java.util.ArrayList\<\>(r0.size())\ljava.util.Iterator r4 = r0.iterator()\l\l}"];
+subgraph cluster_LoopRegion_1493473470 {
+label = "LOOP:0: (2:11|(1:18)(1:14))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0031|android.app.NotificationChannelGroup \lif (r4.hasNext() != false) goto L11\l}"];
+subgraph cluster_Region_1668300226 {
+label = "R(2:11|(1:18)(1:14))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0033|android.app.NotificationChannelGroup r5 = r4.next()\l}"];
+subgraph cluster_IfRegion_380560918 {
+label = "IF [B:14:0x003b] THEN: R(1:18) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003b|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L17\l}"];
+subgraph cluster_Region_487980203 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x003d|r3.add(new androidx.core.app.NotificationChannelGroupCompat(r5))\l}"];
+}
+subgraph cluster_Region_1575007130 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0046|r3.add(new androidx.core.app.NotificationChannelGroupCompat(r5, r1))\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x004f|RETURN\l|return r3\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0054|RETURN\l|return java.util.Collections.emptyList()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ ?|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0000}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002d|LOOP_START\lLOOP:0: B:11:0x002d\-\>B:24:0x002d\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0046|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x002d|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x002d|LOOP_END\lSYNTHETIC\lLOOP:0: B:11:0x002d\-\>B:24:0x002d\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x003d|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x002d|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x004f|SYNTHETIC\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|MTH_EXIT_BLOCK\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0050}"];
+MethodNode[shape=record,label="{public java.util.List\<androidx.core.app.NotificationChannelGroupCompat\> androidx.core.app.NotificationManagerCompat.getNotificationChannelGroupsCompat((r7v0 'this' androidx.core.app.NotificationManagerCompat A[IMMUTABLE_TYPE, THIS]))  | USE_LINES_HINTS\lBACK_EDGE: B:15:0x003d \-\> B:11:0x002d, BACK_EDGE: B:16:0x0046 \-\> B:11:0x002d, CROSS_EDGE: B:9:0x001b \-\> B:10:0x001f, CROSS_EDGE: B:20:0x0054 \-\> B:1:?, CROSS_EDGE: B:3:0x0004 \-\> B:19:0x0050\lINLINE_NOT_NEEDED\lTYPE_VARS: EMPTY\lSIGNATURE: ()Ljava\/util\/List\<Landroidx\/core\/app\/NotificationChannelGroupCompat;\>;\l}"];
+MethodNode -> Node_0;Node_3 -> Node_4;
+Node_3 -> Node_19[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_19[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_21[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_22[style=dashed];
+Node_14 -> Node_23;
+Node_15 -> Node_26;
+Node_16 -> Node_25;
+Node_18 -> Node_1;
+Node_20 -> Node_1;
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_22 -> Node_16;
+Node_25 -> Node_24;
+Node_24 -> Node_11;
+Node_23 -> Node_15;
+Node_26 -> Node_24;
+Node_21 -> Node_18;
+Node_19 -> Node_20;
+}
+
